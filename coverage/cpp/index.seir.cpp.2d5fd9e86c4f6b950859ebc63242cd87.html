@@ -26,7 +26,7 @@
     </tr>
     <tr>
       <th scope="row">Date:</th>
-      <td>2021-09-13 10:25:31</td>
+      <td>2021-09-28 12:26:24</td>
     </tr>
   </table>
 </div>
@@ -41,13 +41,13 @@
     <tr>
       <th scope="row">Lines:</th>
       <td>0</td>
-      <td>7</td>
+      <td>6</td>
       <td class="coverage-none">0.0%</td>
     </tr>
     <tr>
       <th scope="row">Branches:</th>
       <td>0</td>
-      <td>24</td>
+      <td>20</td>
       <td class="coverage-none">0.0%</td>
     </tr>
   </table>
@@ -215,7 +215,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm">*/</span><span class="w"></span></td>
+      <td class="src "><span class="cm">*/</span></td>
     </tr>
 
     <tr class="source-line">
@@ -223,7 +223,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;epidemiology/secir/seir.h&quot;</span><span class="cp"></span></td>
+      <td class="src "><span class="cp">#include</span> <span class="cpf">&quot;epidemiology/secir/seir.h&quot;</span><span class="cp"></span></td>
     </tr>
 
     <tr class="source-line">
@@ -239,7 +239,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="k">namespace</span><span class="w"> </span><span class="nn">epi</span><span class="w"></span></td>
+      <td class="src "><span class="k">namespace</span> <span class="n">epi</span></td>
     </tr>
 
     <tr class="source-line">
@@ -247,7 +247,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="p">{</span><span class="w"></span></td>
+      <td class="src "><span class="p">{</span></td>
     </tr>
 
     <tr class="source-line">
@@ -255,7 +255,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount uncoveredLine">&cross;</td>
-      <td class="src uncoveredLine"><span class="kt">void</span><span class="w"> </span><span class="nf">print_seir_params</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">SeirModel</span><span class="o">&amp;</span><span class="w"> </span><span class="n">model</span><span class="p">)</span><span class="w"></span></td>
+      <td class="src uncoveredLine"><span class="kt">void</span> <span class="n">print_seir_params</span><span class="p">(</span><span class="k">const</span> <span class="n">SeirModel</span><span class="o">&amp;</span> <span class="n">model</span><span class="p">)</span></td>
     </tr>
 
     <tr class="source-line">
@@ -263,7 +263,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="p">{</span><span class="w"></span></td>
+      <td class="src "><span class="p">{</span></td>
     </tr>
 
     <tr class="source-line">
@@ -271,7 +271,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount uncoveredLine">&cross;</td>
-      <td class="src uncoveredLine"><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s"> SEIR model set.</span><span class="se">\n</span><span class="s"> Parameters:</span><span class="se">\n\t</span><span class="s"> Time incubation:</span><span class="se">\t</span><span class="s"> %.4f </span><span class="se">\n\t</span><span class="s"> Time infectious:</span><span class="se">\t</span><span class="s"> %.4f </span><span class="se">\n\t</span><span class="s"> transmission &quot;</span><span class="w"></span></td>
+      <td class="src uncoveredLine">    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s"> SEIR model set.</span><span class="se">\n</span><span class="s"> Parameters:</span><span class="se">\n\t</span><span class="s"> Time incubation:</span><span class="se">\t</span><span class="s"> %.4f </span><span class="se">\n\t</span><span class="s"> Time infectious:</span><span class="se">\t</span><span class="s"> %.4f </span><span class="se">\n\t</span><span class="s"> transmission &quot;</span></td>
     </tr>
 
     <tr class="source-line">
@@ -279,7 +279,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="w">           </span><span class="s">&quot;risk:</span><span class="se">\t</span><span class="s"> %.4f </span><span class="se">\n\t</span><span class="s"> N:</span><span class="se">\t</span><span class="s"> %d </span><span class="se">\n\t</span><span class="s"> E0:</span><span class="se">\t</span><span class="s"> %d </span><span class="se">\n\t</span><span class="s"> I0:</span><span class="se">\t</span><span class="s"> %d </span><span class="se">\n\t</span><span class="s"> R0:</span><span class="se">\t</span><span class="s"> %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"></span></td>
+      <td class="src ">           <span class="s">&quot;risk:</span><span class="se">\t</span><span class="s"> %.4f </span><span class="se">\n\t</span><span class="s"> N:</span><span class="se">\t</span><span class="s"> %d </span><span class="se">\n\t</span><span class="s"> E0:</span><span class="se">\t</span><span class="s"> %d </span><span class="se">\n\t</span><span class="s"> I0:</span><span class="se">\t</span><span class="s"> %d </span><span class="se">\n\t</span><span class="s"> R0:</span><span class="se">\t</span><span class="s"> %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span></td>
     </tr>
 
     <tr class="source-line">
@@ -287,7 +287,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount uncoveredLine">&cross;</td>
-      <td class="src uncoveredLine"><span class="w">           </span><span class="mf">1.0</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">model</span><span class="p">.</span><span class="n">parameters</span><span class="p">.</span><span class="n">get</span><span class="o">&lt;</span><span class="n">StageTimeIncubationInv</span><span class="o">&gt;</span><span class="p">(),</span><span class="w"> </span><span class="mf">1.0</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">model</span><span class="p">.</span><span class="n">parameters</span><span class="p">.</span><span class="n">get</span><span class="o">&lt;</span><span class="n">StageTimeInfectiousInv</span><span class="o">&gt;</span><span class="p">(),</span><span class="w"></span></td>
+      <td class="src uncoveredLine">           <span class="mf">1.0</span> <span class="o">/</span> <span class="n">model</span><span class="p">.</span><span class="n">parameters</span><span class="p">.</span><span class="n">get</span><span class="o">&lt;</span><span class="n">StageTimeIncubationInv</span><span class="o">&gt;</span><span class="p">(),</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="n">model</span><span class="p">.</span><span class="n">parameters</span><span class="p">.</span><span class="n">get</span><span class="o">&lt;</span><span class="n">StageTimeInfectiousInv</span><span class="o">&gt;</span><span class="p">(),</span></td>
     </tr>
 
     <tr class="source-line">
@@ -295,7 +295,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount uncoveredLine">&cross;</td>
-      <td class="src uncoveredLine"><span class="w">           </span><span class="n">model</span><span class="p">.</span><span class="n">parameters</span><span class="p">.</span><span class="n">get</span><span class="o">&lt;</span><span class="n">TransmissionRisk</span><span class="o">&gt;</span><span class="p">(),</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">model</span><span class="p">.</span><span class="n">populations</span><span class="p">.</span><span class="n">get_total</span><span class="p">(),</span><span class="w"></span></td>
+      <td class="src uncoveredLine">           <span class="n">model</span><span class="p">.</span><span class="n">parameters</span><span class="p">.</span><span class="n">get</span><span class="o">&lt;</span><span class="n">TransmissionRisk</span><span class="o">&gt;</span><span class="p">(),</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">model</span><span class="p">.</span><span class="n">populations</span><span class="p">.</span><span class="n">get_total</span><span class="p">(),</span></td>
     </tr>
 
     <tr class="source-line">
@@ -303,7 +303,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount uncoveredLine">&cross;</td>
-      <td class="src uncoveredLine"><span class="w">           </span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">model</span><span class="p">.</span><span class="n">populations</span><span class="p">[{</span><span class="n">Index</span><span class="o">&lt;</span><span class="n">SeirInfType</span><span class="o">&gt;</span><span class="p">(</span><span class="n">SeirInfType</span><span class="o">::</span><span class="n">E</span><span class="p">)}],</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">model</span><span class="p">.</span><span class="n">populations</span><span class="p">[{</span><span class="n">Index</span><span class="o">&lt;</span><span class="n">SeirInfType</span><span class="o">&gt;</span><span class="p">(</span><span class="n">SeirInfType</span><span class="o">::</span><span class="n">I</span><span class="p">)}],</span><span class="w"></span></td>
+      <td class="src uncoveredLine">           <span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">model</span><span class="p">.</span><span class="n">populations</span><span class="p">[{</span><span class="n">Index</span><span class="o">&lt;</span><span class="n">SeirInfType</span><span class="o">&gt;</span><span class="p">(</span><span class="n">SeirInfType</span><span class="o">::</span><span class="n">E</span><span class="p">)}],</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">model</span><span class="p">.</span><span class="n">populations</span><span class="p">[{</span><span class="n">Index</span><span class="o">&lt;</span><span class="n">SeirInfType</span><span class="o">&gt;</span><span class="p">(</span><span class="n">SeirInfType</span><span class="o">::</span><span class="n">I</span><span class="p">)}],</span></td>
     </tr>
 
     <tr class="source-line">
@@ -311,7 +311,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount uncoveredLine">&cross;</td>
-      <td class="src uncoveredLine"><span class="w">           </span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">model</span><span class="p">.</span><span class="n">populations</span><span class="p">[{</span><span class="n">Index</span><span class="o">&lt;</span><span class="n">SeirInfType</span><span class="o">&gt;</span><span class="p">(</span><span class="n">SeirInfType</span><span class="o">::</span><span class="n">R</span><span class="p">)}]);</span><span class="w"></span></td>
+      <td class="src uncoveredLine">           <span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">model</span><span class="p">.</span><span class="n">populations</span><span class="p">[{</span><span class="n">Index</span><span class="o">&lt;</span><span class="n">SeirInfType</span><span class="o">&gt;</span><span class="p">(</span><span class="n">SeirInfType</span><span class="o">::</span><span class="n">R</span><span class="p">)}]);</span></td>
     </tr>
 
     <tr class="source-line">
@@ -319,7 +319,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="p">}</span><span class="w"></span></td>
+      <td class="src "><span class="p">}</span></td>
     </tr>
 
     <tr class="source-line">
@@ -334,8 +334,8 @@
       <td class="lineno"><a id="l34" href="#l34">34</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount uncoveredLine">&cross;</td>
-      <td class="src uncoveredLine"><span class="p">}</span><span class="w"> </span><span class="c1">// namespace epi</span></td>
+      <td class="linecount "></td>
+      <td class="src "><span class="p">}</span> <span class="c1">// namespace epi</span></td>
     </tr>
 
     <tr class="source-line">

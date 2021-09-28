@@ -26,7 +26,7 @@
     </tr>
     <tr>
       <th scope="row">Date:</th>
-      <td>2021-09-13 10:25:31</td>
+      <td>2021-09-28 12:26:24</td>
     </tr>
   </table>
 </div>
@@ -46,9 +46,9 @@
     </tr>
     <tr>
       <th scope="row">Branches:</th>
-      <td>20</td>
-      <td>27</td>
-      <td class="coverage-low">74.1%</td>
+      <td>0</td>
+      <td>0</td>
+      <td class="coverage-unknown">-%</td>
     </tr>
   </table>
 </div>
@@ -215,7 +215,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm">*/</span><span class="w"></span></td>
+      <td class="src "><span class="cm">*/</span></td>
     </tr>
 
     <tr class="source-line">
@@ -223,7 +223,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;epidemiology/abm/time.h&quot;</span><span class="cp"></span></td>
+      <td class="src "><span class="cp">#include</span> <span class="cpf">&quot;epidemiology/abm/time.h&quot;</span><span class="cp"></span></td>
     </tr>
 
     <tr class="source-line">
@@ -231,7 +231,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;epidemiology/utils/random_number_generator.h&quot;</span><span class="cp"></span></td>
+      <td class="src "><span class="cp">#include</span> <span class="cpf">&quot;epidemiology/utils/random_number_generator.h&quot;</span><span class="cp"></span></td>
     </tr>
 
     <tr class="source-line">
@@ -239,7 +239,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;algorithm&gt;</span><span class="cp"></span></td>
+      <td class="src "><span class="cp">#include</span> <span class="cpf">&lt;algorithm&gt;</span><span class="cp"></span></td>
     </tr>
 
     <tr class="source-line">
@@ -247,7 +247,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;array&gt;</span><span class="cp"></span></td>
+      <td class="src "><span class="cp">#include</span> <span class="cpf">&lt;array&gt;</span><span class="cp"></span></td>
     </tr>
 
     <tr class="source-line">
@@ -255,7 +255,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;numeric&gt;</span><span class="cp"></span></td>
+      <td class="src "><span class="cp">#include</span> <span class="cpf">&lt;numeric&gt;</span><span class="cp"></span></td>
     </tr>
 
     <tr class="source-line">
@@ -271,7 +271,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="n">namespace</span><span class="w"> </span><span class="n">epi</span><span class="w"></span></td>
+      <td class="src "><span class="n">namespace</span> <span class="n">epi</span></td>
     </tr>
 
     <tr class="source-line">
@@ -279,7 +279,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="p">{</span><span class="w"></span></td>
+      <td class="src "><span class="p">{</span></td>
     </tr>
 
     <tr class="source-line">
@@ -415,7 +415,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> */</span><span class="w"></span></td>
+      <td class="src "><span class="cm"> */</span></td>
     </tr>
 
     <tr class="source-line">
@@ -423,15 +423,15 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="n">template</span><span class="w"> </span><span class="o">&lt;</span><span class="n">class</span><span class="w"> </span><span class="n">T</span><span class="p">,</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">NumTransitions</span><span class="o">&gt;</span><span class="w"></span></td>
+      <td class="src "><span class="n">template</span> <span class="o">&lt;</span><span class="n">class</span> <span class="n">T</span><span class="p">,</span> <span class="kt">size_t</span> <span class="n">NumTransitions</span><span class="o">&gt;</span></td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno"><a id="l46" href="#l46">46</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">215</td>
-      <td class="src coveredLine"><span class="n">T</span><span class="w"> </span><span class="n">random_transition</span><span class="p">(</span><span class="n">T</span><span class="w"> </span><span class="n">current_state</span><span class="p">,</span><span class="w"> </span><span class="n">TimeSpan</span><span class="w"> </span><span class="n">dt</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">pair</span><span class="o">&lt;</span><span class="n">T</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="o">&gt;</span><span class="w"> </span><span class="p">(</span><span class="o">&amp;</span><span class="n">transitions</span><span class="p">)[</span><span class="n">NumTransitions</span><span class="p">])</span><span class="w"></span></td>
+      <td class="linecount coveredLine">198</td>
+      <td class="src coveredLine"><span class="n">T</span> <span class="n">random_transition</span><span class="p">(</span><span class="n">T</span> <span class="n">current_state</span><span class="p">,</span> <span class="n">TimeSpan</span> <span class="n">dt</span><span class="p">,</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">pair</span><span class="o">&lt;</span><span class="n">T</span><span class="p">,</span> <span class="kt">double</span><span class="o">&gt;</span> <span class="p">(</span><span class="o">&amp;</span><span class="n">transitions</span><span class="p">)[</span><span class="n">NumTransitions</span><span class="p">])</span></td>
     </tr>
 
     <tr class="source-line">
@@ -439,27 +439,15 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="p">{</span><span class="w"></span></td>
+      <td class="src "><span class="p">{</span></td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno"><a id="l48" href="#l48">48</a></td>
       <td class="linebranch">
-        <details class="linebranchDetails">
-        <summary class="linebranchSummary">4/7</summary>
-        <div class="linebranchContents">
-          <div class="takenBranch">&check; Branch 3 taken 93 times.</div>
-          <div class="takenBranch">&check; Branch 5 taken 93 times.</div>
-          <div class="notTakenBranch">&cross; Branch 6 not taken.</div>
-          <div class="takenBranch">&check; Branch 11 taken 122 times.</div>
-          <div class="notTakenBranch">&cross; Branch 12 not taken.</div>
-          <div class="takenBranch">&check; Branch 13 taken 122 times.</div>
-          <div class="notTakenBranch">&cross; Branch 14 not taken.</div>
-        </div>
-        </details>
       </td>
-      <td class="linecount coveredLine">518</td>
-      <td class="src coveredLine"><span class="w">    </span><span class="n">assert</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">all_of</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">begin</span><span class="p">(</span><span class="n">transitions</span><span class="p">),</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">end</span><span class="p">(</span><span class="n">transitions</span><span class="p">),</span><span class="w"> </span><span class="p">[](</span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="n">p</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span></td>
+      <td class="linecount coveredLine">481</td>
+      <td class="src coveredLine">    <span class="n">assert</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">all_of</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">begin</span><span class="p">(</span><span class="n">transitions</span><span class="p">),</span> <span class="n">std</span><span class="o">::</span><span class="n">end</span><span class="p">(</span><span class="n">transitions</span><span class="p">),</span> <span class="p">[](</span><span class="k">auto</span><span class="o">&amp;</span> <span class="n">p</span><span class="p">)</span> <span class="p">{</span></td>
     </tr>
 
     <tr class="source-line">
@@ -467,7 +455,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">second</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mf">0.0</span><span class="p">;</span><span class="w"></span></td>
+      <td class="src ">        <span class="k">return</span> <span class="n">p</span><span class="p">.</span><span class="n">second</span> <span class="o">&gt;=</span> <span class="mf">0.0</span><span class="p">;</span></td>
     </tr>
 
     <tr class="source-line">
@@ -475,7 +463,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="w">    </span><span class="p">})</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="s">&quot;transition rates must be non-negative&quot;</span><span class="p">);</span><span class="w"></span></td>
+      <td class="src ">    <span class="p">})</span> <span class="o">&amp;&amp;</span> <span class="s">&quot;transition rates must be non-negative&quot;</span><span class="p">);</span></td>
     </tr>
 
     <tr class="source-line">
@@ -491,56 +479,47 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="w">    </span><span class="c1">//check if any transition happens using exponential distribution with the sum of all transition rates</span></td>
+      <td class="src ">    <span class="c1">//check if any transition happens using exponential distribution with the sum of all transition rates</span></td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno"><a id="l53" href="#l53">53</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">518</td>
-      <td class="src coveredLine"><span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">sum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">accumulate</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">begin</span><span class="p">(</span><span class="n">transitions</span><span class="p">),</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">end</span><span class="p">(</span><span class="n">transitions</span><span class="p">),</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="p">[](</span><span class="k">auto</span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="k">auto</span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">t</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span></td>
+      <td class="linecount coveredLine">481</td>
+      <td class="src coveredLine">    <span class="k">auto</span> <span class="n">sum</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">accumulate</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">begin</span><span class="p">(</span><span class="n">transitions</span><span class="p">),</span> <span class="n">std</span><span class="o">::</span><span class="n">end</span><span class="p">(</span><span class="n">transitions</span><span class="p">),</span> <span class="mf">0.0</span><span class="p">,</span> <span class="p">[](</span><span class="k">auto</span><span class="o">&amp;&amp;</span> <span class="n">a</span><span class="p">,</span> <span class="k">auto</span><span class="o">&amp;&amp;</span> <span class="n">t</span><span class="p">)</span> <span class="p">{</span></td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno"><a id="l54" href="#l54">54</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">303</td>
-      <td class="src coveredLine"><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">t</span><span class="p">.</span><span class="n">second</span><span class="p">;</span><span class="w"></span></td>
+      <td class="linecount coveredLine">283</td>
+      <td class="src coveredLine">        <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">t</span><span class="p">.</span><span class="n">second</span><span class="p">;</span></td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno"><a id="l55" href="#l55">55</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">303</td>
-      <td class="src coveredLine"><span class="w">    </span><span class="p">});</span><span class="w"></span></td>
+      <td class="linecount "></td>
+      <td class="src ">    <span class="p">});</span></td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno"><a id="l56" href="#l56">56</a></td>
       <td class="linebranch">
-        <details class="linebranchDetails">
-        <summary class="linebranchSummary">4/4</summary>
-        <div class="linebranchContents">
-          <div class="takenBranch">&check; Branch 0 taken 1 times.</div>
-          <div class="takenBranch">&check; Branch 1 taken 92 times.</div>
-          <div class="takenBranch">&check; Branch 2 taken 76 times.</div>
-          <div class="takenBranch">&check; Branch 3 taken 46 times.</div>
-        </div>
-        </details>
       </td>
-      <td class="linecount coveredLine">215</td>
-      <td class="src coveredLine"><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">sum</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">//no transitions or all transitions have rate zero</span></td>
+      <td class="linecount coveredLine">198</td>
+      <td class="src coveredLine">    <span class="k">if</span> <span class="p">(</span><span class="n">sum</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span> <span class="c1">//no transitions or all transitions have rate zero</span></td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno"><a id="l57" href="#l57">57</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">77</td>
-      <td class="src coveredLine"><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">current_state</span><span class="p">;</span><span class="w"></span></td>
+      <td class="linecount coveredLine">76</td>
+      <td class="src coveredLine">        <span class="k">return</span> <span class="n">current_state</span><span class="p">;</span></td>
     </tr>
 
     <tr class="source-line">
@@ -548,43 +527,23 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="w">    </span><span class="p">}</span><span class="w"></span></td>
+      <td class="src ">    <span class="p">}</span></td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno"><a id="l59" href="#l59">59</a></td>
       <td class="linebranch">
-        <details class="linebranchDetails">
-        <summary class="linebranchSummary">4/6</summary>
-        <div class="linebranchContents">
-          <div class="takenBranch">&check; Branch 1 taken 92 times.</div>
-          <div class="takenBranch">&check; Branch 4 taken 92 times.</div>
-          <div class="takenBranch">&check; Branch 7 taken 46 times.</div>
-          <div class="notTakenBranch">&cross; Branch 8 not taken.</div>
-          <div class="takenBranch">&check; Branch 10 taken 46 times.</div>
-          <div class="notTakenBranch">&cross; Branch 11 not taken.</div>
-        </div>
-        </details>
       </td>
-      <td class="linecount coveredLine">138</td>
-      <td class="src coveredLine"><span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">v</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ExponentialDistribution</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;::</span><span class="n">get_instance</span><span class="p">()(</span><span class="n">sum</span><span class="p">);</span><span class="w"></span></td>
+      <td class="linecount coveredLine">122</td>
+      <td class="src coveredLine">    <span class="k">auto</span> <span class="n">v</span> <span class="o">=</span> <span class="n">ExponentialDistribution</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;::</span><span class="n">get_instance</span><span class="p">()(</span><span class="n">sum</span><span class="p">);</span></td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno"><a id="l60" href="#l60">60</a></td>
       <td class="linebranch">
-        <details class="linebranchDetails">
-        <summary class="linebranchSummary">4/4</summary>
-        <div class="linebranchContents">
-          <div class="takenBranch">&check; Branch 1 taken 19 times.</div>
-          <div class="takenBranch">&check; Branch 2 taken 73 times.</div>
-          <div class="takenBranch">&check; Branch 4 taken 8 times.</div>
-          <div class="takenBranch">&check; Branch 5 taken 38 times.</div>
-        </div>
-        </details>
       </td>
-      <td class="linecount coveredLine">138</td>
-      <td class="src coveredLine"><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">v</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">dt</span><span class="p">.</span><span class="n">days</span><span class="p">())</span><span class="w"> </span><span class="p">{</span><span class="w"></span></td>
+      <td class="linecount coveredLine">122</td>
+      <td class="src coveredLine">    <span class="k">if</span> <span class="p">(</span><span class="n">v</span> <span class="o">&lt;</span> <span class="n">dt</span><span class="p">.</span><span class="n">days</span><span class="p">())</span> <span class="p">{</span></td>
     </tr>
 
     <tr class="source-line">
@@ -592,66 +551,55 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="w">        </span><span class="c1">//pick one of the possible transitions using discrete distribution</span></td>
+      <td class="src ">        <span class="c1">//pick one of the possible transitions using discrete distribution</span></td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno"><a id="l62" href="#l62">62</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount "></td>
-      <td class="src "><span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">array</span><span class="o">&lt;</span><span class="kt">double</span><span class="p">,</span><span class="w"> </span><span class="n">NumTransitions</span><span class="o">&gt;</span><span class="w"> </span><span class="n">rates</span><span class="p">;</span><span class="w"></span></td>
+      <td class="linecount coveredLine">28</td>
+      <td class="src coveredLine">        <span class="n">std</span><span class="o">::</span><span class="n">array</span><span class="o">&lt;</span><span class="kt">double</span><span class="p">,</span> <span class="n">NumTransitions</span><span class="o">&gt;</span> <span class="n">rates</span><span class="p">;</span></td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno"><a id="l63" href="#l63">63</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">69</td>
-      <td class="src coveredLine"><span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">transform</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">begin</span><span class="p">(</span><span class="n">transitions</span><span class="p">),</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">end</span><span class="p">(</span><span class="n">transitions</span><span class="p">),</span><span class="w"> </span><span class="n">rates</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="w"> </span><span class="p">[](</span><span class="k">auto</span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">t</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span></td>
+      <td class="linecount coveredLine">73</td>
+      <td class="src coveredLine">        <span class="n">std</span><span class="o">::</span><span class="n">transform</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">begin</span><span class="p">(</span><span class="n">transitions</span><span class="p">),</span> <span class="n">std</span><span class="o">::</span><span class="n">end</span><span class="p">(</span><span class="n">transitions</span><span class="p">),</span> <span class="n">rates</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="p">[](</span><span class="k">auto</span><span class="o">&amp;&amp;</span> <span class="n">t</span><span class="p">)</span> <span class="p">{</span></td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno"><a id="l64" href="#l64">64</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount "></td>
-      <td class="src "><span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">t</span><span class="p">.</span><span class="n">second</span><span class="p">;</span><span class="w"></span></td>
+      <td class="linecount coveredLine">45</td>
+      <td class="src coveredLine">            <span class="k">return</span> <span class="n">t</span><span class="p">.</span><span class="n">second</span><span class="p">;</span></td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno"><a id="l65" href="#l65">65</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">42</td>
-      <td class="src coveredLine"><span class="w">        </span><span class="p">});</span><span class="w"></span></td>
+      <td class="linecount "></td>
+      <td class="src ">        <span class="p">});</span></td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno"><a id="l66" href="#l66">66</a></td>
       <td class="linebranch">
-        <details class="linebranchDetails">
-        <summary class="linebranchSummary">4/6</summary>
-        <div class="linebranchContents">
-          <div class="takenBranch">&check; Branch 1 taken 19 times.</div>
-          <div class="takenBranch">&check; Branch 4 taken 19 times.</div>
-          <div class="takenBranch">&check; Branch 7 taken 8 times.</div>
-          <div class="notTakenBranch">&cross; Branch 8 not taken.</div>
-          <div class="takenBranch">&check; Branch 10 taken 8 times.</div>
-          <div class="notTakenBranch">&cross; Branch 11 not taken.</div>
-        </div>
-        </details>
       </td>
-      <td class="linecount coveredLine">27</td>
-      <td class="src coveredLine"><span class="w">        </span><span class="k">auto</span><span class="w"> </span><span class="n">random_idx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">DiscreteDistribution</span><span class="o">&lt;</span><span class="kt">size_t</span><span class="o">&gt;::</span><span class="n">get_instance</span><span class="p">()(</span><span class="n">rates</span><span class="p">);</span><span class="w"></span></td>
+      <td class="linecount coveredLine">28</td>
+      <td class="src coveredLine">        <span class="k">auto</span> <span class="n">random_idx</span> <span class="o">=</span> <span class="n">DiscreteDistribution</span><span class="o">&lt;</span><span class="kt">size_t</span><span class="o">&gt;::</span><span class="n">get_instance</span><span class="p">()(</span><span class="n">rates</span><span class="p">);</span></td>
     </tr>
 
     <tr class="source-line">
       <td class="lineno"><a id="l67" href="#l67">67</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">27</td>
-      <td class="src coveredLine"><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">transitions</span><span class="p">[</span><span class="n">random_idx</span><span class="p">].</span><span class="n">first</span><span class="p">;</span><span class="w"></span></td>
+      <td class="linecount coveredLine">28</td>
+      <td class="src coveredLine">        <span class="k">return</span> <span class="n">transitions</span><span class="p">[</span><span class="n">random_idx</span><span class="p">].</span><span class="n">first</span><span class="p">;</span></td>
     </tr>
 
     <tr class="source-line">
@@ -659,7 +607,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="w">    </span><span class="p">}</span><span class="w"></span></td>
+      <td class="src ">    <span class="p">}</span></td>
     </tr>
 
     <tr class="source-line">
@@ -674,8 +622,8 @@
       <td class="lineno"><a id="l70" href="#l70">70</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">111</td>
-      <td class="src coveredLine"><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">current_state</span><span class="p">;</span><span class="w"></span></td>
+      <td class="linecount coveredLine">94</td>
+      <td class="src coveredLine">    <span class="k">return</span> <span class="n">current_state</span><span class="p">;</span></td>
     </tr>
 
     <tr class="source-line">
@@ -683,7 +631,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="p">}</span><span class="w"></span></td>
+      <td class="src "><span class="p">}</span></td>
     </tr>
 
     <tr class="source-line">
@@ -699,7 +647,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="p">}</span><span class="w"> </span><span class="c1">// namespace epi</span></td>
+      <td class="src "><span class="p">}</span> <span class="c1">// namespace epi</span></td>
     </tr>
 
     <tr class="source-line">
