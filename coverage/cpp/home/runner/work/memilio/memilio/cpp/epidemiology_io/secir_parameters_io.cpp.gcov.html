@@ -1,0 +1,668 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>LCOV - coverage.info - /home/runner/work/memilio/memilio/cpp/epidemiology_io/secir_parameters_io.cpp</title>
+  <link rel="stylesheet" type="text/css" href="../../../../../../../gcov.css">
+</head>
+
+<body>
+
+  <table width="100%" border=0 cellspacing=0 cellpadding=0>
+    <tr><td class="title">LCOV - code coverage report</td></tr>
+    <tr><td class="ruler"><img src="../../../../../../../glass.png" width=3 height=3 alt=""></td></tr>
+
+    <tr>
+      <td width="100%">
+        <table cellpadding=1 border=0 width="100%">
+          <tr>
+            <td width="10%" class="headerItem">Current view:</td>
+            <td width="35%" class="headerValue"><a href="../../../../../../../index.html">top level</a> - <a href="index.html">home/runner/work/memilio/memilio/cpp/epidemiology_io</a> - secir_parameters_io.cpp<span style="font-size: 80%;"> (source / <a href="secir_parameters_io.cpp.func-sort-c.html">functions</a>)</span></td>
+            <td width="5%"></td>
+            <td width="15%"></td>
+            <td width="10%" class="headerCovTableHead">Hit</td>
+            <td width="10%" class="headerCovTableHead">Total</td>
+            <td width="15%" class="headerCovTableHead">Coverage</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Test:</td>
+            <td class="headerValue">coverage.info</td>
+            <td></td>
+            <td class="headerItem">Lines:</td>
+            <td class="headerCovTableEntry">298</td>
+            <td class="headerCovTableEntry">339</td>
+            <td class="headerCovTableEntryMed">87.9 %</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Date:</td>
+            <td class="headerValue">2021-10-01 11:40:45</td>
+            <td></td>
+            <td class="headerItem">Functions:</td>
+            <td class="headerCovTableEntry">13</td>
+            <td class="headerCovTableEntry">13</td>
+            <td class="headerCovTableEntryHi">100.0 %</td>
+          </tr>
+          <tr><td><img src="../../../../../../../glass.png" width=3 height=3 alt=""></td></tr>
+        </table>
+      </td>
+    </tr>
+
+    <tr><td class="ruler"><img src="../../../../../../../glass.png" width=3 height=3 alt=""></td></tr>
+  </table>
+
+  <table cellpadding=0 cellspacing=0 border=0>
+    <tr>
+      <td><br></td>
+    </tr>
+    <tr>
+      <td>
+<pre class="sourceHeading">          Line data    Source code</pre>
+<pre class="source">
+<a name="1"><span class="lineNum">       1 </span>            : /* </a>
+<a name="2"><span class="lineNum">       2 </span>            : * Copyright (C) 2020-2021 German Aerospace Center (DLR-SC)</a>
+<a name="3"><span class="lineNum">       3 </span>            : *</a>
+<a name="4"><span class="lineNum">       4 </span>            : * Authors: Wadim Koslow, Daniel Abele, Martin J. Kuehn, Lena Ploetzke</a>
+<a name="5"><span class="lineNum">       5 </span>            : *</a>
+<a name="6"><span class="lineNum">       6 </span>            : * Contact: Martin J. Kuehn &lt;Martin.Kuehn@DLR.de&gt;</a>
+<a name="7"><span class="lineNum">       7 </span>            : *</a>
+<a name="8"><span class="lineNum">       8 </span>            : * Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</a>
+<a name="9"><span class="lineNum">       9 </span>            : * you may not use this file except in compliance with the License.</a>
+<a name="10"><span class="lineNum">      10 </span>            : * You may obtain a copy of the License at</a>
+<a name="11"><span class="lineNum">      11 </span>            : *</a>
+<a name="12"><span class="lineNum">      12 </span>            : *     http://www.apache.org/licenses/LICENSE-2.0</a>
+<a name="13"><span class="lineNum">      13 </span>            : *</a>
+<a name="14"><span class="lineNum">      14 </span>            : * Unless required by applicable law or agreed to in writing, software</a>
+<a name="15"><span class="lineNum">      15 </span>            : * distributed under the License is distributed on an &quot;AS IS&quot; BASIS,</a>
+<a name="16"><span class="lineNum">      16 </span>            : * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</a>
+<a name="17"><span class="lineNum">      17 </span>            : * See the License for the specific language governing permissions and</a>
+<a name="18"><span class="lineNum">      18 </span>            : * limitations under the License.</a>
+<a name="19"><span class="lineNum">      19 </span>            : */</a>
+<a name="20"><span class="lineNum">      20 </span>            : #include &lt;epidemiology_io/secir_parameters_io.h&gt;</a>
+<a name="21"><span class="lineNum">      21 </span>            : #include &lt;epidemiology_io/secir_result_io.h&gt;</a>
+<a name="22"><span class="lineNum">      22 </span>            : #include &lt;epidemiology_io/io.h&gt;</a>
+<a name="23"><span class="lineNum">      23 </span>            : #include &lt;epidemiology/utils/memory.h&gt;</a>
+<a name="24"><span class="lineNum">      24 </span>            : #include &lt;epidemiology/utils/uncertain_value.h&gt;</a>
+<a name="25"><span class="lineNum">      25 </span>            : #include &lt;epidemiology/utils/stl_util.h&gt;</a>
+<a name="26"><span class="lineNum">      26 </span>            : #include &lt;epidemiology/utils/graph.h&gt;</a>
+<a name="27"><span class="lineNum">      27 </span>            : #include &lt;epidemiology/migration/migration.h&gt;</a>
+<a name="28"><span class="lineNum">      28 </span>            : #include &lt;epidemiology/secir/damping.h&gt;</a>
+<a name="29"><span class="lineNum">      29 </span>            : #include &lt;epidemiology/model/populations.h&gt;</a>
+<a name="30"><span class="lineNum">      30 </span>            : #include &lt;epidemiology/secir/uncertain_matrix.h&gt;</a>
+<a name="31"><span class="lineNum">      31 </span>            : #include &lt;epidemiology/secir/secir.h&gt;</a>
+<a name="32"><span class="lineNum">      32 </span>            : #include &lt;epidemiology/utils/compiler_diagnostics.h&gt;</a>
+<a name="33"><span class="lineNum">      33 </span>            : #include &lt;epidemiology/utils/date.h&gt;</a>
+<a name="34"><span class="lineNum">      34 </span>            : </a>
+<a name="35"><span class="lineNum">      35 </span>            : #include &lt;json/json.h&gt;</a>
+<a name="36"><span class="lineNum">      36 </span>            : </a>
+<a name="37"><span class="lineNum">      37 </span>            : #include &lt;boost/filesystem.hpp&gt;</a>
+<a name="38"><span class="lineNum">      38 </span>            : </a>
+<a name="39"><span class="lineNum">      39 </span>            : #include &lt;numeric&gt;</a>
+<a name="40"><span class="lineNum">      40 </span>            : #include &lt;vector&gt;</a>
+<a name="41"><span class="lineNum">      41 </span>            : #include &lt;iostream&gt;</a>
+<a name="42"><span class="lineNum">      42 </span>            : #include &lt;string&gt;</a>
+<a name="43"><span class="lineNum">      43 </span>            : #include &lt;random&gt;</a>
+<a name="44"><span class="lineNum">      44 </span>            : #include &lt;fstream&gt;</a>
+<a name="45"><span class="lineNum">      45 </span>            : </a>
+<a name="46"><span class="lineNum">      46 </span>            : namespace epi</a>
+<a name="47"><span class="lineNum">      47 </span>            : {</a>
+<a name="48"><span class="lineNum">      48 </span>            : </a>
+<a name="49"><span class="lineNum">      49 </span>            : namespace details</a>
+<a name="50"><span class="lineNum">      50 </span>            : {</a>
+<a name="51"><span class="lineNum">      51 </span><span class="lineCov">          8 :     IOResult&lt;Date&gt; get_max_date(const Json::Value&amp; root)</span></a>
+<a name="52"><span class="lineNum">      52 </span>            :     {</a>
+<a name="53"><span class="lineNum">      53 </span><span class="lineCov">          8 :         Date max_date = Date(0, 1, 1);</span></a>
+<a name="54"><span class="lineNum">      54 </span><span class="lineCov">       2768 :         for (unsigned int i = 0; i &lt; root.size(); i++) {</span></a>
+<a name="55"><span class="lineNum">      55 </span><span class="lineCov">       2760 :             auto js_date = root[i][&quot;Date&quot;];</span></a>
+<a name="56"><span class="lineNum">      56 </span><span class="lineCov">       2760 :             if (!js_date.isString()) {</span></a>
+<a name="57"><span class="lineNum">      57 </span><span class="lineNoCov">          0 :                 log_error(&quot;Date element must be a string.&quot;);</span></a>
+<a name="58"><span class="lineNum">      58 </span><span class="lineNoCov">          0 :                 return failure(StatusCode::InvalidType, &quot;Date element must be a string.&quot;);</span></a>
+<a name="59"><span class="lineNum">      59 </span>            :             }</a>
+<a name="60"><span class="lineNum">      60 </span><span class="lineCov">       2760 :             auto date_temp = parse_date(js_date.asString());</span></a>
+<a name="61"><span class="lineNum">      61 </span><span class="lineCov">       2760 :             if (date_temp &gt; max_date) {</span></a>
+<a name="62"><span class="lineNum">      62 </span><span class="lineCov">        736 :                 max_date = date_temp;</span></a>
+<a name="63"><span class="lineNum">      63 </span>            :             }</a>
+<a name="64"><span class="lineNum">      64 </span>            :         }</a>
+<a name="65"><span class="lineNum">      65 </span>            : </a>
+<a name="66"><span class="lineNum">      66 </span><span class="lineCov">          8 :         return success(max_date);</span></a>
+<a name="67"><span class="lineNum">      67 </span>            :     }</a>
+<a name="68"><span class="lineNum">      68 </span>            : </a>
+<a name="69"><span class="lineNum">      69 </span><span class="lineCov">          4 :     void interpolate_ages(const std::vector&lt;double&gt;&amp; age_ranges, std::vector&lt;std::vector&lt;double&gt;&gt;&amp; interpolation,</span></a>
+<a name="70"><span class="lineNum">      70 </span>            :                           std::vector&lt;bool&gt;&amp; carry_over)</a>
+<a name="71"><span class="lineNum">      71 </span>            :     {</a>
+<a name="72"><span class="lineNum">      72 </span><span class="lineCov">         12 :         std::vector&lt;double&gt; param_ranges = {5., 10., 20., 25., 20., 20.};</span></a>
+<a name="73"><span class="lineNum">      73 </span>            : </a>
+<a name="74"><span class="lineNum">      74 </span>            :         //counter for parameter age groups</a>
+<a name="75"><span class="lineNum">      75 </span><span class="lineCov">          4 :         size_t counter = 0;</span></a>
+<a name="76"><span class="lineNum">      76 </span>            : </a>
+<a name="77"><span class="lineNum">      77 </span>            :         //residual of param age groups</a>
+<a name="78"><span class="lineNum">      78 </span><span class="lineCov">          4 :         double res = 0.0;</span></a>
+<a name="79"><span class="lineNum">      79 </span><span class="lineCov">         48 :         for (size_t i = 0; i &lt; age_ranges.size(); i++) {</span></a>
+<a name="80"><span class="lineNum">      80 </span>            : </a>
+<a name="81"><span class="lineNum">      81 </span>            :             // if current param age group didn't fit into previous rki age group, transfer residual to current age group</a>
+<a name="82"><span class="lineNum">      82 </span><span class="lineCov">         44 :             if (res &lt; 0) {</span></a>
+<a name="83"><span class="lineNum">      83 </span><span class="lineCov">         36 :                 interpolation[i].push_back(std::min(-res / age_ranges[i], 1.0));</span></a>
+<a name="84"><span class="lineNum">      84 </span>            :             }</a>
+<a name="85"><span class="lineNum">      85 </span>            : </a>
+<a name="86"><span class="lineNum">      86 </span><span class="lineCov">         44 :             if (counter &lt; param_ranges.size() - 1) {</span></a>
+<a name="87"><span class="lineNum">      87 </span><span class="lineCov">         40 :                 res += age_ranges[i];</span></a>
+<a name="88"><span class="lineNum">      88 </span><span class="lineCov">         40 :                 if (std::abs(res) &lt; age_ranges[i]) {</span></a>
+<a name="89"><span class="lineNum">      89 </span><span class="lineCov">         20 :                     counter++;</span></a>
+<a name="90"><span class="lineNum">      90 </span>            :                 }</a>
+<a name="91"><span class="lineNum">      91 </span>            :                 // iterate over param age groups while there is still room in the current rki age group</a>
+<a name="92"><span class="lineNum">      92 </span><span class="lineCov">         60 :                 while (res &gt; 0) {</span></a>
+<a name="93"><span class="lineNum">      93 </span><span class="lineCov">         20 :                     res -= param_ranges[counter];</span></a>
+<a name="94"><span class="lineNum">      94 </span><span class="lineCov">         20 :                     interpolation[i].push_back((param_ranges[counter] + std::min(res, 0.0)) / age_ranges[i]);</span></a>
+<a name="95"><span class="lineNum">      95 </span><span class="lineCov">         20 :                     if (res &gt;= 0) {</span></a>
+<a name="96"><span class="lineNum">      96 </span><span class="lineNoCov">          0 :                         counter++;</span></a>
+<a name="97"><span class="lineNum">      97 </span>            :                     }</a>
+<a name="98"><span class="lineNum">      98 </span>            :                 }</a>
+<a name="99"><span class="lineNum">      99 </span><span class="lineCov">         40 :                 if (res &lt; 0) {</span></a>
+<a name="100"><span class="lineNum">     100 </span><span class="lineCov">         36 :                     carry_over.push_back(true);</span></a>
+<a name="101"><span class="lineNum">     101 </span>            :                 }</a>
+<a name="102"><span class="lineNum">     102 </span><span class="lineCov">          4 :                 else if (res == 0) {</span></a>
+<a name="103"><span class="lineNum">     103 </span><span class="lineCov">          4 :                     carry_over.push_back(false);</span></a>
+<a name="104"><span class="lineNum">     104 </span>            :                 }</a>
+<a name="105"><span class="lineNum">     105 </span>            :             }</a>
+<a name="106"><span class="lineNum">     106 </span>            :             // if last param age group is reached</a>
+<a name="107"><span class="lineNum">     107 </span>            :             else {</a>
+<a name="108"><span class="lineNum">     108 </span><span class="lineCov">          4 :                 interpolation[i].push_back((age_ranges[i] + res) / age_ranges[i]);</span></a>
+<a name="109"><span class="lineNum">     109 </span><span class="lineCov">          4 :                 if (res &lt; 0 || counter == 0) {</span></a>
+<a name="110"><span class="lineNum">     110 </span><span class="lineCov">          4 :                     carry_over.push_back(true);</span></a>
+<a name="111"><span class="lineNum">     111 </span>            :                 }</a>
+<a name="112"><span class="lineNum">     112 </span><span class="lineNoCov">          0 :                 else if (res == 0) {</span></a>
+<a name="113"><span class="lineNum">     113 </span><span class="lineNoCov">          0 :                     carry_over.push_back(false);</span></a>
+<a name="114"><span class="lineNum">     114 </span>            :                 }</a>
+<a name="115"><span class="lineNum">     115 </span><span class="lineCov">          4 :                 res = 0;</span></a>
+<a name="116"><span class="lineNum">     116 </span>            :             }</a>
+<a name="117"><span class="lineNum">     117 </span>            :         }</a>
+<a name="118"><span class="lineNum">     118 </span>            :         // last entries for &quot;unknown&quot; age group</a>
+<a name="119"><span class="lineNum">     119 </span><span class="lineCov">          4 :         interpolation.push_back({1.0});</span></a>
+<a name="120"><span class="lineNum">     120 </span><span class="lineCov">          4 :         carry_over.push_back(true);</span></a>
+<a name="121"><span class="lineNum">     121 </span><span class="lineCov">          4 :     }</span></a>
+<a name="122"><span class="lineNum">     122 </span>            : </a>
+<a name="123"><span class="lineNum">     123 </span><span class="lineCov">          4 :     IOResult&lt;void&gt; read_rki_data(</span></a>
+<a name="124"><span class="lineNum">     124 </span>            :         std::string const&amp; path, const std::string&amp; id_name, std::vector&lt;int&gt; const&amp; vregion, Date date,</a>
+<a name="125"><span class="lineNum">     125 </span>            :         std::vector&lt;std::vector&lt;double&gt;&gt;&amp; vnum_exp, std::vector&lt;std::vector&lt;double&gt;&gt;&amp; vnum_car,</a>
+<a name="126"><span class="lineNum">     126 </span>            :         std::vector&lt;std::vector&lt;double&gt;&gt;&amp; vnum_inf, std::vector&lt;std::vector&lt;double&gt;&gt;&amp; vnum_hosp,</a>
+<a name="127"><span class="lineNum">     127 </span>            :         std::vector&lt;std::vector&lt;double&gt;&gt;&amp; vnum_icu, std::vector&lt;std::vector&lt;double&gt;&gt;&amp; vnum_death,</a>
+<a name="128"><span class="lineNum">     128 </span>            :         std::vector&lt;std::vector&lt;double&gt;&gt;&amp; vnum_rec, const std::vector&lt;std::vector&lt;int&gt;&gt;&amp; vt_car_to_rec,</a>
+<a name="129"><span class="lineNum">     129 </span>            :         const std::vector&lt;std::vector&lt;int&gt;&gt;&amp; vt_car_to_inf, const std::vector&lt;std::vector&lt;int&gt;&gt;&amp; vt_exp_to_car,</a>
+<a name="130"><span class="lineNum">     130 </span>            :         const std::vector&lt;std::vector&lt;int&gt;&gt;&amp; vt_inf_to_rec, const std::vector&lt;std::vector&lt;int&gt;&gt;&amp; vt_inf_to_hosp,</a>
+<a name="131"><span class="lineNum">     131 </span>            :         const std::vector&lt;std::vector&lt;int&gt;&gt;&amp; vt_hosp_to_rec, const std::vector&lt;std::vector&lt;int&gt;&gt;&amp; vt_hosp_to_icu,</a>
+<a name="132"><span class="lineNum">     132 </span>            :         const std::vector&lt;std::vector&lt;int&gt;&gt;&amp; vt_icu_to_dead, const std::vector&lt;std::vector&lt;double&gt;&gt;&amp; vmu_C_R,</a>
+<a name="133"><span class="lineNum">     133 </span>            :         const std::vector&lt;std::vector&lt;double&gt;&gt;&amp; vmu_I_H, const std::vector&lt;std::vector&lt;double&gt;&gt;&amp; vmu_H_U,</a>
+<a name="134"><span class="lineNum">     134 </span>            :         const std::vector&lt;double&gt;&amp; scaling_factor_inf)</a>
+<a name="135"><span class="lineNum">     135 </span>            :     {</a>
+<a name="136"><span class="lineNum">     136 </span><span class="lineCov">          4 :         if (!boost::filesystem::exists(path)) {</span></a>
+<a name="137"><span class="lineNum">     137 </span><span class="lineNoCov">          0 :             log_error(&quot;RKI data file not found: {}.&quot;, path);</span></a>
+<a name="138"><span class="lineNum">     138 </span><span class="lineNoCov">          0 :             return failure(StatusCode::FileNotFound, path);</span></a>
+<a name="139"><span class="lineNum">     139 </span>            :         }</a>
+<a name="140"><span class="lineNum">     140 </span>            : </a>
+<a name="141"><span class="lineNum">     141 </span><span class="lineCov">          8 :         Json::Reader reader;</span></a>
+<a name="142"><span class="lineNum">     142 </span><span class="lineCov">          8 :         Json::Value root;</span></a>
+<a name="143"><span class="lineNum">     143 </span>            : </a>
+<a name="144"><span class="lineNum">     144 </span><span class="lineCov">          8 :         std::ifstream rki(path);</span></a>
+<a name="145"><span class="lineNum">     145 </span><span class="lineCov">          4 :         if (!reader.parse(rki, root)) {</span></a>
+<a name="146"><span class="lineNum">     146 </span><span class="lineNoCov">          0 :             log_error(reader.getFormattedErrorMessages());</span></a>
+<a name="147"><span class="lineNum">     147 </span><span class="lineNoCov">          0 :             return failure(StatusCode::UnknownError, path + &quot;, &quot; + reader.getFormattedErrorMessages());</span></a>
+<a name="148"><span class="lineNum">     148 </span>            :         }</a>
+<a name="149"><span class="lineNum">     149 </span>            : </a>
+<a name="150"><span class="lineNum">     150 </span><span class="lineCov">          8 :         BOOST_OUTCOME_TRY(max_date, get_max_date(root));</span></a>
+<a name="151"><span class="lineNum">     151 </span><span class="lineCov">          4 :         if (max_date == Date(0, 1, 1)) {</span></a>
+<a name="152"><span class="lineNum">     152 </span><span class="lineNoCov">          0 :             log_error(&quot;RKI data file is empty.&quot;);</span></a>
+<a name="153"><span class="lineNum">     153 </span><span class="lineNoCov">          0 :             return failure(StatusCode::InvalidFileFormat, path + &quot;, file is empty.&quot;);</span></a>
+<a name="154"><span class="lineNum">     154 </span>            :         }</a>
+<a name="155"><span class="lineNum">     155 </span><span class="lineCov">          4 :         if (max_date &lt; date) {</span></a>
+<a name="156"><span class="lineNum">     156 </span><span class="lineNoCov">          0 :             log_error(&quot;Specified date does not exist in RKI data&quot;);</span></a>
+<a name="157"><span class="lineNum">     157 </span><span class="lineNoCov">          0 :             return failure(StatusCode::OutOfRange, path + &quot;, specified date does not exist in RKI data.&quot;);</span></a>
+<a name="158"><span class="lineNum">     158 </span>            :         }</a>
+<a name="159"><span class="lineNum">     159 </span><span class="lineCov">          4 :         auto days_surplus = get_offset_in_days(max_date, date) - 6;</span></a>
+<a name="160"><span class="lineNum">     160 </span>            : </a>
+<a name="161"><span class="lineNum">     161 </span><span class="lineCov">          4 :         if (days_surplus &gt; 0) {</span></a>
+<a name="162"><span class="lineNum">     162 </span><span class="lineCov">          4 :             days_surplus = 0;</span></a>
+<a name="163"><span class="lineNum">     163 </span>            :         }</a>
+<a name="164"><span class="lineNum">     164 </span>            : </a>
+<a name="165"><span class="lineNum">     165 </span><span class="lineCov">         72 :         std::vector&lt;std::string&gt; age_names = {&quot;A00-A04&quot;, &quot;A05-A14&quot;, &quot;A15-A34&quot;, &quot;A35-A59&quot;, &quot;A60-A79&quot;, &quot;A80+&quot;, &quot;unknown&quot;};</span></a>
+<a name="166"><span class="lineNum">     166 </span><span class="lineCov">         12 :         std::vector&lt;double&gt; age_ranges     = {5., 10., 20., 25., 20., 20.};</span></a>
+<a name="167"><span class="lineNum">     167 </span>            : </a>
+<a name="168"><span class="lineNum">     168 </span><span class="lineCov">       2396 :         for (unsigned int i = 0; i &lt; root.size(); i++) {</span></a>
+<a name="169"><span class="lineNum">     169 </span><span class="lineCov">       8280 :             auto it = std::find_if(vregion.begin(), vregion.end(), [&amp;root, i, &amp;id_name](auto r) {</span></a>
+<a name="170"><span class="lineNum">     170 </span><span class="lineCov">       5888 :                 return r == 0 || root[i][id_name].asInt() == r;</span></a>
+<a name="171"><span class="lineNum">     171 </span><span class="lineCov">       4784 :             });</span></a>
+<a name="172"><span class="lineNum">     172 </span><span class="lineCov">       2392 :             if (it != vregion.end()) {</span></a>
+<a name="173"><span class="lineNum">     173 </span><span class="lineCov">       2392 :                 auto region_idx = size_t(it - vregion.begin());</span></a>
+<a name="174"><span class="lineNum">     174 </span>            : </a>
+<a name="175"><span class="lineNum">     175 </span><span class="lineCov">       2392 :                 auto&amp; t_exp_to_car  = vt_exp_to_car[region_idx];</span></a>
+<a name="176"><span class="lineNum">     176 </span><span class="lineCov">       2392 :                 auto&amp; t_car_to_rec  = vt_car_to_rec[region_idx];</span></a>
+<a name="177"><span class="lineNum">     177 </span><span class="lineCov">       2392 :                 auto&amp; t_car_to_inf  = vt_car_to_inf[region_idx];</span></a>
+<a name="178"><span class="lineNum">     178 </span><span class="lineCov">       2392 :                 auto&amp; t_inf_to_rec  = vt_inf_to_rec[region_idx];</span></a>
+<a name="179"><span class="lineNum">     179 </span><span class="lineCov">       2392 :                 auto&amp; t_inf_to_hosp = vt_inf_to_hosp[region_idx];</span></a>
+<a name="180"><span class="lineNum">     180 </span><span class="lineCov">       2392 :                 auto&amp; t_hosp_to_rec = vt_hosp_to_rec[region_idx];</span></a>
+<a name="181"><span class="lineNum">     181 </span><span class="lineCov">       2392 :                 auto&amp; t_hosp_to_icu = vt_hosp_to_icu[region_idx];</span></a>
+<a name="182"><span class="lineNum">     182 </span><span class="lineCov">       2392 :                 auto&amp; t_icu_to_dead = vt_icu_to_dead[region_idx];</span></a>
+<a name="183"><span class="lineNum">     183 </span>            : </a>
+<a name="184"><span class="lineNum">     184 </span><span class="lineCov">       2392 :                 auto&amp; num_car   = vnum_car[region_idx];</span></a>
+<a name="185"><span class="lineNum">     185 </span><span class="lineCov">       2392 :                 auto&amp; num_inf   = vnum_inf[region_idx];</span></a>
+<a name="186"><span class="lineNum">     186 </span><span class="lineCov">       2392 :                 auto&amp; num_rec   = vnum_rec[region_idx];</span></a>
+<a name="187"><span class="lineNum">     187 </span><span class="lineCov">       2392 :                 auto&amp; num_exp   = vnum_exp[region_idx];</span></a>
+<a name="188"><span class="lineNum">     188 </span><span class="lineCov">       2392 :                 auto&amp; num_hosp  = vnum_hosp[region_idx];</span></a>
+<a name="189"><span class="lineNum">     189 </span><span class="lineCov">       2392 :                 auto&amp; num_death = vnum_death[region_idx];</span></a>
+<a name="190"><span class="lineNum">     190 </span><span class="lineCov">       2392 :                 auto&amp; num_icu   = vnum_icu[region_idx];</span></a>
+<a name="191"><span class="lineNum">     191 </span>            : </a>
+<a name="192"><span class="lineNum">     192 </span><span class="lineCov">       2392 :                 auto&amp; mu_C_R = vmu_C_R[region_idx];</span></a>
+<a name="193"><span class="lineNum">     193 </span><span class="lineCov">       2392 :                 auto&amp; mu_I_H = vmu_I_H[region_idx];</span></a>
+<a name="194"><span class="lineNum">     194 </span><span class="lineCov">       2392 :                 auto&amp; mu_H_U = vmu_H_U[region_idx];</span></a>
+<a name="195"><span class="lineNum">     195 </span>            : </a>
+<a name="196"><span class="lineNum">     196 </span><span class="lineCov">       2392 :                 auto date_df = parse_date(root[i][&quot;Date&quot;].asString());</span></a>
+<a name="197"><span class="lineNum">     197 </span>            : </a>
+<a name="198"><span class="lineNum">     198 </span><span class="lineCov">       2392 :                 auto it_age = std::find(age_names.begin(), age_names.end() - 1, root[i][&quot;Age_RKI&quot;].asString());</span></a>
+<a name="199"><span class="lineNum">     199 </span><span class="lineCov">       2392 :                 if (it_age != age_names.end() - 1) {</span></a>
+<a name="200"><span class="lineNum">     200 </span><span class="lineCov">       2208 :                     auto age = size_t(it_age - age_names.begin());</span></a>
+<a name="201"><span class="lineNum">     201 </span>            : </a>
+<a name="202"><span class="lineNum">     202 </span><span class="lineCov">       2208 :                     bool read_icu = false; //params.populations.get({age, SecirCompartments::U}) == 0;</span></a>
+<a name="203"><span class="lineNum">     203 </span>            : </a>
+<a name="204"><span class="lineNum">     204 </span><span class="lineCov">       2208 :                     if (date_df == offset_date_by_days(date, 0)) {</span></a>
+<a name="205"><span class="lineNum">     205 </span><span class="lineCov">         24 :                         num_inf[age] += (1 - mu_C_R[age]) * scaling_factor_inf[age] * root[i][&quot;Confirmed&quot;].asDouble();</span></a>
+<a name="206"><span class="lineNum">     206 </span><span class="lineCov">         24 :                         num_rec[age] += root[i][&quot;Confirmed&quot;].asDouble();</span></a>
+<a name="207"><span class="lineNum">     207 </span>            :                     }</a>
+<a name="208"><span class="lineNum">     208 </span><span class="lineCov">       2208 :                     if (date_df == offset_date_by_days(date, days_surplus)) {</span></a>
+<a name="209"><span class="lineNum">     209 </span><span class="lineCov">         24 :                         num_car[age] +=</span></a>
+<a name="210"><span class="lineNum">     210 </span><span class="lineCov">         24 :                             (2 * mu_C_R[age] - 1) * scaling_factor_inf[age] * root[i][&quot;Confirmed&quot;].asDouble();</span></a>
+<a name="211"><span class="lineNum">     211 </span>            :                     }</a>
+<a name="212"><span class="lineNum">     212 </span>            :                     // -R9</a>
+<a name="213"><span class="lineNum">     213 </span><span class="lineCov">       2208 :                     if (date_df == offset_date_by_days(date, -t_car_to_rec[age] + days_surplus)) {</span></a>
+<a name="214"><span class="lineNum">     214 </span><span class="lineCov">         24 :                         num_car[age] -= mu_C_R[age] * scaling_factor_inf[age] * root[i][&quot;Confirmed&quot;].asDouble();</span></a>
+<a name="215"><span class="lineNum">     215 </span>            :                     }</a>
+<a name="216"><span class="lineNum">     216 </span>            :                     // +R2</a>
+<a name="217"><span class="lineNum">     217 </span><span class="lineCov">       2208 :                     if (date_df == offset_date_by_days(date, +t_exp_to_car[age] + days_surplus)) {</span></a>
+<a name="218"><span class="lineNum">     218 </span><span class="lineCov">         24 :                         num_exp[age] += mu_C_R[age] * scaling_factor_inf[age] * root[i][&quot;Confirmed&quot;].asDouble();</span></a>
+<a name="219"><span class="lineNum">     219 </span>            :                     }</a>
+<a name="220"><span class="lineNum">     220 </span>            :                     // +R3</a>
+<a name="221"><span class="lineNum">     221 </span><span class="lineCov">       2208 :                     if (date_df == offset_date_by_days(date, +t_car_to_inf[age] + days_surplus)) {</span></a>
+<a name="222"><span class="lineNum">     222 </span><span class="lineCov">         24 :                         num_car[age] += (1 - mu_C_R[age]) * scaling_factor_inf[age] * root[i][&quot;Confirmed&quot;].asDouble();</span></a>
+<a name="223"><span class="lineNum">     223 </span><span class="lineCov">         24 :                         num_exp[age] -= (1 - mu_C_R[age]) * scaling_factor_inf[age] * root[i][&quot;Confirmed&quot;].asDouble();</span></a>
+<a name="224"><span class="lineNum">     224 </span>            :                     }</a>
+<a name="225"><span class="lineNum">     225 </span>            :                     // R2 - R9</a>
+<a name="226"><span class="lineNum">     226 </span><span class="lineCov">       2208 :                     if (date_df == offset_date_by_days(date, t_exp_to_car[age] - t_car_to_rec[age] + days_surplus)) {</span></a>
+<a name="227"><span class="lineNum">     227 </span><span class="lineCov">         24 :                         num_exp[age] -= mu_C_R[age] * scaling_factor_inf[age] * root[i][&quot;Confirmed&quot;].asDouble();</span></a>
+<a name="228"><span class="lineNum">     228 </span>            :                     }</a>
+<a name="229"><span class="lineNum">     229 </span>            :                     // R2 + R3</a>
+<a name="230"><span class="lineNum">     230 </span><span class="lineCov">       2208 :                     if (date_df == offset_date_by_days(date, t_exp_to_car[age] + t_car_to_inf[age] + days_surplus)) {</span></a>
+<a name="231"><span class="lineNum">     231 </span><span class="lineCov">         24 :                         num_exp[age] += (1 - mu_C_R[age]) * scaling_factor_inf[age] * root[i][&quot;Confirmed&quot;].asDouble();</span></a>
+<a name="232"><span class="lineNum">     232 </span>            :                     }</a>
+<a name="233"><span class="lineNum">     233 </span>            :                     // -R4</a>
+<a name="234"><span class="lineNum">     234 </span><span class="lineCov">       2208 :                     if (date_df == offset_date_by_days(date, -t_inf_to_rec[age])) {</span></a>
+<a name="235"><span class="lineNum">     235 </span><span class="lineCov">         24 :                         num_inf[age] -= (1 - mu_C_R[age]) * scaling_factor_inf[age] * root[i][&quot;Confirmed&quot;].asDouble();</span></a>
+<a name="236"><span class="lineNum">     236 </span>            :                     }</a>
+<a name="237"><span class="lineNum">     237 </span>            :                     // -R6</a>
+<a name="238"><span class="lineNum">     238 </span><span class="lineCov">       2208 :                     if (date_df == offset_date_by_days(date, -t_inf_to_hosp[age])) {</span></a>
+<a name="239"><span class="lineNum">     239 </span><span class="lineCov">         24 :                         num_inf[age] -= mu_I_H[age] * scaling_factor_inf[age] * root[i][&quot;Confirmed&quot;].asDouble();</span></a>
+<a name="240"><span class="lineNum">     240 </span><span class="lineCov">         24 :                         num_hosp[age] += mu_I_H[age] * scaling_factor_inf[age] * root[i][&quot;Confirmed&quot;].asDouble();</span></a>
+<a name="241"><span class="lineNum">     241 </span>            :                     }</a>
+<a name="242"><span class="lineNum">     242 </span>            :                     // -R6 - R7</a>
+<a name="243"><span class="lineNum">     243 </span><span class="lineCov">       2208 :                     if (date_df == offset_date_by_days(date, -t_inf_to_hosp[age] - t_hosp_to_icu[age])) {</span></a>
+<a name="244"><span class="lineNum">     244 </span><span class="lineCov">         24 :                         num_inf[age] +=</span></a>
+<a name="245"><span class="lineNum">     245 </span><span class="lineCov">         24 :                             mu_I_H[age] * mu_H_U[age] * scaling_factor_inf[age] * root[i][&quot;Confirmed&quot;].asDouble();</span></a>
+<a name="246"><span class="lineNum">     246 </span><span class="lineCov">         24 :                         num_hosp[age] -=</span></a>
+<a name="247"><span class="lineNum">     247 </span><span class="lineCov">         24 :                             mu_I_H[age] * mu_H_U[age] * scaling_factor_inf[age] * root[i][&quot;Confirmed&quot;].asDouble();</span></a>
+<a name="248"><span class="lineNum">     248 </span><span class="lineCov">         24 :                         if (read_icu) {</span></a>
+<a name="249"><span class="lineNum">     249 </span><span class="lineNoCov">          0 :                             num_icu[age] +=</span></a>
+<a name="250"><span class="lineNum">     250 </span><span class="lineNoCov">          0 :                                 mu_H_U[age] * mu_I_H[age] * scaling_factor_inf[age] * root[i][&quot;Confirmed&quot;].asDouble();</span></a>
+<a name="251"><span class="lineNum">     251 </span>            :                         }</a>
+<a name="252"><span class="lineNum">     252 </span>            :                     }</a>
+<a name="253"><span class="lineNum">     253 </span>            :                     // -R6 - R5</a>
+<a name="254"><span class="lineNum">     254 </span><span class="lineCov">       2208 :                     if (date_df == offset_date_by_days(date, -t_inf_to_hosp[age] - t_hosp_to_rec[age])) {</span></a>
+<a name="255"><span class="lineNum">     255 </span><span class="lineCov">         24 :                         num_inf[age] +=</span></a>
+<a name="256"><span class="lineNum">     256 </span><span class="lineCov">         24 :                             mu_I_H[age] * (1 - mu_H_U[age]) * scaling_factor_inf[age] * root[i][&quot;Confirmed&quot;].asDouble();</span></a>
+<a name="257"><span class="lineNum">     257 </span><span class="lineCov">         24 :                         num_hosp[age] -=</span></a>
+<a name="258"><span class="lineNum">     258 </span><span class="lineCov">         24 :                             mu_I_H[age] * (1 - mu_H_U[age]) * scaling_factor_inf[age] * root[i][&quot;Confirmed&quot;].asDouble();</span></a>
+<a name="259"><span class="lineNum">     259 </span>            :                     }</a>
+<a name="260"><span class="lineNum">     260 </span>            :                     // -R10 - R6 - R7</a>
+<a name="261"><span class="lineNum">     261 </span><span class="lineCov">       4416 :                     if (date_df ==</span></a>
+<a name="262"><span class="lineNum">     262 </span><span class="lineCov">       4416 :                         offset_date_by_days(date, -t_icu_to_dead[age] - t_inf_to_hosp[age] - t_hosp_to_icu[age])) {</span></a>
+<a name="263"><span class="lineNum">     263 </span><span class="lineCov">         24 :                         num_death[age] += root[i][&quot;Deaths&quot;].asDouble();</span></a>
+<a name="264"><span class="lineNum">     264 </span>            :                     }</a>
+<a name="265"><span class="lineNum">     265 </span><span class="lineCov">       2208 :                     if (read_icu) {</span></a>
+<a name="266"><span class="lineNum">     266 </span>            :                         // -R6 - R7 - R7</a>
+<a name="267"><span class="lineNum">     267 </span><span class="lineNoCov">          0 :                         if (date_df == offset_date_by_days(date, -t_inf_to_hosp[age] - 2 * t_hosp_to_icu[age])) {</span></a>
+<a name="268"><span class="lineNum">     268 </span><span class="lineNoCov">          0 :                             num_icu[age] -= mu_I_H[age] * mu_H_U[age] * mu_H_U[age] * scaling_factor_inf[age] *</span></a>
+<a name="269"><span class="lineNum">     269 </span><span class="lineNoCov">          0 :                                             root[i][&quot;Confirmed&quot;].asDouble();</span></a>
+<a name="270"><span class="lineNum">     270 </span>            :                         }</a>
+<a name="271"><span class="lineNum">     271 </span>            :                         // -R6 - R5 - R7</a>
+<a name="272"><span class="lineNum">     272 </span><span class="lineNoCov">          0 :                         if (date_df == offset_date_by_days(date, -t_inf_to_hosp[age] - t_hosp_to_icu[age])) {</span></a>
+<a name="273"><span class="lineNum">     273 </span><span class="lineNoCov">          0 :                             num_icu[age] -= mu_I_H[age] * mu_H_U[age] * (1 - mu_H_U[age]) * scaling_factor_inf[age] *</span></a>
+<a name="274"><span class="lineNum">     274 </span><span class="lineNoCov">          0 :                                             root[i][&quot;Confirmed&quot;].asDouble();</span></a>
+<a name="275"><span class="lineNum">     275 </span>            :                         }</a>
+<a name="276"><span class="lineNum">     276 </span>            :                     }</a>
+<a name="277"><span class="lineNum">     277 </span>            :                 }</a>
+<a name="278"><span class="lineNum">     278 </span>            :             }</a>
+<a name="279"><span class="lineNum">     279 </span>            :         }</a>
+<a name="280"><span class="lineNum">     280 </span>            : </a>
+<a name="281"><span class="lineNum">     281 </span><span class="lineCov">          8 :         for (size_t region_idx = 0; region_idx &lt; vregion.size(); ++region_idx) {</span></a>
+<a name="282"><span class="lineNum">     282 </span><span class="lineCov">          4 :             auto region = vregion[region_idx];</span></a>
+<a name="283"><span class="lineNum">     283 </span>            : </a>
+<a name="284"><span class="lineNum">     284 </span><span class="lineCov">          4 :             auto&amp; num_car   = vnum_car[region_idx];</span></a>
+<a name="285"><span class="lineNum">     285 </span><span class="lineCov">          4 :             auto&amp; num_inf   = vnum_inf[region_idx];</span></a>
+<a name="286"><span class="lineNum">     286 </span><span class="lineCov">          4 :             auto&amp; num_rec   = vnum_rec[region_idx];</span></a>
+<a name="287"><span class="lineNum">     287 </span><span class="lineCov">          4 :             auto&amp; num_exp   = vnum_exp[region_idx];</span></a>
+<a name="288"><span class="lineNum">     288 </span><span class="lineCov">          4 :             auto&amp; num_hosp  = vnum_hosp[region_idx];</span></a>
+<a name="289"><span class="lineNum">     289 </span><span class="lineCov">          4 :             auto&amp; num_death = vnum_death[region_idx];</span></a>
+<a name="290"><span class="lineNum">     290 </span><span class="lineCov">          4 :             auto&amp; num_icu   = vnum_icu[region_idx];</span></a>
+<a name="291"><span class="lineNum">     291 </span>            : </a>
+<a name="292"><span class="lineNum">     292 </span><span class="lineCov">          4 :             size_t num_groups = age_ranges.size();</span></a>
+<a name="293"><span class="lineNum">     293 </span><span class="lineCov">         28 :             for (size_t i = 0; i &lt; num_groups; i++) {</span></a>
+<a name="294"><span class="lineNum">     294 </span><span class="lineCov">         38 :                 auto try_fix_constraints = [region, &amp;age_names, i](double&amp; value, double error, auto str) {</span></a>
+<a name="295"><span class="lineNum">     295 </span><span class="lineCov">        168 :                     if (value &lt; error) {</span></a>
+<a name="296"><span class="lineNum">     296 </span>            :                         //this should probably return a failure</a>
+<a name="297"><span class="lineNum">     297 </span>            :                         //but the algorithm is not robust enough to avoid large negative values and there are tests that rely on it</a>
+<a name="298"><span class="lineNum">     298 </span><span class="lineCov">          6 :                         log_error(&quot;{:s} for age group {:s} is {:.4f} for region {:d}, exceeds expected negative value.&quot;,</span></a>
+<a name="299"><span class="lineNum">     299 </span><span class="lineCov">          3 :                                   str, age_names[i], value, region);</span></a>
+<a name="300"><span class="lineNum">     300 </span><span class="lineCov">          3 :                         value = 0.0;</span></a>
+<a name="301"><span class="lineNum">     301 </span>            :                     }</a>
+<a name="302"><span class="lineNum">     302 </span><span class="lineCov">        165 :                     else if (value &lt; 0) {</span></a>
+<a name="303"><span class="lineNum">     303 </span><span class="lineCov">          8 :                         log_info(&quot;{:s} for age group {:s} is {:.4f} for region {:d}, automatically corrected&quot;, str,</span></a>
+<a name="304"><span class="lineNum">     304 </span><span class="lineCov">          4 :                                  age_names[i], value, region);</span></a>
+<a name="305"><span class="lineNum">     305 </span><span class="lineCov">          4 :                         value = 0.0;</span></a>
+<a name="306"><span class="lineNum">     306 </span>            :                     }</a>
+<a name="307"><span class="lineNum">     307 </span><span class="lineCov">        168 :                 };</span></a>
+<a name="308"><span class="lineNum">     308 </span>            : </a>
+<a name="309"><span class="lineNum">     309 </span><span class="lineCov">         24 :                 try_fix_constraints(num_inf[i], -5, &quot;Infected&quot;);</span></a>
+<a name="310"><span class="lineNum">     310 </span><span class="lineCov">         24 :                 try_fix_constraints(num_car[i], -5, &quot;Carrier&quot;);</span></a>
+<a name="311"><span class="lineNum">     311 </span><span class="lineCov">         24 :                 try_fix_constraints(num_exp[i], -5, &quot;Exposed&quot;);</span></a>
+<a name="312"><span class="lineNum">     312 </span><span class="lineCov">         24 :                 try_fix_constraints(num_hosp[i], -5, &quot;Hospitalized&quot;);</span></a>
+<a name="313"><span class="lineNum">     313 </span><span class="lineCov">         24 :                 try_fix_constraints(num_death[i], -5, &quot;Dead&quot;);</span></a>
+<a name="314"><span class="lineNum">     314 </span><span class="lineCov">         24 :                 try_fix_constraints(num_icu[i], -5, &quot;ICU&quot;);</span></a>
+<a name="315"><span class="lineNum">     315 </span><span class="lineCov">         24 :                 try_fix_constraints(num_rec[i], -20, &quot;Recovered&quot;);</span></a>
+<a name="316"><span class="lineNum">     316 </span>            :             }</a>
+<a name="317"><span class="lineNum">     317 </span>            :         }</a>
+<a name="318"><span class="lineNum">     318 </span>            : </a>
+<a name="319"><span class="lineNum">     319 </span><span class="lineCov">          8 :         return success();</span></a>
+<a name="320"><span class="lineNum">     320 </span>            :     }</a>
+<a name="321"><span class="lineNum">     321 </span>            : </a>
+<a name="322"><span class="lineNum">     322 </span><span class="lineCov">          3 :     IOResult&lt;void&gt; set_rki_data(std::vector&lt;SecirModel&gt;&amp; model, const std::string&amp; path, const std::string&amp; id_name,</span></a>
+<a name="323"><span class="lineNum">     323 </span>            :                       std::vector&lt;int&gt; const&amp; region, Date date, const std::vector&lt;double&gt;&amp; scaling_factor_inf)</a>
+<a name="324"><span class="lineNum">     324 </span>            :     {</a>
+<a name="325"><span class="lineNum">     325 </span>            : </a>
+<a name="326"><span class="lineNum">     326 </span><span class="lineCov">          9 :         std::vector&lt;double&gt; age_ranges = {5., 10., 20., 25., 20., 20.};</span></a>
+<a name="327"><span class="lineNum">     327 </span><span class="lineCov">          3 :         assert(scaling_factor_inf.size() == age_ranges.size());</span></a>
+<a name="328"><span class="lineNum">     328 </span>            : </a>
+<a name="329"><span class="lineNum">     329 </span><span class="lineCov">          9 :         std::vector&lt;std::vector&lt;int&gt;&gt; t_car_to_rec{model.size()}; // R9</span></a>
+<a name="330"><span class="lineNum">     330 </span><span class="lineCov">          9 :         std::vector&lt;std::vector&lt;int&gt;&gt; t_car_to_inf{model.size()}; // R3</span></a>
+<a name="331"><span class="lineNum">     331 </span><span class="lineCov">          9 :         std::vector&lt;std::vector&lt;int&gt;&gt; t_exp_to_car{model.size()}; // R2</span></a>
+<a name="332"><span class="lineNum">     332 </span><span class="lineCov">          9 :         std::vector&lt;std::vector&lt;int&gt;&gt; t_inf_to_rec{model.size()}; // R4</span></a>
+<a name="333"><span class="lineNum">     333 </span><span class="lineCov">          9 :         std::vector&lt;std::vector&lt;int&gt;&gt; t_inf_to_hosp{model.size()}; // R6</span></a>
+<a name="334"><span class="lineNum">     334 </span><span class="lineCov">          9 :         std::vector&lt;std::vector&lt;int&gt;&gt; t_hosp_to_rec{model.size()}; // R5</span></a>
+<a name="335"><span class="lineNum">     335 </span><span class="lineCov">          9 :         std::vector&lt;std::vector&lt;int&gt;&gt; t_hosp_to_icu{model.size()}; // R7</span></a>
+<a name="336"><span class="lineNum">     336 </span><span class="lineCov">          9 :         std::vector&lt;std::vector&lt;int&gt;&gt; t_icu_to_dead{model.size()}; // R10</span></a>
+<a name="337"><span class="lineNum">     337 </span>            : </a>
+<a name="338"><span class="lineNum">     338 </span><span class="lineCov">          9 :         std::vector&lt;std::vector&lt;double&gt;&gt; mu_C_R{model.size()};</span></a>
+<a name="339"><span class="lineNum">     339 </span><span class="lineCov">          9 :         std::vector&lt;std::vector&lt;double&gt;&gt; mu_I_H{model.size()};</span></a>
+<a name="340"><span class="lineNum">     340 </span><span class="lineCov">          9 :         std::vector&lt;std::vector&lt;double&gt;&gt; mu_H_U{model.size()};</span></a>
+<a name="341"><span class="lineNum">     341 </span>            : </a>
+<a name="342"><span class="lineNum">     342 </span><span class="lineCov">          6 :         for (size_t county = 0; county &lt; model.size(); county++) {</span></a>
+<a name="343"><span class="lineNum">     343 </span><span class="lineCov">         21 :             for (size_t group = 0; group &lt; age_ranges.size(); group++) {</span></a>
+<a name="344"><span class="lineNum">     344 </span>            : </a>
+<a name="345"><span class="lineNum">     345 </span><span class="lineCov">         36 :                 t_car_to_inf[county].push_back(</span></a>
+<a name="346"><span class="lineNum">     346 </span><span class="lineCov">         90 :                     static_cast&lt;int&gt;(2 * (model[county].parameters.get&lt;epi::IncubationTime&gt;()[(epi::AgeGroup)group] -</span></a>
+<a name="347"><span class="lineNum">     347 </span><span class="lineCov">         54 :                                           model[county].parameters.get&lt;epi::SerialInterval&gt;()[(epi::AgeGroup)group])));</span></a>
+<a name="348"><span class="lineNum">     348 </span><span class="lineCov">         36 :                 t_car_to_rec[county].push_back(static_cast&lt;int&gt;(</span></a>
+<a name="349"><span class="lineNum">     349 </span><span class="lineCov">         36 :                     t_car_to_inf[county][group] + 0.5 * model[county].parameters.get&lt;epi::InfectiousTimeMild&gt;()[(epi::AgeGroup)group]));</span></a>
+<a name="350"><span class="lineNum">     350 </span><span class="lineCov">         36 :                 t_exp_to_car[county].push_back(</span></a>
+<a name="351"><span class="lineNum">     351 </span><span class="lineCov">         72 :                     static_cast&lt;int&gt;(2 * model[county].parameters.get&lt;epi::SerialInterval&gt;()[(epi::AgeGroup)group] -</span></a>
+<a name="352"><span class="lineNum">     352 </span><span class="lineCov">         36 :                                      model[county].parameters.get&lt;epi::IncubationTime&gt;()[(epi::AgeGroup)group]));</span></a>
+<a name="353"><span class="lineNum">     353 </span><span class="lineCov">         36 :                 t_inf_to_rec[county].push_back(</span></a>
+<a name="354"><span class="lineNum">     354 </span><span class="lineCov">         36 :                     static_cast&lt;int&gt;(model[county].parameters.get&lt;epi::InfectiousTimeMild&gt;()[(epi::AgeGroup)group]));</span></a>
+<a name="355"><span class="lineNum">     355 </span><span class="lineCov">         36 :                 t_inf_to_hosp[county].push_back(</span></a>
+<a name="356"><span class="lineNum">     356 </span><span class="lineCov">         36 :                     static_cast&lt;int&gt;(model[county].parameters.get&lt;epi::HomeToHospitalizedTime&gt;()[(epi::AgeGroup)group]));</span></a>
+<a name="357"><span class="lineNum">     357 </span><span class="lineCov">         36 :                 t_hosp_to_rec[county].push_back(</span></a>
+<a name="358"><span class="lineNum">     358 </span><span class="lineCov">         36 :                     static_cast&lt;int&gt;(model[county].parameters.get&lt;epi::HospitalizedToHomeTime&gt;()[(epi::AgeGroup)group]));</span></a>
+<a name="359"><span class="lineNum">     359 </span><span class="lineCov">         36 :                 t_hosp_to_icu[county].push_back(</span></a>
+<a name="360"><span class="lineNum">     360 </span><span class="lineCov">         36 :                     static_cast&lt;int&gt;(model[county].parameters.get&lt;epi::HospitalizedToICUTime&gt;()[(epi::AgeGroup)group]));</span></a>
+<a name="361"><span class="lineNum">     361 </span><span class="lineCov">         36 :                 t_icu_to_dead[county].push_back(</span></a>
+<a name="362"><span class="lineNum">     362 </span><span class="lineCov">         36 :                     static_cast&lt;int&gt;(model[county].parameters.get&lt;epi::ICUToDeathTime&gt;()[(epi::AgeGroup)group]));</span></a>
+<a name="363"><span class="lineNum">     363 </span>            : </a>
+<a name="364"><span class="lineNum">     364 </span><span class="lineCov">         18 :                 mu_C_R[county].push_back(model[county].parameters.get&lt;epi::AsymptoticCasesPerInfectious&gt;()[(epi::AgeGroup)group]);</span></a>
+<a name="365"><span class="lineNum">     365 </span><span class="lineCov">         36 :                 mu_I_H[county].push_back(</span></a>
+<a name="366"><span class="lineNum">     366 </span><span class="lineCov">         36 :                     model[county].parameters.get&lt;epi::HospitalizedCasesPerInfectious&gt;()[(epi::AgeGroup)group]);</span></a>
+<a name="367"><span class="lineNum">     367 </span><span class="lineCov">         18 :                 mu_H_U[county].push_back(model[county].parameters.get&lt;epi::ICUCasesPerHospitalized&gt;()[(epi::AgeGroup)group]);</span></a>
+<a name="368"><span class="lineNum">     368 </span>            :             }</a>
+<a name="369"><span class="lineNum">     369 </span>            :         }</a>
+<a name="370"><span class="lineNum">     370 </span><span class="lineCov">         15 :         std::vector&lt;std::vector&lt;double&gt;&gt; num_inf(model.size(), std::vector&lt;double&gt;(age_ranges.size(), 0.0));</span></a>
+<a name="371"><span class="lineNum">     371 </span><span class="lineCov">         15 :         std::vector&lt;std::vector&lt;double&gt;&gt; num_death(model.size(), std::vector&lt;double&gt;(age_ranges.size(), 0.0));</span></a>
+<a name="372"><span class="lineNum">     372 </span><span class="lineCov">         15 :         std::vector&lt;std::vector&lt;double&gt;&gt; num_rec(model.size(), std::vector&lt;double&gt;(age_ranges.size(), 0.0));</span></a>
+<a name="373"><span class="lineNum">     373 </span><span class="lineCov">         15 :         std::vector&lt;std::vector&lt;double&gt;&gt; num_exp(model.size(), std::vector&lt;double&gt;(age_ranges.size(), 0.0));</span></a>
+<a name="374"><span class="lineNum">     374 </span><span class="lineCov">         15 :         std::vector&lt;std::vector&lt;double&gt;&gt; num_car(model.size(), std::vector&lt;double&gt;(age_ranges.size(), 0.0));</span></a>
+<a name="375"><span class="lineNum">     375 </span><span class="lineCov">         15 :         std::vector&lt;std::vector&lt;double&gt;&gt; num_hosp(model.size(), std::vector&lt;double&gt;(age_ranges.size(), 0.0));</span></a>
+<a name="376"><span class="lineNum">     376 </span><span class="lineCov">         15 :         std::vector&lt;std::vector&lt;double&gt;&gt; num_icu(model.size(), std::vector&lt;double&gt;(age_ranges.size(), 0.0));</span></a>
+<a name="377"><span class="lineNum">     377 </span>            : </a>
+<a name="378"><span class="lineNum">     378 </span><span class="lineCov">          6 :         BOOST_OUTCOME_TRY(read_rki_data(path, id_name, region, date, num_exp, num_car, num_inf, num_hosp, num_icu,</span></a>
+<a name="379"><span class="lineNum">     379 </span>            :                                         num_death, num_rec, t_car_to_rec, t_car_to_inf, t_exp_to_car, t_inf_to_rec,</a>
+<a name="380"><span class="lineNum">     380 </span>            :                                         t_inf_to_hosp, t_hosp_to_rec, t_hosp_to_icu, t_icu_to_dead, mu_C_R, mu_I_H,</a>
+<a name="381"><span class="lineNum">     381 </span>            :                                         mu_H_U, scaling_factor_inf));</a>
+<a name="382"><span class="lineNum">     382 </span>            : </a>
+<a name="383"><span class="lineNum">     383 </span><span class="lineCov">          6 :         for (size_t county = 0; county &lt; model.size(); county++) {</span></a>
+<a name="384"><span class="lineNum">     384 </span><span class="lineCov">          3 :             if (std::accumulate(num_inf[county].begin(), num_inf[county].end(), 0.0) &gt; 0) {</span></a>
+<a name="385"><span class="lineNum">     385 </span><span class="lineCov">          3 :                 size_t num_groups = (size_t)model[county].parameters.get_num_groups();</span></a>
+<a name="386"><span class="lineNum">     386 </span><span class="lineCov">         21 :                 for (size_t i = 0; i &lt; num_groups; i++) {</span></a>
+<a name="387"><span class="lineNum">     387 </span><span class="lineCov">         36 :                     model[county].populations[{AgeGroup(i), InfectionState::Exposed}] =</span></a>
+<a name="388"><span class="lineNum">     388 </span><span class="lineCov">         36 :                         num_exp[county][i];</span></a>
+<a name="389"><span class="lineNum">     389 </span><span class="lineCov">         36 :                     model[county].populations[{AgeGroup(i), InfectionState::Carrier}] =</span></a>
+<a name="390"><span class="lineNum">     390 </span><span class="lineCov">         36 :                         num_car[county][i];</span></a>
+<a name="391"><span class="lineNum">     391 </span><span class="lineCov">         36 :                     model[county].populations[{AgeGroup(i), InfectionState::Infected}] =</span></a>
+<a name="392"><span class="lineNum">     392 </span><span class="lineCov">         36 :                         num_inf[county][i];</span></a>
+<a name="393"><span class="lineNum">     393 </span><span class="lineCov">         36 :                     model[county].populations[{AgeGroup(i), InfectionState::Hospitalized}] =</span></a>
+<a name="394"><span class="lineNum">     394 </span><span class="lineCov">         36 :                         num_hosp[county][i];</span></a>
+<a name="395"><span class="lineNum">     395 </span><span class="lineCov">         36 :                     model[county].populations[{AgeGroup(i), InfectionState::Dead}] =</span></a>
+<a name="396"><span class="lineNum">     396 </span><span class="lineCov">         36 :                         num_death[county][i];</span></a>
+<a name="397"><span class="lineNum">     397 </span><span class="lineCov">         36 :                     model[county].populations[{AgeGroup(i), InfectionState::Recovered}] =</span></a>
+<a name="398"><span class="lineNum">     398 </span><span class="lineCov">         36 :                         num_rec[county][i];</span></a>
+<a name="399"><span class="lineNum">     399 </span>            :                 }</a>
+<a name="400"><span class="lineNum">     400 </span>            :             }</a>
+<a name="401"><span class="lineNum">     401 </span>            :             else {</a>
+<a name="402"><span class="lineNum">     402 </span><span class="lineNoCov">          0 :                 log_warning(&quot;No infections reported on date &quot; + std::to_string(date.year) + &quot;-&quot; +</span></a>
+<a name="403"><span class="lineNum">     403 </span><span class="lineNoCov">          0 :                             std::to_string(date.month) + &quot;-&quot; + std::to_string(date.day) + &quot; for region &quot; +</span></a>
+<a name="404"><span class="lineNum">     404 </span><span class="lineNoCov">          0 :                             std::to_string(region[county]) + &quot;. Population data has not been set.&quot;);</span></a>
+<a name="405"><span class="lineNum">     405 </span>            :             }</a>
+<a name="406"><span class="lineNum">     406 </span>            :         }</a>
+<a name="407"><span class="lineNum">     407 </span><span class="lineCov">          6 :         return success();</span></a>
+<a name="408"><span class="lineNum">     408 </span>            :     }</a>
+<a name="409"><span class="lineNum">     409 </span>            : </a>
+<a name="410"><span class="lineNum">     410 </span><span class="lineCov">          4 :     IOResult&lt;void&gt; read_divi_data(const std::string&amp; path, const std::string&amp; id_name, const std::vector&lt;int&gt;&amp; vregion,</span></a>
+<a name="411"><span class="lineNum">     411 </span>            :                                   Date date, std::vector&lt;double&gt;&amp; vnum_icu)</a>
+<a name="412"><span class="lineNum">     412 </span>            :     {</a>
+<a name="413"><span class="lineNum">     413 </span><span class="lineCov">          4 :         if (!boost::filesystem::exists(path)) {</span></a>
+<a name="414"><span class="lineNum">     414 </span><span class="lineNoCov">          0 :             log_error(&quot;DIVI data file not found: {}.&quot;, path);</span></a>
+<a name="415"><span class="lineNum">     415 </span><span class="lineNoCov">          0 :             return failure(StatusCode::FileNotFound, path);</span></a>
+<a name="416"><span class="lineNum">     416 </span>            :         }</a>
+<a name="417"><span class="lineNum">     417 </span>            : </a>
+<a name="418"><span class="lineNum">     418 </span><span class="lineCov">          8 :         Json::Reader reader;</span></a>
+<a name="419"><span class="lineNum">     419 </span><span class="lineCov">          8 :         Json::Value root;</span></a>
+<a name="420"><span class="lineNum">     420 </span>            : </a>
+<a name="421"><span class="lineNum">     421 </span><span class="lineCov">          8 :         std::ifstream divi(path);</span></a>
+<a name="422"><span class="lineNum">     422 </span><span class="lineCov">          4 :         if (!reader.parse(divi, root)) {</span></a>
+<a name="423"><span class="lineNum">     423 </span><span class="lineNoCov">          0 :             log_error(reader.getFormattedErrorMessages());</span></a>
+<a name="424"><span class="lineNum">     424 </span><span class="lineNoCov">          0 :             return failure(StatusCode::UnknownError, path + &quot;, &quot; + reader.getFormattedErrorMessages());</span></a>
+<a name="425"><span class="lineNum">     425 </span>            :         }</a>
+<a name="426"><span class="lineNum">     426 </span>            : </a>
+<a name="427"><span class="lineNum">     427 </span><span class="lineCov">          8 :         BOOST_OUTCOME_TRY(max_date, get_max_date(root));</span></a>
+<a name="428"><span class="lineNum">     428 </span><span class="lineCov">          4 :         if (max_date == Date(0, 1, 1)) {</span></a>
+<a name="429"><span class="lineNum">     429 </span><span class="lineNoCov">          0 :             log_error(&quot;DIVI data file is empty.&quot;);</span></a>
+<a name="430"><span class="lineNum">     430 </span><span class="lineNoCov">          0 :             return failure(StatusCode::InvalidFileFormat, path + &quot;, file is empty.&quot;);</span></a>
+<a name="431"><span class="lineNum">     431 </span>            :         }</a>
+<a name="432"><span class="lineNum">     432 </span><span class="lineCov">          4 :         if (max_date &lt; date) {</span></a>
+<a name="433"><span class="lineNum">     433 </span><span class="lineNoCov">          0 :             log_error(&quot;Specified date does not exist in DIVI data.&quot;);</span></a>
+<a name="434"><span class="lineNum">     434 </span><span class="lineNoCov">          0 :             return failure(StatusCode::OutOfRange, path + &quot;, specified date does not exist in DIVI data.&quot;);</span></a>
+<a name="435"><span class="lineNum">     435 </span>            :         }</a>
+<a name="436"><span class="lineNum">     436 </span>            : </a>
+<a name="437"><span class="lineNum">     437 </span><span class="lineCov">        372 :         for (unsigned int i = 0; i &lt; root.size(); i++) {</span></a>
+<a name="438"><span class="lineNum">     438 </span><span class="lineCov">       1288 :             auto it      = std::find_if(vregion.begin(), vregion.end(), [&amp;root, i, &amp;id_name](auto r) {</span></a>
+<a name="439"><span class="lineNum">     439 </span><span class="lineCov">        920 :                 return r == 0 || r == root[i][id_name].asInt();</span></a>
+<a name="440"><span class="lineNum">     440 </span><span class="lineCov">        736 :             });</span></a>
+<a name="441"><span class="lineNum">     441 </span><span class="lineCov">        368 :             auto date_df = parse_date(root[i][&quot;Date&quot;].asString());</span></a>
+<a name="442"><span class="lineNum">     442 </span><span class="lineCov">        368 :             if (it != vregion.end() &amp;&amp; date_df == date) {</span></a>
+<a name="443"><span class="lineNum">     443 </span><span class="lineCov">          4 :                 auto region_idx = size_t(it - vregion.begin());</span></a>
+<a name="444"><span class="lineNum">     444 </span><span class="lineCov">          4 :                 auto&amp; num_icu   = vnum_icu[region_idx];</span></a>
+<a name="445"><span class="lineNum">     445 </span><span class="lineCov">          4 :                 num_icu         = root[i][&quot;ICU&quot;].asDouble();</span></a>
+<a name="446"><span class="lineNum">     446 </span>            :             }</a>
+<a name="447"><span class="lineNum">     447 </span>            :         }</a>
+<a name="448"><span class="lineNum">     448 </span>            : </a>
+<a name="449"><span class="lineNum">     449 </span><span class="lineCov">          8 :         return success();</span></a>
+<a name="450"><span class="lineNum">     450 </span>            :     }</a>
+<a name="451"><span class="lineNum">     451 </span>            : </a>
+<a name="452"><span class="lineNum">     452 </span><span class="lineCov">          4 :     IOResult&lt;std::vector&lt;std::vector&lt;double&gt;&gt;&gt; read_population_data(const std::string&amp; path, const std::string&amp; id_name,</span></a>
+<a name="453"><span class="lineNum">     453 </span>            :                                                                     const std::vector&lt;int&gt;&amp; vregion)</a>
+<a name="454"><span class="lineNum">     454 </span>            :     {</a>
+<a name="455"><span class="lineNum">     455 </span><span class="lineCov">          4 :         if (!boost::filesystem::exists(path)) {</span></a>
+<a name="456"><span class="lineNum">     456 </span><span class="lineNoCov">          0 :             log_error(&quot;Population data file not found: {}.&quot;, path);</span></a>
+<a name="457"><span class="lineNum">     457 </span><span class="lineNoCov">          0 :             return failure(StatusCode::FileNotFound, path);</span></a>
+<a name="458"><span class="lineNum">     458 </span>            :         }</a>
+<a name="459"><span class="lineNum">     459 </span>            : </a>
+<a name="460"><span class="lineNum">     460 </span><span class="lineCov">          8 :         Json::Reader reader;</span></a>
+<a name="461"><span class="lineNum">     461 </span><span class="lineCov">          8 :         Json::Value root;</span></a>
+<a name="462"><span class="lineNum">     462 </span>            : </a>
+<a name="463"><span class="lineNum">     463 </span><span class="lineCov">          8 :         std::ifstream census(path);</span></a>
+<a name="464"><span class="lineNum">     464 </span><span class="lineCov">          4 :         if (!reader.parse(census, root)) {</span></a>
+<a name="465"><span class="lineNum">     465 </span><span class="lineNoCov">          0 :             log_error(reader.getFormattedErrorMessages());</span></a>
+<a name="466"><span class="lineNum">     466 </span><span class="lineNoCov">          0 :             return failure(StatusCode::UnknownError, path + &quot;, &quot; + reader.getFormattedErrorMessages());</span></a>
+<a name="467"><span class="lineNum">     467 </span>            :         }</a>
+<a name="468"><span class="lineNum">     468 </span>            : </a>
+<a name="469"><span class="lineNum">     469 </span><span class="lineCov">          4 :         std::vector&lt;std::string&gt; age_names = {&quot;&lt;3 years&quot;,    &quot;3-5 years&quot;,   &quot;6-14 years&quot;,  &quot;15-17 years&quot;,</span></a>
+<a name="470"><span class="lineNum">     470 </span>            :                                               &quot;18-24 years&quot;, &quot;25-29 years&quot;, &quot;30-39 years&quot;, &quot;40-49 years&quot;,</a>
+<a name="471"><span class="lineNum">     471 </span><span class="lineCov">        104 :                                               &quot;50-64 years&quot;, &quot;65-74 years&quot;, &quot;&gt;74 years&quot;};</span></a>
+<a name="472"><span class="lineNum">     472 </span><span class="lineCov">         12 :         std::vector&lt;double&gt; age_ranges     = {3., 3., 9., 3., 7., 5., 10., 10., 15., 10., 25.};</span></a>
+<a name="473"><span class="lineNum">     473 </span>            : </a>
+<a name="474"><span class="lineNum">     474 </span><span class="lineCov">         12 :         std::vector&lt;std::vector&lt;double&gt;&gt; interpolation(age_names.size());</span></a>
+<a name="475"><span class="lineNum">     475 </span><span class="lineCov">          8 :         std::vector&lt;bool&gt; carry_over;</span></a>
+<a name="476"><span class="lineNum">     476 </span>            : </a>
+<a name="477"><span class="lineNum">     477 </span><span class="lineCov">          4 :         interpolate_ages(age_ranges, interpolation, carry_over);</span></a>
+<a name="478"><span class="lineNum">     478 </span>            : </a>
+<a name="479"><span class="lineNum">     479 </span><span class="lineCov">         20 :         std::vector&lt;std::vector&lt;double&gt;&gt; vnum_population(vregion.size(), std::vector&lt;double&gt;(age_names.size(), 0.0));</span></a>
+<a name="480"><span class="lineNum">     480 </span>            : </a>
+<a name="481"><span class="lineNum">     481 </span><span class="lineCov">       1608 :         for (unsigned int i = 0; i &lt; root.size(); i++) {</span></a>
+<a name="482"><span class="lineNum">     482 </span><span class="lineCov">       7990 :             auto it = std::find_if(vregion.begin(), vregion.end(), [&amp;root, i, &amp;id_name](auto r) {</span></a>
+<a name="483"><span class="lineNum">     483 </span><span class="lineCov">       7990 :                 return r == 0 || (int)root[i][id_name].asDouble() / 1000 == r || root[i][id_name] == r;</span></a>
+<a name="484"><span class="lineNum">     484 </span><span class="lineCov">       3208 :             });</span></a>
+<a name="485"><span class="lineNum">     485 </span><span class="lineCov">       1604 :             if (it != vregion.end()) {</span></a>
+<a name="486"><span class="lineNum">     486 </span><span class="lineCov">        418 :                 auto region_idx      = size_t(it - vregion.begin());</span></a>
+<a name="487"><span class="lineNum">     487 </span><span class="lineCov">        418 :                 auto&amp; num_population = vnum_population[region_idx];</span></a>
+<a name="488"><span class="lineNum">     488 </span><span class="lineCov">       5016 :                 for (size_t age = 0; age &lt; age_names.size(); age++) {</span></a>
+<a name="489"><span class="lineNum">     489 </span><span class="lineCov">       4598 :                     num_population[age] += root[i][age_names[age]].asDouble();</span></a>
+<a name="490"><span class="lineNum">     490 </span>            :                 }</a>
+<a name="491"><span class="lineNum">     491 </span>            :             }</a>
+<a name="492"><span class="lineNum">     492 </span>            :         }</a>
+<a name="493"><span class="lineNum">     493 </span>            : </a>
+<a name="494"><span class="lineNum">     494 </span><span class="lineCov">          8 :         std::vector&lt;std::vector&lt;double&gt;&gt; interpol_population(vregion.size(),</span></a>
+<a name="495"><span class="lineNum">     495 </span><span class="lineCov">         24 :                                                              std::vector&lt;double&gt;(age_names.size(), 0.0));</span></a>
+<a name="496"><span class="lineNum">     496 </span><span class="lineCov">          8 :         for (size_t region_idx = 0; region_idx &lt; vregion.size(); ++region_idx) {</span></a>
+<a name="497"><span class="lineNum">     497 </span><span class="lineCov">          4 :             auto&amp; num_population = vnum_population[region_idx];</span></a>
+<a name="498"><span class="lineNum">     498 </span>            : </a>
+<a name="499"><span class="lineNum">     499 </span><span class="lineCov">          4 :             int counter = 0;</span></a>
+<a name="500"><span class="lineNum">     500 </span><span class="lineCov">         48 :             for (size_t i = 0; i &lt; interpolation.size() - 1; i++) {</span></a>
+<a name="501"><span class="lineNum">     501 </span><span class="lineCov">        104 :                 for (size_t j = 0; j &lt; interpolation[i].size(); j++) {</span></a>
+<a name="502"><span class="lineNum">     502 </span><span class="lineCov">         60 :                     interpol_population[region_idx][counter] += interpolation[i][j] * num_population[i];</span></a>
+<a name="503"><span class="lineNum">     503 </span><span class="lineCov">         60 :                     if (j &lt; interpolation[i].size() - 1 || !carry_over[i]) {</span></a>
+<a name="504"><span class="lineNum">     504 </span><span class="lineCov">         20 :                         counter++;</span></a>
+<a name="505"><span class="lineNum">     505 </span>            :                     }</a>
+<a name="506"><span class="lineNum">     506 </span>            :                 }</a>
+<a name="507"><span class="lineNum">     507 </span>            :             }</a>
+<a name="508"><span class="lineNum">     508 </span>            :         }</a>
+<a name="509"><span class="lineNum">     509 </span>            : </a>
+<a name="510"><span class="lineNum">     510 </span><span class="lineCov">          4 :         return success(interpol_population);</span></a>
+<a name="511"><span class="lineNum">     511 </span>            :     }</a>
+<a name="512"><span class="lineNum">     512 </span>            : </a>
+<a name="513"><span class="lineNum">     513 </span><span class="lineCov">          3 :     IOResult&lt;void&gt; set_population_data(std::vector&lt;SecirModel&gt;&amp; model, const std::string&amp; path,</span></a>
+<a name="514"><span class="lineNum">     514 </span>            :                                        const std::string&amp; id_name, const std::vector&lt;int&gt;&amp; vregion)</a>
+<a name="515"><span class="lineNum">     515 </span>            :     {</a>
+<a name="516"><span class="lineNum">     516 </span><span class="lineCov">          6 :         BOOST_OUTCOME_TRY(num_population, read_population_data(path, id_name, vregion));</span></a>
+<a name="517"><span class="lineNum">     517 </span>            : </a>
+<a name="518"><span class="lineNum">     518 </span><span class="lineCov">          6 :         for (size_t region = 0; region &lt; vregion.size(); region++) {</span></a>
+<a name="519"><span class="lineNum">     519 </span><span class="lineCov">          3 :             if (std::accumulate(num_population[region].begin(), num_population[region].end(), 0.0) &gt; 0) {</span></a>
+<a name="520"><span class="lineNum">     520 </span><span class="lineCov">          3 :                 auto num_groups = model[region].parameters.get_num_groups();</span></a>
+<a name="521"><span class="lineNum">     521 </span><span class="lineCov">         21 :                 for (auto i = AgeGroup(0); i &lt; num_groups; i++) {</span></a>
+<a name="522"><span class="lineNum">     522 </span><span class="lineCov">         36 :                     model[region].populations.set_difference_from_group_total&lt;epi::AgeGroup&gt;(</span></a>
+<a name="523"><span class="lineNum">     523 </span><span class="lineCov">         18 :                         {i, InfectionState::Susceptible}, num_population[region][size_t(i)]);</span></a>
+<a name="524"><span class="lineNum">     524 </span>            :                 }</a>
+<a name="525"><span class="lineNum">     525 </span>            :             }</a>
+<a name="526"><span class="lineNum">     526 </span>            :             else {</a>
+<a name="527"><span class="lineNum">     527 </span><span class="lineNoCov">          0 :                 log_warning(&quot;No population data available for region &quot; + std::to_string(region) +</span></a>
+<a name="528"><span class="lineNum">     528 </span>            :                             &quot;. Population data has not been set.&quot;);</a>
+<a name="529"><span class="lineNum">     529 </span>            :             }</a>
+<a name="530"><span class="lineNum">     530 </span>            :         }</a>
+<a name="531"><span class="lineNum">     531 </span>            : </a>
+<a name="532"><span class="lineNum">     532 </span><span class="lineCov">          6 :         return success();</span></a>
+<a name="533"><span class="lineNum">     533 </span>            :     }</a>
+<a name="534"><span class="lineNum">     534 </span>            : </a>
+<a name="535"><span class="lineNum">     535 </span><span class="lineCov">          3 :     IOResult&lt;void&gt; set_divi_data(std::vector&lt;SecirModel&gt;&amp; model, const std::string&amp; path, const std::string&amp; id_name,</span></a>
+<a name="536"><span class="lineNum">     536 </span>            :                                  const std::vector&lt;int&gt;&amp; vregion, Date date, double scaling_factor_icu)</a>
+<a name="537"><span class="lineNum">     537 </span>            :     {</a>
+<a name="538"><span class="lineNum">     538 </span><span class="lineCov">          9 :         std::vector&lt;double&gt; sum_mu_I_U(vregion.size(), 0);</span></a>
+<a name="539"><span class="lineNum">     539 </span><span class="lineCov">          9 :         std::vector&lt;std::vector&lt;double&gt;&gt; mu_I_U{model.size()};</span></a>
+<a name="540"><span class="lineNum">     540 </span><span class="lineCov">          6 :         for (size_t region = 0; region &lt; vregion.size(); region++) {</span></a>
+<a name="541"><span class="lineNum">     541 </span><span class="lineCov">          3 :             auto num_groups = model[region].parameters.get_num_groups();</span></a>
+<a name="542"><span class="lineNum">     542 </span><span class="lineCov">         21 :             for (auto i = epi::AgeGroup(0); i &lt; num_groups; i++) {</span></a>
+<a name="543"><span class="lineNum">     543 </span><span class="lineCov">         54 :                 sum_mu_I_U[region] += model[region].parameters.get&lt;epi::ICUCasesPerHospitalized&gt;()[i] *</span></a>
+<a name="544"><span class="lineNum">     544 </span><span class="lineCov">         36 :                                       model[region].parameters.get&lt;epi::HospitalizedCasesPerInfectious&gt;()[i];</span></a>
+<a name="545"><span class="lineNum">     545 </span><span class="lineCov">         54 :                 mu_I_U[region].push_back(model[region].parameters.get&lt;epi::ICUCasesPerHospitalized&gt;()[i] *</span></a>
+<a name="546"><span class="lineNum">     546 </span><span class="lineCov">         36 :                                          model[region].parameters.get&lt;epi::HospitalizedCasesPerInfectious&gt;()[i]);</span></a>
+<a name="547"><span class="lineNum">     547 </span>            :             }</a>
+<a name="548"><span class="lineNum">     548 </span>            :         }</a>
+<a name="549"><span class="lineNum">     549 </span><span class="lineCov">          9 :         std::vector&lt;double&gt; num_icu(model.size(), 0.0);</span></a>
+<a name="550"><span class="lineNum">     550 </span><span class="lineCov">          6 :         BOOST_OUTCOME_TRY(read_divi_data(path, id_name, vregion, date, num_icu));</span></a>
+<a name="551"><span class="lineNum">     551 </span>            : </a>
+<a name="552"><span class="lineNum">     552 </span><span class="lineCov">          6 :         for (size_t region = 0; region &lt; vregion.size(); region++) {</span></a>
+<a name="553"><span class="lineNum">     553 </span><span class="lineCov">          3 :             auto num_groups = model[region].parameters.get_num_groups();</span></a>
+<a name="554"><span class="lineNum">     554 </span><span class="lineCov">         21 :             for (auto i = epi::AgeGroup(0); i &lt; num_groups; i++) {</span></a>
+<a name="555"><span class="lineNum">     555 </span><span class="lineCov">         36 :                 model[region].populations[{i, epi::InfectionState::ICU}] =</span></a>
+<a name="556"><span class="lineNum">     556 </span><span class="lineCov">         36 :                     scaling_factor_icu * num_icu[region] * mu_I_U[region][(size_t)i] / sum_mu_I_U[region];</span></a>
+<a name="557"><span class="lineNum">     557 </span>            :             }</a>
+<a name="558"><span class="lineNum">     558 </span>            :         }</a>
+<a name="559"><span class="lineNum">     559 </span>            : </a>
+<a name="560"><span class="lineNum">     560 </span><span class="lineCov">          6 :         return success();</span></a>
+<a name="561"><span class="lineNum">     561 </span>            :     }</a>
+<a name="562"><span class="lineNum">     562 </span>            : </a>
+<a name="563"><span class="lineNum">     563 </span>            : } // namespace details</a>
+<a name="564"><span class="lineNum">     564 </span>            : </a>
+<a name="565"><span class="lineNum">     565 </span><span class="lineCov">          1 : IOResult&lt;std::vector&lt;int&gt;&gt; get_county_ids(const std::string&amp; path)</span></a>
+<a name="566"><span class="lineNum">     566 </span>            : {</a>
+<a name="567"><span class="lineNum">     567 </span><span class="lineCov">          2 :     Json::Reader reader;</span></a>
+<a name="568"><span class="lineNum">     568 </span><span class="lineCov">          2 :     Json::Value root;</span></a>
+<a name="569"><span class="lineNum">     569 </span>            : </a>
+<a name="570"><span class="lineNum">     570 </span><span class="lineCov">          2 :     std::vector&lt;int&gt; id;</span></a>
+<a name="571"><span class="lineNum">     571 </span>            : </a>
+<a name="572"><span class="lineNum">     572 </span><span class="lineCov">          2 :     auto filename = path_join(path, &quot;county_current_population.json&quot;);</span></a>
+<a name="573"><span class="lineNum">     573 </span><span class="lineCov">          2 :     std::ifstream census(filename);</span></a>
+<a name="574"><span class="lineNum">     574 </span><span class="lineCov">          1 :     if (!reader.parse(census, root)) {</span></a>
+<a name="575"><span class="lineNum">     575 </span><span class="lineNoCov">          0 :         log_error(reader.getFormattedErrorMessages());</span></a>
+<a name="576"><span class="lineNum">     576 </span><span class="lineNoCov">          0 :         return failure(StatusCode::UnknownError, filename + &quot;, &quot; + reader.getFormattedErrorMessages());</span></a>
+<a name="577"><span class="lineNum">     577 </span>            :     }</a>
+<a name="578"><span class="lineNum">     578 </span>            : </a>
+<a name="579"><span class="lineNum">     579 </span><span class="lineCov">        402 :     for (unsigned int i = 0; i &lt; root.size(); i++) {</span></a>
+<a name="580"><span class="lineNum">     580 </span><span class="lineCov">        401 :         auto val = root[i][&quot;ID_County&quot;];</span></a>
+<a name="581"><span class="lineNum">     581 </span><span class="lineCov">        401 :         if (!val.isInt())</span></a>
+<a name="582"><span class="lineNum">     582 </span>            :         {</a>
+<a name="583"><span class="lineNum">     583 </span><span class="lineNoCov">          0 :             log_error(&quot;ID_County field must be an integer.&quot;);</span></a>
+<a name="584"><span class="lineNum">     584 </span><span class="lineNoCov">          0 :             return failure(StatusCode::InvalidFileFormat, filename + &quot;, ID_County field must be an integer.&quot;);</span></a>
+<a name="585"><span class="lineNum">     585 </span>            :         }</a>
+<a name="586"><span class="lineNum">     586 </span><span class="lineCov">        401 :         id.push_back(val.asInt());</span></a>
+<a name="587"><span class="lineNum">     587 </span>            :     }</a>
+<a name="588"><span class="lineNum">     588 </span>            : </a>
+<a name="589"><span class="lineNum">     589 </span><span class="lineCov">          1 :     return success(id);</span></a>
+<a name="590"><span class="lineNum">     590 </span>            : }</a>
+<a name="591"><span class="lineNum">     591 </span>            : </a>
+<a name="592"><span class="lineNum">     592 </span>            : } // namespace epi</a>
+</pre>
+      </td>
+    </tr>
+  </table>
+  <br>
+
+  <table width="100%" border=0 cellspacing=0 cellpadding=0>
+    <tr><td class="ruler"><img src="../../../../../../../glass.png" width=3 height=3 alt=""></td></tr>
+    <tr><td class="versionInfo">Generated by: <a href="http://ltp.sourceforge.net/coverage/lcov.php" target="_parent">LCOV version 1.14</a></td></tr>
+  </table>
+  <br>
+
+</body>
+</html>
