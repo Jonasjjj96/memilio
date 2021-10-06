@@ -37,11 +37,11 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-10-05 11:42:37</td>
+            <td class="headerValue">2021-10-06 15:49:23</td>
             <td></td>
             <td class="headerItem">Functions:</td>
-            <td class="headerCovTableEntry">323</td>
-            <td class="headerCovTableEntry">326</td>
+            <td class="headerCovTableEntry">333</td>
+            <td class="headerCovTableEntry">336</td>
             <td class="headerCovTableEntryHi">99.1 %</td>
           </tr>
           <tr><td><img src="../glass.png" width=3 height=3 alt=""></td></tr>
@@ -125,6 +125,10 @@
             </tr>
     <tr>
               <td class="coverFn"><a href="custom_index_array.h.gcov.html#51">unsigned long (anonymous namespace)::product&lt;epi::Index, TestParameterSet_customIndexArray_Test::TestBody()::AgeGroup, TestParameterSet_customIndexArray_Test::TestBody()::Income&gt;(epi::Index&lt;TestParameterSet_customIndexArray_Test::TestBody()::AgeGroup, TestParameterSet_customIndexArray_Test::TestBody()::Income&gt; const&amp;)</a></td>
+              <td class="coverFnHi">1</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="custom_index_array.h.gcov.html#118">unsigned long epi::flatten_index&lt;epi::Index&lt;epi::AbmAgeGroup&gt; &gt;(epi::Index&lt;epi::AbmAgeGroup&gt; const&amp;, epi::Index&lt;epi::AbmAgeGroup&gt; const&amp;)</a></td>
               <td class="coverFnHi">1</td>
             </tr>
     <tr>
@@ -244,6 +248,10 @@
               <td class="coverFnHi">1</td>
             </tr>
     <tr>
+              <td class="coverFn"><a href="custom_index_array.h.gcov.html#80">std::enable_if&lt;(0ul)==(epi::Index&lt;epi::AbmAgeGroup&gt;::size-(1)), std::pair&lt;unsigned long, unsigned long&gt; &gt;::type epi::details::flatten_index&lt;0ul, epi::Index&lt;epi::AbmAgeGroup&gt; &gt;(epi::Index&lt;epi::AbmAgeGroup&gt; const&amp;, epi::Index&lt;epi::AbmAgeGroup&gt; const&amp;)</a></td>
+              <td class="coverFnHi">1</td>
+            </tr>
+    <tr>
               <td class="coverFn"><a href="custom_index_array.h.gcov.html#291">epi::operator==(epi::CustomIndexArray&lt;epi::UncertainValue, InfectionState, AgeGroup, Continent&gt;::Iterator&lt;epi::UncertainValue&gt; const&amp;, epi::CustomIndexArray&lt;epi::UncertainValue, InfectionState, AgeGroup, Continent&gt;::Iterator&lt;epi::UncertainValue&gt; const&amp;)</a></td>
               <td class="coverFnHi">1</td>
             </tr>
@@ -329,6 +337,14 @@
             </tr>
     <tr>
               <td class="coverFn"><a href="custom_index_array.h.gcov.html#596">void epi::CustomIndexArray&lt;double, jsontest::Tag&gt;::serialize&lt;epi::JsonSerializer&gt;(epi::JsonSerializer&amp;) const</a></td>
+              <td class="coverFnHi">1</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="custom_index_array.h.gcov.html#250">epi::CustomIndexArray&lt;double, epi::AbmAgeGroup&gt;::get_flat_index(epi::Index&lt;epi::AbmAgeGroup&gt; const&amp;) const</a></td>
+              <td class="coverFnHi">1</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="custom_index_array.h.gcov.html#239">epi::CustomIndexArray&lt;double, epi::AbmAgeGroup&gt;::operator[](epi::Index&lt;epi::AbmAgeGroup&gt; const&amp;) const</a></td>
               <td class="coverFnHi">1</td>
             </tr>
     <tr>
@@ -840,7 +856,7 @@
               <td class="coverFnHi">12</td>
             </tr>
     <tr>
-              <td class="coverFn"><a href="custom_index_array.h.gcov.html#230">epi::CustomIndexArray&lt;double, epi::AbmAgeGroup&gt;::operator[](epi::Index&lt;epi::AbmAgeGroup&gt; const&amp;)</a></td>
+              <td class="coverFn"><a href="custom_index_array.h.gcov.html#230">epi::CustomIndexArray&lt;double, epi::AbmAgeGroup, epi::VaccinationState&gt;::operator[](epi::Index&lt;epi::AbmAgeGroup, epi::VaccinationState&gt; const&amp;)</a></td>
               <td class="coverFnHi">12</td>
             </tr>
     <tr>
@@ -1068,8 +1084,24 @@
               <td class="coverFnHi">57</td>
             </tr>
     <tr>
-              <td class="coverFn"><a href="custom_index_array.h.gcov.html#176">epi::CustomIndexArray&lt;double, epi::AbmAgeGroup&gt;::CustomIndexArray&lt;, (void*)0&gt;(epi::Index&lt;epi::AbmAgeGroup&gt; const&amp;)</a></td>
+              <td class="coverFn"><a href="custom_index_array.h.gcov.html#176">epi::CustomIndexArray&lt;double, epi::AbmAgeGroup, epi::VaccinationState&gt;::CustomIndexArray&lt;, (void*)0&gt;(epi::Index&lt;epi::AbmAgeGroup, epi::VaccinationState&gt; const&amp;)</a></td>
               <td class="coverFnHi">61</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="custom_index_array.h.gcov.html#44">std::enable_if&lt;(0)&lt;(1), unsigned long&gt;::type (anonymous namespace)::product&lt;0, epi::Index, epi::AbmAgeGroup&gt;(epi::Index&lt;epi::AbmAgeGroup&gt; const&amp;)</a></td>
+              <td class="coverFnHi">93</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="custom_index_array.h.gcov.html#38">std::enable_if&lt;(1)==(1), unsigned long&gt;::type (anonymous namespace)::product&lt;1, epi::Index, epi::AbmAgeGroup&gt;(epi::Index&lt;epi::AbmAgeGroup&gt; const&amp;)</a></td>
+              <td class="coverFnHi">93</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="custom_index_array.h.gcov.html#51">unsigned long (anonymous namespace)::product&lt;epi::Index, epi::AbmAgeGroup&gt;(epi::Index&lt;epi::AbmAgeGroup&gt; const&amp;)</a></td>
+              <td class="coverFnHi">93</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="custom_index_array.h.gcov.html#176">epi::CustomIndexArray&lt;double, epi::AbmAgeGroup&gt;::CustomIndexArray&lt;double, (void*)0&gt;(epi::Index&lt;epi::AbmAgeGroup&gt; const&amp;, double&amp;&amp;)</a></td>
+              <td class="coverFnHi">93</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="custom_index_array.h.gcov.html#270">epi::CustomIndexArray&lt;epi::UncertainValue, epi::AgeGroup&gt;::Iterator&lt;epi::UncertainValue const&gt;::Iterator(epi::UncertainValue const*)</a></td>
@@ -1084,7 +1116,7 @@
               <td class="coverFnHi">102</td>
             </tr>
     <tr>
-              <td class="coverFn"><a href="custom_index_array.h.gcov.html#220">epi::CustomIndexArray&lt;double, epi::AbmAgeGroup&gt;::array()</a></td>
+              <td class="coverFn"><a href="custom_index_array.h.gcov.html#220">epi::CustomIndexArray&lt;double, epi::AbmAgeGroup, epi::VaccinationState&gt;::array()</a></td>
               <td class="coverFnHi">106</td>
             </tr>
     <tr>
@@ -1093,34 +1125,10 @@
             </tr>
     <tr>
               <td class="coverFn"><a href="custom_index_array.h.gcov.html#417">epi::CustomIndexArray&lt;epi::UncertainValue, epi::AgeGroup, epi::InfectionState&gt;::Slice&lt;epi::AgeGroup, epi::CustomIndexArray&lt;epi::UncertainValue, epi::AgeGroup, epi::InfectionState&gt;::Iterator&lt;epi::UncertainValue const&gt;, (void*)0&gt;::Slice(epi::Index&lt;epi::AgeGroup, epi::InfectionState&gt; const&amp;, epi::CustomIndexArray&lt;epi::UncertainValue, epi::AgeGroup, epi::InfectionState&gt;::Iterator&lt;epi::UncertainValue const&gt; const&amp;, epi::Seq&lt;unsigned long&gt;)</a></td>
-              <td class="coverFnHi">147</td>
+              <td class="coverFnHi">153</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="custom_index_array.h.gcov.html#291">epi::operator==(epi::CustomIndexArray&lt;epi::UncertainValue, epi::AgeGroup, epi::InfectionState&gt;::Iterator&lt;epi::UncertainValue const&gt; const&amp;, epi::CustomIndexArray&lt;epi::UncertainValue, epi::AgeGroup, epi::InfectionState&gt;::Iterator&lt;epi::UncertainValue const&gt; const&amp;)</a></td>
-              <td class="coverFnHi">147</td>
-            </tr>
-    <tr>
-              <td class="coverFn"><a href="custom_index_array.h.gcov.html#453">epi::CustomIndexArray&lt;epi::UncertainValue, epi::AgeGroup, epi::InfectionState&gt;::Slice&lt;epi::AgeGroup, epi::CustomIndexArray&lt;epi::UncertainValue, epi::AgeGroup, epi::InfectionState&gt;::Iterator&lt;epi::UncertainValue const&gt;, (void*)0&gt;::end() const</a></td>
-              <td class="coverFnHi">147</td>
-            </tr>
-    <tr>
-              <td class="coverFn"><a href="custom_index_array.h.gcov.html#443">epi::CustomIndexArray&lt;epi::UncertainValue, epi::AgeGroup, epi::InfectionState&gt;::Slice&lt;epi::AgeGroup, epi::CustomIndexArray&lt;epi::UncertainValue, epi::AgeGroup, epi::InfectionState&gt;::Iterator&lt;epi::UncertainValue const&gt;, (void*)0&gt;::begin() const</a></td>
-              <td class="coverFnHi">147</td>
-            </tr>
-    <tr>
-              <td class="coverFn"><a href="custom_index_array.h.gcov.html#433">epi::CustomIndexArray&lt;epi::UncertainValue, epi::AgeGroup, epi::InfectionState&gt;::Slice&lt;epi::AgeGroup, epi::CustomIndexArray&lt;epi::UncertainValue, epi::AgeGroup, epi::InfectionState&gt;::Iterator&lt;epi::UncertainValue const&gt;, (void*)0&gt;::numel() const</a></td>
-              <td class="coverFnHi">147</td>
-            </tr>
-    <tr>
-              <td class="coverFn"><a href="custom_index_array.h.gcov.html#586">epi::CustomIndexArray&lt;epi::UncertainValue, epi::AgeGroup, epi::InfectionState&gt;::Slice&lt;epi::AgeGroup, epi::CustomIndexArray&lt;epi::UncertainValue, epi::AgeGroup, epi::InfectionState&gt;::Iterator&lt;epi::UncertainValue const&gt;, (void*)0&gt; epi::CustomIndexArray&lt;epi::UncertainValue, epi::AgeGroup, epi::InfectionState&gt;::slice&lt;epi::AgeGroup&gt;(epi::Seq&lt;unsigned long&gt;) const</a></td>
-              <td class="coverFnHi">147</td>
-            </tr>
-    <tr>
-              <td class="coverFn"><a href="custom_index_array.h.gcov.html#542">epi::CustomIndexArray&lt;epi::UncertainValue, epi::AgeGroup, epi::InfectionState&gt;::begin() const</a></td>
-              <td class="coverFnHi">150</td>
-            </tr>
-    <tr>
-              <td class="coverFn"><a href="custom_index_array.h.gcov.html#270">epi::CustomIndexArray&lt;epi::UncertainValue, epi::AgeGroup, epi::InfectionState&gt;::Iterator&lt;epi::UncertainValue const&gt;::Iterator(epi::UncertainValue const*)</a></td>
               <td class="coverFnHi">153</td>
             </tr>
     <tr>
@@ -1130,6 +1138,30 @@
     <tr>
               <td class="coverFn"><a href="custom_index_array.h.gcov.html#216">epi::CustomIndexArray&lt;epi::UncertainValue, epi::AgeGroup&gt;::array() const</a></td>
               <td class="coverFnHi">153</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="custom_index_array.h.gcov.html#453">epi::CustomIndexArray&lt;epi::UncertainValue, epi::AgeGroup, epi::InfectionState&gt;::Slice&lt;epi::AgeGroup, epi::CustomIndexArray&lt;epi::UncertainValue, epi::AgeGroup, epi::InfectionState&gt;::Iterator&lt;epi::UncertainValue const&gt;, (void*)0&gt;::end() const</a></td>
+              <td class="coverFnHi">153</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="custom_index_array.h.gcov.html#443">epi::CustomIndexArray&lt;epi::UncertainValue, epi::AgeGroup, epi::InfectionState&gt;::Slice&lt;epi::AgeGroup, epi::CustomIndexArray&lt;epi::UncertainValue, epi::AgeGroup, epi::InfectionState&gt;::Iterator&lt;epi::UncertainValue const&gt;, (void*)0&gt;::begin() const</a></td>
+              <td class="coverFnHi">153</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="custom_index_array.h.gcov.html#433">epi::CustomIndexArray&lt;epi::UncertainValue, epi::AgeGroup, epi::InfectionState&gt;::Slice&lt;epi::AgeGroup, epi::CustomIndexArray&lt;epi::UncertainValue, epi::AgeGroup, epi::InfectionState&gt;::Iterator&lt;epi::UncertainValue const&gt;, (void*)0&gt;::numel() const</a></td>
+              <td class="coverFnHi">153</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="custom_index_array.h.gcov.html#586">epi::CustomIndexArray&lt;epi::UncertainValue, epi::AgeGroup, epi::InfectionState&gt;::Slice&lt;epi::AgeGroup, epi::CustomIndexArray&lt;epi::UncertainValue, epi::AgeGroup, epi::InfectionState&gt;::Iterator&lt;epi::UncertainValue const&gt;, (void*)0&gt; epi::CustomIndexArray&lt;epi::UncertainValue, epi::AgeGroup, epi::InfectionState&gt;::slice&lt;epi::AgeGroup&gt;(epi::Seq&lt;unsigned long&gt;) const</a></td>
+              <td class="coverFnHi">153</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="custom_index_array.h.gcov.html#542">epi::CustomIndexArray&lt;epi::UncertainValue, epi::AgeGroup, epi::InfectionState&gt;::begin() const</a></td>
+              <td class="coverFnHi">156</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="custom_index_array.h.gcov.html#270">epi::CustomIndexArray&lt;epi::UncertainValue, epi::AgeGroup, epi::InfectionState&gt;::Iterator&lt;epi::UncertainValue const&gt;::Iterator(epi::UncertainValue const*)</a></td>
+              <td class="coverFnHi">159</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="custom_index_array.h.gcov.html#358">epi::CustomIndexArray&lt;epi::UncertainValue, InfectionState, AgeGroup, Continent&gt;::Slice&lt;AgeGroup, epi::CustomIndexArray&lt;epi::UncertainValue, InfectionState, AgeGroup, Continent&gt;::Iterator&lt;epi::UncertainValue const&gt;, (void*)0&gt;::Iterator&lt;epi::UncertainValue const&gt;::operator*()</a></td>
@@ -1153,10 +1185,10 @@
             </tr>
     <tr>
               <td class="coverFn"><a href="custom_index_array.h.gcov.html#51">unsigned long (anonymous namespace)::product&lt;epi::Index, epi::AgeGroup, epi::InfectionState&gt;(epi::Index&lt;epi::AgeGroup, epi::InfectionState&gt; const&amp;)</a></td>
-              <td class="coverFnHi">179</td>
+              <td class="coverFnHi">185</td>
             </tr>
     <tr>
-              <td class="coverFn"><a href="custom_index_array.h.gcov.html#216">epi::CustomIndexArray&lt;double, epi::AbmAgeGroup&gt;::array() const</a></td>
+              <td class="coverFn"><a href="custom_index_array.h.gcov.html#216">epi::CustomIndexArray&lt;double, epi::AbmAgeGroup, epi::VaccinationState&gt;::array() const</a></td>
               <td class="coverFnHi">212</td>
             </tr>
     <tr>
@@ -1184,36 +1216,40 @@
               <td class="coverFnHi">257</td>
             </tr>
     <tr>
+              <td class="coverFn"><a href="custom_index_array.h.gcov.html#239">epi::CustomIndexArray&lt;double, epi::AbmAgeGroup, epi::VaccinationState&gt;::operator[](epi::Index&lt;epi::AbmAgeGroup, epi::VaccinationState&gt; const&amp;) const</a></td>
+              <td class="coverFnHi">281</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="custom_index_array.h.gcov.html#118">unsigned long epi::flatten_index&lt;epi::Index&lt;epi::AbmAgeGroup, epi::VaccinationState&gt; &gt;(epi::Index&lt;epi::AbmAgeGroup, epi::VaccinationState&gt; const&amp;, epi::Index&lt;epi::AbmAgeGroup, epi::VaccinationState&gt; const&amp;)</a></td>
+              <td class="coverFnHi">293</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="custom_index_array.h.gcov.html#87">std::enable_if&lt;(0ul)&lt;(epi::Index&lt;epi::AbmAgeGroup, epi::VaccinationState&gt;::size-(1)), std::pair&lt;unsigned long, unsigned long&gt; &gt;::type epi::details::flatten_index&lt;0ul, epi::Index&lt;epi::AbmAgeGroup, epi::VaccinationState&gt; &gt;(epi::Index&lt;epi::AbmAgeGroup, epi::VaccinationState&gt; const&amp;, epi::Index&lt;epi::AbmAgeGroup, epi::VaccinationState&gt; const&amp;)</a></td>
+              <td class="coverFnHi">293</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="custom_index_array.h.gcov.html#80">std::enable_if&lt;(1ul)==(epi::Index&lt;epi::AbmAgeGroup, epi::VaccinationState&gt;::size-(1)), std::pair&lt;unsigned long, unsigned long&gt; &gt;::type epi::details::flatten_index&lt;1ul, epi::Index&lt;epi::AbmAgeGroup, epi::VaccinationState&gt; &gt;(epi::Index&lt;epi::AbmAgeGroup, epi::VaccinationState&gt; const&amp;, epi::Index&lt;epi::AbmAgeGroup, epi::VaccinationState&gt; const&amp;)</a></td>
+              <td class="coverFnHi">293</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="custom_index_array.h.gcov.html#250">epi::CustomIndexArray&lt;double, epi::AbmAgeGroup, epi::VaccinationState&gt;::get_flat_index(epi::Index&lt;epi::AbmAgeGroup, epi::VaccinationState&gt; const&amp;) const</a></td>
+              <td class="coverFnHi">293</td>
+            </tr>
+    <tr>
               <td class="coverFn"><a href="custom_index_array.h.gcov.html#342">epi::CustomIndexArray&lt;epi::UncertainValue, epi::AgeGroup, epi::InfectionState&gt;::Slice&lt;epi::AgeGroup, epi::CustomIndexArray&lt;epi::UncertainValue, epi::AgeGroup, epi::InfectionState&gt;::Iterator&lt;epi::UncertainValue const&gt;, (void*)0&gt;::Iterator&lt;epi::UncertainValue const&gt;::Iterator(epi::CustomIndexArray&lt;epi::UncertainValue, epi::AgeGroup, epi::InfectionState&gt;::Iterator&lt;epi::UncertainValue const&gt;, unsigned long, unsigned long, epi::Seq&lt;unsigned long&gt; const&amp;, long)</a></td>
-              <td class="coverFnHi">294</td>
-            </tr>
-    <tr>
-              <td class="coverFn"><a href="custom_index_array.h.gcov.html#239">epi::CustomIndexArray&lt;double, epi::AbmAgeGroup&gt;::operator[](epi::Index&lt;epi::AbmAgeGroup&gt; const&amp;) const</a></td>
-              <td class="coverFnHi">298</td>
-            </tr>
-    <tr>
-              <td class="coverFn"><a href="custom_index_array.h.gcov.html#118">unsigned long epi::flatten_index&lt;epi::Index&lt;epi::AbmAgeGroup&gt; &gt;(epi::Index&lt;epi::AbmAgeGroup&gt; const&amp;, epi::Index&lt;epi::AbmAgeGroup&gt; const&amp;)</a></td>
-              <td class="coverFnHi">310</td>
-            </tr>
-    <tr>
-              <td class="coverFn"><a href="custom_index_array.h.gcov.html#80">std::enable_if&lt;(0ul)==(epi::Index&lt;epi::AbmAgeGroup&gt;::size-(1)), std::pair&lt;unsigned long, unsigned long&gt; &gt;::type epi::details::flatten_index&lt;0ul, epi::Index&lt;epi::AbmAgeGroup&gt; &gt;(epi::Index&lt;epi::AbmAgeGroup&gt; const&amp;, epi::Index&lt;epi::AbmAgeGroup&gt; const&amp;)</a></td>
-              <td class="coverFnHi">310</td>
-            </tr>
-    <tr>
-              <td class="coverFn"><a href="custom_index_array.h.gcov.html#250">epi::CustomIndexArray&lt;double, epi::AbmAgeGroup&gt;::get_flat_index(epi::Index&lt;epi::AbmAgeGroup&gt; const&amp;) const</a></td>
-              <td class="coverFnHi">310</td>
+              <td class="coverFnHi">306</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="custom_index_array.h.gcov.html#44">std::enable_if&lt;(0)&lt;(2), unsigned long&gt;::type (anonymous namespace)::product&lt;0, epi::Index, epi::AgeGroup, epi::InfectionState&gt;(epi::Index&lt;epi::AgeGroup, epi::InfectionState&gt; const&amp;)</a></td>
-              <td class="coverFnHi">326</td>
+              <td class="coverFnHi">338</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="custom_index_array.h.gcov.html#44">std::enable_if&lt;(1)&lt;(2), unsigned long&gt;::type (anonymous namespace)::product&lt;1, epi::Index, epi::AgeGroup, epi::InfectionState&gt;(epi::Index&lt;epi::AgeGroup, epi::InfectionState&gt; const&amp;)</a></td>
-              <td class="coverFnHi">326</td>
+              <td class="coverFnHi">338</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="custom_index_array.h.gcov.html#38">std::enable_if&lt;(2)==(2), unsigned long&gt;::type (anonymous namespace)::product&lt;2, epi::Index, epi::AgeGroup, epi::InfectionState&gt;(epi::Index&lt;epi::AgeGroup, epi::InfectionState&gt; const&amp;)</a></td>
-              <td class="coverFnHi">326</td>
+              <td class="coverFnHi">338</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="custom_index_array.h.gcov.html#277">epi::CustomIndexArray&lt;epi::UncertainValue, InfectionState, AgeGroup, Continent&gt;::Iterator&lt;epi::UncertainValue const&gt;::operator[](long const&amp;)</a></td>
@@ -1225,7 +1261,7 @@
             </tr>
     <tr>
               <td class="coverFn"><a href="custom_index_array.h.gcov.html#216">epi::CustomIndexArray&lt;epi::UncertainValue, epi::AgeGroup, epi::InfectionState&gt;::array() const</a></td>
-              <td class="coverFnHi">537</td>
+              <td class="coverFnHi">543</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="custom_index_array.h.gcov.html#44">std::enable_if&lt;(0)&lt;(1), unsigned long&gt;::type (anonymous namespace)::product&lt;0, epi::Index, epi::AgeGroup&gt;(epi::Index&lt;epi::AgeGroup&gt; const&amp;)</a></td>
@@ -1240,8 +1276,28 @@
               <td class="coverFnHi">544</td>
             </tr>
     <tr>
+              <td class="coverFn"><a href="custom_index_array.h.gcov.html#176">epi::CustomIndexArray&lt;double, epi::AbmAgeGroup, epi::VaccinationState&gt;::CustomIndexArray&lt;double, (void*)0&gt;(epi::Index&lt;epi::AbmAgeGroup, epi::VaccinationState&gt; const&amp;, double&amp;&amp;)</a></td>
+              <td class="coverFnHi">704</td>
+            </tr>
+    <tr>
               <td class="coverFn"><a href="custom_index_array.h.gcov.html#216">epi::CustomIndexArray&lt;epi::UncertainValue, epi::SeirInfType&gt;::array() const</a></td>
               <td class="coverFnHi">715</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="custom_index_array.h.gcov.html#44">std::enable_if&lt;(0)&lt;(2), unsigned long&gt;::type (anonymous namespace)::product&lt;0, epi::Index, epi::AbmAgeGroup, epi::VaccinationState&gt;(epi::Index&lt;epi::AbmAgeGroup, epi::VaccinationState&gt; const&amp;)</a></td>
+              <td class="coverFnHi">765</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="custom_index_array.h.gcov.html#44">std::enable_if&lt;(1)&lt;(2), unsigned long&gt;::type (anonymous namespace)::product&lt;1, epi::Index, epi::AbmAgeGroup, epi::VaccinationState&gt;(epi::Index&lt;epi::AbmAgeGroup, epi::VaccinationState&gt; const&amp;)</a></td>
+              <td class="coverFnHi">765</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="custom_index_array.h.gcov.html#38">std::enable_if&lt;(2)==(2), unsigned long&gt;::type (anonymous namespace)::product&lt;2, epi::Index, epi::AbmAgeGroup, epi::VaccinationState&gt;(epi::Index&lt;epi::AbmAgeGroup, epi::VaccinationState&gt; const&amp;)</a></td>
+              <td class="coverFnHi">765</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="custom_index_array.h.gcov.html#51">unsigned long (anonymous namespace)::product&lt;epi::Index, epi::AbmAgeGroup, epi::VaccinationState&gt;(epi::Index&lt;epi::AbmAgeGroup, epi::VaccinationState&gt; const&amp;)</a></td>
+              <td class="coverFnHi">765</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="custom_index_array.h.gcov.html#189">epi::CustomIndexArray&lt;epi::UncertainValue, InfectionState, AgeGroup, Continent&gt;::numel() const</a></td>
@@ -1252,22 +1308,6 @@
               <td class="coverFnHi">795</td>
             </tr>
     <tr>
-              <td class="coverFn"><a href="custom_index_array.h.gcov.html#176">epi::CustomIndexArray&lt;double, epi::AbmAgeGroup&gt;::CustomIndexArray&lt;double, (void*)0&gt;(epi::Index&lt;epi::AbmAgeGroup&gt; const&amp;, double&amp;&amp;)</a></td>
-              <td class="coverFnHi">797</td>
-            </tr>
-    <tr>
-              <td class="coverFn"><a href="custom_index_array.h.gcov.html#44">std::enable_if&lt;(0)&lt;(1), unsigned long&gt;::type (anonymous namespace)::product&lt;0, epi::Index, epi::AbmAgeGroup&gt;(epi::Index&lt;epi::AbmAgeGroup&gt; const&amp;)</a></td>
-              <td class="coverFnHi">858</td>
-            </tr>
-    <tr>
-              <td class="coverFn"><a href="custom_index_array.h.gcov.html#38">std::enable_if&lt;(1)==(1), unsigned long&gt;::type (anonymous namespace)::product&lt;1, epi::Index, epi::AbmAgeGroup&gt;(epi::Index&lt;epi::AbmAgeGroup&gt; const&amp;)</a></td>
-              <td class="coverFnHi">858</td>
-            </tr>
-    <tr>
-              <td class="coverFn"><a href="custom_index_array.h.gcov.html#51">unsigned long (anonymous namespace)::product&lt;epi::Index, epi::AbmAgeGroup&gt;(epi::Index&lt;epi::AbmAgeGroup&gt; const&amp;)</a></td>
-              <td class="coverFnHi">858</td>
-            </tr>
-    <tr>
               <td class="coverFn"><a href="custom_index_array.h.gcov.html#230">epi::CustomIndexArray&lt;epi::UncertainValue, epi::AgeGroup, epi::InfectionState&gt;::operator[](epi::Index&lt;epi::AgeGroup, epi::InfectionState&gt; const&amp;)</a></td>
               <td class="coverFnHi">895</td>
             </tr>
@@ -1276,32 +1316,32 @@
               <td class="coverFnHi">992</td>
             </tr>
     <tr>
-              <td class="coverFn"><a href="custom_index_array.h.gcov.html#358">epi::CustomIndexArray&lt;epi::UncertainValue, epi::AgeGroup, epi::InfectionState&gt;::Slice&lt;epi::AgeGroup, epi::CustomIndexArray&lt;epi::UncertainValue, epi::AgeGroup, epi::InfectionState&gt;::Iterator&lt;epi::UncertainValue const&gt;, (void*)0&gt;::Iterator&lt;epi::UncertainValue const&gt;::operator*()</a></td>
-              <td class="coverFnHi">1176</td>
-            </tr>
-    <tr>
-              <td class="coverFn"><a href="custom_index_array.h.gcov.html#362">epi::CustomIndexArray&lt;epi::UncertainValue, epi::AgeGroup, epi::InfectionState&gt;::Slice&lt;epi::AgeGroup, epi::CustomIndexArray&lt;epi::UncertainValue, epi::AgeGroup, epi::InfectionState&gt;::Iterator&lt;epi::UncertainValue const&gt;, (void*)0&gt;::Iterator&lt;epi::UncertainValue const&gt;::operator++()</a></td>
-              <td class="coverFnHi">1176</td>
-            </tr>
-    <tr>
-              <td class="coverFn"><a href="custom_index_array.h.gcov.html#277">epi::CustomIndexArray&lt;epi::UncertainValue, epi::AgeGroup, epi::InfectionState&gt;::Iterator&lt;epi::UncertainValue const&gt;::operator[](long const&amp;)</a></td>
-              <td class="coverFnHi">1176</td>
-            </tr>
-    <tr>
-              <td class="coverFn"><a href="custom_index_array.h.gcov.html#385">epi::CustomIndexArray&lt;epi::UncertainValue, epi::AgeGroup, epi::InfectionState&gt;::Slice&lt;epi::AgeGroup, epi::CustomIndexArray&lt;epi::UncertainValue, epi::AgeGroup, epi::InfectionState&gt;::Iterator&lt;epi::UncertainValue const&gt;, (void*)0&gt;::Iterator&lt;epi::UncertainValue const&gt;::outer_offset(long const&amp;) const</a></td>
-              <td class="coverFnHi">1176</td>
-            </tr>
-    <tr>
               <td class="coverFn"><a href="custom_index_array.h.gcov.html#230">epi::CustomIndexArray&lt;epi::UncertainValue, InfectionState, AgeGroup, Continent&gt;::operator[](epi::Index&lt;InfectionState, AgeGroup, Continent&gt; const&amp;)</a></td>
               <td class="coverFnHi">1183</td>
             </tr>
     <tr>
+              <td class="coverFn"><a href="custom_index_array.h.gcov.html#358">epi::CustomIndexArray&lt;epi::UncertainValue, epi::AgeGroup, epi::InfectionState&gt;::Slice&lt;epi::AgeGroup, epi::CustomIndexArray&lt;epi::UncertainValue, epi::AgeGroup, epi::InfectionState&gt;::Iterator&lt;epi::UncertainValue const&gt;, (void*)0&gt;::Iterator&lt;epi::UncertainValue const&gt;::operator*()</a></td>
+              <td class="coverFnHi">1224</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="custom_index_array.h.gcov.html#362">epi::CustomIndexArray&lt;epi::UncertainValue, epi::AgeGroup, epi::InfectionState&gt;::Slice&lt;epi::AgeGroup, epi::CustomIndexArray&lt;epi::UncertainValue, epi::AgeGroup, epi::InfectionState&gt;::Iterator&lt;epi::UncertainValue const&gt;, (void*)0&gt;::Iterator&lt;epi::UncertainValue const&gt;::operator++()</a></td>
+              <td class="coverFnHi">1224</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="custom_index_array.h.gcov.html#277">epi::CustomIndexArray&lt;epi::UncertainValue, epi::AgeGroup, epi::InfectionState&gt;::Iterator&lt;epi::UncertainValue const&gt;::operator[](long const&amp;)</a></td>
+              <td class="coverFnHi">1224</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="custom_index_array.h.gcov.html#385">epi::CustomIndexArray&lt;epi::UncertainValue, epi::AgeGroup, epi::InfectionState&gt;::Slice&lt;epi::AgeGroup, epi::CustomIndexArray&lt;epi::UncertainValue, epi::AgeGroup, epi::InfectionState&gt;::Iterator&lt;epi::UncertainValue const&gt;, (void*)0&gt;::Iterator&lt;epi::UncertainValue const&gt;::outer_offset(long const&amp;) const</a></td>
+              <td class="coverFnHi">1224</td>
+            </tr>
+    <tr>
               <td class="coverFn"><a href="custom_index_array.h.gcov.html#370">epi::operator==(epi::CustomIndexArray&lt;epi::UncertainValue, epi::AgeGroup, epi::InfectionState&gt;::Slice&lt;epi::AgeGroup, epi::CustomIndexArray&lt;epi::UncertainValue, epi::AgeGroup, epi::InfectionState&gt;::Iterator&lt;epi::UncertainValue const&gt;, (void*)0&gt;::Iterator&lt;epi::UncertainValue const&gt; const&amp;, epi::CustomIndexArray&lt;epi::UncertainValue, epi::AgeGroup, epi::InfectionState&gt;::Slice&lt;epi::AgeGroup, epi::CustomIndexArray&lt;epi::UncertainValue, epi::AgeGroup, epi::InfectionState&gt;::Iterator&lt;epi::UncertainValue const&gt;, (void*)0&gt;::Iterator&lt;epi::UncertainValue const&gt; const&amp;)</a></td>
-              <td class="coverFnHi">1323</td>
+              <td class="coverFnHi">1377</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="custom_index_array.h.gcov.html#377">epi::operator!=(epi::CustomIndexArray&lt;epi::UncertainValue, epi::AgeGroup, epi::InfectionState&gt;::Slice&lt;epi::AgeGroup, epi::CustomIndexArray&lt;epi::UncertainValue, epi::AgeGroup, epi::InfectionState&gt;::Iterator&lt;epi::UncertainValue const&gt;, (void*)0&gt;::Iterator&lt;epi::UncertainValue const&gt; const&amp;, epi::CustomIndexArray&lt;epi::UncertainValue, epi::AgeGroup, epi::InfectionState&gt;::Slice&lt;epi::AgeGroup, epi::CustomIndexArray&lt;epi::UncertainValue, epi::AgeGroup, epi::InfectionState&gt;::Iterator&lt;epi::UncertainValue const&gt;, (void*)0&gt;::Iterator&lt;epi::UncertainValue const&gt; const&amp;)</a></td>
-              <td class="coverFnHi">1323</td>
+              <td class="coverFnHi">1377</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="custom_index_array.h.gcov.html#118">unsigned long epi::flatten_index&lt;epi::Index&lt;InfectionState, AgeGroup, Continent&gt; &gt;(epi::Index&lt;InfectionState, AgeGroup, Continent&gt; const&amp;, epi::Index&lt;InfectionState, AgeGroup, Continent&gt; const&amp;)</a></td>
@@ -1329,39 +1369,39 @@
             </tr>
     <tr>
               <td class="coverFn"><a href="custom_index_array.h.gcov.html#230">epi::CustomIndexArray&lt;epi::UncertainValue, epi::AgeGroup&gt;::operator[](epi::Index&lt;epi::AgeGroup&gt; const&amp;)</a></td>
-              <td class="coverFnHi">4043</td>
+              <td class="coverFnHi">4057</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="custom_index_array.h.gcov.html#118">unsigned long epi::flatten_index&lt;epi::Index&lt;epi::AgeGroup, epi::InfectionState&gt; &gt;(epi::Index&lt;epi::AgeGroup, epi::InfectionState&gt; const&amp;, epi::Index&lt;epi::AgeGroup, epi::InfectionState&gt; const&amp;)</a></td>
-              <td class="coverFnHi">115482</td>
+              <td class="coverFnHi">138228</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="custom_index_array.h.gcov.html#87">std::enable_if&lt;(0ul)&lt;(epi::Index&lt;epi::AgeGroup, epi::InfectionState&gt;::size-(1)), std::pair&lt;unsigned long, unsigned long&gt; &gt;::type epi::details::flatten_index&lt;0ul, epi::Index&lt;epi::AgeGroup, epi::InfectionState&gt; &gt;(epi::Index&lt;epi::AgeGroup, epi::InfectionState&gt; const&amp;, epi::Index&lt;epi::AgeGroup, epi::InfectionState&gt; const&amp;)</a></td>
-              <td class="coverFnHi">115482</td>
+              <td class="coverFnHi">138228</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="custom_index_array.h.gcov.html#80">std::enable_if&lt;(1ul)==(epi::Index&lt;epi::AgeGroup, epi::InfectionState&gt;::size-(1)), std::pair&lt;unsigned long, unsigned long&gt; &gt;::type epi::details::flatten_index&lt;1ul, epi::Index&lt;epi::AgeGroup, epi::InfectionState&gt; &gt;(epi::Index&lt;epi::AgeGroup, epi::InfectionState&gt; const&amp;, epi::Index&lt;epi::AgeGroup, epi::InfectionState&gt; const&amp;)</a></td>
-              <td class="coverFnHi">115482</td>
+              <td class="coverFnHi">138228</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="custom_index_array.h.gcov.html#250">epi::CustomIndexArray&lt;epi::UncertainValue, epi::AgeGroup, epi::InfectionState&gt;::get_flat_index(epi::Index&lt;epi::AgeGroup, epi::InfectionState&gt; const&amp;) const</a></td>
-              <td class="coverFnHi">115482</td>
+              <td class="coverFnHi">138228</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="custom_index_array.h.gcov.html#239">epi::CustomIndexArray&lt;epi::UncertainValue, epi::AgeGroup&gt;::operator[](epi::Index&lt;epi::AgeGroup&gt; const&amp;) const</a></td>
-              <td class="coverFnHi">258006</td>
+              <td class="coverFnHi">315540</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="custom_index_array.h.gcov.html#118">unsigned long epi::flatten_index&lt;epi::Index&lt;epi::AgeGroup&gt; &gt;(epi::Index&lt;epi::AgeGroup&gt; const&amp;, epi::Index&lt;epi::AgeGroup&gt; const&amp;)</a></td>
-              <td class="coverFnHi">262049</td>
+              <td class="coverFnHi">319597</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="custom_index_array.h.gcov.html#80">std::enable_if&lt;(0ul)==(epi::Index&lt;epi::AgeGroup&gt;::size-(1)), std::pair&lt;unsigned long, unsigned long&gt; &gt;::type epi::details::flatten_index&lt;0ul, epi::Index&lt;epi::AgeGroup&gt; &gt;(epi::Index&lt;epi::AgeGroup&gt; const&amp;, epi::Index&lt;epi::AgeGroup&gt; const&amp;)</a></td>
-              <td class="coverFnHi">262049</td>
+              <td class="coverFnHi">319597</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="custom_index_array.h.gcov.html#250">epi::CustomIndexArray&lt;epi::UncertainValue, epi::AgeGroup&gt;::get_flat_index(epi::Index&lt;epi::AgeGroup&gt; const&amp;) const</a></td>
-              <td class="coverFnHi">262049</td>
+              <td class="coverFnHi">319597</td>
             </tr>
   </table>
   <br>

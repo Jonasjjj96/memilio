@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-10-05 11:42:37</td>
+            <td class="headerValue">2021-10-06 15:49:23</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">15</td>
@@ -98,9 +98,9 @@
 <a name="36"><span class="lineNum">      36 </span><span class="lineCov">         18 :     return {index, type};</span></a>
 <a name="37"><span class="lineNum">      37 </span>            : }</a>
 <a name="38"><span class="lineNum">      38 </span>            : </a>
-<a name="39"><span class="lineNum">      39 </span><span class="lineCov">         16 : Person&amp; World::add_person(LocationId id, InfectionState state, AbmAgeGroup age)</span></a>
+<a name="39"><span class="lineNum">      39 </span><span class="lineCov">         16 : Person&amp; World::add_person(LocationId id, InfectionState infection_state, AbmAgeGroup age)</span></a>
 <a name="40"><span class="lineNum">      40 </span>            : {</a>
-<a name="41"><span class="lineNum">      41 </span><span class="lineCov">         16 :     m_persons.push_back(std::make_unique&lt;Person&gt;(id, state, age, m_infection_parameters));</span></a>
+<a name="41"><span class="lineNum">      41 </span><span class="lineCov">         16 :     m_persons.push_back(std::make_unique&lt;Person&gt;(id, infection_state, age, m_infection_parameters));</span></a>
 <a name="42"><span class="lineNum">      42 </span><span class="lineCov">         16 :     auto&amp; person = *m_persons.back();</span></a>
 <a name="43"><span class="lineNum">      43 </span><span class="lineCov">         16 :     get_location(person).add_person(person);</span></a>
 <a name="44"><span class="lineNum">      44 </span><span class="lineCov">         16 :     return person;</span></a>
