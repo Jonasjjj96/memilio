@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-10-06 15:49:23</td>
+            <td class="headerValue">2021-10-11 14:08:20</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">23</td>
@@ -100,10 +100,10 @@
 <a name="38"><span class="lineNum">      38 </span>            :     /**</a>
 <a name="39"><span class="lineNum">      39 </span>            :      * creates a TimeSpan that represents a number of seconds.</a>
 <a name="40"><span class="lineNum">      40 </span>            :      */</a>
-<a name="41"><span class="lineNum">      41 </span><span class="lineCov">        350 :     explicit TimeSpan(int seconds)</span></a>
-<a name="42"><span class="lineNum">      42 </span><span class="lineCov">        350 :         : m_seconds(seconds)</span></a>
+<a name="41"><span class="lineNum">      41 </span><span class="lineCov">        574 :     explicit TimeSpan(int seconds)</span></a>
+<a name="42"><span class="lineNum">      42 </span><span class="lineCov">        574 :         : m_seconds(seconds)</span></a>
 <a name="43"><span class="lineNum">      43 </span>            :     {</a>
-<a name="44"><span class="lineNum">      44 </span><span class="lineCov">        350 :     }</span></a>
+<a name="44"><span class="lineNum">      44 </span><span class="lineCov">        574 :     }</span></a>
 <a name="45"><span class="lineNum">      45 </span>            : </a>
 <a name="46"><span class="lineNum">      46 </span>            :     /**</a>
 <a name="47"><span class="lineNum">      47 </span>            :      * length of time in days.</a>
@@ -220,10 +220,10 @@
 <a name="158"><span class="lineNum">     158 </span>            :     /**</a>
 <a name="159"><span class="lineNum">     159 </span>            :      * creates a TimePoint from a specified number of seconds.</a>
 <a name="160"><span class="lineNum">     160 </span>            :      */</a>
-<a name="161"><span class="lineNum">     161 </span><span class="lineCov">        116 :     explicit TimePoint(int seconds)</span></a>
-<a name="162"><span class="lineNum">     162 </span><span class="lineCov">        116 :         : m_seconds(seconds)</span></a>
+<a name="161"><span class="lineNum">     161 </span><span class="lineCov">        118 :     explicit TimePoint(int seconds)</span></a>
+<a name="162"><span class="lineNum">     162 </span><span class="lineCov">        118 :         : m_seconds(seconds)</span></a>
 <a name="163"><span class="lineNum">     163 </span>            :     {</a>
-<a name="164"><span class="lineNum">     164 </span><span class="lineCov">        116 :     }</span></a>
+<a name="164"><span class="lineNum">     164 </span><span class="lineCov">        118 :     }</span></a>
 <a name="165"><span class="lineNum">     165 </span>            : </a>
 <a name="166"><span class="lineNum">     166 </span>            :     /**</a>
 <a name="167"><span class="lineNum">     167 </span>            :      * time since the epoch in days.</a>
@@ -333,9 +333,9 @@
 <a name="271"><span class="lineNum">     271 </span>            :  * create a TimeSpan of a specified number of seconds.</a>
 <a name="272"><span class="lineNum">     272 </span>            :  * @param seconds number of seconds in the time span.</a>
 <a name="273"><span class="lineNum">     273 </span>            :  */</a>
-<a name="274"><span class="lineNum">     274 </span><span class="lineCov">         63 : inline TimeSpan seconds(int seconds)</span></a>
+<a name="274"><span class="lineNum">     274 </span><span class="lineCov">         79 : inline TimeSpan seconds(int seconds)</span></a>
 <a name="275"><span class="lineNum">     275 </span>            : {</a>
-<a name="276"><span class="lineNum">     276 </span><span class="lineCov">         63 :     return TimeSpan(seconds);</span></a>
+<a name="276"><span class="lineNum">     276 </span><span class="lineCov">         79 :     return TimeSpan(seconds);</span></a>
 <a name="277"><span class="lineNum">     277 </span>            : }</a>
 <a name="278"><span class="lineNum">     278 </span>            : </a>
 <a name="279"><span class="lineNum">     279 </span>            : /**</a>

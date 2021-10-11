@@ -223,6 +223,15 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structepi_1_1HospitalizedToICUTime.html">HospitalizedToICUTime</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">the time people are 'simply' hospitalized before being treated by ICU in the SECIR model in day unit  <a href="structepi_1_1HospitalizedToICUTime.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classepi_1_1Household.html">Household</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A household group represented by a vector with household members.  <a href="classepi_1_1Household.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classepi_1_1HouseholdGroup.html">HouseholdGroup</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A group of households represented by different households.  <a href="classepi_1_1HouseholdGroup.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classepi_1_1HouseholdMember.html">HouseholdMember</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overview: A household member has an vector with weighted age distribution from which the age can be calculated.  <a href="classepi_1_1HouseholdMember.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structepi_1_1ICUCapacity.html">ICUCapacity</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">the icu capacity in the SECIR model  <a href="structepi_1_1ICUCapacity.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -321,7 +330,7 @@ Classes</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structepi_1_1LocationId.html" title="LocationId identifies a Location uniquely.">LocationId</a> identifies a <a class="el" href="classepi_1_1Location.html" title="all locations in the simulated world where persons gather.">Location</a> uniquely.  <a href="structepi_1_1LocationId.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structepi_1_1LockdownDate.html">LockdownDate</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">parameters that govern the migration between locations  <a href="structepi_1_1LockdownDate.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">parameters that govern the migration between locations.  <a href="structepi_1_1LockdownDate.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structepi_1_1MaxRiskOfInfectionFromSympomatic.html">MaxRiskOfInfectionFromSympomatic</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">risk of infection from symptomatic cases increases as test and trace capacity is exceeded.  <a href="structepi_1_1MaxRiskOfInfectionFromSympomatic.html#details">More...</a><br /></td></tr>
@@ -816,6 +825,12 @@ Functions</h2></td></tr>
 <tr class="memitem:af72dbc8ce3e0a9d0e576f9cfe6f5fed4"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceepi.html#af72dbc8ce3e0a9d0e576f9cfe6f5fed4">abs_max</a> (T v1, T v2)</td></tr>
 <tr class="memdesc:af72dbc8ce3e0a9d0e576f9cfe6f5fed4"><td class="mdescLeft">&#160;</td><td class="mdescRight">maximum absolute value of two numbers.  <a href="namespaceepi.html#af72dbc8ce3e0a9d0e576f9cfe6f5fed4">More...</a><br /></td></tr>
 <tr class="separator:af72dbc8ce3e0a9d0e576f9cfe6f5fed4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a620dc5fc631ba3f73c4b433bacedf5dc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceepi.html#a620dc5fc631ba3f73c4b433bacedf5dc">add_household_group_to_world</a> (<a class="el" href="classepi_1_1World.html">epi::World</a> &amp;world, const <a class="el" href="classepi_1_1HouseholdGroup.html">epi::HouseholdGroup</a> &amp;household_group)</td></tr>
+<tr class="memdesc:a620dc5fc631ba3f73c4b433bacedf5dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds households from a household group to the world modell.  <a href="namespaceepi.html#a620dc5fc631ba3f73c4b433bacedf5dc">More...</a><br /></td></tr>
+<tr class="separator:a620dc5fc631ba3f73c4b433bacedf5dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a24c354a07f31b7aecd54b1472961b39f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceepi.html#a24c354a07f31b7aecd54b1472961b39f">add_household_to_world</a> (<a class="el" href="classepi_1_1World.html">epi::World</a> &amp;world, const <a class="el" href="classepi_1_1Household.html">epi::Household</a> &amp;household)</td></tr>
+<tr class="memdesc:a24c354a07f31b7aecd54b1472961b39f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a specific household to the world class.  <a href="namespaceepi.html#a24c354a07f31b7aecd54b1472961b39f">More...</a><br /></td></tr>
+<tr class="separator:a24c354a07f31b7aecd54b1472961b39f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a15a2504363f09ad496faf88547925bef"><td class="memTemplParams" colspan="2">template&lt;class IOContext , class F , class... T&gt; </td></tr>
 <tr class="memitem:a15a2504363f09ad496faf88547925bef"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="namespaceepi_1_1details.html#a3fac1957f2e080c3a4198e55f33a434e">details::ApplyResultT</a>&lt; F, T... &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceepi.html#a15a2504363f09ad496faf88547925bef">apply</a> (IOContext &amp;io, F f, const <a class="el" href="namespaceepi.html#a89f5e00dd122b11fad06af0f2e72ee1a">IOResult</a>&lt; T &gt; &amp;... rs)</td></tr>
 <tr class="memdesc:a15a2504363f09ad496faf88547925bef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluate a function with zero or more unpacked IOResults as arguments.  <a href="namespaceepi.html#a15a2504363f09ad496faf88547925bef">More...</a><br /></td></tr>
@@ -2646,6 +2661,80 @@ template&lt;class T &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>maximum absolute value between v1 and v2 </dd></dl>
+
+</div>
+</div>
+<a id="a620dc5fc631ba3f73c4b433bacedf5dc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a620dc5fc631ba3f73c4b433bacedf5dc">&#9670;&nbsp;</a></span>add_household_group_to_world()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void epi::add_household_group_to_world </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classepi_1_1World.html">epi::World</a> &amp;&#160;</td>
+          <td class="paramname"><em>world</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classepi_1_1HouseholdGroup.html">epi::HouseholdGroup</a> &amp;&#160;</td>
+          <td class="paramname"><em>household_group</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Adds households from a household group to the world modell. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">world</td><td>The world class to which the group has to be added. </td></tr>
+    <tr><td class="paramname">household_group</td><td>The household group to add. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a24c354a07f31b7aecd54b1472961b39f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a24c354a07f31b7aecd54b1472961b39f">&#9670;&nbsp;</a></span>add_household_to_world()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void epi::add_household_to_world </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classepi_1_1World.html">epi::World</a> &amp;&#160;</td>
+          <td class="paramname"><em>world</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classepi_1_1Household.html">epi::Household</a> &amp;&#160;</td>
+          <td class="paramname"><em>household</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Adds a specific household to the world class. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">world</td><td>The world class to which the household has to be added. </td></tr>
+    <tr><td class="paramname">household</td><td>The household to add to world. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

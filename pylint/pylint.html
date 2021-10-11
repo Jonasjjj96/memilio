@@ -1335,48 +1335,6 @@
             </tr>
             
             <tr>
-                <td>1</td>
-                <td>0</td>
-                <td>refactor</td>
-                <td><code>duplicate-code</code></td>
-                <td>R0801</td>
-                <td></td>
-                <td><pre>Similar lines in 2 files
-==epidemiology.epidata.getPopulationData:[100:110]
-==epidemiology.epidata.getRKIData:[232:242]
-            sys.exit(exit_string)
-    else:
-
-        # Supported data formats:
-        load = {
-            &#39;csv&#39;: gd.loadCsv,
-            &#39;geojson&#39;: gd.loadGeojson
-        }
-
-        # Get data:</pre></td>
-            </tr>
-            
-            <tr>
-                <td>1</td>
-                <td>0</td>
-                <td>refactor</td>
-                <td><code>duplicate-code</code></td>
-                <td>R0801</td>
-                <td></td>
-                <td><pre>Similar lines in 2 files
-==epidemiology.epidata.getJHData:[61:69]
-==epidemiology.epidata.getRKIData:[228:236]
-        try:
-            df = pandas.read_json(file_in)
-        except ValueError:
-            exit_string = &#34;Error: The file: &#34; + file_in + &#34; does not exist. Call program without -r flag to get it.&#34;
-            sys.exit(exit_string)
-    else:
-
-        # Supported data formats:</pre></td>
-            </tr>
-            
-            <tr>
                 <td>34</td>
                 <td>0</td>
                 <td>error</td>
@@ -2261,6 +2219,48 @@
             </tr>
             
             <tr>
+                <td>1</td>
+                <td>0</td>
+                <td>refactor</td>
+                <td><code>duplicate-code</code></td>
+                <td>R0801</td>
+                <td></td>
+                <td><pre>Similar lines in 2 files
+==epidemiology.epidata.getPopulationData:[100:110]
+==epidemiology.epidata.getRKIData:[232:242]
+            sys.exit(exit_string)
+    else:
+
+        # Supported data formats:
+        load = {
+            &#39;csv&#39;: gd.loadCsv,
+            &#39;geojson&#39;: gd.loadGeojson
+        }
+
+        # ArcGIS public data item ID:</pre></td>
+            </tr>
+            
+            <tr>
+                <td>1</td>
+                <td>0</td>
+                <td>refactor</td>
+                <td><code>duplicate-code</code></td>
+                <td>R0801</td>
+                <td></td>
+                <td><pre>Similar lines in 2 files
+==epidemiology.epidata.getJHData:[61:69]
+==epidemiology.epidata.getRKIData:[228:236]
+        try:
+            df = pandas.read_json(file_in)
+        except ValueError:
+            exit_string = &#34;Error: The file: &#34; + file_in + &#34; does not exist. Call program without -r flag to get it.&#34;
+            sys.exit(exit_string)
+    else:
+        # Get data:
+        # https://raw.githubusercontent.com/datasets/covid-19/master/data/time-series-19-covid-combined.csv</pre></td>
+            </tr>
+            
+            <tr>
                 <td>27</td>
                 <td>0</td>
                 <td>warning</td>
@@ -2702,13 +2702,13 @@
             </tr>
             
             <tr>
-                <td>refactor</td>
-                <td>40</td>
+                <td>warning</td>
+                <td>37</td>
             </tr>
             
             <tr>
-                <td>warning</td>
-                <td>37</td>
+                <td>refactor</td>
+                <td>40</td>
             </tr>
             
         </table>
@@ -2732,33 +2732,33 @@
             </tr>
             
             <tr>
+                <td>bare-except</td>
+                <td>12</td>
+            </tr>
+            
+            <tr>
                 <td>too-many-locals</td>
                 <td>10</td>
             </tr>
             
             <tr>
-                <td>consider-using-dict-items</td>
+                <td>consider-iterating-dictionary</td>
                 <td>1</td>
             </tr>
             
             <tr>
-                <td>line-too-long</td>
-                <td>9</td>
+                <td>too-many-arguments</td>
+                <td>6</td>
             </tr>
             
             <tr>
-                <td>no-else-return</td>
-                <td>1</td>
+                <td>too-many-nested-blocks</td>
+                <td>8</td>
             </tr>
             
             <tr>
-                <td>missing-function-docstring</td>
-                <td>4</td>
-            </tr>
-            
-            <tr>
-                <td>bare-except</td>
-                <td>12</td>
+                <td>too-many-branches</td>
+                <td>5</td>
             </tr>
             
             <tr>
@@ -2767,17 +2767,12 @@
             </tr>
             
             <tr>
-                <td>consider-using-enumerate</td>
-                <td>8</td>
+                <td>line-too-long</td>
+                <td>9</td>
             </tr>
             
             <tr>
-                <td>inconsistent-return-statements</td>
-                <td>1</td>
-            </tr>
-            
-            <tr>
-                <td>unused-argument</td>
+                <td>missing-function-docstring</td>
                 <td>4</td>
             </tr>
             
@@ -2787,32 +2782,7 @@
             </tr>
             
             <tr>
-                <td>too-many-branches</td>
-                <td>5</td>
-            </tr>
-            
-            <tr>
-                <td>too-many-function-args</td>
-                <td>1</td>
-            </tr>
-            
-            <tr>
-                <td>unused-import</td>
-                <td>1</td>
-            </tr>
-            
-            <tr>
-                <td>too-many-nested-blocks</td>
-                <td>8</td>
-            </tr>
-            
-            <tr>
-                <td>too-many-arguments</td>
-                <td>6</td>
-            </tr>
-            
-            <tr>
-                <td>too-many-boolean-expressions</td>
+                <td>consider-using-dict-items</td>
                 <td>1</td>
             </tr>
             
@@ -2837,12 +2807,42 @@
             </tr>
             
             <tr>
+                <td>unused-argument</td>
+                <td>4</td>
+            </tr>
+            
+            <tr>
                 <td>wrong-import-order</td>
                 <td>2</td>
             </tr>
             
             <tr>
-                <td>consider-iterating-dictionary</td>
+                <td>consider-using-enumerate</td>
+                <td>8</td>
+            </tr>
+            
+            <tr>
+                <td>too-many-boolean-expressions</td>
+                <td>1</td>
+            </tr>
+            
+            <tr>
+                <td>no-else-return</td>
+                <td>1</td>
+            </tr>
+            
+            <tr>
+                <td>inconsistent-return-statements</td>
+                <td>1</td>
+            </tr>
+            
+            <tr>
+                <td>too-many-function-args</td>
+                <td>1</td>
+            </tr>
+            
+            <tr>
+                <td>unused-import</td>
                 <td>1</td>
             </tr>
             
@@ -2862,28 +2862,23 @@
             </tr>
             
             <tr>
-                <td>epidemiology.epidata.getJHData</td>
+                <td>epidemiology.epidata.getDIVIData</td>
+                <td>21</td>
+            </tr>
+            
+            <tr>
+                <td>epidemiology.epidata.getSimulationData</td>
                 <td>9</td>
             </tr>
             
             <tr>
-                <td>epidemiology.epidata.getPopulationData</td>
-                <td>29</td>
+                <td>epidemiology.epidata.getDataIntoPandasDataFrame</td>
+                <td>21</td>
             </tr>
             
             <tr>
-                <td>epidemiology.epidata.getRKIDatawithEstimations</td>
-                <td>11</td>
-            </tr>
-            
-            <tr>
-                <td>epidemiology.epidata.commuter_migration_bfa</td>
-                <td>33</td>
-            </tr>
-            
-            <tr>
-                <td>epidemiology.epidata.cleanData</td>
-                <td>4</td>
+                <td>epidemiology.epidata.getJHData</td>
+                <td>9</td>
             </tr>
             
             <tr>
@@ -2897,23 +2892,28 @@
             </tr>
             
             <tr>
-                <td>epidemiology.epidata.getDIVIData</td>
-                <td>21</td>
-            </tr>
-            
-            <tr>
-                <td>epidemiology.epidata.getDataIntoPandasDataFrame</td>
-                <td>21</td>
-            </tr>
-            
-            <tr>
-                <td>epidemiology.epidata.getSimulationData</td>
-                <td>9</td>
+                <td>epidemiology.epidata.commuter_migration_bfa</td>
+                <td>33</td>
             </tr>
             
             <tr>
                 <td>epidemiology.epidata.getRKIData</td>
-                <td>89</td>
+                <td>87</td>
+            </tr>
+            
+            <tr>
+                <td>epidemiology.epidata.cleanData</td>
+                <td>4</td>
+            </tr>
+            
+            <tr>
+                <td>epidemiology.epidata.getPopulationData</td>
+                <td>29</td>
+            </tr>
+            
+            <tr>
+                <td>epidemiology.epidata.getRKIDatawithEstimations</td>
+                <td>13</td>
             </tr>
             
         </table>
@@ -2927,28 +2927,23 @@
             </tr>
             
             <tr>
-                <td>epidemiology/epidata/getJHData.py</td>
+                <td>epidemiology/epidata/getDIVIData.py</td>
+                <td>21</td>
+            </tr>
+            
+            <tr>
+                <td>epidemiology/epidata/getSimulationData.py</td>
                 <td>9</td>
             </tr>
             
             <tr>
-                <td>epidemiology/epidata/getPopulationData.py</td>
-                <td>29</td>
+                <td>epidemiology/epidata/getDataIntoPandasDataFrame.py</td>
+                <td>21</td>
             </tr>
             
             <tr>
-                <td>epidemiology/epidata/getRKIDatawithEstimations.py</td>
-                <td>11</td>
-            </tr>
-            
-            <tr>
-                <td>epidemiology/epidata/commuter_migration_bfa.py</td>
-                <td>33</td>
-            </tr>
-            
-            <tr>
-                <td>epidemiology/epidata/cleanData.py</td>
-                <td>4</td>
+                <td>epidemiology/epidata/getJHData.py</td>
+                <td>9</td>
             </tr>
             
             <tr>
@@ -2962,23 +2957,28 @@
             </tr>
             
             <tr>
-                <td>epidemiology/epidata/getDIVIData.py</td>
-                <td>21</td>
-            </tr>
-            
-            <tr>
-                <td>epidemiology/epidata/getDataIntoPandasDataFrame.py</td>
-                <td>21</td>
-            </tr>
-            
-            <tr>
-                <td>epidemiology/epidata/getSimulationData.py</td>
-                <td>9</td>
+                <td>epidemiology/epidata/commuter_migration_bfa.py</td>
+                <td>33</td>
             </tr>
             
             <tr>
                 <td>epidemiology/epidata/getRKIData.py</td>
-                <td>89</td>
+                <td>87</td>
+            </tr>
+            
+            <tr>
+                <td>epidemiology/epidata/cleanData.py</td>
+                <td>4</td>
+            </tr>
+            
+            <tr>
+                <td>epidemiology/epidata/getPopulationData.py</td>
+                <td>29</td>
+            </tr>
+            
+            <tr>
+                <td>epidemiology/epidata/getRKIDatawithEstimations.py</td>
+                <td>13</td>
             </tr>
             
         </table>

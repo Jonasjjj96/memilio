@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-10-06 15:49:23</td>
+            <td class="headerValue">2021-10-11 14:08:20</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">9</td>
@@ -192,12 +192,12 @@
 <a name="130"><span class="lineNum">     130 </span>            :      * @param t the current time</a>
 <a name="131"><span class="lineNum">     131 </span>            :      * @param dydt a reference to the calculated output</a>
 <a name="132"><span class="lineNum">     132 </span>            :      */</a>
-<a name="133"><span class="lineNum">     133 </span><span class="lineCov">       7017 :     void eval_right_hand_side(Eigen::Ref&lt;const Eigen::VectorXd&gt; pop, Eigen::Ref&lt;const Eigen::VectorXd&gt; y, double t, Eigen::Ref&lt;Eigen::VectorXd&gt; dydt) const</span></a>
+<a name="133"><span class="lineNum">     133 </span><span class="lineCov">       6759 :     void eval_right_hand_side(Eigen::Ref&lt;const Eigen::VectorXd&gt; pop, Eigen::Ref&lt;const Eigen::VectorXd&gt; y, double t, Eigen::Ref&lt;Eigen::VectorXd&gt; dydt) const</span></a>
 <a name="134"><span class="lineNum">     134 </span>            :     {</a>
-<a name="135"><span class="lineNum">     135 </span><span class="lineCov">       7017 :         dydt.setZero();</span></a>
+<a name="135"><span class="lineNum">     135 </span><span class="lineCov">       6759 :         dydt.setZero();</span></a>
 <a name="136"><span class="lineNum">     136 </span>            : </a>
 <a name="137"><span class="lineNum">     137 </span>            : #if USE_DERIV_FUNC</a>
-<a name="138"><span class="lineNum">     138 </span><span class="lineCov">       7017 :         this-&gt;get_derivatives(pop, y, t, dydt);</span></a>
+<a name="138"><span class="lineNum">     138 </span><span class="lineCov">       6759 :         this-&gt;get_derivatives(pop, y, t, dydt);</span></a>
 <a name="139"><span class="lineNum">     139 </span>            : #else // USE_DERIV_FUNC</a>
 <a name="140"><span class="lineNum">     140 </span>            :         for (auto&amp; flow : flows) {</a>
 <a name="141"><span class="lineNum">     141 </span>            :             ScalarType f = std::get&lt;2&gt;(flow)(parameters, pop, y, t);</a>
@@ -205,7 +205,7 @@
 <a name="143"><span class="lineNum">     143 </span>            :             dydt[call(Populations::get_flat_index, std::get&lt;1&gt;(flow))] += f;</a>
 <a name="144"><span class="lineNum">     144 </span>            :         }</a>
 <a name="145"><span class="lineNum">     145 </span>            : #endif // USE_DERIV_FUNC</a>
-<a name="146"><span class="lineNum">     146 </span><span class="lineCov">       7017 :     }</span></a>
+<a name="146"><span class="lineNum">     146 </span><span class="lineCov">       6759 :     }</span></a>
 <a name="147"><span class="lineNum">     147 </span>            : </a>
 <a name="148"><span class="lineNum">     148 </span>            :     /**</a>
 <a name="149"><span class="lineNum">     149 </span>            :      * @brief get_initial_values returns the initial values for the compartmental populations.</a>
