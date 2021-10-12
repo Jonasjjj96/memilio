@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['epidemiology_2416',['Epidemiology',['../md__home_runner_work_memilio_memilio_cpp_Readme.html',1,'']]]
+  ['memilio_20_2d_20a_20high_20performance_20modular_20epidemics_20simulation_20software_149',['MEmilio - a high performance Modular EpideMIcs simuLatIOn software',['../index.html',1,'']]]
 ];

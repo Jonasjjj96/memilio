@@ -70,54 +70,15 @@ $(function() {
 <p>MEmilio is a common project between the Institute for Software Technology of the German Aerospace Center (DLR) and the department of Systems Immunology (SIMM) of the Helmholtz Center for Infection Research (HZI). This project will bring cutting edge and compute intensive epidemiological models to a large scale, which enables a precise and high-resolution spatiotemporal pandemic simulation for entire countries. MEmilio is still under developement but it is available as Open Source and we encourage everyone to make use of it. If you use it, please cite:</p>
 <p>M. J. Kühn, D. Abele, T. Mitra, W. Koslow, M. Abedi, K. Rack, M. Siggel, S. Khailaie, M. Klitz, S. Binder, Luca Spataro, J. Gilg, J. Kleinert, M. Häberle, L. Plötzke, C. D. Spinner, M. Stecher, X. X. Zhu, A. Basermann, M. Meyer-Hermann, "Assessment of effective mitigation and prediction of the spread of SARS-CoV-2 in Germany using demographic information and spatial resolution". Mathematical Biosciences 339, 108648 (2021). <a href="https://www.sciencedirect.com/science/article/pii/S0025556421000845?via%3Dihub">https://www.sciencedirect.com/science/article/pii/S0025556421000845?via%3Dihub</a></p>
 <p><b>Getting started</b></p>
-<p>This project is divided into multiple building blocks. The implementation of the epidemiological models is to be found in cpp. Currently, there is an ODE-SECIR and an agent-based model. Data acquisition tools and data is to be found in data.</p>
+<p>This project is divided into multiple building blocks. The C++ implementation of the epidemiological models can be found in the cpp directory (see the README there). Currently, there is an ODE-SECIR and an agent-based model.</p>
+<p>Data acquisition tools and data is to be found in data.</p>
 <p>In pycode, the epidemiology python package is defined. It consists of python bindings to call the C++ code available in cpp and the epidata subpackage which provides tools to download and structure important data. More about the python package can be found in <a href="pycode/README.rst">Python README</a>.</p>
-<p>The C++ code is divided into two libraries, <em>epidemiology</em> (models, math, ensemble runs etc.) and <em>epidemiology_io</em> (IO routines for parameter sets and simulation results). By standard, <em>epidemiology</em> is built without <em>epidemiology_io</em>.</p>
 <p><b>Documentation</b></p>
-<p>In each important part of the project, which are described above, there is a README, which contains more information about the structure of the particular part of the project, the instructions for the user and especially the instructions for the developer.</p>
-<p>Also, the code is documented with doxygen and instructions on how to obtain it can be found in the docs folder. The documentation of the code of the master branch can be found here: <a href="https://dlr-sc.github.io/memilio/documentation/index.html">https://dlr-sc.github.io/memilio/documentation/index.html</a></p>
-<p><b>Requirements</b></p>
-<p>By standard <em>epidemiology</em> library is bundled with</p><ul>
-<li>spdlog (<a href="https://github.com/gabime/spdlog">https://github.com/gabime/spdlog</a>)</li>
-<li>eigen v3.3 (<a href="http://gitlab.com/libeigen/eigen">http://gitlab.com/libeigen/eigen</a> and <a href="http://eigen.tuxfamily.org">http://eigen.tuxfamily.org</a>)</li>
-<li>boost outcome and optional (<a href="https://www.boost.org/">https://www.boost.org/</a>)</li>
-</ul>
-<p>See thirdparty/CMakeLists.txt for details.</p>
-<p>In order to use IO of parameters and simulation results (<em>epidemiology_io</em> library), the tool HDF5 (<a href="https://www.hdfgroup.org/">https://www.hdfgroup.org/</a> e.g., via apt install libhdf5-serial-dev) needs to be installed.</p>
-<p>In addition, <em>epidemiology_io</em> is bundled with</p><ul>
-<li>jsoncpp (<a href="https://github.com/open-source-parsers/jsoncpp">https://github.com/open-source-parsers/jsoncpp</a>)</li>
-<li>Boost Filesystem (<a href="https://www.boost.org/">https://www.boost.org/</a>)</li>
-</ul>
-<p>All bundled libraries can be built as part of this project and don't need to be installed.</p>
-<p>See here for more information on 3rdparty-dependencies: <a href="cpp/thirdparty/Readme.rst">cpp/thirdparty/Readme.rst</a></p>
-<p><b>Installation</b></p>
-<p><em>Making and executing C++ code</em></p>
-<ul>
-<li>(Create a build folder and) do cmake .. (without IO library) or cmake -DEPI_BUILD_EPI_IO=ON .. (with IO library) in cpp/build/</li>
-<li>Do cmake &ndash;build .</li>
-<li>Run<ul>
-<li>an example via ./examples/secir_ageres</li>
-<li>all unit tests via ./tests/runUnitTests</li>
-</ul>
-</li>
-</ul>
-<p><em>Running code coverage analysis</em></p>
-<p>Code coverage analysis currently only works on linux with the "Makefile" generator and in Debug mode. To perform the analysis, configure cmake as follows </p><pre class="fragment">cmake -DCMAKE_BUILD_TYPE=Debug -DEPI_TEST_COVERAGE=ON ..
-</pre><p>This step needs to have the tool lcov installed. To execute the coverage, run </p><pre class="fragment">cmake --build . --target coverage
-</pre><p>It will generate a html report inside the <code>coverage</code> directory.</p>
-<p><em>Steps to execute C++ code via python bindings</em></p>
-<ul>
-<li>Create a python virtual environment via python3 -m venv virtualenv/ somewhere under the main epidemiology/ folder</li>
-<li>Activate the environment via source virtualenv/bin/activate</li>
-<li>Do pip3 install scikit-build</li>
-<li>In epidemiology/pycode do<ul>
-<li>python3 setup.py build</li>
-<li>python3 setup.py install</li>
-<li>execute some example</li>
-</ul>
-</li>
-<li>Run the python tests in the pycode/test folder by typing python -m unittest</li>
-</ul>
+<p>Each important part of the project described above is described in detail in the README in the corresponding directory. The README contains e.g. configuration and usage instructions for users and developers.</p>
+<p>Also, the code is documented with doxygen and instructions on how to obtain it can be found in the docs folder. The documentation of the code of the master branch can be found at the following URL:</p>
+<p><a href="https://dlr-sc.github.io/memilio/documentation/index.html">https://dlr-sc.github.io/memilio/documentation/index.html</a></p>
+<p><b>Installation, Usage and Requirements</b></p>
+<p>Each part has different requirements and usage. Detailed instruction can be found in the corresponding READMEs.</p>
 <p><b>Development</b></p><ul>
 <li><a href="https://github.com/DLR-SC/memilio/wiki/git-workflow">Git workflow and change process</a></li>
 <li><a href="https://github.com/DLR-SC/memilio/wiki/coding-guidelines">Coding Guidelines</a> </li>

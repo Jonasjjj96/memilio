@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['keynotfound_577',['KeyNotFound',['../namespaceepi.html#a1e26c2aefb564c12224c2dd16b1ba8ceaa645e4cfc8d16be330607ad52aec5f98',1,'epi']]]
+  ['print_5ferror_70',['print_error',['../namespaceepidemiology_1_1epidata_1_1getSimulationData.html#a09323873bab3ba27b69bf78ee1b098ff',1,'epidemiology::epidata::getSimulationData']]]
 ];

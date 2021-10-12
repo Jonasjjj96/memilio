@@ -1,12 +1,11 @@
 var searchData=
 [
-  ['damping_2ecpp_1425',['damping.cpp',['../damping_8cpp.html',1,'']]],
-  ['damping_2eh_1426',['damping.h',['../damping_8h.html',1,'']]],
-  ['damping_5fsampling_2ecpp_1427',['damping_sampling.cpp',['../damping__sampling_8cpp.html',1,'']]],
-  ['damping_5fsampling_2eh_1428',['damping_sampling.h',['../damping__sampling_8h.html',1,'']]],
-  ['date_2ecpp_1429',['date.cpp',['../date_8cpp.html',1,'']]],
-  ['date_2eh_1430',['date.h',['../date_8h.html',1,'']]],
-  ['defaultdict_2epy_1431',['defaultDict.py',['../defaultDict_8py.html',1,'']]],
-  ['dynamic_5fnpis_2ecpp_1432',['dynamic_npis.cpp',['../dynamic__npis_8cpp.html',1,'']]],
-  ['dynamic_5fnpis_2eh_1433',['dynamic_npis.h',['../dynamic__npis_8h.html',1,'']]]
+  ['getdataintopandasdataframe_2epy_92',['getDataIntoPandasDataFrame.py',['../getDataIntoPandasDataFrame_8py.html',1,'']]],
+  ['getdividata_2epy_93',['getDIVIData.py',['../getDIVIData_8py.html',1,'']]],
+  ['getjhdata_2epy_94',['getJHData.py',['../getJHData_8py.html',1,'']]],
+  ['getpopulationdata_2epy_95',['getPopulationData.py',['../getPopulationData_8py.html',1,'']]],
+  ['getrkidata_2epy_96',['getRKIData.py',['../getRKIData_8py.html',1,'']]],
+  ['getrkidatawithestimations_2epy_97',['getRKIDatawithEstimations.py',['../getRKIDatawithEstimations_8py.html',1,'']]],
+  ['getsimulationdata_2epy_98',['getSimulationData.py',['../getSimulationData_8py.html',1,'']]],
+  ['getvaccinedata_2epy_99',['getVaccineData.py',['../getVaccineData_8py.html',1,'']]]
 ];
