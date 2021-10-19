@@ -151,17 +151,17 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <b>Initial value:</b><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;=  {</div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;   <span class="stringliteral">&#39;read_data&#39;</span>: <span class="keyword">False</span>,</div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;   <span class="stringliteral">&#39;make_plot&#39;</span>: <span class="keyword">False</span>,</div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;   <span class="stringliteral">&#39;out_folder&#39;</span>: default_file_path,</div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;   <span class="stringliteral">&#39;update_data&#39;</span>: <span class="keyword">False</span>,</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;   <span class="stringliteral">&#39;start_date&#39;</span>: date(2020, 4, 24),</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;   <span class="stringliteral">&#39;end_date&#39;</span>: date.today(),</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;   <span class="stringliteral">&#39;split_berlin&#39;</span>: <span class="keyword">False</span>,</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;   <span class="stringliteral">&#39;moving_average&#39;</span>: <span class="keyword">False</span>,</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;   <span class="stringliteral">&#39;fill_dates&#39;</span>: <span class="keyword">False</span>,</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;   <span class="stringliteral">&#39;file_format&#39;</span>: <span class="stringliteral">&#39;json_timeasstring&#39;</span>,</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;   <span class="stringliteral">&#39;no_raw&#39;</span>: <span class="keyword">False</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;    <span class="stringliteral">&#39;read_data&#39;</span>: <span class="keyword">False</span>,</div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;    <span class="stringliteral">&#39;make_plot&#39;</span>: <span class="keyword">False</span>,</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;    <span class="stringliteral">&#39;out_folder&#39;</span>: default_file_path,</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;    <span class="stringliteral">&#39;update_data&#39;</span>: <span class="keyword">False</span>,</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;    <span class="stringliteral">&#39;start_date&#39;</span>: date(2020, 4, 24),</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    <span class="stringliteral">&#39;end_date&#39;</span>: date.today(),</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    <span class="stringliteral">&#39;split_berlin&#39;</span>: <span class="keyword">False</span>,</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <span class="stringliteral">&#39;moving_average&#39;</span>: <span class="keyword">False</span>,</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <span class="stringliteral">&#39;fill_dates&#39;</span>: <span class="keyword">False</span>,</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <span class="stringliteral">&#39;file_format&#39;</span>: <span class="stringliteral">&#39;json_timeasstring&#39;</span>,</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="stringliteral">&#39;no_raw&#39;</span>: <span class="keyword">False</span></div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
@@ -277,14 +277,15 @@ Variables</h2></td></tr>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="stringliteral">&#39;gemeindeschluessel&#39;</span>: EngEng[<span class="stringliteral">&#39;idCounty&#39;</span>],</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="stringliteral">&#39;anzahl_standorte&#39;</span>: EngEng[<span class="stringliteral">&#39;reporting_hospitals&#39;</span>],</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="stringliteral">&#39;faelle_covid_aktuell&#39;</span>: EngEng[<span class="stringliteral">&#39;intensive care unit&#39;</span>],</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="stringliteral">&#39;faelle_covid_aktuell_beatmet&#39;</span>: EngEng[<span class="stringliteral">&#39;ICU_ventilated&#39;</span>],</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="stringliteral">&#39;LAN_ew_GEN&#39;</span>: EngEng[<span class="stringliteral">&#39;state&#39;</span>],</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="stringliteral">&#39;LAN_ew_EWZ&#39;</span>: EngEng[<span class="stringliteral">&#39;population&#39;</span>],</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="stringliteral">&#39;LAN_ew_RS&#39;</span>: EngEng[<span class="stringliteral">&#39;idState&#39;</span>],</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="stringliteral">&#39;EWZ&#39;</span>: EngEng[<span class="stringliteral">&#39;population&#39;</span>],</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="stringliteral">&#39;GEN&#39;</span>: EngEng[<span class="stringliteral">&#39;county&#39;</span>],</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="stringliteral">&#39;RS&#39;</span>: EngEng[<span class="stringliteral">&#39;idCounty&#39;</span>]</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;}</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="comment"># column name new (from 31.03.2021): &quot;faelle_covid_aktuell_invasiv_beatmet&quot;</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="stringliteral">&#39;faelle_covid_aktuell_invasiv_beatmet&#39;</span>: EngEng[<span class="stringliteral">&#39;ICU_ventilated&#39;</span>],</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="stringliteral">&#39;LAN_ew_GEN&#39;</span>: EngEng[<span class="stringliteral">&#39;state&#39;</span>],</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="stringliteral">&#39;LAN_ew_EWZ&#39;</span>: EngEng[<span class="stringliteral">&#39;population&#39;</span>],</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="stringliteral">&#39;LAN_ew_RS&#39;</span>: EngEng[<span class="stringliteral">&#39;idState&#39;</span>],</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="stringliteral">&#39;EWZ&#39;</span>: EngEng[<span class="stringliteral">&#39;population&#39;</span>],</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="stringliteral">&#39;GEN&#39;</span>: EngEng[<span class="stringliteral">&#39;county&#39;</span>],</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="stringliteral">&#39;RS&#39;</span>: EngEng[<span class="stringliteral">&#39;idCounty&#39;</span>]</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
