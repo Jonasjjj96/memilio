@@ -31,18 +31,18 @@
             <td class="headerValue">coverage.info</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntry">144</td>
-            <td class="headerCovTableEntry">159</td>
-            <td class="headerCovTableEntryHi">90.6 %</td>
+            <td class="headerCovTableEntry">154</td>
+            <td class="headerCovTableEntry">169</td>
+            <td class="headerCovTableEntryHi">91.1 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-11-12 12:50:43</td>
+            <td class="headerValue">2021-11-12 13:05:09</td>
             <td></td>
             <td class="headerItem">Functions:</td>
-            <td class="headerCovTableEntry">35</td>
             <td class="headerCovTableEntry">38</td>
-            <td class="headerCovTableEntryHi">92.1 %</td>
+            <td class="headerCovTableEntry">42</td>
+            <td class="headerCovTableEntryHi">90.5 %</td>
           </tr>
           <tr><td><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
         </table>
@@ -139,7 +139,7 @@
 <a name="77"><span class="lineNum">      77 </span>            :     {</a>
 <a name="78"><span class="lineNum">      78 </span><span class="lineCov">          2 :     }</span></a>
 <a name="79"><span class="lineNum">      79 </span>            : </a>
-<a name="80"><span class="lineNum">      80 </span><span class="lineCov">       5158 :     virtual ~ParameterDistribution() = default;</span></a>
+<a name="80"><span class="lineNum">      80 </span><span class="lineCov">       6076 :     virtual ~ParameterDistribution() = default;</span></a>
 <a name="81"><span class="lineNum">      81 </span>            : </a>
 <a name="82"><span class="lineNum">      82 </span><span class="lineCov">          2 :     void set_lower_bound(double lower_bound)</span></a>
 <a name="83"><span class="lineNum">      83 </span>            :     {</a>
@@ -364,10 +364,10 @@
 <a name="302"><span class="lineNum">     302 </span><span class="lineCov">       1412 :         int i        = 0;</span></a>
 <a name="303"><span class="lineNum">     303 </span><span class="lineCov">       1412 :         int retries  = 10;</span></a>
 <a name="304"><span class="lineNum">     304 </span><span class="lineCov">       1412 :         double rnumb = m_distribution(thread_local_rng());</span></a>
-<a name="305"><span class="lineNum">     305 </span><span class="lineCov">       1420 :         while ((rnumb &gt; m_upper_bound || rnumb &lt; m_lower_bound) &amp;&amp; i &lt; retries) {</span></a>
-<a name="306"><span class="lineNum">     306 </span><span class="lineCov">          8 :             rnumb = m_distribution(thread_local_rng());</span></a>
-<a name="307"><span class="lineNum">     307 </span><span class="lineCov">          8 :             i++;</span></a>
-<a name="308"><span class="lineNum">     308 </span><span class="lineCov">          8 :             if (i == retries) {</span></a>
+<a name="305"><span class="lineNum">     305 </span><span class="lineCov">       1416 :         while ((rnumb &gt; m_upper_bound || rnumb &lt; m_lower_bound) &amp;&amp; i &lt; retries) {</span></a>
+<a name="306"><span class="lineNum">     306 </span><span class="lineCov">          4 :             rnumb = m_distribution(thread_local_rng());</span></a>
+<a name="307"><span class="lineNum">     307 </span><span class="lineCov">          4 :             i++;</span></a>
+<a name="308"><span class="lineNum">     308 </span><span class="lineCov">          4 :             if (i == retries) {</span></a>
 <a name="309"><span class="lineNum">     309 </span><span class="lineNoCov">          0 :                 log_warning(&quot;Not successfully sampled within [min,max].&quot;);</span></a>
 <a name="310"><span class="lineNum">     310 </span><span class="lineNoCov">          0 :                 if (rnumb &gt; m_upper_bound) {</span></a>
 <a name="311"><span class="lineNum">     311 </span><span class="lineNoCov">          0 :                     rnumb = m_upper_bound;</span></a>
@@ -380,136 +380,158 @@
 <a name="318"><span class="lineNum">     318 </span><span class="lineCov">       1412 :         return rnumb;</span></a>
 <a name="319"><span class="lineNum">     319 </span>            :     }</a>
 <a name="320"><span class="lineNum">     320 </span>            : </a>
-<a name="321"><span class="lineNum">     321 </span><span class="lineCov">       4665 :     ParameterDistribution* clone() const override</span></a>
-<a name="322"><span class="lineNum">     322 </span>            :     {</a>
-<a name="323"><span class="lineNum">     323 </span><span class="lineCov">       4665 :         return new ParameterDistributionNormal(*this);</span></a>
-<a name="324"><span class="lineNum">     324 </span>            :     }</a>
-<a name="325"><span class="lineNum">     325 </span>            : </a>
-<a name="326"><span class="lineNum">     326 </span>            : private:</a>
-<a name="327"><span class="lineNum">     327 </span>            :     double m_mean; // the mean value of the normal distribution</a>
-<a name="328"><span class="lineNum">     328 </span>            :     double m_standard_dev; // the standard deviation of the normal distribution</a>
-<a name="329"><span class="lineNum">     329 </span>            :     constexpr static double m_quantile = 2.5758; // 0.995 quartile</a>
-<a name="330"><span class="lineNum">     330 </span>            :     std::normal_distribution&lt;double&gt; m_distribution;</a>
-<a name="331"><span class="lineNum">     331 </span>            :     bool m_log_stddev_change = true;</a>
-<a name="332"><span class="lineNum">     332 </span>            : };</a>
-<a name="333"><span class="lineNum">     333 </span>            : </a>
-<a name="334"><span class="lineNum">     334 </span>            : template&lt;class IOObj&gt;</a>
-<a name="335"><span class="lineNum">     335 </span><span class="lineCov">        152 : void details::SerializationVisitor&lt;IOObj&gt;::visit(const ParameterDistributionNormal&amp; normal_dist)</span></a>
-<a name="336"><span class="lineNum">     336 </span>            : {</a>
-<a name="337"><span class="lineNum">     337 </span><span class="lineCov">        152 :     obj.add_element(&quot;Type&quot;, std::string(&quot;Normal&quot;));</span></a>
-<a name="338"><span class="lineNum">     338 </span><span class="lineCov">        152 :     obj.add_element(&quot;Mean&quot;, normal_dist.get_mean());</span></a>
-<a name="339"><span class="lineNum">     339 </span><span class="lineCov">        152 :     obj.add_element(&quot;StandardDev&quot;, normal_dist.get_standard_dev());</span></a>
-<a name="340"><span class="lineNum">     340 </span><span class="lineCov">        152 : }</span></a>
-<a name="341"><span class="lineNum">     341 </span>            : </a>
-<a name="342"><span class="lineNum">     342 </span>            : /*</a>
-<a name="343"><span class="lineNum">     343 </span>            :  * Child class of Parameter Distribution class which represents an uniform distribution </a>
-<a name="344"><span class="lineNum">     344 </span>            :  */</a>
-<a name="345"><span class="lineNum">     345 </span>            : class ParameterDistributionUniform : public VisitableParameterDistribution&lt;ParameterDistributionUniform&gt;</a>
-<a name="346"><span class="lineNum">     346 </span>            : {</a>
-<a name="347"><span class="lineNum">     347 </span>            : public:</a>
-<a name="348"><span class="lineNum">     348 </span>            :     ParameterDistributionUniform()</a>
-<a name="349"><span class="lineNum">     349 </span>            :         : VisitableParameterDistribution&lt;ParameterDistributionUniform&gt;()</a>
+<a name="321"><span class="lineNum">     321 </span>            :     template &lt;class IOContext&gt;</a>
+<a name="322"><span class="lineNum">     322 </span><span class="lineCov">        152 :     static IOResult&lt;ParameterDistributionNormal&gt; deserialize(IOContext&amp; io)</span></a>
+<a name="323"><span class="lineNum">     323 </span>            :     {</a>
+<a name="324"><span class="lineNum">     324 </span><span class="lineCov">        608 :         auto obj  = io.expect_object(&quot;ParameterDistribution&quot;);</span></a>
+<a name="325"><span class="lineNum">     325 </span><span class="lineCov">        608 :         auto type = obj.expect_element(&quot;Type&quot;, Tag&lt;std::string&gt;{});</span></a>
+<a name="326"><span class="lineNum">     326 </span><span class="lineCov">        608 :         auto m      = obj.expect_element(&quot;Mean&quot;, Tag&lt;double&gt;{});</span></a>
+<a name="327"><span class="lineNum">     327 </span><span class="lineCov">        608 :         auto s      = obj.expect_element(&quot;StandardDev&quot;, Tag&lt;double&gt;{});</span></a>
+<a name="328"><span class="lineNum">     328 </span><span class="lineCov">        608 :         auto lb     = obj.expect_element(&quot;LowerBound&quot;, Tag&lt;double&gt;{});</span></a>
+<a name="329"><span class="lineNum">     329 </span><span class="lineCov">        608 :         auto ub     = obj.expect_element(&quot;UpperBound&quot;, Tag&lt;double&gt;{});</span></a>
+<a name="330"><span class="lineNum">     330 </span><span class="lineCov">        608 :         auto predef = obj.expect_list(&quot;PredefinedSamples&quot;, Tag&lt;double&gt;{});</span></a>
+<a name="331"><span class="lineNum">     331 </span><span class="lineCov">        304 :         auto p      = apply(</span></a>
+<a name="332"><span class="lineNum">     332 </span>            :             io,</a>
+<a name="333"><span class="lineNum">     333 </span><span class="lineCov">        152 :             [](auto&amp;&amp; lb_, auto&amp;&amp; ub_, auto&amp;&amp; m_, auto&amp;&amp; s_, auto&amp;&amp; predef_) {</span></a>
+<a name="334"><span class="lineNum">     334 </span><span class="lineCov">        304 :                 auto distr = ParameterDistributionNormal(lb_, ub_, m_, s_);</span></a>
+<a name="335"><span class="lineNum">     335 </span><span class="lineCov">        153 :                 for (auto&amp;&amp; e : predef_) {</span></a>
+<a name="336"><span class="lineNum">     336 </span><span class="lineCov">          1 :                     distr.add_predefined_sample(e);</span></a>
+<a name="337"><span class="lineNum">     337 </span>            :                 }</a>
+<a name="338"><span class="lineNum">     338 </span><span class="lineCov">        304 :                 return distr;</span></a>
+<a name="339"><span class="lineNum">     339 </span>            :             },</a>
+<a name="340"><span class="lineNum">     340 </span>            :             lb, ub, m, s, predef);</a>
+<a name="341"><span class="lineNum">     341 </span><span class="lineCov">        152 :         if (p) {</span></a>
+<a name="342"><span class="lineNum">     342 </span><span class="lineCov">        152 :             return success(p.value());</span></a>
+<a name="343"><span class="lineNum">     343 </span>            :         }</a>
+<a name="344"><span class="lineNum">     344 </span>            :         else {</a>
+<a name="345"><span class="lineNum">     345 </span><span class="lineNoCov">          0 :             return p.as_failure();</span></a>
+<a name="346"><span class="lineNum">     346 </span>            :         }</a>
+<a name="347"><span class="lineNum">     347 </span>            :     }</a>
+<a name="348"><span class="lineNum">     348 </span>            : </a>
+<a name="349"><span class="lineNum">     349 </span><span class="lineCov">       4665 :     ParameterDistribution* clone() const override</span></a>
 <a name="350"><span class="lineNum">     350 </span>            :     {</a>
-<a name="351"><span class="lineNum">     351 </span>            :     }</a>
-<a name="352"><span class="lineNum">     352 </span>            : </a>
-<a name="353"><span class="lineNum">     353 </span><span class="lineCov">          4 :     ParameterDistributionUniform(double lower_bound, double upper_bound)</span></a>
-<a name="354"><span class="lineNum">     354 </span><span class="lineCov">          4 :         : VisitableParameterDistribution&lt;ParameterDistributionUniform&gt;(lower_bound, upper_bound)</span></a>
-<a name="355"><span class="lineNum">     355 </span>            :     {</a>
-<a name="356"><span class="lineNum">     356 </span><span class="lineCov">          4 :     }</span></a>
-<a name="357"><span class="lineNum">     357 </span>            : </a>
-<a name="358"><span class="lineNum">     358 </span>            :     /*</a>
-<a name="359"><span class="lineNum">     359 </span>            :      * @brief gets a sample of a uniformly distributed variable</a>
-<a name="360"><span class="lineNum">     360 </span>            :      */</a>
-<a name="361"><span class="lineNum">     361 </span><span class="lineCov">       1001 :     double get_rand_sample() override</span></a>
-<a name="362"><span class="lineNum">     362 </span>            :     {</a>
-<a name="363"><span class="lineNum">     363 </span><span class="lineCov">       1001 :         if (m_distribution.max() != m_upper_bound || m_distribution.min() != m_lower_bound) {</span></a>
-<a name="364"><span class="lineNum">     364 </span><span class="lineCov">          2 :             m_distribution = std::uniform_real_distribution&lt;double&gt;{m_lower_bound, m_upper_bound};</span></a>
-<a name="365"><span class="lineNum">     365 </span>            :         }</a>
-<a name="366"><span class="lineNum">     366 </span>            : </a>
-<a name="367"><span class="lineNum">     367 </span><span class="lineCov">       1001 :         return m_distribution(thread_local_rng());</span></a>
-<a name="368"><span class="lineNum">     368 </span>            :     }</a>
+<a name="351"><span class="lineNum">     351 </span><span class="lineCov">       4665 :         return new ParameterDistributionNormal(*this);</span></a>
+<a name="352"><span class="lineNum">     352 </span>            :     }</a>
+<a name="353"><span class="lineNum">     353 </span>            : </a>
+<a name="354"><span class="lineNum">     354 </span>            : private:</a>
+<a name="355"><span class="lineNum">     355 </span>            :     double m_mean; // the mean value of the normal distribution</a>
+<a name="356"><span class="lineNum">     356 </span>            :     double m_standard_dev; // the standard deviation of the normal distribution</a>
+<a name="357"><span class="lineNum">     357 </span>            :     constexpr static double m_quantile = 2.5758; // 0.995 quartile</a>
+<a name="358"><span class="lineNum">     358 </span>            :     std::normal_distribution&lt;double&gt; m_distribution;</a>
+<a name="359"><span class="lineNum">     359 </span>            :     bool m_log_stddev_change = true;</a>
+<a name="360"><span class="lineNum">     360 </span>            : };</a>
+<a name="361"><span class="lineNum">     361 </span>            : </a>
+<a name="362"><span class="lineNum">     362 </span>            : template&lt;class IOObj&gt;</a>
+<a name="363"><span class="lineNum">     363 </span><span class="lineCov">        152 : void details::SerializationVisitor&lt;IOObj&gt;::visit(const ParameterDistributionNormal&amp; normal_dist)</span></a>
+<a name="364"><span class="lineNum">     364 </span>            : {</a>
+<a name="365"><span class="lineNum">     365 </span><span class="lineCov">        152 :     obj.add_element(&quot;Type&quot;, std::string(&quot;Normal&quot;));</span></a>
+<a name="366"><span class="lineNum">     366 </span><span class="lineCov">        152 :     obj.add_element(&quot;Mean&quot;, normal_dist.get_mean());</span></a>
+<a name="367"><span class="lineNum">     367 </span><span class="lineCov">        152 :     obj.add_element(&quot;StandardDev&quot;, normal_dist.get_standard_dev());</span></a>
+<a name="368"><span class="lineNum">     368 </span><span class="lineCov">        152 : }</span></a>
 <a name="369"><span class="lineNum">     369 </span>            : </a>
-<a name="370"><span class="lineNum">     370 </span><span class="lineNoCov">          0 :     ParameterDistribution* clone() const override</span></a>
-<a name="371"><span class="lineNum">     371 </span>            :     {</a>
-<a name="372"><span class="lineNum">     372 </span><span class="lineNoCov">          0 :         return new ParameterDistributionUniform(*this);</span></a>
-<a name="373"><span class="lineNum">     373 </span>            :     }</a>
-<a name="374"><span class="lineNum">     374 </span>            : </a>
-<a name="375"><span class="lineNum">     375 </span>            : private:</a>
-<a name="376"><span class="lineNum">     376 </span>            :     std::uniform_real_distribution&lt;double&gt; m_distribution;</a>
-<a name="377"><span class="lineNum">     377 </span>            : };</a>
-<a name="378"><span class="lineNum">     378 </span>            : </a>
-<a name="379"><span class="lineNum">     379 </span>            : template &lt;class IOObj&gt;</a>
-<a name="380"><span class="lineNum">     380 </span><span class="lineCov">          1 : void details::SerializationVisitor&lt;IOObj&gt;::visit(const ParameterDistributionUniform&amp; /*uniform_dist*/)</span></a>
-<a name="381"><span class="lineNum">     381 </span>            : {</a>
-<a name="382"><span class="lineNum">     382 </span><span class="lineCov">          1 :     obj.add_element(&quot;Type&quot;, std::string(&quot;Uniform&quot;));</span></a>
-<a name="383"><span class="lineNum">     383 </span><span class="lineCov">          1 : }</span></a>
-<a name="384"><span class="lineNum">     384 </span>            : </a>
+<a name="370"><span class="lineNum">     370 </span>            : /*</a>
+<a name="371"><span class="lineNum">     371 </span>            :  * Child class of Parameter Distribution class which represents an uniform distribution </a>
+<a name="372"><span class="lineNum">     372 </span>            :  */</a>
+<a name="373"><span class="lineNum">     373 </span>            : class ParameterDistributionUniform : public VisitableParameterDistribution&lt;ParameterDistributionUniform&gt;</a>
+<a name="374"><span class="lineNum">     374 </span>            : {</a>
+<a name="375"><span class="lineNum">     375 </span>            : public:</a>
+<a name="376"><span class="lineNum">     376 </span>            :     ParameterDistributionUniform()</a>
+<a name="377"><span class="lineNum">     377 </span>            :         : VisitableParameterDistribution&lt;ParameterDistributionUniform&gt;()</a>
+<a name="378"><span class="lineNum">     378 </span>            :     {</a>
+<a name="379"><span class="lineNum">     379 </span>            :     }</a>
+<a name="380"><span class="lineNum">     380 </span>            : </a>
+<a name="381"><span class="lineNum">     381 </span><span class="lineCov">          4 :     ParameterDistributionUniform(double lower_bound, double upper_bound)</span></a>
+<a name="382"><span class="lineNum">     382 </span><span class="lineCov">          4 :         : VisitableParameterDistribution&lt;ParameterDistributionUniform&gt;(lower_bound, upper_bound)</span></a>
+<a name="383"><span class="lineNum">     383 </span>            :     {</a>
+<a name="384"><span class="lineNum">     384 </span><span class="lineCov">          4 :     }</span></a>
 <a name="385"><span class="lineNum">     385 </span>            : </a>
-<a name="386"><span class="lineNum">     386 </span>            : /**</a>
-<a name="387"><span class="lineNum">     387 </span>            :  * deserialize a parameter distribution as a shared_ptr.</a>
-<a name="388"><span class="lineNum">     388 </span>            :  * @see mio::deserialize</a>
-<a name="389"><span class="lineNum">     389 </span>            :  */</a>
-<a name="390"><span class="lineNum">     390 </span>            : template &lt;class IOContext&gt;</a>
-<a name="391"><span class="lineNum">     391 </span><span class="lineCov">        153 : IOResult&lt;std::shared_ptr&lt;ParameterDistribution&gt;&gt; deserialize_internal(IOContext&amp; io,</span></a>
-<a name="392"><span class="lineNum">     392 </span>            :                                                                       Tag&lt;std::shared_ptr&lt;ParameterDistribution&gt;&gt;)</a>
-<a name="393"><span class="lineNum">     393 </span>            : {</a>
-<a name="394"><span class="lineNum">     394 </span><span class="lineCov">        612 :     auto obj  = io.expect_object(&quot;ParameterDistribution&quot;);</span></a>
-<a name="395"><span class="lineNum">     395 </span><span class="lineCov">        612 :     auto type = obj.expect_element(&quot;Type&quot;, Tag&lt;std::string&gt;{});</span></a>
-<a name="396"><span class="lineNum">     396 </span><span class="lineCov">        153 :     if (type) {</span></a>
-<a name="397"><span class="lineNum">     397 </span><span class="lineCov">        153 :         if (type.value() == &quot;Uniform&quot;) {</span></a>
-<a name="398"><span class="lineNum">     398 </span><span class="lineCov">          4 :             auto lb     = obj.expect_element(&quot;LowerBound&quot;, Tag&lt;double&gt;{});</span></a>
-<a name="399"><span class="lineNum">     399 </span><span class="lineCov">          4 :             auto ub     = obj.expect_element(&quot;UpperBound&quot;, Tag&lt;double&gt;{});</span></a>
-<a name="400"><span class="lineNum">     400 </span><span class="lineCov">          4 :             auto predef = obj.expect_list(&quot;PredefinedSamples&quot;, Tag&lt;double&gt;{});</span></a>
-<a name="401"><span class="lineNum">     401 </span><span class="lineCov">          2 :             auto p      = apply(</span></a>
-<a name="402"><span class="lineNum">     402 </span>            :                 io,</a>
-<a name="403"><span class="lineNum">     403 </span><span class="lineCov">          1 :                 [](auto&amp;&amp; lb_, auto&amp;&amp; ub_, auto&amp;&amp; predef_) {</span></a>
-<a name="404"><span class="lineNum">     404 </span><span class="lineCov">          2 :                     auto distr = std::make_shared&lt;ParameterDistributionUniform&gt;(lb_, ub_);</span></a>
-<a name="405"><span class="lineNum">     405 </span><span class="lineCov">          1 :                     for (auto&amp;&amp; e : predef_) {</span></a>
-<a name="406"><span class="lineNum">     406 </span><span class="lineNoCov">          0 :                         distr-&gt;add_predefined_sample(e);</span></a>
-<a name="407"><span class="lineNum">     407 </span>            :                     }</a>
-<a name="408"><span class="lineNum">     408 </span><span class="lineCov">          2 :                     return distr;</span></a>
-<a name="409"><span class="lineNum">     409 </span>            :                 },</a>
-<a name="410"><span class="lineNum">     410 </span>            :                 lb, ub, predef);</a>
-<a name="411"><span class="lineNum">     411 </span><span class="lineCov">          1 :             if (p) {</span></a>
-<a name="412"><span class="lineNum">     412 </span><span class="lineCov">          1 :                 return success(p.value());</span></a>
-<a name="413"><span class="lineNum">     413 </span>            :             }</a>
-<a name="414"><span class="lineNum">     414 </span>            :             else {</a>
-<a name="415"><span class="lineNum">     415 </span><span class="lineNoCov">          0 :                 return p.as_failure();</span></a>
-<a name="416"><span class="lineNum">     416 </span>            :             }</a>
-<a name="417"><span class="lineNum">     417 </span>            :         }</a>
-<a name="418"><span class="lineNum">     418 </span><span class="lineCov">        152 :         else if (type.value() == &quot;Normal&quot;) {</span></a>
-<a name="419"><span class="lineNum">     419 </span><span class="lineCov">        608 :             auto m      = obj.expect_element(&quot;Mean&quot;, Tag&lt;double&gt;{});</span></a>
-<a name="420"><span class="lineNum">     420 </span><span class="lineCov">        608 :             auto s      = obj.expect_element(&quot;StandardDev&quot;, Tag&lt;double&gt;{});</span></a>
-<a name="421"><span class="lineNum">     421 </span><span class="lineCov">        608 :             auto lb     = obj.expect_element(&quot;LowerBound&quot;, Tag&lt;double&gt;{});</span></a>
-<a name="422"><span class="lineNum">     422 </span><span class="lineCov">        608 :             auto ub     = obj.expect_element(&quot;UpperBound&quot;, Tag&lt;double&gt;{});</span></a>
-<a name="423"><span class="lineNum">     423 </span><span class="lineCov">        608 :             auto predef = obj.expect_list(&quot;PredefinedSamples&quot;, Tag&lt;double&gt;{});</span></a>
-<a name="424"><span class="lineNum">     424 </span><span class="lineCov">        304 :             auto p      = apply(</span></a>
-<a name="425"><span class="lineNum">     425 </span>            :                 io,</a>
-<a name="426"><span class="lineNum">     426 </span><span class="lineCov">        152 :                 [](auto&amp;&amp; lb_, auto&amp;&amp; ub_, auto&amp;&amp; m_, auto&amp;&amp; s_, auto&amp;&amp; predef_) {</span></a>
-<a name="427"><span class="lineNum">     427 </span><span class="lineCov">        304 :                     auto distr = std::make_shared&lt;ParameterDistributionNormal&gt;(lb_, ub_, m_, s_);</span></a>
-<a name="428"><span class="lineNum">     428 </span><span class="lineCov">        153 :                     for (auto&amp;&amp; e : predef_) {</span></a>
-<a name="429"><span class="lineNum">     429 </span><span class="lineCov">          1 :                         distr-&gt;add_predefined_sample(e);</span></a>
-<a name="430"><span class="lineNum">     430 </span>            :                     }</a>
-<a name="431"><span class="lineNum">     431 </span><span class="lineCov">        304 :                     return distr;</span></a>
-<a name="432"><span class="lineNum">     432 </span>            :                 },</a>
-<a name="433"><span class="lineNum">     433 </span>            :                 lb, ub, m, s, predef);</a>
-<a name="434"><span class="lineNum">     434 </span><span class="lineCov">        152 :             if (p) {</span></a>
-<a name="435"><span class="lineNum">     435 </span><span class="lineCov">        152 :                 return success(p.value());</span></a>
-<a name="436"><span class="lineNum">     436 </span>            :             }</a>
-<a name="437"><span class="lineNum">     437 </span>            :             else {</a>
-<a name="438"><span class="lineNum">     438 </span><span class="lineNoCov">          0 :                 return p.as_failure();</span></a>
-<a name="439"><span class="lineNum">     439 </span>            :             }</a>
-<a name="440"><span class="lineNum">     440 </span>            :         }</a>
-<a name="441"><span class="lineNum">     441 </span>            :         else {</a>
-<a name="442"><span class="lineNum">     442 </span><span class="lineNoCov">          0 :             return failure(StatusCode::InvalidValue, &quot;Type of ParameterDistribution &quot; + type.value() + &quot; not valid.&quot;);</span></a>
-<a name="443"><span class="lineNum">     443 </span>            :         }</a>
-<a name="444"><span class="lineNum">     444 </span>            :     }</a>
-<a name="445"><span class="lineNum">     445 </span><span class="lineNoCov">          0 :     return failure(type.error());</span></a>
-<a name="446"><span class="lineNum">     446 </span>            : }</a>
-<a name="447"><span class="lineNum">     447 </span>            : </a>
-<a name="448"><span class="lineNum">     448 </span>            : } // namespace mio</a>
-<a name="449"><span class="lineNum">     449 </span>            : </a>
-<a name="450"><span class="lineNum">     450 </span>            : #endif // PARAMETER_DISTRIBUTIONS_H</a>
+<a name="386"><span class="lineNum">     386 </span>            :     /*</a>
+<a name="387"><span class="lineNum">     387 </span>            :      * @brief gets a sample of a uniformly distributed variable</a>
+<a name="388"><span class="lineNum">     388 </span>            :      */</a>
+<a name="389"><span class="lineNum">     389 </span><span class="lineCov">       1001 :     double get_rand_sample() override</span></a>
+<a name="390"><span class="lineNum">     390 </span>            :     {</a>
+<a name="391"><span class="lineNum">     391 </span><span class="lineCov">       1001 :         if (m_distribution.max() != m_upper_bound || m_distribution.min() != m_lower_bound) {</span></a>
+<a name="392"><span class="lineNum">     392 </span><span class="lineCov">          2 :             m_distribution = std::uniform_real_distribution&lt;double&gt;{m_lower_bound, m_upper_bound};</span></a>
+<a name="393"><span class="lineNum">     393 </span>            :         }</a>
+<a name="394"><span class="lineNum">     394 </span>            : </a>
+<a name="395"><span class="lineNum">     395 </span><span class="lineCov">       1001 :         return m_distribution(thread_local_rng());</span></a>
+<a name="396"><span class="lineNum">     396 </span>            :     }</a>
+<a name="397"><span class="lineNum">     397 </span>            : </a>
+<a name="398"><span class="lineNum">     398 </span><span class="lineNoCov">          0 :     ParameterDistribution* clone() const override</span></a>
+<a name="399"><span class="lineNum">     399 </span>            :     {</a>
+<a name="400"><span class="lineNum">     400 </span><span class="lineNoCov">          0 :         return new ParameterDistributionUniform(*this);</span></a>
+<a name="401"><span class="lineNum">     401 </span>            :     }</a>
+<a name="402"><span class="lineNum">     402 </span>            : </a>
+<a name="403"><span class="lineNum">     403 </span>            :     template &lt;class IOContext&gt;</a>
+<a name="404"><span class="lineNum">     404 </span><span class="lineCov">          1 :     static IOResult&lt;ParameterDistributionUniform&gt; deserialize(IOContext&amp; io)</span></a>
+<a name="405"><span class="lineNum">     405 </span>            :     {</a>
+<a name="406"><span class="lineNum">     406 </span><span class="lineCov">          4 :         auto obj  = io.expect_object(&quot;ParameterDistribution&quot;);</span></a>
+<a name="407"><span class="lineNum">     407 </span><span class="lineCov">          4 :         auto type = obj.expect_element(&quot;Type&quot;, Tag&lt;std::string&gt;{});</span></a>
+<a name="408"><span class="lineNum">     408 </span><span class="lineCov">          4 :         auto lb     = obj.expect_element(&quot;LowerBound&quot;, Tag&lt;double&gt;{});</span></a>
+<a name="409"><span class="lineNum">     409 </span><span class="lineCov">          4 :         auto ub     = obj.expect_element(&quot;UpperBound&quot;, Tag&lt;double&gt;{});</span></a>
+<a name="410"><span class="lineNum">     410 </span><span class="lineCov">          4 :         auto predef = obj.expect_list(&quot;PredefinedSamples&quot;, Tag&lt;double&gt;{});</span></a>
+<a name="411"><span class="lineNum">     411 </span><span class="lineCov">          2 :         auto p      = apply(</span></a>
+<a name="412"><span class="lineNum">     412 </span>            :             io,</a>
+<a name="413"><span class="lineNum">     413 </span><span class="lineCov">          1 :             [](auto&amp;&amp; lb_, auto&amp;&amp; ub_, auto&amp;&amp; predef_) {</span></a>
+<a name="414"><span class="lineNum">     414 </span><span class="lineCov">          2 :                 auto distr = ParameterDistributionUniform(lb_, ub_);</span></a>
+<a name="415"><span class="lineNum">     415 </span><span class="lineCov">          1 :                 for (auto&amp;&amp; e : predef_) {</span></a>
+<a name="416"><span class="lineNum">     416 </span><span class="lineNoCov">          0 :                     distr.add_predefined_sample(e);</span></a>
+<a name="417"><span class="lineNum">     417 </span>            :                 }</a>
+<a name="418"><span class="lineNum">     418 </span><span class="lineCov">          2 :                 return distr;</span></a>
+<a name="419"><span class="lineNum">     419 </span>            :             },</a>
+<a name="420"><span class="lineNum">     420 </span>            :             lb, ub, predef);</a>
+<a name="421"><span class="lineNum">     421 </span><span class="lineCov">          1 :         if (p) {</span></a>
+<a name="422"><span class="lineNum">     422 </span><span class="lineCov">          1 :             return success(p.value());</span></a>
+<a name="423"><span class="lineNum">     423 </span>            :         }</a>
+<a name="424"><span class="lineNum">     424 </span>            :         else {</a>
+<a name="425"><span class="lineNum">     425 </span><span class="lineNoCov">          0 :             return p.as_failure();</span></a>
+<a name="426"><span class="lineNum">     426 </span>            :         }</a>
+<a name="427"><span class="lineNum">     427 </span>            :     }</a>
+<a name="428"><span class="lineNum">     428 </span>            : </a>
+<a name="429"><span class="lineNum">     429 </span>            : private:</a>
+<a name="430"><span class="lineNum">     430 </span>            :     std::uniform_real_distribution&lt;double&gt; m_distribution;</a>
+<a name="431"><span class="lineNum">     431 </span>            : };</a>
+<a name="432"><span class="lineNum">     432 </span>            : </a>
+<a name="433"><span class="lineNum">     433 </span>            : template &lt;class IOObj&gt;</a>
+<a name="434"><span class="lineNum">     434 </span><span class="lineCov">          1 : void details::SerializationVisitor&lt;IOObj&gt;::visit(const ParameterDistributionUniform&amp; /*uniform_dist*/)</span></a>
+<a name="435"><span class="lineNum">     435 </span>            : {</a>
+<a name="436"><span class="lineNum">     436 </span><span class="lineCov">          1 :     obj.add_element(&quot;Type&quot;, std::string(&quot;Uniform&quot;));</span></a>
+<a name="437"><span class="lineNum">     437 </span><span class="lineCov">          1 : }</span></a>
+<a name="438"><span class="lineNum">     438 </span>            : </a>
+<a name="439"><span class="lineNum">     439 </span>            : </a>
+<a name="440"><span class="lineNum">     440 </span>            : </a>
+<a name="441"><span class="lineNum">     441 </span>            : </a>
+<a name="442"><span class="lineNum">     442 </span>            : </a>
+<a name="443"><span class="lineNum">     443 </span>            : </a>
+<a name="444"><span class="lineNum">     444 </span>            : /**</a>
+<a name="445"><span class="lineNum">     445 </span>            :  * deserialize a parameter distribution as a shared_ptr.</a>
+<a name="446"><span class="lineNum">     446 </span>            :  * @see mio::deserialize</a>
+<a name="447"><span class="lineNum">     447 </span>            :  */</a>
+<a name="448"><span class="lineNum">     448 </span>            : template &lt;class IOContext&gt;</a>
+<a name="449"><span class="lineNum">     449 </span><span class="lineCov">        153 : IOResult&lt;std::shared_ptr&lt;ParameterDistribution&gt;&gt; deserialize_internal(IOContext&amp; io,</span></a>
+<a name="450"><span class="lineNum">     450 </span>            :                                                                       Tag&lt;std::shared_ptr&lt;ParameterDistribution&gt;&gt;)</a>
+<a name="451"><span class="lineNum">     451 </span>            : {</a>
+<a name="452"><span class="lineNum">     452 </span><span class="lineCov">        612 :     auto obj  = io.expect_object(&quot;ParameterDistribution&quot;);</span></a>
+<a name="453"><span class="lineNum">     453 </span><span class="lineCov">        612 :     auto type = obj.expect_element(&quot;Type&quot;, Tag&lt;std::string&gt;{});</span></a>
+<a name="454"><span class="lineNum">     454 </span><span class="lineCov">        153 :     if (type) {</span></a>
+<a name="455"><span class="lineNum">     455 </span><span class="lineCov">        153 :         if (type.value() == &quot;Uniform&quot;) {</span></a>
+<a name="456"><span class="lineNum">     456 </span><span class="lineCov">          2 :             BOOST_OUTCOME_TRY(r, ParameterDistributionUniform::deserialize(io));</span></a>
+<a name="457"><span class="lineNum">     457 </span><span class="lineCov">          1 :             return std::make_shared&lt;ParameterDistributionUniform&gt;(r);</span></a>
+<a name="458"><span class="lineNum">     458 </span>            :         }</a>
+<a name="459"><span class="lineNum">     459 </span><span class="lineCov">        152 :         else if (type.value() == &quot;Normal&quot;) {</span></a>
+<a name="460"><span class="lineNum">     460 </span><span class="lineCov">        304 :             BOOST_OUTCOME_TRY(r, ParameterDistributionNormal::deserialize(io));</span></a>
+<a name="461"><span class="lineNum">     461 </span><span class="lineCov">        152 :             return std::make_shared&lt;ParameterDistributionNormal&gt;(r);</span></a>
+<a name="462"><span class="lineNum">     462 </span>            :         }</a>
+<a name="463"><span class="lineNum">     463 </span>            :         else {</a>
+<a name="464"><span class="lineNum">     464 </span><span class="lineNoCov">          0 :             return failure(StatusCode::InvalidValue, &quot;Type of ParameterDistribution &quot; + type.value() + &quot; not valid.&quot;);</span></a>
+<a name="465"><span class="lineNum">     465 </span>            :         }</a>
+<a name="466"><span class="lineNum">     466 </span>            :     }</a>
+<a name="467"><span class="lineNum">     467 </span><span class="lineNoCov">          0 :     return failure(type.error());</span></a>
+<a name="468"><span class="lineNum">     468 </span>            : }</a>
+<a name="469"><span class="lineNum">     469 </span>            : </a>
+<a name="470"><span class="lineNum">     470 </span>            : } // namespace mio</a>
+<a name="471"><span class="lineNum">     471 </span>            : </a>
+<a name="472"><span class="lineNum">     472 </span>            : #endif // PARAMETER_DISTRIBUTIONS_H</a>
 </pre>
       </td>
     </tr>

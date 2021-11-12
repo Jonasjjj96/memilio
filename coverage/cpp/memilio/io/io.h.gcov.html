@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-11-12 12:50:43</td>
+            <td class="headerValue">2021-11-12 13:05:09</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">361</td>
@@ -248,7 +248,7 @@
 <a name="186"><span class="lineNum">     186 </span>            :     /**</a>
 <a name="187"><span class="lineNum">     187 </span>            :      * default constructor, represents success</a>
 <a name="188"><span class="lineNum">     188 </span>            :      */</a>
-<a name="189"><span class="lineNum">     189 </span><span class="lineCov">       3856 :     IOStatus() = default;</span></a>
+<a name="189"><span class="lineNum">     189 </span><span class="lineCov">       4162 :     IOStatus() = default;</span></a>
 <a name="190"><span class="lineNum">     190 </span>            : </a>
 <a name="191"><span class="lineNum">     191 </span>            :     /**</a>
 <a name="192"><span class="lineNum">     192 </span>            :      * constructor with error code and message</a>
@@ -297,9 +297,9 @@
 <a name="235"><span class="lineNum">     235 </span>            :      * @return true if status is success, false otherwise.</a>
 <a name="236"><span class="lineNum">     236 </span>            :      * @{</a>
 <a name="237"><span class="lineNum">     237 </span>            :      */</a>
-<a name="238"><span class="lineNum">     238 </span><span class="lineCov">       4760 :     bool is_ok() const</span></a>
+<a name="238"><span class="lineNum">     238 </span><span class="lineCov">       4913 :     bool is_ok() const</span></a>
 <a name="239"><span class="lineNum">     239 </span>            :     {</a>
-<a name="240"><span class="lineNum">     240 </span><span class="lineCov">       4760 :         return !(bool)m_ec;</span></a>
+<a name="240"><span class="lineNum">     240 </span><span class="lineCov">       4913 :         return !(bool)m_ec;</span></a>
 <a name="241"><span class="lineNum">     241 </span>            :     }</a>
 <a name="242"><span class="lineNum">     242 </span><span class="lineCov">          5 :     operator bool() const</span></a>
 <a name="243"><span class="lineNum">     243 </span>            :     {</a>
@@ -312,9 +312,9 @@
 <a name="250"><span class="lineNum">     250 </span>            :      * @return true if status is failure, false otherwise.</a>
 <a name="251"><span class="lineNum">     251 </span>            :      * @{</a>
 <a name="252"><span class="lineNum">     252 </span>            :      */</a>
-<a name="253"><span class="lineNum">     253 </span><span class="lineCov">       3181 :     bool is_error() const</span></a>
+<a name="253"><span class="lineNum">     253 </span><span class="lineCov">       3334 :     bool is_error() const</span></a>
 <a name="254"><span class="lineNum">     254 </span>            :     {</a>
-<a name="255"><span class="lineNum">     255 </span><span class="lineCov">       3181 :         return !is_ok();</span></a>
+<a name="255"><span class="lineNum">     255 </span><span class="lineCov">       3334 :         return !is_ok();</span></a>
 <a name="256"><span class="lineNum">     256 </span>            :     }</a>
 <a name="257"><span class="lineNum">     257 </span>            : </a>
 <a name="258"><span class="lineNum">     258 </span>            :     /**</a>
@@ -416,9 +416,9 @@
 <a name="354"><span class="lineNum">     354 </span>            :  * @param t a value that is convertible to the value type of the IOResult</a>
 <a name="355"><span class="lineNum">     355 </span>            :  */</a>
 <a name="356"><span class="lineNum">     356 </span>            : template &lt;class T&gt;</a>
-<a name="357"><span class="lineNum">     357 </span><span class="lineCov">       2334 : auto success(T&amp;&amp; t)</span></a>
+<a name="357"><span class="lineNum">     357 </span><span class="lineCov">       2487 : auto success(T&amp;&amp; t)</span></a>
 <a name="358"><span class="lineNum">     358 </span>            : {</a>
-<a name="359"><span class="lineNum">     359 </span><span class="lineCov">       2334 :     return boost::outcome_v2::success(std::forward&lt;T&gt;(t));</span></a>
+<a name="359"><span class="lineNum">     359 </span><span class="lineCov">       2487 :     return boost::outcome_v2::success(std::forward&lt;T&gt;(t));</span></a>
 <a name="360"><span class="lineNum">     360 </span>            : }</a>
 <a name="361"><span class="lineNum">     361 </span>            : </a>
 <a name="362"><span class="lineNum">     362 </span>            : /**</a>

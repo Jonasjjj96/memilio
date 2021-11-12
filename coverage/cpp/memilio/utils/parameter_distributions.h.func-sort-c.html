@@ -31,18 +31,18 @@
             <td class="headerValue">coverage.info</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntry">144</td>
-            <td class="headerCovTableEntry">159</td>
-            <td class="headerCovTableEntryHi">90.6 %</td>
+            <td class="headerCovTableEntry">154</td>
+            <td class="headerCovTableEntry">169</td>
+            <td class="headerCovTableEntryHi">91.1 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-11-12 12:50:43</td>
+            <td class="headerValue">2021-11-12 13:05:09</td>
             <td></td>
             <td class="headerItem">Functions:</td>
-            <td class="headerCovTableEntry">35</td>
             <td class="headerCovTableEntry">38</td>
-            <td class="headerCovTableEntryHi">92.1 %</td>
+            <td class="headerCovTableEntry">42</td>
+            <td class="headerCovTableEntryHi">90.5 %</td>
           </tr>
           <tr><td><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
         </table>
@@ -64,12 +64,20 @@
               <td class="coverFnLo">0</td>
             </tr>
     <tr>
-              <td class="coverFn"><a href="parameter_distributions.h.gcov.html#368">mio::ParameterDistributionUniform::clone() const</a></td>
+              <td class="coverFn"><a href="parameter_distributions.h.gcov.html#402">boost::outcome_v2::basic_result&lt;mio::ParameterDistributionUniform, mio::IOStatus, boost::outcome_v2::policy::all_narrow&gt; mio::ParameterDistributionUniform::deserialize&lt;mio::JsonContext&gt;(mio::JsonContext&amp;)</a></td>
               <td class="coverFnLo">0</td>
             </tr>
     <tr>
-              <td class="coverFn"><a href="parameter_distributions.h.gcov.html#401">auto mio::deserialize_internal&lt;mio::JsonContext&gt;(mio::JsonContext&amp;, boost::outcome_v2::in_place_type_t&lt;std::shared_ptr&lt;mio::ParameterDistribution&gt; &gt;)::{lambda(auto:1&amp;&amp;, auto:2&amp;&amp;, auto:3&amp;&amp;)#1}::operator()&lt;double const&amp;, double const, std::vector&lt;double, std::allocator&lt;double&gt; &gt; const&amp;&gt;(mio::JsonContext&amp;&amp;, double const&amp;&amp;, std::vector&lt;double, std::allocator&lt;double&gt; &gt; const&amp;) const</a></td>
+              <td class="coverFn"><a href="parameter_distributions.h.gcov.html#396">mio::ParameterDistributionUniform::clone() const</a></td>
               <td class="coverFnLo">0</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="parameter_distributions.h.gcov.html#411">auto mio::ParameterDistributionUniform::deserialize&lt;mio::JsonContext&gt;(mio::JsonContext&amp;)::{lambda(auto:1&amp;&amp;, auto:2&amp;&amp;, auto:3&amp;&amp;)#1}::operator()&lt;double const&amp;, double const, std::vector&lt;double, std::allocator&lt;double&gt; &gt; const&amp;&gt;(mio::JsonContext&amp;&amp;, double const&amp;&amp;, std::vector&lt;double, std::allocator&lt;double&gt; &gt; const&amp;) const</a></td>
+              <td class="coverFnLo">0</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="parameter_distributions.h.gcov.html#320">boost::outcome_v2::basic_result&lt;mio::ParameterDistributionNormal, mio::IOStatus, boost::outcome_v2::policy::all_narrow&gt; mio::ParameterDistributionNormal::deserialize&lt;mio::JsonSerializer&gt;(mio::JsonSerializer&amp;)</a></td>
+              <td class="coverFnHi">1</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="parameter_distributions.h.gcov.html#211">mio::ParameterDistributionNormal::check_quantiles()</a></td>
@@ -88,19 +96,23 @@
               <td class="coverFnHi">1</td>
             </tr>
     <tr>
-              <td class="coverFn"><a href="parameter_distributions.h.gcov.html#378">mio::details::SerializationVisitor&lt;mio::JsonObject&gt;::visit(mio::ParameterDistributionUniform const&amp;)</a></td>
+              <td class="coverFn"><a href="parameter_distributions.h.gcov.html#402">boost::outcome_v2::basic_result&lt;mio::ParameterDistributionUniform, mio::IOStatus, boost::outcome_v2::policy::all_narrow&gt; mio::ParameterDistributionUniform::deserialize&lt;mio::JsonSerializer&gt;(mio::JsonSerializer&amp;)</a></td>
               <td class="coverFnHi">1</td>
             </tr>
     <tr>
-              <td class="coverFn"><a href="parameter_distributions.h.gcov.html#401">auto mio::deserialize_internal&lt;mio::JsonSerializer&gt;(mio::JsonSerializer&amp;, boost::outcome_v2::in_place_type_t&lt;std::shared_ptr&lt;mio::ParameterDistribution&gt; &gt;)::{lambda(auto:1&amp;&amp;, auto:2&amp;&amp;, auto:3&amp;&amp;)#1}::operator()&lt;double const&amp;, double const, std::vector&lt;double, std::allocator&lt;double&gt; &gt; const&amp;&gt;(mio::JsonSerializer&amp;&amp;, double const&amp;&amp;, std::vector&lt;double, std::allocator&lt;double&gt; &gt; const&amp;) const</a></td>
+              <td class="coverFn"><a href="parameter_distributions.h.gcov.html#432">mio::details::SerializationVisitor&lt;mio::JsonObject&gt;::visit(mio::ParameterDistributionUniform const&amp;)</a></td>
               <td class="coverFnHi">1</td>
             </tr>
     <tr>
-              <td class="coverFn"><a href="parameter_distributions.h.gcov.html#424">auto mio::deserialize_internal&lt;mio::JsonSerializer&gt;(mio::JsonSerializer&amp;, boost::outcome_v2::in_place_type_t&lt;std::shared_ptr&lt;mio::ParameterDistribution&gt; &gt;)::{lambda(auto:1&amp;&amp;, auto:2&amp;&amp;, auto:3&amp;&amp;, auto:4&amp;&amp;, auto:5&amp;&amp;)#2}::operator()&lt;double const&amp;, double const, double const, double const, std::vector&lt;double, std::allocator&lt;double&gt; &gt; const&amp;&gt;(mio::JsonSerializer&amp;&amp;, double const&amp;&amp;, double const&amp;&amp;, double const&amp;&amp;, std::vector&lt;double, std::allocator&lt;double&gt; &gt; const&amp;) const</a></td>
+              <td class="coverFn"><a href="parameter_distributions.h.gcov.html#331">auto mio::ParameterDistributionNormal::deserialize&lt;mio::JsonSerializer&gt;(mio::JsonSerializer&amp;)::{lambda(auto:1&amp;&amp;, auto:2&amp;&amp;, auto:3&amp;&amp;, auto:4&amp;&amp;, auto:5&amp;&amp;)#1}::operator()&lt;double const&amp;, double const, double const, double const, std::vector&lt;double, std::allocator&lt;double&gt; &gt; const&amp;&gt;(mio::JsonSerializer&amp;&amp;, double const&amp;&amp;, double const&amp;&amp;, double const&amp;&amp;, std::vector&lt;double, std::allocator&lt;double&gt; &gt; const&amp;) const</a></td>
               <td class="coverFnHi">1</td>
             </tr>
     <tr>
-              <td class="coverFn"><a href="parameter_distributions.h.gcov.html#389">boost::outcome_v2::basic_result&lt;std::shared_ptr&lt;mio::ParameterDistribution&gt;, mio::IOStatus, boost::outcome_v2::policy::all_narrow&gt; mio::deserialize_internal&lt;mio::JsonSerializer&gt;(mio::JsonSerializer&amp;, boost::outcome_v2::in_place_type_t&lt;std::shared_ptr&lt;mio::ParameterDistribution&gt; &gt;)</a></td>
+              <td class="coverFn"><a href="parameter_distributions.h.gcov.html#411">auto mio::ParameterDistributionUniform::deserialize&lt;mio::JsonSerializer&gt;(mio::JsonSerializer&amp;)::{lambda(auto:1&amp;&amp;, auto:2&amp;&amp;, auto:3&amp;&amp;)#1}::operator()&lt;double const&amp;, double const, std::vector&lt;double, std::allocator&lt;double&gt; &gt; const&amp;&gt;(mio::JsonSerializer&amp;&amp;, double const&amp;&amp;, std::vector&lt;double, std::allocator&lt;double&gt; &gt; const&amp;) const</a></td>
+              <td class="coverFnHi">1</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="parameter_distributions.h.gcov.html#447">boost::outcome_v2::basic_result&lt;std::shared_ptr&lt;mio::ParameterDistribution&gt;, mio::IOStatus, boost::outcome_v2::policy::all_narrow&gt; mio::deserialize_internal&lt;mio::JsonSerializer&gt;(mio::JsonSerializer&amp;, boost::outcome_v2::in_place_type_t&lt;std::shared_ptr&lt;mio::ParameterDistribution&gt; &gt;)</a></td>
               <td class="coverFnHi">2</td>
             </tr>
     <tr>
@@ -124,7 +136,7 @@
               <td class="coverFnHi">2</td>
             </tr>
     <tr>
-              <td class="coverFn"><a href="parameter_distributions.h.gcov.html#351">mio::ParameterDistributionUniform::ParameterDistributionUniform(double, double)</a></td>
+              <td class="coverFn"><a href="parameter_distributions.h.gcov.html#379">mio::ParameterDistributionUniform::ParameterDistributionUniform(double, double)</a></td>
               <td class="coverFnHi">4</td>
             </tr>
     <tr>
@@ -132,7 +144,11 @@
               <td class="coverFnHi">5</td>
             </tr>
     <tr>
-              <td class="coverFn"><a href="parameter_distributions.h.gcov.html#389">boost::outcome_v2::basic_result&lt;std::shared_ptr&lt;mio::ParameterDistribution&gt;, mio::IOStatus, boost::outcome_v2::policy::all_narrow&gt; mio::deserialize_internal&lt;mio::JsonContext&gt;(mio::JsonContext&amp;, boost::outcome_v2::in_place_type_t&lt;std::shared_ptr&lt;mio::ParameterDistribution&gt; &gt;)</a></td>
+              <td class="coverFn"><a href="parameter_distributions.h.gcov.html#447">boost::outcome_v2::basic_result&lt;std::shared_ptr&lt;mio::ParameterDistribution&gt;, mio::IOStatus, boost::outcome_v2::policy::all_narrow&gt; mio::deserialize_internal&lt;mio::JsonContext&gt;(mio::JsonContext&amp;, boost::outcome_v2::in_place_type_t&lt;std::shared_ptr&lt;mio::ParameterDistribution&gt; &gt;)</a></td>
+              <td class="coverFnHi">151</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="parameter_distributions.h.gcov.html#320">boost::outcome_v2::basic_result&lt;mio::ParameterDistributionNormal, mio::IOStatus, boost::outcome_v2::policy::all_narrow&gt; mio::ParameterDistributionNormal::deserialize&lt;mio::JsonContext&gt;(mio::JsonContext&amp;)</a></td>
               <td class="coverFnHi">151</td>
             </tr>
     <tr>
@@ -140,11 +156,11 @@
               <td class="coverFnHi">151</td>
             </tr>
     <tr>
-              <td class="coverFn"><a href="parameter_distributions.h.gcov.html#424">auto mio::deserialize_internal&lt;mio::JsonContext&gt;(mio::JsonContext&amp;, boost::outcome_v2::in_place_type_t&lt;std::shared_ptr&lt;mio::ParameterDistribution&gt; &gt;)::{lambda(auto:1&amp;&amp;, auto:2&amp;&amp;, auto:3&amp;&amp;, auto:4&amp;&amp;, auto:5&amp;&amp;)#2}::operator()&lt;double const&amp;, double const, double const, double const, std::vector&lt;double, std::allocator&lt;double&gt; &gt; const&amp;&gt;(mio::JsonContext&amp;&amp;, double const&amp;&amp;, double const&amp;&amp;, double const&amp;&amp;, std::vector&lt;double, std::allocator&lt;double&gt; &gt; const&amp;) const</a></td>
+              <td class="coverFn"><a href="parameter_distributions.h.gcov.html#331">auto mio::ParameterDistributionNormal::deserialize&lt;mio::JsonContext&gt;(mio::JsonContext&amp;)::{lambda(auto:1&amp;&amp;, auto:2&amp;&amp;, auto:3&amp;&amp;, auto:4&amp;&amp;, auto:5&amp;&amp;)#1}::operator()&lt;double const&amp;, double const, double const, double const, std::vector&lt;double, std::allocator&lt;double&gt; &gt; const&amp;&gt;(mio::JsonContext&amp;&amp;, double const&amp;&amp;, double const&amp;&amp;, double const&amp;&amp;, std::vector&lt;double, std::allocator&lt;double&gt; &gt; const&amp;) const</a></td>
               <td class="coverFnHi">151</td>
             </tr>
     <tr>
-              <td class="coverFn"><a href="parameter_distributions.h.gcov.html#333">mio::details::SerializationVisitor&lt;mio::JsonObject&gt;::visit(mio::ParameterDistributionNormal const&amp;)</a></td>
+              <td class="coverFn"><a href="parameter_distributions.h.gcov.html#361">mio::details::SerializationVisitor&lt;mio::JsonObject&gt;::visit(mio::ParameterDistributionNormal const&amp;)</a></td>
               <td class="coverFnHi">152</td>
             </tr>
     <tr>
@@ -172,7 +188,7 @@
               <td class="coverFnHi">498</td>
             </tr>
     <tr>
-              <td class="coverFn"><a href="parameter_distributions.h.gcov.html#359">mio::ParameterDistributionUniform::get_rand_sample()</a></td>
+              <td class="coverFn"><a href="parameter_distributions.h.gcov.html#387">mio::ParameterDistributionUniform::get_rand_sample()</a></td>
               <td class="coverFnHi">1001</td>
             </tr>
     <tr>
@@ -204,12 +220,12 @@
               <td class="coverFnHi">2446</td>
             </tr>
     <tr>
-              <td class="coverFn"><a href="parameter_distributions.h.gcov.html#319">mio::ParameterDistributionNormal::clone() const</a></td>
+              <td class="coverFn"><a href="parameter_distributions.h.gcov.html#347">mio::ParameterDistributionNormal::clone() const</a></td>
               <td class="coverFnHi">4665</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="parameter_distributions.h.gcov.html#78">mio::ParameterDistribution::~ParameterDistribution().2</a></td>
-              <td class="coverFnHi">5158</td>
+              <td class="coverFnHi">6076</td>
             </tr>
   </table>
   <br>
