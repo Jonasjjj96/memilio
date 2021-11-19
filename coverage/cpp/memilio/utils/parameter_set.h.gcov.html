@@ -37,12 +37,12 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-11-16 10:38:26</td>
+            <td class="headerValue">2021-11-19 16:15:30</td>
             <td></td>
             <td class="headerItem">Functions:</td>
-            <td class="headerCovTableEntry">469</td>
-            <td class="headerCovTableEntry">475</td>
-            <td class="headerCovTableEntryHi">98.7 %</td>
+            <td class="headerCovTableEntry">485</td>
+            <td class="headerCovTableEntry">491</td>
+            <td class="headerCovTableEntryHi">98.8 %</td>
           </tr>
           <tr><td><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
         </table>
@@ -123,9 +123,9 @@
 <a name="61"><span class="lineNum">      61 </span>            : </a>
 <a name="62"><span class="lineNum">      62 </span>            :     //get_default either with get_default member function or fallback on default constructor</a>
 <a name="63"><span class="lineNum">      63 </span>            :     template &lt;class Dummy = Tag, class... Ts&gt;</a>
-<a name="64"><span class="lineNum">      64 </span><span class="lineCov">       1805 :     static std::enable_if_t&lt;has_get_default_member_function&lt;Dummy, Ts...&gt;::value, Type&gt; get_default(Ts&amp;&amp;... args)</span></a>
+<a name="64"><span class="lineNum">      64 </span><span class="lineCov">       2242 :     static std::enable_if_t&lt;has_get_default_member_function&lt;Dummy, Ts...&gt;::value, Type&gt; get_default(Ts&amp;&amp;... args)</span></a>
 <a name="65"><span class="lineNum">      65 </span>            :     {</a>
-<a name="66"><span class="lineNum">      66 </span><span class="lineCov">       1805 :         return Tag::get_default(std::forward&lt;Ts&gt;(args)...);</span></a>
+<a name="66"><span class="lineNum">      66 </span><span class="lineCov">       2242 :         return Tag::get_default(std::forward&lt;Ts&gt;(args)...);</span></a>
 <a name="67"><span class="lineNum">      67 </span>            :     }</a>
 <a name="68"><span class="lineNum">      68 </span>            : </a>
 <a name="69"><span class="lineNum">      69 </span>            :     template &lt;class Dummy = Tag, class... Ts&gt;</a>
@@ -151,10 +151,10 @@
 <a name="89"><span class="lineNum">      89 </span>            : </a>
 <a name="90"><span class="lineNum">      90 </span>            :         template &lt;class... Ts, class Dummy1 = void,</a>
 <a name="91"><span class="lineNum">      91 </span>            :                   class = std::enable_if_t&lt;std::is_constructible&lt;Type, Ts...&gt;::value, Dummy1&gt;&gt;</a>
-<a name="92"><span class="lineNum">      92 </span><span class="lineCov">       1880 :         TaggedParameter(Ts&amp;&amp;... args)</span></a>
-<a name="93"><span class="lineNum">      93 </span><span class="lineCov">       1880 :             : m_value(std::forward&lt;Ts&gt;(args)...)</span></a>
+<a name="92"><span class="lineNum">      92 </span><span class="lineCov">       2317 :         TaggedParameter(Ts&amp;&amp;... args)</span></a>
+<a name="93"><span class="lineNum">      93 </span><span class="lineCov">       2317 :             : m_value(std::forward&lt;Ts&gt;(args)...)</span></a>
 <a name="94"><span class="lineNum">      94 </span>            :         {</a>
-<a name="95"><span class="lineNum">      95 </span><span class="lineCov">       1880 :         }</span></a>
+<a name="95"><span class="lineNum">      95 </span><span class="lineCov">       2317 :         }</span></a>
 <a name="96"><span class="lineNum">      96 </span>            : </a>
 <a name="97"><span class="lineNum">      97 </span>            :         operator Type&amp;()</a>
 <a name="98"><span class="lineNum">      98 </span>            :         {</a>
@@ -166,14 +166,14 @@
 <a name="104"><span class="lineNum">     104 </span>            :             return get();</a>
 <a name="105"><span class="lineNum">     105 </span>            :         }</a>
 <a name="106"><span class="lineNum">     106 </span>            : </a>
-<a name="107"><span class="lineNum">     107 </span><span class="lineCov">     343803 :         const Type&amp; get() const</span></a>
+<a name="107"><span class="lineNum">     107 </span><span class="lineCov">     366852 :         const Type&amp; get() const</span></a>
 <a name="108"><span class="lineNum">     108 </span>            :         {</a>
-<a name="109"><span class="lineNum">     109 </span><span class="lineCov">     343803 :             return m_value;</span></a>
+<a name="109"><span class="lineNum">     109 </span><span class="lineCov">     366852 :             return m_value;</span></a>
 <a name="110"><span class="lineNum">     110 </span>            :         }</a>
 <a name="111"><span class="lineNum">     111 </span>            : </a>
-<a name="112"><span class="lineNum">     112 </span><span class="lineCov">       4450 :         Type&amp; get()</span></a>
+<a name="112"><span class="lineNum">     112 </span><span class="lineCov">       4460 :         Type&amp; get()</span></a>
 <a name="113"><span class="lineNum">     113 </span>            :         {</a>
-<a name="114"><span class="lineNum">     114 </span><span class="lineCov">       4450 :             return m_value;</span></a>
+<a name="114"><span class="lineNum">     114 </span><span class="lineCov">       4460 :             return m_value;</span></a>
 <a name="115"><span class="lineNum">     115 </span>            :         }</a>
 <a name="116"><span class="lineNum">     116 </span>            : </a>
 <a name="117"><span class="lineNum">     117 </span>            :         template&lt;class T&gt;</a>
@@ -286,10 +286,10 @@
 <a name="224"><span class="lineNum">     224 </span>            :     template &lt;class Dummy = void,</a>
 <a name="225"><span class="lineNum">     225 </span>            :               class       = std::enable_if_t&lt;</a>
 <a name="226"><span class="lineNum">     226 </span>            :                   details::AllOf&lt;has_get_default_member_function, ParameterTagTraits&lt;Tags&gt;...&gt;::value, Dummy&gt;&gt;</a>
-<a name="227"><span class="lineNum">     227 </span><span class="lineCov">        212 :     ParameterSet()</span></a>
-<a name="228"><span class="lineNum">     228 </span><span class="lineCov">        212 :         : m_tup(ParameterTagTraits&lt;Tags&gt;::get_default()...)</span></a>
+<a name="227"><span class="lineNum">     227 </span><span class="lineCov">        241 :     ParameterSet()</span></a>
+<a name="228"><span class="lineNum">     228 </span><span class="lineCov">        241 :         : m_tup(ParameterTagTraits&lt;Tags&gt;::get_default()...)</span></a>
 <a name="229"><span class="lineNum">     229 </span>            :     {</a>
-<a name="230"><span class="lineNum">     230 </span><span class="lineCov">        212 :     }</span></a>
+<a name="230"><span class="lineNum">     230 </span><span class="lineCov">        241 :     }</span></a>
 <a name="231"><span class="lineNum">     231 </span>            : </a>
 <a name="232"><span class="lineNum">     232 </span>            :     /**</a>
 <a name="233"><span class="lineNum">     233 </span>            :      * @brief default initializing constructor.</a>
@@ -312,9 +312,9 @@
 <a name="250"><span class="lineNum">     250 </span>            :      * @return The value of the parameter</a>
 <a name="251"><span class="lineNum">     251 </span>            :      */</a>
 <a name="252"><span class="lineNum">     252 </span>            :     template &lt;class Tag&gt;</a>
-<a name="253"><span class="lineNum">     253 </span><span class="lineCov">     343803 :     const typename ParameterTagTraits&lt;Tag&gt;::Type&amp; get() const</span></a>
+<a name="253"><span class="lineNum">     253 </span><span class="lineCov">     366852 :     const typename ParameterTagTraits&lt;Tag&gt;::Type&amp; get() const</span></a>
 <a name="254"><span class="lineNum">     254 </span>            :     {</a>
-<a name="255"><span class="lineNum">     255 </span><span class="lineCov">     343803 :         return std::get&lt;details::TaggedParameter&lt;Tag&gt;&gt;(m_tup).get();</span></a>
+<a name="255"><span class="lineNum">     255 </span><span class="lineCov">     366852 :         return std::get&lt;details::TaggedParameter&lt;Tag&gt;&gt;(m_tup).get();</span></a>
 <a name="256"><span class="lineNum">     256 </span>            :     }</a>
 <a name="257"><span class="lineNum">     257 </span>            : </a>
 <a name="258"><span class="lineNum">     258 </span>            :     /**</a>
@@ -323,9 +323,9 @@
 <a name="261"><span class="lineNum">     261 </span>            :      * @return The value of the parameter</a>
 <a name="262"><span class="lineNum">     262 </span>            :      */</a>
 <a name="263"><span class="lineNum">     263 </span>            :     template &lt;class Tag&gt;</a>
-<a name="264"><span class="lineNum">     264 </span><span class="lineCov">       4450 :     typename ParameterTagTraits&lt;Tag&gt;::Type&amp; get()</span></a>
+<a name="264"><span class="lineNum">     264 </span><span class="lineCov">       4460 :     typename ParameterTagTraits&lt;Tag&gt;::Type&amp; get()</span></a>
 <a name="265"><span class="lineNum">     265 </span>            :     {</a>
-<a name="266"><span class="lineNum">     266 </span><span class="lineCov">       4450 :         return std::get&lt;details::TaggedParameter&lt;Tag&gt;&gt;(m_tup).get();</span></a>
+<a name="266"><span class="lineNum">     266 </span><span class="lineCov">       4460 :         return std::get&lt;details::TaggedParameter&lt;Tag&gt;&gt;(m_tup).get();</span></a>
 <a name="267"><span class="lineNum">     267 </span>            :     }</a>
 <a name="268"><span class="lineNum">     268 </span>            : </a>
 <a name="269"><span class="lineNum">     269 </span>            :     /**</a>
@@ -343,10 +343,10 @@
 <a name="281"><span class="lineNum">     281 </span>            :      * @tparam Tag the parameter</a>
 <a name="282"><span class="lineNum">     282 </span>            :      */</a>
 <a name="283"><span class="lineNum">     283 </span>            :     template &lt;class Tag, class T&gt;</a>
-<a name="284"><span class="lineNum">     284 </span><span class="lineCov">         48 :     void set(T&amp;&amp; arg)</span></a>
+<a name="284"><span class="lineNum">     284 </span><span class="lineCov">         51 :     void set(T&amp;&amp; arg)</span></a>
 <a name="285"><span class="lineNum">     285 </span>            :     {</a>
-<a name="286"><span class="lineNum">     286 </span><span class="lineCov">         48 :         get&lt;Tag&gt;() = std::forward&lt;T&gt;(arg);</span></a>
-<a name="287"><span class="lineNum">     287 </span><span class="lineCov">         48 :     }</span></a>
+<a name="286"><span class="lineNum">     286 </span><span class="lineCov">         51 :         get&lt;Tag&gt;() = std::forward&lt;T&gt;(arg);</span></a>
+<a name="287"><span class="lineNum">     287 </span><span class="lineCov">         51 :     }</span></a>
 <a name="288"><span class="lineNum">     288 </span>            : </a>
 <a name="289"><span class="lineNum">     289 </span>            :     /**</a>
 <a name="290"><span class="lineNum">     290 </span>            :      * @brief (re)set parameter to its default value</a>
