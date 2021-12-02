@@ -1,4 +1,8 @@
 var searchData=
 [
-  ['nearest_5fearlier_5fdate_134',['nearest_earlier_date',['../namespaceepidemiology_1_1epidata_1_1getDIVIData.html#a59e94e2a8caf115f1a7643ee820cf586',1,'epidemiology::epidata::getDIVIData']]]
+  ['hour_5fof_5fday_1738',['hour_of_day',['../classmio_1_1TimePoint.html#af3d9addfd30c64e9c3a60d4db1e74da3',1,'mio::TimePoint']]],
+  ['hours_1739',['hours',['../classmio_1_1TimeSpan.html#a31a7b352e92d3df6924f055db1d60ddd',1,'mio::TimeSpan::hours()'],['../classmio_1_1TimePoint.html#a381de8eaabdb6d191039adb630e4ac71',1,'mio::TimePoint::hours()'],['../namespacemio.html#abd4a76eec2ba59f0b53dc135a3449534',1,'mio::hours()']]],
+  ['household_1740',['Household',['../classmio_1_1Household.html#a29ae4806e1eaccde3139321e38ae26b2',1,'mio::Household']]],
+  ['householdgroup_1741',['HouseholdGroup',['../classmio_1_1HouseholdGroup.html#a1dc97a227d0433b04fe47360b3122b46',1,'mio::HouseholdGroup']]],
+  ['householdmember_1742',['HouseholdMember',['../classmio_1_1HouseholdMember.html#ab137a4dd632800bdde95fb308cf9c983',1,'mio::HouseholdMember']]]
 ];

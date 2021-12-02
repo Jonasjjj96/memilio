@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-11-19 16:15:30</td>
+            <td class="headerValue">2021-12-02 14:27:27</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">5</td>
@@ -167,13 +167,13 @@
 <a name="105"><span class="lineNum">     105 </span>            :      * @param dt_min Mininum time step</a>
 <a name="106"><span class="lineNum">     106 </span>            :      * @param dt_max Maximum time step</a>
 <a name="107"><span class="lineNum">     107 </span>            :      */</a>
-<a name="108"><span class="lineNum">     108 </span><span class="lineCov">         34 :     RKIntegratorCore()</span></a>
-<a name="109"><span class="lineNum">     109 </span><span class="lineCov">         34 :         : m_abs_tol(1e-10)</span></a>
+<a name="108"><span class="lineNum">     108 </span><span class="lineCov">         35 :     RKIntegratorCore()</span></a>
+<a name="109"><span class="lineNum">     109 </span><span class="lineCov">         35 :         : m_abs_tol(1e-10)</span></a>
 <a name="110"><span class="lineNum">     110 </span>            :         , m_rel_tol(1e-5)</a>
-<a name="111"><span class="lineNum">     111 </span><span class="lineCov">         34 :         , m_dt_min(std::numeric_limits&lt;double&gt;::min())</span></a>
-<a name="112"><span class="lineNum">     112 </span><span class="lineCov">         68 :         , m_dt_max(std::numeric_limits&lt;double&gt;::max())</span></a>
+<a name="111"><span class="lineNum">     111 </span><span class="lineCov">         35 :         , m_dt_min(std::numeric_limits&lt;double&gt;::min())</span></a>
+<a name="112"><span class="lineNum">     112 </span><span class="lineCov">         70 :         , m_dt_max(std::numeric_limits&lt;double&gt;::max())</span></a>
 <a name="113"><span class="lineNum">     113 </span>            :     {</a>
-<a name="114"><span class="lineNum">     114 </span><span class="lineCov">         34 :     }</span></a>
+<a name="114"><span class="lineNum">     114 </span><span class="lineCov">         35 :     }</span></a>
 <a name="115"><span class="lineNum">     115 </span>            : </a>
 <a name="116"><span class="lineNum">     116 </span>            :     /// @param tol the required absolute tolerance for the comparison with the Fehlberg approximation</a>
 <a name="117"><span class="lineNum">     117 </span><span class="lineCov">          3 :     void set_abs_tolerance(double tol)</span></a>

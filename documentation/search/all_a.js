@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['nearest_5fearlier_5fdate_69',['nearest_earlier_date',['../namespaceepidemiology_1_1epidata_1_1getDIVIData.html#a59e94e2a8caf115f1a7643ee820cf586',1,'epidemiology::epidata::getDIVIData']]]
+  ['json_5fserializer_2ecpp_531',['json_serializer.cpp',['../json__serializer_8cpp.html',1,'']]],
+  ['json_5fserializer_2eh_532',['json_serializer.h',['../json__serializer_8h.html',1,'']]]
 ];
