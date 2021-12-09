@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-12-02 14:27:27</td>
+            <td class="headerValue">2021-12-09 10:55:50</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">9</td>
@@ -98,38 +98,38 @@
 <a name="36"><span class="lineNum">      36 </span>            : {</a>
 <a name="37"><span class="lineNum">      37 </span><span class="lineCov">         81 : }</span></a>
 <a name="38"><span class="lineNum">      38 </span>            : </a>
-<a name="39"><span class="lineNum">      39 </span><span class="lineCov">        229 : InfectionState Location::interact(const Person&amp; person, TimeSpan dt, const GlobalInfectionParameters&amp; global_params) const</span></a>
+<a name="39"><span class="lineNum">      39 </span><span class="lineCov">        184 : InfectionState Location::interact(const Person&amp; person, TimeSpan dt, const GlobalInfectionParameters&amp; global_params) const</span></a>
 <a name="40"><span class="lineNum">      40 </span>            : {</a>
-<a name="41"><span class="lineNum">      41 </span><span class="lineCov">        229 :     auto infection_state = person.get_infection_state();</span></a>
-<a name="42"><span class="lineNum">      42 </span><span class="lineCov">        229 :     auto vaccination_state = person.get_vaccination_state();</span></a>
-<a name="43"><span class="lineNum">      43 </span><span class="lineCov">        229 :     auto age = person.get_age();</span></a>
-<a name="44"><span class="lineNum">      44 </span><span class="lineCov">        229 :         switch (infection_state) {</span></a>
-<a name="45"><span class="lineNum">      45 </span><span class="lineCov">        125 :         case InfectionState::Susceptible:</span></a>
-<a name="46"><span class="lineNum">      46 </span><span class="lineCov">        125 :                 return random_transition(infection_state, dt, {{InfectionState::Exposed, m_cached_exposure_rate[{age,vaccination_state}]}});</span></a>
-<a name="47"><span class="lineNum">      47 </span><span class="lineCov">         16 :         case InfectionState::Carrier:</span></a>
-<a name="48"><span class="lineNum">      48 </span><span class="lineCov">         64 :             return random_transition(</span></a>
+<a name="41"><span class="lineNum">      41 </span><span class="lineCov">        184 :     auto infection_state = person.get_infection_state();</span></a>
+<a name="42"><span class="lineNum">      42 </span><span class="lineCov">        184 :     auto vaccination_state = person.get_vaccination_state();</span></a>
+<a name="43"><span class="lineNum">      43 </span><span class="lineCov">        184 :     auto age = person.get_age();</span></a>
+<a name="44"><span class="lineNum">      44 </span><span class="lineCov">        184 :         switch (infection_state) {</span></a>
+<a name="45"><span class="lineNum">      45 </span><span class="lineCov">         43 :         case InfectionState::Susceptible:</span></a>
+<a name="46"><span class="lineNum">      46 </span><span class="lineCov">         43 :                 return random_transition(infection_state, dt, {{InfectionState::Exposed, m_cached_exposure_rate[{age,vaccination_state}]}});</span></a>
+<a name="47"><span class="lineNum">      47 </span><span class="lineCov">         50 :         case InfectionState::Carrier:</span></a>
+<a name="48"><span class="lineNum">      48 </span><span class="lineCov">        200 :             return random_transition(</span></a>
 <a name="49"><span class="lineNum">      49 </span>            :                 infection_state, dt,</a>
-<a name="50"><span class="lineNum">      50 </span><span class="lineCov">         32 :                 {{InfectionState::Infected, global_params.get&lt;CarrierToInfected&gt;()[{age,vaccination_state}]},</span></a>
-<a name="51"><span class="lineNum">      51 </span><span class="lineCov">         48 :                  {InfectionState::Recovered_Carrier, global_params.get&lt;CarrierToRecovered&gt;()[{age,vaccination_state}]}});</span></a>
-<a name="52"><span class="lineNum">      52 </span><span class="lineCov">         13 :         case InfectionState::Infected:</span></a>
-<a name="53"><span class="lineNum">      53 </span><span class="lineCov">         52 :             return random_transition(</span></a>
+<a name="50"><span class="lineNum">      50 </span><span class="lineCov">        100 :                 {{InfectionState::Infected, global_params.get&lt;CarrierToInfected&gt;()[{age,vaccination_state}]},</span></a>
+<a name="51"><span class="lineNum">      51 </span><span class="lineCov">        150 :                  {InfectionState::Recovered_Carrier, global_params.get&lt;CarrierToRecovered&gt;()[{age,vaccination_state}]}});</span></a>
+<a name="52"><span class="lineNum">      52 </span><span class="lineCov">         46 :         case InfectionState::Infected:</span></a>
+<a name="53"><span class="lineNum">      53 </span><span class="lineCov">        184 :             return random_transition(</span></a>
 <a name="54"><span class="lineNum">      54 </span>            :                 infection_state, dt,</a>
-<a name="55"><span class="lineNum">      55 </span><span class="lineCov">         26 :                 {{InfectionState::Recovered_Infected, global_params.get&lt;InfectedToRecovered&gt;()[{age,vaccination_state}]},</span></a>
-<a name="56"><span class="lineNum">      56 </span><span class="lineCov">         39 :                  {InfectionState::Infected_Severe, global_params.get&lt;InfectedToSevere&gt;()[{age,vaccination_state}]}});</span></a>
-<a name="57"><span class="lineNum">      57 </span><span class="lineCov">         27 :         case InfectionState::Infected_Severe:</span></a>
-<a name="58"><span class="lineNum">      58 </span><span class="lineCov">        108 :             return random_transition(</span></a>
+<a name="55"><span class="lineNum">      55 </span><span class="lineCov">         92 :                 {{InfectionState::Recovered_Infected, global_params.get&lt;InfectedToRecovered&gt;()[{age,vaccination_state}]},</span></a>
+<a name="56"><span class="lineNum">      56 </span><span class="lineCov">        138 :                  {InfectionState::Infected_Severe, global_params.get&lt;InfectedToSevere&gt;()[{age,vaccination_state}]}});</span></a>
+<a name="57"><span class="lineNum">      57 </span><span class="lineCov">          6 :         case InfectionState::Infected_Severe:</span></a>
+<a name="58"><span class="lineNum">      58 </span><span class="lineCov">         24 :             return random_transition(</span></a>
 <a name="59"><span class="lineNum">      59 </span>            :                 infection_state, dt,</a>
-<a name="60"><span class="lineNum">      60 </span><span class="lineCov">         54 :                 {{InfectionState::Recovered_Infected, global_params.get&lt;SevereToRecovered&gt;()[{age,vaccination_state}]},</span></a>
-<a name="61"><span class="lineNum">      61 </span><span class="lineCov">         81 :                  {InfectionState::Infected_Critical, global_params.get&lt;SevereToCritical&gt;()[{age,vaccination_state}]}});</span></a>
-<a name="62"><span class="lineNum">      62 </span><span class="lineCov">         13 :         case InfectionState::Infected_Critical:</span></a>
-<a name="63"><span class="lineNum">      63 </span><span class="lineCov">         52 :             return random_transition(</span></a>
+<a name="60"><span class="lineNum">      60 </span><span class="lineCov">         12 :                 {{InfectionState::Recovered_Infected, global_params.get&lt;SevereToRecovered&gt;()[{age,vaccination_state}]},</span></a>
+<a name="61"><span class="lineNum">      61 </span><span class="lineCov">         18 :                  {InfectionState::Infected_Critical, global_params.get&lt;SevereToCritical&gt;()[{age,vaccination_state}]}});</span></a>
+<a name="62"><span class="lineNum">      62 </span><span class="lineCov">          3 :         case InfectionState::Infected_Critical:</span></a>
+<a name="63"><span class="lineNum">      63 </span><span class="lineCov">         12 :             return random_transition(</span></a>
 <a name="64"><span class="lineNum">      64 </span>            :                 infection_state, dt,</a>
-<a name="65"><span class="lineNum">      65 </span><span class="lineCov">         26 :                 {{InfectionState::Recovered_Infected, global_params.get&lt;CriticalToRecovered&gt;()[{age,vaccination_state}]},</span></a>
-<a name="66"><span class="lineNum">      66 </span><span class="lineCov">         39 :                  {InfectionState::Dead, global_params.get&lt;CriticalToDead&gt;()[{age,vaccination_state}]}});</span></a>
-<a name="67"><span class="lineNum">      67 </span><span class="lineCov">         34 :         case InfectionState::Recovered_Carrier: //fallthrough!</span></a>
+<a name="65"><span class="lineNum">      65 </span><span class="lineCov">          6 :                 {{InfectionState::Recovered_Infected, global_params.get&lt;CriticalToRecovered&gt;()[{age,vaccination_state}]},</span></a>
+<a name="66"><span class="lineNum">      66 </span><span class="lineCov">          9 :                  {InfectionState::Dead, global_params.get&lt;CriticalToDead&gt;()[{age,vaccination_state}]}});</span></a>
+<a name="67"><span class="lineNum">      67 </span><span class="lineCov">         35 :         case InfectionState::Recovered_Carrier: //fallthrough!</span></a>
 <a name="68"><span class="lineNum">      68 </span>            :         case InfectionState::Recovered_Infected:</a>
-<a name="69"><span class="lineNum">      69 </span><span class="lineCov">        102 :             return random_transition(</span></a>
-<a name="70"><span class="lineNum">      70 </span><span class="lineCov">        102 :                 infection_state, dt, {{InfectionState::Susceptible, global_params.get&lt;RecoveredToSusceptible&gt;()[{age,vaccination_state}]}});</span></a>
+<a name="69"><span class="lineNum">      69 </span><span class="lineCov">        105 :             return random_transition(</span></a>
+<a name="70"><span class="lineNum">      70 </span><span class="lineCov">        105 :                 infection_state, dt, {{InfectionState::Susceptible, global_params.get&lt;RecoveredToSusceptible&gt;()[{age,vaccination_state}]}});</span></a>
 <a name="71"><span class="lineNum">      71 </span><span class="lineCov">          1 :         default:</span></a>
 <a name="72"><span class="lineNum">      72 </span><span class="lineCov">          1 :             return infection_state; //some states don't transition</span></a>
 <a name="73"><span class="lineNum">      73 </span>            :         }</a>
@@ -168,17 +168,17 @@
 <a name="106"><span class="lineNum">     106 </span><span class="lineCov">          6 :     change_subpopulation(s, -1);</span></a>
 <a name="107"><span class="lineNum">     107 </span><span class="lineCov">          6 : }</span></a>
 <a name="108"><span class="lineNum">     108 </span>            : </a>
-<a name="109"><span class="lineNum">     109 </span><span class="lineCov">         16 : void Location::changed_state(const Person&amp; p, InfectionState old_infection_state)</span></a>
+<a name="109"><span class="lineNum">     109 </span><span class="lineCov">         15 : void Location::changed_state(const Person&amp; p, InfectionState old_infection_state)</span></a>
 <a name="110"><span class="lineNum">     110 </span>            : {</a>
-<a name="111"><span class="lineNum">     111 </span><span class="lineCov">         16 :     change_subpopulation(old_infection_state, -1);</span></a>
-<a name="112"><span class="lineNum">     112 </span><span class="lineCov">         16 :     change_subpopulation(p.get_infection_state(), +1);</span></a>
-<a name="113"><span class="lineNum">     113 </span><span class="lineCov">         16 : }</span></a>
+<a name="111"><span class="lineNum">     111 </span><span class="lineCov">         15 :     change_subpopulation(old_infection_state, -1);</span></a>
+<a name="112"><span class="lineNum">     112 </span><span class="lineCov">         15 :     change_subpopulation(p.get_infection_state(), +1);</span></a>
+<a name="113"><span class="lineNum">     113 </span><span class="lineCov">         15 : }</span></a>
 <a name="114"><span class="lineNum">     114 </span>            : </a>
-<a name="115"><span class="lineNum">     115 </span><span class="lineCov">        179 : void Location::change_subpopulation(InfectionState s, int delta)</span></a>
+<a name="115"><span class="lineNum">     115 </span><span class="lineCov">        177 : void Location::change_subpopulation(InfectionState s, int delta)</span></a>
 <a name="116"><span class="lineNum">     116 </span>            : {</a>
-<a name="117"><span class="lineNum">     117 </span><span class="lineCov">        179 :     m_subpopulations[size_t(s)] += delta;</span></a>
-<a name="118"><span class="lineNum">     118 </span><span class="lineCov">        179 :     assert(m_subpopulations[size_t(s)]&gt;=0 &amp;&amp; &quot;subpopulations must be non-negative&quot;);</span></a>
-<a name="119"><span class="lineNum">     119 </span><span class="lineCov">        179 : }</span></a>
+<a name="117"><span class="lineNum">     117 </span><span class="lineCov">        177 :     m_subpopulations[size_t(s)] += delta;</span></a>
+<a name="118"><span class="lineNum">     118 </span><span class="lineCov">        177 :     assert(m_subpopulations[size_t(s)]&gt;=0 &amp;&amp; &quot;subpopulations must be non-negative&quot;);</span></a>
+<a name="119"><span class="lineNum">     119 </span><span class="lineCov">        177 : }</span></a>
 <a name="120"><span class="lineNum">     120 </span>            : </a>
 <a name="121"><span class="lineNum">     121 </span><span class="lineCov">        245 : int Location::get_subpopulation(InfectionState s) const</span></a>
 <a name="122"><span class="lineNum">     122 </span>            : {</a>
