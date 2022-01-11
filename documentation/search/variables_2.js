@@ -1,12 +1,9 @@
 var searchData=
 [
-  ['data_5fbegin_1982',['data_begin',['../classmio_1_1CustomIndexArray_1_1Slice_1_1Iterator.html#a48ce2a5e04981169de669b6975ad9ce9',1,'mio::CustomIndexArray::Slice::Iterator::data_begin()'],['../classmio_1_1CustomIndexArray_1_1Slice.html#aa0659cb8e70246502dbe523d7235f52a',1,'mio::CustomIndexArray::Slice::data_begin()']]],
-  ['day_1983',['day',['../structmio_1_1Date.html#ab3925ea9564606bcab110d7da21a8105',1,'mio::Date']]],
-  ['default_5ffile_5fpath_1984',['default_file_path',['../namespacememilio_1_1epidata_1_1defaultDict.html#aac09a59b131ddd6dc74785a850d23632',1,'memilio::epidata::defaultDict']]],
-  ['defaultdict_1985',['defaultDict',['../namespacememilio_1_1epidata_1_1defaultDict.html#a5b8752aa7585dea1ee3c8ad5b913ed94',1,'memilio::epidata::defaultDict']]],
-  ['detected_1986',['detected',['../structmio_1_1InfectionProperties.html#ab9c28897fe2867bed9bbdbefa11d1a55',1,'mio::InfectionProperties']]],
-  ['dfp_5fvec_1987',['dfp_vec',['../namespacememilio_1_1epidata_1_1defaultDict.html#a58b3ff88e58a161f53299d05248849a4',1,'memilio::epidata::defaultDict']]],
-  ['di_1988',['di',['../classmio_1_1CustomIndexArray_1_1Slice_1_1Iterator.html#a9eb013caf25ab28875c382a5804f024b',1,'mio::CustomIndexArray::Slice::Iterator::di()'],['../classmio_1_1CustomIndexArray_1_1Slice.html#af91593ff448d6381ea3a2d3d88a269c2',1,'mio::CustomIndexArray::Slice::di()']]],
-  ['dl_1989',['dl',['../classmio_1_1CustomIndexArray_1_1Slice.html#a1a5a449185be33e628342de36fc6835e',1,'mio::CustomIndexArray::Slice']]],
-  ['dr_1990',['dr',['../classmio_1_1CustomIndexArray_1_1Slice_1_1Iterator.html#a9e5782ab2384086e1faa2895d2b0756f',1,'mio::CustomIndexArray::Slice::Iterator::dr()'],['../classmio_1_1CustomIndexArray_1_1Slice.html#ac631c1a91d50cafe2830aac18b8e748c',1,'mio::CustomIndexArray::Slice::dr()']]]
+  ['end_5fnode_5fidx_2060',['end_node_idx',['../structmio_1_1InEdgeBase.html#a6ada9c4ba51d7a52b65b8332b433078d',1,'mio::InEdgeBase']]],
+  ['engeng_2061',['EngEng',['../namespacememilio_1_1epidata_1_1defaultDict.html#ab6c2fa908c3cd870fa200e8a8d5c4a5b',1,'memilio::epidata::defaultDict']]],
+  ['entries_2062',['entries',['../classmio_1_1Tableau.html#a762837db3f643f6c1ebaee9291f04354',1,'mio::Tableau']]],
+  ['entries_5fhigh_2063',['entries_high',['../classmio_1_1TableauFinal.html#af7b526a25768d773e9dba9263330912d',1,'mio::TableauFinal']]],
+  ['entries_5flow_2064',['entries_low',['../classmio_1_1TableauFinal.html#a0ce66419a2b02fa49579a8326b67339f',1,'mio::TableauFinal']]],
+  ['eseng_2065',['EsEng',['../namespacememilio_1_1epidata_1_1defaultDict.html#aaa3de84e2091fed442b22dcfaf70bd9b',1,'memilio::epidata::defaultDict']]]
 ];

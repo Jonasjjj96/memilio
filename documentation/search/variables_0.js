@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['age_5frki_5flist_1979',['age_rki_list',['../namespacememilio_1_1epidata_1_1defaultDict.html#a2d1e24b5d41143642f6b3ff96252e54f',1,'memilio::epidata::defaultDict']]]
+  ['conjunction_5fv_2048',['conjunction_v',['../namespacemio.html#a5e1169fe9e5d36e1c3a2bf558a874049',1,'mio']]],
+  ['county_2049',['County',['../namespacememilio_1_1epidata_1_1defaultDict.html#a79d2de4fed52305680d8450ba625795d',1,'memilio::epidata::defaultDict']]],
+  ['countymerging_2050',['CountyMerging',['../namespacememilio_1_1epidata_1_1geoModificationGermany.html#a793000594421b885eece0c214a164a86',1,'memilio::epidata::geoModificationGermany']]]
 ];

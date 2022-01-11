@@ -75,9 +75,9 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:abef84e583f2a19926fcd532b70503861"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacememilio_1_1epidata_1_1getSimulationData.html#abef84e583f2a19926fcd532b70503861">get_simulation_data</a> (read_data=dd.defaultDict['read_data'], file_format=dd.defaultDict['file_format'], out_folder=dd.defaultDict['out_folder'], no_raw=dd.defaultDict['no_raw'], end_date=dd.defaultDict['end_date'], fill_dates=dd.defaultDict['fill_dates'], make_plot=dd.defaultDict['make_plot'], moving_average=dd.defaultDict['moving_average'], split_berlin=dd.defaultDict['split_berlin'], start_date=dd.defaultDict['start_date'], update_data=dd.defaultDict['update_data'])</td></tr>
-<tr class="memdesc:abef84e583f2a19926fcd532b70503861"><td class="mdescLeft">&#160;</td><td class="mdescRight">Downloads all data from external sources.  <a href="namespacememilio_1_1epidata_1_1getSimulationData.html#abef84e583f2a19926fcd532b70503861">More...</a><br /></td></tr>
-<tr class="separator:abef84e583f2a19926fcd532b70503861"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93bf290cc3359dae02bb4c94569779f9"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacememilio_1_1epidata_1_1getSimulationData.html#a93bf290cc3359dae02bb4c94569779f9">get_simulation_data</a> (read_data=dd.defaultDict['read_data'], file_format=dd.defaultDict['file_format'], out_folder=dd.defaultDict['out_folder'], no_raw=dd.defaultDict['no_raw'], end_date=dd.defaultDict['end_date'], impute_dates=dd.defaultDict['impute_dates'], make_plot=dd.defaultDict['make_plot'], moving_average=dd.defaultDict['moving_average'], split_berlin=dd.defaultDict['split_berlin'], start_date=dd.defaultDict['start_date'])</td></tr>
+<tr class="memdesc:a93bf290cc3359dae02bb4c94569779f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Downloads all data from external sources.  <a href="namespacememilio_1_1epidata_1_1getSimulationData.html#a93bf290cc3359dae02bb4c94569779f9">More...</a><br /></td></tr>
+<tr class="separator:a93bf290cc3359dae02bb4c94569779f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a01887b3d5346a61a6243dad51e114958"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacememilio_1_1epidata_1_1getSimulationData.html#a01887b3d5346a61a6243dad51e114958">main</a> ()</td></tr>
 <tr class="memdesc:a01887b3d5346a61a6243dad51e114958"><td class="mdescLeft">&#160;</td><td class="mdescRight">Main program entry.  <a href="namespacememilio_1_1epidata_1_1getSimulationData.html#a01887b3d5346a61a6243dad51e114958">More...</a><br /></td></tr>
 <tr class="separator:a01887b3d5346a61a6243dad51e114958"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -85,8 +85,8 @@ Functions</h2></td></tr>
 <tr class="separator:aadc9f569b620bc46255755ed9dd4890b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="abef84e583f2a19926fcd532b70503861"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abef84e583f2a19926fcd532b70503861">&#9670;&nbsp;</a></span>get_simulation_data()</h2>
+<a id="a93bf290cc3359dae02bb4c94569779f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a93bf290cc3359dae02bb4c94569779f9">&#9670;&nbsp;</a></span>get_simulation_data()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -125,7 +125,7 @@ Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>fill_dates</em> = <code>dd.defaultDict['fill_dates']</code>, </td>
+          <td class="paramname"><em>impute_dates</em> = <code>dd.defaultDict['impute_dates']</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -149,13 +149,7 @@ Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>start_date</em> = <code>dd.defaultDict['start_date']</code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>update_data</em> = <code>dd.defaultDict['update_data']</code>&#160;</td>
+          <td class="paramname"><em>start_date</em> = <code>dd.defaultDict['start_date']</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -167,10 +161,10 @@ Functions</h2></td></tr>
 
 <p>Downloads all data from external sources. </p>
 <p>The functions which are called are:</p><ul>
-<li><a class="el" href="namespacememilio_1_1epidata_1_1getRKIData.html#a87a6fe2b6ae9dc3724ad01b91a144a0a" title="Downloads the RKI data and provides different kind of structured data.">getRKIData.get_rki_data</a></li>
+<li><a class="el" href="namespacememilio_1_1epidata_1_1getRKIData.html#a4669bc879cbf423fbb5f29b0b15429fa" title="Downloads the RKI data and provides different kind of structured data.">getRKIData.get_rki_data</a></li>
 <li><a class="el" href="namespacememilio_1_1epidata_1_1getPopulationData.html#addb8226ff93a43c9f11a9141edf3a715" title="Downloads population data.">getPopulationData.get_population_data</a></li>
-<li>getVaccineData.get_jh_data</li>
-<li><a class="el" href="namespacememilio_1_1epidata_1_1getDIVIData.html#a7e160f4063366bd6f0a24366fbab8e1b" title="Function to get the divi data.">getDIVIData.get_divi_data</a></li>
+<li><a class="el" href="namespacememilio_1_1epidata_1_1getVaccinationData.html#af4f8c999894735d8783f8c69581be2a1" title="Downloads the RKI vaccination data and provides different kind of structured data.">getVaccinationData.get_vaccination_data</a></li>
+<li><a class="el" href="namespacememilio_1_1epidata_1_1getDIVIData.html#aae431dedb4dbab6165913e966181dee1" title="Downloads or reads the DIVI ICU data and writes them in different files.">getDIVIData.get_divi_data</a></li>
 </ul>
 <p>Keyword arguments: </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -179,12 +173,11 @@ Functions</h2></td></tr>
     <tr><td class="paramname">out_folder</td><td>Path to folder where data is written in folder out_folder/Germany. </td></tr>
     <tr><td class="paramname">no_raw</td><td>True or False [Default]. Defines if unchanged raw data is saved or not. </td></tr>
     <tr><td class="paramname">end_date</td><td>[Optional] Date to stop to download data [Default = today]. </td></tr>
-    <tr><td class="paramname">fill_dates</td><td>False [Default] or True. Defines if dates where nothing changed are added. </td></tr>
+    <tr><td class="paramname">impute_dates</td><td>False [Default] or True. Defines if dates where nothing changed are added. </td></tr>
     <tr><td class="paramname">make_plot</td><td>False [Default] or True. Defines if plots are generated with matplotlib. </td></tr>
     <tr><td class="paramname">moving_average</td><td>True or False [Default]. Defines if files for 7 day moving average should be created </td></tr>
     <tr><td class="paramname">split_berlin</td><td>True [Default] or False. Defines if Berlin counties is fused to just on county. </td></tr>
     <tr><td class="paramname">start_date</td><td>[Optional] Date to start to download data [Default = 2020-04-24]. </td></tr>
-    <tr><td class="paramname">update_data</td><td>"True" if existing data is updated or "False [Default]" if it is downloaded for all dates from start_date to end_date. </td></tr>
   </table>
   </dd>
 </dl>
