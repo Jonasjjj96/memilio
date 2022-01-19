@@ -188,8 +188,6 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmio_1_1EdgeBase.html">EdgeBase</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmio_1_1EffectiveContacts.html">EffectiveContacts</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1EulerIntegratorCore.html">EulerIntegratorCore</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Simple explicit euler integration y(t+1) = y(t) + h*f(t,y) for ODE y'(t) = f(t,y)  <a href="classmio_1_1EulerIntegratorCore.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -294,6 +292,8 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmio_1_1LockdownDate.html">LockdownDate</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">parameters that govern the migration between locations.  <a href="structmio_1_1LockdownDate.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmio_1_1MaximumContacts.html">MaximumContacts</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmio_1_1MaxRiskOfInfectionFromSympomatic.html">MaxRiskOfInfectionFromSympomatic</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">risk of infection from symptomatic cases increases as test and trace capacity is exceeded.  <a href="structmio_1_1MaxRiskOfInfectionFromSympomatic.html#details">More...</a><br /></td></tr>
@@ -588,9 +588,9 @@ Typedefs</h2></td></tr>
 <tr class="memitem:a8c0df224333a70c37fba34e10571431e"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a8c0df224333a70c37fba34e10571431e"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemio.html#a8c0df224333a70c37fba34e10571431e">is_no_default_init_tag</a> = std::is_same&lt; <a class="el" href="structmio_1_1NoDefaultInit.html">NoDefaultInit</a>, T &gt;</td></tr>
 <tr class="separator:a8c0df224333a70c37fba34e10571431e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6ed26f575be23963b59f29253ad06882"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemio.html#a6ed26f575be23963b59f29253ad06882">LocalInfectionParameters</a> = <a class="el" href="classmio_1_1ParameterSet.html">ParameterSet</a>&lt; <a class="el" href="structmio_1_1EffectiveContacts.html">EffectiveContacts</a> &gt;</td></tr>
-<tr class="memdesc:a6ed26f575be23963b59f29253ad06882"><td class="mdescLeft">&#160;</td><td class="mdescRight">parameters of the infection that depend on the location.  <a href="namespacemio.html#a6ed26f575be23963b59f29253ad06882">More...</a><br /></td></tr>
-<tr class="separator:a6ed26f575be23963b59f29253ad06882"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a84f5346f55c2621d78f320811b7840eb"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemio.html#a84f5346f55c2621d78f320811b7840eb">LocalInfectionParameters</a> = <a class="el" href="classmio_1_1ParameterSet.html">ParameterSet</a>&lt; <a class="el" href="structmio_1_1MaximumContacts.html">MaximumContacts</a> &gt;</td></tr>
+<tr class="memdesc:a84f5346f55c2621d78f320811b7840eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">parameters of the infection that depend on the location.  <a href="namespacemio.html#a84f5346f55c2621d78f320811b7840eb">More...</a><br /></td></tr>
+<tr class="separator:a84f5346f55c2621d78f320811b7840eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a59bd2141b31d1f93df3d2274c999983b"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemio.html#a59bd2141b31d1f93df3d2274c999983b">MigrationCoefficientGroup</a> = <a class="el" href="classmio_1_1DampingMatrixExpressionGroup.html">DampingMatrixExpressionGroup</a>&lt; <a class="el" href="namespacemio.html#ac94e7b62c8f3a638290d6d40f05df999">MigrationCoefficients</a> &gt;</td></tr>
 <tr class="memdesc:a59bd2141b31d1f93df3d2274c999983b"><td class="mdescLeft">&#160;</td><td class="mdescRight">sum of time dependent migration coefficients.  <a href="namespacemio.html#a59bd2141b31d1f93df3d2274c999983b">More...</a><br /></td></tr>
 <tr class="separator:a59bd2141b31d1f93df3d2274c999983b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1826,14 +1826,14 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a id="a6ed26f575be23963b59f29253ad06882"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6ed26f575be23963b59f29253ad06882">&#9670;&nbsp;</a></span>LocalInfectionParameters</h2>
+<a id="a84f5346f55c2621d78f320811b7840eb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a84f5346f55c2621d78f320811b7840eb">&#9670;&nbsp;</a></span>LocalInfectionParameters</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="namespacemio.html#a6ed26f575be23963b59f29253ad06882">mio::LocalInfectionParameters</a> = typedef <a class="el" href="classmio_1_1ParameterSet.html">ParameterSet</a>&lt;<a class="el" href="structmio_1_1EffectiveContacts.html">EffectiveContacts</a>&gt;</td>
+          <td class="memname">using <a class="el" href="namespacemio.html#a84f5346f55c2621d78f320811b7840eb">mio::LocalInfectionParameters</a> = typedef <a class="el" href="classmio_1_1ParameterSet.html">ParameterSet</a>&lt;<a class="el" href="structmio_1_1MaximumContacts.html">MaximumContacts</a>&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">

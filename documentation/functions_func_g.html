@@ -130,7 +130,6 @@ $(function() {
 , <a class="el" href="structmio_1_1DeathsPerHospitalized.html#a1446a952577bf824bfb56db5d0c2c4f6">mio::DeathsPerHospitalized</a>
 , <a class="el" href="structmio_1_1DetectInfection.html#a5336ba51a4e1b510017f447ea31a58e4">mio::DetectInfection</a>
 , <a class="el" href="structmio_1_1DynamicNPIsInfected.html#aa40d518e9f999a62d48f551272b9e749">mio::DynamicNPIsInfected</a>
-, <a class="el" href="structmio_1_1EffectiveContacts.html#a9763b86f42bc7c0f7b5b674ad10e80f7">mio::EffectiveContacts</a>
 , <a class="el" href="structmio_1_1GotoSchoolTimeMaximum.html#ae28d33ececf7b7954beeb67878bea549">mio::GotoSchoolTimeMaximum</a>
 , <a class="el" href="structmio_1_1GotoSchoolTimeMinimum.html#a86e6e3507347919d975829067c937fb5">mio::GotoSchoolTimeMinimum</a>
 , <a class="el" href="structmio_1_1GotoWorkTimeMaximum.html#a8e85ce39aa1daa6b69a5187618fcf518">mio::GotoWorkTimeMaximum</a>
@@ -151,6 +150,7 @@ $(function() {
 , <a class="el" href="structmio_1_1InfectiousTimeAsymptomatic.html#a750f6aec0ea3bcfbdafca3065c8130a2">mio::InfectiousTimeAsymptomatic</a>
 , <a class="el" href="structmio_1_1InfectiousTimeMild.html#a0abb0241cd115d8e479735bc82967159">mio::InfectiousTimeMild</a>
 , <a class="el" href="structmio_1_1LockdownDate.html#acd653c41ac79554d2b17142a26c5c197">mio::LockdownDate</a>
+, <a class="el" href="structmio_1_1MaximumContacts.html#aaad3f969f61731b9cf96a78c3fbb3941">mio::MaximumContacts</a>
 , <a class="el" href="structmio_1_1MaxRiskOfInfectionFromSympomatic.html#a2838687a0e3e7071c2e67f1d7019cfbf">mio::MaxRiskOfInfectionFromSympomatic</a>
 , <a class="el" href="structmio_1_1ParameterTagTraits.html#a99b1b869ce30d502c96af6edc5f34de7">mio::ParameterTagTraits&lt; Tag &gt;</a>
 , <a class="el" href="structmio_1_1RecoveredToSusceptible.html#a75b7013ad4455d733ac1a12127a5f5b8">mio::RecoveredToSusceptible</a>
@@ -363,7 +363,7 @@ $(function() {
 : <a class="el" href="classmio_1_1UncertainContactMatrix.html#a003de7e81ffc682e8aedcc37a7a82973">mio::UncertainContactMatrix</a>
 </li>
 <li>get_secir_model_graph()
-: <a class="el" href="classmio_1_1ParameterStudy.html#adfc97cc34806c63adeecd0528162d189">mio::ParameterStudy&lt; S &gt;</a>
+: <a class="el" href="classmio_1_1ParameterStudy.html#a1f3e25e20baaecad0606bef78e62f39f">mio::ParameterStudy&lt; S &gt;</a>
 </li>
 <li>get_secir_params()
 : <a class="el" href="classmio_1_1ImplicitEulerIntegratorCore.html#a17955e5937f2dba7402621f50e17abfa">mio::ImplicitEulerIntegratorCore</a>
@@ -411,12 +411,12 @@ $(function() {
 : <a class="el" href="classmio_1_1Location.html#a47edccf25fb12f51676c1c421e338fc9">mio::Location</a>
 </li>
 <li>get_thresholds()
-: <a class="el" href="classmio_1_1DynamicNPIs.html#a75173e343f32831b981966a026001d8a">mio::DynamicNPIs</a>
+: <a class="el" href="classmio_1_1DynamicNPIs.html#a5214ea058cab5f2b935b658596f01e83">mio::DynamicNPIs</a>
 </li>
 <li>get_time()
 : <a class="el" href="classmio_1_1Damping.html#a5faa866d18d5951e3e3828fb5b9ad82d">mio::Damping&lt; S &gt;</a>
 , <a class="el" href="classmio_1_1DampingSampling.html#a5319762f6d25fb52053fab99e0af70e1">mio::DampingSampling</a>
-, <a class="el" href="classmio_1_1TimeSeries.html#acf2f630071341a845af2265b4027aaea">mio::TimeSeries&lt; FP &gt;</a>
+, <a class="el" href="classmio_1_1TimeSeries.html#ab0dad4e80982a297ee617e894799d6df">mio::TimeSeries&lt; FP &gt;</a>
 </li>
 <li>get_time_at_location()
 : <a class="el" href="classmio_1_1Person.html#a1c7e55a1f7dcd379c71a37dc631da8ec">mio::Person</a>
@@ -454,8 +454,8 @@ $(function() {
 : <a class="el" href="classmio_1_1TimeSeries.html#af83df4a50ee617517d7d40d6b9da490a">mio::TimeSeries&lt; FP &gt;</a>
 </li>
 <li>get_value()
-: <a class="el" href="classmio_1_1DampingSampling.html#ac8132be55a38bf3ebb2c667f09881bcf">mio::DampingSampling</a>
-, <a class="el" href="classmio_1_1TimeSeries.html#a48f179f3a7c0386b9a0b3050db2eba1b">mio::TimeSeries&lt; FP &gt;</a>
+: <a class="el" href="classmio_1_1DampingSampling.html#aaa01f811eae2e482dd6256323f3f9d96">mio::DampingSampling</a>
+, <a class="el" href="classmio_1_1TimeSeries.html#a352c58716639d7290e167d606bdc16ce">mio::TimeSeries&lt; FP &gt;</a>
 </li>
 <li>goes_to_school()
 : <a class="el" href="classmio_1_1Person.html#afa02d814ae0356986d57c6e729e899df">mio::Person</a>
@@ -464,7 +464,7 @@ $(function() {
 : <a class="el" href="classmio_1_1Person.html#aa608523b0bc86ffff06b21a2aad8ce1b">mio::Person</a>
 </li>
 <li>GraphSimulation()
-: <a class="el" href="classmio_1_1GraphSimulation.html#af7b70ef58c3ddb6d0e19fbda1ddaac20">mio::GraphSimulation&lt; Graph &gt;</a>
+: <a class="el" href="classmio_1_1GraphSimulation.html#a0399c8113f75b7899a19bf75fc7c6e9a">mio::GraphSimulation&lt; Graph &gt;</a>
 </li>
 </ul>
 </div><!-- contents -->
