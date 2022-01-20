@@ -28,7 +28,7 @@
 
         
         <h2>Score</h2>
-        6.51 / 10
+        6.49 / 10
             
         
 
@@ -6779,17 +6779,7 @@
             </tr>
             
             <tr>
-                <td>23</td>
-                <td>0</td>
-                <td>convention</td>
-                <td><code>wrong-import-order</code></td>
-                <td>C0411</td>
-                <td></td>
-                <td><pre>third party import &#34;from pyfakefs import fake_filesystem_unittest&#34; should be placed before &#34;from memilio.epidata import defaultDict as dd&#34;</pre></td>
-            </tr>
-            
-            <tr>
-                <td>26</td>
+                <td>25</td>
                 <td>0</td>
                 <td>convention</td>
                 <td><code>invalid-name</code></td>
@@ -6799,7 +6789,7 @@
             </tr>
             
             <tr>
-                <td>26</td>
+                <td>25</td>
                 <td>0</td>
                 <td>convention</td>
                 <td><code>missing-class-docstring</code></td>
@@ -6809,12 +6799,92 @@
             </tr>
             
             <tr>
+                <td>55</td>
+                <td>69</td>
+                <td>convention</td>
+                <td><code>trailing-whitespace</code></td>
+                <td>C0303</td>
+                <td></td>
+                <td><pre>Trailing whitespace</pre></td>
+            </tr>
+            
+            <tr>
                 <td>58</td>
                 <td>4</td>
                 <td>convention</td>
                 <td><code>missing-function-docstring</code></td>
                 <td>C0116</td>
                 <td>Test_defaultDict.test_invert_dict</td>
+                <td><pre>Missing function or method docstring</pre></td>
+            </tr>
+            
+            <tr>
+                <td>61</td>
+                <td>8</td>
+                <td>convention</td>
+                <td><code>consider-using-dict-items</code></td>
+                <td>C0206</td>
+                <td>Test_defaultDict.test_invert_dict</td>
+                <td><pre>Consider iterating with .items()</pre></td>
+            </tr>
+            
+            <tr>
+                <td>61</td>
+                <td>22</td>
+                <td>convention</td>
+                <td><code>consider-iterating-dictionary</code></td>
+                <td>C0201</td>
+                <td>Test_defaultDict.test_invert_dict</td>
+                <td><pre>Consider iterating the dictionary directly instead of calling .keys()</pre></td>
+            </tr>
+            
+            <tr>
+                <td>63</td>
+                <td>59</td>
+                <td>convention</td>
+                <td><code>trailing-whitespace</code></td>
+                <td>C0303</td>
+                <td></td>
+                <td><pre>Trailing whitespace</pre></td>
+            </tr>
+            
+            <tr>
+                <td>70</td>
+                <td>8</td>
+                <td>convention</td>
+                <td><code>consider-using-dict-items</code></td>
+                <td>C0206</td>
+                <td>Test_defaultDict.test_invert_dict</td>
+                <td><pre>Consider iterating with .items()</pre></td>
+            </tr>
+            
+            <tr>
+                <td>70</td>
+                <td>28</td>
+                <td>convention</td>
+                <td><code>consider-iterating-dictionary</code></td>
+                <td>C0201</td>
+                <td>Test_defaultDict.test_invert_dict</td>
+                <td><pre>Consider iterating the dictionary directly instead of calling .keys()</pre></td>
+            </tr>
+            
+            <tr>
+                <td>72</td>
+                <td>61</td>
+                <td>convention</td>
+                <td><code>trailing-whitespace</code></td>
+                <td>C0303</td>
+                <td></td>
+                <td><pre>Trailing whitespace</pre></td>
+            </tr>
+            
+            <tr>
+                <td>77</td>
+                <td>4</td>
+                <td>convention</td>
+                <td><code>missing-function-docstring</code></td>
+                <td>C0116</td>
+                <td>Test_defaultDict.test_uniqueness</td>
                 <td><pre>Missing function or method docstring</pre></td>
             </tr>
             
@@ -10875,12 +10945,12 @@ from memilio.epidata import getDIVIData
                 <td><pre>Similar lines in 2 files
 ==memilio.epidata.getTestingData:[108:114]
 ==memilio.epidata.getVaccinationData:[129:135]
-                         file_format=dd.defaultDict[&#39;file_format&#39;],
-                         out_folder=dd.defaultDict[&#39;out_folder&#39;],
-                         no_raw=dd.defaultDict[&#39;no_raw&#39;],
-                         start_date=dd.defaultDict[&#39;start_date&#39;],
-                         end_date=dd.defaultDict[&#39;end_date&#39;],
-                         make_plot=dd.defaultDict[&#39;make_plot&#39;],</pre></td>
+                     file_format=dd.defaultDict[&#39;file_format&#39;],
+                     out_folder=dd.defaultDict[&#39;out_folder&#39;],
+                     no_raw=dd.defaultDict[&#39;no_raw&#39;],
+                     start_date=dd.defaultDict[&#39;start_date&#39;],
+                     end_date=dd.defaultDict[&#39;end_date&#39;],
+                     make_plot=dd.defaultDict[&#39;make_plot&#39;],</pre></td>
             </tr>
             
             <tr>
@@ -10902,7 +10972,7 @@ from memilio.epidata import getDIVIData
             &#39;geojson&#39;: gd.loadGeojson
         }
 
-        # ArcGIS public data item ID:</pre></td>
+        # Get data:</pre></td>
             </tr>
             
             <tr>
@@ -10921,8 +10991,8 @@ from memilio.epidata import getDIVIData
             exit_string = &#34;Error: The file: &#34; + file_in + &#34; does not exist. Call program without -r flag to get it.&#34;
             sys.exit(exit_string)
     else:
-
-        # Supported data formats:</pre></td>
+        # Get data:
+        # https://raw.githubusercontent.com/datasets/covid-19/master/data/time-series-19-covid-combined.csv</pre></td>
             </tr>
             
             <tr>
@@ -13206,7 +13276,7 @@ from memilio.epidata import getDIVIData
             
             <tr>
                 <td>convention</td>
-                <td>780</td>
+                <td>787</td>
             </tr>
             
             <tr>
@@ -13286,12 +13356,12 @@ from memilio.epidata import getDIVIData
             
             <tr>
                 <td>consider-using-dict-items</td>
-                <td>6</td>
+                <td>8</td>
             </tr>
             
             <tr>
                 <td>trailing-whitespace</td>
-                <td>181</td>
+                <td>184</td>
             </tr>
             
             <tr>
@@ -13341,7 +13411,7 @@ from memilio.epidata import getDIVIData
             
             <tr>
                 <td>wrong-import-order</td>
-                <td>39</td>
+                <td>38</td>
             </tr>
             
             <tr>
@@ -13351,7 +13421,7 @@ from memilio.epidata import getDIVIData
             
             <tr>
                 <td>missing-function-docstring</td>
-                <td>115</td>
+                <td>116</td>
             </tr>
             
             <tr>
@@ -13436,7 +13506,7 @@ from memilio.epidata import getDIVIData
             
             <tr>
                 <td>consider-iterating-dictionary</td>
-                <td>5</td>
+                <td>7</td>
             </tr>
             
             <tr>
@@ -13606,7 +13676,7 @@ from memilio.epidata import getDIVIData
             
             <tr>
                 <td>memilio.epidata_test.test_epidata_defaultDict</td>
-                <td>6</td>
+                <td>13</td>
             </tr>
             
             <tr>
@@ -13766,7 +13836,7 @@ from memilio.epidata import getDIVIData
             
             <tr>
                 <td>memilio/epidata_test/test_epidata_defaultDict.py</td>
-                <td>6</td>
+                <td>13</td>
             </tr>
             
             <tr>
