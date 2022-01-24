@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2022-01-20 14:43:44</td>
+            <td class="headerValue">2022-01-24 15:34:47</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">165</td>
@@ -206,34 +206,34 @@
 <a name="144"><span class="lineNum">     144 </span>            :     /**</a>
 <a name="145"><span class="lineNum">     145 </span>            :      * number of time points in the series</a>
 <a name="146"><span class="lineNum">     146 </span>            :      */</a>
-<a name="147"><span class="lineNum">     147 </span><span class="lineCov">     251110 :     Eigen::Index get_num_time_points() const</span></a>
+<a name="147"><span class="lineNum">     147 </span><span class="lineCov">     251260 :     Eigen::Index get_num_time_points() const</span></a>
 <a name="148"><span class="lineNum">     148 </span>            :     {</a>
-<a name="149"><span class="lineNum">     149 </span><span class="lineCov">     251110 :         return m_num_time_points;</span></a>
+<a name="149"><span class="lineNum">     149 </span><span class="lineCov">     251260 :         return m_num_time_points;</span></a>
 <a name="150"><span class="lineNum">     150 </span>            :     }</a>
 <a name="151"><span class="lineNum">     151 </span>            : </a>
 <a name="152"><span class="lineNum">     152 </span>            :     /**</a>
 <a name="153"><span class="lineNum">     153 </span>            :      * number of elements of vector at each time point</a>
 <a name="154"><span class="lineNum">     154 </span>            :      */</a>
-<a name="155"><span class="lineNum">     155 </span><span class="lineCov">     261579 :     Eigen::Index get_num_elements() const</span></a>
+<a name="155"><span class="lineNum">     155 </span><span class="lineCov">     261807 :     Eigen::Index get_num_elements() const</span></a>
 <a name="156"><span class="lineNum">     156 </span>            :     {</a>
-<a name="157"><span class="lineNum">     157 </span><span class="lineCov">     261579 :         return get_num_rows() - 1;</span></a>
+<a name="157"><span class="lineNum">     157 </span><span class="lineCov">     261807 :         return get_num_rows() - 1;</span></a>
 <a name="158"><span class="lineNum">     158 </span>            :     }</a>
 <a name="159"><span class="lineNum">     159 </span>            : </a>
 <a name="160"><span class="lineNum">     160 </span>            :     /**</a>
 <a name="161"><span class="lineNum">     161 </span>            :      * number of rows in data storage (includes time)</a>
 <a name="162"><span class="lineNum">     162 </span>            :      */</a>
-<a name="163"><span class="lineNum">     163 </span><span class="lineCov">     261589 :     Eigen::Index get_num_rows() const</span></a>
+<a name="163"><span class="lineNum">     163 </span><span class="lineCov">     261817 :     Eigen::Index get_num_rows() const</span></a>
 <a name="164"><span class="lineNum">     164 </span>            :     {</a>
-<a name="165"><span class="lineNum">     165 </span><span class="lineCov">     261589 :         return m_data.rows();</span></a>
+<a name="165"><span class="lineNum">     165 </span><span class="lineCov">     261817 :         return m_data.rows();</span></a>
 <a name="166"><span class="lineNum">     166 </span>            :     }</a>
 <a name="167"><span class="lineNum">     167 </span>            : </a>
 <a name="168"><span class="lineNum">     168 </span>            :     /**</a>
 <a name="169"><span class="lineNum">     169 </span>            :      * add one uninitialized time point</a>
 <a name="170"><span class="lineNum">     170 </span>            :      */</a>
-<a name="171"><span class="lineNum">     171 </span><span class="lineCov">       1815 :     Eigen::Ref&lt;Vector&gt; add_time_point()</span></a>
+<a name="171"><span class="lineNum">     171 </span><span class="lineCov">       1890 :     Eigen::Ref&lt;Vector&gt; add_time_point()</span></a>
 <a name="172"><span class="lineNum">     172 </span>            :     {</a>
-<a name="173"><span class="lineNum">     173 </span><span class="lineCov">       1815 :         add_time_point_noinit();</span></a>
-<a name="174"><span class="lineNum">     174 </span><span class="lineCov">       1815 :         return get_last_value();</span></a>
+<a name="173"><span class="lineNum">     173 </span><span class="lineCov">       1890 :         add_time_point_noinit();</span></a>
+<a name="174"><span class="lineNum">     174 </span><span class="lineCov">       1890 :         return get_last_value();</span></a>
 <a name="175"><span class="lineNum">     175 </span>            :     }</a>
 <a name="176"><span class="lineNum">     176 </span>            : </a>
 <a name="177"><span class="lineNum">     177 </span>            :     /**</a>
@@ -282,10 +282,10 @@
 <a name="220"><span class="lineNum">     220 </span>            :     /**</a>
 <a name="221"><span class="lineNum">     221 </span>            :      * time of time point at index i</a>
 <a name="222"><span class="lineNum">     222 </span>            :      */</a>
-<a name="223"><span class="lineNum">     223 </span><span class="lineCov">     249378 :     FP&amp; get_time(Eigen::Index i)</span></a>
+<a name="223"><span class="lineNum">     223 </span><span class="lineCov">     249453 :     FP&amp; get_time(Eigen::Index i)</span></a>
 <a name="224"><span class="lineNum">     224 </span>            :     {</a>
-<a name="225"><span class="lineNum">     225 </span><span class="lineCov">     249378 :         assert(i &gt;= 0 &amp;&amp; i &lt; m_num_time_points);</span></a>
-<a name="226"><span class="lineNum">     226 </span><span class="lineCov">     249378 :         return m_data(0, i);</span></a>
+<a name="225"><span class="lineNum">     225 </span><span class="lineCov">     249453 :         assert(i &gt;= 0 &amp;&amp; i &lt; m_num_time_points);</span></a>
+<a name="226"><span class="lineNum">     226 </span><span class="lineCov">     249453 :         return m_data(0, i);</span></a>
 <a name="227"><span class="lineNum">     227 </span>            :     }</a>
 <a name="228"><span class="lineNum">     228 </span><span class="lineCov">       1349 :     const FP&amp; get_time(Eigen::Index i) const</span></a>
 <a name="229"><span class="lineNum">     229 </span>            :     {</a>
@@ -296,9 +296,9 @@
 <a name="234"><span class="lineNum">     234 </span>            :     /**</a>
 <a name="235"><span class="lineNum">     235 </span>            :      * time of time point at index num_time_points - 1</a>
 <a name="236"><span class="lineNum">     236 </span>            :      */</a>
-<a name="237"><span class="lineNum">     237 </span><span class="lineCov">     249051 :     FP&amp; get_last_time()</span></a>
+<a name="237"><span class="lineNum">     237 </span><span class="lineCov">     249126 :     FP&amp; get_last_time()</span></a>
 <a name="238"><span class="lineNum">     238 </span>            :     {</a>
-<a name="239"><span class="lineNum">     239 </span><span class="lineCov">     249051 :         return get_time(get_num_time_points() - 1);</span></a>
+<a name="239"><span class="lineNum">     239 </span><span class="lineCov">     249126 :         return get_time(get_num_time_points() - 1);</span></a>
 <a name="240"><span class="lineNum">     240 </span>            :     }</a>
 <a name="241"><span class="lineNum">     241 </span><span class="lineCov">         12 :     const FP&amp; get_last_time() const</span></a>
 <a name="242"><span class="lineNum">     242 </span>            :     {</a>
@@ -313,18 +313,18 @@
 <a name="251"><span class="lineNum">     251 </span><span class="lineCov">       1413 :         assert(i &gt;= 0 &amp;&amp; i &lt; m_num_time_points);</span></a>
 <a name="252"><span class="lineNum">     252 </span><span class="lineCov">       1413 :         return m_data.col(i).segment(1, get_num_elements());</span></a>
 <a name="253"><span class="lineNum">     253 </span>            :     }</a>
-<a name="254"><span class="lineNum">     254 </span><span class="lineCov">     259516 :     Eigen::Ref&lt;Vector&gt; get_value(Eigen::Index i)</span></a>
+<a name="254"><span class="lineNum">     254 </span><span class="lineCov">     259744 :     Eigen::Ref&lt;Vector&gt; get_value(Eigen::Index i)</span></a>
 <a name="255"><span class="lineNum">     255 </span>            :     {</a>
-<a name="256"><span class="lineNum">     256 </span><span class="lineCov">     259516 :         assert(i &gt;= 0 &amp;&amp; i &lt; m_num_time_points);</span></a>
-<a name="257"><span class="lineNum">     257 </span><span class="lineCov">     259516 :         return m_data.col(i).segment(1, get_num_elements());</span></a>
+<a name="256"><span class="lineNum">     256 </span><span class="lineCov">     259744 :         assert(i &gt;= 0 &amp;&amp; i &lt; m_num_time_points);</span></a>
+<a name="257"><span class="lineNum">     257 </span><span class="lineCov">     259744 :         return m_data.col(i).segment(1, get_num_elements());</span></a>
 <a name="258"><span class="lineNum">     258 </span>            :     }</a>
 <a name="259"><span class="lineNum">     259 </span><span class="lineCov">       1395 :     Eigen::Ref&lt;const Vector&gt; operator[](Eigen::Index i) const</span></a>
 <a name="260"><span class="lineNum">     260 </span>            :     {</a>
 <a name="261"><span class="lineNum">     261 </span><span class="lineCov">       1395 :         return get_value(i);</span></a>
 <a name="262"><span class="lineNum">     262 </span>            :     }</a>
-<a name="263"><span class="lineNum">     263 </span><span class="lineCov">       7094 :     Eigen::Ref&lt;Vector&gt; operator[](Eigen::Index i)</span></a>
+<a name="263"><span class="lineNum">     263 </span><span class="lineCov">       7169 :     Eigen::Ref&lt;Vector&gt; operator[](Eigen::Index i)</span></a>
 <a name="264"><span class="lineNum">     264 </span>            :     {</a>
-<a name="265"><span class="lineNum">     265 </span><span class="lineCov">       7094 :         return get_value(i);</span></a>
+<a name="265"><span class="lineNum">     265 </span><span class="lineCov">       7169 :         return get_value(i);</span></a>
 <a name="266"><span class="lineNum">     266 </span>            :     }</a>
 <a name="267"><span class="lineNum">     267 </span>            : </a>
 <a name="268"><span class="lineNum">     268 </span>            :     /**</a>
@@ -334,28 +334,28 @@
 <a name="272"><span class="lineNum">     272 </span>            :     {</a>
 <a name="273"><span class="lineNum">     273 </span><span class="lineCov">          6 :         return get_value(m_num_time_points - 1);</span></a>
 <a name="274"><span class="lineNum">     274 </span>            :     }</a>
-<a name="275"><span class="lineNum">     275 </span><span class="lineCov">     249567 :     Eigen::Ref&lt;Vector&gt; get_last_value()</span></a>
+<a name="275"><span class="lineNum">     275 </span><span class="lineCov">     249642 :     Eigen::Ref&lt;Vector&gt; get_last_value()</span></a>
 <a name="276"><span class="lineNum">     276 </span>            :     {</a>
-<a name="277"><span class="lineNum">     277 </span><span class="lineCov">     249567 :         return get_value(m_num_time_points - 1);</span></a>
+<a name="277"><span class="lineNum">     277 </span><span class="lineCov">     249642 :         return get_value(m_num_time_points - 1);</span></a>
 <a name="278"><span class="lineNum">     278 </span>            :     }</a>
 <a name="279"><span class="lineNum">     279 </span>            : </a>
 <a name="280"><span class="lineNum">     280 </span>            :     /**</a>
 <a name="281"><span class="lineNum">     281 </span>            :      * reserve capacity for n time points</a>
 <a name="282"><span class="lineNum">     282 </span>            :      */</a>
-<a name="283"><span class="lineNum">     283 </span><span class="lineCov">     249361 :     void reserve(Eigen::Index n)</span></a>
+<a name="283"><span class="lineNum">     283 </span><span class="lineCov">     249436 :     void reserve(Eigen::Index n)</span></a>
 <a name="284"><span class="lineNum">     284 </span>            :     {</a>
-<a name="285"><span class="lineNum">     285 </span><span class="lineCov">     249361 :         assert(n &gt;= 0);</span></a>
-<a name="286"><span class="lineNum">     286 </span><span class="lineCov">     249361 :         if (n &gt; get_capacity()) {</span></a>
+<a name="285"><span class="lineNum">     285 </span><span class="lineCov">     249436 :         assert(n &gt;= 0);</span></a>
+<a name="286"><span class="lineNum">     286 </span><span class="lineCov">     249436 :         if (n &gt; get_capacity()) {</span></a>
 <a name="287"><span class="lineNum">     287 </span><span class="lineCov">        260 :             m_data.conservativeResize(Eigen::NoChange, details::next_pow2(n));</span></a>
 <a name="288"><span class="lineNum">     288 </span>            :         }</a>
-<a name="289"><span class="lineNum">     289 </span><span class="lineCov">     249361 :     }</span></a>
+<a name="289"><span class="lineNum">     289 </span><span class="lineCov">     249436 :     }</span></a>
 <a name="290"><span class="lineNum">     290 </span>            : </a>
 <a name="291"><span class="lineNum">     291 </span>            :     /**</a>
 <a name="292"><span class="lineNum">     292 </span>            :      * current capacity</a>
 <a name="293"><span class="lineNum">     293 </span>            :      */</a>
-<a name="294"><span class="lineNum">     294 </span><span class="lineCov">     249387 :     Eigen::Index get_capacity() const</span></a>
+<a name="294"><span class="lineNum">     294 </span><span class="lineCov">     249462 :     Eigen::Index get_capacity() const</span></a>
 <a name="295"><span class="lineNum">     295 </span>            :     {</a>
-<a name="296"><span class="lineNum">     296 </span><span class="lineCov">     249387 :         return m_data.cols();</span></a>
+<a name="296"><span class="lineNum">     296 </span><span class="lineCov">     249462 :         return m_data.cols();</span></a>
 <a name="297"><span class="lineNum">     297 </span>            :     }</a>
 <a name="298"><span class="lineNum">     298 </span>            : </a>
 <a name="299"><span class="lineNum">     299 </span>            :     /**</a>
@@ -490,11 +490,11 @@
 <a name="428"><span class="lineNum">     428 </span><span class="lineNoCov">          0 :     }</span></a>
 <a name="429"><span class="lineNum">     429 </span>            : </a>
 <a name="430"><span class="lineNum">     430 </span>            : private:</a>
-<a name="431"><span class="lineNum">     431 </span><span class="lineCov">     249277 :     void add_time_point_noinit()</span></a>
+<a name="431"><span class="lineNum">     431 </span><span class="lineCov">     249352 :     void add_time_point_noinit()</span></a>
 <a name="432"><span class="lineNum">     432 </span>            :     {</a>
-<a name="433"><span class="lineNum">     433 </span><span class="lineCov">     249277 :         reserve(m_num_time_points + 1);</span></a>
-<a name="434"><span class="lineNum">     434 </span><span class="lineCov">     249277 :         ++m_num_time_points;</span></a>
-<a name="435"><span class="lineNum">     435 </span><span class="lineCov">     249277 :     }</span></a>
+<a name="433"><span class="lineNum">     433 </span><span class="lineCov">     249352 :         reserve(m_num_time_points + 1);</span></a>
+<a name="434"><span class="lineNum">     434 </span><span class="lineCov">     249352 :         ++m_num_time_points;</span></a>
+<a name="435"><span class="lineNum">     435 </span><span class="lineCov">     249352 :     }</span></a>
 <a name="436"><span class="lineNum">     436 </span>            :     /** currently occupied block of storage */</a>
 <a name="437"><span class="lineNum">     437 </span><span class="lineCov">         92 :     auto get_valid_block()</span></a>
 <a name="438"><span class="lineNum">     438 </span>            :     {</a>
