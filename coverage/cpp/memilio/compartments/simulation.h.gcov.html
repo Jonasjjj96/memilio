@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2022-01-26 08:33:05</td>
+            <td class="headerValue">2022-01-26 17:28:21</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">20</td>
@@ -114,8 +114,8 @@
 <a name="52"><span class="lineNum">      52 </span>            :         : m_integratorCore(std::make_shared&lt;RKIntegratorCore&gt;())</a>
 <a name="53"><span class="lineNum">      53 </span>            :         , m_model(std::make_unique&lt;Model&gt;(model))</a>
 <a name="54"><span class="lineNum">      54 </span>            :         , m_integrator(</a>
-<a name="55"><span class="lineNum">      55 </span><span class="lineCov">      11270 :               [&amp;model = *m_model](auto&amp;&amp; y, auto&amp;&amp; t, auto&amp;&amp; dydt) {</span></a>
-<a name="56"><span class="lineNum">      56 </span><span class="lineCov">       5637 :                   model.eval_right_hand_side(y, y, t, dydt);</span></a>
+<a name="55"><span class="lineNum">      55 </span><span class="lineCov">      11102 :               [&amp;model = *m_model](auto&amp;&amp; y, auto&amp;&amp; t, auto&amp;&amp; dydt) {</span></a>
+<a name="56"><span class="lineNum">      56 </span><span class="lineCov">       5553 :                   model.eval_right_hand_side(y, y, t, dydt);</span></a>
 <a name="57"><span class="lineNum">      57 </span>            :               },</a>
 <a name="58"><span class="lineNum">      58 </span><span class="lineCov">         64 :               t0, m_model-&gt;get_initial_values(), dt, m_integratorCore)</span></a>
 <a name="59"><span class="lineNum">      59 </span>            :     {</a>
