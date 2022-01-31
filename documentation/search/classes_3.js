@@ -10,7 +10,7 @@ var searchData=
   ['dampingsampling_1203',['DampingSampling',['../classmio_1_1DampingSampling.html',1,'mio']]],
   ['dataerror_1204',['DataError',['../classmemilio_1_1epidata_1_1getDataIntoPandasDataFrame_1_1DataError.html',1,'memilio::epidata::getDataIntoPandasDataFrame']]],
   ['date_1205',['Date',['../structmio_1_1Date.html',1,'mio']]],
-  ['deathsperhospitalized_1206',['DeathsPerHospitalized',['../structmio_1_1DeathsPerHospitalized.html',1,'mio']]],
+  ['deathspericu_1206',['DeathsPerICU',['../structmio_1_1DeathsPerICU.html',1,'mio']]],
   ['dereffunctor_1207',['DerefFunctor',['../structmio_1_1details_1_1DerefFunctor.html',1,'mio::details']]],
   ['detectinfection_1208',['DetectInfection',['../structmio_1_1DetectInfection.html',1,'mio']]],
   ['discretedistributioninplace_1209',['DiscreteDistributionInPlace',['../classmio_1_1DiscreteDistributionInPlace.html',1,'mio']]],
