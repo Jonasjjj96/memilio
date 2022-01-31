@@ -28,7 +28,7 @@
 
         
         <h2>Score</h2>
-        6.51 / 10
+        6.50 / 10
             
         
 
@@ -1627,12 +1627,12 @@
                 <td><pre>Similar lines in 2 files
 ==memilio.epidata.getTestingData:[108:114]
 ==memilio.epidata.getVaccinationData:[152:158]
-                     file_format=dd.defaultDict[&#39;file_format&#39;],
-                     out_folder=dd.defaultDict[&#39;out_folder&#39;],
-                     no_raw=dd.defaultDict[&#39;no_raw&#39;],
-                     start_date=dd.defaultDict[&#39;start_date&#39;],
-                     end_date=dd.defaultDict[&#39;end_date&#39;],
-                     make_plot=dd.defaultDict[&#39;make_plot&#39;],</pre></td>
+                         file_format=dd.defaultDict[&#39;file_format&#39;],
+                         out_folder=dd.defaultDict[&#39;out_folder&#39;],
+                         no_raw=dd.defaultDict[&#39;no_raw&#39;],
+                         start_date=dd.defaultDict[&#39;start_date&#39;],
+                         end_date=dd.defaultDict[&#39;end_date&#39;],
+                         make_plot=dd.defaultDict[&#39;make_plot&#39;],</pre></td>
             </tr>
             
             <tr>
@@ -5802,7 +5802,7 @@ from memilio.epidata import getDIVIData</pre></td>
             
         </table>
         
-        <h3>Module <code>memilio.epidata.transformTwitterData</code> (<code>memilio/epidata/transformTwitterData.py</code>)</h3>
+        <h3>Module <code>memilio.epidata.transformMobilityData</code> (<code>memilio/epidata/transformMobilityData.py</code>)</h3>
         <table>
             <tr>
                 <th>Line</th>
@@ -5821,7 +5821,7 @@ from memilio.epidata import getDIVIData</pre></td>
                 <td><code>invalid-name</code></td>
                 <td>C0103</td>
                 <td></td>
-                <td><pre>Module name &#34;transformTwitterData&#34; doesn&#39;t conform to snake_case naming style</pre></td>
+                <td><pre>Module name &#34;transformMobilityData&#34; doesn&#39;t conform to snake_case naming style</pre></td>
             </tr>
             
             <tr>
@@ -5845,13 +5845,13 @@ from memilio.epidata import getDIVIData</pre></td>
             </tr>
             
             <tr>
-                <td>23</td>
+                <td>22</td>
                 <td>0</td>
-                <td>warning</td>
-                <td><code>unused-import</code></td>
-                <td>W0611</td>
+                <td>error</td>
+                <td><code>import-error</code></td>
+                <td>E0401</td>
                 <td></td>
-                <td><pre>Unused getDataIntoPandasDataFrame imported from memilio.epidata as gd</pre></td>
+                <td><pre>Unable to import &#39;numpy&#39;</pre></td>
             </tr>
             
             <tr>
@@ -5860,48 +5860,88 @@ from memilio.epidata import getDIVIData</pre></td>
                 <td>convention</td>
                 <td><code>invalid-name</code></td>
                 <td>C0103</td>
-                <td>transformTwitterData</td>
-                <td><pre>Function name &#34;transformTwitterData&#34; doesn&#39;t conform to snake_case naming style</pre></td>
+                <td>getMobilityFromFile</td>
+                <td><pre>Function name &#34;getMobilityFromFile&#34; doesn&#39;t conform to snake_case naming style</pre></td>
             </tr>
             
             <tr>
-                <td>28</td>
-                <td>25</td>
-                <td>warning</td>
-                <td><code>unused-argument</code></td>
-                <td>W0613</td>
-                <td>transformTwitterData</td>
-                <td><pre>Unused argument &#39;file_format&#39;</pre></td>
-            </tr>
-            
-            <tr>
-                <td>32</td>
-                <td>68</td>
+                <td>42</td>
+                <td>0</td>
                 <td>convention</td>
-                <td><code>trailing-whitespace</code></td>
-                <td>C0303</td>
-                <td></td>
-                <td><pre>Trailing whitespace</pre></td>
+                <td><code>invalid-name</code></td>
+                <td>C0103</td>
+                <td>createFederalStatesMobility</td>
+                <td><pre>Function name &#34;createFederalStatesMobility&#34; doesn&#39;t conform to snake_case naming style</pre></td>
             </tr>
             
             <tr>
-                <td>35</td>
-                <td>70</td>
+                <td>53</td>
+                <td>0</td>
                 <td>convention</td>
-                <td><code>trailing-whitespace</code></td>
-                <td>C0303</td>
+                <td><code>line-too-long</code></td>
+                <td>C0301</td>
                 <td></td>
-                <td><pre>Trailing whitespace</pre></td>
+                <td><pre>Line too long (135/120)</pre></td>
             </tr>
             
             <tr>
-                <td>37</td>
-                <td>68</td>
+                <td>53</td>
+                <td>4</td>
+                <td>refactor</td>
+                <td><code>no-else-return</code></td>
+                <td>R1705</td>
+                <td>createFederalStatesMobility</td>
+                <td><pre>Unnecessary &#34;else&#34; after &#34;return&#34;</pre></td>
+            </tr>
+            
+            <tr>
+                <td>55</td>
+                <td>8</td>
                 <td>convention</td>
-                <td><code>trailing-whitespace</code></td>
-                <td>C0303</td>
-                <td></td>
-                <td><pre>Trailing whitespace</pre></td>
+                <td><code>invalid-name</code></td>
+                <td>C0103</td>
+                <td>createFederalStatesMobility</td>
+                <td><pre>Variable name &#34;countyIDs&#34; doesn&#39;t conform to snake_case naming style</pre></td>
+            </tr>
+            
+            <tr>
+                <td>56</td>
+                <td>8</td>
+                <td>convention</td>
+                <td><code>invalid-name</code></td>
+                <td>C0103</td>
+                <td>createFederalStatesMobility</td>
+                <td><pre>Variable name &#34;stateIDs&#34; doesn&#39;t conform to snake_case naming style</pre></td>
+            </tr>
+            
+            <tr>
+                <td>58</td>
+                <td>8</td>
+                <td>convention</td>
+                <td><code>invalid-name</code></td>
+                <td>C0103</td>
+                <td>createFederalStatesMobility</td>
+                <td><pre>Variable name &#34;stateID_to_countyID&#34; doesn&#39;t conform to snake_case naming style</pre></td>
+            </tr>
+            
+            <tr>
+                <td>93</td>
+                <td>0</td>
+                <td>convention</td>
+                <td><code>invalid-name</code></td>
+                <td>C0103</td>
+                <td>updateMobility2022</td>
+                <td><pre>Function name &#34;updateMobility2022&#34; doesn&#39;t conform to snake_case naming style</pre></td>
+            </tr>
+            
+            <tr>
+                <td>104</td>
+                <td>4</td>
+                <td>refactor</td>
+                <td><code>no-else-return</code></td>
+                <td>R1705</td>
+                <td>updateMobility2022</td>
+                <td><pre>Unnecessary &#34;else&#34; after &#34;return&#34;</pre></td>
             </tr>
             
         </table>
@@ -12752,6 +12792,250 @@ from memilio.epidata import getDIVIData</pre></td>
             
         </table>
         
+        <h3>Module <code>memilio.epidata_test.test_epidata_transform_mobility_data</code> (<code>memilio/epidata_test/test_epidata_transform_mobility_data.py</code>)</h3>
+        <table>
+            <tr>
+                <th>Line</th>
+                <th>Col.</th>
+                <th>Type</th>
+                <th>Symbol</th>
+                <th>ID</th>
+                <th>Obj</th>
+                <th>Message</th>
+            </tr>
+            
+            <tr>
+                <td>1</td>
+                <td>0</td>
+                <td>convention</td>
+                <td><code>missing-module-docstring</code></td>
+                <td>C0114</td>
+                <td></td>
+                <td><pre>Missing module docstring</pre></td>
+            </tr>
+            
+            <tr>
+                <td>25</td>
+                <td>0</td>
+                <td>error</td>
+                <td><code>import-error</code></td>
+                <td>E0401</td>
+                <td></td>
+                <td><pre>Unable to import &#39;pandas&#39;</pre></td>
+            </tr>
+            
+            <tr>
+                <td>26</td>
+                <td>0</td>
+                <td>error</td>
+                <td><code>import-error</code></td>
+                <td>E0401</td>
+                <td></td>
+                <td><pre>Unable to import &#39;numpy&#39;</pre></td>
+            </tr>
+            
+            <tr>
+                <td>33</td>
+                <td>0</td>
+                <td>convention</td>
+                <td><code>missing-class-docstring</code></td>
+                <td>C0115</td>
+                <td>TestTransformMobilityData</td>
+                <td><pre>Missing class docstring</pre></td>
+            </tr>
+            
+            <tr>
+                <td>50</td>
+                <td>28</td>
+                <td>convention</td>
+                <td><code>trailing-whitespace</code></td>
+                <td>C0303</td>
+                <td></td>
+                <td><pre>Trailing whitespace</pre></td>
+            </tr>
+            
+            <tr>
+                <td>68</td>
+                <td>0</td>
+                <td>convention</td>
+                <td><code>trailing-whitespace</code></td>
+                <td>C0303</td>
+                <td></td>
+                <td><pre>Trailing whitespace</pre></td>
+            </tr>
+            
+            <tr>
+                <td>73</td>
+                <td>4</td>
+                <td>convention</td>
+                <td><code>missing-function-docstring</code></td>
+                <td>C0116</td>
+                <td>TestTransformMobilityData.test_get_mobility_from_file</td>
+                <td><pre>Missing function or method docstring</pre></td>
+            </tr>
+            
+            <tr>
+                <td>73</td>
+                <td>42</td>
+                <td>warning</td>
+                <td><code>unused-argument</code></td>
+                <td>W0613</td>
+                <td>TestTransformMobilityData.test_get_mobility_from_file</td>
+                <td><pre>Unused argument &#39;mock_load_file&#39;</pre></td>
+            </tr>
+            
+            <tr>
+                <td>80</td>
+                <td>4</td>
+                <td>convention</td>
+                <td><code>missing-function-docstring</code></td>
+                <td>C0116</td>
+                <td>TestTransformMobilityData.test_update_mobility_reduction_401to400</td>
+                <td><pre>Missing function or method docstring</pre></td>
+            </tr>
+            
+            <tr>
+                <td>80</td>
+                <td>54</td>
+                <td>warning</td>
+                <td><code>unused-argument</code></td>
+                <td>W0613</td>
+                <td>TestTransformMobilityData.test_update_mobility_reduction_401to400</td>
+                <td><pre>Unused argument &#39;mock_load_file&#39;</pre></td>
+            </tr>
+            
+            <tr>
+                <td>82</td>
+                <td>65</td>
+                <td>convention</td>
+                <td><code>trailing-whitespace</code></td>
+                <td>C0303</td>
+                <td></td>
+                <td><pre>Trailing whitespace</pre></td>
+            </tr>
+            
+            <tr>
+                <td>95</td>
+                <td>0</td>
+                <td>convention</td>
+                <td><code>line-too-long</code></td>
+                <td>C0301</td>
+                <td></td>
+                <td><pre>Line too long (121/120)</pre></td>
+            </tr>
+            
+            <tr>
+                <td>99</td>
+                <td>52</td>
+                <td>convention</td>
+                <td><code>trailing-whitespace</code></td>
+                <td>C0303</td>
+                <td></td>
+                <td><pre>Trailing whitespace</pre></td>
+            </tr>
+            
+            <tr>
+                <td>104</td>
+                <td>4</td>
+                <td>convention</td>
+                <td><code>missing-function-docstring</code></td>
+                <td>C0116</td>
+                <td>TestTransformMobilityData.test_update_mobility_reduction_400to400</td>
+                <td><pre>Missing function or method docstring</pre></td>
+            </tr>
+            
+            <tr>
+                <td>104</td>
+                <td>54</td>
+                <td>warning</td>
+                <td><code>unused-argument</code></td>
+                <td>W0613</td>
+                <td>TestTransformMobilityData.test_update_mobility_reduction_400to400</td>
+                <td><pre>Unused argument &#39;mock_load_file&#39;</pre></td>
+            </tr>
+            
+            <tr>
+                <td>118</td>
+                <td>78</td>
+                <td>convention</td>
+                <td><code>trailing-whitespace</code></td>
+                <td>C0303</td>
+                <td></td>
+                <td><pre>Trailing whitespace</pre></td>
+            </tr>
+            
+            <tr>
+                <td>118</td>
+                <td>4</td>
+                <td>convention</td>
+                <td><code>missing-function-docstring</code></td>
+                <td>C0116</td>
+                <td>TestTransformMobilityData.test_create_federal_states_mobility_wrong_input</td>
+                <td><pre>Missing function or method docstring</pre></td>
+            </tr>
+            
+            <tr>
+                <td>118</td>
+                <td>62</td>
+                <td>warning</td>
+                <td><code>unused-argument</code></td>
+                <td>W0613</td>
+                <td>TestTransformMobilityData.test_create_federal_states_mobility_wrong_input</td>
+                <td><pre>Unused argument &#39;mock_load_file&#39;</pre></td>
+            </tr>
+            
+            <tr>
+                <td>129</td>
+                <td>4</td>
+                <td>convention</td>
+                <td><code>missing-function-docstring</code></td>
+                <td>C0116</td>
+                <td>TestTransformMobilityData.test_create_federal_states_mobility</td>
+                <td><pre>Missing function or method docstring</pre></td>
+            </tr>
+            
+            <tr>
+                <td>129</td>
+                <td>50</td>
+                <td>warning</td>
+                <td><code>unused-argument</code></td>
+                <td>W0613</td>
+                <td>TestTransformMobilityData.test_create_federal_states_mobility</td>
+                <td><pre>Unused argument &#39;mock_load_file&#39;</pre></td>
+            </tr>
+            
+            <tr>
+                <td>141</td>
+                <td>52</td>
+                <td>convention</td>
+                <td><code>trailing-whitespace</code></td>
+                <td>C0303</td>
+                <td></td>
+                <td><pre>Trailing whitespace</pre></td>
+            </tr>
+            
+            <tr>
+                <td>147</td>
+                <td>38</td>
+                <td>convention</td>
+                <td><code>singleton-comparison</code></td>
+                <td>C0121</td>
+                <td>TestTransformMobilityData.test_create_federal_states_mobility</td>
+                <td><pre>Comparison &#39;np.isnan(df_return) == True&#39; should be &#39;np.isnan(df_return) is True&#39; if checking for the singleton value True, or &#39;bool(np.isnan(df_return))&#39; if testing for truthiness</pre></td>
+            </tr>
+            
+            <tr>
+                <td>149</td>
+                <td>0</td>
+                <td>convention</td>
+                <td><code>trailing-whitespace</code></td>
+                <td>C0303</td>
+                <td></td>
+                <td><pre>Trailing whitespace</pre></td>
+            </tr>
+            
+        </table>
+        
 
         <h2>Metrics</h2>
         
@@ -12765,22 +13049,22 @@ from memilio.epidata import getDIVIData</pre></td>
             
             <tr>
                 <td>convention</td>
-                <td>779</td>
+                <td>798</td>
             </tr>
             
             <tr>
                 <td>error</td>
-                <td>65</td>
+                <td>68</td>
             </tr>
             
             <tr>
                 <td>warning</td>
-                <td>261</td>
+                <td>264</td>
             </tr>
             
             <tr>
                 <td>refactor</td>
-                <td>122</td>
+                <td>124</td>
             </tr>
             
         </table>
@@ -12795,22 +13079,22 @@ from memilio.epidata import getDIVIData</pre></td>
             
             <tr>
                 <td>missing-module-docstring</td>
-                <td>17</td>
+                <td>18</td>
             </tr>
             
             <tr>
                 <td>import-error</td>
-                <td>41</td>
+                <td>44</td>
             </tr>
             
             <tr>
                 <td>missing-class-docstring</td>
-                <td>13</td>
+                <td>14</td>
             </tr>
             
             <tr>
                 <td>missing-function-docstring</td>
-                <td>111</td>
+                <td>116</td>
             </tr>
             
             <tr>
@@ -12820,17 +13104,17 @@ from memilio.epidata import getDIVIData</pre></td>
             
             <tr>
                 <td>invalid-name</td>
-                <td>258</td>
+                <td>263</td>
             </tr>
             
             <tr>
                 <td>unused-argument</td>
-                <td>24</td>
+                <td>28</td>
             </tr>
             
             <tr>
                 <td>unused-import</td>
-                <td>34</td>
+                <td>33</td>
             </tr>
             
             <tr>
@@ -12840,12 +13124,12 @@ from memilio.epidata import getDIVIData</pre></td>
             
             <tr>
                 <td>line-too-long</td>
-                <td>63</td>
+                <td>65</td>
             </tr>
             
             <tr>
                 <td>trailing-whitespace</td>
-                <td>207</td>
+                <td>211</td>
             </tr>
             
             <tr>
@@ -12904,6 +13188,11 @@ from memilio.epidata import getDIVIData</pre></td>
             </tr>
             
             <tr>
+                <td>singleton-comparison</td>
+                <td>22</td>
+            </tr>
+            
+            <tr>
                 <td>pointless-statement</td>
                 <td>1</td>
             </tr>
@@ -12916,11 +13205,6 @@ from memilio.epidata import getDIVIData</pre></td>
             <tr>
                 <td>deprecated-method</td>
                 <td>5</td>
-            </tr>
-            
-            <tr>
-                <td>singleton-comparison</td>
-                <td>21</td>
             </tr>
             
             <tr>
@@ -12980,7 +13264,7 @@ from memilio.epidata import getDIVIData</pre></td>
             
             <tr>
                 <td>no-else-return</td>
-                <td>6</td>
+                <td>8</td>
             </tr>
             
             <tr>
@@ -13089,6 +13373,11 @@ from memilio.epidata import getDIVIData</pre></td>
             </tr>
             
             <tr>
+                <td>memilio.epidata_test.test_epidata_transform_mobility_data</td>
+                <td>23</td>
+            </tr>
+            
+            <tr>
                 <td>memilio.epidata_test.test_epidata_getDataIntoPandasDataFrame</td>
                 <td>85</td>
             </tr>
@@ -13136,11 +13425,6 @@ from memilio.epidata import getDIVIData</pre></td>
             <tr>
                 <td>memilio.epidata.defaultDict</td>
                 <td>5</td>
-            </tr>
-            
-            <tr>
-                <td>memilio.epidata.transformTwitterData</td>
-                <td>9</td>
             </tr>
             
             <tr>
@@ -13209,6 +13493,11 @@ from memilio.epidata import getDIVIData</pre></td>
             </tr>
             
             <tr>
+                <td>memilio.epidata.transformMobilityData</td>
+                <td>13</td>
+            </tr>
+            
+            <tr>
                 <td>memilio.epidata.modifyDataframeSeries</td>
                 <td>18</td>
             </tr>
@@ -13246,6 +13535,11 @@ from memilio.epidata import getDIVIData</pre></td>
             <tr>
                 <td>memilio/epidata_test/test_epidata_geoModificationGermany.py</td>
                 <td>39</td>
+            </tr>
+            
+            <tr>
+                <td>memilio/epidata_test/test_epidata_transform_mobility_data.py</td>
+                <td>23</td>
             </tr>
             
             <tr>
@@ -13296,11 +13590,6 @@ from memilio.epidata import getDIVIData</pre></td>
             <tr>
                 <td>memilio/epidata/defaultDict.py</td>
                 <td>5</td>
-            </tr>
-            
-            <tr>
-                <td>memilio/epidata/transformTwitterData.py</td>
-                <td>9</td>
             </tr>
             
             <tr>
@@ -13366,6 +13655,11 @@ from memilio.epidata import getDIVIData</pre></td>
             <tr>
                 <td>memilio/epidata/getRKIData.py</td>
                 <td>124</td>
+            </tr>
+            
+            <tr>
+                <td>memilio/epidata/transformMobilityData.py</td>
+                <td>13</td>
             </tr>
             
             <tr>
