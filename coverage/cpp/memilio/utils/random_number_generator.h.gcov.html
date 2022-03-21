@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2022-02-22 09:17:41</td>
+            <td class="headerValue">2022-03-21 09:15:35</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">40</td>
@@ -104,17 +104,17 @@
 <a name="42"><span class="lineNum">      42 </span>            : public:</a>
 <a name="43"><span class="lineNum">      43 </span>            :     using result_type = std::mt19937_64::result_type;</a>
 <a name="44"><span class="lineNum">      44 </span>            : </a>
-<a name="45"><span class="lineNum">      45 </span><span class="lineCov">       4033 :     static constexpr result_type min()</span></a>
+<a name="45"><span class="lineNum">      45 </span><span class="lineCov">       3955 :     static constexpr result_type min()</span></a>
 <a name="46"><span class="lineNum">      46 </span>            :     {</a>
-<a name="47"><span class="lineNum">      47 </span><span class="lineCov">       4033 :         return std::mt19937_64::min();</span></a>
+<a name="47"><span class="lineNum">      47 </span><span class="lineCov">       3955 :         return std::mt19937_64::min();</span></a>
 <a name="48"><span class="lineNum">      48 </span>            :     }</a>
 <a name="49"><span class="lineNum">      49 </span>            :     static constexpr result_type max()</a>
 <a name="50"><span class="lineNum">      50 </span>            :     {</a>
 <a name="51"><span class="lineNum">      51 </span>            :         return std::mt19937_64::max();</a>
 <a name="52"><span class="lineNum">      52 </span>            :     }</a>
-<a name="53"><span class="lineNum">      53 </span><span class="lineCov">       4038 :     result_type operator()()</span></a>
+<a name="53"><span class="lineNum">      53 </span><span class="lineCov">       3960 :     result_type operator()()</span></a>
 <a name="54"><span class="lineNum">      54 </span>            :     {</a>
-<a name="55"><span class="lineNum">      55 </span><span class="lineCov">       4038 :         return m_rng();</span></a>
+<a name="55"><span class="lineNum">      55 </span><span class="lineCov">       3960 :         return m_rng();</span></a>
 <a name="56"><span class="lineNum">      56 </span>            :     }</a>
 <a name="57"><span class="lineNum">      57 </span>            : </a>
 <a name="58"><span class="lineNum">      58 </span><span class="lineCov">          1 :     static std::vector&lt;unsigned int&gt; generate_seeds()</span></a>
@@ -149,10 +149,10 @@
 <a name="87"><span class="lineNum">      87 </span>            :  * get a random number generator that is static and local to this thread.</a>
 <a name="88"><span class="lineNum">      88 </span>            :  * @return a random number generator that is static and local to this thread.</a>
 <a name="89"><span class="lineNum">      89 </span>            :  */</a>
-<a name="90"><span class="lineNum">      90 </span><span class="lineCov">       3538 : inline RandomNumberGenerator&amp; thread_local_rng()</span></a>
+<a name="90"><span class="lineNum">      90 </span><span class="lineCov">       3470 : inline RandomNumberGenerator&amp; thread_local_rng()</span></a>
 <a name="91"><span class="lineNum">      91 </span>            : {</a>
-<a name="92"><span class="lineNum">      92 </span><span class="lineCov">       3538 :     static thread_local auto rng = RandomNumberGenerator();</span></a>
-<a name="93"><span class="lineNum">      93 </span><span class="lineCov">       3538 :     return rng;</span></a>
+<a name="92"><span class="lineNum">      92 </span><span class="lineCov">       3470 :     static thread_local auto rng = RandomNumberGenerator();</span></a>
+<a name="93"><span class="lineNum">      93 </span><span class="lineCov">       3470 :     return rng;</span></a>
 <a name="94"><span class="lineNum">      94 </span>            : }</a>
 <a name="95"><span class="lineNum">      95 </span>            : </a>
 <a name="96"><span class="lineNum">      96 </span><span class="lineCov">          7 : inline void log_rng_seeds(const RandomNumberGenerator&amp; rng, LogLevel level)</span></a>
@@ -209,8 +209,8 @@
 <a name="147"><span class="lineNum">     147 </span>            :      */</a>
 <a name="148"><span class="lineNum">     148 </span><span class="lineCov">          7 :     DistributionAdapter()</span></a>
 <a name="149"><span class="lineNum">     149 </span><span class="lineCov">          7 :     {</span></a>
-<a name="150"><span class="lineNum">     150 </span><span class="lineCov">       1116 :         m_generator = [](auto&amp;&amp; params) {</span></a>
-<a name="151"><span class="lineNum">     151 </span><span class="lineCov">       1109 :             return DistT(params)(thread_local_rng());</span></a>
+<a name="150"><span class="lineNum">     150 </span><span class="lineCov">       1049 :         m_generator = [](auto&amp;&amp; params) {</span></a>
+<a name="151"><span class="lineNum">     151 </span><span class="lineCov">       1042 :             return DistT(params)(thread_local_rng());</span></a>
 <a name="152"><span class="lineNum">     152 </span>            :         };</a>
 <a name="153"><span class="lineNum">     153 </span><span class="lineCov">          7 :     }</span></a>
 <a name="154"><span class="lineNum">     154 </span>            : </a>
@@ -222,9 +222,9 @@
 <a name="160"><span class="lineNum">     160 </span>            :      * DistributionAdapter&lt;std::uniform_int_distribution&gt;::operator() accepts two integers as well.</a>
 <a name="161"><span class="lineNum">     161 </span>            :      */</a>
 <a name="162"><span class="lineNum">     162 </span>            :     template &lt;class... T&gt;</a>
-<a name="163"><span class="lineNum">     163 </span><span class="lineCov">       1247 :     ResultType operator()(T&amp;&amp;... params)</span></a>
+<a name="163"><span class="lineNum">     163 </span><span class="lineCov">       1180 :     ResultType operator()(T&amp;&amp;... params)</span></a>
 <a name="164"><span class="lineNum">     164 </span>            :     {</a>
-<a name="165"><span class="lineNum">     165 </span><span class="lineCov">       1247 :         return m_generator(ParamType{std::forward&lt;T&gt;(params)...});</span></a>
+<a name="165"><span class="lineNum">     165 </span><span class="lineCov">       1180 :         return m_generator(ParamType{std::forward&lt;T&gt;(params)...});</span></a>
 <a name="166"><span class="lineNum">     166 </span>            :     }</a>
 <a name="167"><span class="lineNum">     167 </span>            : </a>
 <a name="168"><span class="lineNum">     168 </span>            :     /**</a>
@@ -247,10 +247,10 @@
 <a name="185"><span class="lineNum">     185 </span>            :      * get a static thread local instance of this class.</a>
 <a name="186"><span class="lineNum">     186 </span>            :      * Instance is default constructed on the first call.</a>
 <a name="187"><span class="lineNum">     187 </span>            :      */</a>
-<a name="188"><span class="lineNum">     188 </span><span class="lineCov">       1182 :     static DistributionAdapter&amp; get_instance()</span></a>
+<a name="188"><span class="lineNum">     188 </span><span class="lineCov">       1115 :     static DistributionAdapter&amp; get_instance()</span></a>
 <a name="189"><span class="lineNum">     189 </span>            :     {</a>
-<a name="190"><span class="lineNum">     190 </span><span class="lineCov">       1182 :         static thread_local DistributionAdapter instance;</span></a>
-<a name="191"><span class="lineNum">     191 </span><span class="lineCov">       1182 :         return instance;</span></a>
+<a name="190"><span class="lineNum">     190 </span><span class="lineCov">       1115 :         static thread_local DistributionAdapter instance;</span></a>
+<a name="191"><span class="lineNum">     191 </span><span class="lineCov">       1115 :         return instance;</span></a>
 <a name="192"><span class="lineNum">     192 </span>            :     }</a>
 <a name="193"><span class="lineNum">     193 </span>            : </a>
 <a name="194"><span class="lineNum">     194 </span>            : private:</a>
@@ -370,16 +370,16 @@
 <a name="308"><span class="lineNum">     308 </span>            :     {</a>
 <a name="309"><span class="lineNum">     309 </span><span class="lineCov">        265 :         auto weights = p.weights();</span></a>
 <a name="310"><span class="lineNum">     310 </span><span class="lineCov">        265 :         if (weights.size() &lt;= 1) {</span></a>
-<a name="311"><span class="lineNum">     311 </span><span class="lineCov">        106 :             return 0;</span></a>
+<a name="311"><span class="lineNum">     311 </span><span class="lineCov">        107 :             return 0;</span></a>
 <a name="312"><span class="lineNum">     312 </span>            :         }</a>
-<a name="313"><span class="lineNum">     313 </span><span class="lineCov">        159 :         auto sum = std::accumulate(weights.begin(), weights.end(), 0.0);</span></a>
+<a name="313"><span class="lineNum">     313 </span><span class="lineCov">        158 :         auto sum = std::accumulate(weights.begin(), weights.end(), 0.0);</span></a>
 <a name="314"><span class="lineNum">     314 </span>            :         auto u =</a>
-<a name="315"><span class="lineNum">     315 </span><span class="lineCov">        159 :             std::uniform_real_distribution&lt;double&gt;()(rng, std::uniform_real_distribution&lt;double&gt;::param_type{0.0, sum});</span></a>
-<a name="316"><span class="lineNum">     316 </span><span class="lineCov">        159 :         auto intermediate_sum = 0.0;</span></a>
-<a name="317"><span class="lineNum">     317 </span><span class="lineCov">        491 :         for (size_t i = 0; i &lt; weights.size(); ++i) {</span></a>
-<a name="318"><span class="lineNum">     318 </span><span class="lineCov">        491 :             intermediate_sum += weights.get_ptr()[i];</span></a>
-<a name="319"><span class="lineNum">     319 </span><span class="lineCov">        491 :             if (u &lt; intermediate_sum) {</span></a>
-<a name="320"><span class="lineNum">     320 </span><span class="lineCov">        159 :                 return i;</span></a>
+<a name="315"><span class="lineNum">     315 </span><span class="lineCov">        158 :             std::uniform_real_distribution&lt;double&gt;()(rng, std::uniform_real_distribution&lt;double&gt;::param_type{0.0, sum});</span></a>
+<a name="316"><span class="lineNum">     316 </span><span class="lineCov">        158 :         auto intermediate_sum = 0.0;</span></a>
+<a name="317"><span class="lineNum">     317 </span><span class="lineCov">        468 :         for (size_t i = 0; i &lt; weights.size(); ++i) {</span></a>
+<a name="318"><span class="lineNum">     318 </span><span class="lineCov">        468 :             intermediate_sum += weights.get_ptr()[i];</span></a>
+<a name="319"><span class="lineNum">     319 </span><span class="lineCov">        468 :             if (u &lt; intermediate_sum) {</span></a>
+<a name="320"><span class="lineNum">     320 </span><span class="lineCov">        158 :                 return i;</span></a>
 <a name="321"><span class="lineNum">     321 </span>            :             }</a>
 <a name="322"><span class="lineNum">     322 </span>            :         }</a>
 <a name="323"><span class="lineNum">     323 </span><span class="lineNoCov">          0 :         assert(false &amp;&amp; &quot;this should never happen.&quot;);</span></a>

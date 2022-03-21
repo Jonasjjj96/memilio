@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2022-02-22 09:17:41</td>
+            <td class="headerValue">2022-03-21 09:15:35</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">7</td>
@@ -106,11 +106,11 @@
 <a name="44"><span class="lineNum">      44 </span><span class="lineCov">         12 :     day++;</span></a>
 <a name="45"><span class="lineNum">      45 </span>            : </a>
 <a name="46"><span class="lineNum">      46 </span>            :     //interpolate between pair of time points that lie on either side of each integer day</a>
-<a name="47"><span class="lineNum">      47 </span><span class="lineCov">        324 :     for (int i = 0; i &lt; simulation_result.get_num_time_points() - 1;) {</span></a>
+<a name="47"><span class="lineNum">      47 </span><span class="lineCov">        428 :     for (int i = 0; i &lt; simulation_result.get_num_time_points() - 1;) {</span></a>
 <a name="48"><span class="lineNum">      48 </span>            :         //only go to next pair of time points if no time point is added.</a>
 <a name="49"><span class="lineNum">      49 </span>            :         //otherwise check the same time points again</a>
 <a name="50"><span class="lineNum">      50 </span>            :         //in case there is more than one day between the two time points</a>
-<a name="51"><span class="lineNum">      51 </span><span class="lineCov">        312 :         if (simulation_result.get_time(i) &lt; day &amp;&amp; simulation_result.get_time(i + 1) &gt;= day) {</span></a>
+<a name="51"><span class="lineNum">      51 </span><span class="lineCov">        416 :         if (simulation_result.get_time(i) &lt; day &amp;&amp; simulation_result.get_time(i + 1) &gt;= day) {</span></a>
 <a name="52"><span class="lineNum">      52 </span><span class="lineCov">        200 :             auto weight = (day - simulation_result.get_time(i)) /</span></a>
 <a name="53"><span class="lineNum">      53 </span><span class="lineCov">        200 :                           (simulation_result.get_time(i + 1) - simulation_result.get_time(i));</span></a>
 <a name="54"><span class="lineNum">      54 </span><span class="lineCov">        400 :             interpolated.add_time_point(day, simulation_result[i] +</span></a>
@@ -118,7 +118,7 @@
 <a name="56"><span class="lineNum">      56 </span><span class="lineCov">        200 :             ++day;</span></a>
 <a name="57"><span class="lineNum">      57 </span>            :         }</a>
 <a name="58"><span class="lineNum">      58 </span>            :         else {</a>
-<a name="59"><span class="lineNum">      59 </span><span class="lineCov">        112 :             ++i;</span></a>
+<a name="59"><span class="lineNum">      59 </span><span class="lineCov">        216 :             ++i;</span></a>
 <a name="60"><span class="lineNum">      60 </span>            :         }</a>
 <a name="61"><span class="lineNum">      61 </span>            :     }</a>
 <a name="62"><span class="lineNum">      62 </span>            : </a>
