@@ -1849,62 +1849,6 @@
             </tr>
             
             <tr>
-                <td>1</td>
-                <td>0</td>
-                <td>refactor</td>
-                <td><code>duplicate-code</code></td>
-                <td>R0801</td>
-                <td></td>
-                <td><pre>Similar lines in 2 files
-==memilio.epidata.getJHData:[88:97]
-==memilio.epidata_test.test_epidata_get_jh_data:[116:123]
-        directory_ger = os.path.join(out_folder, &#39;Germany/&#39;)
-        directory_es = os.path.join(out_folder, &#39;Spain/&#39;)
-        directory_fr = os.path.join(out_folder, &#39;France/&#39;)
-        directory_it = os.path.join(out_folder, &#39;Italy/&#39;)
-        directory_us = os.path.join(out_folder, &#39;US/&#39;)
-        directory_rok = os.path.join(out_folder, &#39;SouthKorea/&#39;)
-        directory_prc = os.path.join(out_folder, &#39;China/&#39;)</pre></td>
-            </tr>
-            
-            <tr>
-                <td>1</td>
-                <td>0</td>
-                <td>refactor</td>
-                <td><code>duplicate-code</code></td>
-                <td>R0801</td>
-                <td></td>
-                <td><pre>Similar lines in 2 files
-==memilio.epidata.getTestingData:[108:114]
-==memilio.epidata.getVaccinationData:[158:164]
-                     file_format=dd.defaultDict[&#39;file_format&#39;],
-                     out_folder=dd.defaultDict[&#39;out_folder&#39;],
-                     no_raw=dd.defaultDict[&#39;no_raw&#39;],
-                     start_date=dd.defaultDict[&#39;start_date&#39;],
-                     end_date=dd.defaultDict[&#39;end_date&#39;],
-                     make_plot=dd.defaultDict[&#39;make_plot&#39;],</pre></td>
-            </tr>
-            
-            <tr>
-                <td>1</td>
-                <td>0</td>
-                <td>refactor</td>
-                <td><code>duplicate-code</code></td>
-                <td>R0801</td>
-                <td></td>
-                <td><pre>Similar lines in 2 files
-==memilio.epidata.getSimulationData:[32:40]
-==memilio.epidata_test.test_epidata_getDataIntoPandasDataFrame:[28:35]
-from memilio.epidata import getDataIntoPandasDataFrame as gd
-from memilio.epidata import defaultDict as dd
-
-from memilio.epidata import getVaccinationData
-from memilio.epidata import getPopulationData
-from memilio.epidata import getRKIData
-from memilio.epidata import getDIVIData</pre></td>
-            </tr>
-            
-            <tr>
                 <td>28</td>
                 <td>0</td>
                 <td>warning</td>
@@ -7720,20 +7664,20 @@ from memilio.epidata import getDIVIData</pre></td>
                 <td>127</td>
                 <td>4</td>
                 <td>refactor</td>
-                <td><code>too-many-statements</code></td>
-                <td>R0915</td>
+                <td><code>no-self-use</code></td>
+                <td>R0201</td>
                 <td>Test_getDataIntoPandasDataFrame.test_cli_correct_default</td>
-                <td><pre>Too many statements (98/50)</pre></td>
+                <td><pre>Method could be a function</pre></td>
             </tr>
             
             <tr>
                 <td>127</td>
                 <td>4</td>
                 <td>refactor</td>
-                <td><code>no-self-use</code></td>
-                <td>R0201</td>
+                <td><code>too-many-statements</code></td>
+                <td>R0915</td>
                 <td>Test_getDataIntoPandasDataFrame.test_cli_correct_default</td>
-                <td><pre>Method could be a function</pre></td>
+                <td><pre>Too many statements (98/50)</pre></td>
             </tr>
             
             <tr>
@@ -7950,20 +7894,20 @@ from memilio.epidata import getDIVIData</pre></td>
                 <td>300</td>
                 <td>4</td>
                 <td>refactor</td>
-                <td><code>too-many-statements</code></td>
-                <td>R0915</td>
+                <td><code>no-self-use</code></td>
+                <td>R0201</td>
                 <td>Test_getDataIntoPandasDataFrame.test_cli_set_different_values</td>
-                <td><pre>Too many statements (62/50)</pre></td>
+                <td><pre>Method could be a function</pre></td>
             </tr>
             
             <tr>
                 <td>300</td>
                 <td>4</td>
                 <td>refactor</td>
-                <td><code>no-self-use</code></td>
-                <td>R0201</td>
+                <td><code>too-many-statements</code></td>
+                <td>R0915</td>
                 <td>Test_getDataIntoPandasDataFrame.test_cli_set_different_values</td>
-                <td><pre>Method could be a function</pre></td>
+                <td><pre>Too many statements (62/50)</pre></td>
             </tr>
             
             <tr>
@@ -11905,6 +11849,65 @@ from memilio.epidata import getDIVIData</pre></td>
             </tr>
             
             <tr>
+                <td>1</td>
+                <td>0</td>
+                <td>refactor</td>
+                <td><code>duplicate-code</code></td>
+                <td>R0801</td>
+                <td></td>
+                <td><pre>Similar lines in 2 files
+==memilio.epidata.getJHData:[88:97]
+==memilio.epidata_test.test_epidata_get_jh_data:[116:123]
+    directory_ger = os.path.join(out_folder, &#39;Germany/&#39;)
+    directory_es = os.path.join(out_folder, &#39;Spain/&#39;)
+    directory_fr = os.path.join(out_folder, &#39;France/&#39;)
+    directory_it = os.path.join(out_folder, &#39;Italy/&#39;)
+    directory_us = os.path.join(out_folder, &#39;US/&#39;)
+    directory_rok = os.path.join(out_folder, &#39;SouthKorea/&#39;)
+    directory_prc = os.path.join(out_folder, &#39;China/&#39;)
+
+    # dictionary of countries</pre></td>
+            </tr>
+            
+            <tr>
+                <td>1</td>
+                <td>0</td>
+                <td>refactor</td>
+                <td><code>duplicate-code</code></td>
+                <td>R0801</td>
+                <td></td>
+                <td><pre>Similar lines in 2 files
+==memilio.epidata.getSimulationData:[32:40]
+==memilio.epidata_test.test_epidata_getDataIntoPandasDataFrame:[28:35]
+from memilio.epidata import getDataIntoPandasDataFrame as gd
+from memilio.epidata import defaultDict as dd
+from memilio.epidata import getVaccinationData
+from memilio.epidata import getPopulationData
+from memilio.epidata import getRKIData
+from memilio.epidata import getDIVIData
+
+</pre></td>
+            </tr>
+            
+            <tr>
+                <td>1</td>
+                <td>0</td>
+                <td>refactor</td>
+                <td><code>duplicate-code</code></td>
+                <td>R0801</td>
+                <td></td>
+                <td><pre>Similar lines in 2 files
+==memilio.epidata.getTestingData:[108:114]
+==memilio.epidata.getVaccinationData:[158:164]
+                     file_format=dd.defaultDict[&#39;file_format&#39;],
+                     out_folder=dd.defaultDict[&#39;out_folder&#39;],
+                     no_raw=dd.defaultDict[&#39;no_raw&#39;],
+                     start_date=dd.defaultDict[&#39;start_date&#39;],
+                     end_date=dd.defaultDict[&#39;end_date&#39;],
+                     make_plot=dd.defaultDict[&#39;make_plot&#39;],</pre></td>
+            </tr>
+            
+            <tr>
                 <td>24</td>
                 <td>0</td>
                 <td>error</td>
@@ -12806,86 +12809,6 @@ from memilio.epidata import getDIVIData</pre></td>
             </tr>
             
             <tr>
-                <td>superfluous-parens</td>
-                <td>3</td>
-            </tr>
-            
-            <tr>
-                <td>invalid-name</td>
-                <td>270</td>
-            </tr>
-            
-            <tr>
-                <td>missing-module-docstring</td>
-                <td>18</td>
-            </tr>
-            
-            <tr>
-                <td>import-error</td>
-                <td>45</td>
-            </tr>
-            
-            <tr>
-                <td>missing-class-docstring</td>
-                <td>14</td>
-            </tr>
-            
-            <tr>
-                <td>missing-function-docstring</td>
-                <td>129</td>
-            </tr>
-            
-            <tr>
-                <td>consider-using-enumerate</td>
-                <td>36</td>
-            </tr>
-            
-            <tr>
-                <td>use-a-generator</td>
-                <td>8</td>
-            </tr>
-            
-            <tr>
-                <td>redundant-unittest-assert</td>
-                <td>1</td>
-            </tr>
-            
-            <tr>
-                <td>redefined-builtin</td>
-                <td>17</td>
-            </tr>
-            
-            <tr>
-                <td>unused-import</td>
-                <td>33</td>
-            </tr>
-            
-            <tr>
-                <td>wrong-import-order</td>
-                <td>36</td>
-            </tr>
-            
-            <tr>
-                <td>unused-argument</td>
-                <td>32</td>
-            </tr>
-            
-            <tr>
-                <td>function-redefined</td>
-                <td>4</td>
-            </tr>
-            
-            <tr>
-                <td>unused-variable</td>
-                <td>11</td>
-            </tr>
-            
-            <tr>
-                <td>too-many-locals</td>
-                <td>28</td>
-            </tr>
-            
-            <tr>
                 <td>trailing-whitespace</td>
                 <td>141</td>
             </tr>
@@ -12896,53 +12819,13 @@ from memilio.epidata import getDIVIData</pre></td>
             </tr>
             
             <tr>
-                <td>unspecified-encoding</td>
-                <td>24</td>
+                <td>invalid-name</td>
+                <td>270</td>
             </tr>
             
             <tr>
-                <td>consider-using-dict-items</td>
-                <td>8</td>
-            </tr>
-            
-            <tr>
-                <td>consider-iterating-dictionary</td>
-                <td>7</td>
-            </tr>
-            
-            <tr>
-                <td>no-self-use</td>
-                <td>8</td>
-            </tr>
-            
-            <tr>
-                <td>redefined-outer-name</td>
-                <td>3</td>
-            </tr>
-            
-            <tr>
-                <td>assignment-from-no-return</td>
-                <td>3</td>
-            </tr>
-            
-            <tr>
-                <td>too-many-statements</td>
-                <td>19</td>
-            </tr>
-            
-            <tr>
-                <td>anomalous-backslash-in-string</td>
-                <td>120</td>
-            </tr>
-            
-            <tr>
-                <td>arguments-out-of-order</td>
-                <td>1</td>
-            </tr>
-            
-            <tr>
-                <td>consider-using-with</td>
-                <td>8</td>
+                <td>import-error</td>
+                <td>45</td>
             </tr>
             
             <tr>
@@ -12951,48 +12834,8 @@ from memilio.epidata import getDIVIData</pre></td>
             </tr>
             
             <tr>
-                <td>pointless-statement</td>
-                <td>1</td>
-            </tr>
-            
-            <tr>
-                <td>deprecated-method</td>
-                <td>5</td>
-            </tr>
-            
-            <tr>
-                <td>singleton-comparison</td>
-                <td>24</td>
-            </tr>
-            
-            <tr>
-                <td>too-many-lines</td>
-                <td>2</td>
-            </tr>
-            
-            <tr>
-                <td>consider-using-in</td>
-                <td>3</td>
-            </tr>
-            
-            <tr>
-                <td>no-else-continue</td>
-                <td>2</td>
-            </tr>
-            
-            <tr>
-                <td>too-many-public-methods</td>
-                <td>1</td>
-            </tr>
-            
-            <tr>
-                <td>unnecessary-comprehension</td>
-                <td>9</td>
-            </tr>
-            
-            <tr>
-                <td>too-many-nested-blocks</td>
-                <td>8</td>
+                <td>too-many-locals</td>
+                <td>28</td>
             </tr>
             
             <tr>
@@ -13001,18 +12844,38 @@ from memilio.epidata import getDIVIData</pre></td>
             </tr>
             
             <tr>
-                <td>duplicate-key</td>
-                <td>2</td>
+                <td>too-many-statements</td>
+                <td>19</td>
             </tr>
             
             <tr>
-                <td>consider-using-dict-comprehension</td>
-                <td>1</td>
+                <td>wrong-import-order</td>
+                <td>36</td>
+            </tr>
+            
+            <tr>
+                <td>unused-variable</td>
+                <td>11</td>
+            </tr>
+            
+            <tr>
+                <td>unused-import</td>
+                <td>33</td>
+            </tr>
+            
+            <tr>
+                <td>consider-using-enumerate</td>
+                <td>36</td>
             </tr>
             
             <tr>
                 <td>bad-indentation</td>
                 <td>2</td>
+            </tr>
+            
+            <tr>
+                <td>missing-module-docstring</td>
+                <td>18</td>
             </tr>
             
             <tr>
@@ -13026,28 +12889,33 @@ from memilio.epidata import getDIVIData</pre></td>
             </tr>
             
             <tr>
+                <td>unnecessary-comprehension</td>
+                <td>9</td>
+            </tr>
+            
+            <tr>
+                <td>unused-argument</td>
+                <td>32</td>
+            </tr>
+            
+            <tr>
                 <td>no-else-return</td>
                 <td>9</td>
             </tr>
             
             <tr>
-                <td>too-many-boolean-expressions</td>
-                <td>1</td>
-            </tr>
-            
-            <tr>
-                <td>broad-except</td>
-                <td>4</td>
-            </tr>
-            
-            <tr>
-                <td>consider-using-set-comprehension</td>
-                <td>3</td>
-            </tr>
-            
-            <tr>
                 <td>dangerous-default-value</td>
                 <td>3</td>
+            </tr>
+            
+            <tr>
+                <td>consider-using-dict-items</td>
+                <td>8</td>
+            </tr>
+            
+            <tr>
+                <td>consider-using-with</td>
+                <td>8</td>
             </tr>
             
             <tr>
@@ -13058,6 +12926,51 @@ from memilio.epidata import getDIVIData</pre></td>
             <tr>
                 <td>unnecessary-pass</td>
                 <td>1</td>
+            </tr>
+            
+            <tr>
+                <td>singleton-comparison</td>
+                <td>24</td>
+            </tr>
+            
+            <tr>
+                <td>too-many-nested-blocks</td>
+                <td>8</td>
+            </tr>
+            
+            <tr>
+                <td>too-many-boolean-expressions</td>
+                <td>1</td>
+            </tr>
+            
+            <tr>
+                <td>missing-function-docstring</td>
+                <td>129</td>
+            </tr>
+            
+            <tr>
+                <td>redefined-builtin</td>
+                <td>17</td>
+            </tr>
+            
+            <tr>
+                <td>duplicate-key</td>
+                <td>2</td>
+            </tr>
+            
+            <tr>
+                <td>consider-using-dict-comprehension</td>
+                <td>1</td>
+            </tr>
+            
+            <tr>
+                <td>superfluous-parens</td>
+                <td>3</td>
+            </tr>
+            
+            <tr>
+                <td>consider-using-set-comprehension</td>
+                <td>3</td>
             </tr>
             
             <tr>
@@ -13081,6 +12994,96 @@ from memilio.epidata import getDIVIData</pre></td>
             </tr>
             
             <tr>
+                <td>broad-except</td>
+                <td>4</td>
+            </tr>
+            
+            <tr>
+                <td>too-many-lines</td>
+                <td>2</td>
+            </tr>
+            
+            <tr>
+                <td>consider-using-in</td>
+                <td>3</td>
+            </tr>
+            
+            <tr>
+                <td>missing-class-docstring</td>
+                <td>14</td>
+            </tr>
+            
+            <tr>
+                <td>no-self-use</td>
+                <td>8</td>
+            </tr>
+            
+            <tr>
+                <td>pointless-statement</td>
+                <td>1</td>
+            </tr>
+            
+            <tr>
+                <td>deprecated-method</td>
+                <td>5</td>
+            </tr>
+            
+            <tr>
+                <td>unspecified-encoding</td>
+                <td>24</td>
+            </tr>
+            
+            <tr>
+                <td>consider-iterating-dictionary</td>
+                <td>7</td>
+            </tr>
+            
+            <tr>
+                <td>redefined-outer-name</td>
+                <td>3</td>
+            </tr>
+            
+            <tr>
+                <td>assignment-from-no-return</td>
+                <td>3</td>
+            </tr>
+            
+            <tr>
+                <td>anomalous-backslash-in-string</td>
+                <td>120</td>
+            </tr>
+            
+            <tr>
+                <td>arguments-out-of-order</td>
+                <td>1</td>
+            </tr>
+            
+            <tr>
+                <td>no-else-continue</td>
+                <td>2</td>
+            </tr>
+            
+            <tr>
+                <td>too-many-public-methods</td>
+                <td>1</td>
+            </tr>
+            
+            <tr>
+                <td>use-a-generator</td>
+                <td>8</td>
+            </tr>
+            
+            <tr>
+                <td>redundant-unittest-assert</td>
+                <td>1</td>
+            </tr>
+            
+            <tr>
+                <td>function-redefined</td>
+                <td>4</td>
+            </tr>
+            
+            <tr>
                 <td>duplicate-code</td>
                 <td>3</td>
             </tr>
@@ -13096,13 +13099,118 @@ from memilio.epidata import getDIVIData</pre></td>
             </tr>
             
             <tr>
-                <td>memilio.epidata_test.test_epidata_geoModificationGermany</td>
-                <td>46</td>
+                <td>memilio.epidata.modifyDataframeSeries</td>
+                <td>18</td>
             </tr>
             
             <tr>
-                <td>memilio.epidata_test.test_epidata_get_vaccination_data</td>
+                <td>memilio.epidata.getRKIDatawithEstimations</td>
+                <td>10</td>
+            </tr>
+            
+            <tr>
+                <td>memilio.epidata.customPlot</td>
+                <td>17</td>
+            </tr>
+            
+            <tr>
+                <td>memilio.epidata.getTestingData</td>
+                <td>61</td>
+            </tr>
+            
+            <tr>
+                <td>memilio.epidata.transformMobilityData</td>
+                <td>13</td>
+            </tr>
+            
+            <tr>
+                <td>memilio.epidata.getDataIntoPandasDataFrame</td>
+                <td>32</td>
+            </tr>
+            
+            <tr>
+                <td>memilio.epidata.getCommuterMobility</td>
+                <td>45</td>
+            </tr>
+            
+            <tr>
+                <td>memilio.epidata.defaultDict</td>
+                <td>13</td>
+            </tr>
+            
+            <tr>
+                <td>memilio.epidata.getDIVIData</td>
+                <td>18</td>
+            </tr>
+            
+            <tr>
+                <td>memilio.epidata.geoModificationGermany</td>
+                <td>27</td>
+            </tr>
+            
+            <tr>
+                <td>memilio.epidata.transformWeatherData</td>
+                <td>20</td>
+            </tr>
+            
+            <tr>
+                <td>memilio.epidata.getSimulationData</td>
+                <td>7</td>
+            </tr>
+            
+            <tr>
+                <td>memilio.epidata.getPopulationData</td>
                 <td>39</td>
+            </tr>
+            
+            <tr>
+                <td>memilio.epidata.getRKIData</td>
+                <td>124</td>
+            </tr>
+            
+            <tr>
+                <td>memilio.epidata.getVaccinationData</td>
+                <td>77</td>
+            </tr>
+            
+            <tr>
+                <td>memilio.epidata.getJHData</td>
+                <td>9</td>
+            </tr>
+            
+            <tr>
+                <td>memilio.epidata.cleanData</td>
+                <td>7</td>
+            </tr>
+            
+            <tr>
+                <td>memilio.epidata_test.test_epidata_getDataIntoPandasDataFrame</td>
+                <td>85</td>
+            </tr>
+            
+            <tr>
+                <td>memilio.epidata_test.test_epidata_getCommuterMobility</td>
+                <td>27</td>
+            </tr>
+            
+            <tr>
+                <td>memilio.epidata_test.test_epidata_get_simulation_data</td>
+                <td>23</td>
+            </tr>
+            
+            <tr>
+                <td>memilio.epidata_test.test_epidata_modifyDataframeSeries</td>
+                <td>22</td>
+            </tr>
+            
+            <tr>
+                <td>memilio.epidata_test.test_epidata_get_population_data</td>
+                <td>19</td>
+            </tr>
+            
+            <tr>
+                <td>memilio.epidata_test.test_epidata_transform_mobility_data</td>
+                <td>23</td>
             </tr>
             
             <tr>
@@ -13121,23 +13229,8 @@ from memilio.epidata import getDIVIData</pre></td>
             </tr>
             
             <tr>
-                <td>memilio.epidata_test.test_epidata_getCommuterMobility</td>
-                <td>27</td>
-            </tr>
-            
-            <tr>
                 <td>memilio.epidata_test.test_epidata_get_RKI_Data</td>
                 <td>143</td>
-            </tr>
-            
-            <tr>
-                <td>memilio.epidata_test.test_epidata_get_simulation_data</td>
-                <td>23</td>
-            </tr>
-            
-            <tr>
-                <td>memilio.epidata_test.test_epidata_modifyDataframeSeries</td>
-                <td>22</td>
             </tr>
             
             <tr>
@@ -13146,107 +13239,17 @@ from memilio.epidata import getDIVIData</pre></td>
             </tr>
             
             <tr>
-                <td>memilio.epidata_test.test_epidata_getDataIntoPandasDataFrame</td>
-                <td>85</td>
-            </tr>
-            
-            <tr>
                 <td>memilio.epidata_test.test_epidata_cleandata</td>
                 <td>90</td>
             </tr>
             
             <tr>
-                <td>memilio.epidata_test.test_epidata_transform_mobility_data</td>
-                <td>23</td>
+                <td>memilio.epidata_test.test_epidata_geoModificationGermany</td>
+                <td>46</td>
             </tr>
             
             <tr>
-                <td>memilio.epidata_test.test_epidata_get_population_data</td>
-                <td>19</td>
-            </tr>
-            
-            <tr>
-                <td>memilio.epidata.getVaccinationData</td>
-                <td>77</td>
-            </tr>
-            
-            <tr>
-                <td>memilio.epidata.defaultDict</td>
-                <td>13</td>
-            </tr>
-            
-            <tr>
-                <td>memilio.epidata.getRKIData</td>
-                <td>124</td>
-            </tr>
-            
-            <tr>
-                <td>memilio.epidata.getJHData</td>
-                <td>9</td>
-            </tr>
-            
-            <tr>
-                <td>memilio.epidata.modifyDataframeSeries</td>
-                <td>18</td>
-            </tr>
-            
-            <tr>
-                <td>memilio.epidata.customPlot</td>
-                <td>17</td>
-            </tr>
-            
-            <tr>
-                <td>memilio.epidata.getTestingData</td>
-                <td>61</td>
-            </tr>
-            
-            <tr>
-                <td>memilio.epidata.getCommuterMobility</td>
-                <td>45</td>
-            </tr>
-            
-            <tr>
-                <td>memilio.epidata.getRKIDatawithEstimations</td>
-                <td>10</td>
-            </tr>
-            
-            <tr>
-                <td>memilio.epidata.getSimulationData</td>
-                <td>7</td>
-            </tr>
-            
-            <tr>
-                <td>memilio.epidata.cleanData</td>
-                <td>7</td>
-            </tr>
-            
-            <tr>
-                <td>memilio.epidata.transformWeatherData</td>
-                <td>20</td>
-            </tr>
-            
-            <tr>
-                <td>memilio.epidata.transformMobilityData</td>
-                <td>13</td>
-            </tr>
-            
-            <tr>
-                <td>memilio.epidata.getDataIntoPandasDataFrame</td>
-                <td>32</td>
-            </tr>
-            
-            <tr>
-                <td>memilio.epidata.geoModificationGermany</td>
-                <td>27</td>
-            </tr>
-            
-            <tr>
-                <td>memilio.epidata.getDIVIData</td>
-                <td>18</td>
-            </tr>
-            
-            <tr>
-                <td>memilio.epidata.getPopulationData</td>
+                <td>memilio.epidata_test.test_epidata_get_vaccination_data</td>
                 <td>42</td>
             </tr>
             
@@ -13261,13 +13264,118 @@ from memilio.epidata import getDIVIData</pre></td>
             </tr>
             
             <tr>
-                <td>memilio/epidata_test/test_epidata_geoModificationGermany.py</td>
-                <td>46</td>
+                <td>memilio/epidata/modifyDataframeSeries.py</td>
+                <td>18</td>
             </tr>
             
             <tr>
-                <td>memilio/epidata_test/test_epidata_get_vaccination_data.py</td>
+                <td>memilio/epidata/getRKIDatawithEstimations.py</td>
+                <td>10</td>
+            </tr>
+            
+            <tr>
+                <td>memilio/epidata/customPlot.py</td>
+                <td>17</td>
+            </tr>
+            
+            <tr>
+                <td>memilio/epidata/getTestingData.py</td>
+                <td>61</td>
+            </tr>
+            
+            <tr>
+                <td>memilio/epidata/transformMobilityData.py</td>
+                <td>13</td>
+            </tr>
+            
+            <tr>
+                <td>memilio/epidata/getDataIntoPandasDataFrame.py</td>
+                <td>32</td>
+            </tr>
+            
+            <tr>
+                <td>memilio/epidata/getCommuterMobility.py</td>
+                <td>45</td>
+            </tr>
+            
+            <tr>
+                <td>memilio/epidata/defaultDict.py</td>
+                <td>13</td>
+            </tr>
+            
+            <tr>
+                <td>memilio/epidata/getDIVIData.py</td>
+                <td>18</td>
+            </tr>
+            
+            <tr>
+                <td>memilio/epidata/geoModificationGermany.py</td>
+                <td>27</td>
+            </tr>
+            
+            <tr>
+                <td>memilio/epidata/transformWeatherData.py</td>
+                <td>20</td>
+            </tr>
+            
+            <tr>
+                <td>memilio/epidata/getSimulationData.py</td>
+                <td>7</td>
+            </tr>
+            
+            <tr>
+                <td>memilio/epidata/getPopulationData.py</td>
                 <td>39</td>
+            </tr>
+            
+            <tr>
+                <td>memilio/epidata/getRKIData.py</td>
+                <td>124</td>
+            </tr>
+            
+            <tr>
+                <td>memilio/epidata/getVaccinationData.py</td>
+                <td>77</td>
+            </tr>
+            
+            <tr>
+                <td>memilio/epidata/getJHData.py</td>
+                <td>9</td>
+            </tr>
+            
+            <tr>
+                <td>memilio/epidata/cleanData.py</td>
+                <td>7</td>
+            </tr>
+            
+            <tr>
+                <td>memilio/epidata_test/test_epidata_getDataIntoPandasDataFrame.py</td>
+                <td>85</td>
+            </tr>
+            
+            <tr>
+                <td>memilio/epidata_test/test_epidata_getCommuterMobility.py</td>
+                <td>27</td>
+            </tr>
+            
+            <tr>
+                <td>memilio/epidata_test/test_epidata_get_simulation_data.py</td>
+                <td>23</td>
+            </tr>
+            
+            <tr>
+                <td>memilio/epidata_test/test_epidata_modifyDataframeSeries.py</td>
+                <td>22</td>
+            </tr>
+            
+            <tr>
+                <td>memilio/epidata_test/test_epidata_get_population_data.py</td>
+                <td>19</td>
+            </tr>
+            
+            <tr>
+                <td>memilio/epidata_test/test_epidata_transform_mobility_data.py</td>
+                <td>23</td>
             </tr>
             
             <tr>
@@ -13286,23 +13394,8 @@ from memilio.epidata import getDIVIData</pre></td>
             </tr>
             
             <tr>
-                <td>memilio/epidata_test/test_epidata_getCommuterMobility.py</td>
-                <td>27</td>
-            </tr>
-            
-            <tr>
                 <td>memilio/epidata_test/test_epidata_get_RKI_Data.py</td>
                 <td>143</td>
-            </tr>
-            
-            <tr>
-                <td>memilio/epidata_test/test_epidata_get_simulation_data.py</td>
-                <td>23</td>
-            </tr>
-            
-            <tr>
-                <td>memilio/epidata_test/test_epidata_modifyDataframeSeries.py</td>
-                <td>22</td>
             </tr>
             
             <tr>
@@ -13311,107 +13404,17 @@ from memilio.epidata import getDIVIData</pre></td>
             </tr>
             
             <tr>
-                <td>memilio/epidata_test/test_epidata_getDataIntoPandasDataFrame.py</td>
-                <td>85</td>
-            </tr>
-            
-            <tr>
                 <td>memilio/epidata_test/test_epidata_cleandata.py</td>
                 <td>90</td>
             </tr>
             
             <tr>
-                <td>memilio/epidata_test/test_epidata_transform_mobility_data.py</td>
-                <td>23</td>
+                <td>memilio/epidata_test/test_epidata_geoModificationGermany.py</td>
+                <td>46</td>
             </tr>
             
             <tr>
-                <td>memilio/epidata_test/test_epidata_get_population_data.py</td>
-                <td>19</td>
-            </tr>
-            
-            <tr>
-                <td>memilio/epidata/getVaccinationData.py</td>
-                <td>77</td>
-            </tr>
-            
-            <tr>
-                <td>memilio/epidata/defaultDict.py</td>
-                <td>13</td>
-            </tr>
-            
-            <tr>
-                <td>memilio/epidata/getRKIData.py</td>
-                <td>124</td>
-            </tr>
-            
-            <tr>
-                <td>memilio/epidata/getJHData.py</td>
-                <td>9</td>
-            </tr>
-            
-            <tr>
-                <td>memilio/epidata/modifyDataframeSeries.py</td>
-                <td>18</td>
-            </tr>
-            
-            <tr>
-                <td>memilio/epidata/customPlot.py</td>
-                <td>17</td>
-            </tr>
-            
-            <tr>
-                <td>memilio/epidata/getTestingData.py</td>
-                <td>61</td>
-            </tr>
-            
-            <tr>
-                <td>memilio/epidata/getCommuterMobility.py</td>
-                <td>45</td>
-            </tr>
-            
-            <tr>
-                <td>memilio/epidata/getRKIDatawithEstimations.py</td>
-                <td>10</td>
-            </tr>
-            
-            <tr>
-                <td>memilio/epidata/getSimulationData.py</td>
-                <td>7</td>
-            </tr>
-            
-            <tr>
-                <td>memilio/epidata/cleanData.py</td>
-                <td>7</td>
-            </tr>
-            
-            <tr>
-                <td>memilio/epidata/transformWeatherData.py</td>
-                <td>20</td>
-            </tr>
-            
-            <tr>
-                <td>memilio/epidata/transformMobilityData.py</td>
-                <td>13</td>
-            </tr>
-            
-            <tr>
-                <td>memilio/epidata/getDataIntoPandasDataFrame.py</td>
-                <td>32</td>
-            </tr>
-            
-            <tr>
-                <td>memilio/epidata/geoModificationGermany.py</td>
-                <td>27</td>
-            </tr>
-            
-            <tr>
-                <td>memilio/epidata/getDIVIData.py</td>
-                <td>18</td>
-            </tr>
-            
-            <tr>
-                <td>memilio/epidata/getPopulationData.py</td>
+                <td>memilio/epidata_test/test_epidata_get_vaccination_data.py</td>
                 <td>42</td>
             </tr>
             
