@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2022-04-04 11:13:32</td>
+            <td class="headerValue">2022-04-06 13:13:01</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">6</td>
@@ -406,7 +406,7 @@
 <a name="344"><span class="lineNum">     344 </span><span class="lineCov">          2 :         std::vector&lt;double&gt; num_icu(model.size(), 0.0);</span></a>
 <a name="345"><span class="lineNum">     345 </span>            : </a>
 <a name="346"><span class="lineNum">     346 </span><span class="lineCov">          1 :         BOOST_OUTCOME_TRY(details::read_rki_data(</span></a>
-<a name="347"><span class="lineNum">     347 </span>            :             path_join(data_dir, &quot;all_county_age_ma_rki.json&quot;), id_name, region, date, num_exp, num_car, num_inf, num_hosp,</a>
+<a name="347"><span class="lineNum">     347 </span>            :             path_join(data_dir, &quot;cases_all_county_age_ma7.json&quot;), id_name, region, date, num_exp, num_car, num_inf, num_hosp,</a>
 <a name="348"><span class="lineNum">     348 </span>            :             dummy_icu, num_death, num_rec, t_car_to_rec, t_car_to_inf, t_exp_to_car, t_inf_to_rec, t_inf_to_hosp,</a>
 <a name="349"><span class="lineNum">     349 </span>            :             t_hosp_to_rec, t_hosp_to_icu, t_icu_to_dead, mu_C_R, mu_I_H, mu_H_U, scaling_factor_inf));</a>
 <a name="350"><span class="lineNum">     350 </span><span class="lineCov">          1 :         BOOST_OUTCOME_TRY(details::read_divi_data(path_join(data_dir, &quot;county_divi.json&quot;), id_name, region, date, num_icu));</span></a>
@@ -468,7 +468,7 @@
 <a name="406"><span class="lineNum">     406 </span><span class="lineNoCov">          0 :         log_warning(&quot;No DIVI data available for this date&quot;);</span></a>
 <a name="407"><span class="lineNum">     407 </span>            :     }</a>
 <a name="408"><span class="lineNum">     408 </span><span class="lineCov">          2 :     BOOST_OUTCOME_TRY(</span></a>
-<a name="409"><span class="lineNum">     409 </span>            :         details::set_rki_data(model, path_join(dir, &quot;all_age_ma_rki.json&quot;), id_name, {0}, date, scaling_factor_inf));</a>
+<a name="409"><span class="lineNum">     409 </span>            :         details::set_rki_data(model, path_join(dir, &quot;cases_all_age_ma7.json&quot;), id_name, {0}, date, scaling_factor_inf));</a>
 <a name="410"><span class="lineNum">     410 </span><span class="lineCov">          2 :     BOOST_OUTCOME_TRY(</span></a>
 <a name="411"><span class="lineNum">     411 </span>            :         details::set_population_data(model, path_join(dir, &quot;county_current_population.json&quot;), &quot;ID_County&quot;, {0}));</a>
 <a name="412"><span class="lineNum">     412 </span><span class="lineCov">          2 :     return success();</span></a>
@@ -497,7 +497,7 @@
 <a name="435"><span class="lineNum">     435 </span><span class="lineNoCov">          0 :         log_warning(&quot;No DIVI data available for this date&quot;);</span></a>
 <a name="436"><span class="lineNum">     436 </span>            :     }</a>
 <a name="437"><span class="lineNum">     437 </span>            : </a>
-<a name="438"><span class="lineNum">     438 </span><span class="lineCov">          2 :     BOOST_OUTCOME_TRY(details::set_rki_data(model, path_join(dir, &quot;all_state_age_ma_rki.json&quot;), id_name, state, date,</span></a>
+<a name="438"><span class="lineNum">     438 </span><span class="lineCov">          2 :     BOOST_OUTCOME_TRY(details::set_rki_data(model, path_join(dir, &quot;cases_all_state_age_ma7.json&quot;), id_name, state, date,</span></a>
 <a name="439"><span class="lineNum">     439 </span>            :                                             scaling_factor_inf));</a>
 <a name="440"><span class="lineNum">     440 </span><span class="lineCov">          2 :     BOOST_OUTCOME_TRY(</span></a>
 <a name="441"><span class="lineNum">     441 </span>            :         details::set_population_data(model, path_join(dir, &quot;county_current_population.json&quot;), &quot;ID_County&quot;, state));</a>
@@ -527,7 +527,7 @@
 <a name="465"><span class="lineNum">     465 </span>            :     else {</a>
 <a name="466"><span class="lineNum">     466 </span><span class="lineNoCov">          0 :         log_warning(&quot;No DIVI data available for this date&quot;);</span></a>
 <a name="467"><span class="lineNum">     467 </span>            :     }</a>
-<a name="468"><span class="lineNum">     468 </span><span class="lineCov">          2 :     BOOST_OUTCOME_TRY(details::set_rki_data(model, path_join(dir, &quot;all_county_age_ma_rki.json&quot;), id_name, county, date,</span></a>
+<a name="468"><span class="lineNum">     468 </span><span class="lineCov">          2 :     BOOST_OUTCOME_TRY(details::set_rki_data(model, path_join(dir, &quot;cases_all_county_age_ma7.json&quot;), id_name, county, date,</span></a>
 <a name="469"><span class="lineNum">     469 </span>            :                                             scaling_factor_inf));</a>
 <a name="470"><span class="lineNum">     470 </span><span class="lineCov">          2 :     BOOST_OUTCOME_TRY(</span></a>
 <a name="471"><span class="lineNum">     471 </span>            :         details::set_population_data(model, path_join(dir, &quot;county_current_population.json&quot;), &quot;ID_County&quot;, county));</a>
