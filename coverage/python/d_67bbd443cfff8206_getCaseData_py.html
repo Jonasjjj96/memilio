@@ -241,7 +241,7 @@
     <p class="pln"><span class="n"><a id="t182" href="#t182">182</a></span><span class="t">                        <span class="str">"dataframe is empty for csv and geojson!"</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
     <p class="pln"><span class="n"><a id="t183" href="#t183">183</a></span><span class="t">            <span class="com"># drop columns that do not exist in data from github</span>&nbsp;</span><span class="r"></span></p>
     <p class="run"><span class="n"><a id="t184" href="#t184">184</a></span><span class="t">            <span class="nam">df</span> <span class="op">=</span> <span class="nam">df</span><span class="op">.</span><span class="nam">drop</span><span class="op">(</span><span class="op">[</span><span class="str">"Altersgruppe2"</span><span class="op">,</span> <span class="str">"Datenstand"</span><span class="op">,</span> <span class="str">"OBJECTID"</span><span class="op">,</span>&nbsp;</span><span class="r"></span></p>
-    <p class="pln"><span class="n"><a id="t185" href="#t185">185</a></span><span class="t">                          <span class="str">"Bundesland"</span><span class="op">,</span> <span class="str">"Landkreis"</span><span class="op">]</span><span class="op">,</span> <span class="num">1</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
+    <p class="pln"><span class="n"><a id="t185" href="#t185">185</a></span><span class="t">                          <span class="str">"Bundesland"</span><span class="op">,</span> <span class="str">"Landkreis"</span><span class="op">]</span><span class="op">,</span> <span class="nam">axis</span><span class="op">=</span><span class="num">1</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
     <p class="run"><span class="n"><a id="t186" href="#t186">186</a></span><span class="t">    <span class="nam">df</span> <span class="op">=</span> <span class="nam">df</span><span class="op">.</span><span class="nam">convert_dtypes</span><span class="op">(</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
     <p class="pln"><span class="n"><a id="t187" href="#t187">187</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
     <p class="pln"><span class="n"><a id="t188" href="#t188">188</a></span><span class="t">    <span class="com"># output data to not always download it</span>&nbsp;</span><span class="r"></span></p>
@@ -296,7 +296,7 @@
     <p class="pln"><span class="n"><a id="t237" href="#t237">237</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
     <p class="pln"><span class="n"><a id="t238" href="#t238">238</a></span><span class="t">    <span class="com"># get rid of unnecessary columns</span>&nbsp;</span><span class="r"></span></p>
     <p class="run"><span class="n"><a id="t239" href="#t239">239</a></span><span class="t">    <span class="nam">df</span> <span class="op">=</span> <span class="nam">df</span><span class="op">.</span><span class="nam">drop</span><span class="op">(</span><span class="op">[</span><span class="str">'NeuerFall'</span><span class="op">,</span> <span class="str">'NeuerTodesfall'</span><span class="op">,</span> <span class="str">'NeuGenesen'</span><span class="op">,</span>&nbsp;</span><span class="r"></span></p>
-    <p class="pln"><span class="n"><a id="t240" href="#t240">240</a></span><span class="t">                 <span class="str">"IstErkrankungsbeginn"</span><span class="op">,</span> <span class="str">"Meldedatum"</span><span class="op">,</span> <span class="str">"Refdatum"</span><span class="op">]</span><span class="op">,</span> <span class="num">1</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
+    <p class="pln"><span class="n"><a id="t240" href="#t240">240</a></span><span class="t">                  <span class="str">"IstErkrankungsbeginn"</span><span class="op">,</span> <span class="str">"Meldedatum"</span><span class="op">,</span> <span class="str">"Refdatum"</span><span class="op">]</span><span class="op">,</span> <span class="nam">axis</span><span class="op">=</span><span class="num">1</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
     <p class="pln"><span class="n"><a id="t241" href="#t241">241</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
     <p class="run"><span class="n"><a id="t242" href="#t242">242</a></span><span class="t">    <span class="nam">print</span><span class="op">(</span><span class="str">"Available columns:"</span><span class="op">,</span> <span class="nam">df</span><span class="op">.</span><span class="nam">columns</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
     <p class="pln"><span class="n"><a id="t243" href="#t243">243</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
@@ -753,7 +753,7 @@
     <div class="content">
         <p>
             <a class="nav" href="index.html">&#xab; index</a> &nbsp; &nbsp; <a class="nav" href="https://coverage.readthedocs.io">coverage.py v6.3.2</a>,
-            created at 2022-04-07 15:43 +0000
+            created at 2022-04-08 12:27 +0000
         </p>
     </div>
 </footer>
