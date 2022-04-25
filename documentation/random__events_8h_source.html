@@ -101,32 +101,34 @@ $(function() {
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> T, <span class="keywordtype">size_t</span> NumTransitions&gt;</div>
 <div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="namespacemio.html#aa566ba246b06d03c6feeb5892974a555">   46</a></span>&#160;T <a class="code" href="namespacemio.html#aa566ba246b06d03c6feeb5892974a555">random_transition</a>(T current_state, <a class="code" href="classmio_1_1TimeSpan.html">TimeSpan</a> dt, <span class="keyword">const</span> std::pair&lt;T, double&gt; (&amp;transitions)[NumTransitions])</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;{</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    assert(std::all_of(<a class="code" href="namespacemio.html#aa6c974748a742fac0093de2634750791">std::begin</a>(transitions), <a class="code" href="namespacemio.html#a81e603f62801572c7afdf910bc057681">std::end</a>(transitions), [](<span class="keyword">auto</span>&amp; p) {</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keywordflow">return</span> p.second &gt;= 0.0;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    }) &amp;&amp; <span class="stringliteral">&quot;transition rates must be non-negative&quot;</span>);</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="comment">//check if any transition happens using exponential distribution with the sum of all transition rates</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keyword">auto</span> sum = std::accumulate(<a class="code" href="namespacemio.html#aa6c974748a742fac0093de2634750791">std::begin</a>(transitions), <a class="code" href="namespacemio.html#a81e603f62801572c7afdf910bc057681">std::end</a>(transitions), 0.0, [](<span class="keyword">auto</span>&amp;&amp; a, <span class="keyword">auto</span>&amp;&amp; t) {</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <span class="keywordflow">return</span> a + t.second;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    });</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordflow">if</span> (sum &lt;= 0) { <span class="comment">//no transitions or all transitions have rate zero</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="keywordflow">return</span> current_state;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    }</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keyword">auto</span> v = <a class="code" href="classmio_1_1DistributionAdapter.html#a3a7b7f81268e15248352b811961a74f1">ExponentialDistribution&lt;double&gt;::get_instance</a>()(sum);</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordflow">if</span> (v &lt; dt.<a class="code" href="classmio_1_1TimeSpan.html#ad1b89b95928abe78bc7b7b7efcef60ac">days</a>()) {</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="comment">//pick one of the possible transitions using discrete distribution</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        std::array&lt;double, NumTransitions&gt; rates;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        std::transform(<a class="code" href="namespacemio.html#aa6c974748a742fac0093de2634750791">std::begin</a>(transitions), <a class="code" href="namespacemio.html#a81e603f62801572c7afdf910bc057681">std::end</a>(transitions), rates.begin(), [](<span class="keyword">auto</span>&amp;&amp; t) {</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            return t.second;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        });</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <span class="keyword">auto</span> random_idx = <a class="code" href="classmio_1_1DistributionAdapter.html#a3a7b7f81268e15248352b811961a74f1">DiscreteDistribution&lt;size_t&gt;::get_instance</a>()(rates);</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="keywordflow">return</span> transitions[random_idx].first;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    }</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordflow">return</span> current_state;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;}</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;} <span class="comment">// namespace mio</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    assert(std::all_of(<a class="code" href="namespacemio.html#aa6c974748a742fac0093de2634750791">std::begin</a>(transitions), <a class="code" href="namespacemio.html#a81e603f62801572c7afdf910bc057681">std::end</a>(transitions),</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                       [](<span class="keyword">auto</span>&amp; p) {</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                           <span class="keywordflow">return</span> p.second &gt;= 0.0;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                       }) &amp;&amp;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;           <span class="stringliteral">&quot;transition rates must be non-negative&quot;</span>);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="comment">//check if any transition happens using exponential distribution with the sum of all transition rates</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keyword">auto</span> sum = std::accumulate(<a class="code" href="namespacemio.html#aa6c974748a742fac0093de2634750791">std::begin</a>(transitions), <a class="code" href="namespacemio.html#a81e603f62801572c7afdf910bc057681">std::end</a>(transitions), 0.0, [](<span class="keyword">auto</span>&amp;&amp; a, <span class="keyword">auto</span>&amp;&amp; t) {</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="keywordflow">return</span> a + t.second;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    });</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordflow">if</span> (sum &lt;= 0) { <span class="comment">//no transitions or all transitions have rate zero</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="keywordflow">return</span> current_state;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    }</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keyword">auto</span> v = <a class="code" href="classmio_1_1DistributionAdapter.html#a3a7b7f81268e15248352b811961a74f1">ExponentialDistribution&lt;double&gt;::get_instance</a>()(sum);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordflow">if</span> (v &lt; dt.<a class="code" href="classmio_1_1TimeSpan.html#ad1b89b95928abe78bc7b7b7efcef60ac">days</a>()) {</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <span class="comment">//pick one of the possible transitions using discrete distribution</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        std::array&lt;double, NumTransitions&gt; rates;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        std::transform(<a class="code" href="namespacemio.html#aa6c974748a742fac0093de2634750791">std::begin</a>(transitions), <a class="code" href="namespacemio.html#a81e603f62801572c7afdf910bc057681">std::end</a>(transitions), rates.begin(), [](<span class="keyword">auto</span>&amp;&amp; t) {</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            return t.second;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        });</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="keyword">auto</span> random_idx = <a class="code" href="classmio_1_1DistributionAdapter.html#a3a7b7f81268e15248352b811961a74f1">DiscreteDistribution&lt;size_t&gt;::get_instance</a>()(rates);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <span class="keywordflow">return</span> transitions[random_idx].first;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    }</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordflow">return</span> current_state;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;}</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;} <span class="comment">// namespace mio</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="arandom__number__generator_8h_html"><div class="ttname"><a href="random__number__generator_8h.html">random_number_generator.h</a></div></div>
 <div class="ttc" id="aclassmio_1_1TimeSpan_html"><div class="ttname"><a href="classmio_1_1TimeSpan.html">mio::TimeSpan</a></div><div class="ttdoc">a duration of time.</div><div class="ttdef"><b>Definition:</b> time.h:30</div></div>

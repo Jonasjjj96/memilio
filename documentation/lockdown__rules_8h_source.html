@@ -73,7 +73,7 @@ $(function() {
 <a href="lockdown__rules_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/* </span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">* Copyright (C) 2020-2021 German Aerospace Center (DLR-SC)</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">*</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">* Authors: Daniel Abele</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">* Authors: Daniel Abele, Elisabeth Kluth</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">*</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">* Contact: Martin J. Kuehn &lt;Martin.Kuehn@DLR.de&gt;</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">*</span></div>
@@ -103,22 +103,18 @@ $(function() {
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacemio.html">mio</a></div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;{</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespacemio.html#af8a07cd06b0a17789341357868ac6ca9">set_home_office</a>(TimePoint t_begin, <span class="keywordtype">double</span> p, <a class="code" href="namespacemio.html#a11622b5f8ae0cbe973b905c24c60b8b8">AbmMigrationParameters</a>&amp; params);</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespacemio.html#a3cf2a3e2d962eb57b8741e637a9cc1c5">set_school_closure</a>(TimePoint t_begin, <span class="keywordtype">double</span> p, <a class="code" href="namespacemio.html#a11622b5f8ae0cbe973b905c24c60b8b8">AbmMigrationParameters</a>&amp; params);</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespacemio.html#ad6ae0d4ef041b8c1573afbbfe29fb0c2">close_social_events</a>(TimePoint t_begin, <span class="keywordtype">double</span> p, <a class="code" href="namespacemio.html#a11622b5f8ae0cbe973b905c24c60b8b8">AbmMigrationParameters</a>&amp; params);</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;} <span class="comment">//namespace mio</span></div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="preprocessor">#endif // LOCKDOWN_RULES_H</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespacemio.html#af8a07cd06b0a17789341357868ac6ca9">set_home_office</a>(TimePoint t_begin, <span class="keywordtype">double</span> p, <a class="code" href="namespacemio.html#a11622b5f8ae0cbe973b905c24c60b8b8">AbmMigrationParameters</a>&amp; params);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespacemio.html#a3cf2a3e2d962eb57b8741e637a9cc1c5">set_school_closure</a>(TimePoint t_begin, <span class="keywordtype">double</span> p, <a class="code" href="namespacemio.html#a11622b5f8ae0cbe973b905c24c60b8b8">AbmMigrationParameters</a>&amp; params);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespacemio.html#ad6ae0d4ef041b8c1573afbbfe29fb0c2">close_social_events</a>(TimePoint t_begin, <span class="keywordtype">double</span> p, <a class="code" href="namespacemio.html#a11622b5f8ae0cbe973b905c24c60b8b8">AbmMigrationParameters</a>&amp; params);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;} <span class="comment">//namespace mio</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="preprocessor">#endif // LOCKDOWN_RULES_H</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="anamespacemio_html_af8a07cd06b0a17789341357868ac6ca9"><div class="ttname"><a href="namespacemio.html#af8a07cd06b0a17789341357868ac6ca9">mio::set_home_office</a></div><div class="ttdeci">void set_home_office(TimePoint t_begin, double p, AbmMigrationParameters &amp;params)</div><div class="ttdoc">LockdownRules implements non phamarceutical interventions via dampings.</div><div class="ttdef"><b>Definition:</b> lockdown_rules.cpp:28</div></div>
-<div class="ttc" id="anamespacemio_html_ad6ae0d4ef041b8c1573afbbfe29fb0c2"><div class="ttname"><a href="namespacemio.html#ad6ae0d4ef041b8c1573afbbfe29fb0c2">mio::close_social_events</a></div><div class="ttdeci">void close_social_events(TimePoint t_begin, double p, AbmMigrationParameters &amp;params)</div><div class="ttdoc">During lockdown people join social events less often.</div><div class="ttdef"><b>Definition:</b> lockdown_rules.cpp:38</div></div>
+<div class="ttc" id="anamespacemio_html_af8a07cd06b0a17789341357868ac6ca9"><div class="ttname"><a href="namespacemio.html#af8a07cd06b0a17789341357868ac6ca9">mio::set_home_office</a></div><div class="ttdeci">void set_home_office(TimePoint t_begin, double p, AbmMigrationParameters &amp;params)</div><div class="ttdoc">LockdownRules implements non phamarceutical interventions via dampings.</div><div class="ttdef"><b>Definition:</b> lockdown_rules.cpp:27</div></div>
+<div class="ttc" id="anamespacemio_html_ad6ae0d4ef041b8c1573afbbfe29fb0c2"><div class="ttname"><a href="namespacemio.html#ad6ae0d4ef041b8c1573afbbfe29fb0c2">mio::close_social_events</a></div><div class="ttdeci">void close_social_events(TimePoint t_begin, double p, AbmMigrationParameters &amp;params)</div><div class="ttdoc">During lockdown people join social events less often.</div><div class="ttdef"><b>Definition:</b> lockdown_rules.cpp:39</div></div>
 <div class="ttc" id="adamping_8h_html"><div class="ttname"><a href="damping_8h.html">damping.h</a></div></div>
 <div class="ttc" id="atime_8h_html"><div class="ttname"><a href="time_8h.html">time.h</a></div></div>
 <div class="ttc" id="anamespacemio_html_a3cf2a3e2d962eb57b8741e637a9cc1c5"><div class="ttname"><a href="namespacemio.html#a3cf2a3e2d962eb57b8741e637a9cc1c5">mio::set_school_closure</a></div><div class="ttdeci">void set_school_closure(TimePoint t_begin, double p, AbmMigrationParameters &amp;params)</div><div class="ttdoc">If schools are closed, students stay at home instead of going to school.</div><div class="ttdef"><b>Definition:</b> lockdown_rules.cpp:33</div></div>

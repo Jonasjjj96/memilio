@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['warn_2420',['warn',['../namespacemio.html#a67881790c6dfd8c058d27e5f1fe24220a1ea4c3ab05ee0c6d4de30740443769cb',1,'mio']]],
-  ['work_2421',['Work',['../namespacemio.html#a4ffecc86ccc302b68fff2f48099c2116a0f9263536b9fc61ada745644735bfd8f',1,'mio']]]
+  ['vaccinated_2492',['Vaccinated',['../namespacemio.html#a35cf9e731885c0762a9c5a70f84f05f0a1478ab3c772ef3603c5571e8ea57684f',1,'mio']]]
 ];

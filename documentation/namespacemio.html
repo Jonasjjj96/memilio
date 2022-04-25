@@ -106,6 +106,9 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmio_1_1CarrierToRecovered.html">CarrierToRecovered</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmio_1_1Cell.html">Cell</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The location can be split up into several cells.  <a href="structmio_1_1Cell.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1ColumnVectorShape.html">ColumnVectorShape</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">shape of a column vector.  <a href="classmio_1_1ColumnVectorShape.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -265,7 +268,7 @@ Classes</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">probability of getting infected from a contact  <a href="structmio_1_1InfectionProbabilityFromContact.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmio_1_1InfectionProperties.html">InfectionProperties</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structmio_1_1LocationId.html" title="LocationId identifies a Location uniquely.">LocationId</a> identifies a <a class="el" href="classmio_1_1Location.html" title="all locations in the simulated world where persons gather.">Location</a> uniquely.  <a href="structmio_1_1InfectionProperties.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Infection properties describe the infection state of a person and if a infection is detected.  <a href="structmio_1_1InfectionProperties.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmio_1_1InfectiousTimeAsymptomatic.html">InfectiousTimeAsymptomatic</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">the infectious time for asymptomatic cases in the SECIR model in day unit  <a href="structmio_1_1InfectiousTimeAsymptomatic.html#details">More...</a><br /></td></tr>
@@ -467,6 +470,11 @@ Classes</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Iterator that transforms the values produced by an underlying iterator.  <a href="classmio_1_1TransformIterator.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmio_1_1TransmissionRisk.html">TransmissionRisk</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmio_1_1Trip.html">Trip</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A trip describes a migration from one location to another location.  <a href="structmio_1_1Trip.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1TripList.html">TripList</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1TypeSafe.html">TypeSafe</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">typesafe wrapper around any type to make function arguments, tuple elements, etc.  <a href="classmio_1_1TypeSafe.html#details">More...</a><br /></td></tr>
@@ -746,6 +754,10 @@ Enumerations</h2></td></tr>
 &#160;&#160;<a class="el" href="namespacemio.html#a4ffecc86ccc302b68fff2f48099c2116a0c09a8f523b937dae1ff7e3588566465">LocationType::BasicsShop</a>, 
 <a class="el" href="namespacemio.html#a4ffecc86ccc302b68fff2f48099c2116acc2ab63fd3eb564be64b4f21bd083bc7">LocationType::Hospital</a>, 
 <a class="el" href="namespacemio.html#a4ffecc86ccc302b68fff2f48099c2116a26bf7a7e68c0acc2c819ec1621630389">LocationType::ICU</a>, 
+<a class="el" href="namespacemio.html#a4ffecc86ccc302b68fff2f48099c2116ae9989db5dabeea617f40c8dbfd07f5fb">LocationType::Car</a>, 
+<br />
+&#160;&#160;<a class="el" href="namespacemio.html#a4ffecc86ccc302b68fff2f48099c2116ae1160edbe28f9ff9089ac90e23437cb5">LocationType::PublicTransport</a>, 
+<a class="el" href="namespacemio.html#a4ffecc86ccc302b68fff2f48099c2116ab780feddf2b83d77ae9ab2173b8fe0b2">LocationType::TransportWithoutContact</a>, 
 <a class="el" href="namespacemio.html#a4ffecc86ccc302b68fff2f48099c2116ae93f994f01c537c4e2f7d8528c3eb5e9">LocationType::Count</a>
 <br />
  }</td></tr>
@@ -1266,6 +1278,8 @@ Functions</h2></td></tr>
 Variables</h2></td></tr>
 <tr class="memitem:a38182e25e3b08dfcffe1bf54b4261cfc"><td class="memItemLeft" align="right" valign="top">static constexpr uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemio.html#a38182e25e3b08dfcffe1bf54b4261cfc">INVALID_LOCATION_INDEX</a> = std::numeric_limits&lt;uint32_t&gt;::<a class="el" href="namespacemio.html#a97f6645c13faf4749f34d7e6e191f9ac">max</a>()</td></tr>
 <tr class="separator:a38182e25e3b08dfcffe1bf54b4261cfc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b44788cb4d4e6581e08f3fdc01c96f0"><td class="memItemLeft" align="right" valign="top">static constexpr uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemio.html#a4b44788cb4d4e6581e08f3fdc01c96f0">INVALID_PERSON_ID</a> = std::numeric_limits&lt;uint32_t&gt;::<a class="el" href="namespacemio.html#a97f6645c13faf4749f34d7e6e191f9ac">max</a>()</td></tr>
+<tr class="separator:a4b44788cb4d4e6581e08f3fdc01c96f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A collection of classes to simplify handling of matrix shapes in meta programming. </p>
@@ -2373,6 +2387,9 @@ template&lt;class... Ts&gt; </div>
 <tr><td class="fieldname"><a id="a4ffecc86ccc302b68fff2f48099c2116a0c09a8f523b937dae1ff7e3588566465"></a>BasicsShop&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a4ffecc86ccc302b68fff2f48099c2116acc2ab63fd3eb564be64b4f21bd083bc7"></a>Hospital&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a4ffecc86ccc302b68fff2f48099c2116a26bf7a7e68c0acc2c819ec1621630389"></a>ICU&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a4ffecc86ccc302b68fff2f48099c2116ae9989db5dabeea617f40c8dbfd07f5fb"></a>Car&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a4ffecc86ccc302b68fff2f48099c2116ae1160edbe28f9ff9089ac90e23437cb5"></a>PublicTransport&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a4ffecc86ccc302b68fff2f48099c2116ab780feddf2b83d77ae9ab2173b8fe0b2"></a>TransportWithoutContact&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a4ffecc86ccc302b68fff2f48099c2116ae93f994f01c537c4e2f7d8528c3eb5e9"></a>Count&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
@@ -4878,8 +4895,8 @@ template&lt;class Sim , std::enable_if_t&lt;!is_expression_valid&lt; get_migrati
 
 </div>
 </div>
-<a id="ab09fed64957be20ff3a3cccda8724004"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab09fed64957be20ff3a3cccda8724004">&#9670;&nbsp;</a></span>go_to_event()</h2>
+<a id="a57ee674ede9f345eb17cf5d9b109dfa2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a57ee674ede9f345eb17cf5d9b109dfa2">&#9670;&nbsp;</a></span>go_to_event()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -4916,7 +4933,7 @@ template&lt;class Sim , std::enable_if_t&lt;!is_expression_valid&lt; get_migrati
       </table>
 </div><div class="memdoc">
 
-<p>people go to social events outside work/school. </p>
+<p>people might go to social events </p>
 
 </div>
 </div>
@@ -5004,6 +5021,48 @@ template&lt;class Sim , std::enable_if_t&lt;!is_expression_valid&lt; get_migrati
 
 </div>
 </div>
+<a id="a940c40d74cb166090bd90fc4de3ae194"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a940c40d74cb166090bd90fc4de3ae194">&#9670;&nbsp;</a></span>go_to_quarantine()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacemio.html#a4ffecc86ccc302b68fff2f48099c2116">LocationType</a> mio::go_to_quarantine </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classmio_1_1Person.html">Person</a> &amp;&#160;</td>
+          <td class="paramname"><em>person</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classmio_1_1TimePoint.html">TimePoint</a>&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classmio_1_1TimeSpan.html">TimeSpan</a>&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="namespacemio.html#a11622b5f8ae0cbe973b905c24c60b8b8">AbmMigrationParameters</a> &amp;&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>people who are in quarantine should go gome </p>
+
+</div>
+</div>
 <a id="af40588efe7dbbe12534d5151292e91e5"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af40588efe7dbbe12534d5151292e91e5">&#9670;&nbsp;</a></span>go_to_school()</h2>
 
@@ -5046,8 +5105,8 @@ template&lt;class Sim , std::enable_if_t&lt;!is_expression_valid&lt; get_migrati
 
 </div>
 </div>
-<a id="a861833ffb4e434cb23cf4fef10095db4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a861833ffb4e434cb23cf4fef10095db4">&#9670;&nbsp;</a></span>go_to_shop()</h2>
+<a id="a2a1a25b5dc176bd758a7179d28d2e349"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a1a25b5dc176bd758a7179d28d2e349">&#9670;&nbsp;</a></span>go_to_shop()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -5084,12 +5143,12 @@ template&lt;class Sim , std::enable_if_t&lt;!is_expression_valid&lt; get_migrati
       </table>
 </div><div class="memdoc">
 
-<p>people go to the shop outside work/school except on sunday. </p>
+<p>adults may go shopping in their free time </p>
 
 </div>
 </div>
-<a id="abc574db0bca71ae53618e2ed2d6e7939"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abc574db0bca71ae53618e2ed2d6e7939">&#9670;&nbsp;</a></span>go_to_work()</h2>
+<a id="aa72f49f566185665c7f5b64182e83997"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa72f49f566185665c7f5b64182e83997">&#9670;&nbsp;</a></span>go_to_work()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -5126,7 +5185,7 @@ template&lt;class Sim , std::enable_if_t&lt;!is_expression_valid&lt; get_migrati
       </table>
 </div><div class="memdoc">
 
-<p>working age adults go to work in the morning and return later in the day. </p>
+<p>adults go to worl in the mornign and return later in the day. </p>
 
 </div>
 </div>
@@ -6183,40 +6242,8 @@ template&lt;class T &gt; </div>
 
 </div>
 </div>
-<a id="a9a58db8b765e525595174fe5b502bf85"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9a58db8b765e525595174fe5b502bf85">&#9670;&nbsp;</a></span>operator&lt;&lt;() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class T &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">std::enable_if_t&lt;!<a class="el" href="namespacemio.html#a828f9a1016d1048d5d3e67dcc5ff4e8f">has_ostream_op</a>&lt;T&gt;::value, std::ostream&amp;&gt; mio::operator&lt;&lt; </td>
-          <td>(</td>
-          <td class="paramtype">std::ostream &amp;&#160;</td>
-          <td class="paramname"><em>os</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="structmio_1_1Edge.html">Edge</a>&lt; T &gt; &amp;&#160;</td>
-          <td class="paramname"><em>e</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>out stream operator for edges if edge property type does not have stream operator defined </p>
-
-</div>
-</div>
 <a id="a5b8d13d4bfbc6ab42cccb685cafdc5fe"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5b8d13d4bfbc6ab42cccb685cafdc5fe">&#9670;&nbsp;</a></span>operator&lt;&lt;() <span class="overload">[2/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a5b8d13d4bfbc6ab42cccb685cafdc5fe">&#9670;&nbsp;</a></span>operator&lt;&lt;() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -6244,6 +6271,38 @@ template&lt;class T &gt; </div>
 </div><div class="memdoc">
 
 <p>out stream operator for edges if edge property type has stream operator defined </p>
+
+</div>
+</div>
+<a id="a9a58db8b765e525595174fe5b502bf85"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9a58db8b765e525595174fe5b502bf85">&#9670;&nbsp;</a></span>operator&lt;&lt;() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">std::enable_if_t&lt;!<a class="el" href="namespacemio.html#a828f9a1016d1048d5d3e67dcc5ff4e8f">has_ostream_op</a>&lt;T&gt;::value, std::ostream&amp;&gt; mio::operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>os</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structmio_1_1Edge.html">Edge</a>&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>e</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>out stream operator for edges if edge property type does not have stream operator defined </p>
 
 </div>
 </div>
@@ -7871,6 +7930,28 @@ template&lt;class... Bs&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">constexpr uint32_t mio::INVALID_LOCATION_INDEX = std::numeric_limits&lt;uint32_t&gt;::<a class="el" href="namespacemio.html#a97f6645c13faf4749f34d7e6e191f9ac">max</a>()</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4b44788cb4d4e6581e08f3fdc01c96f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4b44788cb4d4e6581e08f3fdc01c96f0">&#9670;&nbsp;</a></span>INVALID_PERSON_ID</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr uint32_t mio::INVALID_PERSON_ID = std::numeric_limits&lt;uint32_t&gt;::<a class="el" href="namespacemio.html#a97f6645c13faf4749f34d7e6e191f9ac">max</a>()</td>
         </tr>
       </table>
   </td>

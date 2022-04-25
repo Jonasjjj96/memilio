@@ -92,6 +92,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a9ff368e72d03fce8777e0876db15823b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1Location.html#a9ff368e72d03fce8777e0876db15823b">changed_state</a> (const <a class="el" href="classmio_1_1Person.html">Person</a> &amp;person, <a class="el" href="namespacemio.html#a2e4305478e894848657fca367c5a9800">InfectionState</a> old_infection_state)</td></tr>
 <tr class="memdesc:a9ff368e72d03fce8777e0876db15823b"><td class="mdescLeft">&#160;</td><td class="mdescRight">notification that one person in this location changed infection state.  <a href="classmio_1_1Location.html#a9ff368e72d03fce8777e0876db15823b">More...</a><br /></td></tr>
 <tr class="separator:a9ff368e72d03fce8777e0876db15823b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a74962f2ffc2c27c058bedfe77d9627dd"><td class="memItemLeft" align="right" valign="top">const std::vector&lt; <a class="el" href="structmio_1_1Cell.html">Cell</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1Location.html#a74962f2ffc2c27c058bedfe77d9627dd">get_cells</a> () const</td></tr>
+<tr class="separator:a74962f2ffc2c27c058bedfe77d9627dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa484ffc34f6c8a04454bb724d3e7d589"><td class="memItemLeft" align="right" valign="top">unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1Location.html#aa484ffc34f6c8a04454bb724d3e7d589">get_index</a> () const</td></tr>
 <tr class="memdesc:aa484ffc34f6c8a04454bb724d3e7d589"><td class="mdescLeft">&#160;</td><td class="mdescRight">get the index of this location.  <a href="classmio_1_1Location.html#aa484ffc34f6c8a04454bb724d3e7d589">More...</a><br /></td></tr>
 <tr class="separator:aa484ffc34f6c8a04454bb724d3e7d589"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -113,9 +115,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a91553f85e87c9d62552bb4490d4ab35c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacemio.html#a2e4305478e894848657fca367c5a9800">InfectionState</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1Location.html#a91553f85e87c9d62552bb4490d4ab35c">interact</a> (const <a class="el" href="classmio_1_1Person.html">Person</a> &amp;person, <a class="el" href="classmio_1_1TimeSpan.html">TimeSpan</a> dt, const <a class="el" href="namespacemio.html#aa9335162cc3bcb5ae2b26bb4031c22a2">GlobalInfectionParameters</a> &amp;global_params) const</td></tr>
 <tr class="memdesc:a91553f85e87c9d62552bb4490d4ab35c"><td class="mdescLeft">&#160;</td><td class="mdescRight">a person interacts with the population at this location, may change infection state.  <a href="classmio_1_1Location.html#a91553f85e87c9d62552bb4490d4ab35c">More...</a><br /></td></tr>
 <tr class="separator:a91553f85e87c9d62552bb4490d4ab35c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0189475a9063c7e67358ddc5d6c67557"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1Location.html#a0189475a9063c7e67358ddc5d6c67557">Location</a> (<a class="el" href="namespacemio.html#a4ffecc86ccc302b68fff2f48099c2116">LocationType</a> type, uint32_t index)</td></tr>
-<tr class="memdesc:a0189475a9063c7e67358ddc5d6c67557"><td class="mdescLeft">&#160;</td><td class="mdescRight">construct a <a class="el" href="classmio_1_1Location.html" title="all locations in the simulated world where persons gather.">Location</a> of a certain type.  <a href="classmio_1_1Location.html#a0189475a9063c7e67358ddc5d6c67557">More...</a><br /></td></tr>
-<tr class="separator:a0189475a9063c7e67358ddc5d6c67557"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad196771796894efc9ce2ed1528cd468c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1Location.html#ad196771796894efc9ce2ed1528cd468c">Location</a> (<a class="el" href="namespacemio.html#a4ffecc86ccc302b68fff2f48099c2116">LocationType</a> type, uint32_t index, uint32_t num_cells=0)</td></tr>
+<tr class="memdesc:ad196771796894efc9ce2ed1528cd468c"><td class="mdescLeft">&#160;</td><td class="mdescRight">construct a <a class="el" href="classmio_1_1Location.html" title="all locations in the simulated world where persons gather.">Location</a> of a certain type.  <a href="classmio_1_1Location.html#ad196771796894efc9ce2ed1528cd468c">More...</a><br /></td></tr>
+<tr class="separator:ad196771796894efc9ce2ed1528cd468c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a79622d318884d5ebb563bb5c1368a996"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1Location.html#a79622d318884d5ebb563bb5c1368a996">remove_person</a> (const <a class="el" href="classmio_1_1Person.html">Person</a> &amp;person)</td></tr>
 <tr class="memdesc:a79622d318884d5ebb563bb5c1368a996"><td class="mdescLeft">&#160;</td><td class="mdescRight">remove a person from the population of this location.  <a href="classmio_1_1Location.html#a79622d318884d5ebb563bb5c1368a996">More...</a><br /></td></tr>
 <tr class="separator:a79622d318884d5ebb563bb5c1368a996"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -131,6 +133,8 @@ Private Member Functions</h2></td></tr>
 Private Attributes</h2></td></tr>
 <tr class="memitem:a99978f96349330e0347a2137eaca01b2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmio_1_1CustomIndexArray.html">CustomIndexArray</a>&lt; double, <a class="el" href="namespacemio.html#a0d380e3f3f17bf6426361472dc0c01b6">AbmAgeGroup</a>, <a class="el" href="namespacemio.html#a35cf9e731885c0762a9c5a70f84f05f0">mio::VaccinationState</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1Location.html#a99978f96349330e0347a2137eaca01b2">m_cached_exposure_rate</a></td></tr>
 <tr class="separator:a99978f96349330e0347a2137eaca01b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af7f15407069e4991c8ec5424406b61f6"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="structmio_1_1Cell.html">Cell</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1Location.html#af7f15407069e4991c8ec5424406b61f6">m_cells</a></td></tr>
+<tr class="separator:af7f15407069e4991c8ec5424406b61f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aec93b724582d1f575cf62da9c8b87342"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1Location.html#aec93b724582d1f575cf62da9c8b87342">m_index</a></td></tr>
 <tr class="separator:aec93b724582d1f575cf62da9c8b87342"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3ca9bdf66339d8760ddd543f05a56bf5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1Location.html#a3ca9bdf66339d8760ddd543f05a56bf5">m_num_persons</a> = 0</td></tr>
@@ -147,8 +151,8 @@ Private Attributes</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>all locations in the simulated world where persons gather. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a0189475a9063c7e67358ddc5d6c67557"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0189475a9063c7e67358ddc5d6c67557">&#9670;&nbsp;</a></span>Location()</h2>
+<a id="ad196771796894efc9ce2ed1528cd468c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad196771796894efc9ce2ed1528cd468c">&#9670;&nbsp;</a></span>Location()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -163,7 +167,13 @@ Private Attributes</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">uint32_t&#160;</td>
-          <td class="paramname"><em>index</em>&#160;</td>
+          <td class="paramname"><em>index</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>num_cells</em> = <code>0</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -178,6 +188,7 @@ Private Attributes</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">type</td><td>the type of the location </td></tr>
     <tr><td class="paramname">index</td><td>the index of the location </td></tr>
+    <tr><td class="paramname">num_cells</td><td>the number of cells in which the location is divided </td></tr>
   </table>
   </dd>
 </dl>
@@ -318,6 +329,23 @@ Private Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="a74962f2ffc2c27c058bedfe77d9627dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a74962f2ffc2c27c058bedfe77d9627dd">&#9670;&nbsp;</a></span>get_cells()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::vector&lt;<a class="el" href="structmio_1_1Cell.html">Cell</a>&gt;&amp; mio::Location::get_cells </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>
@@ -563,6 +591,28 @@ Private Attributes</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="classmio_1_1CustomIndexArray.html">CustomIndexArray</a>&lt;double, <a class="el" href="namespacemio.html#a0d380e3f3f17bf6426361472dc0c01b6">AbmAgeGroup</a>, <a class="el" href="namespacemio.html#a35cf9e731885c0762a9c5a70f84f05f0">mio::VaccinationState</a>&gt; mio::Location::m_cached_exposure_rate</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af7f15407069e4991c8ec5424406b61f6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af7f15407069e4991c8ec5424406b61f6">&#9670;&nbsp;</a></span>m_cells</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;<a class="el" href="structmio_1_1Cell.html">Cell</a>&gt; mio::Location::m_cells</td>
         </tr>
       </table>
   </td>

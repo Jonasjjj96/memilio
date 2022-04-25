@@ -31,18 +31,18 @@
             <td class="headerValue">coverage.info</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntry">58</td>
-            <td class="headerCovTableEntry">69</td>
-            <td class="headerCovTableEntryMed">84.1 %</td>
+            <td class="headerCovTableEntry">63</td>
+            <td class="headerCovTableEntry">74</td>
+            <td class="headerCovTableEntryMed">85.1 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2022-04-21 06:41:59</td>
+            <td class="headerValue">2022-04-25 08:12:48</td>
             <td></td>
             <td class="headerItem">Functions:</td>
-            <td class="headerCovTableEntry">7</td>
-            <td class="headerCovTableEntry">9</td>
-            <td class="headerCovTableEntryMed">77.8 %</td>
+            <td class="headerCovTableEntry">8</td>
+            <td class="headerCovTableEntry">10</td>
+            <td class="headerCovTableEntryMed">80.0 %</td>
           </tr>
           <tr><td><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
         </table>
@@ -64,7 +64,7 @@
 <a name="2"><span class="lineNum">       2 </span>            : * Copyright (C) 2020-2021 German Aerospace Center (DLR-SC)</a>
 <a name="3"><span class="lineNum">       3 </span>            : *        &amp; Helmholtz Centre for Infection Research (HZI)</a>
 <a name="4"><span class="lineNum">       4 </span>            : *</a>
-<a name="5"><span class="lineNum">       5 </span>            : * Authors: Daniel Abele, Majid Abedi</a>
+<a name="5"><span class="lineNum">       5 </span>            : * Authors: Daniel Abele, Majid Abedi, Elisabeth Kluth</a>
 <a name="6"><span class="lineNum">       6 </span>            : *</a>
 <a name="7"><span class="lineNum">       7 </span>            : * Contact: Martin J. Kuehn &lt;Martin.Kuehn@DLR.de&gt;</a>
 <a name="8"><span class="lineNum">       8 </span>            : *</a>
@@ -182,37 +182,47 @@
 <a name="120"><span class="lineNum">     120 </span><span class="lineCov">          2 :     return current_loc;</span></a>
 <a name="121"><span class="lineNum">     121 </span>            : }</a>
 <a name="122"><span class="lineNum">     122 </span>            : </a>
-<a name="123"><span class="lineNum">     123 </span><span class="lineCov">          2 : LocationType go_to_hospital(const Person&amp; person, TimePoint /*t*/, TimeSpan /*dt*/,</span></a>
-<a name="124"><span class="lineNum">     124 </span>            :                             const AbmMigrationParameters&amp; /*params*/)</a>
+<a name="123"><span class="lineNum">     123 </span><span class="lineCov">          5 : LocationType go_to_quarantine(const Person&amp; person, TimePoint /*t*/, TimeSpan /*dt*/,</span></a>
+<a name="124"><span class="lineNum">     124 </span>            :                               const AbmMigrationParameters&amp; /*params*/)</a>
 <a name="125"><span class="lineNum">     125 </span>            : {</a>
-<a name="126"><span class="lineNum">     126 </span><span class="lineCov">          2 :     auto current_loc = person.get_location_id().type;</span></a>
-<a name="127"><span class="lineNum">     127 </span><span class="lineCov">          2 :     if (person.get_infection_state() == InfectionState::Infected_Severe) {</span></a>
-<a name="128"><span class="lineNum">     128 </span><span class="lineCov">          1 :         return LocationType::Hospital;</span></a>
+<a name="126"><span class="lineNum">     126 </span><span class="lineCov">          5 :     auto current_loc = person.get_location_id().type;</span></a>
+<a name="127"><span class="lineNum">     127 </span><span class="lineCov">          5 :     if (person.is_in_quarantine()) {</span></a>
+<a name="128"><span class="lineNum">     128 </span><span class="lineCov">          1 :         return LocationType::Home;</span></a>
 <a name="129"><span class="lineNum">     129 </span>            :     }</a>
-<a name="130"><span class="lineNum">     130 </span><span class="lineCov">          1 :     return current_loc;</span></a>
+<a name="130"><span class="lineNum">     130 </span><span class="lineCov">          4 :     return current_loc;</span></a>
 <a name="131"><span class="lineNum">     131 </span>            : }</a>
 <a name="132"><span class="lineNum">     132 </span>            : </a>
-<a name="133"><span class="lineNum">     133 </span><span class="lineCov">          2 : LocationType go_to_icu(const Person&amp; person, TimePoint /*t*/, TimeSpan /*dt*/, const AbmMigrationParameters&amp; /*params*/)</span></a>
-<a name="134"><span class="lineNum">     134 </span>            : {</a>
-<a name="135"><span class="lineNum">     135 </span><span class="lineCov">          2 :     auto current_loc = person.get_location_id().type;</span></a>
-<a name="136"><span class="lineNum">     136 </span><span class="lineCov">          2 :     if (person.get_infection_state() == InfectionState::Infected_Critical) {</span></a>
-<a name="137"><span class="lineNum">     137 </span><span class="lineCov">          1 :         return LocationType::ICU;</span></a>
-<a name="138"><span class="lineNum">     138 </span>            :     }</a>
-<a name="139"><span class="lineNum">     139 </span><span class="lineCov">          1 :     return current_loc;</span></a>
-<a name="140"><span class="lineNum">     140 </span>            : }</a>
-<a name="141"><span class="lineNum">     141 </span>            : </a>
-<a name="142"><span class="lineNum">     142 </span><span class="lineCov">          2 : LocationType return_home_when_recovered(const Person&amp; person, TimePoint /*t*/, TimeSpan /*dt*/,</span></a>
-<a name="143"><span class="lineNum">     143 </span>            :                                         const AbmMigrationParameters&amp; /*params*/)</a>
+<a name="133"><span class="lineNum">     133 </span><span class="lineCov">          6 : LocationType go_to_hospital(const Person&amp; person, TimePoint /*t*/, TimeSpan /*dt*/,</span></a>
+<a name="134"><span class="lineNum">     134 </span>            :                             const AbmMigrationParameters&amp; /*params*/)</a>
+<a name="135"><span class="lineNum">     135 </span>            : {</a>
+<a name="136"><span class="lineNum">     136 </span><span class="lineCov">          6 :     auto current_loc = person.get_location_id().type;</span></a>
+<a name="137"><span class="lineNum">     137 </span><span class="lineCov">          6 :     if (person.get_infection_state() == InfectionState::Infected_Severe) {</span></a>
+<a name="138"><span class="lineNum">     138 </span><span class="lineCov">          2 :         return LocationType::Hospital;</span></a>
+<a name="139"><span class="lineNum">     139 </span>            :     }</a>
+<a name="140"><span class="lineNum">     140 </span><span class="lineCov">          4 :     return current_loc;</span></a>
+<a name="141"><span class="lineNum">     141 </span>            : }</a>
+<a name="142"><span class="lineNum">     142 </span>            : </a>
+<a name="143"><span class="lineNum">     143 </span><span class="lineCov">          2 : LocationType go_to_icu(const Person&amp; person, TimePoint /*t*/, TimeSpan /*dt*/, const AbmMigrationParameters&amp; /*params*/)</span></a>
 <a name="144"><span class="lineNum">     144 </span>            : {</a>
 <a name="145"><span class="lineNum">     145 </span><span class="lineCov">          2 :     auto current_loc = person.get_location_id().type;</span></a>
-<a name="146"><span class="lineNum">     146 </span><span class="lineCov">          4 :     if ((current_loc == LocationType::Hospital || current_loc == LocationType::ICU) &amp;&amp;</span></a>
-<a name="147"><span class="lineNum">     147 </span><span class="lineCov">          2 :         person.get_infection_state() == InfectionState::Recovered_Infected) {</span></a>
-<a name="148"><span class="lineNum">     148 </span><span class="lineCov">          1 :         return LocationType::Home;</span></a>
-<a name="149"><span class="lineNum">     149 </span>            :     }</a>
-<a name="150"><span class="lineNum">     150 </span><span class="lineCov">          1 :     return current_loc;</span></a>
-<a name="151"><span class="lineNum">     151 </span>            : }</a>
-<a name="152"><span class="lineNum">     152 </span>            : </a>
-<a name="153"><span class="lineNum">     153 </span>            : } // namespace mio</a>
+<a name="146"><span class="lineNum">     146 </span><span class="lineCov">          2 :     if (person.get_infection_state() == InfectionState::Infected_Critical) {</span></a>
+<a name="147"><span class="lineNum">     147 </span><span class="lineCov">          1 :         return LocationType::ICU;</span></a>
+<a name="148"><span class="lineNum">     148 </span>            :     }</a>
+<a name="149"><span class="lineNum">     149 </span><span class="lineCov">          1 :     return current_loc;</span></a>
+<a name="150"><span class="lineNum">     150 </span>            : }</a>
+<a name="151"><span class="lineNum">     151 </span>            : </a>
+<a name="152"><span class="lineNum">     152 </span><span class="lineCov">          7 : LocationType return_home_when_recovered(const Person&amp; person, TimePoint /*t*/, TimeSpan /*dt*/,</span></a>
+<a name="153"><span class="lineNum">     153 </span>            :                                         const AbmMigrationParameters&amp; /*params*/)</a>
+<a name="154"><span class="lineNum">     154 </span>            : {</a>
+<a name="155"><span class="lineNum">     155 </span><span class="lineCov">          7 :     auto current_loc = person.get_location_id().type;</span></a>
+<a name="156"><span class="lineNum">     156 </span><span class="lineCov">         10 :     if ((current_loc == LocationType::Hospital || current_loc == LocationType::ICU) &amp;&amp;</span></a>
+<a name="157"><span class="lineNum">     157 </span><span class="lineCov">          3 :         person.get_infection_state() == InfectionState::Recovered_Infected) {</span></a>
+<a name="158"><span class="lineNum">     158 </span><span class="lineCov">          2 :         return LocationType::Home;</span></a>
+<a name="159"><span class="lineNum">     159 </span>            :     }</a>
+<a name="160"><span class="lineNum">     160 </span><span class="lineCov">          5 :     return current_loc;</span></a>
+<a name="161"><span class="lineNum">     161 </span>            : }</a>
+<a name="162"><span class="lineNum">     162 </span>            : </a>
+<a name="163"><span class="lineNum">     163 </span>            : } // namespace mio</a>
 </pre>
       </td>
     </tr>
