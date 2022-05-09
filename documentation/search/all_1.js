@@ -57,6 +57,6 @@ var searchData=
   ['array_55',['array',['../classmio_1_1CustomIndexArray.html#aebe5e9cd4508bacac528accda7394e25',1,'mio::CustomIndexArray::array() const'],['../classmio_1_1CustomIndexArray.html#a4f1b9fa82823a7b3cc03ed98392d65ac',1,'mio::CustomIndexArray::array()']]],
   ['as_5farray_56',['as_array',['../classmio_1_1CustomIndexArray_1_1Slice.html#a77e34f758e73ab32d4c273ad083e9420',1,'mio::CustomIndexArray::Slice']]],
   ['assign_5fgeographical_5fentities_57',['assign_geographical_entities',['../namespacememilio_1_1epidata_1_1getCommuterMobility.html#a40488a5a716c57f8516431281a39ac47',1,'memilio::epidata::getCommuterMobility']]],
-  ['asymptoticcasesperinfectious_58',['AsymptoticCasesPerInfectious',['../structmio_1_1AsymptoticCasesPerInfectious.html',1,'mio']]],
+  ['asymptomaticcasesperinfectious_58',['AsymptomaticCasesPerInfectious',['../structmio_1_1AsymptomaticCasesPerInfectious.html',1,'mio']]],
   ['agent_20based_20model_59',['Agent Based Model',['../md__home_runner_work_memilio_memilio_cpp_models_abm_README.html',1,'']]]
 ];

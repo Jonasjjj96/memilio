@@ -1,7 +1,7 @@
 var searchData=
 [
   ['scalartype_2407',['ScalarType',['../config_8h.html#acd4f1d492d83a74716a42615e127d641',1,'config.h']]],
-  ['secirparamsbase_2408',['SecirParamsBase',['../namespacemio.html#a7a472e190e2299ba6cb41d16c6526b7c',1,'mio']]],
+  ['secirparamsbase_2408',['SecirParamsBase',['../namespacemio.html#a64f732561351a649beb150740b5c5a9f',1,'mio']]],
   ['seirparameters_2409',['SeirParameters',['../namespacemio.html#afd78e0fe547496c5a98ebfc15f3b3676',1,'mio']]],
   ['seirpopulations_2410',['SeirPopulations',['../namespacemio.html#a1eb4a9d23de323bfa65d55abeb3c53cf',1,'mio']]],
   ['serialize_5ft_2411',['serialize_t',['../namespacemio.html#af1c9f969c0a8d114d1cfdff970cc99f9',1,'mio']]],

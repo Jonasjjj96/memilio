@@ -171,7 +171,7 @@ var searchData=
   ['matrixref_774',['MatrixRef',['../classmio_1_1RowMajorIterator.html#a03416298357ab9fefd918a908b3e8330',1,'mio::RowMajorIterator']]],
   ['max_775',['max',['../classmio_1_1RandomNumberGenerator.html#ad7878baea932b038665d4cf509a6efbc',1,'mio::RandomNumberGenerator::max()'],['../namespacemio.html#a97f6645c13faf4749f34d7e6e191f9ac',1,'mio::max()']]],
   ['maximumcontacts_776',['MaximumContacts',['../structmio_1_1MaximumContacts.html',1,'mio']]],
-  ['maxriskofinfectionfromsympomatic_777',['MaxRiskOfInfectionFromSympomatic',['../structmio_1_1MaxRiskOfInfectionFromSympomatic.html',1,'mio']]],
+  ['maxriskofinfectionfromsymptomatic_777',['MaxRiskOfInfectionFromSymptomatic',['../structmio_1_1MaxRiskOfInfectionFromSymptomatic.html',1,'mio']]],
   ['memilio_20c_2b_2b_20io_778',['MEmilio C++ IO',['../md__home_runner_work_memilio_memilio_cpp_memilio_io_README.html',1,'']]],
   ['math_20classes_779',['Math classes',['../md__home_runner_work_memilio_memilio_cpp_memilio_math_README.html',1,'']]],
   ['memilio_20c_2b_2b_20mobility_780',['MEmilio C++ mobility',['../md__home_runner_work_memilio_memilio_cpp_memilio_mobility_README.html',1,'']]],

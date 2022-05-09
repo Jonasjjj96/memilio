@@ -298,7 +298,7 @@ $(function() {
 <div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;        <span class="keyword">auto</span> test_and_trace_required = 0.0;</div>
 <div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span> i = AgeGroup(0); i &lt; n_agegroups; ++i) {</div>
 <div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;            <span class="keyword">auto</span> dummy_R3 = 0.5 / (params.get&lt;IncubationTime&gt;()[i] - params.get&lt;SerialInterval&gt;()[i]);</div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;            test_and_trace_required += (1 - params.get&lt;AsymptoticCasesPerInfectious&gt;()[i]) * dummy_R3 *</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;            test_and_trace_required += (1 - params.get&lt;AsymptomaticCasesPerInfectious&gt;()[i]) * dummy_R3 *</div>
 <div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;                                       this-&gt;<a class="code" href="structmio_1_1CompartmentalModel.html#ad710ff6bb5ff12abda0f2f175d42418c">populations</a>.<a class="code" href="classmio_1_1Populations.html#a68da56ff8ea9be481c8c054f1e4ca2e3">get_from</a>(pop, {i, <a class="code" href="namespacemio.html#a2e4305478e894848657fca367c5a9800a914419aa32f04011357d3b604a86d7eb">InfectionState::Carrier</a>});</div>
 <div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;            icu_occupancy += this-&gt;<a class="code" href="structmio_1_1CompartmentalModel.html#ad710ff6bb5ff12abda0f2f175d42418c">populations</a>.<a class="code" href="classmio_1_1Populations.html#a68da56ff8ea9be481c8c054f1e4ca2e3">get_from</a>(pop, {i, <a class="code" href="namespacemio.html#a2e4305478e894848657fca367c5a9800a26bf7a7e68c0acc2c819ec1621630389">InfectionState::ICU</a>});</div>
 <div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;        }</div>
@@ -334,7 +334,7 @@ $(function() {
 <div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;                <span class="comment">//symptomatic are less well quarantined when testing and tracing is overwhelmed so they infect more people</span></div>
 <div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;                <span class="keyword">auto</span> risk_from_symptomatic = <a class="code" href="namespacemio.html#a472d6437e9b34e277b8ccc551b0630b8">smoother_cosine</a>(</div>
 <div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;                    test_and_trace_required, params.get&lt;TestAndTraceCapacity&gt;(), params.get&lt;TestAndTraceCapacity&gt;() * 5,</div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;                    params.get&lt;RiskOfInfectionFromSympomatic&gt;()[j], params.get&lt;MaxRiskOfInfectionFromSympomatic&gt;()[j]);</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;                    params.get&lt;RiskOfInfectionFromSymptomatic&gt;()[j], params.get&lt;MaxRiskOfInfectionFromSymptomatic&gt;()[j]);</div>
 <div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160; </div>
 <div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;                <span class="comment">// effective contact rate by contact rate between groups i and j and damping j</span></div>
 <div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;                <span class="keywordtype">double</span> season_val = (1 + params.get&lt;<a class="code" href="structmio_1_1Seasonality.html">mio::Seasonality</a>&gt;() *</div>
@@ -362,10 +362,10 @@ $(function() {
 <div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160; </div>
 <div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;            dydt[Ei] -= dummy_R2 * y[Ei]; <span class="comment">// only exchange of E and C done here</span></div>
 <div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;            dydt[Ci] = dummy_R2 * y[Ei] -</div>
-<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;                       ((1 - params.get&lt;AsymptoticCasesPerInfectious&gt;()[i]) * dummy_R3 +</div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;                        params.get&lt;AsymptoticCasesPerInfectious&gt;()[i] / params.get&lt;InfectiousTimeAsymptomatic&gt;()[i]) *</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;                       ((1 - params.get&lt;AsymptomaticCasesPerInfectious&gt;()[i]) * dummy_R3 +</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;                        params.get&lt;AsymptomaticCasesPerInfectious&gt;()[i] / params.get&lt;InfectiousTimeAsymptomatic&gt;()[i]) *</div>
 <div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;                           y[Ci];</div>
-<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;            dydt[Ii] = (1 - params.get&lt;AsymptoticCasesPerInfectious&gt;()[i]) * dummy_R3 * y[Ci] -</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;            dydt[Ii] = (1 - params.get&lt;AsymptomaticCasesPerInfectious&gt;()[i]) * dummy_R3 * y[Ci] -</div>
 <div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;                       ((1 - params.get&lt;HospitalizedCasesPerInfectious&gt;()[i]) / params.get&lt;InfectiousTimeMild&gt;()[i] +</div>
 <div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;                        params.get&lt;HospitalizedCasesPerInfectious&gt;()[i] / params.get&lt;HomeToHospitalizedTime&gt;()[i]) *</div>
 <div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;                           y[Ii];</div>
@@ -381,7 +381,7 @@ $(function() {
 <div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;            dydt[Ui] += prob_hosp2icu / params.get&lt;HospitalizedToICUTime&gt;()[i] * y[Hi];</div>
 <div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160; </div>
 <div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;            dydt[Ri] =</div>
-<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;                params.get&lt;AsymptoticCasesPerInfectious&gt;()[i] / params.get&lt;InfectiousTimeAsymptomatic&gt;()[i] * y[Ci] +</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;                params.get&lt;AsymptomaticCasesPerInfectious&gt;()[i] / params.get&lt;InfectiousTimeAsymptomatic&gt;()[i] * y[Ci] +</div>
 <div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;                (1 - params.get&lt;HospitalizedCasesPerInfectious&gt;()[i]) / params.get&lt;InfectiousTimeMild&gt;()[i] * y[Ii] +</div>
 <div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;                (1 - params.get&lt;ICUCasesPerHospitalized&gt;()[i]) / params.get&lt;HospitalizedToHomeTime&gt;()[i] * y[Hi] +</div>
 <div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;                (1 - params.get&lt;DeathsPerICU&gt;()[i]) / params.get&lt;ICUToHomeTime&gt;()[i] * y[Ui];</div>
@@ -507,9 +507,9 @@ $(function() {
 <div class="line"><a name="l00485"></a><span class="lineno">  485</span>&#160;    <span class="comment">//parameters as arrays</span></div>
 <div class="line"><a name="l00486"></a><span class="lineno">  486</span>&#160;    <span class="keyword">auto</span>&amp;&amp; t_inc     = params.template get&lt;IncubationTime&gt;().array().template cast&lt;double&gt;();</div>
 <div class="line"><a name="l00487"></a><span class="lineno">  487</span>&#160;    <span class="keyword">auto</span>&amp;&amp; t_ser     = params.template get&lt;SerialInterval&gt;().array().template cast&lt;double&gt;();</div>
-<div class="line"><a name="l00488"></a><span class="lineno">  488</span>&#160;    <span class="keyword">auto</span>&amp;&amp; p_asymp   = params.template get&lt;AsymptoticCasesPerInfectious&gt;().array().template cast&lt;double&gt;();</div>
-<div class="line"><a name="l00489"></a><span class="lineno">  489</span>&#160;    <span class="keyword">auto</span>&amp;&amp; p_inf     = params.template get&lt;RiskOfInfectionFromSympomatic&gt;().array().template cast&lt;double&gt;();</div>
-<div class="line"><a name="l00490"></a><span class="lineno">  490</span>&#160;    <span class="keyword">auto</span>&amp;&amp; p_inf_max = params.template get&lt;MaxRiskOfInfectionFromSympomatic&gt;().array().template cast&lt;double&gt;();</div>
+<div class="line"><a name="l00488"></a><span class="lineno">  488</span>&#160;    <span class="keyword">auto</span>&amp;&amp; p_asymp   = params.template get&lt;AsymptomaticCasesPerInfectious&gt;().array().template cast&lt;double&gt;();</div>
+<div class="line"><a name="l00489"></a><span class="lineno">  489</span>&#160;    <span class="keyword">auto</span>&amp;&amp; p_inf     = params.template get&lt;RiskOfInfectionFromSymptomatic&gt;().array().template cast&lt;double&gt;();</div>
+<div class="line"><a name="l00490"></a><span class="lineno">  490</span>&#160;    <span class="keyword">auto</span>&amp;&amp; p_inf_max = params.template get&lt;MaxRiskOfInfectionFromSymptomatic&gt;().array().template cast&lt;double&gt;();</div>
 <div class="line"><a name="l00491"></a><span class="lineno">  491</span>&#160;    <span class="comment">//slice of carriers</span></div>
 <div class="line"><a name="l00492"></a><span class="lineno">  492</span>&#160;    <span class="keyword">auto</span> y_car = <a class="code" href="namespacemio.html#a743eeec3a91821cb14fd831740b17827">slice</a>(y, {Eigen::Index(<a class="code" href="namespacemio.html#a2e4305478e894848657fca367c5a9800a914419aa32f04011357d3b604a86d7eb">InfectionState::Carrier</a>), Eigen::Index(<span class="keywordtype">size_t</span>(params.get_num_groups())),</div>
 <div class="line"><a name="l00493"></a><span class="lineno">  493</span>&#160;                           Eigen::Index(<a class="code" href="namespacemio.html#a2e4305478e894848657fca367c5a9800ae93f994f01c537c4e2f7d8528c3eb5e9">InfectionState::Count</a>)});</div>

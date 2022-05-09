@@ -15,7 +15,7 @@ var searchData=
   ['secir_5fresult_5fio_2eh_999',['secir_result_io.h',['../secir__result__io_8h.html',1,'']]],
   ['secirmodel_1000',['SecirModel',['../classmio_1_1SecirModel.html',1,'mio::SecirModel'],['../classmio_1_1SecirModel.html#a32f89a9a1c2f9faadd265b4c79eb4e0d',1,'mio::SecirModel::SecirModel(const Populations &amp;pop, const ParameterSet &amp;params)'],['../classmio_1_1SecirModel.html#a4c9a081d692441aa5ff7c6de6b8fa124',1,'mio::SecirModel::SecirModel(int num_agegroups)']]],
   ['secirparams_1001',['SecirParams',['../classmio_1_1SecirParams.html',1,'mio::SecirParams'],['../classmio_1_1SecirParams.html#a2b2c2072378389b771f0c06080c500e7',1,'mio::SecirParams::SecirParams(AgeGroup num_agegroups)'],['../classmio_1_1SecirParams.html#a99e715d66fe2ebe9bf426340b707f2f3',1,'mio::SecirParams::SecirParams(SecirParamsBase &amp;&amp;base)']]],
-  ['secirparamsbase_1002',['SecirParamsBase',['../namespacemio.html#a7a472e190e2299ba6cb41d16c6526b7c',1,'mio']]],
+  ['secirparamsbase_1002',['SecirParamsBase',['../namespacemio.html#a64f732561351a649beb150740b5c5a9f',1,'mio']]],
   ['secirsimulation_1003',['SecirSimulation',['../classmio_1_1SecirSimulation.html',1,'mio::SecirSimulation&lt; Base &gt;'],['../classmio_1_1SecirSimulation.html#abb9381d099bbf67a2c26903b7cfd3c84',1,'mio::SecirSimulation::SecirSimulation()']]],
   ['seconds_1004',['seconds',['../classmio_1_1TimeSpan.html#a4d6eef6da7944303a1c9d72d22b41811',1,'mio::TimeSpan::seconds()'],['../classmio_1_1TimePoint.html#a0a9fea2b38c68f2e990210de7f2e9526',1,'mio::TimePoint::seconds()'],['../namespacemio.html#ab3b2cd060947f606c966be5a88b2b7ef',1,'mio::seconds()']]],
   ['seed_1005',['seed',['../classmio_1_1RandomNumberGenerator.html#a3d993584ebd84b4d427ba492cece2745',1,'mio::RandomNumberGenerator']]],

@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2022-05-03 09:05:46</td>
+            <td class="headerValue">2022-05-09 13:08:43</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">52</td>
@@ -326,7 +326,7 @@
 <a name="264"><span class="lineNum">     264 </span>            : /**</a>
 <a name="265"><span class="lineNum">     265 </span>            : * @brief the percentage of asymptomatic cases in the SECIR model</a>
 <a name="266"><span class="lineNum">     266 </span>            : */</a>
-<a name="267"><span class="lineNum">     267 </span>            : struct AsymptoticCasesPerInfectious {</a>
+<a name="267"><span class="lineNum">     267 </span>            : struct AsymptomaticCasesPerInfectious {</a>
 <a name="268"><span class="lineNum">     268 </span>            :     using Type = CustomIndexArray&lt;UncertainValue, AgeGroup&gt;;</a>
 <a name="269"><span class="lineNum">     269 </span><span class="lineCov">         31 :     static Type get_default(AgeGroup size)</span></a>
 <a name="270"><span class="lineNum">     270 </span>            :     {</a>
@@ -334,14 +334,14 @@
 <a name="272"><span class="lineNum">     272 </span>            :     }</a>
 <a name="273"><span class="lineNum">     273 </span><span class="lineCov">          6 :     static std::string name()</span></a>
 <a name="274"><span class="lineNum">     274 </span>            :     {</a>
-<a name="275"><span class="lineNum">     275 </span><span class="lineCov">          6 :         return &quot;AsymptoticCasesPerInfectious&quot;;</span></a>
+<a name="275"><span class="lineNum">     275 </span><span class="lineCov">          6 :         return &quot;AsymptomaticCasesPerInfectious&quot;;</span></a>
 <a name="276"><span class="lineNum">     276 </span>            :     }</a>
 <a name="277"><span class="lineNum">     277 </span>            : };</a>
 <a name="278"><span class="lineNum">     278 </span>            : </a>
 <a name="279"><span class="lineNum">     279 </span>            : /**</a>
 <a name="280"><span class="lineNum">     280 </span>            : * @brief the risk of infection from symptomatic cases in the SECIR model</a>
 <a name="281"><span class="lineNum">     281 </span>            : */</a>
-<a name="282"><span class="lineNum">     282 </span>            : struct RiskOfInfectionFromSympomatic {</a>
+<a name="282"><span class="lineNum">     282 </span>            : struct RiskOfInfectionFromSymptomatic {</a>
 <a name="283"><span class="lineNum">     283 </span>            :     using Type = CustomIndexArray&lt;UncertainValue, AgeGroup&gt;;</a>
 <a name="284"><span class="lineNum">     284 </span><span class="lineCov">         31 :     static Type get_default(AgeGroup size)</span></a>
 <a name="285"><span class="lineNum">     285 </span>            :     {</a>
@@ -349,14 +349,14 @@
 <a name="287"><span class="lineNum">     287 </span>            :     }</a>
 <a name="288"><span class="lineNum">     288 </span><span class="lineCov">          6 :     static std::string name()</span></a>
 <a name="289"><span class="lineNum">     289 </span>            :     {</a>
-<a name="290"><span class="lineNum">     290 </span><span class="lineCov">          6 :         return &quot;RiskOfInfectionFromSympomatic&quot;;</span></a>
+<a name="290"><span class="lineNum">     290 </span><span class="lineCov">          6 :         return &quot;RiskOfInfectionFromSymptomatic&quot;;</span></a>
 <a name="291"><span class="lineNum">     291 </span>            :     }</a>
 <a name="292"><span class="lineNum">     292 </span>            : };</a>
 <a name="293"><span class="lineNum">     293 </span>            : </a>
 <a name="294"><span class="lineNum">     294 </span>            : /**</a>
 <a name="295"><span class="lineNum">     295 </span>            : * @brief risk of infection from symptomatic cases increases as test and trace capacity is exceeded.</a>
 <a name="296"><span class="lineNum">     296 </span>            : */</a>
-<a name="297"><span class="lineNum">     297 </span>            : struct MaxRiskOfInfectionFromSympomatic {</a>
+<a name="297"><span class="lineNum">     297 </span>            : struct MaxRiskOfInfectionFromSymptomatic {</a>
 <a name="298"><span class="lineNum">     298 </span>            :     using Type = CustomIndexArray&lt;UncertainValue, AgeGroup&gt;;</a>
 <a name="299"><span class="lineNum">     299 </span><span class="lineCov">         31 :     static Type get_default(AgeGroup size)</span></a>
 <a name="300"><span class="lineNum">     300 </span>            :     {</a>
@@ -364,7 +364,7 @@
 <a name="302"><span class="lineNum">     302 </span>            :     }</a>
 <a name="303"><span class="lineNum">     303 </span><span class="lineCov">          6 :     static std::string name()</span></a>
 <a name="304"><span class="lineNum">     304 </span>            :     {</a>
-<a name="305"><span class="lineNum">     305 </span><span class="lineCov">          6 :         return &quot;MaxRiskOfInfectionFromSympomatic&quot;;</span></a>
+<a name="305"><span class="lineNum">     305 </span><span class="lineCov">          6 :         return &quot;MaxRiskOfInfectionFromSymptomatic&quot;;</span></a>
 <a name="306"><span class="lineNum">     306 </span>            :     }</a>
 <a name="307"><span class="lineNum">     307 </span>            : };</a>
 <a name="308"><span class="lineNum">     308 </span>            : </a>
@@ -462,8 +462,8 @@
 <a name="400"><span class="lineNum">     400 </span>            :     ParameterSet&lt;StartDay, Seasonality, ICUCapacity, TestAndTraceCapacity, ContactPatterns, DynamicNPIsInfected,</a>
 <a name="401"><span class="lineNum">     401 </span>            :                  IncubationTime, InfectiousTimeMild, InfectiousTimeAsymptomatic, SerialInterval, HospitalizedToHomeTime,</a>
 <a name="402"><span class="lineNum">     402 </span>            :                  HomeToHospitalizedTime, HospitalizedToICUTime, ICUToHomeTime, ICUToDeathTime,</a>
-<a name="403"><span class="lineNum">     403 </span>            :                  InfectionProbabilityFromContact, RelativeCarrierInfectability, AsymptoticCasesPerInfectious,</a>
-<a name="404"><span class="lineNum">     404 </span>            :                  RiskOfInfectionFromSympomatic, MaxRiskOfInfectionFromSympomatic, HospitalizedCasesPerInfectious,</a>
+<a name="403"><span class="lineNum">     403 </span>            :                  InfectionProbabilityFromContact, RelativeCarrierInfectability, AsymptomaticCasesPerInfectious,</a>
+<a name="404"><span class="lineNum">     404 </span>            :                  RiskOfInfectionFromSymptomatic, MaxRiskOfInfectionFromSymptomatic, HospitalizedCasesPerInfectious,</a>
 <a name="405"><span class="lineNum">     405 </span>            :                  ICUCasesPerHospitalized, DeathsPerICU&gt;;</a>
 <a name="406"><span class="lineNum">     406 </span>            : </a>
 <a name="407"><span class="lineNum">     407 </span>            : /**</a>
@@ -478,9 +478,9 @@
 <a name="416"><span class="lineNum">     416 </span>            :     {</a>
 <a name="417"><span class="lineNum">     417 </span><span class="lineCov">         31 :     }</span></a>
 <a name="418"><span class="lineNum">     418 </span>            : </a>
-<a name="419"><span class="lineNum">     419 </span><span class="lineCov">       7619 :     AgeGroup get_num_groups() const</span></a>
+<a name="419"><span class="lineNum">     419 </span><span class="lineCov">       7223 :     AgeGroup get_num_groups() const</span></a>
 <a name="420"><span class="lineNum">     420 </span>            :     {</a>
-<a name="421"><span class="lineNum">     421 </span><span class="lineCov">       7619 :         return m_num_groups;</span></a>
+<a name="421"><span class="lineNum">     421 </span><span class="lineCov">       7223 :         return m_num_groups;</span></a>
 <a name="422"><span class="lineNum">     422 </span>            :     }</a>
 <a name="423"><span class="lineNum">     423 </span>            : </a>
 <a name="424"><span class="lineNum">     424 </span>            :     /**</a>
@@ -514,9 +514,9 @@
 <a name="452"><span class="lineNum">     452 </span><span class="lineCov">         25 :                 this-&gt;get&lt;SerialInterval&gt;()[i] = 0.5 * this-&gt;get&lt;IncubationTime&gt;()[i] + 0.5;</span></a>
 <a name="453"><span class="lineNum">     453 </span>            :             }</a>
 <a name="454"><span class="lineNum">     454 </span><span class="lineCov">         31 :             else if (this-&gt;get&lt;SerialInterval&gt;()[i] &gt; this-&gt;get&lt;IncubationTime&gt;()[i] - 0.5) {</span></a>
-<a name="455"><span class="lineNum">     455 </span><span class="lineCov">          3 :                 log_warning(&quot;Constraint check: Parameter SerialInterval changed from {:.4f} to {:.4f}&quot;,</span></a>
-<a name="456"><span class="lineNum">     456 </span><span class="lineCov">          6 :                             this-&gt;get&lt;SerialInterval&gt;()[i], this-&gt;get&lt;IncubationTime&gt;()[i] - 0.5);</span></a>
-<a name="457"><span class="lineNum">     457 </span><span class="lineCov">          3 :                 this-&gt;get&lt;SerialInterval&gt;()[i] = this-&gt;get&lt;IncubationTime&gt;()[i] - 0.5;</span></a>
+<a name="455"><span class="lineNum">     455 </span><span class="lineCov">          9 :                 log_warning(&quot;Constraint check: Parameter SerialInterval changed from {:.4f} to {:.4f}&quot;,</span></a>
+<a name="456"><span class="lineNum">     456 </span><span class="lineCov">         18 :                             this-&gt;get&lt;SerialInterval&gt;()[i], this-&gt;get&lt;IncubationTime&gt;()[i] - 0.5);</span></a>
+<a name="457"><span class="lineNum">     457 </span><span class="lineCov">          9 :                 this-&gt;get&lt;SerialInterval&gt;()[i] = this-&gt;get&lt;IncubationTime&gt;()[i] - 0.5;</span></a>
 <a name="458"><span class="lineNum">     458 </span>            :             }</a>
 <a name="459"><span class="lineNum">     459 </span>            : </a>
 <a name="460"><span class="lineNum">     460 </span><span class="lineCov">         56 :             if (this-&gt;get&lt;InfectiousTimeMild&gt;()[i] &lt; 1.0) {</span></a>
@@ -576,18 +576,18 @@
 <a name="514"><span class="lineNum">     514 </span><span class="lineNoCov">          0 :                 this-&gt;get&lt;RelativeCarrierInfectability&gt;()[i] = 0;</span></a>
 <a name="515"><span class="lineNum">     515 </span>            :             }</a>
 <a name="516"><span class="lineNum">     516 </span>            : </a>
-<a name="517"><span class="lineNum">     517 </span><span class="lineCov">        112 :             if (this-&gt;get&lt;AsymptoticCasesPerInfectious&gt;()[i] &lt; 0.0 ||</span></a>
-<a name="518"><span class="lineNum">     518 </span><span class="lineCov">         56 :                 this-&gt;get&lt;AsymptoticCasesPerInfectious&gt;()[i] &gt; 1.0) {</span></a>
-<a name="519"><span class="lineNum">     519 </span><span class="lineCov">          1 :                 log_warning(&quot;Constraint check: Parameter AsymptoticCasesPerInfectious changed from {:0.4f} to {:d} &quot;,</span></a>
-<a name="520"><span class="lineNum">     520 </span><span class="lineCov">          2 :                             this-&gt;get&lt;AsymptoticCasesPerInfectious&gt;()[i], 0);</span></a>
-<a name="521"><span class="lineNum">     521 </span><span class="lineCov">          1 :                 this-&gt;get&lt;AsymptoticCasesPerInfectious&gt;()[i] = 0;</span></a>
+<a name="517"><span class="lineNum">     517 </span><span class="lineCov">        112 :             if (this-&gt;get&lt;AsymptomaticCasesPerInfectious&gt;()[i] &lt; 0.0 ||</span></a>
+<a name="518"><span class="lineNum">     518 </span><span class="lineCov">         56 :                 this-&gt;get&lt;AsymptomaticCasesPerInfectious&gt;()[i] &gt; 1.0) {</span></a>
+<a name="519"><span class="lineNum">     519 </span><span class="lineCov">          1 :                 log_warning(&quot;Constraint check: Parameter AsymptomaticCasesPerInfectious changed from {:0.4f} to {:d} &quot;,</span></a>
+<a name="520"><span class="lineNum">     520 </span><span class="lineCov">          2 :                             this-&gt;get&lt;AsymptomaticCasesPerInfectious&gt;()[i], 0);</span></a>
+<a name="521"><span class="lineNum">     521 </span><span class="lineCov">          1 :                 this-&gt;get&lt;AsymptomaticCasesPerInfectious&gt;()[i] = 0;</span></a>
 <a name="522"><span class="lineNum">     522 </span>            :             }</a>
 <a name="523"><span class="lineNum">     523 </span>            : </a>
-<a name="524"><span class="lineNum">     524 </span><span class="lineCov">        112 :             if (this-&gt;get&lt;RiskOfInfectionFromSympomatic&gt;()[i] &lt; 0.0 ||</span></a>
-<a name="525"><span class="lineNum">     525 </span><span class="lineCov">         56 :                 this-&gt;get&lt;RiskOfInfectionFromSympomatic&gt;()[i] &gt; 1.0) {</span></a>
-<a name="526"><span class="lineNum">     526 </span><span class="lineNoCov">          0 :                 log_warning(&quot;Constraint check: Parameter RiskOfInfectionFromSympomatic changed from {:0.4f} to {:d}&quot;,</span></a>
-<a name="527"><span class="lineNum">     527 </span><span class="lineNoCov">          0 :                             this-&gt;get&lt;RiskOfInfectionFromSympomatic&gt;()[i], 0);</span></a>
-<a name="528"><span class="lineNum">     528 </span><span class="lineNoCov">          0 :                 this-&gt;get&lt;RiskOfInfectionFromSympomatic&gt;()[i] = 0;</span></a>
+<a name="524"><span class="lineNum">     524 </span><span class="lineCov">        112 :             if (this-&gt;get&lt;RiskOfInfectionFromSymptomatic&gt;()[i] &lt; 0.0 ||</span></a>
+<a name="525"><span class="lineNum">     525 </span><span class="lineCov">         56 :                 this-&gt;get&lt;RiskOfInfectionFromSymptomatic&gt;()[i] &gt; 1.0) {</span></a>
+<a name="526"><span class="lineNum">     526 </span><span class="lineNoCov">          0 :                 log_warning(&quot;Constraint check: Parameter RiskOfInfectionFromSymptomatic changed from {:0.4f} to {:d}&quot;,</span></a>
+<a name="527"><span class="lineNum">     527 </span><span class="lineNoCov">          0 :                             this-&gt;get&lt;RiskOfInfectionFromSymptomatic&gt;()[i], 0);</span></a>
+<a name="528"><span class="lineNum">     528 </span><span class="lineNoCov">          0 :                 this-&gt;get&lt;RiskOfInfectionFromSymptomatic&gt;()[i] = 0;</span></a>
 <a name="529"><span class="lineNum">     529 </span>            :             }</a>
 <a name="530"><span class="lineNum">     530 </span>            : </a>
 <a name="531"><span class="lineNum">     531 </span><span class="lineCov">        112 :             if (this-&gt;get&lt;HospitalizedCasesPerInfectious&gt;()[i] &lt; 0.0 ||</span></a>
@@ -686,15 +686,15 @@
 <a name="624"><span class="lineNum">     624 </span><span class="lineNoCov">          0 :                 log_warning(&quot;Constraint check: Parameter RelativeCarrierInfectability smaller {:d}&quot;, 0);</span></a>
 <a name="625"><span class="lineNum">     625 </span>            :             }</a>
 <a name="626"><span class="lineNum">     626 </span>            : </a>
-<a name="627"><span class="lineNum">     627 </span><span class="lineCov">         44 :             if (this-&gt;get&lt;AsymptoticCasesPerInfectious&gt;()[i] &lt; 0.0 ||</span></a>
-<a name="628"><span class="lineNum">     628 </span><span class="lineCov">         22 :                 this-&gt;get&lt;AsymptoticCasesPerInfectious&gt;()[i] &gt; 1.0) {</span></a>
-<a name="629"><span class="lineNum">     629 </span><span class="lineCov">          1 :                 log_warning(&quot;Constraint check: Parameter AsymptoticCasesPerInfectious smaller {:d} or larger {:d}&quot;, 0,</span></a>
+<a name="627"><span class="lineNum">     627 </span><span class="lineCov">         44 :             if (this-&gt;get&lt;AsymptomaticCasesPerInfectious&gt;()[i] &lt; 0.0 ||</span></a>
+<a name="628"><span class="lineNum">     628 </span><span class="lineCov">         22 :                 this-&gt;get&lt;AsymptomaticCasesPerInfectious&gt;()[i] &gt; 1.0) {</span></a>
+<a name="629"><span class="lineNum">     629 </span><span class="lineCov">          1 :                 log_warning(&quot;Constraint check: Parameter AsymptomaticCasesPerInfectious smaller {:d} or larger {:d}&quot;, 0,</span></a>
 <a name="630"><span class="lineNum">     630 </span><span class="lineCov">          2 :                             1);</span></a>
 <a name="631"><span class="lineNum">     631 </span>            :             }</a>
 <a name="632"><span class="lineNum">     632 </span>            : </a>
-<a name="633"><span class="lineNum">     633 </span><span class="lineCov">         44 :             if (this-&gt;get&lt;RiskOfInfectionFromSympomatic&gt;()[i] &lt; 0.0 ||</span></a>
-<a name="634"><span class="lineNum">     634 </span><span class="lineCov">         22 :                 this-&gt;get&lt;RiskOfInfectionFromSympomatic&gt;()[i] &gt; 1.0) {</span></a>
-<a name="635"><span class="lineNum">     635 </span><span class="lineNoCov">          0 :                 log_warning(&quot;Constraint check: Parameter RiskOfInfectionFromSympomatic smaller {:d} or larger {:d}&quot;, 0,</span></a>
+<a name="633"><span class="lineNum">     633 </span><span class="lineCov">         44 :             if (this-&gt;get&lt;RiskOfInfectionFromSymptomatic&gt;()[i] &lt; 0.0 ||</span></a>
+<a name="634"><span class="lineNum">     634 </span><span class="lineCov">         22 :                 this-&gt;get&lt;RiskOfInfectionFromSymptomatic&gt;()[i] &gt; 1.0) {</span></a>
+<a name="635"><span class="lineNum">     635 </span><span class="lineNoCov">          0 :                 log_warning(&quot;Constraint check: Parameter RiskOfInfectionFromSymptomatic smaller {:d} or larger {:d}&quot;, 0,</span></a>
 <a name="636"><span class="lineNum">     636 </span><span class="lineNoCov">          0 :                             1);</span></a>
 <a name="637"><span class="lineNum">     637 </span>            :             }</a>
 <a name="638"><span class="lineNum">     638 </span>            : </a>
