@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2022-05-09 13:08:43</td>
+            <td class="headerValue">2022-05-10 15:32:32</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">2</td>
@@ -244,23 +244,24 @@
 <a name="182"><span class="lineNum">     182 </span>            :      * the migration rules regarding hospitalization/ICU/quarantine are always used</a>
 <a name="183"><span class="lineNum">     183 </span>            :      */</a>
 <a name="184"><span class="lineNum">     184 </span>            :     void use_migration_rules(bool param);</a>
-<a name="185"><span class="lineNum">     185 </span>            : </a>
-<a name="186"><span class="lineNum">     186 </span>            : private:</a>
-<a name="187"><span class="lineNum">     187 </span>            :     void interaction(TimePoint t, TimeSpan dt);</a>
-<a name="188"><span class="lineNum">     188 </span>            :     void migration(TimePoint t, TimeSpan dt);</a>
-<a name="189"><span class="lineNum">     189 </span>            : </a>
-<a name="190"><span class="lineNum">     190 </span>            :     std::vector&lt;std::unique_ptr&lt;Person&gt;&gt; m_persons;</a>
-<a name="191"><span class="lineNum">     191 </span>            :     std::vector&lt;std::vector&lt;Location&gt;&gt; m_locations;</a>
-<a name="192"><span class="lineNum">     192 </span>            :     GlobalInfectionParameters m_infection_parameters;</a>
-<a name="193"><span class="lineNum">     193 </span>            :     AbmMigrationParameters m_migration_parameters;</a>
-<a name="194"><span class="lineNum">     194 </span>            :     GlobalTestingParameters m_testing_parameters;</a>
-<a name="195"><span class="lineNum">     195 </span>            :     TripList m_trip_list;</a>
-<a name="196"><span class="lineNum">     196 </span>            :     bool m_use_migration_rules;</a>
-<a name="197"><span class="lineNum">     197 </span>            : };</a>
-<a name="198"><span class="lineNum">     198 </span>            : </a>
-<a name="199"><span class="lineNum">     199 </span>            : } // namespace mio</a>
-<a name="200"><span class="lineNum">     200 </span>            : </a>
-<a name="201"><span class="lineNum">     201 </span>            : #endif</a>
+<a name="185"><span class="lineNum">     185 </span>            :     bool use_migration_rules() const;</a>
+<a name="186"><span class="lineNum">     186 </span>            : </a>
+<a name="187"><span class="lineNum">     187 </span>            : private:</a>
+<a name="188"><span class="lineNum">     188 </span>            :     void interaction(TimePoint t, TimeSpan dt);</a>
+<a name="189"><span class="lineNum">     189 </span>            :     void migration(TimePoint t, TimeSpan dt);</a>
+<a name="190"><span class="lineNum">     190 </span>            : </a>
+<a name="191"><span class="lineNum">     191 </span>            :     std::vector&lt;std::unique_ptr&lt;Person&gt;&gt; m_persons;</a>
+<a name="192"><span class="lineNum">     192 </span>            :     std::vector&lt;std::vector&lt;Location&gt;&gt; m_locations;</a>
+<a name="193"><span class="lineNum">     193 </span>            :     GlobalInfectionParameters m_infection_parameters;</a>
+<a name="194"><span class="lineNum">     194 </span>            :     AbmMigrationParameters m_migration_parameters;</a>
+<a name="195"><span class="lineNum">     195 </span>            :     GlobalTestingParameters m_testing_parameters;</a>
+<a name="196"><span class="lineNum">     196 </span>            :     TripList m_trip_list;</a>
+<a name="197"><span class="lineNum">     197 </span>            :     bool m_use_migration_rules;</a>
+<a name="198"><span class="lineNum">     198 </span>            : };</a>
+<a name="199"><span class="lineNum">     199 </span>            : </a>
+<a name="200"><span class="lineNum">     200 </span>            : } // namespace mio</a>
+<a name="201"><span class="lineNum">     201 </span>            : </a>
+<a name="202"><span class="lineNum">     202 </span>            : #endif</a>
 </pre>
       </td>
     </tr>

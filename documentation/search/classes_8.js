@@ -1,14 +1,13 @@
 var searchData=
 [
-  ['icucapacity_1291',['ICUCapacity',['../structmio_1_1ICUCapacity.html',1,'mio']]],
-  ['icucasesperhospitalized_1292',['ICUCasesPerHospitalized',['../structmio_1_1ICUCasesPerHospitalized.html',1,'mio']]],
-  ['icutodeathtime_1293',['ICUToDeathTime',['../structmio_1_1ICUToDeathTime.html',1,'mio']]],
-  ['icutohometime_1294',['ICUToHomeTime',['../structmio_1_1ICUToHomeTime.html',1,'mio']]],
-  ['impliciteulerintegratorcore_1295',['ImplicitEulerIntegratorCore',['../classmio_1_1ImplicitEulerIntegratorCore.html',1,'mio']]],
-  ['incubationperiod_1296',['IncubationPeriod',['../structmio_1_1IncubationPeriod.html',1,'mio']]],
-  ['incubationtime_1297',['IncubationTime',['../structmio_1_1IncubationTime.html',1,'mio']]],
-  ['index_1298',['Index',['../classmio_1_1Index.html',1,'mio']]],
-  ['index_3c_20abmagegroup_20_3e_1299',['Index&lt; AbmAgeGroup &gt;',['../classmio_1_1Index.html',1,'mio']]],
+  ['icucapacity_1292',['ICUCapacity',['../structmio_1_1ICUCapacity.html',1,'mio']]],
+  ['icucasesperhospitalized_1293',['ICUCasesPerHospitalized',['../structmio_1_1ICUCasesPerHospitalized.html',1,'mio']]],
+  ['icutodeathtime_1294',['ICUToDeathTime',['../structmio_1_1ICUToDeathTime.html',1,'mio']]],
+  ['icutohometime_1295',['ICUToHomeTime',['../structmio_1_1ICUToHomeTime.html',1,'mio']]],
+  ['impliciteulerintegratorcore_1296',['ImplicitEulerIntegratorCore',['../classmio_1_1ImplicitEulerIntegratorCore.html',1,'mio']]],
+  ['incubationperiod_1297',['IncubationPeriod',['../structmio_1_1IncubationPeriod.html',1,'mio']]],
+  ['incubationtime_1298',['IncubationTime',['../structmio_1_1IncubationTime.html',1,'mio']]],
+  ['index_1299',['Index',['../classmio_1_1Index.html',1,'mio']]],
   ['index_3c_20agegroup_20_3e_1300',['Index&lt; AgeGroup &gt;',['../classmio_1_1Index.html',1,'mio']]],
   ['index_3c_20categorytag_20_3e_1301',['Index&lt; CategoryTag &gt;',['../classmio_1_1Index_3_01CategoryTag_01_4.html',1,'mio']]],
   ['index_3c_20tags_2e_2e_2e_20_3e_1302',['Index&lt; Tags... &gt;',['../classmio_1_1Index.html',1,'mio']]],
@@ -33,5 +32,5 @@ var searchData=
   ['is_5frandom_5faccess_5fiterator_1321',['is_random_access_iterator',['../structmio_1_1details_1_1is__random__access__iterator.html',1,'mio::details']]],
   ['isioresult_1322',['IsIOResult',['../structmio_1_1details_1_1IsIOResult.html',1,'mio::details']]],
   ['isioresult_3c_20ioresult_3c_20t_20_3e_20_3e_1323',['IsIOResult&lt; IOResult&lt; T &gt; &gt;',['../structmio_1_1details_1_1IsIOResult_3_01IOResult_3_01T_01_4_01_4.html',1,'mio::details']]],
-  ['iterator_1324',['Iterator',['../classmio_1_1CustomIndexArray_1_1Slice_1_1Iterator.html',1,'mio::CustomIndexArray&lt; Typ, Tags &gt;::Slice&lt; Tag, iter_type, &gt;::Iterator&lt; T &gt;'],['../structmio_1_1CustomIndexArray_1_1Iterator.html',1,'mio::CustomIndexArray&lt; Typ, Tags &gt;::Iterator&lt; T &gt;']]]
+  ['iterator_1324',['Iterator',['../structmio_1_1CustomIndexArray_1_1Iterator.html',1,'mio::CustomIndexArray&lt; Typ, Tags &gt;::Iterator&lt; T &gt;'],['../classmio_1_1CustomIndexArray_1_1Slice_1_1Iterator.html',1,'mio::CustomIndexArray&lt; Typ, Tags &gt;::Slice&lt; Tag, iter_type, &gt;::Iterator&lt; T &gt;']]]
 ];

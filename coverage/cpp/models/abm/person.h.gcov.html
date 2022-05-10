@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2022-05-09 13:08:43</td>
+            <td class="headerValue">2022-05-10 15:32:32</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">8</td>
@@ -100,231 +100,240 @@
 <a name="38"><span class="lineNum">      38 </span>            :  * Infection properties describe the infection state of a person and if a infection is detected</a>
 <a name="39"><span class="lineNum">      39 </span>            :  */</a>
 <a name="40"><span class="lineNum">      40 </span>            : struct InfectionProperties {</a>
-<a name="41"><span class="lineNum">      41 </span><span class="lineCov">        201 :     InfectionProperties(InfectionState infection_state, bool infection_detected = false)</span></a>
-<a name="42"><span class="lineNum">      42 </span><span class="lineCov">        201 :         : state(infection_state)</span></a>
-<a name="43"><span class="lineNum">      43 </span><span class="lineCov">        201 :         , detected(infection_detected)</span></a>
+<a name="41"><span class="lineNum">      41 </span><span class="lineCov">        202 :     InfectionProperties(InfectionState infection_state, bool infection_detected = false)</span></a>
+<a name="42"><span class="lineNum">      42 </span><span class="lineCov">        202 :         : state(infection_state)</span></a>
+<a name="43"><span class="lineNum">      43 </span><span class="lineCov">        202 :         , detected(infection_detected)</span></a>
 <a name="44"><span class="lineNum">      44 </span>            :     {</a>
-<a name="45"><span class="lineNum">      45 </span><span class="lineCov">        201 :     }</span></a>
+<a name="45"><span class="lineNum">      45 </span><span class="lineCov">        202 :     }</span></a>
 <a name="46"><span class="lineNum">      46 </span>            :     InfectionState state;</a>
 <a name="47"><span class="lineNum">      47 </span>            :     bool detected;</a>
-<a name="48"><span class="lineNum">      48 </span>            : };</a>
-<a name="49"><span class="lineNum">      49 </span>            : </a>
-<a name="50"><span class="lineNum">      50 </span>            : static constexpr uint32_t INVALID_PERSON_ID = std::numeric_limits&lt;uint32_t&gt;::max();</a>
-<a name="51"><span class="lineNum">      51 </span>            : </a>
-<a name="52"><span class="lineNum">      52 </span>            : /**</a>
-<a name="53"><span class="lineNum">      53 </span>            :  * Agents in the simulated world that can carry and spread the infection.</a>
-<a name="54"><span class="lineNum">      54 </span>            :  */</a>
-<a name="55"><span class="lineNum">      55 </span>            : class Person</a>
-<a name="56"><span class="lineNum">      56 </span>            : {</a>
-<a name="57"><span class="lineNum">      57 </span>            : public:</a>
-<a name="58"><span class="lineNum">      58 </span>            :     /**</a>
-<a name="59"><span class="lineNum">      59 </span>            :      * create a Person.</a>
-<a name="60"><span class="lineNum">      60 </span>            :      * @param id index and type of the initial location of the person</a>
-<a name="61"><span class="lineNum">      61 </span>            :      * @param infection_properties the initial infection state of the person and if infection is detected</a>
-<a name="62"><span class="lineNum">      62 </span>            :      * @param vaccination_state the initial infection state of the person</a>
-<a name="63"><span class="lineNum">      63 </span>            :      * @param age the age group of the person</a>
-<a name="64"><span class="lineNum">      64 </span>            :      * @param global_params the global infection parameters</a>
-<a name="65"><span class="lineNum">      65 </span>            :      * @param person_id index of the person</a>
-<a name="66"><span class="lineNum">      66 </span>            :      */</a>
-<a name="67"><span class="lineNum">      67 </span>            :     Person(LocationId id, InfectionProperties infection_properties, AbmAgeGroup age,</a>
-<a name="68"><span class="lineNum">      68 </span>            :            const GlobalInfectionParameters&amp; global_params,</a>
-<a name="69"><span class="lineNum">      69 </span>            :            VaccinationState vaccination_state = VaccinationState::Unvaccinated, uint32_t person_id = INVALID_PERSON_ID);</a>
-<a name="70"><span class="lineNum">      70 </span>            : </a>
-<a name="71"><span class="lineNum">      71 </span>            :     /**</a>
-<a name="72"><span class="lineNum">      72 </span>            :      * create a Person.</a>
-<a name="73"><span class="lineNum">      73 </span>            :      * @param location the initial location of the person</a>
-<a name="74"><span class="lineNum">      74 </span>            :      * @param infection_properties the initial infection state of the person and if infection is detected</a>
-<a name="75"><span class="lineNum">      75 </span>            :      * @param age the age group of the person</a>
-<a name="76"><span class="lineNum">      76 </span>            :      * @param global_params the global infection parameters</a>
-<a name="77"><span class="lineNum">      77 </span>            :      * @param person_id index of the person</a>
-<a name="78"><span class="lineNum">      78 </span>            :      */</a>
-<a name="79"><span class="lineNum">      79 </span>            :     Person(Location&amp; location, InfectionProperties infection_properties, AbmAgeGroup age,</a>
-<a name="80"><span class="lineNum">      80 </span>            :            const GlobalInfectionParameters&amp; global_params,</a>
-<a name="81"><span class="lineNum">      81 </span>            :            VaccinationState vaccination_state = VaccinationState::Unvaccinated, uint32_t person_id = INVALID_PERSON_ID);</a>
-<a name="82"><span class="lineNum">      82 </span>            : </a>
-<a name="83"><span class="lineNum">      83 </span>            :     /** </a>
-<a name="84"><span class="lineNum">      84 </span>            :      * Time passes and the person interacts with the population at its current location.</a>
-<a name="85"><span class="lineNum">      85 </span>            :      * The person might change infection state.</a>
-<a name="86"><span class="lineNum">      86 </span>            :      * @param dt length of the current simulation time step</a>
-<a name="87"><span class="lineNum">      87 </span>            :      * @param global_infection_parameters infection parameters that are the same in all locations</a>
-<a name="88"><span class="lineNum">      88 </span>            :      */</a>
-<a name="89"><span class="lineNum">      89 </span>            :     void interact(TimeSpan dt, const GlobalInfectionParameters&amp; global_infection_parameters, Location&amp; loc,</a>
-<a name="90"><span class="lineNum">      90 </span>            :                   const GlobalTestingParameters&amp; global_testing_params);</a>
+<a name="48"><span class="lineNum">      48 </span>            : </a>
+<a name="49"><span class="lineNum">      49 </span>            :     bool operator==(const InfectionProperties&amp; other) const</a>
+<a name="50"><span class="lineNum">      50 </span>            :     {</a>
+<a name="51"><span class="lineNum">      51 </span>            :         return std::tie(state, detected) == std::tie(other.state, detected);</a>
+<a name="52"><span class="lineNum">      52 </span>            :     }</a>
+<a name="53"><span class="lineNum">      53 </span>            :     bool operator!=(const InfectionProperties&amp; other) const</a>
+<a name="54"><span class="lineNum">      54 </span>            :     {</a>
+<a name="55"><span class="lineNum">      55 </span>            :         return std::tie(state, detected) != std::tie(other.state, detected);</a>
+<a name="56"><span class="lineNum">      56 </span>            :     }</a>
+<a name="57"><span class="lineNum">      57 </span>            : };</a>
+<a name="58"><span class="lineNum">      58 </span>            : </a>
+<a name="59"><span class="lineNum">      59 </span>            : static constexpr uint32_t INVALID_PERSON_ID = std::numeric_limits&lt;uint32_t&gt;::max();</a>
+<a name="60"><span class="lineNum">      60 </span>            : </a>
+<a name="61"><span class="lineNum">      61 </span>            : /**</a>
+<a name="62"><span class="lineNum">      62 </span>            :  * Agents in the simulated world that can carry and spread the infection.</a>
+<a name="63"><span class="lineNum">      63 </span>            :  */</a>
+<a name="64"><span class="lineNum">      64 </span>            : class Person</a>
+<a name="65"><span class="lineNum">      65 </span>            : {</a>
+<a name="66"><span class="lineNum">      66 </span>            : public:</a>
+<a name="67"><span class="lineNum">      67 </span>            :     /**</a>
+<a name="68"><span class="lineNum">      68 </span>            :      * create a Person.</a>
+<a name="69"><span class="lineNum">      69 </span>            :      * @param id index and type of the initial location of the person</a>
+<a name="70"><span class="lineNum">      70 </span>            :      * @param infection_properties the initial infection state of the person and if infection is detected</a>
+<a name="71"><span class="lineNum">      71 </span>            :      * @param vaccination_state the initial infection state of the person</a>
+<a name="72"><span class="lineNum">      72 </span>            :      * @param age the age group of the person</a>
+<a name="73"><span class="lineNum">      73 </span>            :      * @param global_params the global infection parameters</a>
+<a name="74"><span class="lineNum">      74 </span>            :      * @param person_id index of the person</a>
+<a name="75"><span class="lineNum">      75 </span>            :      */</a>
+<a name="76"><span class="lineNum">      76 </span>            :     Person(LocationId id, InfectionProperties infection_properties, AbmAgeGroup age,</a>
+<a name="77"><span class="lineNum">      77 </span>            :            const GlobalInfectionParameters&amp; global_params,</a>
+<a name="78"><span class="lineNum">      78 </span>            :            VaccinationState vaccination_state = VaccinationState::Unvaccinated, uint32_t person_id = INVALID_PERSON_ID);</a>
+<a name="79"><span class="lineNum">      79 </span>            : </a>
+<a name="80"><span class="lineNum">      80 </span>            :     /**</a>
+<a name="81"><span class="lineNum">      81 </span>            :      * create a Person.</a>
+<a name="82"><span class="lineNum">      82 </span>            :      * @param location the initial location of the person</a>
+<a name="83"><span class="lineNum">      83 </span>            :      * @param infection_properties the initial infection state of the person and if infection is detected</a>
+<a name="84"><span class="lineNum">      84 </span>            :      * @param age the age group of the person</a>
+<a name="85"><span class="lineNum">      85 </span>            :      * @param global_params the global infection parameters</a>
+<a name="86"><span class="lineNum">      86 </span>            :      * @param person_id index of the person</a>
+<a name="87"><span class="lineNum">      87 </span>            :      */</a>
+<a name="88"><span class="lineNum">      88 </span>            :     Person(Location&amp; location, InfectionProperties infection_properties, AbmAgeGroup age,</a>
+<a name="89"><span class="lineNum">      89 </span>            :            const GlobalInfectionParameters&amp; global_params,</a>
+<a name="90"><span class="lineNum">      90 </span>            :            VaccinationState vaccination_state = VaccinationState::Unvaccinated, uint32_t person_id = INVALID_PERSON_ID);</a>
 <a name="91"><span class="lineNum">      91 </span>            : </a>
 <a name="92"><span class="lineNum">      92 </span>            :     /** </a>
-<a name="93"><span class="lineNum">      93 </span>            :      * migrate to a different location.</a>
-<a name="94"><span class="lineNum">      94 </span>            :      * @param loc_new the new location of the person.</a>
-<a name="95"><span class="lineNum">      95 </span>            :      * @param cells_new the new cells of the person.</a>
-<a name="96"><span class="lineNum">      96 </span>            :      * */</a>
-<a name="97"><span class="lineNum">      97 </span>            :     void migrate_to(Location&amp; loc_old, Location&amp; loc_new, const std::vector&lt;uint32_t&gt;&amp; cells_new = {});</a>
-<a name="98"><span class="lineNum">      98 </span>            : </a>
-<a name="99"><span class="lineNum">      99 </span>            :     /**</a>
-<a name="100"><span class="lineNum">     100 </span>            :      * Get the current infection state of the person.</a>
-<a name="101"><span class="lineNum">     101 </span>            :      * @returns the current infection state of the person</a>
-<a name="102"><span class="lineNum">     102 </span>            :      */</a>
-<a name="103"><span class="lineNum">     103 </span><span class="lineCov">        487 :     InfectionState get_infection_state() const</span></a>
-<a name="104"><span class="lineNum">     104 </span>            :     {</a>
-<a name="105"><span class="lineNum">     105 </span><span class="lineCov">        487 :         return m_infection_state;</span></a>
-<a name="106"><span class="lineNum">     106 </span>            :     }</a>
+<a name="93"><span class="lineNum">      93 </span>            :      * Time passes and the person interacts with the population at its current location.</a>
+<a name="94"><span class="lineNum">      94 </span>            :      * The person might change infection state.</a>
+<a name="95"><span class="lineNum">      95 </span>            :      * @param dt length of the current simulation time step</a>
+<a name="96"><span class="lineNum">      96 </span>            :      * @param global_infection_parameters infection parameters that are the same in all locations</a>
+<a name="97"><span class="lineNum">      97 </span>            :      */</a>
+<a name="98"><span class="lineNum">      98 </span>            :     void interact(TimeSpan dt, const GlobalInfectionParameters&amp; global_infection_parameters, Location&amp; loc,</a>
+<a name="99"><span class="lineNum">      99 </span>            :                   const GlobalTestingParameters&amp; global_testing_params);</a>
+<a name="100"><span class="lineNum">     100 </span>            : </a>
+<a name="101"><span class="lineNum">     101 </span>            :     /** </a>
+<a name="102"><span class="lineNum">     102 </span>            :      * migrate to a different location.</a>
+<a name="103"><span class="lineNum">     103 </span>            :      * @param loc_new the new location of the person.</a>
+<a name="104"><span class="lineNum">     104 </span>            :      * @param cells_new the new cells of the person.</a>
+<a name="105"><span class="lineNum">     105 </span>            :      * */</a>
+<a name="106"><span class="lineNum">     106 </span>            :     void migrate_to(Location&amp; loc_old, Location&amp; loc_new, const std::vector&lt;uint32_t&gt;&amp; cells_new = {});</a>
 <a name="107"><span class="lineNum">     107 </span>            : </a>
 <a name="108"><span class="lineNum">     108 </span>            :     /**</a>
-<a name="109"><span class="lineNum">     109 </span>            :      * Get the current vaccination state of the person.</a>
-<a name="110"><span class="lineNum">     110 </span>            :      * @returns the current vaccination state of the person</a>
+<a name="109"><span class="lineNum">     109 </span>            :      * Get the current infection state of the person.</a>
+<a name="110"><span class="lineNum">     110 </span>            :      * @returns the current infection state of the person</a>
 <a name="111"><span class="lineNum">     111 </span>            :      */</a>
-<a name="112"><span class="lineNum">     112 </span><span class="lineCov">        237 :     VaccinationState get_vaccination_state() const</span></a>
+<a name="112"><span class="lineNum">     112 </span><span class="lineCov">        464 :     InfectionState get_infection_state() const</span></a>
 <a name="113"><span class="lineNum">     113 </span>            :     {</a>
-<a name="114"><span class="lineNum">     114 </span><span class="lineCov">        237 :         return m_vaccination_state;</span></a>
+<a name="114"><span class="lineNum">     114 </span><span class="lineCov">        464 :         return m_infection_state;</span></a>
 <a name="115"><span class="lineNum">     115 </span>            :     }</a>
 <a name="116"><span class="lineNum">     116 </span>            : </a>
 <a name="117"><span class="lineNum">     117 </span>            :     /**</a>
-<a name="118"><span class="lineNum">     118 </span>            :      * Sets the current infection state of the person.</a>
-<a name="119"><span class="lineNum">     119 </span>            :      */</a>
-<a name="120"><span class="lineNum">     120 </span>            :     void set_infection_state(InfectionState inf_state);</a>
-<a name="121"><span class="lineNum">     121 </span>            : </a>
-<a name="122"><span class="lineNum">     122 </span>            :     /**</a>
-<a name="123"><span class="lineNum">     123 </span>            :      * Get the age group of this person.</a>
-<a name="124"><span class="lineNum">     124 </span>            :      * @return age.</a>
-<a name="125"><span class="lineNum">     125 </span>            :      */</a>
-<a name="126"><span class="lineNum">     126 </span><span class="lineCov">        475 :     mio::Index&lt;AbmAgeGroup&gt; get_age() const</span></a>
-<a name="127"><span class="lineNum">     127 </span>            :     {</a>
-<a name="128"><span class="lineNum">     128 </span><span class="lineCov">        475 :         return m_age;</span></a>
-<a name="129"><span class="lineNum">     129 </span>            :     }</a>
+<a name="118"><span class="lineNum">     118 </span>            :      * Get the current vaccination state of the person.</a>
+<a name="119"><span class="lineNum">     119 </span>            :      * @returns the current vaccination state of the person</a>
+<a name="120"><span class="lineNum">     120 </span>            :      */</a>
+<a name="121"><span class="lineNum">     121 </span><span class="lineCov">        212 :     VaccinationState get_vaccination_state() const</span></a>
+<a name="122"><span class="lineNum">     122 </span>            :     {</a>
+<a name="123"><span class="lineNum">     123 </span><span class="lineCov">        212 :         return m_vaccination_state;</span></a>
+<a name="124"><span class="lineNum">     124 </span>            :     }</a>
+<a name="125"><span class="lineNum">     125 </span>            : </a>
+<a name="126"><span class="lineNum">     126 </span>            :     /**</a>
+<a name="127"><span class="lineNum">     127 </span>            :      * Sets the current infection state of the person.</a>
+<a name="128"><span class="lineNum">     128 </span>            :      */</a>
+<a name="129"><span class="lineNum">     129 </span>            :     void set_infection_state(InfectionState inf_state);</a>
 <a name="130"><span class="lineNum">     130 </span>            : </a>
 <a name="131"><span class="lineNum">     131 </span>            :     /**</a>
-<a name="132"><span class="lineNum">     132 </span>            :      * get index and type of the current location of the person.</a>
-<a name="133"><span class="lineNum">     133 </span>            :      * @returns index and type of the current location of the person</a>
+<a name="132"><span class="lineNum">     132 </span>            :      * Get the age group of this person.</a>
+<a name="133"><span class="lineNum">     133 </span>            :      * @return age.</a>
 <a name="134"><span class="lineNum">     134 </span>            :      */</a>
-<a name="135"><span class="lineNum">     135 </span><span class="lineCov">        456 :     LocationId get_location_id() const</span></a>
+<a name="135"><span class="lineNum">     135 </span><span class="lineCov">        450 :     AbmAgeGroup get_age() const</span></a>
 <a name="136"><span class="lineNum">     136 </span>            :     {</a>
-<a name="137"><span class="lineNum">     137 </span><span class="lineCov">        456 :         return m_location_id;</span></a>
+<a name="137"><span class="lineNum">     137 </span><span class="lineCov">        450 :         return m_age;</span></a>
 <a name="138"><span class="lineNum">     138 </span>            :     }</a>
 <a name="139"><span class="lineNum">     139 </span>            : </a>
 <a name="140"><span class="lineNum">     140 </span>            :     /**</a>
-<a name="141"><span class="lineNum">     141 </span>            :      * Get the time the person has been at its current location.</a>
-<a name="142"><span class="lineNum">     142 </span>            :      * @return time span.</a>
+<a name="141"><span class="lineNum">     141 </span>            :      * get index and type of the current location of the person.</a>
+<a name="142"><span class="lineNum">     142 </span>            :      * @returns index and type of the current location of the person</a>
 <a name="143"><span class="lineNum">     143 </span>            :      */</a>
-<a name="144"><span class="lineNum">     144 </span><span class="lineCov">          2 :     TimeSpan get_time_at_location() const</span></a>
+<a name="144"><span class="lineNum">     144 </span><span class="lineCov">        457 :     LocationId get_location_id() const</span></a>
 <a name="145"><span class="lineNum">     145 </span>            :     {</a>
-<a name="146"><span class="lineNum">     146 </span><span class="lineCov">          2 :         return m_time_at_location;</span></a>
+<a name="146"><span class="lineNum">     146 </span><span class="lineCov">        457 :         return m_location_id;</span></a>
 <a name="147"><span class="lineNum">     147 </span>            :     }</a>
 <a name="148"><span class="lineNum">     148 </span>            : </a>
 <a name="149"><span class="lineNum">     149 </span>            :     /**</a>
-<a name="150"><span class="lineNum">     150 </span>            :      * Get the time since the person has been testes.</a>
+<a name="150"><span class="lineNum">     150 </span>            :      * Get the time the person has been at its current location.</a>
 <a name="151"><span class="lineNum">     151 </span>            :      * @return time span.</a>
 <a name="152"><span class="lineNum">     152 </span>            :      */</a>
-<a name="153"><span class="lineNum">     153 </span><span class="lineCov">          8 :     TimeSpan get_time_since_negative_test() const</span></a>
+<a name="153"><span class="lineNum">     153 </span><span class="lineCov">          2 :     TimeSpan get_time_at_location() const</span></a>
 <a name="154"><span class="lineNum">     154 </span>            :     {</a>
-<a name="155"><span class="lineNum">     155 </span><span class="lineCov">          8 :         return m_time_since_negative_test;</span></a>
+<a name="155"><span class="lineNum">     155 </span><span class="lineCov">          2 :         return m_time_at_location;</span></a>
 <a name="156"><span class="lineNum">     156 </span>            :     }</a>
-<a name="157"><span class="lineNum">     157 </span>            :     /**</a>
-<a name="158"><span class="lineNum">     158 </span>            :      * set an assigned location of the person. The assigned location is saved by its index.</a>
-<a name="159"><span class="lineNum">     159 </span>            :      * Assume that a person has at most one assigned location per location type.</a>
-<a name="160"><span class="lineNum">     160 </span>            :      * @param location the new assigned location</a>
+<a name="157"><span class="lineNum">     157 </span>            : </a>
+<a name="158"><span class="lineNum">     158 </span>            :     /**</a>
+<a name="159"><span class="lineNum">     159 </span>            :      * Get the time since the person has been testes.</a>
+<a name="160"><span class="lineNum">     160 </span>            :      * @return time span.</a>
 <a name="161"><span class="lineNum">     161 </span>            :      */</a>
-<a name="162"><span class="lineNum">     162 </span>            :     void set_assigned_location(Location&amp; location);</a>
-<a name="163"><span class="lineNum">     163 </span>            : </a>
-<a name="164"><span class="lineNum">     164 </span>            :     /**</a>
-<a name="165"><span class="lineNum">     165 </span>            :      * set an assigned location of the person. The assigned location is saved by an index.</a>
-<a name="166"><span class="lineNum">     166 </span>            :      * Assume that a person has at most one assigned location of a certain location type</a>
-<a name="167"><span class="lineNum">     167 </span>            :      * @param location_type location type of the new assigned location</a>
-<a name="168"><span class="lineNum">     168 </span>            :      * @param index index of the new assigned location</a>
-<a name="169"><span class="lineNum">     169 </span>            :      */</a>
-<a name="170"><span class="lineNum">     170 </span>            :     void set_assigned_location(LocationId id);</a>
-<a name="171"><span class="lineNum">     171 </span>            : </a>
-<a name="172"><span class="lineNum">     172 </span>            :     /**</a>
-<a name="173"><span class="lineNum">     173 </span>            :      * returns the index of a assigned location of the person.</a>
-<a name="174"><span class="lineNum">     174 </span>            :      * Assume that a person has at most one assigned location of a certrain location type.</a>
-<a name="175"><span class="lineNum">     175 </span>            :      * @param type location type of the assigned location</a>
-<a name="176"><span class="lineNum">     176 </span>            :      */</a>
-<a name="177"><span class="lineNum">     177 </span>            :     uint32_t get_assigned_location_index(LocationType type) const;</a>
-<a name="178"><span class="lineNum">     178 </span>            : </a>
-<a name="179"><span class="lineNum">     179 </span>            :     /**</a>
-<a name="180"><span class="lineNum">     180 </span>            :      *returns the assigned locations of the person.</a>
-<a name="181"><span class="lineNum">     181 </span>            :      */</a>
-<a name="182"><span class="lineNum">     182 </span>            :     const std::vector&lt;uint32_t&gt;&amp; get_assigned_locations() const</a>
-<a name="183"><span class="lineNum">     183 </span>            :     {</a>
-<a name="184"><span class="lineNum">     184 </span>            :         return m_assigned_locations;</a>
-<a name="185"><span class="lineNum">     185 </span>            :     }</a>
-<a name="186"><span class="lineNum">     186 </span>            : </a>
-<a name="187"><span class="lineNum">     187 </span>            :     /**</a>
-<a name="188"><span class="lineNum">     188 </span>            :      * Every person has a random number.</a>
-<a name="189"><span class="lineNum">     189 </span>            :      * Depending on this number and the time, the person works from home in case of a lockdown.</a>
-<a name="190"><span class="lineNum">     190 </span>            :      * @return if the person works from home</a>
-<a name="191"><span class="lineNum">     191 </span>            :      */</a>
-<a name="192"><span class="lineNum">     192 </span>            :     bool goes_to_work(TimePoint t, const AbmMigrationParameters&amp; params) const;</a>
-<a name="193"><span class="lineNum">     193 </span>            : </a>
-<a name="194"><span class="lineNum">     194 </span>            :     /**</a>
-<a name="195"><span class="lineNum">     195 </span>            :      * Every person has a random number to determine what time to go to work.</a>
-<a name="196"><span class="lineNum">     196 </span>            :      * Depending on this number person decides what time has to go to work;</a>
-<a name="197"><span class="lineNum">     197 </span>            :      * @return the time of going to work</a>
-<a name="198"><span class="lineNum">     198 </span>            :      */</a>
-<a name="199"><span class="lineNum">     199 </span>            :     TimeSpan get_go_to_work_time(const AbmMigrationParameters&amp; params) const;</a>
-<a name="200"><span class="lineNum">     200 </span>            : </a>
-<a name="201"><span class="lineNum">     201 </span>            :     /**</a>
-<a name="202"><span class="lineNum">     202 </span>            :      * Every person has a random number that determines if they go to school in case of a lockdown.</a>
-<a name="203"><span class="lineNum">     203 </span>            :      * @return if the person goes to school</a>
-<a name="204"><span class="lineNum">     204 </span>            :      */</a>
-<a name="205"><span class="lineNum">     205 </span>            :     bool goes_to_school(TimePoint t, const AbmMigrationParameters&amp; params) const;</a>
-<a name="206"><span class="lineNum">     206 </span>            : </a>
-<a name="207"><span class="lineNum">     207 </span>            :     /**</a>
-<a name="208"><span class="lineNum">     208 </span>            :      * Every person has a random number to determine what time to go to school.</a>
-<a name="209"><span class="lineNum">     209 </span>            :      * Depending on this number person decides what time has to go to school;</a>
-<a name="210"><span class="lineNum">     210 </span>            :      * @return the time of going to school</a>
-<a name="211"><span class="lineNum">     211 </span>            :      */</a>
-<a name="212"><span class="lineNum">     212 </span>            :     TimeSpan get_go_to_school_time(const AbmMigrationParameters&amp; params) const;</a>
-<a name="213"><span class="lineNum">     213 </span>            : </a>
-<a name="214"><span class="lineNum">     214 </span>            :     /**</a>
-<a name="215"><span class="lineNum">     215 </span>            :      * Answers the question if a person is currently in quarantine.</a>
-<a name="216"><span class="lineNum">     216 </span>            :      * @return if the person is in quarantine</a>
-<a name="217"><span class="lineNum">     217 </span>            :      */</a>
-<a name="218"><span class="lineNum">     218 </span><span class="lineCov">         30 :     bool is_in_quarantine() const</span></a>
-<a name="219"><span class="lineNum">     219 </span>            :     {</a>
-<a name="220"><span class="lineNum">     220 </span><span class="lineCov">         30 :         return m_quarantine;</span></a>
-<a name="221"><span class="lineNum">     221 </span>            :     }</a>
+<a name="162"><span class="lineNum">     162 </span><span class="lineCov">         10 :     TimeSpan get_time_since_negative_test() const</span></a>
+<a name="163"><span class="lineNum">     163 </span>            :     {</a>
+<a name="164"><span class="lineNum">     164 </span><span class="lineCov">         10 :         return m_time_since_negative_test;</span></a>
+<a name="165"><span class="lineNum">     165 </span>            :     }</a>
+<a name="166"><span class="lineNum">     166 </span>            :     /**</a>
+<a name="167"><span class="lineNum">     167 </span>            :      * set an assigned location of the person. The assigned location is saved by its index.</a>
+<a name="168"><span class="lineNum">     168 </span>            :      * Assume that a person has at most one assigned location per location type.</a>
+<a name="169"><span class="lineNum">     169 </span>            :      * @param location the new assigned location</a>
+<a name="170"><span class="lineNum">     170 </span>            :      */</a>
+<a name="171"><span class="lineNum">     171 </span>            :     void set_assigned_location(Location&amp; location);</a>
+<a name="172"><span class="lineNum">     172 </span>            : </a>
+<a name="173"><span class="lineNum">     173 </span>            :     /**</a>
+<a name="174"><span class="lineNum">     174 </span>            :      * set an assigned location of the person. The assigned location is saved by an index.</a>
+<a name="175"><span class="lineNum">     175 </span>            :      * Assume that a person has at most one assigned location of a certain location type</a>
+<a name="176"><span class="lineNum">     176 </span>            :      * @param location_type location type of the new assigned location</a>
+<a name="177"><span class="lineNum">     177 </span>            :      * @param index index of the new assigned location</a>
+<a name="178"><span class="lineNum">     178 </span>            :      */</a>
+<a name="179"><span class="lineNum">     179 </span>            :     void set_assigned_location(LocationId id);</a>
+<a name="180"><span class="lineNum">     180 </span>            : </a>
+<a name="181"><span class="lineNum">     181 </span>            :     /**</a>
+<a name="182"><span class="lineNum">     182 </span>            :      * returns the index of a assigned location of the person.</a>
+<a name="183"><span class="lineNum">     183 </span>            :      * Assume that a person has at most one assigned location of a certrain location type.</a>
+<a name="184"><span class="lineNum">     184 </span>            :      * @param type location type of the assigned location</a>
+<a name="185"><span class="lineNum">     185 </span>            :      */</a>
+<a name="186"><span class="lineNum">     186 </span>            :     uint32_t get_assigned_location_index(LocationType type) const;</a>
+<a name="187"><span class="lineNum">     187 </span>            : </a>
+<a name="188"><span class="lineNum">     188 </span>            :     /**</a>
+<a name="189"><span class="lineNum">     189 </span>            :      *returns the assigned locations of the person.</a>
+<a name="190"><span class="lineNum">     190 </span>            :      */</a>
+<a name="191"><span class="lineNum">     191 </span>            :     const std::vector&lt;uint32_t&gt;&amp; get_assigned_locations() const</a>
+<a name="192"><span class="lineNum">     192 </span>            :     {</a>
+<a name="193"><span class="lineNum">     193 </span>            :         return m_assigned_locations;</a>
+<a name="194"><span class="lineNum">     194 </span>            :     }</a>
+<a name="195"><span class="lineNum">     195 </span>            : </a>
+<a name="196"><span class="lineNum">     196 </span>            :     /**</a>
+<a name="197"><span class="lineNum">     197 </span>            :      * Every person has a random number.</a>
+<a name="198"><span class="lineNum">     198 </span>            :      * Depending on this number and the time, the person works from home in case of a lockdown.</a>
+<a name="199"><span class="lineNum">     199 </span>            :      * @return if the person works from home</a>
+<a name="200"><span class="lineNum">     200 </span>            :      */</a>
+<a name="201"><span class="lineNum">     201 </span>            :     bool goes_to_work(TimePoint t, const AbmMigrationParameters&amp; params) const;</a>
+<a name="202"><span class="lineNum">     202 </span>            : </a>
+<a name="203"><span class="lineNum">     203 </span>            :     /**</a>
+<a name="204"><span class="lineNum">     204 </span>            :      * Every person has a random number to determine what time to go to work.</a>
+<a name="205"><span class="lineNum">     205 </span>            :      * Depending on this number person decides what time has to go to work;</a>
+<a name="206"><span class="lineNum">     206 </span>            :      * @return the time of going to work</a>
+<a name="207"><span class="lineNum">     207 </span>            :      */</a>
+<a name="208"><span class="lineNum">     208 </span>            :     TimeSpan get_go_to_work_time(const AbmMigrationParameters&amp; params) const;</a>
+<a name="209"><span class="lineNum">     209 </span>            : </a>
+<a name="210"><span class="lineNum">     210 </span>            :     /**</a>
+<a name="211"><span class="lineNum">     211 </span>            :      * Every person has a random number that determines if they go to school in case of a lockdown.</a>
+<a name="212"><span class="lineNum">     212 </span>            :      * @return if the person goes to school</a>
+<a name="213"><span class="lineNum">     213 </span>            :      */</a>
+<a name="214"><span class="lineNum">     214 </span>            :     bool goes_to_school(TimePoint t, const AbmMigrationParameters&amp; params) const;</a>
+<a name="215"><span class="lineNum">     215 </span>            : </a>
+<a name="216"><span class="lineNum">     216 </span>            :     /**</a>
+<a name="217"><span class="lineNum">     217 </span>            :      * Every person has a random number to determine what time to go to school.</a>
+<a name="218"><span class="lineNum">     218 </span>            :      * Depending on this number person decides what time has to go to school;</a>
+<a name="219"><span class="lineNum">     219 </span>            :      * @return the time of going to school</a>
+<a name="220"><span class="lineNum">     220 </span>            :      */</a>
+<a name="221"><span class="lineNum">     221 </span>            :     TimeSpan get_go_to_school_time(const AbmMigrationParameters&amp; params) const;</a>
 <a name="222"><span class="lineNum">     222 </span>            : </a>
 <a name="223"><span class="lineNum">     223 </span>            :     /**</a>
-<a name="224"><span class="lineNum">     224 </span>            :      * Simulates a Corona test and returns the test result of the person.</a>
-<a name="225"><span class="lineNum">     225 </span>            :      * If the test is positive, the person has to quarantine.</a>
-<a name="226"><span class="lineNum">     226 </span>            :      * If the test is negative, quarantine ends.</a>
-<a name="227"><span class="lineNum">     227 </span>            :      * @param params sensitivity and specificity of the test method</a>
-<a name="228"><span class="lineNum">     228 </span>            :      * @return true if the test result of the person is positive</a>
-<a name="229"><span class="lineNum">     229 </span>            :      */</a>
-<a name="230"><span class="lineNum">     230 </span>            :     bool get_tested(const TestParameters&amp; params);</a>
+<a name="224"><span class="lineNum">     224 </span>            :      * Answers the question if a person is currently in quarantine.</a>
+<a name="225"><span class="lineNum">     225 </span>            :      * @return if the person is in quarantine</a>
+<a name="226"><span class="lineNum">     226 </span>            :      */</a>
+<a name="227"><span class="lineNum">     227 </span><span class="lineCov">         31 :     bool is_in_quarantine() const</span></a>
+<a name="228"><span class="lineNum">     228 </span>            :     {</a>
+<a name="229"><span class="lineNum">     229 </span><span class="lineCov">         31 :         return m_quarantine;</span></a>
+<a name="230"><span class="lineNum">     230 </span>            :     }</a>
 <a name="231"><span class="lineNum">     231 </span>            : </a>
 <a name="232"><span class="lineNum">     232 </span>            :     /**</a>
-<a name="233"><span class="lineNum">     233 </span>            :      * get the person id of the person</a>
-<a name="234"><span class="lineNum">     234 </span>            :      * the person id should correspondet to the index in m_persons in world</a>
-<a name="235"><span class="lineNum">     235 </span>            :      */</a>
-<a name="236"><span class="lineNum">     236 </span>            :     uint32_t get_person_id();</a>
-<a name="237"><span class="lineNum">     237 </span>            : </a>
-<a name="238"><span class="lineNum">     238 </span>            :     /**</a>
-<a name="239"><span class="lineNum">     239 </span>            :      * get index of cells of the person</a>
-<a name="240"><span class="lineNum">     240 </span>            :      */</a>
-<a name="241"><span class="lineNum">     241 </span>            :     std::vector&lt;uint32_t&gt;&amp; get_cells();</a>
-<a name="242"><span class="lineNum">     242 </span>            : </a>
-<a name="243"><span class="lineNum">     243 </span>            :     const std::vector&lt;uint32_t&gt;&amp; get_cells() const;</a>
-<a name="244"><span class="lineNum">     244 </span>            : </a>
-<a name="245"><span class="lineNum">     245 </span>            : private:</a>
-<a name="246"><span class="lineNum">     246 </span>            :     LocationId m_location_id;</a>
-<a name="247"><span class="lineNum">     247 </span>            :     std::vector&lt;uint32_t&gt; m_assigned_locations;</a>
-<a name="248"><span class="lineNum">     248 </span>            :     InfectionState m_infection_state;</a>
-<a name="249"><span class="lineNum">     249 </span>            :     VaccinationState m_vaccination_state;</a>
-<a name="250"><span class="lineNum">     250 </span>            :     TimeSpan m_time_until_carrier;</a>
-<a name="251"><span class="lineNum">     251 </span>            :     bool m_quarantine;</a>
-<a name="252"><span class="lineNum">     252 </span>            :     mio::Index&lt;AbmAgeGroup&gt; m_age;</a>
-<a name="253"><span class="lineNum">     253 </span>            :     TimeSpan m_time_at_location;</a>
-<a name="254"><span class="lineNum">     254 </span>            :     double m_random_workgroup;</a>
-<a name="255"><span class="lineNum">     255 </span>            :     double m_random_schoolgroup;</a>
-<a name="256"><span class="lineNum">     256 </span>            :     double m_random_goto_work_hour;</a>
-<a name="257"><span class="lineNum">     257 </span>            :     double m_random_goto_school_hour;</a>
-<a name="258"><span class="lineNum">     258 </span>            :     TimeSpan m_time_since_negative_test;</a>
-<a name="259"><span class="lineNum">     259 </span>            :     uint32_t m_person_id;</a>
-<a name="260"><span class="lineNum">     260 </span>            :     std::vector&lt;uint32_t&gt; m_cells;</a>
-<a name="261"><span class="lineNum">     261 </span>            : };</a>
-<a name="262"><span class="lineNum">     262 </span>            : </a>
-<a name="263"><span class="lineNum">     263 </span>            : } // namespace mio</a>
-<a name="264"><span class="lineNum">     264 </span>            : </a>
-<a name="265"><span class="lineNum">     265 </span>            : #endif</a>
+<a name="233"><span class="lineNum">     233 </span>            :      * Simulates a Corona test and returns the test result of the person.</a>
+<a name="234"><span class="lineNum">     234 </span>            :      * If the test is positive, the person has to quarantine.</a>
+<a name="235"><span class="lineNum">     235 </span>            :      * If the test is negative, quarantine ends.</a>
+<a name="236"><span class="lineNum">     236 </span>            :      * @param params sensitivity and specificity of the test method</a>
+<a name="237"><span class="lineNum">     237 </span>            :      * @return true if the test result of the person is positive</a>
+<a name="238"><span class="lineNum">     238 </span>            :      */</a>
+<a name="239"><span class="lineNum">     239 </span>            :     bool get_tested(const TestParameters&amp; params);</a>
+<a name="240"><span class="lineNum">     240 </span>            : </a>
+<a name="241"><span class="lineNum">     241 </span>            :     /**</a>
+<a name="242"><span class="lineNum">     242 </span>            :      * get the person id of the person</a>
+<a name="243"><span class="lineNum">     243 </span>            :      * the person id should correspondet to the index in m_persons in world</a>
+<a name="244"><span class="lineNum">     244 </span>            :      */</a>
+<a name="245"><span class="lineNum">     245 </span>            :     uint32_t get_person_id();</a>
+<a name="246"><span class="lineNum">     246 </span>            : </a>
+<a name="247"><span class="lineNum">     247 </span>            :     /**</a>
+<a name="248"><span class="lineNum">     248 </span>            :      * get index of cells of the person</a>
+<a name="249"><span class="lineNum">     249 </span>            :      */</a>
+<a name="250"><span class="lineNum">     250 </span>            :     std::vector&lt;uint32_t&gt;&amp; get_cells();</a>
+<a name="251"><span class="lineNum">     251 </span>            : </a>
+<a name="252"><span class="lineNum">     252 </span>            :     const std::vector&lt;uint32_t&gt;&amp; get_cells() const;</a>
+<a name="253"><span class="lineNum">     253 </span>            : </a>
+<a name="254"><span class="lineNum">     254 </span>            : private:</a>
+<a name="255"><span class="lineNum">     255 </span>            :     LocationId m_location_id;</a>
+<a name="256"><span class="lineNum">     256 </span>            :     std::vector&lt;uint32_t&gt; m_assigned_locations;</a>
+<a name="257"><span class="lineNum">     257 </span>            :     InfectionState m_infection_state;</a>
+<a name="258"><span class="lineNum">     258 </span>            :     VaccinationState m_vaccination_state;</a>
+<a name="259"><span class="lineNum">     259 </span>            :     TimeSpan m_time_until_carrier;</a>
+<a name="260"><span class="lineNum">     260 </span>            :     bool m_quarantine;</a>
+<a name="261"><span class="lineNum">     261 </span>            :     AbmAgeGroup m_age;</a>
+<a name="262"><span class="lineNum">     262 </span>            :     TimeSpan m_time_at_location;</a>
+<a name="263"><span class="lineNum">     263 </span>            :     double m_random_workgroup;</a>
+<a name="264"><span class="lineNum">     264 </span>            :     double m_random_schoolgroup;</a>
+<a name="265"><span class="lineNum">     265 </span>            :     double m_random_goto_work_hour;</a>
+<a name="266"><span class="lineNum">     266 </span>            :     double m_random_goto_school_hour;</a>
+<a name="267"><span class="lineNum">     267 </span>            :     TimeSpan m_time_since_negative_test;</a>
+<a name="268"><span class="lineNum">     268 </span>            :     uint32_t m_person_id;</a>
+<a name="269"><span class="lineNum">     269 </span>            :     std::vector&lt;uint32_t&gt; m_cells;</a>
+<a name="270"><span class="lineNum">     270 </span>            : };</a>
+<a name="271"><span class="lineNum">     271 </span>            : </a>
+<a name="272"><span class="lineNum">     272 </span>            : } // namespace mio</a>
+<a name="273"><span class="lineNum">     273 </span>            : </a>
+<a name="274"><span class="lineNum">     274 </span>            : #endif</a>
 </pre>
       </td>
     </tr>
