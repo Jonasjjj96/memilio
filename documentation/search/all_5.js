@@ -31,5 +31,5 @@ var searchData=
   ['evolve_5fmodel_245',['evolve_model',['../namespacemio.html#aebf8e2a8ccea82f3bbd91c3d479d1094',1,'mio']]],
   ['exponentialdistribution_246',['ExponentialDistribution',['../namespacemio.html#a4116647943793f9c44b5e2c70ea1a84e',1,'mio']]],
   ['exposed_247',['Exposed',['../namespacemio.html#a2e4305478e894848657fca367c5a9800aa54eecd5041d37f5c8443e0ee91e241a',1,'mio::Exposed()'],['../namespacemio.html#ab764bd5fabfc7f31499bcb6791929895aa54eecd5041d37f5c8443e0ee91e241a',1,'mio::Exposed()'],['../namespacemio.html#a2e4305478e894848657fca367c5a9800aa54eecd5041d37f5c8443e0ee91e241a',1,'mio::Exposed()'],['../namespacemio.html#ab764bd5fabfc7f31499bcb6791929895aa54eecd5041d37f5c8443e0ee91e241a',1,'mio::Exposed()']]],
-  ['extract_5fsubframe_5fbased_5fon_5fdates_248',['extract_subframe_based_on_dates',['../namespacememilio_1_1epidata_1_1getDIVIData.html#aad2e84d29535d28b9b42f17a06933aca',1,'memilio::epidata::getDIVIData']]]
+  ['extract_5fsubframe_5fbased_5fon_5fdates_248',['extract_subframe_based_on_dates',['../namespacememilio_1_1epidata_1_1modifyDataframeSeries.html#abe568d90d62bbeb5a8bb9cc7c740621e',1,'memilio::epidata::modifyDataframeSeries']]]
 ];

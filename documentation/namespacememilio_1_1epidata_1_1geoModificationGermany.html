@@ -127,6 +127,12 @@ Functions</h2></td></tr>
 <tr class="separator:adcaef639980624435017ecb289f52779"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3cf3cce0c2afd6afab9e4382aff669eb"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacememilio_1_1epidata_1_1geoModificationGermany.html#a3cf3cce0c2afd6afab9e4382aff669eb">get_stateid_to_name</a> ()</td></tr>
 <tr class="separator:a3cf3cce0c2afd6afab9e4382aff669eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c6d82414ccb48583b1a1edbd2298d3c"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacememilio_1_1epidata_1_1geoModificationGermany.html#a3c6d82414ccb48583b1a1edbd2298d3c">insert_names_of_counties</a> (df, county_id_col=dd.EngEng[&quot;idCounty&quot;], merge_berlin=True)</td></tr>
+<tr class="memdesc:a3c6d82414ccb48583b1a1edbd2298d3c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a column with names of counties given a dataframe with state ids.  <a href="namespacememilio_1_1epidata_1_1geoModificationGermany.html#a3c6d82414ccb48583b1a1edbd2298d3c">More...</a><br /></td></tr>
+<tr class="separator:a3c6d82414ccb48583b1a1edbd2298d3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d9042405fba66f506f90ba85fa31240"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacememilio_1_1epidata_1_1geoModificationGermany.html#a7d9042405fba66f506f90ba85fa31240">insert_names_of_states</a> (df, state_id_col=dd.EngEng[&quot;idState&quot;])</td></tr>
+<tr class="memdesc:a7d9042405fba66f506f90ba85fa31240"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a column with names of states given a dataframe with state ids.  <a href="namespacememilio_1_1epidata_1_1geoModificationGermany.html#a7d9042405fba66f506f90ba85fa31240">More...</a><br /></td></tr>
+<tr class="separator:a7d9042405fba66f506f90ba85fa31240"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a498e32778ba64548a4c932d622635ba4"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacememilio_1_1epidata_1_1geoModificationGermany.html#a498e32778ba64548a4c932d622635ba4">merge_df_counties</a> (df, merged_id, separated_ids, sorting=[dd.EngEng['date']], columns=dd.EngEng['date'], method='sum')</td></tr>
 <tr class="memdesc:a498e32778ba64548a4c932d622635ba4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Merges the data frame data of different local entities such as the districts of Berlin or counties that were merged on political decision in between.  <a href="namespacememilio_1_1epidata_1_1geoModificationGermany.html#a498e32778ba64548a4c932d622635ba4">More...</a><br /></td></tr>
 <tr class="separator:a498e32778ba64548a4c932d622635ba4"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -790,6 +796,89 @@ Variables</h2></td></tr>
 
 @return hash map from federal state ID to state name.
 </pre> 
+</div>
+</div>
+<a id="a3c6d82414ccb48583b1a1edbd2298d3c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3c6d82414ccb48583b1a1edbd2298d3c">&#9670;&nbsp;</a></span>insert_names_of_counties()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def memilio.epidata.geoModificationGermany.insert_names_of_counties </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>df</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>county_id_col</em> = <code>dd.EngEng[&quot;idCounty&quot;]</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>merge_berlin</em> = <code>True</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Adds a column with names of counties given a dataframe with state ids. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">df</td><td>dataframe with county ids and missing county names </td></tr>
+    <tr><td class="paramname">county_id_col</td><td>column name of the column containing the county ids </td></tr>
+    <tr><td class="paramname">merge_berlin</td><td>[Default: True] Defines whether the different districts are listed separately or combined as one entity 'Berlin'. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>dataframe df with column of state names corresponding to county ids </dd></dl>
+
+</div>
+</div>
+<a id="a7d9042405fba66f506f90ba85fa31240"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7d9042405fba66f506f90ba85fa31240">&#9670;&nbsp;</a></span>insert_names_of_states()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def memilio.epidata.geoModificationGermany.insert_names_of_states </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>df</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>state_id_col</em> = <code>dd.EngEng[&quot;idState&quot;]</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Adds a column with names of states given a dataframe with state ids. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">df</td><td>dataframe with state ids and missing state names </td></tr>
+    <tr><td class="paramname">state_id_col</td><td>column name of the column containing the state ids </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>dataframe df with column of state names corresponding to county ids </dd></dl>
+
 </div>
 </div>
 <a id="a498e32778ba64548a4c932d622635ba4"></a>

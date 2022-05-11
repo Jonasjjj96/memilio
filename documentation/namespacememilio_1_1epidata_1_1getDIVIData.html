@@ -78,9 +78,6 @@ Functions</h2></td></tr>
 <tr class="memitem:a0c383523a7c16ec6b2e37bc2392a6f34"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacememilio_1_1epidata_1_1getDIVIData.html#a0c383523a7c16ec6b2e37bc2392a6f34">divi_data_sanity_checks</a> (df=pd.DataFrame())</td></tr>
 <tr class="memdesc:a0c383523a7c16ec6b2e37bc2392a6f34"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks the sanity of the divi_data dataframe.  <a href="namespacememilio_1_1epidata_1_1getDIVIData.html#a0c383523a7c16ec6b2e37bc2392a6f34">More...</a><br /></td></tr>
 <tr class="separator:a0c383523a7c16ec6b2e37bc2392a6f34"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aad2e84d29535d28b9b42f17a06933aca"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacememilio_1_1epidata_1_1getDIVIData.html#aad2e84d29535d28b9b42f17a06933aca">extract_subframe_based_on_dates</a> (df, start_date, end_date)</td></tr>
-<tr class="memdesc:aad2e84d29535d28b9b42f17a06933aca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes all data with date lower than start date or higher than end date.  <a href="namespacememilio_1_1epidata_1_1getDIVIData.html#aad2e84d29535d28b9b42f17a06933aca">More...</a><br /></td></tr>
-<tr class="separator:aad2e84d29535d28b9b42f17a06933aca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aae431dedb4dbab6165913e966181dee1"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacememilio_1_1epidata_1_1getDIVIData.html#aae431dedb4dbab6165913e966181dee1">get_divi_data</a> (read_data=dd.defaultDict['read_data'], file_format=dd.defaultDict['file_format'], out_folder=dd.defaultDict['out_folder'], no_raw=dd.defaultDict['no_raw'], end_date=dd.defaultDict['end_date'], start_date=dd.defaultDict['start_date'], impute_dates=dd.defaultDict['impute_dates'], moving_average=dd.defaultDict['moving_average'])</td></tr>
 <tr class="memdesc:aae431dedb4dbab6165913e966181dee1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Downloads or reads the DIVI ICU data and writes them in different files.  <a href="namespacememilio_1_1epidata_1_1getDIVIData.html#aae431dedb4dbab6165913e966181dee1">More...</a><br /></td></tr>
 <tr class="separator:aae431dedb4dbab6165913e966181dee1"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -109,51 +106,6 @@ Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">df</td><td>The dataframe which has to be checked </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="aad2e84d29535d28b9b42f17a06933aca"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aad2e84d29535d28b9b42f17a06933aca">&#9670;&nbsp;</a></span>extract_subframe_based_on_dates()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">def memilio.epidata.getDIVIData.extract_subframe_based_on_dates </td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>df</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>start_date</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>end_date</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Removes all data with date lower than start date or higher than end date. </p>
-<p>Returns the Dataframe with only dates between start date and end date. Resets the Index of the Dataframe.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">df</td><td>The dataframe which has to be edited </td></tr>
-    <tr><td class="paramname">start_date</td><td>Date of first date in dataframe </td></tr>
-    <tr><td class="paramname">end_date</td><td>Date of last date in dataframe </td></tr>
   </table>
   </dd>
 </dl>
@@ -223,8 +175,8 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Downloads or reads the DIVI ICU data and writes them in different files. </p>
-<p>Available data starts from 2020-04-24. If the given start_date is earlier, it is changed to this date and a warning is printed. If it does not already exist, the folder Germany is generated in the given out_folder. If read_data == True and the file "FullData_DIVI.json" exists, the data is read form this file and stored in a pandas dataframe. Otherwise the program is stopped.</p>
-<p>The dataframe is written to the file filename = "FullData_DIVI". Than the columns are renamed to English and the state and county names are added. Afterwards, three kinds of structuring of the data are done. We obtain the chronological sequence of ICU and ICU_ventilated stored in the files "county_divi".json", "state_divi.json" and "germany_divi.json" for counties, states and whole Germany, respectively.</p>
+<p>Available data starts from 2020-04-24. If the given start_date is earlier, it is changed to this date and a warning is printed. If it does not already exist, the folder Germany is generated in the given out_folder. If read_data == True and the file "FullData_DIVI.json" exists, the data is read form this file and stored in a pandas dataframe. If read_data = True and the file does not exist the program is stopped.</p>
+<p>The downloaded dataframe is written to the file "FullData_DIVI". After that, the columns are renamed to English and the state and county names are added. Afterwards, three kinds of structuring of the data are done. We obtain the chronological sequence of ICU and ICU_ventilated stored in the files "county_divi".json", "state_divi.json" and "germany_divi.json" for counties, states and whole Germany, respectively.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">read_data</td><td>False [Default] or True. Defines if data is read from file or downloaded. </td></tr>

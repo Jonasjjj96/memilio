@@ -75,11 +75,62 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:abe568d90d62bbeb5a8bb9cc7c740621e"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacememilio_1_1epidata_1_1modifyDataframeSeries.html#abe568d90d62bbeb5a8bb9cc7c740621e">extract_subframe_based_on_dates</a> (df, start_date, end_date)</td></tr>
+<tr class="memdesc:abe568d90d62bbeb5a8bb9cc7c740621e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes all data with date lower than start date or higher than end date.  <a href="namespacememilio_1_1epidata_1_1modifyDataframeSeries.html#abe568d90d62bbeb5a8bb9cc7c740621e">More...</a><br /></td></tr>
+<tr class="separator:abe568d90d62bbeb5a8bb9cc7c740621e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6c9ee11a9567c103abfbba3376d29235"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacememilio_1_1epidata_1_1modifyDataframeSeries.html#a6c9ee11a9567c103abfbba3376d29235">impute_and_reduce_df</a> (df_old, group_by_cols, mod_cols, impute='forward', moving_average=0, min_date='', max_date='', start_w_firstval=False)</td></tr>
 <tr class="memdesc:a6c9ee11a9567c103abfbba3376d29235"><td class="mdescLeft">&#160;</td><td class="mdescRight">Impute missing dates of dataframe time series and optionally calculates a moving average of the data.  <a href="namespacememilio_1_1epidata_1_1modifyDataframeSeries.html#a6c9ee11a9567c103abfbba3376d29235">More...</a><br /></td></tr>
 <tr class="separator:a6c9ee11a9567c103abfbba3376d29235"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f5e314e012fab4bce45a073e98d5174"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacememilio_1_1epidata_1_1modifyDataframeSeries.html#a6f5e314e012fab4bce45a073e98d5174">insert_column_by_map</a> (df, col_to_map, new_col_name, map)</td></tr>
+<tr class="memdesc:a6f5e314e012fab4bce45a073e98d5174"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a column to a given dataframe based on a mapping of values of a given column.  <a href="namespacememilio_1_1epidata_1_1modifyDataframeSeries.html#a6f5e314e012fab4bce45a073e98d5174">More...</a><br /></td></tr>
+<tr class="separator:a6f5e314e012fab4bce45a073e98d5174"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="abe568d90d62bbeb5a8bb9cc7c740621e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abe568d90d62bbeb5a8bb9cc7c740621e">&#9670;&nbsp;</a></span>extract_subframe_based_on_dates()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def memilio.epidata.modifyDataframeSeries.extract_subframe_based_on_dates </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>df</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>start_date</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>end_date</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Removes all data with date lower than start date or higher than end date. </p>
+<p>Returns the Dataframe with only dates between start date and end date. Resets the Index of the Dataframe.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">df</td><td>The dataframe which has to be edited </td></tr>
+    <tr><td class="paramname">start_date</td><td>Date of first date in dataframe </td></tr>
+    <tr><td class="paramname">end_date</td><td>Date of last date in dataframe </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a6c9ee11a9567c103abfbba3376d29235"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6c9ee11a9567c103abfbba3376d29235">&#9670;&nbsp;</a></span>impute_and_reduce_df()</h2>
 
@@ -157,6 +208,58 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>dataframe with imputed dates (and moving average if requested) </dd></dl>
+
+</div>
+</div>
+<a id="a6f5e314e012fab4bce45a073e98d5174"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f5e314e012fab4bce45a073e98d5174">&#9670;&nbsp;</a></span>insert_column_by_map()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def memilio.epidata.modifyDataframeSeries.insert_column_by_map </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>df</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>col_to_map</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>new_col_name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>map</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Adds a column to a given dataframe based on a mapping of values of a given column. </p>
+<p>The mapping is defined by a list containing tupels of the form (new_value, old_value) where old_value is a value in the col_to_map and new_value the value that is added in the new column if col_to_map contains the old_value. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">df</td><td>dataframe to modify </td></tr>
+    <tr><td class="paramname">col_to_map</td><td>column containing values to be mapped </td></tr>
+    <tr><td class="paramname">new_col_name</td><td>name of the new column containing the mapped values </td></tr>
+    <tr><td class="paramname">map</td><td>List of tuples of values in the column to be added and values in the given column </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>dataframe df with column of state names correspomding to state ids </dd></dl>
 
 </div>
 </div>
