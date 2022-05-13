@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['localinfectionparameters_2385',['LocalInfectionParameters',['../namespacemio.html#a84f5346f55c2621d78f320811b7840eb',1,'mio']]],
-  ['locationiterator_2386',['LocationIterator',['../classmio_1_1World.html#a7210bc22050b6285527b974df3f6434b',1,'mio::World']]]
+  ['localinfectionparameters_2381',['LocalInfectionParameters',['../namespacemio_1_1abm.html#ac2605ee8b302c94d664ddd892db76996',1,'mio::abm']]],
+  ['locationiterator_2382',['LocationIterator',['../classmio_1_1abm_1_1World.html#a3598d16f4b3ec4b8152194ad13547fff',1,'mio::abm::World']]]
 ];

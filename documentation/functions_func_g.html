@@ -75,16 +75,16 @@ $(function() {
 , <a class="el" href="classmio_1_1TypeSafe.html#ab04a46a971cc3558a3a8776a2646be48">mio::TypeSafe&lt; T, Derived &gt;</a>
 </li>
 <li>get_age()
-: <a class="el" href="classmio_1_1Person.html#a2dd8651379329b2d37b6035008ddf112">mio::Person</a>
+: <a class="el" href="classmio_1_1abm_1_1Person.html#a92883550827db7067f9098bba68f72ed">mio::abm::Person</a>
 </li>
 <li>get_age_weights()
-: <a class="el" href="classmio_1_1HouseholdMember.html#a4688c7afa3d664c2cecbe9cede29e225">mio::HouseholdMember</a>
+: <a class="el" href="classmio_1_1abm_1_1HouseholdMember.html#ae2f01717783d6e7fb1623fc9b3d83265">mio::abm::HouseholdMember</a>
 </li>
 <li>get_assigned_location_index()
-: <a class="el" href="classmio_1_1Person.html#a01e4707bed587c92f309cb698866a259">mio::Person</a>
+: <a class="el" href="classmio_1_1abm_1_1Person.html#af8770b3fa5ab2417bd6db805abaf4f9a">mio::abm::Person</a>
 </li>
 <li>get_assigned_locations()
-: <a class="el" href="classmio_1_1Person.html#a9286812cfc256d5f9d5a7723d09ef292">mio::Person</a>
+: <a class="el" href="classmio_1_1abm_1_1Person.html#acf2fd7b9fe82fc0d8a76099517be9e47">mio::abm::Person</a>
 </li>
 <li>get_base_value()
 : <a class="el" href="classmio_1_1DynamicNPIs.html#aca5a7daba20450a37e38ed1e46e16587">mio::DynamicNPIs</a>
@@ -96,8 +96,8 @@ $(function() {
 : <a class="el" href="classmio_1_1TimeSeries.html#a751c9c8fec2ea77e22eda73444980a59">mio::TimeSeries&lt; FP &gt;</a>
 </li>
 <li>get_cells()
-: <a class="el" href="classmio_1_1Location.html#a74962f2ffc2c27c058bedfe77d9627dd">mio::Location</a>
-, <a class="el" href="classmio_1_1Person.html#ade3462cb1b21bca1b1298446df78e83e">mio::Person</a>
+: <a class="el" href="classmio_1_1abm_1_1Location.html#a259fdf63985e692e0a7ab39f99af43cd">mio::abm::Location</a>
+, <a class="el" href="classmio_1_1abm_1_1Person.html#a580a3592abc0e72920b9f56535cf0cf3">mio::abm::Person</a>
 </li>
 <li>get_coefficients()
 : <a class="el" href="classmio_1_1MigrationParameters.html#aa24351d9b60a5e163753930217cf36f0">mio::MigrationParameters</a>
@@ -118,29 +118,43 @@ $(function() {
 : <a class="el" href="classmio_1_1UncertainContactMatrix.html#ab40516fd780c0649ad6a874b1213416c">mio::UncertainContactMatrix</a>
 </li>
 <li>get_current_index()
-: <a class="el" href="classmio_1_1TripList.html#a72bd872aa73bbdc9cb4159c4c36dd0cf">mio::TripList</a>
+: <a class="el" href="classmio_1_1abm_1_1TripList.html#a0d1bc12cbdc07ea446a8a3884a2b7f3c">mio::abm::TripList</a>
 </li>
 <li>get_dampings()
 : <a class="el" href="classmio_1_1DampingMatrixExpression.html#aa8511a6191706d67b4b80c6bc9102af9">mio::DampingMatrixExpression&lt; D &gt;</a>
 , <a class="el" href="classmio_1_1UncertainContactMatrix.html#af0217ee945eea3dbca086270d3f4b1b2">mio::UncertainContactMatrix</a>
 </li>
 <li>get_default()
-: <a class="el" href="structmio_1_1AntigenTest.html#a3bc2f03c03f488715ad117e72c5b8ce9">mio::AntigenTest</a>
+: <a class="el" href="structmio_1_1abm_1_1AntigenTest.html#af33ef6005685529906c6cc4a263991d0">mio::abm::AntigenTest</a>
+, <a class="el" href="structmio_1_1abm_1_1BasicShoppingRate.html#a5812ad2cbfce0928bb5279717d789ce5">mio::abm::BasicShoppingRate</a>
+, <a class="el" href="structmio_1_1abm_1_1CarrierToInfected.html#a3b2158d444eba83fbedda8ea55fcd892">mio::abm::CarrierToInfected</a>
+, <a class="el" href="structmio_1_1abm_1_1CarrierToRecovered.html#a4944903fdcb09045f5ed29c808a0f4fb">mio::abm::CarrierToRecovered</a>
+, <a class="el" href="structmio_1_1abm_1_1CriticalToDead.html#aa3172061d3a582b2575296ac8ce92562">mio::abm::CriticalToDead</a>
+, <a class="el" href="structmio_1_1abm_1_1CriticalToRecovered.html#a778171e4acababe27f13049d2a93ecf0">mio::abm::CriticalToRecovered</a>
+, <a class="el" href="structmio_1_1abm_1_1DetectInfection.html#aaead5ef2843cc494fb07817d9ff50979">mio::abm::DetectInfection</a>
+, <a class="el" href="structmio_1_1abm_1_1GotoSchoolTimeMaximum.html#a86bc64d83344f902039c774d0b43128b">mio::abm::GotoSchoolTimeMaximum</a>
+, <a class="el" href="structmio_1_1abm_1_1GotoSchoolTimeMinimum.html#a0476f44558e5e33e47af9c127575c2ad">mio::abm::GotoSchoolTimeMinimum</a>
+, <a class="el" href="structmio_1_1abm_1_1GotoWorkTimeMaximum.html#a8fee69eeb47f4a1663391f413a66da2f">mio::abm::GotoWorkTimeMaximum</a>
+, <a class="el" href="structmio_1_1abm_1_1GotoWorkTimeMinimum.html#a5649c8a3ea4a155c4a7673f05058bf3a">mio::abm::GotoWorkTimeMinimum</a>
+, <a class="el" href="structmio_1_1abm_1_1IncubationPeriod.html#a36dc314e3e21b1688f73ccef354d73d2">mio::abm::IncubationPeriod</a>
+, <a class="el" href="structmio_1_1abm_1_1InfectedToRecovered.html#a244c7a1627c6e0b50947eeace7359451">mio::abm::InfectedToRecovered</a>
+, <a class="el" href="structmio_1_1abm_1_1InfectedToSevere.html#a2b57ac85f99e08a90141236c6c91f010">mio::abm::InfectedToSevere</a>
+, <a class="el" href="structmio_1_1abm_1_1LockdownDate.html#aeebc7981ba2d287218798b43e40713de">mio::abm::LockdownDate</a>
+, <a class="el" href="structmio_1_1abm_1_1MaximumContacts.html#a84bbab0887596fcb3ea2d5ac8cd8fd31">mio::abm::MaximumContacts</a>
+, <a class="el" href="structmio_1_1abm_1_1RecoveredToSusceptible.html#a4fb8d8ac83456fbaa0029b29f3375f57">mio::abm::RecoveredToSusceptible</a>
+, <a class="el" href="structmio_1_1abm_1_1SchoolRatio.html#a30dfb0638d143a826a7060aa6bfa46dd">mio::abm::SchoolRatio</a>
+, <a class="el" href="structmio_1_1abm_1_1SevereToCritical.html#a5bef75c99e686dd950523d3c6600f21b">mio::abm::SevereToCritical</a>
+, <a class="el" href="structmio_1_1abm_1_1SevereToRecovered.html#a1fe63cd40b45efe516a74eb65a9a216c">mio::abm::SevereToRecovered</a>
+, <a class="el" href="structmio_1_1abm_1_1SocialEventRate.html#a82c7c10dcec97c1c8877b589e4bb2016">mio::abm::SocialEventRate</a>
+, <a class="el" href="structmio_1_1abm_1_1SusceptibleToExposedByCarrier.html#a962077770c1017142c2acc8c9cd67a08">mio::abm::SusceptibleToExposedByCarrier</a>
+, <a class="el" href="structmio_1_1abm_1_1SusceptibleToExposedByInfected.html#a6fdc2779f98688f5f91ef3525484c7c7">mio::abm::SusceptibleToExposedByInfected</a>
+, <a class="el" href="structmio_1_1abm_1_1TestWhileInfected.html#a94926865409c03a2c456e79abb14228e">mio::abm::TestWhileInfected</a>
+, <a class="el" href="structmio_1_1abm_1_1WorkRatio.html#ac031f1e58bf4b17645a9553971fc288d">mio::abm::WorkRatio</a>
 , <a class="el" href="structmio_1_1AsymptomaticCasesPerInfectious.html#aee8c6ea1dd3b38a350f3d5bc47309209">mio::AsymptomaticCasesPerInfectious</a>
-, <a class="el" href="structmio_1_1BasicShoppingRate.html#a6286f06e25685941d2993d111b96208a">mio::BasicShoppingRate</a>
-, <a class="el" href="structmio_1_1CarrierToInfected.html#a88616546003bebdc4865e269a338bca4">mio::CarrierToInfected</a>
-, <a class="el" href="structmio_1_1CarrierToRecovered.html#ac8fea67572dae6664fce0c912b49b513">mio::CarrierToRecovered</a>
 , <a class="el" href="structmio_1_1ContactFrequency.html#a58df7cc522d6870bb6569697f2a71c9a">mio::ContactFrequency</a>
 , <a class="el" href="structmio_1_1ContactPatterns.html#a080deeb46b6f4cbc03e5b39f5e8064a3">mio::ContactPatterns</a>
-, <a class="el" href="structmio_1_1CriticalToDead.html#a242e564bc3a0a7f5422fcd012bea3f27">mio::CriticalToDead</a>
-, <a class="el" href="structmio_1_1CriticalToRecovered.html#a52e01268d2f0ef63ba2ec70a3b1d5560">mio::CriticalToRecovered</a>
 , <a class="el" href="structmio_1_1DeathsPerICU.html#a9534f757ca4ef3aaa3e6170115e5ee0a">mio::DeathsPerICU</a>
-, <a class="el" href="structmio_1_1DetectInfection.html#a5336ba51a4e1b510017f447ea31a58e4">mio::DetectInfection</a>
 , <a class="el" href="structmio_1_1DynamicNPIsInfected.html#aa40d518e9f999a62d48f551272b9e749">mio::DynamicNPIsInfected</a>
-, <a class="el" href="structmio_1_1GotoSchoolTimeMaximum.html#ae28d33ececf7b7954beeb67878bea549">mio::GotoSchoolTimeMaximum</a>
-, <a class="el" href="structmio_1_1GotoSchoolTimeMinimum.html#a86e6e3507347919d975829067c937fb5">mio::GotoSchoolTimeMinimum</a>
-, <a class="el" href="structmio_1_1GotoWorkTimeMaximum.html#a8e85ce39aa1daa6b69a5187618fcf518">mio::GotoWorkTimeMaximum</a>
-, <a class="el" href="structmio_1_1GotoWorkTimeMinimum.html#aec34627b9e33cb86049545c2bcac2ec4">mio::GotoWorkTimeMinimum</a>
 , <a class="el" href="structmio_1_1HomeToHospitalizedTime.html#abaf87d030bf2059f8a5e01e5a950876d">mio::HomeToHospitalizedTime</a>
 , <a class="el" href="structmio_1_1HospitalizedCasesPerInfectious.html#a4d074c38731688f92b90260e42d093c0">mio::HospitalizedCasesPerInfectious</a>
 , <a class="el" href="structmio_1_1HospitalizedToHomeTime.html#a7951b918c29fbd86e8bf5524b4d0d798">mio::HospitalizedToHomeTime</a>
@@ -149,35 +163,21 @@ $(function() {
 , <a class="el" href="structmio_1_1ICUCasesPerHospitalized.html#af92a772481b34b61d60ae3183691f00f">mio::ICUCasesPerHospitalized</a>
 , <a class="el" href="structmio_1_1ICUToDeathTime.html#a79607cd385745e5174a7fe27e861514e">mio::ICUToDeathTime</a>
 , <a class="el" href="structmio_1_1ICUToHomeTime.html#a44a23349466cc5707b6739007c24eff1">mio::ICUToHomeTime</a>
-, <a class="el" href="structmio_1_1IncubationPeriod.html#ac15c359a10ffca68488937d686dead30">mio::IncubationPeriod</a>
 , <a class="el" href="structmio_1_1IncubationTime.html#a4c2298dc04954ccd6f1bf7ab181ca337">mio::IncubationTime</a>
-, <a class="el" href="structmio_1_1InfectedToRecovered.html#a7247ba64a51f50778e3d8111a14ebe54">mio::InfectedToRecovered</a>
-, <a class="el" href="structmio_1_1InfectedToSevere.html#ae665659902568ce4ceaa074ffda2a295">mio::InfectedToSevere</a>
 , <a class="el" href="structmio_1_1InfectionProbabilityFromContact.html#aa33eae2a8cb3c359b680ed247b63404d">mio::InfectionProbabilityFromContact</a>
 , <a class="el" href="structmio_1_1InfectiousTimeAsymptomatic.html#a750f6aec0ea3bcfbdafca3065c8130a2">mio::InfectiousTimeAsymptomatic</a>
 , <a class="el" href="structmio_1_1InfectiousTimeMild.html#a0abb0241cd115d8e479735bc82967159">mio::InfectiousTimeMild</a>
-, <a class="el" href="structmio_1_1LockdownDate.html#acd653c41ac79554d2b17142a26c5c197">mio::LockdownDate</a>
-, <a class="el" href="structmio_1_1MaximumContacts.html#aaad3f969f61731b9cf96a78c3fbb3941">mio::MaximumContacts</a>
 , <a class="el" href="structmio_1_1MaxRiskOfInfectionFromSymptomatic.html#ae3974268264abcd3cacf9a5cff0e7c17">mio::MaxRiskOfInfectionFromSymptomatic</a>
 , <a class="el" href="structmio_1_1ParameterTagTraits.html#a99b1b869ce30d502c96af6edc5f34de7">mio::ParameterTagTraits&lt; Tag &gt;</a>
-, <a class="el" href="structmio_1_1RecoveredToSusceptible.html#a75b7013ad4455d733ac1a12127a5f5b8">mio::RecoveredToSusceptible</a>
 , <a class="el" href="structmio_1_1RelativeCarrierInfectability.html#a7382f00325310a30eb21866ff2d377da">mio::RelativeCarrierInfectability</a>
 , <a class="el" href="structmio_1_1RiskOfInfectionFromSymptomatic.html#a7b7725b8ea60f5acbfc447ef2bcb62ff">mio::RiskOfInfectionFromSymptomatic</a>
-, <a class="el" href="structmio_1_1SchoolRatio.html#a43e8d3d0b752da637cabde2850a35d30">mio::SchoolRatio</a>
 , <a class="el" href="structmio_1_1Seasonality.html#a0dffaaa8d46d2d990e37199d4c39a868">mio::Seasonality</a>
 , <a class="el" href="structmio_1_1SerialInterval.html#ab6d87dd7e2cad49e824126b28b33752e">mio::SerialInterval</a>
-, <a class="el" href="structmio_1_1SevereToCritical.html#a5bd7af6e378421e9ce9b6b06aaeb3dd8">mio::SevereToCritical</a>
-, <a class="el" href="structmio_1_1SevereToRecovered.html#a717665c9d1e5f33eba3ff5db76972577">mio::SevereToRecovered</a>
-, <a class="el" href="structmio_1_1SocialEventRate.html#a13b6a436e9deec95b477b9e75159137c">mio::SocialEventRate</a>
 , <a class="el" href="structmio_1_1StageTimeIncubationInv.html#a096d2e2fa9196d127ecbb96a0a773ac2">mio::StageTimeIncubationInv</a>
 , <a class="el" href="structmio_1_1StageTimeInfectiousInv.html#ab08dad8150c64e1f4011ecd16cbb489c">mio::StageTimeInfectiousInv</a>
 , <a class="el" href="structmio_1_1StartDay.html#a171a1d6979a60402a447796ca3dfe5b2">mio::StartDay</a>
-, <a class="el" href="structmio_1_1SusceptibleToExposedByCarrier.html#a4dc25b3250afb84604828ae8a6b6b009">mio::SusceptibleToExposedByCarrier</a>
-, <a class="el" href="structmio_1_1SusceptibleToExposedByInfected.html#a0bf487336510d0f852902d04d2c61a2d">mio::SusceptibleToExposedByInfected</a>
 , <a class="el" href="structmio_1_1TestAndTraceCapacity.html#a130b5a3b3b4b79644634f673cc022d9b">mio::TestAndTraceCapacity</a>
-, <a class="el" href="structmio_1_1TestWhileInfected.html#a6d0d98fa4979b1a8799b3fcf0c34b739">mio::TestWhileInfected</a>
 , <a class="el" href="structmio_1_1TransmissionRisk.html#adc8f0f5e481e28ebeb04ebc256f87040">mio::TransmissionRisk</a>
-, <a class="el" href="structmio_1_1WorkRatio.html#a2622ba43cbeb2b259090b0d795398926">mio::WorkRatio</a>
 </li>
 <li>get_derivatives()
 : <a class="el" href="structmio_1_1CompartmentalModel.html#a411f5685b950e97ab57bd59f49011161">mio::CompartmentalModel&lt; Pop, Params &gt;</a>
@@ -201,16 +201,16 @@ $(function() {
 : <a class="el" href="classmio_1_1DistributionAdapter.html#a2a7b00fc85007021e976de3a34b9795c">mio::DistributionAdapter&lt; DistT &gt;</a>
 </li>
 <li>get_global_infection_parameters()
-: <a class="el" href="classmio_1_1World.html#a37d0c299b7fe04ce6c367092c8a97f73">mio::World</a>
+: <a class="el" href="classmio_1_1abm_1_1World.html#a8e9f1c756bc4f8a506d2252ad470ca30">mio::abm::World</a>
 </li>
 <li>get_global_testing_parameters()
-: <a class="el" href="classmio_1_1World.html#a2957c51631eb54522d5b3fd244552896">mio::World</a>
+: <a class="el" href="classmio_1_1abm_1_1World.html#aed5a2233322f51759be69cd722c02e6f">mio::abm::World</a>
 </li>
 <li>get_go_to_school_time()
-: <a class="el" href="classmio_1_1Person.html#a21a4d42df8e59187b1d6bc7ffe83d49a">mio::Person</a>
+: <a class="el" href="classmio_1_1abm_1_1Person.html#a54de560aef0308b47b8cade8f566bfd3">mio::abm::Person</a>
 </li>
 <li>get_go_to_work_time()
-: <a class="el" href="classmio_1_1Person.html#a78bfb7f711f5d7c2d16db6ab31f9baa5">mio::Person</a>
+: <a class="el" href="classmio_1_1abm_1_1Person.html#a2a4d8af331d3174c8a40a3f8acacb4b5">mio::abm::Person</a>
 </li>
 <li>get_graph()
 : <a class="el" href="classmio_1_1GraphSimulation.html#a7d7adcdf846d0de554158bd8e546b23e">mio::GraphSimulation&lt; Graph &gt;</a>
@@ -222,19 +222,19 @@ $(function() {
 : <a class="el" href="classmio_1_1DampingSampling.html#a99786a208fcd6e2dc05b332139e4cf65">mio::DampingSampling</a>
 </li>
 <li>get_households()
-: <a class="el" href="classmio_1_1HouseholdGroup.html#aea6bbba8a333b76fb7aab453ac1152c8">mio::HouseholdGroup</a>
+: <a class="el" href="classmio_1_1abm_1_1HouseholdGroup.html#ab0d334f4d5ddad99038f7aab2c4b81b2">mio::abm::HouseholdGroup</a>
 </li>
 <li>get_index()
-: <a class="el" href="classmio_1_1Location.html#aa484ffc34f6c8a04454bb724d3e7d589">mio::Location</a>
+: <a class="el" href="classmio_1_1abm_1_1Location.html#a20e81fbe2b307554802250b9f2d9096c">mio::abm::Location</a>
 </li>
 <li>get_individualized_location()
-: <a class="el" href="classmio_1_1World.html#af6f4d81b565d2edf9055a5eba4dd5d17">mio::World</a>
+: <a class="el" href="classmio_1_1abm_1_1World.html#a03f4096528f2ecc48c376a94fb58f694">mio::abm::World</a>
 </li>
 <li>get_infection_parameters()
-: <a class="el" href="classmio_1_1Location.html#ab1c5b56f8ca65d8f3ef13050b6cea753">mio::Location</a>
+: <a class="el" href="classmio_1_1abm_1_1Location.html#ad10271ff6039b0b384eee7c38777b657">mio::abm::Location</a>
 </li>
 <li>get_infection_state()
-: <a class="el" href="classmio_1_1Person.html#a15c80bbcca066c580930b74b3e43d7ed">mio::Person</a>
+: <a class="el" href="classmio_1_1abm_1_1Person.html#ae162a803f43ee53374dc2360ad64e705">mio::abm::Person</a>
 </li>
 <li>get_initial_values()
 : <a class="el" href="structmio_1_1CompartmentalModel.html#a06bd9d1254b506f3b4a280707528b65f">mio::CompartmentalModel&lt; Pop, Params &gt;</a>
@@ -246,8 +246,8 @@ $(function() {
 : <a class="el" href="classmio_1_1Simulation.html#aef416198ab58eec301948ee6225519e9">mio::Simulation&lt; M &gt;</a>
 </li>
 <li>get_interval()
-: <a class="el" href="classmio_1_1DynamicNPIs.html#a2c8ec5df99d335830c0b0c1eaac58137">mio::DynamicNPIs</a>
-, <a class="el" href="classmio_1_1TestingScheme.html#a1f8f5a80a62c495f8deab464e521c27b">mio::TestingScheme</a>
+: <a class="el" href="classmio_1_1abm_1_1TestingScheme.html#af2d027673108e85c1e3e119c1db389ef">mio::abm::TestingScheme</a>
+, <a class="el" href="classmio_1_1DynamicNPIs.html#a2c8ec5df99d335830c0b0c1eaac58137">mio::DynamicNPIs</a>
 </li>
 <li>get_last_state()
 : <a class="el" href="classmio_1_1SimulationNode.html#a41b2f30e6abc50886d72f603c2808318">mio::SimulationNode&lt; Sim &gt;</a>
@@ -263,13 +263,13 @@ $(function() {
 , <a class="el" href="classmio_1_1DampingSampling.html#ab5623954be3ae50db30dc8f1d120f044">mio::DampingSampling</a>
 </li>
 <li>get_location()
-: <a class="el" href="classmio_1_1World.html#a0bd8fb9a7b4972dde4f49beddcca1528">mio::World</a>
+: <a class="el" href="classmio_1_1abm_1_1World.html#a1e5c87cfb04abaa65bed379dbcd6de6d">mio::abm::World</a>
 </li>
 <li>get_location_id()
-: <a class="el" href="classmio_1_1Person.html#aa4a3f90f850e0eb42a7a0d78d7d15c5c">mio::Person</a>
+: <a class="el" href="classmio_1_1abm_1_1Person.html#a2393085fdcf2dc286fb249644340bb81">mio::abm::Person</a>
 </li>
 <li>get_locations()
-: <a class="el" href="classmio_1_1World.html#ac08ae363b11f3135f4abccd21f1bde92">mio::World</a>
+: <a class="el" href="classmio_1_1abm_1_1World.html#aa28bc67a5246f88656379a38426c7b36">mio::abm::World</a>
 </li>
 <li>get_lower_bound()
 : <a class="el" href="classmio_1_1ParameterDistribution.html#a7a75e2eb4766540b89554d4750814074">mio::ParameterDistribution</a>
@@ -289,10 +289,10 @@ $(function() {
 : <a class="el" href="classmio_1_1ParameterDistributionNormal.html#a662185ef40d11e821b5ce76390f4eb38">mio::ParameterDistributionNormal</a>
 </li>
 <li>get_members()
-: <a class="el" href="classmio_1_1Household.html#ac72f65a54f2519e0c8071c963de23696">mio::Household</a>
+: <a class="el" href="classmio_1_1abm_1_1Household.html#a774ad4ebff1cb73a2d731ff1ef10969a">mio::abm::Household</a>
 </li>
 <li>get_migration_parameters()
-: <a class="el" href="classmio_1_1World.html#a41322625c8baa6f836904742adadcc1e">mio::World</a>
+: <a class="el" href="classmio_1_1abm_1_1World.html#aa2583c7c5b064f32e9fb49abbbdcb443">mio::abm::World</a>
 </li>
 <li>get_minimum()
 : <a class="el" href="classmio_1_1DampingMatrixExpression.html#a7fb83eccf000276cf5e2ab82b427c667">mio::DampingMatrixExpression&lt; D &gt;</a>
@@ -302,10 +302,10 @@ $(function() {
 , <a class="el" href="classmio_1_1Simulation.html#a949391f61eb30293f1186d6b6e29d2a9">mio::Simulation&lt; M &gt;</a>
 </li>
 <li>get_next_trip()
-: <a class="el" href="classmio_1_1TripList.html#ad81d40523e0fcd94e2e70a00af3cd9d0">mio::TripList</a>
+: <a class="el" href="classmio_1_1abm_1_1TripList.html#a2fddf84fc1fe75311d454c54fcc11c4f">mio::abm::TripList</a>
 </li>
 <li>get_next_trip_time()
-: <a class="el" href="classmio_1_1TripList.html#a7be0861cf2afcee2f15ef49fb9aa42fa">mio::TripList</a>
+: <a class="el" href="classmio_1_1abm_1_1TripList.html#a0b3f6442583b97a1868d4c89a0e99499">mio::abm::TripList</a>
 </li>
 <li>get_num_compartments()
 : <a class="el" href="classmio_1_1Populations.html#a2c7692a2c19babe8bc00dd57667d3466">mio::Populations&lt; Categories &gt;</a>
@@ -337,16 +337,16 @@ $(function() {
 : <a class="el" href="classmio_1_1MigrationEdge.html#a8f57803857c8299bf7862cb252c2edfa">mio::MigrationEdge</a>
 </li>
 <li>get_person_id()
-: <a class="el" href="classmio_1_1Person.html#a6948c1071ed39059fc3cc9420dda478d">mio::Person</a>
+: <a class="el" href="classmio_1_1abm_1_1Person.html#af0c14d2bf1cca3ad7762152715d012af">mio::abm::Person</a>
 </li>
 <li>get_persons()
-: <a class="el" href="classmio_1_1World.html#a5b1dc7277a03b9ac1d220653995ffde5">mio::World</a>
+: <a class="el" href="classmio_1_1abm_1_1World.html#a865bbb5e5aad5d87acf2116afacd6e22">mio::abm::World</a>
 </li>
 <li>get_predefined_samples()
 : <a class="el" href="classmio_1_1ParameterDistribution.html#a7302e4a3219b87d67df0bc1cbd912b8d">mio::ParameterDistribution</a>
 </li>
 <li>get_probability()
-: <a class="el" href="classmio_1_1TestingScheme.html#ac1fea6ceaf98f9d2a2abb10efe65fccb">mio::TestingScheme</a>
+: <a class="el" href="classmio_1_1abm_1_1TestingScheme.html#a0480bebcf143b72e17d37de25ea6d286">mio::abm::TestingScheme</a>
 </li>
 <li>get_ptr()
 : <a class="el" href="classmio_1_1Span.html#a96db4a82d94932936913742f6e6e23f0">mio::Span&lt; T &gt;</a>
@@ -361,9 +361,9 @@ $(function() {
 , <a class="el" href="classmio_1_1TimeSeriesValueIterator.html#a1e8ad3f054cacdbb3875de1f0a5bdeb4">mio::TimeSeriesValueIterator&lt; FP, IsConstIter &gt;</a>
 </li>
 <li>get_result()
-: <a class="el" href="classmio_1_1AbmSimulation.html#ae7a377aa140d7453a6e3b95615bdd23a">mio::AbmSimulation</a>
+: <a class="el" href="classmio_1_1abm_1_1Simulation.html#a98c56e37a4f2aa0e88b9fb53473c4dba">mio::abm::Simulation</a>
 , <a class="el" href="classmio_1_1OdeIntegrator.html#ab1abb4a00ddba5c404f48b9846a0a624">mio::OdeIntegrator</a>
-, <a class="el" href="classmio_1_1Simulation.html#a42245df12f70b7f3bf8bf852378326f8">mio::Simulation&lt; M &gt;</a>
+, <a class="el" href="classmio_1_1Simulation.html#a417b2934a8c709292134970e1e2fdd8b">mio::Simulation&lt; M &gt;</a>
 , <a class="el" href="classmio_1_1SimulationNode.html#a16d7a4782c40095c99c6b63ac89bc4b1">mio::SimulationNode&lt; Sim &gt;</a>
 </li>
 <li>get_reverse_times()
@@ -373,10 +373,10 @@ $(function() {
 : <a class="el" href="classmio_1_1ParameterDistribution.html#a1910fa4239888e5a05a1f42ab4acbbc9">mio::ParameterDistribution</a>
 </li>
 <li>get_school_holiday_damping()
-: <a class="el" href="classmio_1_1UncertainContactMatrix.html#a9fa9c25ddf4aef1d647d96cc0f48c34d">mio::UncertainContactMatrix</a>
+: <a class="el" href="classmio_1_1UncertainContactMatrix.html#a0a131c9c7a883e733abd1fde5b7ac427">mio::UncertainContactMatrix</a>
 </li>
 <li>get_school_holidays()
-: <a class="el" href="classmio_1_1UncertainContactMatrix.html#a5cc8216de210b818f6bdb35a0a949b05">mio::UncertainContactMatrix</a>
+: <a class="el" href="classmio_1_1UncertainContactMatrix.html#a003de7e81ffc682e8aedcc37a7a82973">mio::UncertainContactMatrix</a>
 </li>
 <li>get_secir_model_graph()
 : <a class="el" href="classmio_1_1ParameterStudy.html#adfc97cc34806c63adeecd0528162d189">mio::ParameterStudy&lt; S &gt;</a>
@@ -399,19 +399,19 @@ $(function() {
 , <a class="el" href="classmio_1_1SquareMatrixShape.html#ab62001c6aa94ef847ba65bb0f43185b0">mio::SquareMatrixShape</a>
 </li>
 <li>get_simulation()
-: <a class="el" href="classmio_1_1SimulationNode.html#a066be9173117493d23ae50c72ca220ea">mio::SimulationNode&lt; Sim &gt;</a>
+: <a class="el" href="classmio_1_1SimulationNode.html#ad9a43931f5445501d0bf23d9c307a78e">mio::SimulationNode&lt; Sim &gt;</a>
 </li>
 <li>get_standard_dev()
 : <a class="el" href="classmio_1_1ParameterDistributionNormal.html#a5800006339c75cfd1321fba605240a60">mio::ParameterDistributionNormal</a>
 </li>
 <li>get_subpopulation()
-: <a class="el" href="classmio_1_1Location.html#acf11b272268019ae408277a497c90726">mio::Location</a>
+: <a class="el" href="classmio_1_1abm_1_1Location.html#aa913bb1b8b3aad396408f136ef0b02a5">mio::abm::Location</a>
 </li>
 <li>get_subpopulation_combined()
-: <a class="el" href="classmio_1_1World.html#a72eaa2fb38c4f220c923ec9fff0ba948">mio::World</a>
+: <a class="el" href="classmio_1_1abm_1_1World.html#aabc2b0bb8242dcbc47ab5988764bdbad">mio::abm::World</a>
 </li>
 <li>get_subpopulations()
-: <a class="el" href="classmio_1_1Location.html#af5d0ae5a0ac540f2cae5615b0e66b4e4">mio::Location</a>
+: <a class="el" href="classmio_1_1abm_1_1Location.html#adc3572303c8cb44136c2a4e16480fcbd">mio::abm::Location</a>
 </li>
 <li>get_t()
 : <a class="el" href="classmio_1_1GraphSimulation.html#a64fbf6038dd4658690e0603931b459d4">mio::GraphSimulation&lt; Graph &gt;</a>
@@ -421,10 +421,10 @@ $(function() {
 , <a class="el" href="classmio_1_1SimulationNode.html#ab8aeff267aef10a1f3bee94b4f3143a5">mio::SimulationNode&lt; Sim &gt;</a>
 </li>
 <li>get_tested()
-: <a class="el" href="classmio_1_1Person.html#a79b397a8e3ea76e98d7603119864c8ef">mio::Person</a>
+: <a class="el" href="classmio_1_1abm_1_1Person.html#ac6818dfbfad2a6453f077156aeb5deb8">mio::abm::Person</a>
 </li>
 <li>get_testing_scheme()
-: <a class="el" href="classmio_1_1Location.html#a47edccf25fb12f51676c1c421e338fc9">mio::Location</a>
+: <a class="el" href="classmio_1_1abm_1_1Location.html#a2bbacfa98b5885ea6c0f8c9aefec664d">mio::abm::Location</a>
 </li>
 <li>get_thresholds()
 : <a class="el" href="classmio_1_1DynamicNPIs.html#a5214ea058cab5f2b935b658596f01e83">mio::DynamicNPIs</a>
@@ -435,13 +435,13 @@ $(function() {
 , <a class="el" href="classmio_1_1TimeSeries.html#ab0dad4e80982a297ee617e894799d6df">mio::TimeSeries&lt; FP &gt;</a>
 </li>
 <li>get_time_at_location()
-: <a class="el" href="classmio_1_1Person.html#a1c7e55a1f7dcd379c71a37dc631da8ec">mio::Person</a>
+: <a class="el" href="classmio_1_1abm_1_1Person.html#a4ca7cc745687a2febe4dd767d5f46da9">mio::abm::Person</a>
 </li>
 <li>get_time_since_negative_test()
-: <a class="el" href="classmio_1_1Person.html#ad7f0f01fd6bc5f52758ac85c6e478f63">mio::Person</a>
+: <a class="el" href="classmio_1_1abm_1_1Person.html#a8e5817fcdb0e89f2800835dba5dc0705">mio::abm::Person</a>
 </li>
 <li>get_times()
-: <a class="el" href="classmio_1_1TimeSeries.html#a3ea143d4e9d3fdd1a57f475d4f50f279">mio::TimeSeries&lt; FP &gt;</a>
+: <a class="el" href="classmio_1_1TimeSeries.html#ad82d6408bd852d9e58e5dc858dc28faa">mio::TimeSeries&lt; FP &gt;</a>
 </li>
 <li>get_tmax()
 : <a class="el" href="classmio_1_1ParameterStudy.html#aa3f6d156a8220d07c57ca6e2a35c146e">mio::ParameterStudy&lt; S &gt;</a>
@@ -450,40 +450,40 @@ $(function() {
 : <a class="el" href="classmio_1_1Populations.html#a496db0e09eb6c3c8fafb26afa0026c6c">mio::Populations&lt; Categories &gt;</a>
 </li>
 <li>get_total_number_of_households()
-: <a class="el" href="classmio_1_1HouseholdGroup.html#ac95e6ee254bb92675b021b633f8d8752">mio::HouseholdGroup</a>
+: <a class="el" href="classmio_1_1abm_1_1HouseholdGroup.html#a1c50c143f03966ae2079eb173920fa52">mio::abm::HouseholdGroup</a>
 </li>
 <li>get_total_number_of_members()
-: <a class="el" href="classmio_1_1Household.html#ab4059dd5f5649c0161d425ead19536b8">mio::Household</a>
+: <a class="el" href="classmio_1_1abm_1_1Household.html#ac43ec7c5c1d379831f6375e9b505964e">mio::abm::Household</a>
 </li>
 <li>get_trip_list()
-: <a class="el" href="classmio_1_1World.html#a9eac6a378820ae7a800fe606a0507046">mio::World</a>
+: <a class="el" href="classmio_1_1abm_1_1World.html#a95bb210a474815d18051623c34a34f91">mio::abm::World</a>
 </li>
 <li>get_type()
-: <a class="el" href="classmio_1_1Damping.html#ac247d14686bd73a263310069e47cb475">mio::Damping&lt; S &gt;</a>
+: <a class="el" href="classmio_1_1abm_1_1Location.html#a7ce83866d7b57c399aba377c8e26e402">mio::abm::Location</a>
+, <a class="el" href="classmio_1_1Damping.html#ac247d14686bd73a263310069e47cb475">mio::Damping&lt; S &gt;</a>
 , <a class="el" href="classmio_1_1DampingSampling.html#af852beb0907b78e4ee26ca846baf4caf">mio::DampingSampling</a>
-, <a class="el" href="classmio_1_1Location.html#ae31deb707c124bfdcd176e95dde897d5">mio::Location</a>
 </li>
 <li>get_upper_bound()
 : <a class="el" href="classmio_1_1ParameterDistribution.html#a81b06d73861ef7e83b5d2e374efaffeb">mio::ParameterDistribution</a>
 </li>
 <li>get_vaccination_state()
-: <a class="el" href="classmio_1_1Person.html#a68ab7edb4766441aecf091830a84843e">mio::Person</a>
+: <a class="el" href="classmio_1_1abm_1_1Person.html#afa308d4c52780b66760357c7c5caa238">mio::abm::Person</a>
 </li>
 <li>get_valid_block()
-: <a class="el" href="classmio_1_1TimeSeries.html#ab05a1f795d9f58a44c7c6b8964a7aaf2">mio::TimeSeries&lt; FP &gt;</a>
+: <a class="el" href="classmio_1_1TimeSeries.html#af83df4a50ee617517d7d40d6b9da490a">mio::TimeSeries&lt; FP &gt;</a>
 </li>
 <li>get_value()
-: <a class="el" href="classmio_1_1DampingSampling.html#aaa01f811eae2e482dd6256323f3f9d96">mio::DampingSampling</a>
+: <a class="el" href="classmio_1_1DampingSampling.html#ac8132be55a38bf3ebb2c667f09881bcf">mio::DampingSampling</a>
 , <a class="el" href="classmio_1_1TimeSeries.html#a352c58716639d7290e167d606bdc16ce">mio::TimeSeries&lt; FP &gt;</a>
 </li>
 <li>get_world()
-: <a class="el" href="classmio_1_1AbmSimulation.html#a6473567eeaa63dd72737faf6a9f73e6a">mio::AbmSimulation</a>
+: <a class="el" href="classmio_1_1abm_1_1Simulation.html#a364cfc5b5a23c31626095da227083563">mio::abm::Simulation</a>
 </li>
 <li>goes_to_school()
-: <a class="el" href="classmio_1_1Person.html#afa02d814ae0356986d57c6e729e899df">mio::Person</a>
+: <a class="el" href="classmio_1_1abm_1_1Person.html#a4ceae17a3f9229bd6ac6fb54a1e63836">mio::abm::Person</a>
 </li>
 <li>goes_to_work()
-: <a class="el" href="classmio_1_1Person.html#aa608523b0bc86ffff06b21a2aad8ce1b">mio::Person</a>
+: <a class="el" href="classmio_1_1abm_1_1Person.html#a037b9d3f6bbc482986f9980a11153955">mio::abm::Person</a>
 </li>
 <li>GraphSimulation()
 : <a class="el" href="classmio_1_1GraphSimulation.html#a0399c8113f75b7899a19bf75fc7c6e9a">mio::GraphSimulation&lt; Graph &gt;</a>

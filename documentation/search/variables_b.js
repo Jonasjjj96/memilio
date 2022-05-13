@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['time_2327',['time',['../structmio_1_1Trip.html#acfb587c5e11dcc62b7430a1f08c87444',1,'mio::Trip']]],
-  ['type_2328',['type',['../structmio_1_1LocationId.html#a7a6d2746731c0d7d8ec9d115e248cd98',1,'mio::LocationId']]]
+  ['time_2324',['time',['../structmio_1_1abm_1_1Trip.html#a57c712334dcc9ca9d3945196f1332c63',1,'mio::abm::Trip']]],
+  ['type_2325',['type',['../structmio_1_1abm_1_1LocationId.html#a87dd2f952b166a8690dabd3e3835d965',1,'mio::abm::LocationId']]]
 ];
