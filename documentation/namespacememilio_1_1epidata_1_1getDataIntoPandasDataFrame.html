@@ -184,18 +184,21 @@ Functions</h2></td></tr>
 
 <p>Defines command line interface. </p>
 <p>The function parameter "what" is used as a dictionary key. The return of the dictionary is either a list of a string and a list of keywords. The string is the message that should be printed when working on the specific package. The further list, contains all special command line arguments which are needed for this package.</p>
-<p>If the key is nor part of the dictionary the program is stopped.</p>
-<p>Three default arguments are added to the parser:</p><ul>
-<li>read-from-disk, Default = False</li>
-<li>file-format, Default = json_timeasstring, choices = ['json', 'hdf5', 'json_timeasstring']</li>
-<li>out_path Default = data/pydata/</li>
+<p>If the key is not part of the dictionary the program is stopped.</p>
+<p>The following default arguments are added to the parser:</p><ul>
+<li>read-from-disk</li>
+<li>file-format, choices = ['json', 'hdf5', 'json_timeasstring']</li>
+<li>out_path</li>
+<li>no_raw The default values are defined in default dict.</li>
 </ul>
 <p>Depending on what following parser can be added:</p><ul>
+<li>start_date</li>
 <li>end_date</li>
 <li>plot</li>
 <li>split_berlin</li>
-<li>moving-average</li>
-<li>start_date</li>
+<li>moving_average</li>
+<li>impute_dates</li>
+<li>rep-date</li>
 </ul>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
