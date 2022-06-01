@@ -28,7 +28,7 @@
 
         
         <h2>Score</h2>
-        7.25 / 10
+        7.24 / 10
             
         
 
@@ -95,12 +95,11 @@
 ==memilio.epidata_test.test_epidata_getDataIntoPandasDataFrame:[28:35]
 from memilio.epidata import getDataIntoPandasDataFrame as gd
 from memilio.epidata import defaultDict as dd
+
 from memilio.epidata import getVaccinationData
 from memilio.epidata import getPopulationData
 from memilio.epidata import getCaseData
-from memilio.epidata import getDIVIData
-
-</pre></td>
+from memilio.epidata import getDIVIData</pre></td>
             </tr>
             
         </table>
@@ -995,6 +994,16 @@ from memilio.epidata import getDIVIData
             
             <tr>
                 <td>155</td>
+                <td>0</td>
+                <td>convention</td>
+                <td><code>line-too-long</code></td>
+                <td>C0301</td>
+                <td></td>
+                <td><pre>Line too long (123/120)</pre></td>
+            </tr>
+            
+            <tr>
+                <td>157</td>
                 <td>16</td>
                 <td>convention</td>
                 <td><code>invalid-name</code></td>
@@ -1004,7 +1013,7 @@ from memilio.epidata import getDIVIData
             </tr>
             
             <tr>
-                <td>163</td>
+                <td>166</td>
                 <td>20</td>
                 <td>convention</td>
                 <td><code>invalid-name</code></td>
@@ -1014,7 +1023,7 @@ from memilio.epidata import getDIVIData
             </tr>
             
             <tr>
-                <td>175</td>
+                <td>176</td>
                 <td>20</td>
                 <td>convention</td>
                 <td><code>invalid-name</code></td>
@@ -1024,7 +1033,7 @@ from memilio.epidata import getDIVIData
             </tr>
             
             <tr>
-                <td>184</td>
+                <td>185</td>
                 <td>12</td>
                 <td>convention</td>
                 <td><code>invalid-name</code></td>
@@ -1034,23 +1043,13 @@ from memilio.epidata import getDIVIData
             </tr>
             
             <tr>
-                <td>186</td>
+                <td>187</td>
                 <td>4</td>
                 <td>convention</td>
                 <td><code>invalid-name</code></td>
                 <td>C0103</td>
                 <td>get_case_data</td>
                 <td><pre>Variable name &#34;df&#34; doesn&#39;t conform to snake_case naming style</pre></td>
-            </tr>
-            
-            <tr>
-                <td>193</td>
-                <td>4</td>
-                <td>convention</td>
-                <td><code>invalid-name</code></td>
-                <td>C0103</td>
-                <td>get_case_data</td>
-                <td><pre>Variable name &#34;Altersgruppe&#34; doesn&#39;t conform to snake_case naming style</pre></td>
             </tr>
             
             <tr>
@@ -1060,7 +1059,7 @@ from memilio.epidata import getDIVIData
                 <td><code>invalid-name</code></td>
                 <td>C0103</td>
                 <td>get_case_data</td>
-                <td><pre>Variable name &#34;Geschlecht&#34; doesn&#39;t conform to snake_case naming style</pre></td>
+                <td><pre>Variable name &#34;Altersgruppe&#34; doesn&#39;t conform to snake_case naming style</pre></td>
             </tr>
             
             <tr>
@@ -1070,7 +1069,7 @@ from memilio.epidata import getDIVIData
                 <td><code>invalid-name</code></td>
                 <td>C0103</td>
                 <td>get_case_data</td>
-                <td><pre>Variable name &#34;AnzahlFall&#34; doesn&#39;t conform to snake_case naming style</pre></td>
+                <td><pre>Variable name &#34;Geschlecht&#34; doesn&#39;t conform to snake_case naming style</pre></td>
             </tr>
             
             <tr>
@@ -1080,7 +1079,7 @@ from memilio.epidata import getDIVIData
                 <td><code>invalid-name</code></td>
                 <td>C0103</td>
                 <td>get_case_data</td>
-                <td><pre>Variable name &#34;AnzahlGenesen&#34; doesn&#39;t conform to snake_case naming style</pre></td>
+                <td><pre>Variable name &#34;AnzahlFall&#34; doesn&#39;t conform to snake_case naming style</pre></td>
             </tr>
             
             <tr>
@@ -1090,7 +1089,7 @@ from memilio.epidata import getDIVIData
                 <td><code>invalid-name</code></td>
                 <td>C0103</td>
                 <td>get_case_data</td>
-                <td><pre>Variable name &#34;AnzahlTodesfall&#34; doesn&#39;t conform to snake_case naming style</pre></td>
+                <td><pre>Variable name &#34;AnzahlGenesen&#34; doesn&#39;t conform to snake_case naming style</pre></td>
             </tr>
             
             <tr>
@@ -1100,7 +1099,7 @@ from memilio.epidata import getDIVIData
                 <td><code>invalid-name</code></td>
                 <td>C0103</td>
                 <td>get_case_data</td>
-                <td><pre>Variable name &#34;IdBundesland&#34; doesn&#39;t conform to snake_case naming style</pre></td>
+                <td><pre>Variable name &#34;AnzahlTodesfall&#34; doesn&#39;t conform to snake_case naming style</pre></td>
             </tr>
             
             <tr>
@@ -1110,11 +1109,21 @@ from memilio.epidata import getDIVIData
                 <td><code>invalid-name</code></td>
                 <td>C0103</td>
                 <td>get_case_data</td>
+                <td><pre>Variable name &#34;IdBundesland&#34; doesn&#39;t conform to snake_case naming style</pre></td>
+            </tr>
+            
+            <tr>
+                <td>200</td>
+                <td>4</td>
+                <td>convention</td>
+                <td><code>invalid-name</code></td>
+                <td>C0103</td>
+                <td>get_case_data</td>
                 <td><pre>Variable name &#34;IdLandkreis&#34; doesn&#39;t conform to snake_case naming style</pre></td>
             </tr>
             
             <tr>
-                <td>229</td>
+                <td>230</td>
                 <td>4</td>
                 <td>convention</td>
                 <td><code>invalid-name</code></td>
@@ -1124,7 +1133,7 @@ from memilio.epidata import getDIVIData
             </tr>
             
             <tr>
-                <td>239</td>
+                <td>240</td>
                 <td>4</td>
                 <td>convention</td>
                 <td><code>invalid-name</code></td>
@@ -1134,7 +1143,7 @@ from memilio.epidata import getDIVIData
             </tr>
             
             <tr>
-                <td>249</td>
+                <td>250</td>
                 <td>4</td>
                 <td>convention</td>
                 <td><code>invalid-name</code></td>
@@ -1144,7 +1153,7 @@ from memilio.epidata import getDIVIData
             </tr>
             
             <tr>
-                <td>252</td>
+                <td>253</td>
                 <td>4</td>
                 <td>convention</td>
                 <td><code>invalid-name</code></td>
@@ -1154,23 +1163,13 @@ from memilio.epidata import getDIVIData
             </tr>
             
             <tr>
-                <td>265</td>
+                <td>266</td>
                 <td>8</td>
                 <td>convention</td>
                 <td><code>invalid-name</code></td>
                 <td>C0103</td>
                 <td>get_case_data</td>
                 <td><pre>Variable name &#34;gbNF_cs&#34; doesn&#39;t conform to snake_case naming style</pre></td>
-            </tr>
-            
-            <tr>
-                <td>283</td>
-                <td>4</td>
-                <td>convention</td>
-                <td><code>invalid-name</code></td>
-                <td>C0103</td>
-                <td>get_case_data</td>
-                <td><pre>Variable name &#34;gbNT&#34; doesn&#39;t conform to snake_case naming style</pre></td>
             </tr>
             
             <tr>
@@ -1190,11 +1189,21 @@ from memilio.epidata import getDIVIData
                 <td><code>invalid-name</code></td>
                 <td>C0103</td>
                 <td>get_case_data</td>
+                <td><pre>Variable name &#34;gbNT&#34; doesn&#39;t conform to snake_case naming style</pre></td>
+            </tr>
+            
+            <tr>
+                <td>286</td>
+                <td>4</td>
+                <td>convention</td>
+                <td><code>invalid-name</code></td>
+                <td>C0103</td>
+                <td>get_case_data</td>
                 <td><pre>Variable name &#34;gbNT_cs&#34; doesn&#39;t conform to snake_case naming style</pre></td>
             </tr>
             
             <tr>
-                <td>296</td>
+                <td>297</td>
                 <td>8</td>
                 <td>convention</td>
                 <td><code>invalid-name</code></td>
@@ -1204,7 +1213,7 @@ from memilio.epidata import getDIVIData
             </tr>
             
             <tr>
-                <td>319</td>
+                <td>320</td>
                 <td>4</td>
                 <td>convention</td>
                 <td><code>invalid-name</code></td>
@@ -1214,7 +1223,7 @@ from memilio.epidata import getDIVIData
             </tr>
             
             <tr>
-                <td>321</td>
+                <td>322</td>
                 <td>4</td>
                 <td>convention</td>
                 <td><code>invalid-name</code></td>
@@ -1224,23 +1233,13 @@ from memilio.epidata import getDIVIData
             </tr>
             
             <tr>
-                <td>331</td>
+                <td>332</td>
                 <td>8</td>
                 <td>convention</td>
                 <td><code>invalid-name</code></td>
                 <td>C0103</td>
                 <td>get_case_data</td>
                 <td><pre>Variable name &#34;gbNF_cs&#34; doesn&#39;t conform to snake_case naming style</pre></td>
-            </tr>
-            
-            <tr>
-                <td>345</td>
-                <td>4</td>
-                <td>convention</td>
-                <td><code>invalid-name</code></td>
-                <td>C0103</td>
-                <td>get_case_data</td>
-                <td><pre>Variable name &#34;gbNFst&#34; doesn&#39;t conform to snake_case naming style</pre></td>
             </tr>
             
             <tr>
@@ -1250,11 +1249,21 @@ from memilio.epidata import getDIVIData
                 <td><code>invalid-name</code></td>
                 <td>C0103</td>
                 <td>get_case_data</td>
+                <td><pre>Variable name &#34;gbNFst&#34; doesn&#39;t conform to snake_case naming style</pre></td>
+            </tr>
+            
+            <tr>
+                <td>347</td>
+                <td>4</td>
+                <td>convention</td>
+                <td><code>invalid-name</code></td>
+                <td>C0103</td>
+                <td>get_case_data</td>
                 <td><pre>Variable name &#34;gbNFst_cs&#34; doesn&#39;t conform to snake_case naming style</pre></td>
             </tr>
             
             <tr>
-                <td>358</td>
+                <td>359</td>
                 <td>8</td>
                 <td>convention</td>
                 <td><code>invalid-name</code></td>
@@ -1264,7 +1273,7 @@ from memilio.epidata import getDIVIData
             </tr>
             
             <tr>
-                <td>377</td>
+                <td>378</td>
                 <td>4</td>
                 <td>convention</td>
                 <td><code>invalid-name</code></td>
@@ -1274,7 +1283,7 @@ from memilio.epidata import getDIVIData
             </tr>
             
             <tr>
-                <td>379</td>
+                <td>380</td>
                 <td>4</td>
                 <td>convention</td>
                 <td><code>invalid-name</code></td>
@@ -1284,7 +1293,7 @@ from memilio.epidata import getDIVIData
             </tr>
             
             <tr>
-                <td>391</td>
+                <td>392</td>
                 <td>8</td>
                 <td>convention</td>
                 <td><code>invalid-name</code></td>
@@ -1294,7 +1303,7 @@ from memilio.epidata import getDIVIData
             </tr>
             
             <tr>
-                <td>405</td>
+                <td>406</td>
                 <td>8</td>
                 <td>convention</td>
                 <td><code>invalid-name</code></td>
@@ -1304,7 +1313,7 @@ from memilio.epidata import getDIVIData
             </tr>
             
             <tr>
-                <td>415</td>
+                <td>416</td>
                 <td>4</td>
                 <td>convention</td>
                 <td><code>invalid-name</code></td>
@@ -1314,7 +1323,7 @@ from memilio.epidata import getDIVIData
             </tr>
             
             <tr>
-                <td>416</td>
+                <td>417</td>
                 <td>4</td>
                 <td>convention</td>
                 <td><code>invalid-name</code></td>
@@ -1324,7 +1333,7 @@ from memilio.epidata import getDIVIData
             </tr>
             
             <tr>
-                <td>431</td>
+                <td>432</td>
                 <td>8</td>
                 <td>convention</td>
                 <td><code>invalid-name</code></td>
@@ -1334,7 +1343,7 @@ from memilio.epidata import getDIVIData
             </tr>
             
             <tr>
-                <td>443</td>
+                <td>444</td>
                 <td>4</td>
                 <td>convention</td>
                 <td><code>invalid-name</code></td>
@@ -1344,7 +1353,7 @@ from memilio.epidata import getDIVIData
             </tr>
             
             <tr>
-                <td>445</td>
+                <td>446</td>
                 <td>4</td>
                 <td>convention</td>
                 <td><code>invalid-name</code></td>
@@ -1354,7 +1363,7 @@ from memilio.epidata import getDIVIData
             </tr>
             
             <tr>
-                <td>460</td>
+                <td>461</td>
                 <td>8</td>
                 <td>convention</td>
                 <td><code>invalid-name</code></td>
@@ -1364,7 +1373,7 @@ from memilio.epidata import getDIVIData
             </tr>
             
             <tr>
-                <td>475</td>
+                <td>476</td>
                 <td>4</td>
                 <td>convention</td>
                 <td><code>invalid-name</code></td>
@@ -1374,7 +1383,7 @@ from memilio.epidata import getDIVIData
             </tr>
             
             <tr>
-                <td>478</td>
+                <td>479</td>
                 <td>4</td>
                 <td>convention</td>
                 <td><code>invalid-name</code></td>
@@ -1384,7 +1393,7 @@ from memilio.epidata import getDIVIData
             </tr>
             
             <tr>
-                <td>490</td>
+                <td>491</td>
                 <td>8</td>
                 <td>convention</td>
                 <td><code>invalid-name</code></td>
@@ -1394,7 +1403,7 @@ from memilio.epidata import getDIVIData
             </tr>
             
             <tr>
-                <td>513</td>
+                <td>514</td>
                 <td>4</td>
                 <td>convention</td>
                 <td><code>invalid-name</code></td>
@@ -1404,7 +1413,7 @@ from memilio.epidata import getDIVIData
             </tr>
             
             <tr>
-                <td>515</td>
+                <td>516</td>
                 <td>4</td>
                 <td>convention</td>
                 <td><code>invalid-name</code></td>
@@ -1414,7 +1423,7 @@ from memilio.epidata import getDIVIData
             </tr>
             
             <tr>
-                <td>528</td>
+                <td>529</td>
                 <td>8</td>
                 <td>convention</td>
                 <td><code>invalid-name</code></td>
@@ -1424,7 +1433,7 @@ from memilio.epidata import getDIVIData
             </tr>
             
             <tr>
-                <td>542</td>
+                <td>543</td>
                 <td>4</td>
                 <td>convention</td>
                 <td><code>invalid-name</code></td>
@@ -1434,7 +1443,7 @@ from memilio.epidata import getDIVIData
             </tr>
             
             <tr>
-                <td>544</td>
+                <td>545</td>
                 <td>4</td>
                 <td>convention</td>
                 <td><code>invalid-name</code></td>
@@ -1444,7 +1453,7 @@ from memilio.epidata import getDIVIData
             </tr>
             
             <tr>
-                <td>560</td>
+                <td>561</td>
                 <td>8</td>
                 <td>convention</td>
                 <td><code>invalid-name</code></td>
@@ -1454,7 +1463,7 @@ from memilio.epidata import getDIVIData
             </tr>
             
             <tr>
-                <td>576</td>
+                <td>577</td>
                 <td>4</td>
                 <td>convention</td>
                 <td><code>invalid-name</code></td>
@@ -1464,7 +1473,7 @@ from memilio.epidata import getDIVIData
             </tr>
             
             <tr>
-                <td>578</td>
+                <td>579</td>
                 <td>4</td>
                 <td>convention</td>
                 <td><code>invalid-name</code></td>
@@ -1474,7 +1483,7 @@ from memilio.epidata import getDIVIData
             </tr>
             
             <tr>
-                <td>590</td>
+                <td>591</td>
                 <td>8</td>
                 <td>convention</td>
                 <td><code>invalid-name</code></td>
@@ -1484,7 +1493,7 @@ from memilio.epidata import getDIVIData
             </tr>
             
             <tr>
-                <td>610</td>
+                <td>611</td>
                 <td>8</td>
                 <td>convention</td>
                 <td><code>invalid-name</code></td>
@@ -1494,7 +1503,7 @@ from memilio.epidata import getDIVIData
             </tr>
             
             <tr>
-                <td>623</td>
+                <td>624</td>
                 <td>4</td>
                 <td>convention</td>
                 <td><code>invalid-name</code></td>
@@ -1504,7 +1513,7 @@ from memilio.epidata import getDIVIData
             </tr>
             
             <tr>
-                <td>625</td>
+                <td>626</td>
                 <td>4</td>
                 <td>convention</td>
                 <td><code>invalid-name</code></td>
@@ -1514,7 +1523,7 @@ from memilio.epidata import getDIVIData
             </tr>
             
             <tr>
-                <td>638</td>
+                <td>639</td>
                 <td>8</td>
                 <td>convention</td>
                 <td><code>invalid-name</code></td>
@@ -1524,7 +1533,7 @@ from memilio.epidata import getDIVIData
             </tr>
             
             <tr>
-                <td>652</td>
+                <td>653</td>
                 <td>4</td>
                 <td>convention</td>
                 <td><code>invalid-name</code></td>
@@ -1534,7 +1543,7 @@ from memilio.epidata import getDIVIData
             </tr>
             
             <tr>
-                <td>654</td>
+                <td>655</td>
                 <td>4</td>
                 <td>convention</td>
                 <td><code>invalid-name</code></td>
@@ -1544,7 +1553,7 @@ from memilio.epidata import getDIVIData
             </tr>
             
             <tr>
-                <td>670</td>
+                <td>671</td>
                 <td>8</td>
                 <td>convention</td>
                 <td><code>invalid-name</code></td>
@@ -11222,7 +11231,7 @@ from memilio.epidata import getDIVIData
             
             <tr>
                 <td>convention</td>
-                <td>699</td>
+                <td>700</td>
             </tr>
             
             <tr>
@@ -11357,7 +11366,7 @@ from memilio.epidata import getDIVIData
             
             <tr>
                 <td>line-too-long</td>
-                <td>57</td>
+                <td>58</td>
             </tr>
             
             <tr>
@@ -11667,7 +11676,7 @@ from memilio.epidata import getDIVIData
             
             <tr>
                 <td>memilio.epidata.getCaseData</td>
-                <td>71</td>
+                <td>72</td>
             </tr>
             
             <tr>
@@ -11837,7 +11846,7 @@ from memilio.epidata import getDIVIData
             
             <tr>
                 <td>memilio/epidata/getCaseData.py</td>
-                <td>71</td>
+                <td>72</td>
             </tr>
             
             <tr>
