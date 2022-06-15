@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2022-06-13 16:57:34</td>
+            <td class="headerValue">2022-06-15 16:14:56</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">23</td>
@@ -174,12 +174,12 @@
 <a name="112"><span class="lineNum">     112 </span>            :      * deserialize an object of this class.</a>
 <a name="113"><span class="lineNum">     113 </span>            :      * @see mio::deserialize</a>
 <a name="114"><span class="lineNum">     114 </span>            :      */</a>
-<a name="115"><span class="lineNum">     115 </span>            :     template&lt;class IOContext&gt;</a>
+<a name="115"><span class="lineNum">     115 </span>            :     template &lt;class IOContext&gt;</a>
 <a name="116"><span class="lineNum">     116 </span>            :     static IOResult&lt;RectMatrixShape&gt; deserialize(IOContext&amp; io)</a>
 <a name="117"><span class="lineNum">     117 </span>            :     {</a>
 <a name="118"><span class="lineNum">     118 </span>            :         auto obj = io.expect_object(&quot;RectMatrixShape&quot;);</a>
-<a name="119"><span class="lineNum">     119 </span>            :         auto r = obj.expect_element(&quot;Rows&quot;, Tag&lt;Eigen::Index&gt;{});</a>
-<a name="120"><span class="lineNum">     120 </span>            :         auto c = obj.expect_element(&quot;Columns&quot;, Tag&lt;Eigen::Index&gt;{});</a>
+<a name="119"><span class="lineNum">     119 </span>            :         auto r   = obj.expect_element(&quot;Rows&quot;, Tag&lt;Eigen::Index&gt;{});</a>
+<a name="120"><span class="lineNum">     120 </span>            :         auto c   = obj.expect_element(&quot;Columns&quot;, Tag&lt;Eigen::Index&gt;{});</a>
 <a name="121"><span class="lineNum">     121 </span>            :         return apply(</a>
 <a name="122"><span class="lineNum">     122 </span>            :             io,</a>
 <a name="123"><span class="lineNum">     123 </span>            :             [](auto&amp;&amp; r_, auto&amp;&amp; c_) -&gt; IOResult&lt;RectMatrixShape&gt; {</a>
@@ -209,10 +209,10 @@
 <a name="147"><span class="lineNum">     147 </span>            :      * construct a square matrix of dimensions r</a>
 <a name="148"><span class="lineNum">     148 </span>            :      * @param r number of rows and columns</a>
 <a name="149"><span class="lineNum">     149 </span>            :      */</a>
-<a name="150"><span class="lineNum">     150 </span><span class="lineCov">      24451 :     explicit SquareMatrixShape(Eigen::Index r)</span></a>
-<a name="151"><span class="lineNum">     151 </span><span class="lineCov">      24451 :         : m_rows(r)</span></a>
+<a name="150"><span class="lineNum">     150 </span><span class="lineCov">      25951 :     explicit SquareMatrixShape(Eigen::Index r)</span></a>
+<a name="151"><span class="lineNum">     151 </span><span class="lineCov">      25951 :         : m_rows(r)</span></a>
 <a name="152"><span class="lineNum">     152 </span>            :     {</a>
-<a name="153"><span class="lineNum">     153 </span><span class="lineCov">      24451 :     }</span></a>
+<a name="153"><span class="lineNum">     153 </span><span class="lineCov">      25951 :     }</span></a>
 <a name="154"><span class="lineNum">     154 </span>            : </a>
 <a name="155"><span class="lineNum">     155 </span>            :     /**</a>
 <a name="156"><span class="lineNum">     156 </span>            :      * extract the shape of a square matrix.</a>
@@ -220,27 +220,27 @@
 <a name="158"><span class="lineNum">     158 </span>            :      * @tparam ME matrix expression.</a>
 <a name="159"><span class="lineNum">     159 </span>            :      */</a>
 <a name="160"><span class="lineNum">     160 </span>            :     template &lt;class ME&gt;</a>
-<a name="161"><span class="lineNum">     161 </span><span class="lineCov">      24369 :     static SquareMatrixShape get_shape_of(const Eigen::MatrixBase&lt;ME&gt;&amp; m)</span></a>
+<a name="161"><span class="lineNum">     161 </span><span class="lineCov">      25869 :     static SquareMatrixShape get_shape_of(const Eigen::MatrixBase&lt;ME&gt;&amp; m)</span></a>
 <a name="162"><span class="lineNum">     162 </span>            :     {</a>
-<a name="163"><span class="lineNum">     163 </span><span class="lineCov">      24369 :         assert(m.rows() == m.cols());</span></a>
-<a name="164"><span class="lineNum">     164 </span><span class="lineCov">      24369 :         return SquareMatrixShape{m.rows()};</span></a>
+<a name="163"><span class="lineNum">     163 </span><span class="lineCov">      25869 :         assert(m.rows() == m.cols());</span></a>
+<a name="164"><span class="lineNum">     164 </span><span class="lineCov">      25869 :         return SquareMatrixShape{m.rows()};</span></a>
 <a name="165"><span class="lineNum">     165 </span>            :     }</a>
 <a name="166"><span class="lineNum">     166 </span>            : </a>
 <a name="167"><span class="lineNum">     167 </span>            :     /**</a>
 <a name="168"><span class="lineNum">     168 </span>            :      * number of rows.</a>
 <a name="169"><span class="lineNum">     169 </span>            :      * equal to number of columns.</a>
 <a name="170"><span class="lineNum">     170 </span>            :      */</a>
-<a name="171"><span class="lineNum">     171 </span><span class="lineCov">      12220 :     Eigen::Index rows() const</span></a>
+<a name="171"><span class="lineNum">     171 </span><span class="lineCov">      12970 :     Eigen::Index rows() const</span></a>
 <a name="172"><span class="lineNum">     172 </span>            :     {</a>
-<a name="173"><span class="lineNum">     173 </span><span class="lineCov">      12220 :         return m_rows;</span></a>
+<a name="173"><span class="lineNum">     173 </span><span class="lineCov">      12970 :         return m_rows;</span></a>
 <a name="174"><span class="lineNum">     174 </span>            :     }</a>
 <a name="175"><span class="lineNum">     175 </span>            :     /**</a>
 <a name="176"><span class="lineNum">     176 </span>            :      * number of columns.</a>
 <a name="177"><span class="lineNum">     177 </span>            :      * equal to number of rows.</a>
 <a name="178"><span class="lineNum">     178 </span>            :      */</a>
-<a name="179"><span class="lineNum">     179 </span><span class="lineCov">      12180 :     Eigen::Index cols() const</span></a>
+<a name="179"><span class="lineNum">     179 </span><span class="lineCov">      12930 :     Eigen::Index cols() const</span></a>
 <a name="180"><span class="lineNum">     180 </span>            :     {</a>
-<a name="181"><span class="lineNum">     181 </span><span class="lineCov">      12180 :         return m_rows;</span></a>
+<a name="181"><span class="lineNum">     181 </span><span class="lineCov">      12930 :         return m_rows;</span></a>
 <a name="182"><span class="lineNum">     182 </span>            :     }</a>
 <a name="183"><span class="lineNum">     183 </span>            :     /**</a>
 <a name="184"><span class="lineNum">     184 </span>            :      * number of rows or columns.</a>
@@ -277,11 +277,11 @@
 <a name="215"><span class="lineNum">     215 </span>            :      * deserialize an object of this class.</a>
 <a name="216"><span class="lineNum">     216 </span>            :      * @see mio::deserialize</a>
 <a name="217"><span class="lineNum">     217 </span>            :      */</a>
-<a name="218"><span class="lineNum">     218 </span>            :     template&lt;class IOContext&gt;</a>
+<a name="218"><span class="lineNum">     218 </span>            :     template &lt;class IOContext&gt;</a>
 <a name="219"><span class="lineNum">     219 </span>            :     static IOResult&lt;SquareMatrixShape&gt; deserialize(IOContext&amp; io)</a>
 <a name="220"><span class="lineNum">     220 </span>            :     {</a>
 <a name="221"><span class="lineNum">     221 </span>            :         auto obj = io.expect_object(&quot;SquareMatrixShape&quot;);</a>
-<a name="222"><span class="lineNum">     222 </span>            :         auto r = obj.expect_element(&quot;Rows&quot;, Tag&lt;Eigen::Index&gt;{});</a>
+<a name="222"><span class="lineNum">     222 </span>            :         auto r   = obj.expect_element(&quot;Rows&quot;, Tag&lt;Eigen::Index&gt;{});</a>
 <a name="223"><span class="lineNum">     223 </span>            :         return apply(</a>
 <a name="224"><span class="lineNum">     224 </span>            :             io,</a>
 <a name="225"><span class="lineNum">     225 </span>            :             [](auto&amp;&amp; r_) -&gt; IOResult&lt;SquareMatrixShape&gt; {</a>
@@ -378,11 +378,11 @@
 <a name="316"><span class="lineNum">     316 </span>            :      * deserialize an object of this class.</a>
 <a name="317"><span class="lineNum">     317 </span>            :      * @see mio::deserialize</a>
 <a name="318"><span class="lineNum">     318 </span>            :      */</a>
-<a name="319"><span class="lineNum">     319 </span>            :     template&lt;class IOContext&gt;</a>
+<a name="319"><span class="lineNum">     319 </span>            :     template &lt;class IOContext&gt;</a>
 <a name="320"><span class="lineNum">     320 </span>            :     static IOResult&lt;ColumnVectorShape&gt; deserialize(IOContext&amp; io)</a>
 <a name="321"><span class="lineNum">     321 </span>            :     {</a>
 <a name="322"><span class="lineNum">     322 </span>            :         auto obj = io.expect_object(&quot;ColumnVectorShape&quot;);</a>
-<a name="323"><span class="lineNum">     323 </span>            :         auto r = obj.expect_element(&quot;Rows&quot;, Tag&lt;Eigen::Index&gt;{});</a>
+<a name="323"><span class="lineNum">     323 </span>            :         auto r   = obj.expect_element(&quot;Rows&quot;, Tag&lt;Eigen::Index&gt;{});</a>
 <a name="324"><span class="lineNum">     324 </span>            :         return apply(</a>
 <a name="325"><span class="lineNum">     325 </span>            :             io,</a>
 <a name="326"><span class="lineNum">     326 </span>            :             [](auto&amp;&amp; r_) -&gt; IOResult&lt;ColumnVectorShape&gt; {</a>

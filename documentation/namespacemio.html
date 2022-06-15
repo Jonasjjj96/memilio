@@ -460,7 +460,7 @@ Typedefs</h2></td></tr>
 <tr class="memitem:a828f9a1016d1048d5d3e67dcc5ff4e8f"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemio.html#a828f9a1016d1048d5d3e67dcc5ff4e8f">has_ostream_op</a> = <a class="el" href="structmio_1_1is__expression__valid.html">is_expression_valid</a>&lt; <a class="el" href="namespacemio.html#a0c09d69095773d82728cea5345a40008">ostream_op_expr_t</a>, T &gt;</td></tr>
 <tr class="separator:a828f9a1016d1048d5d3e67dcc5ff4e8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a802f35511c350a60fbd8838a6df5bd61"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
-<tr class="memitem:a802f35511c350a60fbd8838a6df5bd61"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemio.html#a802f35511c350a60fbd8838a6df5bd61">InterpolateResultT</a> = std::decay_t&lt; decltype(<a class="el" href="namespacemio.html#acab60abe374e023baf8bfdad8c7a4dd9">interpolate_simulation_result</a>(std::declval&lt; T &gt;()))&gt;</td></tr>
+<tr class="memitem:a802f35511c350a60fbd8838a6df5bd61"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemio.html#a802f35511c350a60fbd8838a6df5bd61">InterpolateResultT</a> = std::decay_t&lt; decltype(<a class="el" href="namespacemio.html#a449f66b75f44f30dc4e70963355f9b5e">interpolate_simulation_result</a>(std::declval&lt; T &gt;()))&gt;</td></tr>
 <tr class="memdesc:a802f35511c350a60fbd8838a6df5bd61"><td class="mdescLeft">&#160;</td><td class="mdescRight">helper template, type returned by overload interpolate_simulation_result(T t)  <a href="namespacemio.html#a802f35511c350a60fbd8838a6df5bd61">More...</a><br /></td></tr>
 <tr class="separator:a802f35511c350a60fbd8838a6df5bd61"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae556a666d14183eb2bf3a3efc11551ec"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
@@ -825,15 +825,22 @@ Functions</h2></td></tr>
 <tr class="separator:af182124b02db89381844675d1365a286"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae19cc9b7e5eb64f5ce5464de5511f737"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
 <tr class="memitem:ae19cc9b7e5eb64f5ce5464de5511f737"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="namespacemio.html#a802f35511c350a60fbd8838a6df5bd61">InterpolateResultT</a>&lt; T &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemio.html#ae19cc9b7e5eb64f5ce5464de5511f737">interpolate_ensemble_results</a> (const std::vector&lt; T &gt; &amp;ensemble_results)</td></tr>
-<tr class="memdesc:ae19cc9b7e5eb64f5ce5464de5511f737"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interpolates results of all runs with evenly spaced, integer time points.  <a href="namespacemio.html#ae19cc9b7e5eb64f5ce5464de5511f737">More...</a><br /></td></tr>
+<tr class="memdesc:ae19cc9b7e5eb64f5ce5464de5511f737"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interpolates results of all runs with evenly spaced, integer time points that represent whole days.  <a href="namespacemio.html#ae19cc9b7e5eb64f5ce5464de5511f737">More...</a><br /></td></tr>
 <tr class="separator:ae19cc9b7e5eb64f5ce5464de5511f737"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a192b86ffbea1443e5fcdaaacce671227"><td class="memTemplParams" colspan="2">template&lt;class Simulation &gt; </td></tr>
 <tr class="memitem:a192b86ffbea1443e5fcdaaacce671227"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classmio_1_1TimeSeries.html">TimeSeries</a>&lt; double &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemio.html#a192b86ffbea1443e5fcdaaacce671227">interpolate_simulation_result</a> (const <a class="el" href="classmio_1_1Graph.html">Graph</a>&lt; <a class="el" href="classmio_1_1SimulationNode.html">SimulationNode</a>&lt; <a class="el" href="classmio_1_1Simulation.html">Simulation</a> &gt;, <a class="el" href="classmio_1_1MigrationEdge.html">MigrationEdge</a> &gt; &amp;graph_result)</td></tr>
 <tr class="memdesc:a192b86ffbea1443e5fcdaaacce671227"><td class="mdescLeft">&#160;</td><td class="mdescRight">interpolate time series with evenly spaced, integer time points for each node.  <a href="namespacemio.html#a192b86ffbea1443e5fcdaaacce671227">More...</a><br /></td></tr>
 <tr class="separator:a192b86ffbea1443e5fcdaaacce671227"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acab60abe374e023baf8bfdad8c7a4dd9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmio_1_1TimeSeries.html">TimeSeries</a>&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemio.html#acab60abe374e023baf8bfdad8c7a4dd9">interpolate_simulation_result</a> (const <a class="el" href="classmio_1_1TimeSeries.html">TimeSeries</a>&lt; double &gt; &amp;simulation_result)</td></tr>
-<tr class="memdesc:acab60abe374e023baf8bfdad8c7a4dd9"><td class="mdescLeft">&#160;</td><td class="mdescRight">TODO: extrapolate first and last point.  <a href="namespacemio.html#acab60abe374e023baf8bfdad8c7a4dd9">More...</a><br /></td></tr>
-<tr class="separator:acab60abe374e023baf8bfdad8c7a4dd9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a449f66b75f44f30dc4e70963355f9b5e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmio_1_1TimeSeries.html">TimeSeries</a>&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemio.html#a449f66b75f44f30dc4e70963355f9b5e">interpolate_simulation_result</a> (const <a class="el" href="classmio_1_1TimeSeries.html">TimeSeries</a>&lt; double &gt; &amp;simulation_result, const double abs_tol=1e-14)</td></tr>
+<tr class="memdesc:a449f66b75f44f30dc4e70963355f9b5e"><td class="mdescLeft">&#160;</td><td class="mdescRight">interpolate time series with evenly spaced, integer time points that represent whole days.  <a href="namespacemio.html#a449f66b75f44f30dc4e70963355f9b5e">More...</a><br /></td></tr>
+<tr class="separator:a449f66b75f44f30dc4e70963355f9b5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7dcfb78101db4f3634bad069f1e2271f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmio_1_1TimeSeries.html">TimeSeries</a>&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemio.html#a7dcfb78101db4f3634bad069f1e2271f">interpolate_simulation_result</a> (const <a class="el" href="classmio_1_1TimeSeries.html">TimeSeries</a>&lt; double &gt; &amp;simulation_result, const std::vector&lt; double &gt; &amp;interpolation_times)</td></tr>
+<tr class="memdesc:a7dcfb78101db4f3634bad069f1e2271f"><td class="mdescLeft">&#160;</td><td class="mdescRight">interpolate time series with freely chosen time points that lie in between the time points of the given time series up to a given tolerance.  <a href="namespacemio.html#a7dcfb78101db4f3634bad069f1e2271f">More...</a><br /></td></tr>
+<tr class="separator:a7dcfb78101db4f3634bad069f1e2271f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a46a8c32ccd44e57584abc88bf22eee11"><td class="memTemplParams" colspan="2">template&lt;typename X , typename V &gt; </td></tr>
+<tr class="memitem:a46a8c32ccd44e57584abc88bf22eee11"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemio.html#a46a8c32ccd44e57584abc88bf22eee11">linear_interpolation</a> (const X &amp;x_eval, const X &amp;x_1, const X &amp;x_2, const V &amp;y1, const V &amp;y2)</td></tr>
+<tr class="memdesc:a46a8c32ccd44e57584abc88bf22eee11"><td class="mdescLeft">&#160;</td><td class="mdescRight">Linear interpolation between two data values.  <a href="namespacemio.html#a46a8c32ccd44e57584abc88bf22eee11">More...</a><br /></td></tr>
+<tr class="separator:a46a8c32ccd44e57584abc88bf22eee11"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7a8e658f565465ae076eab415d976e1b"><td class="memTemplParams" colspan="2">template&lt;typename... Args&gt; </td></tr>
 <tr class="memitem:a7a8e658f565465ae076eab415d976e1b"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemio.html#a7a8e658f565465ae076eab415d976e1b">log</a> (<a class="el" href="namespacemio.html#a67881790c6dfd8c058d27e5f1fe24220">LogLevel</a> level, spdlog::string_view_t fmt, const Args &amp;... args)</td></tr>
 <tr class="separator:a7a8e658f565465ae076eab415d976e1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1383,7 +1390,7 @@ template&lt;class T &gt; </div>
 template&lt;class T &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="namespacemio.html#a802f35511c350a60fbd8838a6df5bd61">mio::InterpolateResultT</a> = typedef std::decay_t&lt;decltype(<a class="el" href="namespacemio.html#acab60abe374e023baf8bfdad8c7a4dd9">interpolate_simulation_result</a>(std::declval&lt;T&gt;()))&gt;</td>
+          <td class="memname">using <a class="el" href="namespacemio.html#a802f35511c350a60fbd8838a6df5bd61">mio::InterpolateResultT</a> = typedef std::decay_t&lt;decltype(<a class="el" href="namespacemio.html#a449f66b75f44f30dc4e70963355f9b5e">interpolate_simulation_result</a>(std::declval&lt;T&gt;()))&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -4380,8 +4387,8 @@ template&lt;class T &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Interpolates results of all runs with evenly spaced, integer time points. </p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="namespacemio.html#acab60abe374e023baf8bfdad8c7a4dd9" title="TODO: extrapolate first and last point.">interpolate_simulation_result</a> </dd></dl>
+<p>Interpolates results of all runs with evenly spaced, integer time points that represent whole days. </p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="namespacemio.html#a449f66b75f44f30dc4e70963355f9b5e" title="interpolate time series with evenly spaced, integer time points that represent whole days.">interpolate_simulation_result</a> </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">ensemble_result</td><td>result of multiple simulations (single <a class="el" href="classmio_1_1TimeSeries.html" title="stores vectors of values at time points (or some other abstract variable) the value at each time poin...">TimeSeries</a> or <a class="el" href="classmio_1_1Graph.html" title="generic graph structure">Graph</a>) </td></tr>
@@ -4393,7 +4400,7 @@ template&lt;class T &gt; </div>
 </div>
 </div>
 <a id="a192b86ffbea1443e5fcdaaacce671227"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a192b86ffbea1443e5fcdaaacce671227">&#9670;&nbsp;</a></span>interpolate_simulation_result() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a192b86ffbea1443e5fcdaaacce671227">&#9670;&nbsp;</a></span>interpolate_simulation_result() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -4411,7 +4418,7 @@ template&lt;class Simulation &gt; </div>
 </div><div class="memdoc">
 
 <p>interpolate time series with evenly spaced, integer time points for each node. </p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="namespacemio.html#acab60abe374e023baf8bfdad8c7a4dd9" title="TODO: extrapolate first and last point.">interpolate_simulation_result</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="namespacemio.html#a449f66b75f44f30dc4e70963355f9b5e" title="interpolate time series with evenly spaced, integer time points that represent whole days.">interpolate_simulation_result</a> </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">graph_result</td><td>graph of simulations whose results will be interpolated </td></tr>
@@ -4422,8 +4429,8 @@ template&lt;class Simulation &gt; </div>
 
 </div>
 </div>
-<a id="acab60abe374e023baf8bfdad8c7a4dd9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acab60abe374e023baf8bfdad8c7a4dd9">&#9670;&nbsp;</a></span>interpolate_simulation_result() <span class="overload">[2/2]</span></h2>
+<a id="a449f66b75f44f30dc4e70963355f9b5e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a449f66b75f44f30dc4e70963355f9b5e">&#9670;&nbsp;</a></span>interpolate_simulation_result() <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -4432,21 +4439,131 @@ template&lt;class Simulation &gt; </div>
           <td class="memname"><a class="el" href="classmio_1_1TimeSeries.html">TimeSeries</a>&lt; double &gt; mio::interpolate_simulation_result </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classmio_1_1TimeSeries.html">TimeSeries</a>&lt; double &gt; &amp;&#160;</td>
-          <td class="paramname"><em>simulation_result</em></td><td>)</td>
+          <td class="paramname"><em>simulation_result</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">const double&#160;</td>
+          <td class="paramname"><em>abs_tol</em> = <code>1e-14</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>TODO: extrapolate first and last point. </p>
-<p>interpolate time series with evenly spaced, integer time points.</p>
-<p>time points [t0, t1, t2, ..., tmax] interpolated as [floor(t0), floor(t0) + 1,...,ceil(tmax)]. values at new time points are linearly interpolated from their immediate neighbors from the old time points. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>interpolate time series with evenly spaced, integer time points that represent whole days. </p>
+<p>time points [t0, t1, t2, ..., tmax] interpolated as days [ceil(t0), floor(t0) + 1,...,floor(tmax)]. tolerances in the first and last time point (t0 and t_max) are accounted for. values at new time points are linearly interpolated from their immediate neighbors from the old time points. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="namespacemio.html#a449f66b75f44f30dc4e70963355f9b5e" title="interpolate time series with evenly spaced, integer time points that represent whole days.">interpolate_simulation_result</a> </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">simulation_result</td><td>time series to interpolate </td></tr>
+    <tr><td class="paramname">abs_tol</td><td>absolute tolerance given for doubles t0 and tmax to account for small deviations from whole days. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>interpolated time series </dd></dl>
+
+</div>
+</div>
+<a id="a7dcfb78101db4f3634bad069f1e2271f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7dcfb78101db4f3634bad069f1e2271f">&#9670;&nbsp;</a></span>interpolate_simulation_result() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classmio_1_1TimeSeries.html">TimeSeries</a>&lt; double &gt; mio::interpolate_simulation_result </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classmio_1_1TimeSeries.html">TimeSeries</a>&lt; double &gt; &amp;&#160;</td>
+          <td class="paramname"><em>simulation_result</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; double &gt; &amp;&#160;</td>
+          <td class="paramname"><em>interpolation_times</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>interpolate time series with freely chosen time points that lie in between the time points of the given time series up to a given tolerance. </p>
+<p>values at new time points are linearly interpolated from their immediate neighbors from the old time points. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">simulation_result</td><td>time series to interpolate </td></tr>
+    <tr><td class="paramname">interpolations_times</td><td>std::vector of time points at which simulation results are interpolated. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>interpolated time series at given interpolation points </dd></dl>
+
+</div>
+</div>
+<a id="a46a8c32ccd44e57584abc88bf22eee11"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a46a8c32ccd44e57584abc88bf22eee11">&#9670;&nbsp;</a></span>linear_interpolation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename X , typename V &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">auto mio::linear_interpolation </td>
+          <td>(</td>
+          <td class="paramtype">const X &amp;&#160;</td>
+          <td class="paramname"><em>x_eval</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const X &amp;&#160;</td>
+          <td class="paramname"><em>x_1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const X &amp;&#160;</td>
+          <td class="paramname"><em>x_2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const V &amp;&#160;</td>
+          <td class="paramname"><em>y1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const V &amp;&#160;</td>
+          <td class="paramname"><em>y2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Linear interpolation between two data values. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">x_eval</td><td>Location to evaluate interpolation. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">x_1</td><td>Left node of interpolation. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">x_2</td><td>Right node of interpolation. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">y_1</td><td>Value at left node. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">y_2</td><td>Value at right node. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">unnamed</td><td>Interpolation result. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -5226,40 +5343,8 @@ template&lt;class T &gt; </div>
 
 </div>
 </div>
-<a id="a5b8d13d4bfbc6ab42cccb685cafdc5fe"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5b8d13d4bfbc6ab42cccb685cafdc5fe">&#9670;&nbsp;</a></span>operator&lt;&lt;() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class T &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">std::enable_if_t&lt;<a class="el" href="namespacemio.html#a828f9a1016d1048d5d3e67dcc5ff4e8f">has_ostream_op</a>&lt;T&gt;::value, std::ostream&amp;&gt; mio::operator&lt;&lt; </td>
-          <td>(</td>
-          <td class="paramtype">std::ostream &amp;&#160;</td>
-          <td class="paramname"><em>os</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="structmio_1_1Edge.html">Edge</a>&lt; T &gt; &amp;&#160;</td>
-          <td class="paramname"><em>e</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>out stream operator for edges if edge property type has stream operator defined </p>
-
-</div>
-</div>
 <a id="a9a58db8b765e525595174fe5b502bf85"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9a58db8b765e525595174fe5b502bf85">&#9670;&nbsp;</a></span>operator&lt;&lt;() <span class="overload">[2/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a9a58db8b765e525595174fe5b502bf85">&#9670;&nbsp;</a></span>operator&lt;&lt;() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -5287,6 +5372,38 @@ template&lt;class T &gt; </div>
 </div><div class="memdoc">
 
 <p>out stream operator for edges if edge property type does not have stream operator defined </p>
+
+</div>
+</div>
+<a id="a5b8d13d4bfbc6ab42cccb685cafdc5fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5b8d13d4bfbc6ab42cccb685cafdc5fe">&#9670;&nbsp;</a></span>operator&lt;&lt;() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">std::enable_if_t&lt;<a class="el" href="namespacemio.html#a828f9a1016d1048d5d3e67dcc5ff4e8f">has_ostream_op</a>&lt;T&gt;::value, std::ostream&amp;&gt; mio::operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>os</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structmio_1_1Edge.html">Edge</a>&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>e</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>out stream operator for edges if edge property type has stream operator defined </p>
 
 </div>
 </div>

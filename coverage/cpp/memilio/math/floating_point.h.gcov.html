@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2022-06-13 16:57:34</td>
+            <td class="headerValue">2022-06-15 16:14:56</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">4</td>
@@ -111,10 +111,10 @@
 <a name="49"><span class="lineNum">      49 </span>            :      * @return true if v1 is within the specified relative OR absolute tolerance of v2  </a>
 <a name="50"><span class="lineNum">      50 </span>            :      */</a>
 <a name="51"><span class="lineNum">      51 </span>            :     template&lt;class T&gt;</a>
-<a name="52"><span class="lineNum">      52 </span><span class="lineCov">        810 :     bool floating_point_equal(T v1, T v2, T abs_tol = 0, T rel_tol = std::numeric_limits&lt;T&gt;::min())</span></a>
+<a name="52"><span class="lineNum">      52 </span><span class="lineCov">        806 :     bool floating_point_equal(T v1, T v2, T abs_tol = 0, T rel_tol = std::numeric_limits&lt;T&gt;::min())</span></a>
 <a name="53"><span class="lineNum">      53 </span>            :     {</a>
-<a name="54"><span class="lineNum">      54 </span><span class="lineCov">        810 :         auto diff = std::abs(v1 - v2);</span></a>
-<a name="55"><span class="lineNum">      55 </span><span class="lineCov">        810 :         return diff &lt;= abs_tol || diff &lt;= abs_max(v1, v2) * rel_tol;</span></a>
+<a name="54"><span class="lineNum">      54 </span><span class="lineCov">        806 :         auto diff = std::abs(v1 - v2);</span></a>
+<a name="55"><span class="lineNum">      55 </span><span class="lineCov">        806 :         return diff &lt;= abs_tol || diff &lt;= abs_max(v1, v2) * rel_tol;</span></a>
 <a name="56"><span class="lineNum">      56 </span>            :     }</a>
 <a name="57"><span class="lineNum">      57 </span>            : </a>
 <a name="58"><span class="lineNum">      58 </span>            :     /**</a>
