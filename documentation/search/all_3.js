@@ -37,7 +37,7 @@ var searchData=
   ['compartmentalmodel_3c_20populations_3c_20agegroup_2c_20infectionstate_20_3e_2c_20secirparams_20_3e_99',['CompartmentalModel&lt; Populations&lt; AgeGroup, InfectionState &gt;, SecirParams &gt;',['../structmio_1_1CompartmentalModel.html',1,'mio']]],
   ['compartmentalmodel_3c_20populations_3c_20infectionstate_20_3e_2c_20parametersbase_20_3e_100',['CompartmentalModel&lt; Populations&lt; InfectionState &gt;, ParametersBase &gt;',['../structmio_1_1CompartmentalModel.html',1,'mio']]],
   ['compiler_5fdiagnostics_2eh_101',['compiler_diagnostics.h',['../compiler__diagnostics_8h.html',1,'']]],
-  ['compute_5fvaccination_5fratios_102',['compute_vaccination_ratios',['../namespacememilio_1_1epidata_1_1getVaccinationData.html#a265ffea53c2060ce04cc1eab0bd5f049',1,'memilio::epidata::getVaccinationData']]],
+  ['compute_5fvaccination_5fratios_102',['compute_vaccination_ratios',['../namespacememilio_1_1epidata_1_1getVaccinationData.html#a4608bee6ab035e43785420c561cd576e',1,'memilio::epidata::getVaccinationData']]],
   ['config_2eh_103',['config.h',['../config_8h.html',1,'']]],
   ['configure_5ffile_104',['configure_file',['../memilio_2CMakeLists_8txt.html#a421db26921c41f82925203e718f244ec',1,'CMakeLists.txt']]],
   ['conjunction_105',['conjunction',['../structmio_1_1conjunction.html',1,'mio']]],

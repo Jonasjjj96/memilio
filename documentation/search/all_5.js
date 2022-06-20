@@ -30,5 +30,6 @@ var searchData=
   ['evolve_5fmodel_240',['evolve_model',['../namespacemio.html#aebf8e2a8ccea82f3bbd91c3d479d1094',1,'mio']]],
   ['exponentialdistribution_241',['ExponentialDistribution',['../namespacemio.html#a4116647943793f9c44b5e2c70ea1a84e',1,'mio']]],
   ['exposed_242',['Exposed',['../namespacemio_1_1abm.html#ad1ae0779f53a827b524e1f0925b9d704aa54eecd5041d37f5c8443e0ee91e241a',1,'mio::abm::Exposed()'],['../namespacemio_1_1oseir.html#a32ea4a2481cf5935d5124ffb43636e44aa54eecd5041d37f5c8443e0ee91e241a',1,'mio::oseir::Exposed()'],['../namespacemio.html#ab764bd5fabfc7f31499bcb6791929895aa54eecd5041d37f5c8443e0ee91e241a',1,'mio::Exposed()']]],
-  ['extract_5fsubframe_5fbased_5fon_5fdates_243',['extract_subframe_based_on_dates',['../namespacememilio_1_1epidata_1_1modifyDataframeSeries.html#abe568d90d62bbeb5a8bb9cc7c740621e',1,'memilio::epidata::modifyDataframeSeries']]]
+  ['extract_5fsubframe_5fbased_5fon_5fdates_243',['extract_subframe_based_on_dates',['../namespacememilio_1_1epidata_1_1modifyDataframeSeries.html#abe568d90d62bbeb5a8bb9cc7c740621e',1,'memilio::epidata::modifyDataframeSeries']]],
+  ['extrapolate_5fage_5fgroups_244',['extrapolate_age_groups',['../namespacememilio_1_1epidata_1_1getVaccinationData.html#a4d0df3fdf6c98e676c7ca35cc61135ef',1,'memilio::epidata::getVaccinationData']]]
 ];

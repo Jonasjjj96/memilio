@@ -28,7 +28,7 @@
 
         
         <h2>Score</h2>
-        7.24 / 10
+        7.20 / 10
             
         
 
@@ -2603,62 +2603,6 @@
             </tr>
             
             <tr>
-                <td>1</td>
-                <td>0</td>
-                <td>refactor</td>
-                <td><code>duplicate-code</code></td>
-                <td>R0801</td>
-                <td></td>
-                <td><pre>Similar lines in 2 files
-==memilio.epidata.getJHData:[88:97]
-==memilio.epidata_test.test_epidata_get_jh_data:[116:123]
-        directory_ger = os.path.join(out_folder, &#39;Germany/&#39;)
-        directory_es = os.path.join(out_folder, &#39;Spain/&#39;)
-        directory_fr = os.path.join(out_folder, &#39;France/&#39;)
-        directory_it = os.path.join(out_folder, &#39;Italy/&#39;)
-        directory_us = os.path.join(out_folder, &#39;US/&#39;)
-        directory_rok = os.path.join(out_folder, &#39;SouthKorea/&#39;)
-        directory_prc = os.path.join(out_folder, &#39;China/&#39;)</pre></td>
-            </tr>
-            
-            <tr>
-                <td>1</td>
-                <td>0</td>
-                <td>refactor</td>
-                <td><code>duplicate-code</code></td>
-                <td>R0801</td>
-                <td></td>
-                <td><pre>Similar lines in 2 files
-==memilio.epidata.getTestingData:[108:114]
-==memilio.epidata.getVaccinationData:[172:178]
-                     file_format=dd.defaultDict[&#39;file_format&#39;],
-                     out_folder=dd.defaultDict[&#39;out_folder&#39;],
-                     no_raw=dd.defaultDict[&#39;no_raw&#39;],
-                     start_date=dd.defaultDict[&#39;start_date&#39;],
-                     end_date=dd.defaultDict[&#39;end_date&#39;],
-                     make_plot=dd.defaultDict[&#39;make_plot&#39;],</pre></td>
-            </tr>
-            
-            <tr>
-                <td>1</td>
-                <td>0</td>
-                <td>refactor</td>
-                <td><code>duplicate-code</code></td>
-                <td>R0801</td>
-                <td></td>
-                <td><pre>Similar lines in 2 files
-==memilio.epidata.getSimulationData:[32:40]
-==memilio.epidata_test.test_epidata_getDataIntoPandasDataFrame:[28:35]
-from memilio.epidata import getDataIntoPandasDataFrame as gd
-from memilio.epidata import defaultDict as dd
-
-from memilio.epidata import getVaccinationData
-from memilio.epidata import getPopulationData
-from memilio.epidata import getCaseData
-from memilio.epidata import getDIVIData</pre></td>
-            </tr>
-            
-            <tr>
                 <td>27</td>
                 <td>0</td>
                 <td>error</td>
@@ -3871,7 +3815,7 @@ from memilio.epidata import getDIVIData</pre></td>
                 <td><code>too-many-lines</code></td>
                 <td>C0302</td>
                 <td></td>
-                <td><pre>Too many lines in module (1144/1000)</pre></td>
+                <td><pre>Too many lines in module (1052/1000)</pre></td>
             </tr>
             
             <tr>
@@ -3895,7 +3839,7 @@ from memilio.epidata import getDIVIData</pre></td>
             </tr>
             
             <tr>
-                <td>24</td>
+                <td>23</td>
                 <td>0</td>
                 <td>error</td>
                 <td><code>import-error</code></td>
@@ -3905,7 +3849,7 @@ from memilio.epidata import getDIVIData</pre></td>
             </tr>
             
             <tr>
-                <td>25</td>
+                <td>24</td>
                 <td>0</td>
                 <td>error</td>
                 <td><code>import-error</code></td>
@@ -3915,7 +3859,7 @@ from memilio.epidata import getDIVIData</pre></td>
             </tr>
             
             <tr>
-                <td>38</td>
+                <td>37</td>
                 <td>0</td>
                 <td>convention</td>
                 <td><code>missing-function-docstring</code></td>
@@ -3925,7 +3869,7 @@ from memilio.epidata import getDIVIData</pre></td>
             </tr>
             
             <tr>
-                <td>40</td>
+                <td>39</td>
                 <td>0</td>
                 <td>convention</td>
                 <td><code>line-too-long</code></td>
@@ -3935,7 +3879,7 @@ from memilio.epidata import getDIVIData</pre></td>
             </tr>
             
             <tr>
-                <td>42</td>
+                <td>41</td>
                 <td>4</td>
                 <td>convention</td>
                 <td><code>invalid-name</code></td>
@@ -3945,7 +3889,7 @@ from memilio.epidata import getDIVIData</pre></td>
             </tr>
             
             <tr>
-                <td>45</td>
+                <td>44</td>
                 <td>8</td>
                 <td>convention</td>
                 <td><code>invalid-name</code></td>
@@ -3955,7 +3899,37 @@ from memilio.epidata import getDIVIData</pre></td>
             </tr>
             
             <tr>
-                <td>63</td>
+                <td>55</td>
+                <td>0</td>
+                <td>convention</td>
+                <td><code>invalid-name</code></td>
+                <td>C0103</td>
+                <td>sanity_checks</td>
+                <td><pre>Argument name &#34;df&#34; doesn&#39;t conform to snake_case naming style</pre></td>
+            </tr>
+            
+            <tr>
+                <td>55</td>
+                <td>0</td>
+                <td>convention</td>
+                <td><code>missing-function-docstring</code></td>
+                <td>C0116</td>
+                <td>sanity_checks</td>
+                <td><pre>Missing function or method docstring</pre></td>
+            </tr>
+            
+            <tr>
+                <td>69</td>
+                <td>0</td>
+                <td>convention</td>
+                <td><code>superfluous-parens</code></td>
+                <td>C0325</td>
+                <td></td>
+                <td><pre>Unnecessary parens after &#39;if&#39; keyword</pre></td>
+            </tr>
+            
+            <tr>
+                <td>80</td>
                 <td>73</td>
                 <td>convention</td>
                 <td><code>trailing-whitespace</code></td>
@@ -3965,7 +3939,7 @@ from memilio.epidata import getDIVIData</pre></td>
             </tr>
             
             <tr>
-                <td>66</td>
+                <td>83</td>
                 <td>78</td>
                 <td>convention</td>
                 <td><code>trailing-whitespace</code></td>
@@ -3975,7 +3949,7 @@ from memilio.epidata import getDIVIData</pre></td>
             </tr>
             
             <tr>
-                <td>68</td>
+                <td>85</td>
                 <td>66</td>
                 <td>convention</td>
                 <td><code>trailing-whitespace</code></td>
@@ -3985,7 +3959,7 @@ from memilio.epidata import getDIVIData</pre></td>
             </tr>
             
             <tr>
-                <td>106</td>
+                <td>123</td>
                 <td>0</td>
                 <td>refactor</td>
                 <td><code>too-many-arguments</code></td>
@@ -3995,7 +3969,7 @@ from memilio.epidata import getDIVIData</pre></td>
             </tr>
             
             <tr>
-                <td>109</td>
+                <td>126</td>
                 <td>72</td>
                 <td>convention</td>
                 <td><code>trailing-whitespace</code></td>
@@ -4005,18 +3979,18 @@ from memilio.epidata import getDIVIData</pre></td>
             </tr>
             
             <tr>
-                <td>141</td>
+                <td>156</td>
                 <td>0</td>
                 <td>convention</td>
-                <td><code>line-too-long</code></td>
-                <td>C0301</td>
-                <td></td>
-                <td><pre>Line too long (186/120)</pre></td>
+                <td><code>invalid-name</code></td>
+                <td>C0103</td>
+                <td>sanitizing_average_regions</td>
+                <td><pre>Argument name &#34;df&#34; doesn&#39;t conform to snake_case naming style</pre></td>
             </tr>
             
             <tr>
-                <td>144</td>
-                <td>109</td>
+                <td>157</td>
+                <td>81</td>
                 <td>convention</td>
                 <td><code>trailing-whitespace</code></td>
                 <td>C0303</td>
@@ -4025,167 +3999,27 @@ from memilio.epidata import getDIVIData</pre></td>
             </tr>
             
             <tr>
-                <td>145</td>
+                <td>169</td>
                 <td>0</td>
                 <td>convention</td>
-                <td><code>line-too-long</code></td>
-                <td>C0301</td>
+                <td><code>trailing-whitespace</code></td>
+                <td>C0303</td>
                 <td></td>
-                <td><pre>Line too long (140/120)</pre></td>
-            </tr>
-            
-            <tr>
-                <td>146</td>
-                <td>0</td>
-                <td>convention</td>
-                <td><code>line-too-long</code></td>
-                <td>C0301</td>
-                <td></td>
-                <td><pre>Line too long (123/120)</pre></td>
-            </tr>
-            
-            <tr>
-                <td>159</td>
-                <td>4</td>
-                <td>convention</td>
-                <td><code>consider-using-enumerate</code></td>
-                <td>C0200</td>
-                <td>split_column_based_on_values</td>
-                <td><pre>Consider using enumerate instead of iterating with range and len</pre></td>
-            </tr>
-            
-            <tr>
-                <td>170</td>
-                <td>0</td>
-                <td>convention</td>
-                <td><code>line-too-long</code></td>
-                <td>C0301</td>
-                <td></td>
-                <td><pre>Line too long (124/120)</pre></td>
-            </tr>
-            
-            <tr>
-                <td>172</td>
-                <td>0</td>
-                <td>refactor</td>
-                <td><code>too-many-arguments</code></td>
-                <td>R0913</td>
-                <td>get_vaccination_data</td>
-                <td><pre>Too many arguments (9/5)</pre></td>
-            </tr>
-            
-            <tr>
-                <td>172</td>
-                <td>0</td>
-                <td>refactor</td>
-                <td><code>too-many-locals</code></td>
-                <td>R0914</td>
-                <td>get_vaccination_data</td>
-                <td><pre>Too many local variables (117/15)</pre></td>
-            </tr>
-            
-            <tr>
-                <td>172</td>
-                <td>25</td>
-                <td>warning</td>
-                <td><code>unused-argument</code></td>
-                <td>W0613</td>
-                <td>get_vaccination_data</td>
-                <td><pre>Unused argument &#39;read_data&#39;</pre></td>
-            </tr>
-            
-            <tr>
-                <td>172</td>
-                <td>0</td>
-                <td>refactor</td>
-                <td><code>too-many-branches</code></td>
-                <td>R0912</td>
-                <td>get_vaccination_data</td>
-                <td><pre>Too many branches (81/12)</pre></td>
-            </tr>
-            
-            <tr>
-                <td>172</td>
-                <td>0</td>
-                <td>refactor</td>
-                <td><code>too-many-statements</code></td>
-                <td>R0915</td>
-                <td>get_vaccination_data</td>
-                <td><pre>Too many statements (303/50)</pre></td>
+                <td><pre>Trailing whitespace</pre></td>
             </tr>
             
             <tr>
                 <td>176</td>
-                <td>25</td>
+                <td>12</td>
                 <td>warning</td>
-                <td><code>unused-argument</code></td>
-                <td>W0613</td>
-                <td>get_vaccination_data</td>
-                <td><pre>Unused argument &#39;start_date&#39;</pre></td>
+                <td><code>unused-variable</code></td>
+                <td>W0612</td>
+                <td>sanitizing_average_regions</td>
+                <td><pre>Unused variable &#39;region&#39;</pre></td>
             </tr>
             
             <tr>
-                <td>177</td>
-                <td>25</td>
-                <td>warning</td>
-                <td><code>unused-argument</code></td>
-                <td>W0613</td>
-                <td>get_vaccination_data</td>
-                <td><pre>Unused argument &#39;end_date&#39;</pre></td>
-            </tr>
-            
-            <tr>
-                <td>198</td>
-                <td>102</td>
-                <td>convention</td>
-                <td><code>trailing-whitespace</code></td>
-                <td>C0303</td>
-                <td></td>
-                <td><pre>Trailing whitespace</pre></td>
-            </tr>
-            
-            <tr>
-                <td>210</td>
-                <td>75</td>
-                <td>convention</td>
-                <td><code>trailing-whitespace</code></td>
-                <td>C0303</td>
-                <td></td>
-                <td><pre>Trailing whitespace</pre></td>
-            </tr>
-            
-            <tr>
-                <td>211</td>
-                <td>73</td>
-                <td>convention</td>
-                <td><code>trailing-whitespace</code></td>
-                <td>C0303</td>
-                <td></td>
-                <td><pre>Trailing whitespace</pre></td>
-            </tr>
-            
-            <tr>
-                <td>213</td>
-                <td>18</td>
-                <td>convention</td>
-                <td><code>trailing-whitespace</code></td>
-                <td>C0303</td>
-                <td></td>
-                <td><pre>Trailing whitespace</pre></td>
-            </tr>
-            
-            <tr>
-                <td>217</td>
-                <td>60</td>
-                <td>convention</td>
-                <td><code>trailing-whitespace</code></td>
-                <td>C0303</td>
-                <td></td>
-                <td><pre>Trailing whitespace</pre></td>
-            </tr>
-            
-            <tr>
-                <td>224</td>
+                <td>182</td>
                 <td>0</td>
                 <td>convention</td>
                 <td><code>line-too-long</code></td>
@@ -4195,147 +4029,67 @@ from memilio.epidata import getDIVIData</pre></td>
             </tr>
             
             <tr>
-                <td>296</td>
+                <td>183</td>
                 <td>0</td>
                 <td>convention</td>
                 <td><code>line-too-long</code></td>
                 <td>C0301</td>
                 <td></td>
-                <td><pre>Line too long (142/120)</pre></td>
+                <td><pre>Line too long (131/120)</pre></td>
             </tr>
             
             <tr>
-                <td>351</td>
-                <td>4</td>
-                <td>convention</td>
-                <td><code>consider-using-enumerate</code></td>
-                <td>C0200</td>
-                <td>get_vaccination_data</td>
-                <td><pre>Consider using enumerate instead of iterating with range and len</pre></td>
-            </tr>
-            
-            <tr>
-                <td>358</td>
-                <td>8</td>
-                <td>convention</td>
-                <td><code>consider-using-enumerate</code></td>
-                <td>C0200</td>
-                <td>get_vaccination_data</td>
-                <td><pre>Consider using enumerate instead of iterating with range and len</pre></td>
-            </tr>
-            
-            <tr>
-                <td>368</td>
-                <td>8</td>
-                <td>convention</td>
-                <td><code>consider-using-enumerate</code></td>
-                <td>C0200</td>
-                <td>get_vaccination_data</td>
-                <td><pre>Consider using enumerate instead of iterating with range and len</pre></td>
-            </tr>
-            
-            <tr>
-                <td>381</td>
-                <td>4</td>
-                <td>convention</td>
-                <td><code>consider-using-enumerate</code></td>
-                <td>C0200</td>
-                <td>get_vaccination_data</td>
-                <td><pre>Consider using enumerate instead of iterating with range and len</pre></td>
-            </tr>
-            
-            <tr>
-                <td>405</td>
-                <td>4</td>
-                <td>convention</td>
-                <td><code>consider-using-enumerate</code></td>
-                <td>C0200</td>
-                <td>get_vaccination_data</td>
-                <td><pre>Consider using enumerate instead of iterating with range and len</pre></td>
-            </tr>
-            
-            <tr>
-                <td>418</td>
-                <td>4</td>
-                <td>convention</td>
-                <td><code>consider-using-enumerate</code></td>
-                <td>C0200</td>
-                <td>get_vaccination_data</td>
-                <td><pre>Consider using enumerate instead of iterating with range and len</pre></td>
-            </tr>
-            
-            <tr>
-                <td>439</td>
-                <td>4</td>
-                <td>convention</td>
-                <td><code>consider-using-enumerate</code></td>
-                <td>C0200</td>
-                <td>get_vaccination_data</td>
-                <td><pre>Consider using enumerate instead of iterating with range and len</pre></td>
-            </tr>
-            
-            <tr>
-                <td>451</td>
-                <td>4</td>
-                <td>convention</td>
-                <td><code>consider-using-enumerate</code></td>
-                <td>C0200</td>
-                <td>get_vaccination_data</td>
-                <td><pre>Consider using enumerate instead of iterating with range and len</pre></td>
-            </tr>
-            
-            <tr>
-                <td>525</td>
-                <td>7</td>
-                <td>refactor</td>
-                <td><code>consider-using-in</code></td>
-                <td>R1714</td>
-                <td>get_vaccination_data</td>
-                <td><pre>Consider merging these comparisons with &#34;in&#34; to &#39;sanitize_data in (1, 2)&#39;</pre></td>
-            </tr>
-            
-            <tr>
-                <td>578</td>
-                <td>4</td>
-                <td>refactor</td>
-                <td><code>too-many-nested-blocks</code></td>
-                <td>R1702</td>
-                <td>get_vaccination_data</td>
-                <td><pre>Too many nested blocks (6/5)</pre></td>
-            </tr>
-            
-            <tr>
-                <td>583</td>
-                <td>12</td>
+                <td>195</td>
+                <td>0</td>
                 <td>convention</td>
                 <td><code>invalid-name</code></td>
                 <td>C0103</td>
-                <td>get_vaccination_data</td>
-                <td><pre>Variable name &#34;kk&#34; doesn&#39;t conform to snake_case naming style</pre></td>
+                <td>sanitizing_extrapolation_mobility</td>
+                <td><pre>Argument name &#34;df&#34; doesn&#39;t conform to snake_case naming style</pre></td>
             </tr>
             
             <tr>
-                <td>606</td>
-                <td>8</td>
+                <td>195</td>
+                <td>0</td>
+                <td>refactor</td>
+                <td><code>too-many-locals</code></td>
+                <td>R0914</td>
+                <td>sanitizing_extrapolation_mobility</td>
+                <td><pre>Too many local variables (38/15)</pre></td>
+            </tr>
+            
+            <tr>
+                <td>195</td>
+                <td>0</td>
+                <td>refactor</td>
+                <td><code>too-many-branches</code></td>
+                <td>R0912</td>
+                <td>sanitizing_extrapolation_mobility</td>
+                <td><pre>Too many branches (14/12)</pre></td>
+            </tr>
+            
+            <tr>
+                <td>195</td>
+                <td>0</td>
+                <td>refactor</td>
+                <td><code>too-many-statements</code></td>
+                <td>R0915</td>
+                <td>sanitizing_extrapolation_mobility</td>
+                <td><pre>Too many statements (60/50)</pre></td>
+            </tr>
+            
+            <tr>
+                <td>197</td>
+                <td>0</td>
                 <td>convention</td>
-                <td><code>consider-using-dict-items</code></td>
-                <td>C0206</td>
-                <td>get_vaccination_data</td>
-                <td><pre>Consider iterating with .items()</pre></td>
+                <td><code>line-too-long</code></td>
+                <td>C0301</td>
+                <td></td>
+                <td><pre>Line too long (154/120)</pre></td>
             </tr>
             
             <tr>
-                <td>616</td>
-                <td>16</td>
-                <td>convention</td>
-                <td><code>invalid-name</code></td>
-                <td>C0103</td>
-                <td>get_vaccination_data</td>
-                <td><pre>Variable name &#34;ii&#34; doesn&#39;t conform to snake_case naming style</pre></td>
-            </tr>
-            
-            <tr>
-                <td>625</td>
+                <td>200</td>
                 <td>0</td>
                 <td>convention</td>
                 <td><code>line-too-long</code></td>
@@ -4345,97 +4099,57 @@ from memilio.epidata import getDIVIData</pre></td>
             </tr>
             
             <tr>
-                <td>629</td>
+                <td>201</td>
                 <td>0</td>
                 <td>convention</td>
                 <td><code>line-too-long</code></td>
                 <td>C0301</td>
                 <td></td>
-                <td><pre>Line too long (140/120)</pre></td>
+                <td><pre>Line too long (123/120)</pre></td>
             </tr>
             
             <tr>
-                <td>630</td>
-                <td>0</td>
+                <td>219</td>
+                <td>8</td>
                 <td>convention</td>
-                <td><code>line-too-long</code></td>
-                <td>C0301</td>
-                <td></td>
-                <td><pre>Line too long (147/120)</pre></td>
+                <td><code>invalid-name</code></td>
+                <td>C0103</td>
+                <td>sanitizing_extrapolation_mobility</td>
+                <td><pre>Variable name &#34;kk&#34; doesn&#39;t conform to snake_case naming style</pre></td>
             </tr>
             
             <tr>
-                <td>636</td>
-                <td>0</td>
+                <td>241</td>
+                <td>4</td>
                 <td>convention</td>
-                <td><code>line-too-long</code></td>
-                <td>C0301</td>
-                <td></td>
-                <td><pre>Line too long (140/120)</pre></td>
+                <td><code>consider-using-dict-items</code></td>
+                <td>C0206</td>
+                <td>sanitizing_extrapolation_mobility</td>
+                <td><pre>Consider iterating with .items()</pre></td>
             </tr>
             
             <tr>
-                <td>637</td>
-                <td>0</td>
-                <td>convention</td>
-                <td><code>line-too-long</code></td>
-                <td>C0301</td>
-                <td></td>
-                <td><pre>Line too long (198/120)</pre></td>
-            </tr>
-            
-            <tr>
-                <td>637</td>
-                <td>0</td>
-                <td>refactor</td>
-                <td><code>unnecessary-comprehension</code></td>
-                <td>R1721</td>
-                <td>get_vaccination_data</td>
-                <td><pre>Unnecessary use of a comprehension, use list(unique_age_groups_old) instead.</pre></td>
-            </tr>
-            
-            <tr>
-                <td>657</td>
+                <td>251</td>
                 <td>12</td>
                 <td>convention</td>
                 <td><code>invalid-name</code></td>
                 <td>C0103</td>
-                <td>get_vaccination_data</td>
+                <td>sanitizing_extrapolation_mobility</td>
                 <td><pre>Variable name &#34;ii&#34; doesn&#39;t conform to snake_case naming style</pre></td>
             </tr>
             
             <tr>
-                <td>660</td>
-                <td>12</td>
-                <td>warning</td>
-                <td><code>redefined-builtin</code></td>
-                <td>W0622</td>
-                <td>get_vaccination_data</td>
-                <td><pre>Redefining built-in &#39;id&#39;</pre></td>
-            </tr>
-            
-            <tr>
-                <td>660</td>
-                <td>12</td>
+                <td>260</td>
+                <td>0</td>
                 <td>convention</td>
-                <td><code>invalid-name</code></td>
-                <td>C0103</td>
-                <td>get_vaccination_data</td>
-                <td><pre>Variable name &#34;id&#34; doesn&#39;t conform to snake_case naming style</pre></td>
+                <td><code>line-too-long</code></td>
+                <td>C0301</td>
+                <td></td>
+                <td><pre>Line too long (159/120)</pre></td>
             </tr>
             
             <tr>
-                <td>674</td>
-                <td>12</td>
-                <td>convention</td>
-                <td><code>consider-using-enumerate</code></td>
-                <td>C0200</td>
-                <td>get_vaccination_data</td>
-                <td><pre>Consider using enumerate instead of iterating with range and len</pre></td>
-            </tr>
-            
-            <tr>
-                <td>684</td>
+                <td>264</td>
                 <td>0</td>
                 <td>convention</td>
                 <td><code>line-too-long</code></td>
@@ -4445,157 +4159,437 @@ from memilio.epidata import getDIVIData</pre></td>
             </tr>
             
             <tr>
-                <td>685</td>
+                <td>265</td>
                 <td>0</td>
                 <td>convention</td>
                 <td><code>line-too-long</code></td>
                 <td>C0301</td>
                 <td></td>
-                <td><pre>Line too long (128/120)</pre></td>
+                <td><pre>Line too long (132/120)</pre></td>
             </tr>
             
             <tr>
-                <td>699</td>
+                <td>271</td>
                 <td>0</td>
                 <td>convention</td>
                 <td><code>line-too-long</code></td>
                 <td>C0301</td>
                 <td></td>
-                <td><pre>Line too long (127/120)</pre></td>
+                <td><pre>Line too long (125/120)</pre></td>
             </tr>
             
             <tr>
-                <td>700</td>
+                <td>272</td>
                 <td>0</td>
                 <td>convention</td>
                 <td><code>line-too-long</code></td>
                 <td>C0301</td>
                 <td></td>
-                <td><pre>Line too long (209/120)</pre></td>
+                <td><pre>Line too long (173/120)</pre></td>
             </tr>
             
             <tr>
-                <td>735</td>
+                <td>272</td>
                 <td>0</td>
-                <td>convention</td>
-                <td><code>line-too-long</code></td>
-                <td>C0301</td>
-                <td></td>
-                <td><pre>Line too long (155/120)</pre></td>
+                <td>refactor</td>
+                <td><code>unnecessary-comprehension</code></td>
+                <td>R1721</td>
+                <td>sanitizing_extrapolation_mobility</td>
+                <td><pre>Unnecessary use of a comprehension, use list(age_groups) instead.</pre></td>
             </tr>
             
             <tr>
-                <td>743</td>
-                <td>0</td>
-                <td>convention</td>
-                <td><code>line-too-long</code></td>
-                <td>C0301</td>
-                <td></td>
-                <td><pre>Line too long (199/120)</pre></td>
-            </tr>
-            
-            <tr>
-                <td>744</td>
-                <td>0</td>
-                <td>convention</td>
-                <td><code>line-too-long</code></td>
-                <td>C0301</td>
-                <td></td>
-                <td><pre>Line too long (156/120)</pre></td>
-            </tr>
-            
-            <tr>
-                <td>746</td>
-                <td>0</td>
-                <td>convention</td>
-                <td><code>line-too-long</code></td>
-                <td>C0301</td>
-                <td></td>
-                <td><pre>Line too long (161/120)</pre></td>
-            </tr>
-            
-            <tr>
-                <td>747</td>
-                <td>0</td>
-                <td>convention</td>
-                <td><code>line-too-long</code></td>
-                <td>C0301</td>
-                <td></td>
-                <td><pre>Line too long (178/120)</pre></td>
-            </tr>
-            
-            <tr>
-                <td>755</td>
-                <td>29</td>
-                <td>convention</td>
-                <td><code>singleton-comparison</code></td>
-                <td>C0121</td>
-                <td>get_vaccination_data</td>
-                <td><pre>Comparison &#39;np.isnan(df_san[vacc_column_names]) == True&#39; should be &#39;np.isnan(df_san[vacc_column_names]) is True&#39; if checking for the singleton value True, or &#39;bool(np.isnan(df_san[vacc_column_names]))&#39; if testing for truthiness</pre></td>
-            </tr>
-            
-            <tr>
-                <td>773</td>
-                <td>12</td>
+                <td>281</td>
+                <td>8</td>
                 <td>convention</td>
                 <td><code>invalid-name</code></td>
                 <td>C0103</td>
-                <td>get_vaccination_data</td>
+                <td>sanitizing_extrapolation_mobility</td>
+                <td><pre>Variable name &#34;ii&#34; doesn&#39;t conform to snake_case naming style</pre></td>
+            </tr>
+            
+            <tr>
+                <td>283</td>
+                <td>8</td>
+                <td>warning</td>
+                <td><code>redefined-builtin</code></td>
+                <td>W0622</td>
+                <td>sanitizing_extrapolation_mobility</td>
+                <td><pre>Redefining built-in &#39;id&#39;</pre></td>
+            </tr>
+            
+            <tr>
+                <td>283</td>
+                <td>8</td>
+                <td>convention</td>
+                <td><code>invalid-name</code></td>
+                <td>C0103</td>
+                <td>sanitizing_extrapolation_mobility</td>
                 <td><pre>Variable name &#34;id&#34; doesn&#39;t conform to snake_case naming style</pre></td>
             </tr>
             
             <tr>
-                <td>775</td>
-                <td>16</td>
-                <td>convention</td>
-                <td><code>invalid-name</code></td>
-                <td>C0103</td>
-                <td>get_vaccination_data</td>
-                <td><pre>Variable name &#34;a&#34; doesn&#39;t conform to snake_case naming style</pre></td>
-            </tr>
-            
-            <tr>
-                <td>777</td>
-                <td>16</td>
-                <td>convention</td>
-                <td><code>invalid-name</code></td>
-                <td>C0103</td>
-                <td>get_vaccination_data</td>
-                <td><pre>Variable name &#34;b&#34; doesn&#39;t conform to snake_case naming style</pre></td>
-            </tr>
-            
-            <tr>
-                <td>857</td>
-                <td>0</td>
-                <td>refactor</td>
-                <td><code>unnecessary-comprehension</code></td>
-                <td>R1721</td>
-                <td>get_vaccination_data</td>
-                <td><pre>Unnecessary use of a comprehension, use list(unique_age_groups_old) instead.</pre></td>
-            </tr>
-            
-            <tr>
-                <td>869</td>
-                <td>0</td>
-                <td>refactor</td>
-                <td><code>unnecessary-comprehension</code></td>
-                <td>R1721</td>
-                <td>get_vaccination_data</td>
-                <td><pre>Unnecessary use of a comprehension, use list(unique_age_groups_old) instead.</pre></td>
-            </tr>
-            
-            <tr>
-                <td>952</td>
-                <td>12</td>
+                <td>297</td>
+                <td>8</td>
                 <td>convention</td>
                 <td><code>consider-using-enumerate</code></td>
                 <td>C0200</td>
-                <td>get_vaccination_data</td>
+                <td>sanitizing_extrapolation_mobility</td>
                 <td><pre>Consider using enumerate instead of iterating with range and len</pre></td>
             </tr>
             
             <tr>
-                <td>1006</td>
+                <td>307</td>
+                <td>0</td>
+                <td>convention</td>
+                <td><code>line-too-long</code></td>
+                <td>C0301</td>
+                <td></td>
+                <td><pre>Line too long (121/120)</pre></td>
+            </tr>
+            
+            <tr>
+                <td>322</td>
+                <td>0</td>
+                <td>convention</td>
+                <td><code>line-too-long</code></td>
+                <td>C0301</td>
+                <td></td>
+                <td><pre>Line too long (123/120)</pre></td>
+            </tr>
+            
+            <tr>
+                <td>323</td>
+                <td>0</td>
+                <td>convention</td>
+                <td><code>line-too-long</code></td>
+                <td>C0301</td>
+                <td></td>
+                <td><pre>Line too long (206/120)</pre></td>
+            </tr>
+            
+            <tr>
+                <td>358</td>
+                <td>0</td>
+                <td>convention</td>
+                <td><code>line-too-long</code></td>
+                <td>C0301</td>
+                <td></td>
+                <td><pre>Line too long (142/120)</pre></td>
+            </tr>
+            
+            <tr>
+                <td>366</td>
+                <td>0</td>
+                <td>convention</td>
+                <td><code>line-too-long</code></td>
+                <td>C0301</td>
+                <td></td>
+                <td><pre>Line too long (179/120)</pre></td>
+            </tr>
+            
+            <tr>
+                <td>367</td>
+                <td>0</td>
+                <td>convention</td>
+                <td><code>line-too-long</code></td>
+                <td>C0301</td>
+                <td></td>
+                <td><pre>Line too long (136/120)</pre></td>
+            </tr>
+            
+            <tr>
+                <td>379</td>
+                <td>25</td>
+                <td>convention</td>
+                <td><code>singleton-comparison</code></td>
+                <td>C0121</td>
+                <td>sanitizing_extrapolation_mobility</td>
+                <td><pre>Comparison &#39;np.isnan(df_san[column_names]) == True&#39; should be &#39;np.isnan(df_san[column_names]) is True&#39; if checking for the singleton value True, or &#39;bool(np.isnan(df_san[column_names]))&#39; if testing for truthiness</pre></td>
+            </tr>
+            
+            <tr>
+                <td>397</td>
+                <td>8</td>
+                <td>convention</td>
+                <td><code>invalid-name</code></td>
+                <td>C0103</td>
+                <td>sanitizing_extrapolation_mobility</td>
+                <td><pre>Variable name &#34;id&#34; doesn&#39;t conform to snake_case naming style</pre></td>
+            </tr>
+            
+            <tr>
+                <td>399</td>
+                <td>12</td>
+                <td>convention</td>
+                <td><code>invalid-name</code></td>
+                <td>C0103</td>
+                <td>sanitizing_extrapolation_mobility</td>
+                <td><pre>Variable name &#34;a&#34; doesn&#39;t conform to snake_case naming style</pre></td>
+            </tr>
+            
+            <tr>
+                <td>401</td>
+                <td>12</td>
+                <td>convention</td>
+                <td><code>invalid-name</code></td>
+                <td>C0103</td>
+                <td>sanitizing_extrapolation_mobility</td>
+                <td><pre>Variable name &#34;b&#34; doesn&#39;t conform to snake_case naming style</pre></td>
+            </tr>
+            
+            <tr>
+                <td>410</td>
+                <td>0</td>
+                <td>refactor</td>
+                <td><code>too-many-arguments</code></td>
+                <td>R0913</td>
+                <td>extrapolate_age_groups</td>
+                <td><pre>Too many arguments (8/5)</pre></td>
+            </tr>
+            
+            <tr>
+                <td>410</td>
+                <td>0</td>
+                <td>refactor</td>
+                <td><code>too-many-locals</code></td>
+                <td>R0914</td>
+                <td>extrapolate_age_groups</td>
+                <td><pre>Too many local variables (23/15)</pre></td>
+            </tr>
+            
+            <tr>
+                <td>414</td>
+                <td>97</td>
+                <td>convention</td>
+                <td><code>trailing-whitespace</code></td>
+                <td>C0303</td>
+                <td></td>
+                <td><pre>Trailing whitespace</pre></td>
+            </tr>
+            
+            <tr>
+                <td>415</td>
+                <td>116</td>
+                <td>convention</td>
+                <td><code>trailing-whitespace</code></td>
+                <td>C0303</td>
+                <td></td>
+                <td><pre>Trailing whitespace</pre></td>
+            </tr>
+            
+            <tr>
+                <td>417</td>
+                <td>0</td>
+                <td>convention</td>
+                <td><code>line-too-long</code></td>
+                <td>C0301</td>
+                <td></td>
+                <td><pre>Line too long (121/120)</pre></td>
+            </tr>
+            
+            <tr>
+                <td>432</td>
+                <td>4</td>
+                <td>convention</td>
+                <td><code>consider-using-enumerate</code></td>
+                <td>C0200</td>
+                <td>extrapolate_age_groups</td>
+                <td><pre>Consider using enumerate instead of iterating with range and len</pre></td>
+            </tr>
+            
+            <tr>
+                <td>435</td>
+                <td>8</td>
+                <td>convention</td>
+                <td><code>invalid-name</code></td>
+                <td>C0103</td>
+                <td>extrapolate_age_groups</td>
+                <td><pre>Variable name &#34;countyID&#34; doesn&#39;t conform to snake_case naming style</pre></td>
+            </tr>
+            
+            <tr>
+                <td>443</td>
+                <td>0</td>
+                <td>convention</td>
+                <td><code>trailing-whitespace</code></td>
+                <td>C0303</td>
+                <td></td>
+                <td><pre>Trailing whitespace</pre></td>
+            </tr>
+            
+            <tr>
+                <td>444</td>
+                <td>8</td>
+                <td>convention</td>
+                <td><code>consider-using-enumerate</code></td>
+                <td>C0200</td>
+                <td>extrapolate_age_groups</td>
+                <td><pre>Consider using enumerate instead of iterating with range and len</pre></td>
+            </tr>
+            
+            <tr>
+                <td>466</td>
+                <td>12</td>
+                <td>convention</td>
+                <td><code>consider-using-enumerate</code></td>
+                <td>C0200</td>
+                <td>extrapolate_age_groups</td>
+                <td><pre>Consider using enumerate instead of iterating with range and len</pre></td>
+            </tr>
+            
+            <tr>
+                <td>473</td>
+                <td>0</td>
+                <td>convention</td>
+                <td><code>trailing-whitespace</code></td>
+                <td>C0303</td>
+                <td></td>
+                <td><pre>Trailing whitespace</pre></td>
+            </tr>
+            
+            <tr>
+                <td>480</td>
+                <td>0</td>
+                <td>convention</td>
+                <td><code>line-too-long</code></td>
+                <td>C0301</td>
+                <td></td>
+                <td><pre>Line too long (168/120)</pre></td>
+            </tr>
+            
+            <tr>
+                <td>486</td>
+                <td>0</td>
+                <td>convention</td>
+                <td><code>line-too-long</code></td>
+                <td>C0301</td>
+                <td></td>
+                <td><pre>Line too long (124/120)</pre></td>
+            </tr>
+            
+            <tr>
+                <td>488</td>
+                <td>0</td>
+                <td>refactor</td>
+                <td><code>too-many-arguments</code></td>
+                <td>R0913</td>
+                <td>get_vaccination_data</td>
+                <td><pre>Too many arguments (9/5)</pre></td>
+            </tr>
+            
+            <tr>
+                <td>488</td>
+                <td>0</td>
+                <td>refactor</td>
+                <td><code>too-many-locals</code></td>
+                <td>R0914</td>
+                <td>get_vaccination_data</td>
+                <td><pre>Too many local variables (65/15)</pre></td>
+            </tr>
+            
+            <tr>
+                <td>488</td>
+                <td>25</td>
+                <td>warning</td>
+                <td><code>unused-argument</code></td>
+                <td>W0613</td>
+                <td>get_vaccination_data</td>
+                <td><pre>Unused argument &#39;read_data&#39;</pre></td>
+            </tr>
+            
+            <tr>
+                <td>488</td>
+                <td>0</td>
+                <td>refactor</td>
+                <td><code>too-many-branches</code></td>
+                <td>R0912</td>
+                <td>get_vaccination_data</td>
+                <td><pre>Too many branches (45/12)</pre></td>
+            </tr>
+            
+            <tr>
+                <td>488</td>
+                <td>0</td>
+                <td>refactor</td>
+                <td><code>too-many-statements</code></td>
+                <td>R0915</td>
+                <td>get_vaccination_data</td>
+                <td><pre>Too many statements (175/50)</pre></td>
+            </tr>
+            
+            <tr>
+                <td>492</td>
+                <td>25</td>
+                <td>warning</td>
+                <td><code>unused-argument</code></td>
+                <td>W0613</td>
+                <td>get_vaccination_data</td>
+                <td><pre>Unused argument &#39;start_date&#39;</pre></td>
+            </tr>
+            
+            <tr>
+                <td>493</td>
+                <td>25</td>
+                <td>warning</td>
+                <td><code>unused-argument</code></td>
+                <td>W0613</td>
+                <td>get_vaccination_data</td>
+                <td><pre>Unused argument &#39;end_date&#39;</pre></td>
+            </tr>
+            
+            <tr>
+                <td>514</td>
+                <td>102</td>
+                <td>convention</td>
+                <td><code>trailing-whitespace</code></td>
+                <td>C0303</td>
+                <td></td>
+                <td><pre>Trailing whitespace</pre></td>
+            </tr>
+            
+            <tr>
+                <td>526</td>
+                <td>75</td>
+                <td>convention</td>
+                <td><code>trailing-whitespace</code></td>
+                <td>C0303</td>
+                <td></td>
+                <td><pre>Trailing whitespace</pre></td>
+            </tr>
+            
+            <tr>
+                <td>527</td>
+                <td>73</td>
+                <td>convention</td>
+                <td><code>trailing-whitespace</code></td>
+                <td>C0303</td>
+                <td></td>
+                <td><pre>Trailing whitespace</pre></td>
+            </tr>
+            
+            <tr>
+                <td>529</td>
+                <td>18</td>
+                <td>convention</td>
+                <td><code>trailing-whitespace</code></td>
+                <td>C0303</td>
+                <td></td>
+                <td><pre>Trailing whitespace</pre></td>
+            </tr>
+            
+            <tr>
+                <td>533</td>
+                <td>60</td>
+                <td>convention</td>
+                <td><code>trailing-whitespace</code></td>
+                <td>C0303</td>
+                <td></td>
+                <td><pre>Trailing whitespace</pre></td>
+            </tr>
+            
+            <tr>
+                <td>540</td>
                 <td>0</td>
                 <td>convention</td>
                 <td><code>line-too-long</code></td>
@@ -4605,27 +4599,127 @@ from memilio.epidata import getDIVIData</pre></td>
             </tr>
             
             <tr>
-                <td>1007</td>
+                <td>611</td>
                 <td>0</td>
                 <td>convention</td>
                 <td><code>line-too-long</code></td>
                 <td>C0301</td>
                 <td></td>
-                <td><pre>Line too long (188/120)</pre></td>
+                <td><pre>Line too long (142/120)</pre></td>
             </tr>
             
             <tr>
-                <td>1017</td>
+                <td>665</td>
                 <td>8</td>
                 <td>convention</td>
-                <td><code>invalid-name</code></td>
-                <td>C0103</td>
+                <td><code>consider-using-enumerate</code></td>
+                <td>C0200</td>
                 <td>get_vaccination_data</td>
-                <td><pre>Variable name &#34;id&#34; doesn&#39;t conform to snake_case naming style</pre></td>
+                <td><pre>Consider using enumerate instead of iterating with range and len</pre></td>
             </tr>
             
             <tr>
-                <td>1066</td>
+                <td>675</td>
+                <td>8</td>
+                <td>convention</td>
+                <td><code>consider-using-enumerate</code></td>
+                <td>C0200</td>
+                <td>get_vaccination_data</td>
+                <td><pre>Consider using enumerate instead of iterating with range and len</pre></td>
+            </tr>
+            
+            <tr>
+                <td>688</td>
+                <td>4</td>
+                <td>convention</td>
+                <td><code>consider-using-enumerate</code></td>
+                <td>C0200</td>
+                <td>get_vaccination_data</td>
+                <td><pre>Consider using enumerate instead of iterating with range and len</pre></td>
+            </tr>
+            
+            <tr>
+                <td>712</td>
+                <td>4</td>
+                <td>convention</td>
+                <td><code>consider-using-enumerate</code></td>
+                <td>C0200</td>
+                <td>get_vaccination_data</td>
+                <td><pre>Consider using enumerate instead of iterating with range and len</pre></td>
+            </tr>
+            
+            <tr>
+                <td>725</td>
+                <td>4</td>
+                <td>convention</td>
+                <td><code>consider-using-enumerate</code></td>
+                <td>C0200</td>
+                <td>get_vaccination_data</td>
+                <td><pre>Consider using enumerate instead of iterating with range and len</pre></td>
+            </tr>
+            
+            <tr>
+                <td>737</td>
+                <td>0</td>
+                <td>convention</td>
+                <td><code>trailing-whitespace</code></td>
+                <td>C0303</td>
+                <td></td>
+                <td><pre>Trailing whitespace</pre></td>
+            </tr>
+            
+            <tr>
+                <td>804</td>
+                <td>7</td>
+                <td>refactor</td>
+                <td><code>consider-using-in</code></td>
+                <td>R1714</td>
+                <td>get_vaccination_data</td>
+                <td><pre>Consider merging these comparisons with &#34;in&#34; to &#39;sanitize_data in (1, 2)&#39;</pre></td>
+            </tr>
+            
+            <tr>
+                <td>820</td>
+                <td>96</td>
+                <td>convention</td>
+                <td><code>trailing-whitespace</code></td>
+                <td>C0303</td>
+                <td></td>
+                <td><pre>Trailing whitespace</pre></td>
+            </tr>
+            
+            <tr>
+                <td>848</td>
+                <td>8</td>
+                <td>warning</td>
+                <td><code>unused-variable</code></td>
+                <td>W0612</td>
+                <td>get_vaccination_data</td>
+                <td><pre>Unused variable &#39;df_fullsum&#39;</pre></td>
+            </tr>
+            
+            <tr>
+                <td>888</td>
+                <td>0</td>
+                <td>refactor</td>
+                <td><code>unnecessary-comprehension</code></td>
+                <td>R1721</td>
+                <td>get_vaccination_data</td>
+                <td><pre>Unnecessary use of a comprehension, use list(unique_age_groups_old) instead.</pre></td>
+            </tr>
+            
+            <tr>
+                <td>900</td>
+                <td>0</td>
+                <td>refactor</td>
+                <td><code>unnecessary-comprehension</code></td>
+                <td>R1721</td>
+                <td>get_vaccination_data</td>
+                <td><pre>Unnecessary use of a comprehension, use list(unique_age_groups_old) instead.</pre></td>
+            </tr>
+            
+            <tr>
+                <td>974</td>
                 <td>8</td>
                 <td>warning</td>
                 <td><code>unused-variable</code></td>
@@ -4635,7 +4729,7 @@ from memilio.epidata import getDIVIData</pre></td>
             </tr>
             
             <tr>
-                <td>1094</td>
+                <td>1002</td>
                 <td>8</td>
                 <td>warning</td>
                 <td><code>unused-variable</code></td>
@@ -4645,7 +4739,7 @@ from memilio.epidata import getDIVIData</pre></td>
             </tr>
             
             <tr>
-                <td>1117</td>
+                <td>1025</td>
                 <td>0</td>
                 <td>refactor</td>
                 <td><code>unnecessary-comprehension</code></td>
@@ -4655,7 +4749,7 @@ from memilio.epidata import getDIVIData</pre></td>
             </tr>
             
             <tr>
-                <td>1130</td>
+                <td>1038</td>
                 <td>0</td>
                 <td>refactor</td>
                 <td><code>unnecessary-comprehension</code></td>
@@ -4869,7 +4963,67 @@ from memilio.epidata import getDIVIData</pre></td>
             </tr>
             
             <tr>
-                <td>161</td>
+                <td>160</td>
+                <td>0</td>
+                <td>refactor</td>
+                <td><code>too-many-arguments</code></td>
+                <td>R0913</td>
+                <td>split_column_based_on_values</td>
+                <td><pre>Too many arguments (6/5)</pre></td>
+            </tr>
+            
+            <tr>
+                <td>163</td>
+                <td>0</td>
+                <td>convention</td>
+                <td><code>line-too-long</code></td>
+                <td>C0301</td>
+                <td></td>
+                <td><pre>Line too long (146/120)</pre></td>
+            </tr>
+            
+            <tr>
+                <td>166</td>
+                <td>109</td>
+                <td>convention</td>
+                <td><code>trailing-whitespace</code></td>
+                <td>C0303</td>
+                <td></td>
+                <td><pre>Trailing whitespace</pre></td>
+            </tr>
+            
+            <tr>
+                <td>167</td>
+                <td>0</td>
+                <td>convention</td>
+                <td><code>line-too-long</code></td>
+                <td>C0301</td>
+                <td></td>
+                <td><pre>Line too long (139/120)</pre></td>
+            </tr>
+            
+            <tr>
+                <td>169</td>
+                <td>0</td>
+                <td>convention</td>
+                <td><code>line-too-long</code></td>
+                <td>C0301</td>
+                <td></td>
+                <td><pre>Line too long (142/120)</pre></td>
+            </tr>
+            
+            <tr>
+                <td>186</td>
+                <td>4</td>
+                <td>convention</td>
+                <td><code>consider-using-enumerate</code></td>
+                <td>C0200</td>
+                <td>split_column_based_on_values</td>
+                <td><pre>Consider using enumerate instead of iterating with range and len</pre></td>
+            </tr>
+            
+            <tr>
+                <td>203</td>
                 <td>0</td>
                 <td>convention</td>
                 <td><code>invalid-name</code></td>
@@ -4879,7 +5033,7 @@ from memilio.epidata import getDIVIData</pre></td>
             </tr>
             
             <tr>
-                <td>184</td>
+                <td>226</td>
                 <td>0</td>
                 <td>convention</td>
                 <td><code>invalid-name</code></td>
@@ -4889,23 +5043,13 @@ from memilio.epidata import getDIVIData</pre></td>
             </tr>
             
             <tr>
-                <td>184</td>
+                <td>226</td>
                 <td>55</td>
                 <td>warning</td>
                 <td><code>redefined-builtin</code></td>
                 <td>W0622</td>
                 <td>insert_column_by_map</td>
                 <td><pre>Redefining built-in &#39;map&#39;</pre></td>
-            </tr>
-            
-            <tr>
-                <td>201</td>
-                <td>0</td>
-                <td>convention</td>
-                <td><code>missing-final-newline</code></td>
-                <td>C0304</td>
-                <td></td>
-                <td><pre>Final newline missing</pre></td>
             </tr>
             
         </table>
@@ -5084,6 +5228,65 @@ from memilio.epidata import getDIVIData</pre></td>
                 <td>C0114</td>
                 <td></td>
                 <td><pre>Missing module docstring</pre></td>
+            </tr>
+            
+            <tr>
+                <td>1</td>
+                <td>0</td>
+                <td>refactor</td>
+                <td><code>duplicate-code</code></td>
+                <td>R0801</td>
+                <td></td>
+                <td><pre>Similar lines in 2 files
+==memilio.epidata.getJHData:[88:97]
+==memilio.epidata_test.test_epidata_get_jh_data:[116:123]
+    directory_ger = os.path.join(out_folder, &#39;Germany/&#39;)
+    directory_es = os.path.join(out_folder, &#39;Spain/&#39;)
+    directory_fr = os.path.join(out_folder, &#39;France/&#39;)
+    directory_it = os.path.join(out_folder, &#39;Italy/&#39;)
+    directory_us = os.path.join(out_folder, &#39;US/&#39;)
+    directory_rok = os.path.join(out_folder, &#39;SouthKorea/&#39;)
+    directory_prc = os.path.join(out_folder, &#39;China/&#39;)
+
+    # dictionary of countries</pre></td>
+            </tr>
+            
+            <tr>
+                <td>1</td>
+                <td>0</td>
+                <td>refactor</td>
+                <td><code>duplicate-code</code></td>
+                <td>R0801</td>
+                <td></td>
+                <td><pre>Similar lines in 2 files
+==memilio.epidata.getTestingData:[108:114]
+==memilio.epidata.getVaccinationData:[488:494]
+                         file_format=dd.defaultDict[&#39;file_format&#39;],
+                         out_folder=dd.defaultDict[&#39;out_folder&#39;],
+                         no_raw=dd.defaultDict[&#39;no_raw&#39;],
+                         start_date=dd.defaultDict[&#39;start_date&#39;],
+                         end_date=dd.defaultDict[&#39;end_date&#39;],
+                         make_plot=dd.defaultDict[&#39;make_plot&#39;],</pre></td>
+            </tr>
+            
+            <tr>
+                <td>1</td>
+                <td>0</td>
+                <td>refactor</td>
+                <td><code>duplicate-code</code></td>
+                <td>R0801</td>
+                <td></td>
+                <td><pre>Similar lines in 2 files
+==memilio.epidata.getSimulationData:[32:40]
+==memilio.epidata_test.test_epidata_getDataIntoPandasDataFrame:[28:35]
+from memilio.epidata import getDataIntoPandasDataFrame as gd
+from memilio.epidata import defaultDict as dd
+from memilio.epidata import getVaccinationData
+from memilio.epidata import getPopulationData
+from memilio.epidata import getCaseData
+from memilio.epidata import getDIVIData
+
+</pre></td>
             </tr>
             
             <tr>
@@ -10375,7 +10578,7 @@ from memilio.epidata import getDIVIData</pre></td>
             </tr>
             
             <tr>
-                <td>30</td>
+                <td>31</td>
                 <td>0</td>
                 <td>convention</td>
                 <td><code>missing-class-docstring</code></td>
@@ -10385,7 +10588,7 @@ from memilio.epidata import getDIVIData</pre></td>
             </tr>
             
             <tr>
-                <td>68</td>
+                <td>69</td>
                 <td>4</td>
                 <td>convention</td>
                 <td><code>consider-using-enumerate</code></td>
@@ -10395,7 +10598,7 @@ from memilio.epidata import getDIVIData</pre></td>
             </tr>
             
             <tr>
-                <td>101</td>
+                <td>102</td>
                 <td>4</td>
                 <td>convention</td>
                 <td><code>missing-function-docstring</code></td>
@@ -10405,137 +10608,67 @@ from memilio.epidata import getDIVIData</pre></td>
             </tr>
             
             <tr>
-                <td>102</td>
+                <td>103</td>
                 <td>18</td>
                 <td>warning</td>
                 <td><code>unused-argument</code></td>
                 <td>W0613</td>
                 <td>TestGetVaccinationData.test_get_vaccination_data_alternative_ages_no_errors_with_plots</td>
                 <td><pre>Unused argument &#39;mockv&#39;</pre></td>
-            </tr>
-            
-            <tr>
-                <td>107</td>
-                <td>4</td>
-                <td>convention</td>
-                <td><code>missing-function-docstring</code></td>
-                <td>C0116</td>
-                <td>TestGetVaccinationData.test_get_standard_vaccination_data_no_errors_with_plots</td>
-                <td><pre>Missing function or method docstring</pre></td>
             </tr>
             
             <tr>
                 <td>108</td>
-                <td>18</td>
-                <td>warning</td>
-                <td><code>unused-argument</code></td>
-                <td>W0613</td>
-                <td>TestGetVaccinationData.test_get_standard_vaccination_data_no_errors_with_plots</td>
-                <td><pre>Unused argument &#39;mockv&#39;</pre></td>
-            </tr>
-            
-            <tr>
-                <td>113</td>
                 <td>4</td>
                 <td>convention</td>
                 <td><code>missing-function-docstring</code></td>
                 <td>C0116</td>
-                <td>TestGetVaccinationData.test_get_standard_vaccination_sanitize_1</td>
+                <td>TestGetVaccinationData.test_get_standard_vaccination_sanitize_3</td>
+                <td><pre>Missing function or method docstring</pre></td>
+            </tr>
+            
+            <tr>
+                <td>109</td>
+                <td>18</td>
+                <td>warning</td>
+                <td><code>unused-argument</code></td>
+                <td>W0613</td>
+                <td>TestGetVaccinationData.test_get_standard_vaccination_sanitize_3</td>
+                <td><pre>Unused argument &#39;mockv&#39;</pre></td>
+            </tr>
+            
+            <tr>
+                <td>114</td>
+                <td>4</td>
+                <td>convention</td>
+                <td><code>missing-function-docstring</code></td>
+                <td>C0116</td>
+                <td>TestGetVaccinationData.test_sanity_checks</td>
                 <td><pre>Missing function or method docstring</pre></td>
             </tr>
             
             <tr>
                 <td>114</td>
-                <td>18</td>
+                <td>33</td>
                 <td>warning</td>
                 <td><code>unused-argument</code></td>
                 <td>W0613</td>
-                <td>TestGetVaccinationData.test_get_standard_vaccination_sanitize_1</td>
-                <td><pre>Unused argument &#39;mockv&#39;</pre></td>
-            </tr>
-            
-            <tr>
-                <td>119</td>
-                <td>4</td>
-                <td>convention</td>
-                <td><code>missing-function-docstring</code></td>
-                <td>C0116</td>
-                <td>TestGetVaccinationData.test_get_standard_vaccination_sanitize_2</td>
-                <td><pre>Missing function or method docstring</pre></td>
-            </tr>
-            
-            <tr>
-                <td>120</td>
-                <td>18</td>
-                <td>warning</td>
-                <td><code>unused-argument</code></td>
-                <td>W0613</td>
-                <td>TestGetVaccinationData.test_get_standard_vaccination_sanitize_2</td>
-                <td><pre>Unused argument &#39;mockv&#39;</pre></td>
-            </tr>
-            
-            <tr>
-                <td>125</td>
-                <td>4</td>
-                <td>convention</td>
-                <td><code>missing-function-docstring</code></td>
-                <td>C0116</td>
-                <td>TestGetVaccinationData.test_get_standard_vaccination_sanitize_3</td>
-                <td><pre>Missing function or method docstring</pre></td>
-            </tr>
-            
-            <tr>
-                <td>126</td>
-                <td>18</td>
-                <td>warning</td>
-                <td><code>unused-argument</code></td>
-                <td>W0613</td>
-                <td>TestGetVaccinationData.test_get_standard_vaccination_sanitize_3</td>
-                <td><pre>Unused argument &#39;mockv&#39;</pre></td>
-            </tr>
-            
-            <tr>
-                <td>131</td>
-                <td>4</td>
-                <td>convention</td>
-                <td><code>missing-function-docstring</code></td>
-                <td>C0116</td>
-                <td>TestGetVaccinationData.test_get_standard_vaccination_sanitize_0</td>
-                <td><pre>Missing function or method docstring</pre></td>
-            </tr>
-            
-            <tr>
-                <td>132</td>
-                <td>18</td>
-                <td>warning</td>
-                <td><code>unused-argument</code></td>
-                <td>W0613</td>
-                <td>TestGetVaccinationData.test_get_standard_vaccination_sanitize_0</td>
+                <td>TestGetVaccinationData.test_sanity_checks</td>
                 <td><pre>Unused argument &#39;mockv&#39;</pre></td>
             </tr>
             
             <tr>
                 <td>135</td>
-                <td>4</td>
+                <td>34</td>
                 <td>convention</td>
-                <td><code>missing-function-docstring</code></td>
-                <td>C0116</td>
-                <td>TestGetVaccinationData.test_download_vaccination_data</td>
-                <td><pre>Missing function or method docstring</pre></td>
+                <td><code>trailing-whitespace</code></td>
+                <td>C0303</td>
+                <td></td>
+                <td><pre>Trailing whitespace</pre></td>
             </tr>
             
             <tr>
-                <td>136</td>
-                <td>8</td>
-                <td>convention</td>
-                <td><code>invalid-name</code></td>
-                <td>C0103</td>
-                <td>TestGetVaccinationData.test_download_vaccination_data</td>
-                <td><pre>Variable name &#34;df&#34; doesn&#39;t conform to snake_case naming style</pre></td>
-            </tr>
-            
-            <tr>
-                <td>156</td>
+                <td>163</td>
                 <td>4</td>
                 <td>convention</td>
                 <td><code>missing-function-docstring</code></td>
@@ -10545,7 +10678,7 @@ from memilio.epidata import getDIVIData</pre></td>
             </tr>
             
             <tr>
-                <td>156</td>
+                <td>163</td>
                 <td>40</td>
                 <td>warning</td>
                 <td><code>unused-argument</code></td>
@@ -10555,7 +10688,7 @@ from memilio.epidata import getDIVIData</pre></td>
             </tr>
             
             <tr>
-                <td>158</td>
+                <td>165</td>
                 <td>12</td>
                 <td>convention</td>
                 <td><code>invalid-name</code></td>
@@ -10565,7 +10698,7 @@ from memilio.epidata import getDIVIData</pre></td>
             </tr>
             
             <tr>
-                <td>158</td>
+                <td>165</td>
                 <td>12</td>
                 <td>warning</td>
                 <td><code>unused-variable</code></td>
@@ -10575,87 +10708,7 @@ from memilio.epidata import getDIVIData</pre></td>
             </tr>
             
             <tr>
-                <td>163</td>
-                <td>4</td>
-                <td>convention</td>
-                <td><code>missing-function-docstring</code></td>
-                <td>C0116</td>
-                <td>TestGetVaccinationData.test_split_column_based_on_values</td>
-                <td><pre>Missing function or method docstring</pre></td>
-            </tr>
-            
-            <tr>
-                <td>163</td>
-                <td>4</td>
-                <td>refactor</td>
-                <td><code>too-many-locals</code></td>
-                <td>R0914</td>
-                <td>TestGetVaccinationData.test_split_column_based_on_values</td>
-                <td><pre>Too many local variables (17/15)</pre></td>
-            </tr>
-            
-            <tr>
-                <td>213</td>
-                <td>8</td>
-                <td>convention</td>
-                <td><code>consider-using-enumerate</code></td>
-                <td>C0200</td>
-                <td>TestGetVaccinationData.test_split_column_based_on_values</td>
-                <td><pre>Consider using enumerate instead of iterating with range and len</pre></td>
-            </tr>
-            
-            <tr>
-                <td>226</td>
-                <td>12</td>
-                <td>convention</td>
-                <td><code>consider-using-enumerate</code></td>
-                <td>C0200</td>
-                <td>TestGetVaccinationData.test_split_column_based_on_values</td>
-                <td><pre>Consider using enumerate instead of iterating with range and len</pre></td>
-            </tr>
-            
-            <tr>
-                <td>232</td>
-                <td>4</td>
-                <td>convention</td>
-                <td><code>missing-function-docstring</code></td>
-                <td>C0116</td>
-                <td>TestGetVaccinationData.test_split_column_based_on_values_ident_length_wrong</td>
-                <td><pre>Missing function or method docstring</pre></td>
-            </tr>
-            
-            <tr>
-                <td>232</td>
-                <td>4</td>
-                <td>refactor</td>
-                <td><code>too-many-locals</code></td>
-                <td>R0914</td>
-                <td>TestGetVaccinationData.test_split_column_based_on_values_ident_length_wrong</td>
-                <td><pre>Too many local variables (17/15)</pre></td>
-            </tr>
-            
-            <tr>
-                <td>283</td>
-                <td>8</td>
-                <td>convention</td>
-                <td><code>consider-using-enumerate</code></td>
-                <td>C0200</td>
-                <td>TestGetVaccinationData.test_split_column_based_on_values_ident_length_wrong</td>
-                <td><pre>Consider using enumerate instead of iterating with range and len</pre></td>
-            </tr>
-            
-            <tr>
-                <td>296</td>
-                <td>12</td>
-                <td>convention</td>
-                <td><code>consider-using-enumerate</code></td>
-                <td>C0200</td>
-                <td>TestGetVaccinationData.test_split_column_based_on_values_ident_length_wrong</td>
-                <td><pre>Consider using enumerate instead of iterating with range and len</pre></td>
-            </tr>
-            
-            <tr>
-                <td>302</td>
+                <td>171</td>
                 <td>4</td>
                 <td>convention</td>
                 <td><code>missing-function-docstring</code></td>
@@ -10665,13 +10718,43 @@ from memilio.epidata import getDIVIData</pre></td>
             </tr>
             
             <tr>
-                <td>302</td>
+                <td>171</td>
                 <td>4</td>
                 <td>refactor</td>
                 <td><code>too-many-locals</code></td>
                 <td>R0914</td>
                 <td>TestGetVaccinationData.test_interval_mapping</td>
                 <td><pre>Too many local variables (19/15)</pre></td>
+            </tr>
+            
+            <tr>
+                <td>236</td>
+                <td>4</td>
+                <td>convention</td>
+                <td><code>missing-function-docstring</code></td>
+                <td>C0116</td>
+                <td>TestGetVaccinationData.test_sanitizing_based_on_regions</td>
+                <td><pre>Missing function or method docstring</pre></td>
+            </tr>
+            
+            <tr>
+                <td>236</td>
+                <td>4</td>
+                <td>refactor</td>
+                <td><code>no-self-use</code></td>
+                <td>R0201</td>
+                <td>TestGetVaccinationData.test_sanitizing_based_on_regions</td>
+                <td><pre>Method could be a function</pre></td>
+            </tr>
+            
+            <tr>
+                <td>288</td>
+                <td>4</td>
+                <td>convention</td>
+                <td><code>missing-function-docstring</code></td>
+                <td>C0116</td>
+                <td>TestGetVaccinationData.test_extrapolate_age_groups</td>
+                <td><pre>Missing function or method docstring</pre></td>
             </tr>
             
         </table>
@@ -10719,7 +10802,17 @@ from memilio.epidata import getDIVIData</pre></td>
             </tr>
             
             <tr>
-                <td>24</td>
+                <td>23</td>
+                <td>0</td>
+                <td>error</td>
+                <td><code>import-error</code></td>
+                <td>E0401</td>
+                <td></td>
+                <td><pre>Unable to import &#39;numpy&#39;</pre></td>
+            </tr>
+            
+            <tr>
+                <td>25</td>
                 <td>0</td>
                 <td>convention</td>
                 <td><code>wrong-import-order</code></td>
@@ -10729,7 +10822,7 @@ from memilio.epidata import getDIVIData</pre></td>
             </tr>
             
             <tr>
-                <td>28</td>
+                <td>29</td>
                 <td>0</td>
                 <td>convention</td>
                 <td><code>invalid-name</code></td>
@@ -10739,7 +10832,7 @@ from memilio.epidata import getDIVIData</pre></td>
             </tr>
             
             <tr>
-                <td>28</td>
+                <td>29</td>
                 <td>0</td>
                 <td>convention</td>
                 <td><code>missing-class-docstring</code></td>
@@ -10749,7 +10842,7 @@ from memilio.epidata import getDIVIData</pre></td>
             </tr>
             
             <tr>
-                <td>77</td>
+                <td>78</td>
                 <td>4</td>
                 <td>convention</td>
                 <td><code>missing-function-docstring</code></td>
@@ -10759,7 +10852,7 @@ from memilio.epidata import getDIVIData</pre></td>
             </tr>
             
             <tr>
-                <td>83</td>
+                <td>84</td>
                 <td>8</td>
                 <td>convention</td>
                 <td><code>invalid-name</code></td>
@@ -10769,7 +10862,7 @@ from memilio.epidata import getDIVIData</pre></td>
             </tr>
             
             <tr>
-                <td>90</td>
+                <td>91</td>
                 <td>0</td>
                 <td>convention</td>
                 <td><code>line-too-long</code></td>
@@ -10779,7 +10872,7 @@ from memilio.epidata import getDIVIData</pre></td>
             </tr>
             
             <tr>
-                <td>95</td>
+                <td>96</td>
                 <td>0</td>
                 <td>convention</td>
                 <td><code>trailing-whitespace</code></td>
@@ -10789,7 +10882,7 @@ from memilio.epidata import getDIVIData</pre></td>
             </tr>
             
             <tr>
-                <td>96</td>
+                <td>97</td>
                 <td>0</td>
                 <td>convention</td>
                 <td><code>line-too-long</code></td>
@@ -10799,7 +10892,7 @@ from memilio.epidata import getDIVIData</pre></td>
             </tr>
             
             <tr>
-                <td>101</td>
+                <td>102</td>
                 <td>0</td>
                 <td>convention</td>
                 <td><code>trailing-whitespace</code></td>
@@ -10809,7 +10902,7 @@ from memilio.epidata import getDIVIData</pre></td>
             </tr>
             
             <tr>
-                <td>106</td>
+                <td>107</td>
                 <td>8</td>
                 <td>convention</td>
                 <td><code>invalid-name</code></td>
@@ -10819,7 +10912,7 @@ from memilio.epidata import getDIVIData</pre></td>
             </tr>
             
             <tr>
-                <td>114</td>
+                <td>115</td>
                 <td>0</td>
                 <td>convention</td>
                 <td><code>line-too-long</code></td>
@@ -10829,7 +10922,7 @@ from memilio.epidata import getDIVIData</pre></td>
             </tr>
             
             <tr>
-                <td>119</td>
+                <td>120</td>
                 <td>0</td>
                 <td>convention</td>
                 <td><code>trailing-whitespace</code></td>
@@ -10839,7 +10932,7 @@ from memilio.epidata import getDIVIData</pre></td>
             </tr>
             
             <tr>
-                <td>120</td>
+                <td>121</td>
                 <td>0</td>
                 <td>convention</td>
                 <td><code>line-too-long</code></td>
@@ -10849,7 +10942,7 @@ from memilio.epidata import getDIVIData</pre></td>
             </tr>
             
             <tr>
-                <td>132</td>
+                <td>133</td>
                 <td>8</td>
                 <td>convention</td>
                 <td><code>invalid-name</code></td>
@@ -10859,7 +10952,7 @@ from memilio.epidata import getDIVIData</pre></td>
             </tr>
             
             <tr>
-                <td>139</td>
+                <td>140</td>
                 <td>0</td>
                 <td>convention</td>
                 <td><code>line-too-long</code></td>
@@ -10869,7 +10962,7 @@ from memilio.epidata import getDIVIData</pre></td>
             </tr>
             
             <tr>
-                <td>146</td>
+                <td>147</td>
                 <td>0</td>
                 <td>convention</td>
                 <td><code>line-too-long</code></td>
@@ -10879,7 +10972,7 @@ from memilio.epidata import getDIVIData</pre></td>
             </tr>
             
             <tr>
-                <td>154</td>
+                <td>155</td>
                 <td>8</td>
                 <td>convention</td>
                 <td><code>invalid-name</code></td>
@@ -10889,7 +10982,7 @@ from memilio.epidata import getDIVIData</pre></td>
             </tr>
             
             <tr>
-                <td>173</td>
+                <td>174</td>
                 <td>8</td>
                 <td>convention</td>
                 <td><code>invalid-name</code></td>
@@ -10899,7 +10992,7 @@ from memilio.epidata import getDIVIData</pre></td>
             </tr>
             
             <tr>
-                <td>181</td>
+                <td>182</td>
                 <td>8</td>
                 <td>convention</td>
                 <td><code>invalid-name</code></td>
@@ -10909,7 +11002,7 @@ from memilio.epidata import getDIVIData</pre></td>
             </tr>
             
             <tr>
-                <td>188</td>
+                <td>189</td>
                 <td>0</td>
                 <td>convention</td>
                 <td><code>line-too-long</code></td>
@@ -10924,12 +11017,142 @@ from memilio.epidata import getDIVIData</pre></td>
                 <td>convention</td>
                 <td><code>missing-function-docstring</code></td>
                 <td>C0116</td>
+                <td>Test_modifyDataframeSeries.test_split_column_based_on_values</td>
+                <td><pre>Missing function or method docstring</pre></td>
+            </tr>
+            
+            <tr>
+                <td>195</td>
+                <td>4</td>
+                <td>refactor</td>
+                <td><code>too-many-locals</code></td>
+                <td>R0914</td>
+                <td>Test_modifyDataframeSeries.test_split_column_based_on_values</td>
+                <td><pre>Too many local variables (23/15)</pre></td>
+            </tr>
+            
+            <tr>
+                <td>242</td>
+                <td>8</td>
+                <td>convention</td>
+                <td><code>consider-using-enumerate</code></td>
+                <td>C0200</td>
+                <td>Test_modifyDataframeSeries.test_split_column_based_on_values</td>
+                <td><pre>Consider using enumerate instead of iterating with range and len</pre></td>
+            </tr>
+            
+            <tr>
+                <td>274</td>
+                <td>0</td>
+                <td>convention</td>
+                <td><code>line-too-long</code></td>
+                <td>C0301</td>
+                <td></td>
+                <td><pre>Line too long (134/120)</pre></td>
+            </tr>
+            
+            <tr>
+                <td>285</td>
+                <td>8</td>
+                <td>convention</td>
+                <td><code>consider-using-enumerate</code></td>
+                <td>C0200</td>
+                <td>Test_modifyDataframeSeries.test_split_column_based_on_values</td>
+                <td><pre>Consider using enumerate instead of iterating with range and len</pre></td>
+            </tr>
+            
+            <tr>
+                <td>289</td>
+                <td>4</td>
+                <td>convention</td>
+                <td><code>missing-function-docstring</code></td>
+                <td>C0116</td>
+                <td>Test_modifyDataframeSeries.test_split_column_based_on_values_compute_cumsum</td>
+                <td><pre>Missing function or method docstring</pre></td>
+            </tr>
+            
+            <tr>
+                <td>290</td>
+                <td>43</td>
+                <td>convention</td>
+                <td><code>trailing-whitespace</code></td>
+                <td>C0303</td>
+                <td></td>
+                <td><pre>Trailing whitespace</pre></td>
+            </tr>
+            
+            <tr>
+                <td>297</td>
+                <td>0</td>
+                <td>refactor</td>
+                <td><code>unnecessary-comprehension</code></td>
+                <td>R1721</td>
+                <td>Test_modifyDataframeSeries.test_split_column_based_on_values_compute_cumsum</td>
+                <td><pre>Unnecessary use of a comprehension, use list(range(0, 144)) instead.</pre></td>
+            </tr>
+            
+            <tr>
+                <td>313</td>
+                <td>0</td>
+                <td>convention</td>
+                <td><code>line-too-long</code></td>
+                <td>C0301</td>
+                <td></td>
+                <td><pre>Line too long (129/120)</pre></td>
+            </tr>
+            
+            <tr>
+                <td>315</td>
+                <td>0</td>
+                <td>convention</td>
+                <td><code>line-too-long</code></td>
+                <td>C0301</td>
+                <td></td>
+                <td><pre>Line too long (151/120)</pre></td>
+            </tr>
+            
+            <tr>
+                <td>316</td>
+                <td>0</td>
+                <td>convention</td>
+                <td><code>line-too-long</code></td>
+                <td>C0301</td>
+                <td></td>
+                <td><pre>Line too long (133/120)</pre></td>
+            </tr>
+            
+            <tr>
+                <td>318</td>
+                <td>0</td>
+                <td>convention</td>
+                <td><code>line-too-long</code></td>
+                <td>C0301</td>
+                <td></td>
+                <td><pre>Line too long (162/120)</pre></td>
+            </tr>
+            
+            <tr>
+                <td>319</td>
+                <td>0</td>
+                <td>convention</td>
+                <td><code>line-too-long</code></td>
+                <td>C0301</td>
+                <td></td>
+                <td><pre>Line too long (134/120)</pre></td>
+            </tr>
+            
+            <tr>
+                <td>321</td>
+                <td>4</td>
+                <td>convention</td>
+                <td><code>missing-function-docstring</code></td>
+                <td>C0116</td>
                 <td>Test_modifyDataframeSeries.test_extract_subframe_based_on_dates</td>
                 <td><pre>Missing function or method docstring</pre></td>
             </tr>
             
             <tr>
-                <td>214</td>
+                <td>340</td>
                 <td>4</td>
                 <td>convention</td>
                 <td><code>missing-function-docstring</code></td>
@@ -10939,7 +11162,7 @@ from memilio.epidata import getDIVIData</pre></td>
             </tr>
             
             <tr>
-                <td>218</td>
+                <td>344</td>
                 <td>8</td>
                 <td>convention</td>
                 <td><code>invalid-name</code></td>
@@ -10949,7 +11172,7 @@ from memilio.epidata import getDIVIData</pre></td>
             </tr>
             
             <tr>
-                <td>229</td>
+                <td>355</td>
                 <td>8</td>
                 <td>convention</td>
                 <td><code>invalid-name</code></td>
@@ -11217,22 +11440,22 @@ from memilio.epidata import getDIVIData</pre></td>
             
             <tr>
                 <td>convention</td>
-                <td>700</td>
-            </tr>
-            
-            <tr>
-                <td>refactor</td>
-                <td>137</td>
+                <td>716</td>
             </tr>
             
             <tr>
                 <td>error</td>
-                <td>65</td>
+                <td>66</td>
             </tr>
             
             <tr>
                 <td>warning</td>
-                <td>169</td>
+                <td>168</td>
+            </tr>
+            
+            <tr>
+                <td>refactor</td>
+                <td>143</td>
             </tr>
             
         </table>
@@ -11246,8 +11469,23 @@ from memilio.epidata import getDIVIData</pre></td>
             </tr>
             
             <tr>
+                <td>too-many-lines</td>
+                <td>3</td>
+            </tr>
+            
+            <tr>
+                <td>invalid-name</td>
+                <td>277</td>
+            </tr>
+            
+            <tr>
                 <td>missing-module-docstring</td>
                 <td>18</td>
+            </tr>
+            
+            <tr>
+                <td>import-error</td>
+                <td>42</td>
             </tr>
             
             <tr>
@@ -11256,23 +11494,33 @@ from memilio.epidata import getDIVIData</pre></td>
             </tr>
             
             <tr>
+                <td>unspecified-encoding</td>
+                <td>27</td>
+            </tr>
+            
+            <tr>
                 <td>missing-function-docstring</td>
-                <td>135</td>
+                <td>134</td>
             </tr>
             
             <tr>
                 <td>too-many-locals</td>
-                <td>29</td>
+                <td>30</td>
             </tr>
             
             <tr>
-                <td>too-many-arguments</td>
-                <td>17</td>
+                <td>arguments-out-of-order</td>
+                <td>1</td>
             </tr>
             
             <tr>
-                <td>no-self-use</td>
-                <td>8</td>
+                <td>too-many-statements</td>
+                <td>20</td>
+            </tr>
+            
+            <tr>
+                <td>unused-variable</td>
+                <td>10</td>
             </tr>
             
             <tr>
@@ -11281,103 +11529,13 @@ from memilio.epidata import getDIVIData</pre></td>
             </tr>
             
             <tr>
-                <td>import-error</td>
-                <td>41</td>
-            </tr>
-            
-            <tr>
-                <td>consider-using-enumerate</td>
-                <td>37</td>
-            </tr>
-            
-            <tr>
-                <td>unused-argument</td>
-                <td>35</td>
-            </tr>
-            
-            <tr>
-                <td>invalid-name</td>
-                <td>275</td>
-            </tr>
-            
-            <tr>
-                <td>unused-variable</td>
-                <td>8</td>
-            </tr>
-            
-            <tr>
-                <td>line-too-long</td>
-                <td>58</td>
-            </tr>
-            
-            <tr>
-                <td>pointless-statement</td>
-                <td>1</td>
-            </tr>
-            
-            <tr>
-                <td>too-many-statements</td>
-                <td>19</td>
-            </tr>
-            
-            <tr>
-                <td>deprecated-method</td>
-                <td>5</td>
-            </tr>
-            
-            <tr>
-                <td>singleton-comparison</td>
-                <td>24</td>
-            </tr>
-            
-            <tr>
-                <td>unspecified-encoding</td>
-                <td>27</td>
-            </tr>
-            
-            <tr>
-                <td>consider-using-with</td>
-                <td>7</td>
-            </tr>
-            
-            <tr>
-                <td>unused-import</td>
-                <td>9</td>
-            </tr>
-            
-            <tr>
-                <td>trailing-whitespace</td>
-                <td>79</td>
-            </tr>
-            
-            <tr>
-                <td>consider-using-dict-items</td>
-                <td>8</td>
-            </tr>
-            
-            <tr>
-                <td>consider-iterating-dictionary</td>
-                <td>7</td>
-            </tr>
-            
-            <tr>
-                <td>redefined-outer-name</td>
-                <td>3</td>
-            </tr>
-            
-            <tr>
-                <td>assignment-from-no-return</td>
-                <td>3</td>
-            </tr>
-            
-            <tr>
                 <td>anomalous-backslash-in-string</td>
                 <td>40</td>
             </tr>
             
             <tr>
-                <td>too-many-lines</td>
-                <td>3</td>
+                <td>trailing-whitespace</td>
+                <td>89</td>
             </tr>
             
             <tr>
@@ -11401,13 +11559,48 @@ from memilio.epidata import getDIVIData</pre></td>
             </tr>
             
             <tr>
-                <td>arguments-out-of-order</td>
-                <td>1</td>
+                <td>unused-import</td>
+                <td>9</td>
+            </tr>
+            
+            <tr>
+                <td>consider-using-dict-items</td>
+                <td>8</td>
+            </tr>
+            
+            <tr>
+                <td>consider-iterating-dictionary</td>
+                <td>7</td>
+            </tr>
+            
+            <tr>
+                <td>no-self-use</td>
+                <td>9</td>
+            </tr>
+            
+            <tr>
+                <td>unused-argument</td>
+                <td>32</td>
+            </tr>
+            
+            <tr>
+                <td>line-too-long</td>
+                <td>66</td>
+            </tr>
+            
+            <tr>
+                <td>singleton-comparison</td>
+                <td>24</td>
             </tr>
             
             <tr>
                 <td>superfluous-parens</td>
-                <td>3</td>
+                <td>4</td>
+            </tr>
+            
+            <tr>
+                <td>consider-using-enumerate</td>
+                <td>34</td>
             </tr>
             
             <tr>
@@ -11417,6 +11610,71 @@ from memilio.epidata import getDIVIData</pre></td>
             
             <tr>
                 <td>redundant-unittest-assert</td>
+                <td>1</td>
+            </tr>
+            
+            <tr>
+                <td>pointless-statement</td>
+                <td>1</td>
+            </tr>
+            
+            <tr>
+                <td>deprecated-method</td>
+                <td>5</td>
+            </tr>
+            
+            <tr>
+                <td>consider-using-with</td>
+                <td>7</td>
+            </tr>
+            
+            <tr>
+                <td>too-many-arguments</td>
+                <td>19</td>
+            </tr>
+            
+            <tr>
+                <td>unnecessary-comprehension</td>
+                <td>10</td>
+            </tr>
+            
+            <tr>
+                <td>redefined-outer-name</td>
+                <td>3</td>
+            </tr>
+            
+            <tr>
+                <td>assignment-from-no-return</td>
+                <td>3</td>
+            </tr>
+            
+            <tr>
+                <td>raise-missing-from</td>
+                <td>9</td>
+            </tr>
+            
+            <tr>
+                <td>no-else-return</td>
+                <td>9</td>
+            </tr>
+            
+            <tr>
+                <td>too-many-nested-blocks</td>
+                <td>7</td>
+            </tr>
+            
+            <tr>
+                <td>too-many-branches</td>
+                <td>8</td>
+            </tr>
+            
+            <tr>
+                <td>broad-except</td>
+                <td>4</td>
+            </tr>
+            
+            <tr>
+                <td>too-many-boolean-expressions</td>
                 <td>1</td>
             </tr>
             
@@ -11431,28 +11689,38 @@ from memilio.epidata import getDIVIData</pre></td>
             </tr>
             
             <tr>
-                <td>no-else-return</td>
-                <td>9</td>
+                <td>consider-using-set-comprehension</td>
+                <td>3</td>
             </tr>
             
             <tr>
-                <td>too-many-nested-blocks</td>
-                <td>8</td>
-            </tr>
-            
-            <tr>
-                <td>too-many-boolean-expressions</td>
+                <td>use-dict-literal</td>
                 <td>1</td>
             </tr>
             
             <tr>
-                <td>too-many-branches</td>
-                <td>7</td>
+                <td>using-constant-test</td>
+                <td>1</td>
             </tr>
             
             <tr>
-                <td>raise-missing-from</td>
-                <td>9</td>
+                <td>dangerous-default-value</td>
+                <td>3</td>
+            </tr>
+            
+            <tr>
+                <td>unidiomatic-typecheck</td>
+                <td>1</td>
+            </tr>
+            
+            <tr>
+                <td>unneeded-not</td>
+                <td>1</td>
+            </tr>
+            
+            <tr>
+                <td>unnecessary-pass</td>
+                <td>1</td>
             </tr>
             
             <tr>
@@ -11471,56 +11739,6 @@ from memilio.epidata import getDIVIData</pre></td>
             </tr>
             
             <tr>
-                <td>unnecessary-comprehension</td>
-                <td>9</td>
-            </tr>
-            
-            <tr>
-                <td>missing-final-newline</td>
-                <td>1</td>
-            </tr>
-            
-            <tr>
-                <td>consider-using-set-comprehension</td>
-                <td>3</td>
-            </tr>
-            
-            <tr>
-                <td>broad-except</td>
-                <td>4</td>
-            </tr>
-            
-            <tr>
-                <td>dangerous-default-value</td>
-                <td>3</td>
-            </tr>
-            
-            <tr>
-                <td>unnecessary-pass</td>
-                <td>1</td>
-            </tr>
-            
-            <tr>
-                <td>use-dict-literal</td>
-                <td>1</td>
-            </tr>
-            
-            <tr>
-                <td>using-constant-test</td>
-                <td>1</td>
-            </tr>
-            
-            <tr>
-                <td>unidiomatic-typecheck</td>
-                <td>1</td>
-            </tr>
-            
-            <tr>
-                <td>unneeded-not</td>
-                <td>1</td>
-            </tr>
-            
-            <tr>
                 <td>duplicate-code</td>
                 <td>3</td>
             </tr>
@@ -11536,13 +11754,33 @@ from memilio.epidata import getDIVIData</pre></td>
             </tr>
             
             <tr>
-                <td>memilio.epidata_test.test_epidata_get_simulation_data</td>
-                <td>8</td>
+                <td>memilio.epidata_test.test_epidata_getCaseData</td>
+                <td>54</td>
             </tr>
             
             <tr>
-                <td>memilio.epidata_test.test_epidata_get_vaccination_data</td>
-                <td>32</td>
+                <td>memilio.epidata_test.test_epidata_get_jh_data</td>
+                <td>73</td>
+            </tr>
+            
+            <tr>
+                <td>memilio.epidata_test.test_epidata_cleandata</td>
+                <td>90</td>
+            </tr>
+            
+            <tr>
+                <td>memilio.epidata_test.test_epidata_getCommuterMobility</td>
+                <td>27</td>
+            </tr>
+            
+            <tr>
+                <td>memilio.epidata_test.test_epidata_transform_mobility_data</td>
+                <td>23</td>
+            </tr>
+            
+            <tr>
+                <td>memilio.epidata_test.test_epidata_geoModificationGermany</td>
+                <td>49</td>
             </tr>
             
             <tr>
@@ -11556,33 +11794,8 @@ from memilio.epidata import getDIVIData</pre></td>
             </tr>
             
             <tr>
-                <td>memilio.epidata_test.test_epidata_getCaseDatawithEstimations</td>
-                <td>55</td>
-            </tr>
-            
-            <tr>
-                <td>memilio.epidata_test.test_epidata_transform_mobility_data</td>
-                <td>23</td>
-            </tr>
-            
-            <tr>
-                <td>memilio.epidata_test.test_epidata_get_jh_data</td>
-                <td>73</td>
-            </tr>
-            
-            <tr>
-                <td>memilio.epidata_test.test_epidata_modifyDataframeSeries</td>
-                <td>27</td>
-            </tr>
-            
-            <tr>
-                <td>memilio.epidata_test.test_epidata_defaultDict</td>
-                <td>12</td>
-            </tr>
-            
-            <tr>
-                <td>memilio.epidata_test.test_epidata_cleandata</td>
-                <td>90</td>
+                <td>memilio.epidata_test.test_epidata_get_simulation_data</td>
+                <td>8</td>
             </tr>
             
             <tr>
@@ -11591,33 +11804,23 @@ from memilio.epidata import getDIVIData</pre></td>
             </tr>
             
             <tr>
-                <td>memilio.epidata_test.test_epidata_getCaseData</td>
-                <td>54</td>
-            </tr>
-            
-            <tr>
-                <td>memilio.epidata_test.test_epidata_getCommuterMobility</td>
-                <td>27</td>
-            </tr>
-            
-            <tr>
-                <td>memilio.epidata_test.test_epidata_geoModificationGermany</td>
-                <td>49</td>
-            </tr>
-            
-            <tr>
-                <td>memilio.epidata.defaultDict</td>
+                <td>memilio.epidata_test.test_epidata_defaultDict</td>
                 <td>12</td>
             </tr>
             
             <tr>
-                <td>memilio.epidata.transformMobilityData</td>
-                <td>13</td>
+                <td>memilio.epidata_test.test_epidata_modifyDataframeSeries</td>
+                <td>41</td>
             </tr>
             
             <tr>
-                <td>memilio.epidata.getCommuterMobility</td>
-                <td>45</td>
+                <td>memilio.epidata_test.test_epidata_getCaseDatawithEstimations</td>
+                <td>55</td>
+            </tr>
+            
+            <tr>
+                <td>memilio.epidata_test.test_epidata_get_vaccination_data</td>
+                <td>20</td>
             </tr>
             
             <tr>
@@ -11626,18 +11829,13 @@ from memilio.epidata import getDIVIData</pre></td>
             </tr>
             
             <tr>
-                <td>memilio.epidata.getCaseDatawithEstimations</td>
-                <td>10</td>
+                <td>memilio.epidata.getSimulationData</td>
+                <td>7</td>
             </tr>
             
             <tr>
-                <td>memilio.epidata.getCaseData</td>
-                <td>72</td>
-            </tr>
-            
-            <tr>
-                <td>memilio.epidata.getTestingData</td>
-                <td>61</td>
+                <td>memilio.epidata.modifyDataframeSeries</td>
+                <td>28</td>
             </tr>
             
             <tr>
@@ -11646,33 +11844,8 @@ from memilio.epidata import getDIVIData</pre></td>
             </tr>
             
             <tr>
-                <td>memilio.epidata.modifyDataframeSeries</td>
-                <td>23</td>
-            </tr>
-            
-            <tr>
-                <td>memilio.epidata.transformWeatherData</td>
-                <td>20</td>
-            </tr>
-            
-            <tr>
-                <td>memilio.epidata.getVaccinationData</td>
-                <td>80</td>
-            </tr>
-            
-            <tr>
-                <td>memilio.epidata.getSimulationData</td>
-                <td>7</td>
-            </tr>
-            
-            <tr>
-                <td>memilio.epidata.getDataIntoPandasDataFrame</td>
-                <td>32</td>
-            </tr>
-            
-            <tr>
-                <td>memilio.epidata.geoModificationGermany</td>
-                <td>31</td>
+                <td>memilio.epidata.transformMobilityData</td>
+                <td>13</td>
             </tr>
             
             <tr>
@@ -11681,13 +11854,58 @@ from memilio.epidata import getDIVIData</pre></td>
             </tr>
             
             <tr>
+                <td>memilio.epidata.getCommuterMobility</td>
+                <td>45</td>
+            </tr>
+            
+            <tr>
+                <td>memilio.epidata.defaultDict</td>
+                <td>12</td>
+            </tr>
+            
+            <tr>
+                <td>memilio.epidata.getCaseData</td>
+                <td>72</td>
+            </tr>
+            
+            <tr>
+                <td>memilio.epidata.getVaccinationData</td>
+                <td>95</td>
+            </tr>
+            
+            <tr>
                 <td>memilio.epidata.cleanData</td>
                 <td>7</td>
             </tr>
             
             <tr>
+                <td>memilio.epidata.geoModificationGermany</td>
+                <td>31</td>
+            </tr>
+            
+            <tr>
+                <td>memilio.epidata.getDataIntoPandasDataFrame</td>
+                <td>32</td>
+            </tr>
+            
+            <tr>
+                <td>memilio.epidata.getCaseDatawithEstimations</td>
+                <td>10</td>
+            </tr>
+            
+            <tr>
                 <td>memilio.epidata.getJHData</td>
-                <td>12</td>
+                <td>9</td>
+            </tr>
+            
+            <tr>
+                <td>memilio.epidata.getTestingData</td>
+                <td>61</td>
+            </tr>
+            
+            <tr>
+                <td>memilio.epidata.transformWeatherData</td>
+                <td>23</td>
             </tr>
             
         </table>
@@ -11701,13 +11919,33 @@ from memilio.epidata import getDIVIData</pre></td>
             </tr>
             
             <tr>
-                <td>memilio/epidata_test/test_epidata_get_simulation_data.py</td>
-                <td>8</td>
+                <td>memilio/epidata_test/test_epidata_getCaseData.py</td>
+                <td>54</td>
             </tr>
             
             <tr>
-                <td>memilio/epidata_test/test_epidata_get_vaccination_data.py</td>
-                <td>32</td>
+                <td>memilio/epidata_test/test_epidata_get_jh_data.py</td>
+                <td>73</td>
+            </tr>
+            
+            <tr>
+                <td>memilio/epidata_test/test_epidata_cleandata.py</td>
+                <td>90</td>
+            </tr>
+            
+            <tr>
+                <td>memilio/epidata_test/test_epidata_getCommuterMobility.py</td>
+                <td>27</td>
+            </tr>
+            
+            <tr>
+                <td>memilio/epidata_test/test_epidata_transform_mobility_data.py</td>
+                <td>23</td>
+            </tr>
+            
+            <tr>
+                <td>memilio/epidata_test/test_epidata_geoModificationGermany.py</td>
+                <td>49</td>
             </tr>
             
             <tr>
@@ -11721,33 +11959,8 @@ from memilio.epidata import getDIVIData</pre></td>
             </tr>
             
             <tr>
-                <td>memilio/epidata_test/test_epidata_getCaseDatawithEstimations.py</td>
-                <td>55</td>
-            </tr>
-            
-            <tr>
-                <td>memilio/epidata_test/test_epidata_transform_mobility_data.py</td>
-                <td>23</td>
-            </tr>
-            
-            <tr>
-                <td>memilio/epidata_test/test_epidata_get_jh_data.py</td>
-                <td>73</td>
-            </tr>
-            
-            <tr>
-                <td>memilio/epidata_test/test_epidata_modifyDataframeSeries.py</td>
-                <td>27</td>
-            </tr>
-            
-            <tr>
-                <td>memilio/epidata_test/test_epidata_defaultDict.py</td>
-                <td>12</td>
-            </tr>
-            
-            <tr>
-                <td>memilio/epidata_test/test_epidata_cleandata.py</td>
-                <td>90</td>
+                <td>memilio/epidata_test/test_epidata_get_simulation_data.py</td>
+                <td>8</td>
             </tr>
             
             <tr>
@@ -11756,33 +11969,23 @@ from memilio.epidata import getDIVIData</pre></td>
             </tr>
             
             <tr>
-                <td>memilio/epidata_test/test_epidata_getCaseData.py</td>
-                <td>54</td>
-            </tr>
-            
-            <tr>
-                <td>memilio/epidata_test/test_epidata_getCommuterMobility.py</td>
-                <td>27</td>
-            </tr>
-            
-            <tr>
-                <td>memilio/epidata_test/test_epidata_geoModificationGermany.py</td>
-                <td>49</td>
-            </tr>
-            
-            <tr>
-                <td>memilio/epidata/defaultDict.py</td>
+                <td>memilio/epidata_test/test_epidata_defaultDict.py</td>
                 <td>12</td>
             </tr>
             
             <tr>
-                <td>memilio/epidata/transformMobilityData.py</td>
-                <td>13</td>
+                <td>memilio/epidata_test/test_epidata_modifyDataframeSeries.py</td>
+                <td>41</td>
             </tr>
             
             <tr>
-                <td>memilio/epidata/getCommuterMobility.py</td>
-                <td>45</td>
+                <td>memilio/epidata_test/test_epidata_getCaseDatawithEstimations.py</td>
+                <td>55</td>
+            </tr>
+            
+            <tr>
+                <td>memilio/epidata_test/test_epidata_get_vaccination_data.py</td>
+                <td>20</td>
             </tr>
             
             <tr>
@@ -11791,18 +11994,13 @@ from memilio.epidata import getDIVIData</pre></td>
             </tr>
             
             <tr>
-                <td>memilio/epidata/getCaseDatawithEstimations.py</td>
-                <td>10</td>
+                <td>memilio/epidata/getSimulationData.py</td>
+                <td>7</td>
             </tr>
             
             <tr>
-                <td>memilio/epidata/getCaseData.py</td>
-                <td>72</td>
-            </tr>
-            
-            <tr>
-                <td>memilio/epidata/getTestingData.py</td>
-                <td>61</td>
+                <td>memilio/epidata/modifyDataframeSeries.py</td>
+                <td>28</td>
             </tr>
             
             <tr>
@@ -11811,33 +12009,8 @@ from memilio.epidata import getDIVIData</pre></td>
             </tr>
             
             <tr>
-                <td>memilio/epidata/modifyDataframeSeries.py</td>
-                <td>23</td>
-            </tr>
-            
-            <tr>
-                <td>memilio/epidata/transformWeatherData.py</td>
-                <td>20</td>
-            </tr>
-            
-            <tr>
-                <td>memilio/epidata/getVaccinationData.py</td>
-                <td>80</td>
-            </tr>
-            
-            <tr>
-                <td>memilio/epidata/getSimulationData.py</td>
-                <td>7</td>
-            </tr>
-            
-            <tr>
-                <td>memilio/epidata/getDataIntoPandasDataFrame.py</td>
-                <td>32</td>
-            </tr>
-            
-            <tr>
-                <td>memilio/epidata/geoModificationGermany.py</td>
-                <td>31</td>
+                <td>memilio/epidata/transformMobilityData.py</td>
+                <td>13</td>
             </tr>
             
             <tr>
@@ -11846,13 +12019,58 @@ from memilio.epidata import getDIVIData</pre></td>
             </tr>
             
             <tr>
+                <td>memilio/epidata/getCommuterMobility.py</td>
+                <td>45</td>
+            </tr>
+            
+            <tr>
+                <td>memilio/epidata/defaultDict.py</td>
+                <td>12</td>
+            </tr>
+            
+            <tr>
+                <td>memilio/epidata/getCaseData.py</td>
+                <td>72</td>
+            </tr>
+            
+            <tr>
+                <td>memilio/epidata/getVaccinationData.py</td>
+                <td>95</td>
+            </tr>
+            
+            <tr>
                 <td>memilio/epidata/cleanData.py</td>
                 <td>7</td>
             </tr>
             
             <tr>
+                <td>memilio/epidata/geoModificationGermany.py</td>
+                <td>31</td>
+            </tr>
+            
+            <tr>
+                <td>memilio/epidata/getDataIntoPandasDataFrame.py</td>
+                <td>32</td>
+            </tr>
+            
+            <tr>
+                <td>memilio/epidata/getCaseDatawithEstimations.py</td>
+                <td>10</td>
+            </tr>
+            
+            <tr>
                 <td>memilio/epidata/getJHData.py</td>
-                <td>12</td>
+                <td>9</td>
+            </tr>
+            
+            <tr>
+                <td>memilio/epidata/getTestingData.py</td>
+                <td>61</td>
+            </tr>
+            
+            <tr>
+                <td>memilio/epidata/transformWeatherData.py</td>
+                <td>23</td>
             </tr>
             
         </table>
