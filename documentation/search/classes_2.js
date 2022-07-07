@@ -6,7 +6,7 @@ var searchData=
   ['columnvectorshape_1249',['ColumnVectorShape',['../classmio_1_1ColumnVectorShape.html',1,'mio']]],
   ['compartmentalmodel_1250',['CompartmentalModel',['../structmio_1_1CompartmentalModel.html',1,'mio']]],
   ['compartmentalmodel_3c_20populations_3c_20agegroup_2c_20infectionstate_20_3e_2c_20secirparams_20_3e_1251',['CompartmentalModel&lt; Populations&lt; AgeGroup, InfectionState &gt;, SecirParams &gt;',['../structmio_1_1CompartmentalModel.html',1,'mio']]],
-  ['compartmentalmodel_3c_20populations_3c_20infectionstate_20_3e_2c_20parametersbase_20_3e_1252',['CompartmentalModel&lt; Populations&lt; InfectionState &gt;, ParametersBase &gt;',['../structmio_1_1CompartmentalModel.html',1,'mio']]],
+  ['compartmentalmodel_3c_20populations_3c_20infectionstate_20_3e_2c_20parameters_20_3e_1252',['CompartmentalModel&lt; Populations&lt; InfectionState &gt;, Parameters &gt;',['../structmio_1_1CompartmentalModel.html',1,'mio']]],
   ['conjunction_1253',['conjunction',['../structmio_1_1conjunction.html',1,'mio']]],
   ['conjunction_3c_20b1_20_3e_1254',['conjunction&lt; B1 &gt;',['../structmio_1_1conjunction_3_01B1_01_4.html',1,'mio']]],
   ['conjunction_3c_20b1_2c_20bn_2e_2e_2e_20_3e_1255',['conjunction&lt; B1, Bn... &gt;',['../structmio_1_1conjunction_3_01B1_00_01Bn_8_8_8_01_4.html',1,'mio']]],
