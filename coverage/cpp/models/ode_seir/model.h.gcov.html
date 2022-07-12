@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2022-07-11 12:26:32</td>
+            <td class="headerValue">2022-07-12 19:27:12</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">2</td>
@@ -97,42 +97,40 @@
 <a name="35"><span class="lineNum">      35 </span>            :     * define the model *</a>
 <a name="36"><span class="lineNum">      36 </span>            :     ********************/</a>
 <a name="37"><span class="lineNum">      37 </span>            : </a>
-<a name="38"><span class="lineNum">      38 </span>            :     class Model : public CompartmentalModel&lt;Populations&lt;InfectionState&gt;, Parameters&gt;</a>
+<a name="38"><span class="lineNum">      38 </span>            :     class Model : public CompartmentalModel&lt;InfectionState, Populations&lt;InfectionState&gt;, Parameters&gt;</a>
 <a name="39"><span class="lineNum">      39 </span>            :     {</a>
-<a name="40"><span class="lineNum">      40 </span>            :         using Base = CompartmentalModel&lt;mio::Populations&lt;InfectionState&gt;, Parameters&gt;;</a>
-<a name="41"><span class="lineNum">      41 </span>            :         using Po   = Base::Populations;</a>
-<a name="42"><span class="lineNum">      42 </span>            :         using Pa   = Base::ParameterSet;</a>
-<a name="43"><span class="lineNum">      43 </span>            : </a>
-<a name="44"><span class="lineNum">      44 </span>            :     public:</a>
-<a name="45"><span class="lineNum">      45 </span><span class="lineCov">          2 :         Model()</span></a>
-<a name="46"><span class="lineNum">      46 </span><span class="lineCov">          2 :             : Base(Po({Index&lt;InfectionState&gt;((size_t)InfectionState::Count)}, 0.), Pa())</span></a>
-<a name="47"><span class="lineNum">      47 </span>            :         {</a>
-<a name="48"><span class="lineNum">      48 </span><span class="lineCov">          2 :         }</span></a>
-<a name="49"><span class="lineNum">      49 </span>            : </a>
-<a name="50"><span class="lineNum">      50 </span><span class="lineCov">        699 :         void get_derivatives(Eigen::Ref&lt;const Eigen::VectorXd&gt; pop, Eigen::Ref&lt;const Eigen::VectorXd&gt; y, double t,</span></a>
-<a name="51"><span class="lineNum">      51 </span>            :                              Eigen::Ref&lt;Eigen::VectorXd&gt; dydt) const override</a>
-<a name="52"><span class="lineNum">      52 </span>            :         {</a>
-<a name="53"><span class="lineNum">      53 </span><span class="lineCov">        699 :             auto&amp; params     = this-&gt;parameters;</span></a>
-<a name="54"><span class="lineNum">      54 </span><span class="lineCov">        699 :             double S2E_coeff = params.get&lt;ContactPatterns&gt;().get_matrix_at(t)(0, 0) *</span></a>
-<a name="55"><span class="lineNum">      55 </span><span class="lineCov">       1398 :                                params.get&lt;InfectionProbabilityFromContact&gt;() / populations.get_total();</span></a>
-<a name="56"><span class="lineNum">      56 </span>            : </a>
-<a name="57"><span class="lineNum">      57 </span><span class="lineCov">       2097 :             dydt[(size_t)InfectionState::Susceptible] =</span></a>
-<a name="58"><span class="lineNum">      58 </span><span class="lineCov">        699 :                 -S2E_coeff * y[(size_t)InfectionState::Susceptible] * pop[(size_t)InfectionState::Infected];</span></a>
-<a name="59"><span class="lineNum">      59 </span><span class="lineCov">       2097 :             dydt[(size_t)InfectionState::Exposed] =</span></a>
-<a name="60"><span class="lineNum">      60 </span><span class="lineCov">       1398 :                 S2E_coeff * y[(size_t)InfectionState::Susceptible] * pop[(size_t)InfectionState::Infected] -</span></a>
-<a name="61"><span class="lineNum">      61 </span><span class="lineCov">        699 :                 (1.0 / params.get&lt;LatentTime&gt;()) * y[(size_t)InfectionState::Exposed];</span></a>
-<a name="62"><span class="lineNum">      62 </span><span class="lineCov">       2097 :             dydt[(size_t)InfectionState::Infected] =</span></a>
-<a name="63"><span class="lineNum">      63 </span><span class="lineCov">       1398 :                 (1.0 / params.get&lt;LatentTime&gt;()) * y[(size_t)InfectionState::Exposed] -</span></a>
+<a name="40"><span class="lineNum">      40 </span>            :         using Base = CompartmentalModel&lt;InfectionState, mio::Populations&lt;InfectionState&gt;, Parameters&gt;;</a>
+<a name="41"><span class="lineNum">      41 </span>            : </a>
+<a name="42"><span class="lineNum">      42 </span>            :     public:</a>
+<a name="43"><span class="lineNum">      43 </span><span class="lineCov">          2 :         Model()</span></a>
+<a name="44"><span class="lineNum">      44 </span><span class="lineCov">          2 :             : Base(Populations({InfectionState::Count}, 0.), ParameterSet())</span></a>
+<a name="45"><span class="lineNum">      45 </span>            :         {</a>
+<a name="46"><span class="lineNum">      46 </span><span class="lineCov">          2 :         }</span></a>
+<a name="47"><span class="lineNum">      47 </span>            : </a>
+<a name="48"><span class="lineNum">      48 </span><span class="lineCov">        699 :         void get_derivatives(Eigen::Ref&lt;const Eigen::VectorXd&gt; pop, Eigen::Ref&lt;const Eigen::VectorXd&gt; y, double t,</span></a>
+<a name="49"><span class="lineNum">      49 </span>            :                              Eigen::Ref&lt;Eigen::VectorXd&gt; dydt) const override</a>
+<a name="50"><span class="lineNum">      50 </span>            :         {</a>
+<a name="51"><span class="lineNum">      51 </span><span class="lineCov">        699 :             auto&amp; params     = this-&gt;parameters;</span></a>
+<a name="52"><span class="lineNum">      52 </span><span class="lineCov">       1398 :             double S2E_coeff = params.get&lt;ContactPatterns&gt;().get_matrix_at(t)(0, 0) *</span></a>
+<a name="53"><span class="lineNum">      53 </span><span class="lineCov">       2097 :                                params.get&lt;InfectionProbabilityFromContact&gt;() / populations.get_total();</span></a>
+<a name="54"><span class="lineNum">      54 </span>            : </a>
+<a name="55"><span class="lineNum">      55 </span><span class="lineCov">       2097 :             dydt[(size_t)InfectionState::Susceptible] =</span></a>
+<a name="56"><span class="lineNum">      56 </span><span class="lineCov">        699 :                 -S2E_coeff * y[(size_t)InfectionState::Susceptible] * pop[(size_t)InfectionState::Infected];</span></a>
+<a name="57"><span class="lineNum">      57 </span><span class="lineCov">       2097 :             dydt[(size_t)InfectionState::Exposed] =</span></a>
+<a name="58"><span class="lineNum">      58 </span><span class="lineCov">       1398 :                 S2E_coeff * y[(size_t)InfectionState::Susceptible] * pop[(size_t)InfectionState::Infected] -</span></a>
+<a name="59"><span class="lineNum">      59 </span><span class="lineCov">        699 :                 (1.0 / params.get&lt;LatentTime&gt;()) * y[(size_t)InfectionState::Exposed];</span></a>
+<a name="60"><span class="lineNum">      60 </span><span class="lineCov">       2097 :             dydt[(size_t)InfectionState::Infected] =</span></a>
+<a name="61"><span class="lineNum">      61 </span><span class="lineCov">       1398 :                 (1.0 / params.get&lt;LatentTime&gt;()) * y[(size_t)InfectionState::Exposed] -</span></a>
+<a name="62"><span class="lineNum">      62 </span><span class="lineCov">        699 :                 (1.0 / params.get&lt;InfectiousTime&gt;()) * y[(size_t)InfectionState::Infected];</span></a>
+<a name="63"><span class="lineNum">      63 </span><span class="lineCov">       2097 :             dydt[(size_t)InfectionState::Recovered] =</span></a>
 <a name="64"><span class="lineNum">      64 </span><span class="lineCov">        699 :                 (1.0 / params.get&lt;InfectiousTime&gt;()) * y[(size_t)InfectionState::Infected];</span></a>
-<a name="65"><span class="lineNum">      65 </span><span class="lineCov">       2097 :             dydt[(size_t)InfectionState::Recovered] =</span></a>
-<a name="66"><span class="lineNum">      66 </span><span class="lineCov">        699 :                 (1.0 / params.get&lt;InfectiousTime&gt;()) * y[(size_t)InfectionState::Infected];</span></a>
-<a name="67"><span class="lineNum">      67 </span><span class="lineCov">        699 :         }</span></a>
-<a name="68"><span class="lineNum">      68 </span>            :     };</a>
-<a name="69"><span class="lineNum">      69 </span>            : </a>
-<a name="70"><span class="lineNum">      70 </span>            : } // namespace oseir</a>
-<a name="71"><span class="lineNum">      71 </span>            : } // namespace mio</a>
-<a name="72"><span class="lineNum">      72 </span>            : </a>
-<a name="73"><span class="lineNum">      73 </span>            : #endif // SEIR_MODEL_H</a>
+<a name="65"><span class="lineNum">      65 </span><span class="lineCov">        699 :         }</span></a>
+<a name="66"><span class="lineNum">      66 </span>            :     };</a>
+<a name="67"><span class="lineNum">      67 </span>            : </a>
+<a name="68"><span class="lineNum">      68 </span>            : } // namespace oseir</a>
+<a name="69"><span class="lineNum">      69 </span>            : } // namespace mio</a>
+<a name="70"><span class="lineNum">      70 </span>            : </a>
+<a name="71"><span class="lineNum">      71 </span>            : #endif // SEIR_MODEL_H</a>
 </pre>
       </td>
     </tr>

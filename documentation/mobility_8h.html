@@ -123,6 +123,10 @@ Typedefs</h2></td></tr>
 <tr class="memitem:ac94e7b62c8f3a638290d6d40f05df999"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemio.html#ac94e7b62c8f3a638290d6d40f05df999">mio::MigrationCoefficients</a> = DampingMatrixExpression&lt; VectorDampings &gt;</td></tr>
 <tr class="memdesc:ac94e7b62c8f3a638290d6d40f05df999"><td class="mdescLeft">&#160;</td><td class="mdescRight">time dependent migration coefficients.  <a href="namespacemio.html#ac94e7b62c8f3a638290d6d40f05df999">More...</a><br /></td></tr>
 <tr class="separator:ac94e7b62c8f3a638290d6d40f05df999"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab139fe68c2e45522c9700c13f4517cae"><td class="memTemplParams" colspan="2">template&lt;class Sim &gt; </td></tr>
+<tr class="memitem:ab139fe68c2e45522c9700c13f4517cae"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemio.html#ab139fe68c2e45522c9700c13f4517cae">mio::test_commuters_expr_t</a> = decltype(test_commuters(std::declval&lt; Sim &amp; &gt;(), std::declval&lt; Eigen::Ref&lt; const Eigen::VectorXd &gt; &amp; &gt;(), std::declval&lt; double &gt;()))</td></tr>
+<tr class="memdesc:ab139fe68c2e45522c9700c13f4517cae"><td class="mdescLeft">&#160;</td><td class="mdescRight">detect a get_migration_factors function for the Model type.  <a href="namespacemio.html#ab139fe68c2e45522c9700c13f4517cae">More...</a><br /></td></tr>
+<tr class="separator:ab139fe68c2e45522c9700c13f4517cae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -146,6 +150,10 @@ Functions</h2></td></tr>
 <tr class="memitem:ab74f1d86f5a3421e7a971c22b50fd89c"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemio.html#ab74f1d86f5a3421e7a971c22b50fd89c">mio::get_migration_factors</a> (const SimulationNode&lt; Sim &gt; &amp;, double, const Eigen::Ref&lt; const Eigen::VectorXd &gt; &amp;y)</td></tr>
 <tr class="memdesc:ab74f1d86f5a3421e7a971c22b50fd89c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get an additional migration factor.  <a href="namespacemio.html#ab74f1d86f5a3421e7a971c22b50fd89c">More...</a><br /></td></tr>
 <tr class="separator:ab74f1d86f5a3421e7a971c22b50fd89c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb526164db4b433fe9e65133f20edd3d"><td class="memTemplParams" colspan="2">template&lt;class Sim , std::enable_if_t&lt;!is_expression_valid&lt; test_commuters_expr_t, Sim &gt;::value, void * &gt;  = nullptr&gt; </td></tr>
+<tr class="memitem:adb526164db4b433fe9e65133f20edd3d"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemio.html#adb526164db4b433fe9e65133f20edd3d">mio::test_commuters</a> (SimulationNode&lt; Sim &gt; &amp;, Eigen::Ref&lt; Eigen::VectorXd &gt;, double)</td></tr>
+<tr class="memdesc:adb526164db4b433fe9e65133f20edd3d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Test persons when migrating from their source node.  <a href="namespacemio.html#adb526164db4b433fe9e65133f20edd3d">More...</a><br /></td></tr>
+<tr class="separator:adb526164db4b433fe9e65133f20edd3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader"></div></td></tr>
 <tr class="memitem:a9afccd5e6410c704b1565079e5837d80"><td class="memTemplParams" colspan="2">template&lt;class Sim &gt; </td></tr>
 <tr class="memitem:a9afccd5e6410c704b1565079e5837d80"><td class="memTemplItemLeft" align="right" valign="top">GraphSimulation&lt; Graph&lt; SimulationNode&lt; Sim &gt;, MigrationEdge &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemio.html#a9afccd5e6410c704b1565079e5837d80">mio::make_migration_sim</a> (double t0, double dt, const Graph&lt; SimulationNode&lt; Sim &gt;, MigrationEdge &gt; &amp;graph)</td></tr>

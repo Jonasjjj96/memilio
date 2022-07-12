@@ -31,18 +31,18 @@
             <td class="headerValue">coverage.info</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntry">154</td>
+            <td class="headerCovTableEntry">156</td>
             <td class="headerCovTableEntry">169</td>
-            <td class="headerCovTableEntryHi">91.1 %</td>
+            <td class="headerCovTableEntryHi">92.3 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2022-07-11 12:26:32</td>
+            <td class="headerValue">2022-07-12 19:27:12</td>
             <td></td>
             <td class="headerItem">Functions:</td>
-            <td class="headerCovTableEntry">38</td>
-            <td class="headerCovTableEntry">42</td>
-            <td class="headerCovTableEntryHi">90.5 %</td>
+            <td class="headerCovTableEntry">35</td>
+            <td class="headerCovTableEntry">36</td>
+            <td class="headerCovTableEntryHi">97.2 %</td>
           </tr>
           <tr><td><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
         </table>
@@ -128,18 +128,18 @@
 <a name="66"><span class="lineNum">      66 </span>            : class ParameterDistribution</a>
 <a name="67"><span class="lineNum">      67 </span>            : {</a>
 <a name="68"><span class="lineNum">      68 </span>            : public:</a>
-<a name="69"><span class="lineNum">      69 </span><span class="lineCov">        492 :     ParameterDistribution(double lower_bound, double upper_bound)</span></a>
-<a name="70"><span class="lineNum">      70 </span><span class="lineCov">        492 :         : m_lower_bound(lower_bound)</span></a>
-<a name="71"><span class="lineNum">      71 </span><span class="lineCov">        492 :         , m_upper_bound(upper_bound)</span></a>
+<a name="69"><span class="lineNum">      69 </span><span class="lineCov">       2048 :     ParameterDistribution(double lower_bound, double upper_bound)</span></a>
+<a name="70"><span class="lineNum">      70 </span><span class="lineCov">       2048 :         : m_lower_bound(lower_bound)</span></a>
+<a name="71"><span class="lineNum">      71 </span><span class="lineCov">       2048 :         , m_upper_bound(upper_bound)</span></a>
 <a name="72"><span class="lineNum">      72 </span>            :     {</a>
-<a name="73"><span class="lineNum">      73 </span><span class="lineCov">        492 :     }</span></a>
+<a name="73"><span class="lineNum">      73 </span><span class="lineCov">       2048 :     }</span></a>
 <a name="74"><span class="lineNum">      74 </span>            : </a>
 <a name="75"><span class="lineNum">      75 </span><span class="lineCov">          2 :     ParameterDistribution()</span></a>
 <a name="76"><span class="lineNum">      76 </span><span class="lineCov">          2 :         : ParameterDistribution(0, 0)</span></a>
 <a name="77"><span class="lineNum">      77 </span>            :     {</a>
 <a name="78"><span class="lineNum">      78 </span><span class="lineCov">          2 :     }</span></a>
 <a name="79"><span class="lineNum">      79 </span>            : </a>
-<a name="80"><span class="lineNum">      80 </span><span class="lineCov">       4128 :     virtual ~ParameterDistribution() = default;</span></a>
+<a name="80"><span class="lineNum">      80 </span><span class="lineCov">      15671 :     virtual ~ParameterDistribution() = default;</span></a>
 <a name="81"><span class="lineNum">      81 </span>            : </a>
 <a name="82"><span class="lineNum">      82 </span><span class="lineCov">          2 :     void set_lower_bound(double lower_bound)</span></a>
 <a name="83"><span class="lineNum">      83 </span>            :     {</a>
@@ -182,15 +182,15 @@
 <a name="120"><span class="lineNum">     120 </span>            :      * first, in case the vector of predefined values is empty, a 'real'</a>
 <a name="121"><span class="lineNum">     121 </span>            :      * random sample is taken</a>
 <a name="122"><span class="lineNum">     122 </span>            :      */</a>
-<a name="123"><span class="lineNum">     123 </span><span class="lineCov">       2446 :     double get_sample()</span></a>
+<a name="123"><span class="lineNum">     123 </span><span class="lineCov">       4204 :     double get_sample()</span></a>
 <a name="124"><span class="lineNum">     124 </span>            :     {</a>
-<a name="125"><span class="lineNum">     125 </span><span class="lineCov">       2446 :         if (m_predefined_samples.size() &gt; 0) {</span></a>
+<a name="125"><span class="lineNum">     125 </span><span class="lineCov">       4204 :         if (m_predefined_samples.size() &gt; 0) {</span></a>
 <a name="126"><span class="lineNum">     126 </span><span class="lineCov">          4 :             double rnumb = m_predefined_samples[0];</span></a>
 <a name="127"><span class="lineNum">     127 </span><span class="lineCov">          4 :             m_predefined_samples.erase(m_predefined_samples.begin());</span></a>
 <a name="128"><span class="lineNum">     128 </span><span class="lineCov">          4 :             return rnumb;</span></a>
 <a name="129"><span class="lineNum">     129 </span>            :         }</a>
 <a name="130"><span class="lineNum">     130 </span>            :         else {</a>
-<a name="131"><span class="lineNum">     131 </span><span class="lineCov">       2442 :             return get_rand_sample();</span></a>
+<a name="131"><span class="lineNum">     131 </span><span class="lineCov">       4200 :             return get_rand_sample();</span></a>
 <a name="132"><span class="lineNum">     132 </span>            :         }</a>
 <a name="133"><span class="lineNum">     133 </span>            :     }</a>
 <a name="134"><span class="lineNum">     134 </span>            : </a>
@@ -364,10 +364,10 @@
 <a name="302"><span class="lineNum">     302 </span><span class="lineCov">       1412 :         int i        = 0;</span></a>
 <a name="303"><span class="lineNum">     303 </span><span class="lineCov">       1412 :         int retries  = 10;</span></a>
 <a name="304"><span class="lineNum">     304 </span><span class="lineCov">       1412 :         double rnumb = m_distribution(thread_local_rng());</span></a>
-<a name="305"><span class="lineNum">     305 </span><span class="lineCov">       1414 :         while ((rnumb &gt; m_upper_bound || rnumb &lt; m_lower_bound) &amp;&amp; i &lt; retries) {</span></a>
-<a name="306"><span class="lineNum">     306 </span><span class="lineCov">          2 :             rnumb = m_distribution(thread_local_rng());</span></a>
-<a name="307"><span class="lineNum">     307 </span><span class="lineCov">          2 :             i++;</span></a>
-<a name="308"><span class="lineNum">     308 </span><span class="lineCov">          2 :             if (i == retries) {</span></a>
+<a name="305"><span class="lineNum">     305 </span><span class="lineCov">       1424 :         while ((rnumb &gt; m_upper_bound || rnumb &lt; m_lower_bound) &amp;&amp; i &lt; retries) {</span></a>
+<a name="306"><span class="lineNum">     306 </span><span class="lineCov">         12 :             rnumb = m_distribution(thread_local_rng());</span></a>
+<a name="307"><span class="lineNum">     307 </span><span class="lineCov">         12 :             i++;</span></a>
+<a name="308"><span class="lineNum">     308 </span><span class="lineCov">         12 :             if (i == retries) {</span></a>
 <a name="309"><span class="lineNum">     309 </span><span class="lineNoCov">          0 :                 log_warning(&quot;Not successfully sampled within [min,max].&quot;);</span></a>
 <a name="310"><span class="lineNum">     310 </span><span class="lineNoCov">          0 :                 if (rnumb &gt; m_upper_bound) {</span></a>
 <a name="311"><span class="lineNum">     311 </span><span class="lineNoCov">          0 :                     rnumb = m_upper_bound;</span></a>
@@ -408,9 +408,9 @@
 <a name="346"><span class="lineNum">     346 </span>            :         }</a>
 <a name="347"><span class="lineNum">     347 </span>            :     }</a>
 <a name="348"><span class="lineNum">     348 </span>            : </a>
-<a name="349"><span class="lineNum">     349 </span><span class="lineCov">       2717 :     ParameterDistribution* clone() const override</span></a>
+<a name="349"><span class="lineNum">     349 </span><span class="lineCov">       2917 :     ParameterDistribution* clone() const override</span></a>
 <a name="350"><span class="lineNum">     350 </span>            :     {</a>
-<a name="351"><span class="lineNum">     351 </span><span class="lineCov">       2717 :         return new ParameterDistributionNormal(*this);</span></a>
+<a name="351"><span class="lineNum">     351 </span><span class="lineCov">       2917 :         return new ParameterDistributionNormal(*this);</span></a>
 <a name="352"><span class="lineNum">     352 </span>            :     }</a>
 <a name="353"><span class="lineNum">     353 </span>            : </a>
 <a name="354"><span class="lineNum">     354 </span>            : private:</a>
@@ -440,26 +440,26 @@
 <a name="378"><span class="lineNum">     378 </span>            :     {</a>
 <a name="379"><span class="lineNum">     379 </span>            :     }</a>
 <a name="380"><span class="lineNum">     380 </span>            : </a>
-<a name="381"><span class="lineNum">     381 </span><span class="lineCov">          4 :     ParameterDistributionUniform(double lower_bound, double upper_bound)</span></a>
-<a name="382"><span class="lineNum">     382 </span><span class="lineCov">          4 :         : VisitableParameterDistribution&lt;ParameterDistributionUniform&gt;(lower_bound, upper_bound)</span></a>
+<a name="381"><span class="lineNum">     381 </span><span class="lineCov">       1560 :     ParameterDistributionUniform(double lower_bound, double upper_bound)</span></a>
+<a name="382"><span class="lineNum">     382 </span><span class="lineCov">       1560 :         : VisitableParameterDistribution&lt;ParameterDistributionUniform&gt;(lower_bound, upper_bound)</span></a>
 <a name="383"><span class="lineNum">     383 </span>            :     {</a>
-<a name="384"><span class="lineNum">     384 </span><span class="lineCov">          4 :     }</span></a>
+<a name="384"><span class="lineNum">     384 </span><span class="lineCov">       1560 :     }</span></a>
 <a name="385"><span class="lineNum">     385 </span>            : </a>
 <a name="386"><span class="lineNum">     386 </span>            :     /*</a>
 <a name="387"><span class="lineNum">     387 </span>            :      * @brief gets a sample of a uniformly distributed variable</a>
 <a name="388"><span class="lineNum">     388 </span>            :      */</a>
-<a name="389"><span class="lineNum">     389 </span><span class="lineCov">       1001 :     double get_rand_sample() override</span></a>
+<a name="389"><span class="lineNum">     389 </span><span class="lineCov">       2759 :     double get_rand_sample() override</span></a>
 <a name="390"><span class="lineNum">     390 </span>            :     {</a>
-<a name="391"><span class="lineNum">     391 </span><span class="lineCov">       1001 :         if (m_distribution.max() != m_upper_bound || m_distribution.min() != m_lower_bound) {</span></a>
-<a name="392"><span class="lineNum">     392 </span><span class="lineCov">          2 :             m_distribution = std::uniform_real_distribution&lt;double&gt;{m_lower_bound, m_upper_bound};</span></a>
+<a name="391"><span class="lineNum">     391 </span><span class="lineCov">       2759 :         if (m_distribution.max() != m_upper_bound || m_distribution.min() != m_lower_bound) {</span></a>
+<a name="392"><span class="lineNum">     392 </span><span class="lineCov">        428 :             m_distribution = std::uniform_real_distribution&lt;double&gt;{m_lower_bound, m_upper_bound};</span></a>
 <a name="393"><span class="lineNum">     393 </span>            :         }</a>
 <a name="394"><span class="lineNum">     394 </span>            : </a>
-<a name="395"><span class="lineNum">     395 </span><span class="lineCov">       1001 :         return m_distribution(thread_local_rng());</span></a>
+<a name="395"><span class="lineNum">     395 </span><span class="lineCov">       2759 :         return m_distribution(thread_local_rng());</span></a>
 <a name="396"><span class="lineNum">     396 </span>            :     }</a>
 <a name="397"><span class="lineNum">     397 </span>            : </a>
-<a name="398"><span class="lineNum">     398 </span><span class="lineNoCov">          0 :     ParameterDistribution* clone() const override</span></a>
+<a name="398"><span class="lineNum">     398 </span><span class="lineCov">       9787 :     ParameterDistribution* clone() const override</span></a>
 <a name="399"><span class="lineNum">     399 </span>            :     {</a>
-<a name="400"><span class="lineNum">     400 </span><span class="lineNoCov">          0 :         return new ParameterDistributionUniform(*this);</span></a>
+<a name="400"><span class="lineNum">     400 </span><span class="lineCov">       9787 :         return new ParameterDistributionUniform(*this);</span></a>
 <a name="401"><span class="lineNum">     401 </span>            :     }</a>
 <a name="402"><span class="lineNum">     402 </span>            : </a>
 <a name="403"><span class="lineNum">     403 </span>            :     template &lt;class IOContext&gt;</a>

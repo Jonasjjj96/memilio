@@ -92,9 +92,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a13f680ff932e44a4bf39aa2b0a4358b4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmio_1_1observer__ptr.html">observer_ptr</a>&lt; const <a class="el" href="classmio_1_1ParameterDistribution.html">ParameterDistribution</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1UncertainValue.html#a13f680ff932e44a4bf39aa2b0a4358b4">get_distribution</a> () const</td></tr>
 <tr class="memdesc:a13f680ff932e44a4bf39aa2b0a4358b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the parameter distribution.  <a href="classmio_1_1UncertainValue.html#a13f680ff932e44a4bf39aa2b0a4358b4">More...</a><br /></td></tr>
 <tr class="separator:a13f680ff932e44a4bf39aa2b0a4358b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3df63cf7da238e1847a6d245f55ccea2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1UncertainValue.html#a3df63cf7da238e1847a6d245f55ccea2">operator ScalarType</a> () const</td></tr>
-<tr class="memdesc:a3df63cf7da238e1847a6d245f55ccea2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Conversion to scalar by returning the scalar contained in <a class="el" href="classmio_1_1UncertainValue.html" title="The UncertainValue class consists of a scalar value and a Distribution object.">UncertainValue</a>.  <a href="classmio_1_1UncertainValue.html#a3df63cf7da238e1847a6d245f55ccea2">More...</a><br /></td></tr>
-<tr class="separator:a3df63cf7da238e1847a6d245f55ccea2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af0a7ec3e3dbb9904fbecf3fc85afc1aa"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1UncertainValue.html#af0a7ec3e3dbb9904fbecf3fc85afc1aa">operator const ScalarType &amp;</a> () const</td></tr>
+<tr class="separator:af0a7ec3e3dbb9904fbecf3fc85afc1aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2fd5a0f0162868d424b8148d433d2237"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1UncertainValue.html#a2fd5a0f0162868d424b8148d433d2237">operator ScalarType &amp;</a> ()</td></tr>
 <tr class="memdesc:a2fd5a0f0162868d424b8148d433d2237"><td class="mdescLeft">&#160;</td><td class="mdescRight">Conversion to scalar reference by returning the scalar contained in <a class="el" href="classmio_1_1UncertainValue.html" title="The UncertainValue class consists of a scalar value and a Distribution object.">UncertainValue</a>.  <a href="classmio_1_1UncertainValue.html#a2fd5a0f0162868d424b8148d433d2237">More...</a><br /></td></tr>
 <tr class="separator:a2fd5a0f0162868d424b8148d433d2237"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -121,6 +120,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a72d50c5653e6801201ca5a0293bec7d4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1UncertainValue.html#a72d50c5653e6801201ca5a0293bec7d4">UncertainValue</a> (<a class="el" href="classmio_1_1UncertainValue.html">UncertainValue</a> &amp;&amp;other)=default</td></tr>
 <tr class="separator:a72d50c5653e6801201ca5a0293bec7d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad7bae469157565506b763d5bd9f6b497"><td class="memItemLeft" align="right" valign="top"><a class="el" href="config_8h.html#acd4f1d492d83a74716a42615e127d641">ScalarType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1UncertainValue.html#ad7bae469157565506b763d5bd9f6b497">value</a> () const</td></tr>
+<tr class="memdesc:ad7bae469157565506b763d5bd9f6b497"><td class="mdescLeft">&#160;</td><td class="mdescRight">Conversion to scalar by returning the scalar contained in <a class="el" href="classmio_1_1UncertainValue.html" title="The UncertainValue class consists of a scalar value and a Distribution object.">UncertainValue</a>.  <a href="classmio_1_1UncertainValue.html#ad7bae469157565506b763d5bd9f6b497">More...</a><br /></td></tr>
 <tr class="separator:ad7bae469157565506b763d5bd9f6b497"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
@@ -325,22 +325,20 @@ template&lt;class IOContext &gt; </div>
 
 </div>
 </div>
-<a id="a3df63cf7da238e1847a6d245f55ccea2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3df63cf7da238e1847a6d245f55ccea2">&#9670;&nbsp;</a></span>operator ScalarType()</h2>
+<a id="af0a7ec3e3dbb9904fbecf3fc85afc1aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af0a7ec3e3dbb9904fbecf3fc85afc1aa">&#9670;&nbsp;</a></span>operator const ScalarType &amp;()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">mio::UncertainValue::operator <a class="el" href="config_8h.html#acd4f1d492d83a74716a42615e127d641">ScalarType</a> </td>
+          <td class="memname">mio::UncertainValue::operator const <a class="el" href="config_8h.html#acd4f1d492d83a74716a42615e127d641">ScalarType</a> &amp; </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Conversion to scalar by returning the scalar contained in <a class="el" href="classmio_1_1UncertainValue.html" title="The UncertainValue class consists of a scalar value and a Distribution object.">UncertainValue</a>. </p>
 
 </div>
 </div>
@@ -461,6 +459,8 @@ template&lt;class IOContext &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Conversion to scalar by returning the scalar contained in <a class="el" href="classmio_1_1UncertainValue.html" title="The UncertainValue class consists of a scalar value and a Distribution object.">UncertainValue</a>. </p>
 
 </div>
 </div>

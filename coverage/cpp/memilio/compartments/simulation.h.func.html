@@ -37,12 +37,12 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2022-07-11 12:26:32</td>
+            <td class="headerValue">2022-07-12 19:27:12</td>
             <td></td>
             <td class="headerItem">Functions:</td>
-            <td class="headerCovTableEntry">20</td>
-            <td class="headerCovTableEntry">21</td>
-            <td class="headerCovTableEntryHi">95.2 %</td>
+            <td class="headerCovTableEntry">27</td>
+            <td class="headerCovTableEntry">30</td>
+            <td class="headerCovTableEntryHi">90.0 %</td>
           </tr>
           <tr><td><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
         </table>
@@ -61,7 +61,7 @@
     </tr>
     <tr>
               <td class="coverFn"><a href="simulation.h.gcov.html#102">mio::Simulation&lt;mio::SecirModel&gt;::get_result()</a></td>
-              <td class="coverFnHi">62</td>
+              <td class="coverFnHi">72</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="simulation.h.gcov.html#64">mio::Simulation&lt;mio::SecirModel&gt;::set_integrator(std::shared_ptr&lt;mio::IntegratorCore&gt;)</a></td>
@@ -96,6 +96,26 @@
               <td class="coverFnHi">5</td>
             </tr>
     <tr>
+              <td class="coverFn"><a href="simulation.h.gcov.html#102">mio::Simulation&lt;mio::osecirvvs::Model&gt;::get_result()</a></td>
+              <td class="coverFnHi">70</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="simulation.h.gcov.html#64">mio::Simulation&lt;mio::osecirvvs::Model&gt;::set_integrator(std::shared_ptr&lt;mio::IntegratorCore&gt;)</a></td>
+              <td class="coverFnLo">0</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="simulation.h.gcov.html#93">mio::Simulation&lt;mio::osecirvvs::Model&gt;::advance(double)</a></td>
+              <td class="coverFnHi">30</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="simulation.h.gcov.html#127">mio::Simulation&lt;mio::osecirvvs::Model&gt;::get_model()</a></td>
+              <td class="coverFnHi">377</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="simulation.h.gcov.html#49">mio::Simulation&lt;mio::osecirvvs::Model&gt;::Simulation(mio::osecirvvs::Model const&amp;, double, double)</a></td>
+              <td class="coverFnHi">4</td>
+            </tr>
+    <tr>
               <td class="coverFn"><a href="simulation.h.gcov.html#102">mio::Simulation&lt;TestCompartmentSimulation_integrator_uses_model_reference_Test::TestBody()::MockModel&gt;::get_result()</a></td>
               <td class="coverFnHi">2</td>
             </tr>
@@ -120,6 +140,10 @@
               <td class="coverFnHi">1</td>
             </tr>
     <tr>
+              <td class="coverFn"><a href="simulation.h.gcov.html#169">mio::TimeSeries&lt;double&gt; mio::simulate&lt;mio::osecirvvs::Model, mio::osecirvvs::Simulation&lt;mio::Simulation&lt;mio::osecirvvs::Model&gt; &gt; &gt;(double, double, double, mio::osecirvvs::Model const&amp;, std::shared_ptr&lt;mio::IntegratorCore&gt;)</a></td>
+              <td class="coverFnHi">1</td>
+            </tr>
+    <tr>
               <td class="coverFn"><a href="simulation.h.gcov.html#111">mio::Simulation&lt;mio::SecirModel&gt;::get_result() const</a></td>
               <td class="coverFnHi">2</td>
             </tr>
@@ -132,12 +156,24 @@
               <td class="coverFnLo">0</td>
             </tr>
     <tr>
+              <td class="coverFn"><a href="simulation.h.gcov.html#111">mio::Simulation&lt;mio::osecirvvs::Model&gt;::get_result() const</a></td>
+              <td class="coverFnLo">0</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="simulation.h.gcov.html#119">mio::Simulation&lt;mio::osecirvvs::Model&gt;::get_model() const</a></td>
+              <td class="coverFnHi">86</td>
+            </tr>
+    <tr>
               <td class="coverFn"><a href="simulation.h.gcov.html#54">auto mio::Simulation&lt;mio::SecirModel&gt;::Simulation(mio::SecirModel const&amp;, double, double)::{lambda(auto:1&amp;&amp;, auto:2&amp;&amp;, auto:3&amp;&amp;)#1}::operator()&lt;Eigen::Ref&lt;{lambda(auto:1&amp;&amp;, auto:2&amp;&amp;, auto:3&amp;&amp;)#1}::operator()::Matrix&lt;double, -1, 1, 0, -1, 1&gt; const, 0, {lambda(auto:1&amp;&amp;, auto:2&amp;&amp;, auto:3&amp;&amp;)#1}::operator()::InnerStride&lt;1&gt; &gt;, double, Eigen&lt;{lambda(auto:1&amp;&amp;, auto:2&amp;&amp;, auto:3&amp;&amp;)#1}::operator()::Matrix, 0, {lambda(auto:1&amp;&amp;, auto:2&amp;&amp;, auto:3&amp;&amp;)#1}::operator()::InnerStride&gt; &gt;(Eigen::Ref&lt;{lambda(auto:1&amp;&amp;, auto:2&amp;&amp;, auto:3&amp;&amp;)#1}::operator()::Matrix&lt;double, -1, 1, 0, -1, 1&gt; const, 0, {lambda(auto:1&amp;&amp;, auto:2&amp;&amp;, auto:3&amp;&amp;)#1}::operator()::InnerStride&lt;1&gt; &gt;&amp;&amp;, double&amp;&amp;, Eigen&lt;{lambda(auto:1&amp;&amp;, auto:2&amp;&amp;, auto:3&amp;&amp;)#1}::operator()::Matrix, 0, {lambda(auto:1&amp;&amp;, auto:2&amp;&amp;, auto:3&amp;&amp;)#1}::operator()::InnerStride&gt;&amp;&amp;) const</a></td>
-              <td class="coverFnHi">8076</td>
+              <td class="coverFnHi">7302</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="simulation.h.gcov.html#54">auto mio::Simulation&lt;mio::oseir::Model&gt;::Simulation(mio::oseir::Model const&amp;, double, double)::{lambda(auto:1&amp;&amp;, auto:2&amp;&amp;, auto:3&amp;&amp;)#1}::operator()&lt;Eigen::Ref&lt;{lambda(auto:1&amp;&amp;, auto:2&amp;&amp;, auto:3&amp;&amp;)#1}::operator()::Matrix&lt;double, -1, 1, 0, -1, 1&gt; const, 0, {lambda(auto:1&amp;&amp;, auto:2&amp;&amp;, auto:3&amp;&amp;)#1}::operator()::InnerStride&lt;1&gt; &gt;, double, Eigen&lt;{lambda(auto:1&amp;&amp;, auto:2&amp;&amp;, auto:3&amp;&amp;)#1}::operator()::Matrix, 0, {lambda(auto:1&amp;&amp;, auto:2&amp;&amp;, auto:3&amp;&amp;)#1}::operator()::InnerStride&gt; &gt;(Eigen::Ref&lt;{lambda(auto:1&amp;&amp;, auto:2&amp;&amp;, auto:3&amp;&amp;)#1}::operator()::Matrix&lt;double, -1, 1, 0, -1, 1&gt; const, 0, {lambda(auto:1&amp;&amp;, auto:2&amp;&amp;, auto:3&amp;&amp;)#1}::operator()::InnerStride&lt;1&gt; &gt;&amp;&amp;, double&amp;&amp;, Eigen&lt;{lambda(auto:1&amp;&amp;, auto:2&amp;&amp;, auto:3&amp;&amp;)#1}::operator()::Matrix, 0, {lambda(auto:1&amp;&amp;, auto:2&amp;&amp;, auto:3&amp;&amp;)#1}::operator()::InnerStride&gt;&amp;&amp;) const</a></td>
               <td class="coverFnHi">699</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="simulation.h.gcov.html#54">auto mio::Simulation&lt;mio::osecirvvs::Model&gt;::Simulation(mio::osecirvvs::Model const&amp;, double, double)::{lambda(auto:1&amp;&amp;, auto:2&amp;&amp;, auto:3&amp;&amp;)#1}::operator()&lt;Eigen::Ref&lt;{lambda(auto:1&amp;&amp;, auto:2&amp;&amp;, auto:3&amp;&amp;)#1}::operator()::Matrix&lt;double, -1, 1, 0, -1, 1&gt; const, 0, {lambda(auto:1&amp;&amp;, auto:2&amp;&amp;, auto:3&amp;&amp;)#1}::operator()::InnerStride&lt;1&gt; &gt;, double, Eigen&lt;{lambda(auto:1&amp;&amp;, auto:2&amp;&amp;, auto:3&amp;&amp;)#1}::operator()::Matrix, 0, {lambda(auto:1&amp;&amp;, auto:2&amp;&amp;, auto:3&amp;&amp;)#1}::operator()::InnerStride&gt; &gt;(Eigen::Ref&lt;{lambda(auto:1&amp;&amp;, auto:2&amp;&amp;, auto:3&amp;&amp;)#1}::operator()::Matrix&lt;double, -1, 1, 0, -1, 1&gt; const, 0, {lambda(auto:1&amp;&amp;, auto:2&amp;&amp;, auto:3&amp;&amp;)#1}::operator()::InnerStride&lt;1&gt; &gt;&amp;&amp;, double&amp;&amp;, Eigen&lt;{lambda(auto:1&amp;&amp;, auto:2&amp;&amp;, auto:3&amp;&amp;)#1}::operator()::Matrix, 0, {lambda(auto:1&amp;&amp;, auto:2&amp;&amp;, auto:3&amp;&amp;)#1}::operator()::InnerStride&gt;&amp;&amp;) const</a></td>
+              <td class="coverFnHi">258</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="simulation.h.gcov.html#54">auto mio::Simulation&lt;TestCompartmentSimulation_integrator_uses_model_reference_Test::TestBody()::MockModel&gt;::Simulation(TestCompartmentSimulation_integrator_uses_model_reference_Test::TestBody()::MockModel const&amp;, double, double)::{lambda(auto:1&amp;&amp;, auto:2&amp;&amp;, auto:3&amp;&amp;)#1}::operator()&lt;Eigen::Ref&lt;{lambda(auto:1&amp;&amp;, auto:2&amp;&amp;, auto:3&amp;&amp;)#1}::operator()::Matrix&lt;double, -1, 1, 0, -1, 1&gt; const, 0, {lambda(auto:1&amp;&amp;, auto:2&amp;&amp;, auto:3&amp;&amp;)#1}::operator()::InnerStride&lt;1&gt; &gt;, double, Eigen&lt;{lambda(auto:1&amp;&amp;, auto:2&amp;&amp;, auto:3&amp;&amp;)#1}::operator()::Matrix, 0, {lambda(auto:1&amp;&amp;, auto:2&amp;&amp;, auto:3&amp;&amp;)#1}::operator()::InnerStride&gt; &gt;(Eigen::Ref&lt;{lambda(auto:1&amp;&amp;, auto:2&amp;&amp;, auto:3&amp;&amp;)#1}::operator()::Matrix&lt;double, -1, 1, 0, -1, 1&gt; const, 0, {lambda(auto:1&amp;&amp;, auto:2&amp;&amp;, auto:3&amp;&amp;)#1}::operator()::InnerStride&lt;1&gt; &gt;&amp;&amp;, double&amp;&amp;, Eigen&lt;{lambda(auto:1&amp;&amp;, auto:2&amp;&amp;, auto:3&amp;&amp;)#1}::operator()::Matrix, 0, {lambda(auto:1&amp;&amp;, auto:2&amp;&amp;, auto:3&amp;&amp;)#1}::operator()::InnerStride&gt;&amp;&amp;) const</a></td>

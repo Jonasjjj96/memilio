@@ -75,6 +75,9 @@ $(function() {
 : <a class="el" href="classmio_1_1IOStatus.html#a255494ff251ce874a2c6fce705393481">mio::IOStatus</a>
 , <a class="el" href="classmio_1_1observer__ptr.html#a84d0dcf9ec8220d43b3023560b836726">mio::observer_ptr&lt; T &gt;</a>
 </li>
+<li>operator const ScalarType &amp;()
+: <a class="el" href="classmio_1_1UncertainValue.html#af0a7ec3e3dbb9904fbecf3fc85afc1aa">mio::UncertainValue</a>
+</li>
 <li>operator const Type &amp;()
 : <a class="el" href="classmio_1_1details_1_1TaggedParameter.html#a288501498c4001244111e6d8656bb8e0">mio::details::TaggedParameter&lt; TagT &gt;</a>
 </li>
@@ -83,9 +86,6 @@ $(function() {
 </li>
 <li>operator ContactMatrixGroup const &amp;()
 : <a class="el" href="classmio_1_1UncertainContactMatrix.html#afbd21c109fa98124f9f4ec7005cc0948">mio::UncertainContactMatrix</a>
-</li>
-<li>operator ScalarType()
-: <a class="el" href="classmio_1_1UncertainValue.html#a3df63cf7da238e1847a6d245f55ccea2">mio::UncertainValue</a>
 </li>
 <li>operator ScalarType &amp;()
 : <a class="el" href="classmio_1_1UncertainValue.html#a2fd5a0f0162868d424b8148d433d2237">mio::UncertainValue</a>
@@ -236,15 +236,15 @@ $(function() {
 </li>
 <li>operator=()
 : <a class="el" href="classmio_1_1abm_1_1World.html#ad5308ac7346a78f6ca88a56c71a289e2">mio::abm::World</a>
-, <a class="el" href="structmio_1_1CompartmentalModel.html#a69265d81a689406019a7d7cfd75ec4ef">mio::CompartmentalModel&lt; Pop, Params &gt;</a>
+, <a class="el" href="structmio_1_1CompartmentalModel.html#aa2e112fd20b10c6c31bbe0c412079c8d">mio::CompartmentalModel&lt; Comp, Pop, Params &gt;</a>
 , <a class="el" href="structmio_1_1CustomIndexArray_1_1Iterator.html#a3039b088cfee219631c06bc9cd7fd780">mio::CustomIndexArray&lt; Typ, Tags &gt;::Iterator&lt; T &gt;</a>
 , <a class="el" href="classmio_1_1CustomIndexArray.html#a507484414f9238e177953bf2b6792ded">mio::CustomIndexArray&lt; Typ, Tags &gt;</a>
 , <a class="el" href="classmio_1_1CustomIndexArray_1_1Slice_1_1Iterator.html#a2e8856c47b56dc743990b81dad0146d3">mio::CustomIndexArray&lt; Typ, Tags &gt;::Slice&lt; Tag, iter_type, &gt;::Iterator&lt; T &gt;</a>
 , <a class="el" href="classmio_1_1CustomIndexArray_1_1Slice.html#a6aca2991ea72b4af5b3dd2457571502e">mio::CustomIndexArray&lt; Typ, Tags &gt;::Slice&lt; Tag, iter_type, &gt;</a>
-, <a class="el" href="structmio_1_1details_1_1NoCopy.html#a36909fb649ddda81ed92cf7e7ac4d4be">mio::details::NoCopy</a>
+, <a class="el" href="structmio_1_1details_1_1NoCopy.html#ae8097369510777bf6923fe9d9b2393b9">mio::details::NoCopy</a>
 , <a class="el" href="classmio_1_1TimeSeries.html#a985c3729d2128d1e98b1c7cf5c223814">mio::TimeSeries&lt; FP &gt;</a>
 , <a class="el" href="classmio_1_1UncertainContactMatrix.html#ae881f250520d974df69e317873bd99f0">mio::UncertainContactMatrix</a>
-, <a class="el" href="classmio_1_1UncertainValue.html#a5efa85d3e41c2727438f7371960d4d23">mio::UncertainValue</a>
+, <a class="el" href="classmio_1_1UncertainValue.html#a1b1d5ffc558dbdddd42dcbd0873dabf6">mio::UncertainValue</a>
 </li>
 <li>operator==()
 : <a class="el" href="structmio_1_1abm_1_1InfectionProperties.html#a1f9e72f10626290101adc4fbf558d4c7">mio::abm::InfectionProperties</a>
@@ -291,13 +291,13 @@ $(function() {
 </li>
 <li>operator[]()
 : <a class="el" href="structmio_1_1CustomIndexArray_1_1Iterator.html#a5ec45b6a04aaccd7930211de53892ac0">mio::CustomIndexArray&lt; Typ, Tags &gt;::Iterator&lt; T &gt;</a>
-, <a class="el" href="classmio_1_1CustomIndexArray.html#a2d78e82fc851f0e5d783f5dcfd48e2f0">mio::CustomIndexArray&lt; Typ, Tags &gt;</a>
-, <a class="el" href="classmio_1_1CustomIndexArray_1_1Slice_1_1Iterator.html#abb1c10152e0228656bb238f461af880c">mio::CustomIndexArray&lt; Typ, Tags &gt;::Slice&lt; Tag, iter_type, &gt;::Iterator&lt; T &gt;</a>
-, <a class="el" href="classmio_1_1DampingMatrixExpressionGroup.html#a652ab044d59927b817c8f825a565c0f8">mio::DampingMatrixExpressionGroup&lt; E &gt;</a>
-, <a class="el" href="classmio_1_1Dampings.html#ac482ffa62f3bf172ae777a0537c93370">mio::Dampings&lt; D &gt;</a>
+, <a class="el" href="classmio_1_1CustomIndexArray.html#a2a772a9db443e7ef4403723f18ec91c4">mio::CustomIndexArray&lt; Typ, Tags &gt;</a>
+, <a class="el" href="classmio_1_1CustomIndexArray_1_1Slice_1_1Iterator.html#a9fc74919926161c31ac66a9cf3ae4b1b">mio::CustomIndexArray&lt; Typ, Tags &gt;::Slice&lt; Tag, iter_type, &gt;::Iterator&lt; T &gt;</a>
+, <a class="el" href="classmio_1_1DampingMatrixExpressionGroup.html#a6df5d091c44028d7f38869028b741386">mio::DampingMatrixExpressionGroup&lt; E &gt;</a>
+, <a class="el" href="classmio_1_1Dampings.html#ab1de00baca2c45fae5dae2f986ec2a3e">mio::Dampings&lt; D &gt;</a>
 , <a class="el" href="classmio_1_1details_1_1TimeSeriesIteratorBase.html#a83ac1ab6a7ddfbf76909f716b5b608fe">mio::details::TimeSeriesIteratorBase&lt; Derived, FP, IsConstIter, ValueType, ReferenceType &gt;</a>
 , <a class="el" href="classmio_1_1Range.html#aa6d4bf637b880f3db592a9640979ef92">mio::Range&lt; IterPair &gt;</a>
-, <a class="el" href="classmio_1_1TimeSeries.html#a98ed7062f80359d7ca611c889c7648e1">mio::TimeSeries&lt; FP &gt;</a>
+, <a class="el" href="classmio_1_1TimeSeries.html#a8477fa66c65f45a7435d102872579d0a">mio::TimeSeries&lt; FP &gt;</a>
 , <a class="el" href="classmio_1_1TransformIterator.html#a1382dd233f285a481e430ff89ea0a97a">mio::TransformIterator&lt; UnderlyingIter, Transform &gt;</a>
 </li>
 <li>out_edges()

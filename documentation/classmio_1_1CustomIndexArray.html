@@ -122,6 +122,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ae9ea39b33f425c46a7fee2eb2c0aa42d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmio_1_1CustomIndexArray.html#ae84b5b09a0d7d1842ef229cdee7d4682">const_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1CustomIndexArray.html#ae9ea39b33f425c46a7fee2eb2c0aa42d">begin</a> () const</td></tr>
 <tr class="memdesc:ae9ea39b33f425c46a7fee2eb2c0aa42d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a start iterator for the elements.  <a href="classmio_1_1CustomIndexArray.html#ae9ea39b33f425c46a7fee2eb2c0aa42d">More...</a><br /></td></tr>
 <tr class="separator:ae9ea39b33f425c46a7fee2eb2c0aa42d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6b8b3ab8bd7d15584854938137a6c988"><td class="memTemplParams" colspan="2">template&lt;class Iter &gt; </td></tr>
+<tr class="memitem:a6b8b3ab8bd7d15584854938137a6c988"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classmio_1_1CustomIndexArray.html#a6b8b3ab8bd7d15584854938137a6c988">CustomIndexArray</a> (<a class="el" href="classmio_1_1CustomIndexArray.html#abd7df97abfc73fff6ab38b53d1fddc10">Index</a> const &amp;dims, Iter b, Iter e)</td></tr>
+<tr class="memdesc:a6b8b3ab8bd7d15584854938137a6c988"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes array with values from a range.  <a href="classmio_1_1CustomIndexArray.html#a6b8b3ab8bd7d15584854938137a6c988">More...</a><br /></td></tr>
+<tr class="separator:a6b8b3ab8bd7d15584854938137a6c988"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a50501eba9a61930b5c6f264a92521528"><td class="memTemplParams" colspan="2">template&lt;class... Ts, typename std::enable_if_t&lt; std::is_constructible&lt; Type, Ts... &gt;::value &gt; *  = nullptr&gt; </td></tr>
 <tr class="memitem:a50501eba9a61930b5c6f264a92521528"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classmio_1_1CustomIndexArray.html#a50501eba9a61930b5c6f264a92521528">CustomIndexArray</a> (<a class="el" href="classmio_1_1CustomIndexArray.html#abd7df97abfc73fff6ab38b53d1fddc10">Index</a> const &amp;dims, Ts &amp;&amp;... args)</td></tr>
 <tr class="memdesc:a50501eba9a61930b5c6f264a92521528"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classmio_1_1CustomIndexArray.html" title="A class template for an array with custom indices.">CustomIndexArray</a> constructor, that initializes the array to constant instances of <code>CustsomIndexArray::Type</code>.  <a href="classmio_1_1CustomIndexArray.html#a50501eba9a61930b5c6f264a92521528">More...</a><br /></td></tr>
@@ -147,6 +151,13 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a2a772a9db443e7ef4403723f18ec91c4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmio_1_1CustomIndexArray.html#a5b1a1ad38cc2c1ca3c85ba402008b875">Type</a> const  &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1CustomIndexArray.html#a2a772a9db443e7ef4403723f18ec91c4">operator[]</a> (<a class="el" href="classmio_1_1CustomIndexArray.html#abd7df97abfc73fff6ab38b53d1fddc10">Index</a> const &amp;index) const</td></tr>
 <tr class="memdesc:a2a772a9db443e7ef4403723f18ec91c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">returns the entry of the array given a flat index index  <a href="classmio_1_1CustomIndexArray.html#a2a772a9db443e7ef4403723f18ec91c4">More...</a><br /></td></tr>
 <tr class="separator:a2a772a9db443e7ef4403723f18ec91c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abc93f7ca210dce1048fc07e4a0869d29"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1CustomIndexArray.html#abc93f7ca210dce1048fc07e4a0869d29">resize</a> (<a class="el" href="classmio_1_1CustomIndexArray.html#abd7df97abfc73fff6ab38b53d1fddc10">Index</a> new_dims)</td></tr>
+<tr class="memdesc:abc93f7ca210dce1048fc07e4a0869d29"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resize all dimensions.  <a href="classmio_1_1CustomIndexArray.html#abc93f7ca210dce1048fc07e4a0869d29">More...</a><br /></td></tr>
+<tr class="separator:abc93f7ca210dce1048fc07e4a0869d29"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a849773a9e5c974861d0eb42aca473632"><td class="memTemplParams" colspan="2">template&lt;class Tag &gt; </td></tr>
+<tr class="memitem:a849773a9e5c974861d0eb42aca473632"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classmio_1_1CustomIndexArray.html#a849773a9e5c974861d0eb42aca473632">resize</a> (<a class="el" href="classmio_1_1Index.html">mio::Index</a>&lt; <a class="el" href="namespacemio.html#a2f858e287c3935240954cf75cf53cfeb">Tag</a> &gt; new_dim)</td></tr>
+<tr class="memdesc:a849773a9e5c974861d0eb42aca473632"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resize a single dimension.  <a href="classmio_1_1CustomIndexArray.html#a849773a9e5c974861d0eb42aca473632">More...</a><br /></td></tr>
+<tr class="separator:a849773a9e5c974861d0eb42aca473632"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab4e93d1acee334d2cf613ba6bf7b1767"><td class="memTemplParams" colspan="2">template&lt;class IOContext &gt; </td></tr>
 <tr class="memitem:ab4e93d1acee334d2cf613ba6bf7b1767"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classmio_1_1CustomIndexArray.html#ab4e93d1acee334d2cf613ba6bf7b1767">serialize</a> (IOContext &amp;io) const</td></tr>
 <tr class="memdesc:ab4e93d1acee334d2cf613ba6bf7b1767"><td class="mdescLeft">&#160;</td><td class="mdescRight">serialize this.  <a href="classmio_1_1CustomIndexArray.html#ab4e93d1acee334d2cf613ba6bf7b1767">More...</a><br /></td></tr>
@@ -346,7 +357,7 @@ template&lt;class Typ , class... Tags&gt; </div>
 </div>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a50501eba9a61930b5c6f264a92521528"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a50501eba9a61930b5c6f264a92521528">&#9670;&nbsp;</a></span>CustomIndexArray()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a50501eba9a61930b5c6f264a92521528">&#9670;&nbsp;</a></span>CustomIndexArray() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -386,6 +397,54 @@ template&lt;class... Ts, typename std::enable_if_t&lt; std::is_constructible&lt;
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">args</td><td>The constructor arguments of Type </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a6b8b3ab8bd7d15584854938137a6c988"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6b8b3ab8bd7d15584854938137a6c988">&#9670;&nbsp;</a></span>CustomIndexArray() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Typ , class... Tags&gt; </div>
+<div class="memtemplate">
+template&lt;class Iter &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classmio_1_1CustomIndexArray.html">mio::CustomIndexArray</a>&lt; Typ, Tags &gt;::<a class="el" href="classmio_1_1CustomIndexArray.html">CustomIndexArray</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classmio_1_1CustomIndexArray.html#abd7df97abfc73fff6ab38b53d1fddc10">Index</a> const &amp;&#160;</td>
+          <td class="paramname"><em>dims</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Iter&#160;</td>
+          <td class="paramname"><em>b</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Iter&#160;</td>
+          <td class="paramname"><em>e</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initializes array with values from a range. </p>
+<p>Each element of the array will be assigned the corresponding value from the range. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dims</td><td>dimensions of the array. </td></tr>
+    <tr><td class="paramname">b</td><td>begin of the range of values. </td></tr>
+    <tr><td class="paramname">e</td><td>end of the range of values. </td></tr>
   </table>
   </dd>
 </dl>
@@ -783,6 +842,64 @@ template&lt;class Typ , class... Tags&gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>the value at the index </dd></dl>
+
+</div>
+</div>
+<a id="abc93f7ca210dce1048fc07e4a0869d29"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abc93f7ca210dce1048fc07e4a0869d29">&#9670;&nbsp;</a></span>resize() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Typ , class... Tags&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classmio_1_1CustomIndexArray.html">mio::CustomIndexArray</a>&lt; Typ, Tags &gt;::resize </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classmio_1_1CustomIndexArray.html#abd7df97abfc73fff6ab38b53d1fddc10">Index</a>&#160;</td>
+          <td class="paramname"><em>new_dims</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Resize all dimensions. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">new_dims</td><td>new dimensions. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a849773a9e5c974861d0eb42aca473632"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a849773a9e5c974861d0eb42aca473632">&#9670;&nbsp;</a></span>resize() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Typ , class... Tags&gt; </div>
+<div class="memtemplate">
+template&lt;class Tag &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classmio_1_1CustomIndexArray.html">mio::CustomIndexArray</a>&lt; Typ, Tags &gt;::resize </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classmio_1_1Index.html">mio::Index</a>&lt; <a class="el" href="namespacemio.html#a2f858e287c3935240954cf75cf53cfeb">Tag</a> &gt;&#160;</td>
+          <td class="paramname"><em>new_dim</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Resize a single dimension. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">new</td><td>dimension. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
