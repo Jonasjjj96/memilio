@@ -64,8 +64,8 @@
             <a id="indexLink" class="nav" href="index.html">&Hat; index</a> &nbsp; &nbsp;
             <a id="nextFileLink" class="nav" href="test_epidata_get_jh_data_py.html">&#xbb; next</a>
             &nbsp; &nbsp; &nbsp;
-            <a class="nav" href="https://coverage.readthedocs.io">coverage.py v6.4.3</a>,
-            created at 2022-08-12 09:36 +0000
+            <a class="nav" href="https://coverage.readthedocs.io">coverage.py v6.4.4</a>,
+            created at 2022-08-31 08:35 +0000
         </p>
         <aside class="hidden">
             <button type="button" class="button_next_chunk" data-shortcut="j"/>
@@ -108,7 +108,7 @@
     <p class="pln"><span class="n"><a id="t26" href="#t26">26</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
     <p class="run"><span class="n"><a id="t27" href="#t27">27</a></span><span class="t"><span class="key">from</span> <span class="nam">memilio</span><span class="op">.</span><span class="nam">epidata</span> <span class="key">import</span> <span class="nam">getDIVIData</span> <span class="key">as</span> <span class="nam">gdd</span>&nbsp;</span><span class="r"></span></p>
     <p class="run"><span class="n"><a id="t28" href="#t28">28</a></span><span class="t"><span class="key">from</span> <span class="nam">memilio</span><span class="op">.</span><span class="nam">epidata</span> <span class="key">import</span> <span class="nam">getDataIntoPandasDataFrame</span> <span class="key">as</span> <span class="nam">gd</span>&nbsp;</span><span class="r"></span></p>
-    <p class="run"><span class="n"><a id="t29" href="#t29">29</a></span><span class="t"><span class="key">from</span> <span class="nam">memilio</span><span class="op">.</span><span class="nam">epidata</span> <span class="key">import</span> <span class="nam">modifyDataframeSeries</span> <span class="key">as</span> <span class="nam">mDfS</span>&nbsp;</span><span class="r"></span></p>
+    <p class="run"><span class="n"><a id="t29" href="#t29">29</a></span><span class="t"><span class="key">from</span> <span class="nam">memilio</span><span class="op">.</span><span class="nam">epidata</span> <span class="key">import</span> <span class="nam">modifyDataframeSeries</span> <span class="key">as</span> <span class="nam">mdfs</span>&nbsp;</span><span class="r"></span></p>
     <p class="run"><span class="n"><a id="t30" href="#t30">30</a></span><span class="t"><span class="key">from</span> <span class="nam">unittest</span><span class="op">.</span><span class="nam">mock</span> <span class="key">import</span> <span class="nam">patch</span><span class="op">,</span> <span class="nam">call</span>&nbsp;</span><span class="r"></span></p>
     <p class="pln"><span class="n"><a id="t31" href="#t31">31</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
     <p class="pln"><span class="n"><a id="t32" href="#t32">32</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
@@ -187,7 +187,7 @@
     <p class="run"><span class="n"><a id="t105" href="#t105">105</a></span><span class="t">        <span class="nam">gdd</span><span class="op">.</span><span class="nam">get_divi_data</span><span class="op">(</span><span class="nam">out_folder</span><span class="op">=</span><span class="nam">self</span><span class="op">.</span><span class="nam">path</span><span class="op">,</span> <span class="nam">start_date</span><span class="op">=</span><span class="nam">date</span><span class="op">(</span><span class="num">2020</span><span class="op">,</span> <span class="num">1</span><span class="op">,</span> <span class="num">1</span><span class="op">)</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
     <p class="run"><span class="n"><a id="t106" href="#t106">106</a></span><span class="t">        <span class="nam">expected_call</span> <span class="op">=</span> <span class="op">[</span>&nbsp;</span><span class="r"></span></p>
     <p class="pln"><span class="n"><a id="t107" href="#t107">107</a></span><span class="t">            <span class="nam">call</span><span class="op">(</span>&nbsp;</span><span class="r"></span></p>
-    <p class="pln"><span class="n"><a id="t108" href="#t108">108</a></span><span class="t">                <span class="str">'Warning: First data available on 2020-04-24. You asked for 2020-01-01.'</span><span class="op">)</span><span class="op">]</span>&nbsp;</span><span class="r"></span></p>
+    <p class="pln"><span class="n"><a id="t108" href="#t108">108</a></span><span class="t">                <span class="str">'Warning: First data available on 2020-04-24. You asked for 2020-01-01. Changed it to 2020-04-24.'</span><span class="op">)</span><span class="op">]</span>&nbsp;</span><span class="r"></span></p>
     <p class="run"><span class="n"><a id="t109" href="#t109">109</a></span><span class="t">        <span class="nam">gdd_calls</span> <span class="op">=</span> <span class="nam">self</span><span class="op">.</span><span class="nam">gdd_calls</span><span class="op">(</span><span class="nam">text</span><span class="op">=</span><span class="str">''</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
     <p class="run"><span class="n"><a id="t110" href="#t110">110</a></span><span class="t">        <span class="nam">expected_calls</span> <span class="op">=</span> <span class="nam">expected_call</span> <span class="op">+</span> <span class="nam">gdd_calls</span>&nbsp;</span><span class="r"></span></p>
     <p class="run"><span class="n"><a id="t111" href="#t111">111</a></span><span class="t">        <span class="nam">mock_print</span><span class="op">.</span><span class="nam">assert_has_calls</span><span class="op">(</span><span class="nam">expected_calls</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
@@ -370,8 +370,8 @@
             <a id="indexLink" class="nav" href="index.html">&Hat; index</a> &nbsp; &nbsp;
             <a id="nextFileLink" class="nav" href="test_epidata_get_jh_data_py.html">&#xbb; next</a>
             &nbsp; &nbsp; &nbsp;
-            <a class="nav" href="https://coverage.readthedocs.io">coverage.py v6.4.3</a>,
-            created at 2022-08-12 09:36 +0000
+            <a class="nav" href="https://coverage.readthedocs.io">coverage.py v6.4.4</a>,
+            created at 2022-08-31 08:35 +0000
         </p>
     </div>
 </footer>

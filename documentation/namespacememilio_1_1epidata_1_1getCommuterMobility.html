@@ -80,9 +80,9 @@ Functions</h2></td></tr>
 <tr class="separator:a40488a5a716c57f8516431281a39ac47"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ace5558a5d455d1b6ba6d54a936eec4b7"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacememilio_1_1epidata_1_1getCommuterMobility.html#ace5558a5d455d1b6ba6d54a936eec4b7">commuter_sanity_checks</a> (df)</td></tr>
 <tr class="separator:ace5558a5d455d1b6ba6d54a936eec4b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a74351b9be6409d50daa899b69bdd045c"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacememilio_1_1epidata_1_1getCommuterMobility.html#a74351b9be6409d50daa899b69bdd045c">get_commuter_data</a> (setup_dict='', read_data=dd.defaultDict['read_data'], file_format=dd.defaultDict['file_format'], out_folder=dd.defaultDict['out_folder'], make_plot=dd.defaultDict['make_plot'], no_raw=dd.defaultDict['no_raw'])</td></tr>
-<tr class="memdesc:a74351b9be6409d50daa899b69bdd045c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes DataFrame of commuter migration patterns based on the Federal Agency of Work data.  <a href="namespacememilio_1_1epidata_1_1getCommuterMobility.html#a74351b9be6409d50daa899b69bdd045c">More...</a><br /></td></tr>
-<tr class="separator:a74351b9be6409d50daa899b69bdd045c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4be1ceee29c0e212afca5e9117ec7e09"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacememilio_1_1epidata_1_1getCommuterMobility.html#a4be1ceee29c0e212afca5e9117ec7e09">get_commuter_data</a> (read_data=dd.defaultDict['read_data'], file_format=dd.defaultDict['file_format'], out_folder=dd.defaultDict['out_folder'], no_raw=dd.defaultDict['no_raw'], make_plot=dd.defaultDict['make_plot'], setup_dict='')</td></tr>
+<tr class="memdesc:a4be1ceee29c0e212afca5e9117ec7e09"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes DataFrame of commuter migration patterns based on the Federal Agency of Work data.  <a href="namespacememilio_1_1epidata_1_1getCommuterMobility.html#a4be1ceee29c0e212afca5e9117ec7e09">More...</a><br /></td></tr>
+<tr class="separator:a4be1ceee29c0e212afca5e9117ec7e09"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a92839e6c4127a687481d0d33451a4946"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacememilio_1_1epidata_1_1getCommuterMobility.html#a92839e6c4127a687481d0d33451a4946">get_neighbors_mobility</a> (countyid, direction='both', abs_tol=0, rel_tol=0, tol_comb='or', merge_eisenach=True, out_folder=dd.defaultDict['out_folder'])</td></tr>
 <tr class="memdesc:a92839e6c4127a687481d0d33451a4946"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the neighbors of a particular county ID depening on the commuter mobility and given absolute and relative thresholds on the number of commuters.  <a href="namespacememilio_1_1epidata_1_1getCommuterMobility.html#a92839e6c4127a687481d0d33451a4946">More...</a><br /></td></tr>
 <tr class="separator:a92839e6c4127a687481d0d33451a4946"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -161,8 +161,8 @@ state_gov_table Table of governing region regional keys per federal state. </dd>
 
 </div>
 </div>
-<a id="a74351b9be6409d50daa899b69bdd045c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a74351b9be6409d50daa899b69bdd045c">&#9670;&nbsp;</a></span>get_commuter_data()</h2>
+<a id="a4be1ceee29c0e212afca5e9117ec7e09"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4be1ceee29c0e212afca5e9117ec7e09">&#9670;&nbsp;</a></span>get_commuter_data()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -170,12 +170,6 @@ state_gov_table Table of governing region regional keys per federal state. </dd>
         <tr>
           <td class="memname">def memilio.epidata.getCommuterMobility.get_commuter_data </td>
           <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>setup_dict</em> = <code>''</code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
           <td class="paramtype">&#160;</td>
           <td class="paramname"><em>read_data</em> = <code>dd.defaultDict['read_data']</code>, </td>
         </tr>
@@ -195,13 +189,19 @@ state_gov_table Table of governing region regional keys per federal state. </dd>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>no_raw</em> = <code>dd.defaultDict['no_raw']</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
           <td class="paramname"><em>make_plot</em> = <code>dd.defaultDict['make_plot']</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>no_raw</em> = <code>dd.defaultDict['no_raw']</code>&#160;</td>
+          <td class="paramname"><em>setup_dict</em> = <code>''</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -214,7 +214,12 @@ state_gov_table Table of governing region regional keys per federal state. </dd>
 <p>Computes DataFrame of commuter migration patterns based on the Federal Agency of Work data. </p>
 <p>Keyword arguments: </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">setup_dict</td><td>dictionary with necessary values: 'path': String with datapath where migration files can be found 'abs_tol': tolerated undetected people 'rel_tol': relative Tolerance to undetected people</td></tr>
+    <tr><td class="paramname">read_data</td><td>True or False. Defines if data is read from file or downloaded. Only for population data. Commuter data is always downloaded. Default defined in <a class="el" href="namespacememilio_1_1epidata_1_1defaultDict.html">defaultDict</a>. </td></tr>
+    <tr><td class="paramname">file_format</td><td>File format which is used for writing the data. Default defined in <a class="el" href="namespacememilio_1_1epidata_1_1defaultDict.html">defaultDict</a>. </td></tr>
+    <tr><td class="paramname">out_folder</td><td>Folder where data is written to. Default defined in <a class="el" href="namespacememilio_1_1epidata_1_1defaultDict.html">defaultDict</a>. </td></tr>
+    <tr><td class="paramname">no_raw</td><td>[Currently not used] True or False. Defines if unchanged raw data is saved or not. Default defined in <a class="el" href="namespacememilio_1_1epidata_1_1defaultDict.html">defaultDict</a>. </td></tr>
+    <tr><td class="paramname">make_plot</td><td>[Currently not used] True or False. Defines if plots are generated with matplotlib. Default defined in <a class="el" href="namespacememilio_1_1epidata_1_1defaultDict.html">defaultDict</a>. </td></tr>
+    <tr><td class="paramname">setup_dict</td><td>dictionary with necessary values: 'path': String with datapath where migration files can be found 'abs_tol': tolerated undetected people 'rel_tol': relative Tolerance to undetected people </td></tr>
   </table>
   </dd>
 </dl>
