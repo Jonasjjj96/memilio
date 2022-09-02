@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2022-09-01 15:01:29</td>
+            <td class="headerValue">2022-09-02 10:00:03</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">117</td>
@@ -129,13 +129,13 @@
 <a name="67"><span class="lineNum">      67 </span>            :      */</a>
 <a name="68"><span class="lineNum">      68 </span>            :     template &lt;typename Dummy = CategoryTag,</a>
 <a name="69"><span class="lineNum">      69 </span>            :                   std::enable_if_t&lt;std::is_enum&lt;Dummy&gt;::value, void&gt;* = nullptr&gt;</a>
-<a name="70"><span class="lineNum">      70 </span><span class="lineCov">     291112 :     Index(Dummy val) : TypeSafe&lt;size_t, Index&lt;CategoryTag&gt;&gt;((size_t)val) {}</span></a>
+<a name="70"><span class="lineNum">      70 </span><span class="lineCov">     279106 :     Index(Dummy val) : TypeSafe&lt;size_t, Index&lt;CategoryTag&gt;&gt;((size_t)val) {}</span></a>
 <a name="71"><span class="lineNum">      71 </span>            : </a>
 <a name="72"><span class="lineNum">      72 </span>            :     /**</a>
 <a name="73"><span class="lineNum">      73 </span>            :      * @brief Constructor from size_t</a>
 <a name="74"><span class="lineNum">      74 </span>            :      * @param val</a>
 <a name="75"><span class="lineNum">      75 </span>            :      */</a>
-<a name="76"><span class="lineNum">      76 </span><span class="lineCov">     216886 :     explicit Index(size_t val) : TypeSafe&lt;size_t, Index&lt;CategoryTag&gt;&gt;(val) {}</span></a>
+<a name="76"><span class="lineNum">      76 </span><span class="lineCov">     212539 :     explicit Index(size_t val) : TypeSafe&lt;size_t, Index&lt;CategoryTag&gt;&gt;(val) {}</span></a>
 <a name="77"><span class="lineNum">      77 </span>            : </a>
 <a name="78"><span class="lineNum">      78 </span>            :     /**</a>
 <a name="79"><span class="lineNum">      79 </span>            :      * serialize this. </a>
@@ -172,7 +172,7 @@
 <a name="110"><span class="lineNum">     110 </span>            :     static size_t constexpr size = sizeof...(CategoryTag);</a>
 <a name="111"><span class="lineNum">     111 </span>            : </a>
 <a name="112"><span class="lineNum">     112 </span>            :     // constructor from Indices</a>
-<a name="113"><span class="lineNum">     113 </span><span class="lineCov">     398105 :     Index(Index&lt;CategoryTag&gt; const&amp;..._indices) : indices{_indices...} {}</span></a>
+<a name="113"><span class="lineNum">     113 </span><span class="lineCov">     385887 :     Index(Index&lt;CategoryTag&gt; const&amp;..._indices) : indices{_indices...} {}</span></a>
 <a name="114"><span class="lineNum">     114 </span>            :     </a>
 <a name="115"><span class="lineNum">     115 </span>            : private:</a>
 <a name="116"><span class="lineNum">     116 </span><span class="lineCov">          3 :     Index(const std::tuple&lt;Index&lt;CategoryTag&gt;...&gt;&amp; _indices) : indices(_indices) {}</span></a>
@@ -235,26 +235,26 @@
 <a name="173"><span class="lineNum">     173 </span>            : // retrieves the Index at the Ith position for a Index with more than one Tag const version</a>
 <a name="174"><span class="lineNum">     174 </span>            : template &lt;size_t I, typename... CategoryTags,</a>
 <a name="175"><span class="lineNum">     175 </span>            :           std::enable_if_t&lt;(sizeof...(CategoryTags) &gt; 1), void&gt;* = nullptr&gt;</a>
-<a name="176"><span class="lineNum">     176 </span><span class="lineCov">    3186450 : constexpr typename std::tuple_element&lt;I, std::tuple&lt;Index&lt;CategoryTags&gt;...&gt; &gt;::type const&amp; get(Index&lt;CategoryTags...&gt; const&amp; i) noexcept</span></a>
+<a name="176"><span class="lineNum">     176 </span><span class="lineCov">    3088718 : constexpr typename std::tuple_element&lt;I, std::tuple&lt;Index&lt;CategoryTags&gt;...&gt; &gt;::type const&amp; get(Index&lt;CategoryTags...&gt; const&amp; i) noexcept</span></a>
 <a name="177"><span class="lineNum">     177 </span>            : {</a>
-<a name="178"><span class="lineNum">     178 </span><span class="lineCov">    3186450 :     return std::get&lt;I&gt;(i.indices);</span></a>
+<a name="178"><span class="lineNum">     178 </span><span class="lineCov">    3088718 :     return std::get&lt;I&gt;(i.indices);</span></a>
 <a name="179"><span class="lineNum">     179 </span>            : }</a>
 <a name="180"><span class="lineNum">     180 </span>            : </a>
 <a name="181"><span class="lineNum">     181 </span>            : // retrieves the Index at the Ith position for a Index with one Tag, equals identity function const version</a>
 <a name="182"><span class="lineNum">     182 </span>            : template &lt;size_t I, typename... CategoryTags,</a>
 <a name="183"><span class="lineNum">     183 </span>            :           std::enable_if_t&lt;(sizeof...(CategoryTags) == 1), void&gt;* = nullptr&gt;</a>
-<a name="184"><span class="lineNum">     184 </span><span class="lineCov">    2859506 : constexpr typename std::tuple_element&lt;I, std::tuple&lt;Index&lt;CategoryTags&gt;...&gt; &gt;::type const&amp; get(Index&lt;CategoryTags...&gt; const&amp; i) noexcept</span></a>
+<a name="184"><span class="lineNum">     184 </span><span class="lineCov">    2734988 : constexpr typename std::tuple_element&lt;I, std::tuple&lt;Index&lt;CategoryTags&gt;...&gt; &gt;::type const&amp; get(Index&lt;CategoryTags...&gt; const&amp; i) noexcept</span></a>
 <a name="185"><span class="lineNum">     185 </span>            : {</a>
 <a name="186"><span class="lineNum">     186 </span>            :     static_assert(I==0, &quot;I must be equal to zero for an Index with just one template parameter&quot;);</a>
-<a name="187"><span class="lineNum">     187 </span><span class="lineCov">    2859506 :     return i;</span></a>
+<a name="187"><span class="lineNum">     187 </span><span class="lineCov">    2734988 :     return i;</span></a>
 <a name="188"><span class="lineNum">     188 </span>            : }</a>
 <a name="189"><span class="lineNum">     189 </span>            : </a>
 <a name="190"><span class="lineNum">     190 </span>            : // retrieves the Index for the tag Tag of a Index with more than one Tag</a>
 <a name="191"><span class="lineNum">     191 </span>            : template &lt;typename Tag, typename... CategoryTags,</a>
 <a name="192"><span class="lineNum">     192 </span>            :           std::enable_if_t&lt;(sizeof...(CategoryTags) &gt; 1), void&gt;* = nullptr&gt;</a>
-<a name="193"><span class="lineNum">     193 </span><span class="lineCov">        415 : constexpr Index&lt;Tag&gt;&amp; get(Index&lt;CategoryTags...&gt;&amp; i) noexcept</span></a>
+<a name="193"><span class="lineNum">     193 </span><span class="lineCov">        418 : constexpr Index&lt;Tag&gt;&amp; get(Index&lt;CategoryTags...&gt;&amp; i) noexcept</span></a>
 <a name="194"><span class="lineNum">     194 </span>            : {</a>
-<a name="195"><span class="lineNum">     195 </span><span class="lineCov">        415 :     return std::get&lt;Index&lt;Tag&gt;&gt;(i.indices);</span></a>
+<a name="195"><span class="lineNum">     195 </span><span class="lineCov">        418 :     return std::get&lt;Index&lt;Tag&gt;&gt;(i.indices);</span></a>
 <a name="196"><span class="lineNum">     196 </span>            : }</a>
 <a name="197"><span class="lineNum">     197 </span>            : </a>
 <a name="198"><span class="lineNum">     198 </span>            : // retrieves the Index for the tag Tag of a Index with one Tag, equals identity function</a>
@@ -270,9 +270,9 @@
 <a name="208"><span class="lineNum">     208 </span>            : // retrieves the Index for the tag Tag for a Index with more than one Tag const version</a>
 <a name="209"><span class="lineNum">     209 </span>            : template &lt;typename Tag, typename... CategoryTags,</a>
 <a name="210"><span class="lineNum">     210 </span>            :           std::enable_if_t&lt;(sizeof...(CategoryTags) &gt; 1), void&gt;* = nullptr&gt;</a>
-<a name="211"><span class="lineNum">     211 </span><span class="lineCov">       2772 : constexpr Index&lt;Tag&gt; const&amp; get(Index&lt;CategoryTags...&gt; const&amp; i) noexcept</span></a>
+<a name="211"><span class="lineNum">     211 </span><span class="lineCov">       2775 : constexpr Index&lt;Tag&gt; const&amp; get(Index&lt;CategoryTags...&gt; const&amp; i) noexcept</span></a>
 <a name="212"><span class="lineNum">     212 </span>            : {</a>
-<a name="213"><span class="lineNum">     213 </span><span class="lineCov">       2772 :     return std::get&lt;Index&lt;Tag&gt;&gt;(i.indices);</span></a>
+<a name="213"><span class="lineNum">     213 </span><span class="lineCov">       2775 :     return std::get&lt;Index&lt;Tag&gt;&gt;(i.indices);</span></a>
 <a name="214"><span class="lineNum">     214 </span>            : }</a>
 <a name="215"><span class="lineNum">     215 </span>            : </a>
 <a name="216"><span class="lineNum">     216 </span>            : // retrieves the Index for the tag Tag for a Index with one Tag, equals identity function const version</a>
