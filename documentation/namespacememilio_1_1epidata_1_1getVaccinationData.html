@@ -78,14 +78,11 @@ Functions</h2></td></tr>
 <tr class="memitem:a4608bee6ab035e43785420c561cd576e"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacememilio_1_1epidata_1_1getVaccinationData.html#a4608bee6ab035e43785420c561cd576e">compute_vaccination_ratios</a> (age_group_list, vaccinations_table, vacc_column, region_column, population, merge_2022=True)</td></tr>
 <tr class="memdesc:a4608bee6ab035e43785420c561cd576e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes vaccination ratios based on the number of vaccinations and the corresponding population data.  <a href="namespacememilio_1_1epidata_1_1getVaccinationData.html#a4608bee6ab035e43785420c561cd576e">More...</a><br /></td></tr>
 <tr class="separator:a4608bee6ab035e43785420c561cd576e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4961a3f05b9e939180c316a16b4e14ba"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacememilio_1_1epidata_1_1getVaccinationData.html#a4961a3f05b9e939180c316a16b4e14ba">create_intervals_mapping</a> (from_lower_bounds, to_lower_bounds)</td></tr>
-<tr class="memdesc:a4961a3f05b9e939180c316a16b4e14ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a mapping from given intervals to new desired intervals.  <a href="namespacememilio_1_1epidata_1_1getVaccinationData.html#a4961a3f05b9e939180c316a16b4e14ba">More...</a><br /></td></tr>
-<tr class="separator:a4961a3f05b9e939180c316a16b4e14ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a83332e6031e5a82fac8a3d7b59eaa785"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacememilio_1_1epidata_1_1getVaccinationData.html#a83332e6031e5a82fac8a3d7b59eaa785">download_vaccination_data</a> ()</td></tr>
 <tr class="separator:a83332e6031e5a82fac8a3d7b59eaa785"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4d0df3fdf6c98e676c7ca35cc61135ef"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacememilio_1_1epidata_1_1getVaccinationData.html#a4d0df3fdf6c98e676c7ca35cc61135ef">extrapolate_age_groups</a> (df_data, population_all_ages, unique_age_groups_old, unique_age_groups_new, column_names, age_old_to_all_ages_indices, min_all_ages, all_ages_to_age_new_share)</td></tr>
-<tr class="memdesc:a4d0df3fdf6c98e676c7ca35cc61135ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Original age groups (05-11, 12-17, 18-59, 60+) are replaced by infection data age groups (0-4, 5-14, 15-34, 35-59, 60-79, 80+).  <a href="namespacememilio_1_1epidata_1_1getVaccinationData.html#a4d0df3fdf6c98e676c7ca35cc61135ef">More...</a><br /></td></tr>
-<tr class="separator:a4d0df3fdf6c98e676c7ca35cc61135ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af97ef44e8fd55e9cd9084f7307d5a080"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacememilio_1_1epidata_1_1getVaccinationData.html#af97ef44e8fd55e9cd9084f7307d5a080">extrapolate_age_groups_vaccinations</a> (df_data, population_all_ages, unique_age_groups_old, unique_age_groups_new, column_names, age_old_to_all_ages_indices, min_all_ages, all_ages_to_age_new_share)</td></tr>
+<tr class="memdesc:af97ef44e8fd55e9cd9084f7307d5a080"><td class="mdescLeft">&#160;</td><td class="mdescRight">Original age groups (05-11, 12-17, 18-59, 60+) are replaced by infection data age groups (0-4, 5-14, 15-34, 35-59, 60-79, 80+).  <a href="namespacememilio_1_1epidata_1_1getVaccinationData.html#af97ef44e8fd55e9cd9084f7307d5a080">More...</a><br /></td></tr>
+<tr class="separator:af97ef44e8fd55e9cd9084f7307d5a080"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac6ca78539e169d6574cf541e039726e6"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacememilio_1_1epidata_1_1getVaccinationData.html#ac6ca78539e169d6574cf541e039726e6">get_vaccination_data</a> (read_data=dd.defaultDict['read_data'], file_format=dd.defaultDict['file_format'], out_folder=dd.defaultDict['out_folder'], no_raw=dd.defaultDict['no_raw'], start_date=dd.defaultDict['start_date'], end_date=dd.defaultDict['end_date'], impute_dates=True, moving_average=dd.defaultDict['moving_average'], make_plot=dd.defaultDict['make_plot'], sanitize_data=dd.defaultDict['sanitize_data'])</td></tr>
 <tr class="memdesc:ac6ca78539e169d6574cf541e039726e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Downloads the RKI vaccination data and provides different kind of structured data.  <a href="namespacememilio_1_1epidata_1_1getVaccinationData.html#ac6ca78539e169d6574cf541e039726e6">More...</a><br /></td></tr>
 <tr class="separator:ac6ca78539e169d6574cf541e039726e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -168,44 +165,6 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a4961a3f05b9e939180c316a16b4e14ba"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4961a3f05b9e939180c316a16b4e14ba">&#9670;&nbsp;</a></span>create_intervals_mapping()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">def memilio.epidata.getVaccinationData.create_intervals_mapping </td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>from_lower_bounds</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>to_lower_bounds</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Creates a mapping from given intervals to new desired intervals. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">from_lower_bounds</td><td>lower bounds of original intervals </td></tr>
-    <tr><td class="paramname">to_lower_bounds</td><td>desired lower bounds of new intervals </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>mapping from intervals to intervals The mapping is given as a list of tupels for every original interval. The list contains a tuple for every new interval intersecting the original interval. Each tuple defines the share of the original interval that is mapped to the new interval and the index of the new interval. We assume that the range of the intervals mapped from is contained in the range of the intervals mapped to. For example for from_lower_bounds = [5,20,30,80,85,90] and to_lower_bounds=[0,15,20,60,100] given the mapping would be [[[2/3,0], [1/3,1]], [[1,2]], [[3/5,2], [2/5,3]], [[1,3]], [[1,3]]] </dd></dl>
-
-</div>
-</div>
 <a id="a83332e6031e5a82fac8a3d7b59eaa785"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a83332e6031e5a82fac8a3d7b59eaa785">&#9670;&nbsp;</a></span>download_vaccination_data()</h2>
 
@@ -223,14 +182,14 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a4d0df3fdf6c98e676c7ca35cc61135ef"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4d0df3fdf6c98e676c7ca35cc61135ef">&#9670;&nbsp;</a></span>extrapolate_age_groups()</h2>
+<a id="af97ef44e8fd55e9cd9084f7307d5a080"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af97ef44e8fd55e9cd9084f7307d5a080">&#9670;&nbsp;</a></span>extrapolate_age_groups_vaccinations()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">def memilio.epidata.getVaccinationData.extrapolate_age_groups </td>
+          <td class="memname">def memilio.epidata.getVaccinationData.extrapolate_age_groups_vaccinations </td>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname"><em>df_data</em>, </td>

@@ -81,7 +81,7 @@ var searchData=
   ['crbegin_148',['crbegin',['../classmio_1_1TimeSeries.html#a87da026167d47dc2b74996bb2b3d4dd3',1,'mio::TimeSeries']]],
   ['create_5fdirectory_149',['create_directory',['../namespacemio.html#a075272e6cfaf25ad2292e4108c2309a9',1,'mio::create_directory(std::string const  &amp;rel_path, std::string &amp;abs_path)'],['../namespacemio.html#a8d3e99d87ecd03e78eef03c54a8e58d2',1,'mio::create_directory(std::string const  &amp;rel_path)']]],
   ['create_5fintermediateregion_5flevel_150',['create_intermediateregion_level',['../namespacememilio_1_1epidata_1_1geoModificationGermany.html#a03a2c87f7cbb9dd4ef9484e38d6348df',1,'memilio::epidata::geoModificationGermany']]],
-  ['create_5fintervals_5fmapping_151',['create_intervals_mapping',['../namespacememilio_1_1epidata_1_1getVaccinationData.html#a4961a3f05b9e939180c316a16b4e14ba',1,'memilio::epidata::getVaccinationData']]],
+  ['create_5fintervals_5fmapping_151',['create_intervals_mapping',['../namespacememilio_1_1epidata_1_1modifyDataframeSeries.html#a17570113b7b17fd5b16cadb16634b204',1,'memilio::epidata::modifyDataframeSeries']]],
   ['create_5fsampled_5fsimulation_152',['create_sampled_simulation',['../classmio_1_1ParameterStudy.html#a80053ce3e0f6bb5d264e19131a508483',1,'mio::ParameterStudy']]],
   ['create_5fstepper_153',['create_stepper',['../classmio_1_1ControlledStepperWrapper.html#aa83dc9ea3da5a44ac73c6646c2a81128',1,'mio::ControlledStepperWrapper']]],
   ['createfederalstatesmobility_154',['createFederalStatesMobility',['../namespacememilio_1_1epidata_1_1transformMobilityData.html#a4e2b264a8ee70851927b3e7c31c0d62d',1,'memilio::epidata::transformMobilityData']]],

@@ -39,5 +39,5 @@ var searchData=
   ['exposednaive_269',['ExposedNaive',['../namespacemio_1_1osecirvvs.html#a429bf3ed03ff6928629f5d786b547023a4fd5f686e6daffd4643a4b1987944f65',1,'mio::osecirvvs']]],
   ['exposedpartialimmunity_270',['ExposedPartialImmunity',['../namespacemio_1_1osecirvvs.html#a429bf3ed03ff6928629f5d786b547023a5e334f9e55a0df889be70e054623da6a',1,'mio::osecirvvs']]],
   ['extract_5fsubframe_5fbased_5fon_5fdates_271',['extract_subframe_based_on_dates',['../namespacememilio_1_1epidata_1_1modifyDataframeSeries.html#abe568d90d62bbeb5a8bb9cc7c740621e',1,'memilio::epidata::modifyDataframeSeries']]],
-  ['extrapolate_5fage_5fgroups_272',['extrapolate_age_groups',['../namespacememilio_1_1epidata_1_1getVaccinationData.html#a4d0df3fdf6c98e676c7ca35cc61135ef',1,'memilio::epidata::getVaccinationData']]]
+  ['extrapolate_5fage_5fgroups_5fvaccinations_272',['extrapolate_age_groups_vaccinations',['../namespacememilio_1_1epidata_1_1getVaccinationData.html#af97ef44e8fd55e9cd9084f7307d5a080',1,'memilio::epidata::getVaccinationData']]]
 ];
