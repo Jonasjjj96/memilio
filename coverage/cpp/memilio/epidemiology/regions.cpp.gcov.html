@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2022-09-28 09:02:49</td>
+            <td class="headerValue">2022-09-28 10:15:14</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">4</td>
@@ -169,8 +169,8 @@
 <a name="107"><span class="lineNum">     107 </span>            :             //all holiday periods that overlap with the specified period</a>
 <a name="108"><span class="lineNum">     108 </span><span class="lineCov">          2 :             auto holidays_in_range =</span></a>
 <a name="109"><span class="lineNum">     109 </span><span class="lineCov">          4 :                 std::equal_range(all.begin(), all.end(), std::make_pair(start_date, end_date), [](auto&amp; p1, auto&amp; p2) {</span></a>
-<a name="110"><span class="lineNum">     110 </span><span class="lineCov">         51 :                     return std::tie(p1.second.year, p1.second.month, p1.second.day) &lt;</span></a>
-<a name="111"><span class="lineNum">     111 </span><span class="lineCov">         51 :                            std::tie(p2.first.year, p2.first.month, p2.first.day);</span></a>
+<a name="110"><span class="lineNum">     110 </span><span class="lineCov">         57 :                     return std::tie(p1.second.year, p1.second.month, p1.second.day) &lt;</span></a>
+<a name="111"><span class="lineNum">     111 </span><span class="lineCov">         57 :                            std::tie(p2.first.year, p2.first.month, p2.first.day);</span></a>
 <a name="112"><span class="lineNum">     112 </span><span class="lineCov">          2 :                 });</span></a>
 <a name="113"><span class="lineNum">     113 </span>            : </a>
 <a name="114"><span class="lineNum">     114 </span><span class="lineCov">          4 :             return {holidays_in_range};</span></a>
