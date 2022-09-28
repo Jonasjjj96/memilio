@@ -86,7 +86,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a3a3a6b99b1fec8c7c501423500d8f870"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1abm_1_1Location.html#a3a3a6b99b1fec8c7c501423500d8f870">add_person</a> (const <a class="el" href="classmio_1_1abm_1_1Person.html">Person</a> &amp;person)</td></tr>
 <tr class="memdesc:a3a3a6b99b1fec8c7c501423500d8f870"><td class="mdescLeft">&#160;</td><td class="mdescRight">add a person to the population at this location.  <a href="classmio_1_1abm_1_1Location.html#a3a3a6b99b1fec8c7c501423500d8f870">More...</a><br /></td></tr>
 <tr class="separator:a3a3a6b99b1fec8c7c501423500d8f870"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a572f2030b9f6086b6bfb82b99be6e57f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1abm_1_1Location.html#a572f2030b9f6086b6bfb82b99be6e57f">begin_step</a> (<a class="el" href="classmio_1_1abm_1_1TimeSpan.html">TimeSpan</a> dt, const <a class="el" href="namespacemio_1_1abm.html#a554539dff6c4ad02bfe88343c012d760">GlobalInfectionParameters</a> &amp;global_params)</td></tr>
+<tr class="memitem:a572f2030b9f6086b6bfb82b99be6e57f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1abm_1_1Location.html#a572f2030b9f6086b6bfb82b99be6e57f">begin_step</a> (<a class="el" href="classmio_1_1abm_1_1TimeSpan.html">TimeSpan</a> dt, const <a class="el" href="namespacemio_1_1abm.html#a89535e247a14e5756e50f7c62ef53951">GlobalInfectionParameters</a> &amp;global_params)</td></tr>
 <tr class="memdesc:a572f2030b9f6086b6bfb82b99be6e57f"><td class="mdescLeft">&#160;</td><td class="mdescRight">prepare the location for the next simulation step.  <a href="classmio_1_1abm_1_1Location.html#a572f2030b9f6086b6bfb82b99be6e57f">More...</a><br /></td></tr>
 <tr class="separator:a572f2030b9f6086b6bfb82b99be6e57f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9424537bf10f26a2bfc4c66b9d7ecaa5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1abm_1_1Location.html#a9424537bf10f26a2bfc4c66b9d7ecaa5">changed_state</a> (const <a class="el" href="classmio_1_1abm_1_1Person.html">Person</a> &amp;person, <a class="el" href="namespacemio_1_1abm.html#ad1ae0779f53a827b524e1f0925b9d704">InfectionState</a> old_infection_state)</td></tr>
@@ -107,12 +107,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:adc3572303c8cb44136c2a4e16480fcbd"><td class="memItemLeft" align="right" valign="top">Eigen::Ref&lt; const Eigen::VectorXi &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1abm_1_1Location.html#adc3572303c8cb44136c2a4e16480fcbd">get_subpopulations</a> () const</td></tr>
 <tr class="memdesc:adc3572303c8cb44136c2a4e16480fcbd"><td class="mdescLeft">&#160;</td><td class="mdescRight">number of persons at this location for all infection states.  <a href="classmio_1_1abm_1_1Location.html#adc3572303c8cb44136c2a4e16480fcbd">More...</a><br /></td></tr>
 <tr class="separator:adc3572303c8cb44136c2a4e16480fcbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2bbacfa98b5885ea6c0f8c9aefec664d"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classmio_1_1abm_1_1TestingScheme.html">TestingScheme</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1abm_1_1Location.html#a2bbacfa98b5885ea6c0f8c9aefec664d">get_testing_scheme</a> () const</td></tr>
-<tr class="separator:a2bbacfa98b5885ea6c0f8c9aefec664d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7ce83866d7b57c399aba377c8e26e402"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacemio_1_1abm.html#a83bc98ab43329c10fe9a6e683f2e1d0f">LocationType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1abm_1_1Location.html#a7ce83866d7b57c399aba377c8e26e402">get_type</a> () const</td></tr>
 <tr class="memdesc:a7ce83866d7b57c399aba377c8e26e402"><td class="mdescLeft">&#160;</td><td class="mdescRight">get the type of this location.  <a href="classmio_1_1abm_1_1Location.html#a7ce83866d7b57c399aba377c8e26e402">More...</a><br /></td></tr>
 <tr class="separator:a7ce83866d7b57c399aba377c8e26e402"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1d5fe204617ac91d2583937478dc5c0c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacemio_1_1abm.html#ad1ae0779f53a827b524e1f0925b9d704">InfectionState</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1abm_1_1Location.html#a1d5fe204617ac91d2583937478dc5c0c">interact</a> (const <a class="el" href="classmio_1_1abm_1_1Person.html">Person</a> &amp;person, <a class="el" href="classmio_1_1abm_1_1TimeSpan.html">TimeSpan</a> dt, const <a class="el" href="namespacemio_1_1abm.html#a554539dff6c4ad02bfe88343c012d760">GlobalInfectionParameters</a> &amp;global_params) const</td></tr>
+<tr class="memitem:a1d5fe204617ac91d2583937478dc5c0c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacemio_1_1abm.html#ad1ae0779f53a827b524e1f0925b9d704">InfectionState</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1abm_1_1Location.html#a1d5fe204617ac91d2583937478dc5c0c">interact</a> (const <a class="el" href="classmio_1_1abm_1_1Person.html">Person</a> &amp;person, <a class="el" href="classmio_1_1abm_1_1TimeSpan.html">TimeSpan</a> dt, const <a class="el" href="namespacemio_1_1abm.html#a89535e247a14e5756e50f7c62ef53951">GlobalInfectionParameters</a> &amp;global_params) const</td></tr>
 <tr class="memdesc:a1d5fe204617ac91d2583937478dc5c0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">a person interacts with the population at this location, may change infection state.  <a href="classmio_1_1abm_1_1Location.html#a1d5fe204617ac91d2583937478dc5c0c">More...</a><br /></td></tr>
 <tr class="separator:a1d5fe204617ac91d2583937478dc5c0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9e1cc5d06ca8839be707248285b9bb39"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1abm_1_1Location.html#a9e1cc5d06ca8839be707248285b9bb39">Location</a> (<a class="el" href="namespacemio_1_1abm.html#a83bc98ab43329c10fe9a6e683f2e1d0f">LocationType</a> type, uint32_t index, uint32_t num_cells=0)</td></tr>
@@ -121,8 +119,6 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a80eaee6fe9eae2a29ccee70f9566b6d9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1abm_1_1Location.html#a80eaee6fe9eae2a29ccee70f9566b6d9">remove_person</a> (const <a class="el" href="classmio_1_1abm_1_1Person.html">Person</a> &amp;person)</td></tr>
 <tr class="memdesc:a80eaee6fe9eae2a29ccee70f9566b6d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">remove a person from the population of this location.  <a href="classmio_1_1abm_1_1Location.html#a80eaee6fe9eae2a29ccee70f9566b6d9">More...</a><br /></td></tr>
 <tr class="separator:a80eaee6fe9eae2a29ccee70f9566b6d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab9d659b17e640e8b57058e806a2e6a6c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1abm_1_1Location.html#ab9d659b17e640e8b57058e806a2e6a6c">set_testing_scheme</a> (<a class="el" href="classmio_1_1abm_1_1TimeSpan.html">TimeSpan</a> interval, double probability)</td></tr>
-<tr class="separator:ab9d659b17e640e8b57058e806a2e6a6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
@@ -143,8 +139,6 @@ Private Attributes</h2></td></tr>
 <tr class="separator:ad38964b0fd7605c91e2b28568b4408a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acda26ffe2bc24fb17e1bdbb3e3c3d496"><td class="memItemLeft" align="right" valign="top">std::array&lt; int, size_t(<a class="el" href="namespacemio_1_1abm.html#ad1ae0779f53a827b524e1f0925b9d704ae93f994f01c537c4e2f7d8528c3eb5e9">InfectionState::Count</a>)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1abm_1_1Location.html#acda26ffe2bc24fb17e1bdbb3e3c3d496">m_subpopulations</a></td></tr>
 <tr class="separator:acda26ffe2bc24fb17e1bdbb3e3c3d496"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aef99e71128f7011571c836c572ea406f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmio_1_1abm_1_1TestingScheme.html">TestingScheme</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1abm_1_1Location.html#aef99e71128f7011571c836c572ea406f">m_testing_scheme</a></td></tr>
-<tr class="separator:aef99e71128f7011571c836c572ea406f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2ca3248856a842d53de0e6ae265bfcb3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacemio_1_1abm.html#a83bc98ab43329c10fe9a6e683f2e1d0f">LocationType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1abm_1_1Location.html#a2ca3248856a842d53de0e6ae265bfcb3">m_type</a></td></tr>
 <tr class="separator:a2ca3248856a842d53de0e6ae265bfcb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -237,7 +231,7 @@ Private Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="namespacemio_1_1abm.html#a554539dff6c4ad02bfe88343c012d760">GlobalInfectionParameters</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="namespacemio_1_1abm.html#a89535e247a14e5756e50f7c62ef53951">GlobalInfectionParameters</a> &amp;&#160;</td>
           <td class="paramname"><em>global_params</em>&#160;</td>
         </tr>
         <tr>
@@ -444,23 +438,6 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a2bbacfa98b5885ea6c0f8c9aefec664d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2bbacfa98b5885ea6c0f8c9aefec664d">&#9670;&nbsp;</a></span>get_testing_scheme()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const <a class="el" href="classmio_1_1abm_1_1TestingScheme.html">TestingScheme</a>&amp; mio::abm::Location::get_testing_scheme </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="a7ce83866d7b57c399aba377c8e26e402"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7ce83866d7b57c399aba377c8e26e402">&#9670;&nbsp;</a></span>get_type()</h2>
 
@@ -501,7 +478,7 @@ Private Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="namespacemio_1_1abm.html#a554539dff6c4ad02bfe88343c012d760">GlobalInfectionParameters</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="namespacemio_1_1abm.html#a89535e247a14e5756e50f7c62ef53951">GlobalInfectionParameters</a> &amp;&#160;</td>
           <td class="paramname"><em>global_params</em>&#160;</td>
         </tr>
         <tr>
@@ -548,34 +525,6 @@ Private Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
-
-</div>
-</div>
-<a id="ab9d659b17e640e8b57058e806a2e6a6c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab9d659b17e640e8b57058e806a2e6a6c">&#9670;&nbsp;</a></span>set_testing_scheme()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void mio::abm::Location::set_testing_scheme </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classmio_1_1abm_1_1TimeSpan.html">TimeSpan</a>&#160;</td>
-          <td class="paramname"><em>interval</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>probability</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
 
 </div>
 </div>
@@ -701,28 +650,6 @@ Private Attributes</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">std::array&lt;int, size_t(<a class="el" href="namespacemio_1_1abm.html#ad1ae0779f53a827b524e1f0925b9d704ae93f994f01c537c4e2f7d8528c3eb5e9">InfectionState::Count</a>)&gt; mio::abm::Location::m_subpopulations</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="aef99e71128f7011571c836c572ea406f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aef99e71128f7011571c836c572ea406f">&#9670;&nbsp;</a></span>m_testing_scheme</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classmio_1_1abm_1_1TestingScheme.html">TestingScheme</a> mio::abm::Location::m_testing_scheme</td>
         </tr>
       </table>
   </td>
