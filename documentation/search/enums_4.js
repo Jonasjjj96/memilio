@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['vaccinationstate_2655',['VaccinationState',['../namespacemio_1_1abm.html#acb1be3974226c65c471a4a9f4b99765c',1,'mio::abm']]]
+  ['vaccinationstate_2667',['VaccinationState',['../namespacemio_1_1abm.html#acb1be3974226c65c471a4a9f4b99765c',1,'mio::abm']]]
 ];

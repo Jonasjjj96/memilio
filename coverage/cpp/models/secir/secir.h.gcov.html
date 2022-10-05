@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2022-09-28 10:15:14</td>
+            <td class="headerValue">2022-10-05 09:44:41</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">15</td>
@@ -270,7 +270,7 @@
 <a name="208"><span class="lineNum">     208 </span>            : </a>
 <a name="209"><span class="lineNum">     209 </span>            : #if USE_DERIV_FUNC</a>
 <a name="210"><span class="lineNum">     210 </span>            : </a>
-<a name="211"><span class="lineNum">     211 </span><span class="lineCov">       7240 :     void get_derivatives(Eigen::Ref&lt;const Eigen::VectorXd&gt; pop, Eigen::Ref&lt;const Eigen::VectorXd&gt; y, double t,</span></a>
+<a name="211"><span class="lineNum">     211 </span><span class="lineCov">       7786 :     void get_derivatives(Eigen::Ref&lt;const Eigen::VectorXd&gt; pop, Eigen::Ref&lt;const Eigen::VectorXd&gt; y, double t,</span></a>
 <a name="212"><span class="lineNum">     212 </span>            :                          Eigen::Ref&lt;Eigen::VectorXd&gt; dydt) const override</a>
 <a name="213"><span class="lineNum">     213 </span>            :     {</a>
 <a name="214"><span class="lineNum">     214 </span>            :         // alpha  // percentage of asymptomatic cases</a>
@@ -279,108 +279,108 @@
 <a name="217"><span class="lineNum">     217 </span>            :         // theta // icu per hospitalized</a>
 <a name="218"><span class="lineNum">     218 </span>            :         // delta  // deaths per ICUs</a>
 <a name="219"><span class="lineNum">     219 </span>            :         // 0: S,      1: E,     2: C,     3: I,     4: H,     5: U,     6: R,     7: D</a>
-<a name="220"><span class="lineNum">     220 </span><span class="lineCov">       7240 :         auto const&amp; params   = this-&gt;parameters;</span></a>
-<a name="221"><span class="lineNum">     221 </span><span class="lineCov">       7240 :         AgeGroup n_agegroups = params.get_num_groups();</span></a>
+<a name="220"><span class="lineNum">     220 </span><span class="lineCov">       7786 :         auto const&amp; params   = this-&gt;parameters;</span></a>
+<a name="221"><span class="lineNum">     221 </span><span class="lineCov">       7786 :         AgeGroup n_agegroups = params.get_num_groups();</span></a>
 <a name="222"><span class="lineNum">     222 </span>            : </a>
-<a name="223"><span class="lineNum">     223 </span><span class="lineCov">       7240 :         ContactMatrixGroup const&amp; contact_matrix = params.get&lt;mio::ContactPatterns&gt;();</span></a>
+<a name="223"><span class="lineNum">     223 </span><span class="lineCov">       7786 :         ContactMatrixGroup const&amp; contact_matrix = params.get&lt;mio::ContactPatterns&gt;();</span></a>
 <a name="224"><span class="lineNum">     224 </span>            : </a>
-<a name="225"><span class="lineNum">     225 </span><span class="lineCov">       7240 :         auto icu_occupancy           = 0.0;</span></a>
-<a name="226"><span class="lineNum">     226 </span><span class="lineCov">       7240 :         auto test_and_trace_required = 0.0;</span></a>
-<a name="227"><span class="lineNum">     227 </span><span class="lineCov">      15716 :         for (auto i = AgeGroup(0); i &lt; n_agegroups; ++i) {</span></a>
-<a name="228"><span class="lineNum">     228 </span><span class="lineCov">       8476 :             auto dummy_R3 = 0.5 / (params.get&lt;IncubationTime&gt;()[i] - params.get&lt;SerialInterval&gt;()[i]);</span></a>
-<a name="229"><span class="lineNum">     229 </span><span class="lineCov">       8476 :             test_and_trace_required += (1 - params.get&lt;AsymptomaticCasesPerInfectious&gt;()[i]) * dummy_R3 *</span></a>
-<a name="230"><span class="lineNum">     230 </span><span class="lineCov">       8476 :                                        this-&gt;populations.get_from(pop, {i, InfectionState::Carrier});</span></a>
-<a name="231"><span class="lineNum">     231 </span><span class="lineCov">       8476 :             icu_occupancy += this-&gt;populations.get_from(pop, {i, InfectionState::ICU});</span></a>
+<a name="225"><span class="lineNum">     225 </span><span class="lineCov">       7786 :         auto icu_occupancy           = 0.0;</span></a>
+<a name="226"><span class="lineNum">     226 </span><span class="lineCov">       7786 :         auto test_and_trace_required = 0.0;</span></a>
+<a name="227"><span class="lineNum">     227 </span><span class="lineCov">      16808 :         for (auto i = AgeGroup(0); i &lt; n_agegroups; ++i) {</span></a>
+<a name="228"><span class="lineNum">     228 </span><span class="lineCov">       9022 :             auto dummy_R3 = 0.5 / (params.get&lt;IncubationTime&gt;()[i] - params.get&lt;SerialInterval&gt;()[i]);</span></a>
+<a name="229"><span class="lineNum">     229 </span><span class="lineCov">       9022 :             test_and_trace_required += (1 - params.get&lt;AsymptomaticCasesPerInfectious&gt;()[i]) * dummy_R3 *</span></a>
+<a name="230"><span class="lineNum">     230 </span><span class="lineCov">       9022 :                                        this-&gt;populations.get_from(pop, {i, InfectionState::Carrier});</span></a>
+<a name="231"><span class="lineNum">     231 </span><span class="lineCov">       9022 :             icu_occupancy += this-&gt;populations.get_from(pop, {i, InfectionState::ICU});</span></a>
 <a name="232"><span class="lineNum">     232 </span>            :         }</a>
 <a name="233"><span class="lineNum">     233 </span>            : </a>
-<a name="234"><span class="lineNum">     234 </span><span class="lineCov">      15716 :         for (auto i = AgeGroup(0); i &lt; n_agegroups; i++) {</span></a>
+<a name="234"><span class="lineNum">     234 </span><span class="lineCov">      16808 :         for (auto i = AgeGroup(0); i &lt; n_agegroups; i++) {</span></a>
 <a name="235"><span class="lineNum">     235 </span>            : </a>
-<a name="236"><span class="lineNum">     236 </span><span class="lineCov">       8476 :             size_t Si = this-&gt;populations.get_flat_index({i, InfectionState::Susceptible});</span></a>
-<a name="237"><span class="lineNum">     237 </span><span class="lineCov">       8476 :             size_t Ei = this-&gt;populations.get_flat_index({i, InfectionState::Exposed});</span></a>
-<a name="238"><span class="lineNum">     238 </span><span class="lineCov">       8476 :             size_t Ci = this-&gt;populations.get_flat_index({i, InfectionState::Carrier});</span></a>
-<a name="239"><span class="lineNum">     239 </span><span class="lineCov">       8476 :             size_t Ii = this-&gt;populations.get_flat_index({i, InfectionState::Infected});</span></a>
-<a name="240"><span class="lineNum">     240 </span><span class="lineCov">       8476 :             size_t Hi = this-&gt;populations.get_flat_index({i, InfectionState::Hospitalized});</span></a>
-<a name="241"><span class="lineNum">     241 </span><span class="lineCov">       8476 :             size_t Ui = this-&gt;populations.get_flat_index({i, InfectionState::ICU});</span></a>
-<a name="242"><span class="lineNum">     242 </span><span class="lineCov">       8476 :             size_t Ri = this-&gt;populations.get_flat_index({i, InfectionState::Recovered});</span></a>
-<a name="243"><span class="lineNum">     243 </span><span class="lineCov">       8476 :             size_t Di = this-&gt;populations.get_flat_index({i, InfectionState::Dead});</span></a>
+<a name="236"><span class="lineNum">     236 </span><span class="lineCov">       9022 :             size_t Si = this-&gt;populations.get_flat_index({i, InfectionState::Susceptible});</span></a>
+<a name="237"><span class="lineNum">     237 </span><span class="lineCov">       9022 :             size_t Ei = this-&gt;populations.get_flat_index({i, InfectionState::Exposed});</span></a>
+<a name="238"><span class="lineNum">     238 </span><span class="lineCov">       9022 :             size_t Ci = this-&gt;populations.get_flat_index({i, InfectionState::Carrier});</span></a>
+<a name="239"><span class="lineNum">     239 </span><span class="lineCov">       9022 :             size_t Ii = this-&gt;populations.get_flat_index({i, InfectionState::Infected});</span></a>
+<a name="240"><span class="lineNum">     240 </span><span class="lineCov">       9022 :             size_t Hi = this-&gt;populations.get_flat_index({i, InfectionState::Hospitalized});</span></a>
+<a name="241"><span class="lineNum">     241 </span><span class="lineCov">       9022 :             size_t Ui = this-&gt;populations.get_flat_index({i, InfectionState::ICU});</span></a>
+<a name="242"><span class="lineNum">     242 </span><span class="lineCov">       9022 :             size_t Ri = this-&gt;populations.get_flat_index({i, InfectionState::Recovered});</span></a>
+<a name="243"><span class="lineNum">     243 </span><span class="lineCov">       9022 :             size_t Di = this-&gt;populations.get_flat_index({i, InfectionState::Dead});</span></a>
 <a name="244"><span class="lineNum">     244 </span>            : </a>
-<a name="245"><span class="lineNum">     245 </span><span class="lineCov">       8476 :             dydt[Si] = 0;</span></a>
-<a name="246"><span class="lineNum">     246 </span><span class="lineCov">       8476 :             dydt[Ei] = 0;</span></a>
+<a name="245"><span class="lineNum">     245 </span><span class="lineCov">       9022 :             dydt[Si] = 0;</span></a>
+<a name="246"><span class="lineNum">     246 </span><span class="lineCov">       9022 :             dydt[Ei] = 0;</span></a>
 <a name="247"><span class="lineNum">     247 </span>            : </a>
 <a name="248"><span class="lineNum">     248 </span>            :             double dummy_R2 =</a>
-<a name="249"><span class="lineNum">     249 </span><span class="lineCov">       8476 :                 1.0 / (2 * params.get&lt;SerialInterval&gt;()[i] - params.get&lt;IncubationTime&gt;()[i]); // R2 = 1/(2SI-TINC)</span></a>
+<a name="249"><span class="lineNum">     249 </span><span class="lineCov">       9022 :                 1.0 / (2 * params.get&lt;SerialInterval&gt;()[i] - params.get&lt;IncubationTime&gt;()[i]); // R2 = 1/(2SI-TINC)</span></a>
 <a name="250"><span class="lineNum">     250 </span>            :             double dummy_R3 =</a>
-<a name="251"><span class="lineNum">     251 </span><span class="lineCov">       8476 :                 0.5 / (params.get&lt;IncubationTime&gt;()[i] - params.get&lt;SerialInterval&gt;()[i]); // R3 = 1/(2(TINC-SI))</span></a>
+<a name="251"><span class="lineNum">     251 </span><span class="lineCov">       9022 :                 0.5 / (params.get&lt;IncubationTime&gt;()[i] - params.get&lt;SerialInterval&gt;()[i]); // R3 = 1/(2(TINC-SI))</span></a>
 <a name="252"><span class="lineNum">     252 </span>            : </a>
-<a name="253"><span class="lineNum">     253 </span><span class="lineCov">      20660 :             for (auto j = AgeGroup(0); j &lt; n_agegroups; j++) {</span></a>
-<a name="254"><span class="lineNum">     254 </span><span class="lineCov">      12184 :                 size_t Sj = this-&gt;populations.get_flat_index({j, InfectionState::Susceptible});</span></a>
-<a name="255"><span class="lineNum">     255 </span><span class="lineCov">      12184 :                 size_t Ej = this-&gt;populations.get_flat_index({j, InfectionState::Exposed});</span></a>
-<a name="256"><span class="lineNum">     256 </span><span class="lineCov">      12184 :                 size_t Cj = this-&gt;populations.get_flat_index({j, InfectionState::Carrier});</span></a>
-<a name="257"><span class="lineNum">     257 </span><span class="lineCov">      12184 :                 size_t Ij = this-&gt;populations.get_flat_index({j, InfectionState::Infected});</span></a>
-<a name="258"><span class="lineNum">     258 </span><span class="lineCov">      12184 :                 size_t Hj = this-&gt;populations.get_flat_index({j, InfectionState::Hospitalized});</span></a>
-<a name="259"><span class="lineNum">     259 </span><span class="lineCov">      12184 :                 size_t Uj = this-&gt;populations.get_flat_index({j, InfectionState::ICU});</span></a>
-<a name="260"><span class="lineNum">     260 </span><span class="lineCov">      12184 :                 size_t Rj = this-&gt;populations.get_flat_index({j, InfectionState::Recovered});</span></a>
+<a name="253"><span class="lineNum">     253 </span><span class="lineCov">      21752 :             for (auto j = AgeGroup(0); j &lt; n_agegroups; j++) {</span></a>
+<a name="254"><span class="lineNum">     254 </span><span class="lineCov">      12730 :                 size_t Sj = this-&gt;populations.get_flat_index({j, InfectionState::Susceptible});</span></a>
+<a name="255"><span class="lineNum">     255 </span><span class="lineCov">      12730 :                 size_t Ej = this-&gt;populations.get_flat_index({j, InfectionState::Exposed});</span></a>
+<a name="256"><span class="lineNum">     256 </span><span class="lineCov">      12730 :                 size_t Cj = this-&gt;populations.get_flat_index({j, InfectionState::Carrier});</span></a>
+<a name="257"><span class="lineNum">     257 </span><span class="lineCov">      12730 :                 size_t Ij = this-&gt;populations.get_flat_index({j, InfectionState::Infected});</span></a>
+<a name="258"><span class="lineNum">     258 </span><span class="lineCov">      12730 :                 size_t Hj = this-&gt;populations.get_flat_index({j, InfectionState::Hospitalized});</span></a>
+<a name="259"><span class="lineNum">     259 </span><span class="lineCov">      12730 :                 size_t Uj = this-&gt;populations.get_flat_index({j, InfectionState::ICU});</span></a>
+<a name="260"><span class="lineNum">     260 </span><span class="lineCov">      12730 :                 size_t Rj = this-&gt;populations.get_flat_index({j, InfectionState::Recovered});</span></a>
 <a name="261"><span class="lineNum">     261 </span>            : </a>
 <a name="262"><span class="lineNum">     262 </span>            :                 //symptomatic are less well quarantined when testing and tracing is overwhelmed so they infect more people</a>
-<a name="263"><span class="lineNum">     263 </span><span class="lineCov">      48736 :                 auto risk_from_symptomatic = smoother_cosine(</span></a>
-<a name="264"><span class="lineNum">     264 </span><span class="lineCov">      24368 :                     test_and_trace_required, params.get&lt;TestAndTraceCapacity&gt;(), params.get&lt;TestAndTraceCapacity&gt;() * 5,</span></a>
-<a name="265"><span class="lineNum">     265 </span><span class="lineCov">      36552 :                     params.get&lt;RiskOfInfectionFromSymptomatic&gt;()[j], params.get&lt;MaxRiskOfInfectionFromSymptomatic&gt;()[j]);</span></a>
+<a name="263"><span class="lineNum">     263 </span><span class="lineCov">      50920 :                 auto risk_from_symptomatic = smoother_cosine(</span></a>
+<a name="264"><span class="lineNum">     264 </span><span class="lineCov">      25460 :                     test_and_trace_required, params.get&lt;TestAndTraceCapacity&gt;(), params.get&lt;TestAndTraceCapacity&gt;() * 5,</span></a>
+<a name="265"><span class="lineNum">     265 </span><span class="lineCov">      38190 :                     params.get&lt;RiskOfInfectionFromSymptomatic&gt;()[j], params.get&lt;MaxRiskOfInfectionFromSymptomatic&gt;()[j]);</span></a>
 <a name="266"><span class="lineNum">     266 </span>            : </a>
 <a name="267"><span class="lineNum">     267 </span>            :                 // effective contact rate by contact rate between groups i and j and damping j</a>
-<a name="268"><span class="lineNum">     268 </span><span class="lineCov">      24368 :                 double season_val = (1 + params.get&lt;mio::Seasonality&gt;() *</span></a>
-<a name="269"><span class="lineNum">     269 </span><span class="lineCov">      12184 :                                              sin(3.141592653589793 *</span></a>
-<a name="270"><span class="lineNum">     270 </span><span class="lineCov">      24368 :                                                  (std::fmod((params.get&lt;mio::StartDay&gt;() + t), 365.0) / 182.5 + 0.5)));</span></a>
+<a name="268"><span class="lineNum">     268 </span><span class="lineCov">      25460 :                 double season_val = (1 + params.get&lt;mio::Seasonality&gt;() *</span></a>
+<a name="269"><span class="lineNum">     269 </span><span class="lineCov">      12730 :                                              sin(3.141592653589793 *</span></a>
+<a name="270"><span class="lineNum">     270 </span><span class="lineCov">      25460 :                                                  (std::fmod((params.get&lt;mio::StartDay&gt;() + t), 365.0) / 182.5 + 0.5)));</span></a>
 <a name="271"><span class="lineNum">     271 </span>            :                 double cont_freq_eff =</a>
-<a name="272"><span class="lineNum">     272 </span><span class="lineCov">      24368 :                     season_val * contact_matrix.get_matrix_at(t)(static_cast&lt;Eigen::Index&gt;((size_t)i),</span></a>
-<a name="273"><span class="lineNum">     273 </span><span class="lineCov">      36552 :                                                                  static_cast&lt;Eigen::Index&gt;((size_t)j));</span></a>
-<a name="274"><span class="lineNum">     274 </span><span class="lineCov">      12184 :                 double Nj = pop[Sj] + pop[Ej] + pop[Cj] + pop[Ij] + pop[Hj] + pop[Uj] + pop[Rj]; // without died people</span></a>
-<a name="275"><span class="lineNum">     275 </span><span class="lineCov">      12184 :                 double divNj = 1.0 / Nj; // precompute 1.0/Nj</span></a>
+<a name="272"><span class="lineNum">     272 </span><span class="lineCov">      25460 :                     season_val * contact_matrix.get_matrix_at(t)(static_cast&lt;Eigen::Index&gt;((size_t)i),</span></a>
+<a name="273"><span class="lineNum">     273 </span><span class="lineCov">      38190 :                                                                  static_cast&lt;Eigen::Index&gt;((size_t)j));</span></a>
+<a name="274"><span class="lineNum">     274 </span><span class="lineCov">      12730 :                 double Nj = pop[Sj] + pop[Ej] + pop[Cj] + pop[Ij] + pop[Hj] + pop[Uj] + pop[Rj]; // without died people</span></a>
+<a name="275"><span class="lineNum">     275 </span><span class="lineCov">      12730 :                 double divNj = 1.0 / Nj; // precompute 1.0/Nj</span></a>
 <a name="276"><span class="lineNum">     276 </span>            :                 double dummy_S =</a>
-<a name="277"><span class="lineNum">     277 </span><span class="lineCov">      12184 :                     y[Si] * cont_freq_eff * divNj * params.get&lt;InfectionProbabilityFromContact&gt;()[i] *</span></a>
-<a name="278"><span class="lineNum">     278 </span><span class="lineCov">      12184 :                     (params.get&lt;RelativeCarrierInfectability&gt;()[j] * pop[Cj] + risk_from_symptomatic * pop[Ij]);</span></a>
+<a name="277"><span class="lineNum">     277 </span><span class="lineCov">      12730 :                     y[Si] * cont_freq_eff * divNj * params.get&lt;InfectionProbabilityFromContact&gt;()[i] *</span></a>
+<a name="278"><span class="lineNum">     278 </span><span class="lineCov">      12730 :                     (params.get&lt;RelativeCarrierInfectability&gt;()[j] * pop[Cj] + risk_from_symptomatic * pop[Ij]);</span></a>
 <a name="279"><span class="lineNum">     279 </span>            : </a>
-<a name="280"><span class="lineNum">     280 </span><span class="lineCov">      12184 :                 dydt[Si] -= dummy_S; // -R1*(C+beta*I)*S/N0</span></a>
-<a name="281"><span class="lineNum">     281 </span><span class="lineCov">      12184 :                 dydt[Ei] += dummy_S; // R1*(C+beta*I)*S/N0-R2*E</span></a>
+<a name="280"><span class="lineNum">     280 </span><span class="lineCov">      12730 :                 dydt[Si] -= dummy_S; // -R1*(C+beta*I)*S/N0</span></a>
+<a name="281"><span class="lineNum">     281 </span><span class="lineCov">      12730 :                 dydt[Ei] += dummy_S; // R1*(C+beta*I)*S/N0-R2*E</span></a>
 <a name="282"><span class="lineNum">     282 </span>            :             }</a>
 <a name="283"><span class="lineNum">     283 </span>            : </a>
 <a name="284"><span class="lineNum">     284 </span>            :             // ICU capacity shortage is close</a>
 <a name="285"><span class="lineNum">     285 </span>            :             double prob_hosp2icu =</a>
-<a name="286"><span class="lineNum">     286 </span><span class="lineCov">      16952 :                 smoother_cosine(icu_occupancy, 0.90 * params.get&lt;mio::ICUCapacity&gt;(), params.get&lt;mio::ICUCapacity&gt;(),</span></a>
-<a name="287"><span class="lineNum">     287 </span><span class="lineCov">      16952 :                                 params.get&lt;ICUCasesPerHospitalized&gt;()[i], 0);</span></a>
+<a name="286"><span class="lineNum">     286 </span><span class="lineCov">      18044 :                 smoother_cosine(icu_occupancy, 0.90 * params.get&lt;mio::ICUCapacity&gt;(), params.get&lt;mio::ICUCapacity&gt;(),</span></a>
+<a name="287"><span class="lineNum">     287 </span><span class="lineCov">      18044 :                                 params.get&lt;ICUCasesPerHospitalized&gt;()[i], 0);</span></a>
 <a name="288"><span class="lineNum">     288 </span>            : </a>
-<a name="289"><span class="lineNum">     289 </span><span class="lineCov">       8476 :             double prob_hosp2dead = params.get&lt;ICUCasesPerHospitalized&gt;()[i] - prob_hosp2icu;</span></a>
+<a name="289"><span class="lineNum">     289 </span><span class="lineCov">       9022 :             double prob_hosp2dead = params.get&lt;ICUCasesPerHospitalized&gt;()[i] - prob_hosp2icu;</span></a>
 <a name="290"><span class="lineNum">     290 </span>            : </a>
-<a name="291"><span class="lineNum">     291 </span><span class="lineCov">       8476 :             dydt[Ei] -= dummy_R2 * y[Ei]; // only exchange of E and C done here</span></a>
-<a name="292"><span class="lineNum">     292 </span><span class="lineCov">      16952 :             dydt[Ci] = dummy_R2 * y[Ei] -</span></a>
-<a name="293"><span class="lineNum">     293 </span><span class="lineCov">       8476 :                        ((1 - params.get&lt;AsymptomaticCasesPerInfectious&gt;()[i]) * dummy_R3 +</span></a>
-<a name="294"><span class="lineNum">     294 </span><span class="lineCov">       8476 :                         params.get&lt;AsymptomaticCasesPerInfectious&gt;()[i] / params.get&lt;InfectiousTimeAsymptomatic&gt;()[i]) *</span></a>
-<a name="295"><span class="lineNum">     295 </span><span class="lineCov">       8476 :                            y[Ci];</span></a>
-<a name="296"><span class="lineNum">     296 </span><span class="lineCov">      16952 :             dydt[Ii] = (1 - params.get&lt;AsymptomaticCasesPerInfectious&gt;()[i]) * dummy_R3 * y[Ci] -</span></a>
-<a name="297"><span class="lineNum">     297 </span><span class="lineCov">       8476 :                        ((1 - params.get&lt;HospitalizedCasesPerInfectious&gt;()[i]) / params.get&lt;InfectiousTimeMild&gt;()[i] +</span></a>
-<a name="298"><span class="lineNum">     298 </span><span class="lineCov">       8476 :                         params.get&lt;HospitalizedCasesPerInfectious&gt;()[i] / params.get&lt;HomeToHospitalizedTime&gt;()[i]) *</span></a>
-<a name="299"><span class="lineNum">     299 </span><span class="lineCov">       8476 :                            y[Ii];</span></a>
-<a name="300"><span class="lineNum">     300 </span><span class="lineCov">      25428 :             dydt[Hi] =</span></a>
-<a name="301"><span class="lineNum">     301 </span><span class="lineCov">      16952 :                 params.get&lt;HospitalizedCasesPerInfectious&gt;()[i] / params.get&lt;HomeToHospitalizedTime&gt;()[i] * y[Ii] -</span></a>
-<a name="302"><span class="lineNum">     302 </span><span class="lineCov">       8476 :                 ((1 - params.get&lt;ICUCasesPerHospitalized&gt;()[i]) / params.get&lt;HospitalizedToHomeTime&gt;()[i] +</span></a>
-<a name="303"><span class="lineNum">     303 </span><span class="lineCov">       8476 :                  params.get&lt;ICUCasesPerHospitalized&gt;()[i] / params.get&lt;HospitalizedToICUTime&gt;()[i]) *</span></a>
-<a name="304"><span class="lineNum">     304 </span><span class="lineCov">       8476 :                     y[Hi];</span></a>
-<a name="305"><span class="lineNum">     305 </span><span class="lineCov">       8476 :             dydt[Ui] = -((1 - params.get&lt;DeathsPerICU&gt;()[i]) / params.get&lt;ICUToHomeTime&gt;()[i] +</span></a>
-<a name="306"><span class="lineNum">     306 </span><span class="lineCov">      16952 :                          params.get&lt;DeathsPerICU&gt;()[i] / params.get&lt;ICUToDeathTime&gt;()[i]) *</span></a>
-<a name="307"><span class="lineNum">     307 </span><span class="lineCov">       8476 :                        y[Ui];</span></a>
+<a name="291"><span class="lineNum">     291 </span><span class="lineCov">       9022 :             dydt[Ei] -= dummy_R2 * y[Ei]; // only exchange of E and C done here</span></a>
+<a name="292"><span class="lineNum">     292 </span><span class="lineCov">      18044 :             dydt[Ci] = dummy_R2 * y[Ei] -</span></a>
+<a name="293"><span class="lineNum">     293 </span><span class="lineCov">       9022 :                        ((1 - params.get&lt;AsymptomaticCasesPerInfectious&gt;()[i]) * dummy_R3 +</span></a>
+<a name="294"><span class="lineNum">     294 </span><span class="lineCov">       9022 :                         params.get&lt;AsymptomaticCasesPerInfectious&gt;()[i] / params.get&lt;InfectiousTimeAsymptomatic&gt;()[i]) *</span></a>
+<a name="295"><span class="lineNum">     295 </span><span class="lineCov">       9022 :                            y[Ci];</span></a>
+<a name="296"><span class="lineNum">     296 </span><span class="lineCov">      18044 :             dydt[Ii] = (1 - params.get&lt;AsymptomaticCasesPerInfectious&gt;()[i]) * dummy_R3 * y[Ci] -</span></a>
+<a name="297"><span class="lineNum">     297 </span><span class="lineCov">       9022 :                        ((1 - params.get&lt;HospitalizedCasesPerInfectious&gt;()[i]) / params.get&lt;InfectiousTimeMild&gt;()[i] +</span></a>
+<a name="298"><span class="lineNum">     298 </span><span class="lineCov">       9022 :                         params.get&lt;HospitalizedCasesPerInfectious&gt;()[i] / params.get&lt;HomeToHospitalizedTime&gt;()[i]) *</span></a>
+<a name="299"><span class="lineNum">     299 </span><span class="lineCov">       9022 :                            y[Ii];</span></a>
+<a name="300"><span class="lineNum">     300 </span><span class="lineCov">      27066 :             dydt[Hi] =</span></a>
+<a name="301"><span class="lineNum">     301 </span><span class="lineCov">      18044 :                 params.get&lt;HospitalizedCasesPerInfectious&gt;()[i] / params.get&lt;HomeToHospitalizedTime&gt;()[i] * y[Ii] -</span></a>
+<a name="302"><span class="lineNum">     302 </span><span class="lineCov">       9022 :                 ((1 - params.get&lt;ICUCasesPerHospitalized&gt;()[i]) / params.get&lt;HospitalizedToHomeTime&gt;()[i] +</span></a>
+<a name="303"><span class="lineNum">     303 </span><span class="lineCov">       9022 :                  params.get&lt;ICUCasesPerHospitalized&gt;()[i] / params.get&lt;HospitalizedToICUTime&gt;()[i]) *</span></a>
+<a name="304"><span class="lineNum">     304 </span><span class="lineCov">       9022 :                     y[Hi];</span></a>
+<a name="305"><span class="lineNum">     305 </span><span class="lineCov">       9022 :             dydt[Ui] = -((1 - params.get&lt;DeathsPerICU&gt;()[i]) / params.get&lt;ICUToHomeTime&gt;()[i] +</span></a>
+<a name="306"><span class="lineNum">     306 </span><span class="lineCov">      18044 :                          params.get&lt;DeathsPerICU&gt;()[i] / params.get&lt;ICUToDeathTime&gt;()[i]) *</span></a>
+<a name="307"><span class="lineNum">     307 </span><span class="lineCov">       9022 :                        y[Ui];</span></a>
 <a name="308"><span class="lineNum">     308 </span>            :             // add flow from hosp to icu according to potentially adjusted probability due to ICU limits</a>
-<a name="309"><span class="lineNum">     309 </span><span class="lineCov">       8476 :             dydt[Ui] += prob_hosp2icu / params.get&lt;HospitalizedToICUTime&gt;()[i] * y[Hi];</span></a>
+<a name="309"><span class="lineNum">     309 </span><span class="lineCov">       9022 :             dydt[Ui] += prob_hosp2icu / params.get&lt;HospitalizedToICUTime&gt;()[i] * y[Hi];</span></a>
 <a name="310"><span class="lineNum">     310 </span>            : </a>
-<a name="311"><span class="lineNum">     311 </span><span class="lineCov">      25428 :             dydt[Ri] =</span></a>
-<a name="312"><span class="lineNum">     312 </span><span class="lineCov">       8476 :                 params.get&lt;AsymptomaticCasesPerInfectious&gt;()[i] / params.get&lt;InfectiousTimeAsymptomatic&gt;()[i] * y[Ci] +</span></a>
-<a name="313"><span class="lineNum">     313 </span><span class="lineCov">       8476 :                 (1 - params.get&lt;HospitalizedCasesPerInfectious&gt;()[i]) / params.get&lt;InfectiousTimeMild&gt;()[i] * y[Ii] +</span></a>
-<a name="314"><span class="lineNum">     314 </span><span class="lineCov">      16952 :                 (1 - params.get&lt;ICUCasesPerHospitalized&gt;()[i]) / params.get&lt;HospitalizedToHomeTime&gt;()[i] * y[Hi] +</span></a>
-<a name="315"><span class="lineNum">     315 </span><span class="lineCov">       8476 :                 (1 - params.get&lt;DeathsPerICU&gt;()[i]) / params.get&lt;ICUToHomeTime&gt;()[i] * y[Ui];</span></a>
+<a name="311"><span class="lineNum">     311 </span><span class="lineCov">      27066 :             dydt[Ri] =</span></a>
+<a name="312"><span class="lineNum">     312 </span><span class="lineCov">       9022 :                 params.get&lt;AsymptomaticCasesPerInfectious&gt;()[i] / params.get&lt;InfectiousTimeAsymptomatic&gt;()[i] * y[Ci] +</span></a>
+<a name="313"><span class="lineNum">     313 </span><span class="lineCov">       9022 :                 (1 - params.get&lt;HospitalizedCasesPerInfectious&gt;()[i]) / params.get&lt;InfectiousTimeMild&gt;()[i] * y[Ii] +</span></a>
+<a name="314"><span class="lineNum">     314 </span><span class="lineCov">      18044 :                 (1 - params.get&lt;ICUCasesPerHospitalized&gt;()[i]) / params.get&lt;HospitalizedToHomeTime&gt;()[i] * y[Hi] +</span></a>
+<a name="315"><span class="lineNum">     315 </span><span class="lineCov">       9022 :                 (1 - params.get&lt;DeathsPerICU&gt;()[i]) / params.get&lt;ICUToHomeTime&gt;()[i] * y[Ui];</span></a>
 <a name="316"><span class="lineNum">     316 </span>            : </a>
-<a name="317"><span class="lineNum">     317 </span><span class="lineCov">       8476 :             dydt[Di] = params.get&lt;DeathsPerICU&gt;()[i] / params.get&lt;ICUToDeathTime&gt;()[i] * y[Ui];</span></a>
+<a name="317"><span class="lineNum">     317 </span><span class="lineCov">       9022 :             dydt[Di] = params.get&lt;DeathsPerICU&gt;()[i] / params.get&lt;ICUToDeathTime&gt;()[i] * y[Ui];</span></a>
 <a name="318"><span class="lineNum">     318 </span>            :             // add potential, additional deaths due to ICU overflow</a>
-<a name="319"><span class="lineNum">     319 </span><span class="lineCov">       8476 :             dydt[Di] += prob_hosp2dead / params.get&lt;HospitalizedToICUTime&gt;()[i] * y[Hi];</span></a>
+<a name="319"><span class="lineNum">     319 </span><span class="lineCov">       9022 :             dydt[Di] += prob_hosp2dead / params.get&lt;HospitalizedToICUTime&gt;()[i] * y[Hi];</span></a>
 <a name="320"><span class="lineNum">     320 </span>            :         }</a>
-<a name="321"><span class="lineNum">     321 </span><span class="lineCov">       7240 :     }</span></a>
+<a name="321"><span class="lineNum">     321 </span><span class="lineCov">       7786 :     }</span></a>
 <a name="322"><span class="lineNum">     322 </span>            : </a>
 <a name="323"><span class="lineNum">     323 </span>            : #endif // USE_DERIV_FUNC</a>
 <a name="324"><span class="lineNum">     324 </span>            : </a>

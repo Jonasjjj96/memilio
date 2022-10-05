@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2022-09-28 10:15:14</td>
+            <td class="headerValue">2022-10-05 09:44:41</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">27</td>
@@ -115,8 +115,8 @@
 <a name="53"><span class="lineNum">      53 </span>            :               std::make_shared&lt;mio::ControlledStepperWrapper&lt;boost::numeric::odeint::runge_kutta_cash_karp54&gt;&gt;())</a>
 <a name="54"><span class="lineNum">      54 </span>            :         , m_model(std::make_unique&lt;Model&gt;(model))</a>
 <a name="55"><span class="lineNum">      55 </span>            :         , m_integrator(</a>
-<a name="56"><span class="lineNum">      56 </span><span class="lineCov">      16495 :               [&amp;model = *m_model](auto&amp;&amp; y, auto&amp;&amp; t, auto&amp;&amp; dydt) {</span></a>
-<a name="57"><span class="lineNum">      57 </span><span class="lineCov">       8241 :                   model.eval_right_hand_side(y, y, t, dydt);</span></a>
+<a name="56"><span class="lineNum">      56 </span><span class="lineCov">      17587 :               [&amp;model = *m_model](auto&amp;&amp; y, auto&amp;&amp; t, auto&amp;&amp; dydt) {</span></a>
+<a name="57"><span class="lineNum">      57 </span><span class="lineCov">       8787 :                   model.eval_right_hand_side(y, y, t, dydt);</span></a>
 <a name="58"><span class="lineNum">      58 </span>            :               },</a>
 <a name="59"><span class="lineNum">      59 </span><span class="lineCov">         74 :               t0, m_model-&gt;get_initial_values(), dt, m_integratorCore)</span></a>
 <a name="60"><span class="lineNum">      60 </span>            :     {</a>
