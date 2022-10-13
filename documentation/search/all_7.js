@@ -108,7 +108,7 @@ var searchData=
   ['get_5fnum_5frows_410',['get_num_rows',['../classmio_1_1TimeSeries.html#ad53ca302a349309936bf59bf3b6c4cd5',1,'mio::TimeSeries']]],
   ['get_5fnum_5fruns_411',['get_num_runs',['../classmio_1_1ParameterStudy.html#ab0247a7cd6292141cd0649799f82b5d4',1,'mio::ParameterStudy']]],
   ['get_5fnum_5ftime_5fpoints_412',['get_num_time_points',['../classmio_1_1TimeSeries.html#acc9c110493d8d5a7c99db62b72511bcf',1,'mio::TimeSeries']]],
-  ['get_5fnuts3_5fcounty_5fid_5fmap_413',['get_nuts3_county_id_map',['../namespacememilio_1_1epidata_1_1geoModificationGermany.html#a0418a5cb1fc36c6584b25f96d4cbc137',1,'memilio::epidata::geoModificationGermany']]],
+  ['get_5fnuts3_5fcounty_5fid_5fmap_413',['get_nuts3_county_id_map',['../namespacememilio_1_1epidata_1_1geoModificationGermany.html#aa2d34e424200b354eb9bcc25a7233c13',1,'memilio::epidata::geoModificationGermany']]],
   ['get_5fofficial_5fcounty_5ftable_414',['get_official_county_table',['../namespacememilio_1_1epidata_1_1geoModificationGermany.html#a71a1b3df6812444feb3fa56acafeb6b0',1,'memilio::epidata::geoModificationGermany']]],
   ['get_5foffset_5fin_5fdays_415',['get_offset_in_days',['../namespacemio.html#a836ec51b48f63ad6dca0724e9f5b28d8',1,'mio']]],
   ['get_5fparameters_416',['get_parameters',['../classmio_1_1MigrationEdge.html#a8f57803857c8299bf7862cb252c2edfa',1,'mio::MigrationEdge']]],

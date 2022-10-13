@@ -54,8 +54,8 @@
             </div>
         </aside>
         <h2>
-            <span class="text">514 statements &nbsp;</span>
-            <button type="button" class="run button_toggle_run" value="run" data-shortcut="r" title="Toggle lines run">513<span class="text"> run</span></button>
+            <span class="text">519 statements &nbsp;</span>
+            <button type="button" class="run button_toggle_run" value="run" data-shortcut="r" title="Toggle lines run">518<span class="text"> run</span></button>
             <button type="button" class="mis show_mis button_toggle_mis" value="mis" data-shortcut="m" title="Toggle lines missing">1<span class="text"> missing</span></button>
             <button type="button" class="exc show_exc button_toggle_exc" value="exc" data-shortcut="x" title="Toggle lines excluded">0<span class="text"> excluded</span></button>
         </h2>
@@ -65,7 +65,7 @@
             <a id="nextFileLink" class="nav" href="test_epidata_getCaseDatawithEstimations_py.html">&#xbb; next</a>
             &nbsp; &nbsp; &nbsp;
             <a class="nav" href="https://coverage.readthedocs.io">coverage.py v6.5.0</a>,
-            created at 2022-10-05 09:55 +0000
+            created at 2022-10-13 12:58 +0000
         </p>
         <aside class="hidden">
             <button type="button" class="button_next_chunk" data-shortcut="j"/>
@@ -404,7 +404,7 @@
     <p class="pln"><span class="n"><a id="t322" href="#t322">322</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
     <p class="run"><span class="n"><a id="t323" href="#t323">323</a></span><span class="t">    <span class="op">@</span><span class="nam">patch</span><span class="op">(</span><span class="str">'memilio.epidata.getCaseData.gd.loadGeojson'</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
     <p class="run"><span class="n"><a id="t324" href="#t324">324</a></span><span class="t">    <span class="op">@</span><span class="nam">patch</span><span class="op">(</span><span class="str">'memilio.epidata.getCaseData.gd.loadCsv'</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
-    <p class="pln"><span class="n"><a id="t325" href="#t325">325</a></span><span class="t">    <span class="key">def</span> <span class="nam">test_get_case_data_download</span><span class="op">(</span><span class="nam">self</span><span class="op">,</span> <span class="nam">mock_loadCsv</span><span class="op">,</span> <span class="nam">mock_loadGeojson</span><span class="op">)</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
+    <p class="run"><span class="n"><a id="t325" href="#t325">325</a></span><span class="t">    <span class="key">def</span> <span class="nam">test_get_case_data_download</span><span class="op">(</span><span class="nam">self</span><span class="op">,</span> <span class="nam">mock_loadCsv</span><span class="op">,</span> <span class="nam">mock_loadGeojson</span><span class="op">)</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
     <p class="pln"><span class="n"><a id="t326" href="#t326">326</a></span><span class="t">        <span class="com"># Test with downloading data</span>&nbsp;</span><span class="r"></span></p>
     <p class="run"><span class="n"><a id="t327" href="#t327">327</a></span><span class="t">        <span class="nam">read_data</span> <span class="op">=</span> <span class="key">False</span>&nbsp;</span><span class="r"></span></p>
     <p class="run"><span class="n"><a id="t328" href="#t328">328</a></span><span class="t">        <span class="nam">file_format</span> <span class="op">=</span> <span class="str">'json_timeasstring'</span>&nbsp;</span><span class="r"></span></p>
@@ -503,7 +503,7 @@
     <p class="pln"><span class="n"><a id="t421" href="#t421">421</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
     <p class="run"><span class="n"><a id="t422" href="#t422">422</a></span><span class="t">    <span class="op">@</span><span class="nam">patch</span><span class="op">(</span><span class="str">'memilio.epidata.getCaseData.gd.loadGeojson'</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
     <p class="run"><span class="n"><a id="t423" href="#t423">423</a></span><span class="t">    <span class="op">@</span><span class="nam">patch</span><span class="op">(</span><span class="str">'memilio.epidata.getCaseData.gd.loadCsv'</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
-    <p class="pln"><span class="n"><a id="t424" href="#t424">424</a></span><span class="t">    <span class="key">def</span> <span class="nam">test_get_case_data_download_split_berlin</span><span class="op">(</span>&nbsp;</span><span class="r"></span></p>
+    <p class="run"><span class="n"><a id="t424" href="#t424">424</a></span><span class="t">    <span class="key">def</span> <span class="nam">test_get_case_data_download_split_berlin</span><span class="op">(</span>&nbsp;</span><span class="r"></span></p>
     <p class="pln"><span class="n"><a id="t425" href="#t425">425</a></span><span class="t">            <span class="nam">self</span><span class="op">,</span> <span class="nam">mock_loadCsv</span><span class="op">,</span> <span class="nam">mock_loadGeojson</span><span class="op">)</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
     <p class="pln"><span class="n"><a id="t426" href="#t426">426</a></span><span class="t">        <span class="com"># Test case with downloading data where first csv-source is incomplete and second one is used</span>&nbsp;</span><span class="r"></span></p>
     <p class="pln"><span class="n"><a id="t427" href="#t427">427</a></span><span class="t">        <span class="com"># and split_berlin = True</span>&nbsp;</span><span class="r"></span></p>
@@ -1022,7 +1022,7 @@
     <p class="run"><span class="n"><a id="t940" href="#t940">940</a></span><span class="t">            <span class="nam">self</span><span class="op">.</span><span class="nam">assertTrue</span><span class="op">(</span><span class="nam">file</span> <span class="key">in</span> <span class="nam">os</span><span class="op">.</span><span class="nam">listdir</span><span class="op">(</span><span class="nam">directory</span><span class="op">)</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
     <p class="pln"><span class="n"><a id="t941" href="#t941">941</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
     <p class="run"><span class="n"><a id="t942" href="#t942">942</a></span><span class="t">    <span class="op">@</span><span class="nam">patch</span><span class="op">(</span><span class="str">'memilio.epidata.getCaseData.gd.loadCsv'</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
-    <p class="pln"><span class="n"><a id="t943" href="#t943">943</a></span><span class="t">    <span class="key">def</span> <span class="nam">test_no_raw</span><span class="op">(</span><span class="nam">self</span><span class="op">,</span> <span class="nam">mock_loadCsv</span><span class="op">)</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
+    <p class="run"><span class="n"><a id="t943" href="#t943">943</a></span><span class="t">    <span class="key">def</span> <span class="nam">test_no_raw</span><span class="op">(</span><span class="nam">self</span><span class="op">,</span> <span class="nam">mock_loadCsv</span><span class="op">)</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
     <p class="pln"><span class="n"><a id="t944" href="#t944">944</a></span><span class="t">        <span class="com"># Test with downloading data</span>&nbsp;</span><span class="r"></span></p>
     <p class="run"><span class="n"><a id="t945" href="#t945">945</a></span><span class="t">        <span class="nam">read_data</span> <span class="op">=</span> <span class="key">False</span>&nbsp;</span><span class="r"></span></p>
     <p class="run"><span class="n"><a id="t946" href="#t946">946</a></span><span class="t">        <span class="nam">file_format</span> <span class="op">=</span> <span class="str">'json_timeasstring'</span>&nbsp;</span><span class="r"></span></p>
@@ -1091,7 +1091,7 @@
     <p class="pln"><span class="n"><a id="t1009" href="#t1009">1009</a></span><span class="t">                         <span class="op">[</span><span class="str">"Recovered"</span><span class="op">]</span><span class="op">.</span><span class="nam">item</span><span class="op">(</span><span class="op">)</span><span class="op">,</span> <span class="num">2</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
     <p class="pln"><span class="n"><a id="t1010" href="#t1010">1010</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
     <p class="run"><span class="n"><a id="t1011" href="#t1011">1011</a></span><span class="t">    <span class="op">@</span><span class="nam">patch</span><span class="op">(</span><span class="str">'memilio.epidata.getCaseData.gd.cli'</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
-    <p class="pln"><span class="n"><a id="t1012" href="#t1012">1012</a></span><span class="t">    <span class="key">def</span> <span class="nam">test_main</span><span class="op">(</span><span class="nam">self</span><span class="op">,</span> <span class="nam">mock_cli</span><span class="op">)</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
+    <p class="run"><span class="n"><a id="t1012" href="#t1012">1012</a></span><span class="t">    <span class="key">def</span> <span class="nam">test_main</span><span class="op">(</span><span class="nam">self</span><span class="op">,</span> <span class="nam">mock_cli</span><span class="op">)</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
     <p class="pln"><span class="n"><a id="t1013" href="#t1013">1013</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
     <p class="run"><span class="n"><a id="t1014" href="#t1014">1014</a></span><span class="t">        <span class="nam">mock_cli</span><span class="op">.</span><span class="nam">return_value</span> <span class="op">=</span> <span class="op">{</span><span class="str">"read_data"</span><span class="op">:</span> <span class="key">True</span><span class="op">,</span>&nbsp;</span><span class="r"></span></p>
     <p class="pln"><span class="n"><a id="t1015" href="#t1015">1015</a></span><span class="t">                                 <span class="str">"file_format"</span><span class="op">:</span> <span class="str">'json_timeasstring'</span><span class="op">,</span>&nbsp;</span><span class="r"></span></p>
@@ -1121,7 +1121,7 @@
     <p class="run"><span class="n"><a id="t1039" href="#t1039">1039</a></span><span class="t">        <span class="nam">self</span><span class="op">.</span><span class="nam">assertEqual</span><span class="op">(</span><span class="nam">gcd</span><span class="op">.</span><span class="nam">check_for_completeness</span><span class="op">(</span><span class="nam">empty_df</span><span class="op">)</span><span class="op">,</span> <span class="key">False</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
     <p class="pln"><span class="n"><a id="t1040" href="#t1040">1040</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
     <p class="run"><span class="n"><a id="t1041" href="#t1041">1041</a></span><span class="t">    <span class="op">@</span><span class="nam">patch</span><span class="op">(</span><span class="str">'memilio.epidata.getCaseData.gd.loadCsv'</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
-    <p class="pln"><span class="n"><a id="t1042" href="#t1042">1042</a></span><span class="t">    <span class="key">def</span> <span class="nam">test_rep_date</span><span class="op">(</span><span class="nam">self</span><span class="op">,</span> <span class="nam">mocklcsv</span><span class="op">)</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
+    <p class="run"><span class="n"><a id="t1042" href="#t1042">1042</a></span><span class="t">    <span class="key">def</span> <span class="nam">test_rep_date</span><span class="op">(</span><span class="nam">self</span><span class="op">,</span> <span class="nam">mocklcsv</span><span class="op">)</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
     <p class="pln"><span class="n"><a id="t1043" href="#t1043">1043</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
     <p class="run"><span class="n"><a id="t1044" href="#t1044">1044</a></span><span class="t">        <span class="nam">mocklcsv</span><span class="op">.</span><span class="nam">return_value</span> <span class="op">=</span> <span class="nam">pd</span><span class="op">.</span><span class="nam">read_json</span><span class="op">(</span>&nbsp;</span><span class="r"></span></p>
     <p class="pln"><span class="n"><a id="t1045" href="#t1045">1045</a></span><span class="t">            <span class="nam">self</span><span class="op">.</span><span class="nam">test_string_all_federal_states_and_counties_github</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
@@ -1217,7 +1217,7 @@
             <a id="nextFileLink" class="nav" href="test_epidata_getCaseDatawithEstimations_py.html">&#xbb; next</a>
             &nbsp; &nbsp; &nbsp;
             <a class="nav" href="https://coverage.readthedocs.io">coverage.py v6.5.0</a>,
-            created at 2022-10-05 09:55 +0000
+            created at 2022-10-13 12:58 +0000
         </p>
     </div>
 </footer>

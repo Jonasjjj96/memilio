@@ -54,8 +54,8 @@
             </div>
         </aside>
         <h2>
-            <span class="text">234 statements &nbsp;</span>
-            <button type="button" class="run button_toggle_run" value="run" data-shortcut="r" title="Toggle lines run">233<span class="text"> run</span></button>
+            <span class="text">236 statements &nbsp;</span>
+            <button type="button" class="run button_toggle_run" value="run" data-shortcut="r" title="Toggle lines run">235<span class="text"> run</span></button>
             <button type="button" class="mis show_mis button_toggle_mis" value="mis" data-shortcut="m" title="Toggle lines missing">1<span class="text"> missing</span></button>
             <button type="button" class="exc show_exc button_toggle_exc" value="exc" data-shortcut="x" title="Toggle lines excluded">0<span class="text"> excluded</span></button>
         </h2>
@@ -65,7 +65,7 @@
             <a id="nextFileLink" class="nav" href="test_epidata_getCommuterMobility_py.html">&#xbb; next</a>
             &nbsp; &nbsp; &nbsp;
             <a class="nav" href="https://coverage.readthedocs.io">coverage.py v6.5.0</a>,
-            created at 2022-10-05 09:55 +0000
+            created at 2022-10-13 12:58 +0000
         </p>
         <aside class="hidden">
             <button type="button" class="button_next_chunk" data-shortcut="j"/>
@@ -308,7 +308,7 @@
     <p class="run"><span class="n"><a id="t226" href="#t226">226</a></span><span class="t">            <span class="nam">income_sheets</span><span class="op">[</span><span class="nam">sheet_name</span><span class="op">]</span><span class="op">.</span><span class="nam">to_excel</span><span class="op">(</span>&nbsp;</span><span class="r"></span></p>
     <p class="pln"><span class="n"><a id="t227" href="#t227">227</a></span><span class="t">                <span class="nam">dummy</span><span class="op">,</span> <span class="nam">sheet_name</span><span class="op">=</span><span class="nam">sheet_name</span><span class="op">,</span> <span class="nam">index</span><span class="op">=</span><span class="key">False</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
     <p class="pln"><span class="n"><a id="t228" href="#t228">228</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
-    <p class="run"><span class="n"><a id="t229" href="#t229">229</a></span><span class="t">        <span class="nam">dummy</span><span class="op">.</span><span class="nam">save</span><span class="op">(</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
+    <p class="run"><span class="n"><a id="t229" href="#t229">229</a></span><span class="t">        <span class="nam">dummy</span><span class="op">.</span><span class="nam">close</span><span class="op">(</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
     <p class="pln"><span class="n"><a id="t230" href="#t230">230</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
     <p class="run"><span class="n"><a id="t231" href="#t231">231</a></span><span class="t">    <span class="key">def</span> <span class="nam">test_get_case_data_with_estimations</span><span class="op">(</span><span class="nam">self</span><span class="op">)</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
     <p class="pln"><span class="n"><a id="t232" href="#t232">232</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
@@ -506,7 +506,7 @@
     <p class="run"><span class="n"><a id="t424" href="#t424">424</a></span><span class="t">    <span class="op">@</span><span class="nam">patch</span><span class="op">(</span><span class="str">'memilio.epidata.getCaseDatawithEstimations.gcd.get_case_data'</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
     <p class="run"><span class="n"><a id="t425" href="#t425">425</a></span><span class="t">    <span class="op">@</span><span class="nam">patch</span><span class="op">(</span><span class="str">'memilio.epidata.getCaseDatawithEstimations.gjd.get_jh_data'</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
     <p class="run"><span class="n"><a id="t426" href="#t426">426</a></span><span class="t">    <span class="op">@</span><span class="nam">patch</span><span class="op">(</span><span class="str">'memilio.epidata.getCaseDatawithEstimations.download_weekly_deaths_numbers'</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
-    <p class="pln"><span class="n"><a id="t427" href="#t427">427</a></span><span class="t">    <span class="key">def</span> <span class="nam">test_get_case_data_with_estimations_download</span><span class="op">(</span>&nbsp;</span><span class="r"></span></p>
+    <p class="run"><span class="n"><a id="t427" href="#t427">427</a></span><span class="t">    <span class="key">def</span> <span class="nam">test_get_case_data_with_estimations_download</span><span class="op">(</span>&nbsp;</span><span class="r"></span></p>
     <p class="pln"><span class="n"><a id="t428" href="#t428">428</a></span><span class="t">            <span class="nam">self</span><span class="op">,</span> <span class="nam">mock_get_jh_data</span><span class="op">,</span> <span class="nam">mock_get_case_data</span><span class="op">,</span>&nbsp;</span><span class="r"></span></p>
     <p class="pln"><span class="n"><a id="t429" href="#t429">429</a></span><span class="t">            <span class="nam">mock_download_weekly_deaths_numbers</span><span class="op">)</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
     <p class="pln"><span class="n"><a id="t430" href="#t430">430</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
@@ -682,7 +682,7 @@
     <p class="pln"><span class="n"><a id="t600" href="#t600">600</a></span><span class="t">            <span class="nam">df_real_deaths_per_week</span><span class="op">[</span><span class="str">'Sterbejahr'</span><span class="op">]</span><span class="op">)</span><span class="op">[</span><span class="num">0</span><span class="op">]</span><span class="op">,</span> <span class="num">2020</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
     <p class="pln"><span class="n"><a id="t601" href="#t601">601</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
     <p class="run"><span class="n"><a id="t602" href="#t602">602</a></span><span class="t">    <span class="op">@</span><span class="nam">patch</span><span class="op">(</span><span class="str">'builtins.print'</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
-    <p class="pln"><span class="n"><a id="t603" href="#t603">603</a></span><span class="t">    <span class="key">def</span> <span class="nam">test_except_non_existing_file</span><span class="op">(</span><span class="nam">self</span><span class="op">,</span> <span class="nam">mock_print</span><span class="op">)</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
+    <p class="run"><span class="n"><a id="t603" href="#t603">603</a></span><span class="t">    <span class="key">def</span> <span class="nam">test_except_non_existing_file</span><span class="op">(</span><span class="nam">self</span><span class="op">,</span> <span class="nam">mock_print</span><span class="op">)</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
     <p class="pln"><span class="n"><a id="t604" href="#t604">604</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
     <p class="run"><span class="n"><a id="t605" href="#t605">605</a></span><span class="t">        <span class="nam">read_data</span> <span class="op">=</span> <span class="key">True</span>&nbsp;</span><span class="r"></span></p>
     <p class="run"><span class="n"><a id="t606" href="#t606">606</a></span><span class="t">        <span class="nam">make_plot</span> <span class="op">=</span> <span class="key">False</span>&nbsp;</span><span class="r"></span></p>
@@ -721,7 +721,7 @@
             <a id="nextFileLink" class="nav" href="test_epidata_getCommuterMobility_py.html">&#xbb; next</a>
             &nbsp; &nbsp; &nbsp;
             <a class="nav" href="https://coverage.readthedocs.io">coverage.py v6.5.0</a>,
-            created at 2022-10-05 09:55 +0000
+            created at 2022-10-13 12:58 +0000
         </p>
     </div>
 </footer>
