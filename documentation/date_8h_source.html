@@ -71,7 +71,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <a href="date_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/* </span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">* Copyright (C) 2020-2021 German Aerospace Center (DLR-SC)</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">* Copyright (C) 2020-2023 German Aerospace Center (DLR-SC)</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">*</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">* Authors: Daniel Abele, Martin J. Kuehn</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">*</span></div>
@@ -161,7 +161,7 @@ $(function() {
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        obj.add_element(<span class="stringliteral">&quot;Day&quot;</span>, <a class="code" href="structmio_1_1Date.html#ab3925ea9564606bcab110d7da21a8105">day</a>);</div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    }</div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160; </div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">class</span> IOContext&gt;</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">class</span> IOContext&gt;</div>
 <div class="line"><a name="l00123"></a><span class="lineno"><a class="line" href="structmio_1_1Date.html#ae97abb743f5a6a4da51aa43cc08be3e3">  123</a></span>&#160;    <span class="keyword">static</span> <a class="code" href="namespacemio.html#ae556a666d14183eb2bf3a3efc11551ec">IOResult&lt;Date&gt;</a> <a class="code" href="structmio_1_1Date.html#ae97abb743f5a6a4da51aa43cc08be3e3">deserialize</a>(IOContext&amp; io)</div>
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    {</div>
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        <span class="keyword">auto</span> obj = io.expect_object(<span class="stringliteral">&quot;Date&quot;</span>);</div>
@@ -196,134 +196,135 @@ $(function() {
 <div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="namespacemio.html#a23604adfeac7ebc8418d741959e80906">failure</a>(<a class="code" href="namespacemio.html#a2799d348d433018d5b183d75bfbdd699a365b2699d38b61ef4b4c8a1066c8468f">StatusCode::OutOfRange</a>, <span class="stringliteral">&quot;Argument is not a valid date.&quot;</span>);</div>
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;        }</div>
 <div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="namespacemio.html#a80d7fd30c9669e05b537b2caedd82bb8">success</a>(date);</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    } <span class="keywordflow">catch</span> (<span class="keyword">const</span> std::invalid_argument&amp;) {</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="namespacemio.html#a23604adfeac7ebc8418d741959e80906">failure</a>(<a class="code" href="namespacemio.html#a2799d348d433018d5b183d75bfbdd699a223e81e8afa42c41346a6696560ecc7b">StatusCode::InvalidValue</a>, <span class="stringliteral">&quot;Argument ist not a valid date string.&quot;</span>);</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    }</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;}</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160; </div>
-<div class="line"><a name="l00174"></a><span class="lineno"><a class="line" href="namespacemio.html#abebb31121953c36c5b5b42976df8bcad">  174</a></span>&#160;<span class="keyword">inline</span> <a class="code" href="structmio_1_1Date.html">Date</a> <a class="code" href="namespacemio.html#abebb31121953c36c5b5b42976df8bcad">offset_date_by_days</a>(<a class="code" href="structmio_1_1Date.html">Date</a> date, <span class="keywordtype">int</span> offset_days)</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;{</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    <span class="keyword">auto</span> year  = date.<a class="code" href="structmio_1_1Date.html#ab171e645aefa796cc0d4980b5e7b40c8">year</a>;</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    <span class="keyword">auto</span> month = date.<a class="code" href="structmio_1_1Date.html#a431a83d3905d741fb09855a1db90d931">month</a>;</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    <span class="keyword">auto</span> day   = date.<a class="code" href="structmio_1_1Date.html#ab3925ea9564606bcab110d7da21a8105">day</a>;</div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    assert(month &gt; 0 &amp;&amp; month &lt; 13 &amp;&amp; day &gt; 0 &amp;&amp; day &lt; 32);</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160; </div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    std::array&lt;int, 12&gt; month_len;</div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    <span class="keywordflow">if</span> (((year % 4 == 0) &amp;&amp; (year % 100 != 0)) || (year % 400 == 0)) {</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;        <span class="comment">// leap year</span></div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;        month_len = {31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    }</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;        month_len = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    }</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    <span class="keywordflow">if</span> (day + offset_days &gt; 0 &amp;&amp; day + offset_days &lt;= month_len[month - 1]) {</div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;        <span class="keywordflow">return</span> {year, month, day + offset_days};</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    }</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;        std::array&lt;int, 12&gt; part_sum;</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;        std::partial_sum(month_len.begin(), month_len.end(), part_sum.begin());</div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160; </div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;        <span class="keywordtype">int</span> day_in_year = day + offset_days;</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;        <span class="keywordflow">if</span> (month &gt; 1) {</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;            <span class="comment">// take month-2 since end of last month has to be found and due to start at 0 of C++ (against January=1 in date format)</span></div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;            day_in_year += part_sum[month - 2];</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;        }</div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160; </div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;        <span class="keywordflow">if</span> (day_in_year &gt; 0 &amp;&amp; day_in_year &lt;= part_sum[11]) {</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;            <span class="keyword">auto</span> iter = std::find_if(part_sum.begin(), part_sum.end(), [day_in_year](<span class="keyword">auto</span> s) {</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;                return day_in_year &lt;= s;</div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;            });</div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;            <span class="keywordtype">int</span> i     = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(iter - part_sum.begin());</div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;            <span class="keywordflow">return</span> {year, i + 1, day_in_year - (i &gt; 0 ? part_sum[<span class="keyword">static_cast&lt;</span><span class="keywordtype">size_t</span><span class="keyword">&gt;</span>(i - 1)] : 0)};</div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;        }</div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;        <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;            <span class="keywordflow">if</span> (day_in_year &gt; 0) {</div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="namespacemio.html#abebb31121953c36c5b5b42976df8bcad">offset_date_by_days</a>({year + 1, 1, 1}, day_in_year - part_sum[11] - 1);</div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;            }</div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;            <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="namespacemio.html#abebb31121953c36c5b5b42976df8bcad">offset_date_by_days</a>({year - 1, 12, 31}, day_in_year);</div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;            }</div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;        }</div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;    }</div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;}</div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160; </div>
-<div class="line"><a name="l00225"></a><span class="lineno"><a class="line" href="namespacemio.html#af05c44a9a8cdb809f88f9b7f0767ba48">  225</a></span>&#160;<span class="keyword">inline</span> <span class="keywordtype">int</span> <a class="code" href="namespacemio.html#af05c44a9a8cdb809f88f9b7f0767ba48">get_day_in_year</a>(<a class="code" href="structmio_1_1Date.html">Date</a> date)</div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;{</div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;    <span class="keyword">auto</span> year  = date.<a class="code" href="structmio_1_1Date.html#ab171e645aefa796cc0d4980b5e7b40c8">year</a>;</div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;    <span class="keyword">auto</span> month = date.<a class="code" href="structmio_1_1Date.html#a431a83d3905d741fb09855a1db90d931">month</a>;</div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;    <span class="keyword">auto</span> day   = date.<a class="code" href="structmio_1_1Date.html#ab3925ea9564606bcab110d7da21a8105">day</a>;</div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;    assert(month &gt; 0 &amp;&amp; month &lt; 13 &amp;&amp; day &gt; 0 &amp;&amp; day &lt; 32);</div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160; </div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;    <span class="keywordflow">if</span> (month &gt; 1) {</div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;        std::array&lt;int, 12&gt; month_len;</div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;        <span class="keywordflow">if</span> (((year % 4 == 0) &amp;&amp; (year % 100 != 0)) || (year % 400 == 0)) {</div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;            <span class="comment">// leap year</span></div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;            month_len = {31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};</div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;        }</div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;        <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;            month_len = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};</div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;        }</div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160; </div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;        std::array&lt;int, 12&gt; part_sum;</div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;        std::partial_sum(month_len.begin(), month_len.end(), part_sum.begin());</div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160; </div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;        <span class="comment">// take month-2 since end of last month has to be found and due to start at 0 of C++ (against January=1 in date format)</span></div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;        <span class="keywordtype">int</span> day_in_year = part_sum[month - 2] + day;</div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160; </div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;        <span class="keywordflow">return</span> day_in_year;</div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;    }</div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;    <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;        <span class="keywordflow">return</span> day;</div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;    }</div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;}</div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160; </div>
-<div class="line"><a name="l00261"></a><span class="lineno"><a class="line" href="namespacemio.html#a836ec51b48f63ad6dca0724e9f5b28d8">  261</a></span>&#160;<span class="keyword">inline</span> <span class="keywordtype">int</span> <a class="code" href="namespacemio.html#a836ec51b48f63ad6dca0724e9f5b28d8">get_offset_in_days</a>(<a class="code" href="structmio_1_1Date.html">Date</a> date1, <a class="code" href="structmio_1_1Date.html">Date</a> date2)</div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;{</div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;    <span class="keyword">auto</span> year1  = date1.<a class="code" href="structmio_1_1Date.html#ab171e645aefa796cc0d4980b5e7b40c8">year</a>;</div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;    <span class="keyword">auto</span> month1 = date1.<a class="code" href="structmio_1_1Date.html#a431a83d3905d741fb09855a1db90d931">month</a>;</div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;    <span class="keyword">auto</span> day1   = date1.<a class="code" href="structmio_1_1Date.html#ab3925ea9564606bcab110d7da21a8105">day</a>;</div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160; </div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;    <span class="keyword">auto</span> year2  = date2.<a class="code" href="structmio_1_1Date.html#ab171e645aefa796cc0d4980b5e7b40c8">year</a>;</div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;    <span class="keyword">auto</span> month2 = date2.<a class="code" href="structmio_1_1Date.html#a431a83d3905d741fb09855a1db90d931">month</a>;</div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;    <span class="keyword">auto</span> day2   = date2.<a class="code" href="structmio_1_1Date.html#ab3925ea9564606bcab110d7da21a8105">day</a>;</div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160; </div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;    <span class="keywordflow">if</span> (year1 == year2 &amp;&amp; month1 == month2) {</div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;        <span class="keywordflow">return</span> day1 - day2;</div>
-<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;    }</div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;    <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;        <span class="keywordtype">int</span> day_in_year1 = <a class="code" href="namespacemio.html#af05c44a9a8cdb809f88f9b7f0767ba48">get_day_in_year</a>(date1);</div>
-<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;        <span class="keywordtype">int</span> day_in_year2 = <a class="code" href="namespacemio.html#af05c44a9a8cdb809f88f9b7f0767ba48">get_day_in_year</a>(date2);</div>
-<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160; </div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;        <span class="keywordflow">if</span> (year1 &lt; year2) {</div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;            <span class="keywordtype">int</span> sum_days = 0;</div>
-<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = year1; i &lt; year2; i++) {</div>
-<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;                sum_days += 365;</div>
-<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;                <span class="keywordflow">if</span> (((i % 4 == 0) &amp;&amp; (i % 100 != 0)) || (i % 400 == 0)) {</div>
-<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;                    sum_days += 1;</div>
-<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;                }</div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;            }</div>
-<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;            <span class="keywordflow">return</span> -(sum_days - day_in_year1) - day_in_year2;</div>
-<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;        }</div>
-<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (year1 &gt; year2) {</div>
-<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;            <span class="keywordtype">int</span> sum_days = 0;</div>
-<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = year2; i &lt; year1; i++) {</div>
-<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;                sum_days += 365;</div>
-<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;                <span class="keywordflow">if</span> (((i % 4 == 0) &amp;&amp; (i % 100 != 0)) || (i % 400 == 0)) {</div>
-<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;                    sum_days += 1;</div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;                }</div>
-<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;            }</div>
-<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;            <span class="keywordflow">return</span> day_in_year1 + sum_days - day_in_year2;</div>
-<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;        }</div>
-<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;        <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160; </div>
-<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;            <span class="keywordflow">return</span> day_in_year1 - day_in_year2;</div>
-<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;        }</div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;    }</div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;}</div>
-<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160; </div>
-<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;} <span class="comment">// end namespace mio</span></div>
-<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160; </div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;<span class="preprocessor">#endif // EPI_UTILS_DATE_H</span></div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    }</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    <span class="keywordflow">catch</span> (<span class="keyword">const</span> std::invalid_argument&amp;) {</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="namespacemio.html#a23604adfeac7ebc8418d741959e80906">failure</a>(<a class="code" href="namespacemio.html#a2799d348d433018d5b183d75bfbdd699a223e81e8afa42c41346a6696560ecc7b">StatusCode::InvalidValue</a>, <span class="stringliteral">&quot;Argument ist not a valid date string.&quot;</span>);</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    }</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;}</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160; </div>
+<div class="line"><a name="l00175"></a><span class="lineno"><a class="line" href="namespacemio.html#abebb31121953c36c5b5b42976df8bcad">  175</a></span>&#160;<span class="keyword">inline</span> <a class="code" href="structmio_1_1Date.html">Date</a> <a class="code" href="namespacemio.html#abebb31121953c36c5b5b42976df8bcad">offset_date_by_days</a>(<a class="code" href="structmio_1_1Date.html">Date</a> date, <span class="keywordtype">int</span> offset_days)</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;{</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    <span class="keyword">auto</span> year  = date.<a class="code" href="structmio_1_1Date.html#ab171e645aefa796cc0d4980b5e7b40c8">year</a>;</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    <span class="keyword">auto</span> month = date.<a class="code" href="structmio_1_1Date.html#a431a83d3905d741fb09855a1db90d931">month</a>;</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    <span class="keyword">auto</span> day   = date.<a class="code" href="structmio_1_1Date.html#ab3925ea9564606bcab110d7da21a8105">day</a>;</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    assert(month &gt; 0 &amp;&amp; month &lt; 13 &amp;&amp; day &gt; 0 &amp;&amp; day &lt; 32);</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160; </div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    std::array&lt;int, 12&gt; month_len;</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    <span class="keywordflow">if</span> (((year % 4 == 0) &amp;&amp; (year % 100 != 0)) || (year % 400 == 0)) {</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;        <span class="comment">// leap year</span></div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;        month_len = {31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    }</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;        month_len = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    }</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    <span class="keywordflow">if</span> (day + offset_days &gt; 0 &amp;&amp; day + offset_days &lt;= month_len[month - 1]) {</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;        <span class="keywordflow">return</span> {year, month, day + offset_days};</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    }</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;        std::array&lt;int, 12&gt; part_sum;</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;        std::partial_sum(month_len.begin(), month_len.end(), part_sum.begin());</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160; </div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;        <span class="keywordtype">int</span> day_in_year = day + offset_days;</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;        <span class="keywordflow">if</span> (month &gt; 1) {</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;            <span class="comment">// take month-2 since end of last month has to be found and due to start at 0 of C++ (against January=1 in date format)</span></div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;            day_in_year += part_sum[month - 2];</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;        }</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160; </div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;        <span class="keywordflow">if</span> (day_in_year &gt; 0 &amp;&amp; day_in_year &lt;= part_sum[11]) {</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;            <span class="keyword">auto</span> iter = std::find_if(part_sum.begin(), part_sum.end(), [day_in_year](<span class="keyword">auto</span> s) {</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;                return day_in_year &lt;= s;</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;            });</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;            <span class="keywordtype">int</span> i     = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(iter - part_sum.begin());</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;            <span class="keywordflow">return</span> {year, i + 1, day_in_year - (i &gt; 0 ? part_sum[<span class="keyword">static_cast&lt;</span><span class="keywordtype">size_t</span><span class="keyword">&gt;</span>(i - 1)] : 0)};</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;        }</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;        <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;            <span class="keywordflow">if</span> (day_in_year &gt; 0) {</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="namespacemio.html#abebb31121953c36c5b5b42976df8bcad">offset_date_by_days</a>({year + 1, 1, 1}, day_in_year - part_sum[11] - 1);</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;            }</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;            <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="namespacemio.html#abebb31121953c36c5b5b42976df8bcad">offset_date_by_days</a>({year - 1, 12, 31}, day_in_year);</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;            }</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;        }</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;    }</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;}</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160; </div>
+<div class="line"><a name="l00226"></a><span class="lineno"><a class="line" href="namespacemio.html#af05c44a9a8cdb809f88f9b7f0767ba48">  226</a></span>&#160;<span class="keyword">inline</span> <span class="keywordtype">int</span> <a class="code" href="namespacemio.html#af05c44a9a8cdb809f88f9b7f0767ba48">get_day_in_year</a>(<a class="code" href="structmio_1_1Date.html">Date</a> date)</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;{</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;    <span class="keyword">auto</span> year  = date.<a class="code" href="structmio_1_1Date.html#ab171e645aefa796cc0d4980b5e7b40c8">year</a>;</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;    <span class="keyword">auto</span> month = date.<a class="code" href="structmio_1_1Date.html#a431a83d3905d741fb09855a1db90d931">month</a>;</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;    <span class="keyword">auto</span> day   = date.<a class="code" href="structmio_1_1Date.html#ab3925ea9564606bcab110d7da21a8105">day</a>;</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;    assert(month &gt; 0 &amp;&amp; month &lt; 13 &amp;&amp; day &gt; 0 &amp;&amp; day &lt; 32);</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160; </div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;    <span class="keywordflow">if</span> (month &gt; 1) {</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;        std::array&lt;int, 12&gt; month_len;</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;        <span class="keywordflow">if</span> (((year % 4 == 0) &amp;&amp; (year % 100 != 0)) || (year % 400 == 0)) {</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;            <span class="comment">// leap year</span></div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;            month_len = {31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;        }</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;        <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;            month_len = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;        }</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160; </div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;        std::array&lt;int, 12&gt; part_sum;</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;        std::partial_sum(month_len.begin(), month_len.end(), part_sum.begin());</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160; </div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;        <span class="comment">// take month-2 since end of last month has to be found and due to start at 0 of C++ (against January=1 in date format)</span></div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;        <span class="keywordtype">int</span> day_in_year = part_sum[month - 2] + day;</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160; </div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;        <span class="keywordflow">return</span> day_in_year;</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;    }</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;    <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;        <span class="keywordflow">return</span> day;</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;    }</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;}</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160; </div>
+<div class="line"><a name="l00262"></a><span class="lineno"><a class="line" href="namespacemio.html#a836ec51b48f63ad6dca0724e9f5b28d8">  262</a></span>&#160;<span class="keyword">inline</span> <span class="keywordtype">int</span> <a class="code" href="namespacemio.html#a836ec51b48f63ad6dca0724e9f5b28d8">get_offset_in_days</a>(<a class="code" href="structmio_1_1Date.html">Date</a> date1, <a class="code" href="structmio_1_1Date.html">Date</a> date2)</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;{</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;    <span class="keyword">auto</span> year1  = date1.<a class="code" href="structmio_1_1Date.html#ab171e645aefa796cc0d4980b5e7b40c8">year</a>;</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;    <span class="keyword">auto</span> month1 = date1.<a class="code" href="structmio_1_1Date.html#a431a83d3905d741fb09855a1db90d931">month</a>;</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;    <span class="keyword">auto</span> day1   = date1.<a class="code" href="structmio_1_1Date.html#ab3925ea9564606bcab110d7da21a8105">day</a>;</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160; </div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;    <span class="keyword">auto</span> year2  = date2.<a class="code" href="structmio_1_1Date.html#ab171e645aefa796cc0d4980b5e7b40c8">year</a>;</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;    <span class="keyword">auto</span> month2 = date2.<a class="code" href="structmio_1_1Date.html#a431a83d3905d741fb09855a1db90d931">month</a>;</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;    <span class="keyword">auto</span> day2   = date2.<a class="code" href="structmio_1_1Date.html#ab3925ea9564606bcab110d7da21a8105">day</a>;</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160; </div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;    <span class="keywordflow">if</span> (year1 == year2 &amp;&amp; month1 == month2) {</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;        <span class="keywordflow">return</span> day1 - day2;</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;    }</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;    <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;        <span class="keywordtype">int</span> day_in_year1 = <a class="code" href="namespacemio.html#af05c44a9a8cdb809f88f9b7f0767ba48">get_day_in_year</a>(date1);</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;        <span class="keywordtype">int</span> day_in_year2 = <a class="code" href="namespacemio.html#af05c44a9a8cdb809f88f9b7f0767ba48">get_day_in_year</a>(date2);</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160; </div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;        <span class="keywordflow">if</span> (year1 &lt; year2) {</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;            <span class="keywordtype">int</span> sum_days = 0;</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = year1; i &lt; year2; i++) {</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;                sum_days += 365;</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;                <span class="keywordflow">if</span> (((i % 4 == 0) &amp;&amp; (i % 100 != 0)) || (i % 400 == 0)) {</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;                    sum_days += 1;</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;                }</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;            }</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;            <span class="keywordflow">return</span> -(sum_days - day_in_year1) - day_in_year2;</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;        }</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (year1 &gt; year2) {</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;            <span class="keywordtype">int</span> sum_days = 0;</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = year2; i &lt; year1; i++) {</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;                sum_days += 365;</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;                <span class="keywordflow">if</span> (((i % 4 == 0) &amp;&amp; (i % 100 != 0)) || (i % 400 == 0)) {</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;                    sum_days += 1;</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;                }</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;            }</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;            <span class="keywordflow">return</span> day_in_year1 + sum_days - day_in_year2;</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;        }</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;        <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160; </div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;            <span class="keywordflow">return</span> day_in_year1 - day_in_year2;</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;        }</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;    }</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;}</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160; </div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;} <span class="comment">// end namespace mio</span></div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160; </div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;<span class="preprocessor">#endif // EPI_UTILS_DATE_H</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="anamespacemio_html_a8630d8af93b95cc04f1f60ec774a425b"><div class="ttname"><a href="namespacemio.html#a8630d8af93b95cc04f1f60ec774a425b">mio::parse_date</a></div><div class="ttdeci">IOResult&lt; Date &gt; parse_date(const std::string &amp;date_str)</div><div class="ttdoc">parses a date from a string.</div><div class="ttdef"><b>Definition:</b> date.h:152</div></div>
 <div class="ttc" id="astructmio_1_1Date_html_a118a61655f5940971dca329890e0593e"><div class="ttname"><a href="structmio_1_1Date.html#a118a61655f5940971dca329890e0593e">mio::Date::operator&lt;=</a></div><div class="ttdeci">bool operator&lt;=(const Date &amp;other) const</div><div class="ttdef"><b>Definition:</b> date.h:83</div></div>
@@ -336,22 +337,22 @@ $(function() {
 <div class="ttc" id="astructmio_1_1Date_html_ab3925ea9564606bcab110d7da21a8105"><div class="ttname"><a href="structmio_1_1Date.html#ab3925ea9564606bcab110d7da21a8105">mio::Date::day</a></div><div class="ttdeci">int day</div><div class="ttdef"><b>Definition:</b> date.h:143</div></div>
 <div class="ttc" id="astructmio_1_1Date_html_a27b29dabb2aad7b3ff4e0a1fcd9a4a79"><div class="ttname"><a href="structmio_1_1Date.html#a27b29dabb2aad7b3ff4e0a1fcd9a4a79">mio::Date::PrintTo</a></div><div class="ttdeci">friend void PrintTo(const Date &amp;self, std::ostream *os)</div><div class="ttdoc">gtest printer.</div><div class="ttdef"><b>Definition:</b> date.h:100</div></div>
 <div class="ttc" id="astructmio_1_1Date_html_a272057e86b489646b6e8c907b048daa7"><div class="ttname"><a href="structmio_1_1Date.html#a272057e86b489646b6e8c907b048daa7">mio::Date::operator&gt;=</a></div><div class="ttdeci">bool operator&gt;=(const Date &amp;other) const</div><div class="ttdef"><b>Definition:</b> date.h:91</div></div>
-<div class="ttc" id="anamespacemio_html_abebb31121953c36c5b5b42976df8bcad"><div class="ttname"><a href="namespacemio.html#abebb31121953c36c5b5b42976df8bcad">mio::offset_date_by_days</a></div><div class="ttdeci">Date offset_date_by_days(Date date, int offset_days)</div><div class="ttdoc">Computes the new date corresponding to a given date and a offset in days.</div><div class="ttdef"><b>Definition:</b> date.h:174</div></div>
+<div class="ttc" id="anamespacemio_html_abebb31121953c36c5b5b42976df8bcad"><div class="ttname"><a href="namespacemio.html#abebb31121953c36c5b5b42976df8bcad">mio::offset_date_by_days</a></div><div class="ttdeci">Date offset_date_by_days(Date date, int offset_days)</div><div class="ttdoc">Computes the new date corresponding to a given date and a offset in days.</div><div class="ttdef"><b>Definition:</b> date.h:175</div></div>
 <div class="ttc" id="astructmio_1_1Date_html_ab171e645aefa796cc0d4980b5e7b40c8"><div class="ttname"><a href="structmio_1_1Date.html#ab171e645aefa796cc0d4980b5e7b40c8">mio::Date::year</a></div><div class="ttdeci">int year</div><div class="ttdef"><b>Definition:</b> date.h:141</div></div>
 <div class="ttc" id="astructmio_1_1Date_html_a431a83d3905d741fb09855a1db90d931"><div class="ttname"><a href="structmio_1_1Date.html#a431a83d3905d741fb09855a1db90d931">mio::Date::month</a></div><div class="ttdeci">int month</div><div class="ttdef"><b>Definition:</b> date.h:142</div></div>
 <div class="ttc" id="anamespacemio_html_a2799d348d433018d5b183d75bfbdd699a365b2699d38b61ef4b4c8a1066c8468f"><div class="ttname"><a href="namespacemio.html#a2799d348d433018d5b183d75bfbdd699a365b2699d38b61ef4b4c8a1066c8468f">mio::StatusCode::OutOfRange</a></div><div class="ttdeci">@ OutOfRange</div></div>
-<div class="ttc" id="anamespacemio_html_af05c44a9a8cdb809f88f9b7f0767ba48"><div class="ttname"><a href="namespacemio.html#af05c44a9a8cdb809f88f9b7f0767ba48">mio::get_day_in_year</a></div><div class="ttdeci">int get_day_in_year(Date date)</div><div class="ttdoc">Computes the day in year based on a given date.</div><div class="ttdef"><b>Definition:</b> date.h:225</div></div>
+<div class="ttc" id="anamespacemio_html_af05c44a9a8cdb809f88f9b7f0767ba48"><div class="ttname"><a href="namespacemio.html#af05c44a9a8cdb809f88f9b7f0767ba48">mio::get_day_in_year</a></div><div class="ttdeci">int get_day_in_year(Date date)</div><div class="ttdoc">Computes the day in year based on a given date.</div><div class="ttdef"><b>Definition:</b> date.h:226</div></div>
 <div class="ttc" id="anamespacemio_html_a2799d348d433018d5b183d75bfbdd699a223e81e8afa42c41346a6696560ecc7b"><div class="ttname"><a href="namespacemio.html#a2799d348d433018d5b183d75bfbdd699a223e81e8afa42c41346a6696560ecc7b">mio::StatusCode::InvalidValue</a></div><div class="ttdeci">@ InvalidValue</div></div>
 <div class="ttc" id="anamespacemio_html_ae556a666d14183eb2bf3a3efc11551ec"><div class="ttname"><a href="namespacemio.html#ae556a666d14183eb2bf3a3efc11551ec">mio::IOResult</a></div><div class="ttdeci">boost::outcome_v2::unchecked&lt; T, IOStatus &gt; IOResult</div><div class="ttdoc">Value-or-error type for operations that return a value but can fail.</div><div class="ttdef"><b>Definition:</b> io.h:340</div></div>
 <div class="ttc" id="astructmio_1_1Date_html_abf915509ec00c89efa6ebd435fcb3e40"><div class="ttname"><a href="structmio_1_1Date.html#abf915509ec00c89efa6ebd435fcb3e40">mio::Date::Date</a></div><div class="ttdeci">Date()=default</div><div class="ttdoc">default constructor.</div></div>
-<div class="ttc" id="anamespacemio_html_a836ec51b48f63ad6dca0724e9f5b28d8"><div class="ttname"><a href="namespacemio.html#a836ec51b48f63ad6dca0724e9f5b28d8">mio::get_offset_in_days</a></div><div class="ttdeci">int get_offset_in_days(Date date1, Date date2)</div><div class="ttdoc">Computes the offset in days given two dates: first date minus second date.</div><div class="ttdef"><b>Definition:</b> date.h:261</div></div>
+<div class="ttc" id="anamespacemio_html_a836ec51b48f63ad6dca0724e9f5b28d8"><div class="ttname"><a href="namespacemio.html#a836ec51b48f63ad6dca0724e9f5b28d8">mio::get_offset_in_days</a></div><div class="ttdeci">int get_offset_in_days(Date date1, Date date2)</div><div class="ttdoc">Computes the offset in days given two dates: first date minus second date.</div><div class="ttdef"><b>Definition:</b> date.h:262</div></div>
 <div class="ttc" id="astructmio_1_1Date_html_ae97abb743f5a6a4da51aa43cc08be3e3"><div class="ttname"><a href="structmio_1_1Date.html#ae97abb743f5a6a4da51aa43cc08be3e3">mio::Date::deserialize</a></div><div class="ttdeci">static IOResult&lt; Date &gt; deserialize(IOContext &amp;io)</div><div class="ttdoc">deserialize an object of this class.</div><div class="ttdef"><b>Definition:</b> date.h:123</div></div>
 <div class="ttc" id="aio_8h_html"><div class="ttname"><a href="io_8h.html">io.h</a></div></div>
 <div class="ttc" id="astructmio_1_1Date_html"><div class="ttname"><a href="structmio_1_1Date.html">mio::Date</a></div><div class="ttdoc">Simple date representation as year, month, and day.</div><div class="ttdef"><b>Definition:</b> date.h:39</div></div>
 <div class="ttc" id="anamespacemio_html_a3cd34c233549e8b0e086c67fd82809d3"><div class="ttname"><a href="namespacemio.html#a3cd34c233549e8b0e086c67fd82809d3">mio::apply</a></div><div class="ttdeci">details::ApplyResultT&lt; F, T... &gt; apply(IOContext &amp;io, F f, const IOResult&lt; T &gt; &amp;... rs)</div><div class="ttdoc">Evaluate a function with zero or more unpacked IOResults as arguments.</div><div class="ttdef"><b>Definition:</b> io.h:466</div></div>
 <div class="ttc" id="anamespacemio_html_a80d7fd30c9669e05b537b2caedd82bb8"><div class="ttname"><a href="namespacemio.html#a80d7fd30c9669e05b537b2caedd82bb8">mio::success</a></div><div class="ttdeci">auto success()</div><div class="ttdoc">Create an object that is implicitly convertible to a succesful IOResult&lt;void&gt;.</div><div class="ttdef"><b>Definition:</b> io.h:346</div></div>
 <div class="ttc" id="anamespacemio_html_a2f858e287c3935240954cf75cf53cfeb"><div class="ttname"><a href="namespacemio.html#a2f858e287c3935240954cf75cf53cfeb">mio::Tag</a></div><div class="ttdeci">boost::outcome_v2::in_place_type_t&lt; T &gt; Tag</div><div class="ttdoc">Type that is used for overload resolution.</div><div class="ttdef"><b>Definition:</b> io.h:394</div></div>
-<div class="ttc" id="anamespacemio_html"><div class="ttname"><a href="namespacemio.html">mio</a></div><div class="ttdoc">A collection of classes to simplify handling of matrix shapes in meta programming.</div><div class="ttdef"><b>Definition:</b> compartmentalmodel.h:32</div></div>
+<div class="ttc" id="anamespacemio_html"><div class="ttname"><a href="namespacemio.html">mio</a></div><div class="ttdoc">A collection of classes to simplify handling of matrix shapes in meta programming.</div><div class="ttdef"><b>Definition:</b> compartmentalmodel.h:31</div></div>
 <div class="ttc" id="astructmio_1_1Date_html_a72c650cee0b17242e561c8da43dd37c3"><div class="ttname"><a href="structmio_1_1Date.html#a72c650cee0b17242e561c8da43dd37c3">mio::Date::serialize</a></div><div class="ttdeci">void serialize(IOContext &amp;io) const</div><div class="ttdoc">serialize this.</div><div class="ttdef"><b>Definition:</b> date.h:110</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

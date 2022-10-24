@@ -71,7 +71,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <a href="ode__seir_2infection__state_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/* </span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">* Copyright (C) 2020-2021 German Aerospace Center (DLR-SC)</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">* Copyright (C) 2020-2023 German Aerospace Center (DLR-SC)</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">*</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">* Authors: Daniel Abele, Jan Kleinert, Martin J. Kuehn</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">*</span></div>
@@ -97,14 +97,14 @@ $(function() {
 <div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="namespacemio_1_1oseir.html">   25</a></span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceoseir.html">oseir</a></div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;{</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="namespacemio_1_1oseir.html#a32ea4a2481cf5935d5124ffb43636e44">   32</a></span>&#160;    <span class="keyword">enum class</span> <a class="code" href="namespacemio_1_1oseir.html#a32ea4a2481cf5935d5124ffb43636e44">InfectionState</a></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    {</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <a class="code" href="namespacemio_1_1oseir.html#a32ea4a2481cf5935d5124ffb43636e44a494bf3eaa390dc405dd04ed1c8c99311">Susceptible</a>,</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <a class="code" href="namespacemio_1_1oseir.html#a32ea4a2481cf5935d5124ffb43636e44aa54eecd5041d37f5c8443e0ee91e241a">Exposed</a>,</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <a class="code" href="namespacemio_1_1oseir.html#a32ea4a2481cf5935d5124ffb43636e44ae11a453510398112e5dba69d300da48b">Infected</a>,</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <a class="code" href="namespacemio_1_1oseir.html#a32ea4a2481cf5935d5124ffb43636e44a5c4c4cf7bbab0d76fe61420aee14a5ca">Recovered</a>,</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <a class="code" href="namespacemio_1_1oseir.html#a32ea4a2481cf5935d5124ffb43636e44ae93f994f01c537c4e2f7d8528c3eb5e9">Count</a></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    };</div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="namespacemio_1_1oseir.html#a32ea4a2481cf5935d5124ffb43636e44">   32</a></span>&#160;<span class="keyword">enum class</span> <a class="code" href="namespacemio_1_1oseir.html#a32ea4a2481cf5935d5124ffb43636e44">InfectionState</a></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;{</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <a class="code" href="namespacemio_1_1oseir.html#a32ea4a2481cf5935d5124ffb43636e44a494bf3eaa390dc405dd04ed1c8c99311">Susceptible</a>,</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <a class="code" href="namespacemio_1_1oseir.html#a32ea4a2481cf5935d5124ffb43636e44aa54eecd5041d37f5c8443e0ee91e241a">Exposed</a>,</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <a class="code" href="namespacemio_1_1oseir.html#a32ea4a2481cf5935d5124ffb43636e44ae11a453510398112e5dba69d300da48b">Infected</a>,</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <a class="code" href="namespacemio_1_1oseir.html#a32ea4a2481cf5935d5124ffb43636e44a5c4c4cf7bbab0d76fe61420aee14a5ca">Recovered</a>,</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <a class="code" href="namespacemio_1_1oseir.html#a32ea4a2481cf5935d5124ffb43636e44ae93f994f01c537c4e2f7d8528c3eb5e9">Count</a></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;};</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;} <span class="comment">// namespace oseir</span></div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;} <span class="comment">// namespace mio</span></div>
@@ -118,7 +118,7 @@ $(function() {
 <div class="ttc" id="anamespacemio_1_1oseir_html_a32ea4a2481cf5935d5124ffb43636e44a5c4c4cf7bbab0d76fe61420aee14a5ca"><div class="ttname"><a href="namespacemio_1_1oseir.html#a32ea4a2481cf5935d5124ffb43636e44a5c4c4cf7bbab0d76fe61420aee14a5ca">mio::oseir::InfectionState::Recovered</a></div><div class="ttdeci">@ Recovered</div></div>
 <div class="ttc" id="anamespacemio_1_1oseir_html_a32ea4a2481cf5935d5124ffb43636e44"><div class="ttname"><a href="namespacemio_1_1oseir.html#a32ea4a2481cf5935d5124ffb43636e44">mio::oseir::InfectionState</a></div><div class="ttdeci">InfectionState</div><div class="ttdoc">The InfectionState enum describes the possible categories for the infectious state of persons.</div><div class="ttdef"><b>Definition:</b> infection_state.h:32</div></div>
 <div class="ttc" id="anamespacemio_1_1oseir_html_a32ea4a2481cf5935d5124ffb43636e44a494bf3eaa390dc405dd04ed1c8c99311"><div class="ttname"><a href="namespacemio_1_1oseir.html#a32ea4a2481cf5935d5124ffb43636e44a494bf3eaa390dc405dd04ed1c8c99311">mio::oseir::InfectionState::Susceptible</a></div><div class="ttdeci">@ Susceptible</div></div>
-<div class="ttc" id="anamespacemio_html"><div class="ttname"><a href="namespacemio.html">mio</a></div><div class="ttdoc">A collection of classes to simplify handling of matrix shapes in meta programming.</div><div class="ttdef"><b>Definition:</b> compartmentalmodel.h:32</div></div>
+<div class="ttc" id="anamespacemio_html"><div class="ttname"><a href="namespacemio.html">mio</a></div><div class="ttdoc">A collection of classes to simplify handling of matrix shapes in meta programming.</div><div class="ttdef"><b>Definition:</b> compartmentalmodel.h:31</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

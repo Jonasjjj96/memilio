@@ -71,7 +71,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <a href="smoother_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/* </span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">* Copyright (C) 2020-2021 German Aerospace Center (DLR-SC)</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">* Copyright (C) 2020-2023 German Aerospace Center (DLR-SC)</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">*</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">* Authors: Martin J. Kuehn, Daniel Abele</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">*</span></div>
@@ -112,20 +112,21 @@ $(function() {
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;}</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> LeftExpr, <span class="keyword">class</span> RightExpr&gt;</div>
-<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="namespacemio.html#a73ea68c2bc0b216f8ffeb9c5a53ea49a">   66</a></span>&#160;<span class="keyword">auto</span> <a class="code" href="namespacemio.html#a472d6437e9b34e277b8ccc551b0630b8">smoother_cosine</a>(<span class="keywordtype">double</span> x, <span class="keywordtype">double</span> xleft, <span class="keywordtype">double</span> xright, <span class="keyword">const</span> Eigen::MatrixBase&lt;LeftExpr&gt;&amp; yleft_expr, <span class="keyword">const</span> Eigen::MatrixBase&lt;RightExpr&gt;&amp; yright_expr)</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;{</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordflow">return</span> yleft_expr.binaryExpr(yright_expr, [=](<span class="keyword">auto</span> yleft, <span class="keyword">auto</span> yright) {</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="namespacemio.html#a472d6437e9b34e277b8ccc551b0630b8">smoother_cosine</a>(x, xleft, xright, yleft, yright);</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    });</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;}</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;} <span class="comment">// namespace mio</span></div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="preprocessor">#endif //EPI_MATH_SMOOTHER_H</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="namespacemio.html#a73ea68c2bc0b216f8ffeb9c5a53ea49a">   66</a></span>&#160;<span class="keyword">auto</span> <a class="code" href="namespacemio.html#a472d6437e9b34e277b8ccc551b0630b8">smoother_cosine</a>(<span class="keywordtype">double</span> x, <span class="keywordtype">double</span> xleft, <span class="keywordtype">double</span> xright, <span class="keyword">const</span> Eigen::MatrixBase&lt;LeftExpr&gt;&amp; yleft_expr,</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                     <span class="keyword">const</span> Eigen::MatrixBase&lt;RightExpr&gt;&amp; yright_expr)</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;{</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordflow">return</span> yleft_expr.binaryExpr(yright_expr, [=](<span class="keyword">auto</span> yleft, <span class="keyword">auto</span> yright) {</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="namespacemio.html#a472d6437e9b34e277b8ccc551b0630b8">smoother_cosine</a>(x, xleft, xright, yleft, yright);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    });</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;}</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;} <span class="comment">// namespace mio</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="preprocessor">#endif //EPI_MATH_SMOOTHER_H</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="aeigen_8h_html"><div class="ttname"><a href="eigen_8h.html">eigen.h</a></div></div>
 <div class="ttc" id="anamespacemio_html_a472d6437e9b34e277b8ccc551b0630b8"><div class="ttname"><a href="namespacemio.html#a472d6437e9b34e277b8ccc551b0630b8">mio::smoother_cosine</a></div><div class="ttdeci">double smoother_cosine(double x, double xleft, double xright, double yleft, double yright)</div><div class="ttdoc">Returns the smoothed evaluation of a discrete jump of function values   yleft and yright on xleft and...</div><div class="ttdef"><b>Definition:</b> smoother.h:43</div></div>
-<div class="ttc" id="anamespacemio_html"><div class="ttname"><a href="namespacemio.html">mio</a></div><div class="ttdoc">A collection of classes to simplify handling of matrix shapes in meta programming.</div><div class="ttdef"><b>Definition:</b> compartmentalmodel.h:32</div></div>
+<div class="ttc" id="anamespacemio_html"><div class="ttname"><a href="namespacemio.html">mio</a></div><div class="ttdoc">A collection of classes to simplify handling of matrix shapes in meta programming.</div><div class="ttdef"><b>Definition:</b> compartmentalmodel.h:31</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

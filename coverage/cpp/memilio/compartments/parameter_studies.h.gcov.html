@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2022-10-13 13:53:50</td>
+            <td class="headerValue">2022-10-24 15:44:59</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">11</td>
@@ -61,7 +61,7 @@
 <pre class="sourceHeading">          Line data    Source code</pre>
 <pre class="source">
 <a name="1"><span class="lineNum">       1 </span>            : /* </a>
-<a name="2"><span class="lineNum">       2 </span>            : * Copyright (C) 2020-2021 German Aerospace Center (DLR-SC)</a>
+<a name="2"><span class="lineNum">       2 </span>            : * Copyright (C) 2020-2023 German Aerospace Center (DLR-SC)</a>
 <a name="3"><span class="lineNum">       3 </span>            : *</a>
 <a name="4"><span class="lineNum">       4 </span>            : * Authors: Daniel Abele, Martin J. Kuehn</a>
 <a name="5"><span class="lineNum">       5 </span>            : *</a>
@@ -110,8 +110,8 @@
 <a name="48"><span class="lineNum">      48 </span>            :      * @param graph_sim_dt time step of graph simulation</a>
 <a name="49"><span class="lineNum">      49 </span>            :      * @param num_runs number of runs</a>
 <a name="50"><span class="lineNum">      50 </span>            :      */</a>
-<a name="51"><span class="lineNum">      51 </span><span class="lineCov">          1 :     ParameterStudy(const mio::Graph&lt;typename Simulation::Model, mio::MigrationParameters&gt;&amp; graph, double t0, double tmax, double graph_sim_dt,</span></a>
-<a name="52"><span class="lineNum">      52 </span>            :                    size_t num_runs)</a>
+<a name="51"><span class="lineNum">      51 </span><span class="lineCov">          1 :     ParameterStudy(const mio::Graph&lt;typename Simulation::Model, mio::MigrationParameters&gt;&amp; graph, double t0,</span></a>
+<a name="52"><span class="lineNum">      52 </span>            :                    double tmax, double graph_sim_dt, size_t num_runs)</a>
 <a name="53"><span class="lineNum">      53 </span>            :         : m_graph(graph)</a>
 <a name="54"><span class="lineNum">      54 </span>            :         , m_num_runs(num_runs)</a>
 <a name="55"><span class="lineNum">      55 </span>            :         , m_t0{t0}</a>
@@ -120,8 +120,8 @@
 <a name="58"><span class="lineNum">      58 </span>            :     {</a>
 <a name="59"><span class="lineNum">      59 </span><span class="lineCov">          1 :     }</span></a>
 <a name="60"><span class="lineNum">      60 </span>            : </a>
-<a name="61"><span class="lineNum">      61 </span>            :     ParameterStudy(const mio::Graph&lt;typename Simulation::Model, mio::MigrationParameters&gt;&amp; graph, double t0, double tmax,</a>
-<a name="62"><span class="lineNum">      62 </span>            :                    double dev_rel, double graph_sim_dt, size_t num_runs)</a>
+<a name="61"><span class="lineNum">      61 </span>            :     ParameterStudy(const mio::Graph&lt;typename Simulation::Model, mio::MigrationParameters&gt;&amp; graph, double t0,</a>
+<a name="62"><span class="lineNum">      62 </span>            :                    double tmax, double dev_rel, double graph_sim_dt, size_t num_runs)</a>
 <a name="63"><span class="lineNum">      63 </span>            :         : m_graph(graph)</a>
 <a name="64"><span class="lineNum">      64 </span>            :         , m_num_runs(num_runs)</a>
 <a name="65"><span class="lineNum">      65 </span>            :         , m_t0{t0}</a>
@@ -237,7 +237,7 @@
 <a name="175"><span class="lineNum">     175 </span>            :      * Get the input model that the parameter study is run for.</a>
 <a name="176"><span class="lineNum">     176 </span>            :      * Use for single node simulations, use get_secir_model_graph for graph simulations.</a>
 <a name="177"><span class="lineNum">     177 </span>            :      * @{</a>
-<a name="178"><span class="lineNum">     178 </span>            :      */ </a>
+<a name="178"><span class="lineNum">     178 </span>            :      */</a>
 <a name="179"><span class="lineNum">     179 </span>            :     const typename Simulation::Model&amp; get_model() const</a>
 <a name="180"><span class="lineNum">     180 </span>            :     {</a>
 <a name="181"><span class="lineNum">     181 </span>            :         return m_graph.nodes()[0].property;</a>
@@ -252,7 +252,7 @@
 <a name="190"><span class="lineNum">     190 </span>            :      * Get the input graph that the parameter study is run for.</a>
 <a name="191"><span class="lineNum">     191 </span>            :      * Use for graph simulations, use get_model for single node simulations.</a>
 <a name="192"><span class="lineNum">     192 </span>            :      * @{</a>
-<a name="193"><span class="lineNum">     193 </span>            :      */ </a>
+<a name="193"><span class="lineNum">     193 </span>            :      */</a>
 <a name="194"><span class="lineNum">     194 </span>            :     const Graph&lt;typename Simulation::Model, MigrationParameters&gt;&amp; get_secir_model_graph() const</a>
 <a name="195"><span class="lineNum">     195 </span>            :     {</a>
 <a name="196"><span class="lineNum">     196 </span>            :         return m_graph;</a>

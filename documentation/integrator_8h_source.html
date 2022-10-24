@@ -71,7 +71,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <a href="integrator_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/* </span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">* Copyright (C) 2020-2021 German Aerospace Center (DLR-SC)</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">* Copyright (C) 2020-2023 German Aerospace Center (DLR-SC)</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">*</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">* Authors: Daniel Abele</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">*</span></div>
@@ -141,7 +141,7 @@ $(function() {
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
 <div class="line"><a name="l00097"></a><span class="lineno"><a class="line" href="classmio_1_1OdeIntegrator.html#a658c3e11e92b3311bcb995fdd5e0bbb3">   97</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classmio_1_1OdeIntegrator.html#a658c3e11e92b3311bcb995fdd5e0bbb3">set_integrator</a>(std::shared_ptr&lt;IntegratorCore&gt; integrator)</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    {</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <a class="code" href="classmio_1_1OdeIntegrator.html#aff4ac43c83f70b0184adf9f716831514">m_core</a>= integrator;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <a class="code" href="classmio_1_1OdeIntegrator.html#aff4ac43c83f70b0184adf9f716831514">m_core</a> = integrator;</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    }</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="keyword">private</span>:</div>
@@ -171,7 +171,7 @@ $(function() {
 <div class="ttc" id="anamespacestd_html"><div class="ttname"><a href="namespacestd.html">std</a></div><div class="ttdef"><b>Definition:</b> io.h:80</div></div>
 <div class="ttc" id="aclassmio_1_1OdeIntegrator_html_a59e35c0d8f54a16ce8ee702b525ef3f8"><div class="ttname"><a href="classmio_1_1OdeIntegrator.html#a59e35c0d8f54a16ce8ee702b525ef3f8">mio::OdeIntegrator::advance</a></div><div class="ttdeci">Eigen::Ref&lt; Eigen::VectorXd &gt; advance(double tmax)</div><div class="ttdoc">advance the integrator.</div><div class="ttdef"><b>Definition:</b> integrator.cpp:26</div></div>
 <div class="ttc" id="aclassmio_1_1OdeIntegrator_html_a0f3a5028c2d5f98b77dfd684f1cdf6a8"><div class="ttname"><a href="classmio_1_1OdeIntegrator.html#a0f3a5028c2d5f98b77dfd684f1cdf6a8">mio::OdeIntegrator::m_f</a></div><div class="ttdeci">DerivFunction m_f</div><div class="ttdef"><b>Definition:</b> integrator.h:103</div></div>
-<div class="ttc" id="anamespacemio_html"><div class="ttname"><a href="namespacemio.html">mio</a></div><div class="ttdoc">A collection of classes to simplify handling of matrix shapes in meta programming.</div><div class="ttdef"><b>Definition:</b> compartmentalmodel.h:32</div></div>
+<div class="ttc" id="anamespacemio_html"><div class="ttname"><a href="namespacemio.html">mio</a></div><div class="ttdoc">A collection of classes to simplify handling of matrix shapes in meta programming.</div><div class="ttdef"><b>Definition:</b> compartmentalmodel.h:31</div></div>
 <div class="ttc" id="aclassmio_1_1OdeIntegrator_html_aff4ac43c83f70b0184adf9f716831514"><div class="ttname"><a href="classmio_1_1OdeIntegrator.html#aff4ac43c83f70b0184adf9f716831514">mio::OdeIntegrator::m_core</a></div><div class="ttdeci">std::shared_ptr&lt; IntegratorCore &gt; m_core</div><div class="ttdef"><b>Definition:</b> integrator.h:106</div></div>
 <div class="ttc" id="aclassmio_1_1OdeIntegrator_html_afe89b6bc15bca17dc51c7da834ab1402"><div class="ttname"><a href="classmio_1_1OdeIntegrator.html#afe89b6bc15bca17dc51c7da834ab1402">mio::OdeIntegrator::get_result</a></div><div class="ttdeci">const TimeSeries&lt; double &gt; &amp; get_result() const</div><div class="ttdef"><b>Definition:</b> integrator.h:92</div></div>
 <!-- start footer part -->

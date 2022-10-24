@@ -1,12 +1,19 @@
 var searchData=
 [
-  ['randomnumbergenerator_1518',['RandomNumberGenerator',['../classmio_1_1RandomNumberGenerator.html',1,'mio']]],
-  ['range_1519',['Range',['../classmio_1_1Range.html',1,'mio']]],
-  ['recoveredtosusceptible_1520',['RecoveredToSusceptible',['../structmio_1_1abm_1_1RecoveredToSusceptible.html',1,'mio::abm']]],
-  ['rectmatrixshape_1521',['RectMatrixShape',['../classmio_1_1RectMatrixShape.html',1,'mio']]],
-  ['relativecarrierinfectability_1522',['RelativeCarrierInfectability',['../structmio_1_1RelativeCarrierInfectability.html',1,'mio::RelativeCarrierInfectability'],['../structmio_1_1osecirvvs_1_1RelativeCarrierInfectability.html',1,'mio::osecirvvs::RelativeCarrierInfectability']]],
-  ['riskofinfectionfromsympomatic_1523',['RiskOfInfectionFromSympomatic',['../structmio_1_1osecirvvs_1_1RiskOfInfectionFromSympomatic.html',1,'mio::osecirvvs']]],
-  ['riskofinfectionfromsymptomatic_1524',['RiskOfInfectionFromSymptomatic',['../structmio_1_1RiskOfInfectionFromSymptomatic.html',1,'mio']]],
-  ['rkintegratorcore_1525',['RKIntegratorCore',['../classmio_1_1RKIntegratorCore.html',1,'mio']]],
-  ['rowmajoriterator_1526',['RowMajorIterator',['../classmio_1_1RowMajorIterator.html',1,'mio']]]
+  ['randomnumbergenerator_1494',['RandomNumberGenerator',['../classmio_1_1RandomNumberGenerator.html',1,'mio']]],
+  ['range_1495',['Range',['../classmio_1_1Range.html',1,'mio']]],
+  ['recoveredperinfectednosymptoms_1496',['RecoveredPerInfectedNoSymptoms',['../structmio_1_1RecoveredPerInfectedNoSymptoms.html',1,'mio::RecoveredPerInfectedNoSymptoms'],['../structmio_1_1osecirvvs_1_1RecoveredPerInfectedNoSymptoms.html',1,'mio::osecirvvs::RecoveredPerInfectedNoSymptoms']]],
+  ['recoveredtosusceptible_1497',['RecoveredToSusceptible',['../structmio_1_1abm_1_1RecoveredToSusceptible.html',1,'mio::abm']]],
+  ['rectmatrixshape_1498',['RectMatrixShape',['../classmio_1_1RectMatrixShape.html',1,'mio']]],
+  ['reducexposedimprovedimmunity_1499',['ReducExposedImprovedImmunity',['../structmio_1_1osecirvvs_1_1ReducExposedImprovedImmunity.html',1,'mio::osecirvvs']]],
+  ['reducexposedpartialimmunity_1500',['ReducExposedPartialImmunity',['../structmio_1_1osecirvvs_1_1ReducExposedPartialImmunity.html',1,'mio::osecirvvs']]],
+  ['reducinfectedseverecriticaldeadimprovedimmunity_1501',['ReducInfectedSevereCriticalDeadImprovedImmunity',['../structmio_1_1osecirvvs_1_1ReducInfectedSevereCriticalDeadImprovedImmunity.html',1,'mio::osecirvvs']]],
+  ['reducinfectedseverecriticaldeadpartialimmunity_1502',['ReducInfectedSevereCriticalDeadPartialImmunity',['../structmio_1_1osecirvvs_1_1ReducInfectedSevereCriticalDeadPartialImmunity.html',1,'mio::osecirvvs']]],
+  ['reducinfectedsymptomsimprovedimmunity_1503',['ReducInfectedSymptomsImprovedImmunity',['../structmio_1_1osecirvvs_1_1ReducInfectedSymptomsImprovedImmunity.html',1,'mio::osecirvvs']]],
+  ['reducinfectedsymptomspartialimmunity_1504',['ReducInfectedSymptomsPartialImmunity',['../structmio_1_1osecirvvs_1_1ReducInfectedSymptomsPartialImmunity.html',1,'mio::osecirvvs']]],
+  ['reductimeinfectedmild_1505',['ReducTimeInfectedMild',['../structmio_1_1osecirvvs_1_1ReducTimeInfectedMild.html',1,'mio::osecirvvs']]],
+  ['relativetransmissionnosymptoms_1506',['RelativeTransmissionNoSymptoms',['../structmio_1_1osecirvvs_1_1RelativeTransmissionNoSymptoms.html',1,'mio::osecirvvs::RelativeTransmissionNoSymptoms'],['../structmio_1_1RelativeTransmissionNoSymptoms.html',1,'mio::RelativeTransmissionNoSymptoms']]],
+  ['riskofinfectionfromsymptomatic_1507',['RiskOfInfectionFromSymptomatic',['../structmio_1_1osecirvvs_1_1RiskOfInfectionFromSymptomatic.html',1,'mio::osecirvvs::RiskOfInfectionFromSymptomatic'],['../structmio_1_1RiskOfInfectionFromSymptomatic.html',1,'mio::RiskOfInfectionFromSymptomatic']]],
+  ['rkintegratorcore_1508',['RKIntegratorCore',['../classmio_1_1RKIntegratorCore.html',1,'mio']]],
+  ['rowmajoriterator_1509',['RowMajorIterator',['../classmio_1_1RowMajorIterator.html',1,'mio']]]
 ];

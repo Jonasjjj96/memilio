@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2022-10-13 13:53:50</td>
+            <td class="headerValue">2022-10-24 15:44:59</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">2</td>
@@ -61,7 +61,7 @@
 <pre class="sourceHeading">          Line data    Source code</pre>
 <pre class="source">
 <a name="1"><span class="lineNum">       1 </span>            : /* </a>
-<a name="2"><span class="lineNum">       2 </span>            : * Copyright (C) 2020-2021 German Aerospace Center (DLR-SC)</a>
+<a name="2"><span class="lineNum">       2 </span>            : * Copyright (C) 2020-2023 German Aerospace Center (DLR-SC)</a>
 <a name="3"><span class="lineNum">       3 </span>            : *</a>
 <a name="4"><span class="lineNum">       4 </span>            : * Authors: Daniel Abele, Wadim Koslow, Martin J. Kuehn</a>
 <a name="5"><span class="lineNum">       5 </span>            : *</a>
@@ -135,7 +135,7 @@
 <a name="73"><span class="lineNum">      73 </span>            :  */</a>
 <a name="74"><span class="lineNum">      74 </span>            : template &lt;class Model&gt;</a>
 <a name="75"><span class="lineNum">      75 </span><span class="lineCov">          1 : IOResult&lt;void&gt; write_graph(const Graph&lt;Model, MigrationParameters&gt;&amp; graph, const std::string&amp; directory,</span></a>
-<a name="76"><span class="lineNum">      76 </span>            :                             int ioflags = IOF_None)</a>
+<a name="76"><span class="lineNum">      76 </span>            :                            int ioflags = IOF_None)</a>
 <a name="77"><span class="lineNum">      77 </span>            : {</a>
 <a name="78"><span class="lineNum">      78 </span><span class="lineCov">          1 :     assert(graph.nodes().size() &gt; 0 &amp;&amp; &quot;Graph Nodes are empty&quot;);</span></a>
 <a name="79"><span class="lineNum">      79 </span>            : </a>
@@ -147,9 +147,9 @@
 <a name="85"><span class="lineNum">      85 </span>            :     }</a>
 <a name="86"><span class="lineNum">      86 </span>            :     else {</a>
 <a name="87"><span class="lineNum">      87 </span><span class="lineNoCov">          0 :         log_info(&quot;Results are stored in {:s}/results. Files from previous &quot;</span></a>
-<a name="88"><span class="lineNum">      88 </span>            :                     &quot;graph will be &quot;</a>
-<a name="89"><span class="lineNum">      89 </span>            :                     &quot;overwritten&quot;,</a>
-<a name="90"><span class="lineNum">      90 </span>            :                     mio::get_current_dir_name());</a>
+<a name="88"><span class="lineNum">      88 </span>            :                  &quot;graph will be &quot;</a>
+<a name="89"><span class="lineNum">      89 </span>            :                  &quot;overwritten&quot;,</a>
+<a name="90"><span class="lineNum">      90 </span>            :                  mio::get_current_dir_name());</a>
 <a name="91"><span class="lineNum">      91 </span>            :     }</a>
 <a name="92"><span class="lineNum">      92 </span>            : </a>
 <a name="93"><span class="lineNum">      93 </span>            :     //write two files per node</a>
@@ -235,7 +235,7 @@
 <a name="173"><span class="lineNum">     173 </span><span class="lineCov">          2 :             if (end_node_idx &gt;= graph.nodes().size()) {</span></a>
 <a name="174"><span class="lineNum">     174 </span><span class="lineNoCov">          0 :                 log_error(&quot;EndNodeIndex not in range of number of graph nodes.&quot;);</span></a>
 <a name="175"><span class="lineNum">     175 </span>            :                 return failure(StatusCode::OutOfRange,</a>
-<a name="176"><span class="lineNum">     176 </span><span class="lineNoCov">          0 :                                 edge_filename + &quot;, EndNodeIndex not in range of number of graph nodes.&quot;);</span></a>
+<a name="176"><span class="lineNum">     176 </span><span class="lineNoCov">          0 :                                edge_filename + &quot;, EndNodeIndex not in range of number of graph nodes.&quot;);</span></a>
 <a name="177"><span class="lineNum">     177 </span>            :             }</a>
 <a name="178"><span class="lineNum">     178 </span><span class="lineCov">          2 :             BOOST_OUTCOME_TRY(parameters, deserialize_json(e[&quot;Parameters&quot;], Tag&lt;MigrationParameters&gt;{}, ioflags));</span></a>
 <a name="179"><span class="lineNum">     179 </span><span class="lineCov">          2 :             graph.add_edge(start_node_idx, end_node_idx, parameters);</span></a>

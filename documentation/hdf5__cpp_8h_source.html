@@ -71,7 +71,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <a href="hdf5__cpp_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/* </span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">* Copyright (C) 2020-2021 German Aerospace Center (DLR-SC)</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">* Copyright (C) 2020-2023 German Aerospace Center (DLR-SC)</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">*</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">* Authors: Daniel Abele</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">*</span></div>
@@ -139,11 +139,11 @@ $(function() {
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    }</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;};</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="preprocessor">#define MEMILIO_H5_CHECK(id, ...) \</span></div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="preprocessor">    do { \</span></div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="preprocessor">        if (id &lt; 0) { \</span></div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="preprocessor">            return ::mio::failure(__VA_ARGS__); \</span></div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="preprocessor">        } \</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="preprocessor">#define MEMILIO_H5_CHECK(id, ...)                                                                                      \</span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="preprocessor">    do {                                                                                                               \</span></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="preprocessor">        if (id &lt; 0) {                                                                                                  \</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="preprocessor">            return ::mio::failure(__VA_ARGS__);                                                                        \</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="preprocessor">        }                                                                                                              \</span></div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="preprocessor">    } while (0)</span></div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;} <span class="comment">// namespace mio</span></div>
@@ -152,11 +152,11 @@ $(function() {
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="preprocessor">#endif //EPI_IO_HDF5_CPP_H</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="acompiler__diagnostics_8h_html_a222996f9b3656a6d4dbc4e9a57c72e2e"><div class="ttname"><a href="compiler__diagnostics_8h.html#a222996f9b3656a6d4dbc4e9a57c72e2e">MSVC_WARNING_DISABLE_PUSH</a></div><div class="ttdeci">#define MSVC_WARNING_DISABLE_PUSH(...)</div><div class="ttdef"><b>Definition:</b> compiler_diagnostics.h:39</div></div>
+<div class="ttc" id="acompiler__diagnostics_8h_html_a222996f9b3656a6d4dbc4e9a57c72e2e"><div class="ttname"><a href="compiler__diagnostics_8h.html#a222996f9b3656a6d4dbc4e9a57c72e2e">MSVC_WARNING_DISABLE_PUSH</a></div><div class="ttdeci">#define MSVC_WARNING_DISABLE_PUSH(...)</div><div class="ttdef"><b>Definition:</b> compiler_diagnostics.h:41</div></div>
 <div class="ttc" id="acompiler__diagnostics_8h_html"><div class="ttname"><a href="compiler__diagnostics_8h.html">compiler_diagnostics.h</a></div></div>
 <div class="ttc" id="aconfig_8h_html"><div class="ttname"><a href="config_8h.html">config.h</a></div></div>
-<div class="ttc" id="acompiler__diagnostics_8h_html_ab0626891d3a8e9833c6e70d3540cbd59"><div class="ttname"><a href="compiler__diagnostics_8h.html#ab0626891d3a8e9833c6e70d3540cbd59">MSVC_WARNING_POP</a></div><div class="ttdeci">#define MSVC_WARNING_POP</div><div class="ttdef"><b>Definition:</b> compiler_diagnostics.h:40</div></div>
-<div class="ttc" id="anamespacemio_html"><div class="ttname"><a href="namespacemio.html">mio</a></div><div class="ttdoc">A collection of classes to simplify handling of matrix shapes in meta programming.</div><div class="ttdef"><b>Definition:</b> compartmentalmodel.h:32</div></div>
+<div class="ttc" id="acompiler__diagnostics_8h_html_ab0626891d3a8e9833c6e70d3540cbd59"><div class="ttname"><a href="compiler__diagnostics_8h.html#ab0626891d3a8e9833c6e70d3540cbd59">MSVC_WARNING_POP</a></div><div class="ttdeci">#define MSVC_WARNING_POP</div><div class="ttdef"><b>Definition:</b> compiler_diagnostics.h:42</div></div>
+<div class="ttc" id="anamespacemio_html"><div class="ttname"><a href="namespacemio.html">mio</a></div><div class="ttdoc">A collection of classes to simplify handling of matrix shapes in meta programming.</div><div class="ttdef"><b>Definition:</b> compartmentalmodel.h:31</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

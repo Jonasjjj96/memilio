@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2022-10-13 13:53:50</td>
+            <td class="headerValue">2022-10-24 15:44:59</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">64</td>
@@ -61,7 +61,7 @@
 <pre class="sourceHeading">          Line data    Source code</pre>
 <pre class="source">
 <a name="1"><span class="lineNum">       1 </span>            : /* </a>
-<a name="2"><span class="lineNum">       2 </span>            : * Copyright (C) 2020-2021 German Aerospace Center (DLR-SC)</a>
+<a name="2"><span class="lineNum">       2 </span>            : * Copyright (C) 2020-2023 German Aerospace Center (DLR-SC)</a>
 <a name="3"><span class="lineNum">       3 </span>            : *</a>
 <a name="4"><span class="lineNum">       4 </span>            : * Authors: Daniel Abele</a>
 <a name="5"><span class="lineNum">       5 </span>            : *</a>
@@ -229,108 +229,106 @@
 <a name="167"><span class="lineNum">     167 </span><span class="lineCov">         60 :                                       });</span></a>
 <a name="168"><span class="lineNum">     168 </span>            :     }</a>
 <a name="169"><span class="lineNum">     169 </span>            : </a>
-<a name="170"><span class="lineNum">     170 </span>            : </a>
-<a name="171"><span class="lineNum">     171 </span>            : </a>
-<a name="172"><span class="lineNum">     172 </span>            :     /**</a>
-<a name="173"><span class="lineNum">     173 </span>            :      * @brief range of nodes</a>
-<a name="174"><span class="lineNum">     174 </span>            :      */</a>
-<a name="175"><span class="lineNum">     175 </span><span class="lineCov">        247 :     auto nodes()</span></a>
-<a name="176"><span class="lineNum">     176 </span>            :     {</a>
-<a name="177"><span class="lineNum">     177 </span><span class="lineCov">        247 :         return make_range(begin(m_nodes), end(m_nodes));</span></a>
-<a name="178"><span class="lineNum">     178 </span>            :     }</a>
-<a name="179"><span class="lineNum">     179 </span>            : </a>
-<a name="180"><span class="lineNum">     180 </span>            :     /**</a>
-<a name="181"><span class="lineNum">     181 </span>            :      * @brief range of nodes</a>
-<a name="182"><span class="lineNum">     182 </span>            :      */</a>
-<a name="183"><span class="lineNum">     183 </span><span class="lineCov">          9 :     auto nodes() const</span></a>
-<a name="184"><span class="lineNum">     184 </span>            :     {</a>
-<a name="185"><span class="lineNum">     185 </span><span class="lineCov">          9 :         return make_range(begin(m_nodes), end(m_nodes));</span></a>
-<a name="186"><span class="lineNum">     186 </span>            :     };</a>
-<a name="187"><span class="lineNum">     187 </span>            : </a>
-<a name="188"><span class="lineNum">     188 </span>            :     /**</a>
-<a name="189"><span class="lineNum">     189 </span>            :      * @brief range of edges</a>
-<a name="190"><span class="lineNum">     190 </span>            :      */</a>
-<a name="191"><span class="lineNum">     191 </span><span class="lineCov">         70 :     auto edges()</span></a>
-<a name="192"><span class="lineNum">     192 </span>            :     {</a>
-<a name="193"><span class="lineNum">     193 </span><span class="lineCov">         70 :         return make_range(begin(m_edges), end(m_edges));</span></a>
-<a name="194"><span class="lineNum">     194 </span>            :     }</a>
-<a name="195"><span class="lineNum">     195 </span>            : </a>
-<a name="196"><span class="lineNum">     196 </span>            :     /**</a>
-<a name="197"><span class="lineNum">     197 </span>            :      * @brief range of edges</a>
-<a name="198"><span class="lineNum">     198 </span>            :      */</a>
-<a name="199"><span class="lineNum">     199 </span>            :     auto edges() const</a>
-<a name="200"><span class="lineNum">     200 </span>            :     {</a>
-<a name="201"><span class="lineNum">     201 </span>            :         return make_range(begin(m_edges), end(m_edges));</a>
-<a name="202"><span class="lineNum">     202 </span>            :     }</a>
-<a name="203"><span class="lineNum">     203 </span>            : </a>
-<a name="204"><span class="lineNum">     204 </span>            :     /**</a>
-<a name="205"><span class="lineNum">     205 </span>            :      * @brief range of edges going out from a specific node</a>
-<a name="206"><span class="lineNum">     206 </span>            :      */</a>
-<a name="207"><span class="lineNum">     207 </span><span class="lineCov">          2 :     auto out_edges(size_t node_idx)</span></a>
-<a name="208"><span class="lineNum">     208 </span>            :     {</a>
-<a name="209"><span class="lineNum">     209 </span><span class="lineCov">          2 :         return out_edges(begin(m_edges), end(m_edges), node_idx);</span></a>
-<a name="210"><span class="lineNum">     210 </span>            :     }</a>
-<a name="211"><span class="lineNum">     211 </span>            : </a>
-<a name="212"><span class="lineNum">     212 </span>            :     /**</a>
-<a name="213"><span class="lineNum">     213 </span>            :      * @brief range of edges going out from a specific node</a>
-<a name="214"><span class="lineNum">     214 </span>            :      */</a>
-<a name="215"><span class="lineNum">     215 </span><span class="lineCov">          4 :     auto out_edges(size_t node_idx) const</span></a>
-<a name="216"><span class="lineNum">     216 </span>            :     {</a>
-<a name="217"><span class="lineNum">     217 </span><span class="lineCov">          4 :         return out_edges(begin(m_edges), end(m_edges), node_idx);</span></a>
-<a name="218"><span class="lineNum">     218 </span>            :     }</a>
-<a name="219"><span class="lineNum">     219 </span>            : </a>
-<a name="220"><span class="lineNum">     220 </span>            : private:</a>
-<a name="221"><span class="lineNum">     221 </span>            :     template &lt;typename Iter&gt;</a>
-<a name="222"><span class="lineNum">     222 </span><span class="lineCov">          6 :     static auto out_edges(Iter b, Iter e, size_t idx)</span></a>
-<a name="223"><span class="lineNum">     223 </span>            :     {</a>
-<a name="224"><span class="lineNum">     224 </span><span class="lineCov">         35 :         return make_range(std::equal_range(b, e, OutEdgeBase(idx), [](auto&amp;&amp; e1, auto&amp;&amp; e2) {</span></a>
-<a name="225"><span class="lineNum">     225 </span><span class="lineCov">         23 :             return e1.start_node_idx &lt; e2.start_node_idx;</span></a>
-<a name="226"><span class="lineNum">     226 </span><span class="lineCov">         12 :         }));</span></a>
-<a name="227"><span class="lineNum">     227 </span>            :     }</a>
-<a name="228"><span class="lineNum">     228 </span>            : </a>
-<a name="229"><span class="lineNum">     229 </span>            : private:</a>
-<a name="230"><span class="lineNum">     230 </span>            :     std::vector&lt;Node&lt;NodePropertyT&gt;&gt; m_nodes;</a>
-<a name="231"><span class="lineNum">     231 </span>            :     std::vector&lt;Edge&lt;EdgePropertyT&gt;&gt; m_edges;</a>
-<a name="232"><span class="lineNum">     232 </span>            : }; // namespace mio</a>
-<a name="233"><span class="lineNum">     233 </span>            : </a>
-<a name="234"><span class="lineNum">     234 </span>            : template &lt;class T&gt;</a>
-<a name="235"><span class="lineNum">     235 </span>            : std::enable_if_t&lt;!has_ostream_op&lt;T&gt;::value, void&gt; print_graph_object(std::ostream&amp; os, size_t idx, const T&amp;)</a>
-<a name="236"><span class="lineNum">     236 </span>            : {</a>
-<a name="237"><span class="lineNum">     237 </span>            :     os &lt;&lt; idx;</a>
-<a name="238"><span class="lineNum">     238 </span>            : }</a>
-<a name="239"><span class="lineNum">     239 </span>            : </a>
-<a name="240"><span class="lineNum">     240 </span>            : template &lt;class T&gt;</a>
-<a name="241"><span class="lineNum">     241 </span>            : std::enable_if_t&lt;has_ostream_op&lt;T&gt;::value, void&gt; print_graph_object(std::ostream&amp; os, size_t idx, const T&amp; o)</a>
-<a name="242"><span class="lineNum">     242 </span>            : {</a>
-<a name="243"><span class="lineNum">     243 </span>            :     os &lt;&lt; idx &lt;&lt; &quot; [&quot; &lt;&lt; o &lt;&lt; &quot;]&quot;;</a>
-<a name="244"><span class="lineNum">     244 </span>            : }</a>
-<a name="245"><span class="lineNum">     245 </span>            : </a>
-<a name="246"><span class="lineNum">     246 </span>            : template &lt;class Graph&gt;</a>
-<a name="247"><span class="lineNum">     247 </span>            : void print_graph(std::ostream&amp; os, const Graph&amp; g)</a>
-<a name="248"><span class="lineNum">     248 </span>            : {</a>
-<a name="249"><span class="lineNum">     249 </span>            :     auto nodes = g.nodes();</a>
-<a name="250"><span class="lineNum">     250 </span>            :     for (size_t i = 0; i &lt; nodes.size(); ++i) {</a>
-<a name="251"><span class="lineNum">     251 </span>            :         os &lt;&lt; &quot;NODE &quot;;</a>
-<a name="252"><span class="lineNum">     252 </span>            :         print_graph_object(os, i, nodes[i]);</a>
-<a name="253"><span class="lineNum">     253 </span>            :         os &lt;&lt; '\n';</a>
-<a name="254"><span class="lineNum">     254 </span>            :     }</a>
-<a name="255"><span class="lineNum">     255 </span>            : </a>
-<a name="256"><span class="lineNum">     256 </span>            :     auto edges = g.edges();</a>
-<a name="257"><span class="lineNum">     257 </span>            :     for (size_t i = 0; i &lt; edges.size(); ++i) {</a>
-<a name="258"><span class="lineNum">     258 </span>            :         auto&amp; e = edges[i];</a>
-<a name="259"><span class="lineNum">     259 </span>            :         os &lt;&lt; &quot;EDGE &quot;;</a>
-<a name="260"><span class="lineNum">     260 </span>            :         print_graph_object(os, i, e.property);</a>
-<a name="261"><span class="lineNum">     261 </span>            :         os &lt;&lt; &quot; FROM NODE &quot;;</a>
-<a name="262"><span class="lineNum">     262 </span>            :         print_graph_object(os, e.start_node_idx, nodes[e.start_node_idx]);</a>
-<a name="263"><span class="lineNum">     263 </span>            :         os &lt;&lt; &quot; TO &quot;;</a>
-<a name="264"><span class="lineNum">     264 </span>            :         print_graph_object(os, e.end_node_idx, nodes[e.end_node_idx]);</a>
-<a name="265"><span class="lineNum">     265 </span>            :         os &lt;&lt; '\n';</a>
-<a name="266"><span class="lineNum">     266 </span>            :     }</a>
-<a name="267"><span class="lineNum">     267 </span>            : }</a>
+<a name="170"><span class="lineNum">     170 </span>            :     /**</a>
+<a name="171"><span class="lineNum">     171 </span>            :      * @brief range of nodes</a>
+<a name="172"><span class="lineNum">     172 </span>            :      */</a>
+<a name="173"><span class="lineNum">     173 </span><span class="lineCov">        247 :     auto nodes()</span></a>
+<a name="174"><span class="lineNum">     174 </span>            :     {</a>
+<a name="175"><span class="lineNum">     175 </span><span class="lineCov">        247 :         return make_range(begin(m_nodes), end(m_nodes));</span></a>
+<a name="176"><span class="lineNum">     176 </span>            :     }</a>
+<a name="177"><span class="lineNum">     177 </span>            : </a>
+<a name="178"><span class="lineNum">     178 </span>            :     /**</a>
+<a name="179"><span class="lineNum">     179 </span>            :      * @brief range of nodes</a>
+<a name="180"><span class="lineNum">     180 </span>            :      */</a>
+<a name="181"><span class="lineNum">     181 </span><span class="lineCov">          9 :     auto nodes() const</span></a>
+<a name="182"><span class="lineNum">     182 </span>            :     {</a>
+<a name="183"><span class="lineNum">     183 </span><span class="lineCov">          9 :         return make_range(begin(m_nodes), end(m_nodes));</span></a>
+<a name="184"><span class="lineNum">     184 </span>            :     };</a>
+<a name="185"><span class="lineNum">     185 </span>            : </a>
+<a name="186"><span class="lineNum">     186 </span>            :     /**</a>
+<a name="187"><span class="lineNum">     187 </span>            :      * @brief range of edges</a>
+<a name="188"><span class="lineNum">     188 </span>            :      */</a>
+<a name="189"><span class="lineNum">     189 </span><span class="lineCov">         70 :     auto edges()</span></a>
+<a name="190"><span class="lineNum">     190 </span>            :     {</a>
+<a name="191"><span class="lineNum">     191 </span><span class="lineCov">         70 :         return make_range(begin(m_edges), end(m_edges));</span></a>
+<a name="192"><span class="lineNum">     192 </span>            :     }</a>
+<a name="193"><span class="lineNum">     193 </span>            : </a>
+<a name="194"><span class="lineNum">     194 </span>            :     /**</a>
+<a name="195"><span class="lineNum">     195 </span>            :      * @brief range of edges</a>
+<a name="196"><span class="lineNum">     196 </span>            :      */</a>
+<a name="197"><span class="lineNum">     197 </span>            :     auto edges() const</a>
+<a name="198"><span class="lineNum">     198 </span>            :     {</a>
+<a name="199"><span class="lineNum">     199 </span>            :         return make_range(begin(m_edges), end(m_edges));</a>
+<a name="200"><span class="lineNum">     200 </span>            :     }</a>
+<a name="201"><span class="lineNum">     201 </span>            : </a>
+<a name="202"><span class="lineNum">     202 </span>            :     /**</a>
+<a name="203"><span class="lineNum">     203 </span>            :      * @brief range of edges going out from a specific node</a>
+<a name="204"><span class="lineNum">     204 </span>            :      */</a>
+<a name="205"><span class="lineNum">     205 </span><span class="lineCov">          2 :     auto out_edges(size_t node_idx)</span></a>
+<a name="206"><span class="lineNum">     206 </span>            :     {</a>
+<a name="207"><span class="lineNum">     207 </span><span class="lineCov">          2 :         return out_edges(begin(m_edges), end(m_edges), node_idx);</span></a>
+<a name="208"><span class="lineNum">     208 </span>            :     }</a>
+<a name="209"><span class="lineNum">     209 </span>            : </a>
+<a name="210"><span class="lineNum">     210 </span>            :     /**</a>
+<a name="211"><span class="lineNum">     211 </span>            :      * @brief range of edges going out from a specific node</a>
+<a name="212"><span class="lineNum">     212 </span>            :      */</a>
+<a name="213"><span class="lineNum">     213 </span><span class="lineCov">          4 :     auto out_edges(size_t node_idx) const</span></a>
+<a name="214"><span class="lineNum">     214 </span>            :     {</a>
+<a name="215"><span class="lineNum">     215 </span><span class="lineCov">          4 :         return out_edges(begin(m_edges), end(m_edges), node_idx);</span></a>
+<a name="216"><span class="lineNum">     216 </span>            :     }</a>
+<a name="217"><span class="lineNum">     217 </span>            : </a>
+<a name="218"><span class="lineNum">     218 </span>            : private:</a>
+<a name="219"><span class="lineNum">     219 </span>            :     template &lt;typename Iter&gt;</a>
+<a name="220"><span class="lineNum">     220 </span><span class="lineCov">          6 :     static auto out_edges(Iter b, Iter e, size_t idx)</span></a>
+<a name="221"><span class="lineNum">     221 </span>            :     {</a>
+<a name="222"><span class="lineNum">     222 </span><span class="lineCov">         35 :         return make_range(std::equal_range(b, e, OutEdgeBase(idx), [](auto&amp;&amp; e1, auto&amp;&amp; e2) {</span></a>
+<a name="223"><span class="lineNum">     223 </span><span class="lineCov">         23 :             return e1.start_node_idx &lt; e2.start_node_idx;</span></a>
+<a name="224"><span class="lineNum">     224 </span><span class="lineCov">         12 :         }));</span></a>
+<a name="225"><span class="lineNum">     225 </span>            :     }</a>
+<a name="226"><span class="lineNum">     226 </span>            : </a>
+<a name="227"><span class="lineNum">     227 </span>            : private:</a>
+<a name="228"><span class="lineNum">     228 </span>            :     std::vector&lt;Node&lt;NodePropertyT&gt;&gt; m_nodes;</a>
+<a name="229"><span class="lineNum">     229 </span>            :     std::vector&lt;Edge&lt;EdgePropertyT&gt;&gt; m_edges;</a>
+<a name="230"><span class="lineNum">     230 </span>            : }; // namespace mio</a>
+<a name="231"><span class="lineNum">     231 </span>            : </a>
+<a name="232"><span class="lineNum">     232 </span>            : template &lt;class T&gt;</a>
+<a name="233"><span class="lineNum">     233 </span>            : std::enable_if_t&lt;!has_ostream_op&lt;T&gt;::value, void&gt; print_graph_object(std::ostream&amp; os, size_t idx, const T&amp;)</a>
+<a name="234"><span class="lineNum">     234 </span>            : {</a>
+<a name="235"><span class="lineNum">     235 </span>            :     os &lt;&lt; idx;</a>
+<a name="236"><span class="lineNum">     236 </span>            : }</a>
+<a name="237"><span class="lineNum">     237 </span>            : </a>
+<a name="238"><span class="lineNum">     238 </span>            : template &lt;class T&gt;</a>
+<a name="239"><span class="lineNum">     239 </span>            : std::enable_if_t&lt;has_ostream_op&lt;T&gt;::value, void&gt; print_graph_object(std::ostream&amp; os, size_t idx, const T&amp; o)</a>
+<a name="240"><span class="lineNum">     240 </span>            : {</a>
+<a name="241"><span class="lineNum">     241 </span>            :     os &lt;&lt; idx &lt;&lt; &quot; [&quot; &lt;&lt; o &lt;&lt; &quot;]&quot;;</a>
+<a name="242"><span class="lineNum">     242 </span>            : }</a>
+<a name="243"><span class="lineNum">     243 </span>            : </a>
+<a name="244"><span class="lineNum">     244 </span>            : template &lt;class Graph&gt;</a>
+<a name="245"><span class="lineNum">     245 </span>            : void print_graph(std::ostream&amp; os, const Graph&amp; g)</a>
+<a name="246"><span class="lineNum">     246 </span>            : {</a>
+<a name="247"><span class="lineNum">     247 </span>            :     auto nodes = g.nodes();</a>
+<a name="248"><span class="lineNum">     248 </span>            :     for (size_t i = 0; i &lt; nodes.size(); ++i) {</a>
+<a name="249"><span class="lineNum">     249 </span>            :         os &lt;&lt; &quot;NODE &quot;;</a>
+<a name="250"><span class="lineNum">     250 </span>            :         print_graph_object(os, i, nodes[i]);</a>
+<a name="251"><span class="lineNum">     251 </span>            :         os &lt;&lt; '\n';</a>
+<a name="252"><span class="lineNum">     252 </span>            :     }</a>
+<a name="253"><span class="lineNum">     253 </span>            : </a>
+<a name="254"><span class="lineNum">     254 </span>            :     auto edges = g.edges();</a>
+<a name="255"><span class="lineNum">     255 </span>            :     for (size_t i = 0; i &lt; edges.size(); ++i) {</a>
+<a name="256"><span class="lineNum">     256 </span>            :         auto&amp; e = edges[i];</a>
+<a name="257"><span class="lineNum">     257 </span>            :         os &lt;&lt; &quot;EDGE &quot;;</a>
+<a name="258"><span class="lineNum">     258 </span>            :         print_graph_object(os, i, e.property);</a>
+<a name="259"><span class="lineNum">     259 </span>            :         os &lt;&lt; &quot; FROM NODE &quot;;</a>
+<a name="260"><span class="lineNum">     260 </span>            :         print_graph_object(os, e.start_node_idx, nodes[e.start_node_idx]);</a>
+<a name="261"><span class="lineNum">     261 </span>            :         os &lt;&lt; &quot; TO &quot;;</a>
+<a name="262"><span class="lineNum">     262 </span>            :         print_graph_object(os, e.end_node_idx, nodes[e.end_node_idx]);</a>
+<a name="263"><span class="lineNum">     263 </span>            :         os &lt;&lt; '\n';</a>
+<a name="264"><span class="lineNum">     264 </span>            :     }</a>
+<a name="265"><span class="lineNum">     265 </span>            : }</a>
+<a name="266"><span class="lineNum">     266 </span>            : </a>
+<a name="267"><span class="lineNum">     267 </span>            : } // namespace mio</a>
 <a name="268"><span class="lineNum">     268 </span>            : </a>
-<a name="269"><span class="lineNum">     269 </span>            : } // namespace mio</a>
-<a name="270"><span class="lineNum">     270 </span>            : </a>
-<a name="271"><span class="lineNum">     271 </span>            : #endif //GRAPH_H</a>
+<a name="269"><span class="lineNum">     269 </span>            : #endif //GRAPH_H</a>
 </pre>
       </td>
     </tr>

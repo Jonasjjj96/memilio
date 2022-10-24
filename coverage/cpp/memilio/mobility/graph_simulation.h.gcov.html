@@ -31,13 +31,13 @@
             <td class="headerValue">coverage.info</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntry">27</td>
-            <td class="headerCovTableEntry">27</td>
+            <td class="headerCovTableEntry">28</td>
+            <td class="headerCovTableEntry">28</td>
             <td class="headerCovTableEntryHi">100.0 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2022-10-13 13:53:50</td>
+            <td class="headerValue">2022-10-24 15:44:59</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">15</td>
@@ -61,7 +61,7 @@
 <pre class="sourceHeading">          Line data    Source code</pre>
 <pre class="source">
 <a name="1"><span class="lineNum">       1 </span>            : /* </a>
-<a name="2"><span class="lineNum">       2 </span>            : * Copyright (C) 2020-2021 German Aerospace Center (DLR-SC)</a>
+<a name="2"><span class="lineNum">       2 </span>            : * Copyright (C) 2020-2023 German Aerospace Center (DLR-SC)</a>
 <a name="3"><span class="lineNum">       3 </span>            : *</a>
 <a name="4"><span class="lineNum">       4 </span>            : * Authors: Daniel Abele</a>
 <a name="5"><span class="lineNum">       5 </span>            : *</a>
@@ -109,32 +109,32 @@
 <a name="47"><span class="lineNum">      47 </span>            :     {</a>
 <a name="48"><span class="lineNum">      48 </span><span class="lineCov">          3 :     }</span></a>
 <a name="49"><span class="lineNum">      49 </span>            : </a>
-<a name="50"><span class="lineNum">      50 </span><span class="lineCov">          3 :     GraphSimulation(double t0, double dt, Graph&amp;&amp; g, const node_function&amp; node_func,</span></a>
-<a name="51"><span class="lineNum">      51 </span>            :                     const edge_function&amp;&amp; edge_func)</a>
-<a name="52"><span class="lineNum">      52 </span>            :         : m_t(t0)</a>
-<a name="53"><span class="lineNum">      53 </span>            :         , m_dt(dt)</a>
-<a name="54"><span class="lineNum">      54 </span><span class="lineCov">          3 :         , m_graph(std::move(g))</span></a>
-<a name="55"><span class="lineNum">      55 </span>            :         , m_node_func(node_func)</a>
-<a name="56"><span class="lineNum">      56 </span><span class="lineCov">          6 :         , m_edge_func(edge_func)</span></a>
-<a name="57"><span class="lineNum">      57 </span>            :     {</a>
-<a name="58"><span class="lineNum">      58 </span><span class="lineCov">          3 :     }</span></a>
-<a name="59"><span class="lineNum">      59 </span>            : </a>
-<a name="60"><span class="lineNum">      60 </span><span class="lineCov">          6 :     void advance(double t_max = 1.0)</span></a>
-<a name="61"><span class="lineNum">      61 </span>            :     {</a>
-<a name="62"><span class="lineNum">      62 </span><span class="lineCov">          6 :         auto dt = m_dt;</span></a>
-<a name="63"><span class="lineNum">      63 </span><span class="lineCov">         49 :         while (m_t &lt; t_max) {</span></a>
-<a name="64"><span class="lineNum">      64 </span><span class="lineCov">         43 :             if (m_t + dt &gt; t_max) {</span></a>
-<a name="65"><span class="lineNum">      65 </span><span class="lineCov">          1 :                 dt = t_max - m_t;</span></a>
-<a name="66"><span class="lineNum">      66 </span>            :             }</a>
-<a name="67"><span class="lineNum">      67 </span>            : </a>
-<a name="68"><span class="lineNum">      68 </span><span class="lineCov">        134 :             for (auto&amp; n : m_graph.nodes()) {</span></a>
-<a name="69"><span class="lineNum">      69 </span><span class="lineCov">         91 :                 m_node_func(m_t, dt, n.property);</span></a>
-<a name="70"><span class="lineNum">      70 </span>            :             }</a>
-<a name="71"><span class="lineNum">      71 </span>            : </a>
-<a name="72"><span class="lineNum">      72 </span><span class="lineCov">         43 :             m_t += dt;</span></a>
-<a name="73"><span class="lineNum">      73 </span>            : </a>
-<a name="74"><span class="lineNum">      74 </span><span class="lineCov">        105 :             for (auto&amp; e : m_graph.edges()) {</span></a>
-<a name="75"><span class="lineNum">      75 </span><span class="lineCov">         62 :                 m_edge_func(m_t, dt, e.property, m_graph.nodes()[e.start_node_idx].property, m_graph.nodes()[e.end_node_idx].property);</span></a>
+<a name="50"><span class="lineNum">      50 </span><span class="lineCov">          3 :     GraphSimulation(double t0, double dt, Graph&amp;&amp; g, const node_function&amp; node_func, const edge_function&amp;&amp; edge_func)</span></a>
+<a name="51"><span class="lineNum">      51 </span>            :         : m_t(t0)</a>
+<a name="52"><span class="lineNum">      52 </span>            :         , m_dt(dt)</a>
+<a name="53"><span class="lineNum">      53 </span><span class="lineCov">          3 :         , m_graph(std::move(g))</span></a>
+<a name="54"><span class="lineNum">      54 </span>            :         , m_node_func(node_func)</a>
+<a name="55"><span class="lineNum">      55 </span><span class="lineCov">          6 :         , m_edge_func(edge_func)</span></a>
+<a name="56"><span class="lineNum">      56 </span>            :     {</a>
+<a name="57"><span class="lineNum">      57 </span><span class="lineCov">          3 :     }</span></a>
+<a name="58"><span class="lineNum">      58 </span>            : </a>
+<a name="59"><span class="lineNum">      59 </span><span class="lineCov">          6 :     void advance(double t_max = 1.0)</span></a>
+<a name="60"><span class="lineNum">      60 </span>            :     {</a>
+<a name="61"><span class="lineNum">      61 </span><span class="lineCov">          6 :         auto dt = m_dt;</span></a>
+<a name="62"><span class="lineNum">      62 </span><span class="lineCov">         49 :         while (m_t &lt; t_max) {</span></a>
+<a name="63"><span class="lineNum">      63 </span><span class="lineCov">         43 :             if (m_t + dt &gt; t_max) {</span></a>
+<a name="64"><span class="lineNum">      64 </span><span class="lineCov">          1 :                 dt = t_max - m_t;</span></a>
+<a name="65"><span class="lineNum">      65 </span>            :             }</a>
+<a name="66"><span class="lineNum">      66 </span>            : </a>
+<a name="67"><span class="lineNum">      67 </span><span class="lineCov">        134 :             for (auto&amp; n : m_graph.nodes()) {</span></a>
+<a name="68"><span class="lineNum">      68 </span><span class="lineCov">         91 :                 m_node_func(m_t, dt, n.property);</span></a>
+<a name="69"><span class="lineNum">      69 </span>            :             }</a>
+<a name="70"><span class="lineNum">      70 </span>            : </a>
+<a name="71"><span class="lineNum">      71 </span><span class="lineCov">         43 :             m_t += dt;</span></a>
+<a name="72"><span class="lineNum">      72 </span>            : </a>
+<a name="73"><span class="lineNum">      73 </span><span class="lineCov">        105 :             for (auto&amp; e : m_graph.edges()) {</span></a>
+<a name="74"><span class="lineNum">      74 </span><span class="lineCov">        124 :                 m_edge_func(m_t, dt, e.property, m_graph.nodes()[e.start_node_idx].property,</span></a>
+<a name="75"><span class="lineNum">      75 </span><span class="lineCov">        124 :                             m_graph.nodes()[e.end_node_idx].property);</span></a>
 <a name="76"><span class="lineNum">      76 </span>            :             }</a>
 <a name="77"><span class="lineNum">      77 </span>            :         }</a>
 <a name="78"><span class="lineNum">      78 </span><span class="lineCov">          6 :     }</span></a>
@@ -149,12 +149,12 @@
 <a name="87"><span class="lineNum">      87 </span><span class="lineCov">          3 :         return m_graph;</span></a>
 <a name="88"><span class="lineNum">      88 </span>            :     }</a>
 <a name="89"><span class="lineNum">      89 </span>            : </a>
-<a name="90"><span class="lineNum">      90 </span>            :     const Graph&amp; get_graph() const &amp;</a>
+<a name="90"><span class="lineNum">      90 </span>            :     const Graph&amp; get_graph() const&amp;</a>
 <a name="91"><span class="lineNum">      91 </span>            :     {</a>
 <a name="92"><span class="lineNum">      92 </span>            :         return m_graph;</a>
 <a name="93"><span class="lineNum">      93 </span>            :     }</a>
 <a name="94"><span class="lineNum">      94 </span>            : </a>
-<a name="95"><span class="lineNum">      95 </span><span class="lineCov">          2 :     Graph&amp;&amp; get_graph() &amp;&amp; </span></a>
+<a name="95"><span class="lineNum">      95 </span><span class="lineCov">          2 :     Graph&amp;&amp; get_graph() &amp;&amp;</span></a>
 <a name="96"><span class="lineNum">      96 </span>            :     {</a>
 <a name="97"><span class="lineNum">      97 </span><span class="lineCov">          2 :         return std::move(m_graph);</span></a>
 <a name="98"><span class="lineNum">      98 </span>            :     }</a>

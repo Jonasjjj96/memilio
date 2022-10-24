@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2022-10-13 13:53:50</td>
+            <td class="headerValue">2022-10-24 15:44:59</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">12</td>
@@ -61,7 +61,7 @@
 <pre class="sourceHeading">          Line data    Source code</pre>
 <pre class="source">
 <a name="1"><span class="lineNum">       1 </span>            : /* </a>
-<a name="2"><span class="lineNum">       2 </span>            : * Copyright (C) 2020-2021 German Aerospace Center (DLR-SC)</a>
+<a name="2"><span class="lineNum">       2 </span>            : * Copyright (C) 2020-2023 German Aerospace Center (DLR-SC)</a>
 <a name="3"><span class="lineNum">       3 </span>            : *</a>
 <a name="4"><span class="lineNum">       4 </span>            : * Authors: Daniel Abele, Martin J. Kuehn</a>
 <a name="5"><span class="lineNum">       5 </span>            : *</a>
@@ -110,49 +110,49 @@
 <a name="48"><span class="lineNum">      48 </span>            :      * @param m month as int, 1 - 12</a>
 <a name="49"><span class="lineNum">      49 </span>            :      * @param d day as int, 1 - 31</a>
 <a name="50"><span class="lineNum">      50 </span>            :      */</a>
-<a name="51"><span class="lineNum">      51 </span><span class="lineCov">     281437 :     Date(int y, int m, int d)</span></a>
+<a name="51"><span class="lineNum">      51 </span><span class="lineCov">     116415 :     Date(int y, int m, int d)</span></a>
 <a name="52"><span class="lineNum">      52 </span>            : </a>
-<a name="53"><span class="lineNum">      53 </span><span class="lineCov">     281437 :         : year(y)</span></a>
+<a name="53"><span class="lineNum">      53 </span><span class="lineCov">     116415 :         : year(y)</span></a>
 <a name="54"><span class="lineNum">      54 </span>            :         , month(m)</a>
-<a name="55"><span class="lineNum">      55 </span><span class="lineCov">     281437 :         , day(d)</span></a>
+<a name="55"><span class="lineNum">      55 </span><span class="lineCov">     116415 :         , day(d)</span></a>
 <a name="56"><span class="lineNum">      56 </span>            :     {</a>
-<a name="57"><span class="lineNum">      57 </span><span class="lineCov">     281437 :         assert(month &gt; 0 &amp;&amp; month &lt; 13);</span></a>
-<a name="58"><span class="lineNum">      58 </span><span class="lineCov">     281437 :         assert(day &gt; 0 &amp;&amp; day &lt; 32);</span></a>
-<a name="59"><span class="lineNum">      59 </span><span class="lineCov">     281437 :     }</span></a>
+<a name="57"><span class="lineNum">      57 </span><span class="lineCov">     116415 :         assert(month &gt; 0 &amp;&amp; month &lt; 13);</span></a>
+<a name="58"><span class="lineNum">      58 </span><span class="lineCov">     116415 :         assert(day &gt; 0 &amp;&amp; day &lt; 32);</span></a>
+<a name="59"><span class="lineNum">      59 </span><span class="lineCov">     116415 :     }</span></a>
 <a name="60"><span class="lineNum">      60 </span>            : </a>
 <a name="61"><span class="lineNum">      61 </span>            :     /**</a>
 <a name="62"><span class="lineNum">      62 </span>            :      * equality comparison operators.</a>
 <a name="63"><span class="lineNum">      63 </span>            :      * @param other another date.</a>
 <a name="64"><span class="lineNum">      64 </span>            :      */</a>
 <a name="65"><span class="lineNum">      65 </span>            :     //@{</a>
-<a name="66"><span class="lineNum">      66 </span><span class="lineCov">     275170 :     bool operator==(const Date&amp; other) const</span></a>
+<a name="66"><span class="lineNum">      66 </span><span class="lineCov">     107786 :     bool operator==(const Date&amp; other) const</span></a>
 <a name="67"><span class="lineNum">      67 </span>            :     {</a>
-<a name="68"><span class="lineNum">      68 </span><span class="lineCov">     275170 :         return year == other.year &amp;&amp; month == other.month &amp;&amp; day == other.day;</span></a>
+<a name="68"><span class="lineNum">      68 </span><span class="lineCov">     107786 :         return year == other.year &amp;&amp; month == other.month &amp;&amp; day == other.day;</span></a>
 <a name="69"><span class="lineNum">      69 </span>            :     }</a>
 <a name="70"><span class="lineNum">      70 </span><span class="lineCov">          3 :     bool operator!=(const Date&amp; other) const</span></a>
 <a name="71"><span class="lineNum">      71 </span>            :     {</a>
 <a name="72"><span class="lineNum">      72 </span><span class="lineCov">          3 :         return !(*this == other);</span></a>
 <a name="73"><span class="lineNum">      73 </span>            :     }</a>
-<a name="74"><span class="lineNum">      74 </span><span class="lineCov">      76255 :     bool operator&lt;(const Date&amp; other) const</span></a>
+<a name="74"><span class="lineNum">      74 </span><span class="lineCov">      64019 :     bool operator&lt;(const Date&amp; other) const</span></a>
 <a name="75"><span class="lineNum">      75 </span>            :     {</a>
-<a name="76"><span class="lineNum">      76 </span><span class="lineCov">      76255 :         if (std::tie(year, month, day) &lt; std::tie(other.year, other.month, other.day)) {</span></a>
-<a name="77"><span class="lineNum">      77 </span><span class="lineCov">      39889 :             return true;</span></a>
+<a name="76"><span class="lineNum">      76 </span><span class="lineCov">      64019 :         if (std::tie(year, month, day) &lt; std::tie(other.year, other.month, other.day)) {</span></a>
+<a name="77"><span class="lineNum">      77 </span><span class="lineCov">      40108 :             return true;</span></a>
 <a name="78"><span class="lineNum">      78 </span>            :         }</a>
 <a name="79"><span class="lineNum">      79 </span>            :         else {</a>
-<a name="80"><span class="lineNum">      80 </span><span class="lineCov">      36366 :             return false;</span></a>
+<a name="80"><span class="lineNum">      80 </span><span class="lineCov">      23911 :             return false;</span></a>
 <a name="81"><span class="lineNum">      81 </span>            :         }</a>
 <a name="82"><span class="lineNum">      82 </span>            :     }</a>
 <a name="83"><span class="lineNum">      83 </span><span class="lineCov">          3 :     bool operator&lt;=(const Date&amp; other) const</span></a>
 <a name="84"><span class="lineNum">      84 </span>            :     {</a>
 <a name="85"><span class="lineNum">      85 </span><span class="lineCov">          3 :         return !(other &lt; *this);</span></a>
 <a name="86"><span class="lineNum">      86 </span>            :     }</a>
-<a name="87"><span class="lineNum">      87 </span><span class="lineCov">          9 :     bool operator&gt;(const Date&amp; other) const</span></a>
+<a name="87"><span class="lineNum">      87 </span><span class="lineCov">         10 :     bool operator&gt;(const Date&amp; other) const</span></a>
 <a name="88"><span class="lineNum">      88 </span>            :     {</a>
-<a name="89"><span class="lineNum">      89 </span><span class="lineCov">          9 :         return other &lt; *this;</span></a>
+<a name="89"><span class="lineNum">      89 </span><span class="lineCov">         10 :         return other &lt; *this;</span></a>
 <a name="90"><span class="lineNum">      90 </span>            :     }</a>
-<a name="91"><span class="lineNum">      91 </span><span class="lineCov">      12147 :     bool operator&gt;=(const Date&amp; other) const</span></a>
+<a name="91"><span class="lineNum">      91 </span><span class="lineCov">      15459 :     bool operator&gt;=(const Date&amp; other) const</span></a>
 <a name="92"><span class="lineNum">      92 </span>            :     {</a>
-<a name="93"><span class="lineNum">      93 </span><span class="lineCov">      12147 :         return !(*this &lt; other);</span></a>
+<a name="93"><span class="lineNum">      93 </span><span class="lineCov">      15459 :         return !(*this &lt; other);</span></a>
 <a name="94"><span class="lineNum">      94 </span>            :     }</a>
 <a name="95"><span class="lineNum">      95 </span>            :     //@}</a>
 <a name="96"><span class="lineNum">      96 </span>            : </a>
@@ -181,7 +181,7 @@
 <a name="119"><span class="lineNum">     119 </span>            :      * deserialize an object of this class.</a>
 <a name="120"><span class="lineNum">     120 </span>            :      * @see mio::deserialize</a>
 <a name="121"><span class="lineNum">     121 </span>            :      */</a>
-<a name="122"><span class="lineNum">     122 </span>            :     template&lt;class IOContext&gt;</a>
+<a name="122"><span class="lineNum">     122 </span>            :     template &lt;class IOContext&gt;</a>
 <a name="123"><span class="lineNum">     123 </span>            :     static IOResult&lt;Date&gt; deserialize(IOContext&amp; io)</a>
 <a name="124"><span class="lineNum">     124 </span>            :     {</a>
 <a name="125"><span class="lineNum">     125 </span>            :         auto obj = io.expect_object(&quot;Date&quot;);</a>
@@ -211,162 +211,163 @@
 <a name="149"><span class="lineNum">     149 </span>            :  * @param date_str date as a string.</a>
 <a name="150"><span class="lineNum">     150 </span>            :  * @return parsed date.</a>
 <a name="151"><span class="lineNum">     151 </span>            :  */</a>
-<a name="152"><span class="lineNum">     152 </span><span class="lineCov">       5166 : inline IOResult&lt;Date&gt; parse_date(const std::string&amp; date_str)</span></a>
+<a name="152"><span class="lineNum">     152 </span><span class="lineCov">       6914 : inline IOResult&lt;Date&gt; parse_date(const std::string&amp; date_str)</span></a>
 <a name="153"><span class="lineNum">     153 </span>            : {</a>
 <a name="154"><span class="lineNum">     154 </span>            :     try {</a>
-<a name="155"><span class="lineNum">     155 </span><span class="lineCov">       5166 :         Date date;</span></a>
-<a name="156"><span class="lineNum">     156 </span><span class="lineCov">       5166 :         date.year  = std::stoi(date_str.substr(0, 4));</span></a>
-<a name="157"><span class="lineNum">     157 </span><span class="lineCov">       5166 :         date.month = std::stoi(date_str.substr(5, 2));</span></a>
-<a name="158"><span class="lineNum">     158 </span><span class="lineCov">       5166 :         date.day   = std::stoi(date_str.substr(8, 2));</span></a>
-<a name="159"><span class="lineNum">     159 </span><span class="lineCov">       5166 :         if (date.month &lt; 1 || date.month &gt; 12 || date.day &lt; 1 || date.day &gt; 31) {</span></a>
+<a name="155"><span class="lineNum">     155 </span><span class="lineCov">       6914 :         Date date;</span></a>
+<a name="156"><span class="lineNum">     156 </span><span class="lineCov">       6914 :         date.year  = std::stoi(date_str.substr(0, 4));</span></a>
+<a name="157"><span class="lineNum">     157 </span><span class="lineCov">       6914 :         date.month = std::stoi(date_str.substr(5, 2));</span></a>
+<a name="158"><span class="lineNum">     158 </span><span class="lineCov">       6914 :         date.day   = std::stoi(date_str.substr(8, 2));</span></a>
+<a name="159"><span class="lineNum">     159 </span><span class="lineCov">       6914 :         if (date.month &lt; 1 || date.month &gt; 12 || date.day &lt; 1 || date.day &gt; 31) {</span></a>
 <a name="160"><span class="lineNum">     160 </span><span class="lineNoCov">          0 :             return failure(StatusCode::OutOfRange, &quot;Argument is not a valid date.&quot;);</span></a>
 <a name="161"><span class="lineNum">     161 </span>            :         }</a>
-<a name="162"><span class="lineNum">     162 </span><span class="lineCov">       5166 :         return success(date);</span></a>
-<a name="163"><span class="lineNum">     163 </span><span class="lineNoCov">          0 :     } catch (const std::invalid_argument&amp;) {</span></a>
-<a name="164"><span class="lineNum">     164 </span><span class="lineNoCov">          0 :         return failure(StatusCode::InvalidValue, &quot;Argument ist not a valid date string.&quot;);</span></a>
-<a name="165"><span class="lineNum">     165 </span>            :     }</a>
-<a name="166"><span class="lineNum">     166 </span>            : }</a>
-<a name="167"><span class="lineNum">     167 </span>            : </a>
-<a name="168"><span class="lineNum">     168 </span>            : /**</a>
-<a name="169"><span class="lineNum">     169 </span>            :  * @brief Computes the new date corresponding to a given date and a offset in days.</a>
-<a name="170"><span class="lineNum">     170 </span>            :  * @param date date.</a>
-<a name="171"><span class="lineNum">     171 </span>            :  * @param offset_days offset in days.</a>
-<a name="172"><span class="lineNum">     172 </span>            :  * @return new date that is date + offset_days.</a>
-<a name="173"><span class="lineNum">     173 </span>            :  */</a>
-<a name="174"><span class="lineNum">     174 </span><span class="lineCov">     279904 : inline Date offset_date_by_days(Date date, int offset_days)</span></a>
-<a name="175"><span class="lineNum">     175 </span>            : {</a>
-<a name="176"><span class="lineNum">     176 </span><span class="lineCov">     279904 :     auto year  = date.year;</span></a>
-<a name="177"><span class="lineNum">     177 </span><span class="lineCov">     279904 :     auto month = date.month;</span></a>
-<a name="178"><span class="lineNum">     178 </span><span class="lineCov">     279904 :     auto day   = date.day;</span></a>
-<a name="179"><span class="lineNum">     179 </span><span class="lineCov">     279904 :     assert(month &gt; 0 &amp;&amp; month &lt; 13 &amp;&amp; day &gt; 0 &amp;&amp; day &lt; 32);</span></a>
-<a name="180"><span class="lineNum">     180 </span>            : </a>
-<a name="181"><span class="lineNum">     181 </span><span class="lineCov">     279904 :     std::array&lt;int, 12&gt; month_len;</span></a>
-<a name="182"><span class="lineNum">     182 </span><span class="lineCov">     279904 :     if (((year % 4 == 0) &amp;&amp; (year % 100 != 0)) || (year % 400 == 0)) {</span></a>
-<a name="183"><span class="lineNum">     183 </span>            :         // leap year</a>
-<a name="184"><span class="lineNum">     184 </span><span class="lineCov">     273814 :         month_len = {31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};</span></a>
-<a name="185"><span class="lineNum">     185 </span>            :     }</a>
-<a name="186"><span class="lineNum">     186 </span>            :     else {</a>
-<a name="187"><span class="lineNum">     187 </span><span class="lineCov">       6090 :         month_len = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};</span></a>
-<a name="188"><span class="lineNum">     188 </span>            :     }</a>
-<a name="189"><span class="lineNum">     189 </span><span class="lineCov">     279904 :     if (day + offset_days &gt; 0 &amp;&amp; day + offset_days &lt;= month_len[month - 1]) {</span></a>
-<a name="190"><span class="lineNum">     190 </span><span class="lineCov">     150168 :         return {year, month, day + offset_days};</span></a>
-<a name="191"><span class="lineNum">     191 </span>            :     }</a>
-<a name="192"><span class="lineNum">     192 </span>            :     else {</a>
-<a name="193"><span class="lineNum">     193 </span><span class="lineCov">     129736 :         std::array&lt;int, 12&gt; part_sum;</span></a>
-<a name="194"><span class="lineNum">     194 </span><span class="lineCov">     129736 :         std::partial_sum(month_len.begin(), month_len.end(), part_sum.begin());</span></a>
-<a name="195"><span class="lineNum">     195 </span>            : </a>
-<a name="196"><span class="lineNum">     196 </span><span class="lineCov">     129736 :         int day_in_year = day + offset_days;</span></a>
-<a name="197"><span class="lineNum">     197 </span><span class="lineCov">     129736 :         if (month &gt; 1) {</span></a>
-<a name="198"><span class="lineNum">     198 </span>            :             // take month-2 since end of last month has to be found and due to start at 0 of C++ (against January=1 in date format)</a>
-<a name="199"><span class="lineNum">     199 </span><span class="lineCov">     129730 :             day_in_year += part_sum[month - 2];</span></a>
-<a name="200"><span class="lineNum">     200 </span>            :         }</a>
-<a name="201"><span class="lineNum">     201 </span>            : </a>
-<a name="202"><span class="lineNum">     202 </span><span class="lineCov">     129736 :         if (day_in_year &gt; 0 &amp;&amp; day_in_year &lt;= part_sum[11]) {</span></a>
-<a name="203"><span class="lineNum">     203 </span><span class="lineCov">    1483800 :             auto iter = std::find_if(part_sum.begin(), part_sum.end(), [day_in_year](auto s) {</span></a>
-<a name="204"><span class="lineNum">     204 </span><span class="lineCov">    1360150 :                 return day_in_year &lt;= s;</span></a>
-<a name="205"><span class="lineNum">     205 </span>            :             });</a>
-<a name="206"><span class="lineNum">     206 </span><span class="lineCov">     123652 :             int i     = static_cast&lt;int&gt;(iter - part_sum.begin());</span></a>
-<a name="207"><span class="lineNum">     207 </span><span class="lineCov">     123652 :             return {year, i + 1, day_in_year - (i &gt; 0 ? part_sum[static_cast&lt;size_t&gt;(i - 1)] : 0)};</span></a>
-<a name="208"><span class="lineNum">     208 </span>            :         }</a>
-<a name="209"><span class="lineNum">     209 </span>            :         else {</a>
-<a name="210"><span class="lineNum">     210 </span><span class="lineCov">       6084 :             if (day_in_year &gt; 0) {</span></a>
-<a name="211"><span class="lineNum">     211 </span><span class="lineCov">       6078 :                 return offset_date_by_days({year + 1, 1, 1}, day_in_year - part_sum[11] - 1);</span></a>
-<a name="212"><span class="lineNum">     212 </span>            :             }</a>
-<a name="213"><span class="lineNum">     213 </span>            :             else {</a>
-<a name="214"><span class="lineNum">     214 </span><span class="lineCov">          6 :                 return offset_date_by_days({year - 1, 12, 31}, day_in_year);</span></a>
-<a name="215"><span class="lineNum">     215 </span>            :             }</a>
-<a name="216"><span class="lineNum">     216 </span>            :         }</a>
-<a name="217"><span class="lineNum">     217 </span>            :     }</a>
-<a name="218"><span class="lineNum">     218 </span>            : }</a>
-<a name="219"><span class="lineNum">     219 </span>            : </a>
-<a name="220"><span class="lineNum">     220 </span>            : /**</a>
-<a name="221"><span class="lineNum">     221 </span>            :  * @brief Computes the day in year based on a given date.</a>
-<a name="222"><span class="lineNum">     222 </span>            :  * @param date date</a>
-<a name="223"><span class="lineNum">     223 </span>            :  * @return day in year, starting January, 1st, with 1.</a>
-<a name="224"><span class="lineNum">     224 </span>            :  */</a>
-<a name="225"><span class="lineNum">     225 </span><span class="lineCov">      19925 : inline int get_day_in_year(Date date)</span></a>
-<a name="226"><span class="lineNum">     226 </span>            : {</a>
-<a name="227"><span class="lineNum">     227 </span><span class="lineCov">      19925 :     auto year  = date.year;</span></a>
-<a name="228"><span class="lineNum">     228 </span><span class="lineCov">      19925 :     auto month = date.month;</span></a>
-<a name="229"><span class="lineNum">     229 </span><span class="lineCov">      19925 :     auto day   = date.day;</span></a>
-<a name="230"><span class="lineNum">     230 </span><span class="lineCov">      19925 :     assert(month &gt; 0 &amp;&amp; month &lt; 13 &amp;&amp; day &gt; 0 &amp;&amp; day &lt; 32);</span></a>
-<a name="231"><span class="lineNum">     231 </span>            : </a>
-<a name="232"><span class="lineNum">     232 </span><span class="lineCov">      19925 :     if (month &gt; 1) {</span></a>
-<a name="233"><span class="lineNum">     233 </span><span class="lineCov">      13850 :         std::array&lt;int, 12&gt; month_len;</span></a>
-<a name="234"><span class="lineNum">     234 </span><span class="lineCov">      13850 :         if (((year % 4 == 0) &amp;&amp; (year % 100 != 0)) || (year % 400 == 0)) {</span></a>
-<a name="235"><span class="lineNum">     235 </span>            :             // leap year</a>
-<a name="236"><span class="lineNum">     236 </span><span class="lineCov">      13812 :             month_len = {31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};</span></a>
-<a name="237"><span class="lineNum">     237 </span>            :         }</a>
-<a name="238"><span class="lineNum">     238 </span>            :         else {</a>
-<a name="239"><span class="lineNum">     239 </span><span class="lineCov">         38 :             month_len = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};</span></a>
-<a name="240"><span class="lineNum">     240 </span>            :         }</a>
-<a name="241"><span class="lineNum">     241 </span>            : </a>
-<a name="242"><span class="lineNum">     242 </span><span class="lineCov">      13850 :         std::array&lt;int, 12&gt; part_sum;</span></a>
-<a name="243"><span class="lineNum">     243 </span><span class="lineCov">      13850 :         std::partial_sum(month_len.begin(), month_len.end(), part_sum.begin());</span></a>
-<a name="244"><span class="lineNum">     244 </span>            : </a>
-<a name="245"><span class="lineNum">     245 </span>            :         // take month-2 since end of last month has to be found and due to start at 0 of C++ (against January=1 in date format)</a>
-<a name="246"><span class="lineNum">     246 </span><span class="lineCov">      13850 :         int day_in_year = part_sum[month - 2] + day;</span></a>
-<a name="247"><span class="lineNum">     247 </span>            : </a>
-<a name="248"><span class="lineNum">     248 </span><span class="lineCov">      13850 :         return day_in_year;</span></a>
-<a name="249"><span class="lineNum">     249 </span>            :     }</a>
-<a name="250"><span class="lineNum">     250 </span>            :     else {</a>
-<a name="251"><span class="lineNum">     251 </span><span class="lineCov">       6075 :         return day;</span></a>
-<a name="252"><span class="lineNum">     252 </span>            :     }</a>
-<a name="253"><span class="lineNum">     253 </span>            : }</a>
-<a name="254"><span class="lineNum">     254 </span>            : </a>
-<a name="255"><span class="lineNum">     255 </span>            : /**</a>
-<a name="256"><span class="lineNum">     256 </span>            :  * @brief Computes the offset in days given two dates: first date minus second date.</a>
-<a name="257"><span class="lineNum">     257 </span>            :  * @param date1 first date.</a>
-<a name="258"><span class="lineNum">     258 </span>            :  * @param date2 second date.</a>
-<a name="259"><span class="lineNum">     259 </span>            :  * @return offset in days between the two dates.</a>
-<a name="260"><span class="lineNum">     260 </span>            :  */</a>
-<a name="261"><span class="lineNum">     261 </span><span class="lineCov">      12205 : inline int get_offset_in_days(Date date1, Date date2)</span></a>
-<a name="262"><span class="lineNum">     262 </span>            : {</a>
-<a name="263"><span class="lineNum">     263 </span><span class="lineCov">      12205 :     auto year1  = date1.year;</span></a>
-<a name="264"><span class="lineNum">     264 </span><span class="lineCov">      12205 :     auto month1 = date1.month;</span></a>
-<a name="265"><span class="lineNum">     265 </span><span class="lineCov">      12205 :     auto day1   = date1.day;</span></a>
-<a name="266"><span class="lineNum">     266 </span>            : </a>
-<a name="267"><span class="lineNum">     267 </span><span class="lineCov">      12205 :     auto year2  = date2.year;</span></a>
-<a name="268"><span class="lineNum">     268 </span><span class="lineCov">      12205 :     auto month2 = date2.month;</span></a>
-<a name="269"><span class="lineNum">     269 </span><span class="lineCov">      12205 :     auto day2   = date2.day;</span></a>
-<a name="270"><span class="lineNum">     270 </span>            : </a>
-<a name="271"><span class="lineNum">     271 </span><span class="lineCov">      12205 :     if (year1 == year2 &amp;&amp; month1 == month2) {</span></a>
-<a name="272"><span class="lineNum">     272 </span><span class="lineCov">       2262 :         return day1 - day2;</span></a>
-<a name="273"><span class="lineNum">     273 </span>            :     }</a>
-<a name="274"><span class="lineNum">     274 </span>            :     else {</a>
-<a name="275"><span class="lineNum">     275 </span><span class="lineCov">       9943 :         int day_in_year1 = get_day_in_year(date1);</span></a>
-<a name="276"><span class="lineNum">     276 </span><span class="lineCov">       9943 :         int day_in_year2 = get_day_in_year(date2);</span></a>
-<a name="277"><span class="lineNum">     277 </span>            : </a>
-<a name="278"><span class="lineNum">     278 </span><span class="lineCov">       9943 :         if (year1 &lt; year2) {</span></a>
-<a name="279"><span class="lineNum">     279 </span><span class="lineCov">          1 :             int sum_days = 0;</span></a>
-<a name="280"><span class="lineNum">     280 </span><span class="lineCov">          2 :             for (int i = year1; i &lt; year2; i++) {</span></a>
-<a name="281"><span class="lineNum">     281 </span><span class="lineCov">          1 :                 sum_days += 365;</span></a>
-<a name="282"><span class="lineNum">     282 </span><span class="lineCov">          1 :                 if (((i % 4 == 0) &amp;&amp; (i % 100 != 0)) || (i % 400 == 0)) {</span></a>
-<a name="283"><span class="lineNum">     283 </span><span class="lineNoCov">          0 :                     sum_days += 1;</span></a>
-<a name="284"><span class="lineNum">     284 </span>            :                 }</a>
-<a name="285"><span class="lineNum">     285 </span>            :             }</a>
-<a name="286"><span class="lineNum">     286 </span><span class="lineCov">          1 :             return -(sum_days - day_in_year1) - day_in_year2;</span></a>
-<a name="287"><span class="lineNum">     287 </span>            :         }</a>
-<a name="288"><span class="lineNum">     288 </span><span class="lineCov">       9942 :         else if (year1 &gt; year2) {</span></a>
-<a name="289"><span class="lineNum">     289 </span><span class="lineCov">       6076 :             int sum_days = 0;</span></a>
-<a name="290"><span class="lineNum">     290 </span><span class="lineCov">      12156 :             for (int i = year2; i &lt; year1; i++) {</span></a>
-<a name="291"><span class="lineNum">     291 </span><span class="lineCov">       6080 :                 sum_days += 365;</span></a>
-<a name="292"><span class="lineNum">     292 </span><span class="lineCov">       6080 :                 if (((i % 4 == 0) &amp;&amp; (i % 100 != 0)) || (i % 400 == 0)) {</span></a>
-<a name="293"><span class="lineNum">     293 </span><span class="lineCov">       6077 :                     sum_days += 1;</span></a>
-<a name="294"><span class="lineNum">     294 </span>            :                 }</a>
-<a name="295"><span class="lineNum">     295 </span>            :             }</a>
-<a name="296"><span class="lineNum">     296 </span><span class="lineCov">       6076 :             return day_in_year1 + sum_days - day_in_year2;</span></a>
-<a name="297"><span class="lineNum">     297 </span>            :         }</a>
-<a name="298"><span class="lineNum">     298 </span>            :         else {</a>
-<a name="299"><span class="lineNum">     299 </span>            : </a>
-<a name="300"><span class="lineNum">     300 </span><span class="lineCov">       3866 :             return day_in_year1 - day_in_year2;</span></a>
-<a name="301"><span class="lineNum">     301 </span>            :         }</a>
-<a name="302"><span class="lineNum">     302 </span>            :     }</a>
-<a name="303"><span class="lineNum">     303 </span>            : }</a>
-<a name="304"><span class="lineNum">     304 </span>            : </a>
-<a name="305"><span class="lineNum">     305 </span>            : } // end namespace mio</a>
-<a name="306"><span class="lineNum">     306 </span>            : </a>
-<a name="307"><span class="lineNum">     307 </span>            : #endif // EPI_UTILS_DATE_H</a>
+<a name="162"><span class="lineNum">     162 </span><span class="lineCov">       6914 :         return success(date);</span></a>
+<a name="163"><span class="lineNum">     163 </span>            :     }</a>
+<a name="164"><span class="lineNum">     164 </span><span class="lineNoCov">          0 :     catch (const std::invalid_argument&amp;) {</span></a>
+<a name="165"><span class="lineNum">     165 </span><span class="lineNoCov">          0 :         return failure(StatusCode::InvalidValue, &quot;Argument ist not a valid date string.&quot;);</span></a>
+<a name="166"><span class="lineNum">     166 </span>            :     }</a>
+<a name="167"><span class="lineNum">     167 </span>            : }</a>
+<a name="168"><span class="lineNum">     168 </span>            : </a>
+<a name="169"><span class="lineNum">     169 </span>            : /**</a>
+<a name="170"><span class="lineNum">     170 </span>            :  * @brief Computes the new date corresponding to a given date and a offset in days.</a>
+<a name="171"><span class="lineNum">     171 </span>            :  * @param date date.</a>
+<a name="172"><span class="lineNum">     172 </span>            :  * @param offset_days offset in days.</a>
+<a name="173"><span class="lineNum">     173 </span>            :  * @return new date that is date + offset_days.</a>
+<a name="174"><span class="lineNum">     174 </span>            :  */</a>
+<a name="175"><span class="lineNum">     175 </span><span class="lineCov">     114849 : inline Date offset_date_by_days(Date date, int offset_days)</span></a>
+<a name="176"><span class="lineNum">     176 </span>            : {</a>
+<a name="177"><span class="lineNum">     177 </span><span class="lineCov">     114849 :     auto year  = date.year;</span></a>
+<a name="178"><span class="lineNum">     178 </span><span class="lineCov">     114849 :     auto month = date.month;</span></a>
+<a name="179"><span class="lineNum">     179 </span><span class="lineCov">     114849 :     auto day   = date.day;</span></a>
+<a name="180"><span class="lineNum">     180 </span><span class="lineCov">     114849 :     assert(month &gt; 0 &amp;&amp; month &lt; 13 &amp;&amp; day &gt; 0 &amp;&amp; day &lt; 32);</span></a>
+<a name="181"><span class="lineNum">     181 </span>            : </a>
+<a name="182"><span class="lineNum">     182 </span><span class="lineCov">     114849 :     std::array&lt;int, 12&gt; month_len;</span></a>
+<a name="183"><span class="lineNum">     183 </span><span class="lineCov">     114849 :     if (((year % 4 == 0) &amp;&amp; (year % 100 != 0)) || (year % 400 == 0)) {</span></a>
+<a name="184"><span class="lineNum">     184 </span>            :         // leap year</a>
+<a name="185"><span class="lineNum">     185 </span><span class="lineCov">     107103 :         month_len = {31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};</span></a>
+<a name="186"><span class="lineNum">     186 </span>            :     }</a>
+<a name="187"><span class="lineNum">     187 </span>            :     else {</a>
+<a name="188"><span class="lineNum">     188 </span><span class="lineCov">       7746 :         month_len = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};</span></a>
+<a name="189"><span class="lineNum">     189 </span>            :     }</a>
+<a name="190"><span class="lineNum">     190 </span><span class="lineCov">     114849 :     if (day + offset_days &gt; 0 &amp;&amp; day + offset_days &lt;= month_len[month - 1]) {</span></a>
+<a name="191"><span class="lineNum">     191 </span><span class="lineCov">      73984 :         return {year, month, day + offset_days};</span></a>
+<a name="192"><span class="lineNum">     192 </span>            :     }</a>
+<a name="193"><span class="lineNum">     193 </span>            :     else {</a>
+<a name="194"><span class="lineNum">     194 </span><span class="lineCov">      40865 :         std::array&lt;int, 12&gt; part_sum;</span></a>
+<a name="195"><span class="lineNum">     195 </span><span class="lineCov">      40865 :         std::partial_sum(month_len.begin(), month_len.end(), part_sum.begin());</span></a>
+<a name="196"><span class="lineNum">     196 </span>            : </a>
+<a name="197"><span class="lineNum">     197 </span><span class="lineCov">      40865 :         int day_in_year = day + offset_days;</span></a>
+<a name="198"><span class="lineNum">     198 </span><span class="lineCov">      40865 :         if (month &gt; 1) {</span></a>
+<a name="199"><span class="lineNum">     199 </span>            :             // take month-2 since end of last month has to be found and due to start at 0 of C++ (against January=1 in date format)</a>
+<a name="200"><span class="lineNum">     200 </span><span class="lineCov">      40859 :             day_in_year += part_sum[month - 2];</span></a>
+<a name="201"><span class="lineNum">     201 </span>            :         }</a>
+<a name="202"><span class="lineNum">     202 </span>            : </a>
+<a name="203"><span class="lineNum">     203 </span><span class="lineCov">      40865 :         if (day_in_year &gt; 0 &amp;&amp; day_in_year &lt;= part_sum[11]) {</span></a>
+<a name="204"><span class="lineNum">     204 </span><span class="lineCov">     396652 :             auto iter = std::find_if(part_sum.begin(), part_sum.end(), [day_in_year](auto s) {</span></a>
+<a name="205"><span class="lineNum">     205 </span><span class="lineCov">     363527 :                 return day_in_year &lt;= s;</span></a>
+<a name="206"><span class="lineNum">     206 </span>            :             });</a>
+<a name="207"><span class="lineNum">     207 </span><span class="lineCov">      33125 :             int i     = static_cast&lt;int&gt;(iter - part_sum.begin());</span></a>
+<a name="208"><span class="lineNum">     208 </span><span class="lineCov">      33125 :             return {year, i + 1, day_in_year - (i &gt; 0 ? part_sum[static_cast&lt;size_t&gt;(i - 1)] : 0)};</span></a>
+<a name="209"><span class="lineNum">     209 </span>            :         }</a>
+<a name="210"><span class="lineNum">     210 </span>            :         else {</a>
+<a name="211"><span class="lineNum">     211 </span><span class="lineCov">       7740 :             if (day_in_year &gt; 0) {</span></a>
+<a name="212"><span class="lineNum">     212 </span><span class="lineCov">       7734 :                 return offset_date_by_days({year + 1, 1, 1}, day_in_year - part_sum[11] - 1);</span></a>
+<a name="213"><span class="lineNum">     213 </span>            :             }</a>
+<a name="214"><span class="lineNum">     214 </span>            :             else {</a>
+<a name="215"><span class="lineNum">     215 </span><span class="lineCov">          6 :                 return offset_date_by_days({year - 1, 12, 31}, day_in_year);</span></a>
+<a name="216"><span class="lineNum">     216 </span>            :             }</a>
+<a name="217"><span class="lineNum">     217 </span>            :         }</a>
+<a name="218"><span class="lineNum">     218 </span>            :     }</a>
+<a name="219"><span class="lineNum">     219 </span>            : }</a>
+<a name="220"><span class="lineNum">     220 </span>            : </a>
+<a name="221"><span class="lineNum">     221 </span>            : /**</a>
+<a name="222"><span class="lineNum">     222 </span>            :  * @brief Computes the day in year based on a given date.</a>
+<a name="223"><span class="lineNum">     223 </span>            :  * @param date date</a>
+<a name="224"><span class="lineNum">     224 </span>            :  * @return day in year, starting January, 1st, with 1.</a>
+<a name="225"><span class="lineNum">     225 </span>            :  */</a>
+<a name="226"><span class="lineNum">     226 </span><span class="lineCov">      26580 : inline int get_day_in_year(Date date)</span></a>
+<a name="227"><span class="lineNum">     227 </span>            : {</a>
+<a name="228"><span class="lineNum">     228 </span><span class="lineCov">      26580 :     auto year  = date.year;</span></a>
+<a name="229"><span class="lineNum">     229 </span><span class="lineCov">      26580 :     auto month = date.month;</span></a>
+<a name="230"><span class="lineNum">     230 </span><span class="lineCov">      26580 :     auto day   = date.day;</span></a>
+<a name="231"><span class="lineNum">     231 </span><span class="lineCov">      26580 :     assert(month &gt; 0 &amp;&amp; month &lt; 13 &amp;&amp; day &gt; 0 &amp;&amp; day &lt; 32);</span></a>
+<a name="232"><span class="lineNum">     232 </span>            : </a>
+<a name="233"><span class="lineNum">     233 </span><span class="lineCov">      26580 :     if (month &gt; 1) {</span></a>
+<a name="234"><span class="lineNum">     234 </span><span class="lineCov">      18849 :         std::array&lt;int, 12&gt; month_len;</span></a>
+<a name="235"><span class="lineNum">     235 </span><span class="lineCov">      18849 :         if (((year % 4 == 0) &amp;&amp; (year % 100 != 0)) || (year % 400 == 0)) {</span></a>
+<a name="236"><span class="lineNum">     236 </span>            :             // leap year</a>
+<a name="237"><span class="lineNum">     237 </span><span class="lineCov">      18780 :             month_len = {31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};</span></a>
+<a name="238"><span class="lineNum">     238 </span>            :         }</a>
+<a name="239"><span class="lineNum">     239 </span>            :         else {</a>
+<a name="240"><span class="lineNum">     240 </span><span class="lineCov">         69 :             month_len = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};</span></a>
+<a name="241"><span class="lineNum">     241 </span>            :         }</a>
+<a name="242"><span class="lineNum">     242 </span>            : </a>
+<a name="243"><span class="lineNum">     243 </span><span class="lineCov">      18849 :         std::array&lt;int, 12&gt; part_sum;</span></a>
+<a name="244"><span class="lineNum">     244 </span><span class="lineCov">      18849 :         std::partial_sum(month_len.begin(), month_len.end(), part_sum.begin());</span></a>
+<a name="245"><span class="lineNum">     245 </span>            : </a>
+<a name="246"><span class="lineNum">     246 </span>            :         // take month-2 since end of last month has to be found and due to start at 0 of C++ (against January=1 in date format)</a>
+<a name="247"><span class="lineNum">     247 </span><span class="lineCov">      18849 :         int day_in_year = part_sum[month - 2] + day;</span></a>
+<a name="248"><span class="lineNum">     248 </span>            : </a>
+<a name="249"><span class="lineNum">     249 </span><span class="lineCov">      18849 :         return day_in_year;</span></a>
+<a name="250"><span class="lineNum">     250 </span>            :     }</a>
+<a name="251"><span class="lineNum">     251 </span>            :     else {</a>
+<a name="252"><span class="lineNum">     252 </span><span class="lineCov">       7731 :         return day;</span></a>
+<a name="253"><span class="lineNum">     253 </span>            :     }</a>
+<a name="254"><span class="lineNum">     254 </span>            : }</a>
+<a name="255"><span class="lineNum">     255 </span>            : </a>
+<a name="256"><span class="lineNum">     256 </span>            : /**</a>
+<a name="257"><span class="lineNum">     257 </span>            :  * @brief Computes the offset in days given two dates: first date minus second date.</a>
+<a name="258"><span class="lineNum">     258 </span>            :  * @param date1 first date.</a>
+<a name="259"><span class="lineNum">     259 </span>            :  * @param date2 second date.</a>
+<a name="260"><span class="lineNum">     260 </span>            :  * @return offset in days between the two dates.</a>
+<a name="261"><span class="lineNum">     261 </span>            :  */</a>
+<a name="262"><span class="lineNum">     262 </span><span class="lineCov">      15489 : inline int get_offset_in_days(Date date1, Date date2)</span></a>
+<a name="263"><span class="lineNum">     263 </span>            : {</a>
+<a name="264"><span class="lineNum">     264 </span><span class="lineCov">      15489 :     auto year1  = date1.year;</span></a>
+<a name="265"><span class="lineNum">     265 </span><span class="lineCov">      15489 :     auto month1 = date1.month;</span></a>
+<a name="266"><span class="lineNum">     266 </span><span class="lineCov">      15489 :     auto day1   = date1.day;</span></a>
+<a name="267"><span class="lineNum">     267 </span>            : </a>
+<a name="268"><span class="lineNum">     268 </span><span class="lineCov">      15489 :     auto year2  = date2.year;</span></a>
+<a name="269"><span class="lineNum">     269 </span><span class="lineCov">      15489 :     auto month2 = date2.month;</span></a>
+<a name="270"><span class="lineNum">     270 </span><span class="lineCov">      15489 :     auto day2   = date2.day;</span></a>
+<a name="271"><span class="lineNum">     271 </span>            : </a>
+<a name="272"><span class="lineNum">     272 </span><span class="lineCov">      15489 :     if (year1 == year2 &amp;&amp; month1 == month2) {</span></a>
+<a name="273"><span class="lineNum">     273 </span><span class="lineCov">       2234 :         return day1 - day2;</span></a>
+<a name="274"><span class="lineNum">     274 </span>            :     }</a>
+<a name="275"><span class="lineNum">     275 </span>            :     else {</a>
+<a name="276"><span class="lineNum">     276 </span><span class="lineCov">      13255 :         int day_in_year1 = get_day_in_year(date1);</span></a>
+<a name="277"><span class="lineNum">     277 </span><span class="lineCov">      13255 :         int day_in_year2 = get_day_in_year(date2);</span></a>
+<a name="278"><span class="lineNum">     278 </span>            : </a>
+<a name="279"><span class="lineNum">     279 </span><span class="lineCov">      13255 :         if (year1 &lt; year2) {</span></a>
+<a name="280"><span class="lineNum">     280 </span><span class="lineCov">          1 :             int sum_days = 0;</span></a>
+<a name="281"><span class="lineNum">     281 </span><span class="lineCov">          2 :             for (int i = year1; i &lt; year2; i++) {</span></a>
+<a name="282"><span class="lineNum">     282 </span><span class="lineCov">          1 :                 sum_days += 365;</span></a>
+<a name="283"><span class="lineNum">     283 </span><span class="lineCov">          1 :                 if (((i % 4 == 0) &amp;&amp; (i % 100 != 0)) || (i % 400 == 0)) {</span></a>
+<a name="284"><span class="lineNum">     284 </span><span class="lineNoCov">          0 :                     sum_days += 1;</span></a>
+<a name="285"><span class="lineNum">     285 </span>            :                 }</a>
+<a name="286"><span class="lineNum">     286 </span>            :             }</a>
+<a name="287"><span class="lineNum">     287 </span><span class="lineCov">          1 :             return -(sum_days - day_in_year1) - day_in_year2;</span></a>
+<a name="288"><span class="lineNum">     288 </span>            :         }</a>
+<a name="289"><span class="lineNum">     289 </span><span class="lineCov">      13254 :         else if (year1 &gt; year2) {</span></a>
+<a name="290"><span class="lineNum">     290 </span><span class="lineCov">       7732 :             int sum_days = 0;</span></a>
+<a name="291"><span class="lineNum">     291 </span><span class="lineCov">      15468 :             for (int i = year2; i &lt; year1; i++) {</span></a>
+<a name="292"><span class="lineNum">     292 </span><span class="lineCov">       7736 :                 sum_days += 365;</span></a>
+<a name="293"><span class="lineNum">     293 </span><span class="lineCov">       7736 :                 if (((i % 4 == 0) &amp;&amp; (i % 100 != 0)) || (i % 400 == 0)) {</span></a>
+<a name="294"><span class="lineNum">     294 </span><span class="lineCov">       7733 :                     sum_days += 1;</span></a>
+<a name="295"><span class="lineNum">     295 </span>            :                 }</a>
+<a name="296"><span class="lineNum">     296 </span>            :             }</a>
+<a name="297"><span class="lineNum">     297 </span><span class="lineCov">       7732 :             return day_in_year1 + sum_days - day_in_year2;</span></a>
+<a name="298"><span class="lineNum">     298 </span>            :         }</a>
+<a name="299"><span class="lineNum">     299 </span>            :         else {</a>
+<a name="300"><span class="lineNum">     300 </span>            : </a>
+<a name="301"><span class="lineNum">     301 </span><span class="lineCov">       5522 :             return day_in_year1 - day_in_year2;</span></a>
+<a name="302"><span class="lineNum">     302 </span>            :         }</a>
+<a name="303"><span class="lineNum">     303 </span>            :     }</a>
+<a name="304"><span class="lineNum">     304 </span>            : }</a>
+<a name="305"><span class="lineNum">     305 </span>            : </a>
+<a name="306"><span class="lineNum">     306 </span>            : } // end namespace mio</a>
+<a name="307"><span class="lineNum">     307 </span>            : </a>
+<a name="308"><span class="lineNum">     308 </span>            : #endif // EPI_UTILS_DATE_H</a>
 </pre>
       </td>
     </tr>

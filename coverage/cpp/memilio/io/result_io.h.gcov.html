@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2022-10-13 13:53:50</td>
+            <td class="headerValue">2022-10-24 15:44:59</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">3</td>
@@ -61,7 +61,7 @@
 <pre class="sourceHeading">          Line data    Source code</pre>
 <pre class="source">
 <a name="1"><span class="lineNum">       1 </span>            : /* </a>
-<a name="2"><span class="lineNum">       2 </span>            : * Copyright (C) 2020-2021 German Aerospace Center (DLR-SC)</a>
+<a name="2"><span class="lineNum">       2 </span>            : * Copyright (C) 2020-2023 German Aerospace Center (DLR-SC)</a>
 <a name="3"><span class="lineNum">       3 </span>            : *</a>
 <a name="4"><span class="lineNum">       4 </span>            : * Authors: Wadim Koslow, Daniel Abele</a>
 <a name="5"><span class="lineNum">       5 </span>            : *</a>
@@ -129,17 +129,17 @@
 <a name="67"><span class="lineNum">      67 </span>            :     /**</a>
 <a name="68"><span class="lineNum">      68 </span>            :      * @brief Simulation Results of individual groups.</a>
 <a name="69"><span class="lineNum">      69 </span>            :      */</a>
-<a name="70"><span class="lineNum">      70 </span><span class="lineCov">        385 :     const TimeSeries&lt;double&gt;&amp; get_groups() const</span></a>
+<a name="70"><span class="lineNum">      70 </span><span class="lineCov">        345 :     const TimeSeries&lt;double&gt;&amp; get_groups() const</span></a>
 <a name="71"><span class="lineNum">      71 </span>            :     {</a>
-<a name="72"><span class="lineNum">      72 </span><span class="lineCov">        385 :         return m_groups;</span></a>
+<a name="72"><span class="lineNum">      72 </span><span class="lineCov">        345 :         return m_groups;</span></a>
 <a name="73"><span class="lineNum">      73 </span>            :     }</a>
 <a name="74"><span class="lineNum">      74 </span>            : </a>
 <a name="75"><span class="lineNum">      75 </span>            :     /**</a>
 <a name="76"><span class="lineNum">      76 </span>            :      * @brief Simulation Results of the sum over all groups.</a>
 <a name="77"><span class="lineNum">      77 </span>            :      */</a>
-<a name="78"><span class="lineNum">      78 </span><span class="lineCov">        723 :     const TimeSeries&lt;double&gt;&amp; get_totals() const</span></a>
+<a name="78"><span class="lineNum">      78 </span><span class="lineCov">        647 :     const TimeSeries&lt;double&gt;&amp; get_totals() const</span></a>
 <a name="79"><span class="lineNum">      79 </span>            :     {</a>
-<a name="80"><span class="lineNum">      80 </span><span class="lineCov">        723 :         return m_totals;</span></a>
+<a name="80"><span class="lineNum">      80 </span><span class="lineCov">        647 :         return m_totals;</span></a>
 <a name="81"><span class="lineNum">      81 </span>            :     }</a>
 <a name="82"><span class="lineNum">      82 </span>            : </a>
 <a name="83"><span class="lineNum">      83 </span>            : private:</a>

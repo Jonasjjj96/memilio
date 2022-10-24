@@ -71,7 +71,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <a href="secir_2parameter__space_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/* </span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">* Copyright (C) 2020-2021 German Aerospace Center (DLR-SC)</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">* Copyright (C) 2020-2023 German Aerospace Center (DLR-SC)</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">*</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">* Authors: Daniel Abele, Martin J. Kuehn</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">*</span></div>
@@ -113,32 +113,30 @@ $(function() {
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">* @param[in] tmax end time</span></div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment">* @param[in] dev_rel maximum relative deviation from particular value(s) given in params</span></div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment">*/</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespacemio.html#ab975daec20c1aa857e2a33d1df7f4843">set_params_distributions_normal</a>(</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    SecirModel&amp; model, <span class="keywordtype">double</span> t0,</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordtype">double</span> tmax, <span class="keywordtype">double</span> dev_rel);</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespacemio.html#ac6ab5ed8ad4c24029a4444b062fec8bf">draw_sample_demographics</a>(SecirModel&amp; model);</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespacemio.html#ac90a795f6b20bf76876082e0b7ef5efe">draw_sample_infection</a>(SecirModel&amp; model);</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespacemio.html#a6e7fc96007d26d2370d4ac7467f5303c">draw_sample</a>(SecirModel&amp; model);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespacemio.html#ab975daec20c1aa857e2a33d1df7f4843">set_params_distributions_normal</a>(SecirModel&amp; model, <span class="keywordtype">double</span> t0, <span class="keywordtype">double</span> tmax, <span class="keywordtype">double</span> dev_rel);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespacemio.html#ac6ab5ed8ad4c24029a4444b062fec8bf">draw_sample_demographics</a>(SecirModel&amp; model);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespacemio.html#ac90a795f6b20bf76876082e0b7ef5efe">draw_sample_infection</a>(SecirModel&amp; model);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespacemio.html#a6e7fc96007d26d2370d4ac7467f5303c">draw_sample</a>(SecirModel&amp; model);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;Graph&lt;SecirModel, MigrationParameters&gt; <a class="code" href="namespacemio.html#a6e7fc96007d26d2370d4ac7467f5303c">draw_sample</a>(Graph&lt;SecirModel, MigrationParameters&gt;&amp; graph);</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;Graph&lt;SecirModel, MigrationParameters&gt; <a class="code" href="namespacemio.html#a6e7fc96007d26d2370d4ac7467f5303c">draw_sample</a>(Graph&lt;SecirModel, MigrationParameters&gt;&amp; graph);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;} <span class="comment">// namespace mio</span></div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;} <span class="comment">// namespace mio</span></div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="preprocessor">#endif // PARAMETER_SPACE_H</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="preprocessor">#endif // PARAMETER_SPACE_H</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="amobility_8h_html"><div class="ttname"><a href="mobility_8h.html">mobility.h</a></div></div>
 <div class="ttc" id="anamespacemio_html_ab975daec20c1aa857e2a33d1df7f4843"><div class="ttname"><a href="namespacemio.html#ab975daec20c1aa857e2a33d1df7f4843">mio::set_params_distributions_normal</a></div><div class="ttdeci">void set_params_distributions_normal(SecirModel &amp;model, double t0, double tmax, double dev_rel)</div><div class="ttdef"><b>Definition:</b> parameter_space.cpp:27</div></div>
 <div class="ttc" id="aparameter__distributions_8h_html"><div class="ttname"><a href="parameter__distributions_8h.html">parameter_distributions.h</a></div></div>
-<div class="ttc" id="anamespacemio_html_a6e7fc96007d26d2370d4ac7467f5303c"><div class="ttname"><a href="namespacemio.html#a6e7fc96007d26d2370d4ac7467f5303c">mio::draw_sample</a></div><div class="ttdeci">void draw_sample(SecirModel &amp;model)</div><div class="ttdoc">Draws a sample from SecirModel parameter distributions and stores sample values as SecirParams parame...</div><div class="ttdef"><b>Definition:</b> parameter_space.cpp:153</div></div>
-<div class="ttc" id="anamespacemio_html_ac90a795f6b20bf76876082e0b7ef5efe"><div class="ttname"><a href="namespacemio.html#ac90a795f6b20bf76876082e0b7ef5efe">mio::draw_sample_infection</a></div><div class="ttdeci">void draw_sample_infection(SecirModel &amp;model)</div><div class="ttdoc">draws a sample from the specified distributions for all parameters related to the infection.</div><div class="ttdef"><b>Definition:</b> parameter_space.cpp:112</div></div>
+<div class="ttc" id="anamespacemio_html_a6e7fc96007d26d2370d4ac7467f5303c"><div class="ttname"><a href="namespacemio.html#a6e7fc96007d26d2370d4ac7467f5303c">mio::draw_sample</a></div><div class="ttdeci">void draw_sample(SecirModel &amp;model)</div><div class="ttdoc">Draws a sample from SecirModel parameter distributions and stores sample values as SecirParams parame...</div><div class="ttdef"><b>Definition:</b> parameter_space.cpp:144</div></div>
+<div class="ttc" id="anamespacemio_html_ac90a795f6b20bf76876082e0b7ef5efe"><div class="ttname"><a href="namespacemio.html#ac90a795f6b20bf76876082e0b7ef5efe">mio::draw_sample_infection</a></div><div class="ttdeci">void draw_sample_infection(SecirModel &amp;model)</div><div class="ttdoc">draws a sample from the specified distributions for all parameters related to the infection.</div><div class="ttdef"><b>Definition:</b> parameter_space.cpp:108</div></div>
 <div class="ttc" id="alogging_8h_html"><div class="ttname"><a href="logging_8h.html">logging.h</a></div></div>
 <div class="ttc" id="asecir_8h_html"><div class="ttname"><a href="secir_8h.html">secir.h</a></div></div>
 <div class="ttc" id="amemory_8h_html"><div class="ttname"><a href="memory_8h.html">memory.h</a></div></div>
-<div class="ttc" id="anamespacemio_html"><div class="ttname"><a href="namespacemio.html">mio</a></div><div class="ttdoc">A collection of classes to simplify handling of matrix shapes in meta programming.</div><div class="ttdef"><b>Definition:</b> compartmentalmodel.h:32</div></div>
-<div class="ttc" id="anamespacemio_html_ac6ab5ed8ad4c24029a4444b062fec8bf"><div class="ttname"><a href="namespacemio.html#ac6ab5ed8ad4c24029a4444b062fec8bf">mio::draw_sample_demographics</a></div><div class="ttdeci">void draw_sample_demographics(SecirModel &amp;model)</div><div class="ttdoc">draws a sample from the specified distributions for all parameters related to the demographics,...</div><div class="ttdef"><b>Definition:</b> parameter_space.cpp:88</div></div>
+<div class="ttc" id="anamespacemio_html"><div class="ttname"><a href="namespacemio.html">mio</a></div><div class="ttdoc">A collection of classes to simplify handling of matrix shapes in meta programming.</div><div class="ttdef"><b>Definition:</b> compartmentalmodel.h:31</div></div>
+<div class="ttc" id="anamespacemio_html_ac6ab5ed8ad4c24029a4444b062fec8bf"><div class="ttname"><a href="namespacemio.html#ac6ab5ed8ad4c24029a4444b062fec8bf">mio::draw_sample_demographics</a></div><div class="ttdeci">void draw_sample_demographics(SecirModel &amp;model)</div><div class="ttdoc">draws a sample from the specified distributions for all parameters related to the demographics,...</div><div class="ttdef"><b>Definition:</b> parameter_space.cpp:84</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">
