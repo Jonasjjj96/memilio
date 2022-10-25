@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2022-10-25 05:58:23</td>
+            <td class="headerValue">2022-10-25 08:58:10</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">15</td>
@@ -144,15 +144,15 @@
 <a name="82"><span class="lineNum">      82 </span>            : </a>
 <a name="83"><span class="lineNum">      83 </span><span class="lineCov">        220 :     if (new_infection_state == InfectionState::Infected_Severe ||</span></a>
 <a name="84"><span class="lineNum">      84 </span>            :         new_infection_state == InfectionState::Infected_Critical) {</a>
-<a name="85"><span class="lineNum">      85 </span><span class="lineCov">         65 :         m_quarantine = true;</span></a>
+<a name="85"><span class="lineNum">      85 </span><span class="lineCov">          1 :         m_quarantine = true;</span></a>
 <a name="86"><span class="lineNum">      86 </span>            :     }</a>
 <a name="87"><span class="lineNum">      87 </span>            :     else {</a>
-<a name="88"><span class="lineNum">      88 </span><span class="lineCov">        155 :         m_quarantine = false;</span></a>
+<a name="88"><span class="lineNum">      88 </span><span class="lineCov">        219 :         m_quarantine = false;</span></a>
 <a name="89"><span class="lineNum">      89 </span>            :     }</a>
 <a name="90"><span class="lineNum">      90 </span>            : </a>
 <a name="91"><span class="lineNum">      91 </span><span class="lineCov">        220 :     m_infection_state = new_infection_state;</span></a>
 <a name="92"><span class="lineNum">      92 </span><span class="lineCov">        220 :     if (infection_state != new_infection_state) {</span></a>
-<a name="93"><span class="lineNum">      93 </span><span class="lineCov">         11 :         loc.changed_state(*this, infection_state);</span></a>
+<a name="93"><span class="lineNum">      93 </span><span class="lineCov">         10 :         loc.changed_state(*this, infection_state);</span></a>
 <a name="94"><span class="lineNum">      94 </span>            :     }</a>
 <a name="95"><span class="lineNum">      95 </span>            : </a>
 <a name="96"><span class="lineNum">      96 </span><span class="lineCov">        220 :     m_time_at_location += dt;</span></a>
@@ -260,9 +260,9 @@
 <a name="198"><span class="lineNum">     198 </span><span class="lineCov">          4 :     return m_cells;</span></a>
 <a name="199"><span class="lineNum">     199 </span>            : }</a>
 <a name="200"><span class="lineNum">     200 </span>            : </a>
-<a name="201"><span class="lineNum">     201 </span><span class="lineCov">        119 : const std::vector&lt;uint32_t&gt;&amp; Person::get_cells() const</span></a>
+<a name="201"><span class="lineNum">     201 </span><span class="lineCov">        118 : const std::vector&lt;uint32_t&gt;&amp; Person::get_cells() const</span></a>
 <a name="202"><span class="lineNum">     202 </span>            : {</a>
-<a name="203"><span class="lineNum">     203 </span><span class="lineCov">        119 :     return m_cells;</span></a>
+<a name="203"><span class="lineNum">     203 </span><span class="lineCov">        118 :     return m_cells;</span></a>
 <a name="204"><span class="lineNum">     204 </span>            : }</a>
 <a name="205"><span class="lineNum">     205 </span>            : </a>
 <a name="206"><span class="lineNum">     206 </span>            : } // namespace abm</a>
