@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['ode_20seir_20compartment_20model_917',['ODE SEIR compartment model',['../md__home_runner_work_memilio_memilio_cpp_models_ode_seir_README.html',1,'']]],
-  ['ode_2dbased_20_2f_20seir_2d_20and_20secir_2dtype_20models_918',['ODE-based / SEIR- and SECIR-type models',['../md__home_runner_work_memilio_memilio_cpp_models_secir_README.html',1,'']]],
+  ['ode_2dbased_20_2f_20seir_2d_20and_20secir_2dtype_20models_917',['ODE-based / SEIR- and SECIR-type models',['../md__home_runner_work_memilio_memilio_cpp_models_ode_secir_README.html',1,'']]],
+  ['ode_20seir_20compartment_20model_918',['ODE SEIR compartment model',['../md__home_runner_work_memilio_memilio_cpp_models_ode_seir_README.html',1,'']]],
   ['obj_919',['obj',['../structmio_1_1details_1_1SerializationVisitor.html#a5f7ca6cea890e13a6fbabab634dc33a7',1,'mio::details::SerializationVisitor']]],
   ['observer_5fptr_920',['observer_ptr',['../classmio_1_1observer__ptr.html',1,'mio::observer_ptr&lt; T &gt;'],['../classmio_1_1observer__ptr.html#a86f25c0932c9a7830efe398e7dea310e',1,'mio::observer_ptr::observer_ptr(T *p)'],['../classmio_1_1observer__ptr.html#a1837836c5c964b1fd1308aed15d88d91',1,'mio::observer_ptr::observer_ptr(const observer_ptr &amp;other)=default']]],
   ['odeintegrator_921',['OdeIntegrator',['../classmio_1_1OdeIntegrator.html',1,'mio::OdeIntegrator'],['../classmio_1_1OdeIntegrator.html#ae61f039680bba7ef84b99b0a9c9c1e57',1,'mio::OdeIntegrator::OdeIntegrator()']]],
