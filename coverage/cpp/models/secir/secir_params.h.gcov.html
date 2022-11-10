@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2022-11-09 13:22:59</td>
+            <td class="headerValue">2022-11-10 13:13:38</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">44</td>
@@ -413,9 +413,9 @@
 <a name="351"><span class="lineNum">     351 </span>            :     {</a>
 <a name="352"><span class="lineNum">     352 </span><span class="lineCov">         31 :     }</span></a>
 <a name="353"><span class="lineNum">     353 </span>            : </a>
-<a name="354"><span class="lineNum">     354 </span><span class="lineCov">       6814 :     AgeGroup get_num_groups() const</span></a>
+<a name="354"><span class="lineNum">     354 </span><span class="lineCov">       6484 :     AgeGroup get_num_groups() const</span></a>
 <a name="355"><span class="lineNum">     355 </span>            :     {</a>
-<a name="356"><span class="lineNum">     356 </span><span class="lineCov">       6814 :         return m_num_groups;</span></a>
+<a name="356"><span class="lineNum">     356 </span><span class="lineCov">       6484 :         return m_num_groups;</span></a>
 <a name="357"><span class="lineNum">     357 </span>            :     }</a>
 <a name="358"><span class="lineNum">     358 </span>            : </a>
 <a name="359"><span class="lineNum">     359 </span>            :     /**</a>
@@ -424,9 +424,9 @@
 <a name="362"><span class="lineNum">     362 </span><span class="lineCov">         27 :     void apply_constraints()</span></a>
 <a name="363"><span class="lineNum">     363 </span>            :     {</a>
 <a name="364"><span class="lineNum">     364 </span><span class="lineCov">         27 :         if (this-&gt;get&lt;Seasonality&gt;() &lt; 0.0 || this-&gt;get&lt;Seasonality&gt;() &gt; 0.5) {</span></a>
-<a name="365"><span class="lineNum">     365 </span><span class="lineCov">          5 :             log_warning(&quot;Constraint check: Parameter Seasonality changed from {:0.4f} to {:d}&quot;,</span></a>
-<a name="366"><span class="lineNum">     366 </span><span class="lineCov">         10 :                         this-&gt;get&lt;Seasonality&gt;(), 0);</span></a>
-<a name="367"><span class="lineNum">     367 </span><span class="lineCov">          5 :             this-&gt;set&lt;Seasonality&gt;(0);</span></a>
+<a name="365"><span class="lineNum">     365 </span><span class="lineCov">          4 :             log_warning(&quot;Constraint check: Parameter Seasonality changed from {:0.4f} to {:d}&quot;,</span></a>
+<a name="366"><span class="lineNum">     366 </span><span class="lineCov">          8 :                         this-&gt;get&lt;Seasonality&gt;(), 0);</span></a>
+<a name="367"><span class="lineNum">     367 </span><span class="lineCov">          4 :             this-&gt;set&lt;Seasonality&gt;(0);</span></a>
 <a name="368"><span class="lineNum">     368 </span>            :         }</a>
 <a name="369"><span class="lineNum">     369 </span>            : </a>
 <a name="370"><span class="lineNum">     370 </span><span class="lineCov">         27 :         if (this-&gt;get&lt;ICUCapacity&gt;() &lt; 0.0) {</span></a>
