@@ -31,13 +31,13 @@
             <td class="headerValue">coverage.info</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntry">5</td>
-            <td class="headerCovTableEntry">5</td>
+            <td class="headerCovTableEntry">6</td>
+            <td class="headerCovTableEntry">6</td>
             <td class="headerCovTableEntryHi">100.0 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2022-11-10 18:02:06</td>
+            <td class="headerValue">2022-11-11 11:36:46</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">2</td>
@@ -120,9 +120,9 @@
 <a name="58"><span class="lineNum">      58 </span><span class="lineCov">         12 :         : m_locations((uint32_t)LocationType::Count)</span></a>
 <a name="59"><span class="lineNum">      59 </span>            :         , m_infection_parameters(params)</a>
 <a name="60"><span class="lineNum">      60 </span>            :         , m_migration_parameters()</a>
-<a name="61"><span class="lineNum">      61 </span>            :         , m_trip_list()</a>
-<a name="62"><span class="lineNum">      62 </span><span class="lineCov">         12 :         , m_use_migration_rules(true)</span></a>
-<a name="63"><span class="lineNum">      63 </span>            :     {</a>
+<a name="61"><span class="lineNum">      61 </span><span class="lineCov">         12 :         , m_trip_list()</span></a>
+<a name="62"><span class="lineNum">      62 </span>            :     {</a>
+<a name="63"><span class="lineNum">      63 </span><span class="lineCov">         12 :         use_migration_rules(true);</span></a>
 <a name="64"><span class="lineNum">      64 </span><span class="lineCov">         12 :     }</span></a>
 <a name="65"><span class="lineNum">      65 </span>            : </a>
 <a name="66"><span class="lineNum">      66 </span>            :     //type is move-only for stable references of persons/locations</a>
@@ -257,12 +257,14 @@
 <a name="195"><span class="lineNum">     195 </span>            :     MigrationParameters m_migration_parameters;</a>
 <a name="196"><span class="lineNum">     196 </span>            :     TripList m_trip_list;</a>
 <a name="197"><span class="lineNum">     197 </span>            :     bool m_use_migration_rules;</a>
-<a name="198"><span class="lineNum">     198 </span>            : };</a>
-<a name="199"><span class="lineNum">     199 </span>            : </a>
-<a name="200"><span class="lineNum">     200 </span>            : } // namespace abm</a>
-<a name="201"><span class="lineNum">     201 </span>            : } // namespace mio</a>
-<a name="202"><span class="lineNum">     202 </span>            : </a>
-<a name="203"><span class="lineNum">     203 </span>            : #endif</a>
+<a name="198"><span class="lineNum">     198 </span>            :     std::vector&lt;std::pair&lt;LocationType (*)(const Person&amp;, TimePoint, TimeSpan, const MigrationParameters&amp;),</a>
+<a name="199"><span class="lineNum">     199 </span>            :                           std::vector&lt;LocationType&gt;&gt;&gt; m_migration_rules;</a>
+<a name="200"><span class="lineNum">     200 </span>            : };</a>
+<a name="201"><span class="lineNum">     201 </span>            : </a>
+<a name="202"><span class="lineNum">     202 </span>            : } // namespace abm</a>
+<a name="203"><span class="lineNum">     203 </span>            : } // namespace mio</a>
+<a name="204"><span class="lineNum">     204 </span>            : </a>
+<a name="205"><span class="lineNum">     205 </span>            : #endif</a>
 </pre>
       </td>
     </tr>
