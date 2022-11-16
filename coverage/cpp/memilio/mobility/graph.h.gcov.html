@@ -31,18 +31,18 @@
             <td class="headerValue">coverage.info</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntry">46</td>
-            <td class="headerCovTableEntry">52</td>
-            <td class="headerCovTableEntryMed">88.5 %</td>
+            <td class="headerCovTableEntry">51</td>
+            <td class="headerCovTableEntry">57</td>
+            <td class="headerCovTableEntryMed">89.5 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2022-11-14 14:22:36</td>
+            <td class="headerValue">2022-11-16 10:51:42</td>
             <td></td>
             <td class="headerItem">Functions:</td>
-            <td class="headerCovTableEntry">64</td>
-            <td class="headerCovTableEntry">102</td>
-            <td class="headerCovTableEntryLo">62.7 %</td>
+            <td class="headerCovTableEntry">69</td>
+            <td class="headerCovTableEntry">109</td>
+            <td class="headerCovTableEntryLo">63.3 %</td>
           </tr>
           <tr><td><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
         </table>
@@ -63,7 +63,7 @@
 <a name="1"><span class="lineNum">       1 </span>            : /* </a>
 <a name="2"><span class="lineNum">       2 </span>            : * Copyright (C) 2020-2023 German Aerospace Center (DLR-SC)</a>
 <a name="3"><span class="lineNum">       3 </span>            : *</a>
-<a name="4"><span class="lineNum">       4 </span>            : * Authors: Daniel Abele</a>
+<a name="4"><span class="lineNum">       4 </span>            : * Authors: Daniel Abele, Martin J. Kuehn</a>
 <a name="5"><span class="lineNum">       5 </span>            : *</a>
 <a name="6"><span class="lineNum">       6 </span>            : * Contact: Martin J. Kuehn &lt;Martin.Kuehn@DLR.de&gt;</a>
 <a name="7"><span class="lineNum">       7 </span>            : *</a>
@@ -118,11 +118,11 @@
 <a name="56"><span class="lineNum">      56 </span>            : template &lt;class NodePropertyT&gt;</a>
 <a name="57"><span class="lineNum">      57 </span>            : struct Node {</a>
 <a name="58"><span class="lineNum">      58 </span>            :     template &lt;class... Args&gt;</a>
-<a name="59"><span class="lineNum">      59 </span><span class="lineCov">         57 :     Node(int node_id, Args&amp;&amp;... args)</span></a>
+<a name="59"><span class="lineNum">      59 </span><span class="lineCov">         59 :     Node(int node_id, Args&amp;&amp;... args)</span></a>
 <a name="60"><span class="lineNum">      60 </span>            :         : id{node_id}</a>
-<a name="61"><span class="lineNum">      61 </span><span class="lineCov">         57 :         , property(std::forward&lt;Args&gt;(args)...)</span></a>
+<a name="61"><span class="lineNum">      61 </span><span class="lineCov">         59 :         , property(std::forward&lt;Args&gt;(args)...)</span></a>
 <a name="62"><span class="lineNum">      62 </span>            :     {</a>
-<a name="63"><span class="lineNum">      63 </span><span class="lineCov">         57 :     }</span></a>
+<a name="63"><span class="lineNum">      63 </span><span class="lineCov">         59 :     }</span></a>
 <a name="64"><span class="lineNum">      64 </span>            :     int id;</a>
 <a name="65"><span class="lineNum">      65 </span>            :     NodePropertyT property;</a>
 <a name="66"><span class="lineNum">      66 </span>            : };</a>
@@ -207,10 +207,10 @@
 <a name="145"><span class="lineNum">     145 </span>            :      * @brief add a node to the graph. property of the node is constructed from arguments.</a>
 <a name="146"><span class="lineNum">     146 </span>            :      */</a>
 <a name="147"><span class="lineNum">     147 </span>            :     template &lt;class... Args&gt;</a>
-<a name="148"><span class="lineNum">     148 </span><span class="lineCov">         51 :     Node&lt;NodePropertyT&gt;&amp; add_node(int id, Args&amp;&amp;... args)</span></a>
+<a name="148"><span class="lineNum">     148 </span><span class="lineCov">         53 :     Node&lt;NodePropertyT&gt;&amp; add_node(int id, Args&amp;&amp;... args)</span></a>
 <a name="149"><span class="lineNum">     149 </span>            :     {</a>
-<a name="150"><span class="lineNum">     150 </span><span class="lineCov">         51 :         m_nodes.emplace_back(id, std::forward&lt;Args&gt;(args)...);</span></a>
-<a name="151"><span class="lineNum">     151 </span><span class="lineCov">         51 :         return m_nodes.back();</span></a>
+<a name="150"><span class="lineNum">     150 </span><span class="lineCov">         53 :         m_nodes.emplace_back(id, std::forward&lt;Args&gt;(args)...);</span></a>
+<a name="151"><span class="lineNum">     151 </span><span class="lineCov">         53 :         return m_nodes.back();</span></a>
 <a name="152"><span class="lineNum">     152 </span>            :     }</a>
 <a name="153"><span class="lineNum">     153 </span>            : </a>
 <a name="154"><span class="lineNum">     154 </span>            :     /**</a>
@@ -232,9 +232,9 @@
 <a name="170"><span class="lineNum">     170 </span>            :     /**</a>
 <a name="171"><span class="lineNum">     171 </span>            :      * @brief range of nodes</a>
 <a name="172"><span class="lineNum">     172 </span>            :      */</a>
-<a name="173"><span class="lineNum">     173 </span><span class="lineCov">        247 :     auto nodes()</span></a>
+<a name="173"><span class="lineNum">     173 </span><span class="lineCov">        250 :     auto nodes()</span></a>
 <a name="174"><span class="lineNum">     174 </span>            :     {</a>
-<a name="175"><span class="lineNum">     175 </span><span class="lineCov">        247 :         return make_range(begin(m_nodes), end(m_nodes));</span></a>
+<a name="175"><span class="lineNum">     175 </span><span class="lineCov">        250 :         return make_range(begin(m_nodes), end(m_nodes));</span></a>
 <a name="176"><span class="lineNum">     176 </span>            :     }</a>
 <a name="177"><span class="lineNum">     177 </span>            : </a>
 <a name="178"><span class="lineNum">     178 </span>            :     /**</a>
@@ -248,9 +248,9 @@
 <a name="186"><span class="lineNum">     186 </span>            :     /**</a>
 <a name="187"><span class="lineNum">     187 </span>            :      * @brief range of edges</a>
 <a name="188"><span class="lineNum">     188 </span>            :      */</a>
-<a name="189"><span class="lineNum">     189 </span><span class="lineCov">         70 :     auto edges()</span></a>
+<a name="189"><span class="lineNum">     189 </span><span class="lineCov">         71 :     auto edges()</span></a>
 <a name="190"><span class="lineNum">     190 </span>            :     {</a>
-<a name="191"><span class="lineNum">     191 </span><span class="lineCov">         70 :         return make_range(begin(m_edges), end(m_edges));</span></a>
+<a name="191"><span class="lineNum">     191 </span><span class="lineCov">         71 :         return make_range(begin(m_edges), end(m_edges));</span></a>
 <a name="192"><span class="lineNum">     192 </span>            :     }</a>
 <a name="193"><span class="lineNum">     193 </span>            : </a>
 <a name="194"><span class="lineNum">     194 </span>            :     /**</a>
@@ -291,44 +291,62 @@
 <a name="229"><span class="lineNum">     229 </span>            :     std::vector&lt;Edge&lt;EdgePropertyT&gt;&gt; m_edges;</a>
 <a name="230"><span class="lineNum">     230 </span>            : }; // namespace mio</a>
 <a name="231"><span class="lineNum">     231 </span>            : </a>
-<a name="232"><span class="lineNum">     232 </span>            : template &lt;class T&gt;</a>
-<a name="233"><span class="lineNum">     233 </span>            : std::enable_if_t&lt;!has_ostream_op&lt;T&gt;::value, void&gt; print_graph_object(std::ostream&amp; os, size_t idx, const T&amp;)</a>
-<a name="234"><span class="lineNum">     234 </span>            : {</a>
-<a name="235"><span class="lineNum">     235 </span>            :     os &lt;&lt; idx;</a>
-<a name="236"><span class="lineNum">     236 </span>            : }</a>
-<a name="237"><span class="lineNum">     237 </span>            : </a>
-<a name="238"><span class="lineNum">     238 </span>            : template &lt;class T&gt;</a>
-<a name="239"><span class="lineNum">     239 </span>            : std::enable_if_t&lt;has_ostream_op&lt;T&gt;::value, void&gt; print_graph_object(std::ostream&amp; os, size_t idx, const T&amp; o)</a>
-<a name="240"><span class="lineNum">     240 </span>            : {</a>
-<a name="241"><span class="lineNum">     241 </span>            :     os &lt;&lt; idx &lt;&lt; &quot; [&quot; &lt;&lt; o &lt;&lt; &quot;]&quot;;</a>
-<a name="242"><span class="lineNum">     242 </span>            : }</a>
-<a name="243"><span class="lineNum">     243 </span>            : </a>
-<a name="244"><span class="lineNum">     244 </span>            : template &lt;class Graph&gt;</a>
-<a name="245"><span class="lineNum">     245 </span>            : void print_graph(std::ostream&amp; os, const Graph&amp; g)</a>
-<a name="246"><span class="lineNum">     246 </span>            : {</a>
-<a name="247"><span class="lineNum">     247 </span>            :     auto nodes = g.nodes();</a>
-<a name="248"><span class="lineNum">     248 </span>            :     for (size_t i = 0; i &lt; nodes.size(); ++i) {</a>
-<a name="249"><span class="lineNum">     249 </span>            :         os &lt;&lt; &quot;NODE &quot;;</a>
-<a name="250"><span class="lineNum">     250 </span>            :         print_graph_object(os, i, nodes[i]);</a>
-<a name="251"><span class="lineNum">     251 </span>            :         os &lt;&lt; '\n';</a>
-<a name="252"><span class="lineNum">     252 </span>            :     }</a>
-<a name="253"><span class="lineNum">     253 </span>            : </a>
-<a name="254"><span class="lineNum">     254 </span>            :     auto edges = g.edges();</a>
-<a name="255"><span class="lineNum">     255 </span>            :     for (size_t i = 0; i &lt; edges.size(); ++i) {</a>
-<a name="256"><span class="lineNum">     256 </span>            :         auto&amp; e = edges[i];</a>
-<a name="257"><span class="lineNum">     257 </span>            :         os &lt;&lt; &quot;EDGE &quot;;</a>
-<a name="258"><span class="lineNum">     258 </span>            :         print_graph_object(os, i, e.property);</a>
-<a name="259"><span class="lineNum">     259 </span>            :         os &lt;&lt; &quot; FROM NODE &quot;;</a>
-<a name="260"><span class="lineNum">     260 </span>            :         print_graph_object(os, e.start_node_idx, nodes[e.start_node_idx]);</a>
-<a name="261"><span class="lineNum">     261 </span>            :         os &lt;&lt; &quot; TO &quot;;</a>
-<a name="262"><span class="lineNum">     262 </span>            :         print_graph_object(os, e.end_node_idx, nodes[e.end_node_idx]);</a>
-<a name="263"><span class="lineNum">     263 </span>            :         os &lt;&lt; '\n';</a>
-<a name="264"><span class="lineNum">     264 </span>            :     }</a>
-<a name="265"><span class="lineNum">     265 </span>            : }</a>
-<a name="266"><span class="lineNum">     266 </span>            : </a>
-<a name="267"><span class="lineNum">     267 </span>            : } // namespace mio</a>
-<a name="268"><span class="lineNum">     268 </span>            : </a>
-<a name="269"><span class="lineNum">     269 </span>            : #endif //GRAPH_H</a>
+<a name="232"><span class="lineNum">     232 </span>            : /**</a>
+<a name="233"><span class="lineNum">     233 </span>            :  * Create an unconnected graph.</a>
+<a name="234"><span class="lineNum">     234 </span>            :  * Can be used to save space on disk when writing parameters if the edges are not required.</a>
+<a name="235"><span class="lineNum">     235 </span>            :  * @param node_properties Vector of node properties of all nodes, e.g., parameters in each model node.</a>
+<a name="236"><span class="lineNum">     236 </span>            :  * @param node_ids Indices for the nodes.</a>
+<a name="237"><span class="lineNum">     237 </span>            :  * @return Graph with nodes only having no edges.</a>
+<a name="238"><span class="lineNum">     238 </span>            :  */</a>
+<a name="239"><span class="lineNum">     239 </span>            : template &lt;class NodePropertyT, class EdgePropertyT&gt;</a>
+<a name="240"><span class="lineNum">     240 </span><span class="lineCov">          1 : auto create_graph_without_edges(const std::vector&lt;NodePropertyT&gt;&amp; node_properties, const std::vector&lt;int&gt;&amp; node_ids)</span></a>
+<a name="241"><span class="lineNum">     241 </span>            : {</a>
+<a name="242"><span class="lineNum">     242 </span>            :     // create a graph without edges for writing to file</a>
+<a name="243"><span class="lineNum">     243 </span><span class="lineCov">          1 :     auto graph = mio::Graph&lt;NodePropertyT, EdgePropertyT&gt;();</span></a>
+<a name="244"><span class="lineNum">     244 </span><span class="lineCov">          3 :     for (auto i = size_t(0); i &lt; node_ids.size(); ++i) {</span></a>
+<a name="245"><span class="lineNum">     245 </span><span class="lineCov">          2 :         graph.add_node(node_ids[i], node_properties[i]);</span></a>
+<a name="246"><span class="lineNum">     246 </span>            :     }</a>
+<a name="247"><span class="lineNum">     247 </span><span class="lineCov">          1 :     return graph;</span></a>
+<a name="248"><span class="lineNum">     248 </span>            : }</a>
+<a name="249"><span class="lineNum">     249 </span>            : </a>
+<a name="250"><span class="lineNum">     250 </span>            : template &lt;class T&gt;</a>
+<a name="251"><span class="lineNum">     251 </span>            : std::enable_if_t&lt;!has_ostream_op&lt;T&gt;::value, void&gt; print_graph_object(std::ostream&amp; os, size_t idx, const T&amp;)</a>
+<a name="252"><span class="lineNum">     252 </span>            : {</a>
+<a name="253"><span class="lineNum">     253 </span>            :     os &lt;&lt; idx;</a>
+<a name="254"><span class="lineNum">     254 </span>            : }</a>
+<a name="255"><span class="lineNum">     255 </span>            : </a>
+<a name="256"><span class="lineNum">     256 </span>            : template &lt;class T&gt;</a>
+<a name="257"><span class="lineNum">     257 </span>            : std::enable_if_t&lt;has_ostream_op&lt;T&gt;::value, void&gt; print_graph_object(std::ostream&amp; os, size_t idx, const T&amp; o)</a>
+<a name="258"><span class="lineNum">     258 </span>            : {</a>
+<a name="259"><span class="lineNum">     259 </span>            :     os &lt;&lt; idx &lt;&lt; &quot; [&quot; &lt;&lt; o &lt;&lt; &quot;]&quot;;</a>
+<a name="260"><span class="lineNum">     260 </span>            : }</a>
+<a name="261"><span class="lineNum">     261 </span>            : </a>
+<a name="262"><span class="lineNum">     262 </span>            : template &lt;class Graph&gt;</a>
+<a name="263"><span class="lineNum">     263 </span>            : void print_graph(std::ostream&amp; os, const Graph&amp; g)</a>
+<a name="264"><span class="lineNum">     264 </span>            : {</a>
+<a name="265"><span class="lineNum">     265 </span>            :     auto nodes = g.nodes();</a>
+<a name="266"><span class="lineNum">     266 </span>            :     for (size_t i = 0; i &lt; nodes.size(); ++i) {</a>
+<a name="267"><span class="lineNum">     267 </span>            :         os &lt;&lt; &quot;NODE &quot;;</a>
+<a name="268"><span class="lineNum">     268 </span>            :         print_graph_object(os, i, nodes[i]);</a>
+<a name="269"><span class="lineNum">     269 </span>            :         os &lt;&lt; '\n';</a>
+<a name="270"><span class="lineNum">     270 </span>            :     }</a>
+<a name="271"><span class="lineNum">     271 </span>            : </a>
+<a name="272"><span class="lineNum">     272 </span>            :     auto edges = g.edges();</a>
+<a name="273"><span class="lineNum">     273 </span>            :     for (size_t i = 0; i &lt; edges.size(); ++i) {</a>
+<a name="274"><span class="lineNum">     274 </span>            :         auto&amp; e = edges[i];</a>
+<a name="275"><span class="lineNum">     275 </span>            :         os &lt;&lt; &quot;EDGE &quot;;</a>
+<a name="276"><span class="lineNum">     276 </span>            :         print_graph_object(os, i, e.property);</a>
+<a name="277"><span class="lineNum">     277 </span>            :         os &lt;&lt; &quot; FROM NODE &quot;;</a>
+<a name="278"><span class="lineNum">     278 </span>            :         print_graph_object(os, e.start_node_idx, nodes[e.start_node_idx]);</a>
+<a name="279"><span class="lineNum">     279 </span>            :         os &lt;&lt; &quot; TO &quot;;</a>
+<a name="280"><span class="lineNum">     280 </span>            :         print_graph_object(os, e.end_node_idx, nodes[e.end_node_idx]);</a>
+<a name="281"><span class="lineNum">     281 </span>            :         os &lt;&lt; '\n';</a>
+<a name="282"><span class="lineNum">     282 </span>            :     }</a>
+<a name="283"><span class="lineNum">     283 </span>            : }</a>
+<a name="284"><span class="lineNum">     284 </span>            : </a>
+<a name="285"><span class="lineNum">     285 </span>            : } // namespace mio</a>
+<a name="286"><span class="lineNum">     286 </span>            : </a>
+<a name="287"><span class="lineNum">     287 </span>            : #endif //GRAPH_H</a>
 </pre>
       </td>
     </tr>

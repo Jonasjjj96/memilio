@@ -574,6 +574,10 @@ Functions</h2></td></tr>
 <tr class="memitem:a075272e6cfaf25ad2292e4108c2309a9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacemio.html#ae556a666d14183eb2bf3a3efc11551ec">IOResult</a>&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemio.html#a075272e6cfaf25ad2292e4108c2309a9">create_directory</a> (std::string const  &amp;rel_path, std::string &amp;abs_path)</td></tr>
 <tr class="memdesc:a075272e6cfaf25ad2292e4108c2309a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a directory in the file system.  <a href="namespacemio.html#a075272e6cfaf25ad2292e4108c2309a9">More...</a><br /></td></tr>
 <tr class="separator:a075272e6cfaf25ad2292e4108c2309a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf154a6f66ef76f9a3fbb7424df9c31d"><td class="memTemplParams" colspan="2">template&lt;class NodePropertyT , class EdgePropertyT &gt; </td></tr>
+<tr class="memitem:adf154a6f66ef76f9a3fbb7424df9c31d"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemio.html#adf154a6f66ef76f9a3fbb7424df9c31d">create_graph_without_edges</a> (const std::vector&lt; NodePropertyT &gt; &amp;node_properties, const std::vector&lt; int &gt; &amp;node_ids)</td></tr>
+<tr class="memdesc:adf154a6f66ef76f9a3fbb7424df9c31d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create an unconnected graph.  <a href="namespacemio.html#adf154a6f66ef76f9a3fbb7424df9c31d">More...</a><br /></td></tr>
+<tr class="separator:adf154a6f66ef76f9a3fbb7424df9c31d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac2fcaac4322368f99802f6a206a93c92"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemio.html#ac2fcaac4322368f99802f6a206a93c92">DECL_TYPESAFE</a> (int, DampingLevel)</td></tr>
 <tr class="memdesc:ac2fcaac4322368f99802f6a206a93c92"><td class="mdescLeft">&#160;</td><td class="mdescRight">integer damping level.  <a href="namespacemio.html#ac2fcaac4322368f99802f6a206a93c92">More...</a><br /></td></tr>
 <tr class="separator:ac2fcaac4322368f99802f6a206a93c92"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -2374,6 +2378,46 @@ template&lt;class Iter , class Pred &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if the directory was created, false if it already exists, or any errors that occured. </dd></dl>
+
+</div>
+</div>
+<a id="adf154a6f66ef76f9a3fbb7424df9c31d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adf154a6f66ef76f9a3fbb7424df9c31d">&#9670;&nbsp;</a></span>create_graph_without_edges()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class NodePropertyT , class EdgePropertyT &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">auto mio::create_graph_without_edges </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; NodePropertyT &gt; &amp;&#160;</td>
+          <td class="paramname"><em>node_properties</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; int &gt; &amp;&#160;</td>
+          <td class="paramname"><em>node_ids</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Create an unconnected graph. </p>
+<p>Can be used to save space on disk when writing parameters if the edges are not required. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">node_properties</td><td>Vector of node properties of all nodes, e.g., parameters in each model node. </td></tr>
+    <tr><td class="paramname">node_ids</td><td>Indices for the nodes. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classmio_1_1Graph.html" title="generic graph structure">Graph</a> with nodes only having no edges. </dd></dl>
 
 </div>
 </div>

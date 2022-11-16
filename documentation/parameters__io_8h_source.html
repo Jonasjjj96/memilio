@@ -222,7 +222,7 @@ $(function() {
 <div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;            <a class="code" href="namespacemio.html#ad5d271b1fc1bc5f9ef54eb91c695f239">path_join</a>(data_dir, <span class="stringliteral">&quot;cases_all_county_age_ma7.json&quot;</span>), region, date, num_Exposed, num_InfectedNoSymptoms,</div>
 <div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;            num_InfectedSymptoms, num_InfectedSevere, dummy_icu, num_death, num_rec, t_Exposed, t_InfectedNoSymptoms,</div>
 <div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;            t_InfectedSymptoms, t_InfectedSevere, t_InfectedCritical, mu_C_R, mu_I_H, mu_H_U, scaling_factor_inf));</div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;        BOOST_OUTCOME_TRY(details::read_divi_data(<a class="code" href="namespacemio.html#ad5d271b1fc1bc5f9ef54eb91c695f239">path_join</a>(data_dir, <span class="stringliteral">&quot;county_divi.json&quot;</span>), region, date, num_icu));</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;        BOOST_OUTCOME_TRY(details::read_divi_data(<a class="code" href="namespacemio.html#ad5d271b1fc1bc5f9ef54eb91c695f239">path_join</a>(data_dir, <span class="stringliteral">&quot;county_divi_ma7.json&quot;</span>), region, date, num_icu));</div>
 <div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;        BOOST_OUTCOME_TRY(num_population,</div>
 <div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;                          details::read_population_data(<a class="code" href="namespacemio.html#ad5d271b1fc1bc5f9ef54eb91c695f239">path_join</a>(data_dir, <span class="stringliteral">&quot;county_current_population.json&quot;</span>), region));</div>
 <div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160; </div>
@@ -304,7 +304,7 @@ $(function() {
 <div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;{</div>
 <div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;    <span class="keywordflow">if</span> (date &gt; Date(2020, 4, 23)) {</div>
 <div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;        BOOST_OUTCOME_TRY(</div>
-<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;            details::set_divi_data(model, <a class="code" href="namespacemio.html#ad5d271b1fc1bc5f9ef54eb91c695f239">path_join</a>(dir, <span class="stringliteral">&quot;county_divi.json&quot;</span>), county, date, scaling_factor_icu));</div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;            details::set_divi_data(model, <a class="code" href="namespacemio.html#ad5d271b1fc1bc5f9ef54eb91c695f239">path_join</a>(dir, <span class="stringliteral">&quot;county_divi_ma7.json&quot;</span>), county, date, scaling_factor_icu));</div>
 <div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;    }</div>
 <div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;    <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;        <a class="code" href="namespacemio.html#a34f961d5004bf46cf1cee1133671f8bc">log_warning</a>(<span class="stringliteral">&quot;No DIVI data available for this date&quot;</span>);</div>
