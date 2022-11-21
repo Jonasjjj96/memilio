@@ -2922,23 +2922,51 @@
                 <td><pre>Similar lines in 2 files
 ==memilio.epidata.getCaseData:[64:124]
 ==memilio.epidata.getCaseDatawithEstimations:[40:72]
-        file_format=dd.defaultDict[&#39;file_format&#39;],
-        out_folder=dd.defaultDict[&#39;out_folder&#39;],
-        no_raw=dd.defaultDict[&#39;no_raw&#39;],
-        start_date=date(2020, 1, 1),
-        end_date=dd.defaultDict[&#39;end_date&#39;],
-        impute_dates=dd.defaultDict[&#39;impute_dates&#39;],
-        moving_average=dd.defaultDict[&#39;moving_average&#39;],
-        make_plot=dd.defaultDict[&#39;make_plot&#39;],
-        split_berlin=dd.defaultDict[&#39;split_berlin&#39;],
-        rep_date=dd.defaultDict[&#39;rep_date&#39;]
-        ):
-    &#34;&#34;&#34;! Function to estimate recovered and deaths from combination of case data from RKI and JH data
-WARNING: This file is experimental and has not been tested.
-    From the John-Hopkins (JH) data the fraction recovered/confirmed and deaths/confirmed
-    are calculated for whole Germany
-    With this fraction every existing case data from RKI is scaled.
-    The new columns recovered_estimated and deaths_estimated are added.
+                  file_format=dd.defaultDict[&#39;file_format&#39;],
+                  out_folder=dd.defaultDict[&#39;out_folder&#39;],
+                  no_raw=dd.defaultDict[&#39;no_raw&#39;],
+                  start_date=date(2020, 1, 1),
+                  end_date=dd.defaultDict[&#39;end_date&#39;],
+                  impute_dates=dd.defaultDict[&#39;impute_dates&#39;],
+                  moving_average=dd.defaultDict[&#39;moving_average&#39;],
+                  make_plot=dd.defaultDict[&#39;make_plot&#39;],
+                  split_berlin=dd.defaultDict[&#39;split_berlin&#39;],
+                  rep_date=dd.defaultDict[&#39;rep_date&#39;]
+                  ):
+    &#34;&#34;&#34;! Downloads the case data and provides different kind of structured data
+
+    The data is read either from the internet or from a json file (CaseDataFull.json), stored in an earlier run.
+    If the data is read from the internet, before changing anything the data is stored in CaseDataFull.json.
+    If data should be downloaded, it is checked if data contains all counties.
+    If not a different source is tried.
+    The file is read in or stored at the folder &#34;out_folder&#34;/Germany/.
+    To store and change the data we use pandas.
+
+    While working with the data
+    - the column names are changed to english depending on defaultDict
+    - a new column &#34;Date&#34; is defined.
+    - we are only interested in the values where the parameter NeuerFall, NeuerTodesfall, NeuGenesen are larger than 0.
+    The values, when these parameters are negative are just useful,
+    if one would want to get the difference to the previous day.
+    For details we refer to the above mentioned webpage.
+    - For all different parameters and different columns the values are added up for whole germany for every date
+    and the cumulative sum is calculated. Unless something else is mentioned.
+    - For Berlin all districts can be merged into one [Default]. Otherwise, Berlin is divided into multiple districts and
+        different file names are used.
+    - Following data is generated and written to the mentioned filename
+        - All infected (current and past) for whole germany are stored in &#34;cases_infected&#34;
+        - All deaths whole germany are stored in &#34;cases_deaths&#34;
+        - Infected, deaths and recovered for whole germany are stored in &#34;cases_all_germany&#34;
+        - Infected split for states are stored in &#34;cases_infected_state&#34;
+        - Infected, deaths and recovered split for states are stored in &#34;cases_all_state&#34;
+        - Infected split for counties are stored in &#34;cases_infected_county(_split_berlin)&#34;
+        - Infected, deaths and recovered split for county are stored in &#34;cases_all_county(_split_berlin)&#34;
+        - Infected, deaths and recovered split for gender are stored in &#34;cases_all_gender&#34;
+        - Infected, deaths and recovered split for state and gender are stored in &#34;cases_all_state_gender&#34;
+        - Infected, deaths and recovered split for county and gender are stored in &#34;cases_all_county_gender(_split_berlin)&#34;
+        - Infected, deaths and recovered split for age are stored in &#34;cases_all_age&#34;
+        - Infected, deaths and recovered split for state and age are stored in &#34;cases_all_state_age&#34;
+        - Infected, deaths and recovered split for county and age are stored in &#34;cases_all_county_age(_split_berlin)&#34;
 
     @param read_data True or False. Defines if data is read from file or downloaded. Default defined in defaultDict.
     @param file_format File format which is used for writing the data. Default defined in defaultDict.
@@ -3013,13 +3041,13 @@ WARNING: This file is experimental and has not been tested.
                 <td><pre>Similar lines in 2 files
 ==memilio.epidata.getSimulationData:[48:55]
 ==memilio.epidata.getTestingData:[108:115]
-                        file_format=dd.defaultDict[&#39;file_format&#39;],
-                        out_folder=dd.defaultDict[&#39;out_folder&#39;],
-                        no_raw=dd.defaultDict[&#39;no_raw&#39;],
-                        start_date=dd.defaultDict[&#39;start_date&#39;],
-                        end_date=dd.defaultDict[&#39;end_date&#39;],
-                        impute_dates=dd.defaultDict[&#39;impute_dates&#39;],
-                        moving_average=dd.defaultDict[&#39;moving_average&#39;],</pre></td>
+                     file_format=dd.defaultDict[&#39;file_format&#39;],
+                     out_folder=dd.defaultDict[&#39;out_folder&#39;],
+                     no_raw=dd.defaultDict[&#39;no_raw&#39;],
+                     start_date=dd.defaultDict[&#39;start_date&#39;],
+                     end_date=dd.defaultDict[&#39;end_date&#39;],
+                     impute_dates=dd.defaultDict[&#39;impute_dates&#39;],
+                     moving_average=dd.defaultDict[&#39;moving_average&#39;],</pre></td>
             </tr>
             
             <tr>
