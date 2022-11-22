@@ -92,6 +92,14 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a9424537bf10f26a2bfc4c66b9d7ecaa5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1abm_1_1Location.html#a9424537bf10f26a2bfc4c66b9d7ecaa5">changed_state</a> (const <a class="el" href="classmio_1_1abm_1_1Person.html">Person</a> &amp;person, <a class="el" href="namespacemio_1_1abm.html#ad1ae0779f53a827b524e1f0925b9d704">InfectionState</a> old_infection_state)</td></tr>
 <tr class="memdesc:a9424537bf10f26a2bfc4c66b9d7ecaa5"><td class="mdescLeft">&#160;</td><td class="mdescRight">notification that one person in this location changed infection state.  <a href="classmio_1_1abm_1_1Location.html#a9424537bf10f26a2bfc4c66b9d7ecaa5">More...</a><br /></td></tr>
 <tr class="separator:a9424537bf10f26a2bfc4c66b9d7ecaa5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a919967e1ab8abbbe1c338525b8ed48c8"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1abm_1_1Location.html#a919967e1ab8abbbe1c338525b8ed48c8">compute_relative_transmission_risk</a> ()</td></tr>
+<tr class="memdesc:a919967e1ab8abbbe1c338525b8ed48c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">computes a relative transmission risk factor for the location  <a href="classmio_1_1abm_1_1Location.html#a919967e1ab8abbbe1c338525b8ed48c8">More...</a><br /></td></tr>
+<tr class="separator:a919967e1ab8abbbe1c338525b8ed48c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1587f954c8cd8e7887a5429ad40876aa"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmio_1_1CustomIndexArray.html">CustomIndexArray</a>&lt; double, <a class="el" href="namespacemio_1_1abm.html#ac9a874698e76d3706081b2642c5f4a5a">AgeGroup</a>, <a class="el" href="namespacemio_1_1abm.html#acb1be3974226c65c471a4a9f4b99765c">VaccinationState</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1abm_1_1Location.html#a1587f954c8cd8e7887a5429ad40876aa">get_cached_exposure_rate</a> ()</td></tr>
+<tr class="memdesc:a1587f954c8cd8e7887a5429ad40876aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">get the exposure rate of the location  <a href="classmio_1_1abm_1_1Location.html#a1587f954c8cd8e7887a5429ad40876aa">More...</a><br /></td></tr>
+<tr class="separator:a1587f954c8cd8e7887a5429ad40876aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4442055d52d0ee669690e92cf1540d60"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmio_1_1abm_1_1LocationCapacity.html">LocationCapacity</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1abm_1_1Location.html#a4442055d52d0ee669690e92cf1540d60">get_capacity</a> ()</td></tr>
+<tr class="separator:a4442055d52d0ee669690e92cf1540d60"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a259fdf63985e692e0a7ab39f99af43cd"><td class="memItemLeft" align="right" valign="top">const std::vector&lt; <a class="el" href="structmio_1_1abm_1_1Cell.html">Cell</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1abm_1_1Location.html#a259fdf63985e692e0a7ab39f99af43cd">get_cells</a> () const</td></tr>
 <tr class="separator:a259fdf63985e692e0a7ab39f99af43cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a20e81fbe2b307554802250b9f2d9096c"><td class="memItemLeft" align="right" valign="top">unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1abm_1_1Location.html#a20e81fbe2b307554802250b9f2d9096c">get_index</a> () const</td></tr>
@@ -101,6 +109,9 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ad10271ff6039b0b384eee7c38777b657"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae79dd648eed79c482e179faa29db0bdd"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="namespacemio_1_1abm.html#ac2605ee8b302c94d664ddd892db76996">LocalInfectionParameters</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1abm_1_1Location.html#ae79dd648eed79c482e179faa29db0bdd">get_infection_parameters</a> () const</td></tr>
 <tr class="separator:ae79dd648eed79c482e179faa29db0bdd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a97d03ccc8f4725dee91ba26f044c8980"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1abm_1_1Location.html#a97d03ccc8f4725dee91ba26f044c8980">get_population</a> ()</td></tr>
+<tr class="memdesc:a97d03ccc8f4725dee91ba26f044c8980"><td class="mdescLeft">&#160;</td><td class="mdescRight">get the number of persons at the location  <a href="classmio_1_1abm_1_1Location.html#a97d03ccc8f4725dee91ba26f044c8980">More...</a><br /></td></tr>
+<tr class="separator:a97d03ccc8f4725dee91ba26f044c8980"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa913bb1b8b3aad396408f136ef0b02a5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1abm_1_1Location.html#aa913bb1b8b3aad396408f136ef0b02a5">get_subpopulation</a> (<a class="el" href="namespacemio_1_1abm.html#ad1ae0779f53a827b524e1f0925b9d704">InfectionState</a> s) const</td></tr>
 <tr class="memdesc:aa913bb1b8b3aad396408f136ef0b02a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">number of persons at this location in one infection state.  <a href="classmio_1_1abm_1_1Location.html#aa913bb1b8b3aad396408f136ef0b02a5">More...</a><br /></td></tr>
 <tr class="separator:aa913bb1b8b3aad396408f136ef0b02a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -119,6 +130,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a80eaee6fe9eae2a29ccee70f9566b6d9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1abm_1_1Location.html#a80eaee6fe9eae2a29ccee70f9566b6d9">remove_person</a> (const <a class="el" href="classmio_1_1abm_1_1Person.html">Person</a> &amp;person)</td></tr>
 <tr class="memdesc:a80eaee6fe9eae2a29ccee70f9566b6d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">remove a person from the population of this location.  <a href="classmio_1_1abm_1_1Location.html#a80eaee6fe9eae2a29ccee70f9566b6d9">More...</a><br /></td></tr>
 <tr class="separator:a80eaee6fe9eae2a29ccee70f9566b6d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a452cc9a7592a46741ab5277c5342cb68"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1abm_1_1Location.html#a452cc9a7592a46741ab5277c5342cb68">set_capacity</a> (int persons, int volume)</td></tr>
+<tr class="memdesc:a452cc9a7592a46741ab5277c5342cb68"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the capacity of the location in person and volume.  <a href="classmio_1_1abm_1_1Location.html#a452cc9a7592a46741ab5277c5342cb68">More...</a><br /></td></tr>
+<tr class="separator:a452cc9a7592a46741ab5277c5342cb68"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5d7e60466a47a141712194020a36b458"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1abm_1_1Location.html#a5d7e60466a47a141712194020a36b458">set_capacity_adapted_transmission_risk_flag</a> (bool consider_capacity)</td></tr>
+<tr class="memdesc:a5d7e60466a47a141712194020a36b458"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the capacity adapted transmission risk flag.  <a href="classmio_1_1abm_1_1Location.html#a5d7e60466a47a141712194020a36b458">More...</a><br /></td></tr>
+<tr class="separator:a5d7e60466a47a141712194020a36b458"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
@@ -129,6 +146,10 @@ Private Member Functions</h2></td></tr>
 Private Attributes</h2></td></tr>
 <tr class="memitem:a393536aada3e6e957f51f1c54674fa3c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmio_1_1CustomIndexArray.html">CustomIndexArray</a>&lt; double, <a class="el" href="namespacemio_1_1abm.html#ac9a874698e76d3706081b2642c5f4a5a">AgeGroup</a>, <a class="el" href="namespacemio_1_1abm.html#acb1be3974226c65c471a4a9f4b99765c">VaccinationState</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1abm_1_1Location.html#a393536aada3e6e957f51f1c54674fa3c">m_cached_exposure_rate</a></td></tr>
 <tr class="separator:a393536aada3e6e957f51f1c54674fa3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af710028641535e479c9c751e33ff2e1d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmio_1_1abm_1_1LocationCapacity.html">LocationCapacity</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1abm_1_1Location.html#af710028641535e479c9c751e33ff2e1d">m_capacity</a></td></tr>
+<tr class="separator:af710028641535e479c9c751e33ff2e1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a889399c1cae78db5277410933a966560"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1abm_1_1Location.html#a889399c1cae78db5277410933a966560">m_capacity_adapted_transmission_risk</a></td></tr>
+<tr class="separator:a889399c1cae78db5277410933a966560"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a635151804e7b40d8a61897901995ff93"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="structmio_1_1abm_1_1Cell.html">Cell</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1abm_1_1Location.html#a635151804e7b40d8a61897901995ff93">m_cells</a></td></tr>
 <tr class="separator:a635151804e7b40d8a61897901995ff93"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad2970a0fb3b605f77e5bc3aea1e08553"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1abm_1_1Location.html#ad2970a0fb3b605f77e5bc3aea1e08553">m_index</a></td></tr>
@@ -326,6 +347,63 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a919967e1ab8abbbe1c338525b8ed48c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a919967e1ab8abbbe1c338525b8ed48c8">&#9670;&nbsp;</a></span>compute_relative_transmission_risk()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double mio::abm::Location::compute_relative_transmission_risk </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>computes a relative transmission risk factor for the location </p>
+<dl class="section return"><dt>Returns</dt><dd>the relative risk factor for the location </dd></dl>
+
+</div>
+</div>
+<a id="a1587f954c8cd8e7887a5429ad40876aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1587f954c8cd8e7887a5429ad40876aa">&#9670;&nbsp;</a></span>get_cached_exposure_rate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classmio_1_1CustomIndexArray.html">CustomIndexArray</a>&lt;double, <a class="el" href="namespacemio_1_1abm.html#ac9a874698e76d3706081b2642c5f4a5a">AgeGroup</a>, <a class="el" href="namespacemio_1_1abm.html#acb1be3974226c65c471a4a9f4b99765c">VaccinationState</a>&gt; mio::abm::Location::get_cached_exposure_rate </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>get the exposure rate of the location </p>
+
+</div>
+</div>
+<a id="a4442055d52d0ee669690e92cf1540d60"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4442055d52d0ee669690e92cf1540d60">&#9670;&nbsp;</a></span>get_capacity()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structmio_1_1abm_1_1LocationCapacity.html">LocationCapacity</a> mio::abm::Location::get_capacity </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>the capacity of the location in person and volume </dd></dl>
+
+</div>
+</div>
 <a id="a259fdf63985e692e0a7ab39f99af43cd"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a259fdf63985e692e0a7ab39f99af43cd">&#9670;&nbsp;</a></span>get_cells()</h2>
 
@@ -394,6 +472,26 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+</div>
+</div>
+<a id="a97d03ccc8f4725dee91ba26f044c8980"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a97d03ccc8f4725dee91ba26f044c8980">&#9670;&nbsp;</a></span>get_population()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int mio::abm::Location::get_population </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>get the number of persons at the location </p>
+<dl class="section return"><dt>Returns</dt><dd>number of persons </dd></dl>
 
 </div>
 </div>
@@ -528,6 +626,69 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a452cc9a7592a46741ab5277c5342cb68"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a452cc9a7592a46741ab5277c5342cb68">&#9670;&nbsp;</a></span>set_capacity()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mio::abm::Location::set_capacity </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>persons</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>volume</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set the capacity of the location in person and volume. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">persons</td><td>maximum number of people that can visit the location at the same time </td></tr>
+    <tr><td class="paramname">volume</td><td>volume of the location in m^3 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a5d7e60466a47a141712194020a36b458"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5d7e60466a47a141712194020a36b458">&#9670;&nbsp;</a></span>set_capacity_adapted_transmission_risk_flag()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mio::abm::Location::set_capacity_adapted_transmission_risk_flag </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>consider_capacity</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set the capacity adapted transmission risk flag. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">consider_capacity</td><td>if true considers the capacity of the location for the computation of relative transmission risk </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <h2 class="groupheader">Member Data Documentation</h2>
 <a id="a393536aada3e6e957f51f1c54674fa3c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a393536aada3e6e957f51f1c54674fa3c">&#9670;&nbsp;</a></span>m_cached_exposure_rate</h2>
@@ -540,6 +701,50 @@ Private Attributes</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="classmio_1_1CustomIndexArray.html">CustomIndexArray</a>&lt;double, <a class="el" href="namespacemio_1_1abm.html#ac9a874698e76d3706081b2642c5f4a5a">AgeGroup</a>, <a class="el" href="namespacemio_1_1abm.html#acb1be3974226c65c471a4a9f4b99765c">VaccinationState</a>&gt; mio::abm::Location::m_cached_exposure_rate</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af710028641535e479c9c751e33ff2e1d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af710028641535e479c9c751e33ff2e1d">&#9670;&nbsp;</a></span>m_capacity</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structmio_1_1abm_1_1LocationCapacity.html">LocationCapacity</a> mio::abm::Location::m_capacity</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a889399c1cae78db5277410933a966560"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a889399c1cae78db5277410933a966560">&#9670;&nbsp;</a></span>m_capacity_adapted_transmission_risk</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool mio::abm::Location::m_capacity_adapted_transmission_risk</td>
         </tr>
       </table>
   </td>
