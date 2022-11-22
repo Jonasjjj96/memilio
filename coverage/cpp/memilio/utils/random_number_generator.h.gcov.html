@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2022-11-22 08:40:20</td>
+            <td class="headerValue">2022-11-22 08:57:43</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">21</td>
@@ -104,17 +104,17 @@
 <a name="42"><span class="lineNum">      42 </span>            : public:</a>
 <a name="43"><span class="lineNum">      43 </span>            :     using result_type = std::mt19937_64::result_type;</a>
 <a name="44"><span class="lineNum">      44 </span>            : </a>
-<a name="45"><span class="lineNum">      45 </span><span class="lineCov">       5497 :     static constexpr result_type min()</span></a>
+<a name="45"><span class="lineNum">      45 </span><span class="lineCov">       5507 :     static constexpr result_type min()</span></a>
 <a name="46"><span class="lineNum">      46 </span>            :     {</a>
-<a name="47"><span class="lineNum">      47 </span><span class="lineCov">       5497 :         return std::mt19937_64::min();</span></a>
+<a name="47"><span class="lineNum">      47 </span><span class="lineCov">       5507 :         return std::mt19937_64::min();</span></a>
 <a name="48"><span class="lineNum">      48 </span>            :     }</a>
 <a name="49"><span class="lineNum">      49 </span>            :     static constexpr result_type max()</a>
 <a name="50"><span class="lineNum">      50 </span>            :     {</a>
 <a name="51"><span class="lineNum">      51 </span>            :         return std::mt19937_64::max();</a>
 <a name="52"><span class="lineNum">      52 </span>            :     }</a>
-<a name="53"><span class="lineNum">      53 </span><span class="lineCov">       5497 :     result_type operator()()</span></a>
+<a name="53"><span class="lineNum">      53 </span><span class="lineCov">       5507 :     result_type operator()()</span></a>
 <a name="54"><span class="lineNum">      54 </span>            :     {</a>
-<a name="55"><span class="lineNum">      55 </span><span class="lineCov">       5497 :         return m_rng();</span></a>
+<a name="55"><span class="lineNum">      55 </span><span class="lineCov">       5507 :         return m_rng();</span></a>
 <a name="56"><span class="lineNum">      56 </span>            :     }</a>
 <a name="57"><span class="lineNum">      57 </span>            : </a>
 <a name="58"><span class="lineNum">      58 </span><span class="lineCov">          1 :     static std::vector&lt;unsigned int&gt; generate_seeds()</span></a>
@@ -149,10 +149,10 @@
 <a name="87"><span class="lineNum">      87 </span>            :  * get a random number generator that is static and local to this thread.</a>
 <a name="88"><span class="lineNum">      88 </span>            :  * @return a random number generator that is static and local to this thread.</a>
 <a name="89"><span class="lineNum">      89 </span>            :  */</a>
-<a name="90"><span class="lineNum">      90 </span><span class="lineCov">       4953 : inline RandomNumberGenerator&amp; thread_local_rng()</span></a>
+<a name="90"><span class="lineNum">      90 </span><span class="lineCov">       4954 : inline RandomNumberGenerator&amp; thread_local_rng()</span></a>
 <a name="91"><span class="lineNum">      91 </span>            : {</a>
-<a name="92"><span class="lineNum">      92 </span><span class="lineCov">       4953 :     static thread_local auto rng = RandomNumberGenerator();</span></a>
-<a name="93"><span class="lineNum">      93 </span><span class="lineCov">       4953 :     return rng;</span></a>
+<a name="92"><span class="lineNum">      92 </span><span class="lineCov">       4954 :     static thread_local auto rng = RandomNumberGenerator();</span></a>
+<a name="93"><span class="lineNum">      93 </span><span class="lineCov">       4954 :     return rng;</span></a>
 <a name="94"><span class="lineNum">      94 </span>            : }</a>
 <a name="95"><span class="lineNum">      95 </span>            : </a>
 <a name="96"><span class="lineNum">      96 </span><span class="lineCov">          9 : inline void log_rng_seeds(const RandomNumberGenerator&amp; rng, LogLevel level)</span></a>
