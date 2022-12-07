@@ -31,18 +31,18 @@
             <td class="headerValue">coverage.info</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntry">5</td>
             <td class="headerCovTableEntry">6</td>
-            <td class="headerCovTableEntryMed">83.3 %</td>
+            <td class="headerCovTableEntry">6</td>
+            <td class="headerCovTableEntryHi">100.0 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2022-11-27 11:39:13</td>
+            <td class="headerValue">2022-12-07 13:48:25</td>
             <td></td>
             <td class="headerItem">Functions:</td>
-            <td class="headerCovTableEntry">1</td>
             <td class="headerCovTableEntry">2</td>
-            <td class="headerCovTableEntryLo">50.0 %</td>
+            <td class="headerCovTableEntry">2</td>
+            <td class="headerCovTableEntryHi">100.0 %</td>
           </tr>
           <tr><td><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
         </table>
@@ -116,17 +116,17 @@
 <a name="54"><span class="lineNum">      54 </span>            :      * create a World.</a>
 <a name="55"><span class="lineNum">      55 </span>            :      * @param params parameters of the infection that are the same everywhere in the world.</a>
 <a name="56"><span class="lineNum">      56 </span>            :      */</a>
-<a name="57"><span class="lineNum">      57 </span><span class="lineCov">          2 :     World(const GlobalInfectionParameters&amp; params = {})</span></a>
-<a name="58"><span class="lineNum">      58 </span><span class="lineCov">          2 :         : m_locations((uint32_t)LocationType::Count)</span></a>
+<a name="57"><span class="lineNum">      57 </span><span class="lineCov">         13 :     World(const GlobalInfectionParameters&amp; params = {})</span></a>
+<a name="58"><span class="lineNum">      58 </span><span class="lineCov">         13 :         : m_locations((uint32_t)LocationType::Count)</span></a>
 <a name="59"><span class="lineNum">      59 </span>            :         , m_infection_parameters(params)</a>
 <a name="60"><span class="lineNum">      60 </span>            :         , m_migration_parameters()</a>
-<a name="61"><span class="lineNum">      61 </span><span class="lineCov">          2 :         , m_trip_list()</span></a>
+<a name="61"><span class="lineNum">      61 </span><span class="lineCov">         13 :         , m_trip_list()</span></a>
 <a name="62"><span class="lineNum">      62 </span>            :     {</a>
-<a name="63"><span class="lineNum">      63 </span><span class="lineCov">          2 :         use_migration_rules(true);</span></a>
-<a name="64"><span class="lineNum">      64 </span><span class="lineCov">          2 :     }</span></a>
+<a name="63"><span class="lineNum">      63 </span><span class="lineCov">         13 :         use_migration_rules(true);</span></a>
+<a name="64"><span class="lineNum">      64 </span><span class="lineCov">         13 :     }</span></a>
 <a name="65"><span class="lineNum">      65 </span>            : </a>
 <a name="66"><span class="lineNum">      66 </span>            :     //type is move-only for stable references of persons/locations</a>
-<a name="67"><span class="lineNum">      67 </span><span class="lineNoCov">          0 :     World(World&amp;&amp; other)            = default;</span></a>
+<a name="67"><span class="lineNum">      67 </span><span class="lineCov">          1 :     World(World&amp;&amp; other)            = default;</span></a>
 <a name="68"><span class="lineNum">      68 </span>            :     World&amp; operator=(World&amp;&amp; other) = default;</a>
 <a name="69"><span class="lineNum">      69 </span>            :     World(const World&amp;)             = delete;</a>
 <a name="70"><span class="lineNum">      70 </span>            :     World&amp; operator=(const World&amp;)  = delete;</a>

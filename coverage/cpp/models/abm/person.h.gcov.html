@@ -31,18 +31,18 @@
             <td class="headerValue">coverage.info</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntry">10</td>
             <td class="headerCovTableEntry">18</td>
-            <td class="headerCovTableEntryLo">55.6 %</td>
+            <td class="headerCovTableEntry">18</td>
+            <td class="headerCovTableEntryHi">100.0 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2022-11-27 11:39:13</td>
+            <td class="headerValue">2022-12-07 13:48:25</td>
             <td></td>
             <td class="headerItem">Functions:</td>
-            <td class="headerCovTableEntry">4</td>
             <td class="headerCovTableEntry">8</td>
-            <td class="headerCovTableEntryLo">50.0 %</td>
+            <td class="headerCovTableEntry">8</td>
+            <td class="headerCovTableEntryHi">100.0 %</td>
           </tr>
           <tr><td><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
         </table>
@@ -101,11 +101,11 @@
 <a name="39"><span class="lineNum">      39 </span>            :  * Infection properties describe the infection state of a person and if a infection is detected</a>
 <a name="40"><span class="lineNum">      40 </span>            :  */</a>
 <a name="41"><span class="lineNum">      41 </span>            : struct InfectionProperties {</a>
-<a name="42"><span class="lineNum">      42 </span><span class="lineCov">        104 :     InfectionProperties(InfectionState infection_state, bool infection_detected = false)</span></a>
-<a name="43"><span class="lineNum">      43 </span><span class="lineCov">        104 :         : state(infection_state)</span></a>
-<a name="44"><span class="lineNum">      44 </span><span class="lineCov">        104 :         , detected(infection_detected)</span></a>
+<a name="42"><span class="lineNum">      42 </span><span class="lineCov">        211 :     InfectionProperties(InfectionState infection_state, bool infection_detected = false)</span></a>
+<a name="43"><span class="lineNum">      43 </span><span class="lineCov">        211 :         : state(infection_state)</span></a>
+<a name="44"><span class="lineNum">      44 </span><span class="lineCov">        211 :         , detected(infection_detected)</span></a>
 <a name="45"><span class="lineNum">      45 </span>            :     {</a>
-<a name="46"><span class="lineNum">      46 </span><span class="lineCov">        104 :     }</span></a>
+<a name="46"><span class="lineNum">      46 </span><span class="lineCov">        211 :     }</span></a>
 <a name="47"><span class="lineNum">      47 </span>            :     InfectionState state;</a>
 <a name="48"><span class="lineNum">      48 </span>            :     bool detected;</a>
 <a name="49"><span class="lineNum">      49 </span>            : </a>
@@ -171,18 +171,18 @@
 <a name="109"><span class="lineNum">     109 </span>            :      * Get the current infection state of the person.</a>
 <a name="110"><span class="lineNum">     110 </span>            :      * @returns the current infection state of the person</a>
 <a name="111"><span class="lineNum">     111 </span>            :      */</a>
-<a name="112"><span class="lineNum">     112 </span><span class="lineCov">        104 :     InfectionState get_infection_state() const</span></a>
+<a name="112"><span class="lineNum">     112 </span><span class="lineCov">        488 :     InfectionState get_infection_state() const</span></a>
 <a name="113"><span class="lineNum">     113 </span>            :     {</a>
-<a name="114"><span class="lineNum">     114 </span><span class="lineCov">        104 :         return m_infection_state;</span></a>
+<a name="114"><span class="lineNum">     114 </span><span class="lineCov">        488 :         return m_infection_state;</span></a>
 <a name="115"><span class="lineNum">     115 </span>            :     }</a>
 <a name="116"><span class="lineNum">     116 </span>            : </a>
 <a name="117"><span class="lineNum">     117 </span>            :     /**</a>
 <a name="118"><span class="lineNum">     118 </span>            :      * Get the current vaccination state of the person.</a>
 <a name="119"><span class="lineNum">     119 </span>            :      * @returns the current vaccination state of the person</a>
 <a name="120"><span class="lineNum">     120 </span>            :      */</a>
-<a name="121"><span class="lineNum">     121 </span><span class="lineNoCov">          0 :     VaccinationState get_vaccination_state() const</span></a>
+<a name="121"><span class="lineNum">     121 </span><span class="lineCov">        214 :     VaccinationState get_vaccination_state() const</span></a>
 <a name="122"><span class="lineNum">     122 </span>            :     {</a>
-<a name="123"><span class="lineNum">     123 </span><span class="lineNoCov">          0 :         return m_vaccination_state;</span></a>
+<a name="123"><span class="lineNum">     123 </span><span class="lineCov">        214 :         return m_vaccination_state;</span></a>
 <a name="124"><span class="lineNum">     124 </span>            :     }</a>
 <a name="125"><span class="lineNum">     125 </span>            : </a>
 <a name="126"><span class="lineNum">     126 </span>            :     /**</a>
@@ -194,36 +194,36 @@
 <a name="132"><span class="lineNum">     132 </span>            :      * Get the age group of this person.</a>
 <a name="133"><span class="lineNum">     133 </span>            :      * @return age.</a>
 <a name="134"><span class="lineNum">     134 </span>            :      */</a>
-<a name="135"><span class="lineNum">     135 </span><span class="lineCov">        204 :     AgeGroup get_age() const</span></a>
+<a name="135"><span class="lineNum">     135 </span><span class="lineCov">        455 :     AgeGroup get_age() const</span></a>
 <a name="136"><span class="lineNum">     136 </span>            :     {</a>
-<a name="137"><span class="lineNum">     137 </span><span class="lineCov">        204 :         return m_age;</span></a>
+<a name="137"><span class="lineNum">     137 </span><span class="lineCov">        455 :         return m_age;</span></a>
 <a name="138"><span class="lineNum">     138 </span>            :     }</a>
 <a name="139"><span class="lineNum">     139 </span>            : </a>
 <a name="140"><span class="lineNum">     140 </span>            :     /**</a>
 <a name="141"><span class="lineNum">     141 </span>            :      * get index and type of the current location of the person.</a>
 <a name="142"><span class="lineNum">     142 </span>            :      * @returns index and type of the current location of the person</a>
 <a name="143"><span class="lineNum">     143 </span>            :      */</a>
-<a name="144"><span class="lineNum">     144 </span><span class="lineCov">        120 :     LocationId get_location_id() const</span></a>
+<a name="144"><span class="lineNum">     144 </span><span class="lineCov">        470 :     LocationId get_location_id() const</span></a>
 <a name="145"><span class="lineNum">     145 </span>            :     {</a>
-<a name="146"><span class="lineNum">     146 </span><span class="lineCov">        120 :         return m_location_id;</span></a>
+<a name="146"><span class="lineNum">     146 </span><span class="lineCov">        470 :         return m_location_id;</span></a>
 <a name="147"><span class="lineNum">     147 </span>            :     }</a>
 <a name="148"><span class="lineNum">     148 </span>            : </a>
 <a name="149"><span class="lineNum">     149 </span>            :     /**</a>
 <a name="150"><span class="lineNum">     150 </span>            :      * Get the time the person has been at its current location.</a>
 <a name="151"><span class="lineNum">     151 </span>            :      * @return time span.</a>
 <a name="152"><span class="lineNum">     152 </span>            :      */</a>
-<a name="153"><span class="lineNum">     153 </span><span class="lineNoCov">          0 :     TimeSpan get_time_at_location() const</span></a>
+<a name="153"><span class="lineNum">     153 </span><span class="lineCov">          2 :     TimeSpan get_time_at_location() const</span></a>
 <a name="154"><span class="lineNum">     154 </span>            :     {</a>
-<a name="155"><span class="lineNum">     155 </span><span class="lineNoCov">          0 :         return m_time_at_location;</span></a>
+<a name="155"><span class="lineNum">     155 </span><span class="lineCov">          2 :         return m_time_at_location;</span></a>
 <a name="156"><span class="lineNum">     156 </span>            :     }</a>
 <a name="157"><span class="lineNum">     157 </span>            : </a>
 <a name="158"><span class="lineNum">     158 </span>            :     /**</a>
 <a name="159"><span class="lineNum">     159 </span>            :      * Get the time since the person has been testes.</a>
 <a name="160"><span class="lineNum">     160 </span>            :      * @return time span.</a>
 <a name="161"><span class="lineNum">     161 </span>            :      */</a>
-<a name="162"><span class="lineNum">     162 </span><span class="lineNoCov">          0 :     TimeSpan get_time_since_negative_test() const</span></a>
+<a name="162"><span class="lineNum">     162 </span><span class="lineCov">          8 :     TimeSpan get_time_since_negative_test() const</span></a>
 <a name="163"><span class="lineNum">     163 </span>            :     {</a>
-<a name="164"><span class="lineNum">     164 </span><span class="lineNoCov">          0 :         return m_time_since_negative_test;</span></a>
+<a name="164"><span class="lineNum">     164 </span><span class="lineCov">          8 :         return m_time_since_negative_test;</span></a>
 <a name="165"><span class="lineNum">     165 </span>            :     }</a>
 <a name="166"><span class="lineNum">     166 </span>            :     /**</a>
 <a name="167"><span class="lineNum">     167 </span>            :      * set an assigned location of the person. The assigned location is saved by its index.</a>
@@ -286,9 +286,9 @@
 <a name="224"><span class="lineNum">     224 </span>            :      * Answers the question if a person is currently in quarantine.</a>
 <a name="225"><span class="lineNum">     225 </span>            :      * @return if the person is in quarantine</a>
 <a name="226"><span class="lineNum">     226 </span>            :      */</a>
-<a name="227"><span class="lineNum">     227 </span><span class="lineNoCov">          0 :     bool is_in_quarantine() const</span></a>
+<a name="227"><span class="lineNum">     227 </span><span class="lineCov">         49 :     bool is_in_quarantine() const</span></a>
 <a name="228"><span class="lineNum">     228 </span>            :     {</a>
-<a name="229"><span class="lineNum">     229 </span><span class="lineNoCov">          0 :         return m_quarantine;</span></a>
+<a name="229"><span class="lineNum">     229 </span><span class="lineCov">         49 :         return m_quarantine;</span></a>
 <a name="230"><span class="lineNum">     230 </span>            :     }</a>
 <a name="231"><span class="lineNum">     231 </span>            : </a>
 <a name="232"><span class="lineNum">     232 </span>            :     /**</a>

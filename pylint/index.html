@@ -2693,355 +2693,6 @@
             </tr>
             
             <tr>
-                <td>1</td>
-                <td>0</td>
-                <td>refactor</td>
-                <td><code>duplicate-code</code></td>
-                <td>R0801</td>
-                <td></td>
-                <td><pre>Similar lines in 2 files
-==memilio.epidata.getCaseData:[65:125]
-==memilio.epidata.getCaseDatawithEstimations:[41:73]
-                  file_format=dd.defaultDict[&#39;file_format&#39;],
-                  out_folder=dd.defaultDict[&#39;out_folder&#39;],
-                  no_raw=dd.defaultDict[&#39;no_raw&#39;],
-                  start_date=date(2020, 1, 1),
-                  end_date=dd.defaultDict[&#39;end_date&#39;],
-                  impute_dates=dd.defaultDict[&#39;impute_dates&#39;],
-                  moving_average=dd.defaultDict[&#39;moving_average&#39;],
-                  make_plot=dd.defaultDict[&#39;make_plot&#39;],
-                  split_berlin=dd.defaultDict[&#39;split_berlin&#39;],
-                  rep_date=dd.defaultDict[&#39;rep_date&#39;]
-                  ):
-    &#34;&#34;&#34;! Downloads the case data and provides different kind of structured data
-
-    The data is read either from the internet or from a json file (CaseDataFull.json), stored in an earlier run.
-    If the data is read from the internet, before changing anything the data is stored in CaseDataFull.json.
-    If data should be downloaded, it is checked if data contains all counties.
-    If not a different source is tried.
-    The file is read in or stored at the folder &#34;out_folder&#34;/Germany/.
-    To store and change the data we use pandas.
-
-    While working with the data
-    - the column names are changed to english depending on defaultDict
-    - a new column &#34;Date&#34; is defined.
-    - we are only interested in the values where the parameter NeuerFall, NeuerTodesfall, NeuGenesen are larger than 0.
-    The values, when these parameters are negative are just useful,
-    if one would want to get the difference to the previous day.
-    For details we refer to the above mentioned webpage.
-    - For all different parameters and different columns the values are added up for whole germany for every date
-    and the cumulative sum is calculated. Unless something else is mentioned.
-    - For Berlin all districts can be merged into one [Default]. Otherwise, Berlin is divided into multiple districts and
-        different file names are used.
-    - Following data is generated and written to the mentioned filename
-        - All infected (current and past) for whole germany are stored in &#34;cases_infected&#34;
-        - All deaths whole germany are stored in &#34;cases_deaths&#34;
-        - Infected, deaths and recovered for whole germany are stored in &#34;cases_all_germany&#34;
-        - Infected split for states are stored in &#34;cases_infected_state&#34;
-        - Infected, deaths and recovered split for states are stored in &#34;cases_all_state&#34;
-        - Infected split for counties are stored in &#34;cases_infected_county(_split_berlin)&#34;
-        - Infected, deaths and recovered split for county are stored in &#34;cases_all_county(_split_berlin)&#34;
-        - Infected, deaths and recovered split for gender are stored in &#34;cases_all_gender&#34;
-        - Infected, deaths and recovered split for state and gender are stored in &#34;cases_all_state_gender&#34;
-        - Infected, deaths and recovered split for county and gender are stored in &#34;cases_all_county_gender(_split_berlin)&#34;
-        - Infected, deaths and recovered split for age are stored in &#34;cases_all_age&#34;
-        - Infected, deaths and recovered split for state and age are stored in &#34;cases_all_state_age&#34;
-        - Infected, deaths and recovered split for county and age are stored in &#34;cases_all_county_age(_split_berlin)&#34;
-
-    @param read_data True or False. Defines if data is read from file or downloaded. Default defined in defaultDict.
-    @param file_format File format which is used for writing the data. Default defined in defaultDict.
-    @param out_folder Folder where data is written to. Default defined in defaultDict.
-    @param no_raw True or False. Defines if unchanged raw data is saved or not. Default defined in defaultDict.
-    @param start_date Date of first date in dataframe. Default 2020-01-01.
-    @param end_date Date of last date in dataframe. Default defined in defaultDict.
-    @param impute_dates True or False. Defines if values for dates without new information are imputed. Default defined in defaultDict.
-    @param moving_average Integers &gt;=0. Applies an &#39;moving_average&#39;-days moving average on all time series
-        to smooth out effects of irregular reporting. Default defined in defaultDict.
-    @param make_plot True or False. Defines if plots are generated with matplotlib. Default defined in defaultDict.
-    @param split_berlin True or False. Defines if Berlin&#39;s disctricts are kept separated or get merged. Default defined in defaultDict.
-    @param rep_date True or False. Defines if reporting date or reference date is taken into dataframe. Default defined in defaultDict.
-    &#34;&#34;&#34;
-</pre></td>
-            </tr>
-            
-            <tr>
-                <td>1</td>
-                <td>0</td>
-                <td>refactor</td>
-                <td><code>duplicate-code</code></td>
-                <td>R0801</td>
-                <td></td>
-                <td><pre>Similar lines in 2 files
-==memilio.epidata.getDIVIData:[49:86]
-==memilio.epidata.getHospitalizationData:[147:182]
-                             file_format=dd.defaultDict[&#39;file_format&#39;],
-                             out_folder=dd.defaultDict[&#39;out_folder&#39;],
-                             no_raw=dd.defaultDict[&#39;no_raw&#39;],
-                             start_date=dd.defaultDict[&#39;start_date&#39;],
-                             end_date=dd.defaultDict[&#39;end_date&#39;],
-                             impute_dates=dd.defaultDict[&#39;impute_dates&#39;],
-                             moving_average=dd.defaultDict[&#39;moving_average&#39;],
-                             make_plot=dd.defaultDict[&#39;make_plot&#39;]
-                             ):
-    &#34;&#34;&#34;! Downloads or reads the RKI hospitalization data and writes them in different files.
-
-    Available data starts from 2020-03-01.
-    If it does not already exist, the folder Germany is generated in the given out_folder.
-    If read_data == True and the file &#34;RKIHospitFull.json&#34; exists, the data is read from this file
-    and stored in a pandas dataframe. If read_data = True and the file does not exist the program is stopped.
-
-    The downloaded dataframe is written to the file &#34;RKIHospitFull&#34;.
-    After that, the columns are renamed to english.
-    From the sum of the cases of the last seven days the daily cases are calculated.
-    Afterwards, the data is stored in four different files:
-    &#34;hospit_state_age&#34;, &#34;hospit_state&#34;, &#34;hospit_germany_age&#34; and &#34;hospit_germany&#34;
-    for states or germany and age groups.
-
-    @param read_data True or False. Defines if data is read from file or downloaded.  Default defined in defaultDict.
-    @param file_format File format which is used for writing the data. Default defined in defaultDict.
-    @param out_folder Folder where data is written to. Default defined in defaultDict.
-    @param no_raw True or False. Defines if unchanged raw data is saved or not. Default defined in defaultDict.
-    @param start_date Date of first date in dataframe. Default defined in defaultDict.
-    @param end_date Date of last date in dataframe. Default defined in defaultDict.
-    @param impute_dates True or False. Defines if values for dates without new information are imputed. Default defined in defaultDict.
-        Here Dates are always imputed so False changes nothing.
-    @param moving_average [Currently not used] Integers &gt;=0. Applies an &#39;moving_average&#39;-days moving average on all time series
-        to smooth out weekend effects.  Default defined in defaultDict.
-    @param make_plot [currently not used] True or False. Defines if plots are generated with matplotlib. Default defined in defaultDict.
-    &#34;&#34;&#34;</pre></td>
-            </tr>
-            
-            <tr>
-                <td>1</td>
-                <td>0</td>
-                <td>refactor</td>
-                <td><code>duplicate-code</code></td>
-                <td>R0801</td>
-                <td></td>
-                <td><pre>Similar lines in 2 files
-==memilio.epidata.getSimulationData:[46:53]
-==memilio.epidata.getTestingData:[115:122]
-                        file_format=dd.defaultDict[&#39;file_format&#39;],
-                        out_folder=dd.defaultDict[&#39;out_folder&#39;],
-                        no_raw=dd.defaultDict[&#39;no_raw&#39;],
-                        start_date=dd.defaultDict[&#39;start_date&#39;],
-                        end_date=dd.defaultDict[&#39;end_date&#39;],
-                        impute_dates=dd.defaultDict[&#39;impute_dates&#39;],
-                        moving_average=dd.defaultDict[&#39;moving_average&#39;],</pre></td>
-            </tr>
-            
-            <tr>
-                <td>1</td>
-                <td>0</td>
-                <td>refactor</td>
-                <td><code>duplicate-code</code></td>
-                <td>R0801</td>
-                <td></td>
-                <td><pre>Similar lines in 2 files
-==memilio.epidata.getJHData:[108:117]
-==memilio.epidata_test.test_epidata_get_jh_data:[121:128]
-        directory_ger = os.path.join(out_folder, &#39;Germany/&#39;)
-        directory_es = os.path.join(out_folder, &#39;Spain/&#39;)
-        directory_fr = os.path.join(out_folder, &#39;France/&#39;)
-        directory_it = os.path.join(out_folder, &#39;Italy/&#39;)
-        directory_us = os.path.join(out_folder, &#39;US/&#39;)
-        directory_rok = os.path.join(out_folder, &#39;SouthKorea/&#39;)
-        directory_prc = os.path.join(out_folder, &#39;China/&#39;)</pre></td>
-            </tr>
-            
-            <tr>
-                <td>1</td>
-                <td>0</td>
-                <td>refactor</td>
-                <td><code>duplicate-code</code></td>
-                <td>R0801</td>
-                <td></td>
-                <td><pre>Similar lines in 2 files
-==memilio.epidata_test.test_epidata_getCaseData:[20:29]
-==memilio.epidata_test.test_epidata_get_jh_data:[19:28]
-import os
-import unittest
-from datetime import date, datetime
-from unittest.mock import patch
-
-import pandas as pd
-from pyfakefs import fake_filesystem_unittest
-
-from memilio.epidata import defaultDict as dd</pre></td>
-            </tr>
-            
-            <tr>
-                <td>1</td>
-                <td>0</td>
-                <td>refactor</td>
-                <td><code>duplicate-code</code></td>
-                <td>R0801</td>
-                <td></td>
-                <td><pre>Similar lines in 2 files
-==memilio.epidata.getCaseData:[35:44]
-==memilio.epidata.transformWeatherData:[23:32]
-import numpy as np
-import pandas as pd
-
-from memilio.epidata import defaultDict as dd
-from memilio.epidata import geoModificationGermany as geoger
-from memilio.epidata import getDataIntoPandasDataFrame as gd
-from memilio.epidata import modifyDataframeSeries as mdfs
-
-</pre></td>
-            </tr>
-            
-            <tr>
-                <td>1</td>
-                <td>0</td>
-                <td>refactor</td>
-                <td><code>duplicate-code</code></td>
-                <td>R0801</td>
-                <td></td>
-                <td><pre>Similar lines in 2 files
-==memilio.epidata_test.test_epidata_get_population_data:[19:27]
-==memilio.epidata_test.test_epidata_transform_mobility_data:[19:27]
-import os
-import unittest
-from unittest.mock import patch
-
-import numpy as np
-import pandas as pd
-from pyfakefs import fake_filesystem_unittest
-</pre></td>
-            </tr>
-            
-            <tr>
-                <td>1</td>
-                <td>0</td>
-                <td>refactor</td>
-                <td><code>duplicate-code</code></td>
-                <td>R0801</td>
-                <td></td>
-                <td><pre>Similar lines in 2 files
-==memilio.epidata_test.test_epidata_getHospitalizationData:[102:108]
-==memilio.epidata_test.test_epidata_get_divi_data:[237:243]
-        df = pd.DataFrame(
-            {&#39;date_fake&#39;: [1, 2, 3],
-             &#39;6&#39;: [6, 7, 8],
-             &#39;7&#39;: [7, 8, 9],
-             &#39;8&#39;: [8, 9, 0],
-             &#39;bundesland&#39;: [2, 3, 4],</pre></td>
-            </tr>
-            
-            <tr>
-                <td>1</td>
-                <td>0</td>
-                <td>refactor</td>
-                <td><code>duplicate-code</code></td>
-                <td>R0801</td>
-                <td></td>
-                <td><pre>Similar lines in 2 files
-==memilio.epidata.getPopulationData:[29:37]
-==memilio.epidata.transformWeatherData:[23:29]
-import numpy as np
-import pandas as pd
-
-from memilio.epidata import defaultDict as dd
-from memilio.epidata import geoModificationGermany as geoger
-from memilio.epidata import getDataIntoPandasDataFrame as gd
-
-</pre></td>
-            </tr>
-            
-            <tr>
-                <td>1</td>
-                <td>0</td>
-                <td>refactor</td>
-                <td><code>duplicate-code</code></td>
-                <td>R0801</td>
-                <td></td>
-                <td><pre>Similar lines in 2 files
-==memilio.epidata.getSimulationData:[46:51]
-==memilio.epidata.getVaccinationData:[465:470]
-                        file_format=dd.defaultDict[&#39;file_format&#39;],
-                        out_folder=dd.defaultDict[&#39;out_folder&#39;],
-                        no_raw=dd.defaultDict[&#39;no_raw&#39;],
-                        start_date=dd.defaultDict[&#39;start_date&#39;],
-                        end_date=dd.defaultDict[&#39;end_date&#39;],</pre></td>
-            </tr>
-            
-            <tr>
-                <td>1</td>
-                <td>0</td>
-                <td>refactor</td>
-                <td><code>duplicate-code</code></td>
-                <td>R0801</td>
-                <td></td>
-                <td><pre>Similar lines in 2 files
-==memilio.epidata.getCaseData:[36:44]
-==memilio.epidata.getDIVIData:[40:48]
-import pandas as pd
-
-from memilio.epidata import defaultDict as dd
-from memilio.epidata import geoModificationGermany as geoger
-from memilio.epidata import getDataIntoPandasDataFrame as gd
-from memilio.epidata import modifyDataframeSeries as mdfs
-
-</pre></td>
-            </tr>
-            
-            <tr>
-                <td>1</td>
-                <td>0</td>
-                <td>refactor</td>
-                <td><code>duplicate-code</code></td>
-                <td>R0801</td>
-                <td></td>
-                <td><pre>Similar lines in 2 files
-==memilio.epidata.getCaseData:[35:41]
-==memilio.epidata.transformMobilityData:[21:29]
-import numpy as np
-import pandas as pd
-
-from memilio.epidata import defaultDict as dd
-from memilio.epidata import geoModificationGermany as geoger
-from memilio.epidata import getDataIntoPandasDataFrame as gd
-
-</pre></td>
-            </tr>
-            
-            <tr>
-                <td>1</td>
-                <td>0</td>
-                <td>refactor</td>
-                <td><code>duplicate-code</code></td>
-                <td>R0801</td>
-                <td></td>
-                <td><pre>Similar lines in 2 files
-==memilio.epidata.getCaseDatawithEstimations:[45:50]
-==memilio.epidata.getSimulationData:[50:55]
-                        end_date=dd.defaultDict[&#39;end_date&#39;],
-                        impute_dates=dd.defaultDict[&#39;impute_dates&#39;],
-                        moving_average=dd.defaultDict[&#39;moving_average&#39;],
-                        make_plot=dd.defaultDict[&#39;make_plot&#39;],
-                        split_berlin=dd.defaultDict[&#39;split_berlin&#39;],</pre></td>
-            </tr>
-            
-            <tr>
-                <td>1</td>
-                <td>0</td>
-                <td>refactor</td>
-                <td><code>duplicate-code</code></td>
-                <td>R0801</td>
-                <td></td>
-                <td><pre>Similar lines in 2 files
-==memilio.epidata.getCaseData:[31:38]
-==memilio.epidata.getCaseDatawithEstimations:[25:31]
-import os
-from datetime import date
-
-import matplotlib.pyplot as plt
-import numpy as np
-import pandas as pd</pre></td>
-            </tr>
-            
-            <tr>
                 <td>32</td>
                 <td>0</td>
                 <td>error</td>
@@ -9095,20 +8746,20 @@ import pandas as pd</pre></td>
                 <td>125</td>
                 <td>4</td>
                 <td>refactor</td>
-                <td><code>no-self-use</code></td>
-                <td>R0201</td>
+                <td><code>too-many-statements</code></td>
+                <td>R0915</td>
                 <td>Test_getDataIntoPandasDataFrame.test_cli_correct_default</td>
-                <td><pre>Method could be a function</pre></td>
+                <td><pre>Too many statements (98/50)</pre></td>
             </tr>
             
             <tr>
                 <td>125</td>
                 <td>4</td>
                 <td>refactor</td>
-                <td><code>too-many-statements</code></td>
-                <td>R0915</td>
+                <td><code>no-self-use</code></td>
+                <td>R0201</td>
                 <td>Test_getDataIntoPandasDataFrame.test_cli_correct_default</td>
-                <td><pre>Too many statements (98/50)</pre></td>
+                <td><pre>Method could be a function</pre></td>
             </tr>
             
             <tr>
@@ -9215,20 +8866,20 @@ import pandas as pd</pre></td>
                 <td>291</td>
                 <td>4</td>
                 <td>refactor</td>
-                <td><code>no-self-use</code></td>
-                <td>R0201</td>
+                <td><code>too-many-statements</code></td>
+                <td>R0915</td>
                 <td>Test_getDataIntoPandasDataFrame.test_cli_set_different_values</td>
-                <td><pre>Method could be a function</pre></td>
+                <td><pre>Too many statements (62/50)</pre></td>
             </tr>
             
             <tr>
                 <td>291</td>
                 <td>4</td>
                 <td>refactor</td>
-                <td><code>too-many-statements</code></td>
-                <td>R0915</td>
+                <td><code>no-self-use</code></td>
+                <td>R0201</td>
                 <td>Test_getDataIntoPandasDataFrame.test_cli_set_different_values</td>
-                <td><pre>Too many statements (62/50)</pre></td>
+                <td><pre>Method could be a function</pre></td>
             </tr>
             
             <tr>
@@ -10870,6 +10521,355 @@ import pandas as pd</pre></td>
             </tr>
             
             <tr>
+                <td>1</td>
+                <td>0</td>
+                <td>refactor</td>
+                <td><code>duplicate-code</code></td>
+                <td>R0801</td>
+                <td></td>
+                <td><pre>Similar lines in 2 files
+==memilio.epidata.getCaseData:[65:125]
+==memilio.epidata.getCaseDatawithEstimations:[41:73]
+                  file_format=dd.defaultDict[&#39;file_format&#39;],
+                  out_folder=dd.defaultDict[&#39;out_folder&#39;],
+                  no_raw=dd.defaultDict[&#39;no_raw&#39;],
+                  start_date=date(2020, 1, 1),
+                  end_date=dd.defaultDict[&#39;end_date&#39;],
+                  impute_dates=dd.defaultDict[&#39;impute_dates&#39;],
+                  moving_average=dd.defaultDict[&#39;moving_average&#39;],
+                  make_plot=dd.defaultDict[&#39;make_plot&#39;],
+                  split_berlin=dd.defaultDict[&#39;split_berlin&#39;],
+                  rep_date=dd.defaultDict[&#39;rep_date&#39;]
+                  ):
+    &#34;&#34;&#34;! Downloads the case data and provides different kind of structured data
+
+    The data is read either from the internet or from a json file (CaseDataFull.json), stored in an earlier run.
+    If the data is read from the internet, before changing anything the data is stored in CaseDataFull.json.
+    If data should be downloaded, it is checked if data contains all counties.
+    If not a different source is tried.
+    The file is read in or stored at the folder &#34;out_folder&#34;/Germany/.
+    To store and change the data we use pandas.
+
+    While working with the data
+    - the column names are changed to english depending on defaultDict
+    - a new column &#34;Date&#34; is defined.
+    - we are only interested in the values where the parameter NeuerFall, NeuerTodesfall, NeuGenesen are larger than 0.
+    The values, when these parameters are negative are just useful,
+    if one would want to get the difference to the previous day.
+    For details we refer to the above mentioned webpage.
+    - For all different parameters and different columns the values are added up for whole germany for every date
+    and the cumulative sum is calculated. Unless something else is mentioned.
+    - For Berlin all districts can be merged into one [Default]. Otherwise, Berlin is divided into multiple districts and
+        different file names are used.
+    - Following data is generated and written to the mentioned filename
+        - All infected (current and past) for whole germany are stored in &#34;cases_infected&#34;
+        - All deaths whole germany are stored in &#34;cases_deaths&#34;
+        - Infected, deaths and recovered for whole germany are stored in &#34;cases_all_germany&#34;
+        - Infected split for states are stored in &#34;cases_infected_state&#34;
+        - Infected, deaths and recovered split for states are stored in &#34;cases_all_state&#34;
+        - Infected split for counties are stored in &#34;cases_infected_county(_split_berlin)&#34;
+        - Infected, deaths and recovered split for county are stored in &#34;cases_all_county(_split_berlin)&#34;
+        - Infected, deaths and recovered split for gender are stored in &#34;cases_all_gender&#34;
+        - Infected, deaths and recovered split for state and gender are stored in &#34;cases_all_state_gender&#34;
+        - Infected, deaths and recovered split for county and gender are stored in &#34;cases_all_county_gender(_split_berlin)&#34;
+        - Infected, deaths and recovered split for age are stored in &#34;cases_all_age&#34;
+        - Infected, deaths and recovered split for state and age are stored in &#34;cases_all_state_age&#34;
+        - Infected, deaths and recovered split for county and age are stored in &#34;cases_all_county_age(_split_berlin)&#34;
+
+    @param read_data True or False. Defines if data is read from file or downloaded. Default defined in defaultDict.
+    @param file_format File format which is used for writing the data. Default defined in defaultDict.
+    @param out_folder Folder where data is written to. Default defined in defaultDict.
+    @param no_raw True or False. Defines if unchanged raw data is saved or not. Default defined in defaultDict.
+    @param start_date Date of first date in dataframe. Default 2020-01-01.
+    @param end_date Date of last date in dataframe. Default defined in defaultDict.
+    @param impute_dates True or False. Defines if values for dates without new information are imputed. Default defined in defaultDict.
+    @param moving_average Integers &gt;=0. Applies an &#39;moving_average&#39;-days moving average on all time series
+        to smooth out effects of irregular reporting. Default defined in defaultDict.
+    @param make_plot True or False. Defines if plots are generated with matplotlib. Default defined in defaultDict.
+    @param split_berlin True or False. Defines if Berlin&#39;s disctricts are kept separated or get merged. Default defined in defaultDict.
+    @param rep_date True or False. Defines if reporting date or reference date is taken into dataframe. Default defined in defaultDict.
+    &#34;&#34;&#34;
+</pre></td>
+            </tr>
+            
+            <tr>
+                <td>1</td>
+                <td>0</td>
+                <td>refactor</td>
+                <td><code>duplicate-code</code></td>
+                <td>R0801</td>
+                <td></td>
+                <td><pre>Similar lines in 2 files
+==memilio.epidata.getDIVIData:[49:86]
+==memilio.epidata.getHospitalizationData:[147:182]
+                             file_format=dd.defaultDict[&#39;file_format&#39;],
+                             out_folder=dd.defaultDict[&#39;out_folder&#39;],
+                             no_raw=dd.defaultDict[&#39;no_raw&#39;],
+                             start_date=dd.defaultDict[&#39;start_date&#39;],
+                             end_date=dd.defaultDict[&#39;end_date&#39;],
+                             impute_dates=dd.defaultDict[&#39;impute_dates&#39;],
+                             moving_average=dd.defaultDict[&#39;moving_average&#39;],
+                             make_plot=dd.defaultDict[&#39;make_plot&#39;]
+                             ):
+    &#34;&#34;&#34;! Downloads or reads the RKI hospitalization data and writes them in different files.
+
+    Available data starts from 2020-03-01.
+    If it does not already exist, the folder Germany is generated in the given out_folder.
+    If read_data == True and the file &#34;RKIHospitFull.json&#34; exists, the data is read from this file
+    and stored in a pandas dataframe. If read_data = True and the file does not exist the program is stopped.
+
+    The downloaded dataframe is written to the file &#34;RKIHospitFull&#34;.
+    After that, the columns are renamed to english.
+    From the sum of the cases of the last seven days the daily cases are calculated.
+    Afterwards, the data is stored in four different files:
+    &#34;hospit_state_age&#34;, &#34;hospit_state&#34;, &#34;hospit_germany_age&#34; and &#34;hospit_germany&#34;
+    for states or germany and age groups.
+
+    @param read_data True or False. Defines if data is read from file or downloaded.  Default defined in defaultDict.
+    @param file_format File format which is used for writing the data. Default defined in defaultDict.
+    @param out_folder Folder where data is written to. Default defined in defaultDict.
+    @param no_raw True or False. Defines if unchanged raw data is saved or not. Default defined in defaultDict.
+    @param start_date Date of first date in dataframe. Default defined in defaultDict.
+    @param end_date Date of last date in dataframe. Default defined in defaultDict.
+    @param impute_dates True or False. Defines if values for dates without new information are imputed. Default defined in defaultDict.
+        Here Dates are always imputed so False changes nothing.
+    @param moving_average [Currently not used] Integers &gt;=0. Applies an &#39;moving_average&#39;-days moving average on all time series
+        to smooth out weekend effects.  Default defined in defaultDict.
+    @param make_plot [currently not used] True or False. Defines if plots are generated with matplotlib. Default defined in defaultDict.
+    &#34;&#34;&#34;</pre></td>
+            </tr>
+            
+            <tr>
+                <td>1</td>
+                <td>0</td>
+                <td>refactor</td>
+                <td><code>duplicate-code</code></td>
+                <td>R0801</td>
+                <td></td>
+                <td><pre>Similar lines in 2 files
+==memilio.epidata_test.test_epidata_getCaseData:[20:29]
+==memilio.epidata_test.test_epidata_get_jh_data:[19:28]
+import os
+import unittest
+from datetime import date, datetime
+from unittest.mock import patch
+
+import pandas as pd
+from pyfakefs import fake_filesystem_unittest
+
+from memilio.epidata import defaultDict as dd</pre></td>
+            </tr>
+            
+            <tr>
+                <td>1</td>
+                <td>0</td>
+                <td>refactor</td>
+                <td><code>duplicate-code</code></td>
+                <td>R0801</td>
+                <td></td>
+                <td><pre>Similar lines in 2 files
+==memilio.epidata.getJHData:[108:117]
+==memilio.epidata_test.test_epidata_get_jh_data:[121:128]
+        directory_ger = os.path.join(out_folder, &#39;Germany/&#39;)
+        directory_es = os.path.join(out_folder, &#39;Spain/&#39;)
+        directory_fr = os.path.join(out_folder, &#39;France/&#39;)
+        directory_it = os.path.join(out_folder, &#39;Italy/&#39;)
+        directory_us = os.path.join(out_folder, &#39;US/&#39;)
+        directory_rok = os.path.join(out_folder, &#39;SouthKorea/&#39;)
+        directory_prc = os.path.join(out_folder, &#39;China/&#39;)</pre></td>
+            </tr>
+            
+            <tr>
+                <td>1</td>
+                <td>0</td>
+                <td>refactor</td>
+                <td><code>duplicate-code</code></td>
+                <td>R0801</td>
+                <td></td>
+                <td><pre>Similar lines in 2 files
+==memilio.epidata.getHospitalizationData:[147:154]
+==memilio.epidata.getTestingData:[115:122]
+                             file_format=dd.defaultDict[&#39;file_format&#39;],
+                             out_folder=dd.defaultDict[&#39;out_folder&#39;],
+                             no_raw=dd.defaultDict[&#39;no_raw&#39;],
+                             start_date=dd.defaultDict[&#39;start_date&#39;],
+                             end_date=dd.defaultDict[&#39;end_date&#39;],
+                             impute_dates=dd.defaultDict[&#39;impute_dates&#39;],
+                             moving_average=dd.defaultDict[&#39;moving_average&#39;],</pre></td>
+            </tr>
+            
+            <tr>
+                <td>1</td>
+                <td>0</td>
+                <td>refactor</td>
+                <td><code>duplicate-code</code></td>
+                <td>R0801</td>
+                <td></td>
+                <td><pre>Similar lines in 2 files
+==memilio.epidata.getDIVIData:[49:56]
+==memilio.epidata.getSimulationData:[46:53]
+                        file_format=dd.defaultDict[&#39;file_format&#39;],
+                        out_folder=dd.defaultDict[&#39;out_folder&#39;],
+                        no_raw=dd.defaultDict[&#39;no_raw&#39;],
+                        start_date=dd.defaultDict[&#39;start_date&#39;],
+                        end_date=dd.defaultDict[&#39;end_date&#39;],
+                        impute_dates=dd.defaultDict[&#39;impute_dates&#39;],
+                        moving_average=dd.defaultDict[&#39;moving_average&#39;],</pre></td>
+            </tr>
+            
+            <tr>
+                <td>1</td>
+                <td>0</td>
+                <td>refactor</td>
+                <td><code>duplicate-code</code></td>
+                <td>R0801</td>
+                <td></td>
+                <td><pre>Similar lines in 2 files
+==memilio.epidata_test.test_epidata_get_population_data:[19:27]
+==memilio.epidata_test.test_epidata_transform_mobility_data:[19:27]
+import os
+import unittest
+from unittest.mock import patch
+
+import numpy as np
+import pandas as pd
+from pyfakefs import fake_filesystem_unittest
+</pre></td>
+            </tr>
+            
+            <tr>
+                <td>1</td>
+                <td>0</td>
+                <td>refactor</td>
+                <td><code>duplicate-code</code></td>
+                <td>R0801</td>
+                <td></td>
+                <td><pre>Similar lines in 2 files
+==memilio.epidata_test.test_epidata_getHospitalizationData:[102:108]
+==memilio.epidata_test.test_epidata_get_divi_data:[237:243]
+        df = pd.DataFrame(
+            {&#39;date_fake&#39;: [1, 2, 3],
+             &#39;6&#39;: [6, 7, 8],
+             &#39;7&#39;: [7, 8, 9],
+             &#39;8&#39;: [8, 9, 0],
+             &#39;bundesland&#39;: [2, 3, 4],</pre></td>
+            </tr>
+            
+            <tr>
+                <td>1</td>
+                <td>0</td>
+                <td>refactor</td>
+                <td><code>duplicate-code</code></td>
+                <td>R0801</td>
+                <td></td>
+                <td><pre>Similar lines in 2 files
+==memilio.epidata.getCaseData:[35:44]
+==memilio.epidata.transformWeatherData:[23:32]
+import numpy as np
+import pandas as pd
+
+from memilio.epidata import defaultDict as dd
+from memilio.epidata import geoModificationGermany as geoger
+from memilio.epidata import getDataIntoPandasDataFrame as gd
+from memilio.epidata import modifyDataframeSeries as mdfs
+
+</pre></td>
+            </tr>
+            
+            <tr>
+                <td>1</td>
+                <td>0</td>
+                <td>refactor</td>
+                <td><code>duplicate-code</code></td>
+                <td>R0801</td>
+                <td></td>
+                <td><pre>Similar lines in 2 files
+==memilio.epidata.getPopulationData:[29:37]
+==memilio.epidata.transformMobilityData:[21:29]
+import numpy as np
+import pandas as pd
+
+from memilio.epidata import defaultDict as dd
+from memilio.epidata import geoModificationGermany as geoger
+from memilio.epidata import getDataIntoPandasDataFrame as gd
+
+</pre></td>
+            </tr>
+            
+            <tr>
+                <td>1</td>
+                <td>0</td>
+                <td>refactor</td>
+                <td><code>duplicate-code</code></td>
+                <td>R0801</td>
+                <td></td>
+                <td><pre>Similar lines in 2 files
+==memilio.epidata.getDIVIData:[40:48]
+==memilio.epidata.transformWeatherData:[24:32]
+import pandas as pd
+
+from memilio.epidata import defaultDict as dd
+from memilio.epidata import geoModificationGermany as geoger
+from memilio.epidata import getDataIntoPandasDataFrame as gd
+from memilio.epidata import modifyDataframeSeries as mdfs
+
+</pre></td>
+            </tr>
+            
+            <tr>
+                <td>1</td>
+                <td>0</td>
+                <td>refactor</td>
+                <td><code>duplicate-code</code></td>
+                <td>R0801</td>
+                <td></td>
+                <td><pre>Similar lines in 2 files
+==memilio.epidata.getSimulationData:[46:51]
+==memilio.epidata.getVaccinationData:[465:470]
+                        file_format=dd.defaultDict[&#39;file_format&#39;],
+                        out_folder=dd.defaultDict[&#39;out_folder&#39;],
+                        no_raw=dd.defaultDict[&#39;no_raw&#39;],
+                        start_date=dd.defaultDict[&#39;start_date&#39;],
+                        end_date=dd.defaultDict[&#39;end_date&#39;],</pre></td>
+            </tr>
+            
+            <tr>
+                <td>1</td>
+                <td>0</td>
+                <td>refactor</td>
+                <td><code>duplicate-code</code></td>
+                <td>R0801</td>
+                <td></td>
+                <td><pre>Similar lines in 2 files
+==memilio.epidata.getCaseData:[31:38]
+==memilio.epidata.getCaseDatawithEstimations:[25:31]
+import os
+from datetime import date
+
+import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd
+</pre></td>
+            </tr>
+            
+            <tr>
+                <td>1</td>
+                <td>0</td>
+                <td>refactor</td>
+                <td><code>duplicate-code</code></td>
+                <td>R0801</td>
+                <td></td>
+                <td><pre>Similar lines in 2 files
+==memilio.epidata.getCaseDatawithEstimations:[45:50]
+==memilio.epidata.getSimulationData:[50:55]
+        end_date=dd.defaultDict[&#39;end_date&#39;],
+        impute_dates=dd.defaultDict[&#39;impute_dates&#39;],
+        moving_average=dd.defaultDict[&#39;moving_average&#39;],
+        make_plot=dd.defaultDict[&#39;make_plot&#39;],
+        split_berlin=dd.defaultDict[&#39;split_berlin&#39;],</pre></td>
+            </tr>
+            
+            <tr>
                 <td>24</td>
                 <td>0</td>
                 <td>error</td>
@@ -11507,73 +11507,8 @@ import pandas as pd</pre></td>
             </tr>
             
             <tr>
-                <td>missing-module-docstring</td>
-                <td>19</td>
-            </tr>
-            
-            <tr>
-                <td>import-error</td>
-                <td>46</td>
-            </tr>
-            
-            <tr>
-                <td>missing-class-docstring</td>
-                <td>15</td>
-            </tr>
-            
-            <tr>
-                <td>missing-function-docstring</td>
-                <td>145</td>
-            </tr>
-            
-            <tr>
-                <td>invalid-name</td>
-                <td>285</td>
-            </tr>
-            
-            <tr>
-                <td>unused-argument</td>
-                <td>34</td>
-            </tr>
-            
-            <tr>
-                <td>unused-import</td>
-                <td>6</td>
-            </tr>
-            
-            <tr>
-                <td>superfluous-parens</td>
-                <td>7</td>
-            </tr>
-            
-            <tr>
-                <td>consider-using-enumerate</td>
-                <td>43</td>
-            </tr>
-            
-            <tr>
-                <td>use-a-generator</td>
-                <td>8</td>
-            </tr>
-            
-            <tr>
-                <td>redundant-unittest-assert</td>
-                <td>1</td>
-            </tr>
-            
-            <tr>
-                <td>redefined-builtin</td>
-                <td>18</td>
-            </tr>
-            
-            <tr>
-                <td>too-many-public-methods</td>
-                <td>2</td>
-            </tr>
-            
-            <tr>
-                <td>bare-except</td>
-                <td>3</td>
+                <td>trailing-whitespace</td>
+                <td>50</td>
             </tr>
             
             <tr>
@@ -11582,23 +11517,13 @@ import pandas as pd</pre></td>
             </tr>
             
             <tr>
-                <td>unspecified-encoding</td>
-                <td>28</td>
+                <td>invalid-name</td>
+                <td>285</td>
             </tr>
             
             <tr>
-                <td>consider-using-dict-items</td>
-                <td>9</td>
-            </tr>
-            
-            <tr>
-                <td>consider-iterating-dictionary</td>
-                <td>7</td>
-            </tr>
-            
-            <tr>
-                <td>no-self-use</td>
-                <td>9</td>
+                <td>import-error</td>
+                <td>46</td>
             </tr>
             
             <tr>
@@ -11607,68 +11532,13 @@ import pandas as pd</pre></td>
             </tr>
             
             <tr>
-                <td>too-many-locals</td>
-                <td>43</td>
-            </tr>
-            
-            <tr>
-                <td>assignment-from-no-return</td>
-                <td>3</td>
-            </tr>
-            
-            <tr>
-                <td>too-many-statements</td>
-                <td>21</td>
-            </tr>
-            
-            <tr>
-                <td>unnecessary-comprehension</td>
-                <td>10</td>
-            </tr>
-            
-            <tr>
-                <td>singleton-comparison</td>
-                <td>26</td>
-            </tr>
-            
-            <tr>
-                <td>pointless-statement</td>
-                <td>1</td>
-            </tr>
-            
-            <tr>
-                <td>unused-variable</td>
-                <td>8</td>
-            </tr>
-            
-            <tr>
-                <td>consider-using-with</td>
-                <td>7</td>
-            </tr>
-            
-            <tr>
                 <td>too-many-arguments</td>
                 <td>22</td>
             </tr>
             
             <tr>
-                <td>too-many-lines</td>
-                <td>3</td>
-            </tr>
-            
-            <tr>
-                <td>consider-using-in</td>
-                <td>3</td>
-            </tr>
-            
-            <tr>
-                <td>no-else-continue</td>
-                <td>3</td>
-            </tr>
-            
-            <tr>
-                <td>trailing-whitespace</td>
-                <td>50</td>
+                <td>too-many-locals</td>
+                <td>43</td>
             </tr>
             
             <tr>
@@ -11677,8 +11547,8 @@ import pandas as pd</pre></td>
             </tr>
             
             <tr>
-                <td>too-many-branches</td>
-                <td>10</td>
+                <td>missing-function-docstring</td>
+                <td>145</td>
             </tr>
             
             <tr>
@@ -11692,8 +11562,38 @@ import pandas as pd</pre></td>
             </tr>
             
             <tr>
-                <td>no-member</td>
-                <td>13</td>
+                <td>too-many-branches</td>
+                <td>10</td>
+            </tr>
+            
+            <tr>
+                <td>too-many-statements</td>
+                <td>21</td>
+            </tr>
+            
+            <tr>
+                <td>superfluous-parens</td>
+                <td>7</td>
+            </tr>
+            
+            <tr>
+                <td>singleton-comparison</td>
+                <td>26</td>
+            </tr>
+            
+            <tr>
+                <td>consider-using-enumerate</td>
+                <td>43</td>
+            </tr>
+            
+            <tr>
+                <td>redefined-builtin</td>
+                <td>18</td>
+            </tr>
+            
+            <tr>
+                <td>no-else-continue</td>
+                <td>3</td>
             </tr>
             
             <tr>
@@ -11702,8 +11602,63 @@ import pandas as pd</pre></td>
             </tr>
             
             <tr>
+                <td>unused-argument</td>
+                <td>34</td>
+            </tr>
+            
+            <tr>
+                <td>no-else-return</td>
+                <td>9</td>
+            </tr>
+            
+            <tr>
+                <td>unused-import</td>
+                <td>6</td>
+            </tr>
+            
+            <tr>
+                <td>missing-module-docstring</td>
+                <td>19</td>
+            </tr>
+            
+            <tr>
+                <td>no-member</td>
+                <td>13</td>
+            </tr>
+            
+            <tr>
                 <td>invalid-sequence-index</td>
                 <td>12</td>
+            </tr>
+            
+            <tr>
+                <td>unnecessary-comprehension</td>
+                <td>10</td>
+            </tr>
+            
+            <tr>
+                <td>too-many-lines</td>
+                <td>3</td>
+            </tr>
+            
+            <tr>
+                <td>unused-variable</td>
+                <td>8</td>
+            </tr>
+            
+            <tr>
+                <td>consider-using-dict-items</td>
+                <td>9</td>
+            </tr>
+            
+            <tr>
+                <td>consider-using-in</td>
+                <td>3</td>
+            </tr>
+            
+            <tr>
+                <td>duplicate-key</td>
+                <td>1</td>
             </tr>
             
             <tr>
@@ -11712,13 +11667,18 @@ import pandas as pd</pre></td>
             </tr>
             
             <tr>
+                <td>consider-using-with</td>
+                <td>7</td>
+            </tr>
+            
+            <tr>
                 <td>unnecessary-pass</td>
                 <td>1</td>
             </tr>
             
             <tr>
-                <td>no-else-return</td>
-                <td>9</td>
+                <td>too-many-boolean-expressions</td>
+                <td>1</td>
             </tr>
             
             <tr>
@@ -11742,12 +11702,52 @@ import pandas as pd</pre></td>
             </tr>
             
             <tr>
-                <td>too-many-boolean-expressions</td>
+                <td>missing-class-docstring</td>
+                <td>15</td>
+            </tr>
+            
+            <tr>
+                <td>unspecified-encoding</td>
+                <td>28</td>
+            </tr>
+            
+            <tr>
+                <td>too-many-public-methods</td>
+                <td>2</td>
+            </tr>
+            
+            <tr>
+                <td>consider-iterating-dictionary</td>
+                <td>7</td>
+            </tr>
+            
+            <tr>
+                <td>no-self-use</td>
+                <td>9</td>
+            </tr>
+            
+            <tr>
+                <td>use-a-generator</td>
+                <td>8</td>
+            </tr>
+            
+            <tr>
+                <td>redundant-unittest-assert</td>
                 <td>1</td>
             </tr>
             
             <tr>
-                <td>duplicate-key</td>
+                <td>assignment-from-no-return</td>
+                <td>3</td>
+            </tr>
+            
+            <tr>
+                <td>bare-except</td>
+                <td>3</td>
+            </tr>
+            
+            <tr>
+                <td>pointless-statement</td>
                 <td>1</td>
             </tr>
             
@@ -11767,82 +11767,62 @@ import pandas as pd</pre></td>
             </tr>
             
             <tr>
-                <td>memilio.epidata_test.test_epidata_get_divi_data</td>
-                <td>22</td>
-            </tr>
-            
-            <tr>
-                <td>memilio.epidata_test.test_epidata_geoModificationGermany</td>
-                <td>48</td>
-            </tr>
-            
-            <tr>
-                <td>memilio.epidata_test.test_epidata_getHospitalizationData</td>
-                <td>15</td>
-            </tr>
-            
-            <tr>
-                <td>memilio.epidata_test.test_epidata_getCaseDatawithEstimations</td>
-                <td>51</td>
-            </tr>
-            
-            <tr>
-                <td>memilio.epidata_test.test_epidata_getCommuterMobility</td>
-                <td>23</td>
-            </tr>
-            
-            <tr>
-                <td>memilio.epidata_test.test_epidata_modifyDataframeSeries</td>
-                <td>45</td>
-            </tr>
-            
-            <tr>
-                <td>memilio.epidata_test.test_epidata_transform_mobility_data</td>
-                <td>15</td>
-            </tr>
-            
-            <tr>
-                <td>memilio.epidata_test.test_epidata_getDataIntoPandasDataFrame</td>
-                <td>68</td>
-            </tr>
-            
-            <tr>
-                <td>memilio.epidata_test.test_epidata_cleandata</td>
-                <td>94</td>
-            </tr>
-            
-            <tr>
-                <td>memilio.epidata_test.test_epidata_get_jh_data</td>
-                <td>32</td>
-            </tr>
-            
-            <tr>
-                <td>memilio.epidata_test.test_epidata_get_vaccination_data</td>
-                <td>20</td>
-            </tr>
-            
-            <tr>
-                <td>memilio.epidata_test.test_epidata_get_simulation_data</td>
-                <td>7</td>
-            </tr>
-            
-            <tr>
-                <td>memilio.epidata_test.test_epidata_getCaseData</td>
-                <td>53</td>
-            </tr>
-            
-            <tr>
-                <td>memilio.epidata_test.test_epidata_get_population_data</td>
-                <td>15</td>
-            </tr>
-            
-            <tr>
-                <td>memilio.epidata_test.test_epidata_defaultDict</td>
-                <td>10</td>
-            </tr>
-            
-            <tr>
                 <td>memilio.epidata.getCaseDatawithEstimations</td>
+                <td>13</td>
+            </tr>
+            
+            <tr>
+                <td>memilio.epidata.getSimulationData</td>
+                <td>12</td>
+            </tr>
+            
+            <tr>
+                <td>memilio.epidata.cleanData</td>
+                <td>8</td>
+            </tr>
+            
+            <tr>
+                <td>memilio.epidata.modifyDataframeSeries</td>
+                <td>33</td>
+            </tr>
+            
+            <tr>
+                <td>memilio.epidata.getDIVIData</td>
+                <td>19</td>
+            </tr>
+            
+            <tr>
+                <td>memilio.epidata.getHospitalizationData</td>
+                <td>21</td>
+            </tr>
+            
+            <tr>
+                <td>memilio.epidata.getPopulationData</td>
+                <td>38</td>
+            </tr>
+            
+            <tr>
+                <td>memilio.epidata.getTestingData</td>
+                <td>59</td>
+            </tr>
+            
+            <tr>
+                <td>memilio.epidata.getVaccinationData</td>
+                <td>83</td>
+            </tr>
+            
+            <tr>
+                <td>memilio.epidata.defaultDict</td>
+                <td>11</td>
+            </tr>
+            
+            <tr>
+                <td>memilio.epidata.getDataIntoPandasDataFrame</td>
+                <td>41</td>
+            </tr>
+            
+            <tr>
+                <td>memilio.epidata.transformMobilityData</td>
                 <td>13</td>
             </tr>
             
@@ -11852,48 +11832,8 @@ import pandas as pd</pre></td>
             </tr>
             
             <tr>
-                <td>memilio.epidata.getCaseData</td>
-                <td>75</td>
-            </tr>
-            
-            <tr>
-                <td>memilio.epidata.getSimulationData</td>
-                <td>12</td>
-            </tr>
-            
-            <tr>
-                <td>memilio.epidata.customPlot</td>
-                <td>11</td>
-            </tr>
-            
-            <tr>
-                <td>memilio.epidata.cleanData</td>
-                <td>8</td>
-            </tr>
-            
-            <tr>
                 <td>memilio.epidata.transformWeatherData</td>
                 <td>17</td>
-            </tr>
-            
-            <tr>
-                <td>memilio.epidata.getTestingData</td>
-                <td>59</td>
-            </tr>
-            
-            <tr>
-                <td>memilio.epidata.getDataIntoPandasDataFrame</td>
-                <td>41</td>
-            </tr>
-            
-            <tr>
-                <td>memilio.epidata.geoModificationGermany</td>
-                <td>28</td>
-            </tr>
-            
-            <tr>
-                <td>memilio.epidata.transformMobilityData</td>
-                <td>13</td>
             </tr>
             
             <tr>
@@ -11902,33 +11842,93 @@ import pandas as pd</pre></td>
             </tr>
             
             <tr>
-                <td>memilio.epidata.getPopulationData</td>
-                <td>38</td>
-            </tr>
-            
-            <tr>
-                <td>memilio.epidata.getDIVIData</td>
-                <td>19</td>
-            </tr>
-            
-            <tr>
-                <td>memilio.epidata.getVaccinationData</td>
-                <td>83</td>
-            </tr>
-            
-            <tr>
-                <td>memilio.epidata.modifyDataframeSeries</td>
-                <td>33</td>
-            </tr>
-            
-            <tr>
-                <td>memilio.epidata.defaultDict</td>
+                <td>memilio.epidata.customPlot</td>
                 <td>11</td>
             </tr>
             
             <tr>
-                <td>memilio.epidata.getHospitalizationData</td>
-                <td>35</td>
+                <td>memilio.epidata.getCaseData</td>
+                <td>75</td>
+            </tr>
+            
+            <tr>
+                <td>memilio.epidata.geoModificationGermany</td>
+                <td>28</td>
+            </tr>
+            
+            <tr>
+                <td>memilio.epidata_test.test_epidata_cleandata</td>
+                <td>94</td>
+            </tr>
+            
+            <tr>
+                <td>memilio.epidata_test.test_epidata_getCommuterMobility</td>
+                <td>23</td>
+            </tr>
+            
+            <tr>
+                <td>memilio.epidata_test.test_epidata_get_divi_data</td>
+                <td>22</td>
+            </tr>
+            
+            <tr>
+                <td>memilio.epidata_test.test_epidata_get_vaccination_data</td>
+                <td>20</td>
+            </tr>
+            
+            <tr>
+                <td>memilio.epidata_test.test_epidata_getCaseData</td>
+                <td>53</td>
+            </tr>
+            
+            <tr>
+                <td>memilio.epidata_test.test_epidata_defaultDict</td>
+                <td>10</td>
+            </tr>
+            
+            <tr>
+                <td>memilio.epidata_test.test_epidata_get_jh_data</td>
+                <td>32</td>
+            </tr>
+            
+            <tr>
+                <td>memilio.epidata_test.test_epidata_geoModificationGermany</td>
+                <td>48</td>
+            </tr>
+            
+            <tr>
+                <td>memilio.epidata_test.test_epidata_transform_mobility_data</td>
+                <td>15</td>
+            </tr>
+            
+            <tr>
+                <td>memilio.epidata_test.test_epidata_getCaseDatawithEstimations</td>
+                <td>51</td>
+            </tr>
+            
+            <tr>
+                <td>memilio.epidata_test.test_epidata_get_population_data</td>
+                <td>15</td>
+            </tr>
+            
+            <tr>
+                <td>memilio.epidata_test.test_epidata_get_simulation_data</td>
+                <td>7</td>
+            </tr>
+            
+            <tr>
+                <td>memilio.epidata_test.test_epidata_getHospitalizationData</td>
+                <td>15</td>
+            </tr>
+            
+            <tr>
+                <td>memilio.epidata_test.test_epidata_getDataIntoPandasDataFrame</td>
+                <td>68</td>
+            </tr>
+            
+            <tr>
+                <td>memilio.epidata_test.test_epidata_modifyDataframeSeries</td>
+                <td>59</td>
             </tr>
             
         </table>
@@ -11942,82 +11942,62 @@ import pandas as pd</pre></td>
             </tr>
             
             <tr>
-                <td>memilio/epidata_test/test_epidata_get_divi_data.py</td>
-                <td>22</td>
-            </tr>
-            
-            <tr>
-                <td>memilio/epidata_test/test_epidata_geoModificationGermany.py</td>
-                <td>48</td>
-            </tr>
-            
-            <tr>
-                <td>memilio/epidata_test/test_epidata_getHospitalizationData.py</td>
-                <td>15</td>
-            </tr>
-            
-            <tr>
-                <td>memilio/epidata_test/test_epidata_getCaseDatawithEstimations.py</td>
-                <td>51</td>
-            </tr>
-            
-            <tr>
-                <td>memilio/epidata_test/test_epidata_getCommuterMobility.py</td>
-                <td>23</td>
-            </tr>
-            
-            <tr>
-                <td>memilio/epidata_test/test_epidata_modifyDataframeSeries.py</td>
-                <td>45</td>
-            </tr>
-            
-            <tr>
-                <td>memilio/epidata_test/test_epidata_transform_mobility_data.py</td>
-                <td>15</td>
-            </tr>
-            
-            <tr>
-                <td>memilio/epidata_test/test_epidata_getDataIntoPandasDataFrame.py</td>
-                <td>68</td>
-            </tr>
-            
-            <tr>
-                <td>memilio/epidata_test/test_epidata_cleandata.py</td>
-                <td>94</td>
-            </tr>
-            
-            <tr>
-                <td>memilio/epidata_test/test_epidata_get_jh_data.py</td>
-                <td>32</td>
-            </tr>
-            
-            <tr>
-                <td>memilio/epidata_test/test_epidata_get_vaccination_data.py</td>
-                <td>20</td>
-            </tr>
-            
-            <tr>
-                <td>memilio/epidata_test/test_epidata_get_simulation_data.py</td>
-                <td>7</td>
-            </tr>
-            
-            <tr>
-                <td>memilio/epidata_test/test_epidata_getCaseData.py</td>
-                <td>53</td>
-            </tr>
-            
-            <tr>
-                <td>memilio/epidata_test/test_epidata_get_population_data.py</td>
-                <td>15</td>
-            </tr>
-            
-            <tr>
-                <td>memilio/epidata_test/test_epidata_defaultDict.py</td>
-                <td>10</td>
-            </tr>
-            
-            <tr>
                 <td>memilio/epidata/getCaseDatawithEstimations.py</td>
+                <td>13</td>
+            </tr>
+            
+            <tr>
+                <td>memilio/epidata/getSimulationData.py</td>
+                <td>12</td>
+            </tr>
+            
+            <tr>
+                <td>memilio/epidata/cleanData.py</td>
+                <td>8</td>
+            </tr>
+            
+            <tr>
+                <td>memilio/epidata/modifyDataframeSeries.py</td>
+                <td>33</td>
+            </tr>
+            
+            <tr>
+                <td>memilio/epidata/getDIVIData.py</td>
+                <td>19</td>
+            </tr>
+            
+            <tr>
+                <td>memilio/epidata/getHospitalizationData.py</td>
+                <td>21</td>
+            </tr>
+            
+            <tr>
+                <td>memilio/epidata/getPopulationData.py</td>
+                <td>38</td>
+            </tr>
+            
+            <tr>
+                <td>memilio/epidata/getTestingData.py</td>
+                <td>59</td>
+            </tr>
+            
+            <tr>
+                <td>memilio/epidata/getVaccinationData.py</td>
+                <td>83</td>
+            </tr>
+            
+            <tr>
+                <td>memilio/epidata/defaultDict.py</td>
+                <td>11</td>
+            </tr>
+            
+            <tr>
+                <td>memilio/epidata/getDataIntoPandasDataFrame.py</td>
+                <td>41</td>
+            </tr>
+            
+            <tr>
+                <td>memilio/epidata/transformMobilityData.py</td>
                 <td>13</td>
             </tr>
             
@@ -12027,48 +12007,8 @@ import pandas as pd</pre></td>
             </tr>
             
             <tr>
-                <td>memilio/epidata/getCaseData.py</td>
-                <td>75</td>
-            </tr>
-            
-            <tr>
-                <td>memilio/epidata/getSimulationData.py</td>
-                <td>12</td>
-            </tr>
-            
-            <tr>
-                <td>memilio/epidata/customPlot.py</td>
-                <td>11</td>
-            </tr>
-            
-            <tr>
-                <td>memilio/epidata/cleanData.py</td>
-                <td>8</td>
-            </tr>
-            
-            <tr>
                 <td>memilio/epidata/transformWeatherData.py</td>
                 <td>17</td>
-            </tr>
-            
-            <tr>
-                <td>memilio/epidata/getTestingData.py</td>
-                <td>59</td>
-            </tr>
-            
-            <tr>
-                <td>memilio/epidata/getDataIntoPandasDataFrame.py</td>
-                <td>41</td>
-            </tr>
-            
-            <tr>
-                <td>memilio/epidata/geoModificationGermany.py</td>
-                <td>28</td>
-            </tr>
-            
-            <tr>
-                <td>memilio/epidata/transformMobilityData.py</td>
-                <td>13</td>
             </tr>
             
             <tr>
@@ -12077,33 +12017,93 @@ import pandas as pd</pre></td>
             </tr>
             
             <tr>
-                <td>memilio/epidata/getPopulationData.py</td>
-                <td>38</td>
-            </tr>
-            
-            <tr>
-                <td>memilio/epidata/getDIVIData.py</td>
-                <td>19</td>
-            </tr>
-            
-            <tr>
-                <td>memilio/epidata/getVaccinationData.py</td>
-                <td>83</td>
-            </tr>
-            
-            <tr>
-                <td>memilio/epidata/modifyDataframeSeries.py</td>
-                <td>33</td>
-            </tr>
-            
-            <tr>
-                <td>memilio/epidata/defaultDict.py</td>
+                <td>memilio/epidata/customPlot.py</td>
                 <td>11</td>
             </tr>
             
             <tr>
-                <td>memilio/epidata/getHospitalizationData.py</td>
-                <td>35</td>
+                <td>memilio/epidata/getCaseData.py</td>
+                <td>75</td>
+            </tr>
+            
+            <tr>
+                <td>memilio/epidata/geoModificationGermany.py</td>
+                <td>28</td>
+            </tr>
+            
+            <tr>
+                <td>memilio/epidata_test/test_epidata_cleandata.py</td>
+                <td>94</td>
+            </tr>
+            
+            <tr>
+                <td>memilio/epidata_test/test_epidata_getCommuterMobility.py</td>
+                <td>23</td>
+            </tr>
+            
+            <tr>
+                <td>memilio/epidata_test/test_epidata_get_divi_data.py</td>
+                <td>22</td>
+            </tr>
+            
+            <tr>
+                <td>memilio/epidata_test/test_epidata_get_vaccination_data.py</td>
+                <td>20</td>
+            </tr>
+            
+            <tr>
+                <td>memilio/epidata_test/test_epidata_getCaseData.py</td>
+                <td>53</td>
+            </tr>
+            
+            <tr>
+                <td>memilio/epidata_test/test_epidata_defaultDict.py</td>
+                <td>10</td>
+            </tr>
+            
+            <tr>
+                <td>memilio/epidata_test/test_epidata_get_jh_data.py</td>
+                <td>32</td>
+            </tr>
+            
+            <tr>
+                <td>memilio/epidata_test/test_epidata_geoModificationGermany.py</td>
+                <td>48</td>
+            </tr>
+            
+            <tr>
+                <td>memilio/epidata_test/test_epidata_transform_mobility_data.py</td>
+                <td>15</td>
+            </tr>
+            
+            <tr>
+                <td>memilio/epidata_test/test_epidata_getCaseDatawithEstimations.py</td>
+                <td>51</td>
+            </tr>
+            
+            <tr>
+                <td>memilio/epidata_test/test_epidata_get_population_data.py</td>
+                <td>15</td>
+            </tr>
+            
+            <tr>
+                <td>memilio/epidata_test/test_epidata_get_simulation_data.py</td>
+                <td>7</td>
+            </tr>
+            
+            <tr>
+                <td>memilio/epidata_test/test_epidata_getHospitalizationData.py</td>
+                <td>15</td>
+            </tr>
+            
+            <tr>
+                <td>memilio/epidata_test/test_epidata_getDataIntoPandasDataFrame.py</td>
+                <td>68</td>
+            </tr>
+            
+            <tr>
+                <td>memilio/epidata_test/test_epidata_modifyDataframeSeries.py</td>
+                <td>59</td>
             </tr>
             
         </table>
