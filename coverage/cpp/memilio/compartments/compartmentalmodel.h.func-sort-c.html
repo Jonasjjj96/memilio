@@ -31,13 +31,13 @@
             <td class="headerValue">coverage.info</td>
             <td></td>
             <td class="headerItem">Lines:</td>
+            <td class="headerCovTableEntry">21</td>
             <td class="headerCovTableEntry">24</td>
-            <td class="headerCovTableEntry">27</td>
-            <td class="headerCovTableEntryMed">88.9 %</td>
+            <td class="headerCovTableEntryMed">87.5 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2022-12-08 13:05:37</td>
+            <td class="headerValue">2022-12-08 14:29:51</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">22</td>
@@ -60,7 +60,7 @@
       <td width="20%" class="tableHead">Hit count <span class="tableHeadSort"><img src="../../glass.png" width=10 height=14 alt="Sort by hit count" title="Sort by hit count" border=0></span></td>
     </tr>
     <tr>
-              <td class="coverFn"><a href="compartmentalmodel.h.gcov.html#104">mio::CompartmentalModel&lt;mio::oseir::InfectionState, mio::Populations&lt;mio::oseir::InfectionState&gt;, mio::ParameterSet&lt;mio::oseir::TransmissionProbabilityOnContact, mio::oseir::TimeExposed, mio::oseir::TimeInfected, mio::oseir::ContactPatterns&gt; &gt;::~CompartmentalModel()</a></td>
+              <td class="coverFn"><a href="compartmentalmodel.h.gcov.html#104">mio::CompartmentalModel&lt;mio::oseir::InfectionState, mio::Populations&lt;mio::oseir::InfectionState&gt;, mio::oseir::Parameters&gt;::~CompartmentalModel()</a></td>
               <td class="coverFnLo">0</td>
             </tr>
     <tr>
@@ -80,7 +80,7 @@
               <td class="coverFnLo">0</td>
             </tr>
     <tr>
-              <td class="coverFn"><a href="compartmentalmodel.h.gcov.html#120">mio::CompartmentalModel&lt;mio::oseir::InfectionState, mio::Populations&lt;mio::oseir::InfectionState&gt;, mio::ParameterSet&lt;mio::oseir::TransmissionProbabilityOnContact, mio::oseir::TimeExposed, mio::oseir::TimeInfected, mio::oseir::ContactPatterns&gt; &gt;::get_derivatives(Eigen::Ref&lt;Eigen::Matrix&lt;double, -1, 1, 0, -1, 1&gt; const, 0, Eigen::InnerStride&lt;1&gt; &gt;, Eigen::Ref&lt;Eigen::Matrix&lt;double, -1, 1, 0, -1, 1&gt; const, 0, Eigen::InnerStride&lt;1&gt; &gt;, double, Eigen::Ref&lt;Eigen::Matrix&lt;double, -1, 1, 0, -1, 1&gt;, 0, Eigen::InnerStride&lt;1&gt; &gt;) const</a></td>
+              <td class="coverFn"><a href="compartmentalmodel.h.gcov.html#120">mio::CompartmentalModel&lt;mio::oseir::InfectionState, mio::Populations&lt;mio::oseir::InfectionState&gt;, mio::oseir::Parameters&gt;::get_derivatives(Eigen::Ref&lt;Eigen::Matrix&lt;double, -1, 1, 0, -1, 1&gt; const, 0, Eigen::InnerStride&lt;1&gt; &gt;, Eigen::Ref&lt;Eigen::Matrix&lt;double, -1, 1, 0, -1, 1&gt; const, 0, Eigen::InnerStride&lt;1&gt; &gt;, double, Eigen::Ref&lt;Eigen::Matrix&lt;double, -1, 1, 0, -1, 1&gt;, 0, Eigen::InnerStride&lt;1&gt; &gt;) const</a></td>
               <td class="coverFnLo">0</td>
             </tr>
     <tr>
@@ -92,7 +92,7 @@
               <td class="coverFnLo">0</td>
             </tr>
     <tr>
-              <td class="coverFn"><a href="compartmentalmodel.h.gcov.html#184">std::enable_if&lt;!mio::is_expression_valid&lt;mio::details::check_constraints_expr_t, mio::ParameterSet&lt;mio::oseir::TransmissionProbabilityOnContact, mio::oseir::TimeExposed, mio::oseir::TimeInfected, mio::oseir::ContactPatterns&gt; &gt;::value, void&gt;::type mio::CompartmentalModel&lt;mio::oseir::InfectionState, mio::Populations&lt;mio::oseir::InfectionState&gt;, mio::ParameterSet&lt;mio::oseir::TransmissionProbabilityOnContact, mio::oseir::TimeExposed, mio::oseir::TimeInfected, mio::oseir::ContactPatterns&gt; &gt;::check_constraints&lt;mio::ParameterSet&lt;mio::oseir::TransmissionProbabilityOnContact, mio::oseir::TimeExposed, mio::oseir::TimeInfected, mio::oseir::ContactPatterns&gt; &gt;() const</a></td>
+              <td class="coverFn"><a href="compartmentalmodel.h.gcov.html#177">std::enable_if&lt;mio::is_expression_valid&lt;mio::details::check_constraints_expr_t, mio::oseir::Parameters&gt;::value, void&gt;::type mio::CompartmentalModel&lt;mio::oseir::InfectionState, mio::Populations&lt;mio::oseir::InfectionState&gt;, mio::oseir::Parameters&gt;::check_constraints&lt;mio::oseir::Parameters&gt;() const</a></td>
               <td class="coverFnHi">2</td>
             </tr>
     <tr>
@@ -100,24 +100,24 @@
               <td class="coverFnHi">2</td>
             </tr>
     <tr>
-              <td class="coverFn"><a href="compartmentalmodel.h.gcov.html#94">mio::CompartmentalModel&lt;mio::oseir::InfectionState, mio::Populations&lt;mio::oseir::InfectionState&gt;, mio::ParameterSet&lt;mio::oseir::TransmissionProbabilityOnContact, mio::oseir::TimeExposed, mio::oseir::TimeInfected, mio::oseir::ContactPatterns&gt; &gt;::CompartmentalModel(mio::Populations&lt;mio::oseir::InfectionState&gt; const&amp;, mio::ParameterSet&lt;mio::oseir::TransmissionProbabilityOnContact, mio::oseir::TimeExposed, mio::oseir::TimeInfected, mio::oseir::ContactPatterns&gt; const&amp;)</a></td>
-              <td class="coverFnHi">3</td>
+              <td class="coverFn"><a href="compartmentalmodel.h.gcov.html#94">mio::CompartmentalModel&lt;mio::oseir::InfectionState, mio::Populations&lt;mio::oseir::InfectionState&gt;, mio::oseir::Parameters&gt;::CompartmentalModel(mio::Populations&lt;mio::oseir::InfectionState&gt; const&amp;, mio::oseir::Parameters const&amp;)</a></td>
+              <td class="coverFnHi">4</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="compartmentalmodel.h.gcov.html#157">mio::CompartmentalModel&lt;mio::osecirvvs::InfectionState, mio::Populations&lt;mio::AgeGroup, mio::osecirvvs::InfectionState&gt;, mio::osecirvvs::Parameters&gt;::get_initial_values() const</a></td>
               <td class="coverFnHi">5</td>
             </tr>
     <tr>
-              <td class="coverFn"><a href="compartmentalmodel.h.gcov.html#157">mio::CompartmentalModel&lt;mio::oseir::InfectionState, mio::Populations&lt;mio::oseir::InfectionState&gt;, mio::ParameterSet&lt;mio::oseir::TransmissionProbabilityOnContact, mio::oseir::TimeExposed, mio::oseir::TimeInfected, mio::oseir::ContactPatterns&gt; &gt;::get_initial_values() const</a></td>
+              <td class="coverFn"><a href="compartmentalmodel.h.gcov.html#157">mio::CompartmentalModel&lt;mio::oseir::InfectionState, mio::Populations&lt;mio::oseir::InfectionState&gt;, mio::oseir::Parameters&gt;::get_initial_values() const</a></td>
               <td class="coverFnHi">6</td>
             </tr>
     <tr>
-              <td class="coverFn"><a href="compartmentalmodel.h.gcov.html#100">mio::CompartmentalModel&lt;mio::oseir::InfectionState, mio::Populations&lt;mio::oseir::InfectionState&gt;, mio::ParameterSet&lt;mio::oseir::TransmissionProbabilityOnContact, mio::oseir::TimeExposed, mio::oseir::TimeInfected, mio::oseir::ContactPatterns&gt; &gt;::CompartmentalModel(mio::CompartmentalModel&lt;mio::oseir::InfectionState, mio::Populations&lt;mio::oseir::InfectionState&gt;, mio::ParameterSet&lt;mio::oseir::TransmissionProbabilityOnContact, mio::oseir::TimeExposed, mio::oseir::TimeInfected, mio::oseir::ContactPatterns&gt; &gt; const&amp;)</a></td>
+              <td class="coverFn"><a href="compartmentalmodel.h.gcov.html#100">mio::CompartmentalModel&lt;mio::oseir::InfectionState, mio::Populations&lt;mio::oseir::InfectionState&gt;, mio::oseir::Parameters&gt;::CompartmentalModel(mio::CompartmentalModel&lt;mio::oseir::InfectionState, mio::Populations&lt;mio::oseir::InfectionState&gt;, mio::oseir::Parameters&gt; const&amp;)</a></td>
               <td class="coverFnHi">7</td>
             </tr>
     <tr>
-              <td class="coverFn"><a href="compartmentalmodel.h.gcov.html#104">mio::CompartmentalModel&lt;mio::oseir::InfectionState, mio::Populations&lt;mio::oseir::InfectionState&gt;, mio::ParameterSet&lt;mio::oseir::TransmissionProbabilityOnContact, mio::oseir::TimeExposed, mio::oseir::TimeInfected, mio::oseir::ContactPatterns&gt; &gt;::~CompartmentalModel().2</a></td>
-              <td class="coverFnHi">10</td>
+              <td class="coverFn"><a href="compartmentalmodel.h.gcov.html#104">mio::CompartmentalModel&lt;mio::oseir::InfectionState, mio::Populations&lt;mio::oseir::InfectionState&gt;, mio::oseir::Parameters&gt;::~CompartmentalModel().2</a></td>
+              <td class="coverFnHi">11</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="compartmentalmodel.h.gcov.html#164">std::enable_if&lt;mio::is_expression_valid&lt;mio::details::apply_constraints_expr_t, mio::osecirvvs::Parameters&gt;::value, void&gt;::type mio::CompartmentalModel&lt;mio::osecirvvs::InfectionState, mio::Populations&lt;mio::AgeGroup, mio::osecirvvs::InfectionState&gt;, mio::osecirvvs::Parameters&gt;::apply_constraints&lt;mio::osecirvvs::Parameters&gt;()</a></td>
@@ -172,12 +172,12 @@
               <td class="coverFnHi">696</td>
             </tr>
     <tr>
-              <td class="coverFn"><a href="compartmentalmodel.h.gcov.html#136">mio::CompartmentalModel&lt;mio::oseir::InfectionState, mio::Populations&lt;mio::oseir::InfectionState&gt;, mio::ParameterSet&lt;mio::oseir::TransmissionProbabilityOnContact, mio::oseir::TimeExposed, mio::oseir::TimeInfected, mio::oseir::ContactPatterns&gt; &gt;::eval_right_hand_side(Eigen::Ref&lt;Eigen::Matrix&lt;double, -1, 1, 0, -1, 1&gt; const, 0, Eigen::InnerStride&lt;1&gt; &gt;, Eigen::Ref&lt;Eigen::Matrix&lt;double, -1, 1, 0, -1, 1&gt; const, 0, Eigen::InnerStride&lt;1&gt; &gt;, double, Eigen::Ref&lt;Eigen::Matrix&lt;double, -1, 1, 0, -1, 1&gt;, 0, Eigen::InnerStride&lt;1&gt; &gt;) const</a></td>
+              <td class="coverFn"><a href="compartmentalmodel.h.gcov.html#136">mio::CompartmentalModel&lt;mio::oseir::InfectionState, mio::Populations&lt;mio::oseir::InfectionState&gt;, mio::oseir::Parameters&gt;::eval_right_hand_side(Eigen::Ref&lt;Eigen::Matrix&lt;double, -1, 1, 0, -1, 1&gt; const, 0, Eigen::InnerStride&lt;1&gt; &gt;, Eigen::Ref&lt;Eigen::Matrix&lt;double, -1, 1, 0, -1, 1&gt; const, 0, Eigen::InnerStride&lt;1&gt; &gt;, double, Eigen::Ref&lt;Eigen::Matrix&lt;double, -1, 1, 0, -1, 1&gt;, 0, Eigen::InnerStride&lt;1&gt; &gt;) const</a></td>
               <td class="coverFnHi">933</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="compartmentalmodel.h.gcov.html#136">mio::CompartmentalModel&lt;mio::osecir::InfectionState, mio::Populations&lt;mio::AgeGroup, mio::osecir::InfectionState&gt;, mio::osecir::Parameters&gt;::eval_right_hand_side(Eigen::Ref&lt;Eigen::Matrix&lt;double, -1, 1, 0, -1, 1&gt; const, 0, Eigen::InnerStride&lt;1&gt; &gt;, Eigen::Ref&lt;Eigen::Matrix&lt;double, -1, 1, 0, -1, 1&gt; const, 0, Eigen::InnerStride&lt;1&gt; &gt;, double, Eigen::Ref&lt;Eigen::Matrix&lt;double, -1, 1, 0, -1, 1&gt;, 0, Eigen::InnerStride&lt;1&gt; &gt;) const</a></td>
-              <td class="coverFnHi">6996</td>
+              <td class="coverFnHi">6348</td>
             </tr>
   </table>
   <br>

@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2022-12-08 13:05:37</td>
+            <td class="headerValue">2022-12-08 14:29:51</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">2</td>
@@ -102,10 +102,10 @@
 <a name="40"><span class="lineNum">      40 </span>            :     using Base = CompartmentalModel&lt;InfectionState, mio::Populations&lt;InfectionState&gt;, Parameters&gt;;</a>
 <a name="41"><span class="lineNum">      41 </span>            : </a>
 <a name="42"><span class="lineNum">      42 </span>            : public:</a>
-<a name="43"><span class="lineNum">      43 </span><span class="lineCov">          3 :     Model()</span></a>
-<a name="44"><span class="lineNum">      44 </span><span class="lineCov">          3 :         : Base(Populations({InfectionState::Count}, 0.), ParameterSet())</span></a>
+<a name="43"><span class="lineNum">      43 </span><span class="lineCov">          4 :     Model()</span></a>
+<a name="44"><span class="lineNum">      44 </span><span class="lineCov">          4 :         : Base(Populations({InfectionState::Count}, 0.), ParameterSet())</span></a>
 <a name="45"><span class="lineNum">      45 </span>            :     {</a>
-<a name="46"><span class="lineNum">      46 </span><span class="lineCov">          3 :     }</span></a>
+<a name="46"><span class="lineNum">      46 </span><span class="lineCov">          4 :     }</span></a>
 <a name="47"><span class="lineNum">      47 </span>            : </a>
 <a name="48"><span class="lineNum">      48 </span><span class="lineCov">        933 :     void get_derivatives(Eigen::Ref&lt;const Eigen::VectorXd&gt; pop, Eigen::Ref&lt;const Eigen::VectorXd&gt; y, double t,</span></a>
 <a name="49"><span class="lineNum">      49 </span>            :                          Eigen::Ref&lt;Eigen::VectorXd&gt; dydt) const override</a>
