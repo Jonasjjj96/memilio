@@ -31,18 +31,18 @@
             <td class="headerValue">coverage.info</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntry">386</td>
+            <td class="headerCovTableEntry">398</td>
             <td class="headerCovTableEntry">407</td>
-            <td class="headerCovTableEntryHi">94.8 %</td>
+            <td class="headerCovTableEntryHi">97.8 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2022-12-08 14:29:51</td>
+            <td class="headerValue">2022-12-12 08:18:33</td>
             <td></td>
             <td class="headerItem">Functions:</td>
-            <td class="headerCovTableEntry">12</td>
             <td class="headerCovTableEntry">15</td>
-            <td class="headerCovTableEntryMed">80.0 %</td>
+            <td class="headerCovTableEntry">15</td>
+            <td class="headerCovTableEntryHi">100.0 %</td>
           </tr>
           <tr><td><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
         </table>
@@ -99,15 +99,15 @@
 <a name="37"><span class="lineNum">      37 </span>            :     using Base = CompartmentalModel&lt;InfectionState, mio::Populations&lt;AgeGroup, InfectionState&gt;, Parameters&gt;;</a>
 <a name="38"><span class="lineNum">      38 </span>            : </a>
 <a name="39"><span class="lineNum">      39 </span>            : public:</a>
-<a name="40"><span class="lineNum">      40 </span><span class="lineCov">         13 :     Model(const Populations&amp; pop, const ParameterSet&amp; params)</span></a>
-<a name="41"><span class="lineNum">      41 </span><span class="lineCov">         13 :         : Base(pop, params)</span></a>
+<a name="40"><span class="lineNum">      40 </span><span class="lineCov">         16 :     Model(const Populations&amp; pop, const ParameterSet&amp; params)</span></a>
+<a name="41"><span class="lineNum">      41 </span><span class="lineCov">         16 :         : Base(pop, params)</span></a>
 <a name="42"><span class="lineNum">      42 </span>            :     {</a>
-<a name="43"><span class="lineNum">      43 </span><span class="lineCov">         13 :     }</span></a>
+<a name="43"><span class="lineNum">      43 </span><span class="lineCov">         16 :     }</span></a>
 <a name="44"><span class="lineNum">      44 </span>            : </a>
-<a name="45"><span class="lineNum">      45 </span><span class="lineCov">         13 :     Model(int num_agegroups)</span></a>
-<a name="46"><span class="lineNum">      46 </span><span class="lineCov">         13 :         : Model(Populations({AgeGroup(num_agegroups), InfectionState::Count}), ParameterSet(AgeGroup(num_agegroups)))</span></a>
+<a name="45"><span class="lineNum">      45 </span><span class="lineCov">         15 :     Model(int num_agegroups)</span></a>
+<a name="46"><span class="lineNum">      46 </span><span class="lineCov">         15 :         : Model(Populations({AgeGroup(num_agegroups), InfectionState::Count}), ParameterSet(AgeGroup(num_agegroups)))</span></a>
 <a name="47"><span class="lineNum">      47 </span>            :     {</a>
-<a name="48"><span class="lineNum">      48 </span><span class="lineCov">         13 :     }</span></a>
+<a name="48"><span class="lineNum">      48 </span><span class="lineCov">         15 :     }</span></a>
 <a name="49"><span class="lineNum">      49 </span>            : </a>
 <a name="50"><span class="lineNum">      50 </span><span class="lineCov">        696 :     void get_derivatives(Eigen::Ref&lt;const Eigen::VectorXd&gt; pop, Eigen::Ref&lt;const Eigen::VectorXd&gt; y, double t,</span></a>
 <a name="51"><span class="lineNum">      51 </span>            :                          Eigen::Ref&lt;Eigen::VectorXd&gt; dydt) const override</a>
@@ -424,29 +424,29 @@
 <a name="362"><span class="lineNum">     362 </span>            :     * @see mio::serialize</a>
 <a name="363"><span class="lineNum">     363 </span>            :     */</a>
 <a name="364"><span class="lineNum">     364 </span>            :     template &lt;class IOContext&gt;</a>
-<a name="365"><span class="lineNum">     365 </span><span class="lineNoCov">          0 :     void serialize(IOContext&amp; io) const</span></a>
+<a name="365"><span class="lineNum">     365 </span><span class="lineCov">          1 :     void serialize(IOContext&amp; io) const</span></a>
 <a name="366"><span class="lineNum">     366 </span>            :     {</a>
-<a name="367"><span class="lineNum">     367 </span><span class="lineNoCov">          0 :         auto obj = io.create_object(&quot;Model&quot;);</span></a>
-<a name="368"><span class="lineNum">     368 </span><span class="lineNoCov">          0 :         obj.add_element(&quot;Parameters&quot;, parameters);</span></a>
-<a name="369"><span class="lineNum">     369 </span><span class="lineNoCov">          0 :         obj.add_element(&quot;Populations&quot;, populations);</span></a>
-<a name="370"><span class="lineNum">     370 </span><span class="lineNoCov">          0 :     }</span></a>
+<a name="367"><span class="lineNum">     367 </span><span class="lineCov">          4 :         auto obj = io.create_object(&quot;Model&quot;);</span></a>
+<a name="368"><span class="lineNum">     368 </span><span class="lineCov">          1 :         obj.add_element(&quot;Parameters&quot;, parameters);</span></a>
+<a name="369"><span class="lineNum">     369 </span><span class="lineCov">          1 :         obj.add_element(&quot;Populations&quot;, populations);</span></a>
+<a name="370"><span class="lineNum">     370 </span><span class="lineCov">          1 :     }</span></a>
 <a name="371"><span class="lineNum">     371 </span>            : </a>
 <a name="372"><span class="lineNum">     372 </span>            :     /**</a>
 <a name="373"><span class="lineNum">     373 </span>            :     * deserialize an object of this class.</a>
 <a name="374"><span class="lineNum">     374 </span>            :     * @see mio::deserialize</a>
 <a name="375"><span class="lineNum">     375 </span>            :     */</a>
 <a name="376"><span class="lineNum">     376 </span>            :     template &lt;class IOContext&gt;</a>
-<a name="377"><span class="lineNum">     377 </span><span class="lineNoCov">          0 :     static IOResult&lt;Model&gt; deserialize(IOContext&amp; io)</span></a>
+<a name="377"><span class="lineNum">     377 </span><span class="lineCov">          1 :     static IOResult&lt;Model&gt; deserialize(IOContext&amp; io)</span></a>
 <a name="378"><span class="lineNum">     378 </span>            :     {</a>
-<a name="379"><span class="lineNum">     379 </span><span class="lineNoCov">          0 :         auto obj = io.expect_object(&quot;Model&quot;);</span></a>
-<a name="380"><span class="lineNum">     380 </span><span class="lineNoCov">          0 :         auto par = obj.expect_element(&quot;Parameters&quot;, Tag&lt;ParameterSet&gt;{});</span></a>
-<a name="381"><span class="lineNum">     381 </span><span class="lineNoCov">          0 :         auto pop = obj.expect_element(&quot;Populations&quot;, Tag&lt;Populations&gt;{});</span></a>
+<a name="379"><span class="lineNum">     379 </span><span class="lineCov">          4 :         auto obj = io.expect_object(&quot;Model&quot;);</span></a>
+<a name="380"><span class="lineNum">     380 </span><span class="lineCov">          4 :         auto par = obj.expect_element(&quot;Parameters&quot;, Tag&lt;ParameterSet&gt;{});</span></a>
+<a name="381"><span class="lineNum">     381 </span><span class="lineCov">          4 :         auto pop = obj.expect_element(&quot;Populations&quot;, Tag&lt;Populations&gt;{});</span></a>
 <a name="382"><span class="lineNum">     382 </span>            :         return apply(</a>
 <a name="383"><span class="lineNum">     383 </span>            :             io,</a>
-<a name="384"><span class="lineNum">     384 </span><span class="lineNoCov">          0 :             [](auto&amp;&amp; par_, auto&amp;&amp; pop_) {</span></a>
-<a name="385"><span class="lineNum">     385 </span><span class="lineNoCov">          0 :                 return Model{pop_, par_};</span></a>
+<a name="384"><span class="lineNum">     384 </span><span class="lineCov">          1 :             [](auto&amp;&amp; par_, auto&amp;&amp; pop_) {</span></a>
+<a name="385"><span class="lineNum">     385 </span><span class="lineCov">          1 :                 return Model{pop_, par_};</span></a>
 <a name="386"><span class="lineNum">     386 </span>            :             },</a>
-<a name="387"><span class="lineNum">     387 </span><span class="lineNoCov">          0 :             par, pop);</span></a>
+<a name="387"><span class="lineNum">     387 </span><span class="lineCov">          2 :             par, pop);</span></a>
 <a name="388"><span class="lineNum">     388 </span>            :     }</a>
 <a name="389"><span class="lineNum">     389 </span>            : };</a>
 <a name="390"><span class="lineNum">     390 </span>            : </a>

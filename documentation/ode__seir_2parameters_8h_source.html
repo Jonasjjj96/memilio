@@ -165,56 +165,56 @@ $(function() {
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    {</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    }</div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160; </div>
-<div class="line"><a name="l00114"></a><span class="lineno"><a class="line" href="classmio_1_1oseir_1_1Parameters.html#ab59620cb714f58610bca60bf56cf81a8">  114</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classmio_1_1oseir_1_1Parameters.html#ab59620cb714f58610bca60bf56cf81a8">check_constraints</a>()<span class="keyword"> const</span></div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="keyword">    </span>{</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        <span class="keywordflow">if</span> (this-&gt;get&lt;TimeExposed&gt;() &lt;= 0.0) {</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;            <a class="code" href="namespacemio.html#a89afc3ebfa2c5ab994ec3c76dcad85d1">log_error</a>(<span class="stringliteral">&quot;Constraint check: Parameter TimeExposed {:.4f} smaller or equal {:.4f}&quot;</span>,</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;                      this-&gt;get&lt;TimeExposed&gt;(), 0.0);</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;            <span class="keywordflow">return</span> 1;</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        }</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        <span class="keywordflow">if</span> (this-&gt;get&lt;TimeInfected&gt;() &lt;= 0.0) {</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;            <a class="code" href="namespacemio.html#a89afc3ebfa2c5ab994ec3c76dcad85d1">log_error</a>(<span class="stringliteral">&quot;Constraint check: Parameter TimeInfected {:.4f} smaller or equal {:.4f}&quot;</span>,</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;                      this-&gt;get&lt;TimeInfected&gt;(), 0.0);</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;            <span class="keywordflow">return</span> 1;</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        }</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        <span class="keywordflow">if</span> (this-&gt;get&lt;TransmissionProbabilityOnContact&gt;() &lt; 0.0 ||</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;            this-&gt;get&lt;TransmissionProbabilityOnContact&gt;() &gt; 1.0) {</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;            <a class="code" href="namespacemio.html#a89afc3ebfa2c5ab994ec3c76dcad85d1">log_error</a>(</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;                <span class="stringliteral">&quot;Constraint check: Parameter TransmissionProbabilityOnContact {:.4f} smaller {:.4f} or greater {:.4f}&quot;</span>,</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;                this-&gt;get&lt;TransmissionProbabilityOnContact&gt;(), 0.0, 1.0);</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;            <span class="keywordflow">return</span> 1;</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        }</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;        <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    }</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160; </div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00137"></a><span class="lineno"><a class="line" href="classmio_1_1oseir_1_1Parameters.html#af8118b8ff1b6abc10f5d3105e6ac3771">  137</a></span>&#160;    <a class="code" href="classmio_1_1oseir_1_1Parameters.html#af8118b8ff1b6abc10f5d3105e6ac3771">Parameters</a>(<a class="code" href="classmio_1_1ParameterSet.html">ParametersBase</a>&amp;&amp; base)</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;        : <a class="code" href="classmio_1_1ParameterSet.html">ParametersBase</a>(<a class="code" href="namespacestd.html">std</a>::move(base))</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    {</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    }</div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160; </div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">class</span> IOContext&gt;</div>
-<div class="line"><a name="l00148"></a><span class="lineno"><a class="line" href="classmio_1_1oseir_1_1Parameters.html#a09a48922fc500503477abfda811c5df8">  148</a></span>&#160;    <span class="keyword">static</span> <a class="code" href="namespacemio.html#ae556a666d14183eb2bf3a3efc11551ec">IOResult&lt;Parameters&gt;</a> <a class="code" href="classmio_1_1oseir_1_1Parameters.html#a09a48922fc500503477abfda811c5df8">deserialize</a>(IOContext&amp; io)</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    {</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        BOOST_OUTCOME_TRY(base, <a class="code" href="classmio_1_1ParameterSet.html#aaf16926f86a1bdb3ddcf5559b4650467">ParametersBase::deserialize</a>(io));</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="namespacemio.html#a80d7fd30c9669e05b537b2caedd82bb8">success</a>(<a class="code" href="classmio_1_1oseir_1_1Parameters.html#aa5b93649f32d904f3bd3c5e6416611d6">Parameters</a>(std::move(base)));</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    }</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;};</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160; </div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;} <span class="comment">// namespace oseir</span></div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;} <span class="comment">// namespace mio</span></div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160; </div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// SEIR_PARAMETERS_H</span></div>
+<div class="line"><a name="l00116"></a><span class="lineno"><a class="line" href="classmio_1_1oseir_1_1Parameters.html#ab59620cb714f58610bca60bf56cf81a8">  116</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classmio_1_1oseir_1_1Parameters.html#ab59620cb714f58610bca60bf56cf81a8">check_constraints</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;<span class="keyword">    </span>{</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        <span class="keywordflow">if</span> (this-&gt;get&lt;TimeExposed&gt;() &lt;= 0.0) {</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;            <a class="code" href="namespacemio.html#a89afc3ebfa2c5ab994ec3c76dcad85d1">log_error</a>(<span class="stringliteral">&quot;Constraint check: Parameter TimeExposed {:.4f} smaller or equal {:.4f}&quot;</span>,</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;                      this-&gt;get&lt;TimeExposed&gt;(), 0.0);</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;            <span class="keywordflow">return</span> 1;</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        }</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        <span class="keywordflow">if</span> (this-&gt;get&lt;TimeInfected&gt;() &lt;= 0.0) {</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;            <a class="code" href="namespacemio.html#a89afc3ebfa2c5ab994ec3c76dcad85d1">log_error</a>(<span class="stringliteral">&quot;Constraint check: Parameter TimeInfected {:.4f} smaller or equal {:.4f}&quot;</span>,</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;                      this-&gt;get&lt;TimeInfected&gt;(), 0.0);</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;            <span class="keywordflow">return</span> 1;</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        }</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        <span class="keywordflow">if</span> (this-&gt;get&lt;TransmissionProbabilityOnContact&gt;() &lt; 0.0 ||</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;            this-&gt;get&lt;TransmissionProbabilityOnContact&gt;() &gt; 1.0) {</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;            <a class="code" href="namespacemio.html#a89afc3ebfa2c5ab994ec3c76dcad85d1">log_error</a>(</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;                <span class="stringliteral">&quot;Constraint check: Parameter TransmissionProbabilityOnContact {:.4f} smaller {:.4f} or greater {:.4f}&quot;</span>,</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;                this-&gt;get&lt;TransmissionProbabilityOnContact&gt;(), 0.0, 1.0);</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;            <span class="keywordflow">return</span> 1;</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;        }</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;        <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    }</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160; </div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00139"></a><span class="lineno"><a class="line" href="classmio_1_1oseir_1_1Parameters.html#af8118b8ff1b6abc10f5d3105e6ac3771">  139</a></span>&#160;    <a class="code" href="classmio_1_1oseir_1_1Parameters.html#af8118b8ff1b6abc10f5d3105e6ac3771">Parameters</a>(<a class="code" href="classmio_1_1ParameterSet.html">ParametersBase</a>&amp;&amp; base)</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;        : <a class="code" href="classmio_1_1ParameterSet.html">ParametersBase</a>(<a class="code" href="namespacestd.html">std</a>::move(base))</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    {</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    }</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160; </div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">class</span> IOContext&gt;</div>
+<div class="line"><a name="l00150"></a><span class="lineno"><a class="line" href="classmio_1_1oseir_1_1Parameters.html#a09a48922fc500503477abfda811c5df8">  150</a></span>&#160;    <span class="keyword">static</span> <a class="code" href="namespacemio.html#ae556a666d14183eb2bf3a3efc11551ec">IOResult&lt;Parameters&gt;</a> <a class="code" href="classmio_1_1oseir_1_1Parameters.html#a09a48922fc500503477abfda811c5df8">deserialize</a>(IOContext&amp; io)</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    {</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;        BOOST_OUTCOME_TRY(base, <a class="code" href="classmio_1_1ParameterSet.html#aaf16926f86a1bdb3ddcf5559b4650467">ParametersBase::deserialize</a>(io));</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="namespacemio.html#a80d7fd30c9669e05b537b2caedd82bb8">success</a>(<a class="code" href="classmio_1_1oseir_1_1Parameters.html#aa5b93649f32d904f3bd3c5e6416611d6">Parameters</a>(std::move(base)));</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    }</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;};</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160; </div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;} <span class="comment">// namespace oseir</span></div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;} <span class="comment">// namespace mio</span></div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160; </div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// SEIR_PARAMETERS_H</span></div>
 <div class="ttc" id="aclassmio_1_1ContactMatrix_html"><div class="ttname"><a href="classmio_1_1ContactMatrix.html">mio::ContactMatrix</a></div><div class="ttdoc">represents time dependent contact frequencies between groups.</div><div class="ttdef"><b>Definition:</b> contact_matrix.h:503</div></div>
 <div class="ttc" id="aclassmio_1_1ParameterSet_html"><div class="ttname"><a href="classmio_1_1ParameterSet.html">mio::ParameterSet</a></div><div class="ttdoc">a set of parameters defined at compile time</div><div class="ttdef"><b>Definition:</b> parameter_set.h:204</div></div>
 <div class="ttc" id="aclassmio_1_1ParameterSet_html_aaf16926f86a1bdb3ddcf5559b4650467"><div class="ttname"><a href="classmio_1_1ParameterSet.html#aaf16926f86a1bdb3ddcf5559b4650467">mio::ParameterSet::deserialize</a></div><div class="ttdeci">static IOResult&lt; ParameterSet &gt; deserialize(IOContext &amp;io)</div><div class="ttdoc">deserialize an object of this class.</div><div class="ttdef"><b>Definition:</b> parameter_set.h:346</div></div>
 <div class="ttc" id="aclassmio_1_1UncertainValue_html"><div class="ttname"><a href="classmio_1_1UncertainValue.html">mio::UncertainValue</a></div><div class="ttdoc">The UncertainValue class consists of a scalar value and a Distribution object.</div><div class="ttdef"><b>Definition:</b> uncertain_value.h:44</div></div>
 <div class="ttc" id="aclassmio_1_1oseir_1_1Parameters_html"><div class="ttname"><a href="classmio_1_1oseir_1_1Parameters.html">mio::oseir::Parameters</a></div><div class="ttdoc">Parameters of an age-resolved SECIR/SECIHURD model.</div><div class="ttdef"><b>Definition:</b> parameters.h:104</div></div>
-<div class="ttc" id="aclassmio_1_1oseir_1_1Parameters_html_a09a48922fc500503477abfda811c5df8"><div class="ttname"><a href="classmio_1_1oseir_1_1Parameters.html#a09a48922fc500503477abfda811c5df8">mio::oseir::Parameters::deserialize</a></div><div class="ttdeci">static IOResult&lt; Parameters &gt; deserialize(IOContext &amp;io)</div><div class="ttdoc">deserialize an object of this class.</div><div class="ttdef"><b>Definition:</b> parameters.h:148</div></div>
+<div class="ttc" id="aclassmio_1_1oseir_1_1Parameters_html_a09a48922fc500503477abfda811c5df8"><div class="ttname"><a href="classmio_1_1oseir_1_1Parameters.html#a09a48922fc500503477abfda811c5df8">mio::oseir::Parameters::deserialize</a></div><div class="ttdeci">static IOResult&lt; Parameters &gt; deserialize(IOContext &amp;io)</div><div class="ttdoc">deserialize an object of this class.</div><div class="ttdef"><b>Definition:</b> parameters.h:150</div></div>
 <div class="ttc" id="aclassmio_1_1oseir_1_1Parameters_html_aa5b93649f32d904f3bd3c5e6416611d6"><div class="ttname"><a href="classmio_1_1oseir_1_1Parameters.html#aa5b93649f32d904f3bd3c5e6416611d6">mio::oseir::Parameters::Parameters</a></div><div class="ttdeci">Parameters()</div><div class="ttdef"><b>Definition:</b> parameters.h:106</div></div>
-<div class="ttc" id="aclassmio_1_1oseir_1_1Parameters_html_ab59620cb714f58610bca60bf56cf81a8"><div class="ttname"><a href="classmio_1_1oseir_1_1Parameters.html#ab59620cb714f58610bca60bf56cf81a8">mio::oseir::Parameters::check_constraints</a></div><div class="ttdeci">int check_constraints() const</div><div class="ttdoc">checks whether all Parameters satisfy their corresponding constraints.</div><div class="ttdef"><b>Definition:</b> parameters.h:114</div></div>
-<div class="ttc" id="aclassmio_1_1oseir_1_1Parameters_html_af8118b8ff1b6abc10f5d3105e6ac3771"><div class="ttname"><a href="classmio_1_1oseir_1_1Parameters.html#af8118b8ff1b6abc10f5d3105e6ac3771">mio::oseir::Parameters::Parameters</a></div><div class="ttdeci">Parameters(ParametersBase &amp;&amp;base)</div><div class="ttdef"><b>Definition:</b> parameters.h:137</div></div>
+<div class="ttc" id="aclassmio_1_1oseir_1_1Parameters_html_ab59620cb714f58610bca60bf56cf81a8"><div class="ttname"><a href="classmio_1_1oseir_1_1Parameters.html#ab59620cb714f58610bca60bf56cf81a8">mio::oseir::Parameters::check_constraints</a></div><div class="ttdeci">int check_constraints() const</div><div class="ttdoc">Checks whether all Parameters satisfy their corresponding constraints and logs an error if constraint...</div><div class="ttdef"><b>Definition:</b> parameters.h:116</div></div>
+<div class="ttc" id="aclassmio_1_1oseir_1_1Parameters_html_af8118b8ff1b6abc10f5d3105e6ac3771"><div class="ttname"><a href="classmio_1_1oseir_1_1Parameters.html#af8118b8ff1b6abc10f5d3105e6ac3771">mio::oseir::Parameters::Parameters</a></div><div class="ttdeci">Parameters(ParametersBase &amp;&amp;base)</div><div class="ttdef"><b>Definition:</b> parameters.h:139</div></div>
 <div class="ttc" id="acontact__matrix_8h_html"><div class="ttname"><a href="contact__matrix_8h.html">contact_matrix.h</a></div></div>
 <div class="ttc" id="anamespacemio_html"><div class="ttname"><a href="namespacemio.html">mio</a></div><div class="ttdoc">A collection of classes to simplify handling of matrix shapes in meta programming.</div><div class="ttdef"><b>Definition:</b> compartmentalmodel.h:32</div></div>
 <div class="ttc" id="anamespacemio_html_a80d7fd30c9669e05b537b2caedd82bb8"><div class="ttname"><a href="namespacemio.html#a80d7fd30c9669e05b537b2caedd82bb8">mio::success</a></div><div class="ttdeci">auto success()</div><div class="ttdoc">Create an object that is implicitly convertible to a succesful IOResult&lt;void&gt;.</div><div class="ttdef"><b>Definition:</b> io.h:346</div></div>

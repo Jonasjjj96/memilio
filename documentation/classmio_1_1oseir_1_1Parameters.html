@@ -93,7 +93,7 @@ Inheritance diagram for mio::oseir::Parameters:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ab59620cb714f58610bca60bf56cf81a8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1oseir_1_1Parameters.html#ab59620cb714f58610bca60bf56cf81a8">check_constraints</a> () const</td></tr>
-<tr class="memdesc:ab59620cb714f58610bca60bf56cf81a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">checks whether all <a class="el" href="classmio_1_1oseir_1_1Parameters.html" title="Parameters of an age-resolved SECIR/SECIHURD model.">Parameters</a> satisfy their corresponding constraints.  <a href="classmio_1_1oseir_1_1Parameters.html#ab59620cb714f58610bca60bf56cf81a8">More...</a><br /></td></tr>
+<tr class="memdesc:ab59620cb714f58610bca60bf56cf81a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether all <a class="el" href="classmio_1_1oseir_1_1Parameters.html" title="Parameters of an age-resolved SECIR/SECIHURD model.">Parameters</a> satisfy their corresponding constraints and logs an error if constraints are not satisfied.  <a href="classmio_1_1oseir_1_1Parameters.html#ab59620cb714f58610bca60bf56cf81a8">More...</a><br /></td></tr>
 <tr class="separator:ab59620cb714f58610bca60bf56cf81a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa5b93649f32d904f3bd3c5e6416611d6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1oseir_1_1Parameters.html#aa5b93649f32d904f3bd3c5e6416611d6">Parameters</a> ()</td></tr>
 <tr class="separator:aa5b93649f32d904f3bd3c5e6416611d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -221,8 +221,9 @@ Private Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>checks whether all <a class="el" href="classmio_1_1oseir_1_1Parameters.html" title="Parameters of an age-resolved SECIR/SECIHURD model.">Parameters</a> satisfy their corresponding constraints. </p>
-<p>Logs errors and returns 0 </p>
+<p>Checks whether all <a class="el" href="classmio_1_1oseir_1_1Parameters.html" title="Parameters of an age-resolved SECIR/SECIHURD model.">Parameters</a> satisfy their corresponding constraints and logs an error if constraints are not satisfied. </p>
+<dl class="section return"><dt>Returns</dt><dd>Returns 1 if one constraint is not satisfied, otherwise 0. <br  />
+ </dd></dl>
 
 </div>
 </div>

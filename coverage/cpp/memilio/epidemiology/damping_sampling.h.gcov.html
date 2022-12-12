@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2022-12-08 14:29:51</td>
+            <td class="headerValue">2022-12-12 08:18:33</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">26</td>
@@ -109,25 +109,25 @@
 <a name="47"><span class="lineNum">      47 </span>            :      * @param groups weights of age groups.</a>
 <a name="48"><span class="lineNum">      48 </span>            :      */</a>
 <a name="49"><span class="lineNum">      49 </span>            :     template &lt;class V&gt;</a>
-<a name="50"><span class="lineNum">      50 </span><span class="lineCov">         96 :     DampingSampling(const UncertainValue&amp; value, DampingLevel level, DampingType type, SimulationTime time,</span></a>
+<a name="50"><span class="lineNum">      50 </span><span class="lineCov">        101 :     DampingSampling(const UncertainValue&amp; value, DampingLevel level, DampingType type, SimulationTime time,</span></a>
 <a name="51"><span class="lineNum">      51 </span>            :                     const std::vector&lt;size_t&gt; matrices, const Eigen::MatrixBase&lt;V&gt;&amp; groups)</a>
 <a name="52"><span class="lineNum">      52 </span>            :         : m_value(value)</a>
 <a name="53"><span class="lineNum">      53 </span>            :         , m_level(level)</a>
 <a name="54"><span class="lineNum">      54 </span>            :         , m_type(type)</a>
 <a name="55"><span class="lineNum">      55 </span>            :         , m_time(time)</a>
 <a name="56"><span class="lineNum">      56 </span>            :         , m_matrices(matrices)</a>
-<a name="57"><span class="lineNum">      57 </span><span class="lineCov">         96 :         , m_groups(groups)</span></a>
+<a name="57"><span class="lineNum">      57 </span><span class="lineCov">        101 :         , m_groups(groups)</span></a>
 <a name="58"><span class="lineNum">      58 </span>            :     {</a>
-<a name="59"><span class="lineNum">      59 </span><span class="lineCov">         96 :     }</span></a>
+<a name="59"><span class="lineNum">      59 </span><span class="lineCov">        101 :     }</span></a>
 <a name="60"><span class="lineNum">      60 </span>            : </a>
 <a name="61"><span class="lineNum">      61 </span>            :     /**</a>
 <a name="62"><span class="lineNum">      62 </span>            :      * Get the random value.</a>
 <a name="63"><span class="lineNum">      63 </span>            :      * @return the random value.</a>
 <a name="64"><span class="lineNum">      64 </span>            :      * @{</a>
 <a name="65"><span class="lineNum">      65 </span>            :      */</a>
-<a name="66"><span class="lineNum">      66 </span><span class="lineCov">         38 :     const UncertainValue&amp; get_value() const</span></a>
+<a name="66"><span class="lineNum">      66 </span><span class="lineCov">         39 :     const UncertainValue&amp; get_value() const</span></a>
 <a name="67"><span class="lineNum">      67 </span>            :     {</a>
-<a name="68"><span class="lineNum">      68 </span><span class="lineCov">         38 :         return m_value;</span></a>
+<a name="68"><span class="lineNum">      68 </span><span class="lineCov">         39 :         return m_value;</span></a>
 <a name="69"><span class="lineNum">      69 </span>            :     }</a>
 <a name="70"><span class="lineNum">      70 </span><span class="lineCov">         17 :     UncertainValue&amp; get_value()</span></a>
 <a name="71"><span class="lineNum">      71 </span>            :     {</a>
@@ -148,9 +148,9 @@
 <a name="86"><span class="lineNum">      86 </span>            :      * Get the damping level.</a>
 <a name="87"><span class="lineNum">      87 </span>            :      * @return damping level.</a>
 <a name="88"><span class="lineNum">      88 </span>            :      */</a>
-<a name="89"><span class="lineNum">      89 </span><span class="lineCov">         42 :     DampingLevel get_level() const</span></a>
+<a name="89"><span class="lineNum">      89 </span><span class="lineCov">         43 :     DampingLevel get_level() const</span></a>
 <a name="90"><span class="lineNum">      90 </span>            :     {</a>
-<a name="91"><span class="lineNum">      91 </span><span class="lineCov">         42 :         return m_level;</span></a>
+<a name="91"><span class="lineNum">      91 </span><span class="lineCov">         43 :         return m_level;</span></a>
 <a name="92"><span class="lineNum">      92 </span>            :     }</a>
 <a name="93"><span class="lineNum">      93 </span>            : </a>
 <a name="94"><span class="lineNum">      94 </span>            :     /**</a>
@@ -166,9 +166,9 @@
 <a name="104"><span class="lineNum">     104 </span>            :      * Get the damping type.</a>
 <a name="105"><span class="lineNum">     105 </span>            :      * @return damping type.</a>
 <a name="106"><span class="lineNum">     106 </span>            :      */</a>
-<a name="107"><span class="lineNum">     107 </span><span class="lineCov">         42 :     DampingType get_type() const</span></a>
+<a name="107"><span class="lineNum">     107 </span><span class="lineCov">         43 :     DampingType get_type() const</span></a>
 <a name="108"><span class="lineNum">     108 </span>            :     {</a>
-<a name="109"><span class="lineNum">     109 </span><span class="lineCov">         42 :         return m_type;</span></a>
+<a name="109"><span class="lineNum">     109 </span><span class="lineCov">         43 :         return m_type;</span></a>
 <a name="110"><span class="lineNum">     110 </span>            :     }</a>
 <a name="111"><span class="lineNum">     111 </span>            : </a>
 <a name="112"><span class="lineNum">     112 </span>            :     /**</a>
@@ -184,9 +184,9 @@
 <a name="122"><span class="lineNum">     122 </span>            :      * Get the time the damping becomes active.</a>
 <a name="123"><span class="lineNum">     123 </span>            :      * @return the damping time.</a>
 <a name="124"><span class="lineNum">     124 </span>            :      */</a>
-<a name="125"><span class="lineNum">     125 </span><span class="lineCov">         33 :     SimulationTime get_time() const</span></a>
+<a name="125"><span class="lineNum">     125 </span><span class="lineCov">         34 :     SimulationTime get_time() const</span></a>
 <a name="126"><span class="lineNum">     126 </span>            :     {</a>
-<a name="127"><span class="lineNum">     127 </span><span class="lineCov">         33 :         return m_time;</span></a>
+<a name="127"><span class="lineNum">     127 </span><span class="lineCov">         34 :         return m_time;</span></a>
 <a name="128"><span class="lineNum">     128 </span>            :     }</a>
 <a name="129"><span class="lineNum">     129 </span>            : </a>
 <a name="130"><span class="lineNum">     130 </span>            :     /**</a>
@@ -203,9 +203,9 @@
 <a name="141"><span class="lineNum">     141 </span>            :      * The indices correspond to the indices of matrix in a DampingExpressionGroup (e.g. ContactMatrixGroup).</a>
 <a name="142"><span class="lineNum">     142 </span>            :      * @return list of matrix indices.</a>
 <a name="143"><span class="lineNum">     143 </span>            :      */</a>
-<a name="144"><span class="lineNum">     144 </span><span class="lineCov">         48 :     const std::vector&lt;size_t&gt;&amp; get_matrix_indices() const</span></a>
+<a name="144"><span class="lineNum">     144 </span><span class="lineCov">         50 :     const std::vector&lt;size_t&gt;&amp; get_matrix_indices() const</span></a>
 <a name="145"><span class="lineNum">     145 </span>            :     {</a>
-<a name="146"><span class="lineNum">     146 </span><span class="lineCov">         48 :         return m_matrices;</span></a>
+<a name="146"><span class="lineNum">     146 </span><span class="lineCov">         50 :         return m_matrices;</span></a>
 <a name="147"><span class="lineNum">     147 </span>            :     }</a>
 <a name="148"><span class="lineNum">     148 </span>            : </a>
 <a name="149"><span class="lineNum">     149 </span>            :     /**</a>
@@ -222,9 +222,9 @@
 <a name="160"><span class="lineNum">     160 </span>            :      * The groups correspond to e.g. age groups in the SECIR model.</a>
 <a name="161"><span class="lineNum">     161 </span>            :      * @return weights of groups.</a>
 <a name="162"><span class="lineNum">     162 </span>            :      */</a>
-<a name="163"><span class="lineNum">     163 </span><span class="lineCov">         42 :     const Eigen::VectorXd&amp; get_group_weights() const</span></a>
+<a name="163"><span class="lineNum">     163 </span><span class="lineCov">         43 :     const Eigen::VectorXd&amp; get_group_weights() const</span></a>
 <a name="164"><span class="lineNum">     164 </span>            :     {</a>
-<a name="165"><span class="lineNum">     165 </span><span class="lineCov">         42 :         return m_groups;</span></a>
+<a name="165"><span class="lineNum">     165 </span><span class="lineCov">         43 :         return m_groups;</span></a>
 <a name="166"><span class="lineNum">     166 </span>            :     }</a>
 <a name="167"><span class="lineNum">     167 </span>            :     /**</a>
 <a name="168"><span class="lineNum">     168 </span>            :      * Set the group weights.</a>
@@ -265,37 +265,37 @@
 <a name="203"><span class="lineNum">     203 </span>            :      * @see mio::serialize</a>
 <a name="204"><span class="lineNum">     204 </span>            :      */</a>
 <a name="205"><span class="lineNum">     205 </span>            :     template &lt;class IOContext&gt;</a>
-<a name="206"><span class="lineNum">     206 </span><span class="lineCov">          9 :     void serialize(IOContext&amp; io) const</span></a>
+<a name="206"><span class="lineNum">     206 </span><span class="lineCov">         10 :     void serialize(IOContext&amp; io) const</span></a>
 <a name="207"><span class="lineNum">     207 </span>            :     {</a>
-<a name="208"><span class="lineNum">     208 </span><span class="lineCov">         36 :         auto obj = io.create_object(&quot;DampingSampling&quot;);</span></a>
-<a name="209"><span class="lineNum">     209 </span><span class="lineCov">          9 :         obj.add_element(&quot;Time&quot;, get_time());</span></a>
-<a name="210"><span class="lineNum">     210 </span><span class="lineCov">          9 :         obj.add_element(&quot;Type&quot;, get_type());</span></a>
-<a name="211"><span class="lineNum">     211 </span><span class="lineCov">          9 :         obj.add_element(&quot;Level&quot;, get_level());</span></a>
-<a name="212"><span class="lineNum">     212 </span><span class="lineCov">          9 :         obj.add_element(&quot;Value&quot;, get_value());</span></a>
-<a name="213"><span class="lineNum">     213 </span><span class="lineCov">          9 :         obj.add_list(&quot;MatrixIndices&quot;, get_matrix_indices().begin(), get_matrix_indices().end());</span></a>
-<a name="214"><span class="lineNum">     214 </span><span class="lineCov">          9 :         obj.add_element(&quot;GroupWeights&quot;, get_group_weights());</span></a>
-<a name="215"><span class="lineNum">     215 </span><span class="lineCov">          9 :     }</span></a>
+<a name="208"><span class="lineNum">     208 </span><span class="lineCov">         40 :         auto obj = io.create_object(&quot;DampingSampling&quot;);</span></a>
+<a name="209"><span class="lineNum">     209 </span><span class="lineCov">         10 :         obj.add_element(&quot;Time&quot;, get_time());</span></a>
+<a name="210"><span class="lineNum">     210 </span><span class="lineCov">         10 :         obj.add_element(&quot;Type&quot;, get_type());</span></a>
+<a name="211"><span class="lineNum">     211 </span><span class="lineCov">         10 :         obj.add_element(&quot;Level&quot;, get_level());</span></a>
+<a name="212"><span class="lineNum">     212 </span><span class="lineCov">         10 :         obj.add_element(&quot;Value&quot;, get_value());</span></a>
+<a name="213"><span class="lineNum">     213 </span><span class="lineCov">         10 :         obj.add_list(&quot;MatrixIndices&quot;, get_matrix_indices().begin(), get_matrix_indices().end());</span></a>
+<a name="214"><span class="lineNum">     214 </span><span class="lineCov">         10 :         obj.add_element(&quot;GroupWeights&quot;, get_group_weights());</span></a>
+<a name="215"><span class="lineNum">     215 </span><span class="lineCov">         10 :     }</span></a>
 <a name="216"><span class="lineNum">     216 </span>            : </a>
 <a name="217"><span class="lineNum">     217 </span>            :     /**</a>
 <a name="218"><span class="lineNum">     218 </span>            :      * deserialize an object of this class.</a>
 <a name="219"><span class="lineNum">     219 </span>            :      * @see mio::deserialize</a>
 <a name="220"><span class="lineNum">     220 </span>            :      */</a>
 <a name="221"><span class="lineNum">     221 </span>            :     template &lt;class IOContext&gt;</a>
-<a name="222"><span class="lineNum">     222 </span><span class="lineCov">          9 :     static IOResult&lt;DampingSampling&gt; deserialize(IOContext&amp; io)</span></a>
+<a name="222"><span class="lineNum">     222 </span><span class="lineCov">         10 :     static IOResult&lt;DampingSampling&gt; deserialize(IOContext&amp; io)</span></a>
 <a name="223"><span class="lineNum">     223 </span>            :     {</a>
-<a name="224"><span class="lineNum">     224 </span><span class="lineCov">         36 :         auto obj = io.expect_object(&quot;DampingSampling&quot;);</span></a>
-<a name="225"><span class="lineNum">     225 </span><span class="lineCov">         36 :         auto ti  = obj.expect_element(&quot;Time&quot;, Tag&lt;SimulationTime&gt;{});</span></a>
-<a name="226"><span class="lineNum">     226 </span><span class="lineCov">         36 :         auto ty  = obj.expect_element(&quot;Type&quot;, Tag&lt;DampingType&gt;{});</span></a>
-<a name="227"><span class="lineNum">     227 </span><span class="lineCov">         36 :         auto l   = obj.expect_element(&quot;Level&quot;, Tag&lt;DampingLevel&gt;{});</span></a>
-<a name="228"><span class="lineNum">     228 </span><span class="lineCov">         36 :         auto v   = obj.expect_element(&quot;Value&quot;, Tag&lt;UncertainValue&gt;{});</span></a>
-<a name="229"><span class="lineNum">     229 </span><span class="lineCov">         36 :         auto m   = obj.expect_list(&quot;MatrixIndices&quot;, Tag&lt;size_t&gt;{});</span></a>
-<a name="230"><span class="lineNum">     230 </span><span class="lineCov">         36 :         auto g   = obj.expect_element(&quot;GroupWeights&quot;, Tag&lt;Eigen::VectorXd&gt;{});</span></a>
+<a name="224"><span class="lineNum">     224 </span><span class="lineCov">         40 :         auto obj = io.expect_object(&quot;DampingSampling&quot;);</span></a>
+<a name="225"><span class="lineNum">     225 </span><span class="lineCov">         40 :         auto ti  = obj.expect_element(&quot;Time&quot;, Tag&lt;SimulationTime&gt;{});</span></a>
+<a name="226"><span class="lineNum">     226 </span><span class="lineCov">         40 :         auto ty  = obj.expect_element(&quot;Type&quot;, Tag&lt;DampingType&gt;{});</span></a>
+<a name="227"><span class="lineNum">     227 </span><span class="lineCov">         40 :         auto l   = obj.expect_element(&quot;Level&quot;, Tag&lt;DampingLevel&gt;{});</span></a>
+<a name="228"><span class="lineNum">     228 </span><span class="lineCov">         40 :         auto v   = obj.expect_element(&quot;Value&quot;, Tag&lt;UncertainValue&gt;{});</span></a>
+<a name="229"><span class="lineNum">     229 </span><span class="lineCov">         40 :         auto m   = obj.expect_list(&quot;MatrixIndices&quot;, Tag&lt;size_t&gt;{});</span></a>
+<a name="230"><span class="lineNum">     230 </span><span class="lineCov">         40 :         auto g   = obj.expect_element(&quot;GroupWeights&quot;, Tag&lt;Eigen::VectorXd&gt;{});</span></a>
 <a name="231"><span class="lineNum">     231 </span>            :         return apply(</a>
 <a name="232"><span class="lineNum">     232 </span>            :             io,</a>
-<a name="233"><span class="lineNum">     233 </span><span class="lineCov">          9 :             [](auto&amp;&amp; ti_, auto&amp;&amp; ty_, auto&amp;&amp; l_, auto&amp;&amp; v_, auto&amp;&amp; m_, auto&amp;&amp; g_) {</span></a>
-<a name="234"><span class="lineNum">     234 </span><span class="lineCov">          9 :                 return DampingSampling(v_, l_, ty_, ti_, m_, g_);</span></a>
+<a name="233"><span class="lineNum">     233 </span><span class="lineCov">         10 :             [](auto&amp;&amp; ti_, auto&amp;&amp; ty_, auto&amp;&amp; l_, auto&amp;&amp; v_, auto&amp;&amp; m_, auto&amp;&amp; g_) {</span></a>
+<a name="234"><span class="lineNum">     234 </span><span class="lineCov">         10 :                 return DampingSampling(v_, l_, ty_, ti_, m_, g_);</span></a>
 <a name="235"><span class="lineNum">     235 </span>            :             },</a>
-<a name="236"><span class="lineNum">     236 </span><span class="lineCov">         18 :             ti, ty, l, v, m, g);</span></a>
+<a name="236"><span class="lineNum">     236 </span><span class="lineCov">         20 :             ti, ty, l, v, m, g);</span></a>
 <a name="237"><span class="lineNum">     237 </span>            :     }</a>
 <a name="238"><span class="lineNum">     238 </span>            : </a>
 <a name="239"><span class="lineNum">     239 </span>            : private:</a>
