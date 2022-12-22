@@ -75,6 +75,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="age_8h_source.html">abm/age.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="mask__type_8h_source.html">abm/mask_type.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="time_8h_source.html">abm/time.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="state_8h_source.html">abm/state.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="custom__index__array_8h_source.html">memilio/utils/custom_index_array.h</a>&quot;</code><br />
@@ -121,6 +122,8 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmio_1_1abm_1_1LockdownDate.html">mio::abm::LockdownDate</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">parameters that govern the migration between locations.  <a href="structmio_1_1abm_1_1LockdownDate.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmio_1_1abm_1_1MaskProtection.html">mio::abm::MaskProtection</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmio_1_1abm_1_1MaximumContacts.html">mio::abm::MaximumContacts</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmio_1_1abm_1_1PCRTest.html">mio::abm::PCRTest</a></td></tr>
@@ -154,9 +157,9 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:a89535e247a14e5756e50f7c62ef53951"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemio_1_1abm.html#a89535e247a14e5756e50f7c62ef53951">mio::abm::GlobalInfectionParameters</a> = ParameterSet&lt; IncubationPeriod, SusceptibleToExposedByCarrier, SusceptibleToExposedByInfected, CarrierToInfected, CarrierToRecovered, InfectedToRecovered, InfectedToSevere, SevereToCritical, SevereToRecovered, CriticalToDead, CriticalToRecovered, RecoveredToSusceptible, DetectInfection &gt;</td></tr>
-<tr class="memdesc:a89535e247a14e5756e50f7c62ef53951"><td class="mdescLeft">&#160;</td><td class="mdescRight">parameters of the infection that are the same everywhere within the world.  <a href="namespacemio_1_1abm.html#a89535e247a14e5756e50f7c62ef53951">More...</a><br /></td></tr>
-<tr class="separator:a89535e247a14e5756e50f7c62ef53951"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:affc4b31b9f9ee14812ec1a61159f478f"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemio_1_1abm.html#affc4b31b9f9ee14812ec1a61159f478f">mio::abm::GlobalInfectionParameters</a> = ParameterSet&lt; IncubationPeriod, SusceptibleToExposedByCarrier, SusceptibleToExposedByInfected, CarrierToInfected, CarrierToRecovered, InfectedToRecovered, InfectedToSevere, SevereToCritical, SevereToRecovered, CriticalToDead, CriticalToRecovered, RecoveredToSusceptible, DetectInfection, MaskProtection &gt;</td></tr>
+<tr class="memdesc:affc4b31b9f9ee14812ec1a61159f478f"><td class="mdescLeft">&#160;</td><td class="mdescRight">parameters of the infection that are the same everywhere within the world.  <a href="namespacemio_1_1abm.html#affc4b31b9f9ee14812ec1a61159f478f">More...</a><br /></td></tr>
+<tr class="separator:affc4b31b9f9ee14812ec1a61159f478f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac2605ee8b302c94d664ddd892db76996"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemio_1_1abm.html#ac2605ee8b302c94d664ddd892db76996">mio::abm::LocalInfectionParameters</a> = ParameterSet&lt; MaximumContacts &gt;</td></tr>
 <tr class="memdesc:ac2605ee8b302c94d664ddd892db76996"><td class="mdescLeft">&#160;</td><td class="mdescRight">parameters of the infection that depend on the location.  <a href="namespacemio_1_1abm.html#ac2605ee8b302c94d664ddd892db76996">More...</a><br /></td></tr>
 <tr class="separator:ac2605ee8b302c94d664ddd892db76996"><td class="memSeparator" colspan="2">&#160;</td></tr>

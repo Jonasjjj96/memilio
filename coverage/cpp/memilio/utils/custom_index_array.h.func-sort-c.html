@@ -37,11 +37,11 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2022-12-12 08:18:33</td>
+            <td class="headerValue">2022-12-22 07:58:12</td>
             <td></td>
             <td class="headerItem">Functions:</td>
-            <td class="headerCovTableEntry">502</td>
-            <td class="headerCovTableEntry">515</td>
+            <td class="headerCovTableEntry">511</td>
+            <td class="headerCovTableEntry">524</td>
             <td class="headerCovTableEntryHi">97.5 %</td>
           </tr>
           <tr><td><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
@@ -792,6 +792,10 @@
               <td class="coverFnHi">3</td>
             </tr>
     <tr>
+              <td class="coverFn"><a href="custom_index_array.h.gcov.html#272">mio::CustomIndexArray&lt;double, mio::abm::MaskType&gt;::operator[](mio::Index&lt;mio::abm::MaskType&gt; const&amp;)</a></td>
+              <td class="coverFnHi">3</td>
+            </tr>
+    <tr>
               <td class="coverFn"><a href="custom_index_array.h.gcov.html#291">mio::CustomIndexArray&lt;double, mio::AgeGroup&gt;::operator=(double const&amp;)</a></td>
               <td class="coverFnHi">3</td>
             </tr>
@@ -961,6 +965,10 @@
             </tr>
     <tr>
               <td class="coverFn"><a href="custom_index_array.h.gcov.html#596">mio::CustomIndexArray&lt;double, Tag0, Tag1, Tag2, Tag3&gt;::Slice&lt;Tag2, mio::CustomIndexArray&lt;double, Tag0, Tag1, Tag2, Tag3&gt;::Slice&lt;Tag1, mio::CustomIndexArray&lt;double, Tag0, Tag1, Tag2, Tag3&gt;::Iterator&lt;double&gt;, (void*)0&gt;::Iterator&lt;double&gt;, (void*)0&gt;::Iterator&lt;double&gt;::outer_offset(long const&amp;) const</a></td>
+              <td class="coverFnHi">4</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="custom_index_array.h.gcov.html#282">mio::CustomIndexArray&lt;double, mio::abm::MaskType&gt;::operator[](mio::Index&lt;mio::abm::MaskType&gt; const&amp;) const</a></td>
               <td class="coverFnHi">4</td>
             </tr>
     <tr>
@@ -1156,11 +1164,19 @@
               <td class="coverFnHi">7</td>
             </tr>
     <tr>
+              <td class="coverFn"><a href="custom_index_array.h.gcov.html#115">unsigned long mio::flatten_index&lt;mio::Index&lt;mio::abm::MaskType&gt; &gt;(mio::Index&lt;mio::abm::MaskType&gt; const&amp;, mio::Index&lt;mio::abm::MaskType&gt; const&amp;)</a></td>
+              <td class="coverFnHi">7</td>
+            </tr>
+    <tr>
               <td class="coverFn"><a href="custom_index_array.h.gcov.html#335">mio::CustomIndexArray&lt;mio::UncertainValue, InfectionState, AgeGroup, Continent&gt;::Iterator&lt;mio::UncertainValue const&gt;::Iterator(mio::UncertainValue const*)</a></td>
               <td class="coverFnHi">7</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="custom_index_array.h.gcov.html#335">mio::CustomIndexArray&lt;double, jsontest::Tag&gt;::Iterator&lt;double const&gt;::Iterator(double const*)</a></td>
+              <td class="coverFnHi">7</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="custom_index_array.h.gcov.html#77">std::enable_if&lt;(0ul)==(mio::Index&lt;mio::abm::MaskType&gt;::size-(1)), std::pair&lt;unsigned long, unsigned long&gt; &gt;::type mio::details::flatten_index&lt;0ul, mio::Index&lt;mio::abm::MaskType&gt; &gt;(mio::Index&lt;mio::abm::MaskType&gt; const&amp;, mio::Index&lt;mio::abm::MaskType&gt; const&amp;)</a></td>
               <td class="coverFnHi">7</td>
             </tr>
     <tr>
@@ -1185,6 +1201,10 @@
             </tr>
     <tr>
               <td class="coverFn"><a href="custom_index_array.h.gcov.html#770">mio::CustomIndexArray&lt;mio::UncertainValue, InfectionState, AgeGroup, Continent&gt;::begin() const</a></td>
+              <td class="coverFnHi">7</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="custom_index_array.h.gcov.html#317">mio::CustomIndexArray&lt;double, mio::abm::MaskType&gt;::get_flat_index(mio::Index&lt;mio::abm::MaskType&gt; const&amp;) const</a></td>
               <td class="coverFnHi">7</td>
             </tr>
     <tr>
@@ -1600,16 +1620,28 @@
               <td class="coverFnHi">82</td>
             </tr>
     <tr>
+              <td class="coverFn"><a href="custom_index_array.h.gcov.html#42">std::enable_if&lt;(0)&lt;(1), unsigned long&gt;::type (anonymous namespace)::product&lt;0, mio::Index, mio::abm::MaskType&gt;(mio::Index&lt;mio::abm::MaskType&gt; const&amp;)</a></td>
+              <td class="coverFnHi">86</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="custom_index_array.h.gcov.html#36">std::enable_if&lt;(1)==(1), unsigned long&gt;::type (anonymous namespace)::product&lt;1, mio::Index, mio::abm::MaskType&gt;(mio::Index&lt;mio::abm::MaskType&gt; const&amp;)</a></td>
+              <td class="coverFnHi">86</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="custom_index_array.h.gcov.html#48">unsigned long (anonymous namespace)::product&lt;mio::Index, mio::abm::MaskType&gt;(mio::Index&lt;mio::abm::MaskType&gt; const&amp;)</a></td>
+              <td class="coverFnHi">86</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="custom_index_array.h.gcov.html#176">mio::CustomIndexArray&lt;double, mio::abm::MaskType&gt;::CustomIndexArray&lt;double, (void*)0&gt;(mio::Index&lt;mio::abm::MaskType&gt; const&amp;, double&amp;&amp;)</a></td>
+              <td class="coverFnHi">86</td>
+            </tr>
+    <tr>
               <td class="coverFn"><a href="custom_index_array.h.gcov.html#258">mio::CustomIndexArray&lt;int, mio::abm::AgeGroup&gt;::array() const</a></td>
               <td class="coverFnHi">104</td>
             </tr>
     <tr>
-              <td class="coverFn"><a href="custom_index_array.h.gcov.html#176">mio::CustomIndexArray&lt;double, mio::abm::AgeGroup, mio::abm::VaccinationState&gt;::CustomIndexArray&lt;, (void*)0&gt;(mio::Index&lt;mio::abm::AgeGroup, mio::abm::VaccinationState&gt; const&amp;)</a></td>
-              <td class="coverFnHi">111</td>
-            </tr>
-    <tr>
               <td class="coverFn"><a href="custom_index_array.h.gcov.html#262">mio::CustomIndexArray&lt;double, mio::abm::AgeGroup, mio::abm::VaccinationState&gt;::array()</a></td>
-              <td class="coverFnHi">114</td>
+              <td class="coverFnHi">115</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="custom_index_array.h.gcov.html#317">mio::CustomIndexArray&lt;mio::abm::TimeSpan, mio::abm::AgeGroup&gt;::get_flat_index(mio::Index&lt;mio::abm::AgeGroup&gt; const&amp;) const</a></td>
@@ -1618,6 +1650,10 @@
     <tr>
               <td class="coverFn"><a href="custom_index_array.h.gcov.html#282">mio::CustomIndexArray&lt;mio::abm::TimeSpan, mio::abm::AgeGroup&gt;::operator[](mio::Index&lt;mio::abm::AgeGroup&gt; const&amp;) const</a></td>
               <td class="coverFnHi">116</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="custom_index_array.h.gcov.html#176">mio::CustomIndexArray&lt;double, mio::abm::AgeGroup, mio::abm::VaccinationState&gt;::CustomIndexArray&lt;, (void*)0&gt;(mio::Index&lt;mio::abm::AgeGroup, mio::abm::VaccinationState&gt; const&amp;)</a></td>
+              <td class="coverFnHi">118</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="custom_index_array.h.gcov.html#115">unsigned long mio::flatten_index&lt;mio::Index&lt;mio::abm::AgeGroup&gt; &gt;(mio::Index&lt;mio::abm::AgeGroup&gt; const&amp;, mio::Index&lt;mio::abm::AgeGroup&gt; const&amp;)</a></td>
@@ -1645,27 +1681,23 @@
             </tr>
     <tr>
               <td class="coverFn"><a href="custom_index_array.h.gcov.html#630">mio::CustomIndexArray&lt;mio::UncertainValue, mio::AgeGroup, mio::osecir::InfectionState&gt;::Slice&lt;mio::AgeGroup, mio::CustomIndexArray&lt;mio::UncertainValue, mio::AgeGroup, mio::osecir::InfectionState&gt;::Iterator&lt;mio::UncertainValue const&gt;, (void*)0&gt;::Slice(mio::Index&lt;mio::AgeGroup, mio::osecir::InfectionState&gt; const&amp;, mio::CustomIndexArray&lt;mio::UncertainValue, mio::AgeGroup, mio::osecir::InfectionState&gt;::Iterator&lt;mio::UncertainValue const&gt; const&amp;, mio::Seq&lt;unsigned long&gt;)</a></td>
-              <td class="coverFnHi">162</td>
+              <td class="coverFnHi">164</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="custom_index_array.h.gcov.html#668">mio::CustomIndexArray&lt;mio::UncertainValue, mio::AgeGroup, mio::osecir::InfectionState&gt;::Slice&lt;mio::AgeGroup, mio::CustomIndexArray&lt;mio::UncertainValue, mio::AgeGroup, mio::osecir::InfectionState&gt;::Iterator&lt;mio::UncertainValue const&gt;, (void*)0&gt;::end() const</a></td>
-              <td class="coverFnHi">162</td>
+              <td class="coverFnHi">164</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="custom_index_array.h.gcov.html#656">mio::CustomIndexArray&lt;mio::UncertainValue, mio::AgeGroup, mio::osecir::InfectionState&gt;::Slice&lt;mio::AgeGroup, mio::CustomIndexArray&lt;mio::UncertainValue, mio::AgeGroup, mio::osecir::InfectionState&gt;::Iterator&lt;mio::UncertainValue const&gt;, (void*)0&gt;::begin() const</a></td>
-              <td class="coverFnHi">162</td>
+              <td class="coverFnHi">164</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="custom_index_array.h.gcov.html#644">mio::CustomIndexArray&lt;mio::UncertainValue, mio::AgeGroup, mio::osecir::InfectionState&gt;::Slice&lt;mio::AgeGroup, mio::CustomIndexArray&lt;mio::UncertainValue, mio::AgeGroup, mio::osecir::InfectionState&gt;::Iterator&lt;mio::UncertainValue const&gt;, (void*)0&gt;::numel() const</a></td>
-              <td class="coverFnHi">162</td>
+              <td class="coverFnHi">164</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="custom_index_array.h.gcov.html#808">mio::CustomIndexArray&lt;mio::UncertainValue, mio::AgeGroup, mio::osecir::InfectionState&gt;::Slice&lt;mio::AgeGroup, mio::CustomIndexArray&lt;mio::UncertainValue, mio::AgeGroup, mio::osecir::InfectionState&gt;::Iterator&lt;mio::UncertainValue const&gt;, (void*)0&gt; mio::CustomIndexArray&lt;mio::UncertainValue, mio::AgeGroup, mio::osecir::InfectionState&gt;::slice&lt;mio::AgeGroup&gt;(mio::Seq&lt;unsigned long&gt;) const</a></td>
-              <td class="coverFnHi">162</td>
-            </tr>
-    <tr>
-              <td class="coverFn"><a href="custom_index_array.h.gcov.html#770">mio::CustomIndexArray&lt;mio::UncertainValue, mio::AgeGroup, mio::osecir::InfectionState&gt;::begin() const</a></td>
-              <td class="coverFnHi">166</td>
+              <td class="coverFnHi">164</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="custom_index_array.h.gcov.html#524">mio::CustomIndexArray&lt;mio::UncertainValue, InfectionState, AgeGroup, Continent&gt;::Slice&lt;AgeGroup, mio::CustomIndexArray&lt;mio::UncertainValue, InfectionState, AgeGroup, Continent&gt;::Iterator&lt;mio::UncertainValue const&gt;, (void*)0&gt;::Iterator&lt;mio::UncertainValue const&gt;::operator*()</a></td>
@@ -1680,8 +1712,8 @@
               <td class="coverFnHi">168</td>
             </tr>
     <tr>
-              <td class="coverFn"><a href="custom_index_array.h.gcov.html#335">mio::CustomIndexArray&lt;mio::UncertainValue, mio::AgeGroup, mio::osecir::InfectionState&gt;::Iterator&lt;mio::UncertainValue const&gt;::Iterator(mio::UncertainValue const*)</a></td>
-              <td class="coverFnHi">170</td>
+              <td class="coverFn"><a href="custom_index_array.h.gcov.html#770">mio::CustomIndexArray&lt;mio::UncertainValue, mio::AgeGroup, mio::osecir::InfectionState&gt;::begin() const</a></td>
+              <td class="coverFnHi">168</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="custom_index_array.h.gcov.html#569">mio::operator==(mio::CustomIndexArray&lt;mio::UncertainValue, InfectionState, AgeGroup, Continent&gt;::Slice&lt;AgeGroup, mio::CustomIndexArray&lt;mio::UncertainValue, InfectionState, AgeGroup, Continent&gt;::Iterator&lt;mio::UncertainValue const&gt;, (void*)0&gt;::Iterator&lt;mio::UncertainValue const&gt; const&amp;, mio::CustomIndexArray&lt;mio::UncertainValue, InfectionState, AgeGroup, Continent&gt;::Slice&lt;AgeGroup, mio::CustomIndexArray&lt;mio::UncertainValue, InfectionState, AgeGroup, Continent&gt;::Iterator&lt;mio::UncertainValue const&gt;, (void*)0&gt;::Iterator&lt;mio::UncertainValue const&gt; const&amp;)</a></td>
@@ -1692,8 +1724,12 @@
               <td class="coverFnHi">171</td>
             </tr>
     <tr>
+              <td class="coverFn"><a href="custom_index_array.h.gcov.html#335">mio::CustomIndexArray&lt;mio::UncertainValue, mio::AgeGroup, mio::osecir::InfectionState&gt;::Iterator&lt;mio::UncertainValue const&gt;::Iterator(mio::UncertainValue const*)</a></td>
+              <td class="coverFnHi">172</td>
+            </tr>
+    <tr>
               <td class="coverFn"><a href="custom_index_array.h.gcov.html#48">unsigned long (anonymous namespace)::product&lt;mio::Index, mio::AgeGroup, mio::osecir::InfectionState&gt;(mio::Index&lt;mio::AgeGroup, mio::osecir::InfectionState&gt; const&amp;)</a></td>
-              <td class="coverFnHi">199</td>
+              <td class="coverFnHi">201</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="custom_index_array.h.gcov.html#524">mio::CustomIndexArray&lt;mio::UncertainValue, InfectionState, AgeGroup, Continent&gt;::Slice&lt;Continent, mio::CustomIndexArray&lt;mio::UncertainValue, InfectionState, AgeGroup, Continent&gt;::Iterator&lt;mio::UncertainValue const&gt;, (void*)0&gt;::Iterator&lt;mio::UncertainValue const&gt;::operator*()</a></td>
@@ -1725,11 +1761,11 @@
             </tr>
     <tr>
               <td class="coverFn"><a href="custom_index_array.h.gcov.html#258">mio::CustomIndexArray&lt;double, mio::abm::AgeGroup, mio::abm::VaccinationState&gt;::array() const</a></td>
-              <td class="coverFnHi">228</td>
+              <td class="coverFnHi">230</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="custom_index_array.h.gcov.html#418">mio::operator==(mio::CustomIndexArray&lt;mio::UncertainValue, mio::AgeGroup, mio::osecir::InfectionState&gt;::Iterator&lt;mio::UncertainValue const&gt; const&amp;, mio::CustomIndexArray&lt;mio::UncertainValue, mio::AgeGroup, mio::osecir::InfectionState&gt;::Iterator&lt;mio::UncertainValue const&gt; const&amp;)</a></td>
-              <td class="coverFnHi">230</td>
+              <td class="coverFnHi">232</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="custom_index_array.h.gcov.html#630">mio::CustomIndexArray&lt;mio::UncertainValue, mio::AgeGroup, mio::osecirvvs::InfectionState&gt;::Slice&lt;mio::AgeGroup, mio::CustomIndexArray&lt;mio::UncertainValue, mio::AgeGroup, mio::osecirvvs::InfectionState&gt;::Iterator&lt;mio::UncertainValue const&gt;, (void*)0&gt;::Slice(mio::Index&lt;mio::AgeGroup, mio::osecirvvs::InfectionState&gt; const&amp;, mio::CustomIndexArray&lt;mio::UncertainValue, mio::AgeGroup, mio::osecirvvs::InfectionState&gt;::Iterator&lt;mio::UncertainValue const&gt; const&amp;, mio::Seq&lt;unsigned long&gt;)</a></td>
@@ -1776,39 +1812,35 @@
               <td class="coverFnHi">260</td>
             </tr>
     <tr>
-              <td class="coverFn"><a href="custom_index_array.h.gcov.html#282">mio::CustomIndexArray&lt;double, mio::abm::AgeGroup, mio::abm::VaccinationState&gt;::operator[](mio::Index&lt;mio::abm::AgeGroup, mio::abm::VaccinationState&gt; const&amp;) const</a></td>
-              <td class="coverFnHi">290</td>
-            </tr>
-    <tr>
               <td class="coverFn"><a href="custom_index_array.h.gcov.html#418">mio::operator==(mio::CustomIndexArray&lt;mio::UncertainValue, mio::AgeGroup, mio::osecirvvs::InfectionState&gt;::Iterator&lt;mio::UncertainValue const&gt; const&amp;, mio::CustomIndexArray&lt;mio::UncertainValue, mio::AgeGroup, mio::osecirvvs::InfectionState&gt;::Iterator&lt;mio::UncertainValue const&gt; const&amp;)</a></td>
               <td class="coverFnHi">301</td>
             </tr>
     <tr>
+              <td class="coverFn"><a href="custom_index_array.h.gcov.html#282">mio::CustomIndexArray&lt;double, mio::abm::AgeGroup, mio::abm::VaccinationState&gt;::operator[](mio::Index&lt;mio::abm::AgeGroup, mio::abm::VaccinationState&gt; const&amp;) const</a></td>
+              <td class="coverFnHi">312</td>
+            </tr>
+    <tr>
               <td class="coverFn"><a href="custom_index_array.h.gcov.html#486">mio::CustomIndexArray&lt;mio::UncertainValue, mio::AgeGroup, mio::osecir::InfectionState&gt;::Slice&lt;mio::AgeGroup, mio::CustomIndexArray&lt;mio::UncertainValue, mio::AgeGroup, mio::osecir::InfectionState&gt;::Iterator&lt;mio::UncertainValue const&gt;, (void*)0&gt;::Iterator&lt;mio::UncertainValue const&gt;::Iterator(mio::CustomIndexArray&lt;mio::UncertainValue, mio::AgeGroup, mio::osecir::InfectionState&gt;::Iterator&lt;mio::UncertainValue const&gt;, unsigned long, unsigned long, mio::Seq&lt;unsigned long&gt; const&amp;, long)</a></td>
-              <td class="coverFnHi">324</td>
+              <td class="coverFnHi">328</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="custom_index_array.h.gcov.html#115">unsigned long mio::flatten_index&lt;mio::Index&lt;mio::abm::AgeGroup, mio::abm::VaccinationState&gt; &gt;(mio::Index&lt;mio::abm::AgeGroup, mio::abm::VaccinationState&gt; const&amp;, mio::Index&lt;mio::abm::AgeGroup, mio::abm::VaccinationState&gt; const&amp;)</a></td>
-              <td class="coverFnHi">327</td>
+              <td class="coverFnHi">349</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="custom_index_array.h.gcov.html#85">std::enable_if&lt;(0ul)&lt;(mio::Index&lt;mio::abm::AgeGroup, mio::abm::VaccinationState&gt;::size-(1)), std::pair&lt;unsigned long, unsigned long&gt; &gt;::type mio::details::flatten_index&lt;0ul, mio::Index&lt;mio::abm::AgeGroup, mio::abm::VaccinationState&gt; &gt;(mio::Index&lt;mio::abm::AgeGroup, mio::abm::VaccinationState&gt; const&amp;, mio::Index&lt;mio::abm::AgeGroup, mio::abm::VaccinationState&gt; const&amp;)</a></td>
-              <td class="coverFnHi">327</td>
+              <td class="coverFnHi">349</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="custom_index_array.h.gcov.html#77">std::enable_if&lt;(1ul)==(mio::Index&lt;mio::abm::AgeGroup, mio::abm::VaccinationState&gt;::size-(1)), std::pair&lt;unsigned long, unsigned long&gt; &gt;::type mio::details::flatten_index&lt;1ul, mio::Index&lt;mio::abm::AgeGroup, mio::abm::VaccinationState&gt; &gt;(mio::Index&lt;mio::abm::AgeGroup, mio::abm::VaccinationState&gt; const&amp;, mio::Index&lt;mio::abm::AgeGroup, mio::abm::VaccinationState&gt; const&amp;)</a></td>
-              <td class="coverFnHi">327</td>
+              <td class="coverFnHi">349</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="custom_index_array.h.gcov.html#317">mio::CustomIndexArray&lt;double, mio::abm::AgeGroup, mio::abm::VaccinationState&gt;::get_flat_index(mio::Index&lt;mio::abm::AgeGroup, mio::abm::VaccinationState&gt; const&amp;) const</a></td>
-              <td class="coverFnHi">327</td>
+              <td class="coverFnHi">349</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="custom_index_array.h.gcov.html#42">std::enable_if&lt;(0)&lt;(1), unsigned long&gt;::type (anonymous namespace)::product&lt;0, mio::Index, mio::abm::AgeGroup&gt;(mio::Index&lt;mio::abm::AgeGroup&gt; const&amp;)</a></td>
-              <td class="coverFnHi">361</td>
-            </tr>
-    <tr>
-              <td class="coverFn"><a href="custom_index_array.h.gcov.html#42">std::enable_if&lt;(0)&lt;(2), unsigned long&gt;::type (anonymous namespace)::product&lt;0, mio::Index, mio::AgeGroup, mio::osecir::InfectionState&gt;(mio::Index&lt;mio::AgeGroup, mio::osecir::InfectionState&gt; const&amp;)</a></td>
               <td class="coverFnHi">361</td>
             </tr>
     <tr>
@@ -1816,16 +1848,20 @@
               <td class="coverFnHi">361</td>
             </tr>
     <tr>
-              <td class="coverFn"><a href="custom_index_array.h.gcov.html#42">std::enable_if&lt;(1)&lt;(2), unsigned long&gt;::type (anonymous namespace)::product&lt;1, mio::Index, mio::AgeGroup, mio::osecir::InfectionState&gt;(mio::Index&lt;mio::AgeGroup, mio::osecir::InfectionState&gt; const&amp;)</a></td>
+              <td class="coverFn"><a href="custom_index_array.h.gcov.html#48">unsigned long (anonymous namespace)::product&lt;mio::Index, mio::abm::AgeGroup&gt;(mio::Index&lt;mio::abm::AgeGroup&gt; const&amp;)</a></td>
               <td class="coverFnHi">361</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="custom_index_array.h.gcov.html#42">std::enable_if&lt;(0)&lt;(2), unsigned long&gt;::type (anonymous namespace)::product&lt;0, mio::Index, mio::AgeGroup, mio::osecir::InfectionState&gt;(mio::Index&lt;mio::AgeGroup, mio::osecir::InfectionState&gt; const&amp;)</a></td>
+              <td class="coverFnHi">365</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="custom_index_array.h.gcov.html#42">std::enable_if&lt;(1)&lt;(2), unsigned long&gt;::type (anonymous namespace)::product&lt;1, mio::Index, mio::AgeGroup, mio::osecir::InfectionState&gt;(mio::Index&lt;mio::AgeGroup, mio::osecir::InfectionState&gt; const&amp;)</a></td>
+              <td class="coverFnHi">365</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="custom_index_array.h.gcov.html#36">std::enable_if&lt;(2)==(2), unsigned long&gt;::type (anonymous namespace)::product&lt;2, mio::Index, mio::AgeGroup, mio::osecir::InfectionState&gt;(mio::Index&lt;mio::AgeGroup, mio::osecir::InfectionState&gt; const&amp;)</a></td>
-              <td class="coverFnHi">361</td>
-            </tr>
-    <tr>
-              <td class="coverFn"><a href="custom_index_array.h.gcov.html#48">unsigned long (anonymous namespace)::product&lt;mio::Index, mio::abm::AgeGroup&gt;(mio::Index&lt;mio::abm::AgeGroup&gt; const&amp;)</a></td>
-              <td class="coverFnHi">361</td>
+              <td class="coverFnHi">365</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="custom_index_array.h.gcov.html#361">mio::CustomIndexArray&lt;mio::UncertainValue, InfectionState, AgeGroup, Continent&gt;::Iterator&lt;mio::UncertainValue const&gt;::operator[](long const&amp;)</a></td>
@@ -1853,7 +1889,7 @@
             </tr>
     <tr>
               <td class="coverFn"><a href="custom_index_array.h.gcov.html#258">mio::CustomIndexArray&lt;mio::UncertainValue, mio::AgeGroup, mio::osecir::InfectionState&gt;::array() const</a></td>
-              <td class="coverFnHi">622</td>
+              <td class="coverFnHi">624</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="custom_index_array.h.gcov.html#176">mio::CustomIndexArray&lt;mio::UncertainValue, mio::AgeGroup&gt;::CustomIndexArray&lt;double, (void*)0&gt;(mio::Index&lt;mio::AgeGroup&gt; const&amp;, double&amp;&amp;)</a></td>
@@ -1880,12 +1916,12 @@
               <td class="coverFnHi">1015</td>
             </tr>
     <tr>
-              <td class="coverFn"><a href="custom_index_array.h.gcov.html#176">mio::CustomIndexArray&lt;double, mio::abm::AgeGroup, mio::abm::VaccinationState&gt;::CustomIndexArray&lt;double, (void*)0&gt;(mio::Index&lt;mio::abm::AgeGroup, mio::abm::VaccinationState&gt; const&amp;, double&amp;&amp;)</a></td>
-              <td class="coverFnHi">1073</td>
-            </tr>
-    <tr>
               <td class="coverFn"><a href="custom_index_array.h.gcov.html#217">mio::Index&lt;mio::AgeGroup&gt; mio::CustomIndexArray&lt;mio::UncertainValue, mio::AgeGroup&gt;::size&lt;mio::AgeGroup&gt;() const</a></td>
               <td class="coverFnHi">1140</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="custom_index_array.h.gcov.html#176">mio::CustomIndexArray&lt;double, mio::abm::AgeGroup, mio::abm::VaccinationState&gt;::CustomIndexArray&lt;double, (void*)0&gt;(mio::Index&lt;mio::abm::AgeGroup, mio::abm::VaccinationState&gt; const&amp;, double&amp;&amp;)</a></td>
+              <td class="coverFnHi">1177</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="custom_index_array.h.gcov.html#272">mio::CustomIndexArray&lt;mio::UncertainValue, InfectionState, AgeGroup, Continent&gt;::operator[](mio::Index&lt;InfectionState, AgeGroup, Continent&gt; const&amp;)</a></td>
@@ -1893,35 +1929,35 @@
             </tr>
     <tr>
               <td class="coverFn"><a href="custom_index_array.h.gcov.html#42">std::enable_if&lt;(0)&lt;(2), unsigned long&gt;::type (anonymous namespace)::product&lt;0, mio::Index, mio::abm::AgeGroup, mio::abm::VaccinationState&gt;(mio::Index&lt;mio::abm::AgeGroup, mio::abm::VaccinationState&gt; const&amp;)</a></td>
-              <td class="coverFnHi">1184</td>
+              <td class="coverFnHi">1295</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="custom_index_array.h.gcov.html#42">std::enable_if&lt;(1)&lt;(2), unsigned long&gt;::type (anonymous namespace)::product&lt;1, mio::Index, mio::abm::AgeGroup, mio::abm::VaccinationState&gt;(mio::Index&lt;mio::abm::AgeGroup, mio::abm::VaccinationState&gt; const&amp;)</a></td>
-              <td class="coverFnHi">1184</td>
+              <td class="coverFnHi">1295</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="custom_index_array.h.gcov.html#36">std::enable_if&lt;(2)==(2), unsigned long&gt;::type (anonymous namespace)::product&lt;2, mio::Index, mio::abm::AgeGroup, mio::abm::VaccinationState&gt;(mio::Index&lt;mio::abm::AgeGroup, mio::abm::VaccinationState&gt; const&amp;)</a></td>
-              <td class="coverFnHi">1184</td>
+              <td class="coverFnHi">1295</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="custom_index_array.h.gcov.html#48">unsigned long (anonymous namespace)::product&lt;mio::Index, mio::abm::AgeGroup, mio::abm::VaccinationState&gt;(mio::Index&lt;mio::abm::AgeGroup, mio::abm::VaccinationState&gt; const&amp;)</a></td>
-              <td class="coverFnHi">1184</td>
+              <td class="coverFnHi">1295</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="custom_index_array.h.gcov.html#524">mio::CustomIndexArray&lt;mio::UncertainValue, mio::AgeGroup, mio::osecir::InfectionState&gt;::Slice&lt;mio::AgeGroup, mio::CustomIndexArray&lt;mio::UncertainValue, mio::AgeGroup, mio::osecir::InfectionState&gt;::Iterator&lt;mio::UncertainValue const&gt;, (void*)0&gt;::Iterator&lt;mio::UncertainValue const&gt;::operator*()</a></td>
-              <td class="coverFnHi">1296</td>
+              <td class="coverFnHi">1312</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="custom_index_array.h.gcov.html#537">mio::CustomIndexArray&lt;mio::UncertainValue, mio::AgeGroup, mio::osecir::InfectionState&gt;::Slice&lt;mio::AgeGroup, mio::CustomIndexArray&lt;mio::UncertainValue, mio::AgeGroup, mio::osecir::InfectionState&gt;::Iterator&lt;mio::UncertainValue const&gt;, (void*)0&gt;::Iterator&lt;mio::UncertainValue const&gt;::operator++()</a></td>
-              <td class="coverFnHi">1296</td>
+              <td class="coverFnHi">1312</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="custom_index_array.h.gcov.html#361">mio::CustomIndexArray&lt;mio::UncertainValue, mio::AgeGroup, mio::osecir::InfectionState&gt;::Iterator&lt;mio::UncertainValue const&gt;::operator[](long const&amp;)</a></td>
-              <td class="coverFnHi">1296</td>
+              <td class="coverFnHi">1312</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="custom_index_array.h.gcov.html#596">mio::CustomIndexArray&lt;mio::UncertainValue, mio::AgeGroup, mio::osecir::InfectionState&gt;::Slice&lt;mio::AgeGroup, mio::CustomIndexArray&lt;mio::UncertainValue, mio::AgeGroup, mio::osecir::InfectionState&gt;::Iterator&lt;mio::UncertainValue const&gt;, (void*)0&gt;::Iterator&lt;mio::UncertainValue const&gt;::outer_offset(long const&amp;) const</a></td>
-              <td class="coverFnHi">1296</td>
+              <td class="coverFnHi">1312</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="custom_index_array.h.gcov.html#282">mio::CustomIndexArray&lt;mio::UncertainValue, mio::AgeGroup, mio::osecirvvs::InfectionState&gt;::operator[](mio::Index&lt;mio::AgeGroup, mio::osecirvvs::InfectionState&gt; const&amp;) const</a></td>
@@ -1929,11 +1965,11 @@
             </tr>
     <tr>
               <td class="coverFn"><a href="custom_index_array.h.gcov.html#569">mio::operator==(mio::CustomIndexArray&lt;mio::UncertainValue, mio::AgeGroup, mio::osecir::InfectionState&gt;::Slice&lt;mio::AgeGroup, mio::CustomIndexArray&lt;mio::UncertainValue, mio::AgeGroup, mio::osecir::InfectionState&gt;::Iterator&lt;mio::UncertainValue const&gt;, (void*)0&gt;::Iterator&lt;mio::UncertainValue const&gt; const&amp;, mio::CustomIndexArray&lt;mio::UncertainValue, mio::AgeGroup, mio::osecir::InfectionState&gt;::Slice&lt;mio::AgeGroup, mio::CustomIndexArray&lt;mio::UncertainValue, mio::AgeGroup, mio::osecir::InfectionState&gt;::Iterator&lt;mio::UncertainValue const&gt;, (void*)0&gt;::Iterator&lt;mio::UncertainValue const&gt; const&amp;)</a></td>
-              <td class="coverFnHi">1458</td>
+              <td class="coverFnHi">1476</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="custom_index_array.h.gcov.html#574">mio::operator!=(mio::CustomIndexArray&lt;mio::UncertainValue, mio::AgeGroup, mio::osecir::InfectionState&gt;::Slice&lt;mio::AgeGroup, mio::CustomIndexArray&lt;mio::UncertainValue, mio::AgeGroup, mio::osecir::InfectionState&gt;::Iterator&lt;mio::UncertainValue const&gt;, (void*)0&gt;::Iterator&lt;mio::UncertainValue const&gt; const&amp;, mio::CustomIndexArray&lt;mio::UncertainValue, mio::AgeGroup, mio::osecir::InfectionState&gt;::Slice&lt;mio::AgeGroup, mio::CustomIndexArray&lt;mio::UncertainValue, mio::AgeGroup, mio::osecir::InfectionState&gt;::Iterator&lt;mio::UncertainValue const&gt;, (void*)0&gt;::Iterator&lt;mio::UncertainValue const&gt; const&amp;)</a></td>
-              <td class="coverFnHi">1458</td>
+              <td class="coverFnHi">1476</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="custom_index_array.h.gcov.html#115">unsigned long mio::flatten_index&lt;mio::Index&lt;InfectionState, AgeGroup, Continent&gt; &gt;(mio::Index&lt;InfectionState, AgeGroup, Continent&gt; const&amp;, mio::Index&lt;InfectionState, AgeGroup, Continent&gt; const&amp;)</a></td>
@@ -2025,7 +2061,7 @@
             </tr>
     <tr>
               <td class="coverFn"><a href="custom_index_array.h.gcov.html#272">mio::CustomIndexArray&lt;mio::UncertainValue, mio::AgeGroup&gt;::operator[](mio::Index&lt;mio::AgeGroup&gt; const&amp;)</a></td>
-              <td class="coverFnHi">9322</td>
+              <td class="coverFnHi">9306</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="custom_index_array.h.gcov.html#272">mio::CustomIndexArray&lt;double, mio::AgeGroup, mio::SimulationDay&gt;::operator[](mio::Index&lt;mio::AgeGroup, mio::SimulationDay&gt; const&amp;)</a></td>
@@ -2073,19 +2109,19 @@
             </tr>
     <tr>
               <td class="coverFn"><a href="custom_index_array.h.gcov.html#115">unsigned long mio::flatten_index&lt;mio::Index&lt;mio::AgeGroup, mio::osecir::InfectionState&gt; &gt;(mio::Index&lt;mio::AgeGroup, mio::osecir::InfectionState&gt; const&amp;, mio::Index&lt;mio::AgeGroup, mio::osecir::InfectionState&gt; const&amp;)</a></td>
-              <td class="coverFnHi">155479</td>
+              <td class="coverFnHi">159865</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="custom_index_array.h.gcov.html#85">std::enable_if&lt;(0ul)&lt;(mio::Index&lt;mio::AgeGroup, mio::osecir::InfectionState&gt;::size-(1)), std::pair&lt;unsigned long, unsigned long&gt; &gt;::type mio::details::flatten_index&lt;0ul, mio::Index&lt;mio::AgeGroup, mio::osecir::InfectionState&gt; &gt;(mio::Index&lt;mio::AgeGroup, mio::osecir::InfectionState&gt; const&amp;, mio::Index&lt;mio::AgeGroup, mio::osecir::InfectionState&gt; const&amp;)</a></td>
-              <td class="coverFnHi">155479</td>
+              <td class="coverFnHi">159865</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="custom_index_array.h.gcov.html#77">std::enable_if&lt;(1ul)==(mio::Index&lt;mio::AgeGroup, mio::osecir::InfectionState&gt;::size-(1)), std::pair&lt;unsigned long, unsigned long&gt; &gt;::type mio::details::flatten_index&lt;1ul, mio::Index&lt;mio::AgeGroup, mio::osecir::InfectionState&gt; &gt;(mio::Index&lt;mio::AgeGroup, mio::osecir::InfectionState&gt; const&amp;, mio::Index&lt;mio::AgeGroup, mio::osecir::InfectionState&gt; const&amp;)</a></td>
-              <td class="coverFnHi">155479</td>
+              <td class="coverFnHi">159865</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="custom_index_array.h.gcov.html#317">mio::CustomIndexArray&lt;mio::UncertainValue, mio::AgeGroup, mio::osecir::InfectionState&gt;::get_flat_index(mio::Index&lt;mio::AgeGroup, mio::osecir::InfectionState&gt; const&amp;) const</a></td>
-              <td class="coverFnHi">155479</td>
+              <td class="coverFnHi">159865</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="custom_index_array.h.gcov.html#115">unsigned long mio::flatten_index&lt;mio::Index&lt;mio::AgeGroup, mio::osecirvvs::InfectionState&gt; &gt;(mio::Index&lt;mio::AgeGroup, mio::osecirvvs::InfectionState&gt; const&amp;, mio::Index&lt;mio::AgeGroup, mio::osecirvvs::InfectionState&gt; const&amp;)</a></td>
@@ -2105,19 +2141,19 @@
             </tr>
     <tr>
               <td class="coverFn"><a href="custom_index_array.h.gcov.html#282">mio::CustomIndexArray&lt;mio::UncertainValue, mio::AgeGroup&gt;::operator[](mio::Index&lt;mio::AgeGroup&gt; const&amp;) const</a></td>
-              <td class="coverFnHi">386752</td>
+              <td class="coverFnHi">394492</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="custom_index_array.h.gcov.html#317">mio::CustomIndexArray&lt;mio::UncertainValue, mio::AgeGroup&gt;::get_flat_index(mio::Index&lt;mio::AgeGroup&gt; const&amp;) const</a></td>
-              <td class="coverFnHi">396074</td>
+              <td class="coverFnHi">403798</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="custom_index_array.h.gcov.html#115">unsigned long mio::flatten_index&lt;mio::Index&lt;mio::AgeGroup&gt; &gt;(mio::Index&lt;mio::AgeGroup&gt; const&amp;, mio::Index&lt;mio::AgeGroup&gt; const&amp;)</a></td>
-              <td class="coverFnHi">505059</td>
+              <td class="coverFnHi">512783</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="custom_index_array.h.gcov.html#77">std::enable_if&lt;(0ul)==(mio::Index&lt;mio::AgeGroup&gt;::size-(1)), std::pair&lt;unsigned long, unsigned long&gt; &gt;::type mio::details::flatten_index&lt;0ul, mio::Index&lt;mio::AgeGroup&gt; &gt;(mio::Index&lt;mio::AgeGroup&gt; const&amp;, mio::Index&lt;mio::AgeGroup&gt; const&amp;)</a></td>
-              <td class="coverFnHi">505059</td>
+              <td class="coverFnHi">512783</td>
             </tr>
   </table>
   <br>
