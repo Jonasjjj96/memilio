@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2023-01-02 13:41:13</td>
+            <td class="headerValue">2023-01-04 08:38:55</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">21</td>
@@ -436,53 +436,53 @@
 <a name="374"><span class="lineNum">     374 </span><span class="lineCov">          5 :     return success(vnum_population);</span></a>
 <a name="375"><span class="lineNum">     375 </span>            : }</a>
 <a name="376"><span class="lineNum">     376 </span>            : </a>
-<a name="377"><span class="lineNum">     377 </span><span class="lineCov">          2 : IOResult&lt;void&gt; set_vaccination_data(std::vector&lt;Model&gt;&amp; model, const std::string&amp; path, Date date,</span></a>
+<a name="377"><span class="lineNum">     377 </span><span class="lineCov">          3 : IOResult&lt;void&gt; set_vaccination_data(std::vector&lt;Model&gt;&amp; model, const std::string&amp; path, Date date,</span></a>
 <a name="378"><span class="lineNum">     378 </span>            :                                     const std::vector&lt;int&gt;&amp; vregion, int num_days)</a>
 <a name="379"><span class="lineNum">     379 </span>            : {</a>
-<a name="380"><span class="lineNum">     380 </span><span class="lineCov">          4 :     BOOST_OUTCOME_TRY(vacc_data, read_vaccination_data(path));</span></a>
+<a name="380"><span class="lineNum">     380 </span><span class="lineCov">          6 :     BOOST_OUTCOME_TRY(vacc_data, read_vaccination_data(path));</span></a>
 <a name="381"><span class="lineNum">     381 </span>            : </a>
-<a name="382"><span class="lineNum">     382 </span><span class="lineCov">          2 :     auto num_groups = model[0].parameters.get_num_groups();</span></a>
+<a name="382"><span class="lineNum">     382 </span><span class="lineCov">          3 :     auto num_groups = model[0].parameters.get_num_groups();</span></a>
 <a name="383"><span class="lineNum">     383 </span>            : </a>
-<a name="384"><span class="lineNum">     384 </span><span class="lineCov">          2 :     auto days_until_effective1 = (int)(double)model[0].parameters.get&lt;DaysUntilEffectivePartialImmunity&gt;()[AgeGroup(0)];</span></a>
+<a name="384"><span class="lineNum">     384 </span><span class="lineCov">          3 :     auto days_until_effective1 = (int)(double)model[0].parameters.get&lt;DaysUntilEffectivePartialImmunity&gt;()[AgeGroup(0)];</span></a>
 <a name="385"><span class="lineNum">     385 </span>            :     auto days_until_effective2 =</a>
-<a name="386"><span class="lineNum">     386 </span><span class="lineCov">          2 :         (int)(double)model[0].parameters.get&lt;DaysUntilEffectiveImprovedImmunity&gt;()[AgeGroup(0)];</span></a>
-<a name="387"><span class="lineNum">     387 </span><span class="lineCov">          2 :     auto vaccination_distance = (int)(double)model[0].parameters.get&lt;VaccinationGap&gt;()[AgeGroup(0)];</span></a>
+<a name="386"><span class="lineNum">     386 </span><span class="lineCov">          3 :         (int)(double)model[0].parameters.get&lt;DaysUntilEffectiveImprovedImmunity&gt;()[AgeGroup(0)];</span></a>
+<a name="387"><span class="lineNum">     387 </span><span class="lineCov">          3 :     auto vaccination_distance = (int)(double)model[0].parameters.get&lt;VaccinationGap&gt;()[AgeGroup(0)];</span></a>
 <a name="388"><span class="lineNum">     388 </span>            : </a>
 <a name="389"><span class="lineNum">     389 </span>            :     // iterate over regions (e.g., counties)</a>
-<a name="390"><span class="lineNum">     390 </span><span class="lineCov">          4 :     for (size_t i = 0; i &lt; model.size(); ++i) {</span></a>
+<a name="390"><span class="lineNum">     390 </span><span class="lineCov">          6 :     for (size_t i = 0; i &lt; model.size(); ++i) {</span></a>
 <a name="391"><span class="lineNum">     391 </span>            :         // iterate over age groups in region</a>
-<a name="392"><span class="lineNum">     392 </span><span class="lineCov">         14 :         for (auto g = AgeGroup(0); g &lt; num_groups; ++g) {</span></a>
+<a name="392"><span class="lineNum">     392 </span><span class="lineCov">         21 :         for (auto g = AgeGroup(0); g &lt; num_groups; ++g) {</span></a>
 <a name="393"><span class="lineNum">     393 </span>            : </a>
-<a name="394"><span class="lineNum">     394 </span><span class="lineCov">         12 :             model[i].parameters.template get&lt;DailyFirstVaccination&gt;().resize(SimulationDay(num_days + 1));</span></a>
-<a name="395"><span class="lineNum">     395 </span><span class="lineCov">         12 :             model[i].parameters.template get&lt;DailyFullVaccination&gt;().resize(SimulationDay(num_days + 1));</span></a>
-<a name="396"><span class="lineNum">     396 </span><span class="lineCov">         96 :             for (auto d = SimulationDay(0); d &lt; SimulationDay(num_days + 1); ++d) {</span></a>
-<a name="397"><span class="lineNum">     397 </span><span class="lineCov">         84 :                 model[i].parameters.template get&lt;DailyFirstVaccination&gt;()[{g, d}] = 0.0;</span></a>
-<a name="398"><span class="lineNum">     398 </span><span class="lineCov">         84 :                 model[i].parameters.template get&lt;DailyFullVaccination&gt;()[{g, d}]  = 0.0;</span></a>
+<a name="394"><span class="lineNum">     394 </span><span class="lineCov">         18 :             model[i].parameters.template get&lt;DailyFirstVaccination&gt;().resize(SimulationDay(num_days + 1));</span></a>
+<a name="395"><span class="lineNum">     395 </span><span class="lineCov">         18 :             model[i].parameters.template get&lt;DailyFullVaccination&gt;().resize(SimulationDay(num_days + 1));</span></a>
+<a name="396"><span class="lineNum">     396 </span><span class="lineCov">        120 :             for (auto d = SimulationDay(0); d &lt; SimulationDay(num_days + 1); ++d) {</span></a>
+<a name="397"><span class="lineNum">     397 </span><span class="lineCov">        102 :                 model[i].parameters.template get&lt;DailyFirstVaccination&gt;()[{g, d}] = 0.0;</span></a>
+<a name="398"><span class="lineNum">     398 </span><span class="lineCov">        102 :                 model[i].parameters.template get&lt;DailyFullVaccination&gt;()[{g, d}]  = 0.0;</span></a>
 <a name="399"><span class="lineNum">     399 </span>            :             }</a>
 <a name="400"><span class="lineNum">     400 </span>            :         }</a>
 <a name="401"><span class="lineNum">     401 </span>            :     }</a>
 <a name="402"><span class="lineNum">     402 </span>            : </a>
-<a name="403"><span class="lineNum">     403 </span><span class="lineCov">          4 :     auto max_date_entry = std::max_element(vacc_data.begin(), vacc_data.end(), [](auto&amp;&amp; a, auto&amp;&amp; b) {</span></a>
-<a name="404"><span class="lineNum">     404 </span><span class="lineCov">       1102 :         return a.date &lt; b.date;</span></a>
-<a name="405"><span class="lineNum">     405 </span><span class="lineCov">          4 :     });</span></a>
-<a name="406"><span class="lineNum">     406 </span><span class="lineCov">          2 :     if (max_date_entry == vacc_data.end()) {</span></a>
+<a name="403"><span class="lineNum">     403 </span><span class="lineCov">          6 :     auto max_date_entry = std::max_element(vacc_data.begin(), vacc_data.end(), [](auto&amp;&amp; a, auto&amp;&amp; b) {</span></a>
+<a name="404"><span class="lineNum">     404 </span><span class="lineCov">       1653 :         return a.date &lt; b.date;</span></a>
+<a name="405"><span class="lineNum">     405 </span><span class="lineCov">          6 :     });</span></a>
+<a name="406"><span class="lineNum">     406 </span><span class="lineCov">          3 :     if (max_date_entry == vacc_data.end()) {</span></a>
 <a name="407"><span class="lineNum">     407 </span><span class="lineNoCov">          0 :         return failure(StatusCode::InvalidFileFormat, &quot;Vaccination data file is empty.&quot;);</span></a>
 <a name="408"><span class="lineNum">     408 </span>            :     }</a>
-<a name="409"><span class="lineNum">     409 </span><span class="lineCov">          2 :     auto max_date = max_date_entry-&gt;date;</span></a>
-<a name="410"><span class="lineNum">     410 </span><span class="lineCov">          2 :     auto max_full_date =</span></a>
-<a name="411"><span class="lineNum">     411 </span><span class="lineCov">          2 :         offset_date_by_days(max_date, days_until_effective1 - days_until_effective2 - vaccination_distance);</span></a>
+<a name="409"><span class="lineNum">     409 </span><span class="lineCov">          3 :     auto max_date = max_date_entry-&gt;date;</span></a>
+<a name="410"><span class="lineNum">     410 </span><span class="lineCov">          3 :     auto max_full_date =</span></a>
+<a name="411"><span class="lineNum">     411 </span><span class="lineCov">          3 :         offset_date_by_days(max_date, days_until_effective1 - days_until_effective2 - vaccination_distance);</span></a>
 <a name="412"><span class="lineNum">     412 </span>            : </a>
-<a name="413"><span class="lineNum">     413 </span><span class="lineCov">       1106 :     for (auto&amp;&amp; vacc_data_entry : vacc_data) {</span></a>
-<a name="414"><span class="lineNum">     414 </span><span class="lineCov">       3312 :         auto it      = std::find_if(vregion.begin(), vregion.end(), [&amp;vacc_data_entry](auto&amp;&amp; r) {</span></a>
-<a name="415"><span class="lineNum">     415 </span><span class="lineCov">       4416 :             return r == 0 || (vacc_data_entry.county_id &amp;&amp; vacc_data_entry.county_id == regions::de::CountyId(r)) ||</span></a>
-<a name="416"><span class="lineNum">     416 </span><span class="lineCov">       2208 :                    (vacc_data_entry.state_id &amp;&amp; vacc_data_entry.state_id == regions::de::StateId(r));</span></a>
-<a name="417"><span class="lineNum">     417 </span><span class="lineCov">       2208 :         });</span></a>
-<a name="418"><span class="lineNum">     418 </span><span class="lineCov">       1104 :         auto date_df = vacc_data_entry.date;</span></a>
-<a name="419"><span class="lineNum">     419 </span><span class="lineCov">       1104 :         if (it != vregion.end()) {</span></a>
-<a name="420"><span class="lineNum">     420 </span><span class="lineCov">       1104 :             auto region_idx = size_t(it - vregion.begin());</span></a>
-<a name="421"><span class="lineNum">     421 </span><span class="lineCov">       1104 :             auto age        = vacc_data_entry.age_group;</span></a>
+<a name="413"><span class="lineNum">     413 </span><span class="lineCov">       1659 :     for (auto&amp;&amp; vacc_data_entry : vacc_data) {</span></a>
+<a name="414"><span class="lineNum">     414 </span><span class="lineCov">       4416 :         auto it      = std::find_if(vregion.begin(), vregion.end(), [&amp;vacc_data_entry](auto&amp;&amp; r) {</span></a>
+<a name="415"><span class="lineNum">     415 </span><span class="lineCov">       5520 :             return r == 0 || (vacc_data_entry.county_id &amp;&amp; vacc_data_entry.county_id == regions::de::CountyId(r)) ||</span></a>
+<a name="416"><span class="lineNum">     416 </span><span class="lineCov">       3312 :                    (vacc_data_entry.state_id &amp;&amp; vacc_data_entry.state_id == regions::de::StateId(r));</span></a>
+<a name="417"><span class="lineNum">     417 </span><span class="lineCov">       3312 :         });</span></a>
+<a name="418"><span class="lineNum">     418 </span><span class="lineCov">       1656 :         auto date_df = vacc_data_entry.date;</span></a>
+<a name="419"><span class="lineNum">     419 </span><span class="lineCov">       1656 :         if (it != vregion.end()) {</span></a>
+<a name="420"><span class="lineNum">     420 </span><span class="lineCov">       1656 :             auto region_idx = size_t(it - vregion.begin());</span></a>
+<a name="421"><span class="lineNum">     421 </span><span class="lineCov">       1656 :             auto age        = vacc_data_entry.age_group;</span></a>
 <a name="422"><span class="lineNum">     422 </span>            : </a>
-<a name="423"><span class="lineNum">     423 </span><span class="lineCov">       8832 :             for (size_t d = 0; d &lt; (size_t)num_days + 1; ++d) {</span></a>
+<a name="423"><span class="lineNum">     423 </span><span class="lineCov">      11040 :             for (size_t d = 0; d &lt; (size_t)num_days + 1; ++d) {</span></a>
 <a name="424"><span class="lineNum">     424 </span>            :                 int days_plus;</a>
 <a name="425"><span class="lineNum">     425 </span>            :                 // In the following, second dose means previous 'full immunization', now 'Grundimmunisierung'.</a>
 <a name="426"><span class="lineNum">     426 </span>            :                 // ---</a>
@@ -500,9 +500,9 @@
 <a name="438"><span class="lineNum">     438 </span>            :                 // Storing its value in get&lt;DailyFirstVaccination&gt;() will eventually (in the simulation)</a>
 <a name="439"><span class="lineNum">     439 </span>            :                 // transfer the difference (between get&lt;DailyFirstVaccination&gt;() at d and d-1) of</a>
 <a name="440"><span class="lineNum">     440 </span>            :                 // N susceptible individuals to 'Susceptible Partially Vaccinated' state at day d; see secir_vaccinated.h</a>
-<a name="441"><span class="lineNum">     441 </span><span class="lineCov">       7728 :                 auto offset_first_date =</span></a>
-<a name="442"><span class="lineNum">     442 </span><span class="lineCov">       7728 :                     offset_date_by_days(date, (int)d - days_until_effective1 + vaccination_distance);</span></a>
-<a name="443"><span class="lineNum">     443 </span><span class="lineCov">       7728 :                 if (max_full_date &gt;= offset_first_date) {</span></a>
+<a name="441"><span class="lineNum">     441 </span><span class="lineCov">       9384 :                 auto offset_first_date =</span></a>
+<a name="442"><span class="lineNum">     442 </span><span class="lineCov">       9384 :                     offset_date_by_days(date, (int)d - days_until_effective1 + vaccination_distance);</span></a>
+<a name="443"><span class="lineNum">     443 </span><span class="lineCov">       9384 :                 if (max_full_date &gt;= offset_first_date) {</span></a>
 <a name="444"><span class="lineNum">     444 </span>            :                     // Option 1: considered offset_first_date is available in input data frame</a>
 <a name="445"><span class="lineNum">     445 </span><span class="lineNoCov">          0 :                     if (date_df == offset_first_date) {</span></a>
 <a name="446"><span class="lineNum">     446 </span><span class="lineNoCov">          0 :                         model[region_idx].parameters.template get&lt;DailyFirstVaccination&gt;()[{age, SimulationDay(d)}] =</span></a>
@@ -515,14 +515,14 @@
 <a name="453"><span class="lineNum">     453 </span>            :                     // the the number of vaccinationes at day d (N days after max_date) will be:</a>
 <a name="454"><span class="lineNum">     454 </span>            :                     // total number of vaccinations up to day max_date + N * number of vaccinations ON max_date</a>
 <a name="455"><span class="lineNum">     455 </span>            :                     // (where the latter is computed as the difference between the total number at max_date and max_date-1)</a>
-<a name="456"><span class="lineNum">     456 </span><span class="lineCov">       7728 :                     days_plus = get_offset_in_days(offset_first_date, max_date);</span></a>
-<a name="457"><span class="lineNum">     457 </span><span class="lineCov">       7728 :                     if (date_df == offset_date_by_days(max_date, -1)) {</span></a>
-<a name="458"><span class="lineNum">     458 </span><span class="lineCov">        168 :                         model[region_idx].parameters.template get&lt;DailyFirstVaccination&gt;()[{age, SimulationDay(d)}] -=</span></a>
-<a name="459"><span class="lineNum">     459 </span><span class="lineCov">         84 :                             (days_plus - 1) * vacc_data_entry.num_vaccinations_completed;</span></a>
+<a name="456"><span class="lineNum">     456 </span><span class="lineCov">       9384 :                     days_plus = get_offset_in_days(offset_first_date, max_date);</span></a>
+<a name="457"><span class="lineNum">     457 </span><span class="lineCov">       9384 :                     if (date_df == offset_date_by_days(max_date, -1)) {</span></a>
+<a name="458"><span class="lineNum">     458 </span><span class="lineCov">        204 :                         model[region_idx].parameters.template get&lt;DailyFirstVaccination&gt;()[{age, SimulationDay(d)}] -=</span></a>
+<a name="459"><span class="lineNum">     459 </span><span class="lineCov">        102 :                             (days_plus - 1) * vacc_data_entry.num_vaccinations_completed;</span></a>
 <a name="460"><span class="lineNum">     460 </span>            :                     }</a>
-<a name="461"><span class="lineNum">     461 </span><span class="lineCov">       7644 :                     else if (date_df == max_date) {</span></a>
-<a name="462"><span class="lineNum">     462 </span><span class="lineCov">        168 :                         model[region_idx].parameters.template get&lt;DailyFirstVaccination&gt;()[{age, SimulationDay(d)}] +=</span></a>
-<a name="463"><span class="lineNum">     463 </span><span class="lineCov">         84 :                             days_plus * vacc_data_entry.num_vaccinations_completed;</span></a>
+<a name="461"><span class="lineNum">     461 </span><span class="lineCov">       9282 :                     else if (date_df == max_date) {</span></a>
+<a name="462"><span class="lineNum">     462 </span><span class="lineCov">        204 :                         model[region_idx].parameters.template get&lt;DailyFirstVaccination&gt;()[{age, SimulationDay(d)}] +=</span></a>
+<a name="463"><span class="lineNum">     463 </span><span class="lineCov">        102 :                             days_plus * vacc_data_entry.num_vaccinations_completed;</span></a>
 <a name="464"><span class="lineNum">     464 </span>            :                     }</a>
 <a name="465"><span class="lineNum">     465 </span>            :                 }</a>
 <a name="466"><span class="lineNum">     466 </span>            : </a>
@@ -531,8 +531,8 @@
 <a name="469"><span class="lineNum">     469 </span>            :                 // Storing its value in get&lt;DailyFullVaccination&gt;() will eventually (in the simulation)</a>
 <a name="470"><span class="lineNum">     470 </span>            :                 // transfer the difference (between get&lt;DailyFullVaccination&gt;() at d and d-1) of</a>
 <a name="471"><span class="lineNum">     471 </span>            :                 // N susceptible, partially vaccinated individuals to 'SusceptibleImprovedImmunity' state at day d; see secir_vaccinated.h</a>
-<a name="472"><span class="lineNum">     472 </span><span class="lineCov">       7728 :                 auto offset_full_date = offset_date_by_days(date, (int)d - days_until_effective2);</span></a>
-<a name="473"><span class="lineNum">     473 </span><span class="lineCov">       7728 :                 if (max_full_date &gt;= offset_full_date) {</span></a>
+<a name="472"><span class="lineNum">     472 </span><span class="lineCov">       9384 :                 auto offset_full_date = offset_date_by_days(date, (int)d - days_until_effective2);</span></a>
+<a name="473"><span class="lineNum">     473 </span><span class="lineCov">       9384 :                 if (max_full_date &gt;= offset_full_date) {</span></a>
 <a name="474"><span class="lineNum">     474 </span>            :                     // Option 1: considered offset_full_date is available in input data frame</a>
 <a name="475"><span class="lineNum">     475 </span><span class="lineNoCov">          0 :                     if (date_df == offset_full_date) {</span></a>
 <a name="476"><span class="lineNum">     476 </span><span class="lineNoCov">          0 :                         model[region_idx].parameters.template get&lt;DailyFullVaccination&gt;()[{age, SimulationDay(d)}] =</span></a>
@@ -541,20 +541,20 @@
 <a name="479"><span class="lineNum">     479 </span>            :                 }</a>
 <a name="480"><span class="lineNum">     480 </span>            :                 else { // offset_full_date &gt; max_full_date</a>
 <a name="481"><span class="lineNum">     481 </span>            :                     // Option 2: considered offset_full_date is NOT available in input data frame</a>
-<a name="482"><span class="lineNum">     482 </span><span class="lineCov">       7728 :                     days_plus = get_offset_in_days(offset_full_date, max_date);</span></a>
-<a name="483"><span class="lineNum">     483 </span><span class="lineCov">       7728 :                     if (date_df == offset_date_by_days(max_full_date, -1)) {</span></a>
-<a name="484"><span class="lineNum">     484 </span><span class="lineCov">        168 :                         model[region_idx].parameters.template get&lt;DailyFullVaccination&gt;()[{age, SimulationDay(d)}] -=</span></a>
-<a name="485"><span class="lineNum">     485 </span><span class="lineCov">         84 :                             (days_plus - 1) * vacc_data_entry.num_vaccinations_completed;</span></a>
+<a name="482"><span class="lineNum">     482 </span><span class="lineCov">       9384 :                     days_plus = get_offset_in_days(offset_full_date, max_date);</span></a>
+<a name="483"><span class="lineNum">     483 </span><span class="lineCov">       9384 :                     if (date_df == offset_date_by_days(max_full_date, -1)) {</span></a>
+<a name="484"><span class="lineNum">     484 </span><span class="lineCov">        204 :                         model[region_idx].parameters.template get&lt;DailyFullVaccination&gt;()[{age, SimulationDay(d)}] -=</span></a>
+<a name="485"><span class="lineNum">     485 </span><span class="lineCov">        102 :                             (days_plus - 1) * vacc_data_entry.num_vaccinations_completed;</span></a>
 <a name="486"><span class="lineNum">     486 </span>            :                     }</a>
-<a name="487"><span class="lineNum">     487 </span><span class="lineCov">       7644 :                     else if (date_df == max_full_date) {</span></a>
-<a name="488"><span class="lineNum">     488 </span><span class="lineCov">        168 :                         model[region_idx].parameters.template get&lt;DailyFullVaccination&gt;()[{age, SimulationDay(d)}] +=</span></a>
-<a name="489"><span class="lineNum">     489 </span><span class="lineCov">         84 :                             days_plus * vacc_data_entry.num_vaccinations_completed;</span></a>
+<a name="487"><span class="lineNum">     487 </span><span class="lineCov">       9282 :                     else if (date_df == max_full_date) {</span></a>
+<a name="488"><span class="lineNum">     488 </span><span class="lineCov">        204 :                         model[region_idx].parameters.template get&lt;DailyFullVaccination&gt;()[{age, SimulationDay(d)}] +=</span></a>
+<a name="489"><span class="lineNum">     489 </span><span class="lineCov">        102 :                             days_plus * vacc_data_entry.num_vaccinations_completed;</span></a>
 <a name="490"><span class="lineNum">     490 </span>            :                     }</a>
 <a name="491"><span class="lineNum">     491 </span>            :                 }</a>
 <a name="492"><span class="lineNum">     492 </span>            :             }</a>
 <a name="493"><span class="lineNum">     493 </span>            :         }</a>
 <a name="494"><span class="lineNum">     494 </span>            :     }</a>
-<a name="495"><span class="lineNum">     495 </span><span class="lineCov">          4 :     return success();</span></a>
+<a name="495"><span class="lineNum">     495 </span><span class="lineCov">          6 :     return success();</span></a>
 <a name="496"><span class="lineNum">     496 </span>            : }</a>
 <a name="497"><span class="lineNum">     497 </span>            : </a>
 <a name="498"><span class="lineNum">     498 </span>            : } // namespace details</a>

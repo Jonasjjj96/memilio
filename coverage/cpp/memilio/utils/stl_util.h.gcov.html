@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2023-01-02 13:41:13</td>
+            <td class="headerValue">2023-01-04 08:38:55</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">359</td>
@@ -236,26 +236,26 @@
 <a name="174"><span class="lineNum">     174 </span>            : /**</a>
 <a name="175"><span class="lineNum">     175 </span>            :      * length of a null terminated C string</a>
 <a name="176"><span class="lineNum">     176 </span>            :      */</a>
-<a name="177"><span class="lineNum">     177 </span><span class="lineCov">        116 : inline size_t string_length(const char* str)</span></a>
+<a name="177"><span class="lineNum">     177 </span><span class="lineCov">        118 : inline size_t string_length(const char* str)</span></a>
 <a name="178"><span class="lineNum">     178 </span>            : {</a>
-<a name="179"><span class="lineNum">     179 </span><span class="lineCov">        116 :     return std::strlen(str);</span></a>
+<a name="179"><span class="lineNum">     179 </span><span class="lineCov">        118 :     return std::strlen(str);</span></a>
 <a name="180"><span class="lineNum">     180 </span>            : }</a>
 <a name="181"><span class="lineNum">     181 </span>            : </a>
 <a name="182"><span class="lineNum">     182 </span>            : /**</a>
 <a name="183"><span class="lineNum">     183 </span>            :      * length of a string (e.g std::string)</a>
 <a name="184"><span class="lineNum">     184 </span>            :      */</a>
 <a name="185"><span class="lineNum">     185 </span>            : template &lt;class String&gt;</a>
-<a name="186"><span class="lineNum">     186 </span><span class="lineCov">        118 : size_t string_length(String&amp;&amp; str)</span></a>
+<a name="186"><span class="lineNum">     186 </span><span class="lineCov">        120 : size_t string_length(String&amp;&amp; str)</span></a>
 <a name="187"><span class="lineNum">     187 </span>            : {</a>
-<a name="188"><span class="lineNum">     188 </span><span class="lineCov">        118 :     return str.length();</span></a>
+<a name="188"><span class="lineNum">     188 </span><span class="lineCov">        120 :     return str.length();</span></a>
 <a name="189"><span class="lineNum">     189 </span>            : }</a>
 <a name="190"><span class="lineNum">     190 </span>            : </a>
 <a name="191"><span class="lineNum">     191 </span>            : /**</a>
 <a name="192"><span class="lineNum">     192 </span>            :      * breaks the recursion of path_join_rec.</a>
 <a name="193"><span class="lineNum">     193 </span>            :      */</a>
-<a name="194"><span class="lineNum">     194 </span><span class="lineCov">         59 : inline void path_join_rec(std::stringstream&amp;, bool)</span></a>
+<a name="194"><span class="lineNum">     194 </span><span class="lineCov">         60 : inline void path_join_rec(std::stringstream&amp;, bool)</span></a>
 <a name="195"><span class="lineNum">     195 </span>            : {</a>
-<a name="196"><span class="lineNum">     196 </span><span class="lineCov">         59 : }</span></a>
+<a name="196"><span class="lineNum">     196 </span><span class="lineCov">         60 : }</span></a>
 <a name="197"><span class="lineNum">     197 </span>            : </a>
 <a name="198"><span class="lineNum">     198 </span>            : /**</a>
 <a name="199"><span class="lineNum">     199 </span>            :      * recursive template helper function to join paths</a>
@@ -265,14 +265,14 @@
 <a name="203"><span class="lineNum">     203 </span>            :      * @param tail remaining parts of the path</a>
 <a name="204"><span class="lineNum">     204 </span>            :      */</a>
 <a name="205"><span class="lineNum">     205 </span>            : template &lt;class Head, class... Tail&gt;</a>
-<a name="206"><span class="lineNum">     206 </span><span class="lineCov">        121 : void path_join_rec(std::stringstream&amp; ss, bool writeSeparator, Head&amp;&amp; head, Tail&amp;&amp;... tail)</span></a>
+<a name="206"><span class="lineNum">     206 </span><span class="lineCov">        123 : void path_join_rec(std::stringstream&amp; ss, bool writeSeparator, Head&amp;&amp; head, Tail&amp;&amp;... tail)</span></a>
 <a name="207"><span class="lineNum">     207 </span>            : {</a>
-<a name="208"><span class="lineNum">     208 </span><span class="lineCov">        121 :     if (writeSeparator) {</span></a>
-<a name="209"><span class="lineNum">     209 </span><span class="lineCov">         52 :         ss &lt;&lt; '/';</span></a>
+<a name="208"><span class="lineNum">     208 </span><span class="lineCov">        123 :     if (writeSeparator) {</span></a>
+<a name="209"><span class="lineNum">     209 </span><span class="lineCov">         53 :         ss &lt;&lt; '/';</span></a>
 <a name="210"><span class="lineNum">     210 </span>            :     }</a>
-<a name="211"><span class="lineNum">     211 </span><span class="lineCov">        121 :     ss &lt;&lt; head;</span></a>
-<a name="212"><span class="lineNum">     212 </span><span class="lineCov">        121 :     path_join_rec(ss, string_length(head) &gt; 0 &amp;&amp; head[string_length(head) - 1] != '/', tail...);</span></a>
-<a name="213"><span class="lineNum">     213 </span><span class="lineCov">        121 : }</span></a>
+<a name="211"><span class="lineNum">     211 </span><span class="lineCov">        123 :     ss &lt;&lt; head;</span></a>
+<a name="212"><span class="lineNum">     212 </span><span class="lineCov">        123 :     path_join_rec(ss, string_length(head) &gt; 0 &amp;&amp; head[string_length(head) - 1] != '/', tail...);</span></a>
+<a name="213"><span class="lineNum">     213 </span><span class="lineCov">        123 : }</span></a>
 <a name="214"><span class="lineNum">     214 </span>            : </a>
 <a name="215"><span class="lineNum">     215 </span>            : } // namespace details</a>
 <a name="216"><span class="lineNum">     216 </span>            : </a>
@@ -289,12 +289,12 @@
 <a name="227"><span class="lineNum">     227 </span>            :  * @returns all inputs joined </a>
 <a name="228"><span class="lineNum">     228 </span>            :  */</a>
 <a name="229"><span class="lineNum">     229 </span>            : template &lt;class String, class... Strings&gt;</a>
-<a name="230"><span class="lineNum">     230 </span><span class="lineCov">         59 : std::string path_join(String&amp;&amp; base, Strings&amp;&amp;... app)</span></a>
+<a name="230"><span class="lineNum">     230 </span><span class="lineCov">         60 : std::string path_join(String&amp;&amp; base, Strings&amp;&amp;... app)</span></a>
 <a name="231"><span class="lineNum">     231 </span>            : {</a>
-<a name="232"><span class="lineNum">     232 </span><span class="lineCov">        118 :     std::stringstream ss;</span></a>
-<a name="233"><span class="lineNum">     233 </span><span class="lineCov">         59 :     details::path_join_rec(ss, false, base, app...);</span></a>
-<a name="234"><span class="lineNum">     234 </span><span class="lineCov">         59 :     auto path = ss.str();</span></a>
-<a name="235"><span class="lineNum">     235 </span><span class="lineCov">        118 :     return path;</span></a>
+<a name="232"><span class="lineNum">     232 </span><span class="lineCov">        120 :     std::stringstream ss;</span></a>
+<a name="233"><span class="lineNum">     233 </span><span class="lineCov">         60 :     details::path_join_rec(ss, false, base, app...);</span></a>
+<a name="234"><span class="lineNum">     234 </span><span class="lineCov">         60 :     auto path = ss.str();</span></a>
+<a name="235"><span class="lineNum">     235 </span><span class="lineCov">        120 :     return path;</span></a>
 <a name="236"><span class="lineNum">     236 </span>            : }</a>
 <a name="237"><span class="lineNum">     237 </span>            : </a>
 <a name="238"><span class="lineNum">     238 </span>            : /**</a>
