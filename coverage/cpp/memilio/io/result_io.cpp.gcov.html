@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2023-01-04 08:38:55</td>
+            <td class="headerValue">2023-01-17 17:08:49</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">4</td>
@@ -93,63 +93,63 @@
 <a name="31"><span class="lineNum">      31 </span>            : </a>
 <a name="32"><span class="lineNum">      32 </span>            : namespace mio</a>
 <a name="33"><span class="lineNum">      33 </span>            : {</a>
-<a name="34"><span class="lineNum">      34 </span><span class="lineCov">          5 : IOResult&lt;void&gt; save_result(const std::vector&lt;TimeSeries&lt;double&gt;&gt;&amp; results, const std::vector&lt;int&gt;&amp; ids, int num_groups,</span></a>
+<a name="34"><span class="lineNum">      34 </span><span class="lineCov">          7 : IOResult&lt;void&gt; save_result(const std::vector&lt;TimeSeries&lt;double&gt;&gt;&amp; results, const std::vector&lt;int&gt;&amp; ids, int num_groups,</span></a>
 <a name="35"><span class="lineNum">      35 </span>            :                            const std::string&amp; filename)</a>
 <a name="36"><span class="lineNum">      36 </span>            : {</a>
-<a name="37"><span class="lineNum">      37 </span><span class="lineCov">          5 :     int region_idx = 0;</span></a>
-<a name="38"><span class="lineNum">      38 </span><span class="lineCov">         10 :     H5File file{H5Fcreate(filename.c_str(), H5F_ACC_TRUNC, H5P_DEFAULT, H5P_DEFAULT)};</span></a>
-<a name="39"><span class="lineNum">      39 </span><span class="lineCov">          5 :     MEMILIO_H5_CHECK(file.id, StatusCode::FileNotFound, filename);</span></a>
-<a name="40"><span class="lineNum">      40 </span><span class="lineCov">         11 :     for (auto&amp; result : results) {</span></a>
-<a name="41"><span class="lineNum">      41 </span><span class="lineCov">         12 :         auto h5group_name = &quot;/&quot; + std::to_string(ids[region_idx]);</span></a>
-<a name="42"><span class="lineNum">      42 </span><span class="lineCov">          6 :         H5Group region_h5group{H5Gcreate(file.id, h5group_name.c_str(), H5P_DEFAULT, H5P_DEFAULT, H5P_DEFAULT)};</span></a>
-<a name="43"><span class="lineNum">      43 </span><span class="lineCov">          6 :         MEMILIO_H5_CHECK(region_h5group.id, StatusCode::UnknownError,</span></a>
+<a name="37"><span class="lineNum">      37 </span><span class="lineCov">          7 :     int region_idx = 0;</span></a>
+<a name="38"><span class="lineNum">      38 </span><span class="lineCov">         14 :     H5File file{H5Fcreate(filename.c_str(), H5F_ACC_TRUNC, H5P_DEFAULT, H5P_DEFAULT)};</span></a>
+<a name="39"><span class="lineNum">      39 </span><span class="lineCov">          7 :     MEMILIO_H5_CHECK(file.id, StatusCode::FileNotFound, filename);</span></a>
+<a name="40"><span class="lineNum">      40 </span><span class="lineCov">         15 :     for (auto&amp; result : results) {</span></a>
+<a name="41"><span class="lineNum">      41 </span><span class="lineCov">         16 :         auto h5group_name = &quot;/&quot; + std::to_string(ids[region_idx]);</span></a>
+<a name="42"><span class="lineNum">      42 </span><span class="lineCov">          8 :         H5Group region_h5group{H5Gcreate(file.id, h5group_name.c_str(), H5P_DEFAULT, H5P_DEFAULT, H5P_DEFAULT)};</span></a>
+<a name="43"><span class="lineNum">      43 </span><span class="lineCov">          8 :         MEMILIO_H5_CHECK(region_h5group.id, StatusCode::UnknownError,</span></a>
 <a name="44"><span class="lineNum">      44 </span>            :                          &quot;Group could not be created (&quot; + h5group_name + &quot;)&quot;);</a>
 <a name="45"><span class="lineNum">      45 </span>            : </a>
-<a name="46"><span class="lineNum">      46 </span><span class="lineCov">          6 :         const int num_timepoints      = static_cast&lt;int&gt;(result.get_num_time_points());</span></a>
-<a name="47"><span class="lineNum">      47 </span><span class="lineCov">          6 :         const int num_infectionstates = (int)result.get_num_elements() / num_groups;</span></a>
+<a name="46"><span class="lineNum">      46 </span><span class="lineCov">          8 :         const int num_timepoints      = static_cast&lt;int&gt;(result.get_num_time_points());</span></a>
+<a name="47"><span class="lineNum">      47 </span><span class="lineCov">          8 :         const int num_infectionstates = (int)result.get_num_elements() / num_groups;</span></a>
 <a name="48"><span class="lineNum">      48 </span>            : </a>
-<a name="49"><span class="lineNum">      49 </span><span class="lineCov">          6 :         hsize_t dims_t[] = {static_cast&lt;hsize_t&gt;(num_timepoints)};</span></a>
-<a name="50"><span class="lineNum">      50 </span><span class="lineCov">          6 :         H5DataSpace dspace_t{H5Screate_simple(1, dims_t, NULL)};</span></a>
-<a name="51"><span class="lineNum">      51 </span><span class="lineCov">          6 :         MEMILIO_H5_CHECK(dspace_t.id, StatusCode::UnknownError, &quot;Time DataSpace could not be created.&quot;);</span></a>
-<a name="52"><span class="lineNum">      52 </span><span class="lineCov">          6 :         H5DataSet dset_t{H5Dcreate(region_h5group.id, &quot;Time&quot;, H5T_NATIVE_DOUBLE, dspace_t.id, H5P_DEFAULT, H5P_DEFAULT,</span></a>
+<a name="49"><span class="lineNum">      49 </span><span class="lineCov">          8 :         hsize_t dims_t[] = {static_cast&lt;hsize_t&gt;(num_timepoints)};</span></a>
+<a name="50"><span class="lineNum">      50 </span><span class="lineCov">          8 :         H5DataSpace dspace_t{H5Screate_simple(1, dims_t, NULL)};</span></a>
+<a name="51"><span class="lineNum">      51 </span><span class="lineCov">          8 :         MEMILIO_H5_CHECK(dspace_t.id, StatusCode::UnknownError, &quot;Time DataSpace could not be created.&quot;);</span></a>
+<a name="52"><span class="lineNum">      52 </span><span class="lineCov">          8 :         H5DataSet dset_t{H5Dcreate(region_h5group.id, &quot;Time&quot;, H5T_NATIVE_DOUBLE, dspace_t.id, H5P_DEFAULT, H5P_DEFAULT,</span></a>
 <a name="53"><span class="lineNum">      53 </span><span class="lineNoCov">          0 :                                    H5P_DEFAULT)};</span></a>
-<a name="54"><span class="lineNum">      54 </span><span class="lineCov">          6 :         MEMILIO_H5_CHECK(dset_t.id, StatusCode::UnknownError, &quot;Time DataSet could not be created (Time).&quot;);</span></a>
-<a name="55"><span class="lineNum">      55 </span><span class="lineCov">         12 :         auto values_t = std::vector&lt;double&gt;(result.get_times().begin(), result.get_times().end());</span></a>
-<a name="56"><span class="lineNum">      56 </span><span class="lineCov">          6 :         MEMILIO_H5_CHECK(H5Dwrite(dset_t.id, H5T_NATIVE_DOUBLE, H5S_ALL, H5S_ALL, H5P_DEFAULT, values_t.data()),</span></a>
+<a name="54"><span class="lineNum">      54 </span><span class="lineCov">          8 :         MEMILIO_H5_CHECK(dset_t.id, StatusCode::UnknownError, &quot;Time DataSet could not be created (Time).&quot;);</span></a>
+<a name="55"><span class="lineNum">      55 </span><span class="lineCov">         16 :         auto values_t = std::vector&lt;double&gt;(result.get_times().begin(), result.get_times().end());</span></a>
+<a name="56"><span class="lineNum">      56 </span><span class="lineCov">          8 :         MEMILIO_H5_CHECK(H5Dwrite(dset_t.id, H5T_NATIVE_DOUBLE, H5S_ALL, H5S_ALL, H5P_DEFAULT, values_t.data()),</span></a>
 <a name="57"><span class="lineNum">      57 </span>            :                          StatusCode::UnknownError, &quot;Time data could not be written.&quot;);</a>
 <a name="58"><span class="lineNum">      58 </span>            : </a>
-<a name="59"><span class="lineNum">      59 </span><span class="lineCov">         18 :         auto total = Eigen::Matrix&lt;double, Eigen::Dynamic, Eigen::Dynamic, Eigen::RowMajor&gt;::Zero(num_timepoints,</span></a>
+<a name="59"><span class="lineNum">      59 </span><span class="lineCov">         24 :         auto total = Eigen::Matrix&lt;double, Eigen::Dynamic, Eigen::Dynamic, Eigen::RowMajor&gt;::Zero(num_timepoints,</span></a>
 <a name="60"><span class="lineNum">      60 </span>            :                                                                                                   num_infectionstates)</a>
-<a name="61"><span class="lineNum">      61 </span><span class="lineCov">         12 :                          .eval();</span></a>
+<a name="61"><span class="lineNum">      61 </span><span class="lineCov">         16 :                          .eval();</span></a>
 <a name="62"><span class="lineNum">      62 </span>            : </a>
-<a name="63"><span class="lineNum">      63 </span><span class="lineCov">         38 :         for (int group_idx = 0; group_idx &lt;= num_groups; ++group_idx) {</span></a>
-<a name="64"><span class="lineNum">      64 </span><span class="lineCov">         96 :             auto group = Eigen::Matrix&lt;double, Eigen::Dynamic, Eigen::Dynamic, Eigen::RowMajor&gt;::Zero(</span></a>
+<a name="63"><span class="lineNum">      63 </span><span class="lineCov">         54 :         for (int group_idx = 0; group_idx &lt;= num_groups; ++group_idx) {</span></a>
+<a name="64"><span class="lineNum">      64 </span><span class="lineCov">        138 :             auto group = Eigen::Matrix&lt;double, Eigen::Dynamic, Eigen::Dynamic, Eigen::RowMajor&gt;::Zero(</span></a>
 <a name="65"><span class="lineNum">      65 </span>            :                              num_timepoints, num_infectionstates)</a>
-<a name="66"><span class="lineNum">      66 </span><span class="lineCov">         64 :                              .eval();</span></a>
-<a name="67"><span class="lineNum">      67 </span><span class="lineCov">         32 :             if (group_idx &lt; num_groups) {</span></a>
-<a name="68"><span class="lineNum">      68 </span><span class="lineCov">        142 :                 for (Eigen::Index t_idx = 0; t_idx &lt; result.get_num_time_points(); ++t_idx) {</span></a>
-<a name="69"><span class="lineNum">      69 </span><span class="lineCov">        348 :                     auto v           = result[t_idx].transpose().eval();</span></a>
-<a name="70"><span class="lineNum">      70 </span><span class="lineCov">        116 :                     auto group_slice = mio::slice(v, {group_idx * num_infectionstates, num_infectionstates});</span></a>
-<a name="71"><span class="lineNum">      71 </span><span class="lineCov">        116 :                     mio::slice(group, {t_idx, 1}, {0, num_infectionstates}) = group_slice;</span></a>
-<a name="72"><span class="lineNum">      72 </span><span class="lineCov">        116 :                     mio::slice(total, {t_idx, 1}, {0, num_infectionstates}) += group_slice;</span></a>
+<a name="66"><span class="lineNum">      66 </span><span class="lineCov">         92 :                              .eval();</span></a>
+<a name="67"><span class="lineNum">      67 </span><span class="lineCov">         46 :             if (group_idx &lt; num_groups) {</span></a>
+<a name="68"><span class="lineNum">      68 </span><span class="lineCov">        190 :                 for (Eigen::Index t_idx = 0; t_idx &lt; result.get_num_time_points(); ++t_idx) {</span></a>
+<a name="69"><span class="lineNum">      69 </span><span class="lineCov">        456 :                     auto v           = result[t_idx].transpose().eval();</span></a>
+<a name="70"><span class="lineNum">      70 </span><span class="lineCov">        152 :                     auto group_slice = mio::slice(v, {group_idx * num_infectionstates, num_infectionstates});</span></a>
+<a name="71"><span class="lineNum">      71 </span><span class="lineCov">        152 :                     mio::slice(group, {t_idx, 1}, {0, num_infectionstates}) = group_slice;</span></a>
+<a name="72"><span class="lineNum">      72 </span><span class="lineCov">        152 :                     mio::slice(total, {t_idx, 1}, {0, num_infectionstates}) += group_slice;</span></a>
 <a name="73"><span class="lineNum">      73 </span>            :                 }</a>
 <a name="74"><span class="lineNum">      74 </span>            :             }</a>
 <a name="75"><span class="lineNum">      75 </span>            : </a>
-<a name="76"><span class="lineNum">      76 </span><span class="lineCov">         32 :             hsize_t dims_values[] = {static_cast&lt;hsize_t&gt;(num_timepoints), static_cast&lt;hsize_t&gt;(num_infectionstates)};</span></a>
-<a name="77"><span class="lineNum">      77 </span><span class="lineCov">         32 :             H5DataSpace dspace_values{H5Screate_simple(2, dims_values, NULL)};</span></a>
-<a name="78"><span class="lineNum">      78 </span><span class="lineCov">         32 :             MEMILIO_H5_CHECK(dspace_values.id, StatusCode::UnknownError, &quot;Values DataSpace could not be created.&quot;);</span></a>
-<a name="79"><span class="lineNum">      79 </span><span class="lineCov">         64 :             auto dset_name = group_idx == num_groups ? std::string(&quot;Total&quot;) : &quot;Group&quot; + std::to_string(group_idx + 1);</span></a>
-<a name="80"><span class="lineNum">      80 </span><span class="lineCov">         32 :             H5DataSet dset_values{H5Dcreate(region_h5group.id, dset_name.c_str(), H5T_NATIVE_DOUBLE, dspace_values.id,</span></a>
+<a name="76"><span class="lineNum">      76 </span><span class="lineCov">         46 :             hsize_t dims_values[] = {static_cast&lt;hsize_t&gt;(num_timepoints), static_cast&lt;hsize_t&gt;(num_infectionstates)};</span></a>
+<a name="77"><span class="lineNum">      77 </span><span class="lineCov">         46 :             H5DataSpace dspace_values{H5Screate_simple(2, dims_values, NULL)};</span></a>
+<a name="78"><span class="lineNum">      78 </span><span class="lineCov">         46 :             MEMILIO_H5_CHECK(dspace_values.id, StatusCode::UnknownError, &quot;Values DataSpace could not be created.&quot;);</span></a>
+<a name="79"><span class="lineNum">      79 </span><span class="lineCov">         92 :             auto dset_name = group_idx == num_groups ? std::string(&quot;Total&quot;) : &quot;Group&quot; + std::to_string(group_idx + 1);</span></a>
+<a name="80"><span class="lineNum">      80 </span><span class="lineCov">         46 :             H5DataSet dset_values{H5Dcreate(region_h5group.id, dset_name.c_str(), H5T_NATIVE_DOUBLE, dspace_values.id,</span></a>
 <a name="81"><span class="lineNum">      81 </span><span class="lineNoCov">          0 :                                             H5P_DEFAULT, H5P_DEFAULT, H5P_DEFAULT)};</span></a>
-<a name="82"><span class="lineNum">      82 </span><span class="lineCov">         32 :             MEMILIO_H5_CHECK(dset_values.id, StatusCode::UnknownError, &quot;Values DataSet could not be created.&quot;);</span></a>
+<a name="82"><span class="lineNum">      82 </span><span class="lineCov">         46 :             MEMILIO_H5_CHECK(dset_values.id, StatusCode::UnknownError, &quot;Values DataSet could not be created.&quot;);</span></a>
 <a name="83"><span class="lineNum">      83 </span>            : </a>
-<a name="84"><span class="lineNum">      84 </span><span class="lineCov">         32 :             MEMILIO_H5_CHECK(H5Dwrite(dset_values.id, H5T_NATIVE_DOUBLE, H5S_ALL, H5S_ALL, H5P_DEFAULT,</span></a>
+<a name="84"><span class="lineNum">      84 </span><span class="lineCov">         46 :             MEMILIO_H5_CHECK(H5Dwrite(dset_values.id, H5T_NATIVE_DOUBLE, H5S_ALL, H5S_ALL, H5P_DEFAULT,</span></a>
 <a name="85"><span class="lineNum">      85 </span>            :                                       group_idx == num_groups ? total.data() : group.data()),</a>
 <a name="86"><span class="lineNum">      86 </span>            :                              StatusCode::UnknownError, &quot;Values data could not be written.&quot;);</a>
 <a name="87"><span class="lineNum">      87 </span>            :         }</a>
-<a name="88"><span class="lineNum">      88 </span><span class="lineCov">          6 :         region_idx++;</span></a>
+<a name="88"><span class="lineNum">      88 </span><span class="lineCov">          8 :         region_idx++;</span></a>
 <a name="89"><span class="lineNum">      89 </span>            :     }</a>
-<a name="90"><span class="lineNum">      90 </span><span class="lineCov">         10 :     return success();</span></a>
+<a name="90"><span class="lineNum">      90 </span><span class="lineCov">         14 :     return success();</span></a>
 <a name="91"><span class="lineNum">      91 </span>            : }</a>
 <a name="92"><span class="lineNum">      92 </span>            : </a>
 <a name="93"><span class="lineNum">      93 </span><span class="lineCov">         41 : herr_t store_group_name(hid_t /*id*/, const char* name, const H5L_info_t* /*linfo*/, void* opdata)</span></a>

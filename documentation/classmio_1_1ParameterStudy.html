@@ -122,11 +122,11 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:abe75b079b64fa2ac6267c69d00f15e8a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmio_1_1Simulation.html#a35c28a2a20c23c81e1de59bcca8fb1ec">Simulation::Model</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1ParameterStudy.html#abe75b079b64fa2ac6267c69d00f15e8a">get_model</a> ()</td></tr>
 <tr class="separator:abe75b079b64fa2ac6267c69d00f15e8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader"></div></td></tr>
-<tr class="memitem:a1f3e25e20baaecad0606bef78e62f39f"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classmio_1_1Graph.html">Graph</a>&lt; typename <a class="el" href="classmio_1_1Simulation.html#a35c28a2a20c23c81e1de59bcca8fb1ec">Simulation::Model</a>, <a class="el" href="classmio_1_1MigrationParameters.html">MigrationParameters</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1ParameterStudy.html#a1f3e25e20baaecad0606bef78e62f39f">get_secir_model_graph</a> () const</td></tr>
-<tr class="memdesc:a1f3e25e20baaecad0606bef78e62f39f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the input graph that the parameter study is run for.  <a href="classmio_1_1ParameterStudy.html#a1f3e25e20baaecad0606bef78e62f39f">More...</a><br /></td></tr>
-<tr class="separator:a1f3e25e20baaecad0606bef78e62f39f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adfc97cc34806c63adeecd0528162d189"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmio_1_1Graph.html">Graph</a>&lt; typename <a class="el" href="classmio_1_1Simulation.html#a35c28a2a20c23c81e1de59bcca8fb1ec">Simulation::Model</a>, <a class="el" href="classmio_1_1MigrationParameters.html">MigrationParameters</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1ParameterStudy.html#adfc97cc34806c63adeecd0528162d189">get_secir_model_graph</a> ()</td></tr>
-<tr class="separator:adfc97cc34806c63adeecd0528162d189"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a930bbbf066ee1907997e03ccd24de686"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classmio_1_1Graph.html">Graph</a>&lt; typename <a class="el" href="classmio_1_1Simulation.html#a35c28a2a20c23c81e1de59bcca8fb1ec">Simulation::Model</a>, <a class="el" href="classmio_1_1MigrationParameters.html">MigrationParameters</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1ParameterStudy.html#a930bbbf066ee1907997e03ccd24de686">get_model_graph</a> () const</td></tr>
+<tr class="memdesc:a930bbbf066ee1907997e03ccd24de686"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the input graph that the parameter study is run for.  <a href="classmio_1_1ParameterStudy.html#a930bbbf066ee1907997e03ccd24de686">More...</a><br /></td></tr>
+<tr class="separator:a930bbbf066ee1907997e03ccd24de686"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c022cf037c7a5be6e631a914f7b65b2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmio_1_1Graph.html">Graph</a>&lt; typename <a class="el" href="classmio_1_1Simulation.html#a35c28a2a20c23c81e1de59bcca8fb1ec">Simulation::Model</a>, <a class="el" href="classmio_1_1MigrationParameters.html">MigrationParameters</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1ParameterStudy.html#a9c022cf037c7a5be6e631a914f7b65b2">get_model_graph</a> ()</td></tr>
+<tr class="separator:a9c022cf037c7a5be6e631a914f7b65b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
@@ -156,7 +156,7 @@ class mio::ParameterStudy&lt; S &gt;</h3>
 <p>Class that performs multiple simulation runs with randomly sampled parameters. </p>
 <p>Can simulate migration graphs with one simulation in each node or single simulations. </p><dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">S</td><td>type of simulation that runs in one node of the graph, e.g. SecirSimulation. </td></tr>
+    <tr><td class="paramname">S</td><td>type of simulation that runs in one node of the graph. </td></tr>
   </table>
   </dd>
 </dl>
@@ -335,7 +335,7 @@ template&lt;class S &gt; </div>
 <p>Create study for single compartment model. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">params</td><td>SecirParams object </td></tr>
+    <tr><td class="paramname">model</td><td>compartment model with initial values </td></tr>
     <tr><td class="paramname">t0</td><td>start time of simulations </td></tr>
     <tr><td class="paramname">tmax</td><td>end time of simulations </td></tr>
     <tr><td class="paramname">num_runs</td><td>number of runs in ensemble run </td></tr>
@@ -413,7 +413,48 @@ template&lt;class S &gt; </div>
 </div><div class="memdoc">
 
 <p>Get the input model that the parameter study is run for. </p>
-<p>Use for single node simulations, use get_secir_model_graph for graph simulations. </p>
+<p>Use for single node simulations, use get_model_graph for graph simulations. </p>
+
+</div>
+</div>
+<a id="a9c022cf037c7a5be6e631a914f7b65b2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c022cf037c7a5be6e631a914f7b65b2">&#9670;&nbsp;</a></span>get_model_graph() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class S &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classmio_1_1Graph.html">Graph</a>&lt;typename <a class="el" href="classmio_1_1Simulation.html#a35c28a2a20c23c81e1de59bcca8fb1ec">Simulation::Model</a>, <a class="el" href="classmio_1_1MigrationParameters.html">MigrationParameters</a>&gt;&amp; <a class="el" href="classmio_1_1ParameterStudy.html">mio::ParameterStudy</a>&lt; S &gt;::get_model_graph </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a930bbbf066ee1907997e03ccd24de686"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a930bbbf066ee1907997e03ccd24de686">&#9670;&nbsp;</a></span>get_model_graph() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class S &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classmio_1_1Graph.html">Graph</a>&lt;typename <a class="el" href="classmio_1_1Simulation.html#a35c28a2a20c23c81e1de59bcca8fb1ec">Simulation::Model</a>, <a class="el" href="classmio_1_1MigrationParameters.html">MigrationParameters</a>&gt;&amp; <a class="el" href="classmio_1_1ParameterStudy.html">mio::ParameterStudy</a>&lt; S &gt;::get_model_graph </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the input graph that the parameter study is run for. </p>
+<p>Use for graph simulations, use get_model for single node simulations. </p>
 
 </div>
 </div>
@@ -433,47 +474,6 @@ template&lt;class S &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-
-</div>
-</div>
-<a id="adfc97cc34806c63adeecd0528162d189"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adfc97cc34806c63adeecd0528162d189">&#9670;&nbsp;</a></span>get_secir_model_graph() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class S &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classmio_1_1Graph.html">Graph</a>&lt;typename <a class="el" href="classmio_1_1Simulation.html#a35c28a2a20c23c81e1de59bcca8fb1ec">Simulation::Model</a>, <a class="el" href="classmio_1_1MigrationParameters.html">MigrationParameters</a>&gt;&amp; <a class="el" href="classmio_1_1ParameterStudy.html">mio::ParameterStudy</a>&lt; S &gt;::get_secir_model_graph </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a1f3e25e20baaecad0606bef78e62f39f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1f3e25e20baaecad0606bef78e62f39f">&#9670;&nbsp;</a></span>get_secir_model_graph() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class S &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">const <a class="el" href="classmio_1_1Graph.html">Graph</a>&lt;typename <a class="el" href="classmio_1_1Simulation.html#a35c28a2a20c23c81e1de59bcca8fb1ec">Simulation::Model</a>, <a class="el" href="classmio_1_1MigrationParameters.html">MigrationParameters</a>&gt;&amp; <a class="el" href="classmio_1_1ParameterStudy.html">mio::ParameterStudy</a>&lt; S &gt;::get_secir_model_graph </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Get the input graph that the parameter study is run for. </p>
-<p>Use for graph simulations, use get_model for single node simulations. </p>
 
 </div>
 </div>

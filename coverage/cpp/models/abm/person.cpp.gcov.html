@@ -31,18 +31,18 @@
             <td class="headerValue">coverage.info</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntry">115</td>
             <td class="headerCovTableEntry">118</td>
-            <td class="headerCovTableEntryHi">97.5 %</td>
+            <td class="headerCovTableEntry">118</td>
+            <td class="headerCovTableEntryHi">100.0 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2023-01-04 08:38:55</td>
+            <td class="headerValue">2023-01-17 17:08:49</td>
             <td></td>
             <td class="headerItem">Functions:</td>
-            <td class="headerCovTableEntry">17</td>
             <td class="headerCovTableEntry">18</td>
-            <td class="headerCovTableEntryHi">94.4 %</td>
+            <td class="headerCovTableEntry">18</td>
+            <td class="headerCovTableEntryHi">100.0 %</td>
           </tr>
           <tr><td><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
         </table>
@@ -94,11 +94,11 @@
 <a name="32"><span class="lineNum">      32 </span>            : namespace abm</a>
 <a name="33"><span class="lineNum">      33 </span>            : {</a>
 <a name="34"><span class="lineNum">      34 </span>            : </a>
-<a name="35"><span class="lineNum">      35 </span><span class="lineCov">        220 : Person::Person(LocationId id, InfectionProperties infection_properties, AgeGroup age,</span></a>
-<a name="36"><span class="lineNum">      36 </span><span class="lineCov">        220 :                const GlobalInfectionParameters&amp; global_params, VaccinationState vaccination_state, uint32_t person_id)</span></a>
+<a name="35"><span class="lineNum">      35 </span><span class="lineCov">        226 : Person::Person(LocationId id, InfectionProperties infection_properties, AgeGroup age,</span></a>
+<a name="36"><span class="lineNum">      36 </span><span class="lineCov">        226 :                const GlobalInfectionParameters&amp; global_params, VaccinationState vaccination_state, uint32_t person_id)</span></a>
 <a name="37"><span class="lineNum">      37 </span>            :     : m_location_id(id)</a>
 <a name="38"><span class="lineNum">      38 </span>            :     , m_assigned_locations((uint32_t)LocationType::Count, INVALID_LOCATION_INDEX)</a>
-<a name="39"><span class="lineNum">      39 </span><span class="lineCov">        220 :     , m_infection_state(infection_properties.state)</span></a>
+<a name="39"><span class="lineNum">      39 </span><span class="lineCov">        226 :     , m_infection_state(infection_properties.state)</span></a>
 <a name="40"><span class="lineNum">      40 </span>            :     , m_vaccination_state(vaccination_state)</a>
 <a name="41"><span class="lineNum">      41 </span>            :     , m_time_until_carrier(std::numeric_limits&lt;int&gt;::max())</a>
 <a name="42"><span class="lineNum">      42 </span>            :     , m_quarantine(false)</a>
@@ -107,29 +107,29 @@
 <a name="45"><span class="lineNum">      45 </span>            :     , m_time_since_negative_test(std::numeric_limits&lt;int&gt;::max() / 2)</a>
 <a name="46"><span class="lineNum">      46 </span>            :     , m_mask(Mask(MaskType::Community))</a>
 <a name="47"><span class="lineNum">      47 </span>            :     , m_wears_mask(false)</a>
-<a name="48"><span class="lineNum">      48 </span><span class="lineCov">        440 :     , m_mask_compliance((uint32_t)LocationType::Count, 0.)</span></a>
-<a name="49"><span class="lineNum">      49 </span><span class="lineCov">        660 :     , m_person_id(person_id)</span></a>
+<a name="48"><span class="lineNum">      48 </span><span class="lineCov">        452 :     , m_mask_compliance((uint32_t)LocationType::Count, 0.)</span></a>
+<a name="49"><span class="lineNum">      49 </span><span class="lineCov">        678 :     , m_person_id(person_id)</span></a>
 <a name="50"><span class="lineNum">      50 </span>            : {</a>
-<a name="51"><span class="lineNum">      51 </span><span class="lineCov">        220 :     m_random_workgroup        = UniformDistribution&lt;double&gt;::get_instance()();</span></a>
-<a name="52"><span class="lineNum">      52 </span><span class="lineCov">        220 :     m_random_schoolgroup      = UniformDistribution&lt;double&gt;::get_instance()();</span></a>
-<a name="53"><span class="lineNum">      53 </span><span class="lineCov">        220 :     m_random_goto_work_hour   = UniformDistribution&lt;double&gt;::get_instance()();</span></a>
-<a name="54"><span class="lineNum">      54 </span><span class="lineCov">        220 :     m_random_goto_school_hour = UniformDistribution&lt;double&gt;::get_instance()();</span></a>
+<a name="51"><span class="lineNum">      51 </span><span class="lineCov">        226 :     m_random_workgroup        = UniformDistribution&lt;double&gt;::get_instance()();</span></a>
+<a name="52"><span class="lineNum">      52 </span><span class="lineCov">        226 :     m_random_schoolgroup      = UniformDistribution&lt;double&gt;::get_instance()();</span></a>
+<a name="53"><span class="lineNum">      53 </span><span class="lineCov">        226 :     m_random_goto_work_hour   = UniformDistribution&lt;double&gt;::get_instance()();</span></a>
+<a name="54"><span class="lineNum">      54 </span><span class="lineCov">        226 :     m_random_goto_school_hour = UniformDistribution&lt;double&gt;::get_instance()();</span></a>
 <a name="55"><span class="lineNum">      55 </span>            : </a>
-<a name="56"><span class="lineNum">      56 </span><span class="lineCov">        220 :     if (infection_properties.state == InfectionState::Infected &amp;&amp; infection_properties.detected) {</span></a>
+<a name="56"><span class="lineNum">      56 </span><span class="lineCov">        226 :     if (infection_properties.state == InfectionState::Infected &amp;&amp; infection_properties.detected) {</span></a>
 <a name="57"><span class="lineNum">      57 </span><span class="lineCov">          2 :         m_quarantine = true;</span></a>
 <a name="58"><span class="lineNum">      58 </span>            :     }</a>
-<a name="59"><span class="lineNum">      59 </span><span class="lineCov">        220 :     if (infection_properties.state == InfectionState::Exposed) {</span></a>
-<a name="60"><span class="lineNum">      60 </span><span class="lineCov">         10 :         m_time_until_carrier = hours(UniformIntDistribution&lt;int&gt;::get_instance()(</span></a>
-<a name="61"><span class="lineNum">      61 </span><span class="lineCov">         10 :             0, int(global_params.get&lt;IncubationPeriod&gt;()[{m_age, m_vaccination_state}] * 24)));</span></a>
+<a name="59"><span class="lineNum">      59 </span><span class="lineCov">        226 :     if (infection_properties.state == InfectionState::Exposed) {</span></a>
+<a name="60"><span class="lineNum">      60 </span><span class="lineCov">         14 :         m_time_until_carrier = hours(UniformIntDistribution&lt;int&gt;::get_instance()(</span></a>
+<a name="61"><span class="lineNum">      61 </span><span class="lineCov">         14 :             0, int(global_params.get&lt;IncubationPeriod&gt;()[{m_age, m_vaccination_state}] * 24)));</span></a>
 <a name="62"><span class="lineNum">      62 </span>            :     }</a>
-<a name="63"><span class="lineNum">      63 </span><span class="lineCov">        220 : }</span></a>
+<a name="63"><span class="lineNum">      63 </span><span class="lineCov">        226 : }</span></a>
 <a name="64"><span class="lineNum">      64 </span>            : </a>
-<a name="65"><span class="lineNum">      65 </span><span class="lineCov">         91 : Person::Person(Location&amp; location, InfectionProperties infection_properties, AgeGroup age,</span></a>
-<a name="66"><span class="lineNum">      66 </span><span class="lineCov">         91 :                const GlobalInfectionParameters&amp; global_params, VaccinationState vaccination_state, uint32_t person_id)</span></a>
-<a name="67"><span class="lineNum">      67 </span><span class="lineCov">        182 :     : Person({location.get_index(), location.get_type()}, infection_properties, age, global_params, vaccination_state,</span></a>
-<a name="68"><span class="lineNum">      68 </span><span class="lineCov">        273 :              person_id)</span></a>
+<a name="65"><span class="lineNum">      65 </span><span class="lineCov">         94 : Person::Person(Location&amp; location, InfectionProperties infection_properties, AgeGroup age,</span></a>
+<a name="66"><span class="lineNum">      66 </span><span class="lineCov">         94 :                const GlobalInfectionParameters&amp; global_params, VaccinationState vaccination_state, uint32_t person_id)</span></a>
+<a name="67"><span class="lineNum">      67 </span><span class="lineCov">        188 :     : Person({location.get_index(), location.get_type()}, infection_properties, age, global_params, vaccination_state,</span></a>
+<a name="68"><span class="lineNum">      68 </span><span class="lineCov">        282 :              person_id)</span></a>
 <a name="69"><span class="lineNum">      69 </span>            : {</a>
-<a name="70"><span class="lineNum">      70 </span><span class="lineCov">         91 : }</span></a>
+<a name="70"><span class="lineNum">      70 </span><span class="lineCov">         94 : }</span></a>
 <a name="71"><span class="lineNum">      71 </span>            : </a>
 <a name="72"><span class="lineNum">      72 </span><span class="lineCov">        222 : void Person::interact(TimeSpan dt, const GlobalInfectionParameters&amp; global_infection_params, Location&amp; loc)</span></a>
 <a name="73"><span class="lineNum">      73 </span>            : {</a>
@@ -137,30 +137,30 @@
 <a name="75"><span class="lineNum">      75 </span><span class="lineCov">        222 :     auto new_infection_state = infection_state;</span></a>
 <a name="76"><span class="lineNum">      76 </span>            : </a>
 <a name="77"><span class="lineNum">      77 </span><span class="lineCov">        222 :     if (infection_state == InfectionState::Exposed) {</span></a>
-<a name="78"><span class="lineNum">      78 </span><span class="lineCov">          5 :         if (m_time_until_carrier &lt;= TimeSpan(0)) {</span></a>
+<a name="78"><span class="lineNum">      78 </span><span class="lineCov">         11 :         if (m_time_until_carrier &lt;= TimeSpan(0)) {</span></a>
 <a name="79"><span class="lineNum">      79 </span><span class="lineCov">          2 :             new_infection_state = InfectionState::Carrier;</span></a>
 <a name="80"><span class="lineNum">      80 </span>            :         }</a>
-<a name="81"><span class="lineNum">      81 </span><span class="lineCov">          5 :         m_time_until_carrier -= dt;</span></a>
+<a name="81"><span class="lineNum">      81 </span><span class="lineCov">         11 :         m_time_until_carrier -= dt;</span></a>
 <a name="82"><span class="lineNum">      82 </span>            :     }</a>
 <a name="83"><span class="lineNum">      83 </span>            :     else {</a>
-<a name="84"><span class="lineNum">      84 </span><span class="lineCov">        217 :         new_infection_state = loc.interact(*this, dt, global_infection_params);</span></a>
-<a name="85"><span class="lineNum">      85 </span><span class="lineCov">        217 :         if (new_infection_state == InfectionState::Exposed) {</span></a>
-<a name="86"><span class="lineNum">      86 </span><span class="lineCov">          4 :             m_time_until_carrier = hours(</span></a>
-<a name="87"><span class="lineNum">      87 </span><span class="lineCov">          4 :                 int(global_infection_params.get&lt;IncubationPeriod&gt;()[{this-&gt;m_age, this-&gt;m_vaccination_state}] * 24));</span></a>
+<a name="84"><span class="lineNum">      84 </span><span class="lineCov">        211 :         new_infection_state = loc.interact(*this, dt, global_infection_params);</span></a>
+<a name="85"><span class="lineNum">      85 </span><span class="lineCov">        211 :         if (new_infection_state == InfectionState::Exposed) {</span></a>
+<a name="86"><span class="lineNum">      86 </span><span class="lineCov">          6 :             m_time_until_carrier = hours(</span></a>
+<a name="87"><span class="lineNum">      87 </span><span class="lineCov">          6 :                 int(global_infection_params.get&lt;IncubationPeriod&gt;()[{this-&gt;m_age, this-&gt;m_vaccination_state}] * 24));</span></a>
 <a name="88"><span class="lineNum">      88 </span>            :         }</a>
 <a name="89"><span class="lineNum">      89 </span>            :     }</a>
 <a name="90"><span class="lineNum">      90 </span>            : </a>
 <a name="91"><span class="lineNum">      91 </span><span class="lineCov">        222 :     if (new_infection_state == InfectionState::Infected_Severe ||</span></a>
 <a name="92"><span class="lineNum">      92 </span>            :         new_infection_state == InfectionState::Infected_Critical) {</a>
-<a name="93"><span class="lineNum">      93 </span><span class="lineCov">         37 :         m_quarantine = true;</span></a>
+<a name="93"><span class="lineNum">      93 </span><span class="lineCov">          2 :         m_quarantine = true;</span></a>
 <a name="94"><span class="lineNum">      94 </span>            :     }</a>
 <a name="95"><span class="lineNum">      95 </span>            :     else {</a>
-<a name="96"><span class="lineNum">      96 </span><span class="lineCov">        185 :         m_quarantine = false;</span></a>
+<a name="96"><span class="lineNum">      96 </span><span class="lineCov">        220 :         m_quarantine = false;</span></a>
 <a name="97"><span class="lineNum">      97 </span>            :     }</a>
 <a name="98"><span class="lineNum">      98 </span>            : </a>
 <a name="99"><span class="lineNum">      99 </span><span class="lineCov">        222 :     m_infection_state = new_infection_state;</span></a>
 <a name="100"><span class="lineNum">     100 </span><span class="lineCov">        222 :     if (infection_state != new_infection_state) {</span></a>
-<a name="101"><span class="lineNum">     101 </span><span class="lineCov">         12 :         loc.changed_state(*this, infection_state);</span></a>
+<a name="101"><span class="lineNum">     101 </span><span class="lineCov">         11 :         loc.changed_state(*this, infection_state);</span></a>
 <a name="102"><span class="lineNum">     102 </span>            :     }</a>
 <a name="103"><span class="lineNum">     103 </span>            : </a>
 <a name="104"><span class="lineNum">     104 </span><span class="lineCov">        222 :     m_time_at_location += dt;</span></a>
@@ -187,10 +187,10 @@
 <a name="125"><span class="lineNum">     125 </span><span class="lineCov">        135 :     m_assigned_locations[(uint32_t)id.type] = id.index;</span></a>
 <a name="126"><span class="lineNum">     126 </span><span class="lineCov">        135 : }</span></a>
 <a name="127"><span class="lineNum">     127 </span>            : </a>
-<a name="128"><span class="lineNum">     128 </span><span class="lineNoCov">          0 : void Person::set_infection_state(InfectionState inf_state)</span></a>
+<a name="128"><span class="lineNum">     128 </span><span class="lineCov">          2 : void Person::set_infection_state(InfectionState inf_state)</span></a>
 <a name="129"><span class="lineNum">     129 </span>            : {</a>
-<a name="130"><span class="lineNum">     130 </span><span class="lineNoCov">          0 :     m_infection_state = inf_state;</span></a>
-<a name="131"><span class="lineNum">     131 </span><span class="lineNoCov">          0 : }</span></a>
+<a name="130"><span class="lineNum">     130 </span><span class="lineCov">          2 :     m_infection_state = inf_state;</span></a>
+<a name="131"><span class="lineNum">     131 </span><span class="lineCov">          2 : }</span></a>
 <a name="132"><span class="lineNum">     132 </span>            : </a>
 <a name="133"><span class="lineNum">     133 </span><span class="lineCov">         23 : uint32_t Person::get_assigned_location_index(LocationType type) const</span></a>
 <a name="134"><span class="lineNum">     134 </span>            : {</a>
@@ -268,15 +268,15 @@
 <a name="206"><span class="lineNum">     206 </span><span class="lineCov">          4 :     return m_cells;</span></a>
 <a name="207"><span class="lineNum">     207 </span>            : }</a>
 <a name="208"><span class="lineNum">     208 </span>            : </a>
-<a name="209"><span class="lineNum">     209 </span><span class="lineCov">        127 : const std::vector&lt;uint32_t&gt;&amp; Person::get_cells() const</span></a>
+<a name="209"><span class="lineNum">     209 </span><span class="lineCov">        125 : const std::vector&lt;uint32_t&gt;&amp; Person::get_cells() const</span></a>
 <a name="210"><span class="lineNum">     210 </span>            : {</a>
-<a name="211"><span class="lineNum">     211 </span><span class="lineCov">        127 :     return m_cells;</span></a>
+<a name="211"><span class="lineNum">     211 </span><span class="lineCov">        125 :     return m_cells;</span></a>
 <a name="212"><span class="lineNum">     212 </span>            : }</a>
 <a name="213"><span class="lineNum">     213 </span>            : </a>
-<a name="214"><span class="lineNum">     214 </span><span class="lineCov">        245 : double Person::get_protective_factor(const GlobalInfectionParameters&amp; params) const</span></a>
+<a name="214"><span class="lineNum">     214 </span><span class="lineCov">        239 : double Person::get_protective_factor(const GlobalInfectionParameters&amp; params) const</span></a>
 <a name="215"><span class="lineNum">     215 </span>            : {</a>
-<a name="216"><span class="lineNum">     216 </span><span class="lineCov">        245 :     if (m_wears_mask == false) {</span></a>
-<a name="217"><span class="lineNum">     217 </span><span class="lineCov">        241 :         return 0.;</span></a>
+<a name="216"><span class="lineNum">     216 </span><span class="lineCov">        239 :     if (m_wears_mask == false) {</span></a>
+<a name="217"><span class="lineNum">     217 </span><span class="lineCov">        235 :         return 0.;</span></a>
 <a name="218"><span class="lineNum">     218 </span>            :     }</a>
 <a name="219"><span class="lineNum">     219 </span>            :     else {</a>
 <a name="220"><span class="lineNum">     220 </span><span class="lineCov">          4 :         return params.get&lt;MaskProtection&gt;()[m_mask.get_type()];</span></a>

@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2023-01-04 08:38:55</td>
+            <td class="headerValue">2023-01-17 17:08:49</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">4</td>
@@ -146,7 +146,7 @@
 <a name="84"><span class="lineNum">      84 </span>            :      * @param day Specifies day at which the data is read</a>
 <a name="85"><span class="lineNum">      85 </span>            :      * @param scaling_factor_inf factors by which to scale the confirmed cases of rki data</a>
 <a name="86"><span class="lineNum">      86 </span>            :      */</a>
-<a name="87"><span class="lineNum">      87 </span>            : IOResult&lt;void&gt; set_rki_data(std::vector&lt;Model&gt;&amp; model, const std::string&amp; path, std::vector&lt;int&gt; const&amp; region,</a>
+<a name="87"><span class="lineNum">      87 </span>            : IOResult&lt;void&gt; set_confirmed_cases_data(std::vector&lt;Model&gt;&amp; model, const std::string&amp; path, std::vector&lt;int&gt; const&amp; region,</a>
 <a name="88"><span class="lineNum">      88 </span>            :                             Date date, const std::vector&lt;double&gt;&amp; scaling_factor_inf);</a>
 <a name="89"><span class="lineNum">      89 </span>            : </a>
 <a name="90"><span class="lineNum">      90 </span>            : /**</a>
@@ -228,17 +228,17 @@
 <a name="166"><span class="lineNum">     166 </span><span class="lineCov">          7 :         for (size_t group = 0; group &lt; ConfirmedCasesDataEntry::age_group_names.size(); group++) {</span></a>
 <a name="167"><span class="lineNum">     167 </span>            : </a>
 <a name="168"><span class="lineNum">     168 </span><span class="lineCov">         12 :             t_InfectedNoSymptoms[county].push_back(</span></a>
-<a name="169"><span class="lineNum">     169 </span><span class="lineCov">         24 :                 static_cast&lt;int&gt;(2 * (model[county].parameters.template get&lt;IncubationTime&gt;()[AgeGroup(group)] -</span></a>
-<a name="170"><span class="lineNum">     170 </span><span class="lineCov">         12 :                                       model[county].parameters.template get&lt;SerialInterval&gt;()[AgeGroup(group)])));</span></a>
+<a name="169"><span class="lineNum">     169 </span><span class="lineCov">         24 :                 static_cast&lt;int&gt;(std::round(2 * (model[county].parameters.template get&lt;IncubationTime&gt;()[AgeGroup(group)] -</span></a>
+<a name="170"><span class="lineNum">     170 </span><span class="lineCov">         12 :                                       model[county].parameters.template get&lt;SerialInterval&gt;()[AgeGroup(group)]))));</span></a>
 <a name="171"><span class="lineNum">     171 </span><span class="lineCov">         12 :             t_Exposed[county].push_back(</span></a>
-<a name="172"><span class="lineNum">     172 </span><span class="lineCov">         24 :                 static_cast&lt;int&gt;(2 * model[county].parameters.template get&lt;SerialInterval&gt;()[AgeGroup(group)] -</span></a>
-<a name="173"><span class="lineNum">     173 </span><span class="lineCov">         12 :                                  model[county].parameters.template get&lt;IncubationTime&gt;()[AgeGroup(group)]));</span></a>
+<a name="172"><span class="lineNum">     172 </span><span class="lineCov">         24 :                 static_cast&lt;int&gt;(std::round(2 * model[county].parameters.template get&lt;SerialInterval&gt;()[AgeGroup(group)] -</span></a>
+<a name="173"><span class="lineNum">     173 </span><span class="lineCov">         12 :                                  model[county].parameters.template get&lt;IncubationTime&gt;()[AgeGroup(group)])));</span></a>
 <a name="174"><span class="lineNum">     174 </span><span class="lineCov">         12 :             t_InfectedSymptoms[county].push_back(</span></a>
-<a name="175"><span class="lineNum">     175 </span><span class="lineCov">         12 :                 static_cast&lt;int&gt;(model[county].parameters.template get&lt;TimeInfectedSymptoms&gt;()[AgeGroup(group)]));</span></a>
+<a name="175"><span class="lineNum">     175 </span><span class="lineCov">         12 :                 static_cast&lt;int&gt;(std::round(model[county].parameters.template get&lt;TimeInfectedSymptoms&gt;()[AgeGroup(group)])));</span></a>
 <a name="176"><span class="lineNum">     176 </span><span class="lineCov">         12 :             t_InfectedSevere[county].push_back(</span></a>
-<a name="177"><span class="lineNum">     177 </span><span class="lineCov">         12 :                 static_cast&lt;int&gt;(model[county].parameters.template get&lt;TimeInfectedSevere&gt;()[AgeGroup(group)]));</span></a>
+<a name="177"><span class="lineNum">     177 </span><span class="lineCov">         12 :                 static_cast&lt;int&gt;(std::round(model[county].parameters.template get&lt;TimeInfectedSevere&gt;()[AgeGroup(group)])));</span></a>
 <a name="178"><span class="lineNum">     178 </span><span class="lineCov">         12 :             t_InfectedCritical[county].push_back(</span></a>
-<a name="179"><span class="lineNum">     179 </span><span class="lineCov">         12 :                 static_cast&lt;int&gt;(model[county].parameters.template get&lt;TimeInfectedCritical&gt;()[(AgeGroup)group]));</span></a>
+<a name="179"><span class="lineNum">     179 </span><span class="lineCov">         12 :                 static_cast&lt;int&gt;(std::round(model[county].parameters.template get&lt;TimeInfectedCritical&gt;()[(AgeGroup)group])));</span></a>
 <a name="180"><span class="lineNum">     180 </span>            : </a>
 <a name="181"><span class="lineNum">     181 </span><span class="lineCov">         12 :             mu_C_R[county].push_back(</span></a>
 <a name="182"><span class="lineNum">     182 </span><span class="lineCov">         12 :                 model[county].parameters.template get&lt;RecoveredPerInfectedNoSymptoms&gt;()[AgeGroup(group)]);</span></a>
@@ -339,7 +339,7 @@
 <a name="277"><span class="lineNum">     277 </span><span class="lineNoCov">          0 :         log_warning(&quot;No DIVI data available for this date&quot;);</span></a>
 <a name="278"><span class="lineNum">     278 </span>            :     }</a>
 <a name="279"><span class="lineNum">     279 </span><span class="lineCov">          2 :     BOOST_OUTCOME_TRY(</span></a>
-<a name="280"><span class="lineNum">     280 </span>            :         details::set_rki_data(model, path_join(dir, &quot;cases_all_age_ma7.json&quot;), {0}, date, scaling_factor_inf));</a>
+<a name="280"><span class="lineNum">     280 </span>            :         details::set_confirmed_cases_data(model, path_join(dir, &quot;cases_all_age_ma7.json&quot;), {0}, date, scaling_factor_inf));</a>
 <a name="281"><span class="lineNum">     281 </span><span class="lineCov">          2 :     BOOST_OUTCOME_TRY(details::set_population_data(model, path_join(dir, &quot;county_current_population.json&quot;), {0}));</span></a>
 <a name="282"><span class="lineNum">     282 </span><span class="lineCov">          2 :     return success();</span></a>
 <a name="283"><span class="lineNum">     283 </span>            : }</a>
@@ -367,7 +367,7 @@
 <a name="305"><span class="lineNum">     305 </span>            :     }</a>
 <a name="306"><span class="lineNum">     306 </span>            : </a>
 <a name="307"><span class="lineNum">     307 </span><span class="lineCov">          2 :     BOOST_OUTCOME_TRY(</span></a>
-<a name="308"><span class="lineNum">     308 </span>            :         details::set_rki_data(model, path_join(dir, &quot;cases_all_state_age_ma7.json&quot;), state, date, scaling_factor_inf));</a>
+<a name="308"><span class="lineNum">     308 </span>            :         details::set_confirmed_cases_data(model, path_join(dir, &quot;cases_all_state_age_ma7.json&quot;), state, date, scaling_factor_inf));</a>
 <a name="309"><span class="lineNum">     309 </span><span class="lineCov">          2 :     BOOST_OUTCOME_TRY(details::set_population_data(model, path_join(dir, &quot;county_current_population.json&quot;), state));</span></a>
 <a name="310"><span class="lineNum">     310 </span><span class="lineCov">          2 :     return success();</span></a>
 <a name="311"><span class="lineNum">     311 </span>            : }</a>
@@ -393,7 +393,7 @@
 <a name="331"><span class="lineNum">     331 </span>            :     else {</a>
 <a name="332"><span class="lineNum">     332 </span><span class="lineNoCov">          0 :         log_warning(&quot;No DIVI data available for this date&quot;);</span></a>
 <a name="333"><span class="lineNum">     333 </span>            :     }</a>
-<a name="334"><span class="lineNum">     334 </span><span class="lineCov">          2 :     BOOST_OUTCOME_TRY(details::set_rki_data(model, path_join(dir, &quot;cases_all_county_age_ma7.json&quot;), county, date,</span></a>
+<a name="334"><span class="lineNum">     334 </span><span class="lineCov">          2 :     BOOST_OUTCOME_TRY(details::set_confirmed_cases_data(model, path_join(dir, &quot;cases_all_county_age_ma7.json&quot;), county, date,</span></a>
 <a name="335"><span class="lineNum">     335 </span>            :                                             scaling_factor_inf));</a>
 <a name="336"><span class="lineNum">     336 </span><span class="lineCov">          2 :     BOOST_OUTCOME_TRY(details::set_population_data(model, path_join(dir, &quot;county_current_population.json&quot;), county));</span></a>
 <a name="337"><span class="lineNum">     337 </span><span class="lineCov">          2 :     return success();</span></a>
