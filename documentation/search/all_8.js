@@ -16,11 +16,10 @@ var searchData=
   ['hospit_5fsanity_5fchecks_523',['hospit_sanity_checks',['../namespacememilio_1_1epidata_1_1getHospitalizationData.html#a3cd86bfafb86081c48b6e92d1f155caf',1,'memilio::epidata::getHospitalizationData']]],
   ['hospital_524',['Hospital',['../namespacemio_1_1abm.html#a83bc98ab43329c10fe9a6e683f2e1d0facc2ab63fd3eb564be64b4f21bd083bc7',1,'mio::abm']]],
   ['hour_5fof_5fday_525',['hour_of_day',['../classmio_1_1abm_1_1TimePoint.html#a5c25d479bf039d4411aff2b7be7261fd',1,'mio::abm::TimePoint']]],
-  ['hours_526',['hours',['../classmio_1_1abm_1_1TimeSpan.html#afb5110dc3232b025975a7ca5728d6b63',1,'mio::abm::TimeSpan::hours()'],['../classmio_1_1abm_1_1TimePoint.html#ae2f1f679d80756b07b2f2e747b6030cc',1,'mio::abm::TimePoint::hours()'],['../namespacemio_1_1abm.html#adfb699858fc73204701b1dbe26ee356d',1,'mio::abm::hours()']]],
+  ['hours_526',['hours',['../namespacemio_1_1abm.html#adfb699858fc73204701b1dbe26ee356d',1,'mio::abm::hours()'],['../classmio_1_1abm_1_1TimePoint.html#ae2f1f679d80756b07b2f2e747b6030cc',1,'mio::abm::TimePoint::hours()'],['../classmio_1_1abm_1_1TimeSpan.html#afb5110dc3232b025975a7ca5728d6b63',1,'mio::abm::TimeSpan::hours()']]],
   ['household_527',['Household',['../classmio_1_1abm_1_1Household.html#ae8824c8edca1309522a742b0549dec10',1,'mio::abm::Household::Household()'],['../classmio_1_1abm_1_1Household.html',1,'mio::abm::Household']]],
   ['household_2ecpp_528',['household.cpp',['../household_8cpp.html',1,'']]],
   ['household_2eh_529',['household.h',['../household_8h.html',1,'']]],
   ['householdgroup_530',['HouseholdGroup',['../classmio_1_1abm_1_1HouseholdGroup.html#a4efc296a0a61dd61149d37384bfd536a',1,'mio::abm::HouseholdGroup::HouseholdGroup()'],['../classmio_1_1abm_1_1HouseholdGroup.html',1,'mio::abm::HouseholdGroup']]],
-  ['householdmember_531',['HouseholdMember',['../classmio_1_1abm_1_1HouseholdMember.html#aed9dde61e6f2f9fcbba3971e00f92c3d',1,'mio::abm::HouseholdMember::HouseholdMember()'],['../classmio_1_1abm_1_1HouseholdMember.html',1,'mio::abm::HouseholdMember']]],
-  ['hpc_20against_20corona_20documentation_532',['HPC against Corona Documentation',['../md_README.html',1,'']]]
+  ['householdmember_531',['HouseholdMember',['../classmio_1_1abm_1_1HouseholdMember.html#aed9dde61e6f2f9fcbba3971e00f92c3d',1,'mio::abm::HouseholdMember::HouseholdMember()'],['../classmio_1_1abm_1_1HouseholdMember.html',1,'mio::abm::HouseholdMember']]]
 ];
