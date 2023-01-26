@@ -28,7 +28,7 @@
 
         
         <h2>Score</h2>
-        7.45 / 10
+        7.43 / 10
             
         
 
@@ -153,21 +153,11 @@
             <tr>
                 <td>24</td>
                 <td>0</td>
-                <td>error</td>
-                <td><code>import-error</code></td>
-                <td>E0401</td>
+                <td>warning</td>
+                <td><code>unused-import</code></td>
+                <td>W0611</td>
                 <td></td>
-                <td><pre>Unable to import &#39;matplotlib.pyplot&#39;</pre></td>
-            </tr>
-            
-            <tr>
-                <td>25</td>
-                <td>0</td>
-                <td>error</td>
-                <td><code>import-error</code></td>
-                <td>E0401</td>
-                <td></td>
-                <td><pre>Unable to import &#39;numpy&#39;</pre></td>
+                <td><pre>Unused import os</pre></td>
             </tr>
             
             <tr>
@@ -177,76 +167,106 @@
                 <td><code>import-error</code></td>
                 <td>E0401</td>
                 <td></td>
+                <td><pre>Unable to import &#39;matplotlib&#39;</pre></td>
+            </tr>
+            
+            <tr>
+                <td>27</td>
+                <td>0</td>
+                <td>error</td>
+                <td><code>import-error</code></td>
+                <td>E0401</td>
+                <td></td>
+                <td><pre>Unable to import &#39;matplotlib.pyplot&#39;</pre></td>
+            </tr>
+            
+            <tr>
+                <td>28</td>
+                <td>0</td>
+                <td>error</td>
+                <td><code>import-error</code></td>
+                <td>E0401</td>
+                <td></td>
+                <td><pre>Unable to import &#39;numpy&#39;</pre></td>
+            </tr>
+            
+            <tr>
+                <td>29</td>
+                <td>0</td>
+                <td>error</td>
+                <td><code>import-error</code></td>
+                <td>E0401</td>
+                <td></td>
                 <td><pre>Unable to import &#39;pandas&#39;</pre></td>
             </tr>
             
             <tr>
-                <td>31</td>
+                <td>36</td>
                 <td>0</td>
                 <td>convention</td>
                 <td><code>invalid-name</code></td>
                 <td>C0103</td>
-                <td>plotList</td>
-                <td><pre>Function name &#34;plotList&#34; doesn&#39;t conform to snake_case naming style</pre></td>
-            </tr>
-            
-            <tr>
-                <td>31</td>
-                <td>0</td>
-                <td>convention</td>
-                <td><code>invalid-name</code></td>
-                <td>C0103</td>
-                <td>plotList</td>
+                <td>plot_multiple_series</td>
                 <td><pre>Argument name &#34;x&#34; doesn&#39;t conform to snake_case naming style</pre></td>
             </tr>
             
             <tr>
-                <td>31</td>
+                <td>36</td>
                 <td>0</td>
                 <td>convention</td>
                 <td><code>invalid-name</code></td>
                 <td>C0103</td>
-                <td>plotList</td>
+                <td>plot_multiple_series</td>
                 <td><pre>Argument name &#34;y&#34; doesn&#39;t conform to snake_case naming style</pre></td>
             </tr>
             
             <tr>
-                <td>31</td>
+                <td>36</td>
                 <td>0</td>
                 <td>refactor</td>
                 <td><code>too-many-arguments</code></td>
                 <td>R0913</td>
-                <td>plotList</td>
-                <td><pre>Too many arguments (7/5)</pre></td>
+                <td>plot_multiple_series</td>
+                <td><pre>Too many arguments (16/5)</pre></td>
             </tr>
             
             <tr>
-                <td>44</td>
-                <td>13</td>
+                <td>36</td>
+                <td>0</td>
+                <td>refactor</td>
+                <td><code>too-many-locals</code></td>
+                <td>R0914</td>
+                <td>plot_multiple_series</td>
+                <td><pre>Too many local variables (19/15)</pre></td>
+            </tr>
+            
+            <tr>
+                <td>50</td>
+                <td>77</td>
+                <td>convention</td>
+                <td><code>trailing-whitespace</code></td>
+                <td>C0303</td>
+                <td></td>
+                <td><pre>Trailing whitespace</pre></td>
+            </tr>
+            
+            <tr>
+                <td>57</td>
+                <td>9</td>
                 <td>convention</td>
                 <td><code>invalid-name</code></td>
                 <td>C0103</td>
-                <td>plotList</td>
+                <td>plot_multiple_series</td>
                 <td><pre>Variable name &#34;ax&#34; doesn&#39;t conform to snake_case naming style</pre></td>
             </tr>
             
             <tr>
-                <td>46</td>
-                <td>13</td>
-                <td>convention</td>
-                <td><code>invalid-name</code></td>
-                <td>C0103</td>
-                <td>plotList</td>
-                <td><pre>Variable name &#34;ax&#34; doesn&#39;t conform to snake_case naming style</pre></td>
-            </tr>
-            
-            <tr>
-                <td>48</td>
+                <td>59</td>
                 <td>4</td>
                 <td>convention</td>
                 <td><code>consider-using-enumerate</code></td>
                 <td>C0200</td>
-                <td>plotList</td>
+                <td>plot_multiple_series</td>
                 <td><pre>Consider using enumerate instead of iterating with range and len</pre></td>
             </tr>
             
@@ -1585,13 +1605,13 @@
                 <td><pre>Similar lines in 2 files
 ==memilio.epidata.getHospitalizationData:[147:154]
 ==memilio.epidata.getSimulationData:[46:53]
-                             file_format=dd.defaultDict[&#39;file_format&#39;],
-                             out_folder=dd.defaultDict[&#39;out_folder&#39;],
-                             no_raw=dd.defaultDict[&#39;no_raw&#39;],
-                             start_date=dd.defaultDict[&#39;start_date&#39;],
-                             end_date=dd.defaultDict[&#39;end_date&#39;],
-                             impute_dates=dd.defaultDict[&#39;impute_dates&#39;],
-                             moving_average=dd.defaultDict[&#39;moving_average&#39;],</pre></td>
+                        file_format=dd.defaultDict[&#39;file_format&#39;],
+                        out_folder=dd.defaultDict[&#39;out_folder&#39;],
+                        no_raw=dd.defaultDict[&#39;no_raw&#39;],
+                        start_date=dd.defaultDict[&#39;start_date&#39;],
+                        end_date=dd.defaultDict[&#39;end_date&#39;],
+                        impute_dates=dd.defaultDict[&#39;impute_dates&#39;],
+                        moving_average=dd.defaultDict[&#39;moving_average&#39;],</pre></td>
             </tr>
             
             <tr>
@@ -1742,11 +1762,11 @@ import pandas as pd</pre></td>
                 <td><pre>Similar lines in 2 files
 ==memilio.epidata.getCaseData:[69:74]
 ==memilio.epidata.getSimulationData:[50:55]
-                        end_date=dd.defaultDict[&#39;end_date&#39;],
-                        impute_dates=dd.defaultDict[&#39;impute_dates&#39;],
-                        moving_average=dd.defaultDict[&#39;moving_average&#39;],
-                        make_plot=dd.defaultDict[&#39;make_plot&#39;],
-                        split_berlin=dd.defaultDict[&#39;split_berlin&#39;],</pre></td>
+                  end_date=dd.defaultDict[&#39;end_date&#39;],
+                  impute_dates=dd.defaultDict[&#39;impute_dates&#39;],
+                  moving_average=dd.defaultDict[&#39;moving_average&#39;],
+                  make_plot=dd.defaultDict[&#39;make_plot&#39;],
+                  split_berlin=dd.defaultDict[&#39;split_berlin&#39;],</pre></td>
             </tr>
             
             <tr>
@@ -7030,6 +7050,100 @@ from memilio.epidata import getDataIntoPandasDataFrame as gd
             
         </table>
         
+        <h3>Module <code>memilio.epidata_test.test_epidata_customPlot</code> (<code>memilio/epidata_test/test_epidata_customPlot.py</code>)</h3>
+        <table>
+            <tr>
+                <th>Line</th>
+                <th>Col.</th>
+                <th>Type</th>
+                <th>Symbol</th>
+                <th>ID</th>
+                <th>Obj</th>
+                <th>Message</th>
+            </tr>
+            
+            <tr>
+                <td>1</td>
+                <td>0</td>
+                <td>convention</td>
+                <td><code>invalid-name</code></td>
+                <td>C0103</td>
+                <td></td>
+                <td><pre>Module name &#34;test_epidata_customPlot&#34; doesn&#39;t conform to snake_case naming style</pre></td>
+            </tr>
+            
+            <tr>
+                <td>1</td>
+                <td>0</td>
+                <td>convention</td>
+                <td><code>missing-module-docstring</code></td>
+                <td>C0114</td>
+                <td></td>
+                <td><pre>Missing module docstring</pre></td>
+            </tr>
+            
+            <tr>
+                <td>20</td>
+                <td>0</td>
+                <td>warning</td>
+                <td><code>unused-import</code></td>
+                <td>W0611</td>
+                <td></td>
+                <td><pre>Unused import os</pre></td>
+            </tr>
+            
+            <tr>
+                <td>29</td>
+                <td>0</td>
+                <td>convention</td>
+                <td><code>invalid-name</code></td>
+                <td>C0103</td>
+                <td>Test_customPlot</td>
+                <td><pre>Class name &#34;Test_customPlot&#34; doesn&#39;t conform to PascalCase naming style</pre></td>
+            </tr>
+            
+            <tr>
+                <td>29</td>
+                <td>0</td>
+                <td>convention</td>
+                <td><code>missing-class-docstring</code></td>
+                <td>C0115</td>
+                <td>Test_customPlot</td>
+                <td><pre>Missing class docstring</pre></td>
+            </tr>
+            
+            <tr>
+                <td>37</td>
+                <td>4</td>
+                <td>convention</td>
+                <td><code>missing-function-docstring</code></td>
+                <td>C0116</td>
+                <td>Test_customPlot.test_plot_list</td>
+                <td><pre>Missing function or method docstring</pre></td>
+            </tr>
+            
+            <tr>
+                <td>41</td>
+                <td>0</td>
+                <td>refactor</td>
+                <td><code>unnecessary-comprehension</code></td>
+                <td>R1721</td>
+                <td>Test_customPlot.test_plot_list</td>
+                <td><pre>Unnecessary use of a comprehension, use list(range(100)) instead.</pre></td>
+            </tr>
+            
+            <tr>
+                <td>47</td>
+                <td>0</td>
+                <td>convention</td>
+                <td><code>line-too-long</code></td>
+                <td>C0301</td>
+                <td></td>
+                <td><pre>Line too long (127/120)</pre></td>
+            </tr>
+            
+        </table>
+        
         <h3>Module <code>memilio.epidata_test.test_epidata_defaultDict</code> (<code>memilio/epidata_test/test_epidata_defaultDict.py</code>)</h3>
         <table>
             <tr>
@@ -11479,22 +11593,22 @@ from memilio.epidata import getDataIntoPandasDataFrame as gd
             
             <tr>
                 <td>convention</td>
-                <td>699</td>
+                <td>704</td>
             </tr>
             
             <tr>
                 <td>error</td>
-                <td>75</td>
+                <td>76</td>
             </tr>
             
             <tr>
                 <td>warning</td>
-                <td>127</td>
+                <td>129</td>
             </tr>
             
             <tr>
                 <td>refactor</td>
-                <td>175</td>
+                <td>177</td>
             </tr>
             
         </table>
@@ -11509,12 +11623,12 @@ from memilio.epidata import getDataIntoPandasDataFrame as gd
             
             <tr>
                 <td>missing-module-docstring</td>
-                <td>19</td>
+                <td>20</td>
             </tr>
             
             <tr>
                 <td>import-error</td>
-                <td>46</td>
+                <td>47</td>
             </tr>
             
             <tr>
@@ -11524,12 +11638,12 @@ from memilio.epidata import getDataIntoPandasDataFrame as gd
             
             <tr>
                 <td>missing-class-docstring</td>
-                <td>15</td>
+                <td>16</td>
             </tr>
             
             <tr>
                 <td>missing-function-docstring</td>
-                <td>145</td>
+                <td>146</td>
             </tr>
             
             <tr>
@@ -11554,7 +11668,7 @@ from memilio.epidata import getDataIntoPandasDataFrame as gd
             
             <tr>
                 <td>unused-import</td>
-                <td>6</td>
+                <td>8</td>
             </tr>
             
             <tr>
@@ -11569,17 +11683,17 @@ from memilio.epidata import getDataIntoPandasDataFrame as gd
             
             <tr>
                 <td>too-many-locals</td>
-                <td>43</td>
+                <td>44</td>
             </tr>
             
             <tr>
                 <td>line-too-long</td>
-                <td>88</td>
+                <td>89</td>
             </tr>
             
             <tr>
                 <td>unnecessary-comprehension</td>
-                <td>10</td>
+                <td>11</td>
             </tr>
             
             <tr>
@@ -11669,7 +11783,7 @@ from memilio.epidata import getDataIntoPandasDataFrame as gd
             
             <tr>
                 <td>trailing-whitespace</td>
-                <td>50</td>
+                <td>51</td>
             </tr>
             
             <tr>
@@ -11818,6 +11932,11 @@ from memilio.epidata import getDataIntoPandasDataFrame as gd
             </tr>
             
             <tr>
+                <td>memilio.epidata_test.test_epidata_customPlot</td>
+                <td>8</td>
+            </tr>
+            
+            <tr>
                 <td>memilio.epidata_test.test_epidata_cleandata</td>
                 <td>94</td>
             </tr>
@@ -11849,7 +11968,7 @@ from memilio.epidata import getDataIntoPandasDataFrame as gd
             
             <tr>
                 <td>memilio.epidata.customPlot</td>
-                <td>11</td>
+                <td>13</td>
             </tr>
             
             <tr>
@@ -11993,6 +12112,11 @@ from memilio.epidata import getDataIntoPandasDataFrame as gd
             </tr>
             
             <tr>
+                <td>memilio/epidata_test/test_epidata_customPlot.py</td>
+                <td>8</td>
+            </tr>
+            
+            <tr>
                 <td>memilio/epidata_test/test_epidata_cleandata.py</td>
                 <td>94</td>
             </tr>
@@ -12024,7 +12148,7 @@ from memilio.epidata import getDataIntoPandasDataFrame as gd
             
             <tr>
                 <td>memilio/epidata/customPlot.py</td>
-                <td>11</td>
+                <td>13</td>
             </tr>
             
             <tr>

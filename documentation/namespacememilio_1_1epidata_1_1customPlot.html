@@ -75,19 +75,19 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a3e4b62f0b1ba21a8ae7371a4e5fb1d22"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacememilio_1_1epidata_1_1customPlot.html#a3e4b62f0b1ba21a8ae7371a4e5fb1d22">plotList</a> (x, y, legend, title='', xlabel='', ylabel='', fig_name='')</td></tr>
-<tr class="memdesc:a3e4b62f0b1ba21a8ae7371a4e5fb1d22"><td class="mdescLeft">&#160;</td><td class="mdescRight">Plots time series data.  <a href="namespacememilio_1_1epidata_1_1customPlot.html#a3e4b62f0b1ba21a8ae7371a4e5fb1d22">More...</a><br /></td></tr>
-<tr class="separator:a3e4b62f0b1ba21a8ae7371a4e5fb1d22"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d04b1c203ae558dad61dafa4a234250"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacememilio_1_1epidata_1_1customPlot.html#a9d04b1c203ae558dad61dafa4a234250">plot_multiple_series</a> (x, y, legend, title='', xlabel='', ylabel='', linewidth=1, xticks_idx='default', loc_legend='upper left', fig_size=(10, 6), plot_outside=True, fig_name='customPlot', path_rel='figures/', dpi=300, outercolor='white', innercolor='white')</td></tr>
+<tr class="memdesc:a9d04b1c203ae558dad61dafa4a234250"><td class="mdescLeft">&#160;</td><td class="mdescRight">Plots a variable number of time series data on the same time window inside one plot.  <a href="namespacememilio_1_1epidata_1_1customPlot.html#a9d04b1c203ae558dad61dafa4a234250">More...</a><br /></td></tr>
+<tr class="separator:a9d04b1c203ae558dad61dafa4a234250"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a3e4b62f0b1ba21a8ae7371a4e5fb1d22"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3e4b62f0b1ba21a8ae7371a4e5fb1d22">&#9670;&nbsp;</a></span>plotList()</h2>
+<a id="a9d04b1c203ae558dad61dafa4a234250"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9d04b1c203ae558dad61dafa4a234250">&#9670;&nbsp;</a></span>plot_multiple_series()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">def memilio.epidata.customPlot.plotList </td>
+          <td class="memname">def memilio.epidata.customPlot.plot_multiple_series </td>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname"><em>x</em>, </td>
@@ -126,7 +126,61 @@ Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>fig_name</em> = <code>''</code>&#160;</td>
+          <td class="paramname"><em>linewidth</em> = <code>1</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>xticks_idx</em> = <code>'default'</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>loc_legend</em> = <code>'upper&#160;left'</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>fig_size</em> = <code>(10,&#160;6)</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>plot_outside</em> = <code>True</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>fig_name</em> = <code>'customPlot'</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>path_rel</em> = <code>'figures/'</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>dpi</em> = <code>300</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>outercolor</em> = <code>'white'</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>innercolor</em> = <code>'white'</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -136,7 +190,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Plots time series data. </p>
+<p>Plots a variable number of time series data on the same time window inside one plot. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">x</td><td>x values to plot. </td></tr>
@@ -145,11 +199,14 @@ Functions</h2></td></tr>
     <tr><td class="paramname">title</td><td>title of the plot. </td></tr>
     <tr><td class="paramname">xlabel</td><td>labels for x values. </td></tr>
     <tr><td class="paramname">ylabel</td><td>labels for y values. </td></tr>
+    <tr><td class="paramname">linewidth</td><td>[Default: 1] Width of plotted curves. </td></tr>
+    <tr><td class="paramname">xticks_idx</td><td>[Default: 'default'] List of xticks indices to be used. If 'default' is used, then every 30th x-value is printed. </td></tr>
+    <tr><td class="paramname">dpi</td><td>Dots per inch of figure. </td></tr>
+    <tr><td class="paramname">outercolor</td><td>Outer color of figure. @oaram innercolor Inner color of figure. </td></tr>
     <tr><td class="paramname">fig_name</td><td>name of the figure to save. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>dataframe with imputed dates (and moving average if requested) </dd></dl>
 
 </div>
 </div>
