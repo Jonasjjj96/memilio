@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>HPC against Corona: /home/runner/work/memilio/memilio/cpp/memilio/mobility/mobility.h File Reference</title>
+<title>HPC against Corona: /home/runner/work/memilio/memilio/cpp/memilio/mobility/meta_mobility_instant.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -72,7 +72,7 @@ $(function() {
 <a href="#typedef-members">Typedefs</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">mobility.h File Reference</div>  </div>
+<div class="title">meta_mobility_instant.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="graph__simulation_8h_source.html">memilio/mobility/graph_simulation.h</a>&quot;</code><br />
@@ -85,9 +85,11 @@ $(function() {
 <code>#include &quot;<a class="el" href="contact__matrix_8h_source.html">memilio/epidemiology/contact_matrix.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="dynamic__npis_8h_source.html">memilio/epidemiology/dynamic_npis.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="memilio_2compartments_2simulation_8h_source.html">memilio/compartments/simulation.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="date_8h_source.html">memilio/utils/date.h</a>&quot;</code><br />
+<code>#include &quot;boost/filesystem.hpp&quot;</code><br />
 <code>#include &lt;cassert&gt;</code><br />
 </div>
-<p><a href="mobility_8h_source.html">Go to the source code of this file.</a></p>
+<p><a href="meta__mobility__instant_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
@@ -123,10 +125,10 @@ Typedefs</h2></td></tr>
 <tr class="memitem:ac94e7b62c8f3a638290d6d40f05df999"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemio.html#ac94e7b62c8f3a638290d6d40f05df999">mio::MigrationCoefficients</a> = DampingMatrixExpression&lt; VectorDampings &gt;</td></tr>
 <tr class="memdesc:ac94e7b62c8f3a638290d6d40f05df999"><td class="mdescLeft">&#160;</td><td class="mdescRight">time dependent migration coefficients.  <a href="namespacemio.html#ac94e7b62c8f3a638290d6d40f05df999">More...</a><br /></td></tr>
 <tr class="separator:ac94e7b62c8f3a638290d6d40f05df999"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab139fe68c2e45522c9700c13f4517cae"><td class="memTemplParams" colspan="2">template&lt;class Sim &gt; </td></tr>
-<tr class="memitem:ab139fe68c2e45522c9700c13f4517cae"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemio.html#ab139fe68c2e45522c9700c13f4517cae">mio::test_commuters_expr_t</a> = decltype(test_commuters(std::declval&lt; Sim &amp; &gt;(), std::declval&lt; Eigen::Ref&lt; const Eigen::VectorXd &gt; &amp; &gt;(), std::declval&lt; double &gt;()))</td></tr>
-<tr class="memdesc:ab139fe68c2e45522c9700c13f4517cae"><td class="mdescLeft">&#160;</td><td class="mdescRight">detect a get_migration_factors function for the Model type.  <a href="namespacemio.html#ab139fe68c2e45522c9700c13f4517cae">More...</a><br /></td></tr>
-<tr class="separator:ab139fe68c2e45522c9700c13f4517cae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9114c7ed6467f9e2babbe5c9a2c03747"><td class="memTemplParams" colspan="2">template&lt;class Sim &gt; </td></tr>
+<tr class="memitem:a9114c7ed6467f9e2babbe5c9a2c03747"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemio.html#a9114c7ed6467f9e2babbe5c9a2c03747">mio::test_commuters_expr_t</a> = decltype(test_commuters(std::declval&lt; Sim &amp; &gt;(), std::declval&lt; Eigen::Ref&lt; const Eigen::VectorXd &gt; &amp; &gt;(), std::declval&lt; double &gt;()))</td></tr>
+<tr class="memdesc:a9114c7ed6467f9e2babbe5c9a2c03747"><td class="mdescLeft">&#160;</td><td class="mdescRight">detect a get_migration_factors function for the Model type.  <a href="namespacemio.html#a9114c7ed6467f9e2babbe5c9a2c03747">More...</a><br /></td></tr>
+<tr class="separator:a9114c7ed6467f9e2babbe5c9a2c03747"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>

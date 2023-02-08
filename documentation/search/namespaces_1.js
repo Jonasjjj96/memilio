@@ -1,4 +1,31 @@
 var searchData=
 [
-  ['oseir_1646',['oseir',['../namespaceoseir.html',1,'']]]
+  ['abm_1640',['abm',['../namespacemio_1_1abm.html',1,'mio']]],
+  ['cleandata_1641',['cleanData',['../namespacememilio_1_1epidata_1_1cleanData.html',1,'memilio::epidata']]],
+  ['customplot_1642',['customPlot',['../namespacememilio_1_1epidata_1_1customPlot.html',1,'memilio::epidata']]],
+  ['defaultdict_1643',['defaultDict',['../namespacememilio_1_1epidata_1_1defaultDict.html',1,'memilio::epidata']]],
+  ['detail_1644',['detail',['../namespacemio_1_1detail.html',1,'mio']]],
+  ['details_1645',['details',['../namespacemio_1_1details.html',1,'mio']]],
+  ['epidata_1646',['epidata',['../namespacememilio_1_1epidata.html',1,'memilio']]],
+  ['geomodificationgermany_1647',['geoModificationGermany',['../namespacememilio_1_1epidata_1_1geoModificationGermany.html',1,'memilio::epidata']]],
+  ['getcasedata_1648',['getCaseData',['../namespacememilio_1_1epidata_1_1getCaseData.html',1,'memilio::epidata']]],
+  ['getcasedatawithestimations_1649',['getCaseDatawithEstimations',['../namespacememilio_1_1epidata_1_1getCaseDatawithEstimations.html',1,'memilio::epidata']]],
+  ['getcommutermobility_1650',['getCommuterMobility',['../namespacememilio_1_1epidata_1_1getCommuterMobility.html',1,'memilio::epidata']]],
+  ['getdataintopandasdataframe_1651',['getDataIntoPandasDataFrame',['../namespacememilio_1_1epidata_1_1getDataIntoPandasDataFrame.html',1,'memilio::epidata']]],
+  ['getdividata_1652',['getDIVIData',['../namespacememilio_1_1epidata_1_1getDIVIData.html',1,'memilio::epidata']]],
+  ['gethospitalizationdata_1653',['getHospitalizationData',['../namespacememilio_1_1epidata_1_1getHospitalizationData.html',1,'memilio::epidata']]],
+  ['getjhdata_1654',['getJHData',['../namespacememilio_1_1epidata_1_1getJHData.html',1,'memilio::epidata']]],
+  ['getpopulationdata_1655',['getPopulationData',['../namespacememilio_1_1epidata_1_1getPopulationData.html',1,'memilio::epidata']]],
+  ['getsimulationdata_1656',['getSimulationData',['../namespacememilio_1_1epidata_1_1getSimulationData.html',1,'memilio::epidata']]],
+  ['gettestingdata_1657',['getTestingData',['../namespacememilio_1_1epidata_1_1getTestingData.html',1,'memilio::epidata']]],
+  ['getvaccinationdata_1658',['getVaccinationData',['../namespacememilio_1_1epidata_1_1getVaccinationData.html',1,'memilio::epidata']]],
+  ['iseir_1659',['iseir',['../namespacemio_1_1iseir.html',1,'mio']]],
+  ['mio_1660',['mio',['../namespacemio.html',1,'']]],
+  ['modifydataframeseries_1661',['modifyDataframeSeries',['../namespacememilio_1_1epidata_1_1modifyDataframeSeries.html',1,'memilio::epidata']]],
+  ['osecir_1662',['osecir',['../namespacemio_1_1osecir.html',1,'mio']]],
+  ['osecirvvs_1663',['osecirvvs',['../namespacemio_1_1osecirvvs.html',1,'mio']]],
+  ['oseir_1664',['oseir',['../namespacemio_1_1oseir.html',1,'mio']]],
+  ['regions_1665',['regions',['../namespacemio_1_1regions.html',1,'mio']]],
+  ['transformmobilitydata_1666',['transformMobilityData',['../namespacememilio_1_1epidata_1_1transformMobilityData.html',1,'memilio::epidata']]],
+  ['transformweatherdata_1667',['transformWeatherData',['../namespacememilio_1_1epidata_1_1transformWeatherData.html',1,'memilio::epidata']]]
 ];

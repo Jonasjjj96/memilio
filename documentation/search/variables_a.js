@@ -1,12 +1,8 @@
 var searchData=
 [
-  ['sensitivity_2592',['sensitivity',['../structmio_1_1abm_1_1TestParameters.html#ad7e48b8f2883d0cdfee8b9e0c966f26f',1,'mio::abm::TestParameters']]],
-  ['seq_2593',['seq',['../classmio_1_1CustomIndexArray_1_1Slice_1_1Iterator.html#a0964422a221f7f1265960265eef09df6',1,'mio::CustomIndexArray::Slice::Iterator']]],
-  ['size_2594',['size',['../classmio_1_1Index_3_01CategoryTag_01_4.html#ace2904f9d77e1ae0b0806ddf956462ca',1,'mio::Index&lt; CategoryTag &gt;::size()'],['../classmio_1_1Index.html#ace2904f9d77e1ae0b0806ddf956462ca',1,'mio::Index::size()']]],
-  ['specificity_2595',['specificity',['../structmio_1_1abm_1_1TestParameters.html#a8fc3dd8fa3256e496fb058f68059eeef',1,'mio::abm::TestParameters']]],
-  ['start_2596',['start',['../structmio_1_1Seq.html#a29323e063eb8d9658b48b7280ac24a0a',1,'mio::Seq']]],
-  ['start_5fnode_5fidx_2597',['start_node_idx',['../structmio_1_1OutEdgeBase.html#a3213274c80edf4444cbe5f19973a6d37',1,'mio::OutEdgeBase']]],
-  ['state_2598',['state',['../structmio_1_1abm_1_1InfectionProperties.html#ab44fba5f5a7089ecf8ea6456a48c3620',1,'mio::abm::InfectionProperties']]],
-  ['state_2599',['State',['../namespacememilio_1_1epidata_1_1defaultDict.html#a6f9d4f2a5f4b7e6e153dea07be7f3e22',1,'memilio::epidata::defaultDict']]],
-  ['stride_2600',['stride',['../structmio_1_1Seq.html#ad381ff70960dad602924954fcf814462',1,'mio::Seq']]]
+  ['parameters_2626',['parameters',['../structmio_1_1CompartmentalModel.html#a56afd91de3e44b50d65b496d953246c8',1,'mio::CompartmentalModel::parameters()'],['../classmio_1_1iseir_1_1IdeSeirModel.html#a0d7640f4b0d6eb6ea55630473aca01a9',1,'mio::iseir::IdeSeirModel::parameters()']]],
+  ['person_5fid_2627',['person_id',['../structmio_1_1abm_1_1Trip.html#a47b0f7128334a0fa577a56799aa5a5b8',1,'mio::abm::Trip']]],
+  ['persons_2628',['persons',['../structmio_1_1abm_1_1LocationCapacity.html#aaef01622207c06247de0c8c4fcd88709',1,'mio::abm::LocationCapacity']]],
+  ['populations_2629',['populations',['../structmio_1_1CompartmentalModel.html#a313bd11737ce364149d37602efc0df0d',1,'mio::CompartmentalModel']]],
+  ['property_2630',['property',['../structmio_1_1Node.html#a2f7fb77d9fc764d834080c6561361b10',1,'mio::Node::property()'],['../structmio_1_1Edge.html#ace49cb4b952c9542b81d4a23c24be1f7',1,'mio::Edge::property()']]]
 ];

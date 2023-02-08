@@ -1,8 +1,4 @@
 var searchData=
 [
-  ['parameters_2587',['parameters',['../structmio_1_1CompartmentalModel.html#a56afd91de3e44b50d65b496d953246c8',1,'mio::CompartmentalModel::parameters()'],['../classmio_1_1iseir_1_1IdeSeirModel.html#a0d7640f4b0d6eb6ea55630473aca01a9',1,'mio::iseir::IdeSeirModel::parameters()']]],
-  ['person_5fid_2588',['person_id',['../structmio_1_1abm_1_1Trip.html#a47b0f7128334a0fa577a56799aa5a5b8',1,'mio::abm::Trip']]],
-  ['persons_2589',['persons',['../structmio_1_1abm_1_1LocationCapacity.html#aaef01622207c06247de0c8c4fcd88709',1,'mio::abm::LocationCapacity']]],
-  ['populations_2590',['populations',['../structmio_1_1CompartmentalModel.html#a313bd11737ce364149d37602efc0df0d',1,'mio::CompartmentalModel']]],
-  ['property_2591',['property',['../structmio_1_1Node.html#a2f7fb77d9fc764d834080c6561361b10',1,'mio::Node::property()'],['../structmio_1_1Edge.html#ace49cb4b952c9542b81d4a23c24be1f7',1,'mio::Edge::property()']]]
+  ['obj_2625',['obj',['../structmio_1_1details_1_1SerializationVisitor.html#a5f7ca6cea890e13a6fbabab634dc33a7',1,'mio::details::SerializationVisitor']]]
 ];
