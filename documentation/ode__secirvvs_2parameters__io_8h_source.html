@@ -1192,7 +1192,7 @@ $(function() {
 <div class="line"><a name="l01197"></a><span class="lineno"> 1197</span>&#160;                                                   <span class="keywordtype">double</span> scaling_factor_icu, <span class="keywordtype">int</span> num_days, <span class="keywordtype">bool</span> set_vaccination_data)</div>
 <div class="line"><a name="l01198"></a><span class="lineno"> 1198</span>&#160;{</div>
 <div class="line"><a name="l01199"></a><span class="lineno"> 1199</span>&#160;    <span class="keywordflow">if</span> (set_vaccination_data) {</div>
-<div class="line"><a name="l01200"></a><span class="lineno"> 1200</span>&#160;        BOOST_OUTCOME_TRY(details::set_vaccination_data(model, <a class="code" href="namespacemio.html#ad5d271b1fc1bc5f9ef54eb91c695f239">path_join</a>(data_dir, <span class="stringliteral">&quot;all_county_ageinf_vacc_ma7.json&quot;</span>),</div>
+<div class="line"><a name="l01200"></a><span class="lineno"> 1200</span>&#160;        BOOST_OUTCOME_TRY(details::set_vaccination_data(model, <a class="code" href="namespacemio.html#ad5d271b1fc1bc5f9ef54eb91c695f239">path_join</a>(data_dir, <span class="stringliteral">&quot;vacc_county_ageinf_ma7.json&quot;</span>),</div>
 <div class="line"><a name="l01201"></a><span class="lineno"> 1201</span>&#160;                                                        date, county, num_days));</div>
 <div class="line"><a name="l01202"></a><span class="lineno"> 1202</span>&#160;    }</div>
 <div class="line"><a name="l01203"></a><span class="lineno"> 1203</span>&#160; </div>
@@ -1209,7 +1209,7 @@ $(function() {
 <div class="line"><a name="l01228"></a><span class="lineno"> 1228</span>&#160;                                      <span class="keyword">const</span> std::vector&lt;double&gt;&amp; scaling_factor_inf, <span class="keywordtype">double</span> scaling_factor_icu,</div>
 <div class="line"><a name="l01229"></a><span class="lineno"> 1229</span>&#160;                                      <span class="keyword">const</span> std::string&amp; dir, <span class="keywordtype">int</span> num_days, <span class="keywordtype">bool</span> export_time_series = <span class="keyword">false</span>)</div>
 <div class="line"><a name="l01230"></a><span class="lineno"> 1230</span>&#160;{</div>
-<div class="line"><a name="l01231"></a><span class="lineno"> 1231</span>&#160;    BOOST_OUTCOME_TRY(details::set_vaccination_data(model, <a class="code" href="namespacemio.html#ad5d271b1fc1bc5f9ef54eb91c695f239">path_join</a>(dir, <span class="stringliteral">&quot;all_county_ageinf_vacc_ma7.json&quot;</span>), date,</div>
+<div class="line"><a name="l01231"></a><span class="lineno"> 1231</span>&#160;    BOOST_OUTCOME_TRY(details::set_vaccination_data(model, <a class="code" href="namespacemio.html#ad5d271b1fc1bc5f9ef54eb91c695f239">path_join</a>(dir, <span class="stringliteral">&quot;vacc_county_ageinf_ma7.json&quot;</span>), date,</div>
 <div class="line"><a name="l01232"></a><span class="lineno"> 1232</span>&#160;                                                    county, num_days));</div>
 <div class="line"><a name="l01233"></a><span class="lineno"> 1233</span>&#160; </div>
 <div class="line"><a name="l01234"></a><span class="lineno"> 1234</span>&#160;    <span class="comment">// TODO: Reuse more code, e.g., set_divi_data (in secir) and a set_divi_data (here) only need a different ModelType.</span></div>

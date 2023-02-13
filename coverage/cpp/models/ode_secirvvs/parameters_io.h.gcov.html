@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2023-02-10 15:22:41</td>
+            <td class="headerValue">2023-02-13 16:02:09</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">6</td>
@@ -1259,7 +1259,7 @@
 <a name="1197"><span class="lineNum">    1197 </span>            :                                                    double scaling_factor_icu, int num_days, bool set_vaccination_data)</a>
 <a name="1198"><span class="lineNum">    1198 </span>            : {</a>
 <a name="1199"><span class="lineNum">    1199 </span><span class="lineCov">          1 :     if (set_vaccination_data) {</span></a>
-<a name="1200"><span class="lineNum">    1200 </span><span class="lineCov">          1 :         BOOST_OUTCOME_TRY(details::set_vaccination_data(model, path_join(data_dir, &quot;all_county_ageinf_vacc_ma7.json&quot;),</span></a>
+<a name="1200"><span class="lineNum">    1200 </span><span class="lineCov">          1 :         BOOST_OUTCOME_TRY(details::set_vaccination_data(model, path_join(data_dir, &quot;vacc_county_ageinf_ma7.json&quot;),</span></a>
 <a name="1201"><span class="lineNum">    1201 </span>            :                                                         date, county, num_days));</a>
 <a name="1202"><span class="lineNum">    1202 </span>            :     }</a>
 <a name="1203"><span class="lineNum">    1203 </span>            : </a>
@@ -1290,7 +1290,7 @@
 <a name="1228"><span class="lineNum">    1228 </span>            :                                       const std::vector&lt;double&gt;&amp; scaling_factor_inf, double scaling_factor_icu,</a>
 <a name="1229"><span class="lineNum">    1229 </span>            :                                       const std::string&amp; dir, int num_days, bool export_time_series = false)</a>
 <a name="1230"><span class="lineNum">    1230 </span>            : {</a>
-<a name="1231"><span class="lineNum">    1231 </span><span class="lineCov">          4 :     BOOST_OUTCOME_TRY(details::set_vaccination_data(model, path_join(dir, &quot;all_county_ageinf_vacc_ma7.json&quot;), date,</span></a>
+<a name="1231"><span class="lineNum">    1231 </span><span class="lineCov">          4 :     BOOST_OUTCOME_TRY(details::set_vaccination_data(model, path_join(dir, &quot;vacc_county_ageinf_ma7.json&quot;), date,</span></a>
 <a name="1232"><span class="lineNum">    1232 </span>            :                                                     county, num_days));</a>
 <a name="1233"><span class="lineNum">    1233 </span>            : </a>
 <a name="1234"><span class="lineNum">    1234 </span>            :     // TODO: Reuse more code, e.g., set_divi_data (in secir) and a set_divi_data (here) only need a different ModelType.</a>
