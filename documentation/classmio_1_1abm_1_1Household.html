@@ -75,7 +75,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>A household group represented by a vector with household members.  
+<p>A <a class="el" href="classmio_1_1abm_1_1Household.html" title="A Household represented by a vector with HouseholdMembers.">Household</a> represented by a vector with <a class="el" href="classmio_1_1abm_1_1HouseholdMember.html" title="A HouseholdMember represented by a weighted age distribution.">HouseholdMember</a>s.  
  <a href="classmio_1_1abm_1_1Household.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="household_8h_source.html">household.h</a>&gt;</code></p>
@@ -83,36 +83,39 @@ $(function() {
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a6211c0f18a587e79109bbc52b133ab04"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1abm_1_1Household.html#a6211c0f18a587e79109bbc52b133ab04">add_members</a> (<a class="el" href="classmio_1_1abm_1_1HouseholdMember.html">HouseholdMember</a> household_member, int number_of_members)</td></tr>
-<tr class="memdesc:a6211c0f18a587e79109bbc52b133ab04"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a number of the same members to a household.  <a href="classmio_1_1abm_1_1Household.html#a6211c0f18a587e79109bbc52b133ab04">More...</a><br /></td></tr>
+<tr class="memdesc:a6211c0f18a587e79109bbc52b133ab04"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a number of the same <a class="el" href="classmio_1_1abm_1_1HouseholdMember.html" title="A HouseholdMember represented by a weighted age distribution.">HouseholdMember</a>s to a <a class="el" href="classmio_1_1abm_1_1Household.html" title="A Household represented by a vector with HouseholdMembers.">Household</a>.  <a href="classmio_1_1abm_1_1Household.html#a6211c0f18a587e79109bbc52b133ab04">More...</a><br /></td></tr>
 <tr class="separator:a6211c0f18a587e79109bbc52b133ab04"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a774ad4ebff1cb73a2d731ff1ef10969a"><td class="memItemLeft" align="right" valign="top">const std::vector&lt; std::tuple&lt; <a class="el" href="classmio_1_1abm_1_1HouseholdMember.html">HouseholdMember</a>, int &gt; &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1abm_1_1Household.html#a774ad4ebff1cb73a2d731ff1ef10969a">get_members</a> () const</td></tr>
-<tr class="memdesc:a774ad4ebff1cb73a2d731ff1ef10969a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of households in the household group.  <a href="classmio_1_1abm_1_1Household.html#a774ad4ebff1cb73a2d731ff1ef10969a">More...</a><br /></td></tr>
+<tr class="memdesc:a774ad4ebff1cb73a2d731ff1ef10969a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the <a class="el" href="classmio_1_1abm_1_1HouseholdMember.html" title="A HouseholdMember represented by a weighted age distribution.">HouseholdMember</a>s of the <a class="el" href="classmio_1_1abm_1_1Household.html" title="A Household represented by a vector with HouseholdMembers.">Household</a>.  <a href="classmio_1_1abm_1_1Household.html#a774ad4ebff1cb73a2d731ff1ef10969a">More...</a><br /></td></tr>
 <tr class="separator:a774ad4ebff1cb73a2d731ff1ef10969a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a20a6d0bf61b9e5c933aea232a876b451"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1abm_1_1Household.html#a20a6d0bf61b9e5c933aea232a876b451">get_space_per_member</a> () const</td></tr>
-<tr class="memdesc:a20a6d0bf61b9e5c933aea232a876b451"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the space per member in the household.  <a href="classmio_1_1abm_1_1Household.html#a20a6d0bf61b9e5c933aea232a876b451">More...</a><br /></td></tr>
+<tr class="memdesc:a20a6d0bf61b9e5c933aea232a876b451"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the space per member of the <a class="el" href="classmio_1_1abm_1_1Household.html" title="A Household represented by a vector with HouseholdMembers.">Household</a>, measured in cubic meters.  <a href="classmio_1_1abm_1_1Household.html#a20a6d0bf61b9e5c933aea232a876b451">More...</a><br /></td></tr>
 <tr class="separator:a20a6d0bf61b9e5c933aea232a876b451"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac43ec7c5c1d379831f6375e9b505964e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1abm_1_1Household.html#ac43ec7c5c1d379831f6375e9b505964e">get_total_number_of_members</a> () const</td></tr>
-<tr class="memdesc:ac43ec7c5c1d379831f6375e9b505964e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of members in the household.  <a href="classmio_1_1abm_1_1Household.html#ac43ec7c5c1d379831f6375e9b505964e">More...</a><br /></td></tr>
+<tr class="memdesc:ac43ec7c5c1d379831f6375e9b505964e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of members, i.e. <a class="el" href="classmio_1_1abm_1_1Person.html" title="Agents in the simulated World that can carry and spread the Infection.">Person</a>s in the <a class="el" href="classmio_1_1abm_1_1Household.html" title="A Household represented by a vector with HouseholdMembers.">Household</a>.  <a href="classmio_1_1abm_1_1Household.html#ac43ec7c5c1d379831f6375e9b505964e">More...</a><br /></td></tr>
 <tr class="separator:ac43ec7c5c1d379831f6375e9b505964e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae8824c8edca1309522a742b0549dec10"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1abm_1_1Household.html#ae8824c8edca1309522a742b0549dec10">Household</a> ()</td></tr>
-<tr class="memdesc:ae8824c8edca1309522a742b0549dec10"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a new household.  <a href="classmio_1_1abm_1_1Household.html#ae8824c8edca1309522a742b0549dec10">More...</a><br /></td></tr>
+<tr class="memdesc:ae8824c8edca1309522a742b0549dec10"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a new <a class="el" href="classmio_1_1abm_1_1Household.html" title="A Household represented by a vector with HouseholdMembers.">Household</a>.  <a href="classmio_1_1abm_1_1Household.html#ae8824c8edca1309522a742b0549dec10">More...</a><br /></td></tr>
 <tr class="separator:ae8824c8edca1309522a742b0549dec10"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa0b26a781dbef64181e485aba099c4a4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1abm_1_1Household.html#aa0b26a781dbef64181e485aba099c4a4">set_space_per_member</a> (int space_per_member)</td></tr>
-<tr class="memdesc:aa0b26a781dbef64181e485aba099c4a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the space per member in cubic meters.  <a href="classmio_1_1abm_1_1Household.html#aa0b26a781dbef64181e485aba099c4a4">More...</a><br /></td></tr>
+<tr class="memdesc:aa0b26a781dbef64181e485aba099c4a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the space per member for the computation of the <a class="el" href="structmio_1_1abm_1_1LocationCapacity.html" title="LocationCapacity describes the size of a location.">LocationCapacity</a> of the <a class="el" href="classmio_1_1abm_1_1Household.html" title="A Household represented by a vector with HouseholdMembers.">Household</a>.  <a href="classmio_1_1abm_1_1Household.html#aa0b26a781dbef64181e485aba099c4a4">More...</a><br /></td></tr>
 <tr class="separator:aa0b26a781dbef64181e485aba099c4a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:adc72f486ee04347404a639100cd98cee"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::tuple&lt; <a class="el" href="classmio_1_1abm_1_1HouseholdMember.html">HouseholdMember</a>, int &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1abm_1_1Household.html#adc72f486ee04347404a639100cd98cee">m_household_member_list</a></td></tr>
+<tr class="memdesc:adc72f486ee04347404a639100cd98cee"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classmio_1_1abm_1_1HouseholdMember.html" title="A HouseholdMember represented by a weighted age distribution.">HouseholdMember</a>s of the <a class="el" href="classmio_1_1abm_1_1Household.html" title="A Household represented by a vector with HouseholdMembers.">Household</a> and the respective number of <a class="el" href="classmio_1_1abm_1_1Person.html" title="Agents in the simulated World that can carry and spread the Infection.">Person</a>s.  <a href="classmio_1_1abm_1_1Household.html#adc72f486ee04347404a639100cd98cee">More...</a><br /></td></tr>
 <tr class="separator:adc72f486ee04347404a639100cd98cee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8304504ea8ec1ead97c68a2497fbd6ff"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1abm_1_1Household.html#a8304504ea8ec1ead97c68a2497fbd6ff">m_number_of_members</a></td></tr>
+<tr class="memdesc:a8304504ea8ec1ead97c68a2497fbd6ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Total number of <a class="el" href="classmio_1_1abm_1_1Person.html" title="Agents in the simulated World that can carry and spread the Infection.">Person</a>s in the <a class="el" href="classmio_1_1abm_1_1Household.html" title="A Household represented by a vector with HouseholdMembers.">Household</a>.  <a href="classmio_1_1abm_1_1Household.html#a8304504ea8ec1ead97c68a2497fbd6ff">More...</a><br /></td></tr>
 <tr class="separator:a8304504ea8ec1ead97c68a2497fbd6ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afb3859e211cd4b260765d1268cb3a5c6"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1abm_1_1Household.html#afb3859e211cd4b260765d1268cb3a5c6">m_space_per_member</a></td></tr>
+<tr class="memdesc:afb3859e211cd4b260765d1268cb3a5c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Space per <a class="el" href="classmio_1_1abm_1_1Person.html" title="Agents in the simulated World that can carry and spread the Infection.">Person</a> in cubic meters (constant maximal capacity over time).  <a href="classmio_1_1abm_1_1Household.html#afb3859e211cd4b260765d1268cb3a5c6">More...</a><br /></td></tr>
 <tr class="separator:afb3859e211cd4b260765d1268cb3a5c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>A household group represented by a vector with household members. </p>
-<p>The household may contain multiple members of the same type. </p>
+<div class="textblock"><p>A <a class="el" href="classmio_1_1abm_1_1Household.html" title="A Household represented by a vector with HouseholdMembers.">Household</a> represented by a vector with <a class="el" href="classmio_1_1abm_1_1HouseholdMember.html" title="A HouseholdMember represented by a weighted age distribution.">HouseholdMember</a>s. </p>
+<p>The <a class="el" href="classmio_1_1abm_1_1Household.html" title="A Household represented by a vector with HouseholdMembers.">Household</a> may contain multiple members of the same type. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ae8824c8edca1309522a742b0549dec10"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae8824c8edca1309522a742b0549dec10">&#9670;&nbsp;</a></span>Household()</h2>
@@ -129,7 +132,7 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Constructs a new household. </p>
+<p>Constructs a new <a class="el" href="classmio_1_1abm_1_1Household.html" title="A Household represented by a vector with HouseholdMembers.">Household</a>. </p>
 
 </div>
 </div>
@@ -160,11 +163,11 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Adds a number of the same members to a household. </p>
+<p>Adds a number of the same <a class="el" href="classmio_1_1abm_1_1HouseholdMember.html" title="A HouseholdMember represented by a weighted age distribution.">HouseholdMember</a>s to a <a class="el" href="classmio_1_1abm_1_1Household.html" title="A Household represented by a vector with HouseholdMembers.">Household</a>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">household_member</td><td>A household member from the <a class="el" href="classmio_1_1abm_1_1HouseholdMember.html" title="Overview: A household member has an vector with weighted age distribution from which the age can be c...">HouseholdMember</a> class. </td></tr>
-    <tr><td class="paramname">number_of_members</td><td>The amount of members to be added. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">household_member</td><td>A <a class="el" href="classmio_1_1abm_1_1HouseholdMember.html" title="A HouseholdMember represented by a weighted age distribution.">HouseholdMember</a>. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">number_of_members</td><td>The amount of members to be added. </td></tr>
   </table>
   </dd>
 </dl>
@@ -186,8 +189,7 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Returns the number of households in the household group. </p>
-<dl class="section return"><dt>Returns</dt><dd>Integer of number of households. </dd></dl>
+<p>Get the <a class="el" href="classmio_1_1abm_1_1HouseholdMember.html" title="A HouseholdMember represented by a weighted age distribution.">HouseholdMember</a>s of the <a class="el" href="classmio_1_1abm_1_1Household.html" title="A Household represented by a vector with HouseholdMembers.">Household</a>. </p>
 
 </div>
 </div>
@@ -206,8 +208,7 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Get the space per member in the household. </p>
-<dl class="section return"><dt>Returns</dt><dd>Integer of space per member in cubic meters </dd></dl>
+<p>Get the space per member of the <a class="el" href="classmio_1_1abm_1_1Household.html" title="A Household represented by a vector with HouseholdMembers.">Household</a>, measured in cubic meters. </p>
 
 </div>
 </div>
@@ -226,8 +227,7 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Returns the number of members in the household. </p>
-<dl class="section return"><dt>Returns</dt><dd>Integer of number of members. </dd></dl>
+<p>Returns the number of members, i.e. <a class="el" href="classmio_1_1abm_1_1Person.html" title="Agents in the simulated World that can carry and spread the Infection.">Person</a>s in the <a class="el" href="classmio_1_1abm_1_1Household.html" title="A Household represented by a vector with HouseholdMembers.">Household</a>. </p>
 
 </div>
 </div>
@@ -247,10 +247,10 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Set the space per member in cubic meters. </p>
+<p>Set the space per member for the computation of the <a class="el" href="structmio_1_1abm_1_1LocationCapacity.html" title="LocationCapacity describes the size of a location.">LocationCapacity</a> of the <a class="el" href="classmio_1_1abm_1_1Household.html" title="A Household represented by a vector with HouseholdMembers.">Household</a>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">space_per_member</td><td></td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">space_per_member</td><td>Space per member in cubic meters. </td></tr>
   </table>
   </dd>
 </dl>
@@ -278,6 +278,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p><a class="el" href="classmio_1_1abm_1_1HouseholdMember.html" title="A HouseholdMember represented by a weighted age distribution.">HouseholdMember</a>s of the <a class="el" href="classmio_1_1abm_1_1Household.html" title="A Household represented by a vector with HouseholdMembers.">Household</a> and the respective number of <a class="el" href="classmio_1_1abm_1_1Person.html" title="Agents in the simulated World that can carry and spread the Infection.">Person</a>s. </p>
+
 </div>
 </div>
 <a id="a8304504ea8ec1ead97c68a2497fbd6ff"></a>
@@ -300,6 +302,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Total number of <a class="el" href="classmio_1_1abm_1_1Person.html" title="Agents in the simulated World that can carry and spread the Infection.">Person</a>s in the <a class="el" href="classmio_1_1abm_1_1Household.html" title="A Household represented by a vector with HouseholdMembers.">Household</a>. </p>
+
 </div>
 </div>
 <a id="afb3859e211cd4b260765d1268cb3a5c6"></a>
@@ -321,6 +325,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Space per <a class="el" href="classmio_1_1abm_1_1Person.html" title="Agents in the simulated World that can carry and spread the Infection.">Person</a> in cubic meters (constant maximal capacity over time). </p>
 
 </div>
 </div>

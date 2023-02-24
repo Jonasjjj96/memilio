@@ -75,7 +75,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>Agents in the simulated world that can carry and spread the infection.  
+<p>Agents in the simulated <a class="el" href="classmio_1_1abm_1_1World.html" title="The World of the Simulation.">World</a> that can carry and spread the Infection.  
  <a href="classmio_1_1abm_1_1Person.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="person_8h_source.html">person.h</a>&gt;</code></p>
@@ -83,7 +83,7 @@ $(function() {
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:aaa06e677a405ecc881e29a0672d57335"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1abm_1_1Person.html#aaa06e677a405ecc881e29a0672d57335">apply_mask_intervention</a> (const <a class="el" href="classmio_1_1abm_1_1Location.html">Location</a> &amp;target)</td></tr>
-<tr class="memdesc:aaa06e677a405ecc881e29a0672d57335"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether the person wears a mask at the target location.  <a href="classmio_1_1abm_1_1Person.html#aaa06e677a405ecc881e29a0672d57335">More...</a><br /></td></tr>
+<tr class="memdesc:aaa06e677a405ecc881e29a0672d57335"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether the <a class="el" href="classmio_1_1abm_1_1Person.html" title="Agents in the simulated World that can carry and spread the Infection.">Person</a> wears a <a class="el" href="classmio_1_1abm_1_1Mask.html" title="Reduces the probability that a Person becomes infected.">Mask</a> at the target <a class="el" href="classmio_1_1abm_1_1Location.html" title="all locations in the simulated world where persons gather.">Location</a>.  <a href="classmio_1_1abm_1_1Person.html#aaa06e677a405ecc881e29a0672d57335">More...</a><br /></td></tr>
 <tr class="separator:aaa06e677a405ecc881e29a0672d57335"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a92883550827db7067f9098bba68f72ed"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacemio_1_1abm.html#ac9a874698e76d3706081b2642c5f4a5a">AgeGroup</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1abm_1_1Person.html#a92883550827db7067f9098bba68f72ed">get_age</a> () const</td></tr>
 <tr class="memdesc:a92883550827db7067f9098bba68f72ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the age group of this person.  <a href="classmio_1_1abm_1_1Person.html#a92883550827db7067f9098bba68f72ed">More...</a><br /></td></tr>
@@ -100,10 +100,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a39d8c167652e62e338e994bf65a9afb4"><td class="memItemLeft" align="right" valign="top">const std::vector&lt; uint32_t &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1abm_1_1Person.html#a39d8c167652e62e338e994bf65a9afb4">get_cells</a> () const</td></tr>
 <tr class="separator:a39d8c167652e62e338e994bf65a9afb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a54de560aef0308b47b8cade8f566bfd3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmio_1_1abm_1_1TimeSpan.html">TimeSpan</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1abm_1_1Person.html#a54de560aef0308b47b8cade8f566bfd3">get_go_to_school_time</a> (const <a class="el" href="namespacemio_1_1abm.html#aa8a9868546ef379f6e53a48227b3846f">MigrationParameters</a> &amp;params) const</td></tr>
-<tr class="memdesc:a54de560aef0308b47b8cade8f566bfd3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Every person has a random number to determine what time to go to school.  <a href="classmio_1_1abm_1_1Person.html#a54de560aef0308b47b8cade8f566bfd3">More...</a><br /></td></tr>
+<tr class="memdesc:a54de560aef0308b47b8cade8f566bfd3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draw at what time the <a class="el" href="classmio_1_1abm_1_1Person.html" title="Agents in the simulated World that can carry and spread the Infection.">Person</a> goes to work.  <a href="classmio_1_1abm_1_1Person.html#a54de560aef0308b47b8cade8f566bfd3">More...</a><br /></td></tr>
 <tr class="separator:a54de560aef0308b47b8cade8f566bfd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2a4d8af331d3174c8a40a3f8acacb4b5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmio_1_1abm_1_1TimeSpan.html">TimeSpan</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1abm_1_1Person.html#a2a4d8af331d3174c8a40a3f8acacb4b5">get_go_to_work_time</a> (const <a class="el" href="namespacemio_1_1abm.html#aa8a9868546ef379f6e53a48227b3846f">MigrationParameters</a> &amp;params) const</td></tr>
-<tr class="memdesc:a2a4d8af331d3174c8a40a3f8acacb4b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Every person has a random number to determine what time to go to work.  <a href="classmio_1_1abm_1_1Person.html#a2a4d8af331d3174c8a40a3f8acacb4b5">More...</a><br /></td></tr>
+<tr class="memdesc:a2a4d8af331d3174c8a40a3f8acacb4b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draw at what time the <a class="el" href="classmio_1_1abm_1_1Person.html" title="Agents in the simulated World that can carry and spread the Infection.">Person</a> goes to work.  <a href="classmio_1_1abm_1_1Person.html#a2a4d8af331d3174c8a40a3f8acacb4b5">More...</a><br /></td></tr>
 <tr class="separator:a2a4d8af331d3174c8a40a3f8acacb4b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae162a803f43ee53374dc2360ad64e705"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacemio_1_1abm.html#ad1ae0779f53a827b524e1f0925b9d704">InfectionState</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1abm_1_1Person.html#ae162a803f43ee53374dc2360ad64e705">get_infection_state</a> () const</td></tr>
 <tr class="memdesc:ae162a803f43ee53374dc2360ad64e705"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the current infection state of the person.  <a href="classmio_1_1abm_1_1Person.html#ae162a803f43ee53374dc2360ad64e705">More...</a><br /></td></tr>
@@ -112,18 +112,18 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a2393085fdcf2dc286fb249644340bb81"><td class="mdescLeft">&#160;</td><td class="mdescRight">get index and type of the current location of the person.  <a href="classmio_1_1abm_1_1Person.html#a2393085fdcf2dc286fb249644340bb81">More...</a><br /></td></tr>
 <tr class="separator:a2393085fdcf2dc286fb249644340bb81"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3cc2db5fb461ff9a8265d8c74b6c7c61"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmio_1_1abm_1_1Mask.html">Mask</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1abm_1_1Person.html#a3cc2db5fb461ff9a8265d8c74b6c7c61">get_mask</a> ()</td></tr>
-<tr class="memdesc:a3cc2db5fb461ff9a8265d8c74b6c7c61"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the mask of the person.  <a href="classmio_1_1abm_1_1Person.html#a3cc2db5fb461ff9a8265d8c74b6c7c61">More...</a><br /></td></tr>
+<tr class="memdesc:a3cc2db5fb461ff9a8265d8c74b6c7c61"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the current <a class="el" href="classmio_1_1abm_1_1Mask.html" title="Reduces the probability that a Person becomes infected.">Mask</a> of the <a class="el" href="classmio_1_1abm_1_1Person.html" title="Agents in the simulated World that can carry and spread the Infection.">Person</a>.  <a href="classmio_1_1abm_1_1Person.html#a3cc2db5fb461ff9a8265d8c74b6c7c61">More...</a><br /></td></tr>
 <tr class="separator:a3cc2db5fb461ff9a8265d8c74b6c7c61"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6aa6d354340718ddfbedd7dd11bbbcb7"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classmio_1_1abm_1_1Mask.html">Mask</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1abm_1_1Person.html#a6aa6d354340718ddfbedd7dd11bbbcb7">get_mask</a> () const</td></tr>
 <tr class="separator:a6aa6d354340718ddfbedd7dd11bbbcb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0bc684a2cb8c14dbe34421215cbc946c"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1abm_1_1Person.html#a0bc684a2cb8c14dbe34421215cbc946c">get_mask_compliance</a> (<a class="el" href="namespacemio_1_1abm.html#a83bc98ab43329c10fe9a6e683f2e1d0f">LocationType</a> location) const</td></tr>
-<tr class="memdesc:a0bc684a2cb8c14dbe34421215cbc946c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the mask compliance of the person for the current location.  <a href="classmio_1_1abm_1_1Person.html#a0bc684a2cb8c14dbe34421215cbc946c">More...</a><br /></td></tr>
+<tr class="memdesc:a0bc684a2cb8c14dbe34421215cbc946c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the mask compliance of the <a class="el" href="classmio_1_1abm_1_1Person.html" title="Agents in the simulated World that can carry and spread the Infection.">Person</a> for the current location.  <a href="classmio_1_1abm_1_1Person.html#a0bc684a2cb8c14dbe34421215cbc946c">More...</a><br /></td></tr>
 <tr class="separator:a0bc684a2cb8c14dbe34421215cbc946c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af0c14d2bf1cca3ad7762152715d012af"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1abm_1_1Person.html#af0c14d2bf1cca3ad7762152715d012af">get_person_id</a> ()</td></tr>
 <tr class="memdesc:af0c14d2bf1cca3ad7762152715d012af"><td class="mdescLeft">&#160;</td><td class="mdescRight">get the person id of the person the person id should correspondet to the index in m_persons in world  <a href="classmio_1_1abm_1_1Person.html#af0c14d2bf1cca3ad7762152715d012af">More...</a><br /></td></tr>
 <tr class="separator:af0c14d2bf1cca3ad7762152715d012af"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac22ac2b53467e145512c0ab89591ed87"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1abm_1_1Person.html#ac22ac2b53467e145512c0ab89591ed87">get_protective_factor</a> (const <a class="el" href="namespacemio_1_1abm.html#affc4b31b9f9ee14812ec1a61159f478f">GlobalInfectionParameters</a> &amp;params) const</td></tr>
-<tr class="memdesc:ac22ac2b53467e145512c0ab89591ed87"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the protection of the mask.  <a href="classmio_1_1abm_1_1Person.html#ac22ac2b53467e145512c0ab89591ed87">More...</a><br /></td></tr>
+<tr class="memdesc:ac22ac2b53467e145512c0ab89591ed87"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the protection of the <a class="el" href="classmio_1_1abm_1_1Mask.html" title="Reduces the probability that a Person becomes infected.">Mask</a>.  <a href="classmio_1_1abm_1_1Person.html#ac22ac2b53467e145512c0ab89591ed87">More...</a><br /></td></tr>
 <tr class="separator:ac22ac2b53467e145512c0ab89591ed87"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac6818dfbfad2a6453f077156aeb5deb8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1abm_1_1Person.html#ac6818dfbfad2a6453f077156aeb5deb8">get_tested</a> (const <a class="el" href="structmio_1_1abm_1_1TestParameters.html">TestParameters</a> &amp;params)</td></tr>
 <tr class="memdesc:ac6818dfbfad2a6453f077156aeb5deb8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Simulates a Corona test and returns the test result of the person.  <a href="classmio_1_1abm_1_1Person.html#ac6818dfbfad2a6453f077156aeb5deb8">More...</a><br /></td></tr>
@@ -140,10 +140,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a98809a5c6f127d5c365139b8d709c2c0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1abm_1_1Person.html#a98809a5c6f127d5c365139b8d709c2c0">get_wear_mask</a> () const</td></tr>
 <tr class="separator:a98809a5c6f127d5c365139b8d709c2c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4ceae17a3f9229bd6ac6fb54a1e63836"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1abm_1_1Person.html#a4ceae17a3f9229bd6ac6fb54a1e63836">goes_to_school</a> (<a class="el" href="classmio_1_1abm_1_1TimePoint.html">TimePoint</a> t, const <a class="el" href="namespacemio_1_1abm.html#aa8a9868546ef379f6e53a48227b3846f">MigrationParameters</a> &amp;params) const</td></tr>
-<tr class="memdesc:a4ceae17a3f9229bd6ac6fb54a1e63836"><td class="mdescLeft">&#160;</td><td class="mdescRight">Every person has a random number that determines if they go to school in case of a lockdown.  <a href="classmio_1_1abm_1_1Person.html#a4ceae17a3f9229bd6ac6fb54a1e63836">More...</a><br /></td></tr>
+<tr class="memdesc:a4ceae17a3f9229bd6ac6fb54a1e63836"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draw if the <a class="el" href="classmio_1_1abm_1_1Person.html" title="Agents in the simulated World that can carry and spread the Infection.">Person</a> goes to school or stays at home during lockdown.  <a href="classmio_1_1abm_1_1Person.html#a4ceae17a3f9229bd6ac6fb54a1e63836">More...</a><br /></td></tr>
 <tr class="separator:a4ceae17a3f9229bd6ac6fb54a1e63836"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a037b9d3f6bbc482986f9980a11153955"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1abm_1_1Person.html#a037b9d3f6bbc482986f9980a11153955">goes_to_work</a> (<a class="el" href="classmio_1_1abm_1_1TimePoint.html">TimePoint</a> t, const <a class="el" href="namespacemio_1_1abm.html#aa8a9868546ef379f6e53a48227b3846f">MigrationParameters</a> &amp;params) const</td></tr>
-<tr class="memdesc:a037b9d3f6bbc482986f9980a11153955"><td class="mdescLeft">&#160;</td><td class="mdescRight">Every person has a random number.  <a href="classmio_1_1abm_1_1Person.html#a037b9d3f6bbc482986f9980a11153955">More...</a><br /></td></tr>
+<tr class="memdesc:a037b9d3f6bbc482986f9980a11153955"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draw if the <a class="el" href="classmio_1_1abm_1_1Person.html" title="Agents in the simulated World that can carry and spread the Infection.">Person</a> goes to work or is in home office during lockdown.  <a href="classmio_1_1abm_1_1Person.html#a037b9d3f6bbc482986f9980a11153955">More...</a><br /></td></tr>
 <tr class="separator:a037b9d3f6bbc482986f9980a11153955"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3d97bb97b3638d0907d27c10bb7ae1b0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1abm_1_1Person.html#a3d97bb97b3638d0907d27c10bb7ae1b0">interact</a> (<a class="el" href="classmio_1_1abm_1_1TimeSpan.html">TimeSpan</a> dt, const <a class="el" href="namespacemio_1_1abm.html#affc4b31b9f9ee14812ec1a61159f478f">GlobalInfectionParameters</a> &amp;global_infection_parameters, <a class="el" href="classmio_1_1abm_1_1Location.html">Location</a> &amp;loc)</td></tr>
 <tr class="memdesc:a3d97bb97b3638d0907d27c10bb7ae1b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Time passes and the person interacts with the population at its current location.  <a href="classmio_1_1abm_1_1Person.html#a3d97bb97b3638d0907d27c10bb7ae1b0">More...</a><br /></td></tr>
@@ -155,10 +155,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a6d5a659b8ab1cc570b08da8dd4d50934"><td class="mdescLeft">&#160;</td><td class="mdescRight">migrate to a different location.  <a href="classmio_1_1abm_1_1Person.html#a6d5a659b8ab1cc570b08da8dd4d50934">More...</a><br /></td></tr>
 <tr class="separator:a6d5a659b8ab1cc570b08da8dd4d50934"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a440087d6f017df86c92d6243c5715684"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1abm_1_1Person.html#a440087d6f017df86c92d6243c5715684">Person</a> (<a class="el" href="classmio_1_1abm_1_1Location.html">Location</a> &amp;location, <a class="el" href="structmio_1_1abm_1_1InfectionProperties.html">InfectionProperties</a> infection_properties, <a class="el" href="namespacemio_1_1abm.html#ac9a874698e76d3706081b2642c5f4a5a">AgeGroup</a> age, const <a class="el" href="namespacemio_1_1abm.html#affc4b31b9f9ee14812ec1a61159f478f">GlobalInfectionParameters</a> &amp;global_params, <a class="el" href="namespacemio_1_1abm.html#acb1be3974226c65c471a4a9f4b99765c">VaccinationState</a> vaccination_state=<a class="el" href="namespacemio_1_1abm.html#acb1be3974226c65c471a4a9f4b99765caab7bd85fd947b5e6824b676b1120239e">VaccinationState::Unvaccinated</a>, uint32_t person_id=<a class="el" href="namespacemio_1_1abm.html#a76378fd1909958798084acb78abad563">INVALID_PERSON_ID</a>)</td></tr>
-<tr class="memdesc:a440087d6f017df86c92d6243c5715684"><td class="mdescLeft">&#160;</td><td class="mdescRight">create a <a class="el" href="classmio_1_1abm_1_1Person.html" title="Agents in the simulated world that can carry and spread the infection.">Person</a>.  <a href="classmio_1_1abm_1_1Person.html#a440087d6f017df86c92d6243c5715684">More...</a><br /></td></tr>
+<tr class="memdesc:a440087d6f017df86c92d6243c5715684"><td class="mdescLeft">&#160;</td><td class="mdescRight">create a <a class="el" href="classmio_1_1abm_1_1Person.html" title="Agents in the simulated World that can carry and spread the Infection.">Person</a>.  <a href="classmio_1_1abm_1_1Person.html#a440087d6f017df86c92d6243c5715684">More...</a><br /></td></tr>
 <tr class="separator:a440087d6f017df86c92d6243c5715684"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adce205fa7846f1483a1c76720331bffe"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1abm_1_1Person.html#adce205fa7846f1483a1c76720331bffe">Person</a> (<a class="el" href="structmio_1_1abm_1_1LocationId.html">LocationId</a> id, <a class="el" href="structmio_1_1abm_1_1InfectionProperties.html">InfectionProperties</a> infection_properties, <a class="el" href="namespacemio_1_1abm.html#ac9a874698e76d3706081b2642c5f4a5a">AgeGroup</a> age, const <a class="el" href="namespacemio_1_1abm.html#affc4b31b9f9ee14812ec1a61159f478f">GlobalInfectionParameters</a> &amp;global_params, <a class="el" href="namespacemio_1_1abm.html#acb1be3974226c65c471a4a9f4b99765c">VaccinationState</a> vaccination_state=<a class="el" href="namespacemio_1_1abm.html#acb1be3974226c65c471a4a9f4b99765caab7bd85fd947b5e6824b676b1120239e">VaccinationState::Unvaccinated</a>, uint32_t person_id=<a class="el" href="namespacemio_1_1abm.html#a76378fd1909958798084acb78abad563">INVALID_PERSON_ID</a>)</td></tr>
-<tr class="memdesc:adce205fa7846f1483a1c76720331bffe"><td class="mdescLeft">&#160;</td><td class="mdescRight">create a <a class="el" href="classmio_1_1abm_1_1Person.html" title="Agents in the simulated world that can carry and spread the infection.">Person</a>.  <a href="classmio_1_1abm_1_1Person.html#adce205fa7846f1483a1c76720331bffe">More...</a><br /></td></tr>
+<tr class="memdesc:adce205fa7846f1483a1c76720331bffe"><td class="mdescLeft">&#160;</td><td class="mdescRight">create a <a class="el" href="classmio_1_1abm_1_1Person.html" title="Agents in the simulated World that can carry and spread the Infection.">Person</a>.  <a href="classmio_1_1abm_1_1Person.html#adce205fa7846f1483a1c76720331bffe">More...</a><br /></td></tr>
 <tr class="separator:adce205fa7846f1483a1c76720331bffe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad2b7ad6d2849bb2de97be0c853e71c4a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1abm_1_1Person.html#ad2b7ad6d2849bb2de97be0c853e71c4a">set_assigned_location</a> (<a class="el" href="classmio_1_1abm_1_1Location.html">Location</a> &amp;location)</td></tr>
 <tr class="memdesc:ad2b7ad6d2849bb2de97be0c853e71c4a"><td class="mdescLeft">&#160;</td><td class="mdescRight">set an assigned location of the person.  <a href="classmio_1_1abm_1_1Person.html#ad2b7ad6d2849bb2de97be0c853e71c4a">More...</a><br /></td></tr>
@@ -170,7 +170,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a68b85720859bb0e18486b8807cf4cfbd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the current infection state of the person.  <a href="classmio_1_1abm_1_1Person.html#a68b85720859bb0e18486b8807cf4cfbd">More...</a><br /></td></tr>
 <tr class="separator:a68b85720859bb0e18486b8807cf4cfbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a89af39219e82e8fc74c29f167b74972c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1abm_1_1Person.html#a89af39219e82e8fc74c29f167b74972c">set_mask_preferences</a> (std::vector&lt; double &gt; preferences)</td></tr>
-<tr class="memdesc:a89af39219e82e8fc74c29f167b74972c"><td class="mdescLeft">&#160;</td><td class="mdescRight">For every LocationType a person has a compliance value between -1 and 1.  <a href="classmio_1_1abm_1_1Person.html#a89af39219e82e8fc74c29f167b74972c">More...</a><br /></td></tr>
+<tr class="memdesc:a89af39219e82e8fc74c29f167b74972c"><td class="mdescLeft">&#160;</td><td class="mdescRight">For every LocationType a <a class="el" href="classmio_1_1abm_1_1Person.html" title="Agents in the simulated World that can carry and spread the Infection.">Person</a> has a compliance value between -1 and 1.  <a href="classmio_1_1abm_1_1Person.html#a89af39219e82e8fc74c29f167b74972c">More...</a><br /></td></tr>
 <tr class="separator:a89af39219e82e8fc74c29f167b74972c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3080e5c9ef7da71593d4f7faf1c883e4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1abm_1_1Person.html#a3080e5c9ef7da71593d4f7faf1c883e4">set_wear_mask</a> (bool wear_mask)</td></tr>
 <tr class="memdesc:a3080e5c9ef7da71593d4f7faf1c883e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Decide if a person is currently wearing a mask.  <a href="classmio_1_1abm_1_1Person.html#a3080e5c9ef7da71593d4f7faf1c883e4">More...</a><br /></td></tr>
@@ -216,7 +216,7 @@ Private Attributes</h2></td></tr>
 <tr class="separator:afe466f123ccb1cee377f9f9c257c6e52"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Agents in the simulated world that can carry and spread the infection. </p>
+<div class="textblock"><p>Agents in the simulated <a class="el" href="classmio_1_1abm_1_1World.html" title="The World of the Simulation.">World</a> that can carry and spread the Infection. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="adce205fa7846f1483a1c76720331bffe"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#adce205fa7846f1483a1c76720331bffe">&#9670;&nbsp;</a></span>Person() <span class="overload">[1/2]</span></h2>
@@ -268,7 +268,7 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>create a <a class="el" href="classmio_1_1abm_1_1Person.html" title="Agents in the simulated world that can carry and spread the infection.">Person</a>. </p>
+<p>create a <a class="el" href="classmio_1_1abm_1_1Person.html" title="Agents in the simulated World that can carry and spread the Infection.">Person</a>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">id</td><td>index and type of the initial location of the person </td></tr>
@@ -333,7 +333,7 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>create a <a class="el" href="classmio_1_1abm_1_1Person.html" title="Agents in the simulated world that can carry and spread the infection.">Person</a>. </p>
+<p>create a <a class="el" href="classmio_1_1abm_1_1Person.html" title="Agents in the simulated World that can carry and spread the Infection.">Person</a>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">location</td><td>the initial location of the person </td></tr>
@@ -364,13 +364,14 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Checks whether the person wears a mask at the target location. </p>
+<p>Checks whether the <a class="el" href="classmio_1_1abm_1_1Person.html" title="Agents in the simulated World that can carry and spread the Infection.">Person</a> wears a <a class="el" href="classmio_1_1abm_1_1Mask.html" title="Reduces the probability that a Person becomes infected.">Mask</a> at the target <a class="el" href="classmio_1_1abm_1_1Location.html" title="all locations in the simulated world where persons gather.">Location</a>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">target</td><td>The target location. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">target</td><td>The target location. </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section return"><dt>Returns</dt><dd>Whether a <a class="el" href="classmio_1_1abm_1_1Person.html" title="Agents in the simulated World that can carry and spread the Infection.">Person</a> wears a <a class="el" href="classmio_1_1abm_1_1Mask.html" title="Reduces the probability that a Person becomes infected.">Mask</a> at the <a class="el" href="classmio_1_1abm_1_1Location.html" title="all locations in the simulated world where persons gather.">Location</a>. </dd></dl>
 
 </div>
 </div>
@@ -491,8 +492,8 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Every person has a random number to determine what time to go to school. </p>
-<p>Depending on this number person decides what time has to go to school; </p><dl class="section return"><dt>Returns</dt><dd>the time of going to school </dd></dl>
+<p>Draw at what time the <a class="el" href="classmio_1_1abm_1_1Person.html" title="Agents in the simulated World that can carry and spread the Infection.">Person</a> goes to work. </p>
+<p>Every person has a random number to determine what time to go to school. Depending on this number person decides what time has to go to school; </p><dl class="section return"><dt>Returns</dt><dd>the time of going to school </dd></dl>
 
 </div>
 </div>
@@ -512,8 +513,8 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Every person has a random number to determine what time to go to work. </p>
-<p>Depending on this number person decides what time has to go to work; </p><dl class="section return"><dt>Returns</dt><dd>the time of going to work </dd></dl>
+<p>Draw at what time the <a class="el" href="classmio_1_1abm_1_1Person.html" title="Agents in the simulated World that can carry and spread the Infection.">Person</a> goes to work. </p>
+<p>Every person has a random number to determine what time to go to work. Depending on this number person decides what time has to go to work; </p><dl class="section return"><dt>Returns</dt><dd>the time of going to work </dd></dl>
 
 </div>
 </div>
@@ -572,8 +573,7 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Get the mask of the person. </p>
-<dl class="section return"><dt>Returns</dt><dd>Current mask of the person. </dd></dl>
+<p>Get the current <a class="el" href="classmio_1_1abm_1_1Mask.html" title="Reduces the probability that a Person becomes infected.">Mask</a> of the <a class="el" href="classmio_1_1abm_1_1Person.html" title="Agents in the simulated World that can carry and spread the Infection.">Person</a>. </p>
 
 </div>
 </div>
@@ -610,7 +610,7 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Get the mask compliance of the person for the current location. </p>
+<p>Get the mask compliance of the <a class="el" href="classmio_1_1abm_1_1Person.html" title="Agents in the simulated World that can carry and spread the Infection.">Person</a> for the current location. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">location</td><td>the current location of the person </td></tr>
@@ -656,8 +656,8 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Get the protection of the mask. </p>
-<p>A value of 1 represents full protection and a value of 0 means no protection. </p><dl class="section return"><dt>Returns</dt><dd>The protection factor of the mask. </dd></dl>
+<p>Get the protection of the <a class="el" href="classmio_1_1abm_1_1Mask.html" title="Reduces the probability that a Person becomes infected.">Mask</a>. </p>
+<p>A value of 1 represents full protection and a value of 0 means no protection. </p>
 
 </div>
 </div>
@@ -792,8 +792,8 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Every person has a random number that determines if they go to school in case of a lockdown. </p>
-<dl class="section return"><dt>Returns</dt><dd>if the person goes to school </dd></dl>
+<p>Draw if the <a class="el" href="classmio_1_1abm_1_1Person.html" title="Agents in the simulated World that can carry and spread the Infection.">Person</a> goes to school or stays at home during lockdown. </p>
+<p>Every person has a random number that determines if they go to school in case of a lockdown. </p><dl class="section return"><dt>Returns</dt><dd>if the person goes to school </dd></dl>
 
 </div>
 </div>
@@ -823,8 +823,8 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Every person has a random number. </p>
-<p>Depending on this number and the time, the person works from home in case of a lockdown. </p><dl class="section return"><dt>Returns</dt><dd>if the person works from home </dd></dl>
+<p>Draw if the <a class="el" href="classmio_1_1abm_1_1Person.html" title="Agents in the simulated World that can carry and spread the Infection.">Person</a> goes to work or is in home office during lockdown. </p>
+<p>Every person has a random number. Depending on this number and the time, the person works from home in case of a lockdown. </p><dl class="section return"><dt>Returns</dt><dd>if the person works from home </dd></dl>
 
 </div>
 </div>
@@ -1023,10 +1023,10 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>For every LocationType a person has a compliance value between -1 and 1. </p>
-<p>-1 means that the <a class="el" href="classmio_1_1abm_1_1Person.html" title="Agents in the simulated world that can carry and spread the infection.">Person</a> never complies to any mask duty at the given LocationType. 1 means that the <a class="el" href="classmio_1_1abm_1_1Person.html" title="Agents in the simulated world that can carry and spread the infection.">Person</a> always wears a <a class="el" href="classmio_1_1abm_1_1Mask.html">Mask</a> a the LocationType even if it is not required. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>For every LocationType a <a class="el" href="classmio_1_1abm_1_1Person.html" title="Agents in the simulated World that can carry and spread the Infection.">Person</a> has a compliance value between -1 and 1. </p>
+<p>-1 means that the <a class="el" href="classmio_1_1abm_1_1Person.html" title="Agents in the simulated World that can carry and spread the Infection.">Person</a> never complies to any mask duty at the given LocationType. 1 means that the <a class="el" href="classmio_1_1abm_1_1Person.html" title="Agents in the simulated World that can carry and spread the Infection.">Person</a> always wears a <a class="el" href="classmio_1_1abm_1_1Mask.html" title="Reduces the probability that a Person becomes infected.">Mask</a> a the LocationType even if it is not required. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">preferences</td><td>The vector of mask compliance values for all LocationTypes. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">preferences</td><td>The vector of mask compliance values for all LocationTypes. </td></tr>
   </table>
   </dd>
 </dl>
