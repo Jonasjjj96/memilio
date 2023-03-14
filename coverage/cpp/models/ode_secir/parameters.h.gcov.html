@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2023-03-14 09:59:21</td>
+            <td class="headerValue">2023-03-14 11:10:16</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">44</td>
@@ -415,9 +415,9 @@
 <a name="353"><span class="lineNum">     353 </span>            :     {</a>
 <a name="354"><span class="lineNum">     354 </span><span class="lineCov">         39 :     }</span></a>
 <a name="355"><span class="lineNum">     355 </span>            : </a>
-<a name="356"><span class="lineNum">     356 </span><span class="lineCov">       6634 :     AgeGroup get_num_groups() const</span></a>
+<a name="356"><span class="lineNum">     356 </span><span class="lineCov">       7266 :     AgeGroup get_num_groups() const</span></a>
 <a name="357"><span class="lineNum">     357 </span>            :     {</a>
-<a name="358"><span class="lineNum">     358 </span><span class="lineCov">       6634 :         return m_num_groups;</span></a>
+<a name="358"><span class="lineNum">     358 </span><span class="lineCov">       7266 :         return m_num_groups;</span></a>
 <a name="359"><span class="lineNum">     359 </span>            :     }</a>
 <a name="360"><span class="lineNum">     360 </span>            : </a>
 <a name="361"><span class="lineNum">     361 </span>            :     /**</a>
@@ -426,9 +426,9 @@
 <a name="364"><span class="lineNum">     364 </span><span class="lineCov">         29 :     void apply_constraints()</span></a>
 <a name="365"><span class="lineNum">     365 </span>            :     {</a>
 <a name="366"><span class="lineNum">     366 </span><span class="lineCov">         29 :         if (this-&gt;get&lt;Seasonality&gt;() &lt; 0.0 || this-&gt;get&lt;Seasonality&gt;() &gt; 0.5) {</span></a>
-<a name="367"><span class="lineNum">     367 </span><span class="lineCov">          8 :             log_warning(&quot;Constraint check: Parameter Seasonality changed from {:0.4f} to {:d}&quot;,</span></a>
-<a name="368"><span class="lineNum">     368 </span><span class="lineCov">          8 :                         this-&gt;get&lt;Seasonality&gt;(), 0);</span></a>
-<a name="369"><span class="lineNum">     369 </span><span class="lineCov">          4 :             this-&gt;set&lt;Seasonality&gt;(0);</span></a>
+<a name="367"><span class="lineNum">     367 </span><span class="lineCov">         10 :             log_warning(&quot;Constraint check: Parameter Seasonality changed from {:0.4f} to {:d}&quot;,</span></a>
+<a name="368"><span class="lineNum">     368 </span><span class="lineCov">         10 :                         this-&gt;get&lt;Seasonality&gt;(), 0);</span></a>
+<a name="369"><span class="lineNum">     369 </span><span class="lineCov">          5 :             this-&gt;set&lt;Seasonality&gt;(0);</span></a>
 <a name="370"><span class="lineNum">     370 </span>            :         }</a>
 <a name="371"><span class="lineNum">     371 </span>            : </a>
 <a name="372"><span class="lineNum">     372 </span><span class="lineCov">         29 :         if (this-&gt;get&lt;ICUCapacity&gt;() &lt; 0.0) {</span></a>
@@ -446,11 +446,11 @@
 <a name="384"><span class="lineNum">     384 </span>            :             }</a>
 <a name="385"><span class="lineNum">     385 </span>            : </a>
 <a name="386"><span class="lineNum">     386 </span><span class="lineCov">         69 :             if (2 * this-&gt;get&lt;SerialInterval&gt;()[i] &lt; this-&gt;get&lt;IncubationTime&gt;()[i] + 1.0) {</span></a>
-<a name="387"><span class="lineNum">     387 </span><span class="lineCov">          6 :                 log_warning(&quot;Constraint check: Parameter SerialInterval changed from {:.4f} to {:.4f}&quot;,</span></a>
-<a name="388"><span class="lineNum">     388 </span><span class="lineCov">          6 :                             this-&gt;get&lt;SerialInterval&gt;()[i], 0.5 * this-&gt;get&lt;IncubationTime&gt;()[i] + 0.5);</span></a>
-<a name="389"><span class="lineNum">     389 </span><span class="lineCov">          3 :                 this-&gt;get&lt;SerialInterval&gt;()[i] = 0.5 * this-&gt;get&lt;IncubationTime&gt;()[i] + 0.5;</span></a>
+<a name="387"><span class="lineNum">     387 </span><span class="lineCov">         10 :                 log_warning(&quot;Constraint check: Parameter SerialInterval changed from {:.4f} to {:.4f}&quot;,</span></a>
+<a name="388"><span class="lineNum">     388 </span><span class="lineCov">         10 :                             this-&gt;get&lt;SerialInterval&gt;()[i], 0.5 * this-&gt;get&lt;IncubationTime&gt;()[i] + 0.5);</span></a>
+<a name="389"><span class="lineNum">     389 </span><span class="lineCov">          5 :                 this-&gt;get&lt;SerialInterval&gt;()[i] = 0.5 * this-&gt;get&lt;IncubationTime&gt;()[i] + 0.5;</span></a>
 <a name="390"><span class="lineNum">     390 </span>            :             }</a>
-<a name="391"><span class="lineNum">     391 </span><span class="lineCov">         66 :             else if (this-&gt;get&lt;SerialInterval&gt;()[i] &gt; this-&gt;get&lt;IncubationTime&gt;()[i] - 0.5) {</span></a>
+<a name="391"><span class="lineNum">     391 </span><span class="lineCov">         64 :             else if (this-&gt;get&lt;SerialInterval&gt;()[i] &gt; this-&gt;get&lt;IncubationTime&gt;()[i] - 0.5) {</span></a>
 <a name="392"><span class="lineNum">     392 </span><span class="lineCov">         12 :                 log_warning(&quot;Constraint check: Parameter SerialInterval changed from {:.4f} to {:.4f}&quot;,</span></a>
 <a name="393"><span class="lineNum">     393 </span><span class="lineCov">         12 :                             this-&gt;get&lt;SerialInterval&gt;()[i], this-&gt;get&lt;IncubationTime&gt;()[i] - 0.5);</span></a>
 <a name="394"><span class="lineNum">     394 </span><span class="lineCov">          6 :                 this-&gt;get&lt;SerialInterval&gt;()[i] = this-&gt;get&lt;IncubationTime&gt;()[i] - 0.5;</span></a>
