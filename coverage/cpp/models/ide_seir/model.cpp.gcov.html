@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2023-03-07 14:49:36</td>
+            <td class="headerValue">2023-03-14 09:59:21</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">6</td>
@@ -94,90 +94,90 @@
 <a name="32"><span class="lineNum">      32 </span>            : using Pa  = ParametersBase;</a>
 <a name="33"><span class="lineNum">      33 </span>            : using Vec = TimeSeries&lt;double&gt;::Vector;</a>
 <a name="34"><span class="lineNum">      34 </span>            : </a>
-<a name="35"><span class="lineNum">      35 </span><span class="lineCov">          1 : IdeSeirModel::IdeSeirModel(TimeSeries&lt;double&gt;&amp;&amp; init, double dt_init, int N_init, Pa Parameterset_init)</span></a>
+<a name="35"><span class="lineNum">      35 </span><span class="lineCov">          2 : IdeSeirModel::IdeSeirModel(TimeSeries&lt;double&gt;&amp;&amp; init, double dt_init, int N_init, Pa Parameterset_init)</span></a>
 <a name="36"><span class="lineNum">      36 </span>            :     : parameters{Parameterset_init}</a>
-<a name="37"><span class="lineNum">      37 </span><span class="lineCov">          1 :     , m_result{std::move(init)}</span></a>
+<a name="37"><span class="lineNum">      37 </span><span class="lineCov">          2 :     , m_result{std::move(init)}</span></a>
 <a name="38"><span class="lineNum">      38 </span>            :     , m_result_SEIR{TimeSeries&lt;double&gt;(4)}</a>
 <a name="39"><span class="lineNum">      39 </span>            :     , m_dt{dt_init}</a>
-<a name="40"><span class="lineNum">      40 </span><span class="lineCov">          2 :     , m_N{N_init}</span></a>
+<a name="40"><span class="lineNum">      40 </span><span class="lineCov">          4 :     , m_N{N_init}</span></a>
 <a name="41"><span class="lineNum">      41 </span>            : {</a>
-<a name="42"><span class="lineNum">      42 </span><span class="lineCov">          1 : }</span></a>
+<a name="42"><span class="lineNum">      42 </span><span class="lineCov">          2 : }</span></a>
 <a name="43"><span class="lineNum">      43 </span>            : </a>
-<a name="44"><span class="lineNum">      44 </span><span class="lineCov">      24900 : double IdeSeirModel::generalized_beta_distribution(double tau, double p, double q) const</span></a>
+<a name="44"><span class="lineNum">      44 </span><span class="lineCov">      26560 : double IdeSeirModel::generalized_beta_distribution(double tau, double p, double q) const</span></a>
 <a name="45"><span class="lineNum">      45 </span>            : {</a>
-<a name="46"><span class="lineNum">      46 </span><span class="lineCov">      49500 :     if ((parameters.get&lt;LatencyTime&gt;() &lt; tau) &amp;&amp;</span></a>
-<a name="47"><span class="lineNum">      47 </span><span class="lineCov">      24600 :         (parameters.get&lt;InfectiousTime&gt;() + parameters.get&lt;LatencyTime&gt;() &gt; tau)) {</span></a>
-<a name="48"><span class="lineNum">      48 </span><span class="lineCov">      24600 :         return tgamma(p + q) * pow(tau - parameters.get&lt;LatencyTime&gt;(), p - 1) *</span></a>
-<a name="49"><span class="lineNum">      49 </span><span class="lineCov">      24600 :                pow(parameters.get&lt;InfectiousTime&gt;() + parameters.get&lt;LatencyTime&gt;() - tau, q - 1) /</span></a>
-<a name="50"><span class="lineNum">      50 </span><span class="lineCov">      24600 :                (tgamma(p) * tgamma(q) * pow(parameters.get&lt;InfectiousTime&gt;(), p + q - 1));</span></a>
+<a name="46"><span class="lineNum">      46 </span><span class="lineCov">      52800 :     if ((parameters.get&lt;LatencyTime&gt;() &lt; tau) &amp;&amp;</span></a>
+<a name="47"><span class="lineNum">      47 </span><span class="lineCov">      26240 :         (parameters.get&lt;InfectiousTime&gt;() + parameters.get&lt;LatencyTime&gt;() &gt; tau)) {</span></a>
+<a name="48"><span class="lineNum">      48 </span><span class="lineCov">      26240 :         return tgamma(p + q) * pow(tau - parameters.get&lt;LatencyTime&gt;(), p - 1) *</span></a>
+<a name="49"><span class="lineNum">      49 </span><span class="lineCov">      26240 :                pow(parameters.get&lt;InfectiousTime&gt;() + parameters.get&lt;LatencyTime&gt;() - tau, q - 1) /</span></a>
+<a name="50"><span class="lineNum">      50 </span><span class="lineCov">      26240 :                (tgamma(p) * tgamma(q) * pow(parameters.get&lt;InfectiousTime&gt;(), p + q - 1));</span></a>
 <a name="51"><span class="lineNum">      51 </span>            :     }</a>
-<a name="52"><span class="lineNum">      52 </span><span class="lineCov">        300 :     return 0.0;</span></a>
+<a name="52"><span class="lineNum">      52 </span><span class="lineCov">        320 :     return 0.0;</span></a>
 <a name="53"><span class="lineNum">      53 </span>            : }</a>
 <a name="54"><span class="lineNum">      54 </span>            : </a>
-<a name="55"><span class="lineNum">      55 </span><span class="lineCov">      24900 : double IdeSeirModel::central_difference_quotient(TimeSeries&lt;double&gt; const&amp; ts_ide, InfectionState compartment,</span></a>
+<a name="55"><span class="lineNum">      55 </span><span class="lineCov">      26560 : double IdeSeirModel::central_difference_quotient(TimeSeries&lt;double&gt; const&amp; ts_ide, InfectionState compartment,</span></a>
 <a name="56"><span class="lineNum">      56 </span>            :                                                  Eigen::Index idx) const</a>
 <a name="57"><span class="lineNum">      57 </span>            : {</a>
-<a name="58"><span class="lineNum">      58 </span><span class="lineCov">      24900 :     return (ts_ide[idx + 1][Eigen::Index(compartment)] - ts_ide[idx - 1][Eigen::Index(compartment)]) / (2 * m_dt);</span></a>
+<a name="58"><span class="lineNum">      58 </span><span class="lineCov">      26560 :     return (ts_ide[idx + 1][Eigen::Index(compartment)] - ts_ide[idx - 1][Eigen::Index(compartment)]) / (2 * m_dt);</span></a>
 <a name="59"><span class="lineNum">      59 </span>            : }</a>
 <a name="60"><span class="lineNum">      60 </span>            : </a>
-<a name="61"><span class="lineNum">      61 </span><span class="lineCov">        300 : double IdeSeirModel::num_integration_inner_integral(Eigen::Index idx) const</span></a>
+<a name="61"><span class="lineNum">      61 </span><span class="lineCov">        320 : double IdeSeirModel::num_integration_inner_integral(Eigen::Index idx) const</span></a>
 <a name="62"><span class="lineNum">      62 </span>            : {</a>
-<a name="63"><span class="lineNum">      63 </span><span class="lineCov">        300 :     double res     = 0.5 * (generalized_beta_distribution(m_result.get_time(idx) - m_result.get_time(idx - m_k)) *</span></a>
-<a name="64"><span class="lineNum">      64 </span><span class="lineCov">        300 :                             central_difference_quotient(m_result, InfectionState::S, m_k) +</span></a>
-<a name="65"><span class="lineNum">      65 </span><span class="lineCov">        300 :                         generalized_beta_distribution(m_result.get_time(idx) - m_result.get_time(idx - m_l)) *</span></a>
-<a name="66"><span class="lineNum">      66 </span><span class="lineCov">        300 :                             central_difference_quotient(m_result, InfectionState::S, idx - m_l));</span></a>
-<a name="67"><span class="lineNum">      67 </span><span class="lineCov">        300 :     Eigen::Index i = idx - m_k + 1;</span></a>
-<a name="68"><span class="lineNum">      68 </span><span class="lineCov">      24600 :     while (i &lt;= idx - m_l - 2) {</span></a>
-<a name="69"><span class="lineNum">      69 </span><span class="lineCov">      24300 :         res += (generalized_beta_distribution(m_result.get_time(idx) - m_result.get_time(i)) *</span></a>
-<a name="70"><span class="lineNum">      70 </span><span class="lineCov">      24300 :                 central_difference_quotient(m_result, InfectionState::S, i));</span></a>
-<a name="71"><span class="lineNum">      71 </span><span class="lineCov">      24300 :         ++i;</span></a>
+<a name="63"><span class="lineNum">      63 </span><span class="lineCov">        320 :     double res     = 0.5 * (generalized_beta_distribution(m_result.get_time(idx) - m_result.get_time(idx - m_k)) *</span></a>
+<a name="64"><span class="lineNum">      64 </span><span class="lineCov">        320 :                             central_difference_quotient(m_result, InfectionState::S, m_k) +</span></a>
+<a name="65"><span class="lineNum">      65 </span><span class="lineCov">        320 :                         generalized_beta_distribution(m_result.get_time(idx) - m_result.get_time(idx - m_l)) *</span></a>
+<a name="66"><span class="lineNum">      66 </span><span class="lineCov">        320 :                             central_difference_quotient(m_result, InfectionState::S, idx - m_l));</span></a>
+<a name="67"><span class="lineNum">      67 </span><span class="lineCov">        320 :     Eigen::Index i = idx - m_k + 1;</span></a>
+<a name="68"><span class="lineNum">      68 </span><span class="lineCov">      26240 :     while (i &lt;= idx - m_l - 2) {</span></a>
+<a name="69"><span class="lineNum">      69 </span><span class="lineCov">      25920 :         res += (generalized_beta_distribution(m_result.get_time(idx) - m_result.get_time(i)) *</span></a>
+<a name="70"><span class="lineNum">      70 </span><span class="lineCov">      25920 :                 central_difference_quotient(m_result, InfectionState::S, i));</span></a>
+<a name="71"><span class="lineNum">      71 </span><span class="lineCov">      25920 :         ++i;</span></a>
 <a name="72"><span class="lineNum">      72 </span>            :     }</a>
-<a name="73"><span class="lineNum">      73 </span><span class="lineCov">        300 :     return res;</span></a>
+<a name="73"><span class="lineNum">      73 </span><span class="lineCov">        320 :     return res;</span></a>
 <a name="74"><span class="lineNum">      74 </span>            : }</a>
 <a name="75"><span class="lineNum">      75 </span>            : </a>
-<a name="76"><span class="lineNum">      76 </span><span class="lineCov">          1 : TimeSeries&lt;double&gt; const&amp; IdeSeirModel::simulate(int t_max)</span></a>
+<a name="76"><span class="lineNum">      76 </span><span class="lineCov">          2 : TimeSeries&lt;double&gt; const&amp; IdeSeirModel::simulate(int t_max)</span></a>
 <a name="77"><span class="lineNum">      77 </span>            : {</a>
 <a name="78"><span class="lineNum">      78 </span>            : </a>
-<a name="79"><span class="lineNum">      79 </span><span class="lineCov">          1 :     m_l = (int)std::floor(parameters.get&lt;LatencyTime&gt;() / m_dt);</span></a>
-<a name="80"><span class="lineNum">      80 </span><span class="lineCov">          1 :     m_k = (int)std::ceil((parameters.get&lt;InfectiousTime&gt;() + parameters.get&lt;LatencyTime&gt;()) / m_dt);</span></a>
-<a name="81"><span class="lineNum">      81 </span><span class="lineCov">          1 :     if (m_result.get_time(0) &gt; -(m_k - 1) * m_dt) {</span></a>
+<a name="79"><span class="lineNum">      79 </span><span class="lineCov">          2 :     m_l = (int)std::floor(parameters.get&lt;LatencyTime&gt;() / m_dt);</span></a>
+<a name="80"><span class="lineNum">      80 </span><span class="lineCov">          2 :     m_k = (int)std::ceil((parameters.get&lt;InfectiousTime&gt;() + parameters.get&lt;LatencyTime&gt;()) / m_dt);</span></a>
+<a name="81"><span class="lineNum">      81 </span><span class="lineCov">          2 :     if (m_result.get_time(0) &gt; -(m_k - 1) * m_dt) {</span></a>
 <a name="82"><span class="lineNum">      82 </span><span class="lineNoCov">          0 :         log_warning(&quot;Constraint check: Initial data starts later than necessary. The simulation may be distorted. &quot;</span></a>
 <a name="83"><span class="lineNum">      83 </span>            :                     &quot;Start the data at time {:.4f} at the latest.&quot;,</a>
 <a name="84"><span class="lineNum">      84 </span><span class="lineNoCov">          0 :                     -(m_k - 1) * m_dt);</span></a>
 <a name="85"><span class="lineNum">      85 </span>            :     }</a>
 <a name="86"><span class="lineNum">      86 </span>            : </a>
-<a name="87"><span class="lineNum">      87 </span><span class="lineCov">        151 :     while (m_result.get_last_time() &lt; t_max) {</span></a>
-<a name="88"><span class="lineNum">      88 </span><span class="lineCov">        150 :         m_result.add_time_point(m_result.get_last_time() + m_dt);</span></a>
-<a name="89"><span class="lineNum">      89 </span><span class="lineCov">        150 :         Eigen::Index idx = m_result.get_num_time_points();</span></a>
+<a name="87"><span class="lineNum">      87 </span><span class="lineCov">        162 :     while (m_result.get_last_time() &lt; t_max) {</span></a>
+<a name="88"><span class="lineNum">      88 </span><span class="lineCov">        160 :         m_result.add_time_point(m_result.get_last_time() + m_dt);</span></a>
+<a name="89"><span class="lineNum">      89 </span><span class="lineCov">        160 :         Eigen::Index idx = m_result.get_num_time_points();</span></a>
 <a name="90"><span class="lineNum">      90 </span>            : </a>
 <a name="91"><span class="lineNum">      91 </span>            :         // R0t is the effective reproduction number at time t</a>
 <a name="92"><span class="lineNum">      92 </span>            :         auto R0t1 =</a>
-<a name="93"><span class="lineNum">      93 </span><span class="lineCov">        150 :             parameters.get&lt;ContactFrequency&gt;().get_cont_freq_mat().get_matrix_at(m_result.get_time(idx - 2))(0, 0) *</span></a>
-<a name="94"><span class="lineNum">      94 </span><span class="lineCov">        300 :             parameters.get&lt;TransmissionRisk&gt;() * parameters.get&lt;InfectiousTime&gt;();</span></a>
+<a name="93"><span class="lineNum">      93 </span><span class="lineCov">        160 :             parameters.get&lt;ContactFrequency&gt;().get_cont_freq_mat().get_matrix_at(m_result.get_time(idx - 2))(0, 0) *</span></a>
+<a name="94"><span class="lineNum">      94 </span><span class="lineCov">        320 :             parameters.get&lt;TransmissionRisk&gt;() * parameters.get&lt;InfectiousTime&gt;();</span></a>
 <a name="95"><span class="lineNum">      95 </span>            :         auto R0t2 =</a>
-<a name="96"><span class="lineNum">      96 </span><span class="lineCov">        150 :             parameters.get&lt;ContactFrequency&gt;().get_cont_freq_mat().get_matrix_at(m_result.get_last_time())(0, 0) *</span></a>
-<a name="97"><span class="lineNum">      97 </span><span class="lineCov">        300 :             parameters.get&lt;TransmissionRisk&gt;() * parameters.get&lt;InfectiousTime&gt;();</span></a>
+<a name="96"><span class="lineNum">      96 </span><span class="lineCov">        160 :             parameters.get&lt;ContactFrequency&gt;().get_cont_freq_mat().get_matrix_at(m_result.get_last_time())(0, 0) *</span></a>
+<a name="97"><span class="lineNum">      97 </span><span class="lineCov">        320 :             parameters.get&lt;TransmissionRisk&gt;() * parameters.get&lt;InfectiousTime&gt;();</span></a>
 <a name="98"><span class="lineNum">      98 </span>            : </a>
-<a name="99"><span class="lineNum">      99 </span><span class="lineCov">        450 :         m_result.get_last_value() =</span></a>
-<a name="100"><span class="lineNum">     100 </span><span class="lineCov">        450 :             Vec::Constant(1, m_result[idx - 2][0] * exp(m_dt * (0.5 * 1 / m_N) *</span></a>
-<a name="101"><span class="lineNum">     101 </span><span class="lineCov">        150 :                                                         (R0t1 * num_integration_inner_integral(idx - 2) +</span></a>
-<a name="102"><span class="lineNum">     102 </span><span class="lineCov">        300 :                                                          R0t2 * num_integration_inner_integral(idx - 1))));</span></a>
+<a name="99"><span class="lineNum">      99 </span><span class="lineCov">        480 :         m_result.get_last_value() =</span></a>
+<a name="100"><span class="lineNum">     100 </span><span class="lineCov">        480 :             Vec::Constant(1, m_result[idx - 2][0] * exp(m_dt * (0.5 * 1 / m_N) *</span></a>
+<a name="101"><span class="lineNum">     101 </span><span class="lineCov">        160 :                                                         (R0t1 * num_integration_inner_integral(idx - 2) +</span></a>
+<a name="102"><span class="lineNum">     102 </span><span class="lineCov">        320 :                                                          R0t2 * num_integration_inner_integral(idx - 1))));</span></a>
 <a name="103"><span class="lineNum">     103 </span>            :     }</a>
-<a name="104"><span class="lineNum">     104 </span><span class="lineCov">          1 :     return m_result;</span></a>
+<a name="104"><span class="lineNum">     104 </span><span class="lineCov">          2 :     return m_result;</span></a>
 <a name="105"><span class="lineNum">     105 </span>            : }</a>
 <a name="106"><span class="lineNum">     106 </span>            : </a>
-<a name="107"><span class="lineNum">     107 </span><span class="lineCov">          1 : TimeSeries&lt;double&gt; const&amp; IdeSeirModel::calculate_EIR()</span></a>
+<a name="107"><span class="lineNum">     107 </span><span class="lineCov">          2 : TimeSeries&lt;double&gt; const&amp; IdeSeirModel::calculate_EIR()</span></a>
 <a name="108"><span class="lineNum">     108 </span>            : {</a>
-<a name="109"><span class="lineNum">     109 </span><span class="lineCov">          1 :     Eigen::Index num_points = m_result.get_num_time_points();</span></a>
-<a name="110"><span class="lineNum">     110 </span><span class="lineCov">          1 :     double S, E, I, R;</span></a>
-<a name="111"><span class="lineNum">     111 </span><span class="lineCov">        188 :     for (Eigen::Index i = m_k; i &lt; num_points; ++i) {</span></a>
-<a name="112"><span class="lineNum">     112 </span><span class="lineCov">        187 :         S = m_result[i][Eigen::Index(InfectionState::S)];</span></a>
-<a name="113"><span class="lineNum">     113 </span><span class="lineCov">        187 :         E = m_result[i - m_l][Eigen::Index(InfectionState::S)] - S;</span></a>
-<a name="114"><span class="lineNum">     114 </span><span class="lineCov">        187 :         I = m_result[i - m_k][Eigen::Index(InfectionState::S)] - m_result[i - m_l][Eigen::Index(InfectionState::S)];</span></a>
-<a name="115"><span class="lineNum">     115 </span><span class="lineCov">        187 :         R = m_N - S - E - I;</span></a>
-<a name="116"><span class="lineNum">     116 </span><span class="lineCov">        187 :         m_result_SEIR.add_time_point(m_result.get_time(i), (Vec(4) &lt;&lt; S, E, I, R).finished());</span></a>
+<a name="109"><span class="lineNum">     109 </span><span class="lineCov">          2 :     Eigen::Index num_points = m_result.get_num_time_points();</span></a>
+<a name="110"><span class="lineNum">     110 </span><span class="lineCov">          2 :     double S, E, I, R;</span></a>
+<a name="111"><span class="lineNum">     111 </span><span class="lineCov">        206 :     for (Eigen::Index i = m_k; i &lt; num_points; ++i) {</span></a>
+<a name="112"><span class="lineNum">     112 </span><span class="lineCov">        204 :         S = m_result[i][Eigen::Index(InfectionState::S)];</span></a>
+<a name="113"><span class="lineNum">     113 </span><span class="lineCov">        204 :         E = m_result[i - m_l][Eigen::Index(InfectionState::S)] - S;</span></a>
+<a name="114"><span class="lineNum">     114 </span><span class="lineCov">        204 :         I = m_result[i - m_k][Eigen::Index(InfectionState::S)] - m_result[i - m_l][Eigen::Index(InfectionState::S)];</span></a>
+<a name="115"><span class="lineNum">     115 </span><span class="lineCov">        204 :         R = m_N - S - E - I;</span></a>
+<a name="116"><span class="lineNum">     116 </span><span class="lineCov">        204 :         m_result_SEIR.add_time_point(m_result.get_time(i), (Vec(4) &lt;&lt; S, E, I, R).finished());</span></a>
 <a name="117"><span class="lineNum">     117 </span>            :     }</a>
-<a name="118"><span class="lineNum">     118 </span><span class="lineCov">          2 :     return m_result_SEIR;</span></a>
+<a name="118"><span class="lineNum">     118 </span><span class="lineCov">          4 :     return m_result_SEIR;</span></a>
 <a name="119"><span class="lineNum">     119 </span>            : }</a>
 <a name="120"><span class="lineNum">     120 </span>            : </a>
 <a name="121"><span class="lineNum">     121 </span><span class="lineNoCov">          0 : void IdeSeirModel::print_result(bool calculated_SEIR) const</span></a>

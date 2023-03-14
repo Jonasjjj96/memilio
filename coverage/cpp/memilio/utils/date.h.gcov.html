@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2023-03-07 14:49:36</td>
+            <td class="headerValue">2023-03-14 09:59:21</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">12</td>
@@ -110,15 +110,15 @@
 <a name="48"><span class="lineNum">      48 </span>            :      * @param m month as int, 1 - 12</a>
 <a name="49"><span class="lineNum">      49 </span>            :      * @param d day as int, 1 - 31</a>
 <a name="50"><span class="lineNum">      50 </span>            :      */</a>
-<a name="51"><span class="lineNum">      51 </span><span class="lineCov">     240397 :     Date(int y, int m, int d)</span></a>
+<a name="51"><span class="lineNum">      51 </span><span class="lineCov">     240399 :     Date(int y, int m, int d)</span></a>
 <a name="52"><span class="lineNum">      52 </span>            : </a>
-<a name="53"><span class="lineNum">      53 </span><span class="lineCov">     240397 :         : year(y)</span></a>
+<a name="53"><span class="lineNum">      53 </span><span class="lineCov">     240399 :         : year(y)</span></a>
 <a name="54"><span class="lineNum">      54 </span>            :         , month(m)</a>
-<a name="55"><span class="lineNum">      55 </span><span class="lineCov">     240397 :         , day(d)</span></a>
+<a name="55"><span class="lineNum">      55 </span><span class="lineCov">     240399 :         , day(d)</span></a>
 <a name="56"><span class="lineNum">      56 </span>            :     {</a>
-<a name="57"><span class="lineNum">      57 </span><span class="lineCov">     240397 :         assert(month &gt; 0 &amp;&amp; month &lt; 13);</span></a>
-<a name="58"><span class="lineNum">      58 </span><span class="lineCov">     240397 :         assert(day &gt; 0 &amp;&amp; day &lt; 32);</span></a>
-<a name="59"><span class="lineNum">      59 </span><span class="lineCov">     240397 :     }</span></a>
+<a name="57"><span class="lineNum">      57 </span><span class="lineCov">     240399 :         assert(month &gt; 0 &amp;&amp; month &lt; 13);</span></a>
+<a name="58"><span class="lineNum">      58 </span><span class="lineCov">     240399 :         assert(day &gt; 0 &amp;&amp; day &lt; 32);</span></a>
+<a name="59"><span class="lineNum">      59 </span><span class="lineCov">     240399 :     }</span></a>
 <a name="60"><span class="lineNum">      60 </span>            : </a>
 <a name="61"><span class="lineNum">      61 </span>            :     /**</a>
 <a name="62"><span class="lineNum">      62 </span>            :      * equality comparison operators.</a>
@@ -285,30 +285,30 @@
 <a name="223"><span class="lineNum">     223 </span>            :  * @param date date</a>
 <a name="224"><span class="lineNum">     224 </span>            :  * @return day in year, starting January, 1st, with 1.</a>
 <a name="225"><span class="lineNum">     225 </span>            :  */</a>
-<a name="226"><span class="lineNum">     226 </span><span class="lineCov">      43142 : inline int get_day_in_year(Date date)</span></a>
+<a name="226"><span class="lineNum">     226 </span><span class="lineCov">      43144 : inline int get_day_in_year(Date date)</span></a>
 <a name="227"><span class="lineNum">     227 </span>            : {</a>
-<a name="228"><span class="lineNum">     228 </span><span class="lineCov">      43142 :     auto year  = date.year;</span></a>
-<a name="229"><span class="lineNum">     229 </span><span class="lineCov">      43142 :     auto month = date.month;</span></a>
-<a name="230"><span class="lineNum">     230 </span><span class="lineCov">      43142 :     auto day   = date.day;</span></a>
-<a name="231"><span class="lineNum">     231 </span><span class="lineCov">      43142 :     assert(month &gt; 0 &amp;&amp; month &lt; 13 &amp;&amp; day &gt; 0 &amp;&amp; day &lt; 32);</span></a>
+<a name="228"><span class="lineNum">     228 </span><span class="lineCov">      43144 :     auto year  = date.year;</span></a>
+<a name="229"><span class="lineNum">     229 </span><span class="lineCov">      43144 :     auto month = date.month;</span></a>
+<a name="230"><span class="lineNum">     230 </span><span class="lineCov">      43144 :     auto day   = date.day;</span></a>
+<a name="231"><span class="lineNum">     231 </span><span class="lineCov">      43144 :     assert(month &gt; 0 &amp;&amp; month &lt; 13 &amp;&amp; day &gt; 0 &amp;&amp; day &lt; 32);</span></a>
 <a name="232"><span class="lineNum">     232 </span>            : </a>
-<a name="233"><span class="lineNum">     233 </span><span class="lineCov">      43142 :     if (month &gt; 1) {</span></a>
-<a name="234"><span class="lineNum">     234 </span><span class="lineCov">      21610 :         std::array&lt;int, 12&gt; month_len;</span></a>
-<a name="235"><span class="lineNum">     235 </span><span class="lineCov">      21610 :         if (((year % 4 == 0) &amp;&amp; (year % 100 != 0)) || (year % 400 == 0)) {</span></a>
+<a name="233"><span class="lineNum">     233 </span><span class="lineCov">      43144 :     if (month &gt; 1) {</span></a>
+<a name="234"><span class="lineNum">     234 </span><span class="lineCov">      21612 :         std::array&lt;int, 12&gt; month_len;</span></a>
+<a name="235"><span class="lineNum">     235 </span><span class="lineCov">      21612 :         if (((year % 4 == 0) &amp;&amp; (year % 100 != 0)) || (year % 400 == 0)) {</span></a>
 <a name="236"><span class="lineNum">     236 </span>            :             // leap year</a>
 <a name="237"><span class="lineNum">     237 </span><span class="lineCov">      21541 :             month_len = {31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};</span></a>
 <a name="238"><span class="lineNum">     238 </span>            :         }</a>
 <a name="239"><span class="lineNum">     239 </span>            :         else {</a>
-<a name="240"><span class="lineNum">     240 </span><span class="lineCov">         69 :             month_len = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};</span></a>
+<a name="240"><span class="lineNum">     240 </span><span class="lineCov">         71 :             month_len = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};</span></a>
 <a name="241"><span class="lineNum">     241 </span>            :         }</a>
 <a name="242"><span class="lineNum">     242 </span>            : </a>
-<a name="243"><span class="lineNum">     243 </span><span class="lineCov">      21610 :         std::array&lt;int, 12&gt; part_sum;</span></a>
-<a name="244"><span class="lineNum">     244 </span><span class="lineCov">      21610 :         std::partial_sum(month_len.begin(), month_len.end(), part_sum.begin());</span></a>
+<a name="243"><span class="lineNum">     243 </span><span class="lineCov">      21612 :         std::array&lt;int, 12&gt; part_sum;</span></a>
+<a name="244"><span class="lineNum">     244 </span><span class="lineCov">      21612 :         std::partial_sum(month_len.begin(), month_len.end(), part_sum.begin());</span></a>
 <a name="245"><span class="lineNum">     245 </span>            : </a>
 <a name="246"><span class="lineNum">     246 </span>            :         // take month-2 since end of last month has to be found and due to start at 0 of C++ (against January=1 in date format)</a>
-<a name="247"><span class="lineNum">     247 </span><span class="lineCov">      21610 :         int day_in_year = part_sum[month - 2] + day;</span></a>
+<a name="247"><span class="lineNum">     247 </span><span class="lineCov">      21612 :         int day_in_year = part_sum[month - 2] + day;</span></a>
 <a name="248"><span class="lineNum">     248 </span>            : </a>
-<a name="249"><span class="lineNum">     249 </span><span class="lineCov">      21610 :         return day_in_year;</span></a>
+<a name="249"><span class="lineNum">     249 </span><span class="lineCov">      21612 :         return day_in_year;</span></a>
 <a name="250"><span class="lineNum">     250 </span>            :     }</a>
 <a name="251"><span class="lineNum">     251 </span>            :     else {</a>
 <a name="252"><span class="lineNum">     252 </span><span class="lineCov">      21532 :         return day;</span></a>
