@@ -37,12 +37,12 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2023-03-20 02:27:06</td>
+            <td class="headerValue">2023-03-20 15:15:30</td>
             <td></td>
             <td class="headerItem">Functions:</td>
-            <td class="headerCovTableEntry">5</td>
+            <td class="headerCovTableEntry">7</td>
             <td class="headerCovTableEntry">9</td>
-            <td class="headerCovTableEntryLo">55.6 %</td>
+            <td class="headerCovTableEntryMed">77.8 %</td>
           </tr>
           <tr><td><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
         </table>
@@ -171,15 +171,15 @@
 <a name="109"><span class="lineNum">     109 </span>            :  */</a>
 <a name="110"><span class="lineNum">     110 </span>            : template &lt;class Simulation&gt;</a>
 <a name="111"><span class="lineNum">     111 </span>            : std::vector&lt;TimeSeries&lt;double&gt;&gt;</a>
-<a name="112"><span class="lineNum">     112 </span><span class="lineCov">          1 : interpolate_simulation_result(const Graph&lt;SimulationNode&lt;Simulation&gt;, MigrationEdge&gt;&amp; graph_result)</span></a>
+<a name="112"><span class="lineNum">     112 </span><span class="lineCov">          7 : interpolate_simulation_result(const Graph&lt;SimulationNode&lt;Simulation&gt;, MigrationEdge&gt;&amp; graph_result)</span></a>
 <a name="113"><span class="lineNum">     113 </span>            : {</a>
-<a name="114"><span class="lineNum">     114 </span><span class="lineCov">          1 :     std::vector&lt;TimeSeries&lt;double&gt;&gt; interpolated;</span></a>
-<a name="115"><span class="lineNum">     115 </span><span class="lineCov">          1 :     interpolated.reserve(graph_result.nodes().size());</span></a>
-<a name="116"><span class="lineNum">     116 </span><span class="lineCov">          1 :     std::transform(graph_result.nodes().begin(), graph_result.nodes().end(), std::back_inserter(interpolated),</span></a>
-<a name="117"><span class="lineNum">     117 </span><span class="lineCov">          2 :                    [](auto&amp; n) {</span></a>
-<a name="118"><span class="lineNum">     118 </span><span class="lineCov">          2 :                        return interpolate_simulation_result(n.property.get_result());</span></a>
+<a name="114"><span class="lineNum">     114 </span><span class="lineCov">          7 :     std::vector&lt;TimeSeries&lt;double&gt;&gt; interpolated;</span></a>
+<a name="115"><span class="lineNum">     115 </span><span class="lineCov">          7 :     interpolated.reserve(graph_result.nodes().size());</span></a>
+<a name="116"><span class="lineNum">     116 </span><span class="lineCov">          7 :     std::transform(graph_result.nodes().begin(), graph_result.nodes().end(), std::back_inserter(interpolated),</span></a>
+<a name="117"><span class="lineNum">     117 </span><span class="lineCov">         14 :                    [](auto&amp; n) {</span></a>
+<a name="118"><span class="lineNum">     118 </span><span class="lineCov">         14 :                        return interpolate_simulation_result(n.property.get_result());</span></a>
 <a name="119"><span class="lineNum">     119 </span>            :                    });</a>
-<a name="120"><span class="lineNum">     120 </span><span class="lineCov">          1 :     return interpolated;</span></a>
+<a name="120"><span class="lineNum">     120 </span><span class="lineCov">          7 :     return interpolated;</span></a>
 <a name="121"><span class="lineNum">     121 </span>            : }</a>
 <a name="122"><span class="lineNum">     122 </span>            : </a>
 <a name="123"><span class="lineNum">     123 </span>            : /**</a>

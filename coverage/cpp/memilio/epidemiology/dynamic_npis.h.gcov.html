@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2023-03-20 02:27:06</td>
+            <td class="headerValue">2023-03-20 15:15:30</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">35</td>
@@ -131,13 +131,13 @@
 <a name="69"><span class="lineNum">      69 </span>            :      * @returns the range of set thresholds.</a>
 <a name="70"><span class="lineNum">      70 </span>            :      * @{</a>
 <a name="71"><span class="lineNum">      71 </span>            :      */</a>
-<a name="72"><span class="lineNum">      72 </span><span class="lineCov">         14 :     auto get_thresholds() const</span></a>
+<a name="72"><span class="lineNum">      72 </span><span class="lineCov">         46 :     auto get_thresholds() const</span></a>
 <a name="73"><span class="lineNum">      73 </span>            :     {</a>
-<a name="74"><span class="lineNum">      74 </span><span class="lineCov">         28 :         return make_range(m_thresholds.begin(), m_thresholds.end());</span></a>
+<a name="74"><span class="lineNum">      74 </span><span class="lineCov">         92 :         return make_range(m_thresholds.begin(), m_thresholds.end());</span></a>
 <a name="75"><span class="lineNum">      75 </span>            :     }</a>
-<a name="76"><span class="lineNum">      76 </span><span class="lineCov">        138 :     auto get_thresholds()</span></a>
+<a name="76"><span class="lineNum">      76 </span><span class="lineCov">        210 :     auto get_thresholds()</span></a>
 <a name="77"><span class="lineNum">      77 </span>            :     {</a>
-<a name="78"><span class="lineNum">      78 </span><span class="lineCov">        276 :         return make_range(m_thresholds.begin(), m_thresholds.end());</span></a>
+<a name="78"><span class="lineNum">      78 </span><span class="lineCov">        420 :         return make_range(m_thresholds.begin(), m_thresholds.end());</span></a>
 <a name="79"><span class="lineNum">      79 </span>            :     }</a>
 <a name="80"><span class="lineNum">      80 </span>            :     /** @} */</a>
 <a name="81"><span class="lineNum">      81 </span>            : </a>
@@ -145,9 +145,9 @@
 <a name="83"><span class="lineNum">      83 </span>            :      * get the duration of the NPIs.</a>
 <a name="84"><span class="lineNum">      84 </span>            :      * @return the duration of the NPIs.</a>
 <a name="85"><span class="lineNum">      85 </span>            :      */</a>
-<a name="86"><span class="lineNum">      86 </span><span class="lineCov">         11 :     SimulationTime get_duration() const</span></a>
+<a name="86"><span class="lineNum">      86 </span><span class="lineCov">         27 :     SimulationTime get_duration() const</span></a>
 <a name="87"><span class="lineNum">      87 </span>            :     {</a>
-<a name="88"><span class="lineNum">      88 </span><span class="lineCov">         11 :         return m_duration;</span></a>
+<a name="88"><span class="lineNum">      88 </span><span class="lineCov">         27 :         return m_duration;</span></a>
 <a name="89"><span class="lineNum">      89 </span>            :     }</a>
 <a name="90"><span class="lineNum">      90 </span>            : </a>
 <a name="91"><span class="lineNum">      91 </span>            :     /**</a>
@@ -166,9 +166,9 @@
 <a name="104"><span class="lineNum">     104 </span>            :     /**</a>
 <a name="105"><span class="lineNum">     105 </span>            :      * @return the interval at which the NPIs are checked.</a>
 <a name="106"><span class="lineNum">     106 </span>            :      */</a>
-<a name="107"><span class="lineNum">     107 </span><span class="lineCov">         16 :     SimulationTime get_interval() const</span></a>
+<a name="107"><span class="lineNum">     107 </span><span class="lineCov">         32 :     SimulationTime get_interval() const</span></a>
 <a name="108"><span class="lineNum">     108 </span>            :     {</a>
-<a name="109"><span class="lineNum">     109 </span><span class="lineCov">         16 :         return m_interval;</span></a>
+<a name="109"><span class="lineNum">     109 </span><span class="lineCov">         32 :         return m_interval;</span></a>
 <a name="110"><span class="lineNum">     110 </span>            :     }</a>
 <a name="111"><span class="lineNum">     111 </span>            :     /**</a>
 <a name="112"><span class="lineNum">     112 </span>            :      * @param interval The interval at which the NPIs are checked.</a>
@@ -188,9 +188,9 @@
 <a name="126"><span class="lineNum">     126 </span>            :     /**</a>
 <a name="127"><span class="lineNum">     127 </span>            :      * @return The base value of the thresholds.</a>
 <a name="128"><span class="lineNum">     128 </span>            :      */</a>
-<a name="129"><span class="lineNum">     129 </span><span class="lineCov">         17 :     double get_base_value() const</span></a>
+<a name="129"><span class="lineNum">     129 </span><span class="lineCov">         33 :     double get_base_value() const</span></a>
 <a name="130"><span class="lineNum">     130 </span>            :     {</a>
-<a name="131"><span class="lineNum">     131 </span><span class="lineCov">         17 :         return m_base;</span></a>
+<a name="131"><span class="lineNum">     131 </span><span class="lineCov">         33 :         return m_base;</span></a>
 <a name="132"><span class="lineNum">     132 </span>            :     }</a>
 <a name="133"><span class="lineNum">     133 </span>            :     /**</a>
 <a name="134"><span class="lineNum">     134 </span>            :      * @return The base value of the thresholds.</a>
@@ -204,28 +204,28 @@
 <a name="142"><span class="lineNum">     142 </span>            :     /**</a>
 <a name="143"><span class="lineNum">     143 </span>            :      * draw a random sample from the damping distributions</a>
 <a name="144"><span class="lineNum">     144 </span>            :      */</a>
-<a name="145"><span class="lineNum">     145 </span><span class="lineCov">         13 :     void draw_sample()</span></a>
+<a name="145"><span class="lineNum">     145 </span><span class="lineCov">         19 :     void draw_sample()</span></a>
 <a name="146"><span class="lineNum">     146 </span>            :     {</a>
-<a name="147"><span class="lineNum">     147 </span><span class="lineCov">         24 :         for (auto&amp;&amp; t : m_thresholds) {</span></a>
+<a name="147"><span class="lineNum">     147 </span><span class="lineCov">         30 :         for (auto&amp;&amp; t : m_thresholds) {</span></a>
 <a name="148"><span class="lineNum">     148 </span><span class="lineCov">         22 :             for (auto&amp;&amp; d : t.second) {</span></a>
 <a name="149"><span class="lineNum">     149 </span><span class="lineCov">         11 :                 d.draw_sample();</span></a>
 <a name="150"><span class="lineNum">     150 </span>            :             }</a>
 <a name="151"><span class="lineNum">     151 </span>            :         }</a>
-<a name="152"><span class="lineNum">     152 </span><span class="lineCov">         13 :     }</span></a>
+<a name="152"><span class="lineNum">     152 </span><span class="lineCov">         19 :     }</span></a>
 <a name="153"><span class="lineNum">     153 </span>            : </a>
 <a name="154"><span class="lineNum">     154 </span>            :     /**</a>
 <a name="155"><span class="lineNum">     155 </span>            :      * serialize this. </a>
 <a name="156"><span class="lineNum">     156 </span>            :      * @see mio::serialize</a>
 <a name="157"><span class="lineNum">     157 </span>            :      */</a>
 <a name="158"><span class="lineNum">     158 </span>            :     template &lt;class IOContext&gt;</a>
-<a name="159"><span class="lineNum">     159 </span><span class="lineCov">          7 :     void serialize(IOContext&amp; io) const</span></a>
+<a name="159"><span class="lineNum">     159 </span><span class="lineCov">         23 :     void serialize(IOContext&amp; io) const</span></a>
 <a name="160"><span class="lineNum">     160 </span>            :     {</a>
-<a name="161"><span class="lineNum">     161 </span><span class="lineCov">         28 :         auto obj = io.create_object(&quot;DynamicNPIs&quot;);</span></a>
-<a name="162"><span class="lineNum">     162 </span><span class="lineCov">          7 :         obj.add_list(&quot;Thresholds&quot;, get_thresholds().begin(), get_thresholds().end());</span></a>
-<a name="163"><span class="lineNum">     163 </span><span class="lineCov">          7 :         obj.add_element(&quot;Duration&quot;, get_duration());</span></a>
-<a name="164"><span class="lineNum">     164 </span><span class="lineCov">          7 :         obj.add_element(&quot;Interval&quot;, get_interval());</span></a>
-<a name="165"><span class="lineNum">     165 </span><span class="lineCov">          7 :         obj.add_element(&quot;BaseValue&quot;, get_base_value());</span></a>
-<a name="166"><span class="lineNum">     166 </span><span class="lineCov">          7 :     }</span></a>
+<a name="161"><span class="lineNum">     161 </span><span class="lineCov">         92 :         auto obj = io.create_object(&quot;DynamicNPIs&quot;);</span></a>
+<a name="162"><span class="lineNum">     162 </span><span class="lineCov">         23 :         obj.add_list(&quot;Thresholds&quot;, get_thresholds().begin(), get_thresholds().end());</span></a>
+<a name="163"><span class="lineNum">     163 </span><span class="lineCov">         23 :         obj.add_element(&quot;Duration&quot;, get_duration());</span></a>
+<a name="164"><span class="lineNum">     164 </span><span class="lineCov">         23 :         obj.add_element(&quot;Interval&quot;, get_interval());</span></a>
+<a name="165"><span class="lineNum">     165 </span><span class="lineCov">         23 :         obj.add_element(&quot;BaseValue&quot;, get_base_value());</span></a>
+<a name="166"><span class="lineNum">     166 </span><span class="lineCov">         23 :     }</span></a>
 <a name="167"><span class="lineNum">     167 </span>            : </a>
 <a name="168"><span class="lineNum">     168 </span>            :     /**</a>
 <a name="169"><span class="lineNum">     169 </span>            :      * deserialize an object of this class.</a>
