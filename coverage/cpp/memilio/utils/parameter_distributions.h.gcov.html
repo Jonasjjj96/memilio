@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2023-03-20 15:15:30</td>
+            <td class="headerValue">2023-03-29 06:39:14</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">35</td>
@@ -281,45 +281,45 @@
 <a name="219"><span class="lineNum">     219 </span>            :      * @brief verification that at least 99% of the density</a>
 <a name="220"><span class="lineNum">     220 </span>            :      * function lie in the interval defined by the boundaries</a>
 <a name="221"><span class="lineNum">     221 </span>            :      */</a>
-<a name="222"><span class="lineNum">     222 </span><span class="lineCov">       2318 :     bool check_quantiles(double&amp; mean, double&amp; standard_dev)</span></a>
+<a name="222"><span class="lineNum">     222 </span><span class="lineCov">       2120 :     bool check_quantiles(double&amp; mean, double&amp; standard_dev)</span></a>
 <a name="223"><span class="lineNum">     223 </span>            :     {</a>
-<a name="224"><span class="lineNum">     224 </span><span class="lineCov">       2318 :         bool changed = false;</span></a>
+<a name="224"><span class="lineNum">     224 </span><span class="lineCov">       2120 :         bool changed = false;</span></a>
 <a name="225"><span class="lineNum">     225 </span>            : </a>
-<a name="226"><span class="lineNum">     226 </span><span class="lineCov">       2318 :         changed = adapt_mean(mean);</span></a>
+<a name="226"><span class="lineNum">     226 </span><span class="lineCov">       2120 :         changed = adapt_mean(mean);</span></a>
 <a name="227"><span class="lineNum">     227 </span>            : </a>
-<a name="228"><span class="lineNum">     228 </span><span class="lineCov">       2318 :         changed = adapt_standard_dev(standard_dev);</span></a>
+<a name="228"><span class="lineNum">     228 </span><span class="lineCov">       2120 :         changed = adapt_standard_dev(standard_dev);</span></a>
 <a name="229"><span class="lineNum">     229 </span>            : </a>
-<a name="230"><span class="lineNum">     230 </span><span class="lineCov">       2318 :         if (changed &amp;&amp; m_log_stddev_change) {</span></a>
-<a name="231"><span class="lineNum">     231 </span><span class="lineCov">        176 :             log_warning(&quot;Standard deviation reduced to fit 99% of the distribution within [lowerbound,upperbound].&quot;);</span></a>
+<a name="230"><span class="lineNum">     230 </span><span class="lineCov">       2120 :         if (changed &amp;&amp; m_log_stddev_change) {</span></a>
+<a name="231"><span class="lineNum">     231 </span><span class="lineCov">        220 :             log_warning(&quot;Standard deviation reduced to fit 99% of the distribution within [lowerbound,upperbound].&quot;);</span></a>
 <a name="232"><span class="lineNum">     232 </span>            :         }</a>
 <a name="233"><span class="lineNum">     233 </span>            : </a>
-<a name="234"><span class="lineNum">     234 </span><span class="lineCov">       2318 :         return changed;</span></a>
+<a name="234"><span class="lineNum">     234 </span><span class="lineCov">       2120 :         return changed;</span></a>
 <a name="235"><span class="lineNum">     235 </span>            :     }</a>
 <a name="236"><span class="lineNum">     236 </span>            : </a>
-<a name="237"><span class="lineNum">     237 </span><span class="lineCov">       2318 :     bool adapt_mean(double&amp; mean)</span></a>
+<a name="237"><span class="lineNum">     237 </span><span class="lineCov">       2120 :     bool adapt_mean(double&amp; mean)</span></a>
 <a name="238"><span class="lineNum">     238 </span>            :     {</a>
-<a name="239"><span class="lineNum">     239 </span><span class="lineCov">       2318 :         bool changed = false;</span></a>
-<a name="240"><span class="lineNum">     240 </span><span class="lineCov">       2318 :         if (mean &lt; m_lower_bound || mean &gt; m_upper_bound) {</span></a>
+<a name="239"><span class="lineNum">     239 </span><span class="lineCov">       2120 :         bool changed = false;</span></a>
+<a name="240"><span class="lineNum">     240 </span><span class="lineCov">       2120 :         if (mean &lt; m_lower_bound || mean &gt; m_upper_bound) {</span></a>
 <a name="241"><span class="lineNum">     241 </span><span class="lineNoCov">          0 :             mean    = 0.5 * (m_upper_bound - m_lower_bound);</span></a>
 <a name="242"><span class="lineNum">     242 </span><span class="lineNoCov">          0 :             changed = true;</span></a>
 <a name="243"><span class="lineNum">     243 </span>            :         }</a>
-<a name="244"><span class="lineNum">     244 </span><span class="lineCov">       2318 :         return changed;</span></a>
+<a name="244"><span class="lineNum">     244 </span><span class="lineCov">       2120 :         return changed;</span></a>
 <a name="245"><span class="lineNum">     245 </span>            :     }</a>
 <a name="246"><span class="lineNum">     246 </span>            : </a>
 <a name="247"><span class="lineNum">     247 </span>            :     // ensure that 0.99 % of the distribution are within lower bound and upper bound</a>
-<a name="248"><span class="lineNum">     248 </span><span class="lineCov">       2318 :     bool adapt_standard_dev(double&amp; standard_dev)</span></a>
+<a name="248"><span class="lineNum">     248 </span><span class="lineCov">       2120 :     bool adapt_standard_dev(double&amp; standard_dev)</span></a>
 <a name="249"><span class="lineNum">     249 </span>            :     {</a>
-<a name="250"><span class="lineNum">     250 </span><span class="lineCov">       2318 :         bool changed = false;</span></a>
-<a name="251"><span class="lineNum">     251 </span><span class="lineCov">       2318 :         if (m_mean + standard_dev * m_quantile &gt; m_upper_bound) {</span></a>
-<a name="252"><span class="lineNum">     252 </span><span class="lineCov">         33 :             standard_dev = (m_upper_bound - m_mean) / m_quantile;</span></a>
-<a name="253"><span class="lineNum">     253 </span><span class="lineCov">         33 :             changed      = true;</span></a>
+<a name="250"><span class="lineNum">     250 </span><span class="lineCov">       2120 :         bool changed = false;</span></a>
+<a name="251"><span class="lineNum">     251 </span><span class="lineCov">       2120 :         if (m_mean + standard_dev * m_quantile &gt; m_upper_bound) {</span></a>
+<a name="252"><span class="lineNum">     252 </span><span class="lineCov">         67 :             standard_dev = (m_upper_bound - m_mean) / m_quantile;</span></a>
+<a name="253"><span class="lineNum">     253 </span><span class="lineCov">         67 :             changed      = true;</span></a>
 <a name="254"><span class="lineNum">     254 </span>            :         }</a>
-<a name="255"><span class="lineNum">     255 </span><span class="lineCov">       2318 :         if (m_mean - standard_dev * m_quantile &lt; m_lower_bound) {</span></a>
-<a name="256"><span class="lineNum">     256 </span><span class="lineCov">         71 :             standard_dev = (m_mean - m_lower_bound) / m_quantile;</span></a>
-<a name="257"><span class="lineNum">     257 </span><span class="lineCov">         71 :             changed      = true;</span></a>
+<a name="255"><span class="lineNum">     255 </span><span class="lineCov">       2120 :         if (m_mean - standard_dev * m_quantile &lt; m_lower_bound) {</span></a>
+<a name="256"><span class="lineNum">     256 </span><span class="lineCov">         57 :             standard_dev = (m_mean - m_lower_bound) / m_quantile;</span></a>
+<a name="257"><span class="lineNum">     257 </span><span class="lineCov">         57 :             changed      = true;</span></a>
 <a name="258"><span class="lineNum">     258 </span>            :         }</a>
 <a name="259"><span class="lineNum">     259 </span>            : </a>
-<a name="260"><span class="lineNum">     260 </span><span class="lineCov">       2318 :         return changed;</span></a>
+<a name="260"><span class="lineNum">     260 </span><span class="lineCov">       2120 :         return changed;</span></a>
 <a name="261"><span class="lineNum">     261 </span>            :     }</a>
 <a name="262"><span class="lineNum">     262 </span>            : </a>
 <a name="263"><span class="lineNum">     263 </span><span class="lineCov">          1 :     void set_standard_dev(double standard_dev)</span></a>
@@ -353,21 +353,21 @@
 <a name="291"><span class="lineNum">     291 </span>            :         //If ub = lb, sampling can only be succesful if mean = lb and dev = 0.</a>
 <a name="292"><span class="lineNum">     292 </span>            :         //But this degenerate normal distribution is not allowed by the c++ standard.</a>
 <a name="293"><span class="lineNum">     293 </span><span class="lineCov">       1824 :         if (m_upper_bound == m_lower_bound) {</span></a>
-<a name="294"><span class="lineNum">     294 </span><span class="lineCov">         39 :             return m_lower_bound;</span></a>
+<a name="294"><span class="lineNum">     294 </span><span class="lineCov">        237 :             return m_lower_bound;</span></a>
 <a name="295"><span class="lineNum">     295 </span>            :         }</a>
 <a name="296"><span class="lineNum">     296 </span>            : </a>
-<a name="297"><span class="lineNum">     297 </span><span class="lineCov">       3235 :         if (check_quantiles(m_mean, m_standard_dev) || m_distribution.mean() != m_mean ||</span></a>
-<a name="298"><span class="lineNum">     298 </span><span class="lineCov">       1450 :             m_distribution.stddev() != m_standard_dev) {</span></a>
-<a name="299"><span class="lineNum">     299 </span><span class="lineCov">        336 :             m_distribution = std::normal_distribution&lt;double&gt;{m_mean, m_standard_dev};</span></a>
+<a name="297"><span class="lineNum">     297 </span><span class="lineCov">       2912 :         if (check_quantiles(m_mean, m_standard_dev) || m_distribution.mean() != m_mean ||</span></a>
+<a name="298"><span class="lineNum">     298 </span><span class="lineCov">       1325 :             m_distribution.stddev() != m_standard_dev) {</span></a>
+<a name="299"><span class="lineNum">     299 </span><span class="lineCov">        263 :             m_distribution = std::normal_distribution&lt;double&gt;{m_mean, m_standard_dev};</span></a>
 <a name="300"><span class="lineNum">     300 </span>            :         }</a>
 <a name="301"><span class="lineNum">     301 </span>            : </a>
-<a name="302"><span class="lineNum">     302 </span><span class="lineCov">       1785 :         int i        = 0;</span></a>
-<a name="303"><span class="lineNum">     303 </span><span class="lineCov">       1785 :         int retries  = 10;</span></a>
-<a name="304"><span class="lineNum">     304 </span><span class="lineCov">       1785 :         double rnumb = m_distribution(thread_local_rng());</span></a>
-<a name="305"><span class="lineNum">     305 </span><span class="lineCov">       1797 :         while ((rnumb &gt; m_upper_bound || rnumb &lt; m_lower_bound) &amp;&amp; i &lt; retries) {</span></a>
-<a name="306"><span class="lineNum">     306 </span><span class="lineCov">         12 :             rnumb = m_distribution(thread_local_rng());</span></a>
-<a name="307"><span class="lineNum">     307 </span><span class="lineCov">         12 :             i++;</span></a>
-<a name="308"><span class="lineNum">     308 </span><span class="lineCov">         12 :             if (i == retries) {</span></a>
+<a name="302"><span class="lineNum">     302 </span><span class="lineCov">       1587 :         int i        = 0;</span></a>
+<a name="303"><span class="lineNum">     303 </span><span class="lineCov">       1587 :         int retries  = 10;</span></a>
+<a name="304"><span class="lineNum">     304 </span><span class="lineCov">       1587 :         double rnumb = m_distribution(thread_local_rng());</span></a>
+<a name="305"><span class="lineNum">     305 </span><span class="lineCov">       1596 :         while ((rnumb &gt; m_upper_bound || rnumb &lt; m_lower_bound) &amp;&amp; i &lt; retries) {</span></a>
+<a name="306"><span class="lineNum">     306 </span><span class="lineCov">          9 :             rnumb = m_distribution(thread_local_rng());</span></a>
+<a name="307"><span class="lineNum">     307 </span><span class="lineCov">          9 :             i++;</span></a>
+<a name="308"><span class="lineNum">     308 </span><span class="lineCov">          9 :             if (i == retries) {</span></a>
 <a name="309"><span class="lineNum">     309 </span><span class="lineNoCov">          0 :                 log_warning(&quot;Not successfully sampled within [min,max].&quot;);</span></a>
 <a name="310"><span class="lineNum">     310 </span><span class="lineNoCov">          0 :                 if (rnumb &gt; m_upper_bound) {</span></a>
 <a name="311"><span class="lineNum">     311 </span><span class="lineNoCov">          0 :                     rnumb = m_upper_bound;</span></a>
@@ -377,7 +377,7 @@
 <a name="315"><span class="lineNum">     315 </span>            :                 }</a>
 <a name="316"><span class="lineNum">     316 </span>            :             }</a>
 <a name="317"><span class="lineNum">     317 </span>            :         }</a>
-<a name="318"><span class="lineNum">     318 </span><span class="lineCov">       1785 :         return rnumb;</span></a>
+<a name="318"><span class="lineNum">     318 </span><span class="lineCov">       1587 :         return rnumb;</span></a>
 <a name="319"><span class="lineNum">     319 </span>            :     }</a>
 <a name="320"><span class="lineNum">     320 </span>            : </a>
 <a name="321"><span class="lineNum">     321 </span>            :     template &lt;class IOContext&gt;</a>
