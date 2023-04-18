@@ -117,7 +117,7 @@ $(function() {
 : <a class="el" href="classmio_1_1abm_1_1HouseholdMember.html#ac56cbfef289fc624ee8925816260a543">mio::abm::HouseholdMember</a>
 </li>
 <li>set_assigned_location()
-: <a class="el" href="classmio_1_1abm_1_1Person.html#a859d4c7d4d68bbfd2907898a474631e2">mio::abm::Person</a>
+: <a class="el" href="classmio_1_1abm_1_1Person.html#ad2b7ad6d2849bb2de97be0c853e71c4a">mio::abm::Person</a>
 </li>
 <li>set_base_value()
 : <a class="el" href="classmio_1_1DynamicNPIs.html#af6ade3a9632b1dd2808260584416033b">mio::DynamicNPIs</a>
@@ -189,6 +189,9 @@ $(function() {
 <li>set_matrix_indices()
 : <a class="el" href="classmio_1_1DampingSampling.html#a0d2e50c4e9e8f1b7f3a8ce68ac5c4315">mio::DampingSampling</a>
 </li>
+<li>set_max_support()
+: <a class="el" href="structmio_1_1isecir_1_1DelayDistribution.html#ac7ce241499f3212e5f4c00be1706c17e">mio::isecir::DelayDistribution</a>
+</li>
 <li>set_mean()
 : <a class="el" href="classmio_1_1ParameterDistributionNormal.html#af2c566339b6f0cf0dc6a2c1faec89b0f">mio::ParameterDistributionNormal</a>
 </li>
@@ -248,10 +251,11 @@ $(function() {
 , <a class="el" href="classmio_1_1Dampings.html#a93906e20a2919bf857d60e4c8bb5299e">mio::Dampings&lt; D &gt;</a>
 </li>
 <li>simulate()
-: <a class="el" href="classmio_1_1iseir_1_1IdeSeirModel.html#acbc1b9867dc749285113ccd839f49b7d">mio::iseir::IdeSeirModel</a>
+: <a class="el" href="classmio_1_1iseir_1_1Model.html#aa73cc17dbb36a7818c1f543653f15d15">mio::iseir::Model</a>
 </li>
 <li>Simulation()
 : <a class="el" href="classmio_1_1abm_1_1Simulation.html#a00aa6a9c7d9db326dbb8399b68a1f6ea">mio::abm::Simulation</a>
+, <a class="el" href="classmio_1_1isecir_1_1Simulation.html#a9d63ac59ea23181535d7c45b3bd445c3">mio::isecir::Simulation</a>
 , <a class="el" href="classmio_1_1osecir_1_1Simulation.html#adc25d4f6451f5070a1c4b0c2461be08d">mio::osecir::Simulation&lt; Base &gt;</a>
 , <a class="el" href="classmio_1_1osecirvvs_1_1Simulation.html#aadf38b83a58a55157cc1129f47bc3524">mio::osecirvvs::Simulation&lt; Base &gt;</a>
 , <a class="el" href="classmio_1_1ParameterStudy.html#ab7a03dfc082678dbdc22d0dafe832097">mio::ParameterStudy&lt; S &gt;</a>
@@ -262,7 +266,7 @@ $(function() {
 </li>
 <li>size()
 : <a class="el" href="classmio_1_1ColumnVectorShape.html#a3cf84058ec6b7f06b1d64ca8607a8216">mio::ColumnVectorShape</a>
-, <a class="el" href="classmio_1_1CustomIndexArray.html#a4ce79374c68db1e5bb5fdd4a9c1a997c">mio::CustomIndexArray&lt; Typ, Tags &gt;</a>
+, <a class="el" href="classmio_1_1CustomIndexArray.html#af4d334f7205affa65df02db0f4effb78">mio::CustomIndexArray&lt; Typ, Tags &gt;</a>
 , <a class="el" href="classmio_1_1Index.html#ace2904f9d77e1ae0b0806ddf956462ca">mio::Index&lt; CategoryTag &gt;</a>
 , <a class="el" href="classmio_1_1ParameterSet.html#a81add1fdd128759ddd96e9ef6efc8bcf">mio::ParameterSet&lt; Tags &gt;</a>
 , <a class="el" href="classmio_1_1Range.html#aacee5dc2dbb69c6f1daa59867a141964">mio::Range&lt; IterPair &gt;</a>
@@ -273,14 +277,16 @@ $(function() {
 : <a class="el" href="classmio_1_1TimeSeries.html#ad2d176f78e47de0564e51b44bbc60a0f">mio::TimeSeries&lt; FP &gt;</a>
 </li>
 <li>slice()
-: <a class="el" href="classmio_1_1CustomIndexArray.html#af3105afee10aee8f1dde9a479916f459">mio::CustomIndexArray&lt; Typ, Tags &gt;</a>
-, <a class="el" href="classmio_1_1CustomIndexArray_1_1Slice.html#a02609d5d3777762ae16d08d834b53df6">mio::CustomIndexArray&lt; Typ, Tags &gt;::Slice&lt; Tag, iter_type, &gt;</a>
+: <a class="el" href="classmio_1_1CustomIndexArray.html#a3d71f9ca09c82e0d4e4c54e4aa93ed42">mio::CustomIndexArray&lt; Typ, Tags &gt;</a>
 </li>
 <li>Slice()
 : <a class="el" href="classmio_1_1CustomIndexArray_1_1Slice.html#adc2c75489c3fb45c36b3ad15254328e9">mio::CustomIndexArray&lt; Typ, Tags &gt;::Slice&lt; Tag, iter_type, &gt;</a>
 </li>
+<li>slice()
+: <a class="el" href="classmio_1_1CustomIndexArray_1_1Slice.html#ab7d8b44162004acfd0427c026faf9fab">mio::CustomIndexArray&lt; Typ, Tags &gt;::Slice&lt; Tag, iter_type, &gt;</a>
+</li>
 <li>Span()
-: <a class="el" href="classmio_1_1Span.html#a52ed3fac1ba6e3558874bc4a4d3f3247">mio::Span&lt; T &gt;</a>
+: <a class="el" href="classmio_1_1Span.html#ad9fad35b76ac48e09c5d953b6a800970">mio::Span&lt; T &gt;</a>
 </li>
 <li>specificity
 : <a class="el" href="structmio_1_1abm_1_1TestParameters.html#a8fc3dd8fa3256e496fb058f68059eeef">mio::abm::TestParameters</a>

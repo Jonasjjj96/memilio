@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2023-04-14 10:20:46</td>
+            <td class="headerValue">2023-04-18 19:41:41</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">6</td>
@@ -94,7 +94,7 @@
 <a name="32"><span class="lineNum">      32 </span>            : using Pa  = ParametersBase;</a>
 <a name="33"><span class="lineNum">      33 </span>            : using Vec = TimeSeries&lt;double&gt;::Vector;</a>
 <a name="34"><span class="lineNum">      34 </span>            : </a>
-<a name="35"><span class="lineNum">      35 </span><span class="lineCov">          2 : IdeSeirModel::IdeSeirModel(TimeSeries&lt;double&gt;&amp;&amp; init, double dt_init, int N_init, Pa Parameterset_init)</span></a>
+<a name="35"><span class="lineNum">      35 </span><span class="lineCov">          2 : Model::Model(TimeSeries&lt;double&gt;&amp;&amp; init, double dt_init, int N_init, const Pa&amp; Parameterset_init)</span></a>
 <a name="36"><span class="lineNum">      36 </span>            :     : parameters{Parameterset_init}</a>
 <a name="37"><span class="lineNum">      37 </span><span class="lineCov">          2 :     , m_result{std::move(init)}</span></a>
 <a name="38"><span class="lineNum">      38 </span>            :     , m_result_SEIR{TimeSeries&lt;double&gt;(4)}</a>
@@ -103,7 +103,7 @@
 <a name="41"><span class="lineNum">      41 </span>            : {</a>
 <a name="42"><span class="lineNum">      42 </span><span class="lineCov">          2 : }</span></a>
 <a name="43"><span class="lineNum">      43 </span>            : </a>
-<a name="44"><span class="lineNum">      44 </span><span class="lineCov">      26560 : double IdeSeirModel::generalized_beta_distribution(double tau, double p, double q) const</span></a>
+<a name="44"><span class="lineNum">      44 </span><span class="lineCov">      26560 : double Model::generalized_beta_distribution(double tau, double p, double q) const</span></a>
 <a name="45"><span class="lineNum">      45 </span>            : {</a>
 <a name="46"><span class="lineNum">      46 </span><span class="lineCov">      52800 :     if ((parameters.get&lt;LatencyTime&gt;() &lt; tau) &amp;&amp;</span></a>
 <a name="47"><span class="lineNum">      47 </span><span class="lineCov">      26240 :         (parameters.get&lt;InfectiousTime&gt;() + parameters.get&lt;LatencyTime&gt;() &gt; tau)) {</span></a>
@@ -114,13 +114,13 @@
 <a name="52"><span class="lineNum">      52 </span><span class="lineCov">        320 :     return 0.0;</span></a>
 <a name="53"><span class="lineNum">      53 </span>            : }</a>
 <a name="54"><span class="lineNum">      54 </span>            : </a>
-<a name="55"><span class="lineNum">      55 </span><span class="lineCov">      26560 : double IdeSeirModel::central_difference_quotient(TimeSeries&lt;double&gt; const&amp; ts_ide, InfectionState compartment,</span></a>
-<a name="56"><span class="lineNum">      56 </span>            :                                                  Eigen::Index idx) const</a>
+<a name="55"><span class="lineNum">      55 </span><span class="lineCov">      26560 : double Model::central_difference_quotient(TimeSeries&lt;double&gt; const&amp; ts_ide, InfectionState compartment,</span></a>
+<a name="56"><span class="lineNum">      56 </span>            :                                           Eigen::Index idx) const</a>
 <a name="57"><span class="lineNum">      57 </span>            : {</a>
 <a name="58"><span class="lineNum">      58 </span><span class="lineCov">      26560 :     return (ts_ide[idx + 1][Eigen::Index(compartment)] - ts_ide[idx - 1][Eigen::Index(compartment)]) / (2 * m_dt);</span></a>
 <a name="59"><span class="lineNum">      59 </span>            : }</a>
 <a name="60"><span class="lineNum">      60 </span>            : </a>
-<a name="61"><span class="lineNum">      61 </span><span class="lineCov">        320 : double IdeSeirModel::num_integration_inner_integral(Eigen::Index idx) const</span></a>
+<a name="61"><span class="lineNum">      61 </span><span class="lineCov">        320 : double Model::num_integration_inner_integral(Eigen::Index idx) const</span></a>
 <a name="62"><span class="lineNum">      62 </span>            : {</a>
 <a name="63"><span class="lineNum">      63 </span><span class="lineCov">        320 :     double res     = 0.5 * (generalized_beta_distribution(m_result.get_time(idx) - m_result.get_time(idx - m_k)) *</span></a>
 <a name="64"><span class="lineNum">      64 </span><span class="lineCov">        320 :                             central_difference_quotient(m_result, InfectionState::S, m_k) +</span></a>
@@ -135,7 +135,7 @@
 <a name="73"><span class="lineNum">      73 </span><span class="lineCov">        320 :     return res;</span></a>
 <a name="74"><span class="lineNum">      74 </span>            : }</a>
 <a name="75"><span class="lineNum">      75 </span>            : </a>
-<a name="76"><span class="lineNum">      76 </span><span class="lineCov">          2 : TimeSeries&lt;double&gt; const&amp; IdeSeirModel::simulate(int t_max)</span></a>
+<a name="76"><span class="lineNum">      76 </span><span class="lineCov">          2 : TimeSeries&lt;double&gt; const&amp; Model::simulate(int t_max)</span></a>
 <a name="77"><span class="lineNum">      77 </span>            : {</a>
 <a name="78"><span class="lineNum">      78 </span>            : </a>
 <a name="79"><span class="lineNum">      79 </span><span class="lineCov">          2 :     m_l = (int)std::floor(parameters.get&lt;LatencyTime&gt;() / m_dt);</span></a>
@@ -166,7 +166,7 @@
 <a name="104"><span class="lineNum">     104 </span><span class="lineCov">          2 :     return m_result;</span></a>
 <a name="105"><span class="lineNum">     105 </span>            : }</a>
 <a name="106"><span class="lineNum">     106 </span>            : </a>
-<a name="107"><span class="lineNum">     107 </span><span class="lineCov">          2 : TimeSeries&lt;double&gt; const&amp; IdeSeirModel::calculate_EIR()</span></a>
+<a name="107"><span class="lineNum">     107 </span><span class="lineCov">          2 : TimeSeries&lt;double&gt; const&amp; Model::calculate_EIR()</span></a>
 <a name="108"><span class="lineNum">     108 </span>            : {</a>
 <a name="109"><span class="lineNum">     109 </span><span class="lineCov">          2 :     Eigen::Index num_points = m_result.get_num_time_points();</span></a>
 <a name="110"><span class="lineNum">     110 </span><span class="lineCov">          2 :     double S, E, I, R;</span></a>
@@ -180,7 +180,7 @@
 <a name="118"><span class="lineNum">     118 </span><span class="lineCov">          4 :     return m_result_SEIR;</span></a>
 <a name="119"><span class="lineNum">     119 </span>            : }</a>
 <a name="120"><span class="lineNum">     120 </span>            : </a>
-<a name="121"><span class="lineNum">     121 </span><span class="lineNoCov">          0 : void IdeSeirModel::print_result(bool calculated_SEIR) const</span></a>
+<a name="121"><span class="lineNum">     121 </span><span class="lineNoCov">          0 : void Model::print_result(bool calculated_SEIR) const</span></a>
 <a name="122"><span class="lineNum">     122 </span>            : {</a>
 <a name="123"><span class="lineNum">     123 </span><span class="lineNoCov">          0 :     if (calculated_SEIR) {</span></a>
 <a name="124"><span class="lineNum">     124 </span><span class="lineNoCov">          0 :         std::cout &lt;&lt; &quot;# time  |  S  |  E  |  I  |  R&quot; &lt;&lt; std::endl;</span></a>
