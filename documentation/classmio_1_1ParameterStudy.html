@@ -84,8 +84,15 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
+<tr class="memitem:a1a7d7c79a74d82c9cddefd3ed2878caa"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1ParameterStudy.html#a1a7d7c79a74d82c9cddefd3ed2878caa">ParametersGraph</a> = <a class="el" href="classmio_1_1Graph.html">mio::Graph</a>&lt; typename <a class="el" href="classmio_1_1Simulation.html#a35c28a2a20c23c81e1de59bcca8fb1ec">Simulation::Model</a>, <a class="el" href="classmio_1_1MigrationParameters.html">mio::MigrationParameters</a> &gt;</td></tr>
+<tr class="memdesc:a1a7d7c79a74d82c9cddefd3ed2878caa"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="classmio_1_1Graph.html" title="generic graph structure">Graph</a> type that stores the parametes of the simulation.  <a href="classmio_1_1ParameterStudy.html#a1a7d7c79a74d82c9cddefd3ed2878caa">More...</a><br /></td></tr>
+<tr class="separator:a1a7d7c79a74d82c9cddefd3ed2878caa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab7a03dfc082678dbdc22d0dafe832097"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1ParameterStudy.html#ab7a03dfc082678dbdc22d0dafe832097">Simulation</a> = S</td></tr>
+<tr class="memdesc:ab7a03dfc082678dbdc22d0dafe832097"><td class="mdescLeft">&#160;</td><td class="mdescRight">The type of simulation of a single node of the graph.  <a href="classmio_1_1ParameterStudy.html#ab7a03dfc082678dbdc22d0dafe832097">More...</a><br /></td></tr>
 <tr class="separator:ab7a03dfc082678dbdc22d0dafe832097"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aecf3fa424e6b03e66219a57e223b10d1"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1ParameterStudy.html#aecf3fa424e6b03e66219a57e223b10d1">SimulationGraph</a> = <a class="el" href="classmio_1_1Graph.html">mio::Graph</a>&lt; <a class="el" href="classmio_1_1SimulationNode.html">mio::SimulationNode</a>&lt; <a class="el" href="classmio_1_1ParameterStudy.html#ab7a03dfc082678dbdc22d0dafe832097">Simulation</a> &gt;, <a class="el" href="classmio_1_1MigrationEdge.html">mio::MigrationEdge</a> &gt;</td></tr>
+<tr class="memdesc:aecf3fa424e6b03e66219a57e223b10d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="classmio_1_1Graph.html" title="generic graph structure">Graph</a> type that stores simulations and their results of each run.  <a href="classmio_1_1ParameterStudy.html#aecf3fa424e6b03e66219a57e223b10d1">More...</a><br /></td></tr>
+<tr class="separator:aecf3fa424e6b03e66219a57e223b10d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -95,20 +102,21 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ad953ec4a06e54f0b0880408eeb44bbeb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa3f6d156a8220d07c57ca6e2a35c146e"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1ParameterStudy.html#aa3f6d156a8220d07c57ca6e2a35c146e">get_tmax</a> () const</td></tr>
 <tr class="separator:aa3f6d156a8220d07c57ca6e2a35c146e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa4604f748db2bf16c5c7ed9312100343"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1ParameterStudy.html#aa4604f748db2bf16c5c7ed9312100343">ParameterStudy</a> (const <a class="el" href="classmio_1_1Graph.html">mio::Graph</a>&lt; typename <a class="el" href="classmio_1_1Simulation.html#a35c28a2a20c23c81e1de59bcca8fb1ec">Simulation::Model</a>, <a class="el" href="classmio_1_1MigrationParameters.html">mio::MigrationParameters</a> &gt; &amp;graph, double t0, double tmax, double dev_rel, double graph_sim_dt, size_t num_runs)</td></tr>
-<tr class="separator:aa4604f748db2bf16c5c7ed9312100343"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a52a676c047358513b3d0b6af11c17243"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1ParameterStudy.html#a52a676c047358513b3d0b6af11c17243">ParameterStudy</a> (const <a class="el" href="classmio_1_1Graph.html">mio::Graph</a>&lt; typename <a class="el" href="classmio_1_1Simulation.html#a35c28a2a20c23c81e1de59bcca8fb1ec">Simulation::Model</a>, <a class="el" href="classmio_1_1MigrationParameters.html">mio::MigrationParameters</a> &gt; &amp;graph, double t0, double tmax, double graph_sim_dt, size_t num_runs)</td></tr>
-<tr class="memdesc:a52a676c047358513b3d0b6af11c17243"><td class="mdescLeft">&#160;</td><td class="mdescRight">create study for graph of compartment models.  <a href="classmio_1_1ParameterStudy.html#a52a676c047358513b3d0b6af11c17243">More...</a><br /></td></tr>
-<tr class="separator:a52a676c047358513b3d0b6af11c17243"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a31d5df8eaf1846504548b43dbebc7dd9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1ParameterStudy.html#a31d5df8eaf1846504548b43dbebc7dd9">ParameterStudy</a> (const <a class="el" href="classmio_1_1ParameterStudy.html#a1a7d7c79a74d82c9cddefd3ed2878caa">ParametersGraph</a> &amp;graph, double t0, double tmax, double dev_rel, double graph_sim_dt, size_t num_runs)</td></tr>
+<tr class="memdesc:a31d5df8eaf1846504548b43dbebc7dd9"><td class="mdescLeft">&#160;</td><td class="mdescRight">create study for graph of compartment models.  <a href="classmio_1_1ParameterStudy.html#a31d5df8eaf1846504548b43dbebc7dd9">More...</a><br /></td></tr>
+<tr class="separator:a31d5df8eaf1846504548b43dbebc7dd9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f29abd145680e5c0ed036d21e60ee0e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1ParameterStudy.html#a0f29abd145680e5c0ed036d21e60ee0e">ParameterStudy</a> (const <a class="el" href="classmio_1_1ParameterStudy.html#a1a7d7c79a74d82c9cddefd3ed2878caa">ParametersGraph</a> &amp;graph, double t0, double tmax, double graph_sim_dt, size_t num_runs)</td></tr>
+<tr class="memdesc:a0f29abd145680e5c0ed036d21e60ee0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">create study for graph of compartment models.  <a href="classmio_1_1ParameterStudy.html#a0f29abd145680e5c0ed036d21e60ee0e">More...</a><br /></td></tr>
+<tr class="separator:a0f29abd145680e5c0ed036d21e60ee0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aad8fb5595c9683279c795c433ee2d1d7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1ParameterStudy.html#aad8fb5595c9683279c795c433ee2d1d7">ParameterStudy</a> (typename <a class="el" href="classmio_1_1Simulation.html#a35c28a2a20c23c81e1de59bcca8fb1ec">Simulation::Model</a> const &amp;model, double t0, double tmax, size_t num_runs)</td></tr>
 <tr class="memdesc:aad8fb5595c9683279c795c433ee2d1d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create study for single compartment model.  <a href="classmio_1_1ParameterStudy.html#aad8fb5595c9683279c795c433ee2d1d7">More...</a><br /></td></tr>
 <tr class="separator:aad8fb5595c9683279c795c433ee2d1d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a76a5dd67276020d6d3d519e1fde0d153"><td class="memTemplParams" colspan="2">template&lt;class SampleGraphFunction &gt; </td></tr>
-<tr class="memitem:a76a5dd67276020d6d3d519e1fde0d153"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classmio_1_1Graph.html">mio::Graph</a>&lt; <a class="el" href="classmio_1_1SimulationNode.html">mio::SimulationNode</a>&lt; <a class="el" href="classmio_1_1ParameterStudy.html#ab7a03dfc082678dbdc22d0dafe832097">Simulation</a> &gt;, <a class="el" href="classmio_1_1MigrationEdge.html">mio::MigrationEdge</a> &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classmio_1_1ParameterStudy.html#a76a5dd67276020d6d3d519e1fde0d153">run</a> (SampleGraphFunction sample_graph)</td></tr>
-<tr class="separator:a76a5dd67276020d6d3d519e1fde0d153"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa8ad8accd0a82732c6acf568eae9c80e"><td class="memTemplParams" colspan="2">template&lt;class SampleGraphFunction , class HandleSimulationResultFunction &gt; </td></tr>
-<tr class="memitem:aa8ad8accd0a82732c6acf568eae9c80e"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classmio_1_1ParameterStudy.html#aa8ad8accd0a82732c6acf568eae9c80e">run</a> (SampleGraphFunction sample_graph, HandleSimulationResultFunction result_processing_function)</td></tr>
-<tr class="separator:aa8ad8accd0a82732c6acf568eae9c80e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aca4474458e1c3a27be584f444397e108"><td class="memTemplParams" colspan="2">template&lt;class SampleGraphFunction &gt; </td></tr>
+<tr class="memitem:aca4474458e1c3a27be584f444397e108"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classmio_1_1ParameterStudy.html#aecf3fa424e6b03e66219a57e223b10d1">SimulationGraph</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classmio_1_1ParameterStudy.html#aca4474458e1c3a27be584f444397e108">run</a> (SampleGraphFunction sample_graph)</td></tr>
+<tr class="separator:aca4474458e1c3a27be584f444397e108"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a789993b2fba9816506c99f1a62a3fe89"><td class="memTemplParams" colspan="2">template&lt;class SampleGraphFunction , class HandleSimulationResultFunction &gt; </td></tr>
+<tr class="memitem:a789993b2fba9816506c99f1a62a3fe89"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; std::result_of_t&lt; HandleSimulationResultFunction(<a class="el" href="classmio_1_1ParameterStudy.html#aecf3fa424e6b03e66219a57e223b10d1">SimulationGraph</a>, size_t)&gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classmio_1_1ParameterStudy.html#a789993b2fba9816506c99f1a62a3fe89">run</a> (SampleGraphFunction sample_graph, HandleSimulationResultFunction result_processing_function)</td></tr>
+<tr class="separator:a789993b2fba9816506c99f1a62a3fe89"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abbea6f600c2af118a0da2db40a4a6338"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1ParameterStudy.html#abbea6f600c2af118a0da2db40a4a6338">set_num_runs</a> (size_t num_runs)</td></tr>
 <tr class="separator:abbea6f600c2af118a0da2db40a4a6338"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aabc96a67d2a317db3e01f6e130ce5cca"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1ParameterStudy.html#aabc96a67d2a317db3e01f6e130ce5cca">set_t0</a> (double t0)</td></tr>
@@ -122,17 +130,19 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:abe75b079b64fa2ac6267c69d00f15e8a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmio_1_1Simulation.html#a35c28a2a20c23c81e1de59bcca8fb1ec">Simulation::Model</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1ParameterStudy.html#abe75b079b64fa2ac6267c69d00f15e8a">get_model</a> ()</td></tr>
 <tr class="separator:abe75b079b64fa2ac6267c69d00f15e8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader"></div></td></tr>
-<tr class="memitem:a930bbbf066ee1907997e03ccd24de686"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classmio_1_1Graph.html">Graph</a>&lt; typename <a class="el" href="classmio_1_1Simulation.html#a35c28a2a20c23c81e1de59bcca8fb1ec">Simulation::Model</a>, <a class="el" href="classmio_1_1MigrationParameters.html">MigrationParameters</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1ParameterStudy.html#a930bbbf066ee1907997e03ccd24de686">get_model_graph</a> () const</td></tr>
-<tr class="memdesc:a930bbbf066ee1907997e03ccd24de686"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the input graph that the parameter study is run for.  <a href="classmio_1_1ParameterStudy.html#a930bbbf066ee1907997e03ccd24de686">More...</a><br /></td></tr>
-<tr class="separator:a930bbbf066ee1907997e03ccd24de686"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9c022cf037c7a5be6e631a914f7b65b2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmio_1_1Graph.html">Graph</a>&lt; typename <a class="el" href="classmio_1_1Simulation.html#a35c28a2a20c23c81e1de59bcca8fb1ec">Simulation::Model</a>, <a class="el" href="classmio_1_1MigrationParameters.html">MigrationParameters</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1ParameterStudy.html#a9c022cf037c7a5be6e631a914f7b65b2">get_model_graph</a> ()</td></tr>
-<tr class="separator:a9c022cf037c7a5be6e631a914f7b65b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4996481e80a27fab456190f87feb575c"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classmio_1_1ParameterStudy.html#a1a7d7c79a74d82c9cddefd3ed2878caa">ParametersGraph</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1ParameterStudy.html#a4996481e80a27fab456190f87feb575c">get_model_graph</a> () const</td></tr>
+<tr class="memdesc:a4996481e80a27fab456190f87feb575c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the input graph that the parameter study is run for.  <a href="classmio_1_1ParameterStudy.html#a4996481e80a27fab456190f87feb575c">More...</a><br /></td></tr>
+<tr class="separator:a4996481e80a27fab456190f87feb575c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a94cbdd1dbf7cd3803f17ed5227db140d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmio_1_1ParameterStudy.html#a1a7d7c79a74d82c9cddefd3ed2878caa">ParametersGraph</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1ParameterStudy.html#a94cbdd1dbf7cd3803f17ed5227db140d">get_model_graph</a> ()</td></tr>
+<tr class="separator:a94cbdd1dbf7cd3803f17ed5227db140d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
-<tr class="memitem:a80053ce3e0f6bb5d264e19131a508483"><td class="memTemplParams" colspan="2">template&lt;class SampleGraphFunction &gt; </td></tr>
-<tr class="memitem:a80053ce3e0f6bb5d264e19131a508483"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classmio_1_1GraphSimulation.html">mio::GraphSimulation</a>&lt; <a class="el" href="classmio_1_1Graph.html">mio::Graph</a>&lt; <a class="el" href="classmio_1_1SimulationNode.html">mio::SimulationNode</a>&lt; <a class="el" href="classmio_1_1ParameterStudy.html#ab7a03dfc082678dbdc22d0dafe832097">Simulation</a> &gt;, <a class="el" href="classmio_1_1MigrationEdge.html">mio::MigrationEdge</a> &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classmio_1_1ParameterStudy.html#a80053ce3e0f6bb5d264e19131a508483">create_sampled_simulation</a> (SampleGraphFunction sample_graph)</td></tr>
-<tr class="separator:a80053ce3e0f6bb5d264e19131a508483"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a59d340ac7b23b5e24c34c24555b2a2"><td class="memTemplParams" colspan="2">template&lt;class SampleGraphFunction &gt; </td></tr>
+<tr class="memitem:a9a59d340ac7b23b5e24c34c24555b2a2"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classmio_1_1GraphSimulation.html">mio::GraphSimulation</a>&lt; <a class="el" href="classmio_1_1ParameterStudy.html#aecf3fa424e6b03e66219a57e223b10d1">SimulationGraph</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classmio_1_1ParameterStudy.html#a9a59d340ac7b23b5e24c34c24555b2a2">create_sampled_simulation</a> (SampleGraphFunction sample_graph)</td></tr>
+<tr class="separator:a9a59d340ac7b23b5e24c34c24555b2a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2034afe59a1d0e3b0317bc859eadf1a3"><td class="memItemLeft" align="right" valign="top">std::vector&lt; size_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1ParameterStudy.html#a2034afe59a1d0e3b0317bc859eadf1a3">distribute_runs</a> (size_t num_runs, int num_procs)</td></tr>
+<tr class="separator:a2034afe59a1d0e3b0317bc859eadf1a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -140,8 +150,8 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a7b71290ab60b67bc6eeed54b9c62b958"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa5124021ca99b7d1263b50c39f64df8a"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1ParameterStudy.html#aa5124021ca99b7d1263b50c39f64df8a">m_dt_integration</a> = 0.1</td></tr>
 <tr class="separator:aa5124021ca99b7d1263b50c39f64df8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae2a62ce052ee87bc397571ffb37a244f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmio_1_1Graph.html">mio::Graph</a>&lt; typename <a class="el" href="classmio_1_1Simulation.html#a35c28a2a20c23c81e1de59bcca8fb1ec">Simulation::Model</a>, <a class="el" href="classmio_1_1MigrationParameters.html">mio::MigrationParameters</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1ParameterStudy.html#ae2a62ce052ee87bc397571ffb37a244f">m_graph</a></td></tr>
-<tr class="separator:ae2a62ce052ee87bc397571ffb37a244f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af65939411eb18ae302df0ef09cf23e3b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmio_1_1ParameterStudy.html#a1a7d7c79a74d82c9cddefd3ed2878caa">ParametersGraph</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1ParameterStudy.html#af65939411eb18ae302df0ef09cf23e3b">m_graph</a></td></tr>
+<tr class="separator:af65939411eb18ae302df0ef09cf23e3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2fb649f8ea5ec2e3deab9d355faf5de3"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1ParameterStudy.html#a2fb649f8ea5ec2e3deab9d355faf5de3">m_num_runs</a></td></tr>
 <tr class="separator:a2fb649f8ea5ec2e3deab9d355faf5de3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab9a88a4fe2fa8573085bee31a4ab5fc3"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1ParameterStudy.html#ab9a88a4fe2fa8573085bee31a4ab5fc3">m_t0</a></td></tr>
@@ -161,6 +171,25 @@ class mio::ParameterStudy&lt; S &gt;</h3>
   </dd>
 </dl>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
+<a id="a1a7d7c79a74d82c9cddefd3ed2878caa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1a7d7c79a74d82c9cddefd3ed2878caa">&#9670;&nbsp;</a></span>ParametersGraph</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class S &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classmio_1_1ParameterStudy.html">mio::ParameterStudy</a>&lt; S &gt;::<a class="el" href="classmio_1_1ParameterStudy.html#a1a7d7c79a74d82c9cddefd3ed2878caa">ParametersGraph</a> =  <a class="el" href="classmio_1_1Graph.html">mio::Graph</a>&lt;typename <a class="el" href="classmio_1_1Simulation.html#a35c28a2a20c23c81e1de59bcca8fb1ec">Simulation::Model</a>, <a class="el" href="classmio_1_1MigrationParameters.html">mio::MigrationParameters</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The <a class="el" href="classmio_1_1Graph.html" title="generic graph structure">Graph</a> type that stores the parametes of the simulation. </p>
+<p>This is the input of ParameterStudies. </p>
+
+</div>
+</div>
 <a id="ab7a03dfc082678dbdc22d0dafe832097"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab7a03dfc082678dbdc22d0dafe832097">&#9670;&nbsp;</a></span>Simulation</h2>
 
@@ -175,11 +204,32 @@ template&lt;class S &gt; </div>
       </table>
 </div><div class="memdoc">
 
+<p>The type of simulation of a single node of the graph. </p>
+
+</div>
+</div>
+<a id="aecf3fa424e6b03e66219a57e223b10d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aecf3fa424e6b03e66219a57e223b10d1">&#9670;&nbsp;</a></span>SimulationGraph</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class S &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classmio_1_1ParameterStudy.html">mio::ParameterStudy</a>&lt; S &gt;::<a class="el" href="classmio_1_1ParameterStudy.html#aecf3fa424e6b03e66219a57e223b10d1">SimulationGraph</a> =  <a class="el" href="classmio_1_1Graph.html">mio::Graph</a>&lt;<a class="el" href="classmio_1_1SimulationNode.html">mio::SimulationNode</a>&lt;<a class="el" href="classmio_1_1ParameterStudy.html#ab7a03dfc082678dbdc22d0dafe832097">Simulation</a>&gt;, <a class="el" href="classmio_1_1MigrationEdge.html">mio::MigrationEdge</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The <a class="el" href="classmio_1_1Graph.html" title="generic graph structure">Graph</a> type that stores simulations and their results of each run. </p>
+<p>This is the output of ParameterStudies for each run. </p>
+
 </div>
 </div>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a52a676c047358513b3d0b6af11c17243"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a52a676c047358513b3d0b6af11c17243">&#9670;&nbsp;</a></span>ParameterStudy() <span class="overload">[1/3]</span></h2>
+<a id="a0f29abd145680e5c0ed036d21e60ee0e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0f29abd145680e5c0ed036d21e60ee0e">&#9670;&nbsp;</a></span>ParameterStudy() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -189,7 +239,7 @@ template&lt;class S &gt; </div>
         <tr>
           <td class="memname"><a class="el" href="classmio_1_1ParameterStudy.html">mio::ParameterStudy</a>&lt; S &gt;::<a class="el" href="classmio_1_1ParameterStudy.html">ParameterStudy</a> </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="classmio_1_1Graph.html">mio::Graph</a>&lt; typename <a class="el" href="classmio_1_1Simulation.html#a35c28a2a20c23c81e1de59bcca8fb1ec">Simulation::Model</a>, <a class="el" href="classmio_1_1MigrationParameters.html">mio::MigrationParameters</a> &gt; &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classmio_1_1ParameterStudy.html#a1a7d7c79a74d82c9cddefd3ed2878caa">ParametersGraph</a> &amp;&#160;</td>
           <td class="paramname"><em>graph</em>, </td>
         </tr>
         <tr>
@@ -238,8 +288,8 @@ template&lt;class S &gt; </div>
 
 </div>
 </div>
-<a id="aa4604f748db2bf16c5c7ed9312100343"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa4604f748db2bf16c5c7ed9312100343">&#9670;&nbsp;</a></span>ParameterStudy() <span class="overload">[2/3]</span></h2>
+<a id="a31d5df8eaf1846504548b43dbebc7dd9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a31d5df8eaf1846504548b43dbebc7dd9">&#9670;&nbsp;</a></span>ParameterStudy() <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -249,7 +299,7 @@ template&lt;class S &gt; </div>
         <tr>
           <td class="memname"><a class="el" href="classmio_1_1ParameterStudy.html">mio::ParameterStudy</a>&lt; S &gt;::<a class="el" href="classmio_1_1ParameterStudy.html">ParameterStudy</a> </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="classmio_1_1Graph.html">mio::Graph</a>&lt; typename <a class="el" href="classmio_1_1Simulation.html#a35c28a2a20c23c81e1de59bcca8fb1ec">Simulation::Model</a>, <a class="el" href="classmio_1_1MigrationParameters.html">mio::MigrationParameters</a> &gt; &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classmio_1_1ParameterStudy.html#a1a7d7c79a74d82c9cddefd3ed2878caa">ParametersGraph</a> &amp;&#160;</td>
           <td class="paramname"><em>graph</em>, </td>
         </tr>
         <tr>
@@ -289,6 +339,19 @@ template&lt;class S &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>create study for graph of compartment models. </p>
+<p>Creates distributions for all parameters of the models in the graph. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">graph</td><td>graph of parameters </td></tr>
+    <tr><td class="paramname">t0</td><td>start time of simulations </td></tr>
+    <tr><td class="paramname">tmax</td><td>end time of simulations </td></tr>
+    <tr><td class="paramname">dev_rel</td><td>relative deviation of the created distributions from the initial value. </td></tr>
+    <tr><td class="paramname">graph_sim_dt</td><td>time step of graph simulation </td></tr>
+    <tr><td class="paramname">num_runs</td><td>number of runs </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -346,8 +409,8 @@ template&lt;class S &gt; </div>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a80053ce3e0f6bb5d264e19131a508483"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a80053ce3e0f6bb5d264e19131a508483">&#9670;&nbsp;</a></span>create_sampled_simulation()</h2>
+<a id="a9a59d340ac7b23b5e24c34c24555b2a2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9a59d340ac7b23b5e24c34c24555b2a2">&#9670;&nbsp;</a></span>create_sampled_simulation()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -360,11 +423,49 @@ template&lt;class SampleGraphFunction &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classmio_1_1GraphSimulation.html">mio::GraphSimulation</a>&lt;<a class="el" href="classmio_1_1Graph.html">mio::Graph</a>&lt;<a class="el" href="classmio_1_1SimulationNode.html">mio::SimulationNode</a>&lt;<a class="el" href="classmio_1_1ParameterStudy.html#ab7a03dfc082678dbdc22d0dafe832097">Simulation</a>&gt;, <a class="el" href="classmio_1_1MigrationEdge.html">mio::MigrationEdge</a>&gt; &gt; <a class="el" href="classmio_1_1ParameterStudy.html">mio::ParameterStudy</a>&lt; S &gt;::create_sampled_simulation </td>
+          <td class="memname"><a class="el" href="classmio_1_1GraphSimulation.html">mio::GraphSimulation</a>&lt;<a class="el" href="classmio_1_1ParameterStudy.html#aecf3fa424e6b03e66219a57e223b10d1">SimulationGraph</a>&gt; <a class="el" href="classmio_1_1ParameterStudy.html">mio::ParameterStudy</a>&lt; S &gt;::create_sampled_simulation </td>
           <td>(</td>
           <td class="paramtype">SampleGraphFunction&#160;</td>
           <td class="paramname"><em>sample_graph</em></td><td>)</td>
           <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2034afe59a1d0e3b0317bc859eadf1a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2034afe59a1d0e3b0317bc859eadf1a3">&#9670;&nbsp;</a></span>distribute_runs()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class S &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;size_t&gt; <a class="el" href="classmio_1_1ParameterStudy.html">mio::ParameterStudy</a>&lt; S &gt;::distribute_runs </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>num_runs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>num_procs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -417,8 +518,8 @@ template&lt;class S &gt; </div>
 
 </div>
 </div>
-<a id="a9c022cf037c7a5be6e631a914f7b65b2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9c022cf037c7a5be6e631a914f7b65b2">&#9670;&nbsp;</a></span>get_model_graph() <span class="overload">[1/2]</span></h2>
+<a id="a94cbdd1dbf7cd3803f17ed5227db140d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a94cbdd1dbf7cd3803f17ed5227db140d">&#9670;&nbsp;</a></span>get_model_graph() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -426,7 +527,7 @@ template&lt;class S &gt; </div>
 template&lt;class S &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classmio_1_1Graph.html">Graph</a>&lt;typename <a class="el" href="classmio_1_1Simulation.html#a35c28a2a20c23c81e1de59bcca8fb1ec">Simulation::Model</a>, <a class="el" href="classmio_1_1MigrationParameters.html">MigrationParameters</a>&gt;&amp; <a class="el" href="classmio_1_1ParameterStudy.html">mio::ParameterStudy</a>&lt; S &gt;::get_model_graph </td>
+          <td class="memname"><a class="el" href="classmio_1_1ParameterStudy.html#a1a7d7c79a74d82c9cddefd3ed2878caa">ParametersGraph</a>&amp; <a class="el" href="classmio_1_1ParameterStudy.html">mio::ParameterStudy</a>&lt; S &gt;::get_model_graph </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -436,8 +537,8 @@ template&lt;class S &gt; </div>
 
 </div>
 </div>
-<a id="a930bbbf066ee1907997e03ccd24de686"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a930bbbf066ee1907997e03ccd24de686">&#9670;&nbsp;</a></span>get_model_graph() <span class="overload">[2/2]</span></h2>
+<a id="a4996481e80a27fab456190f87feb575c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4996481e80a27fab456190f87feb575c">&#9670;&nbsp;</a></span>get_model_graph() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -445,7 +546,7 @@ template&lt;class S &gt; </div>
 template&lt;class S &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">const <a class="el" href="classmio_1_1Graph.html">Graph</a>&lt;typename <a class="el" href="classmio_1_1Simulation.html#a35c28a2a20c23c81e1de59bcca8fb1ec">Simulation::Model</a>, <a class="el" href="classmio_1_1MigrationParameters.html">MigrationParameters</a>&gt;&amp; <a class="el" href="classmio_1_1ParameterStudy.html">mio::ParameterStudy</a>&lt; S &gt;::get_model_graph </td>
+          <td class="memname">const <a class="el" href="classmio_1_1ParameterStudy.html#a1a7d7c79a74d82c9cddefd3ed2878caa">ParametersGraph</a>&amp; <a class="el" href="classmio_1_1ParameterStudy.html">mio::ParameterStudy</a>&lt; S &gt;::get_model_graph </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -515,8 +616,8 @@ template&lt;class S &gt; </div>
 
 </div>
 </div>
-<a id="a76a5dd67276020d6d3d519e1fde0d153"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a76a5dd67276020d6d3d519e1fde0d153">&#9670;&nbsp;</a></span>run() <span class="overload">[1/2]</span></h2>
+<a id="aca4474458e1c3a27be584f444397e108"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aca4474458e1c3a27be584f444397e108">&#9670;&nbsp;</a></span>run() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -526,7 +627,7 @@ template&lt;class S &gt; </div>
 template&lt;class SampleGraphFunction &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt;<a class="el" href="classmio_1_1Graph.html">mio::Graph</a>&lt;<a class="el" href="classmio_1_1SimulationNode.html">mio::SimulationNode</a>&lt;<a class="el" href="classmio_1_1ParameterStudy.html#ab7a03dfc082678dbdc22d0dafe832097">Simulation</a>&gt;, <a class="el" href="classmio_1_1MigrationEdge.html">mio::MigrationEdge</a>&gt; &gt; <a class="el" href="classmio_1_1ParameterStudy.html">mio::ParameterStudy</a>&lt; S &gt;::run </td>
+          <td class="memname">std::vector&lt;<a class="el" href="classmio_1_1ParameterStudy.html#aecf3fa424e6b03e66219a57e223b10d1">SimulationGraph</a>&gt; <a class="el" href="classmio_1_1ParameterStudy.html">mio::ParameterStudy</a>&lt; S &gt;::run </td>
           <td>(</td>
           <td class="paramtype">SampleGraphFunction&#160;</td>
           <td class="paramname"><em>sample_graph</em></td><td>)</td>
@@ -537,8 +638,8 @@ template&lt;class SampleGraphFunction &gt; </div>
 
 </div>
 </div>
-<a id="aa8ad8accd0a82732c6acf568eae9c80e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa8ad8accd0a82732c6acf568eae9c80e">&#9670;&nbsp;</a></span>run() <span class="overload">[2/2]</span></h2>
+<a id="a789993b2fba9816506c99f1a62a3fe89"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a789993b2fba9816506c99f1a62a3fe89">&#9670;&nbsp;</a></span>run() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -548,7 +649,7 @@ template&lt;class S &gt; </div>
 template&lt;class SampleGraphFunction , class HandleSimulationResultFunction &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classmio_1_1ParameterStudy.html">mio::ParameterStudy</a>&lt; S &gt;::run </td>
+          <td class="memname">std::vector&lt;std::result_of_t&lt;HandleSimulationResultFunction(<a class="el" href="classmio_1_1ParameterStudy.html#aecf3fa424e6b03e66219a57e223b10d1">SimulationGraph</a>, size_t)&gt; &gt; <a class="el" href="classmio_1_1ParameterStudy.html">mio::ParameterStudy</a>&lt; S &gt;::run </td>
           <td>(</td>
           <td class="paramtype">SampleGraphFunction&#160;</td>
           <td class="paramname"><em>sample_graph</em>, </td>
@@ -678,8 +779,8 @@ template&lt;class S &gt; </div>
 
 </div>
 </div>
-<a id="ae2a62ce052ee87bc397571ffb37a244f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae2a62ce052ee87bc397571ffb37a244f">&#9670;&nbsp;</a></span>m_graph</h2>
+<a id="af65939411eb18ae302df0ef09cf23e3b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af65939411eb18ae302df0ef09cf23e3b">&#9670;&nbsp;</a></span>m_graph</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -690,7 +791,7 @@ template&lt;class S &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classmio_1_1Graph.html">mio::Graph</a>&lt;typename <a class="el" href="classmio_1_1Simulation.html#a35c28a2a20c23c81e1de59bcca8fb1ec">Simulation::Model</a>, <a class="el" href="classmio_1_1MigrationParameters.html">mio::MigrationParameters</a>&gt; <a class="el" href="classmio_1_1ParameterStudy.html">mio::ParameterStudy</a>&lt; S &gt;::m_graph</td>
+          <td class="memname"><a class="el" href="classmio_1_1ParameterStudy.html#a1a7d7c79a74d82c9cddefd3ed2878caa">ParametersGraph</a> <a class="el" href="classmio_1_1ParameterStudy.html">mio::ParameterStudy</a>&lt; S &gt;::m_graph</td>
         </tr>
       </table>
   </td>

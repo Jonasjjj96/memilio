@@ -31,18 +31,18 @@
             <td class="headerValue">coverage.info</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntry">154</td>
-            <td class="headerCovTableEntry">155</td>
+            <td class="headerCovTableEntry">156</td>
+            <td class="headerCovTableEntry">157</td>
             <td class="headerCovTableEntryHi">99.4 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2023-04-18 19:41:41</td>
+            <td class="headerValue">2023-04-21 09:49:31</td>
             <td></td>
             <td class="headerItem">Functions:</td>
-            <td class="headerCovTableEntry">516</td>
-            <td class="headerCovTableEntry">528</td>
-            <td class="headerCovTableEntryHi">97.7 %</td>
+            <td class="headerCovTableEntry">525</td>
+            <td class="headerCovTableEntry">537</td>
+            <td class="headerCovTableEntryHi">97.8 %</td>
           </tr>
           <tr><td><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
         </table>
@@ -97,21 +97,21 @@
 <a name="35"><span class="lineNum">      35 </span>            : //calculate the product of tuple elements</a>
 <a name="36"><span class="lineNum">      36 </span>            : // std::apply or fold expression in C++17</a>
 <a name="37"><span class="lineNum">      37 </span>            : template &lt;int I, template &lt;class...&gt; class Index, class... Ts&gt;</a>
-<a name="38"><span class="lineNum">      38 </span><span class="lineCov">      15070 : typename std::enable_if&lt;(I == sizeof...(Ts)), size_t&gt;::type product(Index&lt;Ts...&gt; const&amp;)</span></a>
+<a name="38"><span class="lineNum">      38 </span><span class="lineCov">      15096 : typename std::enable_if&lt;(I == sizeof...(Ts)), size_t&gt;::type product(Index&lt;Ts...&gt; const&amp;)</span></a>
 <a name="39"><span class="lineNum">      39 </span>            : {</a>
-<a name="40"><span class="lineNum">      40 </span><span class="lineCov">      15070 :     return 1;</span></a>
+<a name="40"><span class="lineNum">      40 </span><span class="lineCov">      15096 :     return 1;</span></a>
 <a name="41"><span class="lineNum">      41 </span>            : }</a>
 <a name="42"><span class="lineNum">      42 </span>            : </a>
 <a name="43"><span class="lineNum">      43 </span>            : template &lt;int I, template &lt;class...&gt; class Index, class... Ts&gt;</a>
-<a name="44"><span class="lineNum">      44 </span><span class="lineCov">      18007 : typename std::enable_if&lt;(I &lt; sizeof...(Ts)), size_t&gt;::type product(Index&lt;Ts...&gt; const&amp; t)</span></a>
+<a name="44"><span class="lineNum">      44 </span><span class="lineCov">      18033 : typename std::enable_if&lt;(I &lt; sizeof...(Ts)), size_t&gt;::type product(Index&lt;Ts...&gt; const&amp; t)</span></a>
 <a name="45"><span class="lineNum">      45 </span>            : {</a>
-<a name="46"><span class="lineNum">      46 </span><span class="lineCov">      18007 :     return (size_t)mio::get&lt;I&gt;(t) * product&lt;I + 1, Index, Ts...&gt;(t);</span></a>
+<a name="46"><span class="lineNum">      46 </span><span class="lineCov">      18033 :     return (size_t)mio::get&lt;I&gt;(t) * product&lt;I + 1, Index, Ts...&gt;(t);</span></a>
 <a name="47"><span class="lineNum">      47 </span>            : }</a>
 <a name="48"><span class="lineNum">      48 </span>            : </a>
 <a name="49"><span class="lineNum">      49 </span>            : template &lt;template &lt;class...&gt; class Index, class... Ts&gt;</a>
-<a name="50"><span class="lineNum">      50 </span><span class="lineCov">      14442 : size_t product(Index&lt;Ts...&gt; const&amp; t)</span></a>
+<a name="50"><span class="lineNum">      50 </span><span class="lineCov">      14469 : size_t product(Index&lt;Ts...&gt; const&amp; t)</span></a>
 <a name="51"><span class="lineNum">      51 </span>            : {</a>
-<a name="52"><span class="lineNum">      52 </span><span class="lineCov">      14442 :     return product&lt;0, Index, Ts...&gt;(t);</span></a>
+<a name="52"><span class="lineNum">      52 </span><span class="lineCov">      14469 :     return product&lt;0, Index, Ts...&gt;(t);</span></a>
 <a name="53"><span class="lineNum">      53 </span>            : }</a>
 <a name="54"><span class="lineNum">      54 </span>            : </a>
 <a name="55"><span class="lineNum">      55 </span>            : } // namespace</a>
@@ -138,23 +138,23 @@
 <a name="76"><span class="lineNum">      76 </span>            : </a>
 <a name="77"><span class="lineNum">      77 </span>            : // Internal implementation for flatten_index</a>
 <a name="78"><span class="lineNum">      78 </span>            : template &lt;size_t I, typename Index&gt;</a>
-<a name="79"><span class="lineNum">      79 </span><span class="lineCov">    1176973 : std::enable_if_t&lt;(I == (Index::size - 1)), std::pair&lt;size_t, size_t&gt;&gt; flatten_index(Index const&amp; indices,</span></a>
+<a name="79"><span class="lineNum">      79 </span><span class="lineCov">    1175703 : std::enable_if_t&lt;(I == (Index::size - 1)), std::pair&lt;size_t, size_t&gt;&gt; flatten_index(Index const&amp; indices,</span></a>
 <a name="80"><span class="lineNum">      80 </span>            :                                                                                     Index const&amp; dimensions)</a>
 <a name="81"><span class="lineNum">      81 </span>            : {</a>
-<a name="82"><span class="lineNum">      82 </span><span class="lineCov">    1176973 :     assert(get&lt;I&gt;(indices) &lt; get&lt;I&gt;(dimensions));</span></a>
-<a name="83"><span class="lineNum">      83 </span><span class="lineCov">    1176973 :     return {(size_t)mio::get&lt;I&gt;(indices), (size_t)mio::get&lt;I&gt;(dimensions)};</span></a>
+<a name="82"><span class="lineNum">      82 </span><span class="lineCov">    1175703 :     assert(get&lt;I&gt;(indices) &lt; get&lt;I&gt;(dimensions));</span></a>
+<a name="83"><span class="lineNum">      83 </span><span class="lineCov">    1175703 :     return {(size_t)mio::get&lt;I&gt;(indices), (size_t)mio::get&lt;I&gt;(dimensions)};</span></a>
 <a name="84"><span class="lineNum">      84 </span>            : }</a>
 <a name="85"><span class="lineNum">      85 </span>            : </a>
 <a name="86"><span class="lineNum">      86 </span>            : template &lt;size_t I, typename Index&gt;</a>
-<a name="87"><span class="lineNum">      87 </span><span class="lineCov">     519367 : std::enable_if_t&lt;(I &lt; (Index::size - 1)), std::pair&lt;size_t, size_t&gt;&gt; flatten_index(Index const&amp; indices,</span></a>
+<a name="87"><span class="lineNum">      87 </span><span class="lineCov">     518116 : std::enable_if_t&lt;(I &lt; (Index::size - 1)), std::pair&lt;size_t, size_t&gt;&gt; flatten_index(Index const&amp; indices,</span></a>
 <a name="88"><span class="lineNum">      88 </span>            :                                                                                    Index const&amp; dimensions)</a>
 <a name="89"><span class="lineNum">      89 </span>            : {</a>
-<a name="90"><span class="lineNum">      90 </span><span class="lineCov">     519367 :     assert(mio::get&lt;I&gt;(indices) &lt; mio::get&lt;I&gt;(dimensions));</span></a>
+<a name="90"><span class="lineNum">      90 </span><span class="lineCov">     518116 :     assert(mio::get&lt;I&gt;(indices) &lt; mio::get&lt;I&gt;(dimensions));</span></a>
 <a name="91"><span class="lineNum">      91 </span>            : </a>
-<a name="92"><span class="lineNum">      92 </span><span class="lineCov">     519367 :     size_t val, prod;</span></a>
-<a name="93"><span class="lineNum">      93 </span><span class="lineCov">     519367 :     std::tie(val, prod) = flatten_index&lt;I + 1&gt;(indices, dimensions);</span></a>
+<a name="92"><span class="lineNum">      92 </span><span class="lineCov">     518116 :     size_t val, prod;</span></a>
+<a name="93"><span class="lineNum">      93 </span><span class="lineCov">     518116 :     std::tie(val, prod) = flatten_index&lt;I + 1&gt;(indices, dimensions);</span></a>
 <a name="94"><span class="lineNum">      94 </span>            : </a>
-<a name="95"><span class="lineNum">      95 </span><span class="lineCov">    1038734 :     return {val + (size_t)mio::get&lt;I&gt;(indices) * prod, prod * (size_t)mio::get&lt;I&gt;(dimensions)};</span></a>
+<a name="95"><span class="lineNum">      95 </span><span class="lineCov">    1036232 :     return {val + (size_t)mio::get&lt;I&gt;(indices) * prod, prod * (size_t)mio::get&lt;I&gt;(dimensions)};</span></a>
 <a name="96"><span class="lineNum">      96 </span>            : }</a>
 <a name="97"><span class="lineNum">      97 </span>            : </a>
 <a name="98"><span class="lineNum">      98 </span>            : template &lt;typename T&gt;</a>
@@ -176,9 +176,9 @@
 <a name="114"><span class="lineNum">     114 </span>            :  * @return the corresponding flat index</a>
 <a name="115"><span class="lineNum">     115 </span>            :  */</a>
 <a name="116"><span class="lineNum">     116 </span>            : template &lt;typename MultiIndex&gt;</a>
-<a name="117"><span class="lineNum">     117 </span><span class="lineCov">    1176973 : size_t flatten_index(MultiIndex const&amp; indices, MultiIndex const&amp; dimensions)</span></a>
+<a name="117"><span class="lineNum">     117 </span><span class="lineCov">    1175703 : size_t flatten_index(MultiIndex const&amp; indices, MultiIndex const&amp; dimensions)</span></a>
 <a name="118"><span class="lineNum">     118 </span>            : {</a>
-<a name="119"><span class="lineNum">     119 </span><span class="lineCov">    1176973 :     return details::flatten_index&lt;0&gt;(indices, dimensions).first;</span></a>
+<a name="119"><span class="lineNum">     119 </span><span class="lineCov">    1175703 :     return details::flatten_index&lt;0&gt;(indices, dimensions).first;</span></a>
 <a name="120"><span class="lineNum">     120 </span>            : }</a>
 <a name="121"><span class="lineNum">     121 </span>            : </a>
 <a name="122"><span class="lineNum">     122 </span>            : /**</a>
@@ -237,12 +237,12 @@
 <a name="175"><span class="lineNum">     175 </span>            :      * @param args The constructor arguments of Type</a>
 <a name="176"><span class="lineNum">     176 </span>            :      */</a>
 <a name="177"><span class="lineNum">     177 </span>            :     template &lt;class... Ts, typename std::enable_if_t&lt;std::is_constructible&lt;Type, Ts...&gt;::value&gt;* = nullptr&gt;</a>
-<a name="178"><span class="lineNum">     178 </span><span class="lineCov">       8498 :     CustomIndexArray(Index const&amp; dims, Ts&amp;&amp;... args)</span></a>
+<a name="178"><span class="lineNum">     178 </span><span class="lineCov">       8526 :     CustomIndexArray(Index const&amp; dims, Ts&amp;&amp;... args)</span></a>
 <a name="179"><span class="lineNum">     179 </span>            :         : m_dimensions{dims}</a>
-<a name="180"><span class="lineNum">     180 </span><span class="lineCov">       8498 :         , m_numel(product(dims))</span></a>
-<a name="181"><span class="lineNum">     181 </span><span class="lineCov">      16996 :         , m_y(InternalArrayType::Constant(m_numel, 1, Type{std::forward&lt;Ts&gt;(args)...}))</span></a>
+<a name="180"><span class="lineNum">     180 </span><span class="lineCov">       8526 :         , m_numel(product(dims))</span></a>
+<a name="181"><span class="lineNum">     181 </span><span class="lineCov">      17052 :         , m_y(InternalArrayType::Constant(m_numel, 1, Type{std::forward&lt;Ts&gt;(args)...}))</span></a>
 <a name="182"><span class="lineNum">     182 </span>            :     {</a>
-<a name="183"><span class="lineNum">     183 </span><span class="lineCov">       8498 :     }</span></a>
+<a name="183"><span class="lineNum">     183 </span><span class="lineCov">       8526 :     }</span></a>
 <a name="184"><span class="lineNum">     184 </span>            : </a>
 <a name="185"><span class="lineNum">     185 </span>            :     /**</a>
 <a name="186"><span class="lineNum">     186 </span>            :      * Initializes array with values from a range.</a>
@@ -267,9 +267,9 @@
 <a name="205"><span class="lineNum">     205 </span>            :      *</a>
 <a name="206"><span class="lineNum">     206 </span>            :      * @return number of elements</a>
 <a name="207"><span class="lineNum">     207 </span>            :      */</a>
-<a name="208"><span class="lineNum">     208 </span><span class="lineCov">       1061 :     size_t constexpr numel() const</span></a>
+<a name="208"><span class="lineNum">     208 </span><span class="lineCov">       1075 :     size_t constexpr numel() const</span></a>
 <a name="209"><span class="lineNum">     209 </span>            :     {</a>
-<a name="210"><span class="lineNum">     210 </span><span class="lineCov">       1061 :         return m_numel;</span></a>
+<a name="210"><span class="lineNum">     210 </span><span class="lineCov">       1075 :         return m_numel;</span></a>
 <a name="211"><span class="lineNum">     211 </span>            :     }</a>
 <a name="212"><span class="lineNum">     212 </span>            : </a>
 <a name="213"><span class="lineNum">     213 </span>            :     /**</a>
@@ -319,9 +319,9 @@
 <a name="257"><span class="lineNum">     257 </span>            :      * @brief array returns a reference to the internally stored flat array.</a>
 <a name="258"><span class="lineNum">     258 </span>            :      * @return const reference to the CustomIndexArray::InternalArrayType instance</a>
 <a name="259"><span class="lineNum">     259 </span>            :      */</a>
-<a name="260"><span class="lineNum">     260 </span><span class="lineCov">       4122 :     auto const&amp; array() const</span></a>
+<a name="260"><span class="lineNum">     260 </span><span class="lineCov">       4163 :     auto const&amp; array() const</span></a>
 <a name="261"><span class="lineNum">     261 </span>            :     {</a>
-<a name="262"><span class="lineNum">     262 </span><span class="lineCov">       4122 :         return m_y;</span></a>
+<a name="262"><span class="lineNum">     262 </span><span class="lineCov">       4163 :         return m_y;</span></a>
 <a name="263"><span class="lineNum">     263 </span>            :     }</a>
 <a name="264"><span class="lineNum">     264 </span><span class="lineCov">      12139 :     auto&amp; array()</span></a>
 <a name="265"><span class="lineNum">     265 </span>            :     {</a>
@@ -333,9 +333,9 @@
 <a name="271"><span class="lineNum">     271 </span>            :      * @param MultiIndex</a>
 <a name="272"><span class="lineNum">     272 </span>            :      * @return the value at the index</a>
 <a name="273"><span class="lineNum">     273 </span>            :      */</a>
-<a name="274"><span class="lineNum">     274 </span><span class="lineCov">     115278 :     Type&amp; operator[](Index const&amp; index)</span></a>
+<a name="274"><span class="lineNum">     274 </span><span class="lineCov">     115397 :     Type&amp; operator[](Index const&amp; index)</span></a>
 <a name="275"><span class="lineNum">     275 </span>            :     {</a>
-<a name="276"><span class="lineNum">     276 </span><span class="lineCov">     115278 :         return m_y[get_flat_index(index)];</span></a>
+<a name="276"><span class="lineNum">     276 </span><span class="lineCov">     115397 :         return m_y[get_flat_index(index)];</span></a>
 <a name="277"><span class="lineNum">     277 </span>            :     }</a>
 <a name="278"><span class="lineNum">     278 </span>            : </a>
 <a name="279"><span class="lineNum">     279 </span>            :     /**</a>
@@ -343,9 +343,9 @@
 <a name="281"><span class="lineNum">     281 </span>            :      * @param index a flat index</a>
 <a name="282"><span class="lineNum">     282 </span>            :      * @return the value at the index</a>
 <a name="283"><span class="lineNum">     283 </span>            :      */</a>
-<a name="284"><span class="lineNum">     284 </span><span class="lineCov">     667875 :     Type const&amp; operator[](Index const&amp; index) const</span></a>
+<a name="284"><span class="lineNum">     284 </span><span class="lineCov">     667740 :     Type const&amp; operator[](Index const&amp; index) const</span></a>
 <a name="285"><span class="lineNum">     285 </span>            :     {</a>
-<a name="286"><span class="lineNum">     286 </span><span class="lineCov">     667875 :         return m_y[get_flat_index(index)];</span></a>
+<a name="286"><span class="lineNum">     286 </span><span class="lineCov">     667740 :         return m_y[get_flat_index(index)];</span></a>
 <a name="287"><span class="lineNum">     287 </span>            :     }</a>
 <a name="288"><span class="lineNum">     288 </span>            : </a>
 <a name="289"><span class="lineNum">     289 </span>            :     /**</a>
@@ -378,9 +378,9 @@
 <a name="316"><span class="lineNum">     316 </span>            :      * @param indices the custom indices for each category</a>
 <a name="317"><span class="lineNum">     317 </span>            :      * @return a flat index into the data structure storing the compartment populations</a>
 <a name="318"><span class="lineNum">     318 </span>            :      */</a>
-<a name="319"><span class="lineNum">     319 </span><span class="lineCov">    1176973 :     size_t get_flat_index(Index const&amp; index) const</span></a>
+<a name="319"><span class="lineNum">     319 </span><span class="lineCov">    1175703 :     size_t get_flat_index(Index const&amp; index) const</span></a>
 <a name="320"><span class="lineNum">     320 </span>            :     {</a>
-<a name="321"><span class="lineNum">     321 </span><span class="lineCov">    1176973 :         return (Eigen::Index)flatten_index(index, m_dimensions);</span></a>
+<a name="321"><span class="lineNum">     321 </span><span class="lineCov">    1175703 :         return (Eigen::Index)flatten_index(index, m_dimensions);</span></a>
 <a name="322"><span class="lineNum">     322 </span>            :     }</a>
 <a name="323"><span class="lineNum">     323 </span>            : </a>
 <a name="324"><span class="lineNum">     324 </span>            : private:</a>
@@ -396,10 +396,10 @@
 <a name="334"><span class="lineNum">     334 </span>            :         using pointer           = value_type*;</a>
 <a name="335"><span class="lineNum">     335 </span>            :         using reference         = value_type&amp;;</a>
 <a name="336"><span class="lineNum">     336 </span>            : </a>
-<a name="337"><span class="lineNum">     337 </span><span class="lineCov">       6547 :         Iterator(pointer ptr)</span></a>
-<a name="338"><span class="lineNum">     338 </span><span class="lineCov">       6547 :             : m_ptr(ptr)</span></a>
+<a name="337"><span class="lineNum">     337 </span><span class="lineCov">       6574 :         Iterator(pointer ptr)</span></a>
+<a name="338"><span class="lineNum">     338 </span><span class="lineCov">       6574 :             : m_ptr(ptr)</span></a>
 <a name="339"><span class="lineNum">     339 </span>            :         {</a>
-<a name="340"><span class="lineNum">     340 </span><span class="lineCov">       6547 :         }</span></a>
+<a name="340"><span class="lineNum">     340 </span><span class="lineCov">       6574 :         }</span></a>
 <a name="341"><span class="lineNum">     341 </span>            : </a>
 <a name="342"><span class="lineNum">     342 </span>            :         Iterator&amp; operator=(pointer rhs)</a>
 <a name="343"><span class="lineNum">     343 </span>            :         {</a>
@@ -422,17 +422,17 @@
 <a name="360"><span class="lineNum">     360 </span>            :             return *this;</a>
 <a name="361"><span class="lineNum">     361 </span>            :         }</a>
 <a name="362"><span class="lineNum">     362 </span>            : </a>
-<a name="363"><span class="lineNum">     363 </span><span class="lineCov">      10708 :         reference operator[](const difference_type&amp; rhs)</span></a>
+<a name="363"><span class="lineNum">     363 </span><span class="lineCov">      10700 :         reference operator[](const difference_type&amp; rhs)</span></a>
 <a name="364"><span class="lineNum">     364 </span>            :         {</a>
-<a name="365"><span class="lineNum">     365 </span><span class="lineCov">      10708 :             return m_ptr[rhs];</span></a>
+<a name="365"><span class="lineNum">     365 </span><span class="lineCov">      10700 :             return m_ptr[rhs];</span></a>
 <a name="366"><span class="lineNum">     366 </span>            :         }</a>
 <a name="367"><span class="lineNum">     367 </span>            :         value_type const&amp; operator[](const difference_type&amp; rhs) const</a>
 <a name="368"><span class="lineNum">     368 </span>            :         {</a>
 <a name="369"><span class="lineNum">     369 </span>            :             return m_ptr[rhs];</a>
 <a name="370"><span class="lineNum">     370 </span>            :         }</a>
-<a name="371"><span class="lineNum">     371 </span><span class="lineCov">      58857 :         reference operator*()</span></a>
+<a name="371"><span class="lineNum">     371 </span><span class="lineCov">      58962 :         reference operator*()</span></a>
 <a name="372"><span class="lineNum">     372 </span>            :         {</a>
-<a name="373"><span class="lineNum">     373 </span><span class="lineCov">      58857 :             return *(m_ptr);</span></a>
+<a name="373"><span class="lineNum">     373 </span><span class="lineCov">      58962 :             return *(m_ptr);</span></a>
 <a name="374"><span class="lineNum">     374 </span>            :         }</a>
 <a name="375"><span class="lineNum">     375 </span>            :         value_type const&amp; operator*() const</a>
 <a name="376"><span class="lineNum">     376 </span>            :         {</a>
@@ -443,10 +443,10 @@
 <a name="381"><span class="lineNum">     381 </span>            :             return m_ptr;</a>
 <a name="382"><span class="lineNum">     382 </span>            :         }</a>
 <a name="383"><span class="lineNum">     383 </span>            : </a>
-<a name="384"><span class="lineNum">     384 </span><span class="lineCov">      58857 :         Iterator&amp; operator++()</span></a>
+<a name="384"><span class="lineNum">     384 </span><span class="lineCov">      58962 :         Iterator&amp; operator++()</span></a>
 <a name="385"><span class="lineNum">     385 </span>            :         {</a>
-<a name="386"><span class="lineNum">     386 </span><span class="lineCov">      58857 :             ++m_ptr;</span></a>
-<a name="387"><span class="lineNum">     387 </span><span class="lineCov">      58857 :             return *this;</span></a>
+<a name="386"><span class="lineNum">     386 </span><span class="lineCov">      58962 :             ++m_ptr;</span></a>
+<a name="387"><span class="lineNum">     387 </span><span class="lineCov">      58962 :             return *this;</span></a>
 <a name="388"><span class="lineNum">     388 </span>            :         }</a>
 <a name="389"><span class="lineNum">     389 </span>            :         Iterator operator++(int)</a>
 <a name="390"><span class="lineNum">     390 </span>            :         {</a>
@@ -474,18 +474,18 @@
 <a name="412"><span class="lineNum">     412 </span>            :         {</a>
 <a name="413"><span class="lineNum">     413 </span>            :             return Iterator(m_ptr - rhs);</a>
 <a name="414"><span class="lineNum">     414 </span>            :         }</a>
-<a name="415"><span class="lineNum">     415 </span>            :         difference_type operator-(const Iterator&amp; rhs) const</a>
+<a name="415"><span class="lineNum">     415 </span><span class="lineCov">         14 :         difference_type operator-(const Iterator&amp; rhs) const</span></a>
 <a name="416"><span class="lineNum">     416 </span>            :         {</a>
-<a name="417"><span class="lineNum">     417 </span>            :             return m_ptr - rhs.m_ptr;</a>
+<a name="417"><span class="lineNum">     417 </span><span class="lineCov">         14 :             return m_ptr - rhs.m_ptr;</span></a>
 <a name="418"><span class="lineNum">     418 </span>            :         }</a>
 <a name="419"><span class="lineNum">     419 </span>            : </a>
-<a name="420"><span class="lineNum">     420 </span><span class="lineCov">       2411 :         friend bool operator==(const Iterator&amp; a, const Iterator&amp; b)</span></a>
+<a name="420"><span class="lineNum">     420 </span><span class="lineCov">       2529 :         friend bool operator==(const Iterator&amp; a, const Iterator&amp; b)</span></a>
 <a name="421"><span class="lineNum">     421 </span>            :         {</a>
-<a name="422"><span class="lineNum">     422 </span><span class="lineCov">       2411 :             return a.m_ptr == b.m_ptr;</span></a>
+<a name="422"><span class="lineNum">     422 </span><span class="lineCov">       2529 :             return a.m_ptr == b.m_ptr;</span></a>
 <a name="423"><span class="lineNum">     423 </span>            :         }</a>
-<a name="424"><span class="lineNum">     424 </span><span class="lineCov">       1787 :         friend bool operator!=(const Iterator&amp; a, const Iterator&amp; b)</span></a>
+<a name="424"><span class="lineNum">     424 </span><span class="lineCov">       1906 :         friend bool operator!=(const Iterator&amp; a, const Iterator&amp; b)</span></a>
 <a name="425"><span class="lineNum">     425 </span>            :         {</a>
-<a name="426"><span class="lineNum">     426 </span><span class="lineCov">       1787 :             return !(a == b);</span></a>
+<a name="426"><span class="lineNum">     426 </span><span class="lineCov">       1906 :             return !(a == b);</span></a>
 <a name="427"><span class="lineNum">     427 </span>            :         }</a>
 <a name="428"><span class="lineNum">     428 </span>            :         friend bool operator&lt;(const Iterator&amp; a, const Iterator&amp; b)</a>
 <a name="429"><span class="lineNum">     429 </span>            :         {</a>
@@ -547,14 +547,14 @@
 <a name="485"><span class="lineNum">     485 </span>            :             using pointer           = value_type*;</a>
 <a name="486"><span class="lineNum">     486 </span>            :             using reference         = value_type&amp;;</a>
 <a name="487"><span class="lineNum">     487 </span>            : </a>
-<a name="488"><span class="lineNum">     488 </span><span class="lineCov">       1251 :             Iterator(iter_type begin_, size_t di_, size_t dr_, Seq&lt;size_t&gt; const&amp; seq_, difference_type offset = 0)</span></a>
+<a name="488"><span class="lineNum">     488 </span><span class="lineCov">       1249 :             Iterator(iter_type begin_, size_t di_, size_t dr_, Seq&lt;size_t&gt; const&amp; seq_, difference_type offset = 0)</span></a>
 <a name="489"><span class="lineNum">     489 </span>            :                 : data_begin(begin_)</a>
 <a name="490"><span class="lineNum">     490 </span>            :                 , di(di_)</a>
 <a name="491"><span class="lineNum">     491 </span>            :                 , dr(dr_)</a>
 <a name="492"><span class="lineNum">     492 </span>            :                 , seq(seq_)</a>
-<a name="493"><span class="lineNum">     493 </span><span class="lineCov">       1251 :                 , inner_offset(offset)</span></a>
+<a name="493"><span class="lineNum">     493 </span><span class="lineCov">       1249 :                 , inner_offset(offset)</span></a>
 <a name="494"><span class="lineNum">     494 </span>            :             {</a>
-<a name="495"><span class="lineNum">     495 </span><span class="lineCov">       1251 :             }</span></a>
+<a name="495"><span class="lineNum">     495 </span><span class="lineCov">       1249 :             }</span></a>
 <a name="496"><span class="lineNum">     496 </span>            : </a>
 <a name="497"><span class="lineNum">     497 </span>            :             Iterator&amp; operator=(size_t rhs)</a>
 <a name="498"><span class="lineNum">     498 </span>            :             {</a>
@@ -585,9 +585,9 @@
 <a name="523"><span class="lineNum">     523 </span>            :             {</a>
 <a name="524"><span class="lineNum">     524 </span>            :                 return data_begin[outer_offset(inner_offset + rhs)];</a>
 <a name="525"><span class="lineNum">     525 </span>            :             }</a>
-<a name="526"><span class="lineNum">     526 </span><span class="lineCov">      10708 :             reference operator*()</span></a>
+<a name="526"><span class="lineNum">     526 </span><span class="lineCov">      10700 :             reference operator*()</span></a>
 <a name="527"><span class="lineNum">     527 </span>            :             {</a>
-<a name="528"><span class="lineNum">     528 </span><span class="lineCov">      10708 :                 return data_begin[outer_offset(inner_offset)];</span></a>
+<a name="528"><span class="lineNum">     528 </span><span class="lineCov">      10700 :                 return data_begin[outer_offset(inner_offset)];</span></a>
 <a name="529"><span class="lineNum">     529 </span>            :             }</a>
 <a name="530"><span class="lineNum">     530 </span>            :             value_type const&amp; operator*() const</a>
 <a name="531"><span class="lineNum">     531 </span>            :             {</a>
@@ -598,10 +598,10 @@
 <a name="536"><span class="lineNum">     536 </span>            :                 return data_begin + outer_offset(inner_offset);</a>
 <a name="537"><span class="lineNum">     537 </span>            :             }</a>
 <a name="538"><span class="lineNum">     538 </span>            : </a>
-<a name="539"><span class="lineNum">     539 </span><span class="lineCov">      10708 :             Iterator&amp; operator++()</span></a>
+<a name="539"><span class="lineNum">     539 </span><span class="lineCov">      10700 :             Iterator&amp; operator++()</span></a>
 <a name="540"><span class="lineNum">     540 </span>            :             {</a>
-<a name="541"><span class="lineNum">     541 </span><span class="lineCov">      10708 :                 inner_offset++;</span></a>
-<a name="542"><span class="lineNum">     542 </span><span class="lineCov">      10708 :                 return *this;</span></a>
+<a name="541"><span class="lineNum">     541 </span><span class="lineCov">      10700 :                 inner_offset++;</span></a>
+<a name="542"><span class="lineNum">     542 </span><span class="lineCov">      10700 :                 return *this;</span></a>
 <a name="543"><span class="lineNum">     543 </span>            :             }</a>
 <a name="544"><span class="lineNum">     544 </span>            :             Iterator operator++(int)</a>
 <a name="545"><span class="lineNum">     545 </span>            :             {</a>
@@ -630,14 +630,14 @@
 <a name="568"><span class="lineNum">     568 </span>            :                 return Iterator(data_begin, di, dr, seq, inner_offset - rhs);</a>
 <a name="569"><span class="lineNum">     569 </span>            :             }</a>
 <a name="570"><span class="lineNum">     570 </span>            : </a>
-<a name="571"><span class="lineNum">     571 </span><span class="lineCov">      11333 :             friend bool operator==(const Iterator&amp; a, const Iterator&amp; b)</span></a>
+<a name="571"><span class="lineNum">     571 </span><span class="lineCov">      11324 :             friend bool operator==(const Iterator&amp; a, const Iterator&amp; b)</span></a>
 <a name="572"><span class="lineNum">     572 </span>            :             {</a>
-<a name="573"><span class="lineNum">     573 </span><span class="lineCov">      11958 :                 return a.inner_offset == b.inner_offset &amp;&amp; a.data_begin == b.data_begin &amp;&amp; a.di == b.di &amp;&amp;</span></a>
-<a name="574"><span class="lineNum">     574 </span><span class="lineCov">      11958 :                        a.dr == b.dr &amp;&amp; a.seq.start == b.seq.start &amp;&amp; a.seq.n == b.seq.n &amp;&amp; a.seq.stride == b.seq.stride;</span></a>
+<a name="573"><span class="lineNum">     573 </span><span class="lineCov">      11948 :                 return a.inner_offset == b.inner_offset &amp;&amp; a.data_begin == b.data_begin &amp;&amp; a.di == b.di &amp;&amp;</span></a>
+<a name="574"><span class="lineNum">     574 </span><span class="lineCov">      11948 :                        a.dr == b.dr &amp;&amp; a.seq.start == b.seq.start &amp;&amp; a.seq.n == b.seq.n &amp;&amp; a.seq.stride == b.seq.stride;</span></a>
 <a name="575"><span class="lineNum">     575 </span>            :             }</a>
-<a name="576"><span class="lineNum">     576 </span><span class="lineCov">      11332 :             friend bool operator!=(const Iterator&amp; a, const Iterator&amp; b)</span></a>
+<a name="576"><span class="lineNum">     576 </span><span class="lineCov">      11323 :             friend bool operator!=(const Iterator&amp; a, const Iterator&amp; b)</span></a>
 <a name="577"><span class="lineNum">     577 </span>            :             {</a>
-<a name="578"><span class="lineNum">     578 </span><span class="lineCov">      11332 :                 return !(a == b);</span></a>
+<a name="578"><span class="lineNum">     578 </span><span class="lineCov">      11323 :                 return !(a == b);</span></a>
 <a name="579"><span class="lineNum">     579 </span>            :             }</a>
 <a name="580"><span class="lineNum">     580 </span>            :             friend bool operator&lt;(const Iterator&amp; a, const Iterator&amp; b)</a>
 <a name="581"><span class="lineNum">     581 </span>            :             {</a>
@@ -657,20 +657,20 @@
 <a name="595"><span class="lineNum">     595 </span>            :             }</a>
 <a name="596"><span class="lineNum">     596 </span>            : </a>
 <a name="597"><span class="lineNum">     597 </span>            :         private:</a>
-<a name="598"><span class="lineNum">     598 </span><span class="lineCov">      10712 :             inline Slice::difference_type outer_offset(difference_type const&amp; inner) const</span></a>
+<a name="598"><span class="lineNum">     598 </span><span class="lineCov">      10704 :             inline Slice::difference_type outer_offset(difference_type const&amp; inner) const</span></a>
 <a name="599"><span class="lineNum">     599 </span>            :             {</a>
 <a name="600"><span class="lineNum">     600 </span>            : </a>
 <a name="601"><span class="lineNum">     601 </span>            :                 // calculate the outer offset from the inner offset</a>
 <a name="602"><span class="lineNum">     602 </span>            : </a>
 <a name="603"><span class="lineNum">     603 </span>            :                 // first unravel the inner index into an index (i,j,k) for a 3-dim array with dims (dl, idx_sequence.n, dr)</a>
-<a name="604"><span class="lineNum">     604 </span><span class="lineCov">      10712 :                 auto dv           = std::div(inner, seq.n * dr);</span></a>
-<a name="605"><span class="lineNum">     605 </span><span class="lineCov">      10712 :                 difference_type i = dv.quot;</span></a>
-<a name="606"><span class="lineNum">     606 </span><span class="lineCov">      10712 :                 dv                = std::div(dv.rem, dr);</span></a>
-<a name="607"><span class="lineNum">     607 </span><span class="lineCov">      10712 :                 difference_type j = dv.quot * seq.stride + seq.start;</span></a>
-<a name="608"><span class="lineNum">     608 </span><span class="lineCov">      10712 :                 difference_type k = dv.rem;</span></a>
+<a name="604"><span class="lineNum">     604 </span><span class="lineCov">      10704 :                 auto dv           = std::div(inner, seq.n * dr);</span></a>
+<a name="605"><span class="lineNum">     605 </span><span class="lineCov">      10704 :                 difference_type i = dv.quot;</span></a>
+<a name="606"><span class="lineNum">     606 </span><span class="lineCov">      10704 :                 dv                = std::div(dv.rem, dr);</span></a>
+<a name="607"><span class="lineNum">     607 </span><span class="lineCov">      10704 :                 difference_type j = dv.quot * seq.stride + seq.start;</span></a>
+<a name="608"><span class="lineNum">     608 </span><span class="lineCov">      10704 :                 difference_type k = dv.rem;</span></a>
 <a name="609"><span class="lineNum">     609 </span>            : </a>
 <a name="610"><span class="lineNum">     610 </span>            :                 // then flatten the index for a 3-dim array with dims (dl, di, dr)</a>
-<a name="611"><span class="lineNum">     611 </span><span class="lineCov">      10712 :                 return i * di * dr + j * dr + k;</span></a>
+<a name="611"><span class="lineNum">     611 </span><span class="lineCov">      10704 :                 return i * di * dr + j * dr + k;</span></a>
 <a name="612"><span class="lineNum">     612 </span>            :             }</a>
 <a name="613"><span class="lineNum">     613 </span>            : </a>
 <a name="614"><span class="lineNum">     614 </span>            :             iter_type data_begin;</a>
@@ -691,23 +691,23 @@
 <a name="629"><span class="lineNum">     629 </span>            :          * @param start_iter An iterator to the first element of the data</a>
 <a name="630"><span class="lineNum">     630 </span>            :          * @param idx_sequence_ A sequence of indices into the slice</a>
 <a name="631"><span class="lineNum">     631 </span>            :          */</a>
-<a name="632"><span class="lineNum">     632 </span><span class="lineCov">        628 :         Slice(Index const&amp; dimensions, iter_type const&amp; start_iter, Seq&lt;size_t&gt; idx_sequence_)</span></a>
+<a name="632"><span class="lineNum">     632 </span><span class="lineCov">        627 :         Slice(Index const&amp; dimensions, iter_type const&amp; start_iter, Seq&lt;size_t&gt; idx_sequence_)</span></a>
 <a name="633"><span class="lineNum">     633 </span>            :             : data_begin(start_iter)</a>
 <a name="634"><span class="lineNum">     634 </span>            :             , idx_sequence(idx_sequence_)</a>
 <a name="635"><span class="lineNum">     635 </span>            :             , m_dimensions(dimensions)</a>
-<a name="636"><span class="lineNum">     636 </span><span class="lineCov">        628 :             , di(mio::get&lt;Tag&gt;(dimensions))</span></a>
-<a name="637"><span class="lineNum">     637 </span><span class="lineCov">        628 :             , dr(product&lt;details::IndexPosition&lt;Tag, Index&gt;::value&gt;(dimensions) / di)</span></a>
-<a name="638"><span class="lineNum">     638 </span><span class="lineCov">       1884 :             , dl(product(dimensions) / (di * dr))</span></a>
+<a name="636"><span class="lineNum">     636 </span><span class="lineCov">        627 :             , di(mio::get&lt;Tag&gt;(dimensions))</span></a>
+<a name="637"><span class="lineNum">     637 </span><span class="lineCov">        627 :             , dr(product&lt;details::IndexPosition&lt;Tag, Index&gt;::value&gt;(dimensions) / di)</span></a>
+<a name="638"><span class="lineNum">     638 </span><span class="lineCov">       1881 :             , dl(product(dimensions) / (di * dr))</span></a>
 <a name="639"><span class="lineNum">     639 </span>            :         {</a>
-<a name="640"><span class="lineNum">     640 </span><span class="lineCov">        628 :             assert((size_t)idx_sequence.start + idx_sequence.n &lt;= di);</span></a>
+<a name="640"><span class="lineNum">     640 </span><span class="lineCov">        627 :             assert((size_t)idx_sequence.start + idx_sequence.n &lt;= di);</span></a>
 <a name="641"><span class="lineNum">     641 </span>            : </a>
-<a name="642"><span class="lineNum">     642 </span><span class="lineCov">        628 :             mio::get&lt;Tag&gt;(m_dimensions) = mio::Index&lt;Tag&gt;(idx_sequence.n);</span></a>
-<a name="643"><span class="lineNum">     643 </span><span class="lineCov">        628 :         }</span></a>
+<a name="642"><span class="lineNum">     642 </span><span class="lineCov">        627 :             mio::get&lt;Tag&gt;(m_dimensions) = mio::Index&lt;Tag&gt;(idx_sequence.n);</span></a>
+<a name="643"><span class="lineNum">     643 </span><span class="lineCov">        627 :         }</span></a>
 <a name="644"><span class="lineNum">     644 </span>            : </a>
 <a name="645"><span class="lineNum">     645 </span>            :         // returns the number of elements in a slice</a>
-<a name="646"><span class="lineNum">     646 </span><span class="lineCov">        629 :         size_t numel() const</span></a>
+<a name="646"><span class="lineNum">     646 </span><span class="lineCov">        628 :         size_t numel() const</span></a>
 <a name="647"><span class="lineNum">     647 </span>            :         {</a>
-<a name="648"><span class="lineNum">     648 </span><span class="lineCov">        629 :             return dl * dr * (idx_sequence.n);</span></a>
+<a name="648"><span class="lineNum">     648 </span><span class="lineCov">        628 :             return dl * dr * (idx_sequence.n);</span></a>
 <a name="649"><span class="lineNum">     649 </span>            :         }</a>
 <a name="650"><span class="lineNum">     650 </span>            : </a>
 <a name="651"><span class="lineNum">     651 </span>            :         // returns an stl-compatible random access iterator into the slice</a>
@@ -717,9 +717,9 @@
 <a name="655"><span class="lineNum">     655 </span>            :         }</a>
 <a name="656"><span class="lineNum">     656 </span>            : </a>
 <a name="657"><span class="lineNum">     657 </span>            :         // returns an stl-compatible random access iterator into the slice</a>
-<a name="658"><span class="lineNum">     658 </span><span class="lineCov">        616 :         const_iterator begin() const</span></a>
+<a name="658"><span class="lineNum">     658 </span><span class="lineCov">        615 :         const_iterator begin() const</span></a>
 <a name="659"><span class="lineNum">     659 </span>            :         {</a>
-<a name="660"><span class="lineNum">     660 </span><span class="lineCov">        616 :             return const_iterator(data_begin, di, dr, idx_sequence, 0);</span></a>
+<a name="660"><span class="lineNum">     660 </span><span class="lineCov">        615 :             return const_iterator(data_begin, di, dr, idx_sequence, 0);</span></a>
 <a name="661"><span class="lineNum">     661 </span>            :         }</a>
 <a name="662"><span class="lineNum">     662 </span>            : </a>
 <a name="663"><span class="lineNum">     663 </span>            :         // returns an stl-compatible end random access iterator into the slice</a>
@@ -729,9 +729,9 @@
 <a name="667"><span class="lineNum">     667 </span>            :         }</a>
 <a name="668"><span class="lineNum">     668 </span>            : </a>
 <a name="669"><span class="lineNum">     669 </span>            :         // returns an stl-compatible end random access iterator into the slice</a>
-<a name="670"><span class="lineNum">     670 </span><span class="lineCov">        619 :         const_iterator end() const</span></a>
+<a name="670"><span class="lineNum">     670 </span><span class="lineCov">        618 :         const_iterator end() const</span></a>
 <a name="671"><span class="lineNum">     671 </span>            :         {</a>
-<a name="672"><span class="lineNum">     672 </span><span class="lineCov">        619 :             return const_iterator(data_begin, di, dr, idx_sequence, numel());</span></a>
+<a name="672"><span class="lineNum">     672 </span><span class="lineCov">        618 :             return const_iterator(data_begin, di, dr, idx_sequence, numel());</span></a>
 <a name="673"><span class="lineNum">     673 </span>            :         }</a>
 <a name="674"><span class="lineNum">     674 </span>            : </a>
 <a name="675"><span class="lineNum">     675 </span>            :         // copies the slice elements into a CustomIndexArray of appropriate dimension</a>
@@ -831,9 +831,9 @@
 <a name="769"><span class="lineNum">     769 </span>            :      * @brief Get a start iterator for the elements</a>
 <a name="770"><span class="lineNum">     770 </span>            :      * @return random access iterator</a>
 <a name="771"><span class="lineNum">     771 </span>            :      */</a>
-<a name="772"><span class="lineNum">     772 </span><span class="lineCov">        955 :     const_iterator begin() const</span></a>
+<a name="772"><span class="lineNum">     772 </span><span class="lineCov">        968 :     const_iterator begin() const</span></a>
 <a name="773"><span class="lineNum">     773 </span>            :     {</a>
-<a name="774"><span class="lineNum">     774 </span><span class="lineCov">        955 :         return const_iterator(array().data());</span></a>
+<a name="774"><span class="lineNum">     774 </span><span class="lineCov">        968 :         return const_iterator(array().data());</span></a>
 <a name="775"><span class="lineNum">     775 </span>            :     }</a>
 <a name="776"><span class="lineNum">     776 </span>            : </a>
 <a name="777"><span class="lineNum">     777 </span>            :     /**</a>
@@ -849,9 +849,9 @@
 <a name="787"><span class="lineNum">     787 </span>            :      * @brief Get an end iterator for the elements</a>
 <a name="788"><span class="lineNum">     788 </span>            :      * @return random access iterator</a>
 <a name="789"><span class="lineNum">     789 </span>            :      */</a>
-<a name="790"><span class="lineNum">     790 </span><span class="lineCov">        357 :     const_iterator end() const</span></a>
+<a name="790"><span class="lineNum">     790 </span><span class="lineCov">        371 :     const_iterator end() const</span></a>
 <a name="791"><span class="lineNum">     791 </span>            :     {</a>
-<a name="792"><span class="lineNum">     792 </span><span class="lineCov">        357 :         return const_iterator(array().data() + array().size());</span></a>
+<a name="792"><span class="lineNum">     792 </span><span class="lineCov">        371 :         return const_iterator(array().data() + array().size());</span></a>
 <a name="793"><span class="lineNum">     793 </span>            :     }</a>
 <a name="794"><span class="lineNum">     794 </span>            : </a>
 <a name="795"><span class="lineNum">     795 </span>            :     /**</a>
@@ -869,9 +869,9 @@
 <a name="807"><span class="lineNum">     807 </span><span class="lineCov">         22 :         return Slice&lt;Tag, iterator&gt;(m_dimensions, begin(), idx_seq);</span></a>
 <a name="808"><span class="lineNum">     808 </span>            :     }</a>
 <a name="809"><span class="lineNum">     809 </span>            :     template &lt;typename Tag&gt;</a>
-<a name="810"><span class="lineNum">     810 </span><span class="lineCov">        615 :     Slice&lt;Tag, const_iterator&gt; slice(Seq&lt;size_t&gt; idx_seq) const</span></a>
+<a name="810"><span class="lineNum">     810 </span><span class="lineCov">        614 :     Slice&lt;Tag, const_iterator&gt; slice(Seq&lt;size_t&gt; idx_seq) const</span></a>
 <a name="811"><span class="lineNum">     811 </span>            :     {</a>
-<a name="812"><span class="lineNum">     812 </span><span class="lineCov">       1230 :         return Slice&lt;Tag, const_iterator&gt;(m_dimensions, begin(), idx_seq);</span></a>
+<a name="812"><span class="lineNum">     812 </span><span class="lineCov">       1228 :         return Slice&lt;Tag, const_iterator&gt;(m_dimensions, begin(), idx_seq);</span></a>
 <a name="813"><span class="lineNum">     813 </span>            :     }</a>
 <a name="814"><span class="lineNum">     814 </span>            :     /**@}*/</a>
 <a name="815"><span class="lineNum">     815 </span>            : </a>
@@ -909,12 +909,12 @@
 <a name="847"><span class="lineNum">     847 </span>            :      * @see mio::serialize</a>
 <a name="848"><span class="lineNum">     848 </span>            :      */</a>
 <a name="849"><span class="lineNum">     849 </span>            :     template &lt;class IOContext&gt;</a>
-<a name="850"><span class="lineNum">     850 </span><span class="lineCov">        337 :     void serialize(IOContext&amp; io) const</span></a>
+<a name="850"><span class="lineNum">     850 </span><span class="lineCov">        351 :     void serialize(IOContext&amp; io) const</span></a>
 <a name="851"><span class="lineNum">     851 </span>            :     {</a>
-<a name="852"><span class="lineNum">     852 </span><span class="lineCov">       1348 :         auto obj = io.create_object(&quot;Array&quot;);</span></a>
-<a name="853"><span class="lineNum">     853 </span><span class="lineCov">        337 :         obj.add_element(&quot;Dimensions&quot;, m_dimensions);</span></a>
-<a name="854"><span class="lineNum">     854 </span><span class="lineCov">        337 :         obj.add_list(&quot;Elements&quot;, begin(), end());</span></a>
-<a name="855"><span class="lineNum">     855 </span><span class="lineCov">        337 :     }</span></a>
+<a name="852"><span class="lineNum">     852 </span><span class="lineCov">       1404 :         auto obj = io.create_object(&quot;Array&quot;);</span></a>
+<a name="853"><span class="lineNum">     853 </span><span class="lineCov">        351 :         obj.add_element(&quot;Dimensions&quot;, m_dimensions);</span></a>
+<a name="854"><span class="lineNum">     854 </span><span class="lineCov">        351 :         obj.add_list(&quot;Elements&quot;, begin(), end());</span></a>
+<a name="855"><span class="lineNum">     855 </span><span class="lineCov">        351 :     }</span></a>
 <a name="856"><span class="lineNum">     856 </span>            : </a>
 <a name="857"><span class="lineNum">     857 </span>            : protected:</a>
 <a name="858"><span class="lineNum">     858 </span>            :     /**</a>
@@ -922,21 +922,21 @@
 <a name="860"><span class="lineNum">     860 </span>            :      * @see mio::deserialize</a>
 <a name="861"><span class="lineNum">     861 </span>            :      */</a>
 <a name="862"><span class="lineNum">     862 </span>            :     template &lt;class IOContext, class Derived&gt;</a>
-<a name="863"><span class="lineNum">     863 </span><span class="lineCov">        141 :     static IOResult&lt;Derived&gt; deserialize(IOContext&amp; io, Tag&lt;Derived&gt;)</span></a>
+<a name="863"><span class="lineNum">     863 </span><span class="lineCov">        155 :     static IOResult&lt;Derived&gt; deserialize(IOContext&amp; io, Tag&lt;Derived&gt;)</span></a>
 <a name="864"><span class="lineNum">     864 </span>            :     {</a>
-<a name="865"><span class="lineNum">     865 </span><span class="lineCov">        564 :         auto obj  = io.expect_object(&quot;Array&quot;);</span></a>
-<a name="866"><span class="lineNum">     866 </span><span class="lineCov">        564 :         auto dims = obj.expect_element(&quot;Dimensions&quot;, Tag&lt;Index&gt;{});</span></a>
-<a name="867"><span class="lineNum">     867 </span><span class="lineCov">        564 :         auto els  = obj.expect_list(&quot;Elements&quot;, Tag&lt;Type&gt;{});</span></a>
+<a name="865"><span class="lineNum">     865 </span><span class="lineCov">        620 :         auto obj  = io.expect_object(&quot;Array&quot;);</span></a>
+<a name="866"><span class="lineNum">     866 </span><span class="lineCov">        620 :         auto dims = obj.expect_element(&quot;Dimensions&quot;, Tag&lt;Index&gt;{});</span></a>
+<a name="867"><span class="lineNum">     867 </span><span class="lineCov">        620 :         auto els  = obj.expect_list(&quot;Elements&quot;, Tag&lt;Type&gt;{});</span></a>
 <a name="868"><span class="lineNum">     868 </span>            :         return apply(</a>
 <a name="869"><span class="lineNum">     869 </span>            :             io,</a>
-<a name="870"><span class="lineNum">     870 </span><span class="lineCov">        141 :             [](auto&amp;&amp; d, auto&amp;&amp; e) -&gt; IOResult&lt;Derived&gt; {</span></a>
-<a name="871"><span class="lineNum">     871 </span><span class="lineCov">        282 :                 auto a = Derived(d);</span></a>
-<a name="872"><span class="lineNum">     872 </span><span class="lineCov">        141 :                 if (a.numel() != e.size())</span></a>
+<a name="870"><span class="lineNum">     870 </span><span class="lineCov">        155 :             [](auto&amp;&amp; d, auto&amp;&amp; e) -&gt; IOResult&lt;Derived&gt; {</span></a>
+<a name="871"><span class="lineNum">     871 </span><span class="lineCov">        310 :                 auto a = Derived(d);</span></a>
+<a name="872"><span class="lineNum">     872 </span><span class="lineCov">        155 :                 if (a.numel() != e.size())</span></a>
 <a name="873"><span class="lineNum">     873 </span><span class="lineNoCov">          0 :                     return failure(StatusCode::OutOfRange, &quot;Dimensions of Array don't match the number of elements.&quot;);</span></a>
-<a name="874"><span class="lineNum">     874 </span><span class="lineCov">        141 :                 std::copy(e.begin(), e.end(), mio::begin(a.m_y));</span></a>
-<a name="875"><span class="lineNum">     875 </span><span class="lineCov">        141 :                 return success(a);</span></a>
+<a name="874"><span class="lineNum">     874 </span><span class="lineCov">        155 :                 std::copy(e.begin(), e.end(), mio::begin(a.m_y));</span></a>
+<a name="875"><span class="lineNum">     875 </span><span class="lineCov">        155 :                 return success(a);</span></a>
 <a name="876"><span class="lineNum">     876 </span>            :             },</a>
-<a name="877"><span class="lineNum">     877 </span><span class="lineCov">        282 :             dims, els);</span></a>
+<a name="877"><span class="lineNum">     877 </span><span class="lineCov">        310 :             dims, els);</span></a>
 <a name="878"><span class="lineNum">     878 </span>            :     }</a>
 <a name="879"><span class="lineNum">     879 </span>            : </a>
 <a name="880"><span class="lineNum">     880 </span>            : public:</a>
@@ -945,9 +945,9 @@
 <a name="883"><span class="lineNum">     883 </span>            :      * @see mio::deserialize</a>
 <a name="884"><span class="lineNum">     884 </span>            :      */</a>
 <a name="885"><span class="lineNum">     885 </span>            :     template &lt;class IOContext&gt;</a>
-<a name="886"><span class="lineNum">     886 </span><span class="lineCov">        132 :     static IOResult&lt;CustomIndexArray&gt; deserialize(IOContext&amp; io)</span></a>
+<a name="886"><span class="lineNum">     886 </span><span class="lineCov">        145 :     static IOResult&lt;CustomIndexArray&gt; deserialize(IOContext&amp; io)</span></a>
 <a name="887"><span class="lineNum">     887 </span>            :     {</a>
-<a name="888"><span class="lineNum">     888 </span><span class="lineCov">        132 :         return deserialize(io, Tag&lt;CustomIndexArray&gt;{});</span></a>
+<a name="888"><span class="lineNum">     888 </span><span class="lineCov">        145 :         return deserialize(io, Tag&lt;CustomIndexArray&gt;{});</span></a>
 <a name="889"><span class="lineNum">     889 </span>            :     }</a>
 <a name="890"><span class="lineNum">     890 </span>            : };</a>
 <a name="891"><span class="lineNum">     891 </span>            : </a>

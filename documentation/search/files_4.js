@@ -1,9 +1,12 @@
 var searchData=
 [
-  ['eigen_2eh_1739',['eigen.h',['../eigen_8h.html',1,'']]],
-  ['eigen_5futil_2eh_1740',['eigen_util.h',['../eigen__util_8h.html',1,'']]],
-  ['epi_5fdata_2ecpp_1741',['epi_data.cpp',['../epi__data_8cpp.html',1,'']]],
-  ['epi_5fdata_2eh_1742',['epi_data.h',['../epi__data_8h.html',1,'']]],
-  ['euler_2ecpp_1743',['euler.cpp',['../euler_8cpp.html',1,'']]],
-  ['euler_2eh_1744',['euler.h',['../euler_8h.html',1,'']]]
+  ['damping_2ecpp_1794',['damping.cpp',['../damping_8cpp.html',1,'']]],
+  ['damping_2eh_1795',['damping.h',['../damping_8h.html',1,'']]],
+  ['damping_5fsampling_2ecpp_1796',['damping_sampling.cpp',['../damping__sampling_8cpp.html',1,'']]],
+  ['damping_5fsampling_2eh_1797',['damping_sampling.h',['../damping__sampling_8h.html',1,'']]],
+  ['date_2ecpp_1798',['date.cpp',['../date_8cpp.html',1,'']]],
+  ['date_2eh_1799',['date.h',['../date_8h.html',1,'']]],
+  ['defaultdict_2epy_1800',['defaultDict.py',['../defaultDict_8py.html',1,'']]],
+  ['dynamic_5fnpis_2ecpp_1801',['dynamic_npis.cpp',['../dynamic__npis_8cpp.html',1,'']]],
+  ['dynamic_5fnpis_2eh_1802',['dynamic_npis.h',['../dynamic__npis_8h.html',1,'']]]
 ];

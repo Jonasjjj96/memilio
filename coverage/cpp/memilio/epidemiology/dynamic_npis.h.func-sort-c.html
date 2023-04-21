@@ -37,12 +37,12 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2023-04-18 19:41:41</td>
+            <td class="headerValue">2023-04-21 09:49:31</td>
             <td></td>
             <td class="headerItem">Functions:</td>
-            <td class="headerCovTableEntry">35</td>
-            <td class="headerCovTableEntry">44</td>
-            <td class="headerCovTableEntryMed">79.5 %</td>
+            <td class="headerCovTableEntry">38</td>
+            <td class="headerCovTableEntry">47</td>
+            <td class="headerCovTableEntryMed">80.9 %</td>
           </tr>
           <tr><td><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
         </table>
@@ -96,6 +96,10 @@
               <td class="coverFnLo">0</td>
             </tr>
     <tr>
+              <td class="coverFn"><a href="dynamic_npis.h.gcov.html#171">boost::outcome_v2::basic_result&lt;mio::DynamicNPIs, mio::IOStatus, boost::outcome_v2::policy::all_narrow&gt; mio::DynamicNPIs::deserialize&lt;mio::BinarySerializerContext&gt;(mio::BinarySerializerContext&amp;)</a></td>
+              <td class="coverFnHi">1</td>
+            </tr>
+    <tr>
               <td class="coverFn"><a href="dynamic_npis.h.gcov.html#279">void mio::implement_dynamic_npis&lt;mio::ContactMatrixGroup, mio::osecir::Simulation&lt;mio_test::MockSimulation&gt;::advance(double)::{lambda(auto:1&amp;)#1}&gt;(mio::ContactMatrixGroup&amp;, std::vector&lt;mio::DampingSampling, std::allocator&lt;mio::DampingSampling&gt; &gt; const&amp;, mio::SimulationTime, mio::SimulationTime, mio::osecir::Simulation&lt;mio_test::MockSimulation&gt;::advance(double)::{lambda(auto:1&amp;)#1}&amp;&amp;)</a></td>
               <td class="coverFnHi">1</td>
             </tr>
@@ -105,6 +109,14 @@
             </tr>
     <tr>
               <td class="coverFn"><a href="dynamic_npis.h.gcov.html#279">void mio::implement_dynamic_npis&lt;mio::DampingMatrixExpressionGroup&lt;mio::DampingMatrixExpression&lt;mio::Dampings&lt;mio::Damping&lt;mio::ColumnVectorShape&gt; &gt; &gt; &gt;, mio::MigrationEdge::apply_migration&lt;mio_test::DummySim&gt;(double, double, mio::SimulationNode&lt;mio_test::DummySim&gt;&amp;, mio::SimulationNode&lt;mio_test::DummySim&gt;&amp;)::{lambda(auto:1&amp;)#1}&gt;(mio::DampingMatrixExpressionGroup&lt;mio::DampingMatrixExpression&lt;mio::Dampings&lt;mio::Damping&lt;mio::ColumnVectorShape&gt; &gt; &gt; &gt;&amp;, std::vector&lt;mio::DampingSampling, std::allocator&lt;mio::DampingSampling&gt; &gt; const&amp;, mio::SimulationTime, mio::SimulationTime, mio::MigrationEdge::apply_migration&lt;mio_test::DummySim&gt;(double, double, mio::SimulationNode&lt;mio_test::DummySim&gt;&amp;, mio::SimulationNode&lt;mio_test::DummySim&gt;&amp;)::{lambda(auto:1&amp;)#1}&amp;&amp;)</a></td>
+              <td class="coverFnHi">1</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="dynamic_npis.h.gcov.html#157">void mio::DynamicNPIs::serialize&lt;mio::BinarySerializerContext&gt;(mio::BinarySerializerContext&amp;) const</a></td>
+              <td class="coverFnHi">1</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="dynamic_npis.h.gcov.html#180">auto mio::DynamicNPIs::deserialize&lt;mio::BinarySerializerContext&gt;(mio::BinarySerializerContext&amp;)::{lambda(auto:1&amp;&amp;, auto:2&amp;&amp;, auto:3&amp;&amp;, auto:4&amp;&amp;)#1}::operator()&lt;std::vector&lt;std::pair&lt;double, std::vector&lt;mio::DampingSampling, std::allocator&lt;mio::DampingSampling&gt; &gt; &gt;, std::allocator&lt;std::pair&lt;double, std::vector&lt;mio::DampingSampling, std::allocator&lt;mio::DampingSampling&gt; &gt; &gt; &gt; &gt; const&amp;, mio::SimulationTime const&amp;, mio::SimulationTime const&amp;, double const&amp;&gt;(mio::BinarySerializerContext&amp;&amp;, mio::SimulationTime const&amp;, mio::SimulationTime const&amp;, double const&amp;) const</a></td>
               <td class="coverFnHi">1</td>
             </tr>
     <tr>
@@ -196,24 +208,24 @@
               <td class="coverFnHi">24</td>
             </tr>
     <tr>
-              <td class="coverFn"><a href="dynamic_npis.h.gcov.html#112">mio::DynamicNPIs::set_interval(mio::SimulationTime)</a></td>
-              <td class="coverFnHi">25</td>
-            </tr>
-    <tr>
               <td class="coverFn"><a href="dynamic_npis.h.gcov.html#157">void mio::DynamicNPIs::serialize&lt;mio::JsonContext&gt;(mio::JsonContext&amp;) const</a></td>
               <td class="coverFnHi">25</td>
             </tr>
     <tr>
+              <td class="coverFn"><a href="dynamic_npis.h.gcov.html#112">mio::DynamicNPIs::set_interval(mio::SimulationTime)</a></td>
+              <td class="coverFnHi">26</td>
+            </tr>
+    <tr>
               <td class="coverFn"><a href="dynamic_npis.h.gcov.html#93">mio::DynamicNPIs::set_duration(mio::SimulationTime)</a></td>
-              <td class="coverFnHi">27</td>
+              <td class="coverFnHi">28</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="dynamic_npis.h.gcov.html#134">mio::DynamicNPIs::set_base_value(double)</a></td>
-              <td class="coverFnHi">27</td>
+              <td class="coverFnHi">28</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="dynamic_npis.h.gcov.html#84">mio::DynamicNPIs::get_duration() const</a></td>
-              <td class="coverFnHi">29</td>
+              <td class="coverFnHi">30</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="dynamic_npis.h.gcov.html#243">auto mio::get_active_damping&lt;mio::DampingMatrixExpression&lt;mio::Dampings&lt;mio::Damping&lt;mio::RectMatrixShape&gt; &gt; &gt; &gt;(mio::DampingMatrixExpression&lt;mio::Dampings&lt;mio::Damping&lt;mio::RectMatrixShape&gt; &gt; &gt; const&amp;, mio::DampingLevel, mio::DampingType, mio::SimulationTime)::{lambda(auto:1&amp;)#1}::operator()&lt;mio::Damping&lt;mio::RectMatrixShape&gt; const&gt;(mio::Damping&lt;mio::RectMatrixShape&gt; const&amp;) const</a></td>
@@ -221,15 +233,15 @@
             </tr>
     <tr>
               <td class="coverFn"><a href="dynamic_npis.h.gcov.html#105">mio::DynamicNPIs::get_interval() const</a></td>
-              <td class="coverFnHi">34</td>
-            </tr>
-    <tr>
-              <td class="coverFn"><a href="dynamic_npis.h.gcov.html#127">mio::DynamicNPIs::get_base_value() const</a></td>
               <td class="coverFnHi">35</td>
             </tr>
     <tr>
+              <td class="coverFn"><a href="dynamic_npis.h.gcov.html#127">mio::DynamicNPIs::get_base_value() const</a></td>
+              <td class="coverFnHi">36</td>
+            </tr>
+    <tr>
               <td class="coverFn"><a href="dynamic_npis.h.gcov.html#70">mio::DynamicNPIs::get_thresholds() const</a></td>
-              <td class="coverFnHi">50</td>
+              <td class="coverFnHi">52</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="dynamic_npis.h.gcov.html#74">mio::DynamicNPIs::get_thresholds()</a></td>

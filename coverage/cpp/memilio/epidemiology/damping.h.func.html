@@ -37,12 +37,12 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2023-04-18 19:41:41</td>
+            <td class="headerValue">2023-04-21 09:49:31</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">130</td>
-            <td class="headerCovTableEntry">148</td>
-            <td class="headerCovTableEntryMed">87.8 %</td>
+            <td class="headerCovTableEntry">151</td>
+            <td class="headerCovTableEntryMed">86.1 %</td>
           </tr>
           <tr><td><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
         </table>
@@ -162,6 +162,10 @@
     <tr>
               <td class="coverFn"><a href="damping.h.gcov.html#224">boost::outcome_v2::basic_result&lt;mio::Damping&lt;mio::SquareMatrixShape&gt;, mio::IOStatus, boost::outcome_v2::policy::all_narrow&gt; mio::Damping&lt;mio::SquareMatrixShape&gt;::deserialize&lt;mio::JsonContext&gt;(mio::JsonContext&amp;)</a></td>
               <td class="coverFnHi">8</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="damping.h.gcov.html#224">boost::outcome_v2::basic_result&lt;mio::Damping&lt;mio::SquareMatrixShape&gt;, mio::IOStatus, boost::outcome_v2::policy::all_narrow&gt; mio::Damping&lt;mio::SquareMatrixShape&gt;::deserialize&lt;mio::BinarySerializerContext&gt;(mio::BinarySerializerContext&amp;)</a></td>
+              <td class="coverFnLo">0</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="damping.h.gcov.html#142">mio::Damping&lt;mio::SquareMatrixShape&gt;::get_time()</a></td>
@@ -429,7 +433,7 @@
             </tr>
     <tr>
               <td class="coverFn"><a href="damping.h.gcov.html#265">mio::Dampings&lt;mio::Damping&lt;mio::SquareMatrixShape&gt; &gt;::Dampings&lt;mio::SquareMatrixShape, void&gt;(mio::SquareMatrixShape)</a></td>
-              <td class="coverFnHi">142</td>
+              <td class="coverFnHi">144</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="damping.h.gcov.html#265">mio::Dampings&lt;mio::Damping&lt;mio::SquareMatrixShape&gt; &gt;::Dampings&lt;int, void&gt;(int)</a></td>
@@ -504,6 +508,10 @@
               <td class="coverFnHi">12</td>
             </tr>
     <tr>
+              <td class="coverFn"><a href="damping.h.gcov.html#210">void mio::Damping&lt;mio::SquareMatrixShape&gt;::serialize&lt;mio::BinarySerializerContext&gt;(mio::BinarySerializerContext&amp;) const</a></td>
+              <td class="coverFnLo">0</td>
+            </tr>
+    <tr>
               <td class="coverFn"><a href="damping.h.gcov.html#332">mio::Dampings&lt;mio::Damping&lt;mio::RectMatrixShape&gt; &gt;::get_matrix_at(mio::SimulationTime) const</a></td>
               <td class="coverFnHi">8</td>
             </tr>
@@ -549,7 +557,7 @@
             </tr>
     <tr>
               <td class="coverFn"><a href="damping.h.gcov.html#332">mio::Dampings&lt;mio::Damping&lt;mio::SquareMatrixShape&gt; &gt;::get_matrix_at(mio::SimulationTime) const</a></td>
-              <td class="coverFnHi">23386</td>
+              <td class="coverFnHi">23164</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="damping.h.gcov.html#345">mio::Dampings&lt;mio::Damping&lt;mio::SquareMatrixShape&gt; &gt;::get_matrix_at(double) const</a></td>
@@ -557,15 +565,15 @@
             </tr>
     <tr>
               <td class="coverFn"><a href="damping.h.gcov.html#412">mio::Dampings&lt;mio::Damping&lt;mio::SquareMatrixShape&gt; &gt;::end() const</a></td>
-              <td class="coverFnHi">77</td>
+              <td class="coverFnHi">79</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="damping.h.gcov.html#408">mio::Dampings&lt;mio::Damping&lt;mio::SquareMatrixShape&gt; &gt;::begin() const</a></td>
-              <td class="coverFnHi">77</td>
+              <td class="coverFnHi">79</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="damping.h.gcov.html#511">mio::Dampings&lt;mio::Damping&lt;mio::SquareMatrixShape&gt; &gt;::finalize() const</a></td>
-              <td class="coverFnHi">23528</td>
+              <td class="coverFnHi">23308</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="damping.h.gcov.html#372">mio::Dampings&lt;mio::Damping&lt;mio::SquareMatrixShape&gt; &gt;::operator==(mio::Dampings&lt;mio::Damping&lt;mio::SquareMatrixShape&gt; &gt; const&amp;) const</a></td>
@@ -578,6 +586,10 @@
     <tr>
               <td class="coverFn"><a href="damping.h.gcov.html#233">auto mio::Damping&lt;mio::SquareMatrixShape&gt;::deserialize&lt;mio::JsonContext&gt;(mio::JsonContext&amp;)::{lambda(auto:1&amp;&amp;, auto:2&amp;&amp;, auto:3&amp;&amp;, auto:4&amp;&amp;)#1}::operator()&lt;mio::SimulationTime const&amp;, mio::DampingType const&amp;, mio::DampingLevel const&amp;, Eigen::Matrix&lt;double, -1, -1, 0, -1, -1&gt; const&amp;&gt;(mio::JsonContext&amp;&amp;, mio::DampingType const&amp;, mio::DampingLevel const&amp;, Eigen::Matrix&lt;double, -1, -1, 0, -1, -1&gt; const&amp;) const</a></td>
               <td class="coverFnHi">8</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="damping.h.gcov.html#233">auto mio::Damping&lt;mio::SquareMatrixShape&gt;::deserialize&lt;mio::BinarySerializerContext&gt;(mio::BinarySerializerContext&amp;)::{lambda(auto:1&amp;&amp;, auto:2&amp;&amp;, auto:3&amp;&amp;, auto:4&amp;&amp;)#1}::operator()&lt;mio::SimulationTime const&amp;, mio::DampingType const&amp;, mio::DampingLevel const&amp;, Eigen::Matrix&lt;double, -1, -1, 0, -1, -1&gt; const&amp;&gt;(mio::BinarySerializerContext&amp;&amp;, mio::DampingType const&amp;, mio::DampingLevel const&amp;, Eigen::Matrix&lt;double, -1, -1, 0, -1, -1&gt; const&amp;) const</a></td>
+              <td class="coverFnLo">0</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="damping.h.gcov.html#571">auto mio::Dampings&lt;mio::Damping&lt;mio::RectMatrixShape&gt; &gt;::update_active_dampings(mio::Damping&lt;mio::RectMatrixShape&gt; const&amp;, std::vector&lt;std::tuple&lt;std::reference_wrapper&lt;Eigen::Matrix&lt;double, -1, -1, 0, -1, -1&gt; const&gt;, mio::DampingLevel, mio::DampingType&gt;, std::allocator&lt;std::tuple&lt;std::reference_wrapper&lt;Eigen::Matrix&lt;double, -1, -1, 0, -1, -1&gt; const&gt;, mio::DampingLevel, mio::DampingType&gt; &gt; &gt;&amp;, std::vector&lt;std::tuple&lt;Eigen::Matrix&lt;double, -1, -1, 0, -1, -1&gt;, mio::DampingLevel&gt;, std::allocator&lt;std::tuple&lt;Eigen::Matrix&lt;double, -1, -1, 0, -1, -1&gt;, mio::DampingLevel&gt; &gt; &gt;&amp;)::{lambda(auto:1&amp;)#2}::operator()&lt;std::tuple&lt;Eigen::Matrix&lt;double, -1, -1, 0, -1, -1&gt;, mio::DampingLevel&gt; &gt;(std::tuple&lt;Eigen::Matrix&lt;double, -1, -1, 0, -1, -1&gt;, mio::DampingLevel&gt;&amp;) const</a></td>
@@ -649,7 +661,7 @@
             </tr>
     <tr>
               <td class="coverFn"><a href="damping.h.gcov.html#337">auto mio::Dampings&lt;mio::Damping&lt;mio::SquareMatrixShape&gt; &gt;::get_matrix_at(mio::SimulationTime) const::{lambda(auto:1&amp;&amp;, auto:2&amp;&amp;)#1}::operator()&lt;std::tuple&lt;mio::SimulationTime&gt; const&amp;, std::tuple&lt;Eigen::Matrix&lt;double, -1, -1, 0, -1, -1&gt;, mio::SimulationTime&gt;&amp;&gt;(std::tuple&lt;mio::SimulationTime&gt; const&amp;, std::tuple&lt;Eigen::Matrix&lt;double, -1, -1, 0, -1, -1&gt;, mio::SimulationTime&gt;&amp;) const</a></td>
-              <td class="coverFnHi">49981</td>
+              <td class="coverFnHi">49537</td>
             </tr>
   </table>
   <br>

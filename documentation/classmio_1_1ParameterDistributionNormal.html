@@ -116,6 +116,12 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a36d5fed590e06ed84b54f79718a686e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac2e7b21fc2bc1aab9afa8748bd12b1d1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1ParameterDistributionNormal.html#ac2e7b21fc2bc1aab9afa8748bd12b1d1">ParameterDistributionNormal</a> (double mean, double standard_dev)</td></tr>
 <tr class="separator:ac2e7b21fc2bc1aab9afa8748bd12b1d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a90b8e37c8b03ab732aee80bfc73bbc67"><td class="memTemplParams" colspan="2">template&lt;class IOContext &gt; </td></tr>
+<tr class="memitem:a90b8e37c8b03ab732aee80bfc73bbc67"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classmio_1_1ParameterDistributionNormal.html#a90b8e37c8b03ab732aee80bfc73bbc67">serialize</a> (IOContext &amp;io) const</td></tr>
+<tr class="separator:a90b8e37c8b03ab732aee80bfc73bbc67"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04a9243934a586a3fc624be8f3d67926"><td class="memTemplParams" colspan="2">template&lt;class IOObject &gt; </td></tr>
+<tr class="memitem:a04a9243934a586a3fc624be8f3d67926"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classmio_1_1ParameterDistributionNormal.html#a04a9243934a586a3fc624be8f3d67926">serialize_elements</a> (IOObject &amp;obj) const</td></tr>
+<tr class="separator:a04a9243934a586a3fc624be8f3d67926"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af2c566339b6f0cf0dc6a2c1faec89b0f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1ParameterDistributionNormal.html#af2c566339b6f0cf0dc6a2c1faec89b0f">set_mean</a> (double mean)</td></tr>
 <tr class="separator:af2c566339b6f0cf0dc6a2c1faec89b0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab200726f666381769dfbdb329073d715"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1ParameterDistributionNormal.html#ab200726f666381769dfbdb329073d715">set_standard_dev</a> (double standard_dev)</td></tr>
@@ -131,6 +137,9 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a6a95f0d3c7b68d4a1ffa8dd5f55b4d3b"><td class="memTemplParams" colspan="2">template&lt;class IOContext &gt; </td></tr>
 <tr class="memitem:a6a95f0d3c7b68d4a1ffa8dd5f55b4d3b"><td class="memTemplItemLeft" align="right" valign="top">static <a class="el" href="namespacemio.html#ae556a666d14183eb2bf3a3efc11551ec">IOResult</a>&lt; <a class="el" href="classmio_1_1ParameterDistributionNormal.html">ParameterDistributionNormal</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classmio_1_1ParameterDistributionNormal.html#a6a95f0d3c7b68d4a1ffa8dd5f55b4d3b">deserialize</a> (IOContext &amp;io)</td></tr>
 <tr class="separator:a6a95f0d3c7b68d4a1ffa8dd5f55b4d3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2fb18a29ed22d24a1908af055eee0cd5"><td class="memTemplParams" colspan="2">template&lt;class IOContext , class IOObject &gt; </td></tr>
+<tr class="memitem:a2fb18a29ed22d24a1908af055eee0cd5"><td class="memTemplItemLeft" align="right" valign="top">static <a class="el" href="namespacemio.html#ae556a666d14183eb2bf3a3efc11551ec">IOResult</a>&lt; <a class="el" href="classmio_1_1ParameterDistributionNormal.html">ParameterDistributionNormal</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classmio_1_1ParameterDistributionNormal.html#a2fb18a29ed22d24a1908af055eee0cd5">deserialize_elements</a> (IOContext &amp;io, IOObject &amp;obj)</td></tr>
+<tr class="separator:a2fb18a29ed22d24a1908af055eee0cd5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -403,6 +412,44 @@ template&lt;class IOContext &gt; </div>
 
 </div>
 </div>
+<a id="a2fb18a29ed22d24a1908af055eee0cd5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2fb18a29ed22d24a1908af055eee0cd5">&#9670;&nbsp;</a></span>deserialize_elements()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class IOContext , class IOObject &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="namespacemio.html#ae556a666d14183eb2bf3a3efc11551ec">IOResult</a>&lt;<a class="el" href="classmio_1_1ParameterDistributionNormal.html">ParameterDistributionNormal</a>&gt; mio::ParameterDistributionNormal::deserialize_elements </td>
+          <td>(</td>
+          <td class="paramtype">IOContext &amp;&#160;</td>
+          <td class="paramname"><em>io</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">IOObject &amp;&#160;</td>
+          <td class="paramname"><em>obj</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a662185ef40d11e821b5ce76390f4eb38"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a662185ef40d11e821b5ce76390f4eb38">&#9670;&nbsp;</a></span>get_mean()</h2>
 
@@ -474,6 +521,46 @@ template&lt;class IOContext &gt; </div>
           <td class="paramtype">bool&#160;</td>
           <td class="paramname"><em>log_stddev_change</em></td><td>)</td>
           <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a90b8e37c8b03ab732aee80bfc73bbc67"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a90b8e37c8b03ab732aee80bfc73bbc67">&#9670;&nbsp;</a></span>serialize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class IOContext &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void mio::ParameterDistributionNormal::serialize </td>
+          <td>(</td>
+          <td class="paramtype">IOContext &amp;&#160;</td>
+          <td class="paramname"><em>io</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a04a9243934a586a3fc624be8f3d67926"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a04a9243934a586a3fc624be8f3d67926">&#9670;&nbsp;</a></span>serialize_elements()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class IOObject &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void mio::ParameterDistributionNormal::serialize_elements </td>
+          <td>(</td>
+          <td class="paramtype">IOObject &amp;&#160;</td>
+          <td class="paramname"><em>obj</em></td><td>)</td>
+          <td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">

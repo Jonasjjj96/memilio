@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2023-04-18 19:41:41</td>
+            <td class="headerValue">2023-04-21 09:49:31</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">1</td>
@@ -98,22 +98,22 @@
 <a name="36"><span class="lineNum">      36 </span>            : </a>
 <a name="37"><span class="lineNum">      37 </span><span class="lineCov">        169 :     double t = t0;</span></a>
 <a name="38"><span class="lineNum">      38 </span><span class="lineCov">        169 :     size_t i = m_result.get_num_time_points() - 1;</span></a>
-<a name="39"><span class="lineNum">      39 </span><span class="lineCov">       2218 :     while (std::abs((tmax - t) / (tmax - t0)) &gt; 1e-10) {</span></a>
+<a name="39"><span class="lineNum">      39 </span><span class="lineCov">       2235 :     while (std::abs((tmax - t) / (tmax - t0)) &gt; 1e-10) {</span></a>
 <a name="40"><span class="lineNum">      40 </span>            :         //we don't make timesteps too small as the error estimator of an adaptive integrator</a>
 <a name="41"><span class="lineNum">      41 </span>            :         //may not be able to handle it. this is very conservative and maybe unnecessary,</a>
 <a name="42"><span class="lineNum">      42 </span>            :         //but also unlikely to happen. may need to be reevaluated</a>
 <a name="43"><span class="lineNum">      43 </span>            : </a>
-<a name="44"><span class="lineNum">      44 </span><span class="lineCov">       2049 :         auto dt_eff = std::min(m_dt, tmax - t);</span></a>
-<a name="45"><span class="lineNum">      45 </span><span class="lineCov">       2049 :         m_result.add_time_point();</span></a>
-<a name="46"><span class="lineNum">      46 </span><span class="lineCov">       2049 :         step_okay &amp;= m_core-&gt;step(m_f, m_result[i], t, dt_eff, m_result[i + 1]);</span></a>
-<a name="47"><span class="lineNum">      47 </span><span class="lineCov">       2049 :         m_result.get_last_time() = t;</span></a>
+<a name="44"><span class="lineNum">      44 </span><span class="lineCov">       2066 :         auto dt_eff = std::min(m_dt, tmax - t);</span></a>
+<a name="45"><span class="lineNum">      45 </span><span class="lineCov">       2066 :         m_result.add_time_point();</span></a>
+<a name="46"><span class="lineNum">      46 </span><span class="lineCov">       2066 :         step_okay &amp;= m_core-&gt;step(m_f, m_result[i], t, dt_eff, m_result[i + 1]);</span></a>
+<a name="47"><span class="lineNum">      47 </span><span class="lineCov">       2066 :         m_result.get_last_time() = t;</span></a>
 <a name="48"><span class="lineNum">      48 </span>            : </a>
-<a name="49"><span class="lineNum">      49 </span><span class="lineCov">       2049 :         ++i;</span></a>
+<a name="49"><span class="lineNum">      49 </span><span class="lineCov">       2066 :         ++i;</span></a>
 <a name="50"><span class="lineNum">      50 </span>            : </a>
-<a name="51"><span class="lineNum">      51 </span><span class="lineCov">       2049 :         if (std::abs((tmax - t) / (tmax - t0)) &gt; 1e-10 || dt_eff &gt; m_dt) {</span></a>
+<a name="51"><span class="lineNum">      51 </span><span class="lineCov">       2066 :         if (std::abs((tmax - t) / (tmax - t0)) &gt; 1e-10 || dt_eff &gt; m_dt) {</span></a>
 <a name="52"><span class="lineNum">      52 </span>            :             //store dt only if it's not the last step as it is probably smaller than required for tolerances</a>
 <a name="53"><span class="lineNum">      53 </span>            :             //except if the step function returns a bigger step size so as to not lose efficiency</a>
-<a name="54"><span class="lineNum">      54 </span><span class="lineCov">       1945 :             m_dt = dt_eff;</span></a>
+<a name="54"><span class="lineNum">      54 </span><span class="lineCov">       1971 :             m_dt = dt_eff;</span></a>
 <a name="55"><span class="lineNum">      55 </span>            :         }</a>
 <a name="56"><span class="lineNum">      56 </span>            :     }</a>
 <a name="57"><span class="lineNum">      57 </span>            : </a>

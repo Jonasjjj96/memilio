@@ -219,6 +219,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a06e5870119660edd103de9d496ece93b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1TimeSeries.html#a06e5870119660edd103de9d496ece93b">reserve</a> (Eigen::Index n)</td></tr>
 <tr class="memdesc:a06e5870119660edd103de9d496ece93b"><td class="mdescLeft">&#160;</td><td class="mdescRight">reserve capacity for n time points  <a href="classmio_1_1TimeSeries.html#a06e5870119660edd103de9d496ece93b">More...</a><br /></td></tr>
 <tr class="separator:a06e5870119660edd103de9d496ece93b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a596376add0fec38e99da09643647b567"><td class="memTemplParams" colspan="2">template&lt;class IOContext &gt; </td></tr>
+<tr class="memitem:a596376add0fec38e99da09643647b567"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classmio_1_1TimeSeries.html#a596376add0fec38e99da09643647b567">serialize</a> (IOContext &amp;io) const</td></tr>
+<tr class="separator:a596376add0fec38e99da09643647b567"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab508f1558b4c240af9d1bf7912667106"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1TimeSeries.html#ab508f1558b4c240af9d1bf7912667106">TimeSeries</a> (const <a class="el" href="classmio_1_1TimeSeries.html">TimeSeries</a> &amp;other)</td></tr>
 <tr class="memdesc:ab508f1558b4c240af9d1bf7912667106"><td class="mdescLeft">&#160;</td><td class="mdescRight">copy ctor  <a href="classmio_1_1TimeSeries.html#ab508f1558b4c240af9d1bf7912667106">More...</a><br /></td></tr>
 <tr class="separator:ab508f1558b4c240af9d1bf7912667106"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -241,6 +244,9 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
+<tr class="memitem:a6404d46876b5eaf81f1f2fc2f0cd2aed"><td class="memTemplParams" colspan="2">template&lt;class IOContext &gt; </td></tr>
+<tr class="memitem:a6404d46876b5eaf81f1f2fc2f0cd2aed"><td class="memTemplItemLeft" align="right" valign="top">static <a class="el" href="namespacemio.html#ae556a666d14183eb2bf3a3efc11551ec">IOResult</a>&lt; <a class="el" href="classmio_1_1TimeSeries.html">TimeSeries</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classmio_1_1TimeSeries.html#a6404d46876b5eaf81f1f2fc2f0cd2aed">deserialize</a> (IOContext &amp;io)</td></tr>
+<tr class="separator:a6404d46876b5eaf81f1f2fc2f0cd2aed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a85094ebcad0ab2a8246cf6dd3be8cd1b"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classmio_1_1TimeSeries.html">TimeSeries</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1TimeSeries.html#a85094ebcad0ab2a8246cf6dd3be8cd1b">zero</a> (Eigen::Index num_time_points, Eigen::Index num_elements)</td></tr>
 <tr class="memdesc:a85094ebcad0ab2a8246cf6dd3be8cd1b"><td class="mdescLeft">&#160;</td><td class="mdescRight">constructs <a class="el" href="classmio_1_1TimeSeries.html" title="stores vectors of values at time points (or some other abstract variable) the value at each time poin...">TimeSeries</a> instance and initializes it with zeros  <a href="classmio_1_1TimeSeries.html#a85094ebcad0ab2a8246cf6dd3be8cd1b">More...</a><br /></td></tr>
 <tr class="separator:a85094ebcad0ab2a8246cf6dd3be8cd1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -896,6 +902,36 @@ template&lt;class FP &gt; </div>
           <td> const</td>
         </tr>
       </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6404d46876b5eaf81f1f2fc2f0cd2aed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6404d46876b5eaf81f1f2fc2f0cd2aed">&#9670;&nbsp;</a></span>deserialize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class FP &gt; </div>
+<div class="memtemplate">
+template&lt;class IOContext &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="namespacemio.html#ae556a666d14183eb2bf3a3efc11551ec">IOResult</a>&lt;<a class="el" href="classmio_1_1TimeSeries.html">TimeSeries</a>&gt; <a class="el" href="classmio_1_1TimeSeries.html">mio::TimeSeries</a>&lt; FP &gt;::deserialize </td>
+          <td>(</td>
+          <td class="paramtype">IOContext &amp;&#160;</td>
+          <td class="paramname"><em>io</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 </div>
@@ -1629,6 +1665,28 @@ template&lt;class FP &gt; </div>
 </div><div class="memdoc">
 
 <p>reserve capacity for n time points </p>
+
+</div>
+</div>
+<a id="a596376add0fec38e99da09643647b567"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a596376add0fec38e99da09643647b567">&#9670;&nbsp;</a></span>serialize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class FP &gt; </div>
+<div class="memtemplate">
+template&lt;class IOContext &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classmio_1_1TimeSeries.html">mio::TimeSeries</a>&lt; FP &gt;::serialize </td>
+          <td>(</td>
+          <td class="paramtype">IOContext &amp;&#160;</td>
+          <td class="paramname"><em>io</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>

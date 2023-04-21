@@ -1,11 +1,5 @@
 var searchData=
 [
-  ['cleandata_2epy_1722',['cleanData.py',['../cleanData_8py.html',1,'']]],
-  ['compartmentalmodel_2eh_1723',['compartmentalmodel.h',['../compartmentalmodel_8h.html',1,'']]],
-  ['compiler_5fdiagnostics_2eh_1724',['compiler_diagnostics.h',['../compiler__diagnostics_8h.html',1,'']]],
-  ['config_2eh_1725',['config.h',['../config_8h.html',1,'']]],
-  ['contact_5fmatrix_2ecpp_1726',['contact_matrix.cpp',['../contact__matrix_8cpp.html',1,'']]],
-  ['contact_5fmatrix_2eh_1727',['contact_matrix.h',['../contact__matrix_8h.html',1,'']]],
-  ['custom_5findex_5farray_2eh_1728',['custom_index_array.h',['../custom__index__array_8h.html',1,'']]],
-  ['customplot_2epy_1729',['customPlot.py',['../customPlot_8py.html',1,'']]]
+  ['binary_5fserializer_2ecpp_1784',['binary_serializer.cpp',['../binary__serializer_8cpp.html',1,'']]],
+  ['binary_5fserializer_2eh_1785',['binary_serializer.h',['../binary__serializer_8h.html',1,'']]]
 ];
