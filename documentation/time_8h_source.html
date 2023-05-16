@@ -295,10 +295,15 @@ $(function() {
 <div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classmio_1_1abm_1_1TimeSpan.html">TimeSpan</a>(<a class="code" href="namespacemio_1_1abm.html#ac50d53d4d672f332b55133479478fe6a">days</a> * 24 * 60 * 60);</div>
 <div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;}</div>
 <div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160; </div>
-<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;} <span class="comment">// namespace abm</span></div>
-<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;} <span class="comment">// namespace mio</span></div>
-<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160; </div>
-<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00319"></a><span class="lineno"><a class="line" href="namespacemio_1_1abm.html#a4262c07467404fd7b7d07c80100898be">  319</a></span>&#160;<span class="keyword">inline</span> <a class="code" href="classmio_1_1abm_1_1TimeSpan.html">TimeSpan</a> <a class="code" href="namespacemio_1_1abm.html#ac50d53d4d672f332b55133479478fe6a">days</a>(<span class="keywordtype">double</span> <a class="code" href="namespacemio_1_1abm.html#ac50d53d4d672f332b55133479478fe6a">days</a>)</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;{</div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classmio_1_1abm_1_1TimeSpan.html">TimeSpan</a>((<span class="keywordtype">int</span>)(<a class="code" href="namespacemio_1_1abm.html#ac50d53d4d672f332b55133479478fe6a">days</a> * 24 * 60 * 60));</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;}</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160; </div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;} <span class="comment">// namespace abm</span></div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;} <span class="comment">// namespace mio</span></div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160; </div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aclassmio_1_1abm_1_1TimePoint_html"><div class="ttname"><a href="classmio_1_1abm_1_1TimePoint.html">mio::abm::TimePoint</a></div><div class="ttdoc">Represents a point in time.</div><div class="ttdef"><b>Definition:</b> time.h:155</div></div>
 <div class="ttc" id="aclassmio_1_1abm_1_1TimePoint_html_a2223210f789626ca5e2c8ff197fed5c0"><div class="ttname"><a href="classmio_1_1abm_1_1TimePoint.html#a2223210f789626ca5e2c8ff197fed5c0">mio::abm::TimePoint::operator+=</a></div><div class="ttdeci">TimePoint &amp; operator+=(const TimeSpan &amp;s)</div><div class="ttdef"><b>Definition:</b> time.h:254</div></div>
 <div class="ttc" id="aclassmio_1_1abm_1_1TimePoint_html_a2daa2c1023c252ec049cb66eb93e4e9d"><div class="ttname"><a href="classmio_1_1abm_1_1TimePoint.html#a2daa2c1023c252ec049cb66eb93e4e9d">mio::abm::TimePoint::operator==</a></div><div class="ttdeci">bool operator==(const TimePoint &amp;other) const</div><div class="ttdef"><b>Definition:</b> time.h:220</div></div>

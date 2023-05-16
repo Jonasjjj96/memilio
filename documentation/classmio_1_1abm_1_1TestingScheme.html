@@ -94,15 +94,15 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a4dfeec86ddbbbd551015718081b9c124"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1abm_1_1TestingScheme.html#a4dfeec86ddbbbd551015718081b9c124">remove_testing_criteria</a> (const <a class="el" href="classmio_1_1abm_1_1TestingCriteria.html">TestingCriteria</a> criteria)</td></tr>
 <tr class="memdesc:a4dfeec86ddbbbd551015718081b9c124"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove a <a class="el" href="classmio_1_1abm_1_1TestingCriteria.html" title="TestingCriteria for TestingScheme.">TestingCriteria</a> from the set of <a class="el" href="classmio_1_1abm_1_1TestingCriteria.html" title="TestingCriteria for TestingScheme.">TestingCriteria</a> that are checked for testing.  <a href="classmio_1_1abm_1_1TestingScheme.html#a4dfeec86ddbbbd551015718081b9c124">More...</a><br /></td></tr>
 <tr class="separator:a4dfeec86ddbbbd551015718081b9c124"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1777461c4f842dedb0a6efd594e1cb53"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1abm_1_1TestingScheme.html#a1777461c4f842dedb0a6efd594e1cb53">run_scheme</a> (<a class="el" href="classmio_1_1abm_1_1Person.html">Person</a> &amp;person, const <a class="el" href="classmio_1_1abm_1_1Location.html">Location</a> &amp;location) const</td></tr>
-<tr class="memdesc:a1777461c4f842dedb0a6efd594e1cb53"><td class="mdescLeft">&#160;</td><td class="mdescRight">runs the testing scheme and tests a person if necessary  <a href="classmio_1_1abm_1_1TestingScheme.html#a1777461c4f842dedb0a6efd594e1cb53">More...</a><br /></td></tr>
-<tr class="separator:a1777461c4f842dedb0a6efd594e1cb53"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab8ceda2dd6fcae04cf86928a032565bf"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1abm_1_1TestingScheme.html#ab8ceda2dd6fcae04cf86928a032565bf">TestingScheme</a> (const std::vector&lt; <a class="el" href="classmio_1_1abm_1_1TestingCriteria.html">TestingCriteria</a> &gt; &amp;testing_criteria, <a class="el" href="classmio_1_1abm_1_1TimeSpan.html">TimeSpan</a> minimal_time_since_last_test, <a class="el" href="classmio_1_1abm_1_1TimePoint.html">TimePoint</a> start_date, <a class="el" href="classmio_1_1abm_1_1TimePoint.html">TimePoint</a> end_date, const <a class="el" href="structmio_1_1abm_1_1GenericTest.html">GenericTest</a> &amp;test_type, double probability)</td></tr>
-<tr class="memdesc:ab8ceda2dd6fcae04cf86928a032565bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a testing scheme.  <a href="classmio_1_1abm_1_1TestingScheme.html#ab8ceda2dd6fcae04cf86928a032565bf">More...</a><br /></td></tr>
-<tr class="separator:ab8ceda2dd6fcae04cf86928a032565bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a12789e77edfafac2a81584691c8c5c84"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1abm_1_1TestingScheme.html#a12789e77edfafac2a81584691c8c5c84">update_activity_status</a> (const <a class="el" href="classmio_1_1abm_1_1TimePoint.html">TimePoint</a> t)</td></tr>
-<tr class="memdesc:a12789e77edfafac2a81584691c8c5c84"><td class="mdescLeft">&#160;</td><td class="mdescRight">checks if the scheme is active at a given time and updates activity status  <a href="classmio_1_1abm_1_1TestingScheme.html#a12789e77edfafac2a81584691c8c5c84">More...</a><br /></td></tr>
-<tr class="separator:a12789e77edfafac2a81584691c8c5c84"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a06179d3cbabff2614219158ae4e68b99"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1abm_1_1TestingScheme.html#a06179d3cbabff2614219158ae4e68b99">run_scheme</a> (<a class="el" href="classmio_1_1abm_1_1Person.html">Person</a> &amp;person, const <a class="el" href="classmio_1_1abm_1_1Location.html">Location</a> &amp;location, <a class="el" href="classmio_1_1abm_1_1TimePoint.html">TimePoint</a> t) const</td></tr>
+<tr class="memdesc:a06179d3cbabff2614219158ae4e68b99"><td class="mdescLeft">&#160;</td><td class="mdescRight">: Runs the <a class="el" href="classmio_1_1abm_1_1TestingScheme.html" title="TestingScheme to regular test Persons.">TestingScheme</a> and potentially tests a <a class="el" href="classmio_1_1abm_1_1Person.html" title="Agents in the simulated World that can carry and spread the Infection.">Person</a>.  <a href="classmio_1_1abm_1_1TestingScheme.html#a06179d3cbabff2614219158ae4e68b99">More...</a><br /></td></tr>
+<tr class="separator:a06179d3cbabff2614219158ae4e68b99"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab6362d9101bc3225f4b264bb497fc116"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1abm_1_1TestingScheme.html#ab6362d9101bc3225f4b264bb497fc116">TestingScheme</a> (const std::vector&lt; <a class="el" href="classmio_1_1abm_1_1TestingCriteria.html">TestingCriteria</a> &gt; &amp;testing_criteria, <a class="el" href="classmio_1_1abm_1_1TimeSpan.html">TimeSpan</a> minimal_time_since_last_test, <a class="el" href="classmio_1_1abm_1_1TimePoint.html">TimePoint</a> start_date, <a class="el" href="classmio_1_1abm_1_1TimePoint.html">TimePoint</a> end_date, const <a class="el" href="structmio_1_1abm_1_1GenericTest.html">GenericTest</a> &amp;test_type, <a class="el" href="config_8h.html#acd4f1d492d83a74716a42615e127d641">ScalarType</a> probability)</td></tr>
+<tr class="memdesc:ab6362d9101bc3225f4b264bb497fc116"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a testing scheme.  <a href="classmio_1_1abm_1_1TestingScheme.html#ab6362d9101bc3225f4b264bb497fc116">More...</a><br /></td></tr>
+<tr class="separator:ab6362d9101bc3225f4b264bb497fc116"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a26419f2794fa465a543dd53fdabfba71"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1abm_1_1TestingScheme.html#a26419f2794fa465a543dd53fdabfba71">update_activity_status</a> (<a class="el" href="classmio_1_1abm_1_1TimePoint.html">TimePoint</a> t)</td></tr>
+<tr class="memdesc:a26419f2794fa465a543dd53fdabfba71"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the scheme is active at a given time and updates activity status.  <a href="classmio_1_1abm_1_1TestingScheme.html#a26419f2794fa465a543dd53fdabfba71">More...</a><br /></td></tr>
+<tr class="separator:a26419f2794fa465a543dd53fdabfba71"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -112,8 +112,8 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a508e8a71340e6aea802a11f1fb60a1ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a92885feb6e6a0186ae12c9b757132785"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmio_1_1abm_1_1TimeSpan.html">TimeSpan</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1abm_1_1TestingScheme.html#a92885feb6e6a0186ae12c9b757132785">m_minimal_time_since_last_test</a></td></tr>
 <tr class="separator:a92885feb6e6a0186ae12c9b757132785"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8cd3bf9d838026a8f576c805f0cc84bf"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1abm_1_1TestingScheme.html#a8cd3bf9d838026a8f576c805f0cc84bf">m_probability</a></td></tr>
-<tr class="separator:a8cd3bf9d838026a8f576c805f0cc84bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab8d312dc865be0fb4e24beb7cbe5d204"><td class="memItemLeft" align="right" valign="top"><a class="el" href="config_8h.html#acd4f1d492d83a74716a42615e127d641">ScalarType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1abm_1_1TestingScheme.html#ab8d312dc865be0fb4e24beb7cbe5d204">m_probability</a></td></tr>
+<tr class="separator:ab8d312dc865be0fb4e24beb7cbe5d204"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3ceb43839789fe02bc673353d02e700d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmio_1_1abm_1_1TimePoint.html">TimePoint</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1abm_1_1TestingScheme.html#a3ceb43839789fe02bc673353d02e700d">m_start_date</a></td></tr>
 <tr class="separator:a3ceb43839789fe02bc673353d02e700d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab680f463f4ed739e0ba1c6e171657992"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmio_1_1abm_1_1GenericTest.html">GenericTest</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1abm_1_1TestingScheme.html#ab680f463f4ed739e0ba1c6e171657992">m_test_type</a></td></tr>
@@ -124,8 +124,8 @@ Private Attributes</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="classmio_1_1abm_1_1TestingScheme.html" title="TestingScheme to regular test Persons.">TestingScheme</a> to regular test <a class="el" href="classmio_1_1abm_1_1Person.html" title="Agents in the simulated World that can carry and spread the Infection.">Person</a>s. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="ab8ceda2dd6fcae04cf86928a032565bf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab8ceda2dd6fcae04cf86928a032565bf">&#9670;&nbsp;</a></span>TestingScheme()</h2>
+<a id="ab6362d9101bc3225f4b264bb497fc116"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab6362d9101bc3225f4b264bb497fc116">&#9670;&nbsp;</a></span>TestingScheme()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -163,7 +163,7 @@ Private Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">double&#160;</td>
+          <td class="paramtype"><a class="el" href="config_8h.html#acd4f1d492d83a74716a42615e127d641">ScalarType</a>&#160;</td>
           <td class="paramname"><em>probability</em>&#160;</td>
         </tr>
         <tr>
@@ -181,8 +181,8 @@ Private Attributes</h2></td></tr>
     <tr><td class="paramname">minimal_time_since_last_test</td><td>time length of how often this scheme applies, i. e., a new test is performed after a person's last test </td></tr>
     <tr><td class="paramname">start_date</td><td>starting date of the scheme </td></tr>
     <tr><td class="paramname">end_date</td><td>ending date of the scheme </td></tr>
-    <tr><td class="paramname">probability</td><td>probability of the test to be performed if a testing rule applies </td></tr>
     <tr><td class="paramname">test_type</td><td>the type of test to be performed </td></tr>
+    <tr><td class="paramname">probability</td><td>probability of the test to be performed if a testing rule applies </td></tr>
   </table>
   </dd>
 </dl>
@@ -281,8 +281,8 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a1777461c4f842dedb0a6efd594e1cb53"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1777461c4f842dedb0a6efd594e1cb53">&#9670;&nbsp;</a></span>run_scheme()</h2>
+<a id="a06179d3cbabff2614219158ae4e68b99"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a06179d3cbabff2614219158ae4e68b99">&#9670;&nbsp;</a></span>run_scheme()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -297,7 +297,13 @@ Private Attributes</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const <a class="el" href="classmio_1_1abm_1_1Location.html">Location</a> &amp;&#160;</td>
-          <td class="paramname"><em>location</em>&#160;</td>
+          <td class="paramname"><em>location</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classmio_1_1abm_1_1TimePoint.html">TimePoint</a>&#160;</td>
+          <td class="paramname"><em>t</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -307,13 +313,21 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>runs the testing scheme and tests a person if necessary </p>
-<dl class="section return"><dt>Returns</dt><dd>if the person is allowed to enter the location </dd></dl>
+<p>: Runs the <a class="el" href="classmio_1_1abm_1_1TestingScheme.html" title="TestingScheme to regular test Persons.">TestingScheme</a> and potentially tests a <a class="el" href="classmio_1_1abm_1_1Person.html" title="Agents in the simulated World that can carry and spread the Infection.">Person</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">person</td><td><a class="el" href="classmio_1_1abm_1_1Person.html" title="Agents in the simulated World that can carry and spread the Infection.">Person</a> to check. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">location</td><td><a class="el" href="classmio_1_1abm_1_1Location.html" title="All locations in the simulated world where persons gather.">Location</a> to check. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">t</td><td><a class="el" href="classmio_1_1abm_1_1TimePoint.html" title="Represents a point in time.">TimePoint</a> when to run the scheme. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>If the person is allowed to enter the <a class="el" href="classmio_1_1abm_1_1Location.html" title="All locations in the simulated world where persons gather.">Location</a> by the scheme. </dd></dl>
 
 </div>
 </div>
-<a id="a12789e77edfafac2a81584691c8c5c84"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a12789e77edfafac2a81584691c8c5c84">&#9670;&nbsp;</a></span>update_activity_status()</h2>
+<a id="a26419f2794fa465a543dd53fdabfba71"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a26419f2794fa465a543dd53fdabfba71">&#9670;&nbsp;</a></span>update_activity_status()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -321,17 +335,17 @@ Private Attributes</h2></td></tr>
         <tr>
           <td class="memname">void mio::abm::TestingScheme::update_activity_status </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="classmio_1_1abm_1_1TimePoint.html">TimePoint</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="classmio_1_1abm_1_1TimePoint.html">TimePoint</a>&#160;</td>
           <td class="paramname"><em>t</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>checks if the scheme is active at a given time and updates activity status </p>
+<p>Checks if the scheme is active at a given time and updates activity status. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">t</td><td>time to be updated at </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">t</td><td><a class="el" href="classmio_1_1abm_1_1TimePoint.html" title="Represents a point in time.">TimePoint</a> to be updated at. </td></tr>
   </table>
   </dd>
 </dl>
@@ -405,8 +419,8 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a8cd3bf9d838026a8f576c805f0cc84bf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8cd3bf9d838026a8f576c805f0cc84bf">&#9670;&nbsp;</a></span>m_probability</h2>
+<a id="ab8d312dc865be0fb4e24beb7cbe5d204"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab8d312dc865be0fb4e24beb7cbe5d204">&#9670;&nbsp;</a></span>m_probability</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -415,7 +429,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">double mio::abm::TestingScheme::m_probability</td>
+          <td class="memname"><a class="el" href="config_8h.html#acd4f1d492d83a74716a42615e127d641">ScalarType</a> mio::abm::TestingScheme::m_probability</td>
         </tr>
       </table>
   </td>

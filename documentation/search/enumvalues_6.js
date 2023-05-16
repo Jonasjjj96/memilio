@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['home_2972',['Home',['../namespacemio_1_1abm.html#a83bc98ab43329c10fe9a6e683f2e1d0fa8cf04a9734132302f96da8e113e80ce5',1,'mio::abm']]],
-  ['hospital_2973',['Hospital',['../namespacemio_1_1abm.html#a83bc98ab43329c10fe9a6e683f2e1d0facc2ab63fd3eb564be64b4f21bd083bc7',1,'mio::abm']]]
+  ['generic_3135',['Generic',['../namespacemio_1_1abm.html#aaaf8822b1e6c701350b795abb75522ffa8045a0a6c688b0635e3caccc408a1446',1,'mio::abm']]]
 ];

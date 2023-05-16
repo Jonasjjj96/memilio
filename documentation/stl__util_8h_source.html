@@ -213,66 +213,71 @@ $(function() {
 <div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
 <div class="line"><a name="l00170"></a><span class="lineno"><a class="line" href="namespacemio.html#af8c639c34c4df5647f084fefb48afc6e">  170</a></span>&#160;<span class="keyword">using</span> <a class="code" href="structmio_1_1is__expression__valid.html">has_eq_op</a> = <a class="code" href="structmio_1_1is__expression__valid.html">is_expression_valid&lt;eq_op_t, T&gt;</a>;</div>
 <div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160; </div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;<span class="keyword">namespace </span>details</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;{</div>
-<div class="line"><a name="l00177"></a><span class="lineno"><a class="line" href="namespacemio_1_1details.html#a1f123f3ffcc0f17c774b25c31e5c8da1">  177</a></span>&#160;<span class="keyword">inline</span> <span class="keywordtype">size_t</span> <a class="code" href="namespacemio_1_1details.html#a1f123f3ffcc0f17c774b25c31e5c8da1">string_length</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* str)</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;{</div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    <span class="keywordflow">return</span> std::strlen(str);</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;}</div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160; </div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> String&gt;</div>
-<div class="line"><a name="l00186"></a><span class="lineno"><a class="line" href="namespacemio_1_1details.html#a949c370986b81bd86bcaa4ba1c8ece79">  186</a></span>&#160;<span class="keywordtype">size_t</span> <a class="code" href="namespacemio_1_1details.html#a1f123f3ffcc0f17c774b25c31e5c8da1">string_length</a>(String&amp;&amp; str)</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;{</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    <span class="keywordflow">return</span> str.length();</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;}</div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160; </div>
-<div class="line"><a name="l00194"></a><span class="lineno"><a class="line" href="namespacemio_1_1details.html#ad25067a082c56dbca39e556b89d32e3d">  194</a></span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="namespacemio_1_1details.html#ad25067a082c56dbca39e556b89d32e3d">path_join_rec</a>(std::stringstream&amp;, <span class="keywordtype">bool</span>)</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
+<div class="line"><a name="l00176"></a><span class="lineno"><a class="line" href="namespacemio.html#a2f0a87714e50d80a23c07a795e1ac104">  176</a></span>&#160;<span class="keyword">using</span> <a class="code" href="namespacemio.html#a2f0a87714e50d80a23c07a795e1ac104">is_iterator_expr_t</a> = <span class="keyword">typename</span> std::iterator_traits&lt;T&gt;::iterator_category;</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
+<div class="line"><a name="l00178"></a><span class="lineno"><a class="line" href="namespacemio.html#a6a13de5a1cf9acb4db85042f9bc948ea">  178</a></span>&#160;<span class="keyword">using</span> <a class="code" href="structmio_1_1is__expression__valid.html">is_iterator</a> = <a class="code" href="structmio_1_1is__expression__valid.html">is_expression_valid&lt;is_iterator_expr_t, T&gt;</a>;</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160; </div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;<span class="keyword">namespace </span>details</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;{</div>
+<div class="line"><a name="l00185"></a><span class="lineno"><a class="line" href="namespacemio_1_1details.html#a1f123f3ffcc0f17c774b25c31e5c8da1">  185</a></span>&#160;<span class="keyword">inline</span> <span class="keywordtype">size_t</span> <a class="code" href="namespacemio_1_1details.html#a1f123f3ffcc0f17c774b25c31e5c8da1">string_length</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* str)</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;{</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    <span class="keywordflow">return</span> std::strlen(str);</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;}</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160; </div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> String&gt;</div>
+<div class="line"><a name="l00194"></a><span class="lineno"><a class="line" href="namespacemio_1_1details.html#a949c370986b81bd86bcaa4ba1c8ece79">  194</a></span>&#160;<span class="keywordtype">size_t</span> <a class="code" href="namespacemio_1_1details.html#a1f123f3ffcc0f17c774b25c31e5c8da1">string_length</a>(String&amp;&amp; str)</div>
 <div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;{</div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;}</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160; </div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class </span>Head, <span class="keyword">class</span>... Tail&gt;</div>
-<div class="line"><a name="l00206"></a><span class="lineno"><a class="line" href="namespacemio_1_1details.html#aa2e82796296a06d168dbcf034472ab11">  206</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespacemio_1_1details.html#ad25067a082c56dbca39e556b89d32e3d">path_join_rec</a>(std::stringstream&amp; ss, <span class="keywordtype">bool</span> writeSeparator, Head&amp;&amp; head, Tail&amp;&amp;... tail)</div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;{</div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;    <span class="keywordflow">if</span> (writeSeparator) {</div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;        ss &lt;&lt; <span class="charliteral">&#39;/&#39;</span>;</div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;    }</div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;    ss &lt;&lt; head;</div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;    <a class="code" href="namespacemio_1_1details.html#ad25067a082c56dbca39e556b89d32e3d">path_join_rec</a>(ss, <a class="code" href="namespacemio_1_1details.html#a1f123f3ffcc0f17c774b25c31e5c8da1">string_length</a>(head) &gt; 0 &amp;&amp; head[<a class="code" href="namespacemio_1_1details.html#a1f123f3ffcc0f17c774b25c31e5c8da1">string_length</a>(head) - 1] != <span class="charliteral">&#39;/&#39;</span>, tail...);</div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;}</div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160; </div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;} <span class="comment">// namespace details</span></div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160; </div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class </span>String, <span class="keyword">class</span>... Strings&gt;</div>
-<div class="line"><a name="l00230"></a><span class="lineno"><a class="line" href="namespacemio.html#ad5d271b1fc1bc5f9ef54eb91c695f239">  230</a></span>&#160;std::string <a class="code" href="namespacemio.html#ad5d271b1fc1bc5f9ef54eb91c695f239">path_join</a>(String&amp;&amp; base, Strings&amp;&amp;... app)</div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;{</div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;    std::stringstream ss;</div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;    <a class="code" href="namespacemio_1_1details.html#ad25067a082c56dbca39e556b89d32e3d">details::path_join_rec</a>(ss, <span class="keyword">false</span>, base, app...);</div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;    <span class="keyword">auto</span> path = ss.str();</div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;    <span class="keywordflow">return</span> path;</div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;}</div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160; </div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> U, <span class="keyword">class</span> T&gt;</div>
-<div class="line"><a name="l00247"></a><span class="lineno"><a class="line" href="namespacemio.html#a53006511360e7600ccee2ca9732a3d72">  247</a></span>&#160;std::unique_ptr&lt;U&gt; <a class="code" href="namespacemio.html#a53006511360e7600ccee2ca9732a3d72">dynamic_unique_ptr_cast</a>(std::unique_ptr&lt;T&gt;&amp;&amp; base_ptr)</div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;{</div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;    <span class="keyword">auto</span> tmp_base_ptr = std::move(base_ptr);</div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;    U* tmp            = <span class="keyword">dynamic_cast&lt;</span>U*<span class="keyword">&gt;</span>(tmp_base_ptr.get());</div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;    std::unique_ptr&lt;U&gt; derived_ptr;</div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;    <span class="keywordflow">if</span> (tmp != <span class="keyword">nullptr</span>) {</div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;        tmp_base_ptr.release();</div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;        derived_ptr.reset(tmp);</div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;    }</div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;    <span class="keywordflow">return</span> derived_ptr;</div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;}</div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160; </div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> Iter, <span class="keyword">class</span> Pred&gt;</div>
-<div class="line"><a name="l00263"></a><span class="lineno"><a class="line" href="namespacemio.html#afd44eabeb55837aa5f3e2ecfa351f049">  263</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="namespacemio.html#afd44eabeb55837aa5f3e2ecfa351f049">contains</a>(Iter b, Iter e, Pred p)</div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;{</div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;    <span class="keywordflow">return</span> find_if(b, e, p) != e;</div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;}</div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160; </div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;} <span class="comment">// namespace mio</span></div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160; </div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;<span class="preprocessor">#endif </span><span class="comment">//STL_UTIL_H</span></div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    <span class="keywordflow">return</span> str.length();</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;}</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160; </div>
+<div class="line"><a name="l00202"></a><span class="lineno"><a class="line" href="namespacemio_1_1details.html#ad25067a082c56dbca39e556b89d32e3d">  202</a></span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="namespacemio_1_1details.html#ad25067a082c56dbca39e556b89d32e3d">path_join_rec</a>(std::stringstream&amp;, <span class="keywordtype">bool</span>)</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;{</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;}</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160; </div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class </span>Head, <span class="keyword">class</span>... Tail&gt;</div>
+<div class="line"><a name="l00214"></a><span class="lineno"><a class="line" href="namespacemio_1_1details.html#aa2e82796296a06d168dbcf034472ab11">  214</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespacemio_1_1details.html#ad25067a082c56dbca39e556b89d32e3d">path_join_rec</a>(std::stringstream&amp; ss, <span class="keywordtype">bool</span> writeSeparator, Head&amp;&amp; head, Tail&amp;&amp;... tail)</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;{</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;    <span class="keywordflow">if</span> (writeSeparator) {</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;        ss &lt;&lt; <span class="charliteral">&#39;/&#39;</span>;</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;    }</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;    ss &lt;&lt; head;</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;    <a class="code" href="namespacemio_1_1details.html#ad25067a082c56dbca39e556b89d32e3d">path_join_rec</a>(ss, <a class="code" href="namespacemio_1_1details.html#a1f123f3ffcc0f17c774b25c31e5c8da1">string_length</a>(head) &gt; 0 &amp;&amp; head[<a class="code" href="namespacemio_1_1details.html#a1f123f3ffcc0f17c774b25c31e5c8da1">string_length</a>(head) - 1] != <span class="charliteral">&#39;/&#39;</span>, tail...);</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;}</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160; </div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;} <span class="comment">// namespace details</span></div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160; </div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class </span>String, <span class="keyword">class</span>... Strings&gt;</div>
+<div class="line"><a name="l00238"></a><span class="lineno"><a class="line" href="namespacemio.html#ad5d271b1fc1bc5f9ef54eb91c695f239">  238</a></span>&#160;std::string <a class="code" href="namespacemio.html#ad5d271b1fc1bc5f9ef54eb91c695f239">path_join</a>(String&amp;&amp; base, Strings&amp;&amp;... app)</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;{</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;    std::stringstream ss;</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;    <a class="code" href="namespacemio_1_1details.html#ad25067a082c56dbca39e556b89d32e3d">details::path_join_rec</a>(ss, <span class="keyword">false</span>, base, app...);</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;    <span class="keyword">auto</span> path = ss.str();</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;    <span class="keywordflow">return</span> path;</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;}</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160; </div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> U, <span class="keyword">class</span> T&gt;</div>
+<div class="line"><a name="l00255"></a><span class="lineno"><a class="line" href="namespacemio.html#a53006511360e7600ccee2ca9732a3d72">  255</a></span>&#160;std::unique_ptr&lt;U&gt; <a class="code" href="namespacemio.html#a53006511360e7600ccee2ca9732a3d72">dynamic_unique_ptr_cast</a>(std::unique_ptr&lt;T&gt;&amp;&amp; base_ptr)</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;{</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;    <span class="keyword">auto</span> tmp_base_ptr = std::move(base_ptr);</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;    U* tmp            = <span class="keyword">dynamic_cast&lt;</span>U*<span class="keyword">&gt;</span>(tmp_base_ptr.get());</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;    std::unique_ptr&lt;U&gt; derived_ptr;</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;    <span class="keywordflow">if</span> (tmp != <span class="keyword">nullptr</span>) {</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;        tmp_base_ptr.release();</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;        derived_ptr.reset(tmp);</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;    }</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;    <span class="keywordflow">return</span> derived_ptr;</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;}</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160; </div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> Iter, <span class="keyword">class</span> Pred&gt;</div>
+<div class="line"><a name="l00271"></a><span class="lineno"><a class="line" href="namespacemio.html#afd44eabeb55837aa5f3e2ecfa351f049">  271</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="namespacemio.html#afd44eabeb55837aa5f3e2ecfa351f049">contains</a>(Iter b, Iter e, Pred p)</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;{</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;    <span class="keywordflow">return</span> find_if(b, e, p) != e;</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;}</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160; </div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;} <span class="comment">// namespace mio</span></div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160; </div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;<span class="preprocessor">#endif </span><span class="comment">//STL_UTIL_H</span></div>
 <div class="ttc" id="aclassmio_1_1Range_html"><div class="ttname"><a href="classmio_1_1Range.html">mio::Range</a></div><div class="ttdoc">immutable random access range, e.g.</div><div class="ttdef"><b>Definition:</b> stl_util.h:78</div></div>
 <div class="ttc" id="aclassmio_1_1Range_html_a027c4090db998b956de49e4167fe5307"><div class="ttname"><a href="classmio_1_1Range.html#a027c4090db998b956de49e4167fe5307">mio::Range::const_iterator</a></div><div class="ttdeci">typename IterPair::first_type const_iterator</div><div class="ttdef"><b>Definition:</b> stl_util.h:82</div></div>
 <div class="ttc" id="aclassmio_1_1Range_html_a0503e2e7ae245a0a6e2ff0209628c951"><div class="ttname"><a href="classmio_1_1Range.html#a0503e2e7ae245a0a6e2ff0209628c951">mio::Range::end</a></div><div class="ttdeci">auto end() const</div><div class="ttdef"><b>Definition:</b> stl_util.h:118</div></div>
@@ -291,18 +296,19 @@ $(function() {
 <div class="ttc" id="aclassmio_1_1Range_html_afab61dd3507232cdc0d7a606c0cec874"><div class="ttname"><a href="classmio_1_1Range.html#afab61dd3507232cdc0d7a606c0cec874">mio::Range::const_reverse_iterator</a></div><div class="ttdeci">std::reverse_iterator&lt; const_iterator &gt; const_reverse_iterator</div><div class="ttdef"><b>Definition:</b> stl_util.h:84</div></div>
 <div class="ttc" id="aclassmio_1_1Range_html_aff3d23d88b626369d8bc2e45b94155ef"><div class="ttname"><a href="classmio_1_1Range.html#aff3d23d88b626369d8bc2e45b94155ef">mio::Range::value_type</a></div><div class="ttdeci">typename std::iterator_traits&lt; iterator &gt;::value_type value_type</div><div class="ttdef"><b>Definition:</b> stl_util.h:85</div></div>
 <div class="ttc" id="ametaprogramming_8h_html"><div class="ttname"><a href="metaprogramming_8h.html">metaprogramming.h</a></div></div>
-<div class="ttc" id="anamespacemio_1_1details_html_a1f123f3ffcc0f17c774b25c31e5c8da1"><div class="ttname"><a href="namespacemio_1_1details.html#a1f123f3ffcc0f17c774b25c31e5c8da1">mio::details::string_length</a></div><div class="ttdeci">size_t string_length(const char *str)</div><div class="ttdoc">length of a null terminated C string</div><div class="ttdef"><b>Definition:</b> stl_util.h:177</div></div>
-<div class="ttc" id="anamespacemio_1_1details_html_ad25067a082c56dbca39e556b89d32e3d"><div class="ttname"><a href="namespacemio_1_1details.html#ad25067a082c56dbca39e556b89d32e3d">mio::details::path_join_rec</a></div><div class="ttdeci">void path_join_rec(std::stringstream &amp;, bool)</div><div class="ttdoc">breaks the recursion of path_join_rec.</div><div class="ttdef"><b>Definition:</b> stl_util.h:194</div></div>
+<div class="ttc" id="anamespacemio_1_1details_html_a1f123f3ffcc0f17c774b25c31e5c8da1"><div class="ttname"><a href="namespacemio_1_1details.html#a1f123f3ffcc0f17c774b25c31e5c8da1">mio::details::string_length</a></div><div class="ttdeci">size_t string_length(const char *str)</div><div class="ttdoc">length of a null terminated C string</div><div class="ttdef"><b>Definition:</b> stl_util.h:185</div></div>
+<div class="ttc" id="anamespacemio_1_1details_html_ad25067a082c56dbca39e556b89d32e3d"><div class="ttname"><a href="namespacemio_1_1details.html#ad25067a082c56dbca39e556b89d32e3d">mio::details::path_join_rec</a></div><div class="ttdeci">void path_join_rec(std::stringstream &amp;, bool)</div><div class="ttdoc">breaks the recursion of path_join_rec.</div><div class="ttdef"><b>Definition:</b> stl_util.h:202</div></div>
 <div class="ttc" id="anamespacemio_html"><div class="ttname"><a href="namespacemio.html">mio</a></div><div class="ttdoc">A collection of classes to simplify handling of matrix shapes in meta programming.</div><div class="ttdef"><b>Definition:</b> compartmentalmodel.h:32</div></div>
 <div class="ttc" id="anamespacemio_html_a0c09d69095773d82728cea5345a40008"><div class="ttname"><a href="namespacemio.html#a0c09d69095773d82728cea5345a40008">mio::ostream_op_expr_t</a></div><div class="ttdeci">decltype(std::declval&lt; std::ostream &amp; &gt;()&lt;&lt; std::declval&lt; T &gt;()) ostream_op_expr_t</div><div class="ttdoc">meta function to check type T for an existing stream output operator &quot;&lt;&lt;&quot;</div><div class="ttdef"><b>Definition:</b> stl_util.h:160</div></div>
-<div class="ttc" id="anamespacemio_html_a53006511360e7600ccee2ca9732a3d72"><div class="ttname"><a href="namespacemio.html#a53006511360e7600ccee2ca9732a3d72">mio::dynamic_unique_ptr_cast</a></div><div class="ttdeci">std::unique_ptr&lt; U &gt; dynamic_unique_ptr_cast(std::unique_ptr&lt; T &gt; &amp;&amp;base_ptr)</div><div class="ttdoc">converts a unique_ptr&lt;T&gt; to unique_ptr.</div><div class="ttdef"><b>Definition:</b> stl_util.h:247</div></div>
+<div class="ttc" id="anamespacemio_html_a2f0a87714e50d80a23c07a795e1ac104"><div class="ttname"><a href="namespacemio.html#a2f0a87714e50d80a23c07a795e1ac104">mio::is_iterator_expr_t</a></div><div class="ttdeci">typename std::iterator_traits&lt; T &gt;::iterator_category is_iterator_expr_t</div><div class="ttdoc">meta function to check type T for beeing an iterator</div><div class="ttdef"><b>Definition:</b> stl_util.h:176</div></div>
+<div class="ttc" id="anamespacemio_html_a53006511360e7600ccee2ca9732a3d72"><div class="ttname"><a href="namespacemio.html#a53006511360e7600ccee2ca9732a3d72">mio::dynamic_unique_ptr_cast</a></div><div class="ttdeci">std::unique_ptr&lt; U &gt; dynamic_unique_ptr_cast(std::unique_ptr&lt; T &gt; &amp;&amp;base_ptr)</div><div class="ttdoc">converts a unique_ptr&lt;T&gt; to unique_ptr.</div><div class="ttdef"><b>Definition:</b> stl_util.h:255</div></div>
 <div class="ttc" id="anamespacemio_html_a628e7270083870520c65318b8c5f2efd"><div class="ttname"><a href="namespacemio.html#a628e7270083870520c65318b8c5f2efd">mio::eq_op_t</a></div><div class="ttdeci">decltype(std::declval&lt; T &gt;()==std::declval&lt; T &gt;()) eq_op_t</div><div class="ttdoc">meta function to check type T for an existing equality comparison operator</div><div class="ttdef"><b>Definition:</b> stl_util.h:168</div></div>
 <div class="ttc" id="anamespacemio_html_a81e603f62801572c7afdf910bc057681"><div class="ttname"><a href="namespacemio.html#a81e603f62801572c7afdf910bc057681">mio::end</a></div><div class="ttdeci">std::enable_if_t&lt; conjunction_v&lt; std::is_base_of&lt; Eigen::EigenBase&lt; M &gt;, M &gt;, details::IsElementReference&lt; M &gt; &gt;, RowMajorIterator&lt; M, false &gt; &gt; end(M &amp;m)</div><div class="ttdoc">create a non-const end iterator for the matrix m.</div><div class="ttdef"><b>Definition:</b> eigen_util.h:452</div></div>
 <div class="ttc" id="anamespacemio_html_aa6c974748a742fac0093de2634750791"><div class="ttname"><a href="namespacemio.html#aa6c974748a742fac0093de2634750791">mio::begin</a></div><div class="ttdeci">std::enable_if_t&lt; conjunction_v&lt; std::is_base_of&lt; Eigen::EigenBase&lt; M &gt;, M &gt;, details::IsElementReference&lt; M &gt; &gt;, RowMajorIterator&lt; M, false &gt; &gt; begin(M &amp;m)</div><div class="ttdoc">create a non-const iterator to first element of the matrix m.</div><div class="ttdef"><b>Definition:</b> eigen_util.h:423</div></div>
 <div class="ttc" id="anamespacemio_html_ac160949c78aa17040a7b44c22754192b"><div class="ttname"><a href="namespacemio.html#ac160949c78aa17040a7b44c22754192b">mio::make_range</a></div><div class="ttdeci">auto make_range(IterPair &amp;&amp;p)</div><div class="ttdoc">factories for template argument deduction</div><div class="ttdef"><b>Definition:</b> stl_util.h:145</div></div>
-<div class="ttc" id="anamespacemio_html_ad5d271b1fc1bc5f9ef54eb91c695f239"><div class="ttname"><a href="namespacemio.html#ad5d271b1fc1bc5f9ef54eb91c695f239">mio::path_join</a></div><div class="ttdeci">std::string path_join(String &amp;&amp;base, Strings &amp;&amp;... app)</div><div class="ttdoc">join one ore more strings with path separators.</div><div class="ttdef"><b>Definition:</b> stl_util.h:230</div></div>
+<div class="ttc" id="anamespacemio_html_ad5d271b1fc1bc5f9ef54eb91c695f239"><div class="ttname"><a href="namespacemio.html#ad5d271b1fc1bc5f9ef54eb91c695f239">mio::path_join</a></div><div class="ttdeci">std::string path_join(String &amp;&amp;base, Strings &amp;&amp;... app)</div><div class="ttdoc">join one ore more strings with path separators.</div><div class="ttdef"><b>Definition:</b> stl_util.h:238</div></div>
 <div class="ttc" id="anamespacemio_html_af182124b02db89381844675d1365a286"><div class="ttname"><a href="namespacemio.html#af182124b02db89381844675d1365a286">mio::insert_sorted_replace</a></div><div class="ttdeci">std::vector&lt; T &gt;::iterator insert_sorted_replace(std::vector&lt; T &gt; &amp;vec, T const &amp;item, Pred pred)</div><div class="ttdoc">inserts element in a sorted vector, replacing items that are equal precondition: elements in the vect...</div><div class="ttdef"><b>Definition:</b> stl_util.h:50</div></div>
-<div class="ttc" id="anamespacemio_html_afd44eabeb55837aa5f3e2ecfa351f049"><div class="ttname"><a href="namespacemio.html#afd44eabeb55837aa5f3e2ecfa351f049">mio::contains</a></div><div class="ttdeci">bool contains(Iter b, Iter e, Pred p)</div><div class="ttdoc">checks if there is an element in this range that matches a predicate</div><div class="ttdef"><b>Definition:</b> stl_util.h:263</div></div>
+<div class="ttc" id="anamespacemio_html_afd44eabeb55837aa5f3e2ecfa351f049"><div class="ttname"><a href="namespacemio.html#afd44eabeb55837aa5f3e2ecfa351f049">mio::contains</a></div><div class="ttdeci">bool contains(Iter b, Iter e, Pred p)</div><div class="ttdoc">checks if there is an element in this range that matches a predicate</div><div class="ttdef"><b>Definition:</b> stl_util.h:271</div></div>
 <div class="ttc" id="anamespacestd_html"><div class="ttname"><a href="namespacestd.html">std</a></div><div class="ttdef"><b>Definition:</b> io.h:90</div></div>
 <div class="ttc" id="astructmio_1_1is__expression__valid_html"><div class="ttname"><a href="structmio_1_1is__expression__valid.html">mio::is_expression_valid</a></div><div class="ttdoc">defines static constant value = true if Expr&lt;T...&gt; produces a valid type.</div><div class="ttdef"><b>Definition:</b> metaprogramming.h:70</div></div>
 </div><!-- fragment --></div><!-- contents -->

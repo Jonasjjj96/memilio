@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['unknownerror_3038',['UnknownError',['../namespacemio.html#a2799d348d433018d5b183d75bfbdd699abfaef30f1c8011c5cefa38ae470fb7aa',1,'mio']]],
-  ['unvaccinated_3039',['Unvaccinated',['../namespacemio_1_1abm.html#acb1be3974226c65c471a4a9f4b99765caab7bd85fd947b5e6824b676b1120239e',1,'mio::abm']]]
+  ['totalinfections_3199',['TotalInfections',['../namespacemio_1_1osecirvvs.html#a429bf3ed03ff6928629f5d786b547023a7665c9bf381c48eb6feac25df813a00f',1,'mio::osecirvvs']]],
+  ['trace_3200',['trace',['../namespacemio.html#a67881790c6dfd8c058d27e5f1fe24220a04a75036e9d520bb983c5ed03b8d0182',1,'mio']]],
+  ['transportwithoutcontact_3201',['TransportWithoutContact',['../namespacemio_1_1abm.html#a83bc98ab43329c10fe9a6e683f2e1d0fab780feddf2b83d77ae9ab2173b8fe0b2',1,'mio::abm']]]
 ];

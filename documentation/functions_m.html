@@ -96,11 +96,14 @@ $(function() {
 <li>m_buf
 : <a class="el" href="classmio_1_1ByteStream.html#a9d2fbb56f7f7f269d5faca1942cd4743">mio::ByteStream</a>
 </li>
-<li>m_cached_exposure_rate
-: <a class="el" href="classmio_1_1abm_1_1Location.html#afeace889e66b136571967ddceca5e1c0">mio::abm::Location</a>
+<li>m_cached_exposure_rate_air
+: <a class="el" href="structmio_1_1abm_1_1Cell.html#a08db49aef343dd71069bafd8eaf21e5d">mio::abm::Cell</a>
+</li>
+<li>m_cached_exposure_rate_contacts
+: <a class="el" href="structmio_1_1abm_1_1Cell.html#a47b25d3a0a3eb659c751b497e2376a55">mio::abm::Cell</a>
 </li>
 <li>m_capacity
-: <a class="el" href="classmio_1_1abm_1_1Location.html#af710028641535e479c9c751e33ff2e1d">mio::abm::Location</a>
+: <a class="el" href="structmio_1_1abm_1_1Cell.html#ac139206fbfa87f5eedf21384f07ef698">mio::abm::Cell</a>
 </li>
 <li>m_capacity_adapted_transmission_risk
 : <a class="el" href="classmio_1_1abm_1_1Location.html#a889399c1cae78db5277410933a966560">mio::abm::Location</a>
@@ -142,6 +145,9 @@ $(function() {
 </li>
 <li>m_deaths_before
 : <a class="el" href="classmio_1_1isecir_1_1Model.html#ab1fd31564b09f4d36a5b06f481c06537">mio::isecir::Model</a>
+</li>
+<li>m_detected
+: <a class="el" href="classmio_1_1abm_1_1Infection.html#a6bdcb3ef1ba28dc5b337331a5cb906b3">mio::abm::Infection</a>
 </li>
 <li>m_dimensions
 : <a class="el" href="classmio_1_1CustomIndexArray.html#a05f5dfa25bdafb296aa28727dccddb48">mio::CustomIndexArray&lt; Typ, Tags &gt;</a>
@@ -238,17 +244,20 @@ $(function() {
 <li>m_i
 : <a class="el" href="classmio_1_1RowMajorIterator.html#a71977f0cdd8c636876e9b1bac2827274">mio::RowMajorIterator&lt; M, IsConst &gt;</a>
 </li>
-<li>m_index
-: <a class="el" href="classmio_1_1abm_1_1Location.html#ad2970a0fb3b605f77e5bc3aea1e08553">mio::abm::Location</a>
+<li>m_id
+: <a class="el" href="classmio_1_1abm_1_1Location.html#a203db1d0024045a7f45e6c0059235ce5">mio::abm::Location</a>
+</li>
+<li>m_infection_course
+: <a class="el" href="classmio_1_1abm_1_1Infection.html#a7f4bc9f6e9c76f49657eebe8207f2038">mio::abm::Infection</a>
 </li>
 <li>m_infection_parameters
 : <a class="el" href="classmio_1_1abm_1_1World.html#a63c7815a294db473f65314170697feb7">mio::abm::World</a>
 </li>
-<li>m_infection_state
-: <a class="el" href="classmio_1_1abm_1_1Person.html#a4c327331c0b882ab78a03eeb445668dc">mio::abm::Person</a>
-</li>
 <li>m_infection_states
 : <a class="el" href="classmio_1_1abm_1_1TestingCriteria.html#a5d6ad69c2796f144467914f6f404d251">mio::abm::TestingCriteria</a>
+</li>
+<li>m_infections
+: <a class="el" href="classmio_1_1abm_1_1Person.html#a62c7a503913e9e0b02fc22eff56b6e08">mio::abm::Person</a>
 </li>
 <li>m_integrator
 : <a class="el" href="classmio_1_1Simulation.html#ad4598248a61b3f9bbe3503d63261f902">mio::Simulation&lt; M &gt;</a>
@@ -280,14 +289,20 @@ $(function() {
 <li>m_level
 : <a class="el" href="classmio_1_1DampingSampling.html#a3d5d43306205fd72df0541f6352cbcea">mio::DampingSampling</a>
 </li>
-<li>m_location_id
-: <a class="el" href="classmio_1_1abm_1_1Person.html#ae420bdeb1c7efc5361e7e71eb687b8dc">mio::abm::Person</a>
+<li>m_location
+: <a class="el" href="classmio_1_1abm_1_1Person.html#a154a3dd98fe6ffb62345d093c14f2356">mio::abm::Person</a>
 </li>
 <li>m_location_types
 : <a class="el" href="classmio_1_1abm_1_1TestingCriteria.html#a8831aaa50fd79c787734b6bd705d69f7">mio::abm::TestingCriteria</a>
 </li>
 <li>m_locations
-: <a class="el" href="classmio_1_1abm_1_1World.html#a950bb6364d8fb5320bb0e9307b7bdffb">mio::abm::World</a>
+: <a class="el" href="classmio_1_1abm_1_1World.html#a029567ee32015927d2e0d4902600468d">mio::abm::World</a>
+</li>
+<li>m_log_norm_alpha
+: <a class="el" href="classmio_1_1abm_1_1Infection.html#af76464c3025d0fd9549d2177fc53f1a4">mio::abm::Infection</a>
+</li>
+<li>m_log_norm_beta
+: <a class="el" href="classmio_1_1abm_1_1Infection.html#adf79402704acb20925b3ee94fb0f89c7">mio::abm::Infection</a>
 </li>
 <li>m_log_stddev_change
 : <a class="el" href="classmio_1_1ParameterDistributionNormal.html#a6b700bad300ad46d5d88679fbc6a40cc">mio::ParameterDistributionNormal</a>
@@ -299,7 +314,7 @@ $(function() {
 : <a class="el" href="classmio_1_1abm_1_1Person.html#aad2290085b52ae4d36f8a146e4654f9e">mio::abm::Person</a>
 </li>
 <li>m_mask_compliance
-: <a class="el" href="classmio_1_1abm_1_1Person.html#a15c60c23b82612cffd3958c81708d3b8">mio::abm::Person</a>
+: <a class="el" href="classmio_1_1abm_1_1Person.html#af47cc7f919aaeb10fc37c649a9ece75b">mio::abm::Person</a>
 </li>
 <li>m_matrices
 : <a class="el" href="classmio_1_1DampingMatrixExpressionGroup.html#a81d7d7e3b17ef3e73bae500e51344b78">mio::DampingMatrixExpressionGroup&lt; E &gt;</a>
@@ -359,9 +374,6 @@ $(function() {
 : <a class="el" href="classmio_1_1osecir_1_1Parameters.html#a918821943875c2252736c04a3fb47c0c">mio::osecir::Parameters</a>
 , <a class="el" href="classmio_1_1osecirvvs_1_1Parameters.html#a24ef88b78a771b9c62b7dec6d15f0321">mio::osecirvvs::Parameters</a>
 </li>
-<li>m_num_persons
-: <a class="el" href="classmio_1_1abm_1_1Location.html#a8b989cf7591c6e2cef03aa83da4f828f">mio::abm::Location</a>
-</li>
 <li>m_num_runs
 : <a class="el" href="classmio_1_1ParameterStudy.html#a2fb649f8ea5ec2e3deab9d355faf5de3">mio::ParameterStudy&lt; S &gt;</a>
 </li>
@@ -388,7 +400,9 @@ $(function() {
 : <a class="el" href="classmio_1_1abm_1_1Person.html#a8413ac38aeefceb8fe8816605b1f930a">mio::abm::Person</a>
 </li>
 <li>m_persons
-: <a class="el" href="classmio_1_1abm_1_1World.html#a50730201715b158f6c8618665d65599c">mio::abm::World</a>
+: <a class="el" href="structmio_1_1abm_1_1Cell.html#a97d985fd2aa4d46092c2bc90a40b9b55">mio::abm::Cell</a>
+, <a class="el" href="classmio_1_1abm_1_1Location.html#a06dab2f8ee3a99550ad07c8ed2b79598">mio::abm::Location</a>
+, <a class="el" href="classmio_1_1abm_1_1World.html#a50730201715b158f6c8618665d65599c">mio::abm::World</a>
 </li>
 <li>m_populations
 : <a class="el" href="classmio_1_1isecir_1_1Model.html#a5f910fdb0dfda9b7eea8f1f0b4849a47">mio::isecir::Model</a>
@@ -397,7 +411,7 @@ $(function() {
 : <a class="el" href="classmio_1_1ParameterDistribution.html#a18b2879f9d93e72981e704dd1ebe56fe">mio::ParameterDistribution</a>
 </li>
 <li>m_probability
-: <a class="el" href="classmio_1_1abm_1_1TestingScheme.html#a8cd3bf9d838026a8f576c805f0cc84bf">mio::abm::TestingScheme</a>
+: <a class="el" href="classmio_1_1abm_1_1TestingScheme.html#ab8d312dc865be0fb4e24beb7cbe5d204">mio::abm::TestingScheme</a>
 </li>
 <li>m_ptr
 : <a class="el" href="structmio_1_1CustomIndexArray_1_1Iterator.html#a161235199ab1ee129f1494206d747b58">mio::CustomIndexArray&lt; Typ, Tags &gt;::Iterator&lt; T &gt;</a>
@@ -438,7 +452,7 @@ $(function() {
 : <a class="el" href="classmio_1_1abm_1_1Location.html#a3dea070e7dc3f56568d8c77db6f2cf1a">mio::abm::Location</a>
 </li>
 <li>m_result
-: <a class="el" href="classmio_1_1abm_1_1Simulation.html#a5972f02914d107538d5c4bcbddbe0556">mio::abm::Simulation</a>
+: <a class="el" href="classmio_1_1abm_1_1Simulation.html#a4236d7602ef146b4aa5592c1ac062beb">mio::abm::Simulation</a>
 , <a class="el" href="classmio_1_1iseir_1_1Model.html#a3b884683323af22f0b2853b84a787fc7">mio::iseir::Model</a>
 , <a class="el" href="classmio_1_1OdeIntegrator.html#a392fa1b1faf2e1346a372f09f3e63ded">mio::OdeIntegrator</a>
 </li>
@@ -553,9 +567,6 @@ $(function() {
 <li>m_time_since_negative_test
 : <a class="el" href="classmio_1_1abm_1_1Person.html#ad64bd9fc6790745f2e3e7e6ccf346fa8">mio::abm::Person</a>
 </li>
-<li>m_time_until_carrier
-: <a class="el" href="classmio_1_1abm_1_1Person.html#a5157a7b577067c62dc2a9a589d6bbefe">mio::abm::Person</a>
-</li>
 <li>m_time_used
 : <a class="el" href="classmio_1_1abm_1_1Mask.html#acf0a14ecf835683565b1748d7b8f1946">mio::abm::Mask</a>
 </li>
@@ -578,8 +589,7 @@ $(function() {
 : <a class="el" href="classmio_1_1ParameterSet.html#a708003bd5caa82ae03721c9d9a1d196a">mio::ParameterSet&lt; Tags &gt;</a>
 </li>
 <li>m_type
-: <a class="el" href="classmio_1_1abm_1_1Location.html#a2ca3248856a842d53de0e6ae265bfcb3">mio::abm::Location</a>
-, <a class="el" href="classmio_1_1abm_1_1Mask.html#a3d65b93e06ff200d929d0646a99841b0">mio::abm::Mask</a>
+: <a class="el" href="classmio_1_1abm_1_1Mask.html#a3d65b93e06ff200d929d0646a99841b0">mio::abm::Mask</a>
 , <a class="el" href="classmio_1_1DampingSampling.html#a7621da9da041a6d5f657cd05d49298fc">mio::DampingSampling</a>
 </li>
 <li>m_underlying_iter
@@ -591,14 +601,20 @@ $(function() {
 <li>m_use_migration_rules
 : <a class="el" href="classmio_1_1abm_1_1World.html#a947a822aeaaba10f26fa25c061ca1d95">mio::abm::World</a>
 </li>
-<li>m_vaccination_state
-: <a class="el" href="classmio_1_1abm_1_1Person.html#acde420ee5aacc6307becceb149ee15d6">mio::abm::Person</a>
+<li>m_vaccinations
+: <a class="el" href="classmio_1_1abm_1_1Person.html#a8224b98e46043322be9ae62ddd85701c">mio::abm::Person</a>
 </li>
 <li>m_value
 : <a class="el" href="classmio_1_1DampingSampling.html#a3ccfd198a0af351ede7d8b54780af1e2">mio::DampingSampling</a>
 , <a class="el" href="classmio_1_1details_1_1TaggedParameter.html#adedcad3369ceebaa9f11c97ec1fb9954">mio::details::TaggedParameter&lt; TagT &gt;</a>
 , <a class="el" href="structmio_1_1TransformIterator_1_1ProxyPointer.html#ac4f31bca9d0a4b16ab879a1ce8fc4f5e">mio::TransformIterator&lt; UnderlyingIter, Transform &gt;::ProxyPointer</a>
 , <a class="el" href="classmio_1_1UncertainValue.html#aab68caebf292e822e2cc1bd8a62513f9">mio::UncertainValue</a>
+</li>
+<li>m_viral_load
+: <a class="el" href="classmio_1_1abm_1_1Infection.html#a29fa6fcc9b4b78730fd1c4bd16453691">mio::abm::Infection</a>
+</li>
+<li>m_virus_variant
+: <a class="el" href="classmio_1_1abm_1_1Infection.html#a606e9843af3132b59480f8a3a663377b">mio::abm::Infection</a>
 </li>
 <li>m_wears_mask
 : <a class="el" href="classmio_1_1abm_1_1Person.html#afe466f123ccb1cee377f9f9c257c6e52">mio::abm::Person</a>
@@ -632,7 +648,7 @@ $(function() {
 , <a class="el" href="classmio_1_1SquareMatrixShape.html#aaf11777e984949cb224ee1cd0ddbfda9">mio::SquareMatrixShape</a>
 </li>
 <li>matrix()
-: <a class="el" href="classmio_1_1TimeSeries.html#ac6bea94a213508d4893637dd1270f7b8">mio::TimeSeries&lt; FP &gt;</a>
+: <a class="el" href="classmio_1_1TimeSeries.html#a15864c9cc3c4abc01153f9f004d5aed1">mio::TimeSeries&lt; FP &gt;</a>
 </li>
 <li>Matrix
 : <a class="el" href="classmio_1_1TimeSeries.html#a8ced5fe4230be54a753c9ce8671ae1f6">mio::TimeSeries&lt; FP &gt;</a>
@@ -653,7 +669,7 @@ $(function() {
 , <a class="el" href="classmio_1_1IOStatus.html#a21a9087e95e1bed0c733a8a23ce711fe">mio::IOStatus</a>
 </li>
 <li>migrate_to()
-: <a class="el" href="classmio_1_1abm_1_1Person.html#a6d5a659b8ab1cc570b08da8dd4d50934">mio::abm::Person</a>
+: <a class="el" href="classmio_1_1abm_1_1Person.html#a59859d4bcd01ef3d831ab597d90956b0">mio::abm::Person</a>
 </li>
 <li>migration()
 : <a class="el" href="classmio_1_1abm_1_1World.html#a7ac82b14caa7c9e8ce453cf062d25376">mio::abm::World</a>

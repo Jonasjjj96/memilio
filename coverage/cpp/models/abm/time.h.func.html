@@ -31,17 +31,17 @@
             <td class="headerValue">coverage.info</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntry">61</td>
-            <td class="headerCovTableEntry">61</td>
+            <td class="headerCovTableEntry">68</td>
+            <td class="headerCovTableEntry">68</td>
             <td class="headerCovTableEntryHi">100.0 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2023-05-08 16:59:32</td>
+            <td class="headerValue">2023-05-16 12:26:29</td>
             <td></td>
             <td class="headerItem">Functions:</td>
-            <td class="headerCovTableEntry">28</td>
-            <td class="headerCovTableEntry">28</td>
+            <td class="headerCovTableEntry">32</td>
+            <td class="headerCovTableEntry">32</td>
             <td class="headerCovTableEntryHi">100.0 %</td>
           </tr>
           <tr><td><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
@@ -60,12 +60,16 @@
       <td width="20%" class="tableHead">Hit count <span class="tableHeadSort"><a href="time.h.func-sort-c.html"><img src="../../updown.png" width=10 height=14 alt="Sort by hit count" title="Sort by hit count" border=0></a></span></td>
     </tr>
     <tr>
+              <td class="coverFn"><a href="time.h.gcov.html#317">mio::abm::days(double)</a></td>
+              <td class="coverFnHi">161</td>
+            </tr>
+    <tr>
               <td class="coverFn"><a href="time.h.gcov.html#312">mio::abm::days(int)</a></td>
-              <td class="coverFnHi">32</td>
+              <td class="coverFnHi">341</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="time.h.gcov.html#303">mio::abm::hours(int)</a></td>
-              <td class="coverFnHi">352</td>
+              <td class="coverFnHi">341</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="time.h.gcov.html#294">mio::abm::minutes(int)</a></td>
@@ -77,19 +81,15 @@
             </tr>
     <tr>
               <td class="coverFn"><a href="time.h.gcov.html#42">mio::abm::TimeSpan::TimeSpan(int)</a></td>
-              <td class="coverFnHi">1644</td>
-            </tr>
-    <tr>
-              <td class="coverFn"><a href="time.h.gcov.html#118">mio::abm::TimeSpan::operator-=(mio::abm::TimeSpan const&amp;)</a></td>
-              <td class="coverFnHi">5</td>
+              <td class="coverFnHi">2339</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="time.h.gcov.html#109">mio::abm::TimeSpan::operator+=(mio::abm::TimeSpan const&amp;)</a></td>
-              <td class="coverFnHi">224</td>
+              <td class="coverFnHi">367</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="time.h.gcov.html#163">mio::abm::TimePoint::TimePoint(int)</a></td>
-              <td class="coverFnHi">358</td>
+              <td class="coverFnHi">960</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="time.h.gcov.html#252">mio::abm::TimePoint::operator+=(mio::abm::TimeSpan const&amp;)</a></td>
@@ -97,15 +97,19 @@
             </tr>
     <tr>
               <td class="coverFn"><a href="time.h.gcov.html#50">mio::abm::TimeSpan::days() const</a></td>
-              <td class="coverFnHi">67</td>
+              <td class="coverFnHi">726</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="time.h.gcov.html#66">mio::abm::TimeSpan::seconds() const</a></td>
-              <td class="coverFnHi">442</td>
+              <td class="coverFnHi">991</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="time.h.gcov.html#133">mio::abm::TimeSpan::operator/(int) const</a></td>
+              <td class="coverFnHi">279</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="time.h.gcov.html#75">mio::abm::TimeSpan::operator==(mio::abm::TimeSpan const&amp;) const</a></td>
-              <td class="coverFnHi">7</td>
+              <td class="coverFnHi">8</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="time.h.gcov.html#95">mio::abm::TimeSpan::operator&gt;=(mio::abm::TimeSpan const&amp;) const</a></td>
@@ -117,7 +121,7 @@
             </tr>
     <tr>
               <td class="coverFn"><a href="time.h.gcov.html#87">mio::abm::TimeSpan::operator&lt;=(mio::abm::TimeSpan const&amp;) const</a></td>
-              <td class="coverFnHi">15</td>
+              <td class="coverFnHi">10</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="time.h.gcov.html#83">mio::abm::TimeSpan::operator&lt;(mio::abm::TimeSpan const&amp;) const</a></td>
@@ -133,7 +137,7 @@
             </tr>
     <tr>
               <td class="coverFn"><a href="time.h.gcov.html#201">mio::abm::TimePoint::hour_of_day() const</a></td>
-              <td class="coverFnHi">15</td>
+              <td class="coverFnHi">16</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="time.h.gcov.html#209">mio::abm::TimePoint::time_since_midnight() const</a></td>
@@ -141,35 +145,47 @@
             </tr>
     <tr>
               <td class="coverFn"><a href="time.h.gcov.html#171">mio::abm::TimePoint::days() const</a></td>
-              <td class="coverFnHi">403</td>
+              <td class="coverFnHi">952</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="time.h.gcov.html#178">mio::abm::TimePoint::hours() const</a></td>
-              <td class="coverFnHi">15</td>
+              <td class="coverFnHi">16</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="time.h.gcov.html#185">mio::abm::TimePoint::seconds() const</a></td>
-              <td class="coverFnHi">158</td>
+              <td class="coverFnHi">431</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="time.h.gcov.html#218">mio::abm::TimePoint::operator==(mio::abm::TimePoint const&amp;) const</a></td>
               <td class="coverFnHi">4</td>
             </tr>
     <tr>
+              <td class="coverFn"><a href="time.h.gcov.html#238">mio::abm::TimePoint::operator&gt;=(mio::abm::TimePoint const&amp;) const</a></td>
+              <td class="coverFnHi">554</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="time.h.gcov.html#234">mio::abm::TimePoint::operator&gt;(mio::abm::TimePoint const&amp;) const</a></td>
+              <td class="coverFnHi">2232</td>
+            </tr>
+    <tr>
               <td class="coverFn"><a href="time.h.gcov.html#230">mio::abm::TimePoint::operator&lt;=(mio::abm::TimePoint const&amp;) const</a></td>
-              <td class="coverFnHi">8</td>
+              <td class="coverFnHi">285</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="time.h.gcov.html#226">mio::abm::TimePoint::operator&lt;(mio::abm::TimePoint const&amp;) const</a></td>
-              <td class="coverFnHi">150</td>
+              <td class="coverFnHi">1056</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="time.h.gcov.html#257">mio::abm::TimePoint::operator-(mio::abm::TimeSpan const&amp;) const</a></td>
+              <td class="coverFnHi">80</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="time.h.gcov.html#272">mio::abm::TimePoint::operator-(mio::abm::TimePoint const&amp;) const</a></td>
-              <td class="coverFnHi">100</td>
+              <td class="coverFnHi">373</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="time.h.gcov.html#248">mio::abm::TimePoint::operator+(mio::abm::TimeSpan const&amp;) const</a></td>
-              <td class="coverFnHi">225</td>
+              <td class="coverFnHi">693</td>
             </tr>
   </table>
   <br>

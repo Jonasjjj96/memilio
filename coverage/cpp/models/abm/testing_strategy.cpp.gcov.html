@@ -31,13 +31,13 @@
             <td class="headerValue">coverage.info</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntry">108</td>
+            <td class="headerCovTableEntry">107</td>
             <td class="headerCovTableEntry">111</td>
-            <td class="headerCovTableEntryHi">97.3 %</td>
+            <td class="headerCovTableEntryHi">96.4 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2023-05-08 16:59:32</td>
+            <td class="headerValue">2023-05-16 12:26:29</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">25</td>
@@ -152,9 +152,9 @@
 <a name="90"><span class="lineNum">      90 </span><span class="lineCov">          2 :     m_infection_states.erase(last, m_infection_states.end());</span></a>
 <a name="91"><span class="lineNum">      91 </span><span class="lineCov">          2 : }</span></a>
 <a name="92"><span class="lineNum">      92 </span>            : </a>
-<a name="93"><span class="lineNum">      93 </span><span class="lineCov">         12 : bool TestingCriteria::evaluate(const Person&amp; p, const Location&amp; l) const</span></a>
+<a name="93"><span class="lineNum">      93 </span><span class="lineCov">         12 : bool TestingCriteria::evaluate(const Person&amp; p, const Location&amp; l, TimePoint t) const</span></a>
 <a name="94"><span class="lineNum">      94 </span>            : {</a>
-<a name="95"><span class="lineNum">      95 </span><span class="lineCov">         12 :     return has_requested_age(p) &amp;&amp; is_requested_location_type(l) &amp;&amp; has_requested_infection_state(p);</span></a>
+<a name="95"><span class="lineNum">      95 </span><span class="lineCov">         12 :     return has_requested_age(p) &amp;&amp; is_requested_location_type(l) &amp;&amp; has_requested_infection_state(p, t);</span></a>
 <a name="96"><span class="lineNum">      96 </span>            : }</a>
 <a name="97"><span class="lineNum">      97 </span>            : </a>
 <a name="98"><span class="lineNum">      98 </span><span class="lineCov">         12 : bool TestingCriteria::has_requested_age(const Person&amp; p) const</span></a>
@@ -173,12 +173,12 @@
 <a name="111"><span class="lineNum">     111 </span><span class="lineCov">         10 :     return std::find(m_location_types.begin(), m_location_types.end(), l.get_type()) != m_location_types.end();</span></a>
 <a name="112"><span class="lineNum">     112 </span>            : }</a>
 <a name="113"><span class="lineNum">     113 </span>            : </a>
-<a name="114"><span class="lineNum">     114 </span><span class="lineCov">          9 : bool TestingCriteria::has_requested_infection_state(const Person&amp; p) const</span></a>
+<a name="114"><span class="lineNum">     114 </span><span class="lineCov">          9 : bool TestingCriteria::has_requested_infection_state(const Person&amp; p, TimePoint t) const</span></a>
 <a name="115"><span class="lineNum">     115 </span>            : {</a>
 <a name="116"><span class="lineNum">     116 </span><span class="lineCov">          9 :     if (m_infection_states.empty()) {</span></a>
 <a name="117"><span class="lineNum">     117 </span><span class="lineCov">          1 :         return true; // no condition on infection state</span></a>
 <a name="118"><span class="lineNum">     118 </span>            :     }</a>
-<a name="119"><span class="lineNum">     119 </span><span class="lineCov">         16 :     return std::find(m_infection_states.begin(), m_infection_states.end(), p.get_infection_state()) !=</span></a>
+<a name="119"><span class="lineNum">     119 </span><span class="lineCov">         16 :     return std::find(m_infection_states.begin(), m_infection_states.end(), p.get_infection_state(t)) !=</span></a>
 <a name="120"><span class="lineNum">     120 </span><span class="lineCov">         16 :            m_infection_states.end();</span></a>
 <a name="121"><span class="lineNum">     121 </span>            : }</a>
 <a name="122"><span class="lineNum">     122 </span>            : </a>
@@ -222,21 +222,21 @@
 <a name="160"><span class="lineNum">     160 </span>            : {</a>
 <a name="161"><span class="lineNum">     161 </span><span class="lineCov">          5 :     return m_is_active;</span></a>
 <a name="162"><span class="lineNum">     162 </span>            : }</a>
-<a name="163"><span class="lineNum">     163 </span><span class="lineCov">          4 : void TestingScheme::update_activity_status(const TimePoint t)</span></a>
+<a name="163"><span class="lineNum">     163 </span><span class="lineCov">          4 : void TestingScheme::update_activity_status(TimePoint t)</span></a>
 <a name="164"><span class="lineNum">     164 </span>            : {</a>
 <a name="165"><span class="lineNum">     165 </span><span class="lineCov">          4 :     m_is_active = (m_start_date &lt;= t &amp;&amp; t &lt;= m_end_date);</span></a>
 <a name="166"><span class="lineNum">     166 </span><span class="lineCov">          4 : }</span></a>
 <a name="167"><span class="lineNum">     167 </span>            : </a>
-<a name="168"><span class="lineNum">     168 </span><span class="lineCov">          6 : bool TestingScheme::run_scheme(Person&amp; person, const Location&amp; location) const</span></a>
+<a name="168"><span class="lineNum">     168 </span><span class="lineCov">          6 : bool TestingScheme::run_scheme(Person&amp; person, const Location&amp; location, TimePoint t) const</span></a>
 <a name="169"><span class="lineNum">     169 </span>            : {</a>
 <a name="170"><span class="lineNum">     170 </span><span class="lineCov">          6 :     if (person.get_time_since_negative_test() &gt; m_minimal_time_since_last_test) {</span></a>
 <a name="171"><span class="lineNum">     171 </span><span class="lineCov">          4 :         double random = UniformDistribution&lt;double&gt;::get_instance()();</span></a>
 <a name="172"><span class="lineNum">     172 </span><span class="lineCov">          4 :         if (random &lt; m_probability) {</span></a>
 <a name="173"><span class="lineNum">     173 </span><span class="lineCov">          4 :             if (std::any_of(m_testing_criteria.begin(), m_testing_criteria.end(),</span></a>
-<a name="174"><span class="lineNum">     174 </span><span class="lineCov">          5 :                             [person, location](TestingCriteria tr) {</span></a>
-<a name="175"><span class="lineNum">     175 </span><span class="lineCov">          5 :                                 return tr.evaluate(person, location);</span></a>
+<a name="174"><span class="lineNum">     174 </span><span class="lineCov">          5 :                             [person, location, t](TestingCriteria tr) {</span></a>
+<a name="175"><span class="lineNum">     175 </span><span class="lineCov">          5 :                                 return tr.evaluate(person, location, t);</span></a>
 <a name="176"><span class="lineNum">     176 </span>            :                             })) {</a>
-<a name="177"><span class="lineNum">     177 </span><span class="lineCov">          3 :                 return !person.get_tested(m_test_type.get_default());</span></a>
+<a name="177"><span class="lineNum">     177 </span><span class="lineCov">          3 :                 return !person.get_tested(t, m_test_type.get_default());</span></a>
 <a name="178"><span class="lineNum">     178 </span>            :             }</a>
 <a name="179"><span class="lineNum">     179 </span>            :         }</a>
 <a name="180"><span class="lineNum">     180 </span>            :     }</a>
@@ -261,25 +261,25 @@
 <a name="199"><span class="lineNum">     199 </span><span class="lineCov">          1 :     m_testing_schemes.erase(last, m_testing_schemes.end());</span></a>
 <a name="200"><span class="lineNum">     200 </span><span class="lineCov">          1 : }</span></a>
 <a name="201"><span class="lineNum">     201 </span>            : </a>
-<a name="202"><span class="lineNum">     202 </span><span class="lineCov">        105 : void TestingStrategy::update_activity_status(const TimePoint t)</span></a>
+<a name="202"><span class="lineNum">     202 </span><span class="lineCov">        105 : void TestingStrategy::update_activity_status(TimePoint t)</span></a>
 <a name="203"><span class="lineNum">     203 </span>            : {</a>
 <a name="204"><span class="lineNum">     204 </span><span class="lineCov">        106 :     for (auto&amp; ts : m_testing_schemes) {</span></a>
 <a name="205"><span class="lineNum">     205 </span><span class="lineCov">          1 :         ts.update_activity_status(t);</span></a>
 <a name="206"><span class="lineNum">     206 </span>            :     }</a>
 <a name="207"><span class="lineNum">     207 </span><span class="lineCov">        105 : }</span></a>
 <a name="208"><span class="lineNum">     208 </span>            : </a>
-<a name="209"><span class="lineNum">     209 </span><span class="lineCov">         23 : bool TestingStrategy::run_strategy(Person&amp; person, const Location&amp; location) const</span></a>
+<a name="209"><span class="lineNum">     209 </span><span class="lineCov">         26 : bool TestingStrategy::run_strategy(Person&amp; person, const Location&amp; location, TimePoint t) const</span></a>
 <a name="210"><span class="lineNum">     210 </span>            : {</a>
 <a name="211"><span class="lineNum">     211 </span>            :     // Person who is in quarantine but not yet home should go home. Otherwise they can't because they test positive.</a>
-<a name="212"><span class="lineNum">     212 </span><span class="lineCov">         23 :     if (location.get_type() == mio::abm::LocationType::Home &amp;&amp; person.is_in_quarantine()) {</span></a>
-<a name="213"><span class="lineNum">     213 </span><span class="lineCov">          1 :         return true;</span></a>
+<a name="212"><span class="lineNum">     212 </span><span class="lineCov">         26 :     if (location.get_type() == mio::abm::LocationType::Home &amp;&amp; person.is_in_quarantine()) {</span></a>
+<a name="213"><span class="lineNum">     213 </span><span class="lineNoCov">          0 :         return true;</span></a>
 <a name="214"><span class="lineNum">     214 </span>            :     }</a>
-<a name="215"><span class="lineNum">     215 </span><span class="lineCov">         22 :     return std::all_of(m_testing_schemes.begin(), m_testing_schemes.end(), [&amp;person, location](TestingScheme ts) {</span></a>
+<a name="215"><span class="lineNum">     215 </span><span class="lineCov">         26 :     return std::all_of(m_testing_schemes.begin(), m_testing_schemes.end(), [&amp;person, location, t](TestingScheme ts) {</span></a>
 <a name="216"><span class="lineNum">     216 </span><span class="lineCov">          2 :         if (ts.is_active()) {</span></a>
-<a name="217"><span class="lineNum">     217 </span><span class="lineCov">          1 :             return ts.run_scheme(person, location);</span></a>
+<a name="217"><span class="lineNum">     217 </span><span class="lineCov">          1 :             return ts.run_scheme(person, location, t);</span></a>
 <a name="218"><span class="lineNum">     218 </span>            :         }</a>
 <a name="219"><span class="lineNum">     219 </span><span class="lineCov">          1 :         return true;</span></a>
-<a name="220"><span class="lineNum">     220 </span><span class="lineCov">         22 :     });</span></a>
+<a name="220"><span class="lineNum">     220 </span><span class="lineCov">         26 :     });</span></a>
 <a name="221"><span class="lineNum">     221 </span>            : }</a>
 <a name="222"><span class="lineNum">     222 </span>            : </a>
 <a name="223"><span class="lineNum">     223 </span>            : } // namespace abm</a>

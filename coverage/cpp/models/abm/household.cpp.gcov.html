@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2023-05-08 16:59:32</td>
+            <td class="headerValue">2023-05-16 12:26:29</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">5</td>
@@ -121,7 +121,7 @@
 <a name="59"><span class="lineNum">      59 </span><span class="lineCov">         16 :     auto home    = world.add_location(LocationType::Home);</span></a>
 <a name="60"><span class="lineNum">      60 </span><span class="lineCov">         32 :     auto members = household.get_members();</span></a>
 <a name="61"><span class="lineNum">      61 </span><span class="lineCov">         32 :     world.get_individualized_location(home).set_capacity(household.get_total_number_of_members(),</span></a>
-<a name="62"><span class="lineNum">      62 </span><span class="lineCov">         16 :                                                          household.get_total_number_of_members() *</span></a>
+<a name="62"><span class="lineNum">      62 </span><span class="lineCov">         32 :                                                          household.get_total_number_of_members() *</span></a>
 <a name="63"><span class="lineNum">      63 </span><span class="lineCov">         16 :                                                              household.get_space_per_member());</span></a>
 <a name="64"><span class="lineNum">      64 </span>            : </a>
 <a name="65"><span class="lineNum">      65 </span><span class="lineCov">         48 :     for (auto&amp; memberTouple : members) {</span></a>
@@ -130,7 +130,7 @@
 <a name="68"><span class="lineNum">      68 </span><span class="lineCov">         32 :         std::tie(member, count) = memberTouple;</span></a>
 <a name="69"><span class="lineNum">      69 </span><span class="lineCov">        136 :         for (int j = 0; j &lt; count; j++) {</span></a>
 <a name="70"><span class="lineNum">      70 </span><span class="lineCov">        104 :             auto age_group = pick_age_group_from_age_distribution(member.get_age_weights());</span></a>
-<a name="71"><span class="lineNum">      71 </span><span class="lineCov">        104 :             auto&amp; person   = world.add_person(home, InfectionState::Susceptible, age_group);</span></a>
+<a name="71"><span class="lineNum">      71 </span><span class="lineCov">        104 :             auto&amp; person   = world.add_person(home, age_group);</span></a>
 <a name="72"><span class="lineNum">      72 </span><span class="lineCov">        104 :             person.set_assigned_location(home);</span></a>
 <a name="73"><span class="lineNum">      73 </span>            :         }</a>
 <a name="74"><span class="lineNum">      74 </span>            :     }</a>

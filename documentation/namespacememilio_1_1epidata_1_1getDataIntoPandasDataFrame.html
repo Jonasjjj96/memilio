@@ -90,14 +90,17 @@ Functions</h2></td></tr>
 <tr class="memitem:a4e4ac14d2c2299cf608fe20d85c0ef04"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacememilio_1_1epidata_1_1getDataIntoPandasDataFrame.html#a4e4ac14d2c2299cf608fe20d85c0ef04">cli</a> (what)</td></tr>
 <tr class="memdesc:a4e4ac14d2c2299cf608fe20d85c0ef04"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines command line interface.  <a href="namespacememilio_1_1epidata_1_1getDataIntoPandasDataFrame.html#a4e4ac14d2c2299cf608fe20d85c0ef04">More...</a><br /></td></tr>
 <tr class="separator:a4e4ac14d2c2299cf608fe20d85c0ef04"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9dd6d49c817aca7bc3c78f434c899b9a"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacememilio_1_1epidata_1_1getDataIntoPandasDataFrame.html#a9dd6d49c817aca7bc3c78f434c899b9a">loadCsv</a> (targetFileName, apiUrl='https://opendata.arcgis.com/datasets/', extension='.csv', param_dict={})</td></tr>
-<tr class="memdesc:a9dd6d49c817aca7bc3c78f434c899b9a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads data sets in CSV format.  <a href="namespacememilio_1_1epidata_1_1getDataIntoPandasDataFrame.html#a9dd6d49c817aca7bc3c78f434c899b9a">More...</a><br /></td></tr>
-<tr class="separator:a9dd6d49c817aca7bc3c78f434c899b9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3eaf088772fc790d0896b2ea74b7a09e"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacememilio_1_1epidata_1_1getDataIntoPandasDataFrame.html#a3eaf088772fc790d0896b2ea74b7a09e">loadExcel</a> (targetFileName, apiUrl='https://opendata.arcgis.com/datasets/', extension='.xls', param_dict={})</td></tr>
-<tr class="separator:a3eaf088772fc790d0896b2ea74b7a09e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af4c57c6b6b23fc7272ba16b5476c0e51"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacememilio_1_1epidata_1_1getDataIntoPandasDataFrame.html#af4c57c6b6b23fc7272ba16b5476c0e51">loadGeojson</a> (targetFileName, apiUrl='https://opendata.arcgis.com/datasets/', extension='geojson')</td></tr>
-<tr class="memdesc:af4c57c6b6b23fc7272ba16b5476c0e51"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads data default: ArcGIS data sets in GeoJSON format.  <a href="namespacememilio_1_1epidata_1_1getDataIntoPandasDataFrame.html#af4c57c6b6b23fc7272ba16b5476c0e51">More...</a><br /></td></tr>
-<tr class="separator:af4c57c6b6b23fc7272ba16b5476c0e51"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a38a1a6d59dad57c4f556b46bf2c5cb43"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacememilio_1_1epidata_1_1getDataIntoPandasDataFrame.html#a38a1a6d59dad57c4f556b46bf2c5cb43">download_file</a> (url, chunk_size=1024, timeout=None, progress_function=None, verify=True)</td></tr>
+<tr class="memdesc:a38a1a6d59dad57c4f556b46bf2c5cb43"><td class="mdescLeft">&#160;</td><td class="mdescRight">Download a file using GET over HTTP.  <a href="namespacememilio_1_1epidata_1_1getDataIntoPandasDataFrame.html#a38a1a6d59dad57c4f556b46bf2c5cb43">More...</a><br /></td></tr>
+<tr class="separator:a38a1a6d59dad57c4f556b46bf2c5cb43"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd90c92e28aba818202c1e0fba546f8f"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacememilio_1_1epidata_1_1getDataIntoPandasDataFrame.html#afd90c92e28aba818202c1e0fba546f8f">extract_zip</a> (file, **param_dict)</td></tr>
+<tr class="memdesc:afd90c92e28aba818202c1e0fba546f8f"><td class="mdescLeft">&#160;</td><td class="mdescRight">reads a zip file and returns a list of dataframes for every file in the zip folder.  <a href="namespacememilio_1_1epidata_1_1getDataIntoPandasDataFrame.html#afd90c92e28aba818202c1e0fba546f8f">More...</a><br /></td></tr>
+<tr class="separator:afd90c92e28aba818202c1e0fba546f8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a14cb48d8c70da052163923323828cd47"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacememilio_1_1epidata_1_1getDataIntoPandasDataFrame.html#a14cb48d8c70da052163923323828cd47">get_file</a> (filepath='', url='', read_data=dd.defaultDict['read_data'], param_dict={}, interactive=False)</td></tr>
+<tr class="memdesc:a14cb48d8c70da052163923323828cd47"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads data from filepath and stores it in a pandas dataframe.  <a href="namespacememilio_1_1epidata_1_1getDataIntoPandasDataFrame.html#a14cb48d8c70da052163923323828cd47">More...</a><br /></td></tr>
+<tr class="separator:a14cb48d8c70da052163923323828cd47"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeab35091563c2e83ae6fbdaf43d4a297"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacememilio_1_1epidata_1_1getDataIntoPandasDataFrame.html#aeab35091563c2e83ae6fbdaf43d4a297">user_choice</a> (message, default=False)</td></tr>
+<tr class="separator:aeab35091563c2e83ae6fbdaf43d4a297"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a887d50603bff5897aace524abc10f3c6"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacememilio_1_1epidata_1_1getDataIntoPandasDataFrame.html#a887d50603bff5897aace524abc10f3c6">write_dataframe</a> (df, directory, file_prefix, file_type, param_dict={})</td></tr>
 <tr class="memdesc:a887d50603bff5897aace524abc10f3c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes pandas dataframe to file.  <a href="namespacememilio_1_1epidata_1_1getDataIntoPandasDataFrame.html#a887d50603bff5897aace524abc10f3c6">More...</a><br /></td></tr>
 <tr class="separator:a887d50603bff5897aace524abc10f3c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -222,35 +225,41 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a9dd6d49c817aca7bc3c78f434c899b9a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9dd6d49c817aca7bc3c78f434c899b9a">&#9670;&nbsp;</a></span>loadCsv()</h2>
+<a id="a38a1a6d59dad57c4f556b46bf2c5cb43"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a38a1a6d59dad57c4f556b46bf2c5cb43">&#9670;&nbsp;</a></span>download_file()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">def memilio.epidata.getDataIntoPandasDataFrame.loadCsv </td>
+          <td class="memname">def memilio.epidata.getDataIntoPandasDataFrame.download_file </td>
           <td>(</td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>targetFileName</em>, </td>
+          <td class="paramname"><em>url</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>apiUrl</em> = <code>'https://opendata.arcgis.com/datasets/'</code>, </td>
+          <td class="paramname"><em>chunk_size</em> = <code>1024</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>extension</em> = <code>'.csv'</code>, </td>
+          <td class="paramname"><em>timeout</em> = <code>None</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>param_dict</em> = <code>{}</code>&#160;</td>
+          <td class="paramname"><em>progress_function</em> = <code>None</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>verify</em> = <code>True</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -260,99 +269,38 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Loads data sets in CSV format. </p>
-<p>(pandas DataFrame) This routine loads data sets (default from ArcGIS) in CSV format of the given public data item ID into a pandas DataFrame and returns the DataFrame.</p>
+<p>Download a file using GET over HTTP. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">targetFileName</td><td>&ndash; file name which should be downloaded, for ArcGIS it should be public data item ID (string) </td></tr>
-    <tr><td class="paramname">apiUrl</td><td>&ndash; API URL (string, default '<a href="https://opendata.arcgis.com/datasets/'">https://opendata.arcgis.com/datasets/'</a>) </td></tr>
-    <tr><td class="paramname">extension</td><td>&ndash; Data format extension (string, default '.csv') </td></tr>
-    <tr><td class="paramname">param_dict</td><td>&ndash; Defines the parameter for read_csv: "sep": Delimiter to use (string, default ',') "header": Row to use for column labels (Use None if there is no header) (int, default 0) "encoding": Encoding to use for UTF when reading (string, default None) "dtype": Data type for data or column (dict of column -&gt; type, default None) </td></tr>
+    <tr><td class="paramname">url</td><td>Full url of the file to download. </td></tr>
+    <tr><td class="paramname">chunk_size</td><td>Number of Bytes downloaded at once. Only used when a progress_function is specified. For a good display of progress, this size should be about the speed of your internet connection in Bytes/s. Can be set to None to let the server decide the chunk size (may be equal to the file size). </td></tr>
+    <tr><td class="paramname">timeout</td><td>Timeout in seconds for the GET request. </td></tr>
+    <tr><td class="paramname">progress_function</td><td>Function called regularly, with the current download progress in [0,1] as a float argument. </td></tr>
+    <tr><td class="paramname">verify</td><td>bool or "interactive". If False, ignores the connection's security. If True, only starts downloads from secure connections, and insecure connections raise a FileNotFoundError. If "interactive", prompts the user whether or not to allow insecure connections. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>dataframe </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>File as BytesIO </dd></dl>
 
 </div>
 </div>
-<a id="a3eaf088772fc790d0896b2ea74b7a09e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3eaf088772fc790d0896b2ea74b7a09e">&#9670;&nbsp;</a></span>loadExcel()</h2>
+<a id="afd90c92e28aba818202c1e0fba546f8f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd90c92e28aba818202c1e0fba546f8f">&#9670;&nbsp;</a></span>extract_zip()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">def memilio.epidata.getDataIntoPandasDataFrame.loadExcel </td>
+          <td class="memname">def memilio.epidata.getDataIntoPandasDataFrame.extract_zip </td>
           <td>(</td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>targetFileName</em>, </td>
+          <td class="paramname"><em>file</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>apiUrl</em> = <code>'https://opendata.arcgis.com/datasets/'</code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>extension</em> = <code>'.xls'</code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>param_dict</em> = <code>{}</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<pre class="fragment"> Loads ArcGIS data sets in Excel formats (xls,xlsx,xlsm,xlsb,odf,ods,odt). (pandas DataFrame)
-
-This routine loads data sets (default from ArcGIS) in Excel format of the given public data
-item ID into a pandas DataFrame and returns the DataFrame.
-
-Keyword arguments:
-targetFileName -- file name which should be downloaded, for ArcGIS it should be public data item ID (string)
-apiUrl -- API URL (string, default
-          'https://opendata.arcgis.com/datasets/')
-extension -- Data format extension (string, default '.xls')
-param_dict -- Defines the parameter for read_excel:
-        "sheetname": sheet from Excel file which should be in DataFrame
-        (string (sheetname) or integer (zero-indexed sheet position), default 0)
-        "header": row to use for column labels (Use None if there is no header) (int, default 0)
-        "engine": defines engine for reading (str, default 'openpyxl')
-</pre> 
-</div>
-</div>
-<a id="af4c57c6b6b23fc7272ba16b5476c0e51"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af4c57c6b6b23fc7272ba16b5476c0e51">&#9670;&nbsp;</a></span>loadGeojson()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">def memilio.epidata.getDataIntoPandasDataFrame.loadGeojson </td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>targetFileName</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>apiUrl</em> = <code>'https://opendata.arcgis.com/datasets/'</code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>extension</em> = <code>'geojson'</code>&#160;</td>
+          <td class="paramtype">**&#160;</td>
+          <td class="paramname"><em>param_dict</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -362,16 +310,104 @@ param_dict -- Defines the parameter for read_excel:
       </table>
 </div><div class="memdoc">
 
-<p>Loads data default: ArcGIS data sets in GeoJSON format. </p>
-<p>(pandas DataFrame) This routine loads datasets default: ArcGIS data sets in GeoJSON format of the given public data item ID into a pandas DataFrame and returns the DataFrame. Trivial information gets removed by JSON normalization and dropping of always constant data fields.</p>
+<p>reads a zip file and returns a list of dataframes for every file in the zip folder. </p>
+<p>If only one file is readable for func_to_use a single dataframe is returned instead of a list with one entry.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">targetFileName</td><td>&ndash; File name without ending, for ArcGIS use public data item ID (string) </td></tr>
-    <tr><td class="paramname">apiUrl</td><td>&ndash; URL to file (default: ArcGIS data sets API URL (string, default '<a href="https://opendata.arcgis.com/datasets/'">https://opendata.arcgis.com/datasets/'</a>)) </td></tr>
-    <tr><td class="paramname">extension</td><td>&ndash; Data format extension (string, default 'geojson') return dataframe </td></tr>
+    <tr><td class="paramname">file</td><td>String. Path to Zipfile to read. </td></tr>
+    <tr><td class="paramname">param_dict</td><td>Dict. Additional information for download functions (e.g. engine, sheet_name, header...)</td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section return"><dt>Returns</dt><dd>list od all dataframes (one for each file). </dd></dl>
+
+</div>
+</div>
+<a id="a14cb48d8c70da052163923323828cd47"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a14cb48d8c70da052163923323828cd47">&#9670;&nbsp;</a></span>get_file()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def memilio.epidata.getDataIntoPandasDataFrame.get_file </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>filepath</em> = <code>''</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>url</em> = <code>''</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>read_data</em> = <code>dd.defaultDict['read_data']</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>param_dict</em> = <code>{}</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>interactive</em> = <code>False</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Loads data from filepath and stores it in a pandas dataframe. </p>
+<p>If data can't be read from given filepath the user is asked whether the file should be downloaded from the given url or not. Uses the progress indicator to give feedback.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">filepath</td><td>String. Filepath from where the data is read. </td></tr>
+    <tr><td class="paramname">url</td><td>String. URL to download the dataset. </td></tr>
+    <tr><td class="paramname">read_data</td><td>True or False. Defines if item is opened from directory (True) or downloaded (False). </td></tr>
+    <tr><td class="paramname">param_dct</td><td>Dict. Additional information for download functions (e.g. engine, sheet_name, header...) </td></tr>
+    <tr><td class="paramname">interactive</td><td>bool. Whether to ask for user input. If False, raises Errors instead.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>pandas dataframe </dd></dl>
+
+</div>
+</div>
+<a id="aeab35091563c2e83ae6fbdaf43d4a297"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeab35091563c2e83ae6fbdaf43d4a297">&#9670;&nbsp;</a></span>user_choice()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def memilio.epidata.getDataIntoPandasDataFrame.user_choice </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>message</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>default</em> = <code>False</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>

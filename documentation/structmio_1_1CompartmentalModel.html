@@ -523,9 +523,12 @@ template&lt;class Comp , class Pop , class Params &gt; </div>
 
 <p>eval_right_hand_side evaulates the right-hand-side f of the ODE dydt = f(y, t) </p>
 <p>The heart of the compartmental model is a first order ODE dydt = f(y,t), where y is a flat representation of all the compartmental populations at time t. This function evaluates the right-hand-side f of the ODE from the intercompartmental flows. It can be used in an ODE solver</p>
+<p>The distinction between pop and y is only for the case of mobility. If we have mobility, we want to evaluate the evolution of infection states for a small group of travellers (y) while they are in any population (pop). It is important that pop &gt; y always applies.</p>
+<p>If we consider a simulation without mobility, the function is called with model.eval_right_hand_side(y, y, t, dydt)</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">y</td><td>the current state of the model as a flat array </td></tr>
+    <tr><td class="paramname">pop</td><td>the current state of the population in the geographic unit we are considering </td></tr>
+    <tr><td class="paramname">y</td><td>the current state of the model (or a subpopulation) as a flat array </td></tr>
     <tr><td class="paramname">t</td><td>the current time </td></tr>
     <tr><td class="paramname">dydt</td><td>a reference to the calculated output </td></tr>
   </table>

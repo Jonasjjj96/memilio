@@ -440,6 +440,13 @@ Typedefs</h2></td></tr>
 <tr class="memitem:a0752d0ad90c7c7789098b08021da4418"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemio.html#a0752d0ad90c7c7789098b08021da4418">is_container</a> = <a class="el" href="structmio_1_1is__expression__valid.html">is_expression_valid</a>&lt; <a class="el" href="namespacemio_1_1details.html#aa2c4bf335b2dc1bff2495bf91e60e182">details::compare_iterators_t</a>, C &gt;</td></tr>
 <tr class="memdesc:a0752d0ad90c7c7789098b08021da4418"><td class="mdescLeft">&#160;</td><td class="mdescRight">Is std::true_type if C is a STL compatible container.  <a href="namespacemio.html#a0752d0ad90c7c7789098b08021da4418">More...</a><br /></td></tr>
 <tr class="separator:a0752d0ad90c7c7789098b08021da4418"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a13de5a1cf9acb4db85042f9bc948ea"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:a6a13de5a1cf9acb4db85042f9bc948ea"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemio.html#a6a13de5a1cf9acb4db85042f9bc948ea">is_iterator</a> = <a class="el" href="structmio_1_1is__expression__valid.html">is_expression_valid</a>&lt; <a class="el" href="namespacemio.html#a2f0a87714e50d80a23c07a795e1ac104">is_iterator_expr_t</a>, T &gt;</td></tr>
+<tr class="separator:a6a13de5a1cf9acb4db85042f9bc948ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f0a87714e50d80a23c07a795e1ac104"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:a2f0a87714e50d80a23c07a795e1ac104"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemio.html#a2f0a87714e50d80a23c07a795e1ac104">is_iterator_expr_t</a> = typename std::iterator_traits&lt; T &gt;::iterator_category</td></tr>
+<tr class="memdesc:a2f0a87714e50d80a23c07a795e1ac104"><td class="mdescLeft">&#160;</td><td class="mdescRight">meta function to check type T for beeing an iterator  <a href="namespacemio.html#a2f0a87714e50d80a23c07a795e1ac104">More...</a><br /></td></tr>
+<tr class="separator:a2f0a87714e50d80a23c07a795e1ac104"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a36c063374af53e3976102aac4e24d676"><td class="memTemplParams" colspan="2">template&lt;class M &gt; </td></tr>
 <tr class="memitem:a36c063374af53e3976102aac4e24d676"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemio.html#a36c063374af53e3976102aac4e24d676">is_matrix_expression</a> = std::is_base_of&lt; Eigen::EigenBase&lt; M &gt;, M &gt;</td></tr>
 <tr class="memdesc:a36c063374af53e3976102aac4e24d676"><td class="mdescLeft">&#160;</td><td class="mdescRight">template utility.  <a href="namespacemio.html#a36c063374af53e3976102aac4e24d676">More...</a><br /></td></tr>
@@ -1524,6 +1531,40 @@ template&lt;class C &gt; </div>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="a6a13de5a1cf9acb4db85042f9bc948ea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6a13de5a1cf9acb4db85042f9bc948ea">&#9670;&nbsp;</a></span>is_iterator</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="namespacemio.html#a6a13de5a1cf9acb4db85042f9bc948ea">mio::is_iterator</a> = typedef <a class="el" href="structmio_1_1is__expression__valid.html">is_expression_valid</a>&lt;<a class="el" href="namespacemio.html#a2f0a87714e50d80a23c07a795e1ac104">is_iterator_expr_t</a>, T&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2f0a87714e50d80a23c07a795e1ac104"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2f0a87714e50d80a23c07a795e1ac104">&#9670;&nbsp;</a></span>is_iterator_expr_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="namespacemio.html#a2f0a87714e50d80a23c07a795e1ac104">mio::is_iterator_expr_t</a> = typedef typename std::iterator_traits&lt;T&gt;::iterator_category</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>meta function to check type T for beeing an iterator </p>
 
 </div>
 </div>

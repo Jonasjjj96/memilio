@@ -122,10 +122,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ae9ea39b33f425c46a7fee2eb2c0aa42d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmio_1_1CustomIndexArray.html#ae84b5b09a0d7d1842ef229cdee7d4682">const_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1CustomIndexArray.html#ae9ea39b33f425c46a7fee2eb2c0aa42d">begin</a> () const</td></tr>
 <tr class="memdesc:ae9ea39b33f425c46a7fee2eb2c0aa42d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a start iterator for the elements.  <a href="classmio_1_1CustomIndexArray.html#ae9ea39b33f425c46a7fee2eb2c0aa42d">More...</a><br /></td></tr>
 <tr class="separator:ae9ea39b33f425c46a7fee2eb2c0aa42d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6b8b3ab8bd7d15584854938137a6c988"><td class="memTemplParams" colspan="2">template&lt;class Iter &gt; </td></tr>
-<tr class="memitem:a6b8b3ab8bd7d15584854938137a6c988"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classmio_1_1CustomIndexArray.html#a6b8b3ab8bd7d15584854938137a6c988">CustomIndexArray</a> (<a class="el" href="classmio_1_1CustomIndexArray.html#abd7df97abfc73fff6ab38b53d1fddc10">Index</a> const &amp;dims, Iter b, Iter e)</td></tr>
-<tr class="memdesc:a6b8b3ab8bd7d15584854938137a6c988"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes array with values from a range.  <a href="classmio_1_1CustomIndexArray.html#a6b8b3ab8bd7d15584854938137a6c988">More...</a><br /></td></tr>
-<tr class="separator:a6b8b3ab8bd7d15584854938137a6c988"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a13b8c7af340dcf6dd59b4964a485a49b"><td class="memTemplParams" colspan="2">template&lt;class Iter , typename std::enable_if_t&lt; is_iterator&lt; Iter &gt;::value &gt; *  = nullptr&gt; </td></tr>
+<tr class="memitem:a13b8c7af340dcf6dd59b4964a485a49b"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classmio_1_1CustomIndexArray.html#a13b8c7af340dcf6dd59b4964a485a49b">CustomIndexArray</a> (<a class="el" href="classmio_1_1CustomIndexArray.html#abd7df97abfc73fff6ab38b53d1fddc10">Index</a> const &amp;dims, Iter b, Iter e)</td></tr>
+<tr class="memdesc:a13b8c7af340dcf6dd59b4964a485a49b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes array with values from a range.  <a href="classmio_1_1CustomIndexArray.html#a13b8c7af340dcf6dd59b4964a485a49b">More...</a><br /></td></tr>
+<tr class="separator:a13b8c7af340dcf6dd59b4964a485a49b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a50501eba9a61930b5c6f264a92521528"><td class="memTemplParams" colspan="2">template&lt;class... Ts, typename std::enable_if_t&lt; std::is_constructible&lt; Type, Ts... &gt;::value &gt; *  = nullptr&gt; </td></tr>
 <tr class="memitem:a50501eba9a61930b5c6f264a92521528"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classmio_1_1CustomIndexArray.html#a50501eba9a61930b5c6f264a92521528">CustomIndexArray</a> (<a class="el" href="classmio_1_1CustomIndexArray.html#abd7df97abfc73fff6ab38b53d1fddc10">Index</a> const &amp;dims, Ts &amp;&amp;... args)</td></tr>
 <tr class="memdesc:a50501eba9a61930b5c6f264a92521528"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classmio_1_1CustomIndexArray.html" title="A class template for an array with custom indices.">CustomIndexArray</a> constructor, that initializes the array to constant instances of <code>CustsomIndexArray::Type</code>.  <a href="classmio_1_1CustomIndexArray.html#a50501eba9a61930b5c6f264a92521528">More...</a><br /></td></tr>
@@ -403,15 +403,15 @@ template&lt;class... Ts, typename std::enable_if_t&lt; std::is_constructible&lt;
 
 </div>
 </div>
-<a id="a6b8b3ab8bd7d15584854938137a6c988"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6b8b3ab8bd7d15584854938137a6c988">&#9670;&nbsp;</a></span>CustomIndexArray() <span class="overload">[2/2]</span></h2>
+<a id="a13b8c7af340dcf6dd59b4964a485a49b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a13b8c7af340dcf6dd59b4964a485a49b">&#9670;&nbsp;</a></span>CustomIndexArray() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;class Typ , class... Tags&gt; </div>
 <div class="memtemplate">
-template&lt;class Iter &gt; </div>
+template&lt;class Iter , typename std::enable_if_t&lt; is_iterator&lt; Iter &gt;::value &gt; *  = nullptr&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="classmio_1_1CustomIndexArray.html">mio::CustomIndexArray</a>&lt; Typ, Tags &gt;::<a class="el" href="classmio_1_1CustomIndexArray.html">CustomIndexArray</a> </td>
@@ -440,7 +440,13 @@ template&lt;class Iter &gt; </div>
 </div><div class="memdoc">
 
 <p>Initializes array with values from a range. </p>
-<p>Each element of the array will be assigned the corresponding value from the range. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Each element of the array will be assigned the corresponding value from the range. </p><dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">Iter</td><td><a class="el" href="structmio_1_1CustomIndexArray_1_1Iterator.html">Iterator</a> class. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">dims</td><td>dimensions of the array. </td></tr>
     <tr><td class="paramname">b</td><td>begin of the range of values. </td></tr>
