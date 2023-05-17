@@ -37,12 +37,12 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2023-05-16 12:26:29</td>
+            <td class="headerValue">2023-05-17 08:59:16</td>
             <td></td>
             <td class="headerItem">Functions:</td>
-            <td class="headerCovTableEntry">77</td>
-            <td class="headerCovTableEntry">120</td>
-            <td class="headerCovTableEntryLo">64.2 %</td>
+            <td class="headerCovTableEntry">83</td>
+            <td class="headerCovTableEntry">135</td>
+            <td class="headerCovTableEntryLo">61.5 %</td>
           </tr>
           <tr><td><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
         </table>
@@ -61,11 +61,11 @@
     </tr>
     <tr>
               <td class="coverFn"><a href="graph.h.gcov.html#47">mio::InEdgeBase::InEdgeBase(unsigned long)</a></td>
-              <td class="coverFnHi">57</td>
+              <td class="coverFnHi">59</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="graph.h.gcov.html#40">mio::OutEdgeBase::OutEdgeBase(unsigned long)</a></td>
-              <td class="coverFnHi">81</td>
+              <td class="coverFnHi">83</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="graph.h.gcov.html#403">auto mio::create_graph_without_edges&lt;mio::osecir::Model, mio::MigrationParameters&gt;(std::vector&lt;mio::osecir::Model, std::allocator&lt;mio::osecir::Model&gt; &gt; const&amp;, std::vector&lt;int, std::allocator&lt;int&gt; &gt; const&amp;)</a></td>
@@ -104,16 +104,28 @@
               <td class="coverFnHi">4</td>
             </tr>
     <tr>
+              <td class="coverFn"><a href="graph.h.gcov.html#83">mio::Edge&lt;mio::MigrationEdgeStochastic&gt;::Edge&lt;Eigen::CwiseNullaryOp&lt;Eigen::internal::scalar_constant_op&lt;double&gt;, Eigen::Matrix&lt;double, -1, 1, 0, -1, 1&gt; &gt; const&gt;(unsigned long, unsigned long, Eigen::CwiseNullaryOp&lt;Eigen::internal::scalar_constant_op&lt;double&gt;, Eigen::Matrix&lt;double, -1, 1, 0, -1, 1&gt; &gt; const&amp;&amp;)</a></td>
+              <td class="coverFnHi">2</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="graph.h.gcov.html#83">mio::Edge&lt;mio::MigrationEdgeStochastic&gt;::Edge&lt;mio::DampingMatrixExpression&lt;mio::Dampings&lt;mio::Damping&lt;mio::ColumnVectorShape&gt; &gt; &gt; &gt;(unsigned long, unsigned long, mio::DampingMatrixExpression&lt;mio::Dampings&lt;mio::Damping&lt;mio::ColumnVectorShape&gt; &gt; &gt;&amp;&amp;)</a></td>
+              <td class="coverFnLo">0</td>
+            </tr>
+    <tr>
               <td class="coverFn"><a href="graph.h.gcov.html#83">mio::Edge&lt;int&gt;::Edge&lt;int&gt;(unsigned long, unsigned long, int&amp;&amp;)</a></td>
               <td class="coverFnHi">29</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="graph.h.gcov.html#68">mio::Node&lt;mio::SimulationNode&lt;mio::Simulation&lt;mio::oseir::Model&gt; &gt; &gt;::Node&lt;mio::oseir::Model&amp;, double const&amp;&gt;(int, mio::oseir::Model&amp;, double const&amp;)</a></td>
-              <td class="coverFnLo">0</td>
+              <td class="coverFnHi">4</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="graph.h.gcov.html#68">mio::Node&lt;mio::SimulationNode&lt;mio::Simulation&lt;mio::oseir::Model&gt; &gt; &gt;::Node&lt;mio::oseir::Model&amp;, int&amp;&gt;(int, mio::oseir::Model&amp;, int&amp;)</a></td>
               <td class="coverFnHi">2</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="graph.h.gcov.html#68">mio::Node&lt;mio::SimulationNode&lt;mio::Simulation&lt;mio::osecir::Model&gt; &gt; &gt;::Node&lt;mio::osecir::Model&amp;, double const&amp;&gt;(int, mio::osecir::Model&amp;, double const&amp;)</a></td>
+              <td class="coverFnLo">0</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="graph.h.gcov.html#68">mio::Node&lt;mio::SimulationNode&lt;mio::Simulation&lt;mio::osecir::Model&gt; &gt; &gt;::Node&lt;mio::osecir::Model, double&gt;(int, mio::osecir::Model&amp;&amp;, double&amp;&amp;)</a></td>
@@ -180,12 +192,44 @@
               <td class="coverFnHi">2</td>
             </tr>
     <tr>
+              <td class="coverFn"><a href="graph.h.gcov.html#198">mio::Graph&lt;mio::SimulationNode&lt;mio::Simulation&lt;mio::oseir::Model&gt; &gt;, mio::MigrationEdgeStochastic&gt;::edges()</a></td>
+              <td class="coverFnHi">89</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="graph.h.gcov.html#182">mio::Graph&lt;mio::SimulationNode&lt;mio::Simulation&lt;mio::oseir::Model&gt; &gt;, mio::MigrationEdgeStochastic&gt;::nodes()</a></td>
+              <td class="coverFnHi">395</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="graph.h.gcov.html#167">mio::Edge&lt;mio::MigrationEdgeStochastic&gt;&amp; mio::Graph&lt;mio::SimulationNode&lt;mio::Simulation&lt;mio::oseir::Model&gt; &gt;, mio::MigrationEdgeStochastic&gt;::add_edge&lt;Eigen::CwiseNullaryOp&lt;Eigen::internal::scalar_constant_op&lt;double&gt;, Eigen::Matrix&lt;double, -1, 1, 0, -1, 1&gt; &gt; const&gt;(unsigned long, unsigned long, Eigen::CwiseNullaryOp&lt;Eigen::internal::scalar_constant_op&lt;double&gt;, Eigen::Matrix&lt;double, -1, 1, 0, -1, 1&gt; &gt; const&amp;&amp;)</a></td>
+              <td class="coverFnHi">2</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="graph.h.gcov.html#157">mio::Node&lt;mio::SimulationNode&lt;mio::Simulation&lt;mio::oseir::Model&gt; &gt; &gt;&amp; mio::Graph&lt;mio::SimulationNode&lt;mio::Simulation&lt;mio::oseir::Model&gt; &gt;, mio::MigrationEdgeStochastic&gt;::add_node&lt;mio::oseir::Model&amp;, double const&amp;&gt;(int, mio::oseir::Model&amp;, double const&amp;)</a></td>
+              <td class="coverFnHi">4</td>
+            </tr>
+    <tr>
               <td class="coverFn"><a href="graph.h.gcov.html#182">mio::Graph&lt;mio::SimulationNode&lt;mio::Simulation&lt;mio::osecir::Model&gt; &gt;, mio::MigrationEdge&gt;::nodes()</a></td>
               <td class="coverFnHi">1</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="graph.h.gcov.html#157">mio::Node&lt;mio::SimulationNode&lt;mio::Simulation&lt;mio::osecir::Model&gt; &gt; &gt;&amp; mio::Graph&lt;mio::SimulationNode&lt;mio::Simulation&lt;mio::osecir::Model&gt; &gt;, mio::MigrationEdge&gt;::add_node&lt;mio::osecir::Model, double&gt;(int, mio::osecir::Model&amp;&amp;, double&amp;&amp;)</a></td>
               <td class="coverFnHi">2</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="graph.h.gcov.html#198">mio::Graph&lt;mio::SimulationNode&lt;mio::Simulation&lt;mio::osecir::Model&gt; &gt;, mio::MigrationEdgeStochastic&gt;::edges()</a></td>
+              <td class="coverFnLo">0</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="graph.h.gcov.html#182">mio::Graph&lt;mio::SimulationNode&lt;mio::Simulation&lt;mio::osecir::Model&gt; &gt;, mio::MigrationEdgeStochastic&gt;::nodes()</a></td>
+              <td class="coverFnLo">0</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="graph.h.gcov.html#167">mio::Edge&lt;mio::MigrationEdgeStochastic&gt;&amp; mio::Graph&lt;mio::SimulationNode&lt;mio::Simulation&lt;mio::osecir::Model&gt; &gt;, mio::MigrationEdgeStochastic&gt;::add_edge&lt;mio::DampingMatrixExpression&lt;mio::Dampings&lt;mio::Damping&lt;mio::ColumnVectorShape&gt; &gt; &gt; &gt;(unsigned long, unsigned long, mio::DampingMatrixExpression&lt;mio::Dampings&lt;mio::Damping&lt;mio::ColumnVectorShape&gt; &gt; &gt;&amp;&amp;)</a></td>
+              <td class="coverFnLo">0</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="graph.h.gcov.html#157">mio::Node&lt;mio::SimulationNode&lt;mio::Simulation&lt;mio::osecir::Model&gt; &gt; &gt;&amp; mio::Graph&lt;mio::SimulationNode&lt;mio::Simulation&lt;mio::osecir::Model&gt; &gt;, mio::MigrationEdgeStochastic&gt;::add_node&lt;mio::osecir::Model&amp;, double const&amp;&gt;(int, mio::osecir::Model&amp;, double const&amp;)</a></td>
+              <td class="coverFnLo">0</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="graph.h.gcov.html#198">mio::Graph&lt;mio::SimulationNode&lt;mio::osecir::Simulation&lt;mio::Simulation&lt;mio::osecir::Model&gt; &gt; &gt;, mio::MigrationEdge&gt;::edges()</a></td>
@@ -333,7 +377,7 @@
             </tr>
     <tr>
               <td class="coverFn"><a href="graph.h.gcov.html#54">mio::EdgeBase::EdgeBase(unsigned long, unsigned long)</a></td>
-              <td class="coverFnHi">57</td>
+              <td class="coverFnHi">59</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="graph.h.gcov.html#332">boost::outcome_v2::basic_result&lt;void, mio::IOStatus, boost::outcome_v2::policy::all_narrow&gt; mio::set_edges&lt;ContactLocation, mio::osecir::Model, mio::MigrationParameters, mio::DampingMatrixExpressionGroup&lt;mio::DampingMatrixExpression&lt;mio::Dampings&lt;mio::Damping&lt;mio::ColumnVectorShape&gt; &gt; &gt; &gt;, mio::osecir::InfectionState, boost::outcome_v2::basic_result&lt;Eigen::Matrix&lt;double, -1, -1, 0, -1, -1&gt;, mio::IOStatus, boost::outcome_v2::policy::all_narrow&gt; (&amp;)(std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt; const&amp;)&gt;(boost::filesystem::path const&amp;, mio::Graph&lt;mio::osecir::Model, mio::MigrationParameters&gt;&amp;, std::initializer_list&lt;mio::osecir::InfectionState&gt;&amp;, unsigned long, boost::outcome_v2::basic_result&lt;Eigen::Matrix&lt;double, -1, -1, 0, -1, -1&gt;, mio::IOStatus, boost::outcome_v2::policy::all_narrow&gt; (&amp;)(std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt; const&amp;), std::vector&lt;double, std::allocator&lt;double&gt; &gt;)</a></td>
@@ -418,6 +462,22 @@
     <tr>
               <td class="coverFn"><a href="graph.h.gcov.html#172">auto mio::Graph&lt;mio::SimulationNode&lt;mio::Simulation&lt;mio::oseir::Model&gt; &gt;, mio::MigrationEdge&gt;::add_edge&lt;Eigen::CwiseNullaryOp&lt;Eigen::internal::scalar_constant_op&lt;double&gt;, Eigen::Matrix&lt;double, -1, 1, 0, -1, 1&gt; &gt; const&gt;(unsigned long, unsigned long, Eigen::CwiseNullaryOp&lt;Eigen::internal::scalar_constant_op&lt;double&gt;, Eigen::Matrix&lt;double, -1, 1, 0, -1, 1&gt; &gt; const&amp;&amp;)::{lambda(auto:1&amp;&amp;, auto:2&amp;&amp;)#1}::operator()&lt;mio::Edge&lt;mio::MigrationEdge&gt;&amp;, mio::Edge&lt;mio::MigrationEdge&gt; const&amp;&gt;(mio::Edge&lt;mio::MigrationEdge&gt;&amp;, mio::Edge&lt;mio::MigrationEdge&gt; const&amp;) const</a></td>
               <td class="coverFnHi">1</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="graph.h.gcov.html#172">auto mio::Graph&lt;mio::SimulationNode&lt;mio::Simulation&lt;mio::oseir::Model&gt; &gt;, mio::MigrationEdgeStochastic&gt;::add_edge&lt;Eigen::CwiseNullaryOp&lt;Eigen::internal::scalar_constant_op&lt;double&gt;, Eigen::Matrix&lt;double, -1, 1, 0, -1, 1&gt; &gt; const&gt;(unsigned long, unsigned long, Eigen::CwiseNullaryOp&lt;Eigen::internal::scalar_constant_op&lt;double&gt;, Eigen::Matrix&lt;double, -1, 1, 0, -1, 1&gt; &gt; const&amp;&amp;)::{lambda(auto:1&amp;&amp;, auto:2&amp;&amp;)#1}::operator()&lt;mio::Edge&lt;mio::MigrationEdgeStochastic&gt; const&amp;, mio::Edge&lt;mio::MigrationEdgeStochastic&gt;&amp;&gt;(mio::Edge&lt;mio::MigrationEdgeStochastic&gt; const&amp;, mio::Edge&lt;mio::MigrationEdgeStochastic&gt;&amp;) const</a></td>
+              <td class="coverFnLo">0</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="graph.h.gcov.html#172">auto mio::Graph&lt;mio::SimulationNode&lt;mio::Simulation&lt;mio::oseir::Model&gt; &gt;, mio::MigrationEdgeStochastic&gt;::add_edge&lt;Eigen::CwiseNullaryOp&lt;Eigen::internal::scalar_constant_op&lt;double&gt;, Eigen::Matrix&lt;double, -1, 1, 0, -1, 1&gt; &gt; const&gt;(unsigned long, unsigned long, Eigen::CwiseNullaryOp&lt;Eigen::internal::scalar_constant_op&lt;double&gt;, Eigen::Matrix&lt;double, -1, 1, 0, -1, 1&gt; &gt; const&amp;&amp;)::{lambda(auto:1&amp;&amp;, auto:2&amp;&amp;)#1}::operator()&lt;mio::Edge&lt;mio::MigrationEdgeStochastic&gt;&amp;, mio::Edge&lt;mio::MigrationEdgeStochastic&gt; const&amp;&gt;(mio::Edge&lt;mio::MigrationEdgeStochastic&gt;&amp;, mio::Edge&lt;mio::MigrationEdgeStochastic&gt; const&amp;) const</a></td>
+              <td class="coverFnLo">0</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="graph.h.gcov.html#172">auto mio::Graph&lt;mio::SimulationNode&lt;mio::Simulation&lt;mio::osecir::Model&gt; &gt;, mio::MigrationEdgeStochastic&gt;::add_edge&lt;mio::DampingMatrixExpression&lt;mio::Dampings&lt;mio::Damping&lt;mio::ColumnVectorShape&gt; &gt; &gt; &gt;(unsigned long, unsigned long, mio::DampingMatrixExpression&lt;mio::Dampings&lt;mio::Damping&lt;mio::ColumnVectorShape&gt; &gt; &gt;&amp;&amp;)::{lambda(auto:1&amp;&amp;, auto:2&amp;&amp;)#1}::operator()&lt;mio::Edge&lt;mio::MigrationEdgeStochastic&gt; const&amp;, mio::Edge&lt;mio::MigrationEdgeStochastic&gt;&amp;&gt;(mio::Edge&lt;mio::MigrationEdgeStochastic&gt; const&amp;, mio::Edge&lt;mio::MigrationEdgeStochastic&gt;&amp;) const</a></td>
+              <td class="coverFnLo">0</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="graph.h.gcov.html#172">auto mio::Graph&lt;mio::SimulationNode&lt;mio::Simulation&lt;mio::osecir::Model&gt; &gt;, mio::MigrationEdgeStochastic&gt;::add_edge&lt;mio::DampingMatrixExpression&lt;mio::Dampings&lt;mio::Damping&lt;mio::ColumnVectorShape&gt; &gt; &gt; &gt;(unsigned long, unsigned long, mio::DampingMatrixExpression&lt;mio::Dampings&lt;mio::Damping&lt;mio::ColumnVectorShape&gt; &gt; &gt;&amp;&amp;)::{lambda(auto:1&amp;&amp;, auto:2&amp;&amp;)#1}::operator()&lt;mio::Edge&lt;mio::MigrationEdgeStochastic&gt;&amp;, mio::Edge&lt;mio::MigrationEdgeStochastic&gt; const&amp;&gt;(mio::Edge&lt;mio::MigrationEdgeStochastic&gt;&amp;, mio::Edge&lt;mio::MigrationEdgeStochastic&gt; const&amp;) const</a></td>
+              <td class="coverFnLo">0</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="graph.h.gcov.html#172">auto mio::Graph&lt;mio::SimulationNode&lt;mio::osecir::Simulation&lt;mio::Simulation&lt;mio::osecir::Model&gt; &gt; &gt;, mio::MigrationEdge&gt;::add_edge&lt;mio::MigrationParameters&amp;&gt;(unsigned long, unsigned long, mio::MigrationParameters&amp;)::{lambda(auto:1&amp;&amp;, auto:2&amp;&amp;)#1}::operator()&lt;mio::Edge&lt;mio::MigrationEdge&gt; const&amp;, mio::Edge&lt;mio::MigrationEdge&gt;&amp;&gt;(mio::Edge&lt;mio::MigrationEdge&gt; const&amp;, mio::Edge&lt;mio::MigrationEdge&gt;&amp;) const</a></td>

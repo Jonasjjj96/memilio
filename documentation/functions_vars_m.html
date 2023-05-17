@@ -114,6 +114,7 @@ $(function() {
 </li>
 <li>m_coefficients
 : <a class="el" href="classmio_1_1MigrationParameters.html#a6ddf4b95f1b63666df7d68b8d9f35d35">mio::MigrationParameters</a>
+, <a class="el" href="classmio_1_1MigrationParametersStochastic.html#adc4ab292bd06308cf0e7aabcd2aa10ab">mio::MigrationParametersStochastic</a>
 </li>
 <li>m_col_idx
 : <a class="el" href="classmio_1_1details_1_1TimeSeriesIteratorBase.html#a9305a9b024389491a5123a07a3c6adfd">mio::details::TimeSeriesIteratorBase&lt; Derived, FP, IsConstIter, ValueType, ReferenceType &gt;</a>
@@ -162,7 +163,7 @@ $(function() {
 </li>
 <li>m_dt
 : <a class="el" href="classmio_1_1abm_1_1Simulation.html#a15af748eafed0b32a50f1bf9c31b18ec">mio::abm::Simulation</a>
-, <a class="el" href="classmio_1_1GraphSimulation.html#aeb300dbbba8b11bb4f4b5dfa4b7c207e">mio::GraphSimulation&lt; Graph &gt;</a>
+, <a class="el" href="classmio_1_1GraphSimulationBase.html#a483b9447d2554ad43e5187767ffef24f">mio::GraphSimulationBase&lt; Graph, edge_f &gt;</a>
 , <a class="el" href="classmio_1_1isecir_1_1Simulation.html#a93f0ec16d2579a2ea49ad42043cffaac">mio::isecir::Simulation</a>
 , <a class="el" href="classmio_1_1iseir_1_1Model.html#a4285ab8c401c1cf7ae010072975db729">mio::iseir::Model</a>
 , <a class="el" href="classmio_1_1OdeIntegrator.html#ab7c9388750a673af1dcf5d96eab8ed2a">mio::OdeIntegrator</a>
@@ -196,7 +197,7 @@ $(function() {
 : <a class="el" href="classmio_1_1IOStatus.html#ab87cb9abb5a24b684f274c881691f4e7">mio::IOStatus</a>
 </li>
 <li>m_edge_func
-: <a class="el" href="classmio_1_1GraphSimulation.html#a2fbef29e1ed80adb45674b12948f6947">mio::GraphSimulation&lt; Graph &gt;</a>
+: <a class="el" href="classmio_1_1GraphSimulationBase.html#adbef2a25d8bc3a2418121de5d37b4144">mio::GraphSimulationBase&lt; Graph, edge_f &gt;</a>
 </li>
 <li>m_edges
 : <a class="el" href="classmio_1_1Graph.html#a8aacb09613a40ccec079b90b3b827473">mio::Graph&lt; NodePropertyT, EdgePropertyT &gt;</a>
@@ -229,7 +230,7 @@ $(function() {
 : <a class="el" href="classmio_1_1DistributionAdapter.html#a35b6d4d268414d613de8eef59b053c45">mio::DistributionAdapter&lt; DistT &gt;</a>
 </li>
 <li>m_graph
-: <a class="el" href="classmio_1_1GraphSimulation.html#a3825dfe53f806e1460c839e2a5ca9794">mio::GraphSimulation&lt; Graph &gt;</a>
+: <a class="el" href="classmio_1_1GraphSimulationBase.html#ad8cc8ad76b9c0c6c203148d8fca68c8b">mio::GraphSimulationBase&lt; Graph, edge_f &gt;</a>
 , <a class="el" href="classmio_1_1ParameterStudy.html#af65939411eb18ae302df0ef09cf23e3b">mio::ParameterStudy&lt; S &gt;</a>
 </li>
 <li>m_groups
@@ -358,8 +359,11 @@ $(function() {
 : <a class="el" href="classmio_1_1isecir_1_1Model.html#aa2153efbcfbed7df8ab91ca9ead82175">mio::isecir::Model</a>
 , <a class="el" href="classmio_1_1iseir_1_1Model.html#a0cbe4e171029bb976b1c27675d9498c3">mio::iseir::Model</a>
 </li>
+<li>m_next_dt
+: <a class="el" href="classmio_1_1OdeIntegrator.html#aacc45c4946bfab430ecd2b2802ec436d">mio::OdeIntegrator</a>
+</li>
 <li>m_node_func
-: <a class="el" href="classmio_1_1GraphSimulation.html#afadc993266c40c8a2464776ae0514fe3">mio::GraphSimulation&lt; Graph &gt;</a>
+: <a class="el" href="classmio_1_1GraphSimulationBase.html#a24bcc73294f3d4efb102521b6aef5767">mio::GraphSimulationBase&lt; Graph, edge_f &gt;</a>
 </li>
 <li>m_nodes
 : <a class="el" href="classmio_1_1Graph.html#a46413b09f2053efcf83a9bd77635186f">mio::Graph&lt; NodePropertyT, EdgePropertyT &gt;</a>
@@ -392,6 +396,7 @@ $(function() {
 <li>m_parameters
 : <a class="el" href="classmio_1_1abm_1_1Location.html#ad38964b0fd7605c91e2b28568b4408a2">mio::abm::Location</a>
 , <a class="el" href="classmio_1_1MigrationEdge.html#a5e61de4454d258b8696e66a470d554c7">mio::MigrationEdge</a>
+, <a class="el" href="classmio_1_1MigrationEdgeStochastic.html#a23ebffda5461caba007fa678aa47db64">mio::MigrationEdgeStochastic</a>
 </li>
 <li>m_params
 : <a class="el" href="classmio_1_1DiscreteDistributionInPlace.html#ab5c06a97f20c300d01061c53c8eb840c">mio::DiscreteDistributionInPlace&lt; Int &gt;</a>
@@ -434,6 +439,9 @@ $(function() {
 </li>
 <li>m_random_workgroup
 : <a class="el" href="classmio_1_1abm_1_1Person.html#a444a9c1ce93158773a91f2605119928b">mio::abm::Person</a>
+</li>
+<li>m_rates
+: <a class="el" href="classmio_1_1GraphSimulationStochastic.html#a90d7ab87a831f326954ba18ba2ee4f5f">mio::GraphSimulationStochastic&lt; Graph &gt;</a>
 </li>
 <li>m_raw_ptr
 : <a class="el" href="classmio_1_1observer__ptr.html#a4c4994227403053f7eea457705e16287">mio::observer_ptr&lt; T &gt;</a>
@@ -522,7 +530,7 @@ $(function() {
 </li>
 <li>m_t
 : <a class="el" href="classmio_1_1abm_1_1Simulation.html#a0c253c28793b5fd8ca0f4b33951f2b07">mio::abm::Simulation</a>
-, <a class="el" href="classmio_1_1GraphSimulation.html#adec29effd61c312948aac3b34e75bd0d">mio::GraphSimulation&lt; Graph &gt;</a>
+, <a class="el" href="classmio_1_1GraphSimulationBase.html#a4611c204dd81a522731ba89dfda0eb36">mio::GraphSimulationBase&lt; Graph, edge_f &gt;</a>
 , <a class="el" href="classmio_1_1TypeSafe.html#aabefcd3c29bd841e143bf534b68f22c6">mio::TypeSafe&lt; T, Derived &gt;</a>
 </li>
 <li>m_t0

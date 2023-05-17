@@ -85,6 +85,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a59e35c0d8f54a16ce8ee702b525ef3f8"><td class="memItemLeft" align="right" valign="top">Eigen::Ref&lt; Eigen::VectorXd &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1OdeIntegrator.html#a59e35c0d8f54a16ce8ee702b525ef3f8">advance</a> (double tmax)</td></tr>
 <tr class="memdesc:a59e35c0d8f54a16ce8ee702b525ef3f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">advance the integrator.  <a href="classmio_1_1OdeIntegrator.html#a59e35c0d8f54a16ce8ee702b525ef3f8">More...</a><br /></td></tr>
 <tr class="separator:a59e35c0d8f54a16ce8ee702b525ef3f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a328c95fc284da0e12e8a27de310a4f58"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1OdeIntegrator.html#a328c95fc284da0e12e8a27de310a4f58">get_dt</a> () const</td></tr>
+<tr class="memdesc:a328c95fc284da0e12e8a27de310a4f58"><td class="mdescLeft">&#160;</td><td class="mdescRight">returns the time step width determined by the <a class="el" href="classmio_1_1IntegratorCore.html">IntegratorCore</a> for the next integration step  <a href="classmio_1_1OdeIntegrator.html#a328c95fc284da0e12e8a27de310a4f58">More...</a><br /></td></tr>
+<tr class="separator:a328c95fc284da0e12e8a27de310a4f58"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab1abb4a00ddba5c404f48b9846a0a624"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmio_1_1TimeSeries.html">TimeSeries</a>&lt; double &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1OdeIntegrator.html#ab1abb4a00ddba5c404f48b9846a0a624">get_result</a> ()</td></tr>
 <tr class="separator:ab1abb4a00ddba5c404f48b9846a0a624"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afe89b6bc15bca17dc51c7da834ab1402"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classmio_1_1TimeSeries.html">TimeSeries</a>&lt; double &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1OdeIntegrator.html#afe89b6bc15bca17dc51c7da834ab1402">get_result</a> () const</td></tr>
@@ -104,6 +107,8 @@ Private Attributes</h2></td></tr>
 <tr class="separator:ab7c9388750a673af1dcf5d96eab8ed2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0f3a5028c2d5f98b77dfd684f1cdf6a8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacemio.html#a6164d4e8f4df5089a14e927650c5a638">DerivFunction</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1OdeIntegrator.html#a0f3a5028c2d5f98b77dfd684f1cdf6a8">m_f</a></td></tr>
 <tr class="separator:a0f3a5028c2d5f98b77dfd684f1cdf6a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aacc45c4946bfab430ecd2b2802ec436d"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1OdeIntegrator.html#aacc45c4946bfab430ecd2b2802ec436d">m_next_dt</a></td></tr>
+<tr class="separator:aacc45c4946bfab430ecd2b2802ec436d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a392fa1b1faf2e1346a372f09f3e63ded"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmio_1_1TimeSeries.html">TimeSeries</a>&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1OdeIntegrator.html#a392fa1b1faf2e1346a372f09f3e63ded">m_result</a></td></tr>
 <tr class="separator:a392fa1b1faf2e1346a372f09f3e63ded"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -194,6 +199,25 @@ template&lt;class F , class Vector &gt; </div>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="a328c95fc284da0e12e8a27de310a4f58"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a328c95fc284da0e12e8a27de310a4f58">&#9670;&nbsp;</a></span>get_dt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double mio::OdeIntegrator::get_dt </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>returns the time step width determined by the <a class="el" href="classmio_1_1IntegratorCore.html">IntegratorCore</a> for the next integration step </p>
 
 </div>
 </div>
@@ -305,6 +329,28 @@ template&lt;class F , class Vector &gt; </div>
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="namespacemio.html#a6164d4e8f4df5089a14e927650c5a638">DerivFunction</a> mio::OdeIntegrator::m_f</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aacc45c4946bfab430ecd2b2802ec436d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aacc45c4946bfab430ecd2b2802ec436d">&#9670;&nbsp;</a></span>m_next_dt</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double mio::OdeIntegrator::m_next_dt</td>
         </tr>
       </table>
   </td>

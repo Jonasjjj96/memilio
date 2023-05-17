@@ -31,18 +31,18 @@
             <td class="headerValue">coverage.info</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntry">26</td>
-            <td class="headerCovTableEntry">26</td>
+            <td class="headerCovTableEntry">28</td>
+            <td class="headerCovTableEntry">28</td>
             <td class="headerCovTableEntryHi">100.0 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2023-05-16 12:26:29</td>
+            <td class="headerValue">2023-05-17 08:59:16</td>
             <td></td>
             <td class="headerItem">Functions:</td>
-            <td class="headerCovTableEntry">27</td>
-            <td class="headerCovTableEntry">30</td>
-            <td class="headerCovTableEntryHi">90.0 %</td>
+            <td class="headerCovTableEntry">28</td>
+            <td class="headerCovTableEntry">32</td>
+            <td class="headerCovTableEntryMed">87.5 %</td>
           </tr>
           <tr><td><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
         </table>
@@ -110,17 +110,17 @@
 <a name="48"><span class="lineNum">      48 </span>            :      * @param[in] t0 start time</a>
 <a name="49"><span class="lineNum">      49 </span>            :      * @param[in] dt initial step size of integration</a>
 <a name="50"><span class="lineNum">      50 </span>            :      */</a>
-<a name="51"><span class="lineNum">      51 </span><span class="lineCov">         55 :     Simulation(Model const&amp; model, double t0 = 0., double dt = 0.1)</span></a>
+<a name="51"><span class="lineNum">      51 </span><span class="lineCov">         59 :     Simulation(Model const&amp; model, double t0 = 0., double dt = 0.1)</span></a>
 <a name="52"><span class="lineNum">      52 </span>            :         : m_integratorCore(</a>
 <a name="53"><span class="lineNum">      53 </span>            :               std::make_shared&lt;mio::ControlledStepperWrapper&lt;boost::numeric::odeint::runge_kutta_cash_karp54&gt;&gt;())</a>
 <a name="54"><span class="lineNum">      54 </span>            :         , m_model(std::make_unique&lt;Model&gt;(model))</a>
 <a name="55"><span class="lineNum">      55 </span>            :         , m_integrator(</a>
-<a name="56"><span class="lineNum">      56 </span><span class="lineCov">      17977 :               [&amp;model = *m_model](auto&amp;&amp; y, auto&amp;&amp; t, auto&amp;&amp; dydt) {</span></a>
-<a name="57"><span class="lineNum">      57 </span><span class="lineCov">       8973 :                   model.eval_right_hand_side(y, y, t, dydt);</span></a>
+<a name="56"><span class="lineNum">      56 </span><span class="lineCov">      18701 :               [&amp;model = *m_model](auto&amp;&amp; y, auto&amp;&amp; t, auto&amp;&amp; dydt) {</span></a>
+<a name="57"><span class="lineNum">      57 </span><span class="lineCov">       9333 :                   model.eval_right_hand_side(y, y, t, dydt);</span></a>
 <a name="58"><span class="lineNum">      58 </span>            :               },</a>
-<a name="59"><span class="lineNum">      59 </span><span class="lineCov">        110 :               t0, m_model-&gt;get_initial_values(), dt, m_integratorCore)</span></a>
+<a name="59"><span class="lineNum">      59 </span><span class="lineCov">        118 :               t0, m_model-&gt;get_initial_values(), dt, m_integratorCore)</span></a>
 <a name="60"><span class="lineNum">      60 </span>            :     {</a>
-<a name="61"><span class="lineNum">      61 </span><span class="lineCov">         55 :     }</span></a>
+<a name="61"><span class="lineNum">      61 </span><span class="lineCov">         59 :     }</span></a>
 <a name="62"><span class="lineNum">      62 </span>            : </a>
 <a name="63"><span class="lineNum">      63 </span>            :     /**</a>
 <a name="64"><span class="lineNum">      64 </span>            :      * @brief set the core integrator used in the simulation</a>
@@ -154,9 +154,9 @@
 <a name="92"><span class="lineNum">      92 </span>            :      * tmax must be greater than get_result().get_last_time_point()</a>
 <a name="93"><span class="lineNum">      93 </span>            :      * @param tmax next stopping point of simulation</a>
 <a name="94"><span class="lineNum">      94 </span>            :      */</a>
-<a name="95"><span class="lineNum">      95 </span><span class="lineCov">        163 :     Eigen::Ref&lt;Eigen::VectorXd&gt; advance(double tmax)</span></a>
+<a name="95"><span class="lineNum">      95 </span><span class="lineCov">        249 :     Eigen::Ref&lt;Eigen::VectorXd&gt; advance(double tmax)</span></a>
 <a name="96"><span class="lineNum">      96 </span>            :     {</a>
-<a name="97"><span class="lineNum">      97 </span><span class="lineCov">        163 :         return m_integrator.advance(tmax);</span></a>
+<a name="97"><span class="lineNum">      97 </span><span class="lineCov">        249 :         return m_integrator.advance(tmax);</span></a>
 <a name="98"><span class="lineNum">      98 </span>            :     }</a>
 <a name="99"><span class="lineNum">      99 </span>            : </a>
 <a name="100"><span class="lineNum">     100 </span>            :     /**</a>
@@ -164,9 +164,9 @@
 <a name="102"><span class="lineNum">     102 </span>            :      * Return the number of persons in all InfectionState%s.</a>
 <a name="103"><span class="lineNum">     103 </span>            :      * @return The result of the simulation.</a>
 <a name="104"><span class="lineNum">     104 </span>            :      */</a>
-<a name="105"><span class="lineNum">     105 </span><span class="lineCov">        677 :     TimeSeries&lt;ScalarType&gt;&amp; get_result()</span></a>
+<a name="105"><span class="lineNum">     105 </span><span class="lineCov">        887 :     TimeSeries&lt;ScalarType&gt;&amp; get_result()</span></a>
 <a name="106"><span class="lineNum">     106 </span>            :     {</a>
-<a name="107"><span class="lineNum">     107 </span><span class="lineCov">        677 :         return m_integrator.get_result();</span></a>
+<a name="107"><span class="lineNum">     107 </span><span class="lineCov">        887 :         return m_integrator.get_result();</span></a>
 <a name="108"><span class="lineNum">     108 </span>            :     }</a>
 <a name="109"><span class="lineNum">     109 </span>            : </a>
 <a name="110"><span class="lineNum">     110 </span>            :     /**</a>
@@ -194,58 +194,66 @@
 <a name="132"><span class="lineNum">     132 </span><span class="lineCov">        836 :         return *m_model;</span></a>
 <a name="133"><span class="lineNum">     133 </span>            :     }</a>
 <a name="134"><span class="lineNum">     134 </span>            : </a>
-<a name="135"><span class="lineNum">     135 </span>            : private:</a>
-<a name="136"><span class="lineNum">     136 </span>            :     std::shared_ptr&lt;IntegratorCore&gt; m_integratorCore;</a>
-<a name="137"><span class="lineNum">     137 </span>            :     std::unique_ptr&lt;Model&gt; m_model;</a>
-<a name="138"><span class="lineNum">     138 </span>            :     OdeIntegrator m_integrator;</a>
-<a name="139"><span class="lineNum">     139 </span>            : }; // namespace mio</a>
-<a name="140"><span class="lineNum">     140 </span>            : </a>
-<a name="141"><span class="lineNum">     141 </span>            : /**</a>
-<a name="142"><span class="lineNum">     142 </span>            :  * Defines the return type of the `advance` member function of a type.</a>
-<a name="143"><span class="lineNum">     143 </span>            :  * Template is invalid if this member function does not exist.</a>
-<a name="144"><span class="lineNum">     144 </span>            :  * @tparam Sim a compartment model simulation type.</a>
-<a name="145"><span class="lineNum">     145 </span>            :  */</a>
-<a name="146"><span class="lineNum">     146 </span>            : template &lt;class Sim&gt;</a>
-<a name="147"><span class="lineNum">     147 </span>            : using advance_expr_t = decltype(std::declval&lt;Sim&gt;().advance(std::declval&lt;double&gt;()));</a>
+<a name="135"><span class="lineNum">     135 </span>            :     /**</a>
+<a name="136"><span class="lineNum">     136 </span>            :      * @brief returns the next time step chosen by integrator</a>
+<a name="137"><span class="lineNum">     137 </span>            :     */</a>
+<a name="138"><span class="lineNum">     138 </span><span class="lineCov">         48 :     double get_dt() const</span></a>
+<a name="139"><span class="lineNum">     139 </span>            :     {</a>
+<a name="140"><span class="lineNum">     140 </span><span class="lineCov">         48 :         return m_integrator.get_dt();</span></a>
+<a name="141"><span class="lineNum">     141 </span>            :     }</a>
+<a name="142"><span class="lineNum">     142 </span>            : </a>
+<a name="143"><span class="lineNum">     143 </span>            : private:</a>
+<a name="144"><span class="lineNum">     144 </span>            :     std::shared_ptr&lt;IntegratorCore&gt; m_integratorCore;</a>
+<a name="145"><span class="lineNum">     145 </span>            :     std::unique_ptr&lt;Model&gt; m_model;</a>
+<a name="146"><span class="lineNum">     146 </span>            :     OdeIntegrator m_integrator;</a>
+<a name="147"><span class="lineNum">     147 </span>            : }; // namespace mio</a>
 <a name="148"><span class="lineNum">     148 </span>            : </a>
 <a name="149"><span class="lineNum">     149 </span>            : /**</a>
-<a name="150"><span class="lineNum">     150 </span>            :  * Template meta function to check if a type is a compartment model simulation. </a>
-<a name="151"><span class="lineNum">     151 </span>            :  * Defines a static constant of name `value`. </a>
-<a name="152"><span class="lineNum">     152 </span>            :  * The constant `value` will be equal to true if Sim is a valid compartment simulation type.</a>
-<a name="153"><span class="lineNum">     153 </span>            :  * Otherwise, `value` will be equal to false.</a>
-<a name="154"><span class="lineNum">     154 </span>            :  * @tparam Sim a type that may or may not be a compartment model simulation.</a>
-<a name="155"><span class="lineNum">     155 </span>            :  */</a>
-<a name="156"><span class="lineNum">     156 </span>            : template &lt;class Sim&gt;</a>
-<a name="157"><span class="lineNum">     157 </span>            : using is_compartment_model_simulation =</a>
-<a name="158"><span class="lineNum">     158 </span>            :     std::integral_constant&lt;bool, (is_expression_valid&lt;advance_expr_t, Sim&gt;::value &amp;&amp;</a>
-<a name="159"><span class="lineNum">     159 </span>            :                                   is_compartment_model&lt;typename Sim::Model&gt;::value)&gt;;</a>
-<a name="160"><span class="lineNum">     160 </span>            : </a>
-<a name="161"><span class="lineNum">     161 </span>            : /**</a>
-<a name="162"><span class="lineNum">     162 </span>            :  * @brief simulate simulates a compartmental model</a>
-<a name="163"><span class="lineNum">     163 </span>            :  * @param[in] t0 start time</a>
-<a name="164"><span class="lineNum">     164 </span>            :  * @param[in] tmax end time</a>
-<a name="165"><span class="lineNum">     165 </span>            :  * @param[in] dt initial step size of integration</a>
-<a name="166"><span class="lineNum">     166 </span>            :  * @param[in] model: An instance of a compartmental model</a>
-<a name="167"><span class="lineNum">     167 </span>            :  * @return a TimeSeries to represent the final simulation result</a>
-<a name="168"><span class="lineNum">     168 </span>            :  * @tparam Model a compartment model type</a>
-<a name="169"><span class="lineNum">     169 </span>            :  * @tparam Sim a simulation type that can simulate the model.</a>
-<a name="170"><span class="lineNum">     170 </span>            :  */</a>
-<a name="171"><span class="lineNum">     171 </span>            : template &lt;class Model, class Sim = Simulation&lt;Model&gt;&gt;</a>
-<a name="172"><span class="lineNum">     172 </span><span class="lineCov">         25 : TimeSeries&lt;ScalarType&gt; simulate(double t0, double tmax, double dt, Model const&amp; model,</span></a>
-<a name="173"><span class="lineNum">     173 </span>            :                                 std::shared_ptr&lt;IntegratorCore&gt; integrator = nullptr)</a>
-<a name="174"><span class="lineNum">     174 </span>            : {</a>
-<a name="175"><span class="lineNum">     175 </span><span class="lineCov">         25 :     model.check_constraints();</span></a>
-<a name="176"><span class="lineNum">     176 </span><span class="lineCov">         50 :     Sim sim(model, t0, dt);</span></a>
-<a name="177"><span class="lineNum">     177 </span><span class="lineCov">         25 :     if (integrator) {</span></a>
-<a name="178"><span class="lineNum">     178 </span><span class="lineCov">          4 :         sim.set_integrator(integrator);</span></a>
-<a name="179"><span class="lineNum">     179 </span>            :     }</a>
-<a name="180"><span class="lineNum">     180 </span><span class="lineCov">         25 :     sim.advance(tmax);</span></a>
-<a name="181"><span class="lineNum">     181 </span><span class="lineCov">         50 :     return sim.get_result();</span></a>
-<a name="182"><span class="lineNum">     182 </span>            : }</a>
-<a name="183"><span class="lineNum">     183 </span>            : </a>
-<a name="184"><span class="lineNum">     184 </span>            : } // namespace mio</a>
-<a name="185"><span class="lineNum">     185 </span>            : </a>
-<a name="186"><span class="lineNum">     186 </span>            : #endif // SIMULATION_H</a>
+<a name="150"><span class="lineNum">     150 </span>            :  * Defines the return type of the `advance` member function of a type.</a>
+<a name="151"><span class="lineNum">     151 </span>            :  * Template is invalid if this member function does not exist.</a>
+<a name="152"><span class="lineNum">     152 </span>            :  * @tparam Sim a compartment model simulation type.</a>
+<a name="153"><span class="lineNum">     153 </span>            :  */</a>
+<a name="154"><span class="lineNum">     154 </span>            : template &lt;class Sim&gt;</a>
+<a name="155"><span class="lineNum">     155 </span>            : using advance_expr_t = decltype(std::declval&lt;Sim&gt;().advance(std::declval&lt;double&gt;()));</a>
+<a name="156"><span class="lineNum">     156 </span>            : </a>
+<a name="157"><span class="lineNum">     157 </span>            : /**</a>
+<a name="158"><span class="lineNum">     158 </span>            :  * Template meta function to check if a type is a compartment model simulation. </a>
+<a name="159"><span class="lineNum">     159 </span>            :  * Defines a static constant of name `value`. </a>
+<a name="160"><span class="lineNum">     160 </span>            :  * The constant `value` will be equal to true if Sim is a valid compartment simulation type.</a>
+<a name="161"><span class="lineNum">     161 </span>            :  * Otherwise, `value` will be equal to false.</a>
+<a name="162"><span class="lineNum">     162 </span>            :  * @tparam Sim a type that may or may not be a compartment model simulation.</a>
+<a name="163"><span class="lineNum">     163 </span>            :  */</a>
+<a name="164"><span class="lineNum">     164 </span>            : template &lt;class Sim&gt;</a>
+<a name="165"><span class="lineNum">     165 </span>            : using is_compartment_model_simulation =</a>
+<a name="166"><span class="lineNum">     166 </span>            :     std::integral_constant&lt;bool, (is_expression_valid&lt;advance_expr_t, Sim&gt;::value &amp;&amp;</a>
+<a name="167"><span class="lineNum">     167 </span>            :                                   is_compartment_model&lt;typename Sim::Model&gt;::value)&gt;;</a>
+<a name="168"><span class="lineNum">     168 </span>            : </a>
+<a name="169"><span class="lineNum">     169 </span>            : /**</a>
+<a name="170"><span class="lineNum">     170 </span>            :  * @brief simulate simulates a compartmental model</a>
+<a name="171"><span class="lineNum">     171 </span>            :  * @param[in] t0 start time</a>
+<a name="172"><span class="lineNum">     172 </span>            :  * @param[in] tmax end time</a>
+<a name="173"><span class="lineNum">     173 </span>            :  * @param[in] dt initial step size of integration</a>
+<a name="174"><span class="lineNum">     174 </span>            :  * @param[in] model: An instance of a compartmental model</a>
+<a name="175"><span class="lineNum">     175 </span>            :  * @return a TimeSeries to represent the final simulation result</a>
+<a name="176"><span class="lineNum">     176 </span>            :  * @tparam Model a compartment model type</a>
+<a name="177"><span class="lineNum">     177 </span>            :  * @tparam Sim a simulation type that can simulate the model.</a>
+<a name="178"><span class="lineNum">     178 </span>            :  */</a>
+<a name="179"><span class="lineNum">     179 </span>            : template &lt;class Model, class Sim = Simulation&lt;Model&gt;&gt;</a>
+<a name="180"><span class="lineNum">     180 </span><span class="lineCov">         25 : TimeSeries&lt;ScalarType&gt; simulate(double t0, double tmax, double dt, Model const&amp; model,</span></a>
+<a name="181"><span class="lineNum">     181 </span>            :                                 std::shared_ptr&lt;IntegratorCore&gt; integrator = nullptr)</a>
+<a name="182"><span class="lineNum">     182 </span>            : {</a>
+<a name="183"><span class="lineNum">     183 </span><span class="lineCov">         25 :     model.check_constraints();</span></a>
+<a name="184"><span class="lineNum">     184 </span><span class="lineCov">         50 :     Sim sim(model, t0, dt);</span></a>
+<a name="185"><span class="lineNum">     185 </span><span class="lineCov">         25 :     if (integrator) {</span></a>
+<a name="186"><span class="lineNum">     186 </span><span class="lineCov">          4 :         sim.set_integrator(integrator);</span></a>
+<a name="187"><span class="lineNum">     187 </span>            :     }</a>
+<a name="188"><span class="lineNum">     188 </span><span class="lineCov">         25 :     sim.advance(tmax);</span></a>
+<a name="189"><span class="lineNum">     189 </span><span class="lineCov">         50 :     return sim.get_result();</span></a>
+<a name="190"><span class="lineNum">     190 </span>            : }</a>
+<a name="191"><span class="lineNum">     191 </span>            : </a>
+<a name="192"><span class="lineNum">     192 </span>            : } // namespace mio</a>
+<a name="193"><span class="lineNum">     193 </span>            : </a>
+<a name="194"><span class="lineNum">     194 </span>            : #endif // SIMULATION_H</a>
 </pre>
       </td>
     </tr>

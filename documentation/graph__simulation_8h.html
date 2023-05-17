@@ -75,13 +75,18 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="graph_8h_source.html">memilio/mobility/graph.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="random__number__generator_8h_source.html">memilio/utils/random_number_generator.h</a>&quot;</code><br />
 </div>
 <p><a href="graph__simulation_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1GraphSimulation.html">mio::GraphSimulation&lt; Graph &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">abstract simulation on a graph with alternating node and edge actions  <a href="classmio_1_1GraphSimulation.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1GraphSimulationBase.html">mio::GraphSimulationBase&lt; Graph, edge_f &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">abstract simulation on a graph with alternating node and edge actions  <a href="classmio_1_1GraphSimulationBase.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1GraphSimulationStochastic.html">mio::GraphSimulationStochastic&lt; Graph &gt;</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
@@ -95,6 +100,9 @@ Functions</h2></td></tr>
 <tr class="memitem:aa713d3a77fed175359840122fa6df9ba"><td class="memTemplParams" colspan="2">template&lt;class Graph , class NodeF , class EdgeF &gt; </td></tr>
 <tr class="memitem:aa713d3a77fed175359840122fa6df9ba"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemio.html#aa713d3a77fed175359840122fa6df9ba">mio::make_graph_sim</a> (double t0, double dt, Graph &amp;&amp;g, NodeF &amp;&amp;node_func, EdgeF &amp;&amp;edge_func)</td></tr>
 <tr class="separator:aa713d3a77fed175359840122fa6df9ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a82b6bb635d6376fc1886175c4f8e75d3"><td class="memTemplParams" colspan="2">template&lt;class Graph , class NodeF , class EdgeF &gt; </td></tr>
+<tr class="memitem:a82b6bb635d6376fc1886175c4f8e75d3"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemio.html#a82b6bb635d6376fc1886175c4f8e75d3">mio::make_graph_sim_stochastic</a> (double t0, double dt, Graph &amp;&amp;g, NodeF &amp;&amp;node_func, EdgeF &amp;&amp;edge_func)</td></tr>
+<tr class="separator:a82b6bb635d6376fc1886175c4f8e75d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- start footer part -->
