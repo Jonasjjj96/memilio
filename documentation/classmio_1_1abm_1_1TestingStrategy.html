@@ -89,7 +89,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:adb7c54df60abe8c0971cbbe04ca3335e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove a <a class="el" href="classmio_1_1abm_1_1TestingScheme.html" title="TestingScheme to regular test Persons.">TestingScheme</a> from the set of schemes that are checked for testing.  <a href="classmio_1_1abm_1_1TestingStrategy.html#adb7c54df60abe8c0971cbbe04ca3335e">More...</a><br /></td></tr>
 <tr class="separator:adb7c54df60abe8c0971cbbe04ca3335e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a76e76e62836fd8c1ac39a3aacb630720"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1abm_1_1TestingStrategy.html#a76e76e62836fd8c1ac39a3aacb630720">run_strategy</a> (<a class="el" href="classmio_1_1abm_1_1Person.html">Person</a> &amp;person, const <a class="el" href="classmio_1_1abm_1_1Location.html">Location</a> &amp;location, <a class="el" href="classmio_1_1abm_1_1TimePoint.html">TimePoint</a> t) const</td></tr>
-<tr class="memdesc:a76e76e62836fd8c1ac39a3aacb630720"><td class="mdescLeft">&#160;</td><td class="mdescRight">: Runs the <a class="el" href="classmio_1_1abm_1_1TestingStrategy.html" title="Set of TestingSchemes that are checked for testing.">TestingStrategy</a> and potentially tests a <a class="el" href="classmio_1_1abm_1_1Person.html" title="Agents in the simulated World that can carry and spread the Infection.">Person</a>.  <a href="classmio_1_1abm_1_1TestingStrategy.html#a76e76e62836fd8c1ac39a3aacb630720">More...</a><br /></td></tr>
+<tr class="memdesc:a76e76e62836fd8c1ac39a3aacb630720"><td class="mdescLeft">&#160;</td><td class="mdescRight">Runs the <a class="el" href="classmio_1_1abm_1_1TestingStrategy.html" title="Set of TestingSchemes that are checked for testing.">TestingStrategy</a> and potentially tests a <a class="el" href="classmio_1_1abm_1_1Person.html" title="Agents in the simulated World that can carry and spread the Infection.">Person</a>.  <a href="classmio_1_1abm_1_1TestingStrategy.html#a76e76e62836fd8c1ac39a3aacb630720">More...</a><br /></td></tr>
 <tr class="separator:a76e76e62836fd8c1ac39a3aacb630720"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6f0a14f3455998dea8be00f54c9d36f4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1abm_1_1TestingStrategy.html#a6f0a14f3455998dea8be00f54c9d36f4">TestingStrategy</a> ()=default</td></tr>
 <tr class="memdesc:a6f0a14f3455998dea8be00f54c9d36f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a <a class="el" href="classmio_1_1abm_1_1TestingStrategy.html" title="Set of TestingSchemes that are checked for testing.">TestingStrategy</a>.  <a href="classmio_1_1abm_1_1TestingStrategy.html#a6f0a14f3455998dea8be00f54c9d36f4">More...</a><br /></td></tr>
@@ -253,16 +253,16 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>: Runs the <a class="el" href="classmio_1_1abm_1_1TestingStrategy.html" title="Set of TestingSchemes that are checked for testing.">TestingStrategy</a> and potentially tests a <a class="el" href="classmio_1_1abm_1_1Person.html" title="Agents in the simulated World that can carry and spread the Infection.">Person</a>. </p>
+<p>Runs the <a class="el" href="classmio_1_1abm_1_1TestingStrategy.html" title="Set of TestingSchemes that are checked for testing.">TestingStrategy</a> and potentially tests a <a class="el" href="classmio_1_1abm_1_1Person.html" title="Agents in the simulated World that can carry and spread the Infection.">Person</a>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">person</td><td><a class="el" href="classmio_1_1abm_1_1Person.html" title="Agents in the simulated World that can carry and spread the Infection.">Person</a> to check. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">location</td><td><a class="el" href="classmio_1_1abm_1_1Location.html" title="All locations in the simulated world where persons gather.">Location</a> to check. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">location</td><td><a class="el" href="classmio_1_1abm_1_1Location.html" title="All Locations in the simulated World where Persons gather.">Location</a> to check. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">t</td><td><a class="el" href="classmio_1_1abm_1_1TimePoint.html" title="Represents a point in time.">TimePoint</a> when to run the strategy. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>If the person is allowed to enter the <a class="el" href="classmio_1_1abm_1_1Location.html" title="All locations in the simulated world where persons gather.">Location</a>. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>If the <a class="el" href="classmio_1_1abm_1_1Person.html" title="Agents in the simulated World that can carry and spread the Infection.">Person</a> is allowed to enter the <a class="el" href="classmio_1_1abm_1_1Location.html" title="All Locations in the simulated World where Persons gather.">Location</a>. </dd></dl>
 
 </div>
 </div>
