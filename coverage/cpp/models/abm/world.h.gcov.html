@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2023-05-29 10:53:13</td>
+            <td class="headerValue">2023-05-29 11:38:19</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">2</td>
@@ -116,16 +116,16 @@
 <a name="54"><span class="lineNum">      54 </span>            :      * @brief Create a World.</a>
 <a name="55"><span class="lineNum">      55 </span>            :      * @param[in] params Parameters of the Infection that are the same everywhere in the World.</a>
 <a name="56"><span class="lineNum">      56 </span>            :      */</a>
-<a name="57"><span class="lineNum">      57 </span><span class="lineCov">         15 :     World(const GlobalInfectionParameters&amp; params = {})</span></a>
-<a name="58"><span class="lineNum">      58 </span><span class="lineCov">         15 :         : m_infection_parameters(params)</span></a>
+<a name="57"><span class="lineNum">      57 </span><span class="lineCov">         17 :     World(const GlobalInfectionParameters&amp; params = {})</span></a>
+<a name="58"><span class="lineNum">      58 </span><span class="lineCov">         17 :         : m_infection_parameters(params)</span></a>
 <a name="59"><span class="lineNum">      59 </span>            :         , m_migration_parameters()</a>
-<a name="60"><span class="lineNum">      60 </span><span class="lineCov">         15 :         , m_trip_list()</span></a>
+<a name="60"><span class="lineNum">      60 </span><span class="lineCov">         17 :         , m_trip_list()</span></a>
 <a name="61"><span class="lineNum">      61 </span>            :     {</a>
-<a name="62"><span class="lineNum">      62 </span><span class="lineCov">         15 :         use_migration_rules(true);</span></a>
-<a name="63"><span class="lineNum">      63 </span><span class="lineCov">         15 :     }</span></a>
+<a name="62"><span class="lineNum">      62 </span><span class="lineCov">         17 :         use_migration_rules(true);</span></a>
+<a name="63"><span class="lineNum">      63 </span><span class="lineCov">         17 :     }</span></a>
 <a name="64"><span class="lineNum">      64 </span>            : </a>
 <a name="65"><span class="lineNum">      65 </span>            :     //type is move-only for stable references of persons/locations</a>
-<a name="66"><span class="lineNum">      66 </span><span class="lineCov">          3 :     World(World&amp;&amp; other)            = default;</span></a>
+<a name="66"><span class="lineNum">      66 </span><span class="lineCov">          6 :     World(World&amp;&amp; other)            = default;</span></a>
 <a name="67"><span class="lineNum">      67 </span>            :     World&amp; operator=(World&amp;&amp; other) = default;</a>
 <a name="68"><span class="lineNum">      68 </span>            :     World(const World&amp;)             = delete;</a>
 <a name="69"><span class="lineNum">      69 </span>            :     World&amp; operator=(const World&amp;)  = delete;</a>

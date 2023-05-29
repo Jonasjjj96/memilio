@@ -87,9 +87,16 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a89bd4529c362b4afac37058f3397039e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1abm_1_1Simulation.html#a89bd4529c362b4afac37058f3397039e">advance</a> (<a class="el" href="classmio_1_1abm_1_1TimePoint.html">TimePoint</a> tmax)</td></tr>
 <tr class="memdesc:a89bd4529c362b4afac37058f3397039e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Run the <a class="el" href="classmio_1_1abm_1_1Simulation.html" title="Run the Simulation in discrete steps, evolve the World and report results.">Simulation</a> from the current time to tmax.  <a href="classmio_1_1abm_1_1Simulation.html#a89bd4529c362b4afac37058f3397039e">More...</a><br /></td></tr>
 <tr class="separator:a89bd4529c362b4afac37058f3397039e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab072cdbdb3df9a4636aa5bcf976bc889"><td class="memTemplParams" colspan="2">template&lt;typename History &gt; </td></tr>
+<tr class="memitem:ab072cdbdb3df9a4636aa5bcf976bc889"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classmio_1_1abm_1_1Simulation.html#ab072cdbdb3df9a4636aa5bcf976bc889">advance</a> (<a class="el" href="classmio_1_1abm_1_1TimePoint.html">TimePoint</a> tmax, <a class="el" href="classmio_1_1History.html">History</a> &amp;history)</td></tr>
+<tr class="memdesc:ab072cdbdb3df9a4636aa5bcf976bc889"><td class="mdescLeft">&#160;</td><td class="mdescRight">Run the <a class="el" href="classmio_1_1abm_1_1Simulation.html" title="Run the Simulation in discrete steps, evolve the World and report results.">Simulation</a> from the current time to tmax.  <a href="classmio_1_1abm_1_1Simulation.html#ab072cdbdb3df9a4636aa5bcf976bc889">More...</a><br /></td></tr>
+<tr class="separator:ab072cdbdb3df9a4636aa5bcf976bc889"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac88cf3f70d9e0e3b02562d906f1c8642"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classmio_1_1TimeSeries.html">TimeSeries</a>&lt; <a class="el" href="config_8h.html#acd4f1d492d83a74716a42615e127d641">ScalarType</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1abm_1_1Simulation.html#ac88cf3f70d9e0e3b02562d906f1c8642">get_result</a> () const</td></tr>
 <tr class="memdesc:ac88cf3f70d9e0e3b02562d906f1c8642"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the result of the <a class="el" href="classmio_1_1abm_1_1Simulation.html" title="Run the Simulation in discrete steps, evolve the World and report results.">Simulation</a>.  <a href="classmio_1_1abm_1_1Simulation.html#ac88cf3f70d9e0e3b02562d906f1c8642">More...</a><br /></td></tr>
 <tr class="separator:ac88cf3f70d9e0e3b02562d906f1c8642"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a45ae091ffc0fae8df80fc11f894fb776"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmio_1_1abm_1_1TimePoint.html">TimePoint</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1abm_1_1Simulation.html#a45ae091ffc0fae8df80fc11f894fb776">get_time</a> () const</td></tr>
+<tr class="memdesc:a45ae091ffc0fae8df80fc11f894fb776"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the current time of the <a class="el" href="classmio_1_1abm_1_1Simulation.html" title="Run the Simulation in discrete steps, evolve the World and report results.">Simulation</a>.  <a href="classmio_1_1abm_1_1Simulation.html#a45ae091ffc0fae8df80fc11f894fb776">More...</a><br /></td></tr>
+<tr class="separator:a45ae091ffc0fae8df80fc11f894fb776"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a364cfc5b5a23c31626095da227083563"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmio_1_1abm_1_1World.html">World</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1abm_1_1Simulation.html#a364cfc5b5a23c31626095da227083563">get_world</a> ()</td></tr>
 <tr class="memdesc:a364cfc5b5a23c31626095da227083563"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the <a class="el" href="classmio_1_1abm_1_1World.html" title="The World of the Simulation.">World</a> that this <a class="el" href="classmio_1_1abm_1_1Simulation.html" title="Run the Simulation in discrete steps, evolve the World and report results.">Simulation</a> evolves.  <a href="classmio_1_1abm_1_1Simulation.html#a364cfc5b5a23c31626095da227083563">More...</a><br /></td></tr>
 <tr class="separator:a364cfc5b5a23c31626095da227083563"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -109,6 +116,8 @@ Private Types</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
+<tr class="memitem:aafc9e0ee79a800a7244d13ae11ea2f45"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1abm_1_1Simulation.html#aafc9e0ee79a800a7244d13ae11ea2f45">evolve_world</a> (<a class="el" href="classmio_1_1abm_1_1TimePoint.html">TimePoint</a> tmax)</td></tr>
+<tr class="separator:aafc9e0ee79a800a7244d13ae11ea2f45"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7885d59b5256df63526c3b23c383ed1e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1abm_1_1Simulation.html#a7885d59b5256df63526c3b23c383ed1e">initialize_locations</a> (<a class="el" href="classmio_1_1abm_1_1TimePoint.html">TimePoint</a> t)</td></tr>
 <tr class="separator:a7885d59b5256df63526c3b23c383ed1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7b13ba6761e6098a9ccbcf661beea1de"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1abm_1_1Simulation.html#a7b13ba6761e6098a9ccbcf661beea1de">store_result_at</a> (<a class="el" href="classmio_1_1abm_1_1TimePoint.html">TimePoint</a> t)</td></tr>
@@ -221,7 +230,7 @@ Private Attributes</h2></td></tr>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
 <a id="a89bd4529c362b4afac37058f3397039e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a89bd4529c362b4afac37058f3397039e">&#9670;&nbsp;</a></span>advance()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a89bd4529c362b4afac37058f3397039e">&#9670;&nbsp;</a></span>advance() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -246,6 +255,71 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="ab072cdbdb3df9a4636aa5bcf976bc889"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab072cdbdb3df9a4636aa5bcf976bc889">&#9670;&nbsp;</a></span>advance() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename History &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void mio::abm::Simulation::advance </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classmio_1_1abm_1_1TimePoint.html">TimePoint</a>&#160;</td>
+          <td class="paramname"><em>tmax</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classmio_1_1History.html">History</a> &amp;&#160;</td>
+          <td class="paramname"><em>history</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Run the <a class="el" href="classmio_1_1abm_1_1Simulation.html" title="Run the Simulation in discrete steps, evolve the World and report results.">Simulation</a> from the current time to tmax. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">tmax</td><td>Time to stop. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">history</td><td><a class="el" href="classmio_1_1History.html">History</a> object to log data of the <a class="el" href="classmio_1_1abm_1_1Simulation.html" title="Run the Simulation in discrete steps, evolve the World and report results.">Simulation</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aafc9e0ee79a800a7244d13ae11ea2f45"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aafc9e0ee79a800a7244d13ae11ea2f45">&#9670;&nbsp;</a></span>evolve_world()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mio::abm::Simulation::evolve_world </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classmio_1_1abm_1_1TimePoint.html">TimePoint</a>&#160;</td>
+          <td class="paramname"><em>tmax</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="ac88cf3f70d9e0e3b02562d906f1c8642"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac88cf3f70d9e0e3b02562d906f1c8642">&#9670;&nbsp;</a></span>get_result()</h2>
 
@@ -263,6 +337,25 @@ Private Attributes</h2></td></tr>
 
 <p>Get the result of the <a class="el" href="classmio_1_1abm_1_1Simulation.html" title="Run the Simulation in discrete steps, evolve the World and report results.">Simulation</a>. </p>
 <p>Sum over all <a class="el" href="classmio_1_1abm_1_1Location.html" title="All Locations in the simulated World where Persons gather.">Location</a>s of the number of <a class="el" href="classmio_1_1abm_1_1Person.html" title="Agents in the simulated World that can carry and spread the Infection.">Person</a>s in an <a class="el" href="namespacemio_1_1abm.html#ad1ae0779f53a827b524e1f0925b9d704" title="InfectionState in ABM.">InfectionState</a>. </p>
+
+</div>
+</div>
+<a id="a45ae091ffc0fae8df80fc11f894fb776"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a45ae091ffc0fae8df80fc11f894fb776">&#9670;&nbsp;</a></span>get_time()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classmio_1_1abm_1_1TimePoint.html">TimePoint</a> mio::abm::Simulation::get_time </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the current time of the <a class="el" href="classmio_1_1abm_1_1Simulation.html" title="Run the Simulation in discrete steps, evolve the World and report results.">Simulation</a>. </p>
 
 </div>
 </div>
