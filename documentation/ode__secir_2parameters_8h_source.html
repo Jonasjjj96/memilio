@@ -485,7 +485,7 @@ $(function() {
 <div class="line"><a name="l00490"></a><span class="lineno">  490</span>&#160;                <span class="keywordflow">return</span> 1;</div>
 <div class="line"><a name="l00491"></a><span class="lineno">  491</span>&#160;            }</div>
 <div class="line"><a name="l00492"></a><span class="lineno">  492</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (this-&gt;get&lt;SerialInterval&gt;()[i] &gt; this-&gt;get&lt;IncubationTime&gt;()[i] - 0.5) {</div>
-<div class="line"><a name="l00493"></a><span class="lineno">  493</span>&#160;                <a class="code" href="namespacemio.html#a89afc3ebfa2c5ab994ec3c76dcad85d1">log_error</a>(<span class="stringliteral">&quot;Constraint check: Parameter SerialInterval {:.4f} smaller {:.4f}&quot;</span>,</div>
+<div class="line"><a name="l00493"></a><span class="lineno">  493</span>&#160;                <a class="code" href="namespacemio.html#a89afc3ebfa2c5ab994ec3c76dcad85d1">log_error</a>(<span class="stringliteral">&quot;Constraint check: Parameter SerialInterval {:.4f} greater {:.4f}&quot;</span>,</div>
 <div class="line"><a name="l00494"></a><span class="lineno">  494</span>&#160;                          this-&gt;get&lt;SerialInterval&gt;()[i], this-&gt;get&lt;IncubationTime&gt;()[i] - 0.5);</div>
 <div class="line"><a name="l00495"></a><span class="lineno">  495</span>&#160;                <span class="keywordflow">return</span> 1;</div>
 <div class="line"><a name="l00496"></a><span class="lineno">  496</span>&#160;            }</div>
