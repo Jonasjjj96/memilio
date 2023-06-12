@@ -111,7 +111,7 @@ $(function() {
 : <a class="el" href="classmio_1_1details_1_1TimeSeriesIteratorBase.html#aa9b00054bdb0dcc44e28cf0de7cfedbb">mio::details::TimeSeriesIteratorBase&lt; Derived, FP, IsConstIter, ValueType, ReferenceType &gt;</a>
 </li>
 <li>TimeSpan()
-: <a class="el" href="classmio_1_1abm_1_1TimeSpan.html#a5e702394c5f05b1a982502e5fa514ba2">mio::abm::TimeSpan</a>
+: <a class="el" href="classmio_1_1abm_1_1TimeSpan.html#a2a80baaadbc5520cbfe13786f85fca4c">mio::abm::TimeSpan</a>
 </li>
 <li>TimeValue
 : <a class="el" href="structmio_1_1details_1_1TimeSeriesIterTraits.html#a3932aa4de7907cf751de3657c9b9fc5d">mio::details::TimeSeriesIterTraits&lt; FP, IsConst &gt;</a>
@@ -139,8 +139,6 @@ $(function() {
 : <a class="el" href="structmio_1_1abm_1_1AerosolTransmissionRates.html#a2bc67197c0ce5082bc34e3cdd729e21f">mio::abm::AerosolTransmissionRates</a>
 , <a class="el" href="structmio_1_1abm_1_1AntigenTest.html#a9f0a463b105cdb2ab531229c6f5ed8df">mio::abm::AntigenTest</a>
 , <a class="el" href="structmio_1_1abm_1_1BasicShoppingRate.html#aaa2e72ac673d8d7893ef12f2ebd73fb5">mio::abm::BasicShoppingRate</a>
-, <a class="el" href="structmio_1_1abm_1_1CarrierToInfected.html#a10d80c047beb8692bf8f779a45d13946">mio::abm::CarrierToInfected</a>
-, <a class="el" href="structmio_1_1abm_1_1CarrierToRecovered.html#a7aeecbe43d30580faa38c2cbf11504de">mio::abm::CarrierToRecovered</a>
 , <a class="el" href="structmio_1_1abm_1_1ContactRates.html#a81b886af59b9927fb4f54736809b0089">mio::abm::ContactRates</a>
 , <a class="el" href="structmio_1_1abm_1_1CriticalToDead.html#a88d35af505f6c21947e8a08a1a62f491">mio::abm::CriticalToDead</a>
 , <a class="el" href="structmio_1_1abm_1_1CriticalToRecovered.html#a8819333800d109a4618e8381b1fb91a6">mio::abm::CriticalToRecovered</a>
@@ -151,8 +149,10 @@ $(function() {
 , <a class="el" href="structmio_1_1abm_1_1GotoWorkTimeMaximum.html#a7b53659fd9f1c6b86cf568fae17ff322">mio::abm::GotoWorkTimeMaximum</a>
 , <a class="el" href="structmio_1_1abm_1_1GotoWorkTimeMinimum.html#ac0505d60a259ad2143aadb6ef57d8ef4">mio::abm::GotoWorkTimeMinimum</a>
 , <a class="el" href="structmio_1_1abm_1_1IncubationPeriod.html#a290cad10ded0d026af28e1d439d0229c">mio::abm::IncubationPeriod</a>
-, <a class="el" href="structmio_1_1abm_1_1InfectedToRecovered.html#a1585f454d48e9e3f2106e19c160346cf">mio::abm::InfectedToRecovered</a>
-, <a class="el" href="structmio_1_1abm_1_1InfectedToSevere.html#aa408558a14a562fdc5d939dcc6ab4f8a">mio::abm::InfectedToSevere</a>
+, <a class="el" href="structmio_1_1abm_1_1InfectedNoSymptomsToRecovered.html#a45aa75d07ec87aed1609b2a0761d0948">mio::abm::InfectedNoSymptomsToRecovered</a>
+, <a class="el" href="structmio_1_1abm_1_1InfectedNoSymptomsToSymptoms.html#aeb01cacd0890326700424c84e2ccaa37">mio::abm::InfectedNoSymptomsToSymptoms</a>
+, <a class="el" href="structmio_1_1abm_1_1InfectedSymptomsToRecovered.html#a9fc6dc8f36cc765fd4165cdd0b0d9aa7">mio::abm::InfectedSymptomsToRecovered</a>
+, <a class="el" href="structmio_1_1abm_1_1InfectedSymptomsToSevere.html#a175c750833ee25c97edb78e45e7ab53c">mio::abm::InfectedSymptomsToSevere</a>
 , <a class="el" href="structmio_1_1abm_1_1InfectivityDistributions.html#a44fb87c50367c305339667ea97c069a4">mio::abm::InfectivityDistributions</a>
 </li>
 <li>type
@@ -168,8 +168,8 @@ $(function() {
 , <a class="el" href="structmio_1_1abm_1_1SevereToCritical.html#a5bbf6ec2ed1916a33751e151825a15f0">mio::abm::SevereToCritical</a>
 , <a class="el" href="structmio_1_1abm_1_1SevereToRecovered.html#af4e887e5bed8c41b2c0ab13c1a77efba">mio::abm::SevereToRecovered</a>
 , <a class="el" href="structmio_1_1abm_1_1SocialEventRate.html#a66a838f001754a82b28ec2302a49a424">mio::abm::SocialEventRate</a>
-, <a class="el" href="structmio_1_1abm_1_1SusceptibleToExposedByCarrier.html#a723aa472547caa51bc9193309c467a60">mio::abm::SusceptibleToExposedByCarrier</a>
-, <a class="el" href="structmio_1_1abm_1_1SusceptibleToExposedByInfected.html#ad6e1aad15d71f8b72a74faeea55a1f1d">mio::abm::SusceptibleToExposedByInfected</a>
+, <a class="el" href="structmio_1_1abm_1_1SusceptibleToExposedByInfectedNoSymptoms.html#abb319f1bd4cd9c87b8077d93c402064c">mio::abm::SusceptibleToExposedByInfectedNoSymptoms</a>
+, <a class="el" href="structmio_1_1abm_1_1SusceptibleToExposedByInfectedSymptoms.html#a79ad4f0fde164cfb58f6ee1a14952974">mio::abm::SusceptibleToExposedByInfectedSymptoms</a>
 , <a class="el" href="structmio_1_1abm_1_1ViralLoadDistributions.html#a4934d1b9eb8cef3dd73ba91134408e53">mio::abm::ViralLoadDistributions</a>
 , <a class="el" href="structmio_1_1abm_1_1WorkRatio.html#aa0fa442d3623d93ff58547f5e05ebeea">mio::abm::WorkRatio</a>
 , <a class="el" href="classmio_1_1CustomIndexArray.html#a5b1a1ad38cc2c1ca3c85ba402008b875">mio::CustomIndexArray&lt; Typ, Tags &gt;</a>

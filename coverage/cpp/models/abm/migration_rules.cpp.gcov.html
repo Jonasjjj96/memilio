@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2023-06-01 13:54:14</td>
+            <td class="headerValue">2023-06-12 15:23:02</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">8</td>
@@ -198,7 +198,7 @@
 <a name="136"><span class="lineNum">     136 </span>            :                             const MigrationParameters&amp; /*params*/)</a>
 <a name="137"><span class="lineNum">     137 </span>            : {</a>
 <a name="138"><span class="lineNum">     138 </span><span class="lineCov">          6 :     auto current_loc = person.get_location().get_type();</span></a>
-<a name="139"><span class="lineNum">     139 </span><span class="lineCov">          6 :     if (person.get_infection_state(t) == InfectionState::Infected_Severe) {</span></a>
+<a name="139"><span class="lineNum">     139 </span><span class="lineCov">          6 :     if (person.get_infection_state(t) == InfectionState::InfectedSevere) {</span></a>
 <a name="140"><span class="lineNum">     140 </span><span class="lineCov">          2 :         return LocationType::Hospital;</span></a>
 <a name="141"><span class="lineNum">     141 </span>            :     }</a>
 <a name="142"><span class="lineNum">     142 </span><span class="lineCov">          4 :     return current_loc;</span></a>
@@ -207,7 +207,7 @@
 <a name="145"><span class="lineNum">     145 </span><span class="lineCov">          2 : LocationType go_to_icu(const Person&amp; person, const TimePoint t, TimeSpan /*dt*/, const MigrationParameters&amp; /*params*/)</span></a>
 <a name="146"><span class="lineNum">     146 </span>            : {</a>
 <a name="147"><span class="lineNum">     147 </span><span class="lineCov">          2 :     auto current_loc = person.get_location().get_type();</span></a>
-<a name="148"><span class="lineNum">     148 </span><span class="lineCov">          2 :     if (person.get_infection_state(t) == InfectionState::Infected_Critical) {</span></a>
+<a name="148"><span class="lineNum">     148 </span><span class="lineCov">          2 :     if (person.get_infection_state(t) == InfectionState::InfectedCritical) {</span></a>
 <a name="149"><span class="lineNum">     149 </span><span class="lineCov">          1 :         return LocationType::ICU;</span></a>
 <a name="150"><span class="lineNum">     150 </span>            :     }</a>
 <a name="151"><span class="lineNum">     151 </span><span class="lineCov">          1 :     return current_loc;</span></a>
@@ -218,7 +218,7 @@
 <a name="156"><span class="lineNum">     156 </span>            : {</a>
 <a name="157"><span class="lineNum">     157 </span><span class="lineCov">          7 :     auto current_loc = person.get_location().get_type();</span></a>
 <a name="158"><span class="lineNum">     158 </span><span class="lineCov">         10 :     if ((current_loc == LocationType::Hospital || current_loc == LocationType::ICU) &amp;&amp;</span></a>
-<a name="159"><span class="lineNum">     159 </span><span class="lineCov">          3 :         person.get_infection_state(t) == InfectionState::Recovered_Infected) {</span></a>
+<a name="159"><span class="lineNum">     159 </span><span class="lineCov">          3 :         person.get_infection_state(t) == InfectionState::Recovered) {</span></a>
 <a name="160"><span class="lineNum">     160 </span><span class="lineCov">          2 :         return LocationType::Home;</span></a>
 <a name="161"><span class="lineNum">     161 </span>            :     }</a>
 <a name="162"><span class="lineNum">     162 </span><span class="lineCov">          5 :     return current_loc;</span></a>

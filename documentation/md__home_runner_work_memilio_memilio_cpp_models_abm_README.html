@@ -78,12 +78,12 @@ Structure</h1>
 <h1><a class="anchor" id="autotoc_md29"></a>
 Simulation</h1>
 <p>The simulation runs in discrete time steps. Each step is in two phases, an interaction phase and a migration phase.</p>
-<p>First each person interacts with the other persons at the same location. This interaction determines their infection state transitions. A susceptible person may become exposed by contact with a carrier, an asymptomatic carrier can become symptomatic (infected), etc. The transitions are determined by chance. The probability of a transition depends on the parameters of the infection and the population at this location.</p>
+<p>First each person interacts with the other persons at the same location. This interaction determines their infection state transitions. A susceptible person may become exposed by contact with an infected person without symptoms. The probability of infection depends on a multitude of factors, such as the viral load and infectiousness of the infectee and the immunity level of the susceptible person.</p>
 <p>During the migration phase, each person may change location. Migration follows complex rules, taking into account the current location, time of day, and properties of the person (e.g. age). Some location changes are deterministic and regular (e.g. going to work), others are random (e.g. going to shopping or to a social event in the evening/on the weekend).</p>
 <p>The result of the simulation is for each time step the count of persons in each infection state at that time.</p>
 <h1><a class="anchor" id="autotoc_md30"></a>
 Example</h1>
-<p>An example can also be found at examples/abm.cpp </p><div class="fragment"><div class="line">//setup the infection parameters</div>
+<p>An example can also be found at simulations/abm.cpp </p><div class="fragment"><div class="line">//setup the infection parameters</div>
 <div class="line">mio::abm::GlobalInfectionParameters params;</div>
 <div class="line">params.incubation_period = 4.7;</div>
 <div class="line">//...</div>
@@ -95,7 +95,7 @@ Example</h1>
 <div class="line">mio::abm::Location&amp; work = world.add_location(mio::abm::LocationType::Work);</div>
 <div class="line">mio::abm::Person&amp; p1 = world.add_person(home, mio::abm::InfectionState::Susceptible);</div>
 <div class="line">mio::abm::Person&amp; p2 = world.add_person(home, mio::abm::InfectionState::Susceptible);</div>
-<div class="line">mio::abm::Person&amp; p3 = world.add_person(home, mio::abm::InfectionState::Carrier);</div>
+<div class="line">mio::abm::Person&amp; p3 = world.add_person(home, mio::abm::InfectionState::InfectedNoSymptoms);</div>
 <div class="line">mio::abm::Person&amp; p4 = world.add_person(home, mio::abm::InfectionState::Susceptible);</div>
 <div class="line"> </div>
 <div class="line">//setup the simulation</div>
