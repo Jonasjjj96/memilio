@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2023-06-20 11:20:26</td>
+            <td class="headerValue">2023-06-20 13:42:55</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">4</td>
@@ -116,15 +116,15 @@
 <a name="54"><span class="lineNum">      54 </span>            :      * @param[in] origin Location where the person starts the Trip.</a>
 <a name="55"><span class="lineNum">      55 </span>            :      * @param[in] input_cells The index of the Cell%s the Person migrates to.</a>
 <a name="56"><span class="lineNum">      56 </span>            :      */</a>
-<a name="57"><span class="lineNum">      57 </span><span class="lineCov">          3 :     Trip(uint32_t id, TimePoint time_new, LocationId destination, LocationId origin,</span></a>
+<a name="57"><span class="lineNum">      57 </span><span class="lineCov">          6 :     Trip(uint32_t id, TimePoint time_new, LocationId destination, LocationId origin,</span></a>
 <a name="58"><span class="lineNum">      58 </span>            :          const std::vector&lt;uint32_t&gt;&amp; input_cells = {})</a>
-<a name="59"><span class="lineNum">      59 </span><span class="lineCov">          3 :     {</span></a>
-<a name="60"><span class="lineNum">      60 </span><span class="lineCov">          3 :         person_id             = id;</span></a>
-<a name="61"><span class="lineNum">      61 </span><span class="lineCov">          3 :         time                  = time_new;</span></a>
-<a name="62"><span class="lineNum">      62 </span><span class="lineCov">          3 :         migration_destination = destination;</span></a>
-<a name="63"><span class="lineNum">      63 </span><span class="lineCov">          3 :         migration_origin      = origin;</span></a>
-<a name="64"><span class="lineNum">      64 </span><span class="lineCov">          3 :         cells                 = input_cells;</span></a>
-<a name="65"><span class="lineNum">      65 </span><span class="lineCov">          3 :     }</span></a>
+<a name="59"><span class="lineNum">      59 </span><span class="lineCov">          6 :     {</span></a>
+<a name="60"><span class="lineNum">      60 </span><span class="lineCov">          6 :         person_id             = id;</span></a>
+<a name="61"><span class="lineNum">      61 </span><span class="lineCov">          6 :         time                  = time_new;</span></a>
+<a name="62"><span class="lineNum">      62 </span><span class="lineCov">          6 :         migration_destination = destination;</span></a>
+<a name="63"><span class="lineNum">      63 </span><span class="lineCov">          6 :         migration_origin      = origin;</span></a>
+<a name="64"><span class="lineNum">      64 </span><span class="lineCov">          6 :         cells                 = input_cells;</span></a>
+<a name="65"><span class="lineNum">      65 </span><span class="lineCov">          6 :     }</span></a>
 <a name="66"><span class="lineNum">      66 </span>            : };</a>
 <a name="67"><span class="lineNum">      67 </span>            : </a>
 <a name="68"><span class="lineNum">      68 </span>            : /**</a>
@@ -157,25 +157,25 @@
 <a name="95"><span class="lineNum">      95 </span>            :     /**</a>
 <a name="96"><span class="lineNum">      96 </span>            :      * @brief Increment the current index to select the next Trip.</a>
 <a name="97"><span class="lineNum">      97 </span>            :      */</a>
-<a name="98"><span class="lineNum">      98 </span><span class="lineCov">          3 :     void increase_index()</span></a>
+<a name="98"><span class="lineNum">      98 </span><span class="lineCov">          6 :     void increase_index()</span></a>
 <a name="99"><span class="lineNum">      99 </span>            :     {</a>
-<a name="100"><span class="lineNum">     100 </span><span class="lineCov">          3 :         m_current_index++;</span></a>
-<a name="101"><span class="lineNum">     101 </span><span class="lineCov">          3 :     }</span></a>
+<a name="100"><span class="lineNum">     100 </span><span class="lineCov">          6 :         m_current_index++;</span></a>
+<a name="101"><span class="lineNum">     101 </span><span class="lineCov">          6 :     }</span></a>
 <a name="102"><span class="lineNum">     102 </span>            : </a>
 <a name="103"><span class="lineNum">     103 </span>            :     /**</a>
 <a name="104"><span class="lineNum">     104 </span>            :      * @brief Get the length of the TripList.</a>
 <a name="105"><span class="lineNum">     105 </span>            :      */</a>
-<a name="106"><span class="lineNum">     106 </span><span class="lineCov">        106 :     size_t num_trips() const</span></a>
+<a name="106"><span class="lineNum">     106 </span><span class="lineCov">        108 :     size_t num_trips() const</span></a>
 <a name="107"><span class="lineNum">     107 </span>            :     {</a>
-<a name="108"><span class="lineNum">     108 </span><span class="lineCov">        106 :         return m_trips.size();</span></a>
+<a name="108"><span class="lineNum">     108 </span><span class="lineCov">        108 :         return m_trips.size();</span></a>
 <a name="109"><span class="lineNum">     109 </span>            :     }</a>
 <a name="110"><span class="lineNum">     110 </span>            : </a>
 <a name="111"><span class="lineNum">     111 </span>            :     /**</a>
 <a name="112"><span class="lineNum">     112 </span>            :      * @brief Get the current index.</a>
 <a name="113"><span class="lineNum">     113 </span>            :      */</a>
-<a name="114"><span class="lineNum">     114 </span><span class="lineCov">          4 :     uint32_t get_current_index() const</span></a>
+<a name="114"><span class="lineNum">     114 </span><span class="lineCov">          9 :     uint32_t get_current_index() const</span></a>
 <a name="115"><span class="lineNum">     115 </span>            :     {</a>
-<a name="116"><span class="lineNum">     116 </span><span class="lineCov">          4 :         return m_current_index;</span></a>
+<a name="116"><span class="lineNum">     116 </span><span class="lineCov">          9 :         return m_current_index;</span></a>
 <a name="117"><span class="lineNum">     117 </span>            :     }</a>
 <a name="118"><span class="lineNum">     118 </span>            : </a>
 <a name="119"><span class="lineNum">     119 </span>            : private:</a>

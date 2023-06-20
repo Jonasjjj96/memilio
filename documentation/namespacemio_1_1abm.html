@@ -284,6 +284,7 @@ Enumerations</h2></td></tr>
 , <br />
 &#160;&#160;<a class="el" href="namespacemio_1_1abm.html#a83bc98ab43329c10fe9a6e683f2e1d0fae1160edbe28f9ff9089ac90e23437cb5">PublicTransport</a>
 , <a class="el" href="namespacemio_1_1abm.html#a83bc98ab43329c10fe9a6e683f2e1d0fab780feddf2b83d77ae9ab2173b8fe0b2">TransportWithoutContact</a>
+, <a class="el" href="namespacemio_1_1abm.html#a83bc98ab43329c10fe9a6e683f2e1d0fa967183cc9e2017da029f50b760b4a60f">Cemetery</a>
 , <a class="el" href="namespacemio_1_1abm.html#a83bc98ab43329c10fe9a6e683f2e1d0fae93f994f01c537c4e2f7d8528c3eb5e9">Count</a>
 <br />
  }</td></tr>
@@ -387,6 +388,9 @@ Functions</h2></td></tr>
 <tr class="memitem:af4be98aeb5718f25bc0a763ac1485d1f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacemio_1_1abm.html#a83bc98ab43329c10fe9a6e683f2e1d0f">LocationType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemio_1_1abm.html#af4be98aeb5718f25bc0a763ac1485d1f">return_home_when_recovered</a> (const <a class="el" href="classmio_1_1abm_1_1Person.html">Person</a> &amp;person, <a class="el" href="classmio_1_1abm_1_1TimePoint.html">TimePoint</a> t, <a class="el" href="classmio_1_1abm_1_1TimeSpan.html">TimeSpan</a> dt, const <a class="el" href="namespacemio_1_1abm.html#aa8a9868546ef379f6e53a48227b3846f">MigrationParameters</a> &amp;params)</td></tr>
 <tr class="memdesc:af4be98aeb5718f25bc0a763ac1485d1f"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classmio_1_1abm_1_1Person.html" title="Agents in the simulated World that can carry and spread the Infection.">Person</a>s in the hospital/icu return home when they recover.  <a href="namespacemio_1_1abm.html#af4be98aeb5718f25bc0a763ac1485d1f">More...</a><br /></td></tr>
 <tr class="separator:af4be98aeb5718f25bc0a763ac1485d1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a24fec4fe95429a2fee4fd7ed18ea7f4b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacemio_1_1abm.html#a83bc98ab43329c10fe9a6e683f2e1d0f">LocationType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemio_1_1abm.html#a24fec4fe95429a2fee4fd7ed18ea7f4b">get_buried</a> (const <a class="el" href="classmio_1_1abm_1_1Person.html">Person</a> &amp;person, <a class="el" href="classmio_1_1abm_1_1TimePoint.html">TimePoint</a> t, <a class="el" href="classmio_1_1abm_1_1TimeSpan.html">TimeSpan</a> dt, const <a class="el" href="namespacemio_1_1abm.html#aa8a9868546ef379f6e53a48227b3846f">MigrationParameters</a> &amp;params)</td></tr>
+<tr class="memdesc:a24fec4fe95429a2fee4fd7ed18ea7f4b"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classmio_1_1abm_1_1Person.html" title="Agents in the simulated World that can carry and spread the Infection.">Person</a>s in the icu go to cemetery when they are dead.  <a href="namespacemio_1_1abm.html#a24fec4fe95429a2fee4fd7ed18ea7f4b">More...</a><br /></td></tr>
+<tr class="separator:a24fec4fe95429a2fee4fd7ed18ea7f4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
@@ -547,6 +551,7 @@ Variables</h2></td></tr>
 <tr><td class="fieldname"><a id="a83bc98ab43329c10fe9a6e683f2e1d0fae9989db5dabeea617f40c8dbfd07f5fb"></a>Car&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a83bc98ab43329c10fe9a6e683f2e1d0fae1160edbe28f9ff9089ac90e23437cb5"></a>PublicTransport&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a83bc98ab43329c10fe9a6e683f2e1d0fab780feddf2b83d77ae9ab2173b8fe0b2"></a>TransportWithoutContact&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a83bc98ab43329c10fe9a6e683f2e1d0fa967183cc9e2017da029f50b760b4a60f"></a>Cemetery&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a83bc98ab43329c10fe9a6e683f2e1d0fae93f994f01c537c4e2f7d8528c3eb5e9"></a>Count&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
@@ -830,6 +835,48 @@ Variables</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="a24fec4fe95429a2fee4fd7ed18ea7f4b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a24fec4fe95429a2fee4fd7ed18ea7f4b">&#9670;&nbsp;</a></span>get_buried()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacemio_1_1abm.html#a83bc98ab43329c10fe9a6e683f2e1d0f">LocationType</a> mio::abm::get_buried </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classmio_1_1abm_1_1Person.html">Person</a> &amp;&#160;</td>
+          <td class="paramname"><em>person</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classmio_1_1abm_1_1TimePoint.html">TimePoint</a>&#160;</td>
+          <td class="paramname"><em>t</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classmio_1_1abm_1_1TimeSpan.html">TimeSpan</a>&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="namespacemio_1_1abm.html#aa8a9868546ef379f6e53a48227b3846f">MigrationParameters</a> &amp;&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classmio_1_1abm_1_1Person.html" title="Agents in the simulated World that can carry and spread the Infection.">Person</a>s in the icu go to cemetery when they are dead. </p>
 
 </div>
 </div>
