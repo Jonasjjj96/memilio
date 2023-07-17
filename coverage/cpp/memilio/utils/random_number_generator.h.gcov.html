@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2023-07-12 14:15:45</td>
+            <td class="headerValue">2023-07-17 14:03:32</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">47</td>
@@ -108,18 +108,18 @@
 <a name="46"><span class="lineNum">      46 </span>            : public:</a>
 <a name="47"><span class="lineNum">      47 </span>            :     using result_type = std::mt19937_64::result_type;</a>
 <a name="48"><span class="lineNum">      48 </span>            : </a>
-<a name="49"><span class="lineNum">      49 </span><span class="lineCov">       6635 :     static constexpr result_type min()</span></a>
+<a name="49"><span class="lineNum">      49 </span><span class="lineCov">       6631 :     static constexpr result_type min()</span></a>
 <a name="50"><span class="lineNum">      50 </span>            :     {</a>
-<a name="51"><span class="lineNum">      51 </span><span class="lineCov">       6635 :         return std::mt19937_64::min();</span></a>
+<a name="51"><span class="lineNum">      51 </span><span class="lineCov">       6631 :         return std::mt19937_64::min();</span></a>
 <a name="52"><span class="lineNum">      52 </span>            :     }</a>
 <a name="53"><span class="lineNum">      53 </span>            :     static constexpr result_type max()</a>
 <a name="54"><span class="lineNum">      54 </span>            :     {</a>
 <a name="55"><span class="lineNum">      55 </span>            :         return std::mt19937_64::max();</a>
 <a name="56"><span class="lineNum">      56 </span>            :     }</a>
-<a name="57"><span class="lineNum">      57 </span><span class="lineCov">       6890 :     result_type operator()()</span></a>
+<a name="57"><span class="lineNum">      57 </span><span class="lineCov">       6886 :     result_type operator()()</span></a>
 <a name="58"><span class="lineNum">      58 </span>            :     {</a>
-<a name="59"><span class="lineNum">      59 </span><span class="lineCov">       6890 :         ++m_num_generated;</span></a>
-<a name="60"><span class="lineNum">      60 </span><span class="lineCov">       6890 :         return m_rng();</span></a>
+<a name="59"><span class="lineNum">      59 </span><span class="lineCov">       6886 :         ++m_num_generated;</span></a>
+<a name="60"><span class="lineNum">      60 </span><span class="lineCov">       6886 :         return m_rng();</span></a>
 <a name="61"><span class="lineNum">      61 </span>            :     }</a>
 <a name="62"><span class="lineNum">      62 </span>            : </a>
 <a name="63"><span class="lineNum">      63 </span><span class="lineCov">          6 :     static std::vector&lt;unsigned int&gt; generate_seeds()</span></a>
@@ -458,9 +458,9 @@
 <a name="396"><span class="lineNum">     396 </span>            :         auto u =</a>
 <a name="397"><span class="lineNum">     397 </span><span class="lineCov">        172 :             std::uniform_real_distribution&lt;double&gt;()(rng, std::uniform_real_distribution&lt;double&gt;::param_type{0.0, sum});</span></a>
 <a name="398"><span class="lineNum">     398 </span><span class="lineCov">        172 :         auto intermediate_sum = 0.0;</span></a>
-<a name="399"><span class="lineNum">     399 </span><span class="lineCov">        512 :         for (size_t i = 0; i &lt; weights.size(); ++i) {</span></a>
-<a name="400"><span class="lineNum">     400 </span><span class="lineCov">        512 :             intermediate_sum += weights.get_ptr()[i];</span></a>
-<a name="401"><span class="lineNum">     401 </span><span class="lineCov">        512 :             if (u &lt; intermediate_sum) {</span></a>
+<a name="399"><span class="lineNum">     399 </span><span class="lineCov">        513 :         for (size_t i = 0; i &lt; weights.size(); ++i) {</span></a>
+<a name="400"><span class="lineNum">     400 </span><span class="lineCov">        513 :             intermediate_sum += weights.get_ptr()[i];</span></a>
+<a name="401"><span class="lineNum">     401 </span><span class="lineCov">        513 :             if (u &lt; intermediate_sum) {</span></a>
 <a name="402"><span class="lineNum">     402 </span><span class="lineCov">        172 :                 return i;</span></a>
 <a name="403"><span class="lineNum">     403 </span>            :             }</a>
 <a name="404"><span class="lineNum">     404 </span>            :         }</a>
