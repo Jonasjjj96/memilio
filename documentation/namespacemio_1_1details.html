@@ -147,9 +147,9 @@ Typedefs</h2></td></tr>
 <tr class="memitem:a11800c3db22deebc6aa9f9d457c9add2"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
 <tr class="memitem:a11800c3db22deebc6aa9f9d457c9add2"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemio_1_1details.html#a11800c3db22deebc6aa9f9d457c9add2">apply_constraints_expr_t</a> = decltype(std::declval&lt; T &gt;().apply_constraints())</td></tr>
 <tr class="separator:a11800c3db22deebc6aa9f9d457c9add2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a21e4ba9203a376f946bd0d326916a07d"><td class="memTemplParams" colspan="2">template&lt;class F , class... T&gt; </td></tr>
-<tr class="memitem:a21e4ba9203a376f946bd0d326916a07d"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemio_1_1details.html#a21e4ba9203a376f946bd0d326916a07d">ApplyResultT</a> = <a class="el" href="namespacemio_1_1details.html#acdee67e3bf4f0cea9100b88dc53a5eca">FlattenIOResultT</a>&lt; std::result_of_t&lt; F(T...)&gt; &gt;</td></tr>
-<tr class="separator:a21e4ba9203a376f946bd0d326916a07d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a98c0eea24e7bbb725e78e8c7c6b22e8a"><td class="memTemplParams" colspan="2">template&lt;class F , class... T&gt; </td></tr>
+<tr class="memitem:a98c0eea24e7bbb725e78e8c7c6b22e8a"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemio_1_1details.html#a98c0eea24e7bbb725e78e8c7c6b22e8a">ApplyResultT</a> = <a class="el" href="namespacemio_1_1details.html#acdee67e3bf4f0cea9100b88dc53a5eca">FlattenIOResultT</a>&lt; std::invoke_result_t&lt; F, T... &gt; &gt;</td></tr>
+<tr class="separator:a98c0eea24e7bbb725e78e8c7c6b22e8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3718cd19964b2e578e34c903209a731f"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
 <tr class="memitem:a3718cd19964b2e578e34c903209a731f"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemio_1_1details.html#a3718cd19964b2e578e34c903209a731f">check_constraints_expr_t</a> = decltype(std::declval&lt; T &gt;().check_constraints())</td></tr>
 <tr class="separator:a3718cd19964b2e578e34c903209a731f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -177,8 +177,8 @@ Functions</h2></td></tr>
 <tr class="memitem:a6f839c34e501d06beb2eb760bda28762"><td class="memTemplParams" colspan="2">template&lt;class IOObj , class Tup , class... Ts&gt; </td></tr>
 <tr class="memitem:a6f839c34e501d06beb2eb760bda28762"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if_t&lt;(sizeof...(Ts)&lt; std::tuple_size&lt; Tup &gt;::value), <a class="el" href="namespacemio.html#ae556a666d14183eb2bf3a3efc11551ec">IOResult</a>&lt; Tup &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemio_1_1details.html#a6f839c34e501d06beb2eb760bda28762">deserialize_tuple_element</a> (IOObj &amp;obj, <a class="el" href="namespacemio.html#a2f858e287c3935240954cf75cf53cfeb">Tag</a>&lt; Tup &gt; tag, const <a class="el" href="namespacemio.html#ae556a666d14183eb2bf3a3efc11551ec">IOResult</a>&lt; Ts &gt; &amp;... rs)</td></tr>
 <tr class="separator:a6f839c34e501d06beb2eb760bda28762"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a458c46db8cb05bc6cc39ad1d0967bb34"><td class="memTemplParams" colspan="2">template&lt;class F , class... T, std::enable_if_t&lt; IsIOResult&lt; std::result_of_t&lt; F(T...)&gt;&gt;::value, void * &gt;  = nullptr&gt; </td></tr>
-<tr class="memitem:a458c46db8cb05bc6cc39ad1d0967bb34"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="namespacemio_1_1details.html#a21e4ba9203a376f946bd0d326916a07d">ApplyResultT</a>&lt; F, T... &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemio_1_1details.html#a458c46db8cb05bc6cc39ad1d0967bb34">eval</a> (F f, const <a class="el" href="namespacemio.html#ae556a666d14183eb2bf3a3efc11551ec">IOResult</a>&lt; T &gt; &amp;... rs)</td></tr>
+<tr class="memitem:a458c46db8cb05bc6cc39ad1d0967bb34"><td class="memTemplParams" colspan="2">template&lt;class F , class... T, std::enable_if_t&lt; IsIOResult&lt; std::invoke_result_t&lt; F, T... &gt;&gt;::value, void * &gt;  = nullptr&gt; </td></tr>
+<tr class="memitem:a458c46db8cb05bc6cc39ad1d0967bb34"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="namespacemio_1_1details.html#a98c0eea24e7bbb725e78e8c7c6b22e8a">ApplyResultT</a>&lt; F, T... &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemio_1_1details.html#a458c46db8cb05bc6cc39ad1d0967bb34">eval</a> (F f, const <a class="el" href="namespacemio.html#ae556a666d14183eb2bf3a3efc11551ec">IOResult</a>&lt; T &gt; &amp;... rs)</td></tr>
 <tr class="separator:a458c46db8cb05bc6cc39ad1d0967bb34"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a49600e78db0bdb85b98a67edacbaf8ca"><td class="memTemplParams" colspan="2">template&lt;size_t I, typename Index &gt; </td></tr>
 <tr class="memitem:a49600e78db0bdb85b98a67edacbaf8ca"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if_t&lt;(I==(<a class="el" href="classmio_1_1Index.html#ace2904f9d77e1ae0b0806ddf956462ca">Index::size</a> - 1)), std::pair&lt; size_t, size_t &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemio_1_1details.html#a49600e78db0bdb85b98a67edacbaf8ca">flatten_index</a> (<a class="el" href="classmio_1_1Index.html">Index</a> const &amp;indices, <a class="el" href="classmio_1_1Index.html">Index</a> const &amp;dimensions)</td></tr>
@@ -247,8 +247,8 @@ template&lt;class T &gt; </div>
 
 </div>
 </div>
-<a id="a21e4ba9203a376f946bd0d326916a07d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a21e4ba9203a376f946bd0d326916a07d">&#9670;&nbsp;</a></span>ApplyResultT</h2>
+<a id="a98c0eea24e7bbb725e78e8c7c6b22e8a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a98c0eea24e7bbb725e78e8c7c6b22e8a">&#9670;&nbsp;</a></span>ApplyResultT</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -256,7 +256,7 @@ template&lt;class T &gt; </div>
 template&lt;class F , class... T&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="namespacemio_1_1details.html#a21e4ba9203a376f946bd0d326916a07d">mio::details::ApplyResultT</a> = typedef <a class="el" href="namespacemio_1_1details.html#acdee67e3bf4f0cea9100b88dc53a5eca">FlattenIOResultT</a>&lt;std::result_of_t&lt;F(T...)&gt; &gt;</td>
+          <td class="memname">using <a class="el" href="namespacemio_1_1details.html#a98c0eea24e7bbb725e78e8c7c6b22e8a">mio::details::ApplyResultT</a> = typedef <a class="el" href="namespacemio_1_1details.html#acdee67e3bf4f0cea9100b88dc53a5eca">FlattenIOResultT</a>&lt;std::invoke_result_t&lt;F, T...&gt; &gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -438,10 +438,10 @@ template&lt;class IOObj , class Tup , class... Ts&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class F , class... T, std::enable_if_t&lt; IsIOResult&lt; std::result_of_t&lt; F(T...)&gt;&gt;::value, void * &gt;  = nullptr&gt; </div>
+template&lt;class F , class... T, std::enable_if_t&lt; IsIOResult&lt; std::invoke_result_t&lt; F, T... &gt;&gt;::value, void * &gt;  = nullptr&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="namespacemio_1_1details.html#a21e4ba9203a376f946bd0d326916a07d">ApplyResultT</a>&lt; F, T... &gt; mio::details::eval </td>
+          <td class="memname"><a class="el" href="namespacemio_1_1details.html#a98c0eea24e7bbb725e78e8c7c6b22e8a">ApplyResultT</a>&lt; F, T... &gt; mio::details::eval </td>
           <td>(</td>
           <td class="paramtype">F&#160;</td>
           <td class="paramname"><em>f</em>, </td>

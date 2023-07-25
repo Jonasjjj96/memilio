@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2023-07-17 14:03:32</td>
+            <td class="headerValue">2023-07-25 07:21:44</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">5</td>
@@ -307,14 +307,14 @@
 <a name="245"><span class="lineNum">     245 </span>            :                     num_InfectedSymptoms[i][age];</a>
 <a name="246"><span class="lineNum">     246 </span><span class="lineCov">          6 :                 rki_data[i][j]((size_t)InfectionState::InfectedSevere + (size_t)InfectionState::Count * age) =</span></a>
 <a name="247"><span class="lineNum">     247 </span>            :                     num_InfectedSevere[i][age];</a>
-<a name="248"><span class="lineNum">     248 </span><span class="lineCov">         12 :                 rki_data[i][j]((size_t)InfectionState::InfectedCritical + (size_t)InfectionState::Count * age) =</span></a>
-<a name="249"><span class="lineNum">     249 </span><span class="lineCov">         12 :                     scaling_factor_icu * num_icu[i] * mu_I_U[i][age] / sum_mu_I_U[i];</span></a>
+<a name="248"><span class="lineNum">     248 </span><span class="lineCov">          6 :                 rki_data[i][j]((size_t)InfectionState::InfectedCritical + (size_t)InfectionState::Count * age) =</span></a>
+<a name="249"><span class="lineNum">     249 </span><span class="lineCov">          6 :                     scaling_factor_icu * num_icu[i] * mu_I_U[i][age] / sum_mu_I_U[i];</span></a>
 <a name="250"><span class="lineNum">     250 </span><span class="lineCov">          6 :                 rki_data[i][j]((size_t)InfectionState::Recovered + (size_t)InfectionState::Count * age) =</span></a>
 <a name="251"><span class="lineNum">     251 </span>            :                     num_rec[i][age];</a>
 <a name="252"><span class="lineNum">     252 </span><span class="lineCov">          6 :                 rki_data[i][j]((size_t)InfectionState::Dead + (size_t)InfectionState::Count * age) = num_death[i][age];</span></a>
-<a name="253"><span class="lineNum">     253 </span><span class="lineCov">         12 :                 rki_data[i][j]((size_t)InfectionState::Susceptible + (size_t)InfectionState::Count * age) =</span></a>
+<a name="253"><span class="lineNum">     253 </span><span class="lineCov">          6 :                 rki_data[i][j]((size_t)InfectionState::Susceptible + (size_t)InfectionState::Count * age) =</span></a>
 <a name="254"><span class="lineNum">     254 </span><span class="lineCov">          6 :                     num_population[i][age] - num_Exposed[i][age] - num_InfectedNoSymptoms[i][age] -</span></a>
-<a name="255"><span class="lineNum">     255 </span><span class="lineCov">         18 :                     num_InfectedSymptoms[i][age] - num_InfectedSevere[i][age] - num_rec[i][age] - num_death[i][age] -</span></a>
+<a name="255"><span class="lineNum">     255 </span><span class="lineCov">         12 :                     num_InfectedSymptoms[i][age] - num_InfectedSevere[i][age] - num_rec[i][age] - num_death[i][age] -</span></a>
 <a name="256"><span class="lineNum">     256 </span><span class="lineCov">         12 :                     rki_data[i][j]((size_t)InfectionState::InfectedCritical + (size_t)InfectionState::Count * age);</span></a>
 <a name="257"><span class="lineNum">     257 </span>            :             }</a>
 <a name="258"><span class="lineNum">     258 </span>            :         }</a>

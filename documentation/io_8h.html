@@ -120,9 +120,9 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:a21e4ba9203a376f946bd0d326916a07d"><td class="memTemplParams" colspan="2">template&lt;class F , class... T&gt; </td></tr>
-<tr class="memitem:a21e4ba9203a376f946bd0d326916a07d"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemio_1_1details.html#a21e4ba9203a376f946bd0d326916a07d">mio::details::ApplyResultT</a> = FlattenIOResultT&lt; std::result_of_t&lt; F(T...)&gt; &gt;</td></tr>
-<tr class="separator:a21e4ba9203a376f946bd0d326916a07d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a98c0eea24e7bbb725e78e8c7c6b22e8a"><td class="memTemplParams" colspan="2">template&lt;class F , class... T&gt; </td></tr>
+<tr class="memitem:a98c0eea24e7bbb725e78e8c7c6b22e8a"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemio_1_1details.html#a98c0eea24e7bbb725e78e8c7c6b22e8a">mio::details::ApplyResultT</a> = FlattenIOResultT&lt; std::invoke_result_t&lt; F, T... &gt; &gt;</td></tr>
+<tr class="separator:a98c0eea24e7bbb725e78e8c7c6b22e8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa2c4bf335b2dc1bff2495bf91e60e182"><td class="memTemplParams" colspan="2">template&lt;class C &gt; </td></tr>
 <tr class="memitem:aa2c4bf335b2dc1bff2495bf91e60e182"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemio_1_1details.html#aa2c4bf335b2dc1bff2495bf91e60e182">mio::details::compare_iterators_t</a> = decltype(std::declval&lt; const C &amp; &gt;().begin() !=std::declval&lt; const C &amp; &gt;().end())</td></tr>
 <tr class="separator:aa2c4bf335b2dc1bff2495bf91e60e182"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -223,7 +223,7 @@ Functions</h2></td></tr>
 <tr class="memitem:a6f839c34e501d06beb2eb760bda28762"><td class="memTemplParams" colspan="2">template&lt;class IOObj , class Tup , class... Ts&gt; </td></tr>
 <tr class="memitem:a6f839c34e501d06beb2eb760bda28762"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if_t&lt;(sizeof...(Ts)&lt; std::tuple_size&lt; Tup &gt;::value), IOResult&lt; Tup &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemio_1_1details.html#a6f839c34e501d06beb2eb760bda28762">mio::details::deserialize_tuple_element</a> (IOObj &amp;obj, Tag&lt; Tup &gt; tag, const IOResult&lt; Ts &gt; &amp;... rs)</td></tr>
 <tr class="separator:a6f839c34e501d06beb2eb760bda28762"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a458c46db8cb05bc6cc39ad1d0967bb34"><td class="memTemplParams" colspan="2">template&lt;class F , class... T, std::enable_if_t&lt; IsIOResult&lt; std::result_of_t&lt; F(T...)&gt;&gt;::value, void * &gt;  = nullptr&gt; </td></tr>
+<tr class="memitem:a458c46db8cb05bc6cc39ad1d0967bb34"><td class="memTemplParams" colspan="2">template&lt;class F , class... T, std::enable_if_t&lt; IsIOResult&lt; std::invoke_result_t&lt; F, T... &gt;&gt;::value, void * &gt;  = nullptr&gt; </td></tr>
 <tr class="memitem:a458c46db8cb05bc6cc39ad1d0967bb34"><td class="memTemplItemLeft" align="right" valign="top">ApplyResultT&lt; F, T... &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemio_1_1details.html#a458c46db8cb05bc6cc39ad1d0967bb34">mio::details::eval</a> (F f, const IOResult&lt; T &gt; &amp;... rs)</td></tr>
 <tr class="separator:a458c46db8cb05bc6cc39ad1d0967bb34"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a23604adfeac7ebc8418d741959e80906"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemio.html#a23604adfeac7ebc8418d741959e80906">mio::failure</a> (const IOStatus &amp;s)</td></tr>

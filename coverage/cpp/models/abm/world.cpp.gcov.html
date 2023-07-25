@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2023-07-17 14:03:32</td>
+            <td class="headerValue">2023-07-25 07:21:44</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">18</td>
@@ -271,7 +271,7 @@
 <a name="209"><span class="lineNum">     209 </span>            :     // Set up global migration rules for all agents</a>
 <a name="210"><span class="lineNum">     210 </span>            :     // check if a person has to go to the hospital, ICU or home due to quarantine/recovery</a>
 <a name="211"><span class="lineNum">     211 </span><span class="lineCov">         19 :     if (m_use_migration_rules) {</span></a>
-<a name="212"><span class="lineNum">     212 </span><span class="lineCov">        360 :         m_migration_rules = {</span></a>
+<a name="212"><span class="lineNum">     212 </span><span class="lineCov">         18 :         m_migration_rules = {</span></a>
 <a name="213"><span class="lineNum">     213 </span><span class="lineCov">         36 :             std::make_pair(&amp;get_buried, std::vector&lt;LocationType&gt;{LocationType::ICU, LocationType::Cemetery}),</span></a>
 <a name="214"><span class="lineNum">     214 </span><span class="lineCov">         36 :             std::make_pair(&amp;return_home_when_recovered,</span></a>
 <a name="215"><span class="lineNum">     215 </span><span class="lineCov">         36 :                            std::vector&lt;LocationType&gt;{</span></a>
@@ -283,10 +283,10 @@
 <a name="221"><span class="lineNum">     221 </span><span class="lineCov">         36 :             std::make_pair(&amp;go_to_work, std::vector&lt;LocationType&gt;{LocationType::Home, LocationType::Work}),</span></a>
 <a name="222"><span class="lineNum">     222 </span><span class="lineCov">         36 :             std::make_pair(&amp;go_to_shop, std::vector&lt;LocationType&gt;{LocationType::Home, LocationType::BasicsShop}),</span></a>
 <a name="223"><span class="lineNum">     223 </span><span class="lineCov">         36 :             std::make_pair(&amp;go_to_event, std::vector&lt;LocationType&gt;{LocationType::Home, LocationType::SocialEvent}),</span></a>
-<a name="224"><span class="lineNum">     224 </span><span class="lineCov">        216 :             std::make_pair(&amp;go_to_quarantine, std::vector&lt;LocationType&gt;{LocationType::Home})};</span></a>
+<a name="224"><span class="lineNum">     224 </span><span class="lineCov">        342 :             std::make_pair(&amp;go_to_quarantine, std::vector&lt;LocationType&gt;{LocationType::Home})};</span></a>
 <a name="225"><span class="lineNum">     225 </span>            :     }</a>
 <a name="226"><span class="lineNum">     226 </span>            :     else {</a>
-<a name="227"><span class="lineNum">     227 </span><span class="lineCov">         12 :         m_migration_rules = {</span></a>
+<a name="227"><span class="lineNum">     227 </span><span class="lineCov">          1 :         m_migration_rules = {</span></a>
 <a name="228"><span class="lineNum">     228 </span><span class="lineCov">          2 :             std::make_pair(&amp;get_buried, std::vector&lt;LocationType&gt;{LocationType::ICU, LocationType::Cemetery}),</span></a>
 <a name="229"><span class="lineNum">     229 </span><span class="lineCov">          2 :             std::make_pair(&amp;return_home_when_recovered,</span></a>
 <a name="230"><span class="lineNum">     230 </span><span class="lineCov">          2 :                            std::vector&lt;LocationType&gt;{</span></a>
@@ -294,7 +294,7 @@
 <a name="232"><span class="lineNum">     232 </span>            :                                LocationType::Hospital}), //assumption: if there is an ICU, there is also an hospital</a>
 <a name="233"><span class="lineNum">     233 </span><span class="lineCov">          2 :             std::make_pair(&amp;go_to_hospital, std::vector&lt;LocationType&gt;{LocationType::Home, LocationType::Hospital}),</span></a>
 <a name="234"><span class="lineNum">     234 </span><span class="lineCov">          2 :             std::make_pair(&amp;go_to_icu, std::vector&lt;LocationType&gt;{LocationType::Hospital, LocationType::ICU}),</span></a>
-<a name="235"><span class="lineNum">     235 </span><span class="lineCov">          8 :             std::make_pair(&amp;go_to_quarantine, std::vector&lt;LocationType&gt;{LocationType::Home})};</span></a>
+<a name="235"><span class="lineNum">     235 </span><span class="lineCov">         11 :             std::make_pair(&amp;go_to_quarantine, std::vector&lt;LocationType&gt;{LocationType::Home})};</span></a>
 <a name="236"><span class="lineNum">     236 </span>            :     }</a>
 <a name="237"><span class="lineNum">     237 </span><span class="lineCov">         19 : }</span></a>
 <a name="238"><span class="lineNum">     238 </span>            : </a>

@@ -114,9 +114,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aca4474458e1c3a27be584f444397e108"><td class="memTemplParams" colspan="2">template&lt;class SampleGraphFunction &gt; </td></tr>
 <tr class="memitem:aca4474458e1c3a27be584f444397e108"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classmio_1_1ParameterStudy.html#aecf3fa424e6b03e66219a57e223b10d1">SimulationGraph</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classmio_1_1ParameterStudy.html#aca4474458e1c3a27be584f444397e108">run</a> (SampleGraphFunction sample_graph)</td></tr>
 <tr class="separator:aca4474458e1c3a27be584f444397e108"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a789993b2fba9816506c99f1a62a3fe89"><td class="memTemplParams" colspan="2">template&lt;class SampleGraphFunction , class HandleSimulationResultFunction &gt; </td></tr>
-<tr class="memitem:a789993b2fba9816506c99f1a62a3fe89"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; std::result_of_t&lt; HandleSimulationResultFunction(<a class="el" href="classmio_1_1ParameterStudy.html#aecf3fa424e6b03e66219a57e223b10d1">SimulationGraph</a>, size_t)&gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classmio_1_1ParameterStudy.html#a789993b2fba9816506c99f1a62a3fe89">run</a> (SampleGraphFunction sample_graph, HandleSimulationResultFunction result_processing_function)</td></tr>
-<tr class="separator:a789993b2fba9816506c99f1a62a3fe89"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4689c1a63802cd442f12f1ce17fcb036"><td class="memTemplParams" colspan="2">template&lt;class SampleGraphFunction , class HandleSimulationResultFunction &gt; </td></tr>
+<tr class="memitem:a4689c1a63802cd442f12f1ce17fcb036"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; std::invoke_result_t&lt; HandleSimulationResultFunction, <a class="el" href="classmio_1_1ParameterStudy.html#aecf3fa424e6b03e66219a57e223b10d1">SimulationGraph</a>, size_t &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classmio_1_1ParameterStudy.html#a4689c1a63802cd442f12f1ce17fcb036">run</a> (SampleGraphFunction sample_graph, HandleSimulationResultFunction result_processing_function)</td></tr>
+<tr class="separator:a4689c1a63802cd442f12f1ce17fcb036"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abbea6f600c2af118a0da2db40a4a6338"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1ParameterStudy.html#abbea6f600c2af118a0da2db40a4a6338">set_num_runs</a> (size_t num_runs)</td></tr>
 <tr class="separator:abbea6f600c2af118a0da2db40a4a6338"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aabc96a67d2a317db3e01f6e130ce5cca"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1ParameterStudy.html#aabc96a67d2a317db3e01f6e130ce5cca">set_t0</a> (double t0)</td></tr>
@@ -638,8 +638,8 @@ template&lt;class SampleGraphFunction &gt; </div>
 
 </div>
 </div>
-<a id="a789993b2fba9816506c99f1a62a3fe89"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a789993b2fba9816506c99f1a62a3fe89">&#9670;&nbsp;</a></span>run() <span class="overload">[2/2]</span></h2>
+<a id="a4689c1a63802cd442f12f1ce17fcb036"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4689c1a63802cd442f12f1ce17fcb036">&#9670;&nbsp;</a></span>run() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -649,7 +649,7 @@ template&lt;class S &gt; </div>
 template&lt;class SampleGraphFunction , class HandleSimulationResultFunction &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt;std::result_of_t&lt;HandleSimulationResultFunction(<a class="el" href="classmio_1_1ParameterStudy.html#aecf3fa424e6b03e66219a57e223b10d1">SimulationGraph</a>, size_t)&gt; &gt; <a class="el" href="classmio_1_1ParameterStudy.html">mio::ParameterStudy</a>&lt; S &gt;::run </td>
+          <td class="memname">std::vector&lt;std::invoke_result_t&lt;HandleSimulationResultFunction, <a class="el" href="classmio_1_1ParameterStudy.html#aecf3fa424e6b03e66219a57e223b10d1">SimulationGraph</a>, size_t&gt; &gt; <a class="el" href="classmio_1_1ParameterStudy.html">mio::ParameterStudy</a>&lt; S &gt;::run </td>
           <td>(</td>
           <td class="paramtype">SampleGraphFunction&#160;</td>
           <td class="paramname"><em>sample_graph</em>, </td>

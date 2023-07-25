@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2023-07-17 14:03:32</td>
+            <td class="headerValue">2023-07-25 07:21:44</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">83</td>
@@ -243,9 +243,9 @@
 <a name="181"><span class="lineNum">     181 </span>            :     /**</a>
 <a name="182"><span class="lineNum">     182 </span>            :      * @brief range of nodes</a>
 <a name="183"><span class="lineNum">     183 </span>            :      */</a>
-<a name="184"><span class="lineNum">     184 </span><span class="lineCov">        800 :     auto nodes()</span></a>
+<a name="184"><span class="lineNum">     184 </span><span class="lineCov">        768 :     auto nodes()</span></a>
 <a name="185"><span class="lineNum">     185 </span>            :     {</a>
-<a name="186"><span class="lineNum">     186 </span><span class="lineCov">        800 :         return make_range(begin(m_nodes), end(m_nodes));</span></a>
+<a name="186"><span class="lineNum">     186 </span><span class="lineCov">        768 :         return make_range(begin(m_nodes), end(m_nodes));</span></a>
 <a name="187"><span class="lineNum">     187 </span>            :     }</a>
 <a name="188"><span class="lineNum">     188 </span>            : </a>
 <a name="189"><span class="lineNum">     189 </span>            :     /**</a>
@@ -259,9 +259,9 @@
 <a name="197"><span class="lineNum">     197 </span>            :     /**</a>
 <a name="198"><span class="lineNum">     198 </span>            :      * @brief range of edges</a>
 <a name="199"><span class="lineNum">     199 </span>            :      */</a>
-<a name="200"><span class="lineNum">     200 </span><span class="lineCov">        198 :     auto edges()</span></a>
+<a name="200"><span class="lineNum">     200 </span><span class="lineCov">        191 :     auto edges()</span></a>
 <a name="201"><span class="lineNum">     201 </span>            :     {</a>
-<a name="202"><span class="lineNum">     202 </span><span class="lineCov">        198 :         return make_range(begin(m_edges), end(m_edges));</span></a>
+<a name="202"><span class="lineNum">     202 </span><span class="lineCov">        191 :         return make_range(begin(m_edges), end(m_edges));</span></a>
 <a name="203"><span class="lineNum">     203 </span>            :     }</a>
 <a name="204"><span class="lineNum">     204 </span>            : </a>
 <a name="205"><span class="lineNum">     205 </span>            :     /**</a>
@@ -430,8 +430,8 @@
 <a name="368"><span class="lineNum">     368 </span><span class="lineCov">         28 :             for (auto age = AgeGroup(0); age &lt; populations.template size&lt;mio::AgeGroup&gt;(); ++age) {</span></a>
 <a name="369"><span class="lineNum">     369 </span><span class="lineCov">        144 :                 for (auto compartment : migrating_compartments) {</span></a>
 <a name="370"><span class="lineNum">     370 </span><span class="lineCov">        120 :                     auto coeff_index = populations.get_flat_index({age, compartment});</span></a>
-<a name="371"><span class="lineNum">     371 </span><span class="lineCov">        240 :                     mobility_coeffs[size_t(ContactLocation::Work)].get_baseline()[coeff_index] =</span></a>
-<a name="372"><span class="lineNum">     372 </span><span class="lineCov">        240 :                         commuter_coeff_ij * commuting_weights[size_t(age)];</span></a>
+<a name="371"><span class="lineNum">     371 </span><span class="lineCov">        120 :                     mobility_coeffs[size_t(ContactLocation::Work)].get_baseline()[coeff_index] =</span></a>
+<a name="372"><span class="lineNum">     372 </span><span class="lineCov">        120 :                         commuter_coeff_ij * commuting_weights[size_t(age)];</span></a>
 <a name="373"><span class="lineNum">     373 </span>            :                 }</a>
 <a name="374"><span class="lineNum">     374 </span>            :             }</a>
 <a name="375"><span class="lineNum">     375 </span>            :             //others</a>

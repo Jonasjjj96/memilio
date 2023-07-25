@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2023-07-17 14:03:32</td>
+            <td class="headerValue">2023-07-25 07:21:44</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">12</td>
@@ -190,7 +190,7 @@
 <a name="128"><span class="lineNum">     128 </span>            :      * @tparam HandleSimulationResultFunction Callable type, accepts instance of SimulationGraph and an index of type size_t.</a>
 <a name="129"><span class="lineNum">     129 </span>            :      */</a>
 <a name="130"><span class="lineNum">     130 </span>            :     template &lt;class SampleGraphFunction, class HandleSimulationResultFunction&gt;</a>
-<a name="131"><span class="lineNum">     131 </span>            :     std::vector&lt;std::result_of_t&lt;HandleSimulationResultFunction(SimulationGraph, size_t)&gt;&gt;</a>
+<a name="131"><span class="lineNum">     131 </span>            :     std::vector&lt;std::invoke_result_t&lt;HandleSimulationResultFunction, SimulationGraph, size_t&gt;&gt;</a>
 <a name="132"><span class="lineNum">     132 </span><span class="lineCov">          2 :     run(SampleGraphFunction sample_graph, HandleSimulationResultFunction result_processing_function)</span></a>
 <a name="133"><span class="lineNum">     133 </span>            :     {</a>
 <a name="134"><span class="lineNum">     134 </span>            :         int num_procs, rank;</a>
@@ -206,7 +206,7 @@
 <a name="144"><span class="lineNum">     144 </span><span class="lineCov">          2 :         auto start_run_idx = std::accumulate(run_distribution.begin(), run_distribution.begin() + size_t(rank), size_t(0));</span></a>
 <a name="145"><span class="lineNum">     145 </span><span class="lineCov">          2 :         auto end_run_idx = start_run_idx + run_distribution[size_t(rank)];</span></a>
 <a name="146"><span class="lineNum">     146 </span>            : </a>
-<a name="147"><span class="lineNum">     147 </span><span class="lineCov">          2 :         std::vector&lt;std::result_of_t&lt;HandleSimulationResultFunction(SimulationGraph, size_t)&gt;&gt; ensemble_result;</span></a>
+<a name="147"><span class="lineNum">     147 </span><span class="lineCov">          2 :         std::vector&lt;std::invoke_result_t&lt;HandleSimulationResultFunction, SimulationGraph, size_t&gt;&gt; ensemble_result;</span></a>
 <a name="148"><span class="lineNum">     148 </span><span class="lineCov">          2 :         ensemble_result.reserve(m_num_runs);</span></a>
 <a name="149"><span class="lineNum">     149 </span>            : </a>
 <a name="150"><span class="lineNum">     150 </span><span class="lineCov">          8 :         for (size_t run_idx = start_run_idx; run_idx &lt; end_run_idx; run_idx++) {</span></a>

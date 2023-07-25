@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2023-07-17 14:03:32</td>
+            <td class="headerValue">2023-07-25 07:21:44</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">15</td>
@@ -301,8 +301,8 @@
 <a name="239"><span class="lineNum">     239 </span><span class="lineCov">       3552 :             dydt[ISyNCi] = (1 - params.get&lt;RecoveredPerInfectedNoSymptoms&gt;()[i]) * rateINS * y[INSNCi] -</span></a>
 <a name="240"><span class="lineNum">     240 </span><span class="lineCov">       1776 :                            (y[ISyNCi] / params.get&lt;TimeInfectedSymptoms&gt;()[i]);</span></a>
 <a name="241"><span class="lineNum">     241 </span>            : </a>
-<a name="242"><span class="lineNum">     242 </span><span class="lineCov">       1776 :             dydt[ISevNi] = params.get&lt;SeverePerInfectedSymptoms&gt;()[i] / params.get&lt;TimeInfectedSymptoms&gt;()[i] *</span></a>
-<a name="243"><span class="lineNum">     243 </span><span class="lineCov">       3552 :                                (y[ISyNi] + y[ISyNCi]) -</span></a>
+<a name="242"><span class="lineNum">     242 </span><span class="lineCov">       3552 :             dydt[ISevNi] = params.get&lt;SeverePerInfectedSymptoms&gt;()[i] / params.get&lt;TimeInfectedSymptoms&gt;()[i] *</span></a>
+<a name="243"><span class="lineNum">     243 </span><span class="lineCov">       1776 :                                (y[ISyNi] + y[ISyNCi]) -</span></a>
 <a name="244"><span class="lineNum">     244 </span><span class="lineCov">       1776 :                            (1 / params.get&lt;TimeInfectedSevere&gt;()[i]) * y[ISevNi];</span></a>
 <a name="245"><span class="lineNum">     245 </span><span class="lineCov">       1776 :             dydt[ICrNi] = -y[ICrNi] / params.get&lt;TimeInfectedCritical&gt;()[i];</span></a>
 <a name="246"><span class="lineNum">     246 </span>            :             // add flow from hosp to icu according to potentially adjusted probability due to ICU limits</a>
@@ -313,18 +313,18 @@
 <a name="251"><span class="lineNum">     251 </span><span class="lineCov">       1776 :             dydt[EPIi] -= rateE * y[EPIi]; // only exchange of E and InfectedNoSymptoms done here</span></a>
 <a name="252"><span class="lineNum">     252 </span><span class="lineCov">       1776 :             dydt[INSPIi]  = rateE * y[EPIi] - (rateINS / reducTimeInfectedMild) * y[INSPIi];</span></a>
 <a name="253"><span class="lineNum">     253 </span><span class="lineCov">       1776 :             dydt[INSPICi] = -(rateINS / reducTimeInfectedMild) * y[INSPICi];</span></a>
-<a name="254"><span class="lineNum">     254 </span><span class="lineCov">       8880 :             dydt[ISyPIi]  = (reducInfectedSymptomsPartialImmunity / reducExposedPartialImmunity) *</span></a>
+<a name="254"><span class="lineNum">     254 </span><span class="lineCov">       1776 :             dydt[ISyPIi]  = (reducInfectedSymptomsPartialImmunity / reducExposedPartialImmunity) *</span></a>
 <a name="255"><span class="lineNum">     255 </span><span class="lineCov">       1776 :                                (1 - params.get&lt;RecoveredPerInfectedNoSymptoms&gt;()[i]) *</span></a>
-<a name="256"><span class="lineNum">     256 </span><span class="lineCov">       3552 :                                (rateINS / reducTimeInfectedMild) * y[INSPIi] -</span></a>
+<a name="256"><span class="lineNum">     256 </span><span class="lineCov">       1776 :                                (rateINS / reducTimeInfectedMild) * y[INSPIi] -</span></a>
 <a name="257"><span class="lineNum">     257 </span><span class="lineCov">       1776 :                            (y[ISyPIi] / (params.get&lt;TimeInfectedSymptoms&gt;()[i] * reducTimeInfectedMild));</span></a>
-<a name="258"><span class="lineNum">     258 </span><span class="lineCov">       8880 :             dydt[ISyPICi] = (reducInfectedSymptomsPartialImmunity / reducExposedPartialImmunity) *</span></a>
+<a name="258"><span class="lineNum">     258 </span><span class="lineCov">       1776 :             dydt[ISyPICi] = (reducInfectedSymptomsPartialImmunity / reducExposedPartialImmunity) *</span></a>
 <a name="259"><span class="lineNum">     259 </span><span class="lineCov">       1776 :                                 (1 - params.get&lt;RecoveredPerInfectedNoSymptoms&gt;()[i]) *</span></a>
-<a name="260"><span class="lineNum">     260 </span><span class="lineCov">       3552 :                                 (rateINS / reducTimeInfectedMild) * y[INSPICi] -</span></a>
+<a name="260"><span class="lineNum">     260 </span><span class="lineCov">       1776 :                                 (rateINS / reducTimeInfectedMild) * y[INSPICi] -</span></a>
 <a name="261"><span class="lineNum">     261 </span><span class="lineCov">       1776 :                             (y[ISyPICi] / (params.get&lt;TimeInfectedSymptoms&gt;()[i] * reducTimeInfectedMild));</span></a>
-<a name="262"><span class="lineNum">     262 </span><span class="lineCov">       1776 :             dydt[ISevPIi] = reducInfectedSevereCriticalDeadPartialImmunity / reducInfectedSymptomsPartialImmunity *</span></a>
+<a name="262"><span class="lineNum">     262 </span><span class="lineCov">       3552 :             dydt[ISevPIi] = reducInfectedSevereCriticalDeadPartialImmunity / reducInfectedSymptomsPartialImmunity *</span></a>
 <a name="263"><span class="lineNum">     263 </span><span class="lineCov">       1776 :                                 params.get&lt;SeverePerInfectedSymptoms&gt;()[i] /</span></a>
 <a name="264"><span class="lineNum">     264 </span><span class="lineCov">       1776 :                                 (params.get&lt;TimeInfectedSymptoms&gt;()[i] * reducTimeInfectedMild) *</span></a>
-<a name="265"><span class="lineNum">     265 </span><span class="lineCov">       3552 :                                 (y[ISyPIi] + y[ISyPICi]) -</span></a>
+<a name="265"><span class="lineNum">     265 </span><span class="lineCov">       1776 :                                 (y[ISyPIi] + y[ISyPICi]) -</span></a>
 <a name="266"><span class="lineNum">     266 </span><span class="lineCov">       1776 :                             (1 / params.get&lt;TimeInfectedSevere&gt;()[i]) * y[ISevPIi];</span></a>
 <a name="267"><span class="lineNum">     267 </span><span class="lineCov">       1776 :             dydt[ICrPIi] = -(1 / params.get&lt;TimeInfectedCritical&gt;()[i]) * y[ICrPIi];</span></a>
 <a name="268"><span class="lineNum">     268 </span>            :             // add flow from hosp to icu according to potentially adjusted probability due to ICU limits</a>
@@ -339,18 +339,18 @@
 <a name="277"><span class="lineNum">     277 </span><span class="lineCov">       1776 :             dydt[INSIIi]  = rateE * y[EIIi] - (rateINS / reducTimeInfectedMild) * y[INSIIi];</span></a>
 <a name="278"><span class="lineNum">     278 </span><span class="lineCov">       1776 :             dydt[INSIICi] = -(rateINS / reducTimeInfectedMild) * y[INSIICi];</span></a>
 <a name="279"><span class="lineNum">     279 </span>            : </a>
-<a name="280"><span class="lineNum">     280 </span><span class="lineCov">       8880 :             dydt[ISyIIi] = (reducInfectedSymptomsImprovedImmunity / reducExposedImprovedImmunity) *</span></a>
+<a name="280"><span class="lineNum">     280 </span><span class="lineCov">       1776 :             dydt[ISyIIi] = (reducInfectedSymptomsImprovedImmunity / reducExposedImprovedImmunity) *</span></a>
 <a name="281"><span class="lineNum">     281 </span><span class="lineCov">       1776 :                                (1 - params.get&lt;RecoveredPerInfectedNoSymptoms&gt;()[i]) *</span></a>
-<a name="282"><span class="lineNum">     282 </span><span class="lineCov">       3552 :                                (rateINS / reducTimeInfectedMild) * y[INSIIi] -</span></a>
+<a name="282"><span class="lineNum">     282 </span><span class="lineCov">       1776 :                                (rateINS / reducTimeInfectedMild) * y[INSIIi] -</span></a>
 <a name="283"><span class="lineNum">     283 </span><span class="lineCov">       1776 :                            (1 / (params.get&lt;TimeInfectedSymptoms&gt;()[i] * reducTimeInfectedMild)) * y[ISyIIi];</span></a>
-<a name="284"><span class="lineNum">     284 </span><span class="lineCov">       8880 :             dydt[ISyIICi] = (reducInfectedSymptomsImprovedImmunity / reducExposedImprovedImmunity) *</span></a>
+<a name="284"><span class="lineNum">     284 </span><span class="lineCov">       1776 :             dydt[ISyIICi] = (reducInfectedSymptomsImprovedImmunity / reducExposedImprovedImmunity) *</span></a>
 <a name="285"><span class="lineNum">     285 </span><span class="lineCov">       1776 :                                 (1 - params.get&lt;RecoveredPerInfectedNoSymptoms&gt;()[i]) *</span></a>
-<a name="286"><span class="lineNum">     286 </span><span class="lineCov">       3552 :                                 (rateINS / reducTimeInfectedMild) * y[INSIICi] -</span></a>
+<a name="286"><span class="lineNum">     286 </span><span class="lineCov">       1776 :                                 (rateINS / reducTimeInfectedMild) * y[INSIICi] -</span></a>
 <a name="287"><span class="lineNum">     287 </span><span class="lineCov">       1776 :                             (1 / (params.get&lt;TimeInfectedSymptoms&gt;()[i] * reducTimeInfectedMild)) * y[ISyIICi];</span></a>
-<a name="288"><span class="lineNum">     288 </span><span class="lineCov">       1776 :             dydt[ISevIIi] = reducInfectedSevereCriticalDeadImprovedImmunity / reducInfectedSymptomsImprovedImmunity *</span></a>
+<a name="288"><span class="lineNum">     288 </span><span class="lineCov">       3552 :             dydt[ISevIIi] = reducInfectedSevereCriticalDeadImprovedImmunity / reducInfectedSymptomsImprovedImmunity *</span></a>
 <a name="289"><span class="lineNum">     289 </span><span class="lineCov">       1776 :                                 params.get&lt;SeverePerInfectedSymptoms&gt;()[i] /</span></a>
 <a name="290"><span class="lineNum">     290 </span><span class="lineCov">       1776 :                                 (params.get&lt;TimeInfectedSymptoms&gt;()[i] * reducTimeInfectedMild) *</span></a>
-<a name="291"><span class="lineNum">     291 </span><span class="lineCov">       3552 :                                 (y[ISyIIi] + y[ISyIICi]) -</span></a>
+<a name="291"><span class="lineNum">     291 </span><span class="lineCov">       1776 :                                 (y[ISyIIi] + y[ISyIICi]) -</span></a>
 <a name="292"><span class="lineNum">     292 </span><span class="lineCov">       1776 :                             (1 / params.get&lt;TimeInfectedSevere&gt;()[i]) * y[ISevIIi];</span></a>
 <a name="293"><span class="lineNum">     293 </span><span class="lineCov">       1776 :             dydt[ICrIIi] = -(1 / params.get&lt;TimeInfectedCritical&gt;()[i]) * y[ICrIIi];</span></a>
 <a name="294"><span class="lineNum">     294 </span>            :             // add flow from hosp to icu according to potentially adjusted probability due to ICU limits</a>
@@ -359,9 +359,9 @@
 <a name="297"><span class="lineNum">     297 </span><span class="lineCov">       3552 :                             params.get&lt;TimeInfectedSevere&gt;()[i] * y[ISevIIi];</span></a>
 <a name="298"><span class="lineNum">     298 </span>            : </a>
 <a name="299"><span class="lineNum">     299 </span>            :             // compute auxiliary compartment of all past infections</a>
-<a name="300"><span class="lineNum">     300 </span><span class="lineCov">       5328 :             dydt[ITi] =</span></a>
+<a name="300"><span class="lineNum">     300 </span><span class="lineCov">       1776 :             dydt[ITi] =</span></a>
 <a name="301"><span class="lineNum">     301 </span><span class="lineCov">       1776 :                 (1 / params.get&lt;TimeInfectedSymptoms&gt;()[i]) * (y[ISyNi] + y[ISyNCi]) +</span></a>
-<a name="302"><span class="lineNum">     302 </span><span class="lineCov">       3552 :                 (1 / (params.get&lt;TimeInfectedSymptoms&gt;()[i] * reducTimeInfectedMild)) * (y[ISyPIi] + y[ISyPICi]) +</span></a>
+<a name="302"><span class="lineNum">     302 </span><span class="lineCov">       1776 :                 (1 / (params.get&lt;TimeInfectedSymptoms&gt;()[i] * reducTimeInfectedMild)) * (y[ISyPIi] + y[ISyPICi]) +</span></a>
 <a name="303"><span class="lineNum">     303 </span><span class="lineCov">       1776 :                 (1 / (params.get&lt;TimeInfectedSymptoms&gt;()[i] * reducTimeInfectedMild)) * (y[ISyIIi] + y[ISyIICi]);</span></a>
 <a name="304"><span class="lineNum">     304 </span>            : </a>
 <a name="305"><span class="lineNum">     305 </span>            :             // recovered and deaths from all paths</a>
@@ -402,10 +402,10 @@
 <a name="340"><span class="lineNum">     340 </span><span class="lineCov">       3552 :                     params.get&lt;TimeInfectedCritical&gt;()[i] * y[ICrIIi];</span></a>
 <a name="341"><span class="lineNum">     341 </span>            : </a>
 <a name="342"><span class="lineNum">     342 </span><span class="lineCov">       1776 :             dydt[DNi]  = params.get&lt;DeathsPerCritical&gt;()[i] / params.get&lt;TimeInfectedCritical&gt;()[i] * y[ICrNi];</span></a>
-<a name="343"><span class="lineNum">     343 </span><span class="lineCov">       7104 :             dydt[DPIi] = reducInfectedSevereCriticalDeadPartialImmunity /</span></a>
+<a name="343"><span class="lineNum">     343 </span><span class="lineCov">       1776 :             dydt[DPIi] = reducInfectedSevereCriticalDeadPartialImmunity /</span></a>
 <a name="344"><span class="lineNum">     344 </span><span class="lineCov">       3552 :                          reducInfectedSevereCriticalDeadPartialImmunity * params.get&lt;DeathsPerCritical&gt;()[i] /</span></a>
 <a name="345"><span class="lineNum">     345 </span><span class="lineCov">       3552 :                          params.get&lt;TimeInfectedCritical&gt;()[i] * y[ICrPIi];</span></a>
-<a name="346"><span class="lineNum">     346 </span><span class="lineCov">       7104 :             dydt[DIIi] = reducInfectedSevereCriticalDeadImprovedImmunity /</span></a>
+<a name="346"><span class="lineNum">     346 </span><span class="lineCov">       1776 :             dydt[DIIi] = reducInfectedSevereCriticalDeadImprovedImmunity /</span></a>
 <a name="347"><span class="lineNum">     347 </span><span class="lineCov">       3552 :                          reducInfectedSevereCriticalDeadImprovedImmunity * params.get&lt;DeathsPerCritical&gt;()[i] /</span></a>
 <a name="348"><span class="lineNum">     348 </span><span class="lineCov">       3552 :                          params.get&lt;TimeInfectedCritical&gt;()[i] * y[ICrIIi];</span></a>
 <a name="349"><span class="lineNum">     349 </span>            :             // add potential, additional deaths due to ICU overflow</a>

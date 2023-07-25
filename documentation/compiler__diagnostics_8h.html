@@ -87,12 +87,10 @@ Namespaces</h2></td></tr>
 Macros</h2></td></tr>
 <tr class="memitem:adbe015fd400c68971ee59ab01d441cb2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="compiler__diagnostics_8h.html#adbe015fd400c68971ee59ab01d441cb2">GCC_CLANG_DIAGNOSTIC</a>(...)</td></tr>
 <tr class="separator:adbe015fd400c68971ee59ab01d441cb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad875f9ee1c26b7052efa488975651835"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="compiler__diagnostics_8h.html#ad875f9ee1c26b7052efa488975651835">IF_CONSTEXPR</a>(expr)</td></tr>
-<tr class="separator:ad875f9ee1c26b7052efa488975651835"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a222996f9b3656a6d4dbc4e9a57c72e2e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="compiler__diagnostics_8h.html#a222996f9b3656a6d4dbc4e9a57c72e2e">MSVC_WARNING_DISABLE_PUSH</a>(...)</td></tr>
 <tr class="separator:a222996f9b3656a6d4dbc4e9a57c72e2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab0626891d3a8e9833c6e70d3540cbd59"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="compiler__diagnostics_8h.html#ab0626891d3a8e9833c6e70d3540cbd59">MSVC_WARNING_POP</a></td></tr>
-<tr class="separator:ab0626891d3a8e9833c6e70d3540cbd59"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab1a582833b695bfecd10965e3b52e733"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="compiler__diagnostics_8h.html#ab1a582833b695bfecd10965e3b52e733">MSVC_WARNING_POP</a>()</td></tr>
+<tr class="separator:ab1a582833b695bfecd10965e3b52e733"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2117b58e19182dff91ad3558e650541d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="compiler__diagnostics_8h.html#a2117b58e19182dff91ad3558e650541d">QUOTE</a>(x)&#160;&#160;&#160;#x</td></tr>
 <tr class="separator:a2117b58e19182dff91ad3558e650541d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -122,28 +120,6 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ad875f9ee1c26b7052efa488975651835"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad875f9ee1c26b7052efa488975651835">&#9670;&nbsp;</a></span>IF_CONSTEXPR</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define IF_CONSTEXPR</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">expr</td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">    <a class="code" href="compiler__diagnostics_8h.html#a222996f9b3656a6d4dbc4e9a57c72e2e">MSVC_WARNING_DISABLE_PUSH</a>(4127)                                                                                    \</div>
-<div class="line">    if (expr)                                                                                                          \</div>
-<div class="line">    MSVC_WARNING_POP</div>
-<div class="ttc" id="acompiler__diagnostics_8h_html_a222996f9b3656a6d4dbc4e9a57c72e2e"><div class="ttname"><a href="compiler__diagnostics_8h.html#a222996f9b3656a6d4dbc4e9a57c72e2e">MSVC_WARNING_DISABLE_PUSH</a></div><div class="ttdeci">#define MSVC_WARNING_DISABLE_PUSH(...)</div><div class="ttdef"><b>Definition:</b> compiler_diagnostics.h:41</div></div>
-</div><!-- fragment -->
-</div>
-</div>
 <a id="a222996f9b3656a6d4dbc4e9a57c72e2e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a222996f9b3656a6d4dbc4e9a57c72e2e">&#9670;&nbsp;</a></span>MSVC_WARNING_DISABLE_PUSH</h2>
 
@@ -162,14 +138,17 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ab0626891d3a8e9833c6e70d3540cbd59"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab0626891d3a8e9833c6e70d3540cbd59">&#9670;&nbsp;</a></span>MSVC_WARNING_POP</h2>
+<a id="ab1a582833b695bfecd10965e3b52e733"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab1a582833b695bfecd10965e3b52e733">&#9670;&nbsp;</a></span>MSVC_WARNING_POP</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">#define MSVC_WARNING_POP</td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
