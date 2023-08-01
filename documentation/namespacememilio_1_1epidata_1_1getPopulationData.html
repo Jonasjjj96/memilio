@@ -75,50 +75,134 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a36ca837c1032a6636be1b2b6c92e7e57"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacememilio_1_1epidata_1_1getPopulationData.html#a36ca837c1032a6636be1b2b6c92e7e57">get_new_counties</a> (data)</td></tr>
-<tr class="memdesc:a36ca837c1032a6636be1b2b6c92e7e57"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates 7 new counties that were formed since 2011 and deletes old counties.  <a href="namespacememilio_1_1epidata_1_1getPopulationData.html#a36ca837c1032a6636be1b2b6c92e7e57">More...</a><br /></td></tr>
-<tr class="separator:a36ca837c1032a6636be1b2b6c92e7e57"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad1e91cf8f26dfe86a57cc20635d9b61b"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacememilio_1_1epidata_1_1getPopulationData.html#ad1e91cf8f26dfe86a57cc20635d9b61b">get_population_data</a> (read_data=dd.defaultDict['read_data'], file_format=dd.defaultDict['file_format'], out_folder=dd.defaultDict['out_folder'], no_raw=dd.defaultDict['no_raw'], split_gender=False, merge_eisenach=True)</td></tr>
-<tr class="memdesc:ad1e91cf8f26dfe86a57cc20635d9b61b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Download age-stratified population data for the German counties.  <a href="namespacememilio_1_1epidata_1_1getPopulationData.html#ad1e91cf8f26dfe86a57cc20635d9b61b">More...</a><br /></td></tr>
-<tr class="separator:ad1e91cf8f26dfe86a57cc20635d9b61b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a359cf1030239e770ed8b8b062da1eefc"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacememilio_1_1epidata_1_1getPopulationData.html#a359cf1030239e770ed8b8b062da1eefc">load_population_data</a> (out_folder=dd.defaultDict['out_folder'], read_data=dd.defaultDict['read_data'], no_raw=dd.defaultDict['no_raw'], file_format=dd.defaultDict['file_format'])</td></tr>
-<tr class="memdesc:a359cf1030239e770ed8b8b062da1eefc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load of county_table, zensus and reg_key files.  <a href="namespacememilio_1_1epidata_1_1getPopulationData.html#a359cf1030239e770ed8b8b062da1eefc">More...</a><br /></td></tr>
-<tr class="separator:a359cf1030239e770ed8b8b062da1eefc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a96f0f7f59f1f85f6be39df0b4dda66b4"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacememilio_1_1epidata_1_1getPopulationData.html#a96f0f7f59f1f85f6be39df0b4dda66b4">assign_population_data</a> (df_pop_raw, counties, age_cols, idCounty_idx)</td></tr>
+<tr class="memdesc:a96f0f7f59f1f85f6be39df0b4dda66b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Assigns population data of all counties of old dataframe in new created dataframe.  <a href="namespacememilio_1_1epidata_1_1getPopulationData.html#a96f0f7f59f1f85f6be39df0b4dda66b4">More...</a><br /></td></tr>
+<tr class="separator:a96f0f7f59f1f85f6be39df0b4dda66b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c4316be63f65819f980f453f1ef24bf"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacememilio_1_1epidata_1_1getPopulationData.html#a0c4316be63f65819f980f453f1ef24bf">export_population_dataframe</a> (df_pop, directory, file_format, merge_eisenach)</td></tr>
+<tr class="memdesc:a0c4316be63f65819f980f453f1ef24bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes population dataframe into directory with new column names and age groups.  <a href="namespacememilio_1_1epidata_1_1getPopulationData.html#a0c4316be63f65819f980f453f1ef24bf">More...</a><br /></td></tr>
+<tr class="separator:a0c4316be63f65819f980f453f1ef24bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f50c9908cd077878e92695eff9c2849"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacememilio_1_1epidata_1_1getPopulationData.html#a9f50c9908cd077878e92695eff9c2849">get_population_data</a> (read_data=dd.defaultDict['read_data'], file_format=dd.defaultDict['file_format'], out_folder=dd.defaultDict['out_folder'], no_raw=dd.defaultDict['no_raw'], merge_eisenach=True, username='', password='')</td></tr>
+<tr class="memdesc:a9f50c9908cd077878e92695eff9c2849"><td class="mdescLeft">&#160;</td><td class="mdescRight">Download age-stratified population data for the German counties.  <a href="namespacememilio_1_1epidata_1_1getPopulationData.html#a9f50c9908cd077878e92695eff9c2849">More...</a><br /></td></tr>
+<tr class="separator:a9f50c9908cd077878e92695eff9c2849"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9c78642cd90d33be2bff3e1f842ecaf2"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacememilio_1_1epidata_1_1getPopulationData.html#a9c78642cd90d33be2bff3e1f842ecaf2">main</a> ()</td></tr>
 <tr class="memdesc:a9c78642cd90d33be2bff3e1f842ecaf2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Main program entry.  <a href="namespacememilio_1_1epidata_1_1getPopulationData.html#a9c78642cd90d33be2bff3e1f842ecaf2">More...</a><br /></td></tr>
 <tr class="separator:a9c78642cd90d33be2bff3e1f842ecaf2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e312f4b04cc3f72953d6bef99e797ef"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacememilio_1_1epidata_1_1getPopulationData.html#a0e312f4b04cc3f72953d6bef99e797ef">read_population_data</a> (username, password, read_data, directory)</td></tr>
+<tr class="memdesc:a0e312f4b04cc3f72953d6bef99e797ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads Population data either from regionalstatistik.de or from directory.  <a href="namespacememilio_1_1epidata_1_1getPopulationData.html#a0e312f4b04cc3f72953d6bef99e797ef">More...</a><br /></td></tr>
+<tr class="separator:a0e312f4b04cc3f72953d6bef99e797ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3788e37bd5d5adcec9958d6e780769d1"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacememilio_1_1epidata_1_1getPopulationData.html#a3788e37bd5d5adcec9958d6e780769d1">test_total_population</a> (df_pop, age_cols)</td></tr>
+<tr class="memdesc:a3788e37bd5d5adcec9958d6e780769d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tests if total population matches expectation.  <a href="namespacememilio_1_1epidata_1_1getPopulationData.html#a3788e37bd5d5adcec9958d6e780769d1">More...</a><br /></td></tr>
+<tr class="separator:a3788e37bd5d5adcec9958d6e780769d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a36ca837c1032a6636be1b2b6c92e7e57"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a36ca837c1032a6636be1b2b6c92e7e57">&#9670;&nbsp;</a></span>get_new_counties()</h2>
+<a id="a96f0f7f59f1f85f6be39df0b4dda66b4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a96f0f7f59f1f85f6be39df0b4dda66b4">&#9670;&nbsp;</a></span>assign_population_data()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">def memilio.epidata.getPopulationData.get_new_counties </td>
+          <td class="memname">def memilio.epidata.getPopulationData.assign_population_data </td>
           <td>(</td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>data</em></td><td>)</td>
+          <td class="paramname"><em>df_pop_raw</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>counties</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>age_cols</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>idCounty_idx</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Creates 7 new counties that were formed since 2011 and deletes old counties. </p>
-<p>Downloaded data is from 2011. However, new counties have been defined. Thus, the new ones have to be added, the data has to be calculated and the old counties have to be deleted.</p>
+<p>Assigns population data of all counties of old dataframe in new created dataframe. </p>
+<p>In df_pop_raw there might be additional information like federal states, governing regions etc. which is not necessary for the dataframe. Also checks for incomplete data. <br  />
+</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">data_temp</td><td>Pandas dataframe </td></tr>
+    <tr><td class="paramname">df_pop_raw</td><td>Raw Population DataFrame read from regionalstatistik.de </td></tr>
+    <tr><td class="paramname">counties</td><td>List of counties to be assigned in new DataFrame </td></tr>
+    <tr><td class="paramname">age_cols</td><td>Age groups in old DataFrame </td></tr>
+    <tr><td class="paramname">idCountyidx</td><td>indexes in old DataFrame where data of corresponding county starts </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Changed data </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>new DataFrame </dd></dl>
 
 </div>
 </div>
-<a id="ad1e91cf8f26dfe86a57cc20635d9b61b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad1e91cf8f26dfe86a57cc20635d9b61b">&#9670;&nbsp;</a></span>get_population_data()</h2>
+<a id="a0c4316be63f65819f980f453f1ef24bf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c4316be63f65819f980f453f1ef24bf">&#9670;&nbsp;</a></span>export_population_dataframe()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def memilio.epidata.getPopulationData.export_population_dataframe </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>df_pop</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>directory</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>file_format</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>merge_eisenach</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Writes population dataframe into directory with new column names and age groups. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">df_pop</td><td>Population data DataFrame to be exported </td></tr>
+    <tr><td class="paramname">directory</td><td>Directory where data is written to. </td></tr>
+    <tr><td class="paramname">file_format</td><td>File format which is used for writing the data. </td></tr>
+    <tr><td class="paramname">merge_eisenach</td><td>Defines whether the counties 'Wartburgkreis' and 'Eisenach' are listed separately or combined as one entity 'Wartburgkreis'. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>exported DataFrame </dd></dl>
+
+</div>
+</div>
+<a id="a9f50c9908cd077878e92695eff9c2849"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9f50c9908cd077878e92695eff9c2849">&#9670;&nbsp;</a></span>get_population_data()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -151,13 +235,19 @@ Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>split_gender</em> = <code>False</code>, </td>
+          <td class="paramname"><em>merge_eisenach</em> = <code>True</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>merge_eisenach</em> = <code>True</code>&#160;</td>
+          <td class="paramname"><em>username</em> = <code>''</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>password</em> = <code>''</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -168,83 +258,24 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Download age-stratified population data for the German counties. </p>
-<p>There are two different data sources that can be transformed in a simple data file with age-resolved information per county and on which our other tools can continue to operate on.</p>
-<p>1.) Official 'Bevölkerungsfortschreibung' 12411-02-03-4: 'Bevölkerung nach Geschlecht und Altersgruppen (17)' of regionalstatistik.de. ATTENTION: The raw file cannot be downloaded automatically by our scripts without an Genesis Online account. In order to work on this dataset, please manually download it from:</p>
+<p>The data we use is: Official 'Bevölkerungsfortschreibung' 12411-02-03-4: 'Bevölkerung nach Geschlecht und Altersgruppen (17)' of regionalstatistik.de. ATTENTION: The raw file cannot be downloaded automatically by our scripts without an Genesis Online account. In order to work on this dataset, please enter your username and password or manually download it from:</p>
 <p><a href="https://www.regionalstatistik.de/genesis/online">https://www.regionalstatistik.de/genesis/online</a> -&gt; "1: Gebiet, Bevölkerung,
     Arbeitsmarkt, Wahlen" -&gt; "12: Bevölkerung" -&gt; "12411 Fortschreibung des
     Bevölkerungsstandes" -&gt; "12411-02-03-4: Bevölkerung nach Geschlecht und Altersgruppen (17) - Stichtag 31.12. - regionale Tiefe: Kreise und krfr. Städte".</p>
-<p>Download the xlsx file and put it under dd.defaultDict['out_folder'], this normally is Memilio/data/pydata/Germany. The folders 'pydata/Germany' have to be created if they do not exist yet. Then this script can be run. TODO: The following parameters have no effect for this source.</p>
-<p>2.) Combination of data from Federal Statistical Office of Germany and Zensus2011 to compute very simple approximations of age-stratified number of inhabitants per county. Population from the Zensus data of all age groups is scaled to the total population of our more recent migration data by a factor which represents the relative increase/decrease in population size between 2011 and 2019 for each county" This data can either be downloaded automatically or read from "out_folder"/Germany/ if it was downloaded before.</p>
+<p>Download the xlsx or csv file and put it under dd.defaultDict['out_folder'], this normally is Memilio/data/pydata/Germany. The folders 'pydata/Germany' have to be created if they do not exist yet. Then this script can be run.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">read_data</td><td>False or True. Defines if data is read from file or downloaded. Default defined in <a class="el" href="namespacememilio_1_1epidata_1_1defaultDict.html">defaultDict</a>. </td></tr>
     <tr><td class="paramname">file_format</td><td>File format which is used for writing the data. Default defined in <a class="el" href="namespacememilio_1_1epidata_1_1defaultDict.html">defaultDict</a>. </td></tr>
     <tr><td class="paramname">out_folder</td><td>Path to folder where data is written in folder out_folder/Germany. Default defined in <a class="el" href="namespacememilio_1_1epidata_1_1defaultDict.html">defaultDict</a>. </td></tr>
-    <tr><td class="paramname">no_raw</td><td>True or False. Defines if unchanged raw data is written or not. Default defined in <a class="el" href="namespacememilio_1_1epidata_1_1defaultDict.html">defaultDict</a>. </td></tr>
-    <tr><td class="paramname">split_gender</td><td>[Default: False] or True. Defines whether data is splitted by gender </td></tr>
+    <tr><td class="paramname">no_raw</td><td>True or False. Defines if unchanged raw data is written or not. Default defined in <a class="el" href="namespacememilio_1_1epidata_1_1defaultDict.html">defaultDict</a>. Currently not used. </td></tr>
     <tr><td class="paramname">merge_eisenach</td><td>[Default: True] or False. Defines whether the counties 'Wartburgkreis' and 'Eisenach' are listed separately or combined as one entity 'Wartburgkreis'. </td></tr>
+    <tr><td class="paramname">username</td><td>Username to sign in at regionalstatistik.de. </td></tr>
+    <tr><td class="paramname">password</td><td>Password to sign in at regionalstatistik.de. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>DataFrame with adjusted population data for all ages to current level. </dd></dl>
-
-</div>
-</div>
-<a id="a359cf1030239e770ed8b8b062da1eefc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a359cf1030239e770ed8b8b062da1eefc">&#9670;&nbsp;</a></span>load_population_data()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">def memilio.epidata.getPopulationData.load_population_data </td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>out_folder</em> = <code>dd.defaultDict['out_folder']</code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>read_data</em> = <code>dd.defaultDict['read_data']</code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>no_raw</em> = <code>dd.defaultDict['no_raw']</code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>file_format</em> = <code>dd.defaultDict['file_format']</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Load of county_table, zensus and reg_key files. </p>
-<p>Data is downloaded from the following sources</p><ul>
-<li>Federal Statistical Office of Germany (Destatis/Genesis-Online), current data for population per county [stored in "county_table"]</li>
-<li>Zensus2011 data with additional information on regional keys [stored in "reg_key"]</li>
-<li>Zensus2011 data from opendata splitted for age and gender [stored in "zensus"]</li>
-</ul>
-<p>Data is either downloaded or read from "out_folder"/Germany/.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">out_folder</td><td>Path to folder where data is written in folder out_folder/Germany. Default defined in <a class="el" href="namespacememilio_1_1epidata_1_1defaultDict.html">defaultDict</a>. </td></tr>
-    <tr><td class="paramname">read_data</td><td>False or True. Defines if data is read from file or downloaded. Default defined in <a class="el" href="namespacememilio_1_1epidata_1_1defaultDict.html">defaultDict</a>. </td></tr>
-    <tr><td class="paramname">no_raw</td><td>True or False. Defines if unchanged raw data is written or not. Default defined in <a class="el" href="namespacememilio_1_1epidata_1_1defaultDict.html">defaultDict</a>. </td></tr>
-    <tr><td class="paramname">file_format</td><td>File format which is used for writing the data. Default defined in <a class="el" href="namespacememilio_1_1epidata_1_1defaultDict.html">defaultDict</a>. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Three dataframes of county_table, reg_key and zensus data. </dd></dl>
 
 </div>
 </div>
@@ -264,6 +295,96 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Main program entry. </p>
+
+</div>
+</div>
+<a id="a0e312f4b04cc3f72953d6bef99e797ef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0e312f4b04cc3f72953d6bef99e797ef">&#9670;&nbsp;</a></span>read_population_data()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def memilio.epidata.getPopulationData.read_population_data </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>username</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>password</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>read_data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>directory</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Reads Population data either from regionalstatistik.de or from directory. </p>
+<p>A request is made using the twill package. Username and Password are required to sign in on regionalstatistik.de. After the sign twill navigates to the file to download.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">username</td><td>Username to sign in at regionalstatistik.de. </td></tr>
+    <tr><td class="paramname">password</td><td>Password to sign in at regionalstatistik.de. </td></tr>
+    <tr><td class="paramname">read_data</td><td>False or True. Defines if data is read from file or downloaded. </td></tr>
+    <tr><td class="paramname">directory</td><td>Path to folder where data is read from. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>DataFrame </dd></dl>
+
+</div>
+</div>
+<a id="a3788e37bd5d5adcec9958d6e780769d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3788e37bd5d5adcec9958d6e780769d1">&#9670;&nbsp;</a></span>test_total_population()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def memilio.epidata.getPopulationData.test_total_population </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>df_pop</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>age_cols</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Tests if total population matches expectation. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">df_pop</td><td>Population Dataframe with all counties </td></tr>
+    <tr><td class="paramname">age_cols</td><td>All age groups in DataFrame </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

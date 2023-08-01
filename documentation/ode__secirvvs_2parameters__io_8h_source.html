@@ -439,15 +439,15 @@ $(function() {
 <div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="namespacemio.html#a80d7fd30c9669e05b537b2caedd82bb8">success</a>();</div>
 <div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;}</div>
 <div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160; </div>
-<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;IOResult&lt;std::vector&lt;std::vector&lt;double&gt;&gt;&gt; read_population_data(<span class="keyword">const</span> std::string&amp; path,</div>
+<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;IOResult&lt;std::vector&lt;std::vector&lt;double&gt;&gt;&gt; <a class="code" href="namespacememilio_1_1epidata_1_1getPopulationData.html#a0e312f4b04cc3f72953d6bef99e797ef">read_population_data</a>(<span class="keyword">const</span> std::string&amp; path,</div>
 <div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;                                                                <span class="keyword">const</span> std::vector&lt;int&gt;&amp; vregion);</div>
-<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;IOResult&lt;std::vector&lt;std::vector&lt;double&gt;&gt;&gt; read_population_data(<span class="keyword">const</span> std::vector&lt;PopulationDataEntry&gt;&amp; population_data,</div>
+<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;IOResult&lt;std::vector&lt;std::vector&lt;double&gt;&gt;&gt; <a class="code" href="namespacememilio_1_1epidata_1_1getPopulationData.html#a0e312f4b04cc3f72953d6bef99e797ef">read_population_data</a>(<span class="keyword">const</span> std::vector&lt;PopulationDataEntry&gt;&amp; population_data,</div>
 <div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;                                                                <span class="keyword">const</span> std::vector&lt;int&gt;&amp; vregion);</div>
 <div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> Model&gt;</div>
 <div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;IOResult&lt;void&gt; set_population_data(std::vector&lt;Model&gt;&amp; model, <span class="keyword">const</span> std::string&amp; path, <span class="keyword">const</span> std::string&amp; path_rki,</div>
 <div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;                                   <span class="keyword">const</span> std::vector&lt;int&gt;&amp; vregion, Date date)</div>
 <div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;{</div>
-<div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;    BOOST_OUTCOME_TRY(num_population, read_population_data(path, vregion));</div>
+<div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;    BOOST_OUTCOME_TRY(num_population, <a class="code" href="namespacememilio_1_1epidata_1_1getPopulationData.html#a0e312f4b04cc3f72953d6bef99e797ef">read_population_data</a>(path, vregion));</div>
 <div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160; </div>
 <div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;    <span class="keyword">auto</span> num_age_groups = ConfirmedCasesDataEntry::age_group_names.size();</div>
 <div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;    std::vector&lt;std::vector&lt;double&gt;&gt; num_rec(model.size(), std::vector&lt;double&gt;(num_age_groups, 0.0));</div>
@@ -627,7 +627,7 @@ $(function() {
 <div class="line"><a name="l00632"></a><span class="lineno">  632</span>&#160;    assert(model.size() == region.size());</div>
 <div class="line"><a name="l00633"></a><span class="lineno">  633</span>&#160; </div>
 <div class="line"><a name="l00634"></a><span class="lineno">  634</span>&#160;    BOOST_OUTCOME_TRY(rki_data, read_confirmed_cases_data(confirmed_cases_path));</div>
-<div class="line"><a name="l00635"></a><span class="lineno">  635</span>&#160;    BOOST_OUTCOME_TRY(population_data, read_population_data(population_data_path));</div>
+<div class="line"><a name="l00635"></a><span class="lineno">  635</span>&#160;    BOOST_OUTCOME_TRY(population_data, <a class="code" href="namespacememilio_1_1epidata_1_1getPopulationData.html#a0e312f4b04cc3f72953d6bef99e797ef">read_population_data</a>(population_data_path));</div>
 <div class="line"><a name="l00636"></a><span class="lineno">  636</span>&#160;    BOOST_OUTCOME_TRY(divi_data, read_divi_data(divi_data_path));</div>
 <div class="line"><a name="l00637"></a><span class="lineno">  637</span>&#160; </div>
 <div class="line"><a name="l00638"></a><span class="lineno">  638</span>&#160;    <span class="comment">/* functionality copy from set_confirmed_cases_data() here splitted in params */</span></div>
@@ -913,7 +913,7 @@ $(function() {
 <div class="line"><a name="l00918"></a><span class="lineno">  918</span>&#160;        }</div>
 <div class="line"><a name="l00919"></a><span class="lineno">  919</span>&#160; </div>
 <div class="line"><a name="l00920"></a><span class="lineno">  920</span>&#160;        <span class="comment">// read population basics</span></div>
-<div class="line"><a name="l00921"></a><span class="lineno">  921</span>&#160;        BOOST_OUTCOME_TRY(num_population, details::read_population_data(population_data, region));</div>
+<div class="line"><a name="l00921"></a><span class="lineno">  921</span>&#160;        BOOST_OUTCOME_TRY(num_population, <a class="code" href="namespacememilio_1_1epidata_1_1getPopulationData.html#a0e312f4b04cc3f72953d6bef99e797ef">details::read_population_data</a>(population_data, region));</div>
 <div class="line"><a name="l00922"></a><span class="lineno">  922</span>&#160; </div>
 <div class="line"><a name="l00923"></a><span class="lineno">  923</span>&#160;        std::vector&lt;std::vector&lt;double&gt;&gt; num_rec(model.size(), std::vector&lt;double&gt;(num_age_groups, 0.0));</div>
 <div class="line"><a name="l00924"></a><span class="lineno">  924</span>&#160;        BOOST_OUTCOME_TRY(details::read_confirmed_cases_data_fix_recovered(rki_data, region, date, num_rec, 14.));</div>
@@ -1302,6 +1302,7 @@ $(function() {
 <div class="ttc" id="alogging_8h_html"><div class="ttname"><a href="logging_8h.html">logging.h</a></div></div>
 <div class="ttc" id="ametapopulation__mobility__instant_8h_html"><div class="ttname"><a href="metapopulation__mobility__instant_8h.html">metapopulation_mobility_instant.h</a></div></div>
 <div class="ttc" id="amodels_2ode__secirvvs_2analyze__result_8h_html"><div class="ttname"><a href="models_2ode__secirvvs_2analyze__result_8h.html">analyze_result.h</a></div></div>
+<div class="ttc" id="anamespacememilio_1_1epidata_1_1getPopulationData_html_a0e312f4b04cc3f72953d6bef99e797ef"><div class="ttname"><a href="namespacememilio_1_1epidata_1_1getPopulationData.html#a0e312f4b04cc3f72953d6bef99e797ef">memilio.epidata.getPopulationData.read_population_data</a></div><div class="ttdeci">def read_population_data(username, password, read_data, directory)</div><div class="ttdoc">Reads Population data either from regionalstatistik.de or from directory.</div><div class="ttdef"><b>Definition:</b> getPopulationData.py:41</div></div>
 <div class="ttc" id="anamespacemio_1_1abm_html_ac9a874698e76d3706081b2642c5f4a5a"><div class="ttname"><a href="namespacemio_1_1abm.html#ac9a874698e76d3706081b2642c5f4a5a">mio::abm::AgeGroup</a></div><div class="ttdeci">AgeGroup</div><div class="ttdoc">age groups like RKI.</div><div class="ttdef"><b>Definition:</b> age.h:33</div></div>
 <div class="ttc" id="anamespacemio_1_1iseir_html_ab27b12ec16e03c1857925e3c24ff99e8a5dbc98dcc983a70728bd082d1a47546e"><div class="ttname"><a href="namespacemio_1_1iseir.html#ab27b12ec16e03c1857925e3c24ff99e8a5dbc98dcc983a70728bd082d1a47546e">mio::iseir::InfectionState::S</a></div><div class="ttdeci">@ S</div></div>
 <div class="ttc" id="anamespacemio_1_1osecirvvs_html_a429bf3ed03ff6928629f5d786b547023a00fcd3ee8c5bfa29f9bc0811ad1d92f6"><div class="ttname"><a href="namespacemio_1_1osecirvvs.html#a429bf3ed03ff6928629f5d786b547023a00fcd3ee8c5bfa29f9bc0811ad1d92f6">mio::osecirvvs::InfectionState::ExposedImprovedImmunity</a></div><div class="ttdeci">@ ExposedImprovedImmunity</div></div>

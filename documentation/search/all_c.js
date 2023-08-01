@@ -1,8 +1,7 @@
 var searchData=
 [
-  ['latencytime_797',['LatencyTime',['../structmio_1_1iseir_1_1LatencyTime.html',1,'mio::iseir']]],
-  ['linear_5finterpolation_798',['linear_interpolation',['../namespacemio.html#a46a8c32ccd44e57584abc88bf22eee11',1,'mio']]],
-  ['load_5fpopulation_5fdata_799',['load_population_data',['../namespacememilio_1_1epidata_1_1getPopulationData.html#a359cf1030239e770ed8b8b062da1eefc',1,'memilio::epidata::getPopulationData']]],
+  ['latencytime_798',['LatencyTime',['../structmio_1_1iseir_1_1LatencyTime.html',1,'mio::iseir']]],
+  ['linear_5finterpolation_799',['linear_interpolation',['../namespacemio.html#a46a8c32ccd44e57584abc88bf22eee11',1,'mio']]],
   ['localinfectionparameters_800',['LocalInfectionParameters',['../namespacemio_1_1abm.html#ad7e0564b161ef9374071f72ab1f15bdc',1,'mio::abm']]],
   ['location_801',['Location',['../classmio_1_1abm_1_1Location.html#a4c39a8584e8912ed1dd0da19569dd194',1,'mio::abm::Location::Location(LocationType loc_type, uint32_t loc_index, uint32_t num_cells=1)'],['../classmio_1_1abm_1_1Location.html#ac6195ae968e5ce9e811ba3ca58a6d6f8',1,'mio::abm::Location::Location(LocationId loc_id, uint32_t num_cells=1)'],['../classmio_1_1abm_1_1Location.html',1,'mio::abm::Location']]],
   ['location_2ecpp_802',['location.cpp',['../location_8cpp.html',1,'']]],

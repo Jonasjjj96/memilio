@@ -48,7 +48,7 @@ var searchData=
   ['allof_68',['AllOf',['../structmio_1_1details_1_1AllOf.html',1,'mio::details']]],
   ['allof_3c_20pred_20_3e_69',['AllOf&lt; Pred &gt;',['../structmio_1_1details_1_1AllOf_3_01Pred_01_4.html',1,'mio::details']]],
   ['allof_3c_20pred_2c_20head_2c_20tail_2e_2e_2e_20_3e_70',['AllOf&lt; Pred, Head, Tail... &gt;',['../structmio_1_1details_1_1AllOf_3_01Pred_00_01Head_00_01Tail_8_8_8_01_4.html',1,'mio::details']]],
-  ['analyze_5fresult_2ecpp_71',['analyze_result.cpp',['../models_2ode__secir_2analyze__result_8cpp.html',1,'(Global Namespace)'],['../memilio_2data_2analyze__result_8cpp.html',1,'(Global Namespace)'],['../models_2ode__secirvvs_2analyze__result_8cpp.html',1,'(Global Namespace)']]],
+  ['analyze_5fresult_2ecpp_71',['analyze_result.cpp',['../memilio_2data_2analyze__result_8cpp.html',1,'(Global Namespace)'],['../models_2ode__secir_2analyze__result_8cpp.html',1,'(Global Namespace)'],['../models_2ode__secirvvs_2analyze__result_8cpp.html',1,'(Global Namespace)']]],
   ['analyze_5fresult_2eh_72',['analyze_result.h',['../models_2ode__secir_2analyze__result_8h.html',1,'(Global Namespace)'],['../models_2ode__secirvvs_2analyze__result_8h.html',1,'(Global Namespace)'],['../memilio_2data_2analyze__result_8h.html',1,'(Global Namespace)']]],
   ['antigentest_73',['AntigenTest',['../structmio_1_1abm_1_1AntigenTest.html',1,'mio::abm']]],
   ['anyof_74',['AnyOf',['../structmio_1_1details_1_1AnyOf.html',1,'mio::details']]],
@@ -66,5 +66,6 @@ var searchData=
   ['applyresultt_86',['ApplyResultT',['../namespacemio_1_1details.html#a98c0eea24e7bbb725e78e8c7c6b22e8a',1,'mio::details']]],
   ['array_87',['array',['../classmio_1_1CustomIndexArray.html#a4f1b9fa82823a7b3cc03ed98392d65ac',1,'mio::CustomIndexArray::array()'],['../classmio_1_1CustomIndexArray.html#aebe5e9cd4508bacac528accda7394e25',1,'mio::CustomIndexArray::array() const']]],
   ['as_5farray_88',['as_array',['../classmio_1_1CustomIndexArray_1_1Slice.html#a77e34f758e73ab32d4c273ad083e9420',1,'mio::CustomIndexArray::Slice']]],
-  ['assign_5fgeographical_5fentities_89',['assign_geographical_entities',['../namespacememilio_1_1epidata_1_1getCommuterMobility.html#a40488a5a716c57f8516431281a39ac47',1,'memilio::epidata::getCommuterMobility']]]
+  ['assign_5fgeographical_5fentities_89',['assign_geographical_entities',['../namespacememilio_1_1epidata_1_1getCommuterMobility.html#a40488a5a716c57f8516431281a39ac47',1,'memilio::epidata::getCommuterMobility']]],
+  ['assign_5fpopulation_5fdata_90',['assign_population_data',['../namespacememilio_1_1epidata_1_1getPopulationData.html#a96f0f7f59f1f85f6be39df0b4dda66b4',1,'memilio::epidata::getPopulationData']]]
 ];
