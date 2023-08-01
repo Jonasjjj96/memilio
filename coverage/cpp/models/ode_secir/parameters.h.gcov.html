@@ -31,13 +31,13 @@
             <td class="headerValue">coverage.info</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntry">181</td>
+            <td class="headerCovTableEntry">178</td>
             <td class="headerCovTableEntry">214</td>
-            <td class="headerCovTableEntryMed">84.6 %</td>
+            <td class="headerCovTableEntryMed">83.2 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2023-08-01 09:44:30</td>
+            <td class="headerValue">2023-08-01 18:15:10</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">45</td>
@@ -415,9 +415,9 @@
 <a name="353"><span class="lineNum">     353 </span>            :     {</a>
 <a name="354"><span class="lineNum">     354 </span><span class="lineCov">         48 :     }</span></a>
 <a name="355"><span class="lineNum">     355 </span>            : </a>
-<a name="356"><span class="lineNum">     356 </span><span class="lineCov">       7746 :     AgeGroup get_num_groups() const</span></a>
+<a name="356"><span class="lineNum">     356 </span><span class="lineCov">       7372 :     AgeGroup get_num_groups() const</span></a>
 <a name="357"><span class="lineNum">     357 </span>            :     {</a>
-<a name="358"><span class="lineNum">     358 </span><span class="lineCov">       7746 :         return m_num_groups;</span></a>
+<a name="358"><span class="lineNum">     358 </span><span class="lineCov">       7372 :         return m_num_groups;</span></a>
 <a name="359"><span class="lineNum">     359 </span>            :     }</a>
 <a name="360"><span class="lineNum">     360 </span>            : </a>
 <a name="361"><span class="lineNum">     361 </span>            :     /**</a>
@@ -446,14 +446,14 @@
 <a name="384"><span class="lineNum">     384 </span>            :             }</a>
 <a name="385"><span class="lineNum">     385 </span>            : </a>
 <a name="386"><span class="lineNum">     386 </span><span class="lineCov">        105 :             if (2 * this-&gt;get&lt;SerialInterval&gt;()[i] &lt; this-&gt;get&lt;IncubationTime&gt;()[i] + 1.0) {</span></a>
-<a name="387"><span class="lineNum">     387 </span><span class="lineCov">         10 :                 log_warning(&quot;Constraint check: Parameter SerialInterval changed from {:.4f} to {:.4f}&quot;,</span></a>
-<a name="388"><span class="lineNum">     388 </span><span class="lineCov">         10 :                             this-&gt;get&lt;SerialInterval&gt;()[i], 0.5 * this-&gt;get&lt;IncubationTime&gt;()[i] + 0.5);</span></a>
-<a name="389"><span class="lineNum">     389 </span><span class="lineCov">          5 :                 this-&gt;get&lt;SerialInterval&gt;()[i] = 0.5 * this-&gt;get&lt;IncubationTime&gt;()[i] + 0.5;</span></a>
+<a name="387"><span class="lineNum">     387 </span><span class="lineNoCov">          0 :                 log_warning(&quot;Constraint check: Parameter SerialInterval changed from {:.4f} to {:.4f}&quot;,</span></a>
+<a name="388"><span class="lineNum">     388 </span><span class="lineNoCov">          0 :                             this-&gt;get&lt;SerialInterval&gt;()[i], 0.5 * this-&gt;get&lt;IncubationTime&gt;()[i] + 0.5);</span></a>
+<a name="389"><span class="lineNum">     389 </span><span class="lineNoCov">          0 :                 this-&gt;get&lt;SerialInterval&gt;()[i] = 0.5 * this-&gt;get&lt;IncubationTime&gt;()[i] + 0.5;</span></a>
 <a name="390"><span class="lineNum">     390 </span>            :             }</a>
-<a name="391"><span class="lineNum">     391 </span><span class="lineCov">        100 :             else if (this-&gt;get&lt;SerialInterval&gt;()[i] &gt; this-&gt;get&lt;IncubationTime&gt;()[i] - 0.5) {</span></a>
-<a name="392"><span class="lineNum">     392 </span><span class="lineCov">         32 :                 log_warning(&quot;Constraint check: Parameter SerialInterval changed from {:.4f} to {:.4f}&quot;,</span></a>
-<a name="393"><span class="lineNum">     393 </span><span class="lineCov">         32 :                             this-&gt;get&lt;SerialInterval&gt;()[i], this-&gt;get&lt;IncubationTime&gt;()[i] - 0.5);</span></a>
-<a name="394"><span class="lineNum">     394 </span><span class="lineCov">         16 :                 this-&gt;get&lt;SerialInterval&gt;()[i] = this-&gt;get&lt;IncubationTime&gt;()[i] - 0.5;</span></a>
+<a name="391"><span class="lineNum">     391 </span><span class="lineCov">        105 :             else if (this-&gt;get&lt;SerialInterval&gt;()[i] &gt; this-&gt;get&lt;IncubationTime&gt;()[i] - 0.5) {</span></a>
+<a name="392"><span class="lineNum">     392 </span><span class="lineCov">         24 :                 log_warning(&quot;Constraint check: Parameter SerialInterval changed from {:.4f} to {:.4f}&quot;,</span></a>
+<a name="393"><span class="lineNum">     393 </span><span class="lineCov">         24 :                             this-&gt;get&lt;SerialInterval&gt;()[i], this-&gt;get&lt;IncubationTime&gt;()[i] - 0.5);</span></a>
+<a name="394"><span class="lineNum">     394 </span><span class="lineCov">         12 :                 this-&gt;get&lt;SerialInterval&gt;()[i] = this-&gt;get&lt;IncubationTime&gt;()[i] - 0.5;</span></a>
 <a name="395"><span class="lineNum">     395 </span>            :             }</a>
 <a name="396"><span class="lineNum">     396 </span>            : </a>
 <a name="397"><span class="lineNum">     397 </span><span class="lineCov">        105 :             if (this-&gt;get&lt;TimeInfectedSymptoms&gt;()[i] &lt; 1.0) {</span></a>
