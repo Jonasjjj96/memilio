@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2023-08-03 15:06:30</td>
+            <td class="headerValue">2023-08-03 17:46:44</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">45</td>
@@ -415,9 +415,9 @@
 <a name="353"><span class="lineNum">     353 </span>            :     {</a>
 <a name="354"><span class="lineNum">     354 </span><span class="lineCov">         48 :     }</span></a>
 <a name="355"><span class="lineNum">     355 </span>            : </a>
-<a name="356"><span class="lineNum">     356 </span><span class="lineCov">    6043862 :     AgeGroup get_num_groups() const</span></a>
+<a name="356"><span class="lineNum">     356 </span><span class="lineCov">    4838102 :     AgeGroup get_num_groups() const</span></a>
 <a name="357"><span class="lineNum">     357 </span>            :     {</a>
-<a name="358"><span class="lineNum">     358 </span><span class="lineCov">    6043862 :         return m_num_groups;</span></a>
+<a name="358"><span class="lineNum">     358 </span><span class="lineCov">    4838102 :         return m_num_groups;</span></a>
 <a name="359"><span class="lineNum">     359 </span>            :     }</a>
 <a name="360"><span class="lineNum">     360 </span>            : </a>
 <a name="361"><span class="lineNum">     361 </span>            :     /**</a>
@@ -462,16 +462,16 @@
 <a name="400"><span class="lineNum">     400 </span>            :             }</a>
 <a name="401"><span class="lineNum">     401 </span>            : </a>
 <a name="402"><span class="lineNum">     402 </span><span class="lineCov">        120 :             if (2 * this-&gt;get&lt;SerialInterval&gt;()[i] &lt; this-&gt;get&lt;IncubationTime&gt;()[i] + tol_times) {</span></a>
-<a name="403"><span class="lineNum">     403 </span><span class="lineCov">          8 :                 log_warning(&quot;Constraint check: Parameter SerialInterval changed from {:.4f} to {:.4f}&quot;,</span></a>
-<a name="404"><span class="lineNum">     404 </span><span class="lineCov">          8 :                             this-&gt;get&lt;SerialInterval&gt;()[i], 0.5 * this-&gt;get&lt;IncubationTime&gt;()[i] + tol_times / 2);</span></a>
-<a name="405"><span class="lineNum">     405 </span><span class="lineCov">          4 :                 this-&gt;get&lt;SerialInterval&gt;()[i] = 0.5 * this-&gt;get&lt;IncubationTime&gt;()[i] + tol_times / 2;</span></a>
-<a name="406"><span class="lineNum">     406 </span><span class="lineCov">          4 :                 corrected                      = true;</span></a>
+<a name="403"><span class="lineNum">     403 </span><span class="lineCov">          2 :                 log_warning(&quot;Constraint check: Parameter SerialInterval changed from {:.4f} to {:.4f}&quot;,</span></a>
+<a name="404"><span class="lineNum">     404 </span><span class="lineCov">          2 :                             this-&gt;get&lt;SerialInterval&gt;()[i], 0.5 * this-&gt;get&lt;IncubationTime&gt;()[i] + tol_times / 2);</span></a>
+<a name="405"><span class="lineNum">     405 </span><span class="lineCov">          1 :                 this-&gt;get&lt;SerialInterval&gt;()[i] = 0.5 * this-&gt;get&lt;IncubationTime&gt;()[i] + tol_times / 2;</span></a>
+<a name="406"><span class="lineNum">     406 </span><span class="lineCov">          1 :                 corrected                      = true;</span></a>
 <a name="407"><span class="lineNum">     407 </span>            :             }</a>
-<a name="408"><span class="lineNum">     408 </span><span class="lineCov">        116 :             else if (this-&gt;get&lt;SerialInterval&gt;()[i] &gt; this-&gt;get&lt;IncubationTime&gt;()[i] - tol_times / 2) {</span></a>
-<a name="409"><span class="lineNum">     409 </span><span class="lineCov">          8 :                 log_warning(&quot;Constraint check: Parameter SerialInterval changed from {:.4f} to {:.4f}&quot;,</span></a>
-<a name="410"><span class="lineNum">     410 </span><span class="lineCov">          8 :                             this-&gt;get&lt;SerialInterval&gt;()[i], this-&gt;get&lt;IncubationTime&gt;()[i] - tol_times / 2);</span></a>
-<a name="411"><span class="lineNum">     411 </span><span class="lineCov">          4 :                 this-&gt;get&lt;SerialInterval&gt;()[i] = this-&gt;get&lt;IncubationTime&gt;()[i] - tol_times / 2;</span></a>
-<a name="412"><span class="lineNum">     412 </span><span class="lineCov">          4 :                 corrected                      = true;</span></a>
+<a name="408"><span class="lineNum">     408 </span><span class="lineCov">        119 :             else if (this-&gt;get&lt;SerialInterval&gt;()[i] &gt; this-&gt;get&lt;IncubationTime&gt;()[i] - tol_times / 2) {</span></a>
+<a name="409"><span class="lineNum">     409 </span><span class="lineCov">         12 :                 log_warning(&quot;Constraint check: Parameter SerialInterval changed from {:.4f} to {:.4f}&quot;,</span></a>
+<a name="410"><span class="lineNum">     410 </span><span class="lineCov">         12 :                             this-&gt;get&lt;SerialInterval&gt;()[i], this-&gt;get&lt;IncubationTime&gt;()[i] - tol_times / 2);</span></a>
+<a name="411"><span class="lineNum">     411 </span><span class="lineCov">          6 :                 this-&gt;get&lt;SerialInterval&gt;()[i] = this-&gt;get&lt;IncubationTime&gt;()[i] - tol_times / 2;</span></a>
+<a name="412"><span class="lineNum">     412 </span><span class="lineCov">          6 :                 corrected                      = true;</span></a>
 <a name="413"><span class="lineNum">     413 </span>            :             }</a>
 <a name="414"><span class="lineNum">     414 </span>            : </a>
 <a name="415"><span class="lineNum">     415 </span><span class="lineCov">        120 :             if (this-&gt;get&lt;TimeInfectedSymptoms&gt;()[i] &lt; tol_times) {</span></a>
