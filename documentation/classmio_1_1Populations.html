@@ -115,7 +115,7 @@ Public Types</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ad47a6b879c59df9552451f6eb9141fe2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1Populations.html#ad47a6b879c59df9552451f6eb9141fe2">apply_constraints</a> ()</td></tr>
-<tr class="memdesc:ad47a6b879c59df9552451f6eb9141fe2"><td class="mdescLeft">&#160;</td><td class="mdescRight">checks whether the population Parameters satisfy their corresponding constraints and applys them  <a href="classmio_1_1Populations.html#ad47a6b879c59df9552451f6eb9141fe2">More...</a><br /></td></tr>
+<tr class="memdesc:ad47a6b879c59df9552451f6eb9141fe2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether all compartments have non-negative values.  <a href="classmio_1_1Populations.html#ad47a6b879c59df9552451f6eb9141fe2">More...</a><br /></td></tr>
 <tr class="separator:ad47a6b879c59df9552451f6eb9141fe2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a05abaa77f45737d710f38b97069b654a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1Populations.html#a05abaa77f45737d710f38b97069b654a">check_constraints</a> () const</td></tr>
 <tr class="memdesc:a05abaa77f45737d710f38b97069b654a"><td class="mdescLeft">&#160;</td><td class="mdescRight">checks whether the population Parameters satisfy their corresponding constraints  <a href="classmio_1_1Populations.html#a05abaa77f45737d710f38b97069b654a">More...</a><br /></td></tr>
@@ -346,7 +346,11 @@ template&lt;class... Categories&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>checks whether the population Parameters satisfy their corresponding constraints and applys them </p>
+<p>Checks whether all compartments have non-negative values. </p>
+<p>This function can be used to prevent slighly negative function values in compartment sizes that came out due to roundoff errors if, e.g., population sizes were computed in a complex way.</p>
+<p>Attention: This function should be used with care. It is necessary for some test problems to run through quickly, but in a manual execution of an example, <a class="el" href="classmio_1_1Populations.html#a05abaa77f45737d710f38b97069b654a" title="checks whether the population Parameters satisfy their corresponding constraints">check_constraints()</a> may be preferred. Note that the <a class="el" href="classmio_1_1Populations.html#ad47a6b879c59df9552451f6eb9141fe2" title="Checks whether all compartments have non-negative values.">apply_constraints()</a> function can and will not set compartments to meaningful values in a sense of a particular scenario, it only sets negative values to zero.</p>
+<dl class="section return"><dt>Returns</dt><dd>Returns true if one ore more constraint were corrected, false otherwise. <br  />
+ </dd></dl>
 
 </div>
 </div>

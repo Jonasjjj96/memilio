@@ -93,7 +93,7 @@ Inheritance diagram for mio::oseir::Parameters:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ad372ad4873483274822941475774321e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1oseir_1_1Parameters.html#ad372ad4873483274822941475774321e">apply_constraints</a> ()</td></tr>
-<tr class="memdesc:ad372ad4873483274822941475774321e"><td class="mdescLeft">&#160;</td><td class="mdescRight">checks whether all <a class="el" href="classmio_1_1oseir_1_1Parameters.html" title="Parameters of an age-resolved SECIR/SECIHURD model.">Parameters</a> satisfy their corresponding constraints and applies them, if they do not  <a href="classmio_1_1oseir_1_1Parameters.html#ad372ad4873483274822941475774321e">More...</a><br /></td></tr>
+<tr class="memdesc:ad372ad4873483274822941475774321e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether all <a class="el" href="classmio_1_1oseir_1_1Parameters.html" title="Parameters of an age-resolved SECIR/SECIHURD model.">Parameters</a> satisfy their corresponding constraints and applies them, if they do not.  <a href="classmio_1_1oseir_1_1Parameters.html#ad372ad4873483274822941475774321e">More...</a><br /></td></tr>
 <tr class="separator:ad372ad4873483274822941475774321e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2f8ffc6b0273f594b40b575837e8eb69"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1oseir_1_1Parameters.html#a2f8ffc6b0273f594b40b575837e8eb69">check_constraints</a> () const</td></tr>
 <tr class="memdesc:a2f8ffc6b0273f594b40b575837e8eb69"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether all <a class="el" href="classmio_1_1oseir_1_1Parameters.html" title="Parameters of an age-resolved SECIR/SECIHURD model.">Parameters</a> satisfy their corresponding constraints and logs an error if constraints are not satisfied.  <a href="classmio_1_1oseir_1_1Parameters.html#a2f8ffc6b0273f594b40b575837e8eb69">More...</a><br /></td></tr>
@@ -224,8 +224,10 @@ Private Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>checks whether all <a class="el" href="classmio_1_1oseir_1_1Parameters.html" title="Parameters of an age-resolved SECIR/SECIHURD model.">Parameters</a> satisfy their corresponding constraints and applies them, if they do not </p>
-<dl class="section return"><dt>Returns</dt><dd>Returns true if one ore more constraint was corrected, false otherwise. <br  />
+<p>Checks whether all <a class="el" href="classmio_1_1oseir_1_1Parameters.html" title="Parameters of an age-resolved SECIR/SECIHURD model.">Parameters</a> satisfy their corresponding constraints and applies them, if they do not. </p>
+<p>Time spans cannot be negative and probabilities can only take values between [0,1].</p>
+<p>Attention: This function should be used with care. It is necessary for some test problems to run through quickly, but in a manual execution of an example, <a class="el" href="classmio_1_1oseir_1_1Parameters.html#a2f8ffc6b0273f594b40b575837e8eb69" title="Checks whether all Parameters satisfy their corresponding constraints and logs an error if constraint...">check_constraints()</a> may be preferred. Note that the <a class="el" href="classmio_1_1oseir_1_1Parameters.html#ad372ad4873483274822941475774321e" title="Checks whether all Parameters satisfy their corresponding constraints and applies them,...">apply_constraints()</a> function can and will not set <a class="el" href="classmio_1_1oseir_1_1Parameters.html" title="Parameters of an age-resolved SECIR/SECIHURD model.">Parameters</a> to meaningful values in an epidemiological or virological context, as all models are designed to be transferable to multiple diseases. Consequently, only acceptable (like 0 or 1 for probabilities or small positive values for time spans) values are set here and a manual adaptation may often be necessary to have set meaningful values.</p>
+<dl class="section return"><dt>Returns</dt><dd>Returns true if one ore more constraint were corrected, false otherwise. <br  />
  </dd></dl>
 
 </div>

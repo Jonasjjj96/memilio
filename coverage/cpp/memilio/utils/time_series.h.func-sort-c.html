@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2023-08-03 14:18:44</td>
+            <td class="headerValue">2023-08-03 15:06:30</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">173</td>
@@ -484,6 +484,10 @@
               <td class="coverFnHi">36</td>
             </tr>
     <tr>
+              <td class="coverFn"><a href="time_series.h.gcov.html#765">auto mio::find_value_reverse&lt;mio::TimeSeries&lt;double&gt;&amp;, double&gt;(mio::TimeSeries&lt;double&gt;&amp;, double, double, double)::{lambda(auto:1)#1}::operator()&lt;double&gt;(double) const</a></td>
+              <td class="coverFnHi">36</td>
+            </tr>
+    <tr>
               <td class="coverFn"><a href="time_series.h.gcov.html#553">mio::details::TimeSeriesIteratorBase&lt;mio::TimeSeriesValueIterator&lt;double, false&gt;, double, false, Eigen::Matrix&lt;double, -1, 1, 0, -1, 1&gt;, Eigen::VectorBlock&lt;Eigen::Block&lt;Eigen::Matrix&lt;double, -1, -1, 0, -1, -1&gt;, -1, 1, true&gt;, -1&gt; &gt;::TimeSeriesIteratorBase(Eigen::Matrix&lt;double, -1, -1, 0, -1, -1&gt;*, long)</a></td>
               <td class="coverFnHi">37</td>
             </tr>
@@ -522,6 +526,10 @@
     <tr>
               <td class="coverFn"><a href="time_series.h.gcov.html#621">mio::details::TimeSeriesIteratorBase&lt;mio::TimeSeriesTimeIterator&lt;double, true&gt;, double, true, double, double const&amp;&gt;::operator-(mio::details::TimeSeriesIteratorBase&lt;mio::TimeSeriesTimeIterator&lt;double, true&gt;, double, true, double, double const&amp;&gt; const&amp;) const</a></td>
               <td class="coverFnHi">72</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="time_series.h.gcov.html#639">mio::details::TimeSeriesIteratorBase&lt;mio::TimeSeriesTimeIterator&lt;double, false&gt;, double, false, double, double&amp;&gt;::operator--()</a></td>
+              <td class="coverFnHi">75</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="time_series.h.gcov.html#421">mio::TimeSeries&lt;double&gt;::get_const_times() const</a></td>
@@ -620,6 +628,14 @@
               <td class="coverFnHi">576</td>
             </tr>
     <tr>
+              <td class="coverFn"><a href="time_series.h.gcov.html#748">mio::TimeSeriesTimeIterator&lt;double, false&gt;::get_reference() const</a></td>
+              <td class="coverFnHi">621</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="time_series.h.gcov.html#572">mio::details::TimeSeriesIteratorBase&lt;mio::TimeSeriesTimeIterator&lt;double, false&gt;, double, false, double, double&amp;&gt;::operator*() const</a></td>
+              <td class="coverFnHi">621</td>
+            </tr>
+    <tr>
               <td class="coverFn"><a href="time_series.h.gcov.html#553">mio::details::TimeSeriesIteratorBase&lt;mio::TimeSeriesTimeIterator&lt;double, false&gt;, double, false, double, double&amp;&gt;::TimeSeriesIteratorBase(Eigen::Matrix&lt;double, -1, -1, 0, -1, -1&gt;*, long)</a></td>
               <td class="coverFnHi">1152</td>
             </tr>
@@ -637,23 +653,11 @@
             </tr>
     <tr>
               <td class="coverFn"><a href="time_series.h.gcov.html#500">mio::details::next_pow2(long)</a></td>
-              <td class="coverFnHi">4666</td>
+              <td class="coverFnHi">4634</td>
             </tr>
     <tr>
-              <td class="coverFn"><a href="time_series.h.gcov.html#765">auto mio::find_value_reverse&lt;mio::TimeSeries&lt;double&gt;&amp;, double&gt;(mio::TimeSeries&lt;double&gt;&amp;, double, double, double)::{lambda(auto:1)#1}::operator()&lt;double&gt;(double) const</a></td>
-              <td class="coverFnHi">5332</td>
-            </tr>
-    <tr>
-              <td class="coverFn"><a href="time_series.h.gcov.html#748">mio::TimeSeriesTimeIterator&lt;double, false&gt;::get_reference() const</a></td>
-              <td class="coverFnHi">5917</td>
-            </tr>
-    <tr>
-              <td class="coverFn"><a href="time_series.h.gcov.html#572">mio::details::TimeSeriesIteratorBase&lt;mio::TimeSeriesTimeIterator&lt;double, false&gt;, double, false, double, double&amp;&gt;::operator*() const</a></td>
-              <td class="coverFnHi">5917</td>
-            </tr>
-    <tr>
-              <td class="coverFn"><a href="time_series.h.gcov.html#639">mio::details::TimeSeriesIteratorBase&lt;mio::TimeSeriesTimeIterator&lt;double, false&gt;, double, false, double, double&amp;&gt;::operator--()</a></td>
-              <td class="coverFnHi">10667</td>
+              <td class="coverFn"><a href="time_series.h.gcov.html#235">mio::TimeSeries&lt;double&gt;::get_time(long) const</a></td>
+              <td class="coverFnHi">55201</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="time_series.h.gcov.html#266">mio::TimeSeries&lt;double&gt;::operator[](long) const</a></td>
@@ -662,10 +666,6 @@
     <tr>
               <td class="coverFn"><a href="time_series.h.gcov.html#256">mio::TimeSeries&lt;double&gt;::get_value(long) const</a></td>
               <td class="coverFnHi">58443</td>
-            </tr>
-    <tr>
-              <td class="coverFn"><a href="time_series.h.gcov.html#235">mio::TimeSeries&lt;double&gt;::get_time(long) const</a></td>
-              <td class="coverFnHi">87235</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="time_series.h.gcov.html#244">mio::TimeSeries&lt;float&gt;::get_last_time()</a></td>
@@ -717,51 +717,51 @@
             </tr>
     <tr>
               <td class="coverFn"><a href="time_series.h.gcov.html#179">mio::TimeSeries&lt;double&gt;::add_time_point()</a></td>
-              <td class="coverFnHi">603398</td>
+              <td class="coverFnHi">756795</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="time_series.h.gcov.html#476">mio::TimeSeries&lt;double&gt;::add_time_point_noinit()</a></td>
-              <td class="coverFnHi">728973</td>
+              <td class="coverFnHi">882370</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="time_series.h.gcov.html#290">mio::TimeSeries&lt;double&gt;::reserve(long)</a></td>
-              <td class="coverFnHi">729296</td>
+              <td class="coverFnHi">882675</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="time_series.h.gcov.html#301">mio::TimeSeries&lt;double&gt;::get_capacity() const</a></td>
-              <td class="coverFnHi">729309</td>
+              <td class="coverFnHi">882688</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="time_series.h.gcov.html#244">mio::TimeSeries&lt;double&gt;::get_last_time()</a></td>
-              <td class="coverFnHi">730617</td>
+              <td class="coverFnHi">884014</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="time_series.h.gcov.html#230">mio::TimeSeries&lt;double&gt;::get_time(long)</a></td>
-              <td class="coverFnHi">731841</td>
+              <td class="coverFnHi">885220</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="time_series.h.gcov.html#282">mio::TimeSeries&lt;double&gt;::get_last_value()</a></td>
-              <td class="coverFnHi">733749</td>
-            </tr>
-    <tr>
-              <td class="coverFn"><a href="time_series.h.gcov.html#155">mio::TimeSeries&lt;double&gt;::get_num_time_points() const</a></td>
-              <td class="coverFnHi">1344991</td>
+              <td class="coverFnHi">887068</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="time_series.h.gcov.html#270">mio::TimeSeries&lt;double&gt;::operator[](long)</a></td>
-              <td class="coverFnHi">4533760</td>
+              <td class="coverFnHi">1531504</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="time_series.h.gcov.html#155">mio::TimeSeries&lt;double&gt;::get_num_time_points() const</a></td>
+              <td class="coverFnHi">1651749</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="time_series.h.gcov.html#261">mio::TimeSeries&lt;double&gt;::get_value(long)</a></td>
-              <td class="coverFnHi">5724829</td>
+              <td class="coverFnHi">3177686</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="time_series.h.gcov.html#163">mio::TimeSeries&lt;double&gt;::get_num_elements() const</a></td>
-              <td class="coverFnHi">5788114</td>
+              <td class="coverFnHi">3240971</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="time_series.h.gcov.html#171">mio::TimeSeries&lt;double&gt;::get_num_rows() const</a></td>
-              <td class="coverFnHi">5788119</td>
+              <td class="coverFnHi">3240976</td>
             </tr>
   </table>
   <br>
