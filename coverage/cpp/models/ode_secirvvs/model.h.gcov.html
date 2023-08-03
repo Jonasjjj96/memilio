@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2023-08-01 18:15:10</td>
+            <td class="headerValue">2023-08-03 14:18:44</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">15</td>
@@ -99,15 +99,15 @@
 <a name="37"><span class="lineNum">      37 </span>            :     using Base = CompartmentalModel&lt;InfectionState, mio::Populations&lt;AgeGroup, InfectionState&gt;, Parameters&gt;;</a>
 <a name="38"><span class="lineNum">      38 </span>            : </a>
 <a name="39"><span class="lineNum">      39 </span>            : public:</a>
-<a name="40"><span class="lineNum">      40 </span><span class="lineCov">         21 :     Model(const Populations&amp; pop, const ParameterSet&amp; params)</span></a>
-<a name="41"><span class="lineNum">      41 </span><span class="lineCov">         21 :         : Base(pop, params)</span></a>
+<a name="40"><span class="lineNum">      40 </span><span class="lineCov">         22 :     Model(const Populations&amp; pop, const ParameterSet&amp; params)</span></a>
+<a name="41"><span class="lineNum">      41 </span><span class="lineCov">         22 :         : Base(pop, params)</span></a>
 <a name="42"><span class="lineNum">      42 </span>            :     {</a>
-<a name="43"><span class="lineNum">      43 </span><span class="lineCov">         21 :     }</span></a>
+<a name="43"><span class="lineNum">      43 </span><span class="lineCov">         22 :     }</span></a>
 <a name="44"><span class="lineNum">      44 </span>            : </a>
-<a name="45"><span class="lineNum">      45 </span><span class="lineCov">         20 :     Model(int num_agegroups)</span></a>
-<a name="46"><span class="lineNum">      46 </span><span class="lineCov">         20 :         : Model(Populations({AgeGroup(num_agegroups), InfectionState::Count}), ParameterSet(AgeGroup(num_agegroups)))</span></a>
+<a name="45"><span class="lineNum">      45 </span><span class="lineCov">         21 :     Model(int num_agegroups)</span></a>
+<a name="46"><span class="lineNum">      46 </span><span class="lineCov">         21 :         : Model(Populations({AgeGroup(num_agegroups), InfectionState::Count}), ParameterSet(AgeGroup(num_agegroups)))</span></a>
 <a name="47"><span class="lineNum">      47 </span>            :     {</a>
-<a name="48"><span class="lineNum">      48 </span><span class="lineCov">         20 :     }</span></a>
+<a name="48"><span class="lineNum">      48 </span><span class="lineCov">         21 :     }</span></a>
 <a name="49"><span class="lineNum">      49 </span>            : </a>
 <a name="50"><span class="lineNum">      50 </span><span class="lineCov">        732 :     void get_derivatives(Eigen::Ref&lt;const Eigen::VectorXd&gt; pop, Eigen::Ref&lt;const Eigen::VectorXd&gt; y, double t,</span></a>
 <a name="51"><span class="lineNum">      51 </span>            :                          Eigen::Ref&lt;Eigen::VectorXd&gt; dydt) const override</a>

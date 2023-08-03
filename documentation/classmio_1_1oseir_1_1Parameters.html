@@ -92,9 +92,12 @@ Inheritance diagram for mio::oseir::Parameters:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ab59620cb714f58610bca60bf56cf81a8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1oseir_1_1Parameters.html#ab59620cb714f58610bca60bf56cf81a8">check_constraints</a> () const</td></tr>
-<tr class="memdesc:ab59620cb714f58610bca60bf56cf81a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether all <a class="el" href="classmio_1_1oseir_1_1Parameters.html" title="Parameters of an age-resolved SECIR/SECIHURD model.">Parameters</a> satisfy their corresponding constraints and logs an error if constraints are not satisfied.  <a href="classmio_1_1oseir_1_1Parameters.html#ab59620cb714f58610bca60bf56cf81a8">More...</a><br /></td></tr>
-<tr class="separator:ab59620cb714f58610bca60bf56cf81a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad372ad4873483274822941475774321e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1oseir_1_1Parameters.html#ad372ad4873483274822941475774321e">apply_constraints</a> ()</td></tr>
+<tr class="memdesc:ad372ad4873483274822941475774321e"><td class="mdescLeft">&#160;</td><td class="mdescRight">checks whether all <a class="el" href="classmio_1_1oseir_1_1Parameters.html" title="Parameters of an age-resolved SECIR/SECIHURD model.">Parameters</a> satisfy their corresponding constraints and applies them, if they do not  <a href="classmio_1_1oseir_1_1Parameters.html#ad372ad4873483274822941475774321e">More...</a><br /></td></tr>
+<tr class="separator:ad372ad4873483274822941475774321e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f8ffc6b0273f594b40b575837e8eb69"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1oseir_1_1Parameters.html#a2f8ffc6b0273f594b40b575837e8eb69">check_constraints</a> () const</td></tr>
+<tr class="memdesc:a2f8ffc6b0273f594b40b575837e8eb69"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether all <a class="el" href="classmio_1_1oseir_1_1Parameters.html" title="Parameters of an age-resolved SECIR/SECIHURD model.">Parameters</a> satisfy their corresponding constraints and logs an error if constraints are not satisfied.  <a href="classmio_1_1oseir_1_1Parameters.html#a2f8ffc6b0273f594b40b575837e8eb69">More...</a><br /></td></tr>
+<tr class="separator:a2f8ffc6b0273f594b40b575837e8eb69"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa5b93649f32d904f3bd3c5e6416611d6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1oseir_1_1Parameters.html#aa5b93649f32d904f3bd3c5e6416611d6">Parameters</a> ()</td></tr>
 <tr class="separator:aa5b93649f32d904f3bd3c5e6416611d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classmio_1_1ParameterSet"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classmio_1_1ParameterSet')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classmio_1_1ParameterSet.html">mio::ParameterSet&lt; Tags &gt;</a></td></tr>
@@ -206,14 +209,35 @@ Private Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="ab59620cb714f58610bca60bf56cf81a8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab59620cb714f58610bca60bf56cf81a8">&#9670;&nbsp;</a></span>check_constraints()</h2>
+<a id="ad372ad4873483274822941475774321e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad372ad4873483274822941475774321e">&#9670;&nbsp;</a></span>apply_constraints()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int mio::oseir::Parameters::check_constraints </td>
+          <td class="memname">bool mio::oseir::Parameters::apply_constraints </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>checks whether all <a class="el" href="classmio_1_1oseir_1_1Parameters.html" title="Parameters of an age-resolved SECIR/SECIHURD model.">Parameters</a> satisfy their corresponding constraints and applies them, if they do not </p>
+<dl class="section return"><dt>Returns</dt><dd>Returns true if one ore more constraint was corrected, false otherwise. <br  />
+ </dd></dl>
+
+</div>
+</div>
+<a id="a2f8ffc6b0273f594b40b575837e8eb69"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2f8ffc6b0273f594b40b575837e8eb69">&#9670;&nbsp;</a></span>check_constraints()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool mio::oseir::Parameters::check_constraints </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -222,7 +246,7 @@ Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Checks whether all <a class="el" href="classmio_1_1oseir_1_1Parameters.html" title="Parameters of an age-resolved SECIR/SECIHURD model.">Parameters</a> satisfy their corresponding constraints and logs an error if constraints are not satisfied. </p>
-<dl class="section return"><dt>Returns</dt><dd>Returns 1 if one constraint is not satisfied, otherwise 0. <br  />
+<dl class="section return"><dt>Returns</dt><dd>Returns true if one constraint is not satisfied, otherwise false. <br  />
  </dd></dl>
 
 </div>

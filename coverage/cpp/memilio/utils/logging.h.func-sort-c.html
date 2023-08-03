@@ -37,12 +37,12 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2023-08-01 18:15:10</td>
+            <td class="headerValue">2023-08-03 14:18:44</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">19</td>
-            <td class="headerCovTableEntry">32</td>
-            <td class="headerCovTableEntryLo">59.4 %</td>
+            <td class="headerCovTableEntry">33</td>
+            <td class="headerCovTableEntryLo">57.6 %</td>
           </tr>
           <tr><td><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
         </table>
@@ -69,6 +69,10 @@
             </tr>
     <tr>
               <td class="coverFn"><a href="logging.h.gcov.html#100">void mio::log_warning&lt;double, double, double&gt;(fmt::v9::basic_string_view&lt;char&gt;, double const&amp;, double const&amp;, double const&amp;)</a></td>
+              <td class="coverFnLo">0</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="logging.h.gcov.html#100">void mio::log_warning&lt;int, mio::UncertainValue, int&gt;(fmt::v9::basic_string_view&lt;char&gt;, int const&amp;, mio::UncertainValue const&amp;, int const&amp;)</a></td>
               <td class="coverFnLo">0</td>
             </tr>
     <tr>
@@ -112,12 +116,12 @@
               <td class="coverFnLo">0</td>
             </tr>
     <tr>
-              <td class="coverFn"><a href="logging.h.gcov.html#100">void mio::log_warning&lt;int, mio::UncertainValue, int&gt;(fmt::v9::basic_string_view&lt;char&gt;, int const&amp;, mio::UncertainValue const&amp;, int const&amp;)</a></td>
+              <td class="coverFn"><a href="logging.h.gcov.html#94">void mio::log_error&lt;mio::UncertainValue, double, double&gt;(fmt::v9::basic_string_view&lt;char&gt;, mio::UncertainValue const&amp;, double const&amp;, double const&amp;)</a></td>
               <td class="coverFnHi">1</td>
             </tr>
     <tr>
-              <td class="coverFn"><a href="logging.h.gcov.html#94">void mio::log_error&lt;mio::UncertainValue, double, double&gt;(fmt::v9::basic_string_view&lt;char&gt;, mio::UncertainValue const&amp;, double const&amp;, double const&amp;)</a></td>
-              <td class="coverFnHi">1</td>
+              <td class="coverFn"><a href="logging.h.gcov.html#100">void mio::log_warning&lt;double, int&gt;(fmt::v9::basic_string_view&lt;char&gt;, double const&amp;, int const&amp;)</a></td>
+              <td class="coverFnHi">2</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="logging.h.gcov.html#94">void mio::log_error&lt;int, double&gt;(fmt::v9::basic_string_view&lt;char&gt;, int const&amp;, double const&amp;)</a></td>
@@ -132,10 +136,6 @@
               <td class="coverFnHi">3</td>
             </tr>
     <tr>
-              <td class="coverFn"><a href="logging.h.gcov.html#100">void mio::log_warning&lt;mio::UncertainValue, int&gt;(fmt::v9::basic_string_view&lt;char&gt;, mio::UncertainValue const&amp;, int const&amp;)</a></td>
-              <td class="coverFnHi">7</td>
-            </tr>
-    <tr>
               <td class="coverFn"><a href="logging.h.gcov.html#88">void mio::log_info&lt;double, double&gt;(fmt::v9::basic_string_view&lt;char&gt;, double const&amp;, double const&amp;)</a></td>
               <td class="coverFnHi">7</td>
             </tr>
@@ -148,20 +148,16 @@
               <td class="coverFnHi">11</td>
             </tr>
     <tr>
-              <td class="coverFn"><a href="logging.h.gcov.html#100">void mio::log_warning&lt;mio::UncertainValue, double&gt;(fmt::v9::basic_string_view&lt;char&gt;, mio::UncertainValue const&amp;, double const&amp;)</a></td>
-              <td class="coverFnHi">12</td>
-            </tr>
-    <tr>
-              <td class="coverFn"><a href="logging.h.gcov.html#82">mio::set_log_level(mio::LogLevel)</a></td>
-              <td class="coverFnHi">13</td>
+              <td class="coverFn"><a href="logging.h.gcov.html#94">void mio::log_error&lt;mio::UncertainValue, double&gt;(fmt::v9::basic_string_view&lt;char&gt;, mio::UncertainValue const&amp;, double const&amp;)</a></td>
+              <td class="coverFnHi">14</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="logging.h.gcov.html#94">void mio::log_error&lt;int&gt;(fmt::v9::basic_string_view&lt;char&gt;, int const&amp;)</a></td>
               <td class="coverFnHi">14</td>
             </tr>
     <tr>
-              <td class="coverFn"><a href="logging.h.gcov.html#94">void mio::log_error&lt;mio::UncertainValue, double&gt;(fmt::v9::basic_string_view&lt;char&gt;, mio::UncertainValue const&amp;, double const&amp;)</a></td>
-              <td class="coverFnHi">15</td>
+              <td class="coverFn"><a href="logging.h.gcov.html#82">mio::set_log_level(mio::LogLevel)</a></td>
+              <td class="coverFnHi">17</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="logging.h.gcov.html#94">void mio::log_error&lt;int, int&gt;(fmt::v9::basic_string_view&lt;char&gt;, int const&amp;, int const&amp;)</a></td>
@@ -173,7 +169,15 @@
             </tr>
     <tr>
               <td class="coverFn"><a href="logging.h.gcov.html#46">mio::details::get_spdlog_level(mio::LogLevel)</a></td>
-              <td class="coverFnHi">24</td>
+              <td class="coverFnHi">28</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="logging.h.gcov.html#100">void mio::log_warning&lt;mio::UncertainValue, int&gt;(fmt::v9::basic_string_view&lt;char&gt;, mio::UncertainValue const&amp;, int const&amp;)</a></td>
+              <td class="coverFnHi">32</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="logging.h.gcov.html#100">void mio::log_warning&lt;mio::UncertainValue, double&gt;(fmt::v9::basic_string_view&lt;char&gt;, mio::UncertainValue const&amp;, double const&amp;)</a></td>
+              <td class="coverFnHi">51</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="logging.h.gcov.html#100">void mio::log_warning&lt;&gt;(fmt::v9::basic_string_view&lt;char&gt;)</a></td>
@@ -181,7 +185,7 @@
             </tr>
     <tr>
               <td class="coverFn"><a href="logging.h.gcov.html#88">void mio::log_info&lt;&gt;(fmt::v9::basic_string_view&lt;char&gt;)</a></td>
-              <td class="coverFnHi">241</td>
+              <td class="coverFnHi">257</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="logging.h.gcov.html#94">void mio::log_error&lt;&gt;(fmt::v9::basic_string_view&lt;char&gt;)</a></td>
