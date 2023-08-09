@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2023-08-04 08:56:44</td>
+            <td class="headerValue">2023-08-09 13:34:25</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">29</td>
@@ -109,16 +109,16 @@
 <a name="47"><span class="lineNum">      47 </span>            :      * @param groups weights of age groups.</a>
 <a name="48"><span class="lineNum">      48 </span>            :      */</a>
 <a name="49"><span class="lineNum">      49 </span>            :     template &lt;class V&gt;</a>
-<a name="50"><span class="lineNum">      50 </span><span class="lineCov">        150 :     DampingSampling(const UncertainValue&amp; value, DampingLevel level, DampingType type, SimulationTime time,</span></a>
+<a name="50"><span class="lineNum">      50 </span><span class="lineCov">        151 :     DampingSampling(const UncertainValue&amp; value, DampingLevel level, DampingType type, SimulationTime time,</span></a>
 <a name="51"><span class="lineNum">      51 </span>            :                     const std::vector&lt;size_t&gt; matrices, const Eigen::MatrixBase&lt;V&gt;&amp; groups)</a>
 <a name="52"><span class="lineNum">      52 </span>            :         : m_value(value)</a>
 <a name="53"><span class="lineNum">      53 </span>            :         , m_level(level)</a>
 <a name="54"><span class="lineNum">      54 </span>            :         , m_type(type)</a>
 <a name="55"><span class="lineNum">      55 </span>            :         , m_time(time)</a>
 <a name="56"><span class="lineNum">      56 </span>            :         , m_matrices(matrices)</a>
-<a name="57"><span class="lineNum">      57 </span><span class="lineCov">        150 :         , m_groups(groups)</span></a>
+<a name="57"><span class="lineNum">      57 </span><span class="lineCov">        151 :         , m_groups(groups)</span></a>
 <a name="58"><span class="lineNum">      58 </span>            :     {</a>
-<a name="59"><span class="lineNum">      59 </span><span class="lineCov">        150 :     }</span></a>
+<a name="59"><span class="lineNum">      59 </span><span class="lineCov">        151 :     }</span></a>
 <a name="60"><span class="lineNum">      60 </span>            : </a>
 <a name="61"><span class="lineNum">      61 </span>            :     /**</a>
 <a name="62"><span class="lineNum">      62 </span>            :      * Get the random value.</a>
@@ -358,10 +358,10 @@
 <a name="296"><span class="lineNum">     296 </span>            : template &lt;class V&gt;</a>
 <a name="297"><span class="lineNum">     297 </span><span class="lineCov">          9 : auto make_migration_damping_vector(ColumnVectorShape shape, V&amp;&amp; groups)</span></a>
 <a name="298"><span class="lineNum">     298 </span>            : {</a>
-<a name="299"><span class="lineNum">     299 </span><span class="lineCov">        172 :     return Eigen::VectorXd::NullaryExpr(shape.size(), [shape, groups = std::forward&lt;V&gt;(groups)](Eigen::Index i) {</span></a>
-<a name="300"><span class="lineNum">     300 </span><span class="lineCov">        177 :         auto num_groups       = groups.size();</span></a>
-<a name="301"><span class="lineNum">     301 </span><span class="lineCov">        177 :         auto num_compartments = size_t(shape.size()) / num_groups;</span></a>
-<a name="302"><span class="lineNum">     302 </span><span class="lineCov">        177 :         return groups[size_t(i) / num_compartments];</span></a>
+<a name="299"><span class="lineNum">     299 </span><span class="lineCov">        208 :     return Eigen::VectorXd::NullaryExpr(shape.size(), [shape, groups = std::forward&lt;V&gt;(groups)](Eigen::Index i) {</span></a>
+<a name="300"><span class="lineNum">     300 </span><span class="lineCov">        213 :         auto num_groups       = groups.size();</span></a>
+<a name="301"><span class="lineNum">     301 </span><span class="lineCov">        213 :         auto num_compartments = size_t(shape.size()) / num_groups;</span></a>
+<a name="302"><span class="lineNum">     302 </span><span class="lineCov">        213 :         return groups[size_t(i) / num_compartments];</span></a>
 <a name="303"><span class="lineNum">     303 </span><span class="lineCov">         10 :     });</span></a>
 <a name="304"><span class="lineNum">     304 </span>            : }</a>
 <a name="305"><span class="lineNum">     305 </span>            : </a>

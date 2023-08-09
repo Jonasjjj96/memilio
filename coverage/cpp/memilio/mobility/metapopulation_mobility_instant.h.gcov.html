@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2023-08-04 08:56:44</td>
+            <td class="headerValue">2023-08-09 13:34:25</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">56</td>
@@ -124,9 +124,9 @@
 <a name="62"><span class="lineNum">      62 </span>            :     {</a>
 <a name="63"><span class="lineNum">      63 </span><span class="lineCov">         14 :         return m_simulation.get_result();</span></a>
 <a name="64"><span class="lineNum">      64 </span>            :     }</a>
-<a name="65"><span class="lineNum">      65 </span><span class="lineCov">        525 :     decltype(auto) get_result()</span></a>
+<a name="65"><span class="lineNum">      65 </span><span class="lineCov">        581 :     decltype(auto) get_result()</span></a>
 <a name="66"><span class="lineNum">      66 </span>            :     {</a>
-<a name="67"><span class="lineNum">      67 </span><span class="lineCov">        525 :         return m_simulation.get_result();</span></a>
+<a name="67"><span class="lineNum">      67 </span><span class="lineCov">        581 :         return m_simulation.get_result();</span></a>
 <a name="68"><span class="lineNum">      68 </span>            :     }</a>
 <a name="69"><span class="lineNum">      69 </span>            :     /**@}*/</a>
 <a name="70"><span class="lineNum">      70 </span>            : </a>
@@ -134,9 +134,9 @@
 <a name="72"><span class="lineNum">      72 </span>            :      * get the the simulation in this node.</a>
 <a name="73"><span class="lineNum">      73 </span>            :      * @{</a>
 <a name="74"><span class="lineNum">      74 </span>            :      */</a>
-<a name="75"><span class="lineNum">      75 </span><span class="lineCov">         81 :     Sim&amp; get_simulation()</span></a>
+<a name="75"><span class="lineNum">      75 </span><span class="lineCov">         95 :     Sim&amp; get_simulation()</span></a>
 <a name="76"><span class="lineNum">      76 </span>            :     {</a>
-<a name="77"><span class="lineNum">      77 </span><span class="lineCov">         81 :         return m_simulation;</span></a>
+<a name="77"><span class="lineNum">      77 </span><span class="lineCov">         95 :         return m_simulation;</span></a>
 <a name="78"><span class="lineNum">      78 </span>            :     }</a>
 <a name="79"><span class="lineNum">      79 </span><span class="lineCov">         16 :     const Sim&amp; get_simulation() const</span></a>
 <a name="80"><span class="lineNum">      80 </span>            :     {</a>
@@ -144,9 +144,9 @@
 <a name="82"><span class="lineNum">      82 </span>            :     }</a>
 <a name="83"><span class="lineNum">      83 </span>            :     /**@}*/</a>
 <a name="84"><span class="lineNum">      84 </span>            : </a>
-<a name="85"><span class="lineNum">      85 </span><span class="lineCov">        621 :     Eigen::Ref&lt;const Eigen::VectorXd&gt; get_last_state() const</span></a>
+<a name="85"><span class="lineNum">      85 </span><span class="lineCov">        561 :     Eigen::Ref&lt;const Eigen::VectorXd&gt; get_last_state() const</span></a>
 <a name="86"><span class="lineNum">      86 </span>            :     {</a>
-<a name="87"><span class="lineNum">      87 </span><span class="lineCov">        621 :         return m_last_state;</span></a>
+<a name="87"><span class="lineNum">      87 </span><span class="lineCov">        561 :         return m_last_state;</span></a>
 <a name="88"><span class="lineNum">      88 </span>            :     }</a>
 <a name="89"><span class="lineNum">      89 </span>            : </a>
 <a name="90"><span class="lineNum">      90 </span><span class="lineCov">         10 :     double get_t0() const</span></a>
@@ -154,11 +154,11 @@
 <a name="92"><span class="lineNum">      92 </span><span class="lineCov">         10 :         return m_t0;</span></a>
 <a name="93"><span class="lineNum">      93 </span>            :     }</a>
 <a name="94"><span class="lineNum">      94 </span>            : </a>
-<a name="95"><span class="lineNum">      95 </span><span class="lineCov">        164 :     void evolve(double t, double dt)</span></a>
+<a name="95"><span class="lineNum">      95 </span><span class="lineCov">        158 :     void evolve(double t, double dt)</span></a>
 <a name="96"><span class="lineNum">      96 </span>            :     {</a>
-<a name="97"><span class="lineNum">      97 </span><span class="lineCov">        164 :         m_simulation.advance(t + dt);</span></a>
-<a name="98"><span class="lineNum">      98 </span><span class="lineCov">        164 :         m_last_state = m_simulation.get_result().get_last_value();</span></a>
-<a name="99"><span class="lineNum">      99 </span><span class="lineCov">        164 :     }</span></a>
+<a name="97"><span class="lineNum">      97 </span><span class="lineCov">        158 :         m_simulation.advance(t + dt);</span></a>
+<a name="98"><span class="lineNum">      98 </span><span class="lineCov">        158 :         m_last_state = m_simulation.get_result().get_last_value();</span></a>
+<a name="99"><span class="lineNum">      99 </span><span class="lineCov">        158 :     }</span></a>
 <a name="100"><span class="lineNum">     100 </span>            : </a>
 <a name="101"><span class="lineNum">     101 </span>            : private:</a>
 <a name="102"><span class="lineNum">     102 </span>            :     Sim m_simulation;</a>
@@ -465,13 +465,13 @@
 <a name="403"><span class="lineNum">     403 </span>            :  * @param t the current simulation time.</a>
 <a name="404"><span class="lineNum">     404 </span>            :  */</a>
 <a name="405"><span class="lineNum">     405 </span>            : template &lt;class Sim, std::enable_if_t&lt;!is_expression_valid&lt;test_commuters_expr_t, Sim&gt;::value, void*&gt; = nullptr&gt;</a>
-<a name="406"><span class="lineNum">     406 </span><span class="lineCov">         14 : void test_commuters(SimulationNode&lt;Sim&gt;&amp; /*node*/, Eigen::Ref&lt;Eigen::VectorXd&gt; /*migrated*/, double /*time*/)</span></a>
+<a name="406"><span class="lineNum">     406 </span><span class="lineNoCov">          0 : void test_commuters(SimulationNode&lt;Sim&gt;&amp; /*node*/, Eigen::Ref&lt;Eigen::VectorXd&gt; /*migrated*/, double /*time*/)</span></a>
 <a name="407"><span class="lineNum">     407 </span>            : {</a>
-<a name="408"><span class="lineNum">     408 </span><span class="lineCov">         14 : }</span></a>
+<a name="408"><span class="lineNum">     408 </span><span class="lineNoCov">          0 : }</span></a>
 <a name="409"><span class="lineNum">     409 </span>            : template &lt;class Sim, std::enable_if_t&lt;is_expression_valid&lt;test_commuters_expr_t, Sim&gt;::value, void*&gt; = nullptr&gt;</a>
-<a name="410"><span class="lineNum">     410 </span><span class="lineNoCov">          0 : void test_commuters(SimulationNode&lt;Sim&gt;&amp; node, Eigen::Ref&lt;Eigen::VectorXd&gt; migrated, double time)</span></a>
+<a name="410"><span class="lineNum">     410 </span><span class="lineCov">         14 : void test_commuters(SimulationNode&lt;Sim&gt;&amp; node, Eigen::Ref&lt;Eigen::VectorXd&gt; migrated, double time)</span></a>
 <a name="411"><span class="lineNum">     411 </span>            : {</a>
-<a name="412"><span class="lineNum">     412 </span><span class="lineNoCov">          0 :     return test_commuters(node.get_simulation(), migrated, time);</span></a>
+<a name="412"><span class="lineNum">     412 </span><span class="lineCov">         14 :     return test_commuters(node.get_simulation(), migrated, time);</span></a>
 <a name="413"><span class="lineNum">     413 </span>            : }</a>
 <a name="414"><span class="lineNum">     414 </span>            : </a>
 <a name="415"><span class="lineNum">     415 </span>            : template &lt;class Sim&gt;</a>
@@ -511,8 +511,8 @@
 <a name="449"><span class="lineNum">     449 </span>            :             //especially at the beginning of the simulation.</a>
 <a name="450"><span class="lineNum">     450 </span>            :             //fix by subtracting the supernumerous returns from the biggest compartment of the age group.</a>
 <a name="451"><span class="lineNum">     451 </span><span class="lineCov">         26 :             Eigen::VectorXd remaining_after_return = (node_to.get_result().get_last_value() - m_migrated[i]).eval();</span></a>
-<a name="452"><span class="lineNum">     452 </span><span class="lineCov">        309 :             for (Eigen::Index j = 0; j &lt; node_to.get_result().get_last_value().size(); ++j) {</span></a>
-<a name="453"><span class="lineNum">     453 </span><span class="lineCov">        296 :                 if (remaining_after_return(j) &lt; 0) {</span></a>
+<a name="452"><span class="lineNum">     452 </span><span class="lineCov">        383 :             for (Eigen::Index j = 0; j &lt; node_to.get_result().get_last_value().size(); ++j) {</span></a>
+<a name="453"><span class="lineNum">     453 </span><span class="lineCov">        370 :                 if (remaining_after_return(j) &lt; 0) {</span></a>
 <a name="454"><span class="lineNum">     454 </span><span class="lineNoCov">          0 :                     auto num_comparts = (Eigen::Index)Sim::Model::Compartments::Count;</span></a>
 <a name="455"><span class="lineNum">     455 </span><span class="lineNoCov">          0 :                     auto group        = Eigen::Index(j / num_comparts);</span></a>
 <a name="456"><span class="lineNum">     456 </span><span class="lineNoCov">          0 :                     auto compart      = j % num_comparts;</span></a>
@@ -555,10 +555,10 @@
 <a name="493"><span class="lineNum">     493 </span>            :  * @see SimulationNode::evolve</a>
 <a name="494"><span class="lineNum">     494 </span>            :  */</a>
 <a name="495"><span class="lineNum">     495 </span>            : template &lt;class Sim&gt;</a>
-<a name="496"><span class="lineNum">     496 </span><span class="lineCov">        151 : void evolve_model(double t, double dt, SimulationNode&lt;Sim&gt;&amp; node)</span></a>
+<a name="496"><span class="lineNum">     496 </span><span class="lineCov">        145 : void evolve_model(double t, double dt, SimulationNode&lt;Sim&gt;&amp; node)</span></a>
 <a name="497"><span class="lineNum">     497 </span>            : {</a>
-<a name="498"><span class="lineNum">     498 </span><span class="lineCov">        151 :     node.evolve(t, dt);</span></a>
-<a name="499"><span class="lineNum">     499 </span><span class="lineCov">        151 : }</span></a>
+<a name="498"><span class="lineNum">     498 </span><span class="lineCov">        145 :     node.evolve(t, dt);</span></a>
+<a name="499"><span class="lineNum">     499 </span><span class="lineCov">        145 : }</span></a>
 <a name="500"><span class="lineNum">     500 </span>            : </a>
 <a name="501"><span class="lineNum">     501 </span>            : /**</a>
 <a name="502"><span class="lineNum">     502 </span>            :  * edge functor for migration simulation.</a>

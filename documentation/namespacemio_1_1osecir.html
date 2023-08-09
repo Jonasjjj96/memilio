@@ -153,16 +153,18 @@ Typedefs</h2></td></tr>
 Enumerations</h2></td></tr>
 <tr class="memitem:a3324235e2fb18f1c89744f6d5c30864b"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemio_1_1osecir.html#a3324235e2fb18f1c89744f6d5c30864b">InfectionState</a> { <br />
 &#160;&#160;<a class="el" href="namespacemio_1_1osecir.html#a3324235e2fb18f1c89744f6d5c30864ba494bf3eaa390dc405dd04ed1c8c99311">Susceptible</a> = 0
-, <a class="el" href="namespacemio_1_1osecir.html#a3324235e2fb18f1c89744f6d5c30864baa54eecd5041d37f5c8443e0ee91e241a">Exposed</a> = 1
-, <a class="el" href="namespacemio_1_1osecir.html#a3324235e2fb18f1c89744f6d5c30864bafd0b1ea9698f60d31c2e79a469b0d2af">InfectedNoSymptoms</a> = 2
-, <a class="el" href="namespacemio_1_1osecir.html#a3324235e2fb18f1c89744f6d5c30864bae5c5d8500211987f287f130f37457115">InfectedSymptoms</a> = 3
+, <a class="el" href="namespacemio_1_1osecir.html#a3324235e2fb18f1c89744f6d5c30864baa54eecd5041d37f5c8443e0ee91e241a">Exposed</a>
+, <a class="el" href="namespacemio_1_1osecir.html#a3324235e2fb18f1c89744f6d5c30864bafd0b1ea9698f60d31c2e79a469b0d2af">InfectedNoSymptoms</a>
+, <a class="el" href="namespacemio_1_1osecir.html#a3324235e2fb18f1c89744f6d5c30864ba3474af14909eab3ca1d032bf7e33dd95">InfectedNoSymptomsConfirmed</a>
 , <br />
-&#160;&#160;<a class="el" href="namespacemio_1_1osecir.html#a3324235e2fb18f1c89744f6d5c30864ba4002b08c261f6e8ae5880f77252471d5">InfectedSevere</a> = 4
-, <a class="el" href="namespacemio_1_1osecir.html#a3324235e2fb18f1c89744f6d5c30864ba59accbf82b92fbddf3c248e36fd28989">InfectedCritical</a> = 5
-, <a class="el" href="namespacemio_1_1osecir.html#a3324235e2fb18f1c89744f6d5c30864ba5c4c4cf7bbab0d76fe61420aee14a5ca">Recovered</a> = 6
-, <a class="el" href="namespacemio_1_1osecir.html#a3324235e2fb18f1c89744f6d5c30864ba183b62c7f067711f9c5a54913c054617">Dead</a> = 7
+&#160;&#160;<a class="el" href="namespacemio_1_1osecir.html#a3324235e2fb18f1c89744f6d5c30864bae5c5d8500211987f287f130f37457115">InfectedSymptoms</a>
+, <a class="el" href="namespacemio_1_1osecir.html#a3324235e2fb18f1c89744f6d5c30864ba804de8377e4fe5f0c0facfcc4eecc3a5">InfectedSymptomsConfirmed</a>
+, <a class="el" href="namespacemio_1_1osecir.html#a3324235e2fb18f1c89744f6d5c30864ba4002b08c261f6e8ae5880f77252471d5">InfectedSevere</a>
+, <a class="el" href="namespacemio_1_1osecir.html#a3324235e2fb18f1c89744f6d5c30864ba59accbf82b92fbddf3c248e36fd28989">InfectedCritical</a>
 , <br />
-&#160;&#160;<a class="el" href="namespacemio_1_1osecir.html#a3324235e2fb18f1c89744f6d5c30864bae93f994f01c537c4e2f7d8528c3eb5e9">Count</a> = 8
+&#160;&#160;<a class="el" href="namespacemio_1_1osecir.html#a3324235e2fb18f1c89744f6d5c30864ba5c4c4cf7bbab0d76fe61420aee14a5ca">Recovered</a>
+, <a class="el" href="namespacemio_1_1osecir.html#a3324235e2fb18f1c89744f6d5c30864ba183b62c7f067711f9c5a54913c054617">Dead</a>
+, <a class="el" href="namespacemio_1_1osecir.html#a3324235e2fb18f1c89744f6d5c30864bae93f994f01c537c4e2f7d8528c3eb5e9">Count</a>
 <br />
  }</td></tr>
 <tr class="memdesc:a3324235e2fb18f1c89744f6d5c30864b"><td class="mdescLeft">&#160;</td><td class="mdescRight">The InfectionState enum describes the possible categories for the infectious state of persons.  <a href="namespacemio_1_1osecir.html#a3324235e2fb18f1c89744f6d5c30864b">More...</a><br /></td></tr>
@@ -198,6 +200,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a63f2bf530fa0a1a9f9400b7dd1076b8d"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemio_1_1osecir.html#a63f2bf530fa0a1a9f9400b7dd1076b8d">simulate</a> (double t0, double tmax, double dt, const <a class="el" href="classmio_1_1osecir_1_1Model.html">Model</a> &amp;model, std::shared_ptr&lt; <a class="el" href="classmio_1_1IntegratorCore.html">IntegratorCore</a> &gt; integrator=nullptr)</td></tr>
 <tr class="memdesc:a63f2bf530fa0a1a9f9400b7dd1076b8d"><td class="mdescLeft">&#160;</td><td class="mdescRight">specialization of simulate for secir models using <a class="el" href="classmio_1_1osecir_1_1Simulation.html" title="specialization of compartment model simulation for secir models.">Simulation</a>.  <a href="namespacemio_1_1osecir.html#a63f2bf530fa0a1a9f9400b7dd1076b8d">More...</a><br /></td></tr>
 <tr class="separator:a63f2bf530fa0a1a9f9400b7dd1076b8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb447483a19498a776a3aa3f997058f5"><td class="memTemplParams" colspan="2">template&lt;class Base  = mio::Simulation&lt;Model&gt;&gt; </td></tr>
+<tr class="memitem:aeb447483a19498a776a3aa3f997058f5"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemio_1_1osecir.html#aeb447483a19498a776a3aa3f997058f5">test_commuters</a> (<a class="el" href="classmio_1_1osecir_1_1Simulation.html">Simulation</a>&lt; Base &gt; &amp;sim, Eigen::Ref&lt; Eigen::VectorXd &gt; migrated, double time)</td></tr>
+<tr class="separator:aeb447483a19498a776a3aa3f997058f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Typedef Documentation</h2>
 <a id="a4e621b26a35e863b329cbe0f7ef499e6"></a>
@@ -240,7 +245,9 @@ Functions</h2></td></tr>
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a3324235e2fb18f1c89744f6d5c30864ba494bf3eaa390dc405dd04ed1c8c99311"></a>Susceptible&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a3324235e2fb18f1c89744f6d5c30864baa54eecd5041d37f5c8443e0ee91e241a"></a>Exposed&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a3324235e2fb18f1c89744f6d5c30864bafd0b1ea9698f60d31c2e79a469b0d2af"></a>InfectedNoSymptoms&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a3324235e2fb18f1c89744f6d5c30864ba3474af14909eab3ca1d032bf7e33dd95"></a>InfectedNoSymptomsConfirmed&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a3324235e2fb18f1c89744f6d5c30864bae5c5d8500211987f287f130f37457115"></a>InfectedSymptoms&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a3324235e2fb18f1c89744f6d5c30864ba804de8377e4fe5f0c0facfcc4eecc3a5"></a>InfectedSymptomsConfirmed&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a3324235e2fb18f1c89744f6d5c30864ba4002b08c261f6e8ae5880f77252471d5"></a>InfectedSevere&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a3324235e2fb18f1c89744f6d5c30864ba59accbf82b92fbddf3c248e36fd28989"></a>InfectedCritical&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a3324235e2fb18f1c89744f6d5c30864ba5c4c4cf7bbab0d76fe61420aee14a5ca"></a>Recovered&#160;</td><td class="fielddoc"></td></tr>
@@ -587,6 +594,42 @@ template&lt;class Base  = mio::Simulation&lt;Model&gt;&gt; </div>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="aeb447483a19498a776a3aa3f997058f5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeb447483a19498a776a3aa3f997058f5">&#9670;&nbsp;</a></span>test_commuters()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Base  = mio::Simulation&lt;Model&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">auto mio::osecir::test_commuters </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classmio_1_1osecir_1_1Simulation.html">Simulation</a>&lt; Base &gt; &amp;&#160;</td>
+          <td class="paramname"><em>sim</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Eigen::Ref&lt; Eigen::VectorXd &gt;&#160;</td>
+          <td class="paramname"><em>migrated</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>time</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>
