@@ -548,7 +548,7 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Set the m_parameter object. </p>
-<p>Can be used to set the m_parameter object, which specifies the used function.</p>
+<p>Can be used to set the m_parameter object, which specifies the used function. The maximum support of a function may be costly to evaluate. In order to not always reevaluate or recompute the support when the user asks for it, a cached value is used. If m_support_max is set to -1, the cached value is deleted and a recomputation is done the next time the user asks for the support. As the support (potentially) depends on the m_parameter object, the cached value has to be deleted. For details see <a class="el" href="structmio_1_1StateAgeFunction.html#acbd1ff5de577fc8bb70b191d4676761e" title="Computes the maximum of the support of the function using the time step size dt and some tolerance to...">get_support_max()</a>.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">new_parameter</td><td>New parameter for <a class="el" href="structmio_1_1StateAgeFunction.html" title="A generic function depending on the state age, i.e.">StateAgeFunction</a>. </td></tr>
