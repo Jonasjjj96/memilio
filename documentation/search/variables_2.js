@@ -1,14 +1,8 @@
 var searchData=
 [
-  ['data_5fbegin_2809',['data_begin',['../classmio_1_1CustomIndexArray_1_1Slice_1_1Iterator.html#a48ce2a5e04981169de669b6975ad9ce9',1,'mio::CustomIndexArray::Slice::Iterator::data_begin()'],['../classmio_1_1CustomIndexArray_1_1Slice.html#aa0659cb8e70246502dbe523d7235f52a',1,'mio::CustomIndexArray::Slice::data_begin()']]],
-  ['day_2810',['day',['../structmio_1_1Date.html#ab3925ea9564606bcab110d7da21a8105',1,'mio::Date']]],
-  ['decline_2811',['decline',['../structmio_1_1abm_1_1ViralLoad.html#ae4b57ab3f4d8e45892ffb62c87d160f0',1,'mio::abm::ViralLoad']]],
-  ['default_5ffile_5fpath_2812',['default_file_path',['../namespacememilio_1_1epidata_1_1defaultDict.html#aac09a59b131ddd6dc74785a850d23632',1,'memilio::epidata::defaultDict']]],
-  ['defaultdict_2813',['defaultDict',['../namespacememilio_1_1epidata_1_1defaultDict.html#a5b8752aa7585dea1ee3c8ad5b913ed94',1,'memilio::epidata::defaultDict']]],
-  ['dfp_5fvec_2814',['dfp_vec',['../namespacememilio_1_1epidata_1_1defaultDict.html#a58b3ff88e58a161f53299d05248849a4',1,'memilio::epidata::defaultDict']]],
-  ['di_2815',['di',['../classmio_1_1CustomIndexArray_1_1Slice_1_1Iterator.html#a9eb013caf25ab28875c382a5804f024b',1,'mio::CustomIndexArray::Slice::Iterator::di()'],['../classmio_1_1CustomIndexArray_1_1Slice.html#af91593ff448d6381ea3a2d3d88a269c2',1,'mio::CustomIndexArray::Slice::di()']]],
-  ['disjunction_5fv_2816',['disjunction_v',['../namespacemio.html#a051882939b25c74a4d3fd2cad852a942',1,'mio']]],
-  ['dl_2817',['dl',['../classmio_1_1CustomIndexArray_1_1Slice.html#a1a5a449185be33e628342de36fc6835e',1,'mio::CustomIndexArray::Slice']]],
-  ['dr_2818',['dr',['../classmio_1_1CustomIndexArray_1_1Slice_1_1Iterator.html#a9e5782ab2384086e1faa2895d2b0756f',1,'mio::CustomIndexArray::Slice::Iterator::dr()'],['../classmio_1_1CustomIndexArray_1_1Slice.html#ac631c1a91d50cafe2830aac18b8e748c',1,'mio::CustomIndexArray::Slice::dr()']]],
-  ['dydt_2819',['dydt',['../classmio_1_1ControlledStepperWrapper.html#ad7681bd25e17edda65e881a80b17558a',1,'mio::ControlledStepperWrapper']]]
+  ['category_2833',['category',['../namespacememilio_1_1epidata_1_1getNPIData.html#ade1d166690957c54c982b97f6be350f9',1,'memilio::epidata::getNPIData']]],
+  ['cells_2834',['cells',['../structmio_1_1abm_1_1Trip.html#af2d5e2e46d3b35582b019353db6fd41a',1,'mio::abm::Trip']]],
+  ['conjunction_5fv_2835',['conjunction_v',['../namespacemio.html#a5e1169fe9e5d36e1c3a2bf558a874049',1,'mio']]],
+  ['county_2836',['County',['../namespacememilio_1_1epidata_1_1defaultDict.html#a79d2de4fed52305680d8450ba625795d',1,'memilio::epidata::defaultDict']]],
+  ['countymerging_2837',['CountyMerging',['../namespacememilio_1_1epidata_1_1geoModificationGermany.html#a793000594421b885eece0c214a164a86',1,'memilio::epidata::geoModificationGermany']]]
 ];

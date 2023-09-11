@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2023-08-29 07:35:05</td>
+            <td class="headerValue">2023-09-11 08:27:37</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">3</td>
@@ -141,7 +141,7 @@
 <a name="79"><span class="lineNum">      79 </span><span class="lineCov">        120 :     bool converged              = false; // carry for convergence criterion</span></a>
 <a name="80"><span class="lineNum">      80 </span><span class="lineCov">        120 :     bool failed_step_size_adapt = false;</span></a>
 <a name="81"><span class="lineNum">      81 </span>            : </a>
-<a name="82"><span class="lineNum">      82 </span><span class="lineCov">        120 :     if (m_kt_values.size() == 0) {</span></a>
+<a name="82"><span class="lineNum">      82 </span><span class="lineCov">        120 :     if (m_yt_eval.size() != yt.size()) {</span></a>
 <a name="83"><span class="lineNum">      83 </span><span class="lineCov">          3 :         m_yt_eval.resize(yt.size());</span></a>
 <a name="84"><span class="lineNum">      84 </span><span class="lineCov">          3 :         m_kt_values.resize(yt.size(), m_tab_final.entries_low.size());</span></a>
 <a name="85"><span class="lineNum">      85 </span>            :     }</a>

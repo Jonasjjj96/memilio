@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2023-08-29 07:35:05</td>
+            <td class="headerValue">2023-09-11 08:27:37</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">5</td>
@@ -216,33 +216,34 @@
 <a name="154"><span class="lineNum">     154 </span>            :     {</a>
 <a name="155"><span class="lineNum">     155 </span>            :         m_tab       = tab;</a>
 <a name="156"><span class="lineNum">     156 </span>            :         m_tab_final = final_tab;</a>
-<a name="157"><span class="lineNum">     157 </span>            :     }</a>
-<a name="158"><span class="lineNum">     158 </span>            : </a>
-<a name="159"><span class="lineNum">     159 </span>            :     /**</a>
-<a name="160"><span class="lineNum">     160 </span>            :      * @brief Make a single integration step of a system of ODEs and adapt the step size</a>
-<a name="161"><span class="lineNum">     161 </span>            :      * @param[in] yt value of y at t, y(t)</a>
-<a name="162"><span class="lineNum">     162 </span>            :      * @param[in,out] t current time</a>
-<a name="163"><span class="lineNum">     163 </span>            :      * @param[in,out] dt current time step size h=dt</a>
-<a name="164"><span class="lineNum">     164 </span>            :      * @param[out] ytp1 approximated value y(t+1)</a>
-<a name="165"><span class="lineNum">     165 </span>            :      */</a>
-<a name="166"><span class="lineNum">     166 </span>            :     bool step(const DerivFunction&amp; f, Eigen::Ref&lt;Eigen::VectorXd const&gt; yt, double&amp; t, double&amp; dt,</a>
-<a name="167"><span class="lineNum">     167 </span>            :               Eigen::Ref&lt;Eigen::VectorXd&gt; ytp1) const override;</a>
-<a name="168"><span class="lineNum">     168 </span>            : </a>
-<a name="169"><span class="lineNum">     169 </span>            : protected:</a>
-<a name="170"><span class="lineNum">     170 </span>            :     Tableau m_tab;</a>
-<a name="171"><span class="lineNum">     171 </span>            :     TableauFinal m_tab_final;</a>
-<a name="172"><span class="lineNum">     172 </span>            :     double m_abs_tol, m_rel_tol;</a>
-<a name="173"><span class="lineNum">     173 </span>            :     double m_dt_min, m_dt_max;</a>
-<a name="174"><span class="lineNum">     174 </span>            :     mutable Eigen::Matrix&lt;double, Eigen::Dynamic, Eigen::Dynamic, Eigen::ColMajor&gt; m_kt_values;</a>
-<a name="175"><span class="lineNum">     175 </span>            :     mutable Eigen::VectorXd m_yt_eval;</a>
-<a name="176"><span class="lineNum">     176 </span>            : </a>
-<a name="177"><span class="lineNum">     177 </span>            : private:</a>
-<a name="178"><span class="lineNum">     178 </span>            :     mutable Eigen::ArrayXd m_eps, m_error_estimate; // tolerance and estimate used for time step adaption</a>
-<a name="179"><span class="lineNum">     179 </span>            : };</a>
-<a name="180"><span class="lineNum">     180 </span>            : </a>
-<a name="181"><span class="lineNum">     181 </span>            : } // namespace mio</a>
-<a name="182"><span class="lineNum">     182 </span>            : </a>
-<a name="183"><span class="lineNum">     183 </span>            : #endif // ADAPT_RK_H_</a>
+<a name="157"><span class="lineNum">     157 </span>            :         m_kt_values.resize(Eigen::NoChange, m_tab_final.entries_low.size());</a>
+<a name="158"><span class="lineNum">     158 </span>            :     }</a>
+<a name="159"><span class="lineNum">     159 </span>            : </a>
+<a name="160"><span class="lineNum">     160 </span>            :     /**</a>
+<a name="161"><span class="lineNum">     161 </span>            :      * @brief Make a single integration step of a system of ODEs and adapt the step size</a>
+<a name="162"><span class="lineNum">     162 </span>            :      * @param[in] yt value of y at t, y(t)</a>
+<a name="163"><span class="lineNum">     163 </span>            :      * @param[in,out] t current time</a>
+<a name="164"><span class="lineNum">     164 </span>            :      * @param[in,out] dt current time step size h=dt</a>
+<a name="165"><span class="lineNum">     165 </span>            :      * @param[out] ytp1 approximated value y(t+1)</a>
+<a name="166"><span class="lineNum">     166 </span>            :      */</a>
+<a name="167"><span class="lineNum">     167 </span>            :     bool step(const DerivFunction&amp; f, Eigen::Ref&lt;Eigen::VectorXd const&gt; yt, double&amp; t, double&amp; dt,</a>
+<a name="168"><span class="lineNum">     168 </span>            :               Eigen::Ref&lt;Eigen::VectorXd&gt; ytp1) const override;</a>
+<a name="169"><span class="lineNum">     169 </span>            : </a>
+<a name="170"><span class="lineNum">     170 </span>            : protected:</a>
+<a name="171"><span class="lineNum">     171 </span>            :     Tableau m_tab;</a>
+<a name="172"><span class="lineNum">     172 </span>            :     TableauFinal m_tab_final;</a>
+<a name="173"><span class="lineNum">     173 </span>            :     double m_abs_tol, m_rel_tol;</a>
+<a name="174"><span class="lineNum">     174 </span>            :     double m_dt_min, m_dt_max;</a>
+<a name="175"><span class="lineNum">     175 </span>            :     mutable Eigen::Matrix&lt;double, Eigen::Dynamic, Eigen::Dynamic, Eigen::ColMajor&gt; m_kt_values;</a>
+<a name="176"><span class="lineNum">     176 </span>            :     mutable Eigen::VectorXd m_yt_eval;</a>
+<a name="177"><span class="lineNum">     177 </span>            : </a>
+<a name="178"><span class="lineNum">     178 </span>            : private:</a>
+<a name="179"><span class="lineNum">     179 </span>            :     mutable Eigen::ArrayXd m_eps, m_error_estimate; // tolerance and estimate used for time step adaption</a>
+<a name="180"><span class="lineNum">     180 </span>            : };</a>
+<a name="181"><span class="lineNum">     181 </span>            : </a>
+<a name="182"><span class="lineNum">     182 </span>            : } // namespace mio</a>
+<a name="183"><span class="lineNum">     183 </span>            : </a>
+<a name="184"><span class="lineNum">     184 </span>            : #endif // ADAPT_RK_H_</a>
 </pre>
       </td>
     </tr>
