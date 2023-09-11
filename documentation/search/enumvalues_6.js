@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['generic_3261',['Generic',['../namespacemio_1_1abm.html#aaaf8822b1e6c701350b795abb75522ffa8045a0a6c688b0635e3caccc408a1446',1,'mio::abm']]]
+  ['genericvaccine_3273',['GenericVaccine',['../namespacemio_1_1abm.html#aaf972255c1cfcdc64f54f9efeaec0705aea59b072b3b9842a710ae6569dd6c3f6',1,'mio::abm']]]
 ];

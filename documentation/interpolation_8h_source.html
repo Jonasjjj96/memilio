@@ -73,7 +73,7 @@ $(function() {
 <a href="interpolation_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">* Copyright (C) 2020-2023 German Aerospace Center (DLR-SC)</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">*</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">* Authors: David Kerkmann, Sascha Korf</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">* Authors: David Kerkmann, Sascha Korf, Khoa Nguyen</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">*</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">* Contact: Martin J. Kuehn &lt;Martin.Kuehn@DLR.de&gt;</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">*</span></div>
@@ -91,22 +91,56 @@ $(function() {
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">*/</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#ifndef INTERPOLATION_H_</span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#define INTERPOLATION_H_</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacemio.html">mio</a></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;{</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &lt;algorithm&gt;</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="logging_8h.html">memilio/utils/logging.h</a>&quot;</span></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> X, <span class="keyword">typename</span> V&gt;</div>
-<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="namespacemio.html#a46a8c32ccd44e57584abc88bf22eee11">   37</a></span>&#160;<span class="keyword">auto</span> <a class="code" href="namespacemio.html#a46a8c32ccd44e57584abc88bf22eee11">linear_interpolation</a>(<span class="keyword">const</span> X&amp; x_eval, <span class="keyword">const</span> X&amp; x_1, <span class="keyword">const</span> X&amp; x_2, <span class="keyword">const</span> V&amp; y1, <span class="keyword">const</span> V&amp; y2)</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;{</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keyword">auto</span> weight = (x_eval - x_1) / (x_2 - x_1);</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordflow">return</span> y1 + weight * (y2 - y1);</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;}</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;} <span class="comment">// namespace mio</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacemio.html">mio</a></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;{</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> X, <span class="keyword">typename</span> V&gt;</div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="namespacemio.html#a46a8c32ccd44e57584abc88bf22eee11">   40</a></span>&#160;<span class="keyword">auto</span> <a class="code" href="namespacemio.html#a46a8c32ccd44e57584abc88bf22eee11">linear_interpolation</a>(<span class="keyword">const</span> X&amp; x_eval, <span class="keyword">const</span> X&amp; x_1, <span class="keyword">const</span> X&amp; x_2, <span class="keyword">const</span> V&amp; y1, <span class="keyword">const</span> V&amp; y2)</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;{</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keyword">auto</span> weight = (x_eval - x_1) / (x_2 - x_1);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordflow">return</span> y1 + weight * (y2 - y1);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;}</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> X, <span class="keyword">typename</span> Y&gt;</div>
+<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="namespacemio.html#a2f961972292a81681062a6c8fdc03041">   54</a></span>&#160;Y <a class="code" href="namespacemio.html#a2f961972292a81681062a6c8fdc03041">linear_interpolation_of_data_set</a>(std::vector&lt;std::pair&lt;X, Y&gt;&gt; vector, <span class="keyword">const</span> X&amp; x_eval)</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;{</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="comment">// If the vector is empty or has only 1 node, throw an error</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordflow">if</span> (vector.empty() || vector.size() == 1) {</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <a class="code" href="namespacemio.html#a89afc3ebfa2c5ab994ec3c76dcad85d1">log_error</a>(<span class="stringliteral">&quot;The vector provided in linear_interpolation_of_data_set() must have more than 1 node.&quot;</span>);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="keywordflow">return</span> 0.0;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    }</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="comment">// Find the corresponding upper position of the node in the data set</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keywordtype">size_t</span> upper_pos = std::upper_bound(vector.begin(), vector.end(), x_eval,</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                                        [](<span class="keywordtype">double</span> value, <span class="keyword">const</span> std::pair&lt;X, Y&gt;&amp; node) {</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                                            return value &lt;= node.first;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                                        }) -</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                       vector.begin();</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordflow">if</span> (upper_pos == 0) {</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <span class="keywordflow">return</span> vector[upper_pos].second;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    }</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="comment">// If the x_eval is between two identifiable nodes in the dataset.</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordflow">if</span> (upper_pos &lt; vector.size()) {</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="namespacemio.html#a46a8c32ccd44e57584abc88bf22eee11">linear_interpolation</a>(x_eval, vector[upper_pos - 1].first, vector[upper_pos].first,</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                                    vector[upper_pos - 1].second, vector[upper_pos].second);</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    }</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;}</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;} <span class="comment">// namespace mio</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="alogging_8h_html"><div class="ttname"><a href="logging_8h.html">logging.h</a></div></div>
 <div class="ttc" id="anamespacemio_html"><div class="ttname"><a href="namespacemio.html">mio</a></div><div class="ttdoc">A collection of classes to simplify handling of matrix shapes in meta programming.</div><div class="ttdef"><b>Definition:</b> compartmentalmodel.h:32</div></div>
-<div class="ttc" id="anamespacemio_html_a46a8c32ccd44e57584abc88bf22eee11"><div class="ttname"><a href="namespacemio.html#a46a8c32ccd44e57584abc88bf22eee11">mio::linear_interpolation</a></div><div class="ttdeci">auto linear_interpolation(const X &amp;x_eval, const X &amp;x_1, const X &amp;x_2, const V &amp;y1, const V &amp;y2)</div><div class="ttdoc">Linear interpolation between two data values.</div><div class="ttdef"><b>Definition:</b> interpolation.h:37</div></div>
+<div class="ttc" id="anamespacemio_html_a2f961972292a81681062a6c8fdc03041"><div class="ttname"><a href="namespacemio.html#a2f961972292a81681062a6c8fdc03041">mio::linear_interpolation_of_data_set</a></div><div class="ttdeci">Y linear_interpolation_of_data_set(std::vector&lt; std::pair&lt; X, Y &gt;&gt; vector, const X &amp;x_eval)</div><div class="ttdoc">Linear interpolation between two points of a dataset, which is represented by a vector of pairs of no...</div><div class="ttdef"><b>Definition:</b> interpolation.h:54</div></div>
+<div class="ttc" id="anamespacemio_html_a46a8c32ccd44e57584abc88bf22eee11"><div class="ttname"><a href="namespacemio.html#a46a8c32ccd44e57584abc88bf22eee11">mio::linear_interpolation</a></div><div class="ttdeci">auto linear_interpolation(const X &amp;x_eval, const X &amp;x_1, const X &amp;x_2, const V &amp;y1, const V &amp;y2)</div><div class="ttdoc">Linear interpolation between two data values.</div><div class="ttdef"><b>Definition:</b> interpolation.h:40</div></div>
+<div class="ttc" id="anamespacemio_html_a89afc3ebfa2c5ab994ec3c76dcad85d1"><div class="ttname"><a href="namespacemio.html#a89afc3ebfa2c5ab994ec3c76dcad85d1">mio::log_error</a></div><div class="ttdeci">void log_error(spdlog::string_view_t fmt, const Args &amp;... args)</div><div class="ttdef"><b>Definition:</b> logging.h:96</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

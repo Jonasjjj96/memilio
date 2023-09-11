@@ -823,6 +823,10 @@ Functions</h2></td></tr>
 <tr class="memitem:a46a8c32ccd44e57584abc88bf22eee11"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemio.html#a46a8c32ccd44e57584abc88bf22eee11">linear_interpolation</a> (const X &amp;x_eval, const X &amp;x_1, const X &amp;x_2, const V &amp;y1, const V &amp;y2)</td></tr>
 <tr class="memdesc:a46a8c32ccd44e57584abc88bf22eee11"><td class="mdescLeft">&#160;</td><td class="mdescRight">Linear interpolation between two data values.  <a href="namespacemio.html#a46a8c32ccd44e57584abc88bf22eee11">More...</a><br /></td></tr>
 <tr class="separator:a46a8c32ccd44e57584abc88bf22eee11"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f961972292a81681062a6c8fdc03041"><td class="memTemplParams" colspan="2">template&lt;typename X , typename Y &gt; </td></tr>
+<tr class="memitem:a2f961972292a81681062a6c8fdc03041"><td class="memTemplItemLeft" align="right" valign="top">Y&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemio.html#a2f961972292a81681062a6c8fdc03041">linear_interpolation_of_data_set</a> (std::vector&lt; std::pair&lt; X, Y &gt;&gt; vector, const X &amp;x_eval)</td></tr>
+<tr class="memdesc:a2f961972292a81681062a6c8fdc03041"><td class="mdescLeft">&#160;</td><td class="mdescRight">Linear interpolation between two points of a dataset, which is represented by a vector of pairs of node and value.  <a href="namespacemio.html#a2f961972292a81681062a6c8fdc03041">More...</a><br /></td></tr>
+<tr class="separator:a2f961972292a81681062a6c8fdc03041"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7a8e658f565465ae076eab415d976e1b"><td class="memTemplParams" colspan="2">template&lt;typename... Args&gt; </td></tr>
 <tr class="memitem:a7a8e658f565465ae076eab415d976e1b"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemio.html#a7a8e658f565465ae076eab415d976e1b">log</a> (<a class="el" href="namespacemio.html#a67881790c6dfd8c058d27e5f1fe24220">LogLevel</a> level, spdlog::string_view_t fmt, const Args &amp;... args)</td></tr>
 <tr class="separator:a7a8e658f565465ae076eab415d976e1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -897,14 +901,14 @@ Functions</h2></td></tr>
 <tr class="memitem:a5af4730337dd5d430e3d09e4a88c09b5"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
 <tr class="memitem:a5af4730337dd5d430e3d09e4a88c09b5"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if_t&lt; <a class="el" href="namespacemio.html#af8c639c34c4df5647f084fefb48afc6e">has_eq_op</a>&lt; T &gt;::value, bool &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemio.html#a5af4730337dd5d430e3d09e4a88c09b5">operator!=</a> (const <a class="el" href="structmio_1_1Node.html">Node</a>&lt; T &gt; &amp;n1, const <a class="el" href="structmio_1_1Node.html">Node</a>&lt; T &gt; &amp;n2)</td></tr>
 <tr class="separator:a5af4730337dd5d430e3d09e4a88c09b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5b8d13d4bfbc6ab42cccb685cafdc5fe"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
-<tr class="memitem:a5b8d13d4bfbc6ab42cccb685cafdc5fe"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if_t&lt; <a class="el" href="namespacemio.html#a828f9a1016d1048d5d3e67dcc5ff4e8f">has_ostream_op</a>&lt; T &gt;::value, std::ostream &amp; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemio.html#a5b8d13d4bfbc6ab42cccb685cafdc5fe">operator&lt;&lt;</a> (std::ostream &amp;os, const <a class="el" href="structmio_1_1Edge.html">Edge</a>&lt; T &gt; &amp;e)</td></tr>
-<tr class="memdesc:a5b8d13d4bfbc6ab42cccb685cafdc5fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">out stream operator for edges if edge property type has stream operator defined  <a href="namespacemio.html#a5b8d13d4bfbc6ab42cccb685cafdc5fe">More...</a><br /></td></tr>
-<tr class="separator:a5b8d13d4bfbc6ab42cccb685cafdc5fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9a58db8b765e525595174fe5b502bf85"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
 <tr class="memitem:a9a58db8b765e525595174fe5b502bf85"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if_t&lt;!<a class="el" href="namespacemio.html#a828f9a1016d1048d5d3e67dcc5ff4e8f">has_ostream_op</a>&lt; T &gt;::value, std::ostream &amp; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemio.html#a9a58db8b765e525595174fe5b502bf85">operator&lt;&lt;</a> (std::ostream &amp;os, const <a class="el" href="structmio_1_1Edge.html">Edge</a>&lt; T &gt; &amp;e)</td></tr>
 <tr class="memdesc:a9a58db8b765e525595174fe5b502bf85"><td class="mdescLeft">&#160;</td><td class="mdescRight">out stream operator for edges if edge property type does not have stream operator defined  <a href="namespacemio.html#a9a58db8b765e525595174fe5b502bf85">More...</a><br /></td></tr>
 <tr class="separator:a9a58db8b765e525595174fe5b502bf85"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b8d13d4bfbc6ab42cccb685cafdc5fe"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:a5b8d13d4bfbc6ab42cccb685cafdc5fe"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if_t&lt; <a class="el" href="namespacemio.html#a828f9a1016d1048d5d3e67dcc5ff4e8f">has_ostream_op</a>&lt; T &gt;::value, std::ostream &amp; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemio.html#a5b8d13d4bfbc6ab42cccb685cafdc5fe">operator&lt;&lt;</a> (std::ostream &amp;os, const <a class="el" href="structmio_1_1Edge.html">Edge</a>&lt; T &gt; &amp;e)</td></tr>
+<tr class="memdesc:a5b8d13d4bfbc6ab42cccb685cafdc5fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">out stream operator for edges if edge property type has stream operator defined  <a href="namespacemio.html#a5b8d13d4bfbc6ab42cccb685cafdc5fe">More...</a><br /></td></tr>
+<tr class="separator:a5b8d13d4bfbc6ab42cccb685cafdc5fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2d44315af9f65cbb43ea90af7f1fae30"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
 <tr class="memitem:a2d44315af9f65cbb43ea90af7f1fae30"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if_t&lt; <a class="el" href="namespacemio.html#af8c639c34c4df5647f084fefb48afc6e">has_eq_op</a>&lt; T &gt;::value, bool &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemio.html#a2d44315af9f65cbb43ea90af7f1fae30">operator==</a> (const <a class="el" href="structmio_1_1Edge.html">Edge</a>&lt; T &gt; &amp;e1, const <a class="el" href="structmio_1_1Edge.html">Edge</a>&lt; T &gt; &amp;e2)</td></tr>
 <tr class="memdesc:a2d44315af9f65cbb43ea90af7f1fae30"><td class="mdescLeft">&#160;</td><td class="mdescRight">comparison operator if edge property type is equality comparable  <a href="namespacemio.html#a2d44315af9f65cbb43ea90af7f1fae30">More...</a><br /></td></tr>
@@ -4571,6 +4575,46 @@ template&lt;typename X , typename V &gt; </div>
 
 </div>
 </div>
+<a id="a2f961972292a81681062a6c8fdc03041"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2f961972292a81681062a6c8fdc03041">&#9670;&nbsp;</a></span>linear_interpolation_of_data_set()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename X , typename Y &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">Y mio::linear_interpolation_of_data_set </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; std::pair&lt; X, Y &gt;&gt;&#160;</td>
+          <td class="paramname"><em>vector</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const X &amp;&#160;</td>
+          <td class="paramname"><em>x_eval</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Linear interpolation between two points of a dataset, which is represented by a vector of pairs of node and value. </p>
+<p>Return 0 if there is less than two points in the dataset. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">vector</td><td>Vector of pairs of node and value. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">x_eval</td><td>Location to evaluate interpolation. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">unnamed</td><td>Interpolation result. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a7a8e658f565465ae076eab415d976e1b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7a8e658f565465ae076eab415d976e1b">&#9670;&nbsp;</a></span>log()</h2>
 
@@ -5477,40 +5521,8 @@ template&lt;class T &gt; </div>
 
 </div>
 </div>
-<a id="a9a58db8b765e525595174fe5b502bf85"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9a58db8b765e525595174fe5b502bf85">&#9670;&nbsp;</a></span>operator&lt;&lt;() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class T &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">std::enable_if_t&lt;!<a class="el" href="namespacemio.html#a828f9a1016d1048d5d3e67dcc5ff4e8f">has_ostream_op</a>&lt;T&gt;::value, std::ostream&amp;&gt; mio::operator&lt;&lt; </td>
-          <td>(</td>
-          <td class="paramtype">std::ostream &amp;&#160;</td>
-          <td class="paramname"><em>os</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="structmio_1_1Edge.html">Edge</a>&lt; T &gt; &amp;&#160;</td>
-          <td class="paramname"><em>e</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>out stream operator for edges if edge property type does not have stream operator defined </p>
-
-</div>
-</div>
 <a id="a5b8d13d4bfbc6ab42cccb685cafdc5fe"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5b8d13d4bfbc6ab42cccb685cafdc5fe">&#9670;&nbsp;</a></span>operator&lt;&lt;() <span class="overload">[2/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a5b8d13d4bfbc6ab42cccb685cafdc5fe">&#9670;&nbsp;</a></span>operator&lt;&lt;() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -5538,6 +5550,38 @@ template&lt;class T &gt; </div>
 </div><div class="memdoc">
 
 <p>out stream operator for edges if edge property type has stream operator defined </p>
+
+</div>
+</div>
+<a id="a9a58db8b765e525595174fe5b502bf85"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9a58db8b765e525595174fe5b502bf85">&#9670;&nbsp;</a></span>operator&lt;&lt;() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">std::enable_if_t&lt;!<a class="el" href="namespacemio.html#a828f9a1016d1048d5d3e67dcc5ff4e8f">has_ostream_op</a>&lt;T&gt;::value, std::ostream&amp;&gt; mio::operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>os</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structmio_1_1Edge.html">Edge</a>&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>e</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>out stream operator for edges if edge property type does not have stream operator defined </p>
 
 </div>
 </div>
