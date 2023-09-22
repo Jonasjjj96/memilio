@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2023-09-13 10:39:18</td>
+            <td class="headerValue">2023-09-22 09:07:47</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">12</td>
@@ -110,24 +110,24 @@
 <a name="48"><span class="lineNum">      48 </span>            :      * @param m month as int, 1 - 12</a>
 <a name="49"><span class="lineNum">      49 </span>            :      * @param d day as int, 1 - 31</a>
 <a name="50"><span class="lineNum">      50 </span>            :      */</a>
-<a name="51"><span class="lineNum">      51 </span><span class="lineCov">     203964 :     Date(int y, int m, int d)</span></a>
+<a name="51"><span class="lineNum">      51 </span><span class="lineCov">     204020 :     Date(int y, int m, int d)</span></a>
 <a name="52"><span class="lineNum">      52 </span>            : </a>
-<a name="53"><span class="lineNum">      53 </span><span class="lineCov">     203964 :         : year(y)</span></a>
+<a name="53"><span class="lineNum">      53 </span><span class="lineCov">     204020 :         : year(y)</span></a>
 <a name="54"><span class="lineNum">      54 </span>            :         , month(m)</a>
-<a name="55"><span class="lineNum">      55 </span><span class="lineCov">     203964 :         , day(d)</span></a>
+<a name="55"><span class="lineNum">      55 </span><span class="lineCov">     204020 :         , day(d)</span></a>
 <a name="56"><span class="lineNum">      56 </span>            :     {</a>
-<a name="57"><span class="lineNum">      57 </span><span class="lineCov">     203964 :         assert(month &gt; 0 &amp;&amp; month &lt; 13);</span></a>
-<a name="58"><span class="lineNum">      58 </span><span class="lineCov">     203964 :         assert(day &gt; 0 &amp;&amp; day &lt; 32);</span></a>
-<a name="59"><span class="lineNum">      59 </span><span class="lineCov">     203964 :     }</span></a>
+<a name="57"><span class="lineNum">      57 </span><span class="lineCov">     204020 :         assert(month &gt; 0 &amp;&amp; month &lt; 13);</span></a>
+<a name="58"><span class="lineNum">      58 </span><span class="lineCov">     204020 :         assert(day &gt; 0 &amp;&amp; day &lt; 32);</span></a>
+<a name="59"><span class="lineNum">      59 </span><span class="lineCov">     204020 :     }</span></a>
 <a name="60"><span class="lineNum">      60 </span>            : </a>
 <a name="61"><span class="lineNum">      61 </span>            :     /**</a>
 <a name="62"><span class="lineNum">      62 </span>            :      * equality comparison operators.</a>
 <a name="63"><span class="lineNum">      63 </span>            :      * @param other another date.</a>
 <a name="64"><span class="lineNum">      64 </span>            :      */</a>
 <a name="65"><span class="lineNum">      65 </span>            :     //@{</a>
-<a name="66"><span class="lineNum">      66 </span><span class="lineCov">     181815 :     bool operator==(const Date&amp; other) const</span></a>
+<a name="66"><span class="lineNum">      66 </span><span class="lineCov">     181843 :     bool operator==(const Date&amp; other) const</span></a>
 <a name="67"><span class="lineNum">      67 </span>            :     {</a>
-<a name="68"><span class="lineNum">      68 </span><span class="lineCov">     181815 :         return year == other.year &amp;&amp; month == other.month &amp;&amp; day == other.day;</span></a>
+<a name="68"><span class="lineNum">      68 </span><span class="lineCov">     181843 :         return year == other.year &amp;&amp; month == other.month &amp;&amp; day == other.day;</span></a>
 <a name="69"><span class="lineNum">      69 </span>            :     }</a>
 <a name="70"><span class="lineNum">      70 </span><span class="lineCov">          3 :     bool operator!=(const Date&amp; other) const</span></a>
 <a name="71"><span class="lineNum">      71 </span>            :     {</a>
