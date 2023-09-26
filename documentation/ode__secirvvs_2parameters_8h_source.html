@@ -586,7 +586,7 @@ $(function() {
 <div class="line"><a name="l00651"></a><span class="lineno">  651</span>&#160;            corrected = <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00652"></a><span class="lineno">  652</span>&#160;        }</div>
 <div class="line"><a name="l00653"></a><span class="lineno">  653</span>&#160; </div>
-<div class="line"><a name="l00654"></a><span class="lineno">  654</span>&#160;        <span class="keywordtype">double</span> tol_times = 1e-4; <span class="comment">// accepted tolerance for compartment stays</span></div>
+<div class="line"><a name="l00654"></a><span class="lineno">  654</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">double</span> tol_times = 1e-1; <span class="comment">// accepted tolerance for compartment stays</span></div>
 <div class="line"><a name="l00655"></a><span class="lineno">  655</span>&#160; </div>
 <div class="line"><a name="l00656"></a><span class="lineno">  656</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span> i = <a class="code" href="namespacemio_1_1abm.html#ac9a874698e76d3706081b2642c5f4a5a">AgeGroup</a>(0); i &lt; <a class="code" href="namespacemio_1_1abm.html#ac9a874698e76d3706081b2642c5f4a5a">AgeGroup</a>(<a class="code" href="classmio_1_1osecirvvs_1_1Parameters.html#a24ef88b78a771b9c62b7dec6d15f0321">m_num_groups</a>); ++i) {</div>
 <div class="line"><a name="l00657"></a><span class="lineno">  657</span>&#160; </div>
@@ -780,7 +780,7 @@ $(function() {
 <div class="line"><a name="l00845"></a><span class="lineno">  845</span>&#160; </div>
 <div class="line"><a name="l00851"></a><span class="lineno"><a class="line" href="classmio_1_1osecirvvs_1_1Parameters.html#ac725607e728eac217308963e83db91c2">  851</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classmio_1_1osecirvvs_1_1Parameters.html#ac725607e728eac217308963e83db91c2">check_constraints</a>()<span class="keyword"> const</span></div>
 <div class="line"><a name="l00852"></a><span class="lineno">  852</span>&#160;<span class="keyword">    </span>{</div>
-<div class="line"><a name="l00853"></a><span class="lineno">  853</span>&#160;        <span class="keywordtype">double</span> tol_times = 1e-4; <span class="comment">// accepted tolerance for compartment stays</span></div>
+<div class="line"><a name="l00853"></a><span class="lineno">  853</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">double</span> tol_times = 1e-1; <span class="comment">// accepted tolerance for compartment stays</span></div>
 <div class="line"><a name="l00854"></a><span class="lineno">  854</span>&#160;        <span class="keywordflow">if</span> (this-&gt;get&lt;Seasonality&gt;() &lt; 0.0 || this-&gt;get&lt;Seasonality&gt;() &gt; 0.5) {</div>
 <div class="line"><a name="l00855"></a><span class="lineno">  855</span>&#160;            <a class="code" href="namespacemio.html#a89afc3ebfa2c5ab994ec3c76dcad85d1">log_error</a>(<span class="stringliteral">&quot;Constraint check: Parameter m_seasonality smaller {:d} or larger {:d}&quot;</span>, 0, 0.5);</div>
 <div class="line"><a name="l00856"></a><span class="lineno">  856</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>

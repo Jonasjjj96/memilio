@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2023-09-25 13:41:43</td>
+            <td class="headerValue">2023-09-26 00:06:35</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">76</td>
@@ -713,7 +713,7 @@
 <a name="651"><span class="lineNum">     651 </span><span class="lineCov">          1 :             corrected = true;</span></a>
 <a name="652"><span class="lineNum">     652 </span>            :         }</a>
 <a name="653"><span class="lineNum">     653 </span>            : </a>
-<a name="654"><span class="lineNum">     654 </span><span class="lineCov">         54 :         double tol_times = 1e-4; // accepted tolerance for compartment stays</span></a>
+<a name="654"><span class="lineNum">     654 </span><span class="lineCov">         54 :         const double tol_times = 1e-1; // accepted tolerance for compartment stays</span></a>
 <a name="655"><span class="lineNum">     655 </span>            : </a>
 <a name="656"><span class="lineNum">     656 </span><span class="lineCov">        203 :         for (auto i = AgeGroup(0); i &lt; AgeGroup(m_num_groups); ++i) {</span></a>
 <a name="657"><span class="lineNum">     657 </span>            : </a>
@@ -912,7 +912,7 @@
 <a name="850"><span class="lineNum">     850 </span>            :      */</a>
 <a name="851"><span class="lineNum">     851 </span><span class="lineCov">         31 :     bool check_constraints() const</span></a>
 <a name="852"><span class="lineNum">     852 </span>            :     {</a>
-<a name="853"><span class="lineNum">     853 </span><span class="lineCov">         31 :         double tol_times = 1e-4; // accepted tolerance for compartment stays</span></a>
+<a name="853"><span class="lineNum">     853 </span><span class="lineCov">         31 :         const double tol_times = 1e-1; // accepted tolerance for compartment stays</span></a>
 <a name="854"><span class="lineNum">     854 </span><span class="lineCov">         31 :         if (this-&gt;get&lt;Seasonality&gt;() &lt; 0.0 || this-&gt;get&lt;Seasonality&gt;() &gt; 0.5) {</span></a>
 <a name="855"><span class="lineNum">     855 </span><span class="lineCov">          2 :             log_error(&quot;Constraint check: Parameter m_seasonality smaller {:d} or larger {:d}&quot;, 0, 0.5);</span></a>
 <a name="856"><span class="lineNum">     856 </span><span class="lineCov">          1 :             return true;</span></a>

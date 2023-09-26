@@ -392,7 +392,7 @@ $(function() {
 <div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160; </div>
 <div class="line"><a name="l00412"></a><span class="lineno"><a class="line" href="classmio_1_1osecir_1_1Parameters.html#ad83d98bcfabfddb841821e8322dcf21d">  412</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classmio_1_1osecir_1_1Parameters.html#ad83d98bcfabfddb841821e8322dcf21d">apply_constraints</a>()</div>
 <div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;    {</div>
-<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;        <span class="keywordtype">double</span> tol_times = 1e-4; <span class="comment">// accepted tolerance for compartment stays</span></div>
+<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">double</span> tol_times = 1e-1; <span class="comment">// accepted tolerance for compartment stays</span></div>
 <div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160; </div>
 <div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;        <span class="keywordtype">int</span> corrected = <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;        <span class="keywordflow">if</span> (this-&gt;get&lt;Seasonality&gt;() &lt; 0.0 || this-&gt;get&lt;Seasonality&gt;() &gt; 0.5) {</div>
@@ -526,7 +526,7 @@ $(function() {
 <div class="line"><a name="l00550"></a><span class="lineno">  550</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00551"></a><span class="lineno">  551</span>&#160;        }</div>
 <div class="line"><a name="l00552"></a><span class="lineno">  552</span>&#160; </div>
-<div class="line"><a name="l00553"></a><span class="lineno">  553</span>&#160;        <span class="keywordtype">double</span> tol_times = 1e-4; <span class="comment">// accepted tolerance for compartment stays</span></div>
+<div class="line"><a name="l00553"></a><span class="lineno">  553</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">double</span> tol_times = 1e-1; <span class="comment">// accepted tolerance for compartment stays</span></div>
 <div class="line"><a name="l00554"></a><span class="lineno">  554</span>&#160; </div>
 <div class="line"><a name="l00555"></a><span class="lineno">  555</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span> i = <a class="code" href="namespacemio_1_1abm.html#ac9a874698e76d3706081b2642c5f4a5a">AgeGroup</a>(0); i &lt; <a class="code" href="namespacemio_1_1abm.html#ac9a874698e76d3706081b2642c5f4a5a">AgeGroup</a>(<a class="code" href="classmio_1_1osecir_1_1Parameters.html#a918821943875c2252736c04a3fb47c0c">m_num_groups</a>); ++i) {</div>
 <div class="line"><a name="l00556"></a><span class="lineno">  556</span>&#160; </div>

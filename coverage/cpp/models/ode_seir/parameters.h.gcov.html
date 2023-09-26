@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2023-09-25 13:41:43</td>
+            <td class="headerValue">2023-09-26 00:06:35</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">7</td>
@@ -185,7 +185,7 @@
 <a name="123"><span class="lineNum">     123 </span>            :      */</a>
 <a name="124"><span class="lineNum">     124 </span><span class="lineCov">          6 :     bool apply_constraints()</span></a>
 <a name="125"><span class="lineNum">     125 </span>            :     {</a>
-<a name="126"><span class="lineNum">     126 </span><span class="lineCov">          6 :         double tol_times = 1e-4;</span></a>
+<a name="126"><span class="lineNum">     126 </span><span class="lineCov">          6 :         const double tol_times = 1e-1;</span></a>
 <a name="127"><span class="lineNum">     127 </span>            : </a>
 <a name="128"><span class="lineNum">     128 </span><span class="lineCov">          6 :         int corrected = false;</span></a>
 <a name="129"><span class="lineNum">     129 </span><span class="lineCov">          6 :         if (this-&gt;get&lt;TimeExposed&gt;() &lt; tol_times) {</span></a>
@@ -221,7 +221,7 @@
 <a name="159"><span class="lineNum">     159 </span>            :      */</a>
 <a name="160"><span class="lineNum">     160 </span><span class="lineCov">          7 :     bool check_constraints() const</span></a>
 <a name="161"><span class="lineNum">     161 </span>            :     {</a>
-<a name="162"><span class="lineNum">     162 </span><span class="lineCov">          7 :         double tol_times = 1e-4;</span></a>
+<a name="162"><span class="lineNum">     162 </span><span class="lineCov">          7 :         const double tol_times = 1e-1;</span></a>
 <a name="163"><span class="lineNum">     163 </span>            : </a>
 <a name="164"><span class="lineNum">     164 </span><span class="lineCov">          7 :         if (this-&gt;get&lt;TimeExposed&gt;() &lt; tol_times) {</span></a>
 <a name="165"><span class="lineNum">     165 </span><span class="lineCov">          2 :             log_error(&quot;Constraint check: Parameter TimeExposed {:.4f} smaller or equal {:.4f}. Please note that &quot;</span></a>
