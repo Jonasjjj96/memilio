@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2023-09-26 00:06:35</td>
+            <td class="headerValue">2023-09-29 16:14:57</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">2</td>
@@ -125,10 +125,10 @@
 <a name="63"><span class="lineNum">      63 </span><span class="lineCov">         18 :     }</span></a>
 <a name="64"><span class="lineNum">      64 </span>            : </a>
 <a name="65"><span class="lineNum">      65 </span>            :     //type is move-only for stable references of persons/locations</a>
-<a name="66"><span class="lineNum">      66 </span><span class="lineCov">          6 :     World(World&amp;&amp; other)            = default;</span></a>
+<a name="66"><span class="lineNum">      66 </span><span class="lineCov">          6 :     World(World&amp;&amp; other) = default;</span></a>
 <a name="67"><span class="lineNum">      67 </span>            :     World&amp; operator=(World&amp;&amp; other) = default;</a>
 <a name="68"><span class="lineNum">      68 </span>            :     World(const World&amp;)             = delete;</a>
-<a name="69"><span class="lineNum">      69 </span>            :     World&amp; operator=(const World&amp;)  = delete;</a>
+<a name="69"><span class="lineNum">      69 </span>            :     World&amp; operator=(const World&amp;) = delete;</a>
 <a name="70"><span class="lineNum">      70 </span>            : </a>
 <a name="71"><span class="lineNum">      71 </span>            :     /** </a>
 <a name="72"><span class="lineNum">      72 </span>            :      * @brief Prepare the World for the next Simulation step.</a>
@@ -194,88 +194,90 @@
 <a name="132"><span class="lineNum">     132 </span>            :      * @param[in] person The Person.</a>
 <a name="133"><span class="lineNum">     133 </span>            :      * @return Reference to the assigned Location.</a>
 <a name="134"><span class="lineNum">     134 </span>            :      */</a>
-<a name="135"><span class="lineNum">     135 </span>            :     Location&amp; find_location(LocationType type, const Person&amp; person);</a>
+<a name="135"><span class="lineNum">     135 </span>            :     const Location&amp; find_location(LocationType type, const Person&amp; person) const;</a>
 <a name="136"><span class="lineNum">     136 </span>            : </a>
-<a name="137"><span class="lineNum">     137 </span>            :     /** </a>
-<a name="138"><span class="lineNum">     138 </span>            :      * @brief Get the number of Persons in one #InfectionState at all Location%s of a type.</a>
-<a name="139"><span class="lineNum">     139 </span>            :      * @param[in] s Specified #InfectionState.</a>
-<a name="140"><span class="lineNum">     140 </span>            :      * @param[in] type Specified #LocationType.</a>
-<a name="141"><span class="lineNum">     141 </span>            :      */</a>
-<a name="142"><span class="lineNum">     142 </span>            :     size_t get_subpopulation_combined(TimePoint t, InfectionState s, LocationType type) const;</a>
-<a name="143"><span class="lineNum">     143 </span>            : </a>
-<a name="144"><span class="lineNum">     144 </span>            :     /** </a>
-<a name="145"><span class="lineNum">     145 </span>            :      * @brief Get the MigrationParameters.</a>
-<a name="146"><span class="lineNum">     146 </span>            :      * @return Reference to the MigrationParameters.</a>
-<a name="147"><span class="lineNum">     147 </span>            :      */</a>
-<a name="148"><span class="lineNum">     148 </span>            :     MigrationParameters&amp; get_migration_parameters();</a>
-<a name="149"><span class="lineNum">     149 </span>            : </a>
-<a name="150"><span class="lineNum">     150 </span>            :     const MigrationParameters&amp; get_migration_parameters() const;</a>
+<a name="137"><span class="lineNum">     137 </span>            :     Location&amp; find_location(LocationType type, const Person&amp; person);</a>
+<a name="138"><span class="lineNum">     138 </span>            : </a>
+<a name="139"><span class="lineNum">     139 </span>            :     /** </a>
+<a name="140"><span class="lineNum">     140 </span>            :      * @brief Get the number of Persons in one #InfectionState at all Location%s of a type.</a>
+<a name="141"><span class="lineNum">     141 </span>            :      * @param[in] s Specified #InfectionState.</a>
+<a name="142"><span class="lineNum">     142 </span>            :      * @param[in] type Specified #LocationType.</a>
+<a name="143"><span class="lineNum">     143 </span>            :      */</a>
+<a name="144"><span class="lineNum">     144 </span>            :     size_t get_subpopulation_combined(TimePoint t, InfectionState s, LocationType type) const;</a>
+<a name="145"><span class="lineNum">     145 </span>            : </a>
+<a name="146"><span class="lineNum">     146 </span>            :     /** </a>
+<a name="147"><span class="lineNum">     147 </span>            :      * @brief Get the MigrationParameters.</a>
+<a name="148"><span class="lineNum">     148 </span>            :      * @return Reference to the MigrationParameters.</a>
+<a name="149"><span class="lineNum">     149 </span>            :      */</a>
+<a name="150"><span class="lineNum">     150 </span>            :     MigrationParameters&amp; get_migration_parameters();</a>
 <a name="151"><span class="lineNum">     151 </span>            : </a>
-<a name="152"><span class="lineNum">     152 </span>            :     /** </a>
-<a name="153"><span class="lineNum">     153 </span>            :      * @brief Get the GlobalInfectionParameters.</a>
-<a name="154"><span class="lineNum">     154 </span>            :      * @return Reference to the GlobalInfectionParameters.</a>
-<a name="155"><span class="lineNum">     155 </span>            :      */</a>
-<a name="156"><span class="lineNum">     156 </span>            :     GlobalInfectionParameters&amp; get_global_infection_parameters();</a>
-<a name="157"><span class="lineNum">     157 </span>            : </a>
-<a name="158"><span class="lineNum">     158 </span>            :     const GlobalInfectionParameters&amp; get_global_infection_parameters() const;</a>
+<a name="152"><span class="lineNum">     152 </span>            :     const MigrationParameters&amp; get_migration_parameters() const;</a>
+<a name="153"><span class="lineNum">     153 </span>            : </a>
+<a name="154"><span class="lineNum">     154 </span>            :     /** </a>
+<a name="155"><span class="lineNum">     155 </span>            :      * @brief Get the GlobalInfectionParameters.</a>
+<a name="156"><span class="lineNum">     156 </span>            :      * @return Reference to the GlobalInfectionParameters.</a>
+<a name="157"><span class="lineNum">     157 </span>            :      */</a>
+<a name="158"><span class="lineNum">     158 </span>            :     GlobalInfectionParameters&amp; get_global_infection_parameters();</a>
 <a name="159"><span class="lineNum">     159 </span>            : </a>
-<a name="160"><span class="lineNum">     160 </span>            :     /**</a>
-<a name="161"><span class="lineNum">     161 </span>            :      * @brief Get the migration data.</a>
-<a name="162"><span class="lineNum">     162 </span>            :      * @return Reference to the list of Trip%s that the Person%s make.</a>
-<a name="163"><span class="lineNum">     163 </span>            :      */</a>
-<a name="164"><span class="lineNum">     164 </span>            :     TripList&amp; get_trip_list();</a>
-<a name="165"><span class="lineNum">     165 </span>            : </a>
-<a name="166"><span class="lineNum">     166 </span>            :     const TripList&amp; get_trip_list() const;</a>
+<a name="160"><span class="lineNum">     160 </span>            :     const GlobalInfectionParameters&amp; get_global_infection_parameters() const;</a>
+<a name="161"><span class="lineNum">     161 </span>            : </a>
+<a name="162"><span class="lineNum">     162 </span>            :     /**</a>
+<a name="163"><span class="lineNum">     163 </span>            :      * @brief Get the migration data.</a>
+<a name="164"><span class="lineNum">     164 </span>            :      * @return Reference to the list of Trip%s that the Person%s make.</a>
+<a name="165"><span class="lineNum">     165 </span>            :      */</a>
+<a name="166"><span class="lineNum">     166 </span>            :     TripList&amp; get_trip_list();</a>
 <a name="167"><span class="lineNum">     167 </span>            : </a>
-<a name="168"><span class="lineNum">     168 </span>            :     /** </a>
-<a name="169"><span class="lineNum">     169 </span>            :      * @brief Decide if migration rules (like go to school/work) are used or not;</a>
-<a name="170"><span class="lineNum">     170 </span>            :      * The migration rules regarding hospitalization/ICU/quarantine are always used.</a>
-<a name="171"><span class="lineNum">     171 </span>            :      * @param[in] param If true uses the migration rules for migration to school/work etc., else only the rules </a>
-<a name="172"><span class="lineNum">     172 </span>            :      * regarding hospitalization/ICU/quarantine.</a>
-<a name="173"><span class="lineNum">     173 </span>            :      */</a>
-<a name="174"><span class="lineNum">     174 </span>            :     void use_migration_rules(bool param);</a>
-<a name="175"><span class="lineNum">     175 </span>            :     bool use_migration_rules() const;</a>
-<a name="176"><span class="lineNum">     176 </span>            : </a>
-<a name="177"><span class="lineNum">     177 </span>            :     /** </a>
-<a name="178"><span class="lineNum">     178 </span>            :      * @brief Get the TestingStrategy.</a>
-<a name="179"><span class="lineNum">     179 </span>            :      * @return Reference to the list of TestingScheme%s that are checked for testing.</a>
-<a name="180"><span class="lineNum">     180 </span>            :      */</a>
-<a name="181"><span class="lineNum">     181 </span>            :     TestingStrategy&amp; get_testing_strategy();</a>
-<a name="182"><span class="lineNum">     182 </span>            : </a>
-<a name="183"><span class="lineNum">     183 </span>            :     const TestingStrategy&amp; get_testing_strategy() const;</a>
+<a name="168"><span class="lineNum">     168 </span>            :     const TripList&amp; get_trip_list() const;</a>
+<a name="169"><span class="lineNum">     169 </span>            : </a>
+<a name="170"><span class="lineNum">     170 </span>            :     /** </a>
+<a name="171"><span class="lineNum">     171 </span>            :      * @brief Decide if migration rules (like go to school/work) are used or not;</a>
+<a name="172"><span class="lineNum">     172 </span>            :      * The migration rules regarding hospitalization/ICU/quarantine are always used.</a>
+<a name="173"><span class="lineNum">     173 </span>            :      * @param[in] param If true uses the migration rules for migration to school/work etc., else only the rules </a>
+<a name="174"><span class="lineNum">     174 </span>            :      * regarding hospitalization/ICU/quarantine.</a>
+<a name="175"><span class="lineNum">     175 </span>            :      */</a>
+<a name="176"><span class="lineNum">     176 </span>            :     void use_migration_rules(bool param);</a>
+<a name="177"><span class="lineNum">     177 </span>            :     bool use_migration_rules() const;</a>
+<a name="178"><span class="lineNum">     178 </span>            : </a>
+<a name="179"><span class="lineNum">     179 </span>            :     /** </a>
+<a name="180"><span class="lineNum">     180 </span>            :      * @brief Get the TestingStrategy.</a>
+<a name="181"><span class="lineNum">     181 </span>            :      * @return Reference to the list of TestingScheme%s that are checked for testing.</a>
+<a name="182"><span class="lineNum">     182 </span>            :      */</a>
+<a name="183"><span class="lineNum">     183 </span>            :     TestingStrategy&amp; get_testing_strategy();</a>
 <a name="184"><span class="lineNum">     184 </span>            : </a>
-<a name="185"><span class="lineNum">     185 </span>            : private:</a>
-<a name="186"><span class="lineNum">     186 </span>            :     /**</a>
-<a name="187"><span class="lineNum">     187 </span>            :      * @brief Person%s interact at their Location and may become infected.</a>
-<a name="188"><span class="lineNum">     188 </span>            :      * @param[in] t The current TimePoint.</a>
-<a name="189"><span class="lineNum">     189 </span>            :      * @param[in] dt The length of the time step of the Simulation.</a>
-<a name="190"><span class="lineNum">     190 </span>            :      */</a>
-<a name="191"><span class="lineNum">     191 </span>            :     void interaction(TimePoint t, TimeSpan dt);</a>
-<a name="192"><span class="lineNum">     192 </span>            :     /**</a>
-<a name="193"><span class="lineNum">     193 </span>            :      * @brief Person%s move in the World according to rules.</a>
-<a name="194"><span class="lineNum">     194 </span>            :      * @param[in] t The current TimePoint.</a>
-<a name="195"><span class="lineNum">     195 </span>            :      * @param[in] dt The length of the time step of the Simulation.</a>
-<a name="196"><span class="lineNum">     196 </span>            :      */</a>
-<a name="197"><span class="lineNum">     197 </span>            :     void migration(TimePoint t, TimeSpan dt);</a>
-<a name="198"><span class="lineNum">     198 </span>            : </a>
-<a name="199"><span class="lineNum">     199 </span>            :     std::vector&lt;std::unique_ptr&lt;Person&gt;&gt; m_persons; ///&lt; Vector with pointers to every Person.</a>
-<a name="200"><span class="lineNum">     200 </span>            :     std::vector&lt;std::unique_ptr&lt;Location&gt;&gt; m_locations; ///&lt; Vector with pointers to every Location.</a>
-<a name="201"><span class="lineNum">     201 </span>            :     TestingStrategy m_testing_strategy; ///&lt; List of TestingScheme%s that are checked for testing.</a>
-<a name="202"><span class="lineNum">     202 </span>            :     GlobalInfectionParameters m_infection_parameters; /** Parameters of the Infection that are the same everywhere in</a>
-<a name="203"><span class="lineNum">     203 </span>            :     the World.*/</a>
-<a name="204"><span class="lineNum">     204 </span>            :     MigrationParameters m_migration_parameters; ///&lt; Parameters that describe the migration between Location%s.</a>
-<a name="205"><span class="lineNum">     205 </span>            :     TripList m_trip_list; ///&lt; List of all Trip%s the Person%s do.</a>
-<a name="206"><span class="lineNum">     206 </span>            :     bool m_use_migration_rules; ///&lt; Whether migration rules are considered.</a>
-<a name="207"><span class="lineNum">     207 </span>            :     std::vector&lt;std::pair&lt;LocationType (*)(const Person&amp;, TimePoint, TimeSpan, const MigrationParameters&amp;),</a>
-<a name="208"><span class="lineNum">     208 </span>            :                           std::vector&lt;LocationType&gt;&gt;&gt;</a>
-<a name="209"><span class="lineNum">     209 </span>            :         m_migration_rules; ///&lt; Rules that govern the migration between Location%s.</a>
-<a name="210"><span class="lineNum">     210 </span>            :     LocationId m_cemetery_id; // Central cemetery for all dead persons.</a>
-<a name="211"><span class="lineNum">     211 </span>            : };</a>
-<a name="212"><span class="lineNum">     212 </span>            : </a>
-<a name="213"><span class="lineNum">     213 </span>            : } // namespace abm</a>
-<a name="214"><span class="lineNum">     214 </span>            : } // namespace mio</a>
-<a name="215"><span class="lineNum">     215 </span>            : </a>
-<a name="216"><span class="lineNum">     216 </span>            : #endif</a>
+<a name="185"><span class="lineNum">     185 </span>            :     const TestingStrategy&amp; get_testing_strategy() const;</a>
+<a name="186"><span class="lineNum">     186 </span>            : </a>
+<a name="187"><span class="lineNum">     187 </span>            : private:</a>
+<a name="188"><span class="lineNum">     188 </span>            :     /**</a>
+<a name="189"><span class="lineNum">     189 </span>            :      * @brief Person%s interact at their Location and may become infected.</a>
+<a name="190"><span class="lineNum">     190 </span>            :      * @param[in] t The current TimePoint.</a>
+<a name="191"><span class="lineNum">     191 </span>            :      * @param[in] dt The length of the time step of the Simulation.</a>
+<a name="192"><span class="lineNum">     192 </span>            :      */</a>
+<a name="193"><span class="lineNum">     193 </span>            :     void interaction(TimePoint t, TimeSpan dt);</a>
+<a name="194"><span class="lineNum">     194 </span>            :     /**</a>
+<a name="195"><span class="lineNum">     195 </span>            :      * @brief Person%s move in the World according to rules.</a>
+<a name="196"><span class="lineNum">     196 </span>            :      * @param[in] t The current TimePoint.</a>
+<a name="197"><span class="lineNum">     197 </span>            :      * @param[in] dt The length of the time step of the Simulation.</a>
+<a name="198"><span class="lineNum">     198 </span>            :      */</a>
+<a name="199"><span class="lineNum">     199 </span>            :     void migration(TimePoint t, TimeSpan dt);</a>
+<a name="200"><span class="lineNum">     200 </span>            : </a>
+<a name="201"><span class="lineNum">     201 </span>            :     std::vector&lt;std::unique_ptr&lt;Person&gt;&gt; m_persons; ///&lt; Vector with pointers to every Person.</a>
+<a name="202"><span class="lineNum">     202 </span>            :     std::vector&lt;std::unique_ptr&lt;Location&gt;&gt; m_locations; ///&lt; Vector with pointers to every Location.</a>
+<a name="203"><span class="lineNum">     203 </span>            :     TestingStrategy m_testing_strategy; ///&lt; List of TestingScheme%s that are checked for testing.</a>
+<a name="204"><span class="lineNum">     204 </span>            :     GlobalInfectionParameters m_infection_parameters; /** Parameters of the Infection that are the same everywhere in</a>
+<a name="205"><span class="lineNum">     205 </span>            :     the World.*/</a>
+<a name="206"><span class="lineNum">     206 </span>            :     MigrationParameters m_migration_parameters; ///&lt; Parameters that describe the migration between Location%s.</a>
+<a name="207"><span class="lineNum">     207 </span>            :     TripList m_trip_list; ///&lt; List of all Trip%s the Person%s do.</a>
+<a name="208"><span class="lineNum">     208 </span>            :     bool m_use_migration_rules; ///&lt; Whether migration rules are considered.</a>
+<a name="209"><span class="lineNum">     209 </span>            :     std::vector&lt;std::pair&lt;LocationType (*)(const Person&amp;, TimePoint, TimeSpan, const MigrationParameters&amp;),</a>
+<a name="210"><span class="lineNum">     210 </span>            :                           std::vector&lt;LocationType&gt;&gt;&gt;</a>
+<a name="211"><span class="lineNum">     211 </span>            :         m_migration_rules; ///&lt; Rules that govern the migration between Location%s.</a>
+<a name="212"><span class="lineNum">     212 </span>            :     LocationId m_cemetery_id; // Central cemetery for all dead persons.</a>
+<a name="213"><span class="lineNum">     213 </span>            : };</a>
+<a name="214"><span class="lineNum">     214 </span>            : </a>
+<a name="215"><span class="lineNum">     215 </span>            : } // namespace abm</a>
+<a name="216"><span class="lineNum">     216 </span>            : } // namespace mio</a>
+<a name="217"><span class="lineNum">     217 </span>            : </a>
+<a name="218"><span class="lineNum">     218 </span>            : #endif</a>
 </pre>
       </td>
     </tr>

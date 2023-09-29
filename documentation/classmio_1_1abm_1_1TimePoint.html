@@ -94,6 +94,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ae2f1f679d80756b07b2f2e747b6030cc"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1abm_1_1TimePoint.html#ae2f1f679d80756b07b2f2e747b6030cc">hours</a> () const</td></tr>
 <tr class="memdesc:ae2f1f679d80756b07b2f2e747b6030cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Time since the epoch in hours.  <a href="classmio_1_1abm_1_1TimePoint.html#ae2f1f679d80756b07b2f2e747b6030cc">More...</a><br /></td></tr>
 <tr class="separator:ae2f1f679d80756b07b2f2e747b6030cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab816eef272ec9ef4bfdc7eec0216d159"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1abm_1_1TimePoint.html#ab816eef272ec9ef4bfdc7eec0216d159">is_weekend</a> () const</td></tr>
+<tr class="memdesc:ab816eef272ec9ef4bfdc7eec0216d159"><td class="mdescLeft">&#160;</td><td class="mdescRight">If the current time is on a weekend, e.g.  <a href="classmio_1_1abm_1_1TimePoint.html#ab816eef272ec9ef4bfdc7eec0216d159">More...</a><br /></td></tr>
+<tr class="separator:ab816eef272ec9ef4bfdc7eec0216d159"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af659bbf42af1b6ad7785efb9817e440a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmio_1_1abm_1_1TimeSpan.html">TimeSpan</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1abm_1_1TimePoint.html#af659bbf42af1b6ad7785efb9817e440a">operator-</a> (const <a class="el" href="classmio_1_1abm_1_1TimePoint.html">TimePoint</a> &amp;p2) const</td></tr>
 <tr class="memdesc:af659bbf42af1b6ad7785efb9817e440a"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classmio_1_1abm_1_1TimeSpan.html" title="A duration of time.">TimeSpan</a> difference between this and another <a class="el" href="classmio_1_1abm_1_1TimePoint.html" title="Represents a point in time.">TimePoint</a>.  <a href="classmio_1_1abm_1_1TimePoint.html#af659bbf42af1b6ad7785efb9817e440a">More...</a><br /></td></tr>
 <tr class="separator:af659bbf42af1b6ad7785efb9817e440a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -278,6 +281,26 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Time since the epoch in hours. </p>
+
+</div>
+</div>
+<a id="ab816eef272ec9ef4bfdc7eec0216d159"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab816eef272ec9ef4bfdc7eec0216d159">&#9670;&nbsp;</a></span>is_weekend()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool mio::abm::TimePoint::is_weekend </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>If the current time is on a weekend, e.g. </p>
+<p>day_of_the_week is 5 = Sat or 6 = Sun. </p>
 
 </div>
 </div>

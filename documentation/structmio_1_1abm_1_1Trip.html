@@ -82,6 +82,8 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:a18dacb47ea0e54fed6354a3499eb478c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmio_1_1abm_1_1Trip.html#a18dacb47ea0e54fed6354a3499eb478c">Trip</a> (uint32_t id, <a class="el" href="classmio_1_1abm_1_1TimePoint.html">TimePoint</a> time_new, <a class="el" href="structmio_1_1abm_1_1LocationId.html">LocationId</a> destination, const std::vector&lt; uint32_t &gt; &amp;input_cells={})</td></tr>
+<tr class="separator:a18dacb47ea0e54fed6354a3499eb478c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3cf14e598c72793c5676d49d15fed42d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmio_1_1abm_1_1Trip.html#a3cf14e598c72793c5676d49d15fed42d">Trip</a> (uint32_t id, <a class="el" href="classmio_1_1abm_1_1TimePoint.html">TimePoint</a> time_new, <a class="el" href="structmio_1_1abm_1_1LocationId.html">LocationId</a> destination, <a class="el" href="structmio_1_1abm_1_1LocationId.html">LocationId</a> origin, const std::vector&lt; uint32_t &gt; &amp;input_cells={})</td></tr>
 <tr class="memdesc:a3cf14e598c72793c5676d49d15fed42d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="structmio_1_1abm_1_1Trip.html" title="A trip describes a migration from one Location to another Location.">Trip</a>.  <a href="structmio_1_1abm_1_1Trip.html#a3cf14e598c72793c5676d49d15fed42d">More...</a><br /></td></tr>
 <tr class="separator:a3cf14e598c72793c5676d49d15fed42d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -108,7 +110,7 @@ Public Attributes</h2></td></tr>
 <div class="textblock"><p>A trip describes a migration from one <a class="el" href="classmio_1_1abm_1_1Location.html" title="All Locations in the simulated World where Persons gather.">Location</a> to another <a class="el" href="classmio_1_1abm_1_1Location.html" title="All Locations in the simulated World where Persons gather.">Location</a>. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a3cf14e598c72793c5676d49d15fed42d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3cf14e598c72793c5676d49d15fed42d">&#9670;&nbsp;</a></span>Trip()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a3cf14e598c72793c5676d49d15fed42d">&#9670;&nbsp;</a></span>Trip() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -155,13 +157,53 @@ Public Attributes</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">id</td><td>ID of the <a class="el" href="classmio_1_1abm_1_1Person.html" title="Agents in the simulated World that can carry and spread the Infection.">Person</a> that makes the <a class="el" href="structmio_1_1abm_1_1Trip.html" title="A trip describes a migration from one Location to another Location.">Trip</a>. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">time_new</td><td>Time at which a <a class="el" href="classmio_1_1abm_1_1Person.html" title="Agents in the simulated World that can carry and spread the Infection.">Person</a> changes the <a class="el" href="classmio_1_1abm_1_1Location.html" title="All Locations in the simulated World where Persons gather.">Location</a>. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">time_new</td><td>Time at which a <a class="el" href="classmio_1_1abm_1_1Person.html" title="Agents in the simulated World that can carry and spread the Infection.">Person</a> changes the <a class="el" href="classmio_1_1abm_1_1Location.html" title="All Locations in the simulated World where Persons gather.">Location</a> this currently cant be set for s specific day just a timepoint in a day. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">destination</td><td><a class="el" href="classmio_1_1abm_1_1Location.html" title="All Locations in the simulated World where Persons gather.">Location</a> where the <a class="el" href="classmio_1_1abm_1_1Person.html" title="Agents in the simulated World that can carry and spread the Infection.">Person</a> migrates to. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">origin</td><td><a class="el" href="classmio_1_1abm_1_1Location.html" title="All Locations in the simulated World where Persons gather.">Location</a> where the person starts the <a class="el" href="structmio_1_1abm_1_1Trip.html" title="A trip describes a migration from one Location to another Location.">Trip</a>. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">input_cells</td><td>The index of the <a class="el" href="structmio_1_1abm_1_1Cell.html" title="The Location can be split up into several Cells.">Cell</a>s the <a class="el" href="classmio_1_1abm_1_1Person.html" title="Agents in the simulated World that can carry and spread the Infection.">Person</a> migrates to. </td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="a18dacb47ea0e54fed6354a3499eb478c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a18dacb47ea0e54fed6354a3499eb478c">&#9670;&nbsp;</a></span>Trip() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">mio::abm::Trip::Trip </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classmio_1_1abm_1_1TimePoint.html">TimePoint</a>&#160;</td>
+          <td class="paramname"><em>time_new</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structmio_1_1abm_1_1LocationId.html">LocationId</a>&#160;</td>
+          <td class="paramname"><em>destination</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; uint32_t &gt; &amp;&#160;</td>
+          <td class="paramname"><em>input_cells</em> = <code>{}</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>

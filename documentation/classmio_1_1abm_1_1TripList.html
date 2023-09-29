@@ -82,36 +82,45 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a15652ba55f22fb850d468761bb1de7af"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1abm_1_1TripList.html#a15652ba55f22fb850d468761bb1de7af">add_trip</a> (<a class="el" href="structmio_1_1abm_1_1Trip.html">Trip</a> trip)</td></tr>
-<tr class="memdesc:a15652ba55f22fb850d468761bb1de7af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a <a class="el" href="structmio_1_1abm_1_1Trip.html" title="A trip describes a migration from one Location to another Location.">Trip</a> to migration data.  <a href="classmio_1_1abm_1_1TripList.html#a15652ba55f22fb850d468761bb1de7af">More...</a><br /></td></tr>
-<tr class="separator:a15652ba55f22fb850d468761bb1de7af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0da4611fadd3b39c9dc0ddc842823445"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1abm_1_1TripList.html#a0da4611fadd3b39c9dc0ddc842823445">add_trip</a> (<a class="el" href="structmio_1_1abm_1_1Trip.html">Trip</a> trip, bool weekend=false)</td></tr>
+<tr class="memdesc:a0da4611fadd3b39c9dc0ddc842823445"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a <a class="el" href="structmio_1_1abm_1_1Trip.html" title="A trip describes a migration from one Location to another Location.">Trip</a> to migration data.  <a href="classmio_1_1abm_1_1TripList.html#a0da4611fadd3b39c9dc0ddc842823445">More...</a><br /></td></tr>
+<tr class="separator:a0da4611fadd3b39c9dc0ddc842823445"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0d1bc12cbdc07ea446a8a3884a2b7f3c"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1abm_1_1TripList.html#a0d1bc12cbdc07ea446a8a3884a2b7f3c">get_current_index</a> () const</td></tr>
 <tr class="memdesc:a0d1bc12cbdc07ea446a8a3884a2b7f3c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the current index.  <a href="classmio_1_1abm_1_1TripList.html#a0d1bc12cbdc07ea446a8a3884a2b7f3c">More...</a><br /></td></tr>
 <tr class="separator:a0d1bc12cbdc07ea446a8a3884a2b7f3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2fddf84fc1fe75311d454c54fcc11c4f"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structmio_1_1abm_1_1Trip.html">Trip</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1abm_1_1TripList.html#a2fddf84fc1fe75311d454c54fcc11c4f">get_next_trip</a> () const</td></tr>
-<tr class="memdesc:a2fddf84fc1fe75311d454c54fcc11c4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the next <a class="el" href="structmio_1_1abm_1_1Trip.html" title="A trip describes a migration from one Location to another Location.">Trip</a>.  <a href="classmio_1_1abm_1_1TripList.html#a2fddf84fc1fe75311d454c54fcc11c4f">More...</a><br /></td></tr>
-<tr class="separator:a2fddf84fc1fe75311d454c54fcc11c4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0b3f6442583b97a1868d4c89a0e99499"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmio_1_1abm_1_1TimePoint.html">TimePoint</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1abm_1_1TripList.html#a0b3f6442583b97a1868d4c89a0e99499">get_next_trip_time</a> () const</td></tr>
-<tr class="memdesc:a0b3f6442583b97a1868d4c89a0e99499"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the time at which the next <a class="el" href="structmio_1_1abm_1_1Trip.html" title="A trip describes a migration from one Location to another Location.">Trip</a> will happen.  <a href="classmio_1_1abm_1_1TripList.html#a0b3f6442583b97a1868d4c89a0e99499">More...</a><br /></td></tr>
-<tr class="separator:a0b3f6442583b97a1868d4c89a0e99499"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0670e6e1b2334768b3252e87fdf7518a"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structmio_1_1abm_1_1Trip.html">Trip</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1abm_1_1TripList.html#a0670e6e1b2334768b3252e87fdf7518a">get_next_trip</a> (bool weekend) const</td></tr>
+<tr class="memdesc:a0670e6e1b2334768b3252e87fdf7518a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the next <a class="el" href="structmio_1_1abm_1_1Trip.html" title="A trip describes a migration from one Location to another Location.">Trip</a>.  <a href="classmio_1_1abm_1_1TripList.html#a0670e6e1b2334768b3252e87fdf7518a">More...</a><br /></td></tr>
+<tr class="separator:a0670e6e1b2334768b3252e87fdf7518a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a380c9050d951c30079e9b8100d88fad9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmio_1_1abm_1_1TimePoint.html">TimePoint</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1abm_1_1TripList.html#a380c9050d951c30079e9b8100d88fad9">get_next_trip_time</a> (bool weekend) const</td></tr>
+<tr class="memdesc:a380c9050d951c30079e9b8100d88fad9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the time at which the next <a class="el" href="structmio_1_1abm_1_1Trip.html" title="A trip describes a migration from one Location to another Location.">Trip</a> will happen.  <a href="classmio_1_1abm_1_1TripList.html#a380c9050d951c30079e9b8100d88fad9">More...</a><br /></td></tr>
+<tr class="separator:a380c9050d951c30079e9b8100d88fad9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a86af2c1ab0df44d3de1503722f135d79"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1abm_1_1TripList.html#a86af2c1ab0df44d3de1503722f135d79">increase_index</a> ()</td></tr>
 <tr class="memdesc:a86af2c1ab0df44d3de1503722f135d79"><td class="mdescLeft">&#160;</td><td class="mdescRight">Increment the current index to select the next <a class="el" href="structmio_1_1abm_1_1Trip.html" title="A trip describes a migration from one Location to another Location.">Trip</a>.  <a href="classmio_1_1abm_1_1TripList.html#a86af2c1ab0df44d3de1503722f135d79">More...</a><br /></td></tr>
 <tr class="separator:a86af2c1ab0df44d3de1503722f135d79"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a821df3085832df11583de9c23443ec71"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1abm_1_1TripList.html#a821df3085832df11583de9c23443ec71">num_trips</a> () const</td></tr>
-<tr class="memdesc:a821df3085832df11583de9c23443ec71"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the length of the <a class="el" href="classmio_1_1abm_1_1TripList.html" title="A list of Trips a Person follows.">TripList</a>.  <a href="classmio_1_1abm_1_1TripList.html#a821df3085832df11583de9c23443ec71">More...</a><br /></td></tr>
-<tr class="separator:a821df3085832df11583de9c23443ec71"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a55d7e324051c5c245f1a6ae719b6878d"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1abm_1_1TripList.html#a55d7e324051c5c245f1a6ae719b6878d">num_trips</a> (bool weekend=false) const</td></tr>
+<tr class="memdesc:a55d7e324051c5c245f1a6ae719b6878d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the length of the <a class="el" href="classmio_1_1abm_1_1TripList.html" title="A list of Trips a Person follows.">TripList</a>.  <a href="classmio_1_1abm_1_1TripList.html#a55d7e324051c5c245f1a6ae719b6878d">More...</a><br /></td></tr>
+<tr class="separator:a55d7e324051c5c245f1a6ae719b6878d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6b47da30e222d32e689c6cfe43824902"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1abm_1_1TripList.html#a6b47da30e222d32e689c6cfe43824902">reset_index</a> ()</td></tr>
+<tr class="memdesc:a6b47da30e222d32e689c6cfe43824902"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset the current index to 0.  <a href="classmio_1_1abm_1_1TripList.html#a6b47da30e222d32e689c6cfe43824902">More...</a><br /></td></tr>
+<tr class="separator:a6b47da30e222d32e689c6cfe43824902"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a325942f87a01156491a73e263682b597"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1abm_1_1TripList.html#a325942f87a01156491a73e263682b597">TripList</a> ()</td></tr>
 <tr class="memdesc:a325942f87a01156491a73e263682b597"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct empty <a class="el" href="classmio_1_1abm_1_1TripList.html" title="A list of Trips a Person follows.">TripList</a>.  <a href="classmio_1_1abm_1_1TripList.html#a325942f87a01156491a73e263682b597">More...</a><br /></td></tr>
 <tr class="separator:a325942f87a01156491a73e263682b597"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1bd2eb0d034d59cc9b59c66d9ee0d9f5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1abm_1_1TripList.html#a1bd2eb0d034d59cc9b59c66d9ee0d9f5">use_weekday_trips_on_weekend</a> ()</td></tr>
+<tr class="memdesc:a1bd2eb0d034d59cc9b59c66d9ee0d9f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Use the same <a class="el" href="classmio_1_1abm_1_1TripList.html" title="A list of Trips a Person follows.">TripList</a> for weekend and weekday.  <a href="classmio_1_1abm_1_1TripList.html#a1bd2eb0d034d59cc9b59c66d9ee0d9f5">More...</a><br /></td></tr>
+<tr class="separator:a1bd2eb0d034d59cc9b59c66d9ee0d9f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:ad7a4d941c957d9569730293674248c58"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1abm_1_1TripList.html#ad7a4d941c957d9569730293674248c58">m_current_index</a></td></tr>
 <tr class="memdesc:ad7a4d941c957d9569730293674248c58"><td class="mdescLeft">&#160;</td><td class="mdescRight">The index of the <a class="el" href="structmio_1_1abm_1_1Trip.html" title="A trip describes a migration from one Location to another Location.">Trip</a> a <a class="el" href="classmio_1_1abm_1_1Person.html" title="Agents in the simulated World that can carry and spread the Infection.">Person</a> makes next.  <a href="classmio_1_1abm_1_1TripList.html#ad7a4d941c957d9569730293674248c58">More...</a><br /></td></tr>
 <tr class="separator:ad7a4d941c957d9569730293674248c58"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a516b538d7504ffba5c1dc3542c169915"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="structmio_1_1abm_1_1Trip.html">Trip</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1abm_1_1TripList.html#a516b538d7504ffba5c1dc3542c169915">m_trips</a></td></tr>
-<tr class="memdesc:a516b538d7504ffba5c1dc3542c169915"><td class="mdescLeft">&#160;</td><td class="mdescRight">The list of <a class="el" href="structmio_1_1abm_1_1Trip.html" title="A trip describes a migration from one Location to another Location.">Trip</a>s a <a class="el" href="classmio_1_1abm_1_1Person.html" title="Agents in the simulated World that can carry and spread the Infection.">Person</a> makes.  <a href="classmio_1_1abm_1_1TripList.html#a516b538d7504ffba5c1dc3542c169915">More...</a><br /></td></tr>
-<tr class="separator:a516b538d7504ffba5c1dc3542c169915"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a720e52fd730cbfd6c4a69a5a80a64209"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="structmio_1_1abm_1_1Trip.html">Trip</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1abm_1_1TripList.html#a720e52fd730cbfd6c4a69a5a80a64209">m_trips_weekday</a></td></tr>
+<tr class="memdesc:a720e52fd730cbfd6c4a69a5a80a64209"><td class="mdescLeft">&#160;</td><td class="mdescRight">The list of <a class="el" href="structmio_1_1abm_1_1Trip.html" title="A trip describes a migration from one Location to another Location.">Trip</a>s a <a class="el" href="classmio_1_1abm_1_1Person.html" title="Agents in the simulated World that can carry and spread the Infection.">Person</a> makes on a weekday.  <a href="classmio_1_1abm_1_1TripList.html#a720e52fd730cbfd6c4a69a5a80a64209">More...</a><br /></td></tr>
+<tr class="separator:a720e52fd730cbfd6c4a69a5a80a64209"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8e24ed7ccbf7e823ebfbcaf638d64ca0"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="structmio_1_1abm_1_1Trip.html">Trip</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1abm_1_1TripList.html#a8e24ed7ccbf7e823ebfbcaf638d64ca0">m_trips_weekend</a></td></tr>
+<tr class="memdesc:a8e24ed7ccbf7e823ebfbcaf638d64ca0"><td class="mdescLeft">&#160;</td><td class="mdescRight">The list of <a class="el" href="structmio_1_1abm_1_1Trip.html" title="A trip describes a migration from one Location to another Location.">Trip</a>s a <a class="el" href="classmio_1_1abm_1_1Person.html" title="Agents in the simulated World that can carry and spread the Infection.">Person</a> makes on a weekend day.  <a href="classmio_1_1abm_1_1TripList.html#a8e24ed7ccbf7e823ebfbcaf638d64ca0">More...</a><br /></td></tr>
+<tr class="separator:a8e24ed7ccbf7e823ebfbcaf638d64ca0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A list of <a class="el" href="structmio_1_1abm_1_1Trip.html" title="A trip describes a migration from one Location to another Location.">Trip</a>s a <a class="el" href="classmio_1_1abm_1_1Person.html" title="Agents in the simulated World that can carry and spread the Infection.">Person</a> follows. </p>
@@ -136,8 +145,8 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a15652ba55f22fb850d468761bb1de7af"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a15652ba55f22fb850d468761bb1de7af">&#9670;&nbsp;</a></span>add_trip()</h2>
+<a id="a0da4611fadd3b39c9dc0ddc842823445"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0da4611fadd3b39c9dc0ddc842823445">&#9670;&nbsp;</a></span>add_trip()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -146,8 +155,18 @@ Private Attributes</h2></td></tr>
           <td class="memname">void mio::abm::TripList::add_trip </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structmio_1_1abm_1_1Trip.html">Trip</a>&#160;</td>
-          <td class="paramname"><em>trip</em></td><td>)</td>
+          <td class="paramname"><em>trip</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>weekend</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -156,6 +175,8 @@ Private Attributes</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">trip</td><td>The <a class="el" href="structmio_1_1abm_1_1Trip.html" title="A trip describes a migration from one Location to another Location.">Trip</a> to be added. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">weekend</td><td>If the <a class="el" href="structmio_1_1abm_1_1Trip.html" title="A trip describes a migration from one Location to another Location.">Trip</a> is made on a weekend day. <br  />
+ </td></tr>
   </table>
   </dd>
 </dl>
@@ -181,8 +202,8 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a2fddf84fc1fe75311d454c54fcc11c4f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2fddf84fc1fe75311d454c54fcc11c4f">&#9670;&nbsp;</a></span>get_next_trip()</h2>
+<a id="a0670e6e1b2334768b3252e87fdf7518a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0670e6e1b2334768b3252e87fdf7518a">&#9670;&nbsp;</a></span>get_next_trip()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -190,18 +211,25 @@ Private Attributes</h2></td></tr>
         <tr>
           <td class="memname">const <a class="el" href="structmio_1_1abm_1_1Trip.html">Trip</a> &amp; mio::abm::TripList::get_next_trip </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>weekend</em></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Get the next <a class="el" href="structmio_1_1abm_1_1Trip.html" title="A trip describes a migration from one Location to another Location.">Trip</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">weekend</td><td>Whether the <a class="el" href="structmio_1_1abm_1_1Trip.html" title="A trip describes a migration from one Location to another Location.">Trip</a>s during the week or on the weekend are used. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
-<a id="a0b3f6442583b97a1868d4c89a0e99499"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0b3f6442583b97a1868d4c89a0e99499">&#9670;&nbsp;</a></span>get_next_trip_time()</h2>
+<a id="a380c9050d951c30079e9b8100d88fad9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a380c9050d951c30079e9b8100d88fad9">&#9670;&nbsp;</a></span>get_next_trip_time()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -209,13 +237,20 @@ Private Attributes</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="classmio_1_1abm_1_1TimePoint.html">TimePoint</a> mio::abm::TripList::get_next_trip_time </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>weekend</em></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Get the time at which the next <a class="el" href="structmio_1_1abm_1_1Trip.html" title="A trip describes a migration from one Location to another Location.">Trip</a> will happen. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">weekend</td><td>Whether the <a class="el" href="structmio_1_1abm_1_1Trip.html" title="A trip describes a migration from one Location to another Location.">Trip</a>s during the week or on the weekend are used. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -238,8 +273,8 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a821df3085832df11583de9c23443ec71"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a821df3085832df11583de9c23443ec71">&#9670;&nbsp;</a></span>num_trips()</h2>
+<a id="a55d7e324051c5c245f1a6ae719b6878d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a55d7e324051c5c245f1a6ae719b6878d">&#9670;&nbsp;</a></span>num_trips()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -247,13 +282,58 @@ Private Attributes</h2></td></tr>
         <tr>
           <td class="memname">size_t mio::abm::TripList::num_trips </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>weekend</em> = <code>false</code></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Get the length of the <a class="el" href="classmio_1_1abm_1_1TripList.html" title="A list of Trips a Person follows.">TripList</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">weekend</td><td>Whether the <a class="el" href="structmio_1_1abm_1_1Trip.html" title="A trip describes a migration from one Location to another Location.">Trip</a>s during the week or on the weekend are used. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a6b47da30e222d32e689c6cfe43824902"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6b47da30e222d32e689c6cfe43824902">&#9670;&nbsp;</a></span>reset_index()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mio::abm::TripList::reset_index </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Reset the current index to 0. </p>
+
+</div>
+</div>
+<a id="a1bd2eb0d034d59cc9b59c66d9ee0d9f5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1bd2eb0d034d59cc9b59c66d9ee0d9f5">&#9670;&nbsp;</a></span>use_weekday_trips_on_weekend()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mio::abm::TripList::use_weekday_trips_on_weekend </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Use the same <a class="el" href="classmio_1_1abm_1_1TripList.html" title="A list of Trips a Person follows.">TripList</a> for weekend and weekday. </p>
 
 </div>
 </div>
@@ -282,8 +362,8 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a516b538d7504ffba5c1dc3542c169915"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a516b538d7504ffba5c1dc3542c169915">&#9670;&nbsp;</a></span>m_trips</h2>
+<a id="a720e52fd730cbfd6c4a69a5a80a64209"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a720e52fd730cbfd6c4a69a5a80a64209">&#9670;&nbsp;</a></span>m_trips_weekday</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -292,7 +372,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt;<a class="el" href="structmio_1_1abm_1_1Trip.html">Trip</a>&gt; mio::abm::TripList::m_trips</td>
+          <td class="memname">std::vector&lt;<a class="el" href="structmio_1_1abm_1_1Trip.html">Trip</a>&gt; mio::abm::TripList::m_trips_weekday</td>
         </tr>
       </table>
   </td>
@@ -302,7 +382,31 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>The list of <a class="el" href="structmio_1_1abm_1_1Trip.html" title="A trip describes a migration from one Location to another Location.">Trip</a>s a <a class="el" href="classmio_1_1abm_1_1Person.html" title="Agents in the simulated World that can carry and spread the Infection.">Person</a> makes. </p>
+<p>The list of <a class="el" href="structmio_1_1abm_1_1Trip.html" title="A trip describes a migration from one Location to another Location.">Trip</a>s a <a class="el" href="classmio_1_1abm_1_1Person.html" title="Agents in the simulated World that can carry and spread the Infection.">Person</a> makes on a weekday. </p>
+
+</div>
+</div>
+<a id="a8e24ed7ccbf7e823ebfbcaf638d64ca0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8e24ed7ccbf7e823ebfbcaf638d64ca0">&#9670;&nbsp;</a></span>m_trips_weekend</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;<a class="el" href="structmio_1_1abm_1_1Trip.html">Trip</a>&gt; mio::abm::TripList::m_trips_weekend</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The list of <a class="el" href="structmio_1_1abm_1_1Trip.html" title="A trip describes a migration from one Location to another Location.">Trip</a>s a <a class="el" href="classmio_1_1abm_1_1Person.html" title="Agents in the simulated World that can carry and spread the Infection.">Person</a> makes on a weekend day. </p>
 
 </div>
 </div>
