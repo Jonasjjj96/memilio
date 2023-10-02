@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2023-09-29 16:14:57</td>
+            <td class="headerValue">2023-10-02 12:53:23</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">15</td>
@@ -125,7 +125,19 @@
 <a name="63"><span class="lineNum">      63 </span>            : </a>
 <a name="64"><span class="lineNum">      64 </span>            : #endif //gcc, clang</a>
 <a name="65"><span class="lineNum">      65 </span>            : </a>
-<a name="66"><span class="lineNum">      66 </span>            : #endif //EPI_UTILS_UNUSED_H</a>
+<a name="66"><span class="lineNum">      66 </span>            : //MSVC has a long standing bug that breaks empty base optimization (EBO)</a>
+<a name="67"><span class="lineNum">      67 </span>            : //if the class has more than one empty base class.</a>
+<a name="68"><span class="lineNum">      68 </span>            : //types that rely on empty base optimization must add this declaration</a>
+<a name="69"><span class="lineNum">      69 </span>            : //e.g. struct MEMILIO_ENABLE_EBO Foo : EmptyBase1, EmptyBase2, ...</a>
+<a name="70"><span class="lineNum">      70 </span>            : //see https://en.cppreference.com/w/cpp/language/ebo</a>
+<a name="71"><span class="lineNum">      71 </span>            : //see https://stackoverflow.com/questions/12701469/why-is-the-empty-base-class-optimization-ebo-is-not-working-in-msvc</a>
+<a name="72"><span class="lineNum">      72 </span>            : #ifdef _MSC_VER</a>
+<a name="73"><span class="lineNum">      73 </span>            : #define MEMILIO_ENABLE_EBO __declspec(empty_bases)</a>
+<a name="74"><span class="lineNum">      74 </span>            : #else</a>
+<a name="75"><span class="lineNum">      75 </span>            : #define MEMILIO_ENABLE_EBO</a>
+<a name="76"><span class="lineNum">      76 </span>            : #endif</a>
+<a name="77"><span class="lineNum">      77 </span>            : </a>
+<a name="78"><span class="lineNum">      78 </span>            : #endif //EPI_UTILS_UNUSED_H</a>
 </pre>
       </td>
     </tr>

@@ -343,10 +343,10 @@ Functions</h2></td></tr>
 <tr class="memitem:af5db136635535cc2702c43fdbbf786db"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmio_1_1abm_1_1TimeSpan.html">TimeSpan</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemio_1_1abm.html#af5db136635535cc2702c43fdbbf786db">minutes</a> (int minutes)</td></tr>
 <tr class="memdesc:af5db136635535cc2702c43fdbbf786db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a <a class="el" href="classmio_1_1abm_1_1TimeSpan.html" title="A duration of time.">TimeSpan</a> of a specified number of minutes.  <a href="namespacemio_1_1abm.html#af5db136635535cc2702c43fdbbf786db">More...</a><br /></td></tr>
 <tr class="separator:af5db136635535cc2702c43fdbbf786db"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a444ef8a460783db1b7693bf79097aa4c"><td class="memTemplParams" colspan="2">template&lt;class T , size_t NumTransitions&gt; </td></tr>
-<tr class="memitem:a444ef8a460783db1b7693bf79097aa4c"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemio_1_1abm.html#a444ef8a460783db1b7693bf79097aa4c">random_transition</a> (T current_state, <a class="el" href="classmio_1_1abm_1_1TimeSpan.html">TimeSpan</a> dt, const std::pair&lt; T, double &gt;(&amp;transitions)[NumTransitions])</td></tr>
-<tr class="memdesc:a444ef8a460783db1b7693bf79097aa4c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Select a random transition from a list of possible transitions from the current state to others.  <a href="namespacemio_1_1abm.html#a444ef8a460783db1b7693bf79097aa4c">More...</a><br /></td></tr>
-<tr class="separator:a444ef8a460783db1b7693bf79097aa4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a55c63daa893b734f598fb8d3f18ae51d"><td class="memTemplParams" colspan="2">template&lt;class RNG , class T , size_t NumTransitions&gt; </td></tr>
+<tr class="memitem:a55c63daa893b734f598fb8d3f18ae51d"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemio_1_1abm.html#a55c63daa893b734f598fb8d3f18ae51d">random_transition</a> (RNG &amp;rng, T current_state, <a class="el" href="classmio_1_1abm_1_1TimeSpan.html">TimeSpan</a> dt, const std::pair&lt; T, double &gt;(&amp;transitions)[NumTransitions])</td></tr>
+<tr class="memdesc:a55c63daa893b734f598fb8d3f18ae51d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Select a random transition from a list of possible transitions from the current state to others.  <a href="namespacemio_1_1abm.html#a55c63daa893b734f598fb8d3f18ae51d">More...</a><br /></td></tr>
+<tr class="separator:a55c63daa893b734f598fb8d3f18ae51d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab084f80016c0db997deedf440e690b00"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmio_1_1abm_1_1TimeSpan.html">TimeSpan</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemio_1_1abm.html#ab084f80016c0db997deedf440e690b00">seconds</a> (int seconds)</td></tr>
 <tr class="memdesc:ab084f80016c0db997deedf440e690b00"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a <a class="el" href="classmio_1_1abm_1_1TimeSpan.html" title="A duration of time.">TimeSpan</a> of a specified number of seconds.  <a href="namespacemio_1_1abm.html#ab084f80016c0db997deedf440e690b00">More...</a><br /></td></tr>
 <tr class="separator:ab084f80016c0db997deedf440e690b00"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -359,6 +359,7 @@ Functions</h2></td></tr>
 <tr><td colspan="2"><div class="groupHeader">Rules for migration between Locations.</div></td></tr>
 <tr><td colspan="2"><div class="groupText"><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">rng</td><td><a class="el" href="classmio_1_1abm_1_1Person_1_1RandomNumberGenerator.html" title="Random number generator of individual persons.">Person::RandomNumberGenerator</a> for the person. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">p</td><td><a class="el" href="classmio_1_1abm_1_1Person.html" title="Agents in the simulated World that can carry and spread the Infection.">Person</a> the rule is applied to. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">t</td><td>Current time. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">dt</td><td>Length of the time step. </td></tr>
@@ -368,36 +369,36 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="classmio_1_1abm_1_1Location.html" title="All Locations in the simulated World where Persons gather.">Location</a> that the <a class="el" href="classmio_1_1abm_1_1Person.html" title="Agents in the simulated World that can carry and spread the Infection.">Person</a> migrates to if the rule is applied, the current <a class="el" href="classmio_1_1abm_1_1Location.html" title="All Locations in the simulated World where Persons gather.">Location</a> of the person if the rule is not applied because of age, time, etc. </dd></dl>
 </div></td></tr>
-<tr class="memitem:a5a9c3f16b2c16e3dcab9aade9ab7179f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacemio_1_1abm.html#a83bc98ab43329c10fe9a6e683f2e1d0f">LocationType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemio_1_1abm.html#a5a9c3f16b2c16e3dcab9aade9ab7179f">random_migration</a> (const <a class="el" href="classmio_1_1abm_1_1Person.html">Person</a> &amp;p, <a class="el" href="classmio_1_1abm_1_1TimePoint.html">TimePoint</a> t, <a class="el" href="classmio_1_1abm_1_1TimeSpan.html">TimeSpan</a> dt, const <a class="el" href="namespacemio_1_1abm.html#aa8a9868546ef379f6e53a48227b3846f">MigrationParameters</a> &amp;params)</td></tr>
-<tr class="memdesc:a5a9c3f16b2c16e3dcab9aade9ab7179f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Completely random migration to any other <a class="el" href="classmio_1_1abm_1_1Location.html" title="All Locations in the simulated World where Persons gather.">Location</a>.  <a href="namespacemio_1_1abm.html#a5a9c3f16b2c16e3dcab9aade9ab7179f">More...</a><br /></td></tr>
-<tr class="separator:a5a9c3f16b2c16e3dcab9aade9ab7179f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a23dadf75335d3dfc222dca7276399948"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacemio_1_1abm.html#a83bc98ab43329c10fe9a6e683f2e1d0f">LocationType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemio_1_1abm.html#a23dadf75335d3dfc222dca7276399948">go_to_school</a> (const <a class="el" href="classmio_1_1abm_1_1Person.html">Person</a> &amp;p, <a class="el" href="classmio_1_1abm_1_1TimePoint.html">TimePoint</a> t, <a class="el" href="classmio_1_1abm_1_1TimeSpan.html">TimeSpan</a> dt, const <a class="el" href="namespacemio_1_1abm.html#aa8a9868546ef379f6e53a48227b3846f">MigrationParameters</a> &amp;params)</td></tr>
-<tr class="memdesc:a23dadf75335d3dfc222dca7276399948"><td class="mdescLeft">&#160;</td><td class="mdescRight">School age children go to school in the morning and return later in the day.  <a href="namespacemio_1_1abm.html#a23dadf75335d3dfc222dca7276399948">More...</a><br /></td></tr>
-<tr class="separator:a23dadf75335d3dfc222dca7276399948"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1496695484bcc3e9402cbe2b3a703d4a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacemio_1_1abm.html#a83bc98ab43329c10fe9a6e683f2e1d0f">LocationType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemio_1_1abm.html#a1496695484bcc3e9402cbe2b3a703d4a">go_to_work</a> (const <a class="el" href="classmio_1_1abm_1_1Person.html">Person</a> &amp;person, <a class="el" href="classmio_1_1abm_1_1TimePoint.html">TimePoint</a> t, <a class="el" href="classmio_1_1abm_1_1TimeSpan.html">TimeSpan</a> dt, const <a class="el" href="namespacemio_1_1abm.html#aa8a9868546ef379f6e53a48227b3846f">MigrationParameters</a> &amp;params)</td></tr>
-<tr class="memdesc:a1496695484bcc3e9402cbe2b3a703d4a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adults go to work in the morning and return later in the day.  <a href="namespacemio_1_1abm.html#a1496695484bcc3e9402cbe2b3a703d4a">More...</a><br /></td></tr>
-<tr class="separator:a1496695484bcc3e9402cbe2b3a703d4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab0ddddc7b492e1f24a267bc4d244afd6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacemio_1_1abm.html#a83bc98ab43329c10fe9a6e683f2e1d0f">LocationType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemio_1_1abm.html#ab0ddddc7b492e1f24a267bc4d244afd6">go_to_shop</a> (const <a class="el" href="classmio_1_1abm_1_1Person.html">Person</a> &amp;person, <a class="el" href="classmio_1_1abm_1_1TimePoint.html">TimePoint</a> t, <a class="el" href="classmio_1_1abm_1_1TimeSpan.html">TimeSpan</a> dt, const <a class="el" href="namespacemio_1_1abm.html#aa8a9868546ef379f6e53a48227b3846f">MigrationParameters</a> &amp;params)</td></tr>
-<tr class="memdesc:ab0ddddc7b492e1f24a267bc4d244afd6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adults may go shopping in their free time.  <a href="namespacemio_1_1abm.html#ab0ddddc7b492e1f24a267bc4d244afd6">More...</a><br /></td></tr>
-<tr class="separator:ab0ddddc7b492e1f24a267bc4d244afd6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8a0fb39e07b1e02fca328c78eedfa487"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacemio_1_1abm.html#a83bc98ab43329c10fe9a6e683f2e1d0f">LocationType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemio_1_1abm.html#a8a0fb39e07b1e02fca328c78eedfa487">go_to_event</a> (const <a class="el" href="classmio_1_1abm_1_1Person.html">Person</a> &amp;person, <a class="el" href="classmio_1_1abm_1_1TimePoint.html">TimePoint</a> t, <a class="el" href="classmio_1_1abm_1_1TimeSpan.html">TimeSpan</a> dt, const <a class="el" href="namespacemio_1_1abm.html#aa8a9868546ef379f6e53a48227b3846f">MigrationParameters</a> &amp;params)</td></tr>
-<tr class="memdesc:a8a0fb39e07b1e02fca328c78eedfa487"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classmio_1_1abm_1_1Person.html" title="Agents in the simulated World that can carry and spread the Infection.">Person</a>s might go to social events.  <a href="namespacemio_1_1abm.html#a8a0fb39e07b1e02fca328c78eedfa487">More...</a><br /></td></tr>
-<tr class="separator:a8a0fb39e07b1e02fca328c78eedfa487"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3798d271a0ac7bb93d8b3b58dff24c61"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacemio_1_1abm.html#a83bc98ab43329c10fe9a6e683f2e1d0f">LocationType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemio_1_1abm.html#a3798d271a0ac7bb93d8b3b58dff24c61">go_to_quarantine</a> (const <a class="el" href="classmio_1_1abm_1_1Person.html">Person</a> &amp;person, <a class="el" href="classmio_1_1abm_1_1TimePoint.html">TimePoint</a>, <a class="el" href="classmio_1_1abm_1_1TimeSpan.html">TimeSpan</a>, const <a class="el" href="namespacemio_1_1abm.html#aa8a9868546ef379f6e53a48227b3846f">MigrationParameters</a> &amp;)</td></tr>
-<tr class="memdesc:a3798d271a0ac7bb93d8b3b58dff24c61"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classmio_1_1abm_1_1Person.html" title="Agents in the simulated World that can carry and spread the Infection.">Person</a>s who are in quarantine should go home.  <a href="namespacemio_1_1abm.html#a3798d271a0ac7bb93d8b3b58dff24c61">More...</a><br /></td></tr>
-<tr class="separator:a3798d271a0ac7bb93d8b3b58dff24c61"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0d5a5d70929764ace50e3cffd7226239"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacemio_1_1abm.html#a83bc98ab43329c10fe9a6e683f2e1d0f">LocationType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemio_1_1abm.html#a0d5a5d70929764ace50e3cffd7226239">go_to_hospital</a> (const <a class="el" href="classmio_1_1abm_1_1Person.html">Person</a> &amp;p, <a class="el" href="classmio_1_1abm_1_1TimePoint.html">TimePoint</a> t, <a class="el" href="classmio_1_1abm_1_1TimeSpan.html">TimeSpan</a> dt, const <a class="el" href="namespacemio_1_1abm.html#aa8a9868546ef379f6e53a48227b3846f">MigrationParameters</a> &amp;params)</td></tr>
-<tr class="memdesc:a0d5a5d70929764ace50e3cffd7226239"><td class="mdescLeft">&#160;</td><td class="mdescRight">Infected <a class="el" href="classmio_1_1abm_1_1Person.html" title="Agents in the simulated World that can carry and spread the Infection.">Person</a>s may be hospitalized.  <a href="namespacemio_1_1abm.html#a0d5a5d70929764ace50e3cffd7226239">More...</a><br /></td></tr>
-<tr class="separator:a0d5a5d70929764ace50e3cffd7226239"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad1a3e402bb77f2fc246cb11135d578a6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacemio_1_1abm.html#a83bc98ab43329c10fe9a6e683f2e1d0f">LocationType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemio_1_1abm.html#ad1a3e402bb77f2fc246cb11135d578a6">go_to_icu</a> (const <a class="el" href="classmio_1_1abm_1_1Person.html">Person</a> &amp;p, <a class="el" href="classmio_1_1abm_1_1TimePoint.html">TimePoint</a> t, <a class="el" href="classmio_1_1abm_1_1TimeSpan.html">TimeSpan</a> dt, const <a class="el" href="namespacemio_1_1abm.html#aa8a9868546ef379f6e53a48227b3846f">MigrationParameters</a> &amp;params)</td></tr>
-<tr class="memdesc:ad1a3e402bb77f2fc246cb11135d578a6"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classmio_1_1abm_1_1Person.html" title="Agents in the simulated World that can carry and spread the Infection.">Person</a>s in the hospital may be put in intensive care.  <a href="namespacemio_1_1abm.html#ad1a3e402bb77f2fc246cb11135d578a6">More...</a><br /></td></tr>
-<tr class="separator:ad1a3e402bb77f2fc246cb11135d578a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af4be98aeb5718f25bc0a763ac1485d1f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacemio_1_1abm.html#a83bc98ab43329c10fe9a6e683f2e1d0f">LocationType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemio_1_1abm.html#af4be98aeb5718f25bc0a763ac1485d1f">return_home_when_recovered</a> (const <a class="el" href="classmio_1_1abm_1_1Person.html">Person</a> &amp;person, <a class="el" href="classmio_1_1abm_1_1TimePoint.html">TimePoint</a> t, <a class="el" href="classmio_1_1abm_1_1TimeSpan.html">TimeSpan</a> dt, const <a class="el" href="namespacemio_1_1abm.html#aa8a9868546ef379f6e53a48227b3846f">MigrationParameters</a> &amp;params)</td></tr>
-<tr class="memdesc:af4be98aeb5718f25bc0a763ac1485d1f"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classmio_1_1abm_1_1Person.html" title="Agents in the simulated World that can carry and spread the Infection.">Person</a>s in the hospital/icu return home when they recover.  <a href="namespacemio_1_1abm.html#af4be98aeb5718f25bc0a763ac1485d1f">More...</a><br /></td></tr>
-<tr class="separator:af4be98aeb5718f25bc0a763ac1485d1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a24fec4fe95429a2fee4fd7ed18ea7f4b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacemio_1_1abm.html#a83bc98ab43329c10fe9a6e683f2e1d0f">LocationType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemio_1_1abm.html#a24fec4fe95429a2fee4fd7ed18ea7f4b">get_buried</a> (const <a class="el" href="classmio_1_1abm_1_1Person.html">Person</a> &amp;person, <a class="el" href="classmio_1_1abm_1_1TimePoint.html">TimePoint</a> t, <a class="el" href="classmio_1_1abm_1_1TimeSpan.html">TimeSpan</a> dt, const <a class="el" href="namespacemio_1_1abm.html#aa8a9868546ef379f6e53a48227b3846f">MigrationParameters</a> &amp;params)</td></tr>
-<tr class="memdesc:a24fec4fe95429a2fee4fd7ed18ea7f4b"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classmio_1_1abm_1_1Person.html" title="Agents in the simulated World that can carry and spread the Infection.">Person</a>s in the icu go to cemetery when they are dead.  <a href="namespacemio_1_1abm.html#a24fec4fe95429a2fee4fd7ed18ea7f4b">More...</a><br /></td></tr>
-<tr class="separator:a24fec4fe95429a2fee4fd7ed18ea7f4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a64e4b8a3f803e37de68ea226b371e7a2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacemio_1_1abm.html#a83bc98ab43329c10fe9a6e683f2e1d0f">LocationType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemio_1_1abm.html#a64e4b8a3f803e37de68ea226b371e7a2">random_migration</a> (<a class="el" href="classmio_1_1abm_1_1Person_1_1RandomNumberGenerator.html">Person::RandomNumberGenerator</a> &amp;rng, const <a class="el" href="classmio_1_1abm_1_1Person.html">Person</a> &amp;p, <a class="el" href="classmio_1_1abm_1_1TimePoint.html">TimePoint</a> t, <a class="el" href="classmio_1_1abm_1_1TimeSpan.html">TimeSpan</a> dt, const <a class="el" href="namespacemio_1_1abm.html#aa8a9868546ef379f6e53a48227b3846f">MigrationParameters</a> &amp;params)</td></tr>
+<tr class="memdesc:a64e4b8a3f803e37de68ea226b371e7a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Completely random migration to any other <a class="el" href="classmio_1_1abm_1_1Location.html" title="All Locations in the simulated World where Persons gather.">Location</a>.  <a href="namespacemio_1_1abm.html#a64e4b8a3f803e37de68ea226b371e7a2">More...</a><br /></td></tr>
+<tr class="separator:a64e4b8a3f803e37de68ea226b371e7a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:addf97a7cd9c710790513f78d2165eda5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacemio_1_1abm.html#a83bc98ab43329c10fe9a6e683f2e1d0f">LocationType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemio_1_1abm.html#addf97a7cd9c710790513f78d2165eda5">go_to_school</a> (<a class="el" href="classmio_1_1abm_1_1Person_1_1RandomNumberGenerator.html">Person::RandomNumberGenerator</a> &amp;rng, const <a class="el" href="classmio_1_1abm_1_1Person.html">Person</a> &amp;p, <a class="el" href="classmio_1_1abm_1_1TimePoint.html">TimePoint</a> t, <a class="el" href="classmio_1_1abm_1_1TimeSpan.html">TimeSpan</a> dt, const <a class="el" href="namespacemio_1_1abm.html#aa8a9868546ef379f6e53a48227b3846f">MigrationParameters</a> &amp;params)</td></tr>
+<tr class="memdesc:addf97a7cd9c710790513f78d2165eda5"><td class="mdescLeft">&#160;</td><td class="mdescRight">School age children go to school in the morning and return later in the day.  <a href="namespacemio_1_1abm.html#addf97a7cd9c710790513f78d2165eda5">More...</a><br /></td></tr>
+<tr class="separator:addf97a7cd9c710790513f78d2165eda5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa649a330f7a3da5e558d803ddfa24b4e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacemio_1_1abm.html#a83bc98ab43329c10fe9a6e683f2e1d0f">LocationType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemio_1_1abm.html#aa649a330f7a3da5e558d803ddfa24b4e">go_to_work</a> (<a class="el" href="classmio_1_1abm_1_1Person_1_1RandomNumberGenerator.html">Person::RandomNumberGenerator</a> &amp;rng, const <a class="el" href="classmio_1_1abm_1_1Person.html">Person</a> &amp;person, <a class="el" href="classmio_1_1abm_1_1TimePoint.html">TimePoint</a> t, <a class="el" href="classmio_1_1abm_1_1TimeSpan.html">TimeSpan</a> dt, const <a class="el" href="namespacemio_1_1abm.html#aa8a9868546ef379f6e53a48227b3846f">MigrationParameters</a> &amp;params)</td></tr>
+<tr class="memdesc:aa649a330f7a3da5e558d803ddfa24b4e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adults go to work in the morning and return later in the day.  <a href="namespacemio_1_1abm.html#aa649a330f7a3da5e558d803ddfa24b4e">More...</a><br /></td></tr>
+<tr class="separator:aa649a330f7a3da5e558d803ddfa24b4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa34ed9af0d4ed32a9d2784060e508049"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacemio_1_1abm.html#a83bc98ab43329c10fe9a6e683f2e1d0f">LocationType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemio_1_1abm.html#aa34ed9af0d4ed32a9d2784060e508049">go_to_shop</a> (<a class="el" href="classmio_1_1abm_1_1Person_1_1RandomNumberGenerator.html">Person::RandomNumberGenerator</a> &amp;rng, const <a class="el" href="classmio_1_1abm_1_1Person.html">Person</a> &amp;person, <a class="el" href="classmio_1_1abm_1_1TimePoint.html">TimePoint</a> t, <a class="el" href="classmio_1_1abm_1_1TimeSpan.html">TimeSpan</a> dt, const <a class="el" href="namespacemio_1_1abm.html#aa8a9868546ef379f6e53a48227b3846f">MigrationParameters</a> &amp;params)</td></tr>
+<tr class="memdesc:aa34ed9af0d4ed32a9d2784060e508049"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adults may go shopping in their free time.  <a href="namespacemio_1_1abm.html#aa34ed9af0d4ed32a9d2784060e508049">More...</a><br /></td></tr>
+<tr class="separator:aa34ed9af0d4ed32a9d2784060e508049"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad33f6dfeb99744a91f55f0459dcfc334"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacemio_1_1abm.html#a83bc98ab43329c10fe9a6e683f2e1d0f">LocationType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemio_1_1abm.html#ad33f6dfeb99744a91f55f0459dcfc334">go_to_event</a> (<a class="el" href="classmio_1_1abm_1_1Person_1_1RandomNumberGenerator.html">Person::RandomNumberGenerator</a> &amp;rng, const <a class="el" href="classmio_1_1abm_1_1Person.html">Person</a> &amp;person, <a class="el" href="classmio_1_1abm_1_1TimePoint.html">TimePoint</a> t, <a class="el" href="classmio_1_1abm_1_1TimeSpan.html">TimeSpan</a> dt, const <a class="el" href="namespacemio_1_1abm.html#aa8a9868546ef379f6e53a48227b3846f">MigrationParameters</a> &amp;params)</td></tr>
+<tr class="memdesc:ad33f6dfeb99744a91f55f0459dcfc334"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classmio_1_1abm_1_1Person.html" title="Agents in the simulated World that can carry and spread the Infection.">Person</a>s might go to social events.  <a href="namespacemio_1_1abm.html#ad33f6dfeb99744a91f55f0459dcfc334">More...</a><br /></td></tr>
+<tr class="separator:ad33f6dfeb99744a91f55f0459dcfc334"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e5c3318f83ff224e3793cf8fce8aa47"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacemio_1_1abm.html#a83bc98ab43329c10fe9a6e683f2e1d0f">LocationType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemio_1_1abm.html#a5e5c3318f83ff224e3793cf8fce8aa47">go_to_quarantine</a> (<a class="el" href="classmio_1_1abm_1_1Person_1_1RandomNumberGenerator.html">Person::RandomNumberGenerator</a> &amp;rng, const <a class="el" href="classmio_1_1abm_1_1Person.html">Person</a> &amp;person, <a class="el" href="classmio_1_1abm_1_1TimePoint.html">TimePoint</a>, <a class="el" href="classmio_1_1abm_1_1TimeSpan.html">TimeSpan</a>, const <a class="el" href="namespacemio_1_1abm.html#aa8a9868546ef379f6e53a48227b3846f">MigrationParameters</a> &amp;)</td></tr>
+<tr class="memdesc:a5e5c3318f83ff224e3793cf8fce8aa47"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classmio_1_1abm_1_1Person.html" title="Agents in the simulated World that can carry and spread the Infection.">Person</a>s who are in quarantine should go home.  <a href="namespacemio_1_1abm.html#a5e5c3318f83ff224e3793cf8fce8aa47">More...</a><br /></td></tr>
+<tr class="separator:a5e5c3318f83ff224e3793cf8fce8aa47"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4bdb9771d97dac1d22410502338078b9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacemio_1_1abm.html#a83bc98ab43329c10fe9a6e683f2e1d0f">LocationType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemio_1_1abm.html#a4bdb9771d97dac1d22410502338078b9">go_to_hospital</a> (<a class="el" href="classmio_1_1abm_1_1Person_1_1RandomNumberGenerator.html">Person::RandomNumberGenerator</a> &amp;rng, const <a class="el" href="classmio_1_1abm_1_1Person.html">Person</a> &amp;p, <a class="el" href="classmio_1_1abm_1_1TimePoint.html">TimePoint</a> t, <a class="el" href="classmio_1_1abm_1_1TimeSpan.html">TimeSpan</a> dt, const <a class="el" href="namespacemio_1_1abm.html#aa8a9868546ef379f6e53a48227b3846f">MigrationParameters</a> &amp;params)</td></tr>
+<tr class="memdesc:a4bdb9771d97dac1d22410502338078b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Infected <a class="el" href="classmio_1_1abm_1_1Person.html" title="Agents in the simulated World that can carry and spread the Infection.">Person</a>s may be hospitalized.  <a href="namespacemio_1_1abm.html#a4bdb9771d97dac1d22410502338078b9">More...</a><br /></td></tr>
+<tr class="separator:a4bdb9771d97dac1d22410502338078b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf0b5528e2b9934e7a045aeecc9fd72e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacemio_1_1abm.html#a83bc98ab43329c10fe9a6e683f2e1d0f">LocationType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemio_1_1abm.html#acf0b5528e2b9934e7a045aeecc9fd72e">go_to_icu</a> (<a class="el" href="classmio_1_1abm_1_1Person_1_1RandomNumberGenerator.html">Person::RandomNumberGenerator</a> &amp;rng, const <a class="el" href="classmio_1_1abm_1_1Person.html">Person</a> &amp;p, <a class="el" href="classmio_1_1abm_1_1TimePoint.html">TimePoint</a> t, <a class="el" href="classmio_1_1abm_1_1TimeSpan.html">TimeSpan</a> dt, const <a class="el" href="namespacemio_1_1abm.html#aa8a9868546ef379f6e53a48227b3846f">MigrationParameters</a> &amp;params)</td></tr>
+<tr class="memdesc:acf0b5528e2b9934e7a045aeecc9fd72e"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classmio_1_1abm_1_1Person.html" title="Agents in the simulated World that can carry and spread the Infection.">Person</a>s in the hospital may be put in intensive care.  <a href="namespacemio_1_1abm.html#acf0b5528e2b9934e7a045aeecc9fd72e">More...</a><br /></td></tr>
+<tr class="separator:acf0b5528e2b9934e7a045aeecc9fd72e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b0e1a06decd7f517f4f5537578f68c6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacemio_1_1abm.html#a83bc98ab43329c10fe9a6e683f2e1d0f">LocationType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemio_1_1abm.html#a8b0e1a06decd7f517f4f5537578f68c6">return_home_when_recovered</a> (<a class="el" href="classmio_1_1abm_1_1Person_1_1RandomNumberGenerator.html">Person::RandomNumberGenerator</a> &amp;rng, const <a class="el" href="classmio_1_1abm_1_1Person.html">Person</a> &amp;person, <a class="el" href="classmio_1_1abm_1_1TimePoint.html">TimePoint</a> t, <a class="el" href="classmio_1_1abm_1_1TimeSpan.html">TimeSpan</a> dt, const <a class="el" href="namespacemio_1_1abm.html#aa8a9868546ef379f6e53a48227b3846f">MigrationParameters</a> &amp;params)</td></tr>
+<tr class="memdesc:a8b0e1a06decd7f517f4f5537578f68c6"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classmio_1_1abm_1_1Person.html" title="Agents in the simulated World that can carry and spread the Infection.">Person</a>s in the hospital/icu return home when they recover.  <a href="namespacemio_1_1abm.html#a8b0e1a06decd7f517f4f5537578f68c6">More...</a><br /></td></tr>
+<tr class="separator:a8b0e1a06decd7f517f4f5537578f68c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abdc5e807de7cc5221317d6e3049daac5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacemio_1_1abm.html#a83bc98ab43329c10fe9a6e683f2e1d0f">LocationType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemio_1_1abm.html#abdc5e807de7cc5221317d6e3049daac5">get_buried</a> (<a class="el" href="classmio_1_1abm_1_1Person_1_1RandomNumberGenerator.html">Person::RandomNumberGenerator</a> &amp;rng, const <a class="el" href="classmio_1_1abm_1_1Person.html">Person</a> &amp;person, <a class="el" href="classmio_1_1abm_1_1TimePoint.html">TimePoint</a> t, <a class="el" href="classmio_1_1abm_1_1TimeSpan.html">TimeSpan</a> dt, const <a class="el" href="namespacemio_1_1abm.html#aa8a9868546ef379f6e53a48227b3846f">MigrationParameters</a> &amp;params)</td></tr>
+<tr class="memdesc:abdc5e807de7cc5221317d6e3049daac5"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classmio_1_1abm_1_1Person.html" title="Agents in the simulated World that can carry and spread the Infection.">Person</a>s in the icu go to cemetery when they are dead.  <a href="namespacemio_1_1abm.html#abdc5e807de7cc5221317d6e3049daac5">More...</a><br /></td></tr>
+<tr class="separator:abdc5e807de7cc5221317d6e3049daac5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
@@ -831,8 +832,8 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a24fec4fe95429a2fee4fd7ed18ea7f4b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a24fec4fe95429a2fee4fd7ed18ea7f4b">&#9670;&nbsp;</a></span>get_buried()</h2>
+<a id="abdc5e807de7cc5221317d6e3049daac5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abdc5e807de7cc5221317d6e3049daac5">&#9670;&nbsp;</a></span>get_buried()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -840,6 +841,12 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="namespacemio_1_1abm.html#a83bc98ab43329c10fe9a6e683f2e1d0f">LocationType</a> mio::abm::get_buried </td>
           <td>(</td>
+          <td class="paramtype"><a class="el" href="classmio_1_1abm_1_1Person_1_1RandomNumberGenerator.html">Person::RandomNumberGenerator</a> &amp;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
           <td class="paramtype">const <a class="el" href="classmio_1_1abm_1_1Person.html">Person</a> &amp;&#160;</td>
           <td class="paramname"><em>person</em>, </td>
         </tr>
@@ -873,8 +880,8 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a8a0fb39e07b1e02fca328c78eedfa487"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8a0fb39e07b1e02fca328c78eedfa487">&#9670;&nbsp;</a></span>go_to_event()</h2>
+<a id="ad33f6dfeb99744a91f55f0459dcfc334"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad33f6dfeb99744a91f55f0459dcfc334">&#9670;&nbsp;</a></span>go_to_event()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -882,6 +889,12 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="namespacemio_1_1abm.html#a83bc98ab43329c10fe9a6e683f2e1d0f">LocationType</a> mio::abm::go_to_event </td>
           <td>(</td>
+          <td class="paramtype"><a class="el" href="classmio_1_1abm_1_1Person_1_1RandomNumberGenerator.html">Person::RandomNumberGenerator</a> &amp;&#160;</td>
+          <td class="paramname"><em>rng</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
           <td class="paramtype">const <a class="el" href="classmio_1_1abm_1_1Person.html">Person</a> &amp;&#160;</td>
           <td class="paramname"><em>person</em>, </td>
         </tr>
@@ -915,8 +928,8 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a0d5a5d70929764ace50e3cffd7226239"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0d5a5d70929764ace50e3cffd7226239">&#9670;&nbsp;</a></span>go_to_hospital()</h2>
+<a id="a4bdb9771d97dac1d22410502338078b9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4bdb9771d97dac1d22410502338078b9">&#9670;&nbsp;</a></span>go_to_hospital()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -924,6 +937,12 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="namespacemio_1_1abm.html#a83bc98ab43329c10fe9a6e683f2e1d0f">LocationType</a> mio::abm::go_to_hospital </td>
           <td>(</td>
+          <td class="paramtype"><a class="el" href="classmio_1_1abm_1_1Person_1_1RandomNumberGenerator.html">Person::RandomNumberGenerator</a> &amp;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
           <td class="paramtype">const <a class="el" href="classmio_1_1abm_1_1Person.html">Person</a> &amp;&#160;</td>
           <td class="paramname"><em>person</em>, </td>
         </tr>
@@ -957,8 +976,8 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="ad1a3e402bb77f2fc246cb11135d578a6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad1a3e402bb77f2fc246cb11135d578a6">&#9670;&nbsp;</a></span>go_to_icu()</h2>
+<a id="acf0b5528e2b9934e7a045aeecc9fd72e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf0b5528e2b9934e7a045aeecc9fd72e">&#9670;&nbsp;</a></span>go_to_icu()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -966,6 +985,12 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="namespacemio_1_1abm.html#a83bc98ab43329c10fe9a6e683f2e1d0f">LocationType</a> mio::abm::go_to_icu </td>
           <td>(</td>
+          <td class="paramtype"><a class="el" href="classmio_1_1abm_1_1Person_1_1RandomNumberGenerator.html">Person::RandomNumberGenerator</a> &amp;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
           <td class="paramtype">const <a class="el" href="classmio_1_1abm_1_1Person.html">Person</a> &amp;&#160;</td>
           <td class="paramname"><em>person</em>, </td>
         </tr>
@@ -999,8 +1024,8 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a3798d271a0ac7bb93d8b3b58dff24c61"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3798d271a0ac7bb93d8b3b58dff24c61">&#9670;&nbsp;</a></span>go_to_quarantine()</h2>
+<a id="a5e5c3318f83ff224e3793cf8fce8aa47"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5e5c3318f83ff224e3793cf8fce8aa47">&#9670;&nbsp;</a></span>go_to_quarantine()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1008,6 +1033,12 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="namespacemio_1_1abm.html#a83bc98ab43329c10fe9a6e683f2e1d0f">LocationType</a> mio::abm::go_to_quarantine </td>
           <td>(</td>
+          <td class="paramtype"><a class="el" href="classmio_1_1abm_1_1Person_1_1RandomNumberGenerator.html">Person::RandomNumberGenerator</a> &amp;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
           <td class="paramtype">const <a class="el" href="classmio_1_1abm_1_1Person.html">Person</a> &amp;&#160;</td>
           <td class="paramname"><em>person</em>, </td>
         </tr>
@@ -1041,8 +1072,8 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a23dadf75335d3dfc222dca7276399948"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a23dadf75335d3dfc222dca7276399948">&#9670;&nbsp;</a></span>go_to_school()</h2>
+<a id="addf97a7cd9c710790513f78d2165eda5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#addf97a7cd9c710790513f78d2165eda5">&#9670;&nbsp;</a></span>go_to_school()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1050,6 +1081,12 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="namespacemio_1_1abm.html#a83bc98ab43329c10fe9a6e683f2e1d0f">LocationType</a> mio::abm::go_to_school </td>
           <td>(</td>
+          <td class="paramtype"><a class="el" href="classmio_1_1abm_1_1Person_1_1RandomNumberGenerator.html">Person::RandomNumberGenerator</a> &amp;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
           <td class="paramtype">const <a class="el" href="classmio_1_1abm_1_1Person.html">Person</a> &amp;&#160;</td>
           <td class="paramname"><em>person</em>, </td>
         </tr>
@@ -1083,8 +1120,8 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="ab0ddddc7b492e1f24a267bc4d244afd6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab0ddddc7b492e1f24a267bc4d244afd6">&#9670;&nbsp;</a></span>go_to_shop()</h2>
+<a id="aa34ed9af0d4ed32a9d2784060e508049"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa34ed9af0d4ed32a9d2784060e508049">&#9670;&nbsp;</a></span>go_to_shop()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1092,6 +1129,12 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="namespacemio_1_1abm.html#a83bc98ab43329c10fe9a6e683f2e1d0f">LocationType</a> mio::abm::go_to_shop </td>
           <td>(</td>
+          <td class="paramtype"><a class="el" href="classmio_1_1abm_1_1Person_1_1RandomNumberGenerator.html">Person::RandomNumberGenerator</a> &amp;&#160;</td>
+          <td class="paramname"><em>rng</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
           <td class="paramtype">const <a class="el" href="classmio_1_1abm_1_1Person.html">Person</a> &amp;&#160;</td>
           <td class="paramname"><em>person</em>, </td>
         </tr>
@@ -1125,8 +1168,8 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a1496695484bcc3e9402cbe2b3a703d4a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1496695484bcc3e9402cbe2b3a703d4a">&#9670;&nbsp;</a></span>go_to_work()</h2>
+<a id="aa649a330f7a3da5e558d803ddfa24b4e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa649a330f7a3da5e558d803ddfa24b4e">&#9670;&nbsp;</a></span>go_to_work()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1134,6 +1177,12 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="namespacemio_1_1abm.html#a83bc98ab43329c10fe9a6e683f2e1d0f">LocationType</a> mio::abm::go_to_work </td>
           <td>(</td>
+          <td class="paramtype"><a class="el" href="classmio_1_1abm_1_1Person_1_1RandomNumberGenerator.html">Person::RandomNumberGenerator</a> &amp;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
           <td class="paramtype">const <a class="el" href="classmio_1_1abm_1_1Person.html">Person</a> &amp;&#160;</td>
           <td class="paramname"><em>person</em>, </td>
         </tr>
@@ -1219,8 +1268,8 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a5a9c3f16b2c16e3dcab9aade9ab7179f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5a9c3f16b2c16e3dcab9aade9ab7179f">&#9670;&nbsp;</a></span>random_migration()</h2>
+<a id="a64e4b8a3f803e37de68ea226b371e7a2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a64e4b8a3f803e37de68ea226b371e7a2">&#9670;&nbsp;</a></span>random_migration()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1228,6 +1277,12 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="namespacemio_1_1abm.html#a83bc98ab43329c10fe9a6e683f2e1d0f">LocationType</a> mio::abm::random_migration </td>
           <td>(</td>
+          <td class="paramtype"><a class="el" href="classmio_1_1abm_1_1Person_1_1RandomNumberGenerator.html">Person::RandomNumberGenerator</a> &amp;&#160;</td>
+          <td class="paramname"><em>rng</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
           <td class="paramtype">const <a class="el" href="classmio_1_1abm_1_1Person.html">Person</a> &amp;&#160;</td>
           <td class="paramname"><em>person</em>, </td>
         </tr>
@@ -1261,17 +1316,23 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a444ef8a460783db1b7693bf79097aa4c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a444ef8a460783db1b7693bf79097aa4c">&#9670;&nbsp;</a></span>random_transition()</h2>
+<a id="a55c63daa893b734f598fb8d3f18ae51d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a55c63daa893b734f598fb8d3f18ae51d">&#9670;&nbsp;</a></span>random_transition()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T , size_t NumTransitions&gt; </div>
+template&lt;class RNG , class T , size_t NumTransitions&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">T mio::abm::random_transition </td>
           <td>(</td>
+          <td class="paramtype">RNG &amp;&#160;</td>
+          <td class="paramname"><em>rng</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
           <td class="paramtype">T&#160;</td>
           <td class="paramname"><em>current_state</em>, </td>
         </tr>
@@ -1298,6 +1359,7 @@ template&lt;class T , size_t NumTransitions&gt; </div>
 <p>Select a random transition from a list of possible transitions from the current state to others. </p>
 <p>Each transition is represented by the new state and the probability of the transition, e.g. a pair {1, 0.5} is the transition to state 1 with rate 0.5. Transition rates are not probabilities but the parameters of an exponential distribution. One of the transitions happens if x &lt; dt, where x is a sample from the exponential distribution Exp(S), S begin the sum of all rates. Which transition happens is determined by sampling from a discrete distribution with the rates as weights. It's also possible that no transition happens in this time step. In this case the current state is returned. </p><dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
+    <tr><td class="paramname">RNG</td><td>Type that satisfies the UniformRandomBitGenerator concept. </td></tr>
     <tr><td class="paramname">T</td><td>Type that represents the states. </td></tr>
     <tr><td class="paramname">NumTransitions</td><td>Number of possible transitions. </td></tr>
   </table>
@@ -1305,6 +1367,7 @@ template&lt;class T , size_t NumTransitions&gt; </div>
 </dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">rng</td><td>RandomNumberGenerator. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">current_state</td><td>Current state before transition. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">dt</td><td>Length of the time step. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">transitions</td><td>Array of pairs of new states and their rates (probabilities). </td></tr>
@@ -1315,8 +1378,8 @@ template&lt;class T , size_t NumTransitions&gt; </div>
 
 </div>
 </div>
-<a id="af4be98aeb5718f25bc0a763ac1485d1f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af4be98aeb5718f25bc0a763ac1485d1f">&#9670;&nbsp;</a></span>return_home_when_recovered()</h2>
+<a id="a8b0e1a06decd7f517f4f5537578f68c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b0e1a06decd7f517f4f5537578f68c6">&#9670;&nbsp;</a></span>return_home_when_recovered()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1324,6 +1387,12 @@ template&lt;class T , size_t NumTransitions&gt; </div>
         <tr>
           <td class="memname"><a class="el" href="namespacemio_1_1abm.html#a83bc98ab43329c10fe9a6e683f2e1d0f">LocationType</a> mio::abm::return_home_when_recovered </td>
           <td>(</td>
+          <td class="paramtype"><a class="el" href="classmio_1_1abm_1_1Person_1_1RandomNumberGenerator.html">Person::RandomNumberGenerator</a> &amp;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
           <td class="paramtype">const <a class="el" href="classmio_1_1abm_1_1Person.html">Person</a> &amp;&#160;</td>
           <td class="paramname"><em>person</em>, </td>
         </tr>

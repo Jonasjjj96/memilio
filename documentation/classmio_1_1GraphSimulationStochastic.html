@@ -92,6 +92,8 @@ Inheritance diagram for mio::GraphSimulationStochastic&lt; Graph &gt;:</div>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a550c1ed26513a0b7ef43df2896b64ebf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1GraphSimulationStochastic.html#a550c1ed26513a0b7ef43df2896b64ebf">advance</a> (double t_max)</td></tr>
 <tr class="separator:a550c1ed26513a0b7ef43df2896b64ebf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea23191c91561b0d8916f62d29724153"><td class="memItemLeft" align="right" valign="top">RandomNumberGenerator &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1GraphSimulationStochastic.html#aea23191c91561b0d8916f62d29724153">get_rng</a> ()</td></tr>
+<tr class="separator:aea23191c91561b0d8916f62d29724153"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9e2912d511dfc5d9842c805b5f642cc8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1GraphSimulationStochastic.html#a9e2912d511dfc5d9842c805b5f642cc8">GraphSimulationStochastic</a> (double t0, double dt, const <a class="el" href="classmio_1_1Graph.html">Graph</a> &amp;g, const <a class="el" href="classmio_1_1GraphSimulationStochastic.html#ae14855d3e45e0bd5887e70d901520982">node_function</a> &amp;node_func, const <a class="el" href="classmio_1_1GraphSimulationStochastic.html#a8029ebaba04b0b97f1de77194e68dd52">edge_function</a> &amp;&amp;edge_func)</td></tr>
 <tr class="separator:a9e2912d511dfc5d9842c805b5f642cc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a17b9bb3a2ab572540d9efeda493a2b69"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1GraphSimulationStochastic.html#a17b9bb3a2ab572540d9efeda493a2b69">GraphSimulationStochastic</a> (double t0, double dt, <a class="el" href="classmio_1_1Graph.html">Graph</a> &amp;&amp;g, const <a class="el" href="classmio_1_1GraphSimulationStochastic.html#ae14855d3e45e0bd5887e70d901520982">node_function</a> &amp;node_func, const <a class="el" href="classmio_1_1GraphSimulationStochastic.html#a8029ebaba04b0b97f1de77194e68dd52">edge_function</a> &amp;&amp;edge_func)</td></tr>
@@ -132,6 +134,8 @@ Private Member Functions</h2></td></tr>
 Private Attributes</h2></td></tr>
 <tr class="memitem:a90d7ab87a831f326954ba18ba2ee4f5f"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="config_8h.html#acd4f1d492d83a74716a42615e127d641">ScalarType</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1GraphSimulationStochastic.html#a90d7ab87a831f326954ba18ba2ee4f5f">m_rates</a></td></tr>
 <tr class="separator:a90d7ab87a831f326954ba18ba2ee4f5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2260b826e787fcfbe35b20ec99fd8ac3"><td class="memItemLeft" align="right" valign="top">RandomNumberGenerator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1GraphSimulationStochastic.html#a2260b826e787fcfbe35b20ec99fd8ac3">m_rng</a></td></tr>
+<tr class="separator:a2260b826e787fcfbe35b20ec99fd8ac3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -398,6 +402,25 @@ template&lt;class Graph &gt; </div>
 
 </div>
 </div>
+<a id="aea23191c91561b0d8916f62d29724153"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aea23191c91561b0d8916f62d29724153">&#9670;&nbsp;</a></span>get_rng()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Graph &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">RandomNumberGenerator&amp; <a class="el" href="classmio_1_1GraphSimulationStochastic.html">mio::GraphSimulationStochastic</a>&lt; <a class="el" href="classmio_1_1Graph.html">Graph</a> &gt;::get_rng </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <h2 class="groupheader">Member Data Documentation</h2>
 <a id="a90d7ab87a831f326954ba18ba2ee4f5f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a90d7ab87a831f326954ba18ba2ee4f5f">&#9670;&nbsp;</a></span>m_rates</h2>
@@ -412,6 +435,30 @@ template&lt;class Graph &gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">std::vector&lt;<a class="el" href="config_8h.html#acd4f1d492d83a74716a42615e127d641">ScalarType</a>&gt; <a class="el" href="classmio_1_1GraphSimulationStochastic.html">mio::GraphSimulationStochastic</a>&lt; <a class="el" href="classmio_1_1Graph.html">Graph</a> &gt;::m_rates</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2260b826e787fcfbe35b20ec99fd8ac3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2260b826e787fcfbe35b20ec99fd8ac3">&#9670;&nbsp;</a></span>m_rng</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Graph &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">RandomNumberGenerator <a class="el" href="classmio_1_1GraphSimulationStochastic.html">mio::GraphSimulationStochastic</a>&lt; <a class="el" href="classmio_1_1Graph.html">Graph</a> &gt;::m_rng</td>
         </tr>
       </table>
   </td>

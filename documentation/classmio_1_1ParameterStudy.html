@@ -98,6 +98,8 @@ Public Types</h2></td></tr>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ab0247a7cd6292141cd0649799f82b5d4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1ParameterStudy.html#ab0247a7cd6292141cd0649799f82b5d4">get_num_runs</a> () const</td></tr>
 <tr class="separator:ab0247a7cd6292141cd0649799f82b5d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae9b1b804adc32b143f0ccdec81e68954"><td class="memItemLeft" align="right" valign="top">RandomNumberGenerator &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1ParameterStudy.html#ae9b1b804adc32b143f0ccdec81e68954">get_rng</a> ()</td></tr>
+<tr class="separator:ae9b1b804adc32b143f0ccdec81e68954"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad953ec4a06e54f0b0880408eeb44bbeb"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1ParameterStudy.html#ad953ec4a06e54f0b0880408eeb44bbeb">get_t0</a> () const</td></tr>
 <tr class="separator:ad953ec4a06e54f0b0880408eeb44bbeb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa3f6d156a8220d07c57ca6e2a35c146e"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1ParameterStudy.html#aa3f6d156a8220d07c57ca6e2a35c146e">get_tmax</a> () const</td></tr>
@@ -154,6 +156,8 @@ Private Attributes</h2></td></tr>
 <tr class="separator:af65939411eb18ae302df0ef09cf23e3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2fb649f8ea5ec2e3deab9d355faf5de3"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1ParameterStudy.html#a2fb649f8ea5ec2e3deab9d355faf5de3">m_num_runs</a></td></tr>
 <tr class="separator:a2fb649f8ea5ec2e3deab9d355faf5de3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa42349075a725b9f60db413806953a3d"><td class="memItemLeft" align="right" valign="top">RandomNumberGenerator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1ParameterStudy.html#aa42349075a725b9f60db413806953a3d">m_rng</a></td></tr>
+<tr class="separator:aa42349075a725b9f60db413806953a3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab9a88a4fe2fa8573085bee31a4ab5fc3"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1ParameterStudy.html#ab9a88a4fe2fa8573085bee31a4ab5fc3">m_t0</a></td></tr>
 <tr class="separator:ab9a88a4fe2fa8573085bee31a4ab5fc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af279fc512e5491c2ed2e0005cf17fa45"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1ParameterStudy.html#af279fc512e5491c2ed2e0005cf17fa45">m_tmax</a></td></tr>
@@ -578,6 +582,25 @@ template&lt;class S &gt; </div>
 
 </div>
 </div>
+<a id="ae9b1b804adc32b143f0ccdec81e68954"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae9b1b804adc32b143f0ccdec81e68954">&#9670;&nbsp;</a></span>get_rng()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class S &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">RandomNumberGenerator&amp; <a class="el" href="classmio_1_1ParameterStudy.html">mio::ParameterStudy</a>&lt; S &gt;::get_rng </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="ad953ec4a06e54f0b0880408eeb44bbeb"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad953ec4a06e54f0b0880408eeb44bbeb">&#9670;&nbsp;</a></span>get_t0()</h2>
 
@@ -816,6 +839,30 @@ template&lt;class S &gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">size_t <a class="el" href="classmio_1_1ParameterStudy.html">mio::ParameterStudy</a>&lt; S &gt;::m_num_runs</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa42349075a725b9f60db413806953a3d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa42349075a725b9f60db413806953a3d">&#9670;&nbsp;</a></span>m_rng</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class S &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">RandomNumberGenerator <a class="el" href="classmio_1_1ParameterStudy.html">mio::ParameterStudy</a>&lt; S &gt;::m_rng</td>
         </tr>
       </table>
   </td>

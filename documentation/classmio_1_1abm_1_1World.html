@@ -136,6 +136,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a865bbb5e5aad5d87acf2116afacd6e22"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmio_1_1Range.html">Range</a>&lt; std::pair&lt; <a class="el" href="classmio_1_1abm_1_1World.html#a5788f51792a6de8a78b368aad1c5e16e">ConstPersonIterator</a>, <a class="el" href="classmio_1_1abm_1_1World.html#a5788f51792a6de8a78b368aad1c5e16e">ConstPersonIterator</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1abm_1_1World.html#a865bbb5e5aad5d87acf2116afacd6e22">get_persons</a> () const</td></tr>
 <tr class="memdesc:a865bbb5e5aad5d87acf2116afacd6e22"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a range of all <a class="el" href="classmio_1_1abm_1_1Person.html" title="Agents in the simulated World that can carry and spread the Infection.">Person</a>s in the <a class="el" href="classmio_1_1abm_1_1World.html" title="The World of the Simulation.">World</a>.  <a href="classmio_1_1abm_1_1World.html#a865bbb5e5aad5d87acf2116afacd6e22">More...</a><br /></td></tr>
 <tr class="separator:a865bbb5e5aad5d87acf2116afacd6e22"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a53671e67dc36fcb8000c545df8b3ff32"><td class="memItemLeft" align="right" valign="top">RandomNumberGenerator &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1abm_1_1World.html#a53671e67dc36fcb8000c545df8b3ff32">get_rng</a> ()</td></tr>
+<tr class="memdesc:a53671e67dc36fcb8000c545df8b3ff32"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the RandomNumberGenerator used by this world for random events.  <a href="classmio_1_1abm_1_1World.html#a53671e67dc36fcb8000c545df8b3ff32">More...</a><br /></td></tr>
+<tr class="separator:a53671e67dc36fcb8000c545df8b3ff32"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8deb1b039ac5ba4e83b44bf60795eb21"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1abm_1_1World.html#a8deb1b039ac5ba4e83b44bf60795eb21">get_subpopulation_combined</a> (<a class="el" href="classmio_1_1abm_1_1TimePoint.html">TimePoint</a> t, <a class="el" href="namespacemio_1_1abm.html#ad1ae0779f53a827b524e1f0925b9d704">InfectionState</a> s, <a class="el" href="namespacemio_1_1abm.html#a83bc98ab43329c10fe9a6e683f2e1d0f">LocationType</a> type) const</td></tr>
 <tr class="memdesc:a8deb1b039ac5ba4e83b44bf60795eb21"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the number of Persons in one <a class="el" href="namespacemio_1_1abm.html#ad1ae0779f53a827b524e1f0925b9d704" title="InfectionState in ABM.">InfectionState</a> at all <a class="el" href="classmio_1_1abm_1_1Location.html" title="All Locations in the simulated World where Persons gather.">Location</a>s of a type.  <a href="classmio_1_1abm_1_1World.html#a8deb1b039ac5ba4e83b44bf60795eb21">More...</a><br /></td></tr>
 <tr class="separator:a8deb1b039ac5ba4e83b44bf60795eb21"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -187,12 +190,15 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:ae237850ed766925907af93f594ab4130"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacemio_1_1abm.html#aa8a9868546ef379f6e53a48227b3846f">MigrationParameters</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1abm_1_1World.html#ae237850ed766925907af93f594ab4130">m_migration_parameters</a></td></tr>
 <tr class="memdesc:ae237850ed766925907af93f594ab4130"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parameters of the <a class="el" href="classmio_1_1abm_1_1Infection.html">Infection</a> that are the same everywhere in the <a class="el" href="classmio_1_1abm_1_1World.html" title="The World of the Simulation.">World</a>.  <a href="classmio_1_1abm_1_1World.html#ae237850ed766925907af93f594ab4130">More...</a><br /></td></tr>
 <tr class="separator:ae237850ed766925907af93f594ab4130"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a07a090ba30c7c0954a8df67d4feef3b9"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::pair&lt; <a class="el" href="namespacemio_1_1abm.html#a83bc98ab43329c10fe9a6e683f2e1d0f">LocationType</a>(*)(const <a class="el" href="classmio_1_1abm_1_1Person.html">Person</a> &amp;, <a class="el" href="classmio_1_1abm_1_1TimePoint.html">TimePoint</a>, <a class="el" href="classmio_1_1abm_1_1TimeSpan.html">TimeSpan</a>, const <a class="el" href="namespacemio_1_1abm.html#aa8a9868546ef379f6e53a48227b3846f">MigrationParameters</a> &amp;), std::vector&lt; <a class="el" href="namespacemio_1_1abm.html#a83bc98ab43329c10fe9a6e683f2e1d0f">LocationType</a> &gt; &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1abm_1_1World.html#a07a090ba30c7c0954a8df67d4feef3b9">m_migration_rules</a></td></tr>
-<tr class="memdesc:a07a090ba30c7c0954a8df67d4feef3b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rules that govern the migration between <a class="el" href="classmio_1_1abm_1_1Location.html" title="All Locations in the simulated World where Persons gather.">Location</a>s.  <a href="classmio_1_1abm_1_1World.html#a07a090ba30c7c0954a8df67d4feef3b9">More...</a><br /></td></tr>
-<tr class="separator:a07a090ba30c7c0954a8df67d4feef3b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7fe6efd325c00f87019bf1dfbbb37300"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::pair&lt; <a class="el" href="namespacemio_1_1abm.html#a83bc98ab43329c10fe9a6e683f2e1d0f">LocationType</a>(*)(<a class="el" href="classmio_1_1abm_1_1Person_1_1RandomNumberGenerator.html">Person::RandomNumberGenerator</a> &amp;, const <a class="el" href="classmio_1_1abm_1_1Person.html">Person</a> &amp;, <a class="el" href="classmio_1_1abm_1_1TimePoint.html">TimePoint</a>, <a class="el" href="classmio_1_1abm_1_1TimeSpan.html">TimeSpan</a>, const <a class="el" href="namespacemio_1_1abm.html#aa8a9868546ef379f6e53a48227b3846f">MigrationParameters</a> &amp;), std::vector&lt; <a class="el" href="namespacemio_1_1abm.html#a83bc98ab43329c10fe9a6e683f2e1d0f">LocationType</a> &gt; &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1abm_1_1World.html#a7fe6efd325c00f87019bf1dfbbb37300">m_migration_rules</a></td></tr>
+<tr class="memdesc:a7fe6efd325c00f87019bf1dfbbb37300"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rules that govern the migration between <a class="el" href="classmio_1_1abm_1_1Location.html" title="All Locations in the simulated World where Persons gather.">Location</a>s.  <a href="classmio_1_1abm_1_1World.html#a7fe6efd325c00f87019bf1dfbbb37300">More...</a><br /></td></tr>
+<tr class="separator:a7fe6efd325c00f87019bf1dfbbb37300"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a50730201715b158f6c8618665d65599c"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::unique_ptr&lt; <a class="el" href="classmio_1_1abm_1_1Person.html">Person</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1abm_1_1World.html#a50730201715b158f6c8618665d65599c">m_persons</a></td></tr>
 <tr class="memdesc:a50730201715b158f6c8618665d65599c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vector with pointers to every <a class="el" href="classmio_1_1abm_1_1Person.html" title="Agents in the simulated World that can carry and spread the Infection.">Person</a>.  <a href="classmio_1_1abm_1_1World.html#a50730201715b158f6c8618665d65599c">More...</a><br /></td></tr>
 <tr class="separator:a50730201715b158f6c8618665d65599c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0579407609ae085f769e78055b2663b7"><td class="memItemLeft" align="right" valign="top">RandomNumberGenerator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1abm_1_1World.html#a0579407609ae085f769e78055b2663b7">m_rng</a></td></tr>
+<tr class="memdesc:a0579407609ae085f769e78055b2663b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Global random number generator.  <a href="classmio_1_1abm_1_1World.html#a0579407609ae085f769e78055b2663b7">More...</a><br /></td></tr>
+<tr class="separator:a0579407609ae085f769e78055b2663b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9ebb9d2b5992c566c56162ab30c214d7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmio_1_1abm_1_1TestingStrategy.html">TestingStrategy</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1abm_1_1World.html#a9ebb9d2b5992c566c56162ab30c214d7">m_testing_strategy</a></td></tr>
 <tr class="memdesc:a9ebb9d2b5992c566c56162ab30c214d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">List of <a class="el" href="classmio_1_1abm_1_1TestingScheme.html" title="TestingScheme to regular test Persons.">TestingScheme</a>s that are checked for testing.  <a href="classmio_1_1abm_1_1World.html#a9ebb9d2b5992c566c56162ab30c214d7">More...</a><br /></td></tr>
 <tr class="separator:a9ebb9d2b5992c566c56162ab30c214d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -755,6 +761,26 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a53671e67dc36fcb8000c545df8b3ff32"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a53671e67dc36fcb8000c545df8b3ff32">&#9670;&nbsp;</a></span>get_rng()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RandomNumberGenerator&amp; mio::abm::World::get_rng </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the RandomNumberGenerator used by this world for random events. </p>
+<p>Persons use their own generators with the same key as the global one. </p><dl class="section return"><dt>Returns</dt><dd>The random number generator. </dd></dl>
+
+</div>
+</div>
 <a id="a8deb1b039ac5ba4e83b44bf60795eb21"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8deb1b039ac5ba4e83b44bf60795eb21">&#9670;&nbsp;</a></span>get_subpopulation_combined()</h2>
 
@@ -1151,8 +1177,8 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a07a090ba30c7c0954a8df67d4feef3b9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a07a090ba30c7c0954a8df67d4feef3b9">&#9670;&nbsp;</a></span>m_migration_rules</h2>
+<a id="a7fe6efd325c00f87019bf1dfbbb37300"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7fe6efd325c00f87019bf1dfbbb37300">&#9670;&nbsp;</a></span>m_migration_rules</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1161,7 +1187,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt;std::pair&lt;<a class="el" href="namespacemio_1_1abm.html#a83bc98ab43329c10fe9a6e683f2e1d0f">LocationType</a> (*)(const <a class="el" href="classmio_1_1abm_1_1Person.html">Person</a>&amp;, <a class="el" href="classmio_1_1abm_1_1TimePoint.html">TimePoint</a>, <a class="el" href="classmio_1_1abm_1_1TimeSpan.html">TimeSpan</a>, const <a class="el" href="namespacemio_1_1abm.html#aa8a9868546ef379f6e53a48227b3846f">MigrationParameters</a>&amp;), std::vector&lt;<a class="el" href="namespacemio_1_1abm.html#a83bc98ab43329c10fe9a6e683f2e1d0f">LocationType</a>&gt; &gt; &gt; mio::abm::World::m_migration_rules</td>
+          <td class="memname">std::vector&lt;std::pair&lt;<a class="el" href="namespacemio_1_1abm.html#a83bc98ab43329c10fe9a6e683f2e1d0f">LocationType</a> (*)(<a class="el" href="classmio_1_1abm_1_1Person_1_1RandomNumberGenerator.html">Person::RandomNumberGenerator</a>&amp;, const <a class="el" href="classmio_1_1abm_1_1Person.html">Person</a>&amp;, <a class="el" href="classmio_1_1abm_1_1TimePoint.html">TimePoint</a>, <a class="el" href="classmio_1_1abm_1_1TimeSpan.html">TimeSpan</a>, const <a class="el" href="namespacemio_1_1abm.html#aa8a9868546ef379f6e53a48227b3846f">MigrationParameters</a>&amp;), std::vector&lt;<a class="el" href="namespacemio_1_1abm.html#a83bc98ab43329c10fe9a6e683f2e1d0f">LocationType</a>&gt; &gt; &gt; mio::abm::World::m_migration_rules</td>
         </tr>
       </table>
   </td>
@@ -1196,6 +1222,30 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Vector with pointers to every <a class="el" href="classmio_1_1abm_1_1Person.html" title="Agents in the simulated World that can carry and spread the Infection.">Person</a>. </p>
+
+</div>
+</div>
+<a id="a0579407609ae085f769e78055b2663b7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0579407609ae085f769e78055b2663b7">&#9670;&nbsp;</a></span>m_rng</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">RandomNumberGenerator mio::abm::World::m_rng</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Global random number generator. </p>
 
 </div>
 </div>

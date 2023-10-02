@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['spdlog_5factive_5flevel_3379',['SPDLOG_ACTIVE_LEVEL',['../logging_8h.html#ae4fda6f71f35120e2ff48157fca961b5',1,'logging.h']]]
+  ['quote_3323',['QUOTE',['../compiler__diagnostics_8h.html#a2117b58e19182dff91ad3558e650541d',1,'compiler_diagnostics.h']]]
 ];
