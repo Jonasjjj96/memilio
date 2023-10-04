@@ -4,7 +4,7 @@ var searchData=
   ['observer_5fptr_1144',['observer_ptr',['../classmio_1_1observer__ptr.html',1,'mio::observer_ptr&lt; T &gt;'],['../classmio_1_1observer__ptr.html#a1837836c5c964b1fd1308aed15d88d91',1,'mio::observer_ptr::observer_ptr(const observer_ptr &amp;other)=default'],['../classmio_1_1observer__ptr.html#a86f25c0932c9a7830efe398e7dea310e',1,'mio::observer_ptr::observer_ptr(T *p)']]],
   ['observer_5fptr_3c_20mio_3a_3aabm_3a_3alocation_20_3e_1145',['observer_ptr&lt; mio::abm::Location &gt;',['../classmio_1_1observer__ptr.html',1,'mio']]],
   ['ode_20seir_20compartment_20model_1146',['ODE SEIR compartment model',['../md__home_runner_work_memilio_memilio_cpp_models_ode_seir_README.html',1,'']]],
-  ['ode_2dbased_20_2f_20seir_2d_20and_20secir_2dtype_20models_1147',['ODE-based / SEIR- and SECIR-type models',['../md__home_runner_work_memilio_memilio_cpp_models_ode_secir_README.html',1,'']]],
+  ['ode_2dbased_20secir_2dtype_20model_1147',['ODE-based SECIR-type model',['../md__home_runner_work_memilio_memilio_cpp_models_ode_secir_README.html',1,'']]],
   ['odeintegrator_1148',['OdeIntegrator',['../classmio_1_1OdeIntegrator.html',1,'mio::OdeIntegrator'],['../classmio_1_1OdeIntegrator.html#ae61f039680bba7ef84b99b0a9c9c1e57',1,'mio::OdeIntegrator::OdeIntegrator()']]],
   ['off_1149',['off',['../namespacemio.html#a67881790c6dfd8c058d27e5f1fe24220a3262d48df5d75e3452f0f16b313b7808',1,'mio']]],
   ['offset_5fdate_5fby_5fdays_1150',['offset_date_by_days',['../namespacemio.html#abebb31121953c36c5b5b42976df8bcad',1,'mio']]],
