@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2023-10-05 08:58:53</td>
+            <td class="headerValue">2023-10-05 09:06:03</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">25</td>
@@ -139,9 +139,9 @@
 <a name="77"><span class="lineNum">      77 </span>            :     // subject to change if Recovered is removed</a>
 <a name="78"><span class="lineNum">      78 </span><span class="lineCov">        374 :     if (m_infections.back().get_infection_state(t) == InfectionState::Susceptible ||</span></a>
 <a name="79"><span class="lineNum">      79 </span><span class="lineCov">        187 :         m_infections.back().get_infection_state(t) == InfectionState::Recovered) {</span></a>
-<a name="80"><span class="lineNum">      80 </span><span class="lineCov">         59 :         return false;</span></a>
+<a name="80"><span class="lineNum">      80 </span><span class="lineCov">         35 :         return false;</span></a>
 <a name="81"><span class="lineNum">      81 </span>            :     }</a>
-<a name="82"><span class="lineNum">      82 </span><span class="lineCov">        128 :     return true;</span></a>
+<a name="82"><span class="lineNum">      82 </span><span class="lineCov">        152 :     return true;</span></a>
 <a name="83"><span class="lineNum">      83 </span>            : }</a>
 <a name="84"><span class="lineNum">      84 </span>            : </a>
 <a name="85"><span class="lineNum">      85 </span><span class="lineCov">       1228 : InfectionState Person::get_infection_state(TimePoint t) const</span></a>
@@ -174,9 +174,9 @@
 <a name="112"><span class="lineNum">     112 </span><span class="lineNoCov">          0 :     return m_infections.back();</span></a>
 <a name="113"><span class="lineNum">     113 </span>            : }</a>
 <a name="114"><span class="lineNum">     114 </span>            : </a>
-<a name="115"><span class="lineNum">     115 </span><span class="lineCov">        118 : Infection&amp; Person::get_infection()</span></a>
+<a name="115"><span class="lineNum">     115 </span><span class="lineCov">        142 : Infection&amp; Person::get_infection()</span></a>
 <a name="116"><span class="lineNum">     116 </span>            : {</a>
-<a name="117"><span class="lineNum">     117 </span><span class="lineCov">        118 :     return m_infections.back();</span></a>
+<a name="117"><span class="lineNum">     117 </span><span class="lineCov">        142 :     return m_infections.back();</span></a>
 <a name="118"><span class="lineNum">     118 </span>            : }</a>
 <a name="119"><span class="lineNum">     119 </span>            : </a>
 <a name="120"><span class="lineNum">     120 </span><span class="lineCov">         22 : void Person::set_assigned_location(Location&amp; location)</span></a>
