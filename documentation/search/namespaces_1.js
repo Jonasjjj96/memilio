@@ -28,8 +28,9 @@ var searchData=
   ['osecir_1921',['osecir',['../namespacemio_1_1osecir.html',1,'mio']]],
   ['osecirvvs_1922',['osecirvvs',['../namespacemio_1_1osecirvvs.html',1,'mio']]],
   ['oseir_1923',['oseir',['../namespacemio_1_1oseir.html',1,'mio']]],
-  ['progress_5findicator_1924',['progress_indicator',['../namespacememilio_1_1epidata_1_1progress__indicator.html',1,'memilio::epidata']]],
-  ['regions_1925',['regions',['../namespacemio_1_1regions.html',1,'mio']]],
-  ['transformmobilitydata_1926',['transformMobilityData',['../namespacememilio_1_1epidata_1_1transformMobilityData.html',1,'memilio::epidata']]],
-  ['transformweatherdata_1927',['transformWeatherData',['../namespacememilio_1_1epidata_1_1transformWeatherData.html',1,'memilio::epidata']]]
+  ['osir_1924',['osir',['../namespacemio_1_1osir.html',1,'mio']]],
+  ['progress_5findicator_1925',['progress_indicator',['../namespacememilio_1_1epidata_1_1progress__indicator.html',1,'memilio::epidata']]],
+  ['regions_1926',['regions',['../namespacemio_1_1regions.html',1,'mio']]],
+  ['transformmobilitydata_1927',['transformMobilityData',['../namespacememilio_1_1epidata_1_1transformMobilityData.html',1,'memilio::epidata']]],
+  ['transformweatherdata_1928',['transformWeatherData',['../namespacememilio_1_1epidata_1_1transformWeatherData.html',1,'memilio::epidata']]]
 ];

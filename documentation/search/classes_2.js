@@ -17,7 +17,7 @@ var searchData=
   ['contactfrequency_1647',['ContactFrequency',['../structmio_1_1iseir_1_1ContactFrequency.html',1,'mio::iseir']]],
   ['contactmatrix_1648',['ContactMatrix',['../classmio_1_1ContactMatrix.html',1,'mio']]],
   ['contactmatrixgroup_1649',['ContactMatrixGroup',['../classmio_1_1ContactMatrixGroup.html',1,'mio']]],
-  ['contactpatterns_1650',['ContactPatterns',['../structmio_1_1isecir_1_1ContactPatterns.html',1,'mio::isecir::ContactPatterns'],['../structmio_1_1osecir_1_1ContactPatterns.html',1,'mio::osecir::ContactPatterns'],['../structmio_1_1osecirvvs_1_1ContactPatterns.html',1,'mio::osecirvvs::ContactPatterns'],['../structmio_1_1oseir_1_1ContactPatterns.html',1,'mio::oseir::ContactPatterns']]],
+  ['contactpatterns_1650',['ContactPatterns',['../structmio_1_1isecir_1_1ContactPatterns.html',1,'mio::isecir::ContactPatterns'],['../structmio_1_1osecir_1_1ContactPatterns.html',1,'mio::osecir::ContactPatterns'],['../structmio_1_1osecirvvs_1_1ContactPatterns.html',1,'mio::osecirvvs::ContactPatterns'],['../structmio_1_1oseir_1_1ContactPatterns.html',1,'mio::oseir::ContactPatterns'],['../structmio_1_1osir_1_1ContactPatterns.html',1,'mio::osir::ContactPatterns']]],
   ['contactrates_1651',['ContactRates',['../structmio_1_1abm_1_1ContactRates.html',1,'mio::abm']]],
   ['controlledstepperwrapper_1652',['ControlledStepperWrapper',['../classmio_1_1ControlledStepperWrapper.html',1,'mio']]],
   ['criticalpersevere_1653',['CriticalPerSevere',['../structmio_1_1osecir_1_1CriticalPerSevere.html',1,'mio::osecir::CriticalPerSevere'],['../structmio_1_1osecirvvs_1_1CriticalPerSevere.html',1,'mio::osecirvvs::CriticalPerSevere']]],

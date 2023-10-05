@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2023-10-05 09:06:03</td>
+            <td class="headerValue">2023-10-05 09:59:23</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">5</td>
@@ -113,24 +113,24 @@
 <a name="51"><span class="lineNum">      51 </span>            :     {</a>
 <a name="52"><span class="lineNum">      52 </span><span class="lineCov">         10 :     }</span></a>
 <a name="53"><span class="lineNum">      53 </span>            : </a>
-<a name="54"><span class="lineNum">      54 </span><span class="lineCov">       1605 :     void get_derivatives(Eigen::Ref&lt;const Eigen::VectorXd&gt; pop, Eigen::Ref&lt;const Eigen::VectorXd&gt; y, double t,</span></a>
+<a name="54"><span class="lineNum">      54 </span><span class="lineCov">       1617 :     void get_derivatives(Eigen::Ref&lt;const Eigen::VectorXd&gt; pop, Eigen::Ref&lt;const Eigen::VectorXd&gt; y, double t,</span></a>
 <a name="55"><span class="lineNum">      55 </span>            :                          Eigen::Ref&lt;Eigen::VectorXd&gt; dydt) const override</a>
 <a name="56"><span class="lineNum">      56 </span>            :     {</a>
-<a name="57"><span class="lineNum">      57 </span><span class="lineCov">       1605 :         auto&amp; params     = this-&gt;parameters;</span></a>
-<a name="58"><span class="lineNum">      58 </span><span class="lineCov">       3210 :         double coeffStoE = params.get&lt;ContactPatterns&gt;().get_matrix_at(t)(0, 0) *</span></a>
-<a name="59"><span class="lineNum">      59 </span><span class="lineCov">       4815 :                            params.get&lt;TransmissionProbabilityOnContact&gt;() / populations.get_total();</span></a>
+<a name="57"><span class="lineNum">      57 </span><span class="lineCov">       1617 :         auto&amp; params     = this-&gt;parameters;</span></a>
+<a name="58"><span class="lineNum">      58 </span><span class="lineCov">       3234 :         double coeffStoE = params.get&lt;ContactPatterns&gt;().get_matrix_at(t)(0, 0) *</span></a>
+<a name="59"><span class="lineNum">      59 </span><span class="lineCov">       4851 :                            params.get&lt;TransmissionProbabilityOnContact&gt;() / populations.get_total();</span></a>
 <a name="60"><span class="lineNum">      60 </span>            : </a>
-<a name="61"><span class="lineNum">      61 </span><span class="lineCov">       1605 :         dydt[(size_t)InfectionState::Susceptible] =</span></a>
-<a name="62"><span class="lineNum">      62 </span><span class="lineCov">       1605 :             -coeffStoE * y[(size_t)InfectionState::Susceptible] * pop[(size_t)InfectionState::Infected];</span></a>
-<a name="63"><span class="lineNum">      63 </span><span class="lineCov">       1605 :         dydt[(size_t)InfectionState::Exposed] =</span></a>
-<a name="64"><span class="lineNum">      64 </span><span class="lineCov">       1605 :             coeffStoE * y[(size_t)InfectionState::Susceptible] * pop[(size_t)InfectionState::Infected] -</span></a>
-<a name="65"><span class="lineNum">      65 </span><span class="lineCov">       1605 :             (1.0 / params.get&lt;TimeExposed&gt;()) * y[(size_t)InfectionState::Exposed];</span></a>
-<a name="66"><span class="lineNum">      66 </span><span class="lineCov">       1605 :         dydt[(size_t)InfectionState::Infected] =</span></a>
-<a name="67"><span class="lineNum">      67 </span><span class="lineCov">       1605 :             (1.0 / params.get&lt;TimeExposed&gt;()) * y[(size_t)InfectionState::Exposed] -</span></a>
-<a name="68"><span class="lineNum">      68 </span><span class="lineCov">       1605 :             (1.0 / params.get&lt;TimeInfected&gt;()) * y[(size_t)InfectionState::Infected];</span></a>
-<a name="69"><span class="lineNum">      69 </span><span class="lineCov">       1605 :         dydt[(size_t)InfectionState::Recovered] =</span></a>
-<a name="70"><span class="lineNum">      70 </span><span class="lineCov">       1605 :             (1.0 / params.get&lt;TimeInfected&gt;()) * y[(size_t)InfectionState::Infected];</span></a>
-<a name="71"><span class="lineNum">      71 </span><span class="lineCov">       1605 :     }</span></a>
+<a name="61"><span class="lineNum">      61 </span><span class="lineCov">       1617 :         dydt[(size_t)InfectionState::Susceptible] =</span></a>
+<a name="62"><span class="lineNum">      62 </span><span class="lineCov">       1617 :             -coeffStoE * y[(size_t)InfectionState::Susceptible] * pop[(size_t)InfectionState::Infected];</span></a>
+<a name="63"><span class="lineNum">      63 </span><span class="lineCov">       1617 :         dydt[(size_t)InfectionState::Exposed] =</span></a>
+<a name="64"><span class="lineNum">      64 </span><span class="lineCov">       1617 :             coeffStoE * y[(size_t)InfectionState::Susceptible] * pop[(size_t)InfectionState::Infected] -</span></a>
+<a name="65"><span class="lineNum">      65 </span><span class="lineCov">       1617 :             (1.0 / params.get&lt;TimeExposed&gt;()) * y[(size_t)InfectionState::Exposed];</span></a>
+<a name="66"><span class="lineNum">      66 </span><span class="lineCov">       1617 :         dydt[(size_t)InfectionState::Infected] =</span></a>
+<a name="67"><span class="lineNum">      67 </span><span class="lineCov">       1617 :             (1.0 / params.get&lt;TimeExposed&gt;()) * y[(size_t)InfectionState::Exposed] -</span></a>
+<a name="68"><span class="lineNum">      68 </span><span class="lineCov">       1617 :             (1.0 / params.get&lt;TimeInfected&gt;()) * y[(size_t)InfectionState::Infected];</span></a>
+<a name="69"><span class="lineNum">      69 </span><span class="lineCov">       1617 :         dydt[(size_t)InfectionState::Recovered] =</span></a>
+<a name="70"><span class="lineNum">      70 </span><span class="lineCov">       1617 :             (1.0 / params.get&lt;TimeInfected&gt;()) * y[(size_t)InfectionState::Infected];</span></a>
+<a name="71"><span class="lineNum">      71 </span><span class="lineCov">       1617 :     }</span></a>
 <a name="72"><span class="lineNum">      72 </span>            : </a>
 <a name="73"><span class="lineNum">      73 </span>            :     /**</a>
 <a name="74"><span class="lineNum">      74 </span>            :     *@brief Computes the reproduction number at a given index time of the Model output obtained by the Simulation.</a>
