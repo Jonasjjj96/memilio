@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2023-10-05 09:59:23</td>
+            <td class="headerValue">2023-10-09 15:51:54</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">14</td>
@@ -147,9 +147,9 @@
 <a name="85"><span class="lineNum">      85 </span>            :      */</a>
 <a name="86"><span class="lineNum">      86 </span>            :     Eigen::Ref&lt;Eigen::VectorXd&gt; advance(double tmax);</a>
 <a name="87"><span class="lineNum">      87 </span>            : </a>
-<a name="88"><span class="lineNum">      88 </span><span class="lineCov">       1184 :     TimeSeries&lt;double&gt;&amp; get_result()</span></a>
+<a name="88"><span class="lineNum">      88 </span><span class="lineCov">       1186 :     TimeSeries&lt;double&gt;&amp; get_result()</span></a>
 <a name="89"><span class="lineNum">      89 </span>            :     {</a>
-<a name="90"><span class="lineNum">      90 </span><span class="lineCov">       1184 :         return m_result;</span></a>
+<a name="90"><span class="lineNum">      90 </span><span class="lineCov">       1186 :         return m_result;</span></a>
 <a name="91"><span class="lineNum">      91 </span>            :     }</a>
 <a name="92"><span class="lineNum">      92 </span>            : </a>
 <a name="93"><span class="lineNum">      93 </span><span class="lineCov">         14 :     const TimeSeries&lt;double&gt;&amp; get_result() const</span></a>
@@ -160,9 +160,9 @@
 <a name="98"><span class="lineNum">      98 </span>            :     /**</a>
 <a name="99"><span class="lineNum">      99 </span>            :      * @brief returns the time step width determined by the IntegratorCore for the next integration step</a>
 <a name="100"><span class="lineNum">     100 </span>            :     */</a>
-<a name="101"><span class="lineNum">     101 </span><span class="lineCov">         54 :     double get_dt() const</span></a>
+<a name="101"><span class="lineNum">     101 </span><span class="lineCov">         56 :     double get_dt() const</span></a>
 <a name="102"><span class="lineNum">     102 </span>            :     {</a>
-<a name="103"><span class="lineNum">     103 </span><span class="lineCov">         54 :         return m_next_dt;</span></a>
+<a name="103"><span class="lineNum">     103 </span><span class="lineCov">         56 :         return m_next_dt;</span></a>
 <a name="104"><span class="lineNum">     104 </span>            :     }</a>
 <a name="105"><span class="lineNum">     105 </span>            : </a>
 <a name="106"><span class="lineNum">     106 </span><span class="lineCov">          9 :     void set_integrator(std::shared_ptr&lt;IntegratorCore&gt; integrator)</span></a>
