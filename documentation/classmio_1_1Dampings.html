@@ -132,9 +132,6 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a0dfa7c3e10b6b940daf45b2f512560ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a34a85d840b16099006912d0134407f37"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmio_1_1Dampings.html#ad87d20f789de9b02abccbe8f54e54154">const_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1Dampings.html#a34a85d840b16099006912d0134407f37">end</a> () const</td></tr>
 <tr class="separator:a34a85d840b16099006912d0134407f37"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adabb9de7cf36caecab4a044124896dea"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1Dampings.html#adabb9de7cf36caecab4a044124896dea">finalize</a> () const</td></tr>
-<tr class="memdesc:adabb9de7cf36caecab4a044124896dea"><td class="mdescLeft">&#160;</td><td class="mdescRight">compute the cache of accumulated dampings.  <a href="classmio_1_1Dampings.html#adabb9de7cf36caecab4a044124896dea">More...</a><br /></td></tr>
-<tr class="separator:adabb9de7cf36caecab4a044124896dea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9d1a1fb478a67e32484212123c8803a0"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1Dampings.html#a9d1a1fb478a67e32484212123c8803a0">get_matrix_at</a> (double t) const</td></tr>
 <tr class="separator:a9d1a1fb478a67e32484212123c8803a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a748dc3c8db190735a423d1c6f87c16c2"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1Dampings.html#a748dc3c8db190735a423d1c6f87c16c2">get_matrix_at</a> (<a class="el" href="classmio_1_1SimulationTime.html">SimulationTime</a> t) const</td></tr>
@@ -163,6 +160,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a9e891978c08bec101389345af623789d"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classmio_1_1Dampings.html#a9e891978c08bec101389345af623789d">serialize</a> (IOContext &amp;io) const</td></tr>
 <tr class="memdesc:a9e891978c08bec101389345af623789d"><td class="mdescLeft">&#160;</td><td class="mdescRight">serialize this.  <a href="classmio_1_1Dampings.html#a9e891978c08bec101389345af623789d">More...</a><br /></td></tr>
 <tr class="separator:a9e891978c08bec101389345af623789d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a81003a50972517633bf1446d567dcaf6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1Dampings.html#a81003a50972517633bf1446d567dcaf6">set_automatic_cache_update</a> (bool b)</td></tr>
+<tr class="memdesc:a81003a50972517633bf1446d567dcaf6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disable the internal cache to speed up multiple modifications in a row.  <a href="classmio_1_1Dampings.html#a81003a50972517633bf1446d567dcaf6">More...</a><br /></td></tr>
+<tr class="separator:a81003a50972517633bf1446d567dcaf6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
@@ -176,6 +176,12 @@ Private Member Functions</h2></td></tr>
 <tr class="memitem:afe9389081c5dc81643a85a4a4791e45b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1Dampings.html#afe9389081c5dc81643a85a4a4791e45b">add_</a> (const <a class="el" href="classmio_1_1Dampings.html#ab538d359c3e3f553caf7f039a358615f">value_type</a> &amp;damping)</td></tr>
 <tr class="memdesc:afe9389081c5dc81643a85a4a4791e45b"><td class="mdescLeft">&#160;</td><td class="mdescRight">internal add.  <a href="classmio_1_1Dampings.html#afe9389081c5dc81643a85a4a4791e45b">More...</a><br /></td></tr>
 <tr class="separator:afe9389081c5dc81643a85a4a4791e45b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a502c0979b966e2b827b1cfbe00970b2c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1Dampings.html#a502c0979b966e2b827b1cfbe00970b2c">automatic_cache_update</a> ()</td></tr>
+<tr class="memdesc:a502c0979b966e2b827b1cfbe00970b2c"><td class="mdescLeft">&#160;</td><td class="mdescRight">updates the cache if automatic cache updates are enabled.  <a href="classmio_1_1Dampings.html#a502c0979b966e2b827b1cfbe00970b2c">More...</a><br /></td></tr>
+<tr class="separator:a502c0979b966e2b827b1cfbe00970b2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1be5f4b4214445d5da9e143b7c5cb490"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1Dampings.html#a1be5f4b4214445d5da9e143b7c5cb490">update_cache</a> ()</td></tr>
+<tr class="memdesc:a1be5f4b4214445d5da9e143b7c5cb490"><td class="mdescLeft">&#160;</td><td class="mdescRight">compute the cache of accumulated dampings.  <a href="classmio_1_1Dampings.html#a1be5f4b4214445d5da9e143b7c5cb490">More...</a><br /></td></tr>
+<tr class="separator:a1be5f4b4214445d5da9e143b7c5cb490"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-methods"></a>
 Static Private Member Functions</h2></td></tr>
@@ -194,6 +200,8 @@ Static Private Member Functions</h2></td></tr>
 Private Attributes</h2></td></tr>
 <tr class="memitem:a979402774ec1c3c35f678abf2c9ae053"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::tuple&lt; <a class="el" href="classmio_1_1Dampings.html#abf012a8c44a62fb1217d25df8eb5eef5">Matrix</a>, <a class="el" href="classmio_1_1SimulationTime.html">SimulationTime</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1Dampings.html#a979402774ec1c3c35f678abf2c9ae053">m_accumulated_dampings_cached</a></td></tr>
 <tr class="separator:a979402774ec1c3c35f678abf2c9ae053"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab1a81c189fbdd8fc8fa70a71be7581d6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1Dampings.html#ab1a81c189fbdd8fc8fa70a71be7581d6">m_automatic_cache_update</a> = true</td></tr>
+<tr class="separator:ab1a81c189fbdd8fc8fa70a71be7581d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1691f484c52a22d7bb282228e78cadd9"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classmio_1_1Dampings.html#ab538d359c3e3f553caf7f039a358615f">value_type</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1Dampings.html#a1691f484c52a22d7bb282228e78cadd9">m_dampings</a></td></tr>
 <tr class="separator:a1691f484c52a22d7bb282228e78cadd9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aef61541bb44e0d95ea4aa8369c9efe65"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmio_1_1Dampings.html#a93906e20a2919bf857d60e4c8bb5299e">Shape</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1Dampings.html#aef61541bb44e0d95ea4aa8369c9efe65">m_shape</a></td></tr>
@@ -517,6 +525,36 @@ template&lt;class D &gt; </div>
 
 </div>
 </div>
+<a id="a502c0979b966e2b827b1cfbe00970b2c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a502c0979b966e2b827b1cfbe00970b2c">&#9670;&nbsp;</a></span>automatic_cache_update()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class D &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classmio_1_1Dampings.html">mio::Dampings</a>&lt; D &gt;::automatic_cache_update </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>updates the cache if automatic cache updates are enabled. </p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classmio_1_1Dampings.html#a1be5f4b4214445d5da9e143b7c5cb490" title="compute the cache of accumulated dampings.">update_cache()</a>, <a class="el" href="classmio_1_1Dampings.html#a81003a50972517633bf1446d567dcaf6" title="Disable the internal cache to speed up multiple modifications in a row.">set_automatic_cache_update()</a> </dd></dl>
+
+</div>
+</div>
 <a id="a62323e051d8a521dc4619a26d44571eb"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a62323e051d8a521dc4619a26d44571eb">&#9670;&nbsp;</a></span>begin() <span class="overload">[1/2]</span></h2>
 
@@ -646,25 +684,6 @@ template&lt;class D &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-
-</div>
-</div>
-<a id="adabb9de7cf36caecab4a044124896dea"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adabb9de7cf36caecab4a044124896dea">&#9670;&nbsp;</a></span>finalize()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class D &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="classmio_1_1Dampings.html">mio::Dampings</a>&lt; D &gt;::finalize</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>compute the cache of accumulated dampings. </p>
-<p>if this is used after adding dampings, all subsequent calls to <a class="el" href="classmio_1_1Dampings.html#a748dc3c8db190735a423d1c6f87c16c2" title="Computes the real contact frequency at a point in time.">get_matrix_at()</a> are quick and threadsafe. Otherwise the cache is updated automatically on the first call. </p>
 
 </div>
 </div>
@@ -970,6 +989,34 @@ template&lt;class IOContext &gt; </div>
 
 </div>
 </div>
+<a id="a81003a50972517633bf1446d567dcaf6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a81003a50972517633bf1446d567dcaf6">&#9670;&nbsp;</a></span>set_automatic_cache_update()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class D &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classmio_1_1Dampings.html">mio::Dampings</a>&lt; D &gt;::set_automatic_cache_update </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>b</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Disable the internal cache to speed up multiple modifications in a row. </p>
+<p>This class has an internal cache where all dampings are combined into a single time series of matrices for faster lookup. By default, the cache is automatically updated when dampings are added or removed, but this can be expensive. This function can be used to disable the cache so that <a class="el" href="classmio_1_1Dampings.html#a3174f6f54ae2a02e2fe0ad522a7d7523" title="add a damping.">add()</a> or <a class="el" href="classmio_1_1Dampings.html#a57cbb91bbbbe8575e6f0aa6d6c2a1765" title="remove the damping at index i.">remove()</a> can be called multiple times in a row more efficiently. Afterwards, the cache needs to be reenabled. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">b</td><td>True if cache updates are enabled. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="af686f4971c59254e0149d9ed23c6a437"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af686f4971c59254e0149d9ed23c6a437">&#9670;&nbsp;</a></span>update_active_dampings()</h2>
 
@@ -1014,6 +1061,33 @@ template&lt;class S &gt; </div>
 
 <p>replace matrices of the same type, sum up matrices on the same level. </p>
 <p>add new types/levels if necessary. </p>
+
+</div>
+</div>
+<a id="a1be5f4b4214445d5da9e143b7c5cb490"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1be5f4b4214445d5da9e143b7c5cb490">&#9670;&nbsp;</a></span>update_cache()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class D &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classmio_1_1Dampings.html">mio::Dampings</a>&lt; D &gt;::update_cache</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>compute the cache of accumulated dampings. </p>
+<p>if this is used after adding dampings, all subsequent calls to <a class="el" href="classmio_1_1Dampings.html#a748dc3c8db190735a423d1c6f87c16c2" title="Computes the real contact frequency at a point in time.">get_matrix_at()</a> are quick and threadsafe. Otherwise the cache is updated automatically on the first call. </p>
 
 </div>
 </div>
@@ -1076,7 +1150,31 @@ template&lt;class D &gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">mutable</span><span class="mlabel">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab1a81c189fbdd8fc8fa70a71be7581d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab1a81c189fbdd8fc8fa70a71be7581d6">&#9670;&nbsp;</a></span>m_automatic_cache_update</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class D &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classmio_1_1Dampings.html">mio::Dampings</a>&lt; D &gt;::m_automatic_cache_update = true</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">

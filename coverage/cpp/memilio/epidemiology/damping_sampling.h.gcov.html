@@ -31,13 +31,13 @@
             <td class="headerValue">coverage.info</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntry">64</td>
-            <td class="headerCovTableEntry">64</td>
+            <td class="headerCovTableEntry">65</td>
+            <td class="headerCovTableEntry">65</td>
             <td class="headerCovTableEntryHi">100.0 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2023-10-09 15:51:54</td>
+            <td class="headerValue">2023-10-16 08:34:41</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">29</td>
@@ -317,58 +317,59 @@
 <a name="255"><span class="lineNum">     255 </span>            : template &lt;class DampingExpression, class DampingSamplings, class F&gt;</a>
 <a name="256"><span class="lineNum">     256 </span><span class="lineCov">         52 : void apply_dampings(DampingExpression&amp; damping_expression, const DampingSamplings&amp; dampings, F make_matrix)</span></a>
 <a name="257"><span class="lineNum">     257 </span>            : {</a>
-<a name="258"><span class="lineNum">     258 </span><span class="lineCov">         93 :     for (auto&amp; d : dampings) {</span></a>
-<a name="259"><span class="lineNum">     259 </span><span class="lineCov">         83 :         for (auto&amp; i : d.get_matrix_indices()) {</span></a>
-<a name="260"><span class="lineNum">     260 </span><span class="lineCov">         42 :             auto m = make_matrix(double(d.get_value()) * d.get_group_weights());</span></a>
-<a name="261"><span class="lineNum">     261 </span><span class="lineCov">         42 :             damping_expression[i].add_damping(m, d.get_level(), d.get_type(), d.get_time());</span></a>
-<a name="262"><span class="lineNum">     262 </span>            :         }</a>
-<a name="263"><span class="lineNum">     263 </span>            :     }</a>
-<a name="264"><span class="lineNum">     264 </span><span class="lineCov">         52 :     damping_expression.finalize();</span></a>
-<a name="265"><span class="lineNum">     265 </span><span class="lineCov">         52 : }</span></a>
-<a name="266"><span class="lineNum">     266 </span>            : </a>
-<a name="267"><span class="lineNum">     267 </span>            : /**</a>
-<a name="268"><span class="lineNum">     268 </span>            :  * Make a contact damping matrix from dampings by group.</a>
-<a name="269"><span class="lineNum">     269 </span>            :  * Maps a vector of dampings by group onto a contact damping matrix according to the formula</a>
-<a name="270"><span class="lineNum">     270 </span>            :  * d_ij = 1 - sqrt((1 - g_i) * (1 - g_j))</a>
-<a name="271"><span class="lineNum">     271 </span>            :  * where d_ij is a coefficient of the matrix</a>
-<a name="272"><span class="lineNum">     272 </span>            :  * and g_i,g_j are coefficients of the group vector.</a>
-<a name="273"><span class="lineNum">     273 </span>            :  * For diagonal elements (i.e. contacts of group with itself): d_ii = g_i; </a>
-<a name="274"><span class="lineNum">     274 </span>            :  * the damping of the corresponding group is applied directly. </a>
-<a name="275"><span class="lineNum">     275 </span>            :  * For off diagonal elements (i.e. contacts of group with other group): d_ij between g_i and g_j; </a>
-<a name="276"><span class="lineNum">     276 </span>            :  * the dampings of both groups are combined and applied equally.</a>
-<a name="277"><span class="lineNum">     277 </span>            :  * @param groups damping value weighted by group.</a>
-<a name="278"><span class="lineNum">     278 </span>            :  * @return square matrix expression of damping coefficients.</a>
-<a name="279"><span class="lineNum">     279 </span>            :  */</a>
-<a name="280"><span class="lineNum">     280 </span>            : template &lt;class V&gt;</a>
-<a name="281"><span class="lineNum">     281 </span><span class="lineCov">         39 : auto make_contact_damping_matrix(V&amp;&amp; groups)</span></a>
-<a name="282"><span class="lineNum">     282 </span>            : {</a>
-<a name="283"><span class="lineNum">     283 </span><span class="lineCov">         39 :     auto ones_v = std::decay_t&lt;V&gt;::PlainObject::Constant(groups.size(), 1.0);</span></a>
-<a name="284"><span class="lineNum">     284 </span><span class="lineCov">         39 :     auto prod   = (ones_v - groups) * (ones_v.transpose() - groups.transpose());</span></a>
-<a name="285"><span class="lineNum">     285 </span><span class="lineCov">         39 :     auto ones_m = decltype(prod)::PlainObject::Constant(groups.size(), groups.size(), 1.0);</span></a>
-<a name="286"><span class="lineNum">     286 </span><span class="lineCov">         78 :     return ones_m - sqrt(prod.array()).matrix();</span></a>
-<a name="287"><span class="lineNum">     287 </span>            : }</a>
-<a name="288"><span class="lineNum">     288 </span>            : </a>
-<a name="289"><span class="lineNum">     289 </span>            : /**</a>
-<a name="290"><span class="lineNum">     290 </span>            :  * Make migration coefficient damping vector from dampings by group.</a>
-<a name="291"><span class="lineNum">     291 </span>            :  * Maps the vector of dampings by group onto a migration coefficient damping vector</a>
-<a name="292"><span class="lineNum">     292 </span>            :  * [g_0, g_0, ..., g_1, g_1, ..., g_2, ...].</a>
-<a name="293"><span class="lineNum">     293 </span>            :  * @param shape shape (i.e. size) of the migration coefficient vector.</a>
-<a name="294"><span class="lineNum">     294 </span>            :  * @param groups damping value weighted by group.</a>
-<a name="295"><span class="lineNum">     295 </span>            :  * @return vector expression of migration coefficient damping.</a>
-<a name="296"><span class="lineNum">     296 </span>            :  */</a>
-<a name="297"><span class="lineNum">     297 </span>            : template &lt;class V&gt;</a>
-<a name="298"><span class="lineNum">     298 </span><span class="lineCov">          9 : auto make_migration_damping_vector(ColumnVectorShape shape, V&amp;&amp; groups)</span></a>
-<a name="299"><span class="lineNum">     299 </span>            : {</a>
-<a name="300"><span class="lineNum">     300 </span><span class="lineCov">        208 :     return Eigen::VectorXd::NullaryExpr(shape.size(), [shape, groups = std::forward&lt;V&gt;(groups)](Eigen::Index i) {</span></a>
-<a name="301"><span class="lineNum">     301 </span><span class="lineCov">        213 :         auto num_groups       = groups.size();</span></a>
-<a name="302"><span class="lineNum">     302 </span><span class="lineCov">        213 :         auto num_compartments = size_t(shape.size()) / num_groups;</span></a>
-<a name="303"><span class="lineNum">     303 </span><span class="lineCov">        213 :         return groups[size_t(i) / num_compartments];</span></a>
-<a name="304"><span class="lineNum">     304 </span><span class="lineCov">         10 :     });</span></a>
-<a name="305"><span class="lineNum">     305 </span>            : }</a>
-<a name="306"><span class="lineNum">     306 </span>            : </a>
-<a name="307"><span class="lineNum">     307 </span>            : } // namespace mio</a>
-<a name="308"><span class="lineNum">     308 </span>            : </a>
-<a name="309"><span class="lineNum">     309 </span>            : #endif //EPI_SECIR_DAMPING_SAMPLING_H</a>
+<a name="258"><span class="lineNum">     258 </span><span class="lineCov">         52 :     damping_expression.set_automatic_cache_update(false);</span></a>
+<a name="259"><span class="lineNum">     259 </span><span class="lineCov">         93 :     for (auto&amp; d : dampings) {</span></a>
+<a name="260"><span class="lineNum">     260 </span><span class="lineCov">         83 :         for (auto&amp; i : d.get_matrix_indices()) {</span></a>
+<a name="261"><span class="lineNum">     261 </span><span class="lineCov">         42 :             auto m = make_matrix(double(d.get_value()) * d.get_group_weights());</span></a>
+<a name="262"><span class="lineNum">     262 </span><span class="lineCov">         42 :             damping_expression[i].add_damping(m, d.get_level(), d.get_type(), d.get_time());</span></a>
+<a name="263"><span class="lineNum">     263 </span>            :         }</a>
+<a name="264"><span class="lineNum">     264 </span>            :     }</a>
+<a name="265"><span class="lineNum">     265 </span><span class="lineCov">         52 :     damping_expression.set_automatic_cache_update(true);</span></a>
+<a name="266"><span class="lineNum">     266 </span><span class="lineCov">         52 : }</span></a>
+<a name="267"><span class="lineNum">     267 </span>            : </a>
+<a name="268"><span class="lineNum">     268 </span>            : /**</a>
+<a name="269"><span class="lineNum">     269 </span>            :  * Make a contact damping matrix from dampings by group.</a>
+<a name="270"><span class="lineNum">     270 </span>            :  * Maps a vector of dampings by group onto a contact damping matrix according to the formula</a>
+<a name="271"><span class="lineNum">     271 </span>            :  * d_ij = 1 - sqrt((1 - g_i) * (1 - g_j))</a>
+<a name="272"><span class="lineNum">     272 </span>            :  * where d_ij is a coefficient of the matrix</a>
+<a name="273"><span class="lineNum">     273 </span>            :  * and g_i,g_j are coefficients of the group vector.</a>
+<a name="274"><span class="lineNum">     274 </span>            :  * For diagonal elements (i.e. contacts of group with itself): d_ii = g_i; </a>
+<a name="275"><span class="lineNum">     275 </span>            :  * the damping of the corresponding group is applied directly. </a>
+<a name="276"><span class="lineNum">     276 </span>            :  * For off diagonal elements (i.e. contacts of group with other group): d_ij between g_i and g_j; </a>
+<a name="277"><span class="lineNum">     277 </span>            :  * the dampings of both groups are combined and applied equally.</a>
+<a name="278"><span class="lineNum">     278 </span>            :  * @param groups damping value weighted by group.</a>
+<a name="279"><span class="lineNum">     279 </span>            :  * @return square matrix expression of damping coefficients.</a>
+<a name="280"><span class="lineNum">     280 </span>            :  */</a>
+<a name="281"><span class="lineNum">     281 </span>            : template &lt;class V&gt;</a>
+<a name="282"><span class="lineNum">     282 </span><span class="lineCov">         39 : auto make_contact_damping_matrix(V&amp;&amp; groups)</span></a>
+<a name="283"><span class="lineNum">     283 </span>            : {</a>
+<a name="284"><span class="lineNum">     284 </span><span class="lineCov">         39 :     auto ones_v = std::decay_t&lt;V&gt;::PlainObject::Constant(groups.size(), 1.0);</span></a>
+<a name="285"><span class="lineNum">     285 </span><span class="lineCov">         39 :     auto prod   = (ones_v - groups) * (ones_v.transpose() - groups.transpose());</span></a>
+<a name="286"><span class="lineNum">     286 </span><span class="lineCov">         39 :     auto ones_m = decltype(prod)::PlainObject::Constant(groups.size(), groups.size(), 1.0);</span></a>
+<a name="287"><span class="lineNum">     287 </span><span class="lineCov">         78 :     return ones_m - sqrt(prod.array()).matrix();</span></a>
+<a name="288"><span class="lineNum">     288 </span>            : }</a>
+<a name="289"><span class="lineNum">     289 </span>            : </a>
+<a name="290"><span class="lineNum">     290 </span>            : /**</a>
+<a name="291"><span class="lineNum">     291 </span>            :  * Make migration coefficient damping vector from dampings by group.</a>
+<a name="292"><span class="lineNum">     292 </span>            :  * Maps the vector of dampings by group onto a migration coefficient damping vector</a>
+<a name="293"><span class="lineNum">     293 </span>            :  * [g_0, g_0, ..., g_1, g_1, ..., g_2, ...].</a>
+<a name="294"><span class="lineNum">     294 </span>            :  * @param shape shape (i.e. size) of the migration coefficient vector.</a>
+<a name="295"><span class="lineNum">     295 </span>            :  * @param groups damping value weighted by group.</a>
+<a name="296"><span class="lineNum">     296 </span>            :  * @return vector expression of migration coefficient damping.</a>
+<a name="297"><span class="lineNum">     297 </span>            :  */</a>
+<a name="298"><span class="lineNum">     298 </span>            : template &lt;class V&gt;</a>
+<a name="299"><span class="lineNum">     299 </span><span class="lineCov">          9 : auto make_migration_damping_vector(ColumnVectorShape shape, V&amp;&amp; groups)</span></a>
+<a name="300"><span class="lineNum">     300 </span>            : {</a>
+<a name="301"><span class="lineNum">     301 </span><span class="lineCov">        208 :     return Eigen::VectorXd::NullaryExpr(shape.size(), [shape, groups = std::forward&lt;V&gt;(groups)](Eigen::Index i) {</span></a>
+<a name="302"><span class="lineNum">     302 </span><span class="lineCov">        213 :         auto num_groups       = groups.size();</span></a>
+<a name="303"><span class="lineNum">     303 </span><span class="lineCov">        213 :         auto num_compartments = size_t(shape.size()) / num_groups;</span></a>
+<a name="304"><span class="lineNum">     304 </span><span class="lineCov">        213 :         return groups[size_t(i) / num_compartments];</span></a>
+<a name="305"><span class="lineNum">     305 </span><span class="lineCov">         10 :     });</span></a>
+<a name="306"><span class="lineNum">     306 </span>            : }</a>
+<a name="307"><span class="lineNum">     307 </span>            : </a>
+<a name="308"><span class="lineNum">     308 </span>            : } // namespace mio</a>
+<a name="309"><span class="lineNum">     309 </span>            : </a>
+<a name="310"><span class="lineNum">     310 </span>            : #endif //EPI_SECIR_DAMPING_SAMPLING_H</a>
 </pre>
       </td>
     </tr>

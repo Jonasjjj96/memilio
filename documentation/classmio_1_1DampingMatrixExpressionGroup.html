@@ -130,9 +130,6 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a79390a8e186f67e0a462dedc87049562"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa50062848685d7cd5e3c9870b6575260"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmio_1_1DampingMatrixExpressionGroup.html#a1bebaa26dd82a53c680249f73a52a38f">const_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1DampingMatrixExpressionGroup.html#aa50062848685d7cd5e3c9870b6575260">end</a> () const</td></tr>
 <tr class="separator:aa50062848685d7cd5e3c9870b6575260"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a25a7b41ed179ea56b00277767e7e8b38"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1DampingMatrixExpressionGroup.html#a25a7b41ed179ea56b00277767e7e8b38">finalize</a> ()</td></tr>
-<tr class="memdesc:a25a7b41ed179ea56b00277767e7e8b38"><td class="mdescLeft">&#160;</td><td class="mdescRight">update internal cache to make get_matrix_at thread safe.  <a href="classmio_1_1DampingMatrixExpressionGroup.html#a25a7b41ed179ea56b00277767e7e8b38">More...</a><br /></td></tr>
-<tr class="separator:a25a7b41ed179ea56b00277767e7e8b38"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9cece421e7b8db6a1e2160af7159e5f4"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
 <tr class="memitem:a9cece421e7b8db6a1e2160af7159e5f4"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classmio_1_1DampingMatrixExpressionGroup.html#a9cece421e7b8db6a1e2160af7159e5f4">get_matrix_at</a> (T t) const</td></tr>
 <tr class="memdesc:a9cece421e7b8db6a1e2160af7159e5f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">get the real contact frequency at a point in time.  <a href="classmio_1_1DampingMatrixExpressionGroup.html#a9cece421e7b8db6a1e2160af7159e5f4">More...</a><br /></td></tr>
@@ -157,6 +154,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a74e739b5588be4b007cba3b8b126a74d"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classmio_1_1DampingMatrixExpressionGroup.html#a74e739b5588be4b007cba3b8b126a74d">serialize</a> (IOContext &amp;io) const</td></tr>
 <tr class="memdesc:a74e739b5588be4b007cba3b8b126a74d"><td class="mdescLeft">&#160;</td><td class="mdescRight">serialize this.  <a href="classmio_1_1DampingMatrixExpressionGroup.html#a74e739b5588be4b007cba3b8b126a74d">More...</a><br /></td></tr>
 <tr class="separator:a74e739b5588be4b007cba3b8b126a74d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac6ffd0d14c71536051c2fd9986edaf0f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1DampingMatrixExpressionGroup.html#ac6ffd0d14c71536051c2fd9986edaf0f">set_automatic_cache_update</a> (bool b)</td></tr>
+<tr class="memdesc:ac6ffd0d14c71536051c2fd9986edaf0f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable/disable automatic cache update for each contained matrix.  <a href="classmio_1_1DampingMatrixExpressionGroup.html#ac6ffd0d14c71536051c2fd9986edaf0f">More...</a><br /></td></tr>
+<tr class="separator:ac6ffd0d14c71536051c2fd9986edaf0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
@@ -622,27 +622,6 @@ template&lt;class E &gt; </div>
 
 </div>
 </div>
-<a id="a25a7b41ed179ea56b00277767e7e8b38"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a25a7b41ed179ea56b00277767e7e8b38">&#9670;&nbsp;</a></span>finalize()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class E &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="classmio_1_1DampingMatrixExpressionGroup.html">mio::DampingMatrixExpressionGroup</a>&lt; E &gt;::finalize </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>update internal cache to make get_matrix_at thread safe. </p>
-
-</div>
-</div>
 <a id="a9cece421e7b8db6a1e2160af7159e5f4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9cece421e7b8db6a1e2160af7159e5f4">&#9670;&nbsp;</a></span>get_matrix_at()</h2>
 
@@ -822,6 +801,29 @@ template&lt;class IOContext &gt; </div>
 
 <p>serialize this. </p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="namespacemio.html#a27a24b9e6cb629e04e9613446f07d6ba" title="Save data that describes an object in a format determined by the given context.">mio::serialize</a> </dd></dl>
+
+</div>
+</div>
+<a id="ac6ffd0d14c71536051c2fd9986edaf0f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac6ffd0d14c71536051c2fd9986edaf0f">&#9670;&nbsp;</a></span>set_automatic_cache_update()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class E &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classmio_1_1DampingMatrixExpressionGroup.html">mio::DampingMatrixExpressionGroup</a>&lt; E &gt;::set_automatic_cache_update </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>b</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Enable/disable automatic cache update for each contained matrix. </p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classmio_1_1Dampings.html#a81003a50972517633bf1446d567dcaf6" title="Disable the internal cache to speed up multiple modifications in a row.">Dampings::set_automatic_cache_update</a> </dd></dl>
 
 </div>
 </div>
