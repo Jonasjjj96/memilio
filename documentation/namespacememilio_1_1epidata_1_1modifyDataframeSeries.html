@@ -67,7 +67,8 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#func-members">Functions</a>  </div>
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
 <div class="title">memilio.epidata.modifyDataframeSeries Namespace Reference</div>  </div>
 </div><!--header-->
@@ -93,6 +94,11 @@ Functions</h2></td></tr>
 <tr class="memitem:a96264f9bbf171a696b5d08f504505e4e"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacememilio_1_1epidata_1_1modifyDataframeSeries.html#a96264f9bbf171a696b5d08f504505e4e">split_column_based_on_values</a> (df_to_split, column_to_split, column_vals_name, groupby_list, column_identifiers_to_names_dict, compute_cumsum)</td></tr>
 <tr class="memdesc:a96264f9bbf171a696b5d08f504505e4e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Splits a column in a dataframe into separate columns.  <a href="namespacememilio_1_1epidata_1_1modifyDataframeSeries.html#a96264f9bbf171a696b5d08f504505e4e">More...</a><br /></td></tr>
 <tr class="separator:a96264f9bbf171a696b5d08f504505e4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a332d2e1648176054b0ea0e5d70f23e66"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacememilio_1_1epidata_1_1modifyDataframeSeries.html#a332d2e1648176054b0ea0e5d70f23e66">copy_on_write</a></td></tr>
+<tr class="separator:a332d2e1648176054b0ea0e5d70f23e66"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="a17570113b7b17fd5b16cadb16634b204"></a>
@@ -299,7 +305,7 @@ Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">df_old</td><td>old pandas dataframe </td></tr>
-    <tr><td class="paramname">group_by_cols</td><td>Column names for grouping by and items of particular group specification (e.g., for region: list of county oder federal state IDs) </td></tr>
+    <tr><td class="paramname">group_by_cols</td><td>Column names for grouping by and items of particular group specification (e.g., for region: list of county or federal state IDs) </td></tr>
     <tr><td class="paramname">mod_cols</td><td>List of columns for which the imputation and/or moving average is conducted (e.g., Confirmed or ICU) </td></tr>
     <tr><td class="paramname">impute</td><td>[Default: 'forward'] imputes either based on older values ('forward') or zeros ('zeros') </td></tr>
     <tr><td class="paramname">moving_average</td><td>[Default: 0, no averaging] Number of days over which to compute the moving average </td></tr>
@@ -429,6 +435,21 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>a dataframe with the new splitted columns </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="a332d2e1648176054b0ea0e5d70f23e66"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a332d2e1648176054b0ea0e5d70f23e66">&#9670;&nbsp;</a></span>copy_on_write</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">memilio.epidata.modifyDataframeSeries.copy_on_write</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>

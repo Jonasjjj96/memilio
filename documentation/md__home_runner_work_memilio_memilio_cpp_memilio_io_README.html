@@ -132,8 +132,22 @@ Other IO modules</h1>
 <h1><a class="anchor" id="autotoc_md21"></a>
 The command line interface</h1>
 <p>We provide a function <code>mio::command_line_interface</code> in the header <code><a class="el" href="cli_8h.html">memilio/io/cli.h</a></code>, that can be used to write to or read from a parameter set. It can take parameters from command line arguments (i.e. the content of <code>argv</code> in the main function), and assign them to or get them from a <code><a class="el" href="classmio_1_1ParameterSet.html" title="a set of parameters defined at compile time">mio::ParameterSet</a></code>. A small example can be seen in <code>cpp/examples/cli.cpp</code>.</p>
-<p>The command line interface (CLI) provides a help dialogue that can be invoked by the argument <code>--help</code> or <code>-h</code>, and the option <code>--print_option</code>. The help option shows the basic usage of the CLI, and lists each parameter by name, as well as any alias and description. "--print_option" can be used with a (space seperated) list of parameter names or aliases (without dashes) to print the current values each parameter to the terminal. In general, an option is defined as a string, which consists either of two dashes followed by a parameter name (e.g. &ndash;help), or a single dash followed by its alias (e.g. -h).</p>
-<p>To set the value of a parameter from the command line, first type the corresponding option (see &ndash;help), followed by the value that should be assigned (reference &ndash;print_option). Values are given as a Json value corresponding to the Type of the parameter. Note that some characters may need to be escaped or quoted, e.g. the Json string <code>"some string"</code> must be entered as <code>\"some string\\"</code> or &lsquo;&rsquo;"some string"'`. </p>
+<p>The command line interface (CLI) provides some non-parameter options listed below.</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Name (Alias) <div style="width:150px"></div>   </th><th class="markdownTableHeadNone">Description    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>--help</code> (<code>-h</code>)   </td><td class="markdownTableBodyNone">Shows the basic usage of the CLI, and lists each parameter by name, as well as any alias and description. Takes priority before all other options and exits the programm.    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>--print_option</code>   </td><td class="markdownTableBodyNone">Can be used with a (space separated) list of parameter names or aliases (without dashes) to print the current values of each parameter to the terminal. This shows the correct json format used by the parameters. Exits after use.    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>--read_from_json</code>   </td><td class="markdownTableBodyNone">Allows reading parameters from a file instead of the command line. Both parameter names and aliases can be used, for example: <br  />
+ <code>{ "&lt;ParameterName&gt;" : &lt;value&gt;, "&lt;ParameterAlias&gt;" : &lt;value&gt; }</code>    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>--write_to_json</code>   </td><td class="markdownTableBodyNone">Writes <em>all</em> parameters with their current values to a specified file.   </td></tr>
+</table>
+<p>In general, an option is defined as a string, which consists either of two dashes followed by a name (e.g. &ndash;help), or a single dash followed by an alias (e.g. -h). Apart from the built-in options, the names each refer to a parameter that can be set.</p>
+<p>To set the value of a parameter from the command line, first type the corresponding parameter option (see &ndash;help), followed by the value that should be assigned (reference &ndash;print_option). Values are given as a Json value corresponding to the Type of the parameter. Note that some characters may need to be escaped or quoted. For example, the Json string <code>"some string"</code> must be entered as <code>\"some string\\"</code> or &lsquo;&rsquo;"some string"'`. </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 <!-- start footer part -->
