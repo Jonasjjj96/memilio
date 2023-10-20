@@ -83,13 +83,19 @@ Simulation</h1>
 <p>The result of the simulation is for each time step the count of persons in each infection state at that time.</p>
 <h1><a class="anchor" id="autotoc_md32"></a>
 Example</h1>
-<p>An example can also be found at simulations/abm.cpp </p><div class="fragment"><div class="line">//setup the infection parameters</div>
-<div class="line">mio::abm::GlobalInfectionParameters params;</div>
-<div class="line">params.incubation_period = 4.7;</div>
+<p>An example can also be found at simulations/abm.cpp </p><div class="fragment"><div class="line">size_t NUM_AGE_GROUPS         = 4;</div>
+<div class="line">const auto AGE_GROUP_0_TO_4   = mio::AgeGroup(NUM_AGE_GROUPS - 4);</div>
+<div class="line">const auto AGE_GROUP_5_TO_14  = mio::AgeGroup(NUM_AGE_GROUPS - 3);</div>
+<div class="line">const auto AGE_GROUP_15_TO_34 = mio::AgeGroup(NUM_AGE_GROUPS - 2);</div>
+<div class="line">const auto AGE_GROUP_35_TO_59 = mio::AgeGroup(NUM_AGE_GROUPS - 1);</div>
+<div class="line"> </div>
+<div class="line">// Create the world with 4 age groups.</div>
+<div class="line">auto world = mio::abm::World(NUM_AGE_GROUPS);</div>
+<div class="line">//setup the parameters</div>
+<div class="line">world.parameters.get&lt;mio::abm::IncubationPeriod&gt;() = 4.;</div>
 <div class="line">//...</div>
 <div class="line"> </div>
 <div class="line">//create the world with some nodes and persons</div>
-<div class="line">mio::abm::World world = mio::abm::World(params);</div>
 <div class="line">mio::abm::Location&amp; home = world.add_location(mio::abm::LocationType::Home);</div>
 <div class="line">mio::abm::Location&amp; school = world.add_location(mio::abm::LocationType::School);</div>
 <div class="line">mio::abm::Location&amp; work = world.add_location(mio::abm::LocationType::Work);</div>

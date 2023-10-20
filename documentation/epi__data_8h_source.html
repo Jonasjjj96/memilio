@@ -143,7 +143,7 @@ $(function() {
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keywordtype">double</span> num_recovered;</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keywordtype">double</span> num_deaths;</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    Date date;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <a class="code" href="namespacemio_1_1abm.html#ac9a874698e76d3706081b2642c5f4a5a">AgeGroup</a> age_group;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    AgeGroup age_group;</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    boost::optional&lt;regions::StateId&gt; state_id;</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    boost::optional&lt;regions::CountyId&gt; county_id;</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    boost::optional&lt;regions::DistrictId&gt; district_id;</div>
@@ -164,13 +164,13 @@ $(function() {
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;            io,</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;            [](<span class="keyword">auto</span>&amp;&amp; nc, <span class="keyword">auto</span>&amp;&amp; nr, <span class="keyword">auto</span>&amp;&amp; nd, <span class="keyword">auto</span>&amp;&amp; d, <span class="keyword">auto</span>&amp;&amp; a_str, <span class="keyword">auto</span>&amp;&amp; sid, <span class="keyword">auto</span>&amp;&amp; cid,</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;               <span class="keyword">auto</span>&amp;&amp; did) -&gt; IOResult&lt;ConfirmedCasesDataEntry&gt; {</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;                <span class="keyword">auto</span> a  = <a class="code" href="namespacemio_1_1abm.html#ac9a874698e76d3706081b2642c5f4a5a">AgeGroup</a>(0);</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;                <span class="keyword">auto</span> a  = AgeGroup(0);</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;                <span class="keyword">auto</span> it = std::find(age_group_names.begin(), age_group_names.end(), a_str);</div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;                <span class="keywordflow">if</span> (it != age_group_names.end()) {</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;                    a = <a class="code" href="namespacemio_1_1abm.html#ac9a874698e76d3706081b2642c5f4a5a">AgeGroup</a>(<span class="keywordtype">size_t</span>(it - age_group_names.begin()));</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;                    a = AgeGroup(<span class="keywordtype">size_t</span>(it - age_group_names.begin()));</div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;                }</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;                <span class="keywordflow">else</span> <span class="keywordflow">if</span> (a_str == <span class="stringliteral">&quot;unknown&quot;</span>) {</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;                    a = <a class="code" href="namespacemio_1_1abm.html#ac9a874698e76d3706081b2642c5f4a5a">AgeGroup</a>(age_group_names.size());</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;                    a = AgeGroup(age_group_names.size());</div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;                }</div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;                <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;                    <span class="keywordflow">return</span> <a class="code" href="namespacemio.html#a23604adfeac7ebc8418d741959e80906">failure</a>(<a class="code" href="namespacemio.html#a2799d348d433018d5b183d75bfbdd699a223e81e8afa42c41346a6696560ecc7b">StatusCode::InvalidValue</a>, <span class="stringliteral">&quot;Invalid confirmed cases data age group.&quot;</span>);</div>
@@ -278,7 +278,7 @@ $(function() {
 <div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;            io,</div>
 <div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;            [](<span class="keyword">auto</span>&amp;&amp; ag, <span class="keyword">auto</span>&amp;&amp; sid, <span class="keyword">auto</span>&amp;&amp; cid, <span class="keyword">auto</span>&amp;&amp; did) {</div>
 <div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;                <span class="keywordflow">return</span> PopulationDataEntry{</div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;                    CustomIndexArray&lt;double, AgeGroup&gt;(<a class="code" href="namespacemio_1_1abm.html#ac9a874698e76d3706081b2642c5f4a5a">AgeGroup</a>(ag.size()), ag.begin(), ag.end()), sid, cid, did};</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;                    CustomIndexArray&lt;double, AgeGroup&gt;(AgeGroup(ag.size()), ag.begin(), ag.end()), sid, cid, did};</div>
 <div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;            },</div>
 <div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;            details::unpack_all(age_groups), state_id, county_id, district_id);</div>
 <div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;    }</div>
@@ -351,13 +351,13 @@ $(function() {
 <div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;    std::vector&lt;PopulationDataEntry&gt; interpolated{population_data};</div>
 <div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span> region_entry_idx = <span class="keywordtype">size_t</span>(0); region_entry_idx &lt; population_data.size(); ++region_entry_idx) {</div>
 <div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;        interpolated[region_entry_idx].population =</div>
-<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;            CustomIndexArray&lt;double, AgeGroup&gt;(<a class="code" href="namespacemio_1_1abm.html#ac9a874698e76d3706081b2642c5f4a5a">AgeGroup</a>(ConfirmedCasesDataEntry::age_group_names.size()), 0.0);</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;            CustomIndexArray&lt;double, AgeGroup&gt;(AgeGroup(ConfirmedCasesDataEntry::age_group_names.size()), 0.0);</div>
 <div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160; </div>
 <div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;        <span class="keywordtype">size_t</span> interpolated_age_idx = 0;</div>
 <div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> age_idx = 0; age_idx &lt; coefficients.size(); age_idx++) {</div>
 <div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> coeff_idx = 0; coeff_idx &lt; coefficients[age_idx].size(); coeff_idx++) {</div>
-<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;                interpolated[region_entry_idx].population[<a class="code" href="namespacemio_1_1abm.html#ac9a874698e76d3706081b2642c5f4a5a">AgeGroup</a>(interpolated_age_idx)] +=</div>
-<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;                    coefficients[age_idx][coeff_idx] * population_data[region_entry_idx].population[<a class="code" href="namespacemio_1_1abm.html#ac9a874698e76d3706081b2642c5f4a5a">AgeGroup</a>(age_idx)];</div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;                interpolated[region_entry_idx].population[AgeGroup(interpolated_age_idx)] +=</div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;                    coefficients[age_idx][coeff_idx] * population_data[region_entry_idx].population[AgeGroup(age_idx)];</div>
 <div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;                <span class="keywordflow">if</span> (coeff_idx &lt; coefficients[age_idx].size() - 1 || !carry_over[age_idx]) {</div>
 <div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;                    interpolated_age_idx++;</div>
 <div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;                }</div>
@@ -390,7 +390,7 @@ $(function() {
 <div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160; </div>
 <div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;    <span class="keywordtype">double</span> num_vaccinations_completed;</div>
 <div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;    Date date;</div>
-<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;    <a class="code" href="namespacemio_1_1abm.html#ac9a874698e76d3706081b2642c5f4a5a">AgeGroup</a> age_group;</div>
+<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;    AgeGroup age_group;</div>
 <div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;    boost::optional&lt;regions::StateId&gt; state_id;</div>
 <div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;    boost::optional&lt;regions::CountyId&gt; county_id;</div>
 <div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;    boost::optional&lt;regions::DistrictId&gt; district_id;</div>
@@ -409,9 +409,9 @@ $(function() {
 <div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;            io,</div>
 <div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;            [](<span class="keyword">auto</span> nf, <span class="keyword">auto</span> d, <span class="keyword">auto</span>&amp;&amp; a_str, <span class="keyword">auto</span> sid, <span class="keyword">auto</span> cid, <span class="keyword">auto</span> did) -&gt; IOResult&lt;VaccinationDataEntry&gt; {</div>
 <div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;                <span class="keyword">auto</span> it = std::find(age_group_names.begin(), age_group_names.end(), a_str);</div>
-<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;                <span class="keyword">auto</span> a  = <a class="code" href="namespacemio_1_1abm.html#ac9a874698e76d3706081b2642c5f4a5a">AgeGroup</a>(0);</div>
+<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;                <span class="keyword">auto</span> a  = AgeGroup(0);</div>
 <div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;                <span class="keywordflow">if</span> (it != age_group_names.end()) {</div>
-<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;                    a = <a class="code" href="namespacemio_1_1abm.html#ac9a874698e76d3706081b2642c5f4a5a">AgeGroup</a>(<span class="keywordtype">size_t</span>(it - age_group_names.begin()));</div>
+<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;                    a = AgeGroup(<span class="keywordtype">size_t</span>(it - age_group_names.begin()));</div>
 <div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;                }</div>
 <div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;                <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;                    <span class="keywordflow">return</span> <a class="code" href="namespacemio.html#a23604adfeac7ebc8418d741959e80906">failure</a>(StatusCode::InvalidValue, <span class="stringliteral">&quot;Invalid vaccination data age group.&quot;</span>);</div>
@@ -445,7 +445,6 @@ $(function() {
 <div class="ttc" id="aio_8h_html"><div class="ttname"><a href="io_8h.html">io.h</a></div></div>
 <div class="ttc" id="ajson__serializer_8h_html"><div class="ttname"><a href="json__serializer_8h.html">json_serializer.h</a></div></div>
 <div class="ttc" id="anamespacememilio_1_1epidata_1_1getPopulationData_html_a0e312f4b04cc3f72953d6bef99e797ef"><div class="ttname"><a href="namespacememilio_1_1epidata_1_1getPopulationData.html#a0e312f4b04cc3f72953d6bef99e797ef">memilio.epidata.getPopulationData.read_population_data</a></div><div class="ttdeci">def read_population_data(username, password, read_data, directory)</div><div class="ttdoc">Reads Population data either from regionalstatistik.de or from directory.</div><div class="ttdef"><b>Definition:</b> getPopulationData.py:44</div></div>
-<div class="ttc" id="anamespacemio_1_1abm_html_ac9a874698e76d3706081b2642c5f4a5a"><div class="ttname"><a href="namespacemio_1_1abm.html#ac9a874698e76d3706081b2642c5f4a5a">mio::abm::AgeGroup</a></div><div class="ttdeci">AgeGroup</div><div class="ttdoc">age groups like RKI.</div><div class="ttdef"><b>Definition:</b> age.h:33</div></div>
 <div class="ttc" id="anamespacemio_html"><div class="ttname"><a href="namespacemio.html">mio</a></div><div class="ttdoc">A collection of classes to simplify handling of matrix shapes in meta programming.</div><div class="ttdef"><b>Definition:</b> compartmentalmodel.h:32</div></div>
 <div class="ttc" id="anamespacemio_html_a1eecf99ef3a231d628f968aeb2136865"><div class="ttname"><a href="namespacemio.html#a1eecf99ef3a231d628f968aeb2136865">mio::deserialize</a></div><div class="ttdeci">IOResult&lt; T &gt; deserialize(IOContext &amp;io, Tag&lt; T &gt; tag)</div><div class="ttdoc">Restores an object from the data stored in an IO context.</div><div class="ttdef"><b>Definition:</b> io.h:809</div></div>
 <div class="ttc" id="anamespacemio_html_a23604adfeac7ebc8418d741959e80906"><div class="ttname"><a href="namespacemio.html#a23604adfeac7ebc8418d741959e80906">mio::failure</a></div><div class="ttdeci">auto failure(const IOStatus &amp;s)</div><div class="ttdoc">Create an object that is implicitly convertible to an error IOResult&lt;T&gt;.</div><div class="ttdef"><b>Definition:</b> io.h:373</div></div>

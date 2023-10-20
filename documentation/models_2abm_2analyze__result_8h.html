@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>MEmilio: /home/runner/work/memilio/memilio/cpp/models/abm/age.h File Reference</title>
+<title>MEmilio: /home/runner/work/memilio/memilio/cpp/models/abm/analyze_result.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -68,13 +68,18 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#namespaces">Namespaces</a> &#124;
-<a href="#enum-members">Enumerations</a>  </div>
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">age.h File Reference</div>  </div>
+<div class="title">analyze_result.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-
-<p><a href="age_8h_source.html">Go to the source code of this file.</a></p>
+<div class="textblock"><code>#include &quot;<a class="el" href="models_2abm_2simulation_8h_source.html">abm/simulation.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="abm_2parameters_8h_source.html">abm/parameters.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="memilio_2data_2analyze__result_8h_source.html">memilio/data/analyze_result.h</a>&quot;</code><br />
+<code>#include &lt;functional&gt;</code><br />
+<code>#include &lt;vector&gt;</code><br />
+</div>
+<p><a href="models_2abm_2analyze__result_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
@@ -84,21 +89,12 @@ Namespaces</h2></td></tr>
 <tr class="memitem:namespacemio_1_1abm"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemio_1_1abm.html">mio::abm</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
-Enumerations</h2></td></tr>
-<tr class="memitem:ac9a874698e76d3706081b2642c5f4a5a"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemio_1_1abm.html#ac9a874698e76d3706081b2642c5f4a5a">mio::abm::AgeGroup</a> { <br />
-&#160;&#160;<a class="el" href="namespacemio_1_1abm.html#ac9a874698e76d3706081b2642c5f4a5aaecdef1978b0426a4dbce2482e4d992c0">mio::abm::Age0to4</a> = 0
-, <a class="el" href="namespacemio_1_1abm.html#ac9a874698e76d3706081b2642c5f4a5aa0e635bc20a1ebd1d39528e24ad180ea6">mio::abm::Age5to14</a>
-, <a class="el" href="namespacemio_1_1abm.html#ac9a874698e76d3706081b2642c5f4a5aad94c53cbd84e5bb40ac92d58ecf410e1">mio::abm::Age15to34</a>
-, <a class="el" href="namespacemio_1_1abm.html#ac9a874698e76d3706081b2642c5f4a5aa1af7e3664451c7caa568fdc0fe9bbea7">mio::abm::Age35to59</a>
-, <br />
-&#160;&#160;<a class="el" href="namespacemio_1_1abm.html#ac9a874698e76d3706081b2642c5f4a5aa256d02bd24303e832b43bc2c45b1ea8e">mio::abm::Age60to79</a>
-, <a class="el" href="namespacemio_1_1abm.html#ac9a874698e76d3706081b2642c5f4a5aadc550a7d96fee29c927fc5f8200a312a">mio::abm::Age80plus</a>
-, <a class="el" href="namespacemio_1_1abm.html#ac9a874698e76d3706081b2642c5f4a5aae93f994f01c537c4e2f7d8528c3eb5e9">mio::abm::Count</a>
-<br />
- }</td></tr>
-<tr class="memdesc:ac9a874698e76d3706081b2642c5f4a5a"><td class="mdescLeft">&#160;</td><td class="mdescRight">age groups like RKI.  <a href="namespacemio_1_1abm.html#ac9a874698e76d3706081b2642c5f4a5a">More...</a><br /></td></tr>
-<tr class="separator:ac9a874698e76d3706081b2642c5f4a5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a53a69cf33bfca774c58acd074f59bfc9"><td class="memTemplParams" colspan="2">template&lt;class Model &gt; </td></tr>
+<tr class="memitem:a53a69cf33bfca774c58acd074f59bfc9"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; Model &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemio_1_1abm.html#a53a69cf33bfca774c58acd074f59bfc9">mio::abm::ensemble_params_percentile</a> (const std::vector&lt; std::vector&lt; Model &gt;&gt; &amp;ensemble_params, double p)</td></tr>
+<tr class="memdesc:a53a69cf33bfca774c58acd074f59bfc9"><td class="mdescLeft">&#160;</td><td class="mdescRight">computes the p percentile of the parameters for each node.  <a href="namespacemio_1_1abm.html#a53a69cf33bfca774c58acd074f59bfc9">More...</a><br /></td></tr>
+<tr class="separator:a53a69cf33bfca774c58acd074f59bfc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- start footer part -->

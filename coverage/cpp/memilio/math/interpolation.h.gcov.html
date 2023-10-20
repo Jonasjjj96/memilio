@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2023-10-20 10:50:47</td>
+            <td class="headerValue">2023-10-20 11:16:17</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">4</td>
@@ -113,23 +113,23 @@
 <a name="51"><span class="lineNum">      51 </span>            :  * @param[out] unnamed Interpolation result.</a>
 <a name="52"><span class="lineNum">      52 </span>            :  */</a>
 <a name="53"><span class="lineNum">      53 </span>            : template &lt;typename X, typename Y&gt;</a>
-<a name="54"><span class="lineNum">      54 </span><span class="lineCov">         13 : Y linear_interpolation_of_data_set(std::vector&lt;std::pair&lt;X, Y&gt;&gt; vector, const X&amp; x_eval)</span></a>
+<a name="54"><span class="lineNum">      54 </span><span class="lineCov">         15 : Y linear_interpolation_of_data_set(std::vector&lt;std::pair&lt;X, Y&gt;&gt; vector, const X&amp; x_eval)</span></a>
 <a name="55"><span class="lineNum">      55 </span>            : {</a>
 <a name="56"><span class="lineNum">      56 </span>            :     // If the vector is empty or has only 1 node, throw an error</a>
-<a name="57"><span class="lineNum">      57 </span><span class="lineCov">         13 :     if (vector.empty() || vector.size() == 1) {</span></a>
+<a name="57"><span class="lineNum">      57 </span><span class="lineCov">         15 :     if (vector.empty() || vector.size() == 1) {</span></a>
 <a name="58"><span class="lineNum">      58 </span><span class="lineCov">          2 :         log_error(&quot;The vector provided in linear_interpolation_of_data_set() must have more than 1 node.&quot;);</span></a>
 <a name="59"><span class="lineNum">      59 </span><span class="lineCov">          1 :         return 0.0;</span></a>
 <a name="60"><span class="lineNum">      60 </span>            :     }</a>
 <a name="61"><span class="lineNum">      61 </span>            : </a>
 <a name="62"><span class="lineNum">      62 </span>            :     // Find the corresponding upper position of the node in the data set</a>
-<a name="63"><span class="lineNum">      63 </span><span class="lineCov">         24 :     size_t upper_pos = std::upper_bound(vector.begin(), vector.end(), x_eval,</span></a>
-<a name="64"><span class="lineNum">      64 </span><span class="lineCov">         20 :                                         [](double value, const std::pair&lt;X, Y&gt;&amp; node) {</span></a>
-<a name="65"><span class="lineNum">      65 </span><span class="lineCov">         20 :                                             return value &lt;= node.first;</span></a>
-<a name="66"><span class="lineNum">      66 </span><span class="lineCov">         12 :                                         }) -</span></a>
-<a name="67"><span class="lineNum">      67 </span><span class="lineCov">         24 :                        vector.begin();</span></a>
+<a name="63"><span class="lineNum">      63 </span><span class="lineCov">         28 :     size_t upper_pos = std::upper_bound(vector.begin(), vector.end(), x_eval,</span></a>
+<a name="64"><span class="lineNum">      64 </span><span class="lineCov">         24 :                                         [](double value, const std::pair&lt;X, Y&gt;&amp; node) {</span></a>
+<a name="65"><span class="lineNum">      65 </span><span class="lineCov">         24 :                                             return value &lt;= node.first;</span></a>
+<a name="66"><span class="lineNum">      66 </span><span class="lineCov">         14 :                                         }) -</span></a>
+<a name="67"><span class="lineNum">      67 </span><span class="lineCov">         28 :                        vector.begin();</span></a>
 <a name="68"><span class="lineNum">      68 </span>            : </a>
-<a name="69"><span class="lineNum">      69 </span><span class="lineCov">         12 :     if (upper_pos == 0) {</span></a>
-<a name="70"><span class="lineNum">      70 </span><span class="lineCov">          4 :         return vector[upper_pos].second;</span></a>
+<a name="69"><span class="lineNum">      69 </span><span class="lineCov">         14 :     if (upper_pos == 0) {</span></a>
+<a name="70"><span class="lineNum">      70 </span><span class="lineCov">          6 :         return vector[upper_pos].second;</span></a>
 <a name="71"><span class="lineNum">      71 </span>            :     }</a>
 <a name="72"><span class="lineNum">      72 </span>            : </a>
 <a name="73"><span class="lineNum">      73 </span>            :     // If the x_eval is between two identifiable nodes in the dataset.</a>

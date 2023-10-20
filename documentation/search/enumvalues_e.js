@@ -1,12 +1,6 @@
 var searchData=
 [
-  ['s_3309',['S',['../namespacemio_1_1iseir.html#ab27b12ec16e03c1857925e3c24ff99e8a5dbc98dcc983a70728bd082d1a47546e',1,'mio::iseir']]],
-  ['school_3310',['School',['../namespacemio_1_1abm.html#a83bc98ab43329c10fe9a6e683f2e1d0fa955cd8691ca89a6baa6ea10c7787e604',1,'mio::abm']]],
-  ['socialevent_3311',['SocialEvent',['../namespacemio_1_1abm.html#a83bc98ab43329c10fe9a6e683f2e1d0fa53ceef26ee8557fa2446a2596daed5c0',1,'mio::abm']]],
-  ['surgical_3312',['Surgical',['../namespacemio_1_1abm.html#ae5dfbb686f6e9d6e642193be9af23424ac0464da06a277b350de740a3dc020aff',1,'mio::abm']]],
-  ['susceptible_3313',['Susceptible',['../namespacemio_1_1abm.html#ad1ae0779f53a827b524e1f0925b9d704a494bf3eaa390dc405dd04ed1c8c99311',1,'mio::abm::Susceptible()'],['../namespacemio_1_1isecir.html#a4765e077a33191fc1125ca33a6ad8697a494bf3eaa390dc405dd04ed1c8c99311',1,'mio::isecir::Susceptible()'],['../namespacemio_1_1osecir.html#a3324235e2fb18f1c89744f6d5c30864ba494bf3eaa390dc405dd04ed1c8c99311',1,'mio::osecir::Susceptible()'],['../namespacemio_1_1oseir.html#a32ea4a2481cf5935d5124ffb43636e44a494bf3eaa390dc405dd04ed1c8c99311',1,'mio::oseir::Susceptible()'],['../namespacemio_1_1osir.html#a15c405d93887314a3a60f9ab095c1a44a494bf3eaa390dc405dd04ed1c8c99311',1,'mio::osir::Susceptible()']]],
-  ['susceptibleimprovedimmunity_3314',['SusceptibleImprovedImmunity',['../namespacemio_1_1osecirvvs.html#a429bf3ed03ff6928629f5d786b547023aac1d1d3f0636653dcbc48edab68459dc',1,'mio::osecirvvs']]],
-  ['susceptiblenaive_3315',['SusceptibleNaive',['../namespacemio_1_1osecirvvs.html#a429bf3ed03ff6928629f5d786b547023a858bb7a51abe0a566d6fc7e3c0a14b8e',1,'mio::osecirvvs']]],
-  ['susceptiblepartialimmunity_3316',['SusceptiblePartialImmunity',['../namespacemio_1_1osecirvvs.html#a429bf3ed03ff6928629f5d786b547023a6af01be28e88e1a1a8839e0428c4b225',1,'mio::osecirvvs']]],
-  ['susceptibletoexposed_3317',['SusceptibleToExposed',['../namespacemio_1_1isecir.html#a4aa9050dca2db281bd2063a108869f73ad223e739ddae9da49d87ec2efb8b24d1',1,'mio::isecir']]]
+  ['totalinfections_3297',['TotalInfections',['../namespacemio_1_1osecirvvs.html#a429bf3ed03ff6928629f5d786b547023a7665c9bf381c48eb6feac25df813a00f',1,'mio::osecirvvs']]],
+  ['trace_3298',['trace',['../namespacemio.html#a67881790c6dfd8c058d27e5f1fe24220a04a75036e9d520bb983c5ed03b8d0182',1,'mio']]],
+  ['transportwithoutcontact_3299',['TransportWithoutContact',['../namespacemio_1_1abm.html#a83bc98ab43329c10fe9a6e683f2e1d0fab780feddf2b83d77ae9ab2173b8fe0b2',1,'mio::abm']]]
 ];

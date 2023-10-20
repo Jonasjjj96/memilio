@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['ide_20secir_20model_3346',['IDE SECIR model',['../md__home_runner_work_memilio_memilio_cpp_models_ide_secir_README.html',1,'']]],
-  ['ide_20seir_20model_3347',['IDE SEIR model',['../md__home_runner_work_memilio_memilio_cpp_models_ide_seir_README.html',1,'']]]
+  ['ide_20secir_20model_3325',['IDE SECIR model',['../md__home_runner_work_memilio_memilio_cpp_models_ide_secir_README.html',1,'']]],
+  ['ide_20seir_20model_3326',['IDE SEIR model',['../md__home_runner_work_memilio_memilio_cpp_models_ide_seir_README.html',1,'']]]
 ];

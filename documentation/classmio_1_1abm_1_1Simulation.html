@@ -102,9 +102,9 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a364cfc5b5a23c31626095da227083563"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a85d2b6e0769126648508a22684e139be"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classmio_1_1abm_1_1World.html">World</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1abm_1_1Simulation.html#a85d2b6e0769126648508a22684e139be">get_world</a> () const</td></tr>
 <tr class="separator:a85d2b6e0769126648508a22684e139be"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a461689eff002ee0cc0c51509cd399fc4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1abm_1_1Simulation.html#a461689eff002ee0cc0c51509cd399fc4">Simulation</a> (<a class="el" href="classmio_1_1abm_1_1TimePoint.html">TimePoint</a> t0)</td></tr>
-<tr class="memdesc:a461689eff002ee0cc0c51509cd399fc4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a <a class="el" href="classmio_1_1abm_1_1Simulation.html" title="Run the Simulation in discrete steps, evolve the World and report results.">Simulation</a> with an empty <a class="el" href="classmio_1_1abm_1_1World.html" title="The World of the Simulation.">World</a>.  <a href="classmio_1_1abm_1_1Simulation.html#a461689eff002ee0cc0c51509cd399fc4">More...</a><br /></td></tr>
-<tr class="separator:a461689eff002ee0cc0c51509cd399fc4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab3a4adeb9cff288b915d5b7618aa713d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1abm_1_1Simulation.html#ab3a4adeb9cff288b915d5b7618aa713d">Simulation</a> (<a class="el" href="classmio_1_1abm_1_1TimePoint.html">TimePoint</a> t0, size_t num_agegroups)</td></tr>
+<tr class="memdesc:ab3a4adeb9cff288b915d5b7618aa713d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a <a class="el" href="classmio_1_1abm_1_1Simulation.html" title="Run the Simulation in discrete steps, evolve the World and report results.">Simulation</a> with an empty <a class="el" href="classmio_1_1abm_1_1World.html" title="The World of the Simulation.">World</a>.  <a href="classmio_1_1abm_1_1Simulation.html#ab3a4adeb9cff288b915d5b7618aa713d">More...</a><br /></td></tr>
+<tr class="separator:ab3a4adeb9cff288b915d5b7618aa713d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae7095977edf8ffdba93c116296b5e485"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1abm_1_1Simulation.html#ae7095977edf8ffdba93c116296b5e485">Simulation</a> (<a class="el" href="classmio_1_1abm_1_1TimePoint.html">TimePoint</a> t0, <a class="el" href="classmio_1_1abm_1_1World.html">World</a> &amp;&amp;world)</td></tr>
 <tr class="memdesc:ae7095977edf8ffdba93c116296b5e485"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a simulation.  <a href="classmio_1_1abm_1_1Simulation.html#ae7095977edf8ffdba93c116296b5e485">More...</a><br /></td></tr>
 <tr class="separator:ae7095977edf8ffdba93c116296b5e485"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -201,8 +201,8 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a461689eff002ee0cc0c51509cd399fc4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a461689eff002ee0cc0c51509cd399fc4">&#9670;&nbsp;</a></span>Simulation() <span class="overload">[2/2]</span></h2>
+<a id="ab3a4adeb9cff288b915d5b7618aa713d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab3a4adeb9cff288b915d5b7618aa713d">&#9670;&nbsp;</a></span>Simulation() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -211,8 +211,18 @@ Private Attributes</h2></td></tr>
           <td class="memname">mio::abm::Simulation::Simulation </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classmio_1_1abm_1_1TimePoint.html">TimePoint</a>&#160;</td>
-          <td class="paramname"><em>t0</em></td><td>)</td>
+          <td class="paramname"><em>t0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>num_agegroups</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
