@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2023-10-19 15:13:04</td>
+            <td class="headerValue">2023-10-20 08:38:18</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">25</td>
@@ -139,9 +139,9 @@
 <a name="77"><span class="lineNum">      77 </span>            :     // subject to change if Recovered is removed</a>
 <a name="78"><span class="lineNum">      78 </span><span class="lineCov">        374 :     if (m_infections.back().get_infection_state(t) == InfectionState::Susceptible ||</span></a>
 <a name="79"><span class="lineNum">      79 </span><span class="lineCov">        187 :         m_infections.back().get_infection_state(t) == InfectionState::Recovered) {</span></a>
-<a name="80"><span class="lineNum">      80 </span><span class="lineCov">         61 :         return false;</span></a>
+<a name="80"><span class="lineNum">      80 </span><span class="lineCov">         59 :         return false;</span></a>
 <a name="81"><span class="lineNum">      81 </span>            :     }</a>
-<a name="82"><span class="lineNum">      82 </span><span class="lineCov">        126 :     return true;</span></a>
+<a name="82"><span class="lineNum">      82 </span><span class="lineCov">        128 :     return true;</span></a>
 <a name="83"><span class="lineNum">      83 </span>            : }</a>
 <a name="84"><span class="lineNum">      84 </span>            : </a>
 <a name="85"><span class="lineNum">      85 </span><span class="lineCov">       1228 : InfectionState Person::get_infection_state(TimePoint t) const</span></a>
@@ -159,14 +159,14 @@
 <a name="97"><span class="lineNum">      97 </span><span class="lineCov">         50 :     m_infections.push_back(std::move(inf));</span></a>
 <a name="98"><span class="lineNum">      98 </span><span class="lineCov">         50 : }</span></a>
 <a name="99"><span class="lineNum">      99 </span>            : </a>
-<a name="100"><span class="lineNum">     100 </span><span class="lineCov">        479 : Location&amp; Person::get_location()</span></a>
+<a name="100"><span class="lineNum">     100 </span><span class="lineCov">        478 : Location&amp; Person::get_location()</span></a>
 <a name="101"><span class="lineNum">     101 </span>            : {</a>
-<a name="102"><span class="lineNum">     102 </span><span class="lineCov">        479 :     return *m_location;</span></a>
+<a name="102"><span class="lineNum">     102 </span><span class="lineCov">        478 :     return *m_location;</span></a>
 <a name="103"><span class="lineNum">     103 </span>            : }</a>
 <a name="104"><span class="lineNum">     104 </span>            : </a>
-<a name="105"><span class="lineNum">     105 </span><span class="lineCov">        492 : const Location&amp; Person::get_location() const</span></a>
+<a name="105"><span class="lineNum">     105 </span><span class="lineCov">        491 : const Location&amp; Person::get_location() const</span></a>
 <a name="106"><span class="lineNum">     106 </span>            : {</a>
-<a name="107"><span class="lineNum">     107 </span><span class="lineCov">        492 :     return *m_location;</span></a>
+<a name="107"><span class="lineNum">     107 </span><span class="lineCov">        491 :     return *m_location;</span></a>
 <a name="108"><span class="lineNum">     108 </span>            : }</a>
 <a name="109"><span class="lineNum">     109 </span>            : </a>
 <a name="110"><span class="lineNum">     110 </span><span class="lineNoCov">          0 : const Infection&amp; Person::get_infection() const</span></a>
@@ -174,9 +174,9 @@
 <a name="112"><span class="lineNum">     112 </span><span class="lineNoCov">          0 :     return m_infections.back();</span></a>
 <a name="113"><span class="lineNum">     113 </span>            : }</a>
 <a name="114"><span class="lineNum">     114 </span>            : </a>
-<a name="115"><span class="lineNum">     115 </span><span class="lineCov">        116 : Infection&amp; Person::get_infection()</span></a>
+<a name="115"><span class="lineNum">     115 </span><span class="lineCov">        118 : Infection&amp; Person::get_infection()</span></a>
 <a name="116"><span class="lineNum">     116 </span>            : {</a>
-<a name="117"><span class="lineNum">     117 </span><span class="lineCov">        116 :     return m_infections.back();</span></a>
+<a name="117"><span class="lineNum">     117 </span><span class="lineCov">        118 :     return m_infections.back();</span></a>
 <a name="118"><span class="lineNum">     118 </span>            : }</a>
 <a name="119"><span class="lineNum">     119 </span>            : </a>
 <a name="120"><span class="lineNum">     120 </span><span class="lineCov">         22 : void Person::set_assigned_location(Location&amp; location)</span></a>
@@ -193,9 +193,9 @@
 <a name="131"><span class="lineNum">     131 </span><span class="lineCov">        277 :     m_assigned_locations[(uint32_t)id.type] = id.index;</span></a>
 <a name="132"><span class="lineNum">     132 </span><span class="lineCov">        277 : }</span></a>
 <a name="133"><span class="lineNum">     133 </span>            : </a>
-<a name="134"><span class="lineNum">     134 </span><span class="lineCov">        445 : uint32_t Person::get_assigned_location_index(LocationType type) const</span></a>
+<a name="134"><span class="lineNum">     134 </span><span class="lineCov">        444 : uint32_t Person::get_assigned_location_index(LocationType type) const</span></a>
 <a name="135"><span class="lineNum">     135 </span>            : {</a>
-<a name="136"><span class="lineNum">     136 </span><span class="lineCov">        445 :     return m_assigned_locations[(uint32_t)type];</span></a>
+<a name="136"><span class="lineNum">     136 </span><span class="lineCov">        444 :     return m_assigned_locations[(uint32_t)type];</span></a>
 <a name="137"><span class="lineNum">     137 </span>            : }</a>
 <a name="138"><span class="lineNum">     138 </span>            : </a>
 <a name="139"><span class="lineNum">     139 </span><span class="lineCov">          7 : bool Person::goes_to_work(TimePoint t, const MigrationParameters&amp; params) const</span></a>
