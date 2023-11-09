@@ -601,6 +601,9 @@ Functions</h2></td></tr>
 <tr class="memitem:ac756601e49cde978ae849e736f7ffd5e"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemio.html#ac756601e49cde978ae849e736f7ffd5e">calculate_migration_returns</a> (Eigen::Ref&lt; <a class="el" href="classmio_1_1TimeSeries.html">TimeSeries</a>&lt; double &gt;::Vector &gt; migrated, const Sim &amp;sim, Eigen::Ref&lt; const <a class="el" href="classmio_1_1TimeSeries.html">TimeSeries</a>&lt; double &gt;::Vector &gt; total, double t, double dt)</td></tr>
 <tr class="memdesc:ac756601e49cde978ae849e736f7ffd5e"><td class="mdescLeft">&#160;</td><td class="mdescRight">adjust number of migrated people when they return according to the model.  <a href="namespacemio.html#ac756601e49cde978ae849e736f7ffd5e">More...</a><br /></td></tr>
 <tr class="separator:ac756601e49cde978ae849e736f7ffd5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab02eb7f4efb5cb5a374a7ad79497784"><td class="memItemLeft" align="right" valign="top">std::array&lt; int, 12 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemio.html#aab02eb7f4efb5cb5a374a7ad79497784">calculate_partial_sum_of_months</a> (const <a class="el" href="structmio_1_1Date.html">Date</a> &amp;date)</td></tr>
+<tr class="memdesc:aab02eb7f4efb5cb5a374a7ad79497784"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the cumulative number of days at the end of each month for a given year.  <a href="namespacemio.html#aab02eb7f4efb5cb5a374a7ad79497784">More...</a><br /></td></tr>
+<tr class="separator:aab02eb7f4efb5cb5a374a7ad79497784"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1a682d1d1100a18177c401a32cbcdb80"><td class="memTemplParams" colspan="2">template&lt;class M &gt; </td></tr>
 <tr class="memitem:a1a682d1d1100a18177c401a32cbcdb80"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if_t&lt; std::is_base_of&lt; Eigen::EigenBase&lt; M &gt;, M &gt;::value, <a class="el" href="classmio_1_1RowMajorIterator.html">RowMajorIterator</a>&lt; M, true &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemio.html#a1a682d1d1100a18177c401a32cbcdb80">cbegin</a> (const M &amp;m)</td></tr>
 <tr class="memdesc:a1a682d1d1100a18177c401a32cbcdb80"><td class="mdescLeft">&#160;</td><td class="mdescRight">create a const iterator to first element of the matrix m.  <a href="namespacemio.html#a1a682d1d1100a18177c401a32cbcdb80">More...</a><br /></td></tr>
@@ -768,6 +771,9 @@ Functions</h2></td></tr>
 <tr class="memitem:ab74f1d86f5a3421e7a971c22b50fd89c"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemio.html#ab74f1d86f5a3421e7a971c22b50fd89c">get_migration_factors</a> (const <a class="el" href="classmio_1_1SimulationNode.html">SimulationNode</a>&lt; Sim &gt; &amp;, double, const Eigen::Ref&lt; const Eigen::VectorXd &gt; &amp;y)</td></tr>
 <tr class="memdesc:ab74f1d86f5a3421e7a971c22b50fd89c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get an additional migration factor.  <a href="namespacemio.html#ab74f1d86f5a3421e7a971c22b50fd89c">More...</a><br /></td></tr>
 <tr class="separator:ab74f1d86f5a3421e7a971c22b50fd89c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a3d6ccfd62c6d5d6da08e3205663124"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemio.html#a1a3d6ccfd62c6d5d6da08e3205663124">get_month_length</a> (<a class="el" href="structmio_1_1Date.html">Date</a> date)</td></tr>
+<tr class="memdesc:a1a3d6ccfd62c6d5d6da08e3205663124"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the length of a month for a given date.  <a href="namespacemio.html#a1a3d6ccfd62c6d5d6da08e3205663124">More...</a><br /></td></tr>
+<tr class="separator:a1a3d6ccfd62c6d5d6da08e3205663124"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a836ec51b48f63ad6dca0724e9f5b28d8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemio.html#a836ec51b48f63ad6dca0724e9f5b28d8">get_offset_in_days</a> (<a class="el" href="structmio_1_1Date.html">Date</a> date1, <a class="el" href="structmio_1_1Date.html">Date</a> date2)</td></tr>
 <tr class="memdesc:a836ec51b48f63ad6dca0724e9f5b28d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the offset in days given two dates: first date minus second date.  <a href="namespacemio.html#a836ec51b48f63ad6dca0724e9f5b28d8">More...</a><br /></td></tr>
 <tr class="separator:a836ec51b48f63ad6dca0724e9f5b28d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -796,6 +802,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a7dcfb78101db4f3634bad069f1e2271f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmio_1_1TimeSeries.html">TimeSeries</a>&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemio.html#a7dcfb78101db4f3634bad069f1e2271f">interpolate_simulation_result</a> (const <a class="el" href="classmio_1_1TimeSeries.html">TimeSeries</a>&lt; double &gt; &amp;simulation_result, const std::vector&lt; double &gt; &amp;interpolation_times)</td></tr>
 <tr class="memdesc:a7dcfb78101db4f3634bad069f1e2271f"><td class="mdescLeft">&#160;</td><td class="mdescRight">interpolate time series with freely chosen time points that lie in between the time points of the given time series up to a given tolerance.  <a href="namespacemio.html#a7dcfb78101db4f3634bad069f1e2271f">More...</a><br /></td></tr>
 <tr class="separator:a7dcfb78101db4f3634bad069f1e2271f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f679c8e097cf89ebf35741100e3757a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemio.html#a8f679c8e097cf89ebf35741100e3757a">is_leap_year</a> (int year)</td></tr>
+<tr class="memdesc:a8f679c8e097cf89ebf35741100e3757a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes if a given year is a leap year.  <a href="namespacemio.html#a8f679c8e097cf89ebf35741100e3757a">More...</a><br /></td></tr>
+<tr class="separator:a8f679c8e097cf89ebf35741100e3757a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a46a8c32ccd44e57584abc88bf22eee11"><td class="memTemplParams" colspan="2">template&lt;typename X , typename V &gt; </td></tr>
 <tr class="memitem:a46a8c32ccd44e57584abc88bf22eee11"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemio.html#a46a8c32ccd44e57584abc88bf22eee11">linear_interpolation</a> (const X &amp;x_eval, const X &amp;x_1, const X &amp;x_2, const V &amp;y1, const V &amp;y2)</td></tr>
 <tr class="memdesc:a46a8c32ccd44e57584abc88bf22eee11"><td class="mdescLeft">&#160;</td><td class="mdescRight">Linear interpolation between two data values.  <a href="namespacemio.html#a46a8c32ccd44e57584abc88bf22eee11">More...</a><br /></td></tr>
@@ -2332,6 +2341,33 @@ template&lt;class Sim , class  = std::enable_if_t&lt;is_compartment_model_simula
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="aab02eb7f4efb5cb5a374a7ad79497784"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aab02eb7f4efb5cb5a374a7ad79497784">&#9670;&nbsp;</a></span>calculate_partial_sum_of_months()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::array&lt;int, 12&gt; mio::calculate_partial_sum_of_months </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structmio_1_1Date.html">Date</a> &amp;&#160;</td>
+          <td class="paramname"><em>date</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Computes the cumulative number of days at the end of each month for a given year. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">date</td><td><a class="el" href="structmio_1_1Date.html" title="Simple date representation as year, month, and day.">Date</a> object representing the year we use to compute the cumulative days. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>array with partial sum for each month </dd></dl>
 
 </div>
 </div>
@@ -4098,6 +4134,33 @@ template&lt;class Sim , std::enable_if_t&lt;!is_expression_valid&lt; get_migrati
 
 </div>
 </div>
+<a id="a1a3d6ccfd62c6d5d6da08e3205663124"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1a3d6ccfd62c6d5d6da08e3205663124">&#9670;&nbsp;</a></span>get_month_length()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int mio::get_month_length </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structmio_1_1Date.html">Date</a>&#160;</td>
+          <td class="paramname"><em>date</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Computes the length of a month for a given date. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">date</td><td>date. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>length of month for given date </dd></dl>
+
+</div>
+</div>
 <a id="a836ec51b48f63ad6dca0724e9f5b28d8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a836ec51b48f63ad6dca0724e9f5b28d8">&#9670;&nbsp;</a></span>get_offset_in_days()</h2>
 
@@ -4407,6 +4470,33 @@ template&lt;class Simulation &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>interpolated time series at given interpolation points </dd></dl>
+
+</div>
+</div>
+<a id="a8f679c8e097cf89ebf35741100e3757a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8f679c8e097cf89ebf35741100e3757a">&#9670;&nbsp;</a></span>is_leap_year()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool mio::is_leap_year </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>year</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Computes if a given year is a leap year. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">year</td><td>year as integer </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if year is a leap year, false otherwise </dd></dl>
 
 </div>
 </div>
