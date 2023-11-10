@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2023-11-09 15:07:56</td>
+            <td class="headerValue">2023-11-10 14:05:56</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">23</td>
@@ -109,11 +109,11 @@
 <a name="47"><span class="lineNum">      47 </span>            :  * of people that can be in the Cell at the same time.</a>
 <a name="48"><span class="lineNum">      48 </span>            :  */</a>
 <a name="49"><span class="lineNum">      49 </span>            : struct CellCapacity {</a>
-<a name="50"><span class="lineNum">      50 </span><span class="lineCov">        189 :     CellCapacity()</span></a>
-<a name="51"><span class="lineNum">      51 </span><span class="lineCov">        189 :         : volume(0)</span></a>
-<a name="52"><span class="lineNum">      52 </span><span class="lineCov">        189 :         , persons(std::numeric_limits&lt;int&gt;::max())</span></a>
+<a name="50"><span class="lineNum">      50 </span><span class="lineCov">        190 :     CellCapacity()</span></a>
+<a name="51"><span class="lineNum">      51 </span><span class="lineCov">        190 :         : volume(0)</span></a>
+<a name="52"><span class="lineNum">      52 </span><span class="lineCov">        190 :         , persons(std::numeric_limits&lt;int&gt;::max())</span></a>
 <a name="53"><span class="lineNum">      53 </span>            :     {</a>
-<a name="54"><span class="lineNum">      54 </span><span class="lineCov">        189 :     }</span></a>
+<a name="54"><span class="lineNum">      54 </span><span class="lineCov">        190 :     }</span></a>
 <a name="55"><span class="lineNum">      55 </span>            :     uint32_t volume; ///&lt; Volume of the Cell.</a>
 <a name="56"><span class="lineNum">      56 </span>            :     uint32_t persons; ///&lt; Maximal number of Person%s at the Cell.</a>
 <a name="57"><span class="lineNum">      57 </span>            : };</a>
@@ -128,13 +128,13 @@
 <a name="66"><span class="lineNum">      66 </span>            :     CustomIndexArray&lt;ScalarType, VirusVariant&gt; m_cached_exposure_rate_air;</a>
 <a name="67"><span class="lineNum">      67 </span>            :     CellCapacity m_capacity;</a>
 <a name="68"><span class="lineNum">      68 </span>            : </a>
-<a name="69"><span class="lineNum">      69 </span><span class="lineCov">        189 :     Cell(size_t num_agegroups, std::vector&lt;observer_ptr&lt;Person&gt;&gt; persons = {})</span></a>
-<a name="70"><span class="lineNum">      70 </span><span class="lineCov">        378 :         : m_persons(std::move(persons))</span></a>
-<a name="71"><span class="lineNum">      71 </span><span class="lineCov">        756 :         , m_cached_exposure_rate_contacts({{VirusVariant::Count, AgeGroup(num_agegroups)}, 0.})</span></a>
-<a name="72"><span class="lineNum">      72 </span><span class="lineCov">        378 :         , m_cached_exposure_rate_air({{VirusVariant::Count}, 0.})</span></a>
-<a name="73"><span class="lineNum">      73 </span><span class="lineCov">       1323 :         , m_capacity()</span></a>
+<a name="69"><span class="lineNum">      69 </span><span class="lineCov">        190 :     Cell(size_t num_agegroups, std::vector&lt;observer_ptr&lt;Person&gt;&gt; persons = {})</span></a>
+<a name="70"><span class="lineNum">      70 </span><span class="lineCov">        380 :         : m_persons(std::move(persons))</span></a>
+<a name="71"><span class="lineNum">      71 </span><span class="lineCov">        760 :         , m_cached_exposure_rate_contacts({{VirusVariant::Count, AgeGroup(num_agegroups)}, 0.})</span></a>
+<a name="72"><span class="lineNum">      72 </span><span class="lineCov">        380 :         , m_cached_exposure_rate_air({{VirusVariant::Count}, 0.})</span></a>
+<a name="73"><span class="lineNum">      73 </span><span class="lineCov">       1330 :         , m_capacity()</span></a>
 <a name="74"><span class="lineNum">      74 </span>            :     {</a>
-<a name="75"><span class="lineNum">      75 </span><span class="lineCov">        189 :     }</span></a>
+<a name="75"><span class="lineNum">      75 </span><span class="lineCov">        190 :     }</span></a>
 <a name="76"><span class="lineNum">      76 </span>            : </a>
 <a name="77"><span class="lineNum">      77 </span>            :     /**</a>
 <a name="78"><span class="lineNum">      78 </span>            :     * @brief Computes a relative cell size for the Cell.</a>
@@ -173,10 +173,10 @@
 <a name="111"><span class="lineNum">     111 </span>            :      * @param[in] num_agegroups [Default: 1] The number of age groups in the model.</a>
 <a name="112"><span class="lineNum">     112 </span>            :      * @param[in] num_cells [Default: 1] The number of Cell%s in which the Location is divided.</a>
 <a name="113"><span class="lineNum">     113 </span>            :      */</a>
-<a name="114"><span class="lineNum">     114 </span><span class="lineCov">         79 :     Location(LocationType loc_type, uint32_t loc_index, size_t num_agegroups = 1, uint32_t num_cells = 1)</span></a>
-<a name="115"><span class="lineNum">     115 </span><span class="lineCov">         79 :         : Location(LocationId{loc_index, loc_type}, num_agegroups, num_cells)</span></a>
+<a name="114"><span class="lineNum">     114 </span><span class="lineCov">         80 :     Location(LocationType loc_type, uint32_t loc_index, size_t num_agegroups = 1, uint32_t num_cells = 1)</span></a>
+<a name="115"><span class="lineNum">     115 </span><span class="lineCov">         80 :         : Location(LocationId{loc_index, loc_type}, num_agegroups, num_cells)</span></a>
 <a name="116"><span class="lineNum">     116 </span>            :     {</a>
-<a name="117"><span class="lineNum">     117 </span><span class="lineCov">         79 :     }</span></a>
+<a name="117"><span class="lineNum">     117 </span><span class="lineCov">         80 :     }</span></a>
 <a name="118"><span class="lineNum">     118 </span>            : </a>
 <a name="119"><span class="lineNum">     119 </span>            :     /**</a>
 <a name="120"><span class="lineNum">     120 </span>            :      * @brief Return a copy of the current Location object.</a>
@@ -218,18 +218,18 @@
 <a name="156"><span class="lineNum">     156 </span>            :      * @brief Get the type of this Location.</a>
 <a name="157"><span class="lineNum">     157 </span>            :      * @return The #LocationType of the Location.</a>
 <a name="158"><span class="lineNum">     158 </span>            :      */</a>
-<a name="159"><span class="lineNum">     159 </span><span class="lineCov">       1094 :     LocationType get_type() const</span></a>
+<a name="159"><span class="lineNum">     159 </span><span class="lineCov">       2031 :     LocationType get_type() const</span></a>
 <a name="160"><span class="lineNum">     160 </span>            :     {</a>
-<a name="161"><span class="lineNum">     161 </span><span class="lineCov">       1094 :         return m_id.type;</span></a>
+<a name="161"><span class="lineNum">     161 </span><span class="lineCov">       2031 :         return m_id.type;</span></a>
 <a name="162"><span class="lineNum">     162 </span>            :     }</a>
 <a name="163"><span class="lineNum">     163 </span>            : </a>
 <a name="164"><span class="lineNum">     164 </span>            :     /**</a>
 <a name="165"><span class="lineNum">     165 </span>            :      * @brief Get the index of this Location.</a>
 <a name="166"><span class="lineNum">     166 </span>            :      * @return The index of the Location.</a>
 <a name="167"><span class="lineNum">     167 </span>            :      */</a>
-<a name="168"><span class="lineNum">     168 </span><span class="lineCov">         56 :     unsigned get_index() const</span></a>
+<a name="168"><span class="lineNum">     168 </span><span class="lineCov">        528 :     unsigned get_index() const</span></a>
 <a name="169"><span class="lineNum">     169 </span>            :     {</a>
-<a name="170"><span class="lineNum">     170 </span><span class="lineCov">         56 :         return m_id.index;</span></a>
+<a name="170"><span class="lineNum">     170 </span><span class="lineCov">        528 :         return m_id.index;</span></a>
 <a name="171"><span class="lineNum">     171 </span>            :     }</a>
 <a name="172"><span class="lineNum">     172 </span>            : </a>
 <a name="173"><span class="lineNum">     173 </span>            :     /**</a>
