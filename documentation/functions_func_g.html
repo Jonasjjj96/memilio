@@ -250,8 +250,7 @@ $(function() {
 </li>
 <li>get_derivatives()
 : <a class="el" href="structmio_1_1CompartmentalModel.html#a79206f894563096b699dc20bac32bf1c">mio::CompartmentalModel&lt; Comp, Pop, Params &gt;</a>
-, <a class="el" href="classmio_1_1osecirvvs_1_1Model.html#a1e56eed0b2c61da1491f150eeec7bd16">mio::osecirvvs::Model</a>
-, <a class="el" href="classmio_1_1oseir_1_1Model.html#a00c095f93a9b5c54bd3c1f604a66182e">mio::oseir::Model</a>
+, <a class="el" href="classmio_1_1FlowModel.html#aa68fe88e88ee2ec190c8c7bdb52a77b9">mio::FlowModel&lt; Comp, Pop, Params, Flows &gt;</a>
 , <a class="el" href="classmio_1_1osir_1_1Model.html#ae9d4ad457d93aa812e32c70e87d35943">mio::osir::Model</a>
 </li>
 <li>get_distribution()
@@ -259,8 +258,7 @@ $(function() {
 </li>
 <li>get_dt()
 : <a class="el" href="classmio_1_1isecir_1_1Simulation.html#ab42f9af1b6db74fc9a7190bd97be6b88">mio::isecir::Simulation</a>
-, <a class="el" href="classmio_1_1OdeIntegrator.html#a328c95fc284da0e12e8a27de310a4f58">mio::OdeIntegrator</a>
-, <a class="el" href="classmio_1_1Simulation.html#aec4e1fe4f709bd1d1133ca274cd72b92">mio::Simulation&lt; M &gt;</a>
+, <a class="el" href="classmio_1_1Simulation.html#abf2d1b124adb64b6fde1ed04f9a56b16">mio::Simulation&lt; M &gt;</a>
 </li>
 <li>get_duration()
 : <a class="el" href="classmio_1_1DynamicNPIs.html#a1386d8dc3e030332ebd84741ca3102c6">mio::DynamicNPIs</a>
@@ -273,10 +271,20 @@ $(function() {
 , <a class="el" href="classmio_1_1osecirvvs_1_1Parameters.html#aa6317f31a549312b3e51682ef12f13d9">mio::osecirvvs::Parameters</a>
 </li>
 <li>get_end_dynamic_npis()
-: <a class="el" href="classmio_1_1osecirvvs_1_1Parameters.html#a68960bf80f186efe6dc22d8de2a087cf">mio::osecirvvs::Parameters</a>
+: <a class="el" href="classmio_1_1osecirvvs_1_1Parameters.html#ad23fd2ee436b6053064eca9c707dc4d9">mio::osecirvvs::Parameters</a>
+</li>
+<li>get_flat_flow_index()
+: <a class="el" href="classmio_1_1FlowModel.html#ac8031e754970459c4c263597a78b6fe1">mio::FlowModel&lt; Comp, Pop, Params, Flows &gt;</a>
 </li>
 <li>get_flat_index()
 : <a class="el" href="classmio_1_1CustomIndexArray.html#a7bb6d3fe2216ecd73f21ff097aff12c7">mio::CustomIndexArray&lt; Typ, Tags &gt;</a>
+</li>
+<li>get_flows()
+: <a class="el" href="classmio_1_1FlowModel.html#a03ea41ecd000e79e5dce0616f3c3a5e6">mio::FlowModel&lt; Comp, Pop, Params, Flows &gt;</a>
+, <a class="el" href="classmio_1_1FlowSimulation.html#ab4cba477935f1be0a646bc8acf00669b">mio::FlowSimulation&lt; M &gt;</a>
+, <a class="el" href="classmio_1_1osecir_1_1Model.html#a429497d277ac6c8d4e7ef494ed3683fe">mio::osecir::Model</a>
+, <a class="el" href="classmio_1_1osecirvvs_1_1Model.html#a257da5a4326a2f86c96dea9a871a5cdd">mio::osecirvvs::Model</a>
+, <a class="el" href="classmio_1_1oseir_1_1Model.html#a5deb346b9f0edf760f51212c29d98b80">mio::oseir::Model</a>
 </li>
 <li>get_from()
 : <a class="el" href="classmio_1_1Populations.html#a68da56ff8ea9be481c8c054f1e4ca2e3">mio::Populations&lt; Categories &gt;</a>
@@ -321,6 +329,9 @@ $(function() {
 <li>get_infectivity()
 : <a class="el" href="classmio_1_1abm_1_1Infection.html#a60edcb4e3d068c45a95b17fedac21058">mio::abm::Infection</a>
 </li>
+<li>get_initial_flows()
+: <a class="el" href="classmio_1_1FlowModel.html#a5933e0aef571e5e6fee69de53a71467a">mio::FlowModel&lt; Comp, Pop, Params, Flows &gt;</a>
+</li>
 <li>get_initial_values()
 : <a class="el" href="structmio_1_1CompartmentalModel.html#a93d6d3a4430d7d5d7735fe3ccc929d02">mio::CompartmentalModel&lt; Comp, Pop, Params &gt;</a>
 </li>
@@ -356,7 +367,7 @@ $(function() {
 : <a class="el" href="classmio_1_1abm_1_1World.html#aa28bc67a5246f88656379a38426c7b36">mio::abm::World</a>
 </li>
 <li>get_log()
-: <a class="el" href="classmio_1_1History.html#a4f21ff887b48ebb77c22b9f4019b1de2">mio::History&lt; Writer, Loggers &gt;</a>
+: <a class="el" href="classmio_1_1History.html#a20f07b05d192e015c4f5cfff0c48c7f5">mio::History&lt; Writer, Loggers &gt;</a>
 </li>
 <li>get_lower_bound()
 : <a class="el" href="classmio_1_1ParameterDistribution.html#a7a75e2eb4766540b89554d4750814074">mio::ParameterDistribution</a>
@@ -392,11 +403,11 @@ $(function() {
 </li>
 <li>get_model()
 : <a class="el" href="classmio_1_1isecir_1_1Simulation.html#af82090f0d50efd0f9ccad58e23ee503b">mio::isecir::Simulation</a>
-, <a class="el" href="classmio_1_1ParameterStudy.html#aa858277fb0559ce82720af4abdb7d51c">mio::ParameterStudy&lt; S &gt;</a>
-, <a class="el" href="classmio_1_1Simulation.html#afd2aa35560f809347805404878f2983a">mio::Simulation&lt; M &gt;</a>
+, <a class="el" href="classmio_1_1ParameterStudy.html#abe75b079b64fa2ac6267c69d00f15e8a">mio::ParameterStudy&lt; S &gt;</a>
+, <a class="el" href="classmio_1_1Simulation.html#a949391f61eb30293f1186d6b6e29d2a9">mio::Simulation&lt; M &gt;</a>
 </li>
 <li>get_model_graph()
-: <a class="el" href="classmio_1_1ParameterStudy.html#a4996481e80a27fab456190f87feb575c">mio::ParameterStudy&lt; S &gt;</a>
+: <a class="el" href="classmio_1_1ParameterStudy.html#a94cbdd1dbf7cd3803f17ed5227db140d">mio::ParameterStudy&lt; S &gt;</a>
 </li>
 <li>get_next_trip()
 : <a class="el" href="classmio_1_1abm_1_1TripList.html#a0670e6e1b2334768b3252e87fdf7518a">mio::abm::TripList</a>
@@ -437,6 +448,9 @@ $(function() {
 </li>
 <li>get_number_persons()
 : <a class="el" href="classmio_1_1abm_1_1Location.html#a400a56e0ccb966df21a7631ed98d1f1c">mio::abm::Location</a>
+</li>
+<li>get_ode_integrator()
+: <a class="el" href="classmio_1_1Simulation.html#a10b829848d03147ba33fb12a0e1870a0">mio::Simulation&lt; M &gt;</a>
 </li>
 <li>get_parameter()
 : <a class="el" href="structmio_1_1StateAgeFunction.html#a256b32f998a32c8fa5641c517a3be1c9">mio::StateAgeFunction</a>
@@ -485,12 +499,14 @@ $(function() {
 <li>get_result()
 : <a class="el" href="classmio_1_1abm_1_1Simulation.html#ac88cf3f70d9e0e3b02562d906f1c8642">mio::abm::Simulation</a>
 , <a class="el" href="classmio_1_1isecir_1_1Simulation.html#a8e8caaceaebcaeb1403f8befe4e12c50">mio::isecir::Simulation</a>
-, <a class="el" href="classmio_1_1OdeIntegrator.html#afe89b6bc15bca17dc51c7da834ab1402">mio::OdeIntegrator</a>
-, <a class="el" href="classmio_1_1Simulation.html#a417b2934a8c709292134970e1e2fdd8b">mio::Simulation&lt; M &gt;</a>
+, <a class="el" href="classmio_1_1Simulation.html#a42245df12f70b7f3bf8bf852378326f8">mio::Simulation&lt; M &gt;</a>
 , <a class="el" href="classmio_1_1SimulationNode.html#a491ed8a4bffa37a3f230b37f6019a742">mio::SimulationNode&lt; Sim &gt;</a>
 </li>
 <li>get_reverse_times()
-: <a class="el" href="classmio_1_1TimeSeries.html#a77401a64cb4e12e7d00a0584f3312390">mio::TimeSeries&lt; FP &gt;</a>
+: <a class="el" href="classmio_1_1TimeSeries.html#a2bddb1d02fdc3e7782563a6b7ee43e9b">mio::TimeSeries&lt; FP &gt;</a>
+</li>
+<li>get_rhs_impl()
+: <a class="el" href="classmio_1_1FlowModel.html#a5ddd7c61d16a328dda82d9dea0a46e5f">mio::FlowModel&lt; Comp, Pop, Params, Flows &gt;</a>
 </li>
 <li>get_rng()
 : <a class="el" href="classmio_1_1abm_1_1World.html#a53671e67dc36fcb8000c545df8b3ff32">mio::abm::World</a>

@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2023-11-10 14:05:56</td>
+            <td class="headerValue">2023-11-14 10:54:32</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">94</td>
@@ -113,15 +113,15 @@
 <a name="51"><span class="lineNum">      51 </span>            : </a>
 <a name="52"><span class="lineNum">      52 </span>            :     // lambda function that calculates the percentile of a single parameter</a>
 <a name="53"><span class="lineNum">      53 </span><span class="lineCov">          3 :     std::vector&lt;Model&gt; percentile(num_nodes, Model((int)num_groups));</span></a>
-<a name="54"><span class="lineNum">      54 </span><span class="lineCov">     379917 :     auto param_percentil = [&amp;ensemble_params, p, num_runs, &amp;percentile](auto n, auto get_param) mutable {</span></a>
-<a name="55"><span class="lineNum">      55 </span><span class="lineCov">      31062 :         std::vector&lt;double&gt; single_element(num_runs);</span></a>
-<a name="56"><span class="lineNum">      56 </span><span class="lineCov">     123216 :         for (size_t run = 0; run &lt; num_runs; run++) {</span></a>
-<a name="57"><span class="lineNum">      57 </span><span class="lineCov">     205360 :             auto const&amp; params  = ensemble_params[run][n];</span></a>
-<a name="58"><span class="lineNum">      58 </span><span class="lineCov">     102680 :             single_element[run] = get_param(params);</span></a>
+<a name="54"><span class="lineNum">      54 </span><span class="lineCov">     379732 :     auto param_percentil = [&amp;ensemble_params, p, num_runs, &amp;percentile](auto n, auto get_param) mutable {</span></a>
+<a name="55"><span class="lineNum">      55 </span><span class="lineCov">      31042 :         std::vector&lt;double&gt; single_element(num_runs);</span></a>
+<a name="56"><span class="lineNum">      56 </span><span class="lineCov">     123156 :         for (size_t run = 0; run &lt; num_runs; run++) {</span></a>
+<a name="57"><span class="lineNum">      57 </span><span class="lineCov">     205260 :             auto const&amp; params  = ensemble_params[run][n];</span></a>
+<a name="58"><span class="lineNum">      58 </span><span class="lineCov">     102630 :             single_element[run] = get_param(params);</span></a>
 <a name="59"><span class="lineNum">      59 </span>            :         }</a>
-<a name="60"><span class="lineNum">      60 </span><span class="lineCov">      10268 :         std::sort(single_element.begin(), single_element.end());</span></a>
-<a name="61"><span class="lineNum">      61 </span><span class="lineCov">      20536 :         auto&amp; new_params = get_param(percentile[n]);</span></a>
-<a name="62"><span class="lineNum">      62 </span><span class="lineCov">      20536 :         new_params       = single_element[static_cast&lt;size_t&gt;(num_runs * p)];</span></a>
+<a name="60"><span class="lineNum">      60 </span><span class="lineCov">      10263 :         std::sort(single_element.begin(), single_element.end());</span></a>
+<a name="61"><span class="lineNum">      61 </span><span class="lineCov">      20526 :         auto&amp; new_params = get_param(percentile[n]);</span></a>
+<a name="62"><span class="lineNum">      62 </span><span class="lineCov">      20526 :         new_params       = single_element[static_cast&lt;size_t&gt;(num_runs * p)];</span></a>
 <a name="63"><span class="lineNum">      63 </span>            :     };</a>
 <a name="64"><span class="lineNum">      64 </span>            : </a>
 <a name="65"><span class="lineNum">      65 </span><span class="lineCov">          2 :     for (size_t node = 0; node &lt; num_nodes; node++) {</span></a>
@@ -130,10 +130,10 @@
 <a name="68"><span class="lineNum">      68 </span>            : </a>
 <a name="69"><span class="lineNum">      69 </span><span class="lineCov">          6 :         for (auto i = AgeGroup(0); i &lt; AgeGroup(num_groups); i++) {</span></a>
 <a name="70"><span class="lineNum">      70 </span>            :             //Population</a>
-<a name="71"><span class="lineNum">      71 </span><span class="lineCov">        145 :             for (auto compart = Index&lt;InfectionState&gt;(0); compart &lt; InfectionState::Count; ++compart) {</span></a>
-<a name="72"><span class="lineNum">      72 </span><span class="lineCov">        140 :                 param_percentil(</span></a>
-<a name="73"><span class="lineNum">      73 </span><span class="lineCov">       1540 :                     node, [ compart, i ](auto&amp;&amp; model) -&gt; auto&amp; {</span></a>
-<a name="74"><span class="lineNum">      74 </span><span class="lineCov">       1540 :                         return model.populations[{i, compart}];</span></a>
+<a name="71"><span class="lineNum">      71 </span><span class="lineCov">        140 :             for (auto compart = Index&lt;InfectionState&gt;(0); compart &lt; InfectionState::Count; ++compart) {</span></a>
+<a name="72"><span class="lineNum">      72 </span><span class="lineCov">        135 :                 param_percentil(</span></a>
+<a name="73"><span class="lineNum">      73 </span><span class="lineCov">       1485 :                     node, [ compart, i ](auto&amp;&amp; model) -&gt; auto&amp; {</span></a>
+<a name="74"><span class="lineNum">      74 </span><span class="lineCov">       1485 :                         return model.populations[{i, compart}];</span></a>
 <a name="75"><span class="lineNum">      75 </span>            :                     });</a>
 <a name="76"><span class="lineNum">      76 </span>            :             }</a>
 <a name="77"><span class="lineNum">      77 </span>            :             // times</a>

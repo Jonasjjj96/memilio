@@ -203,6 +203,9 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a98ed7062f80359d7ca611c889c7648e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8477fa66c65f45a7435d102872579d0a"><td class="memItemLeft" align="right" valign="top">Eigen::Ref&lt; const <a class="el" href="classmio_1_1TimeSeries.html#a65de4f3412202f204b3f5bdcedcfc463">Vector</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1TimeSeries.html#a8477fa66c65f45a7435d102872579d0a">operator[]</a> (Eigen::Index i) const</td></tr>
 <tr class="separator:a8477fa66c65f45a7435d102872579d0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad006a7eeb43270590a2dcbda9d85f3c9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1TimeSeries.html#ad006a7eeb43270590a2dcbda9d85f3c9">print_table</a> (const std::vector&lt; std::string &gt; &amp;column_labels={}, size_t width=16, size_t precision=5, std::ostream &amp;out=std::cout)</td></tr>
+<tr class="memdesc:ad006a7eeb43270590a2dcbda9d85f3c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Print out the <a class="el" href="classmio_1_1TimeSeries.html" title="stores vectors of values at time points (or some other abstract variable) the value at each time poin...">TimeSeries</a> as a table.  <a href="classmio_1_1TimeSeries.html#ad006a7eeb43270590a2dcbda9d85f3c9">More...</a><br /></td></tr>
+<tr class="separator:ad006a7eeb43270590a2dcbda9d85f3c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8a99218f059b889ed826ec512ee94ab1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmio_1_1TimeSeries.html#a949fc79fdef405312fb1331d10511e50">reverse_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1TimeSeries.html#a8a99218f059b889ed826ec512ee94ab1">rbegin</a> ()</td></tr>
 <tr class="separator:a8a99218f059b889ed826ec512ee94ab1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5f45b61a5bd304eb759ea074606576ea"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmio_1_1TimeSeries.html#a0b2938c1707973285feb398256b295d8">const_reverse_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1TimeSeries.html#a5f45b61a5bd304eb759ea074606576ea">rbegin</a> () const</td></tr>
@@ -1520,6 +1523,60 @@ template&lt;class FP &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad006a7eeb43270590a2dcbda9d85f3c9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad006a7eeb43270590a2dcbda9d85f3c9">&#9670;&nbsp;</a></span>print_table()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class FP &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classmio_1_1TimeSeries.html">mio::TimeSeries</a>&lt; FP &gt;::print_table </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; std::string &gt; &amp;&#160;</td>
+          <td class="paramname"><em>column_labels</em> = <code>{}</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>width</em> = <code>16</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>precision</em> = <code>5</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>out</em> = <code>std::cout</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Print out the <a class="el" href="classmio_1_1TimeSeries.html" title="stores vectors of values at time points (or some other abstract variable) the value at each time poin...">TimeSeries</a> as a table. </p>
+<p>All entries in the table are spaced separatedly with at least one space. The first row of the table starts with "Time", followed by other column labels. Each row after that contains the time (see get_time) followed by the value (see get_value) for every row (i.e. time point) in the <a class="el" href="classmio_1_1TimeSeries.html" title="stores vectors of values at time points (or some other abstract variable) the value at each time poin...">TimeSeries</a>. The width parameter sets the minimum width of each table entry. For the numbers from the <a class="el" href="classmio_1_1TimeSeries.html" title="stores vectors of values at time points (or some other abstract variable) the value at each time poin...">TimeSeries</a>, this width includes the decimals and decimal point. If a number or column label is too long, they will not be cut off, but the table will no longer look nicely formatted. If the column_labels vector is too short, the default column label "#i" is used for the i-th column (starting at 1, as "Time" is used for column 0). Labels in the column_labels vector that go beyond the <a class="el" href="classmio_1_1TimeSeries.html" title="stores vectors of values at time points (or some other abstract variable) the value at each time poin...">TimeSeries</a> column numbers are ignored.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">column_labels</td><td>Vector of custom labels for each column. </td></tr>
+    <tr><td class="paramname">width</td><td>The number of characters reserved for each number. </td></tr>
+    <tr><td class="paramname">precision</td><td>The number of decimals. </td></tr>
+    <tr><td class="paramname">out</td><td>Which ostream to use. Prints to terminal by default. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

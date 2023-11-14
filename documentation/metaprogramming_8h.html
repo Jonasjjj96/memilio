@@ -69,12 +69,15 @@ $(function() {
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#namespaces">Namespaces</a> &#124;
-<a href="#typedef-members">Typedefs</a>  </div>
+<a href="#typedef-members">Typedefs</a> &#124;
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
 <div class="title">metaprogramming.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;type_traits&gt;</code><br />
+<code>#include &lt;utility&gt;</code><br />
 </div>
 <p><a href="metaprogramming_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -96,6 +99,9 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmio_1_1details_1_1Empty.html">mio::details::Empty</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmio_1_1index__of__type.html">mio::index_of_type&lt; Type, Types &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finds the index of a Type in the list Types.  <a href="structmio_1_1index__of__type.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmio_1_1details_1_1is__expression__valid.html">mio::details::is_expression_valid&lt; Expr, X, T &gt;</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmio_1_1is__expression__valid.html">mio::is_expression_valid&lt; Expr, T &gt;</a></td></tr>
@@ -103,12 +109,18 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmio_1_1details_1_1is__expression__valid_3_01Expr_00_01void__t_3_01Expr_3_01T_8_8_8_01_4_01_4_00_01T_8_8_8_01_4.html">mio::details::is_expression_valid&lt; Expr, void_t&lt; Expr&lt; T... &gt; &gt;, T... &gt;</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmio_1_1is__type__in__list.html">mio::is_type_in_list&lt; Type, Types &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tests whether Type is in the list Types.  <a href="structmio_1_1is__type__in__list.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmio_1_1details_1_1make__void.html">mio::details::make_void&lt; Ts &gt;</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmio_1_1negation.html">mio::negation&lt; Trait &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Negates a type trait.  <a href="structmio_1_1negation.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmio_1_1details_1_1NoCopy.html">mio::details::NoCopy</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmio_1_1type__at__index.html">mio::type_at_index&lt; Index, Types &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finds the type at the Index-th position in the list Types.  <a href="structmio_1_1type__at__index.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
@@ -129,13 +141,32 @@ Typedefs</h2></td></tr>
 <tr class="memitem:a09eb65dfcf1a9314a36702c9481d8945"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemio.html#a09eb65dfcf1a9314a36702c9481d8945">mio::not_copyable_if_t</a> = typename not_copyable_if&lt; Cond &gt;::type</td></tr>
 <tr class="memdesc:a09eb65dfcf1a9314a36702c9481d8945"><td class="mdescLeft">&#160;</td><td class="mdescRight">equivalent to not_copyable_if&lt;Cond&gt;::type.  <a href="namespacemio.html#a09eb65dfcf1a9314a36702c9481d8945">More...</a><br /></td></tr>
 <tr class="separator:a09eb65dfcf1a9314a36702c9481d8945"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49caa280ba5357645388c8cb56d4da17"><td class="memTemplParams" colspan="2">template&lt;std::size_t Index, class... Types&gt; </td></tr>
+<tr class="memitem:a49caa280ba5357645388c8cb56d4da17"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemio.html#a49caa280ba5357645388c8cb56d4da17">mio::type_at_index_t</a> = typename type_at_index&lt; Index, Types... &gt;::type</td></tr>
+<tr class="memdesc:a49caa280ba5357645388c8cb56d4da17"><td class="mdescLeft">&#160;</td><td class="mdescRight">The type at the Index-th position in the list Types.  <a href="namespacemio.html#a49caa280ba5357645388c8cb56d4da17">More...</a><br /></td></tr>
+<tr class="separator:a49caa280ba5357645388c8cb56d4da17"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af11f796ce6022b2a47e39adc29c89fcb"><td class="memTemplParams" colspan="2">template&lt;class... Ts&gt; </td></tr>
 <tr class="memitem:af11f796ce6022b2a47e39adc29c89fcb"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemio.html#af11f796ce6022b2a47e39adc29c89fcb">mio::void_t</a> = typename details::make_void&lt; Ts... &gt;::type</td></tr>
 <tr class="memdesc:af11f796ce6022b2a47e39adc29c89fcb"><td class="mdescLeft">&#160;</td><td class="mdescRight">utility for meta programming that produces void for any valid type.  <a href="namespacemio.html#af11f796ce6022b2a47e39adc29c89fcb">More...</a><br /></td></tr>
 <tr class="separator:af11f796ce6022b2a47e39adc29c89fcb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a93e3080996228cf0b5b44c7bfb696157"><td class="memTemplParams" colspan="2">template&lt;std::size_t Index, class Type , class... Types&gt; </td></tr>
+<tr class="memitem:a93e3080996228cf0b5b44c7bfb696157"><td class="memTemplItemLeft" align="right" valign="top">constexpr std::size_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemio_1_1details.html#a93e3080996228cf0b5b44c7bfb696157">mio::details::index_of_impl</a> ()</td></tr>
+<tr class="memdesc:a93e3080996228cf0b5b44c7bfb696157"><td class="mdescLeft">&#160;</td><td class="mdescRight">Recursively searches Types for Type.  <a href="namespacemio_1_1details.html#a93e3080996228cf0b5b44c7bfb696157">More...</a><br /></td></tr>
+<tr class="separator:a93e3080996228cf0b5b44c7bfb696157"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
+<tr class="memitem:a02da408d97307651d9f526a9c3f08a40"><td class="memTemplParams" colspan="2">template&lt;class Type , class... Types&gt; </td></tr>
+<tr class="memitem:a02da408d97307651d9f526a9c3f08a40"><td class="memTemplItemLeft" align="right" valign="top">constexpr std::size_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemio.html#a02da408d97307651d9f526a9c3f08a40">mio::index_of_type_v</a> = index_of_type&lt;Type, Types...&gt;::value</td></tr>
+<tr class="memdesc:a02da408d97307651d9f526a9c3f08a40"><td class="mdescLeft">&#160;</td><td class="mdescRight">The index of Type in the list Types.  <a href="namespacemio.html#a02da408d97307651d9f526a9c3f08a40">More...</a><br /></td></tr>
+<tr class="separator:a02da408d97307651d9f526a9c3f08a40"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e3a48068fb5921636cab1ffb4c7eea1"><td class="memTemplParams" colspan="2">template&lt;class Type , class... Types&gt; </td></tr>
+<tr class="memitem:a9e3a48068fb5921636cab1ffb4c7eea1"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemio.html#a9e3a48068fb5921636cab1ffb4c7eea1">mio::is_type_in_list_v</a> = is_type_in_list&lt;Type, Types...&gt;::value</td></tr>
+<tr class="memdesc:a9e3a48068fb5921636cab1ffb4c7eea1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether Type is in the list Types.  <a href="namespacemio.html#a9e3a48068fb5921636cab1ffb4c7eea1">More...</a><br /></td></tr>
+<tr class="separator:a9e3a48068fb5921636cab1ffb4c7eea1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader"></div></td></tr>
 <tr class="memitem:a12844b1c358ec3b74eba28dc795087fd"><td class="memTemplParams" colspan="2">template&lt;class Trait &gt; </td></tr>
 <tr class="memitem:a12844b1c358ec3b74eba28dc795087fd"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemio.html#a12844b1c358ec3b74eba28dc795087fd">mio::negation_v</a> = negation&lt;Trait&gt;::value</td></tr>

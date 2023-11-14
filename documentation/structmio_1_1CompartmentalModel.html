@@ -70,7 +70,6 @@ $(function() {
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
-<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="structmio_1_1CompartmentalModel-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">mio::CompartmentalModel&lt; Comp, Pop, Params &gt; Struct Template Reference</div>  </div>
@@ -81,15 +80,23 @@ $(function() {
  <a href="structmio_1_1CompartmentalModel.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="compartmentalmodel_8h_source.html">compartmentalmodel.h</a>&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for mio::CompartmentalModel&lt; Comp, Pop, Params &gt;:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="structmio_1_1CompartmentalModel.png" usemap="#mio::CompartmentalModel_3C_20Comp_2C_20Pop_2C_20Params_20_3E_map" alt=""/>
+  <map id="mio::CompartmentalModel_3C_20Comp_2C_20Pop_2C_20Params_20_3E_map" name="mio::CompartmentalModel_3C_20Comp_2C_20Pop_2C_20Params_20_3E_map">
+<area href="classmio_1_1FlowModel.html" alt="mio::FlowModel&lt; InfectionState, Populations&lt; AgeGroup, InfectionState &gt;, Parameters, Flows &gt;" shape="rect" coords="282,56,837,80"/>
+<area href="classmio_1_1FlowModel.html" title="A FlowModel is a CompartmentalModel defined by the flows between compartments." alt="mio::FlowModel&lt; Comp, Pop, Params, Flows &gt;" shape="rect" coords="847,56,1402,80"/>
+<area href="classmio_1_1osecir_1_1Model.html" alt="mio::osecir::Model" shape="rect" coords="0,112,555,136"/>
+<area href="classmio_1_1osecirvvs_1_1Model.html" alt="mio::osecirvvs::Model" shape="rect" coords="565,112,1120,136"/>
+  </map>
+</div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
 <tr class="memitem:aa28baa165c23fe3c97a53b177db81a60"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmio_1_1CompartmentalModel.html#aa28baa165c23fe3c97a53b177db81a60">Compartments</a> = Comp</td></tr>
 <tr class="separator:aa28baa165c23fe3c97a53b177db81a60"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afe4408fd431600082dc4340e34c4aee0"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmio_1_1CompartmentalModel.html#afe4408fd431600082dc4340e34c4aee0">Flow</a> = std::tuple&lt; typename <a class="el" href="classmio_1_1Populations.html#a82f390f1c21cedc6ffa8e8ef7cea98aa">Populations::Index</a>, typename <a class="el" href="classmio_1_1Populations.html#a82f390f1c21cedc6ffa8e8ef7cea98aa">Populations::Index</a>, <a class="el" href="structmio_1_1CompartmentalModel.html#a74ba983c34a7d3294a6a6d5a6353e21c">FlowFunction</a> &gt;</td></tr>
-<tr class="separator:afe4408fd431600082dc4340e34c4aee0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a74ba983c34a7d3294a6a6d5a6353e21c"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmio_1_1CompartmentalModel.html#a74ba983c34a7d3294a6a6d5a6353e21c">FlowFunction</a> = std::function&lt; <a class="el" href="config_8h.html#acd4f1d492d83a74716a42615e127d641">ScalarType</a>(<a class="el" href="structmio_1_1CompartmentalModel.html#a93a156eb496bb738cd820cb720a1781e">ParameterSet</a> const  &amp;p, Eigen::Ref&lt; const Eigen::VectorXd &gt; pop, Eigen::Ref&lt; const Eigen::VectorXd &gt; y, double t)&gt;</td></tr>
-<tr class="separator:a74ba983c34a7d3294a6a6d5a6353e21c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a93a156eb496bb738cd820cb720a1781e"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmio_1_1CompartmentalModel.html#a93a156eb496bb738cd820cb720a1781e">ParameterSet</a> = Params</td></tr>
 <tr class="separator:a93a156eb496bb738cd820cb720a1781e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3068432f259b67c5bbb6fa6980bead98"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmio_1_1CompartmentalModel.html#a3068432f259b67c5bbb6fa6980bead98">Populations</a> = Pop</td></tr>
@@ -97,21 +104,10 @@ Public Types</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a42e6972b9098e0a0f0537b1eced2effc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmio_1_1CompartmentalModel.html#a42e6972b9098e0a0f0537b1eced2effc">add_flow</a> (typename <a class="el" href="classmio_1_1Populations.html#a82f390f1c21cedc6ffa8e8ef7cea98aa">Populations::Index</a> from, typename <a class="el" href="classmio_1_1Populations.html#a82f390f1c21cedc6ffa8e8ef7cea98aa">Populations::Index</a> to, <a class="el" href="structmio_1_1CompartmentalModel.html#a74ba983c34a7d3294a6a6d5a6353e21c">FlowFunction</a> f)</td></tr>
-<tr class="memdesc:a42e6972b9098e0a0f0537b1eced2effc"><td class="mdescLeft">&#160;</td><td class="mdescRight">add_flow defines a flow from compartment A to another compartment B  <a href="structmio_1_1CompartmentalModel.html#a42e6972b9098e0a0f0537b1eced2effc">More...</a><br /></td></tr>
-<tr class="separator:a42e6972b9098e0a0f0537b1eced2effc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5abf6cc7a8501bd8000403ca50c2b930"><td class="memTemplParams" colspan="2">template&lt;typename T  = ParameterSet&gt; </td></tr>
-<tr class="memitem:a5abf6cc7a8501bd8000403ca50c2b930"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if_t&lt; <a class="el" href="namespacemio.html#a5f2af1294cf48bb782478c8d183031c0">has_apply_constraints_member_function</a>&lt; T &gt;::value &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structmio_1_1CompartmentalModel.html#a5abf6cc7a8501bd8000403ca50c2b930">apply_constraints</a> ()</td></tr>
-<tr class="separator:a5abf6cc7a8501bd8000403ca50c2b930"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5d7943ded1f7988302a633cdcfb498a5"><td class="memTemplParams" colspan="2">template&lt;typename T  = ParameterSet&gt; </td></tr>
-<tr class="memitem:a5d7943ded1f7988302a633cdcfb498a5"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if_t&lt;!<a class="el" href="namespacemio.html#a5f2af1294cf48bb782478c8d183031c0">has_apply_constraints_member_function</a>&lt; T &gt;::value &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structmio_1_1CompartmentalModel.html#a5d7943ded1f7988302a633cdcfb498a5">apply_constraints</a> ()</td></tr>
-<tr class="separator:a5d7943ded1f7988302a633cdcfb498a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5ecf93846aec4e60b9b9fde84c7179f5"><td class="memTemplParams" colspan="2">template&lt;typename T  = ParameterSet&gt; </td></tr>
-<tr class="memitem:a5ecf93846aec4e60b9b9fde84c7179f5"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if_t&lt; <a class="el" href="namespacemio.html#a376021d0dfbbf5639180b1fa30a26f54">has_check_constraints_member_function</a>&lt; T &gt;::value &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structmio_1_1CompartmentalModel.html#a5ecf93846aec4e60b9b9fde84c7179f5">check_constraints</a> () const</td></tr>
-<tr class="separator:a5ecf93846aec4e60b9b9fde84c7179f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a28934fcb9699a61c799676e110f2529b"><td class="memTemplParams" colspan="2">template&lt;typename T  = ParameterSet&gt; </td></tr>
-<tr class="memitem:a28934fcb9699a61c799676e110f2529b"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if_t&lt;!<a class="el" href="namespacemio.html#a376021d0dfbbf5639180b1fa30a26f54">has_check_constraints_member_function</a>&lt; T &gt;::value &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structmio_1_1CompartmentalModel.html#a28934fcb9699a61c799676e110f2529b">check_constraints</a> () const</td></tr>
-<tr class="separator:a28934fcb9699a61c799676e110f2529b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5bc2e7923a3e11009f72db4a5eb681f0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmio_1_1CompartmentalModel.html#a5bc2e7923a3e11009f72db4a5eb681f0">apply_constraints</a> ()</td></tr>
+<tr class="separator:a5bc2e7923a3e11009f72db4a5eb681f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad02a06b532a956e8a61298574961ce13"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmio_1_1CompartmentalModel.html#ad02a06b532a956e8a61298574961ce13">check_constraints</a> () const</td></tr>
+<tr class="separator:ad02a06b532a956e8a61298574961ce13"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a87347b247fe556c4a9d9d4611539c4d3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmio_1_1CompartmentalModel.html#a87347b247fe556c4a9d9d4611539c4d3">CompartmentalModel</a> (<a class="el" href="structmio_1_1CompartmentalModel.html">CompartmentalModel</a> &amp;&amp;)=default</td></tr>
 <tr class="separator:a87347b247fe556c4a9d9d4611539c4d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab29fbaf0c4a00a886813855519b6e61f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmio_1_1CompartmentalModel.html#ab29fbaf0c4a00a886813855519b6e61f">CompartmentalModel</a> (const <a class="el" href="structmio_1_1CompartmentalModel.html">CompartmentalModel</a> &amp;)=default</td></tr>
@@ -140,11 +136,6 @@ Public Attributes</h2></td></tr>
 <tr class="separator:a56afd91de3e44b50d65b496d953246c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a313bd11737ce364149d37602efc0df0d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmio_1_1CompartmentalModel.html#a3068432f259b67c5bbb6fa6980bead98">Populations</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmio_1_1CompartmentalModel.html#a313bd11737ce364149d37602efc0df0d">populations</a> {}</td></tr>
 <tr class="separator:a313bd11737ce364149d37602efc0df0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
-Private Attributes</h2></td></tr>
-<tr class="memitem:ae7df35c48547c8f1c7dc87654f49f7ee"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="structmio_1_1CompartmentalModel.html#afe4408fd431600082dc4340e34c4aee0">Flow</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmio_1_1CompartmentalModel.html#ae7df35c48547c8f1c7dc87654f49f7ee">flows</a> {}</td></tr>
-<tr class="separator:ae7df35c48547c8f1c7dc87654f49f7ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><h3>template&lt;class Comp, class Pop, class Params&gt;<br />
@@ -164,38 +155,6 @@ template&lt;class Comp , class Pop , class Params &gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="structmio_1_1CompartmentalModel.html">mio::CompartmentalModel</a>&lt; Comp, Pop, Params &gt;::<a class="el" href="structmio_1_1CompartmentalModel.html#aa28baa165c23fe3c97a53b177db81a60">Compartments</a> =  Comp</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="afe4408fd431600082dc4340e34c4aee0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afe4408fd431600082dc4340e34c4aee0">&#9670;&nbsp;</a></span>Flow</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class Comp , class Pop , class Params &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="structmio_1_1CompartmentalModel.html">mio::CompartmentalModel</a>&lt; Comp, Pop, Params &gt;::<a class="el" href="structmio_1_1CompartmentalModel.html#afe4408fd431600082dc4340e34c4aee0">Flow</a> =  std::tuple&lt;typename <a class="el" href="classmio_1_1Populations.html#a82f390f1c21cedc6ffa8e8ef7cea98aa">Populations::Index</a>, typename <a class="el" href="classmio_1_1Populations.html#a82f390f1c21cedc6ffa8e8ef7cea98aa">Populations::Index</a>, <a class="el" href="structmio_1_1CompartmentalModel.html#a74ba983c34a7d3294a6a6d5a6353e21c">FlowFunction</a>&gt;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a74ba983c34a7d3294a6a6d5a6353e21c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a74ba983c34a7d3294a6a6d5a6353e21c">&#9670;&nbsp;</a></span>FlowFunction</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class Comp , class Pop , class Params &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="structmio_1_1CompartmentalModel.html">mio::CompartmentalModel</a>&lt; Comp, Pop, Params &gt;::<a class="el" href="structmio_1_1CompartmentalModel.html#a74ba983c34a7d3294a6a6d5a6353e21c">FlowFunction</a> =  std::function&lt;<a class="el" href="config_8h.html#acd4f1d492d83a74716a42615e127d641">ScalarType</a>(<a class="el" href="structmio_1_1CompartmentalModel.html#a93a156eb496bb738cd820cb720a1781e">ParameterSet</a> const&amp; p, Eigen::Ref&lt;const Eigen::VectorXd&gt; pop, Eigen::Ref&lt;const Eigen::VectorXd&gt; y, double t)&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -351,8 +310,8 @@ template&lt;class Comp , class Pop , class Params &gt; </div>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a42e6972b9098e0a0f0537b1eced2effc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a42e6972b9098e0a0f0537b1eced2effc">&#9670;&nbsp;</a></span>add_flow()</h2>
+<a id="a5bc2e7923a3e11009f72db4a5eb681f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5bc2e7923a3e11009f72db4a5eb681f0">&#9670;&nbsp;</a></span>apply_constraints()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -360,55 +319,7 @@ template&lt;class Comp , class Pop , class Params &gt; </div>
 template&lt;class Comp , class Pop , class Params &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="structmio_1_1CompartmentalModel.html">mio::CompartmentalModel</a>&lt; Comp, Pop, Params &gt;::add_flow </td>
-          <td>(</td>
-          <td class="paramtype">typename <a class="el" href="classmio_1_1Populations.html#a82f390f1c21cedc6ffa8e8ef7cea98aa">Populations::Index</a>&#160;</td>
-          <td class="paramname"><em>from</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">typename <a class="el" href="classmio_1_1Populations.html#a82f390f1c21cedc6ffa8e8ef7cea98aa">Populations::Index</a>&#160;</td>
-          <td class="paramname"><em>to</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="structmio_1_1CompartmentalModel.html#a74ba983c34a7d3294a6a6d5a6353e21c">FlowFunction</a>&#160;</td>
-          <td class="paramname"><em>f</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>add_flow defines a flow from compartment A to another compartment B </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">from</td><td>is the index of the departure compartment A </td></tr>
-    <tr><td class="paramname">to</td><td>is the index of the receiving compartment B </td></tr>
-    <tr><td class="paramname">f</td><td>is a function defining the flow given a set of parameters, the current time t and the snapshot y of all population sizes at time t, represented as a flat array </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a5abf6cc7a8501bd8000403ca50c2b930"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5abf6cc7a8501bd8000403ca50c2b930">&#9670;&nbsp;</a></span>apply_constraints() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class Comp , class Pop , class Params &gt; </div>
-<div class="memtemplate">
-template&lt;typename T  = ParameterSet&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">std::enable_if_t&lt;<a class="el" href="namespacemio.html#a5f2af1294cf48bb782478c8d183031c0">has_apply_constraints_member_function</a>&lt;T&gt;::value&gt; <a class="el" href="structmio_1_1CompartmentalModel.html">mio::CompartmentalModel</a>&lt; Comp, Pop, Params &gt;::apply_constraints </td>
+          <td class="memname">void <a class="el" href="structmio_1_1CompartmentalModel.html">mio::CompartmentalModel</a>&lt; Comp, Pop, Params &gt;::apply_constraints </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -418,60 +329,16 @@ template&lt;typename T  = ParameterSet&gt; </div>
 
 </div>
 </div>
-<a id="a5d7943ded1f7988302a633cdcfb498a5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5d7943ded1f7988302a633cdcfb498a5">&#9670;&nbsp;</a></span>apply_constraints() <span class="overload">[2/2]</span></h2>
+<a id="ad02a06b532a956e8a61298574961ce13"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad02a06b532a956e8a61298574961ce13">&#9670;&nbsp;</a></span>check_constraints()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;class Comp , class Pop , class Params &gt; </div>
-<div class="memtemplate">
-template&lt;typename T  = ParameterSet&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">std::enable_if_t&lt;!<a class="el" href="namespacemio.html#a5f2af1294cf48bb782478c8d183031c0">has_apply_constraints_member_function</a>&lt;T&gt;::value&gt; <a class="el" href="structmio_1_1CompartmentalModel.html">mio::CompartmentalModel</a>&lt; Comp, Pop, Params &gt;::apply_constraints </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a5ecf93846aec4e60b9b9fde84c7179f5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5ecf93846aec4e60b9b9fde84c7179f5">&#9670;&nbsp;</a></span>check_constraints() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class Comp , class Pop , class Params &gt; </div>
-<div class="memtemplate">
-template&lt;typename T  = ParameterSet&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">std::enable_if_t&lt;<a class="el" href="namespacemio.html#a376021d0dfbbf5639180b1fa30a26f54">has_check_constraints_member_function</a>&lt;T&gt;::value&gt; <a class="el" href="structmio_1_1CompartmentalModel.html">mio::CompartmentalModel</a>&lt; Comp, Pop, Params &gt;::check_constraints </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a28934fcb9699a61c799676e110f2529b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a28934fcb9699a61c799676e110f2529b">&#9670;&nbsp;</a></span>check_constraints() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class Comp , class Pop , class Params &gt; </div>
-<div class="memtemplate">
-template&lt;typename T  = ParameterSet&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">std::enable_if_t&lt;!<a class="el" href="namespacemio.html#a376021d0dfbbf5639180b1fa30a26f54">has_check_constraints_member_function</a>&lt;T&gt;::value&gt; <a class="el" href="structmio_1_1CompartmentalModel.html">mio::CompartmentalModel</a>&lt; Comp, Pop, Params &gt;::check_constraints </td>
+          <td class="memname">void <a class="el" href="structmio_1_1CompartmentalModel.html">mio::CompartmentalModel</a>&lt; Comp, Pop, Params &gt;::check_constraints </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -585,7 +452,7 @@ template&lt;class Comp , class Pop , class Params &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Reimplemented in <a class="el" href="classmio_1_1osir_1_1Model.html#ae9d4ad457d93aa812e32c70e87d35943">mio::osir::Model</a>, <a class="el" href="classmio_1_1oseir_1_1Model.html#a00c095f93a9b5c54bd3c1f604a66182e">mio::oseir::Model</a>, and <a class="el" href="classmio_1_1osecirvvs_1_1Model.html#a1e56eed0b2c61da1491f150eeec7bd16">mio::osecirvvs::Model</a>.</p>
+<p>Reimplemented in <a class="el" href="classmio_1_1FlowModel.html#ab0a1f620e1c61ec87de0db8ab410b9e5">mio::FlowModel&lt; Comp, Pop, Params, Flows &gt;</a>, <a class="el" href="classmio_1_1FlowModel.html#ab0a1f620e1c61ec87de0db8ab410b9e5">mio::FlowModel&lt; InfectionState, Populations&lt; AgeGroup, InfectionState &gt;, Parameters, Flows &gt;</a>, <a class="el" href="classmio_1_1FlowModel.html#ab0a1f620e1c61ec87de0db8ab410b9e5">mio::FlowModel&lt; InfectionState, Populations&lt; InfectionState &gt;, Parameters, Flows &gt;</a>, and <a class="el" href="classmio_1_1osir_1_1Model.html#ae9d4ad457d93aa812e32c70e87d35943">mio::osir::Model</a>.</p>
 
 </div>
 </div>
@@ -668,30 +535,6 @@ template&lt;class Comp , class Pop , class Params &gt; </div>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="ae7df35c48547c8f1c7dc87654f49f7ee"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae7df35c48547c8f1c7dc87654f49f7ee">&#9670;&nbsp;</a></span>flows</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class Comp , class Pop , class Params &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::vector&lt;<a class="el" href="structmio_1_1CompartmentalModel.html#afe4408fd431600082dc4340e34c4aee0">Flow</a>&gt; <a class="el" href="structmio_1_1CompartmentalModel.html">mio::CompartmentalModel</a>&lt; Comp, Pop, Params &gt;::flows {}</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="a56afd91de3e44b50d65b496d953246c8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a56afd91de3e44b50d65b496d953246c8">&#9670;&nbsp;</a></span>parameters</h2>
 

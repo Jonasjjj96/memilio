@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2023-11-10 14:05:56</td>
+            <td class="headerValue">2023-11-14 10:54:32</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">7</td>
@@ -653,8 +653,8 @@
 <a name="591"><span class="lineNum">     591 </span>            :             }</a>
 <a name="592"><span class="lineNum">     592 </span>            : </a>
 <a name="593"><span class="lineNum">     593 </span><span class="lineCov">         28 :             for (auto i = AgeGroup(0); i &lt; AgeGroup(6); i++) {</span></a>
-<a name="594"><span class="lineNum">     594 </span><span class="lineCov">        696 :                 for (auto j = Index&lt;InfectionState&gt;(0); j &lt; InfectionState::Count; ++j) {</span></a>
-<a name="595"><span class="lineNum">     595 </span><span class="lineCov">        672 :                     if (model[region].populations[{i, j}] &lt; 0) {</span></a>
+<a name="594"><span class="lineNum">     594 </span><span class="lineCov">        672 :                 for (auto j = Index&lt;InfectionState&gt;(0); j &lt; InfectionState::Count; ++j) {</span></a>
+<a name="595"><span class="lineNum">     595 </span><span class="lineCov">        648 :                     if (model[region].populations[{i, j}] &lt; 0) {</span></a>
 <a name="596"><span class="lineNum">     596 </span><span class="lineNoCov">          0 :                         log_warning(&quot;Compartment at age group {}, infection state {}, is negative: {}&quot;, size_t(i),</span></a>
 <a name="597"><span class="lineNum">     597 </span><span class="lineNoCov">          0 :                                     size_t(j), model[region].populations[{i, j}] / num_population[region][size_t(i)]);</span></a>
 <a name="598"><span class="lineNum">     598 </span>            :                     }</a>

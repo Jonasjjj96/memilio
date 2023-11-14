@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['n_3064',['n',['../structmio_1_1Seq.html#ae74fee3e646ebb89687279e080542c35',1,'mio::Seq']]],
-  ['negation_5fv_3065',['negation_v',['../namespacemio.html#a12844b1c358ec3b74eba28dc795087fd',1,'mio']]]
+  ['obj_3170',['obj',['../structmio_1_1details_1_1SerializationVisitor.html#a5f7ca6cea890e13a6fbabab634dc33a7',1,'mio::details::SerializationVisitor']]]
 ];

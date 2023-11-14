@@ -68,9 +68,12 @@ $(function() {
 <div class="contents">
 <div class="textblock"><p>This directory contains the framework used to build SIR-type compartment models.</p>
 <p>Classes:</p><ul>
-<li>CompartmentModel: Template base class for compartment models. Specialize the class template using a parameter set (e.g. using the <a href="../utils/parameter_set.h">ParameterSet class</a>) and populations (e.g. using the <a href="../epidemiology/populations.h">Populations class</a>). The population is divided into compartments (and optionally other subcategories, e.g. age groups). Derive from the class to define the flows between the compartments.</li>
+<li>CompartmentalModel: Template base class for compartmental models. Specialize the class template using a parameter set (e.g. using the <a href="../utils/parameter_set.h">ParameterSet class</a>) and populations (e.g. using the <a href="../epidemiology/populations.h">Populations class</a>). The population is divided into compartments (and optionally other subcategories, e.g. age groups). Derive from the class to define the change in populations.</li>
+<li>FlowModel: A CompartmentalModel defined by the flows between populations. Requires the additional template parameter Flows, which is a <a href="../utils/type_list.h">TypeList</a> of <a href="../utils/flow.h">Flow</a>. Instead of defining <code>get_derivatives</code>, the function <code>get_flows</code> has to be implemented for a FlowModel.</li>
 <li>Simulation: Template class that runs the simulation using a specified compartment model. Can be derived from to implement behavior that cannot be modeled inside the usual compartment flow structure.</li>
+<li>FlowSimulation: Template class derived from Simulation, that additionally computes the flows between populations. It requires a FlowModel. While the compartment and flow results can be changed outside of the simulation, it is required that both still have the same number of time points to further advance this simulation.</li>
 </ul>
+<p>Note that currently, only the last value of the simulation result (i.e. the TimeSeries obtained from <code>get_result()</code>) is used to advance the simulation. Thus, any changes to the population of the simulation's model will have no effect on the simulation result.</p>
 <p>See the implemented ../../models/seir/README.md "SEIR model" for a simple example of using the classes. See the ../../models/secir/README.md "SECIR model" for an advanced example with age resolution. </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->

@@ -69,12 +69,13 @@ $(function() {
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#namespaces">Namespaces</a> &#124;
+<a href="#typedef-members">Typedefs</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">model.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="compartmentalmodel_8h_source.html">memilio/compartments/compartmentalmodel.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="flow__model_8h_source.html">memilio/compartments/flow_model.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="memilio_2compartments_2simulation_8h_source.html">memilio/compartments/simulation.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="populations_8h_source.html">memilio/epidemiology/populations.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="ode__secir_2infection__state_8h_source.html">ode_secir/infection_state.h</a>&quot;</code><br />
@@ -99,6 +100,11 @@ Namespaces</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:namespacemio_1_1osecir"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemio_1_1osecir.html">mio::osecir</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:a3eca1dc00fcb0cfb2324ecf9f289604e"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemio_1_1osecir.html#a3eca1dc00fcb0cfb2324ecf9f289604e">mio::osecir::Flows</a> = TypeList&lt; Flow&lt; InfectionState::Susceptible, InfectionState::Exposed &gt;, Flow&lt; InfectionState::Exposed, InfectionState::InfectedNoSymptoms &gt;, Flow&lt; InfectionState::InfectedNoSymptoms, InfectionState::InfectedSymptoms &gt;, Flow&lt; InfectionState::InfectedNoSymptoms, InfectionState::Recovered &gt;, Flow&lt; InfectionState::InfectedNoSymptomsConfirmed, InfectionState::InfectedSymptomsConfirmed &gt;, Flow&lt; InfectionState::InfectedNoSymptomsConfirmed, InfectionState::Recovered &gt;, Flow&lt; InfectionState::InfectedSymptoms, InfectionState::InfectedSevere &gt;, Flow&lt; InfectionState::InfectedSymptoms, InfectionState::Recovered &gt;, Flow&lt; InfectionState::InfectedSymptomsConfirmed, InfectionState::InfectedSevere &gt;, Flow&lt; InfectionState::InfectedSymptomsConfirmed, InfectionState::Recovered &gt;, Flow&lt; InfectionState::InfectedSevere, InfectionState::InfectedCritical &gt;, Flow&lt; InfectionState::InfectedSevere, InfectionState::Recovered &gt;, Flow&lt; InfectionState::InfectedSevere, InfectionState::Dead &gt;, Flow&lt; InfectionState::InfectedCritical, InfectionState::Dead &gt;, Flow&lt; InfectionState::InfectedCritical, InfectionState::Recovered &gt; &gt;</td></tr>
+<tr class="separator:a3eca1dc00fcb0cfb2324ecf9f289604e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
