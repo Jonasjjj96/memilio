@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2023-11-14 11:07:16</td>
+            <td class="headerValue">2023-11-14 12:27:15</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">15</td>
@@ -176,14 +176,14 @@
 <a name="114"><span class="lineNum">     114 </span><span class="lineCov">        295 :         cell.m_cached_exposure_rate_air      = {{VirusVariant::Count}, 0.};</span></a>
 <a name="115"><span class="lineNum">     115 </span><span class="lineCov">        681 :         for (auto&amp;&amp; p : cell.m_persons) {</span></a>
 <a name="116"><span class="lineNum">     116 </span><span class="lineCov">        386 :             if (p-&gt;is_infected(t)) {</span></a>
-<a name="117"><span class="lineNum">     117 </span><span class="lineCov">        144 :                 auto&amp; inf  = p-&gt;get_infection();</span></a>
-<a name="118"><span class="lineNum">     118 </span><span class="lineCov">        144 :                 auto virus = inf.get_virus_variant();</span></a>
-<a name="119"><span class="lineNum">     119 </span><span class="lineCov">        144 :                 auto age   = p-&gt;get_age();</span></a>
+<a name="117"><span class="lineNum">     117 </span><span class="lineCov">        116 :                 auto&amp; inf  = p-&gt;get_infection();</span></a>
+<a name="118"><span class="lineNum">     118 </span><span class="lineCov">        116 :                 auto virus = inf.get_virus_variant();</span></a>
+<a name="119"><span class="lineNum">     119 </span><span class="lineCov">        116 :                 auto age   = p-&gt;get_age();</span></a>
 <a name="120"><span class="lineNum">     120 </span>            :                 /* average infectivity over the time step </a>
 <a name="121"><span class="lineNum">     121 </span>            :                  *  to second order accuracy using midpoint rule</a>
 <a name="122"><span class="lineNum">     122 </span>            :                 */</a>
-<a name="123"><span class="lineNum">     123 </span><span class="lineCov">        144 :                 cell.m_cached_exposure_rate_contacts[{virus, age}] += inf.get_infectivity(t + dt / 2);</span></a>
-<a name="124"><span class="lineNum">     124 </span><span class="lineCov">        144 :                 cell.m_cached_exposure_rate_air[{virus}] += inf.get_infectivity(t + dt / 2);</span></a>
+<a name="123"><span class="lineNum">     123 </span><span class="lineCov">        116 :                 cell.m_cached_exposure_rate_contacts[{virus, age}] += inf.get_infectivity(t + dt / 2);</span></a>
+<a name="124"><span class="lineNum">     124 </span><span class="lineCov">        116 :                 cell.m_cached_exposure_rate_air[{virus}] += inf.get_infectivity(t + dt / 2);</span></a>
 <a name="125"><span class="lineNum">     125 </span>            :             }</a>
 <a name="126"><span class="lineNum">     126 </span>            :         }</a>
 <a name="127"><span class="lineNum">     127 </span><span class="lineCov">        295 :         if (m_capacity_adapted_transmission_risk) {</span></a>
