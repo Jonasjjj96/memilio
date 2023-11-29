@@ -76,6 +76,8 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="metaprogramming_8h_source.html">memilio/utils/metaprogramming.h</a>&quot;</code><br />
+<code>#include &lt;array&gt;</code><br />
+<code>#include &lt;numeric&gt;</code><br />
 <code>#include &lt;vector&gt;</code><br />
 <code>#include &lt;algorithm&gt;</code><br />
 <code>#include &lt;utility&gt;</code><br />
@@ -137,6 +139,10 @@ Functions</h2></td></tr>
 <tr class="memitem:a53006511360e7600ccee2ca9732a3d72"><td class="memTemplItemLeft" align="right" valign="top">std::unique_ptr&lt; U &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemio.html#a53006511360e7600ccee2ca9732a3d72">mio::dynamic_unique_ptr_cast</a> (std::unique_ptr&lt; T &gt; &amp;&amp;base_ptr)</td></tr>
 <tr class="memdesc:a53006511360e7600ccee2ca9732a3d72"><td class="mdescLeft">&#160;</td><td class="mdescRight">converts a unique_ptr&lt;T&gt; to unique_ptr<u>. </u> <a href="namespacemio.html#a53006511360e7600ccee2ca9732a3d72">More...</a><br /></td></tr>
 <tr class="separator:a53006511360e7600ccee2ca9732a3d72"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9be9ff17fb76c68d0a1e6c2463164dcd"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:a9be9ff17fb76c68d0a1e6c2463164dcd"><td class="memTemplItemLeft" align="right" valign="top">constexpr std::array&lt; T, size_t(T::Count)&gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemio.html#a9be9ff17fb76c68d0a1e6c2463164dcd">mio::enum_members</a> ()</td></tr>
+<tr class="memdesc:a9be9ff17fb76c68d0a1e6c2463164dcd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get an std::array that contains all members of an enum class.  <a href="namespacemio.html#a9be9ff17fb76c68d0a1e6c2463164dcd">More...</a><br /></td></tr>
+<tr class="separator:a9be9ff17fb76c68d0a1e6c2463164dcd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abe01e2795a0e0b69936834f050129964"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:abe01e2795a0e0b69936834f050129964"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; T &gt;::iterator&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemio.html#abe01e2795a0e0b69936834f050129964">mio::insert_sorted_replace</a> (std::vector&lt; T &gt; &amp;vec, T const &amp;item)</td></tr>
 <tr class="separator:abe01e2795a0e0b69936834f050129964"><td class="memSeparator" colspan="2">&#160;</td></tr>

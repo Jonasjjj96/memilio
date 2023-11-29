@@ -71,7 +71,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <a href="random__number__generator_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/* </span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">* Copyright (C) 2020-2023 German Aerospace Center (DLR-SC)</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">* Copyright (C) 2020-2024 MEmilio</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">*</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">* Authors: Daniel Abele</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">*</span></div>
@@ -488,9 +488,12 @@ $(function() {
 <div class="line"><a name="l00666"></a><span class="lineno">  666</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> Real&gt;</div>
 <div class="line"><a name="l00667"></a><span class="lineno">  667</span>&#160;<span class="keyword">using</span> UniformDistribution = DistributionAdapter&lt;std::uniform_real_distribution&lt;Real&gt;&gt;;</div>
 <div class="line"><a name="l00668"></a><span class="lineno">  668</span>&#160; </div>
-<div class="line"><a name="l00669"></a><span class="lineno">  669</span>&#160;} <span class="comment">// namespace mio</span></div>
-<div class="line"><a name="l00670"></a><span class="lineno">  670</span>&#160; </div>
-<div class="line"><a name="l00671"></a><span class="lineno">  671</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00673"></a><span class="lineno">  673</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> Int&gt;</div>
+<div class="line"><a name="l00674"></a><span class="lineno">  674</span>&#160;<span class="keyword">using</span> PoissonDistribution = DistributionAdapter&lt;std::poisson_distribution&lt;Int&gt;&gt;;</div>
+<div class="line"><a name="l00675"></a><span class="lineno">  675</span>&#160; </div>
+<div class="line"><a name="l00676"></a><span class="lineno">  676</span>&#160;} <span class="comment">// namespace mio</span></div>
+<div class="line"><a name="l00677"></a><span class="lineno">  677</span>&#160; </div>
+<div class="line"><a name="l00678"></a><span class="lineno">  678</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="acompiler__diagnostics_8h_html"><div class="ttname"><a href="compiler__diagnostics_8h.html">compiler_diagnostics.h</a></div></div>
 <div class="ttc" id="acompiler__diagnostics_8h_html_aae95afe748c78c6edadb3f3783ceebc1"><div class="ttname"><a href="compiler__diagnostics_8h.html#aae95afe748c78c6edadb3f3783ceebc1">MEMILIO_ENABLE_EBO</a></div><div class="ttdeci">#define MEMILIO_ENABLE_EBO</div><div class="ttdef"><b>Definition:</b> compiler_diagnostics.h:75</div></div>
 <div class="ttc" id="acompiler__diagnostics_8h_html_ab1a582833b695bfecd10965e3b52e733"><div class="ttname"><a href="compiler__diagnostics_8h.html#ab1a582833b695bfecd10965e3b52e733">MSVC_WARNING_POP</a></div><div class="ttdeci">#define MSVC_WARNING_POP()</div><div class="ttdef"><b>Definition:</b> compiler_diagnostics.h:44</div></div>
