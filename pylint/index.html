@@ -884,15 +884,13 @@
                 <td><pre>Similar lines in 2 files
 ==memilio.epidata.getJHData:[97:106]
 ==memilio.epidata_test.test_epidata_get_jh_data:[122:129]
-    directory_ger = os.path.join(out_folder, &#39;Germany/&#39;)
-    directory_es = os.path.join(out_folder, &#39;Spain/&#39;)
-    directory_fr = os.path.join(out_folder, &#39;France/&#39;)
-    directory_it = os.path.join(out_folder, &#39;Italy/&#39;)
-    directory_us = os.path.join(out_folder, &#39;US/&#39;)
-    directory_rok = os.path.join(out_folder, &#39;SouthKorea/&#39;)
-    directory_prc = os.path.join(out_folder, &#39;China/&#39;)
-
-    # dictionary of countries</pre></td>
+        directory_ger = os.path.join(out_folder, &#39;Germany/&#39;)
+        directory_es = os.path.join(out_folder, &#39;Spain/&#39;)
+        directory_fr = os.path.join(out_folder, &#39;France/&#39;)
+        directory_it = os.path.join(out_folder, &#39;Italy/&#39;)
+        directory_us = os.path.join(out_folder, &#39;US/&#39;)
+        directory_rok = os.path.join(out_folder, &#39;SouthKorea/&#39;)
+        directory_prc = os.path.join(out_folder, &#39;China/&#39;)</pre></td>
             </tr>
             
             <tr>
@@ -937,14 +935,19 @@ from memilio.epidata import getDataIntoPandasDataFrame as gd
 pd.options.mode.copy_on_write = True
 
 
-def getMobilityFromFile(directory, mobility_file):
-    &#34;&#34;&#34;! Gets a mobility matrix that is written in a plain txt file
-    under the given directory into a pandas data frame.
+def read_population_data(username, password, read_data, directory):
+    &#39;&#39;&#39;! Reads Population data either from regionalstatistik.de or from directory
 
-    @param directory Path to folder where data is read.
-    @param mobility_file Mobility matrix file which has to be updated.
-    @return Mobility matrix data frame.
-    &#34;&#34;&#34;</pre></td>
+    A request is made using the twill package. Username and Password are required to
+    sign in on regionalstatistik.de. After the sign twill navigates to the file to download.
+
+    @param username Username to sign in at regionalstatistik.de.
+    @param password Password to sign in at regionalstatistik.de.
+    @param read_data False or True. Defines if data is read from file or downloaded.
+    @param directory Path to folder where data is read from.
+    @return DataFrame
+    &#39;&#39;&#39;
+</pre></td>
             </tr>
             
             <tr>
@@ -957,12 +960,12 @@ def getMobilityFromFile(directory, mobility_file):
                 <td><pre>Similar lines in 2 files
 ==memilio.epidata.getCaseData:[231:237]
 ==memilio.epidata.getDIVIData:[113:119]
+    try:
+        df[dd.EngEng[&#39;date&#39;]] = pd.to_datetime(
+            df[dd.EngEng[&#39;date&#39;]], format=&#34;ISO8601&#34;)
+    except ValueError:
         try:
-            df[dd.EngEng[&#39;date&#39;]] = pd.to_datetime(
-                df[dd.EngEng[&#39;date&#39;]], format=&#34;ISO8601&#34;)
-        except ValueError:
-            try:
-                df[dd.EngEng[&#39;date&#39;]] = pd.to_datetime(</pre></td>
+            df[dd.EngEng[&#39;date&#39;]] = pd.to_datetime(</pre></td>
             </tr>
             
             <tr>
@@ -1149,9 +1152,7 @@ import pandas as pd
 
 from memilio.epidata import defaultDict as dd
 from memilio.epidata import geoModificationGermany as geoger
-from memilio.epidata import getDataIntoPandasDataFrame as gd
-
-# activate CoW for more predictable behaviour of pandas DataFrames</pre></td>
+from memilio.epidata import getDataIntoPandasDataFrame as gd</pre></td>
             </tr>
             
             <tr>
@@ -1169,7 +1170,9 @@ import pandas as pd
 from memilio.epidata import defaultDict as dd
 from memilio.epidata import geoModificationGermany as geoger
 from memilio.epidata import getDataIntoPandasDataFrame as gd
-from memilio.epidata import modifyDataframeSeries as mdfs</pre></td>
+from memilio.epidata import modifyDataframeSeries as mdfs
+
+# activate CoW for more predictable behaviour of pandas DataFrames</pre></td>
             </tr>
             
             <tr>
