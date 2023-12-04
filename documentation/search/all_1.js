@@ -39,7 +39,7 @@ var searchData=
   ['agegroup_59',['AgeGroup',['../structmio_1_1AgeGroup.html#adbce9909e8964fb6e5a2caa9e6d13325',1,'mio::AgeGroup::AgeGroup()'],['../structmio_1_1AgeGroup.html',1,'mio::AgeGroup']]],
   ['agegroupgotoschool_60',['AgeGroupGotoSchool',['../structmio_1_1abm_1_1AgeGroupGotoSchool.html',1,'mio::abm']]],
   ['agegroupgotowork_61',['AgeGroupGotoWork',['../structmio_1_1abm_1_1AgeGroupGotoWork.html',1,'mio::abm']]],
-  ['agent_20based_20model_62',['Agent Based Model',['../md__home_runner_work_memilio_memilio_cpp_models_abm_README.html',1,'']]],
+  ['agent_2dbased_20model_62',['Agent-Based Model',['../md__home_runner_work_memilio_memilio_cpp_models_abm_README.html',1,'']]],
   ['allof_63',['AllOf',['../structmio_1_1details_1_1AllOf.html',1,'mio::details']]],
   ['allof_3c_20pred_20_3e_64',['AllOf&lt; Pred &gt;',['../structmio_1_1details_1_1AllOf_3_01Pred_01_4.html',1,'mio::details']]],
   ['allof_3c_20pred_2c_20head_2c_20tail_2e_2e_2e_20_3e_65',['AllOf&lt; Pred, Head, Tail... &gt;',['../structmio_1_1details_1_1AllOf_3_01Pred_00_01Head_00_01Tail_8_8_8_01_4.html',1,'mio::details']]],

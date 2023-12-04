@@ -37,12 +37,12 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2023-11-29 17:32:27</td>
+            <td class="headerValue">2023-12-04 15:09:45</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">13</td>
-            <td class="headerCovTableEntry">26</td>
-            <td class="headerCovTableEntryLo">50.0 %</td>
+            <td class="headerCovTableEntry">31</td>
+            <td class="headerCovTableEntryLo">41.9 %</td>
           </tr>
           <tr><td><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
         </table>
@@ -65,6 +65,10 @@
             </tr>
     <tr>
               <td class="coverFn"><a href="history.h.gcov.html#58">void mio::DataWriterToMemory&lt;LogLocationInformation, LogPersonInformation&gt;::write_this&lt;LogPersonInformation&gt;(LogPersonInformation::Type const&amp;, std::tuple&lt;std::vector&lt;std::vector&lt;std::tuple&lt;unsigned int, mio::abm::GeographicalLocation&gt;, std::allocator&lt;std::tuple&lt;unsigned int, mio::abm::GeographicalLocation&gt; &gt; &gt;, std::allocator&lt;std::vector&lt;std::tuple&lt;unsigned int, mio::abm::GeographicalLocation&gt;, std::allocator&lt;std::tuple&lt;unsigned int, mio::abm::GeographicalLocation&gt; &gt; &gt; &gt; &gt;, std::vector&lt;std::vector&lt;std::tuple&lt;unsigned int, unsigned int, mio::AgeGroup&gt;, std::allocator&lt;std::tuple&lt;unsigned int, unsigned int, mio::AgeGroup&gt; &gt; &gt;, std::allocator&lt;std::vector&lt;std::tuple&lt;unsigned int, unsigned int, mio::AgeGroup&gt;, std::allocator&lt;std::tuple&lt;unsigned int, unsigned int, mio::AgeGroup&gt; &gt; &gt; &gt; &gt; &gt;&amp;)</a></td>
+              <td class="coverFnLo">0</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="history.h.gcov.html#58">void mio::DataWriterToMemory&lt;MyLogger&gt;::write_this&lt;MyLogger&gt;(MyLogger::Type const&amp;, std::tuple&lt;std::vector&lt;int, std::allocator&lt;int&gt; &gt; &gt;&amp;)</a></td>
               <td class="coverFnLo">0</td>
             </tr>
     <tr>
@@ -92,6 +96,18 @@
               <td class="coverFnLo">0</td>
             </tr>
     <tr>
+              <td class="coverFn"><a href="history.h.gcov.html#83">void mio::History&lt;mio::DataWriterToMemory, MyLogger&gt;::log&lt;int&gt;(int const&amp;)</a></td>
+              <td class="coverFnLo">0</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="history.h.gcov.html#127">void mio::History&lt;mio::DataWriterToMemory, MyLogger&gt;::log_impl&lt;int&gt;(int const&amp;)</a></td>
+              <td class="coverFnLo">0</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="history.h.gcov.html#120">std::enable_if&lt;std::is_base_of&lt;mio::LogAlways, MyLogger&gt;::value, void&gt;::type mio::History&lt;mio::DataWriterToMemory, MyLogger&gt;::log_impl&lt;int, MyLogger&gt;(int const&amp;)</a></td>
+              <td class="coverFnLo">0</td>
+            </tr>
+    <tr>
               <td class="coverFn"><a href="history.h.gcov.html#83">void mio::History&lt;mio::DataWriterToMemory, main::LogTimePoint, main::LogLocationIds&gt;::log&lt;mio::abm::Simulation&gt;(mio::abm::Simulation const&amp;)</a></td>
               <td class="coverFnLo">0</td>
             </tr>
@@ -105,6 +121,10 @@
             </tr>
     <tr>
               <td class="coverFn"><a href="history.h.gcov.html#111">std::enable_if&lt;std::is_base_of&lt;mio::LogOnce, main::LogLocationIds&gt;::value, void&gt;::type mio::History&lt;mio::DataWriterToMemory, main::LogTimePoint, main::LogLocationIds&gt;::log_impl&lt;mio::abm::Simulation, main::LogLocationIds&gt;(mio::abm::Simulation const&amp;)</a></td>
+              <td class="coverFnLo">0</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="history.h.gcov.html#94">mio::History&lt;mio::DataWriterToMemory, MyLogger&gt;::get_log() const</a></td>
               <td class="coverFnLo">0</td>
             </tr>
     <tr>

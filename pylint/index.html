@@ -935,19 +935,14 @@ from memilio.epidata import getDataIntoPandasDataFrame as gd
 pd.options.mode.copy_on_write = True
 
 
-def read_population_data(username, password, read_data, directory):
-    &#39;&#39;&#39;! Reads Population data either from regionalstatistik.de or from directory
+def getMobilityFromFile(directory, mobility_file):
+    &#34;&#34;&#34;! Gets a mobility matrix that is written in a plain txt file
+    under the given directory into a pandas data frame.
 
-    A request is made using the twill package. Username and Password are required to
-    sign in on regionalstatistik.de. After the sign twill navigates to the file to download.
-
-    @param username Username to sign in at regionalstatistik.de.
-    @param password Password to sign in at regionalstatistik.de.
-    @param read_data False or True. Defines if data is read from file or downloaded.
-    @param directory Path to folder where data is read from.
-    @return DataFrame
-    &#39;&#39;&#39;
-</pre></td>
+    @param directory Path to folder where data is read.
+    @param mobility_file Mobility matrix file which has to be updated.
+    @return Mobility matrix data frame.
+    &#34;&#34;&#34;</pre></td>
             </tr>
             
             <tr>
@@ -1030,31 +1025,44 @@ from memilio.epidata import modifyDataframeSeries as mdfs
 pd.options.mode.copy_on_write = True
 
 
-def transformWeatherData(read_data=dd.defaultDict[&#39;read_data&#39;],
-                         file_format=dd.defaultDict[&#39;file_format&#39;],
-                         out_folder=dd.defaultDict[&#39;out_folder&#39;],
-                         start_date=dd.defaultDict[&#39;start_date&#39;],
-                         end_date=dd.defaultDict[&#39;end_date&#39;],
-                         make_plot=dd.defaultDict[&#39;make_plot&#39;],
-                         moving_average=dd.defaultDict[&#39;moving_average&#39;],
-                         merge_berlin=True,
-                         merge_eisenach=False
-                         ):
-    &#34;&#34;&#34;! ...
-    @param file_format File format which is used for writing the data.
-        Default defined in defaultDict.
-    @param out_folder Path to folder where data is written in folder
-        out_folder/Germany.
-    @param start_date [Default = &#39;&#39;, taken from read data] Start date
-        of stored data frames.
-    @param end_date [Default = &#39;&#39;, taken from read data] End date of
-        stored data frames.
-    @param make_plot False [Default] or True. Defines if plots are
-        generated with matplotlib.
-    @param moving_average 0 [Default] or Number &gt; 0. Defines the number of
-        days for which a centered moving average is computed.
+def get_divi_data(read_data=dd.defaultDict[&#39;read_data&#39;],
+                  file_format=dd.defaultDict[&#39;file_format&#39;],
+                  out_folder=dd.defaultDict[&#39;out_folder&#39;],
+                  no_raw=dd.defaultDict[&#39;no_raw&#39;],
+                  start_date=date(2020, 4, 24),
+                  end_date=dd.defaultDict[&#39;end_date&#39;],
+                  impute_dates=dd.defaultDict[&#39;impute_dates&#39;],
+                  moving_average=dd.defaultDict[&#39;moving_average&#39;],
+                  make_plot=dd.defaultDict[&#39;make_plot&#39;]
+                  ):
+    &#34;&#34;&#34;! Downloads or reads the DIVI ICU data and writes them in different files.
+
+    Available data starts from 2020-04-24.
+    If the given start_date is earlier, it is changed to this date and a warning is printed.
+    If it does not already exist, the folder Germany is generated in the given out_folder.
+    If read_data == True and the file &#34;FullData_DIVI.json&#34; exists, the data is read form this file
+    and stored in a pandas dataframe. If read_data = True and the file does not exist the program is stopped.
+
+    The downloaded dataframe is written to the file &#34;FullData_DIVI&#34;.
+    After that, the columns are renamed to English and the state and county names are added.
+    Afterwards, three kinds of structuring of the data are done.
+    We obtain the chronological sequence of ICU and ICU_ventilated
+    stored in the files &#34;county_divi&#34;.json&#34;, &#34;state_divi.json&#34; and &#34;germany_divi.json&#34;
+    for counties, states and whole Germany, respectively.
+
+    @param read_data True or False. Defines if data is read from file or downloaded. Default defined in defaultDict.
+    @param file_format File format which is used for writing the data. Default defined in defaultDict.
+    @param out_folder Folder where data is written to. Default defined in defaultDict.
+    @param no_raw True or False. Defines if unchanged raw data is saved or not. Default defined in defaultDict.
+    @param start_date Date of first date in dataframe. Default defined in defaultDict.
+    @param end_date Date of last date in dataframe. Default defined in defaultDict.
+    @param impute_dates True or False. Defines if values for dates without new information are imputed. Default defined in defaultDict.
+    @param moving_average Integers &gt;=0. Applies an &#39;moving_average&#39;-days moving average on all time series
+        to smooth out effects of irregular reporting. Default defined in defaultDict.
+    @param make_plot [Currently not used] True or False. Defines if plots are generated with matplotlib. Default defined in defaultDict.
     &#34;&#34;&#34;
-</pre></td>
+
+    # First csv data on 24-04-2020</pre></td>
             </tr>
             
             <tr>
@@ -1068,12 +1076,15 @@ def transformWeatherData(read_data=dd.defaultDict[&#39;read_data&#39;],
 ==memilio.epidata.getCommuterMobility:[25:32]
 ==memilio.epidata.transformMobilityData:[19:29]
 import os
+
 import numpy as np
 import pandas as pd
 
 from memilio.epidata import defaultDict as dd
 from memilio.epidata import geoModificationGermany as geoger
-from memilio.epidata import getDataIntoPandasDataFrame as gd</pre></td>
+from memilio.epidata import getDataIntoPandasDataFrame as gd
+
+# activate CoW for more predictable behaviour of pandas DataFrames</pre></td>
             </tr>
             
             <tr>
@@ -1095,8 +1106,11 @@ from memilio.epidata import getDataIntoPandasDataFrame as gd</pre></td>
         self.setUpPyfakefs()
         progress_indicator.ProgressIndicator.disable_indicators(True)
 
-    @patch(&#39;builtins.print&#39;)
-    def test_verify_sorted(self, mock_print):</pre></td>
+    @patch(&#39;memilio.epidata.getVaccinationData.download_vaccination_data&#39;,
+           return_value=df_vacc_data_altern)
+    @patch(&#39;memilio.epidata.getPopulationData.get_population_data&#39;, return_value=df_pop)
+    @patch(&#39;builtins.input&#39;, return_value=&#39;y&#39;)
+    def test_get_vaccination_data_alternative_ages(self, mockin, mockp, mockv):</pre></td>
             </tr>
             
             <tr>
@@ -1152,7 +1166,9 @@ import pandas as pd
 
 from memilio.epidata import defaultDict as dd
 from memilio.epidata import geoModificationGermany as geoger
-from memilio.epidata import getDataIntoPandasDataFrame as gd</pre></td>
+from memilio.epidata import getDataIntoPandasDataFrame as gd
+
+# activate CoW for more predictable behaviour of pandas DataFrames</pre></td>
             </tr>
             
             <tr>
@@ -1195,39 +1211,15 @@ from memilio.epidata import modifyDataframeSeries as mdfs
 pd.options.mode.copy_on_write = True
 
 
-def get_jh_data(read_data=dd.defaultDict[&#39;read_data&#39;],
-                file_format=dd.defaultDict[&#39;file_format&#39;],
-                out_folder=dd.defaultDict[&#39;out_folder&#39;],
-                no_raw=dd.defaultDict[&#39;no_raw&#39;],
-                start_date=date(2020, 1, 22),
-                end_date=dd.defaultDict[&#39;end_date&#39;],
-                impute_dates=dd.defaultDict[&#39;impute_dates&#39;],
-                moving_average=dd.defaultDict[&#39;moving_average&#39;],
-                make_plot=dd.defaultDict[&#39;make_plot&#39;]):
-    &#34;&#34;&#34;! Download data from John Hopkins University
+def hospit_sanity_checks(df):
+    &#34;&#34;&#34;! Checks the sanity of the hospitalization_data dataframe
 
-   Data is either downloaded and afterwards stored or loaded from a stored filed.
-   The file is &#34;FullData_JohnHopkins.json&#34;
+    Checks if type of the given data is a dataframe
+    Checks if the headers of the dataframe are those which are needed
 
-   Working with the data includes
-   - rename columns such that &#34;/&#34; is deleted, e.g Country/Region becomes CountryRegion
-   - data of all countries together are written to a file
-   - download the data from following countries in a separate file
-   and are stored in the according folders with the country name
-       - Germany, SouthKorea, Spain, France, Italy, US, China
-   - furthermore, all countries, for which provinces are added, are written to a file
-
-    @param read_data True or False. Defines if data is read from file or downloaded. Default defined in defaultDict.
-    @param file_format File format which is used for writing the data. Default defined in defaultDict.
-    @param out_folder Folder where data is written to. Default defined in defaultDict.
-    @param no_raw True or False. Defines if unchanged raw data is saved or not. Default defined in defaultDict.
-    @param start_date Date of first date in dataframe. Default defined in defaultDict.
-    @param end_date Date of last date in dataframe. Default defined in defaultDict.
-    @param impute_dates [Currently not used] True or False. Defines if values for dates without new information are imputed. Default defined in defaultDict.
-    @param moving_average [Currently not used] Integers &gt;=0. Applies an &#39;moving_average&#39;-days moving average on all time series
-        to smooth out effects of irregular reporting. Default defined in defaultDict.
-    @param make_plot [Currently not used] True or False. Defines if plots are generated with matplotlib. Default defined in defaultDict.
-   &#34;&#34;&#34;</pre></td>
+    @param df The dataframe which has to be checked
+    &#34;&#34;&#34;
+    # test if dataframe is empty</pre></td>
             </tr>
             
             <tr>
