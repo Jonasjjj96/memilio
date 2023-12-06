@@ -88,6 +88,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a9c78642cd90d33be2bff3e1f842ecaf2"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacememilio_1_1epidata_1_1getPopulationData.html#a9c78642cd90d33be2bff3e1f842ecaf2">main</a> ()</td></tr>
 <tr class="memdesc:a9c78642cd90d33be2bff3e1f842ecaf2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Main program entry.  <a href="namespacememilio_1_1epidata_1_1getPopulationData.html#a9c78642cd90d33be2bff3e1f842ecaf2">More...</a><br /></td></tr>
 <tr class="separator:a9c78642cd90d33be2bff3e1f842ecaf2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa32b151677025eeb8e4d3245296a6922"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacememilio_1_1epidata_1_1getPopulationData.html#aa32b151677025eeb8e4d3245296a6922">manage_credentials</a> ()</td></tr>
+<tr class="memdesc:aa32b151677025eeb8e4d3245296a6922"><td class="mdescLeft">&#160;</td><td class="mdescRight">Manages credentials for regionalstatistik.de (needed for dowload).  <a href="namespacememilio_1_1epidata_1_1getPopulationData.html#aa32b151677025eeb8e4d3245296a6922">More...</a><br /></td></tr>
+<tr class="separator:aa32b151677025eeb8e4d3245296a6922"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0e312f4b04cc3f72953d6bef99e797ef"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacememilio_1_1epidata_1_1getPopulationData.html#a0e312f4b04cc3f72953d6bef99e797ef">read_population_data</a> (username, password, read_data, directory)</td></tr>
 <tr class="memdesc:a0e312f4b04cc3f72953d6bef99e797ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads Population data either from regionalstatistik.de or from directory.  <a href="namespacememilio_1_1epidata_1_1getPopulationData.html#a0e312f4b04cc3f72953d6bef99e797ef">More...</a><br /></td></tr>
 <tr class="separator:a0e312f4b04cc3f72953d6bef99e797ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -301,6 +304,27 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Main program entry. </p>
+
+</div>
+</div>
+<a id="aa32b151677025eeb8e4d3245296a6922"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa32b151677025eeb8e4d3245296a6922">&#9670;&nbsp;</a></span>manage_credentials()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def memilio.epidata.getPopulationData.manage_credentials </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Manages credentials for regionalstatistik.de (needed for dowload). </p>
+<p>A connfig file inside the epidata folder is either written (if not existent yet) with input from user or read with following format: [CREDENTIALS] Username = XXXXX Password = XXXXX</p>
+<dl class="section return"><dt>Returns</dt><dd>Username and password to sign in at regionalstatistik.de. </dd></dl>
 
 </div>
 </div>

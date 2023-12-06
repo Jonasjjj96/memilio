@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2023-12-06 09:42:13</td>
+            <td class="headerValue">2023-12-06 11:33:23</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">3</td>
@@ -121,9 +121,9 @@
 <a name="59"><span class="lineNum">      59 </span>            :     uint32_t index;</a>
 <a name="60"><span class="lineNum">      60 </span>            :     LocationType type;</a>
 <a name="61"><span class="lineNum">      61 </span>            : </a>
-<a name="62"><span class="lineNum">      62 </span><span class="lineCov">       3078 :     bool operator==(const LocationId&amp; rhs) const</span></a>
+<a name="62"><span class="lineNum">      62 </span><span class="lineCov">       3091 :     bool operator==(const LocationId&amp; rhs) const</span></a>
 <a name="63"><span class="lineNum">      63 </span>            :     {</a>
-<a name="64"><span class="lineNum">      64 </span><span class="lineCov">       3078 :         return (index == rhs.index &amp;&amp; type == rhs.type);</span></a>
+<a name="64"><span class="lineNum">      64 </span><span class="lineCov">       3091 :         return (index == rhs.index &amp;&amp; type == rhs.type);</span></a>
 <a name="65"><span class="lineNum">      65 </span>            :     }</a>
 <a name="66"><span class="lineNum">      66 </span>            : </a>
 <a name="67"><span class="lineNum">      67 </span>            :     bool operator!=(const LocationId&amp; rhs) const</a>
@@ -163,9 +163,9 @@
 <a name="101"><span class="lineNum">     101 </span>            : </a>
 <a name="102"><span class="lineNum">     102 </span>            : template &lt;&gt;</a>
 <a name="103"><span class="lineNum">     103 </span>            : struct std::hash&lt;mio::abm::LocationId&gt; {</a>
-<a name="104"><span class="lineNum">     104 </span><span class="lineCov">       1915 :     std::size_t operator()(const mio::abm::LocationId&amp; loc_id) const</span></a>
+<a name="104"><span class="lineNum">     104 </span><span class="lineCov">       1911 :     std::size_t operator()(const mio::abm::LocationId&amp; loc_id) const</span></a>
 <a name="105"><span class="lineNum">     105 </span>            :     {</a>
-<a name="106"><span class="lineNum">     106 </span><span class="lineCov">       1915 :         return (std::hash&lt;uint32_t&gt;()(loc_id.index)) ^ (std::hash&lt;uint32_t&gt;()(static_cast&lt;uint32_t&gt;(loc_id.type)));</span></a>
+<a name="106"><span class="lineNum">     106 </span><span class="lineCov">       1911 :         return (std::hash&lt;uint32_t&gt;()(loc_id.index)) ^ (std::hash&lt;uint32_t&gt;()(static_cast&lt;uint32_t&gt;(loc_id.type)));</span></a>
 <a name="107"><span class="lineNum">     107 </span>            :     }</a>
 <a name="108"><span class="lineNum">     108 </span>            : };</a>
 <a name="109"><span class="lineNum">     109 </span>            : </a>
