@@ -69,13 +69,13 @@ $(function() {
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#namespaces">Namespaces</a> &#124;
-<a href="#typedef-members">Typedefs</a> &#124;
-<a href="#func-members">Functions</a>  </div>
+<a href="#typedef-members">Typedefs</a>  </div>
   <div class="headertitle">
 <div class="title">history.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;vector&gt;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="metaprogramming_8h_source.html">memilio/utils/metaprogramming.h</a>&quot;</code><br />
+<code>#include &lt;vector&gt;</code><br />
 <code>#include &lt;tuple&gt;</code><br />
 <code>#include &lt;iostream&gt;</code><br />
 </div>
@@ -84,12 +84,15 @@ $(function() {
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmio_1_1DataWriterToMemory.html">mio::DataWriterToMemory&lt; Loggers &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">This class writes data retrieved from loggers to memory.  <a href="structmio_1_1DataWriterToMemory.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1History.html">mio::History&lt; Writer, Loggers &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classmio_1_1History.html" title="History class that handles writers and loggers.">History</a> class that handles writers and loggers.  <a href="classmio_1_1History.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmio_1_1LogAlways.html">mio::LogAlways</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmio_1_1LogOnce.html">mio::LogOnce</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structmio_1_1LogOnce.html" title="LogOnce and LogAlways can be used as a base class to write a logger for History.">LogOnce</a> and <a class="el" href="structmio_1_1LogAlways.html">LogAlways</a> can be used as a base class to write a logger for <a class="el" href="classmio_1_1History.html" title="History class that handles writers and loggers.">History</a>.  <a href="structmio_1_1LogOnce.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
@@ -97,20 +100,12 @@ Namespaces</h2></td></tr>
 <tr class="memitem:namespacemio"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemio.html">mio</a></td></tr>
 <tr class="memdesc:namespacemio"><td class="mdescLeft">&#160;</td><td class="mdescRight">A collection of classes to simplify handling of matrix shapes in meta programming. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:namespacemio_1_1details"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemio_1_1details.html">mio::details</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
 <tr class="memitem:a18e3295400f60de85bac8cc951d22cb3"><td class="memTemplParams" colspan="2">template&lt;class... Loggers&gt; </td></tr>
 <tr class="memitem:a18e3295400f60de85bac8cc951d22cb3"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemio.html#a18e3295400f60de85bac8cc951d22cb3">mio::HistoryWithMemoryWriter</a> = History&lt; DataWriterToMemory, Loggers... &gt;</td></tr>
 <tr class="separator:a18e3295400f60de85bac8cc951d22cb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
-Functions</h2></td></tr>
-<tr class="memitem:a0a5fab8bcd44c17993b490e9dc9711ec"><td class="memTemplParams" colspan="2">template&lt;typename T , typename U  = void, typename... Types&gt; </td></tr>
-<tr class="memitem:a0a5fab8bcd44c17993b490e9dc9711ec"><td class="memTemplItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemio_1_1details.html#a0a5fab8bcd44c17993b490e9dc9711ec">mio::details::index_templ_pack</a> ()</td></tr>
-<tr class="separator:a0a5fab8bcd44c17993b490e9dc9711ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- start footer part -->

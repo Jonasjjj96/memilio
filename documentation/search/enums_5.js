@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['virusvariant_3328',['VirusVariant',['../namespacemio_1_1abm.html#a92b83c9298d24c2568847dfd9843011f',1,'mio::abm']]]
+  ['statuscode_3378',['StatusCode',['../namespacemio.html#a2799d348d433018d5b183d75bfbdd699',1,'mio']]]
 ];

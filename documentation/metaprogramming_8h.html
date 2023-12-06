@@ -99,13 +99,16 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmio_1_1details_1_1Empty.html">mio::details::Empty</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmio_1_1has__duplicates.html">mio::has_duplicates&lt; Types &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tests whether the list Types contains any type multiple times.  <a href="structmio_1_1has__duplicates.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmio_1_1index__of__type.html">mio::index_of_type&lt; Type, Types &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finds the index of a Type in the list Types.  <a href="structmio_1_1index__of__type.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmio_1_1details_1_1is__expression__valid.html">mio::details::is_expression_valid&lt; Expr, X, T &gt;</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmio_1_1is__expression__valid.html">mio::is_expression_valid&lt; Expr, T &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">defines static constant value = true if Expr&lt;T...&gt; produces a valid type.  <a href="structmio_1_1is__expression__valid.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmio_1_1details_1_1is__expression__valid.html">mio::details::is_expression_valid&lt; Expr, X, T &gt;</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmio_1_1details_1_1is__expression__valid_3_01Expr_00_01void__t_3_01Expr_3_01T_8_8_8_01_4_01_4_00_01T_8_8_8_01_4.html">mio::details::is_expression_valid&lt; Expr, void_t&lt; Expr&lt; T... &gt; &gt;, T... &gt;</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -159,6 +162,10 @@ Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
+<tr class="memitem:a3eb9e99214aba93f9e66dcb7fb2949c6"><td class="memTemplParams" colspan="2">template&lt;class... Types&gt; </td></tr>
+<tr class="memitem:a3eb9e99214aba93f9e66dcb7fb2949c6"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemio.html#a3eb9e99214aba93f9e66dcb7fb2949c6">mio::has_duplicates_v</a> = has_duplicates&lt;Types...&gt;::value</td></tr>
+<tr class="memdesc:a3eb9e99214aba93f9e66dcb7fb2949c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether Type has any duplicates.  <a href="namespacemio.html#a3eb9e99214aba93f9e66dcb7fb2949c6">More...</a><br /></td></tr>
+<tr class="separator:a3eb9e99214aba93f9e66dcb7fb2949c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a02da408d97307651d9f526a9c3f08a40"><td class="memTemplParams" colspan="2">template&lt;class Type , class... Types&gt; </td></tr>
 <tr class="memitem:a02da408d97307651d9f526a9c3f08a40"><td class="memTemplItemLeft" align="right" valign="top">constexpr std::size_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemio.html#a02da408d97307651d9f526a9c3f08a40">mio::index_of_type_v</a> = index_of_type&lt;Type, Types...&gt;::value</td></tr>
 <tr class="memdesc:a02da408d97307651d9f526a9c3f08a40"><td class="mdescLeft">&#160;</td><td class="mdescRight">The index of Type in the list Types.  <a href="namespacemio.html#a02da408d97307651d9f526a9c3f08a40">More...</a><br /></td></tr>

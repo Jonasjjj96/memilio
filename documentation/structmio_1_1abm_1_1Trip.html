@@ -93,8 +93,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a18dacb47ea0e54fed6354a3499eb478c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmio_1_1abm_1_1Trip.html#a18dacb47ea0e54fed6354a3499eb478c">Trip</a> (uint32_t id, <a class="el" href="classmio_1_1abm_1_1TimePoint.html">TimePoint</a> time_new, <a class="el" href="structmio_1_1abm_1_1LocationId.html">LocationId</a> destination, const std::vector&lt; uint32_t &gt; &amp;input_cells={})</td></tr>
 <tr class="separator:a18dacb47ea0e54fed6354a3499eb478c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3cf14e598c72793c5676d49d15fed42d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmio_1_1abm_1_1Trip.html#a3cf14e598c72793c5676d49d15fed42d">Trip</a> (uint32_t id, <a class="el" href="classmio_1_1abm_1_1TimePoint.html">TimePoint</a> time_new, <a class="el" href="structmio_1_1abm_1_1LocationId.html">LocationId</a> destination, <a class="el" href="structmio_1_1abm_1_1LocationId.html">LocationId</a> origin, const std::vector&lt; uint32_t &gt; &amp;input_cells={})</td></tr>
-<tr class="memdesc:a3cf14e598c72793c5676d49d15fed42d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="structmio_1_1abm_1_1Trip.html" title="A trip describes a migration from one Location to another Location.">Trip</a>.  <a href="structmio_1_1abm_1_1Trip.html#a3cf14e598c72793c5676d49d15fed42d">More...</a><br /></td></tr>
 <tr class="separator:a3cf14e598c72793c5676d49d15fed42d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a70f7cf4e8e8232ca75be50050bcdfe36"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmio_1_1abm_1_1Trip.html#a70f7cf4e8e8232ca75be50050bcdfe36">Trip</a> (uint32_t id, <a class="el" href="classmio_1_1abm_1_1TimePoint.html">TimePoint</a> time_new, <a class="el" href="structmio_1_1abm_1_1LocationId.html">LocationId</a> destination, <a class="el" href="structmio_1_1abm_1_1LocationId.html">LocationId</a> origin, <a class="el" href="namespacemio_1_1abm.html#a57d768cc04c782f46491781226920ff9">TransportMode</a> mode_of_transport, <a class="el" href="namespacemio_1_1abm.html#a87b19348d6ba20fbe8bcb16485029ce5">ActivityType</a> type_of_activity, const std::vector&lt; uint32_t &gt; &amp;input_cells={})</td></tr>
+<tr class="memdesc:a70f7cf4e8e8232ca75be50050bcdfe36"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="structmio_1_1abm_1_1Trip.html" title="A trip describes a migration from one Location to another Location.">Trip</a>.  <a href="structmio_1_1abm_1_1Trip.html#a70f7cf4e8e8232ca75be50050bcdfe36">More...</a><br /></td></tr>
+<tr class="separator:a70f7cf4e8e8232ca75be50050bcdfe36"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
@@ -105,6 +107,9 @@ Static Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
+<tr class="memitem:a88b88e7ff46fb182a83b8f9f9407bec0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacemio_1_1abm.html#a87b19348d6ba20fbe8bcb16485029ce5">ActivityType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmio_1_1abm_1_1Trip.html#a88b88e7ff46fb182a83b8f9f9407bec0">activity_type</a></td></tr>
+<tr class="memdesc:a88b88e7ff46fb182a83b8f9f9407bec0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type of activity. 1:Workplace, 2:Education, 3:Shopping, 4:Leisure, 5:Private Matters, 6:Other Activity, 7:Home, 8:Unknown Activity.  <a href="structmio_1_1abm_1_1Trip.html#a88b88e7ff46fb182a83b8f9f9407bec0">More...</a><br /></td></tr>
+<tr class="separator:a88b88e7ff46fb182a83b8f9f9407bec0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af2d5e2e46d3b35582b019353db6fd41a"><td class="memItemLeft" align="right" valign="top">std::vector&lt; uint32_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmio_1_1abm_1_1Trip.html#af2d5e2e46d3b35582b019353db6fd41a">cells</a></td></tr>
 <tr class="memdesc:af2d5e2e46d3b35582b019353db6fd41a"><td class="mdescLeft">&#160;</td><td class="mdescRight">If migration_destination consists of different <a class="el" href="structmio_1_1abm_1_1Cell.html" title="The Location can be split up into several Cells.">Cell</a>s, this gives the index of the <a class="el" href="structmio_1_1abm_1_1Cell.html" title="The Location can be split up into several Cells.">Cell</a>s the <a class="el" href="classmio_1_1abm_1_1Person.html" title="Agents in the simulated World that can carry and spread the Infection.">Person</a> migrates to.  <a href="structmio_1_1abm_1_1Trip.html#af2d5e2e46d3b35582b019353db6fd41a">More...</a><br /></td></tr>
 <tr class="separator:af2d5e2e46d3b35582b019353db6fd41a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -120,12 +125,15 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:a57c712334dcc9ca9d3945196f1332c63"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmio_1_1abm_1_1TimePoint.html">TimePoint</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmio_1_1abm_1_1Trip.html#a57c712334dcc9ca9d3945196f1332c63">time</a></td></tr>
 <tr class="memdesc:a57c712334dcc9ca9d3945196f1332c63"><td class="mdescLeft">&#160;</td><td class="mdescRight">Time at which a <a class="el" href="classmio_1_1abm_1_1Person.html" title="Agents in the simulated World that can carry and spread the Infection.">Person</a> changes the <a class="el" href="classmio_1_1abm_1_1Location.html" title="All Locations in the simulated World where Persons gather.">Location</a>.  <a href="structmio_1_1abm_1_1Trip.html#a57c712334dcc9ca9d3945196f1332c63">More...</a><br /></td></tr>
 <tr class="separator:a57c712334dcc9ca9d3945196f1332c63"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb610b058eccdc9796fd530344ba4ed2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacemio_1_1abm.html#a57d768cc04c782f46491781226920ff9">TransportMode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmio_1_1abm_1_1Trip.html#adb610b058eccdc9796fd530344ba4ed2">trip_mode</a></td></tr>
+<tr class="memdesc:adb610b058eccdc9796fd530344ba4ed2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mode of transportation. 1:Bike, 2:Car (Driver), 3:Car (Co-Driver)), 4:Public Transport, 5:Walking, 6:Other/Unknown.  <a href="structmio_1_1abm_1_1Trip.html#adb610b058eccdc9796fd530344ba4ed2">More...</a><br /></td></tr>
+<tr class="separator:adb610b058eccdc9796fd530344ba4ed2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A trip describes a migration from one <a class="el" href="classmio_1_1abm_1_1Location.html" title="All Locations in the simulated World where Persons gather.">Location</a> to another <a class="el" href="classmio_1_1abm_1_1Location.html" title="All Locations in the simulated World where Persons gather.">Location</a>. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a3cf14e598c72793c5676d49d15fed42d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3cf14e598c72793c5676d49d15fed42d">&#9670;&nbsp;</a></span>Trip() <span class="overload">[1/2]</span></h2>
+<a id="a70f7cf4e8e8232ca75be50050bcdfe36"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a70f7cf4e8e8232ca75be50050bcdfe36">&#9670;&nbsp;</a></span>Trip() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -157,6 +165,18 @@ Public Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype"><a class="el" href="namespacemio_1_1abm.html#a57d768cc04c782f46491781226920ff9">TransportMode</a>&#160;</td>
+          <td class="paramname"><em>mode_of_transport</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacemio_1_1abm.html#a87b19348d6ba20fbe8bcb16485029ce5">ActivityType</a>&#160;</td>
+          <td class="paramname"><em>type_of_activity</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
           <td class="paramtype">const std::vector&lt; uint32_t &gt; &amp;&#160;</td>
           <td class="paramname"><em>input_cells</em> = <code>{}</code>&#160;</td>
         </tr>
@@ -183,7 +203,7 @@ Public Attributes</h2></td></tr>
 </div>
 </div>
 <a id="a18dacb47ea0e54fed6354a3499eb478c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a18dacb47ea0e54fed6354a3499eb478c">&#9670;&nbsp;</a></span>Trip() <span class="overload">[2/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a18dacb47ea0e54fed6354a3499eb478c">&#9670;&nbsp;</a></span>Trip() <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -205,6 +225,52 @@ Public Attributes</h2></td></tr>
           <td></td>
           <td class="paramtype"><a class="el" href="structmio_1_1abm_1_1LocationId.html">LocationId</a>&#160;</td>
           <td class="paramname"><em>destination</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; uint32_t &gt; &amp;&#160;</td>
+          <td class="paramname"><em>input_cells</em> = <code>{}</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3cf14e598c72793c5676d49d15fed42d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3cf14e598c72793c5676d49d15fed42d">&#9670;&nbsp;</a></span>Trip() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">mio::abm::Trip::Trip </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classmio_1_1abm_1_1TimePoint.html">TimePoint</a>&#160;</td>
+          <td class="paramname"><em>time_new</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structmio_1_1abm_1_1LocationId.html">LocationId</a>&#160;</td>
+          <td class="paramname"><em>destination</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structmio_1_1abm_1_1LocationId.html">LocationId</a>&#160;</td>
+          <td class="paramname"><em>origin</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -298,6 +364,22 @@ template&lt;class IOContext &gt; </div>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a id="a88b88e7ff46fb182a83b8f9f9407bec0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a88b88e7ff46fb182a83b8f9f9407bec0">&#9670;&nbsp;</a></span>activity_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacemio_1_1abm.html#a87b19348d6ba20fbe8bcb16485029ce5">ActivityType</a> mio::abm::Trip::activity_type</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Type of activity. 1:Workplace, 2:Education, 3:Shopping, 4:Leisure, 5:Private Matters, 6:Other Activity, 7:Home, 8:Unknown Activity. </p>
+
+</div>
+</div>
 <a id="af2d5e2e46d3b35582b019353db6fd41a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af2d5e2e46d3b35582b019353db6fd41a">&#9670;&nbsp;</a></span>cells</h2>
 
@@ -375,6 +457,22 @@ template&lt;class IOContext &gt; </div>
 </div><div class="memdoc">
 
 <p>Time at which a <a class="el" href="classmio_1_1abm_1_1Person.html" title="Agents in the simulated World that can carry and spread the Infection.">Person</a> changes the <a class="el" href="classmio_1_1abm_1_1Location.html" title="All Locations in the simulated World where Persons gather.">Location</a>. </p>
+
+</div>
+</div>
+<a id="adb610b058eccdc9796fd530344ba4ed2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adb610b058eccdc9796fd530344ba4ed2">&#9670;&nbsp;</a></span>trip_mode</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacemio_1_1abm.html#a57d768cc04c782f46491781226920ff9">TransportMode</a> mio::abm::Trip::trip_mode</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Mode of transportation. 1:Bike, 2:Car (Driver), 3:Car (Co-Driver)), 4:Public Transport, 5:Walking, 6:Other/Unknown. </p>
 
 </div>
 </div>

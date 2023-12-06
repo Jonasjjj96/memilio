@@ -28,7 +28,7 @@
 
         
         <h2>Score</h2>
-        7.43 / 10
+        7.42 / 10
             
         
 
@@ -922,7 +922,7 @@ from memilio.epidata import defaultDict as dd</pre></td>
                 <td>R0801</td>
                 <td></td>
                 <td><pre>Similar lines in 2 files
-==memilio.epidata.getPopulationData:[32:56]
+==memilio.epidata.getPopulationData:[34:58]
 ==memilio.epidata.transformMobilityData:[21:40]
 import numpy as np
 import pandas as pd
@@ -935,19 +935,14 @@ from memilio.epidata import getDataIntoPandasDataFrame as gd
 pd.options.mode.copy_on_write = True
 
 
-def read_population_data(username, password, read_data, directory):
-    &#39;&#39;&#39;! Reads Population data either from regionalstatistik.de or from directory
+def getMobilityFromFile(directory, mobility_file):
+    &#34;&#34;&#34;! Gets a mobility matrix that is written in a plain txt file
+    under the given directory into a pandas data frame.
 
-    A request is made using the twill package. Username and Password are required to
-    sign in on regionalstatistik.de. After the sign twill navigates to the file to download.
-
-    @param username Username to sign in at regionalstatistik.de.
-    @param password Password to sign in at regionalstatistik.de.
-    @param read_data False or True. Defines if data is read from file or downloaded.
-    @param directory Path to folder where data is read from.
-    @return DataFrame
-    &#39;&#39;&#39;
-</pre></td>
+    @param directory Path to folder where data is read.
+    @param mobility_file Mobility matrix file which has to be updated.
+    @return Mobility matrix data frame.
+    &#34;&#34;&#34;</pre></td>
             </tr>
             
             <tr>
@@ -960,12 +955,12 @@ def read_population_data(username, password, read_data, directory):
                 <td><pre>Similar lines in 2 files
 ==memilio.epidata.getCaseData:[231:237]
 ==memilio.epidata.getDIVIData:[113:119]
+    try:
+        df[dd.EngEng[&#39;date&#39;]] = pd.to_datetime(
+            df[dd.EngEng[&#39;date&#39;]], format=&#34;ISO8601&#34;)
+    except ValueError:
         try:
-            df[dd.EngEng[&#39;date&#39;]] = pd.to_datetime(
-                df[dd.EngEng[&#39;date&#39;]], format=&#34;ISO8601&#34;)
-        except ValueError:
-            try:
-                df[dd.EngEng[&#39;date&#39;]] = pd.to_datetime(</pre></td>
+            df[dd.EngEng[&#39;date&#39;]] = pd.to_datetime(</pre></td>
             </tr>
             
             <tr>
@@ -1093,8 +1088,11 @@ from memilio.epidata import getDataIntoPandasDataFrame as gd</pre></td>
         self.setUpPyfakefs()
         progress_indicator.ProgressIndicator.disable_indicators(True)
 
-    @patch(&#39;builtins.print&#39;)
-    def test_verify_sorted(self, mock_print):</pre></td>
+    @patch(&#39;memilio.epidata.getVaccinationData.download_vaccination_data&#39;,
+           return_value=df_vacc_data_altern)
+    @patch(&#39;memilio.epidata.getPopulationData.get_population_data&#39;, return_value=df_pop)
+    @patch(&#39;builtins.input&#39;, return_value=&#39;y&#39;)
+    def test_get_vaccination_data_alternative_ages(self, mockin, mockp, mockv):</pre></td>
             </tr>
             
             <tr>
@@ -1170,7 +1168,9 @@ import pandas as pd
 from memilio.epidata import defaultDict as dd
 from memilio.epidata import geoModificationGermany as geoger
 from memilio.epidata import getDataIntoPandasDataFrame as gd
-from memilio.epidata import modifyDataframeSeries as mdfs</pre></td>
+from memilio.epidata import modifyDataframeSeries as mdfs
+
+# activate CoW for more predictable behaviour of pandas DataFrames</pre></td>
             </tr>
             
             <tr>
@@ -4792,7 +4792,7 @@ from memilio.epidata import getDataIntoPandasDataFrame as gd</pre></td>
             </tr>
             
             <tr>
-                <td>28</td>
+                <td>30</td>
                 <td>0</td>
                 <td>convention</td>
                 <td><code>wrong-import-order</code></td>
@@ -4802,7 +4802,7 @@ from memilio.epidata import getDataIntoPandasDataFrame as gd</pre></td>
             </tr>
             
             <tr>
-                <td>29</td>
+                <td>31</td>
                 <td>0</td>
                 <td>error</td>
                 <td><code>import-error</code></td>
@@ -4812,7 +4812,7 @@ from memilio.epidata import getDataIntoPandasDataFrame as gd</pre></td>
             </tr>
             
             <tr>
-                <td>30</td>
+                <td>32</td>
                 <td>0</td>
                 <td>convention</td>
                 <td><code>wrong-import-order</code></td>
@@ -4822,7 +4822,7 @@ from memilio.epidata import getDataIntoPandasDataFrame as gd</pre></td>
             </tr>
             
             <tr>
-                <td>31</td>
+                <td>33</td>
                 <td>0</td>
                 <td>convention</td>
                 <td><code>wrong-import-order</code></td>
@@ -4832,7 +4832,7 @@ from memilio.epidata import getDataIntoPandasDataFrame as gd</pre></td>
             </tr>
             
             <tr>
-                <td>33</td>
+                <td>35</td>
                 <td>0</td>
                 <td>error</td>
                 <td><code>import-error</code></td>
@@ -4842,7 +4842,7 @@ from memilio.epidata import getDataIntoPandasDataFrame as gd</pre></td>
             </tr>
             
             <tr>
-                <td>34</td>
+                <td>36</td>
                 <td>0</td>
                 <td>error</td>
                 <td><code>import-error</code></td>
@@ -4852,7 +4852,7 @@ from memilio.epidata import getDataIntoPandasDataFrame as gd</pre></td>
             </tr>
             
             <tr>
-                <td>50</td>
+                <td>52</td>
                 <td>64</td>
                 <td>convention</td>
                 <td><code>trailing-whitespace</code></td>
@@ -4862,7 +4862,7 @@ from memilio.epidata import getDataIntoPandasDataFrame as gd</pre></td>
             </tr>
             
             <tr>
-                <td>74</td>
+                <td>76</td>
                 <td>30</td>
                 <td>convention</td>
                 <td><code>use-maxsplit-arg</code></td>
@@ -4872,7 +4872,27 @@ from memilio.epidata import getDataIntoPandasDataFrame as gd</pre></td>
             </tr>
             
             <tr>
-                <td>173</td>
+                <td>109</td>
+                <td>69</td>
+                <td>convention</td>
+                <td><code>trailing-whitespace</code></td>
+                <td>C0303</td>
+                <td></td>
+                <td><pre>Trailing whitespace</pre></td>
+            </tr>
+            
+            <tr>
+                <td>129</td>
+                <td>17</td>
+                <td>warning</td>
+                <td><code>unspecified-encoding</code></td>
+                <td>W1514</td>
+                <td>manage_credentials</td>
+                <td><pre>Using open without explicitly specifying an encoding</pre></td>
+            </tr>
+            
+            <tr>
+                <td>217</td>
                 <td>59</td>
                 <td>convention</td>
                 <td><code>invalid-name</code></td>
@@ -4882,7 +4902,7 @@ from memilio.epidata import getDataIntoPandasDataFrame as gd</pre></td>
             </tr>
             
             <tr>
-                <td>176</td>
+                <td>220</td>
                 <td>76</td>
                 <td>convention</td>
                 <td><code>trailing-whitespace</code></td>
@@ -4892,7 +4912,7 @@ from memilio.epidata import getDataIntoPandasDataFrame as gd</pre></td>
             </tr>
             
             <tr>
-                <td>178</td>
+                <td>222</td>
                 <td>36</td>
                 <td>convention</td>
                 <td><code>trailing-whitespace</code></td>
@@ -4902,7 +4922,7 @@ from memilio.epidata import getDataIntoPandasDataFrame as gd</pre></td>
             </tr>
             
             <tr>
-                <td>263</td>
+                <td>307</td>
                 <td>0</td>
                 <td>refactor</td>
                 <td><code>too-many-arguments</code></td>
@@ -4912,7 +4932,7 @@ from memilio.epidata import getDataIntoPandasDataFrame as gd</pre></td>
             </tr>
             
             <tr>
-                <td>263</td>
+                <td>307</td>
                 <td>0</td>
                 <td>refactor</td>
                 <td><code>too-many-locals</code></td>
@@ -4922,7 +4942,7 @@ from memilio.epidata import getDataIntoPandasDataFrame as gd</pre></td>
             </tr>
             
             <tr>
-                <td>266</td>
+                <td>310</td>
                 <td>24</td>
                 <td>warning</td>
                 <td><code>unused-argument</code></td>
@@ -4932,7 +4952,7 @@ from memilio.epidata import getDataIntoPandasDataFrame as gd</pre></td>
             </tr>
             
             <tr>
-                <td>274</td>
+                <td>318</td>
                 <td>56</td>
                 <td>convention</td>
                 <td><code>trailing-whitespace</code></td>
@@ -4942,7 +4962,7 @@ from memilio.epidata import getDataIntoPandasDataFrame as gd</pre></td>
             </tr>
             
             <tr>
-                <td>275</td>
+                <td>319</td>
                 <td>28</td>
                 <td>convention</td>
                 <td><code>trailing-whitespace</code></td>
@@ -4952,7 +4972,7 @@ from memilio.epidata import getDataIntoPandasDataFrame as gd</pre></td>
             </tr>
             
             <tr>
-                <td>276</td>
+                <td>320</td>
                 <td>48</td>
                 <td>convention</td>
                 <td><code>trailing-whitespace</code></td>
@@ -4962,7 +4982,7 @@ from memilio.epidata import getDataIntoPandasDataFrame as gd</pre></td>
             </tr>
             
             <tr>
-                <td>282</td>
+                <td>326</td>
                 <td>76</td>
                 <td>convention</td>
                 <td><code>trailing-whitespace</code></td>
@@ -4972,7 +4992,7 @@ from memilio.epidata import getDataIntoPandasDataFrame as gd</pre></td>
             </tr>
             
             <tr>
-                <td>284</td>
+                <td>328</td>
                 <td>18</td>
                 <td>convention</td>
                 <td><code>trailing-whitespace</code></td>
@@ -4982,7 +5002,7 @@ from memilio.epidata import getDataIntoPandasDataFrame as gd</pre></td>
             </tr>
             
             <tr>
-                <td>286</td>
+                <td>330</td>
                 <td>80</td>
                 <td>convention</td>
                 <td><code>trailing-whitespace</code></td>
@@ -4992,7 +5012,7 @@ from memilio.epidata import getDataIntoPandasDataFrame as gd</pre></td>
             </tr>
             
             <tr>
-                <td>287</td>
+                <td>331</td>
                 <td>49</td>
                 <td>convention</td>
                 <td><code>trailing-whitespace</code></td>
@@ -5002,7 +5022,7 @@ from memilio.epidata import getDataIntoPandasDataFrame as gd</pre></td>
             </tr>
             
             <tr>
-                <td>288</td>
+                <td>332</td>
                 <td>77</td>
                 <td>convention</td>
                 <td><code>trailing-whitespace</code></td>
@@ -5012,7 +5032,7 @@ from memilio.epidata import getDataIntoPandasDataFrame as gd</pre></td>
             </tr>
             
             <tr>
-                <td>302</td>
+                <td>346</td>
                 <td>64</td>
                 <td>convention</td>
                 <td><code>trailing-whitespace</code></td>
@@ -5022,7 +5042,7 @@ from memilio.epidata import getDataIntoPandasDataFrame as gd</pre></td>
             </tr>
             
             <tr>
-                <td>324</td>
+                <td>371</td>
                 <td>38</td>
                 <td>convention</td>
                 <td><code>singleton-comparison</code></td>
@@ -5032,7 +5052,7 @@ from memilio.epidata import getDataIntoPandasDataFrame as gd</pre></td>
             </tr>
             
             <tr>
-                <td>327</td>
+                <td>374</td>
                 <td>4</td>
                 <td>convention</td>
                 <td><code>invalid-name</code></td>
@@ -5042,7 +5062,7 @@ from memilio.epidata import getDataIntoPandasDataFrame as gd</pre></td>
             </tr>
             
             <tr>
-                <td>336</td>
+                <td>383</td>
                 <td>4</td>
                 <td>convention</td>
                 <td><code>consider-using-enumerate</code></td>
@@ -11652,7 +11672,7 @@ from memilio.epidata import getDataIntoPandasDataFrame as gd</pre></td>
             </tr>
             
             <tr>
-                <td>23</td>
+                <td>24</td>
                 <td>0</td>
                 <td>error</td>
                 <td><code>import-error</code></td>
@@ -11662,7 +11682,7 @@ from memilio.epidata import getDataIntoPandasDataFrame as gd</pre></td>
             </tr>
             
             <tr>
-                <td>25</td>
+                <td>26</td>
                 <td>0</td>
                 <td>convention</td>
                 <td><code>wrong-import-order</code></td>
@@ -11672,7 +11692,7 @@ from memilio.epidata import getDataIntoPandasDataFrame as gd</pre></td>
             </tr>
             
             <tr>
-                <td>28</td>
+                <td>29</td>
                 <td>0</td>
                 <td>warning</td>
                 <td><code>unused-import</code></td>
@@ -11682,7 +11702,7 @@ from memilio.epidata import getDataIntoPandasDataFrame as gd</pre></td>
             </tr>
             
             <tr>
-                <td>33</td>
+                <td>34</td>
                 <td>0</td>
                 <td>convention</td>
                 <td><code>missing-class-docstring</code></td>
@@ -11692,23 +11712,13 @@ from memilio.epidata import getDataIntoPandasDataFrame as gd</pre></td>
             </tr>
             
             <tr>
-                <td>33</td>
+                <td>34</td>
                 <td>0</td>
                 <td>convention</td>
                 <td><code>invalid-name</code></td>
                 <td>C0103</td>
                 <td>Test_getPopulationData</td>
                 <td><pre>Class name &#34;Test_getPopulationData&#34; doesn&#39;t conform to PascalCase naming style</pre></td>
-            </tr>
-            
-            <tr>
-                <td>40</td>
-                <td>9</td>
-                <td>warning</td>
-                <td><code>unspecified-encoding</code></td>
-                <td>W1514</td>
-                <td>Test_getPopulationData</td>
-                <td><pre>Using open without explicitly specifying an encoding</pre></td>
             </tr>
             
             <tr>
@@ -11722,7 +11732,17 @@ from memilio.epidata import getDataIntoPandasDataFrame as gd</pre></td>
             </tr>
             
             <tr>
-                <td>52</td>
+                <td>50</td>
+                <td>9</td>
+                <td>warning</td>
+                <td><code>unspecified-encoding</code></td>
+                <td>W1514</td>
+                <td>Test_getPopulationData</td>
+                <td><pre>Using open without explicitly specifying an encoding</pre></td>
+            </tr>
+            
+            <tr>
+                <td>57</td>
                 <td>4</td>
                 <td>convention</td>
                 <td><code>missing-function-docstring</code></td>
@@ -11732,7 +11752,7 @@ from memilio.epidata import getDataIntoPandasDataFrame as gd</pre></td>
             </tr>
             
             <tr>
-                <td>64</td>
+                <td>69</td>
                 <td>0</td>
                 <td>convention</td>
                 <td><code>line-too-long</code></td>
@@ -11742,7 +11762,7 @@ from memilio.epidata import getDataIntoPandasDataFrame as gd</pre></td>
             </tr>
             
             <tr>
-                <td>68</td>
+                <td>73</td>
                 <td>4</td>
                 <td>convention</td>
                 <td><code>missing-function-docstring</code></td>
@@ -11752,7 +11772,7 @@ from memilio.epidata import getDataIntoPandasDataFrame as gd</pre></td>
             </tr>
             
             <tr>
-                <td>73</td>
+                <td>78</td>
                 <td>53</td>
                 <td>warning</td>
                 <td><code>unused-variable</code></td>
@@ -11762,7 +11782,7 @@ from memilio.epidata import getDataIntoPandasDataFrame as gd</pre></td>
             </tr>
             
             <tr>
-                <td>74</td>
+                <td>79</td>
                 <td>12</td>
                 <td>convention</td>
                 <td><code>invalid-name</code></td>
@@ -11772,7 +11792,7 @@ from memilio.epidata import getDataIntoPandasDataFrame as gd</pre></td>
             </tr>
             
             <tr>
-                <td>74</td>
+                <td>79</td>
                 <td>12</td>
                 <td>warning</td>
                 <td><code>unused-variable</code></td>
@@ -11782,7 +11802,7 @@ from memilio.epidata import getDataIntoPandasDataFrame as gd</pre></td>
             </tr>
             
             <tr>
-                <td>81</td>
+                <td>86</td>
                 <td>4</td>
                 <td>convention</td>
                 <td><code>missing-function-docstring</code></td>
@@ -11792,7 +11812,7 @@ from memilio.epidata import getDataIntoPandasDataFrame as gd</pre></td>
             </tr>
             
             <tr>
-                <td>81</td>
+                <td>86</td>
                 <td>44</td>
                 <td>warning</td>
                 <td><code>unused-argument</code></td>
@@ -11802,7 +11822,7 @@ from memilio.epidata import getDataIntoPandasDataFrame as gd</pre></td>
             </tr>
             
             <tr>
-                <td>81</td>
+                <td>86</td>
                 <td>55</td>
                 <td>warning</td>
                 <td><code>unused-argument</code></td>
@@ -11812,13 +11832,153 @@ from memilio.epidata import getDataIntoPandasDataFrame as gd</pre></td>
             </tr>
             
             <tr>
-                <td>81</td>
+                <td>86</td>
                 <td>68</td>
                 <td>warning</td>
                 <td><code>unused-argument</code></td>
                 <td>W0613</td>
                 <td>Test_getPopulationData.test_get_population_data_full</td>
                 <td><pre>Unused argument &#39;mock_download&#39;</pre></td>
+            </tr>
+            
+            <tr>
+                <td>97</td>
+                <td>4</td>
+                <td>convention</td>
+                <td><code>missing-function-docstring</code></td>
+                <td>C0116</td>
+                <td>Test_getPopulationData.test_config_write</td>
+                <td><pre>Missing function or method docstring</pre></td>
+            </tr>
+            
+            <tr>
+                <td>97</td>
+                <td>4</td>
+                <td>refactor</td>
+                <td><code>too-many-arguments</code></td>
+                <td>R0913</td>
+                <td>Test_getPopulationData.test_config_write</td>
+                <td><pre>Too many arguments (8/5)</pre></td>
+            </tr>
+            
+            <tr>
+                <td>97</td>
+                <td>32</td>
+                <td>warning</td>
+                <td><code>unused-argument</code></td>
+                <td>W0613</td>
+                <td>Test_getPopulationData.test_config_write</td>
+                <td><pre>Unused argument &#39;mock_test&#39;</pre></td>
+            </tr>
+            
+            <tr>
+                <td>97</td>
+                <td>43</td>
+                <td>warning</td>
+                <td><code>unused-argument</code></td>
+                <td>W0613</td>
+                <td>Test_getPopulationData.test_config_write</td>
+                <td><pre>Unused argument &#39;mock_export&#39;</pre></td>
+            </tr>
+            
+            <tr>
+                <td>97</td>
+                <td>56</td>
+                <td>warning</td>
+                <td><code>unused-argument</code></td>
+                <td>W0613</td>
+                <td>Test_getPopulationData.test_config_write</td>
+                <td><pre>Unused argument &#39;mock_raw&#39;</pre></td>
+            </tr>
+            
+            <tr>
+                <td>97</td>
+                <td>66</td>
+                <td>warning</td>
+                <td><code>unused-argument</code></td>
+                <td>W0613</td>
+                <td>Test_getPopulationData.test_config_write</td>
+                <td><pre>Unused argument &#39;mock_path&#39;</pre></td>
+            </tr>
+            
+            <tr>
+                <td>97</td>
+                <td>77</td>
+                <td>warning</td>
+                <td><code>unused-argument</code></td>
+                <td>W0613</td>
+                <td>Test_getPopulationData.test_config_write</td>
+                <td><pre>Unused argument &#39;mock_choice&#39;</pre></td>
+            </tr>
+            
+            <tr>
+                <td>97</td>
+                <td>90</td>
+                <td>warning</td>
+                <td><code>unused-argument</code></td>
+                <td>W0613</td>
+                <td>Test_getPopulationData.test_config_write</td>
+                <td><pre>Unused argument &#39;mock_pw&#39;</pre></td>
+            </tr>
+            
+            <tr>
+                <td>97</td>
+                <td>99</td>
+                <td>warning</td>
+                <td><code>unused-argument</code></td>
+                <td>W0613</td>
+                <td>Test_getPopulationData.test_config_write</td>
+                <td><pre>Unused argument &#39;mock_un&#39;</pre></td>
+            </tr>
+            
+            <tr>
+                <td>115</td>
+                <td>4</td>
+                <td>convention</td>
+                <td><code>missing-function-docstring</code></td>
+                <td>C0116</td>
+                <td>Test_getPopulationData.test_config_read</td>
+                <td><pre>Missing function or method docstring</pre></td>
+            </tr>
+            
+            <tr>
+                <td>115</td>
+                <td>31</td>
+                <td>warning</td>
+                <td><code>unused-argument</code></td>
+                <td>W0613</td>
+                <td>Test_getPopulationData.test_config_read</td>
+                <td><pre>Unused argument &#39;mock_test&#39;</pre></td>
+            </tr>
+            
+            <tr>
+                <td>115</td>
+                <td>42</td>
+                <td>warning</td>
+                <td><code>unused-argument</code></td>
+                <td>W0613</td>
+                <td>Test_getPopulationData.test_config_read</td>
+                <td><pre>Unused argument &#39;mock_export&#39;</pre></td>
+            </tr>
+            
+            <tr>
+                <td>115</td>
+                <td>66</td>
+                <td>warning</td>
+                <td><code>unused-argument</code></td>
+                <td>W0613</td>
+                <td>Test_getPopulationData.test_config_read</td>
+                <td><pre>Unused argument &#39;mock_path&#39;</pre></td>
+            </tr>
+            
+            <tr>
+                <td>122</td>
+                <td>13</td>
+                <td>warning</td>
+                <td><code>unspecified-encoding</code></td>
+                <td>W1514</td>
+                <td>Test_getPopulationData.test_config_read</td>
+                <td><pre>Using open without explicitly specifying an encoding</pre></td>
             </tr>
             
         </table>
@@ -12906,17 +13066,17 @@ from memilio.epidata import getDataIntoPandasDataFrame as gd</pre></td>
             
             <tr>
                 <td>refactor</td>
-                <td>250</td>
+                <td>251</td>
             </tr>
             
             <tr>
                 <td>warning</td>
-                <td>173</td>
+                <td>185</td>
             </tr>
             
             <tr>
                 <td>convention</td>
-                <td>700</td>
+                <td>703</td>
             </tr>
             
             <tr>
@@ -12966,12 +13126,12 @@ from memilio.epidata import getDataIntoPandasDataFrame as gd</pre></td>
             
             <tr>
                 <td>unspecified-encoding</td>
-                <td>37</td>
+                <td>39</td>
             </tr>
             
             <tr>
                 <td>missing-function-docstring</td>
-                <td>140</td>
+                <td>142</td>
             </tr>
             
             <tr>
@@ -12981,7 +13141,7 @@ from memilio.epidata import getDataIntoPandasDataFrame as gd</pre></td>
             
             <tr>
                 <td>unused-argument</td>
-                <td>48</td>
+                <td>58</td>
             </tr>
             
             <tr>
@@ -13051,7 +13211,7 @@ from memilio.epidata import getDataIntoPandasDataFrame as gd</pre></td>
             
             <tr>
                 <td>too-many-arguments</td>
-                <td>26</td>
+                <td>27</td>
             </tr>
             
             <tr>
@@ -13106,7 +13266,7 @@ from memilio.epidata import getDataIntoPandasDataFrame as gd</pre></td>
             
             <tr>
                 <td>trailing-whitespace</td>
-                <td>57</td>
+                <td>58</td>
             </tr>
             
             <tr>
@@ -13281,7 +13441,7 @@ from memilio.epidata import getDataIntoPandasDataFrame as gd</pre></td>
             
             <tr>
                 <td>memilio.epidata_test.test_epidata_get_population_data</td>
-                <td>18</td>
+                <td>32</td>
             </tr>
             
             <tr>
@@ -13431,7 +13591,7 @@ from memilio.epidata import getDataIntoPandasDataFrame as gd</pre></td>
             
             <tr>
                 <td>memilio.epidata.getPopulationData</td>
-                <td>27</td>
+                <td>29</td>
             </tr>
             
             <tr>
@@ -13486,7 +13646,7 @@ from memilio.epidata import getDataIntoPandasDataFrame as gd</pre></td>
             
             <tr>
                 <td>memilio/epidata_test/test_epidata_get_population_data.py</td>
-                <td>18</td>
+                <td>32</td>
             </tr>
             
             <tr>
@@ -13636,7 +13796,7 @@ from memilio.epidata import getDataIntoPandasDataFrame as gd</pre></td>
             
             <tr>
                 <td>memilio/epidata/getPopulationData.py</td>
-                <td>27</td>
+                <td>29</td>
             </tr>
             
             <tr>

@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2023-12-05 12:49:30</td>
+            <td class="headerValue">2023-12-06 09:42:13</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">23</td>
@@ -127,11 +127,11 @@
 <a name="65"><span class="lineNum">      65 </span>            :      */</a>
 <a name="66"><span class="lineNum">      66 </span>            :     template &lt;class DTransform                                                          = Transform,</a>
 <a name="67"><span class="lineNum">      67 </span>            :               std::enable_if_t&lt;std::is_default_constructible&lt;DTransform&gt;::value, void*&gt; = nullptr&gt;</a>
-<a name="68"><span class="lineNum">      68 </span><span class="lineCov">       1678 :     explicit TransformIterator(UnderlyingIter underlying_iter, Transform transform = Transform{})</span></a>
+<a name="68"><span class="lineNum">      68 </span><span class="lineCov">        660 :     explicit TransformIterator(UnderlyingIter underlying_iter, Transform transform = Transform{})</span></a>
 <a name="69"><span class="lineNum">      69 </span>            :         : m_underlying_iter(underlying_iter)</a>
-<a name="70"><span class="lineNum">      70 </span><span class="lineCov">       1678 :         , m_transform(std::move(transform))</span></a>
+<a name="70"><span class="lineNum">      70 </span><span class="lineCov">        660 :         , m_transform(std::move(transform))</span></a>
 <a name="71"><span class="lineNum">      71 </span>            :     {</a>
-<a name="72"><span class="lineNum">      72 </span><span class="lineCov">       1678 :     }</span></a>
+<a name="72"><span class="lineNum">      72 </span><span class="lineCov">        660 :     }</span></a>
 <a name="73"><span class="lineNum">      73 </span>            :     template &lt;class DTransform                                                           = Transform,</a>
 <a name="74"><span class="lineNum">      74 </span>            :               std::enable_if_t&lt;!std::is_default_constructible&lt;DTransform&gt;::value, void*&gt; = nullptr&gt;</a>
 <a name="75"><span class="lineNum">      75 </span><span class="lineCov">          5 :     TransformIterator(UnderlyingIter underlying_iter, Transform transform)</span></a>
@@ -146,9 +146,9 @@
 <a name="84"><span class="lineNum">      84 </span>            :      * Return value is a temporary value if the transform returns a temporary or rvalue reference.</a>
 <a name="85"><span class="lineNum">      85 </span>            :      * Otherwise the return value is an lvalue reference.</a>
 <a name="86"><span class="lineNum">      86 </span>            :      */</a>
-<a name="87"><span class="lineNum">      87 </span><span class="lineCov">        591 :     reference operator*() const</span></a>
+<a name="87"><span class="lineNum">      87 </span><span class="lineCov">        850 :     reference operator*() const</span></a>
 <a name="88"><span class="lineNum">      88 </span>            :     {</a>
-<a name="89"><span class="lineNum">      89 </span><span class="lineCov">        591 :         return m_transform(*m_underlying_iter);</span></a>
+<a name="89"><span class="lineNum">      89 </span><span class="lineCov">        850 :         return m_transform(*m_underlying_iter);</span></a>
 <a name="90"><span class="lineNum">      90 </span>            :     }</a>
 <a name="91"><span class="lineNum">      91 </span>            :     /**</a>
 <a name="92"><span class="lineNum">      92 </span>            :      * Dereference the underlying iterator with offset and transform the value.</a>
@@ -179,19 +179,19 @@
 <a name="117"><span class="lineNum">     117 </span>            :     /**</a>
 <a name="118"><span class="lineNum">     118 </span>            :      * increment/decrement the underlying operator.</a>
 <a name="119"><span class="lineNum">     119 </span>            :      */</a>
-<a name="120"><span class="lineNum">     120 </span><span class="lineCov">        163 :     TransformIterator&amp; operator++()</span></a>
+<a name="120"><span class="lineNum">     120 </span><span class="lineCov">        688 :     TransformIterator&amp; operator++()</span></a>
 <a name="121"><span class="lineNum">     121 </span>            :     {</a>
-<a name="122"><span class="lineNum">     122 </span><span class="lineCov">        163 :         ++m_underlying_iter;</span></a>
-<a name="123"><span class="lineNum">     123 </span><span class="lineCov">        163 :         return *this;</span></a>
+<a name="122"><span class="lineNum">     122 </span><span class="lineCov">        688 :         ++m_underlying_iter;</span></a>
+<a name="123"><span class="lineNum">     123 </span><span class="lineCov">        688 :         return *this;</span></a>
 <a name="124"><span class="lineNum">     124 </span>            :     }</a>
 <a name="125"><span class="lineNum">     125 </span>            :     TransformIterator operator++(int)</a>
 <a name="126"><span class="lineNum">     126 </span>            :     {</a>
 <a name="127"><span class="lineNum">     127 </span>            :         return m_underlying_iter++;</a>
 <a name="128"><span class="lineNum">     128 </span>            :     }</a>
-<a name="129"><span class="lineNum">     129 </span><span class="lineCov">        427 :     TransformIterator&amp; operator+=(difference_type d)</span></a>
+<a name="129"><span class="lineNum">     129 </span><span class="lineCov">        161 :     TransformIterator&amp; operator+=(difference_type d)</span></a>
 <a name="130"><span class="lineNum">     130 </span>            :     {</a>
-<a name="131"><span class="lineNum">     131 </span><span class="lineCov">        427 :         m_underlying_iter += d;</span></a>
-<a name="132"><span class="lineNum">     132 </span><span class="lineCov">        427 :         return *this;</span></a>
+<a name="131"><span class="lineNum">     131 </span><span class="lineCov">        161 :         m_underlying_iter += d;</span></a>
+<a name="132"><span class="lineNum">     132 </span><span class="lineCov">        161 :         return *this;</span></a>
 <a name="133"><span class="lineNum">     133 </span>            :     }</a>
 <a name="134"><span class="lineNum">     134 </span><span class="lineCov">          1 :     TransformIterator operator+(difference_type d) const</span></a>
 <a name="135"><span class="lineNum">     135 </span>            :     {</a>
@@ -219,9 +219,9 @@
 <a name="157"><span class="lineNum">     157 </span>            :     {</a>
 <a name="158"><span class="lineNum">     158 </span>            :         return {m_underlying_iter - d, m_transform};</a>
 <a name="159"><span class="lineNum">     159 </span>            :     }</a>
-<a name="160"><span class="lineNum">     160 </span><span class="lineCov">        374 :     difference_type operator-(TransformIterator d) const</span></a>
+<a name="160"><span class="lineNum">     160 </span><span class="lineCov">         11 :     difference_type operator-(TransformIterator d) const</span></a>
 <a name="161"><span class="lineNum">     161 </span>            :     {</a>
-<a name="162"><span class="lineNum">     162 </span><span class="lineCov">        374 :         return m_underlying_iter - d.m_underlying_iter;</span></a>
+<a name="162"><span class="lineNum">     162 </span><span class="lineCov">         11 :         return m_underlying_iter - d.m_underlying_iter;</span></a>
 <a name="163"><span class="lineNum">     163 </span>            :     }</a>
 <a name="164"><span class="lineNum">     164 </span>            :     /*@}*/</a>
 <a name="165"><span class="lineNum">     165 </span>            : </a>
@@ -245,9 +245,9 @@
 <a name="183"><span class="lineNum">     183 </span>            :     {</a>
 <a name="184"><span class="lineNum">     184 </span>            :         return m_underlying_iter &gt;= other.m_underlying_iter;</a>
 <a name="185"><span class="lineNum">     185 </span>            :     }</a>
-<a name="186"><span class="lineNum">     186 </span><span class="lineCov">        223 :     bool operator!=(const TransformIterator&amp; other) const</span></a>
+<a name="186"><span class="lineNum">     186 </span><span class="lineCov">        868 :     bool operator!=(const TransformIterator&amp; other) const</span></a>
 <a name="187"><span class="lineNum">     187 </span>            :     {</a>
-<a name="188"><span class="lineNum">     188 </span><span class="lineCov">        223 :         return m_underlying_iter != other.m_underlying_iter;</span></a>
+<a name="188"><span class="lineNum">     188 </span><span class="lineCov">        868 :         return m_underlying_iter != other.m_underlying_iter;</span></a>
 <a name="189"><span class="lineNum">     189 </span>            :     }</a>
 <a name="190"><span class="lineNum">     190 </span>            :     bool operator==(const TransformIterator&amp; other) const</a>
 <a name="191"><span class="lineNum">     191 </span>            :     {</a>

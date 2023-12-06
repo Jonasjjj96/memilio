@@ -31,18 +31,18 @@
             <td class="headerValue">coverage.info</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntry">93</td>
-            <td class="headerCovTableEntry">98</td>
-            <td class="headerCovTableEntryHi">94.9 %</td>
+            <td class="headerCovTableEntry">79</td>
+            <td class="headerCovTableEntry">83</td>
+            <td class="headerCovTableEntryHi">95.2 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2023-12-05 12:49:30</td>
+            <td class="headerValue">2023-12-06 09:42:13</td>
             <td></td>
             <td class="headerItem">Functions:</td>
-            <td class="headerCovTableEntry">15</td>
-            <td class="headerCovTableEntry">17</td>
-            <td class="headerCovTableEntryMed">88.2 %</td>
+            <td class="headerCovTableEntry">12</td>
+            <td class="headerCovTableEntry">14</td>
+            <td class="headerCovTableEntryMed">85.7 %</td>
           </tr>
           <tr><td><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
         </table>
@@ -93,16 +93,16 @@
 <a name="31"><span class="lineNum">      31 </span>            : namespace abm</a>
 <a name="32"><span class="lineNum">      32 </span>            : {</a>
 <a name="33"><span class="lineNum">      33 </span>            : </a>
-<a name="34"><span class="lineNum">      34 </span><span class="lineCov">        184 : Location::Location(LocationId loc_id, size_t num_agegroups, uint32_t num_cells)</span></a>
+<a name="34"><span class="lineNum">      34 </span><span class="lineCov">        188 : Location::Location(LocationId loc_id, size_t num_agegroups, uint32_t num_cells)</span></a>
 <a name="35"><span class="lineNum">      35 </span>            :     : m_id(loc_id)</a>
 <a name="36"><span class="lineNum">      36 </span>            :     , m_capacity_adapted_transmission_risk(false)</a>
 <a name="37"><span class="lineNum">      37 </span>            :     , m_parameters(num_agegroups)</a>
 <a name="38"><span class="lineNum">      38 </span>            :     , m_cells(num_cells, num_agegroups)</a>
 <a name="39"><span class="lineNum">      39 </span>            :     , m_required_mask(MaskType::Community)</a>
-<a name="40"><span class="lineNum">      40 </span><span class="lineCov">        184 :     , m_npi_active(false)</span></a>
+<a name="40"><span class="lineNum">      40 </span><span class="lineCov">        188 :     , m_npi_active(false)</span></a>
 <a name="41"><span class="lineNum">      41 </span>            : {</a>
-<a name="42"><span class="lineNum">      42 </span><span class="lineCov">        184 :     assert(num_cells &gt; 0 &amp;&amp; &quot;Number of cells has to be larger than 0.&quot;);</span></a>
-<a name="43"><span class="lineNum">      43 </span><span class="lineCov">        184 : }</span></a>
+<a name="42"><span class="lineNum">      42 </span><span class="lineCov">        188 :     assert(num_cells &gt; 0 &amp;&amp; &quot;Number of cells has to be larger than 0.&quot;);</span></a>
+<a name="43"><span class="lineNum">      43 </span><span class="lineCov">        188 : }</span></a>
 <a name="44"><span class="lineNum">      44 </span>            : </a>
 <a name="45"><span class="lineNum">      45 </span><span class="lineCov">          6 : Location Location::copy_location_without_persons(size_t num_agegroups)</span></a>
 <a name="46"><span class="lineNum">      46 </span>            : {</a>
@@ -167,51 +167,51 @@
 <a name="105"><span class="lineNum">     105 </span>            :     }</a>
 <a name="106"><span class="lineNum">     106 </span><span class="lineCov">        215 : }</span></a>
 <a name="107"><span class="lineNum">     107 </span>            : </a>
-<a name="108"><span class="lineNum">     108 </span><span class="lineCov">        291 : void Location::cache_exposure_rates(TimePoint t, TimeSpan dt, size_t num_agegroups)</span></a>
+<a name="108"><span class="lineNum">     108 </span><span class="lineCov">        405 : void Location::cache_exposure_rates(TimePoint t, TimeSpan dt, size_t num_agegroups)</span></a>
 <a name="109"><span class="lineNum">     109 </span>            : {</a>
 <a name="110"><span class="lineNum">     110 </span>            :     //cache for next step so it stays constant during the step while subpopulations change</a>
 <a name="111"><span class="lineNum">     111 </span>            :     //otherwise we would have to cache all state changes during a step which uses more memory</a>
-<a name="112"><span class="lineNum">     112 </span><span class="lineCov">        586 :     for (auto&amp; cell : m_cells) {</span></a>
-<a name="113"><span class="lineNum">     113 </span><span class="lineCov">        295 :         cell.m_cached_exposure_rate_contacts = {{VirusVariant::Count, AgeGroup(num_agegroups)}, 0.};</span></a>
-<a name="114"><span class="lineNum">     114 </span><span class="lineCov">        295 :         cell.m_cached_exposure_rate_air      = {{VirusVariant::Count}, 0.};</span></a>
-<a name="115"><span class="lineNum">     115 </span><span class="lineCov">        681 :         for (auto&amp;&amp; p : cell.m_persons) {</span></a>
-<a name="116"><span class="lineNum">     116 </span><span class="lineCov">        386 :             if (p-&gt;is_infected(t)) {</span></a>
-<a name="117"><span class="lineNum">     117 </span><span class="lineCov">        116 :                 auto&amp; inf  = p-&gt;get_infection();</span></a>
-<a name="118"><span class="lineNum">     118 </span><span class="lineCov">        116 :                 auto virus = inf.get_virus_variant();</span></a>
-<a name="119"><span class="lineNum">     119 </span><span class="lineCov">        116 :                 auto age   = p-&gt;get_age();</span></a>
+<a name="112"><span class="lineNum">     112 </span><span class="lineCov">        814 :     for (auto&amp; cell : m_cells) {</span></a>
+<a name="113"><span class="lineNum">     113 </span><span class="lineCov">        409 :         cell.m_cached_exposure_rate_contacts = {{VirusVariant::Count, AgeGroup(num_agegroups)}, 0.};</span></a>
+<a name="114"><span class="lineNum">     114 </span><span class="lineCov">        409 :         cell.m_cached_exposure_rate_air      = {{VirusVariant::Count}, 0.};</span></a>
+<a name="115"><span class="lineNum">     115 </span><span class="lineCov">        717 :         for (auto&amp;&amp; p : cell.m_persons) {</span></a>
+<a name="116"><span class="lineNum">     116 </span><span class="lineCov">        308 :             if (p-&gt;is_infected(t)) {</span></a>
+<a name="117"><span class="lineNum">     117 </span><span class="lineCov">         92 :                 auto&amp; inf  = p-&gt;get_infection();</span></a>
+<a name="118"><span class="lineNum">     118 </span><span class="lineCov">         92 :                 auto virus = inf.get_virus_variant();</span></a>
+<a name="119"><span class="lineNum">     119 </span><span class="lineCov">         92 :                 auto age   = p-&gt;get_age();</span></a>
 <a name="120"><span class="lineNum">     120 </span>            :                 /* average infectivity over the time step </a>
 <a name="121"><span class="lineNum">     121 </span>            :                  *  to second order accuracy using midpoint rule</a>
 <a name="122"><span class="lineNum">     122 </span>            :                 */</a>
-<a name="123"><span class="lineNum">     123 </span><span class="lineCov">        116 :                 cell.m_cached_exposure_rate_contacts[{virus, age}] += inf.get_infectivity(t + dt / 2);</span></a>
-<a name="124"><span class="lineNum">     124 </span><span class="lineCov">        116 :                 cell.m_cached_exposure_rate_air[{virus}] += inf.get_infectivity(t + dt / 2);</span></a>
+<a name="123"><span class="lineNum">     123 </span><span class="lineCov">         92 :                 cell.m_cached_exposure_rate_contacts[{virus, age}] += inf.get_infectivity(t + dt / 2);</span></a>
+<a name="124"><span class="lineNum">     124 </span><span class="lineCov">         92 :                 cell.m_cached_exposure_rate_air[{virus}] += inf.get_infectivity(t + dt / 2);</span></a>
 <a name="125"><span class="lineNum">     125 </span>            :             }</a>
 <a name="126"><span class="lineNum">     126 </span>            :         }</a>
-<a name="127"><span class="lineNum">     127 </span><span class="lineCov">        295 :         if (m_capacity_adapted_transmission_risk) {</span></a>
+<a name="127"><span class="lineNum">     127 </span><span class="lineCov">        409 :         if (m_capacity_adapted_transmission_risk) {</span></a>
 <a name="128"><span class="lineNum">     128 </span><span class="lineCov">          3 :             cell.m_cached_exposure_rate_air.array() *= cell.compute_space_per_person_relative();</span></a>
 <a name="129"><span class="lineNum">     129 </span>            :         }</a>
 <a name="130"><span class="lineNum">     130 </span>            :     }</a>
-<a name="131"><span class="lineNum">     131 </span><span class="lineCov">        291 : }</span></a>
+<a name="131"><span class="lineNum">     131 </span><span class="lineCov">        405 : }</span></a>
 <a name="132"><span class="lineNum">     132 </span>            : </a>
-<a name="133"><span class="lineNum">     133 </span><span class="lineCov">        186 : void Location::add_person(Person&amp; p, std::vector&lt;uint32_t&gt; cells)</span></a>
+<a name="133"><span class="lineNum">     133 </span><span class="lineCov">        197 : void Location::add_person(Person&amp; p, std::vector&lt;uint32_t&gt; cells)</span></a>
 <a name="134"><span class="lineNum">     134 </span>            : {</a>
-<a name="135"><span class="lineNum">     135 </span><span class="lineCov">        372 :     std::lock_guard&lt;std::mutex&gt; lk(m_mut);</span></a>
-<a name="136"><span class="lineNum">     136 </span><span class="lineCov">        186 :     m_persons.push_back(&amp;p);</span></a>
-<a name="137"><span class="lineNum">     137 </span><span class="lineCov">        377 :     for (uint32_t cell_idx : cells)</span></a>
-<a name="138"><span class="lineNum">     138 </span><span class="lineCov">        191 :         m_cells[cell_idx].m_persons.push_back(&amp;p);</span></a>
-<a name="139"><span class="lineNum">     139 </span><span class="lineCov">        186 : }</span></a>
+<a name="135"><span class="lineNum">     135 </span><span class="lineCov">        394 :     std::lock_guard&lt;std::mutex&gt; lk(m_mut);</span></a>
+<a name="136"><span class="lineNum">     136 </span><span class="lineCov">        197 :     m_persons.push_back(&amp;p);</span></a>
+<a name="137"><span class="lineNum">     137 </span><span class="lineCov">        399 :     for (uint32_t cell_idx : cells)</span></a>
+<a name="138"><span class="lineNum">     138 </span><span class="lineCov">        202 :         m_cells[cell_idx].m_persons.push_back(&amp;p);</span></a>
+<a name="139"><span class="lineNum">     139 </span><span class="lineCov">        197 : }</span></a>
 <a name="140"><span class="lineNum">     140 </span>            : </a>
-<a name="141"><span class="lineNum">     141 </span><span class="lineCov">         34 : void Location::remove_person(Person&amp; p)</span></a>
+<a name="141"><span class="lineNum">     141 </span><span class="lineCov">         47 : void Location::remove_person(Person&amp; p)</span></a>
 <a name="142"><span class="lineNum">     142 </span>            : {</a>
-<a name="143"><span class="lineNum">     143 </span><span class="lineCov">         68 :     std::lock_guard&lt;std::mutex&gt; lk(m_mut);</span></a>
-<a name="144"><span class="lineNum">     144 </span><span class="lineCov">         34 :     m_persons.erase(std::remove(m_persons.begin(), m_persons.end(), &amp;p), m_persons.end());</span></a>
-<a name="145"><span class="lineNum">     145 </span><span class="lineCov">         70 :     for (auto&amp;&amp; cell : m_cells) {</span></a>
-<a name="146"><span class="lineNum">     146 </span><span class="lineCov">         36 :         cell.m_persons.erase(std::remove(cell.m_persons.begin(), cell.m_persons.end(), &amp;p), cell.m_persons.end());</span></a>
+<a name="143"><span class="lineNum">     143 </span><span class="lineCov">         94 :     std::lock_guard&lt;std::mutex&gt; lk(m_mut);</span></a>
+<a name="144"><span class="lineNum">     144 </span><span class="lineCov">         47 :     m_persons.erase(std::remove(m_persons.begin(), m_persons.end(), &amp;p), m_persons.end());</span></a>
+<a name="145"><span class="lineNum">     145 </span><span class="lineCov">         96 :     for (auto&amp;&amp; cell : m_cells) {</span></a>
+<a name="146"><span class="lineNum">     146 </span><span class="lineCov">         49 :         cell.m_persons.erase(std::remove(cell.m_persons.begin(), cell.m_persons.end(), &amp;p), cell.m_persons.end());</span></a>
 <a name="147"><span class="lineNum">     147 </span>            :     }</a>
-<a name="148"><span class="lineNum">     148 </span><span class="lineCov">         34 : }</span></a>
+<a name="148"><span class="lineNum">     148 </span><span class="lineCov">         47 : }</span></a>
 <a name="149"><span class="lineNum">     149 </span>            : </a>
-<a name="150"><span class="lineNum">     150 </span><span class="lineCov">         37 : size_t Location::get_number_persons() const</span></a>
+<a name="150"><span class="lineNum">     150 </span><span class="lineCov">         43 : size_t Location::get_number_persons() const</span></a>
 <a name="151"><span class="lineNum">     151 </span>            : {</a>
-<a name="152"><span class="lineNum">     152 </span><span class="lineCov">         37 :     return m_persons.size();</span></a>
+<a name="152"><span class="lineNum">     152 </span><span class="lineCov">         43 :     return m_persons.size();</span></a>
 <a name="153"><span class="lineNum">     153 </span>            : }</a>
 <a name="154"><span class="lineNum">     154 </span>            : </a>
 <a name="155"><span class="lineNum">     155 </span>            : /*</a>
@@ -235,41 +235,15 @@
 <a name="173"><span class="lineNum">     173 </span><span class="lineNoCov">          0 :     });</span></a>
 <a name="174"><span class="lineNum">     174 </span>            : }</a>
 <a name="175"><span class="lineNum">     175 </span>            : </a>
-<a name="176"><span class="lineNum">     176 </span><span class="lineCov">         34 : size_t Location::get_subpopulation(TimePoint t, InfectionState state) const</span></a>
+<a name="176"><span class="lineNum">     176 </span><span class="lineCov">       3063 : size_t Location::get_subpopulation(TimePoint t, InfectionState state) const</span></a>
 <a name="177"><span class="lineNum">     177 </span>            : {</a>
-<a name="178"><span class="lineNum">     178 </span><span class="lineCov">         34 :     return count_if(m_persons.begin(), m_persons.end(), [&amp;](observer_ptr&lt;Person&gt; p) {</span></a>
-<a name="179"><span class="lineNum">     179 </span><span class="lineCov">         30 :         return p-&gt;get_infection_state(t) == state;</span></a>
-<a name="180"><span class="lineNum">     180 </span><span class="lineCov">         34 :     });</span></a>
+<a name="178"><span class="lineNum">     178 </span><span class="lineCov">       3063 :     return count_if(m_persons.begin(), m_persons.end(), [&amp;](observer_ptr&lt;Person&gt; p) {</span></a>
+<a name="179"><span class="lineNum">     179 </span><span class="lineCov">       2268 :         return p-&gt;get_infection_state(t) == state;</span></a>
+<a name="180"><span class="lineNum">     180 </span><span class="lineCov">       3063 :     });</span></a>
 <a name="181"><span class="lineNum">     181 </span>            : }</a>
 <a name="182"><span class="lineNum">     182 </span>            : </a>
-<a name="183"><span class="lineNum">     183 </span><span class="lineCov">        301 : void Location::store_subpopulations(const TimePoint t)</span></a>
-<a name="184"><span class="lineNum">     184 </span>            : {</a>
-<a name="185"><span class="lineNum">     185 </span><span class="lineCov">        301 :     m_subpopulations.add_time_point(t.days());</span></a>
-<a name="186"><span class="lineNum">     186 </span><span class="lineCov">        602 :     Eigen::VectorXd subpopulations(Eigen::VectorXd::Zero((size_t)InfectionState::Count));</span></a>
-<a name="187"><span class="lineNum">     187 </span><span class="lineCov">        696 :     for (auto p : m_persons)</span></a>
-<a name="188"><span class="lineNum">     188 </span><span class="lineCov">        395 :         ++subpopulations[(size_t)p-&gt;get_infection_state(t)];</span></a>
-<a name="189"><span class="lineNum">     189 </span><span class="lineCov">        301 :     m_subpopulations.get_last_value() = subpopulations;</span></a>
-<a name="190"><span class="lineNum">     190 </span><span class="lineCov">        301 : }</span></a>
-<a name="191"><span class="lineNum">     191 </span>            : </a>
-<a name="192"><span class="lineNum">     192 </span><span class="lineCov">         17 : void Location::initialize_subpopulations(const TimePoint t)</span></a>
-<a name="193"><span class="lineNum">     193 </span>            : {</a>
-<a name="194"><span class="lineNum">     194 </span><span class="lineCov">         17 :     if (m_subpopulations.get_num_time_points() == 0) {</span></a>
-<a name="195"><span class="lineNum">     195 </span><span class="lineCov">         11 :         store_subpopulations(t);</span></a>
-<a name="196"><span class="lineNum">     196 </span>            :     }</a>
-<a name="197"><span class="lineNum">     197 </span>            :     else {</a>
-<a name="198"><span class="lineNum">     198 </span><span class="lineCov">          6 :         if (m_subpopulations.get_last_time() != t.days()) { // if not already saved</span></a>
-<a name="199"><span class="lineNum">     199 </span><span class="lineNoCov">          0 :             store_subpopulations(t);</span></a>
-<a name="200"><span class="lineNum">     200 </span>            :         }</a>
-<a name="201"><span class="lineNum">     201 </span>            :     }</a>
-<a name="202"><span class="lineNum">     202 </span><span class="lineCov">         17 : }</span></a>
-<a name="203"><span class="lineNum">     203 </span>            : </a>
-<a name="204"><span class="lineNum">     204 </span><span class="lineCov">        379 : const TimeSeries&lt;ScalarType&gt;&amp; Location::get_subpopulations() const</span></a>
-<a name="205"><span class="lineNum">     205 </span>            : {</a>
-<a name="206"><span class="lineNum">     206 </span><span class="lineCov">        379 :     return m_subpopulations;</span></a>
-<a name="207"><span class="lineNum">     207 </span>            : }</a>
-<a name="208"><span class="lineNum">     208 </span>            : </a>
-<a name="209"><span class="lineNum">     209 </span>            : } // namespace abm</a>
-<a name="210"><span class="lineNum">     210 </span>            : } // namespace mio</a>
+<a name="183"><span class="lineNum">     183 </span>            : } // namespace abm</a>
+<a name="184"><span class="lineNum">     184 </span>            : } // namespace mio</a>
 </pre>
       </td>
     </tr>

@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2023-12-05 12:49:30</td>
+            <td class="headerValue">2023-12-06 09:42:13</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">8</td>
@@ -119,13 +119,13 @@
 <a name="57"><span class="lineNum">      57 </span>            :      * @brief Create a World.</a>
 <a name="58"><span class="lineNum">      58 </span>            :      * @param[in] num_agegroups The number of AgeGroup%s in the simulated World.</a>
 <a name="59"><span class="lineNum">      59 </span>            :      */</a>
-<a name="60"><span class="lineNum">      60 </span><span class="lineCov">         26 :     World(size_t num_agegroups)</span></a>
-<a name="61"><span class="lineNum">      61 </span><span class="lineCov">         26 :         : parameters(num_agegroups)</span></a>
+<a name="60"><span class="lineNum">      60 </span><span class="lineCov">         24 :     World(size_t num_agegroups)</span></a>
+<a name="61"><span class="lineNum">      61 </span><span class="lineCov">         24 :         : parameters(num_agegroups)</span></a>
 <a name="62"><span class="lineNum">      62 </span>            :         , m_trip_list()</a>
 <a name="63"><span class="lineNum">      63 </span>            :         , m_use_migration_rules(true)</a>
-<a name="64"><span class="lineNum">      64 </span><span class="lineCov">         26 :         , m_cemetery_id(add_location(LocationType::Cemetery))</span></a>
+<a name="64"><span class="lineNum">      64 </span><span class="lineCov">         24 :         , m_cemetery_id(add_location(LocationType::Cemetery))</span></a>
 <a name="65"><span class="lineNum">      65 </span>            :     {</a>
-<a name="66"><span class="lineNum">      66 </span><span class="lineCov">         26 :     }</span></a>
+<a name="66"><span class="lineNum">      66 </span><span class="lineCov">         24 :     }</span></a>
 <a name="67"><span class="lineNum">      67 </span>            : </a>
 <a name="68"><span class="lineNum">      68 </span>            :     /**</a>
 <a name="69"><span class="lineNum">      69 </span>            :      * @brief Create a copied World.</a>
@@ -157,7 +157,7 @@
 <a name="95"><span class="lineNum">      95 </span><span class="lineCov">         21 :     }</span></a>
 <a name="96"><span class="lineNum">      96 </span>            : </a>
 <a name="97"><span class="lineNum">      97 </span>            :     //type is move-only for stable references of persons/locations</a>
-<a name="98"><span class="lineNum">      98 </span><span class="lineCov">          6 :     World(World&amp;&amp; other)            = default;</span></a>
+<a name="98"><span class="lineNum">      98 </span><span class="lineCov">          4 :     World(World&amp;&amp; other)            = default;</span></a>
 <a name="99"><span class="lineNum">      99 </span>            :     World&amp; operator=(World&amp;&amp; other) = default;</a>
 <a name="100"><span class="lineNum">     100 </span>            :     World&amp; operator=(const World&amp;)  = delete;</a>
 <a name="101"><span class="lineNum">     101 </span>            : </a>
@@ -216,65 +216,65 @@
 <a name="154"><span class="lineNum">     154 </span>            :     void begin_step(TimePoint t, TimeSpan dt);</a>
 <a name="155"><span class="lineNum">     155 </span>            : </a>
 <a name="156"><span class="lineNum">     156 </span>            :     /** </a>
-<a name="157"><span class="lineNum">     157 </span>            :      * @brief Follow up on the World after the Simulation step.</a>
+<a name="157"><span class="lineNum">     157 </span>            :      * @brief Evolve the world one time step.</a>
 <a name="158"><span class="lineNum">     158 </span>            :      * @param[in] t Current time.</a>
 <a name="159"><span class="lineNum">     159 </span>            :      * @param[in] dt Length of the time step.</a>
 <a name="160"><span class="lineNum">     160 </span>            :      */</a>
-<a name="161"><span class="lineNum">     161 </span>            :     void end_step(TimePoint t, TimeSpan dt);</a>
+<a name="161"><span class="lineNum">     161 </span>            :     void evolve(TimePoint t, TimeSpan dt);</a>
 <a name="162"><span class="lineNum">     162 </span>            : </a>
 <a name="163"><span class="lineNum">     163 </span>            :     /** </a>
-<a name="164"><span class="lineNum">     164 </span>            :      * @brief Evolve the world one time step.</a>
-<a name="165"><span class="lineNum">     165 </span>            :      * @param[in] t Current time.</a>
-<a name="166"><span class="lineNum">     166 </span>            :      * @param[in] dt Length of the time step.</a>
-<a name="167"><span class="lineNum">     167 </span>            :      */</a>
-<a name="168"><span class="lineNum">     168 </span>            :     void evolve(TimePoint t, TimeSpan dt);</a>
-<a name="169"><span class="lineNum">     169 </span>            : </a>
-<a name="170"><span class="lineNum">     170 </span>            :     /** </a>
-<a name="171"><span class="lineNum">     171 </span>            :      * @brief Add a Location to the World.</a>
-<a name="172"><span class="lineNum">     172 </span>            :      * @param[in] type Type of Location to add.</a>
-<a name="173"><span class="lineNum">     173 </span>            :      * @param[in] num_cells [Default: 1] Number of Cell%s that the Location is divided into.</a>
-<a name="174"><span class="lineNum">     174 </span>            :      * @return Index and type of the newly created Location.</a>
-<a name="175"><span class="lineNum">     175 </span>            :      */</a>
-<a name="176"><span class="lineNum">     176 </span>            :     LocationId add_location(LocationType type, uint32_t num_cells = 1);</a>
-<a name="177"><span class="lineNum">     177 </span>            : </a>
-<a name="178"><span class="lineNum">     178 </span>            :     /** </a>
-<a name="179"><span class="lineNum">     179 </span>            :      * @brief Add a Person to the World.</a>
-<a name="180"><span class="lineNum">     180 </span>            :      * @param[in] id Index and type of the initial Location of the Person.</a>
-<a name="181"><span class="lineNum">     181 </span>            :      * @param[in] age AgeGroup of the person.</a>
-<a name="182"><span class="lineNum">     182 </span>            :      * @return Reference to the newly created Person.</a>
-<a name="183"><span class="lineNum">     183 </span>            :      */</a>
-<a name="184"><span class="lineNum">     184 </span>            :     Person&amp; add_person(const LocationId id, AgeGroup age);</a>
-<a name="185"><span class="lineNum">     185 </span>            : </a>
-<a name="186"><span class="lineNum">     186 </span>            :     /**</a>
-<a name="187"><span class="lineNum">     187 </span>            :      * @brief Get a range of all Location%s in the World.</a>
-<a name="188"><span class="lineNum">     188 </span>            :      * @return A range of all Location%s.</a>
-<a name="189"><span class="lineNum">     189 </span>            :      */</a>
-<a name="190"><span class="lineNum">     190 </span>            :     Range&lt;std::pair&lt;ConstLocationIterator, ConstLocationIterator&gt;&gt; get_locations() const;</a>
-<a name="191"><span class="lineNum">     191 </span>            : </a>
-<a name="192"><span class="lineNum">     192 </span>            :     /**</a>
-<a name="193"><span class="lineNum">     193 </span>            :      * @brief Get a range of all Person%s in the World.</a>
-<a name="194"><span class="lineNum">     194 </span>            :      * @return A range of all Person%s.</a>
+<a name="164"><span class="lineNum">     164 </span>            :      * @brief Add a Location to the World.</a>
+<a name="165"><span class="lineNum">     165 </span>            :      * @param[in] type Type of Location to add.</a>
+<a name="166"><span class="lineNum">     166 </span>            :      * @param[in] num_cells [Default: 1] Number of Cell%s that the Location is divided into.</a>
+<a name="167"><span class="lineNum">     167 </span>            :      * @return Index and type of the newly created Location.</a>
+<a name="168"><span class="lineNum">     168 </span>            :      */</a>
+<a name="169"><span class="lineNum">     169 </span>            :     LocationId add_location(LocationType type, uint32_t num_cells = 1);</a>
+<a name="170"><span class="lineNum">     170 </span>            : </a>
+<a name="171"><span class="lineNum">     171 </span>            :     /** </a>
+<a name="172"><span class="lineNum">     172 </span>            :      * @brief Add a Person to the World.</a>
+<a name="173"><span class="lineNum">     173 </span>            :      * @param[in] id Index and type of the initial Location of the Person.</a>
+<a name="174"><span class="lineNum">     174 </span>            :      * @param[in] age AgeGroup of the person.</a>
+<a name="175"><span class="lineNum">     175 </span>            :      * @return Reference to the newly created Person.</a>
+<a name="176"><span class="lineNum">     176 </span>            :      */</a>
+<a name="177"><span class="lineNum">     177 </span>            :     Person&amp; add_person(const LocationId id, AgeGroup age);</a>
+<a name="178"><span class="lineNum">     178 </span>            : </a>
+<a name="179"><span class="lineNum">     179 </span>            :     /**</a>
+<a name="180"><span class="lineNum">     180 </span>            :      * @brief Get a range of all Location%s in the World.</a>
+<a name="181"><span class="lineNum">     181 </span>            :      * @return A range of all Location%s.</a>
+<a name="182"><span class="lineNum">     182 </span>            :      */</a>
+<a name="183"><span class="lineNum">     183 </span>            :     Range&lt;std::pair&lt;ConstLocationIterator, ConstLocationIterator&gt;&gt; get_locations() const;</a>
+<a name="184"><span class="lineNum">     184 </span>            : </a>
+<a name="185"><span class="lineNum">     185 </span>            :     /**</a>
+<a name="186"><span class="lineNum">     186 </span>            :      * @brief Get a range of all Person%s in the World.</a>
+<a name="187"><span class="lineNum">     187 </span>            :      * @return A range of all Person%s.</a>
+<a name="188"><span class="lineNum">     188 </span>            :      */</a>
+<a name="189"><span class="lineNum">     189 </span>            :     Range&lt;std::pair&lt;ConstPersonIterator, ConstPersonIterator&gt;&gt; get_persons() const;</a>
+<a name="190"><span class="lineNum">     190 </span>            : </a>
+<a name="191"><span class="lineNum">     191 </span>            :     /**</a>
+<a name="192"><span class="lineNum">     192 </span>            :      * @brief Get an individualized Location.</a>
+<a name="193"><span class="lineNum">     193 </span>            :      * @param[in] id LocationId of the Location.</a>
+<a name="194"><span class="lineNum">     194 </span>            :      * @return Reference to the Location.</a>
 <a name="195"><span class="lineNum">     195 </span>            :      */</a>
-<a name="196"><span class="lineNum">     196 </span>            :     Range&lt;std::pair&lt;ConstPersonIterator, ConstPersonIterator&gt;&gt; get_persons() const;</a>
+<a name="196"><span class="lineNum">     196 </span>            :     const Location&amp; get_individualized_location(LocationId id) const;</a>
 <a name="197"><span class="lineNum">     197 </span>            : </a>
-<a name="198"><span class="lineNum">     198 </span>            :     /**</a>
-<a name="199"><span class="lineNum">     199 </span>            :      * @brief Get an individualized Location.</a>
-<a name="200"><span class="lineNum">     200 </span>            :      * @param[in] id LocationId of the Location.</a>
-<a name="201"><span class="lineNum">     201 </span>            :      * @return Reference to the Location.</a>
-<a name="202"><span class="lineNum">     202 </span>            :      */</a>
-<a name="203"><span class="lineNum">     203 </span>            :     const Location&amp; get_individualized_location(LocationId id) const;</a>
-<a name="204"><span class="lineNum">     204 </span>            : </a>
-<a name="205"><span class="lineNum">     205 </span>            :     Location&amp; get_individualized_location(LocationId id);</a>
-<a name="206"><span class="lineNum">     206 </span>            : </a>
-<a name="207"><span class="lineNum">     207 </span>            :     /**</a>
-<a name="208"><span class="lineNum">     208 </span>            :      * @brief Find an assigned Location of a Person.</a>
-<a name="209"><span class="lineNum">     209 </span>            :      * @param[in] type The #LocationType that specifies the assigned Location.</a>
-<a name="210"><span class="lineNum">     210 </span>            :      * @param[in] person The Person.</a>
-<a name="211"><span class="lineNum">     211 </span>            :      * @return Reference to the assigned Location.</a>
-<a name="212"><span class="lineNum">     212 </span>            :      */</a>
-<a name="213"><span class="lineNum">     213 </span>            :     const Location&amp; find_location(LocationType type, const Person&amp; person) const;</a>
-<a name="214"><span class="lineNum">     214 </span>            : </a>
-<a name="215"><span class="lineNum">     215 </span>            :     Location&amp; find_location(LocationType type, const Person&amp; person);</a>
+<a name="198"><span class="lineNum">     198 </span>            :     Location&amp; get_individualized_location(LocationId id);</a>
+<a name="199"><span class="lineNum">     199 </span>            : </a>
+<a name="200"><span class="lineNum">     200 </span>            :     /**</a>
+<a name="201"><span class="lineNum">     201 </span>            :      * @brief Find an assigned Location of a Person.</a>
+<a name="202"><span class="lineNum">     202 </span>            :      * @param[in] type The #LocationType that specifies the assigned Location.</a>
+<a name="203"><span class="lineNum">     203 </span>            :      * @param[in] person The Person.</a>
+<a name="204"><span class="lineNum">     204 </span>            :      * @return Reference to the assigned Location.</a>
+<a name="205"><span class="lineNum">     205 </span>            :      */</a>
+<a name="206"><span class="lineNum">     206 </span>            :     const Location&amp; find_location(LocationType type, const Person&amp; person) const;</a>
+<a name="207"><span class="lineNum">     207 </span>            : </a>
+<a name="208"><span class="lineNum">     208 </span>            :     Location&amp; find_location(LocationType type, const Person&amp; person);</a>
+<a name="209"><span class="lineNum">     209 </span>            : </a>
+<a name="210"><span class="lineNum">     210 </span>            :     /** </a>
+<a name="211"><span class="lineNum">     211 </span>            :      * @brief Get the number of Persons in one #InfectionState at all Location%s.</a>
+<a name="212"><span class="lineNum">     212 </span>            :      * @param[in] t Specified #TimePoint.</a>
+<a name="213"><span class="lineNum">     213 </span>            :      * @param[in] s Specified #InfectionState.</a>
+<a name="214"><span class="lineNum">     214 </span>            :      */</a>
+<a name="215"><span class="lineNum">     215 </span>            :     size_t get_subpopulation_combined(TimePoint t, InfectionState s) const;</a>
 <a name="216"><span class="lineNum">     216 </span>            : </a>
 <a name="217"><span class="lineNum">     217 </span>            :     /** </a>
 <a name="218"><span class="lineNum">     218 </span>            :      * @brief Get the number of Persons in one #InfectionState at all Location%s of a type.</a>
@@ -282,7 +282,7 @@
 <a name="220"><span class="lineNum">     220 </span>            :      * @param[in] s Specified #InfectionState.</a>
 <a name="221"><span class="lineNum">     221 </span>            :      * @param[in] type Specified #LocationType.</a>
 <a name="222"><span class="lineNum">     222 </span>            :      */</a>
-<a name="223"><span class="lineNum">     223 </span>            :     size_t get_subpopulation_combined(TimePoint t, InfectionState s, LocationType type) const;</a>
+<a name="223"><span class="lineNum">     223 </span>            :     size_t get_subpopulation_combined_per_location_type(TimePoint t, InfectionState s, LocationType type) const;</a>
 <a name="224"><span class="lineNum">     224 </span>            : </a>
 <a name="225"><span class="lineNum">     225 </span>            :     /**</a>
 <a name="226"><span class="lineNum">     226 </span>            :      * @brief Get the migration data.</a>
@@ -305,9 +305,9 @@
 <a name="243"><span class="lineNum">     243 </span>            :     * @brief Check if at least one Location with a specified LocationType exists.</a>
 <a name="244"><span class="lineNum">     244 </span>            :     * @return True if there is at least one Location of LocationType `type`. False otherwise.</a>
 <a name="245"><span class="lineNum">     245 </span>            :     */</a>
-<a name="246"><span class="lineNum">     246 </span><span class="lineCov">       3720 :     bool has_location(LocationType type) const</span></a>
+<a name="246"><span class="lineNum">     246 </span><span class="lineCov">       3121 :     bool has_location(LocationType type) const</span></a>
 <a name="247"><span class="lineNum">     247 </span>            :     {</a>
-<a name="248"><span class="lineNum">     248 </span><span class="lineCov">       3720 :         return m_has_locations[size_t(type)];</span></a>
+<a name="248"><span class="lineNum">     248 </span><span class="lineCov">       3121 :         return m_has_locations[size_t(type)];</span></a>
 <a name="249"><span class="lineNum">     249 </span>            :     }</a>
 <a name="250"><span class="lineNum">     250 </span>            : </a>
 <a name="251"><span class="lineNum">     251 </span>            :     /**</a>
@@ -317,11 +317,11 @@
 <a name="255"><span class="lineNum">     255 </span>            :     * @return True if there is at least one Location of every LocationType in `location_types`. False otherwise.</a>
 <a name="256"><span class="lineNum">     256 </span>            :     */</a>
 <a name="257"><span class="lineNum">     257 </span>            :     template &lt;class C = std::initializer_list&lt;LocationType&gt;&gt;</a>
-<a name="258"><span class="lineNum">     258 </span><span class="lineCov">       3334 :     bool has_locations(const C&amp; location_types) const</span></a>
+<a name="258"><span class="lineNum">     258 </span><span class="lineCov">       2610 :     bool has_locations(const C&amp; location_types) const</span></a>
 <a name="259"><span class="lineNum">     259 </span>            :     {</a>
-<a name="260"><span class="lineNum">     260 </span><span class="lineCov">      10774 :         return std::all_of(location_types.begin(), location_types.end(), [&amp;](auto loc) {</span></a>
-<a name="261"><span class="lineNum">     261 </span><span class="lineCov">       7440 :             return has_location(loc);</span></a>
-<a name="262"><span class="lineNum">     262 </span><span class="lineCov">       3334 :         });</span></a>
+<a name="260"><span class="lineNum">     260 </span><span class="lineCov">       8852 :         return std::all_of(location_types.begin(), location_types.end(), [&amp;](auto loc) {</span></a>
+<a name="261"><span class="lineNum">     261 </span><span class="lineCov">       6242 :             return has_location(loc);</span></a>
+<a name="262"><span class="lineNum">     262 </span><span class="lineCov">       2610 :         });</span></a>
 <a name="263"><span class="lineNum">     263 </span>            :     }</a>
 <a name="264"><span class="lineNum">     264 </span>            : </a>
 <a name="265"><span class="lineNum">     265 </span>            :     /** </a>
@@ -342,9 +342,9 @@
 <a name="280"><span class="lineNum">     280 </span>            :     * Persons use their own generators with the same key as the global one. </a>
 <a name="281"><span class="lineNum">     281 </span>            :     * @return The random number generator.</a>
 <a name="282"><span class="lineNum">     282 </span>            :     */</a>
-<a name="283"><span class="lineNum">     283 </span><span class="lineCov">        119 :     RandomNumberGenerator&amp; get_rng()</span></a>
+<a name="283"><span class="lineNum">     283 </span><span class="lineCov">        120 :     RandomNumberGenerator&amp; get_rng()</span></a>
 <a name="284"><span class="lineNum">     284 </span>            :     {</a>
-<a name="285"><span class="lineNum">     285 </span><span class="lineCov">        119 :         return m_rng;</span></a>
+<a name="285"><span class="lineNum">     285 </span><span class="lineCov">        120 :         return m_rng;</span></a>
 <a name="286"><span class="lineNum">     286 </span>            :     }</a>
 <a name="287"><span class="lineNum">     287 </span>            : </a>
 <a name="288"><span class="lineNum">     288 </span>            :     /**</a>

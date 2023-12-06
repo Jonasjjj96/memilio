@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['naturalinfection_3396',['NaturalInfection',['../namespacemio_1_1abm.html#aaf972255c1cfcdc64f54f9efeaec0705a7274449ce8f5d4a4a17e3a73944863f9',1,'mio::abm']]],
-  ['noprotection_3397',['NoProtection',['../namespacemio_1_1abm.html#aaf972255c1cfcdc64f54f9efeaec0705a18f2c901a0893097e2ef30ac53f4086a',1,'mio::abm']]]
+  ['leisure_3452',['Leisure',['../namespacemio_1_1abm.html#a87b19348d6ba20fbe8bcb16485029ce5a43defa6c9129fabc91490e8bf2ae1e59',1,'mio::abm']]]
 ];

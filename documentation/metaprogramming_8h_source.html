@@ -226,9 +226,27 @@ $(function() {
 <div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;template &lt;class Type, class... Types&gt;</div>
 <div class="line"><a name="l00247"></a><span class="lineno"><a class="line" href="namespacemio.html#a02da408d97307651d9f526a9c3f08a40">  247</a></span>&#160;constexpr std::size_t index_of_type_v = index_of_type&lt;Type, Types...&gt;::value;</div>
 <div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160; </div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;} <span class="comment">// namespace mio</span></div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160; </div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;#endif</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;template &lt;class... Types&gt;</div>
+<div class="line"><a name="l00254"></a><span class="lineno"><a class="line" href="structmio_1_1has__duplicates.html">  254</a></span>&#160;struct has_duplicates {</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;private:</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;    template &lt;std::size_t... Indices&gt;</div>
+<div class="line"><a name="l00262"></a><span class="lineno"><a class="line" href="structmio_1_1has__duplicates.html#a73636de1d3dc0d80415a155d9dd0b988">  262</a></span>&#160;    static constexpr bool has_duplicates_impl(std::index_sequence&lt;Indices...&gt;)</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;    {</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;        <span class="comment">// index_of_type_v will always be equal to the index of the first occurance of a type,</span></div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;        <span class="comment">// while Indices contains its actual index. Hence, if there is any mismatch, then there is a duplicate.</span></div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;        return ((index_of_type_v&lt;Types, Types...&gt; != Indices) || ...);</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;    }</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160; </div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;public:</div>
+<div class="line"><a name="l00270"></a><span class="lineno"><a class="line" href="structmio_1_1has__duplicates.html#a86383991cd9e17bbace4d755a085ba2b">  270</a></span>&#160;    static constexpr bool value = has_duplicates_impl(std::make_index_sequence&lt;sizeof...(Types)&gt;{});</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;};</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160; </div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;template &lt;class... Types&gt;</div>
+<div class="line"><a name="l00279"></a><span class="lineno"><a class="line" href="namespacemio.html#a3eb9e99214aba93f9e66dcb7fb2949c6">  279</a></span>&#160;constexpr bool has_duplicates_v = has_duplicates&lt;Types...&gt;::value;</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160; </div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;} <span class="comment">// namespace mio</span></div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160; </div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;#endif</div>
 <div class="ttc" id="aclassmio_1_1Index_html"><div class="ttname"><a href="classmio_1_1Index.html">mio::Index</a></div><div class="ttdoc">An Index with more than one template parameter combines several Index objects.</div><div class="ttdef"><b>Definition:</b> index.h:120</div></div>
 <div class="ttc" id="anamespacemio_1_1details_html_a93e3080996228cf0b5b44c7bfb696157"><div class="ttname"><a href="namespacemio_1_1details.html#a93e3080996228cf0b5b44c7bfb696157">mio::details::index_of_impl</a></div><div class="ttdeci">constexpr std::size_t index_of_impl()</div><div class="ttdoc">Recursively searches Types for Type.</div><div class="ttdef"><b>Definition:</b> metaprogramming.h:195</div></div>
 <div class="ttc" id="anamespacemio_html"><div class="ttname"><a href="namespacemio.html">mio</a></div><div class="ttdoc">A collection of classes to simplify handling of matrix shapes in meta programming.</div><div class="ttdef"><b>Definition:</b> compartmentalmodel.h:33</div></div>

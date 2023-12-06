@@ -133,6 +133,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aa933eedeef8c594d1522c0df937f3b31"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacemio_1_1abm.html#ad1ae0779f53a827b524e1f0925b9d704">InfectionState</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1abm_1_1Person.html#aa933eedeef8c594d1522c0df937f3b31">get_infection_state</a> (<a class="el" href="classmio_1_1abm_1_1TimePoint.html">TimePoint</a> t) const</td></tr>
 <tr class="memdesc:aa933eedeef8c594d1522c0df937f3b31"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the InfectionState of the <a class="el" href="classmio_1_1abm_1_1Person.html" title="Agents in the simulated World that can carry and spread the Infection.">Person</a> at a specific <a class="el" href="classmio_1_1abm_1_1TimePoint.html" title="Represents a point in time.">TimePoint</a>.  <a href="classmio_1_1abm_1_1Person.html#aa933eedeef8c594d1522c0df937f3b31">More...</a><br /></td></tr>
 <tr class="separator:aa933eedeef8c594d1522c0df937f3b31"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a52660728b77ca94c80fe3f743752c63b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacemio_1_1abm.html#a57d768cc04c782f46491781226920ff9">mio::abm::TransportMode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1abm_1_1Person.html#a52660728b77ca94c80fe3f743752c63b">get_last_transport_mode</a> () const</td></tr>
+<tr class="memdesc:a52660728b77ca94c80fe3f743752c63b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the transport mode the <a class="el" href="classmio_1_1abm_1_1Person.html" title="Agents in the simulated World that can carry and spread the Infection.">Person</a> used to get to its current <a class="el" href="classmio_1_1abm_1_1Location.html" title="All Locations in the simulated World where Persons gather.">Location</a>.  <a href="classmio_1_1abm_1_1Person.html#a52660728b77ca94c80fe3f743752c63b">More...</a><br /></td></tr>
+<tr class="separator:a52660728b77ca94c80fe3f743752c63b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af772fbf06c12d6f7f17c6bb860cf9484"><td class="memItemLeft" align="right" valign="top">std::pair&lt; <a class="el" href="namespacemio_1_1abm.html#aaf972255c1cfcdc64f54f9efeaec0705">ExposureType</a>, <a class="el" href="classmio_1_1abm_1_1TimePoint.html">TimePoint</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1abm_1_1Person.html#af772fbf06c12d6f7f17c6bb860cf9484">get_latest_protection</a> () const</td></tr>
 <tr class="memdesc:af772fbf06c12d6f7f17c6bb860cf9484"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the latest #Infection or #Vaccination and its initial <a class="el" href="classmio_1_1abm_1_1TimePoint.html" title="Represents a point in time.">TimePoint</a> of the <a class="el" href="classmio_1_1abm_1_1Person.html" title="Agents in the simulated World that can carry and spread the Infection.">Person</a>.  <a href="classmio_1_1abm_1_1Person.html#af772fbf06c12d6f7f17c6bb860cf9484">More...</a><br /></td></tr>
 <tr class="separator:af772fbf06c12d6f7f17c6bb860cf9484"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -196,6 +199,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a59859d4bcd01ef3d831ab597d90956b0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1abm_1_1Person.html#a59859d4bcd01ef3d831ab597d90956b0">migrate_to</a> (<a class="el" href="classmio_1_1abm_1_1Location.html">Location</a> &amp;loc_new, const std::vector&lt; uint32_t &gt; &amp;cells_new={0})</td></tr>
 <tr class="memdesc:a59859d4bcd01ef3d831ab597d90956b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Migrate to a different <a class="el" href="classmio_1_1abm_1_1Location.html" title="All Locations in the simulated World where Persons gather.">Location</a>.  <a href="classmio_1_1abm_1_1Person.html#a59859d4bcd01ef3d831ab597d90956b0">More...</a><br /></td></tr>
 <tr class="separator:a59859d4bcd01ef3d831ab597d90956b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a641659ecac89e6e5e6756e5a9ecbaa4b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1abm_1_1Person.html#a641659ecac89e6e5e6756e5a9ecbaa4b">migrate_to</a> (<a class="el" href="classmio_1_1abm_1_1Location.html">Location</a> &amp;loc_new, <a class="el" href="namespacemio_1_1abm.html#a57d768cc04c782f46491781226920ff9">mio::abm::TransportMode</a> transport_mode, const std::vector&lt; uint32_t &gt; &amp;cells={0})</td></tr>
+<tr class="memdesc:a641659ecac89e6e5e6756e5a9ecbaa4b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Migrate to a different <a class="el" href="classmio_1_1abm_1_1Location.html" title="All Locations in the simulated World where Persons gather.">Location</a>.  <a href="classmio_1_1abm_1_1Person.html#a641659ecac89e6e5e6756e5a9ecbaa4b">More...</a><br /></td></tr>
+<tr class="separator:a641659ecac89e6e5e6756e5a9ecbaa4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7e761d9a5308665ad9e4357acdc4663d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1abm_1_1Person.html#a7e761d9a5308665ad9e4357acdc4663d">operator==</a> (const <a class="el" href="classmio_1_1abm_1_1Person.html">Person</a> &amp;other) const</td></tr>
 <tr class="memdesc:a7e761d9a5308665ad9e4357acdc4663d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compare two <a class="el" href="classmio_1_1abm_1_1Person.html" title="Agents in the simulated World that can carry and spread the Infection.">Person</a>s.  <a href="classmio_1_1abm_1_1Person.html#a7e761d9a5308665ad9e4357acdc4663d">More...</a><br /></td></tr>
 <tr class="separator:a7e761d9a5308665ad9e4357acdc4663d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -242,6 +248,9 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a62c7a503913e9e0b02fc22eff56b6e08"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classmio_1_1abm_1_1Infection.html">Infection</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1abm_1_1Person.html#a62c7a503913e9e0b02fc22eff56b6e08">m_infections</a></td></tr>
 <tr class="memdesc:a62c7a503913e9e0b02fc22eff56b6e08"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vector with all <a class="el" href="classmio_1_1abm_1_1Infection.html">Infection</a>s the <a class="el" href="classmio_1_1abm_1_1Person.html" title="Agents in the simulated World that can carry and spread the Infection.">Person</a> had.  <a href="classmio_1_1abm_1_1Person.html#a62c7a503913e9e0b02fc22eff56b6e08">More...</a><br /></td></tr>
 <tr class="separator:a62c7a503913e9e0b02fc22eff56b6e08"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad33027e8fd8036d1e89a8f9c2c9130c0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacemio_1_1abm.html#a57d768cc04c782f46491781226920ff9">mio::abm::TransportMode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1abm_1_1Person.html#ad33027e8fd8036d1e89a8f9c2c9130c0">m_last_transport_mode</a></td></tr>
+<tr class="memdesc:ad33027e8fd8036d1e89a8f9c2c9130c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">TransportMode the <a class="el" href="classmio_1_1abm_1_1Person.html" title="Agents in the simulated World that can carry and spread the Infection.">Person</a> used to get to its current <a class="el" href="classmio_1_1abm_1_1Location.html" title="All Locations in the simulated World where Persons gather.">Location</a>.  <a href="classmio_1_1abm_1_1Person.html#ad33027e8fd8036d1e89a8f9c2c9130c0">More...</a><br /></td></tr>
+<tr class="separator:ad33027e8fd8036d1e89a8f9c2c9130c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a154a3dd98fe6ffb62345d093c14f2356"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmio_1_1observer__ptr.html">observer_ptr</a>&lt; <a class="el" href="classmio_1_1abm_1_1Location.html">Location</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1abm_1_1Person.html#a154a3dd98fe6ffb62345d093c14f2356">m_location</a></td></tr>
 <tr class="memdesc:a154a3dd98fe6ffb62345d093c14f2356"><td class="mdescLeft">&#160;</td><td class="mdescRight">Current <a class="el" href="classmio_1_1abm_1_1Location.html" title="All Locations in the simulated World where Persons gather.">Location</a> of the <a class="el" href="classmio_1_1abm_1_1Person.html" title="Agents in the simulated World that can carry and spread the Infection.">Person</a>.  <a href="classmio_1_1abm_1_1Person.html#a154a3dd98fe6ffb62345d093c14f2356">More...</a><br /></td></tr>
 <tr class="separator:a154a3dd98fe6ffb62345d093c14f2356"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -752,6 +761,26 @@ template&lt;class IOContext &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The InfectionState of the latest <a class="el" href="classmio_1_1abm_1_1Infection.html">Infection</a> at time t. </dd></dl>
+
+</div>
+</div>
+<a id="a52660728b77ca94c80fe3f743752c63b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a52660728b77ca94c80fe3f743752c63b">&#9670;&nbsp;</a></span>get_last_transport_mode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacemio_1_1abm.html#a57d768cc04c782f46491781226920ff9">mio::abm::TransportMode</a> mio::abm::Person::get_last_transport_mode </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the transport mode the <a class="el" href="classmio_1_1abm_1_1Person.html" title="Agents in the simulated World that can carry and spread the Infection.">Person</a> used to get to its current <a class="el" href="classmio_1_1abm_1_1Location.html" title="All Locations in the simulated World where Persons gather.">Location</a>. </p>
+<dl class="section return"><dt>Returns</dt><dd>TransportMode the <a class="el" href="classmio_1_1abm_1_1Person.html" title="Agents in the simulated World that can carry and spread the Infection.">Person</a> used to get to its current <a class="el" href="classmio_1_1abm_1_1Location.html" title="All Locations in the simulated World where Persons gather.">Location</a>. </dd></dl>
 
 </div>
 </div>
@@ -1303,7 +1332,7 @@ template&lt;class IOContext &gt; </div>
 </div>
 </div>
 <a id="a59859d4bcd01ef3d831ab597d90956b0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a59859d4bcd01ef3d831ab597d90956b0">&#9670;&nbsp;</a></span>migrate_to()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a59859d4bcd01ef3d831ab597d90956b0">&#9670;&nbsp;</a></span>migrate_to() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1332,6 +1361,50 @@ template&lt;class IOContext &gt; </div>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in,out]</td><td class="paramname">loc_new</td><td>The new <a class="el" href="classmio_1_1abm_1_1Location.html" title="All Locations in the simulated World where Persons gather.">Location</a> of the <a class="el" href="classmio_1_1abm_1_1Person.html" title="Agents in the simulated World that can carry and spread the Infection.">Person</a>. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">cells_new</td><td>The <a class="el" href="structmio_1_1abm_1_1Cell.html" title="The Location can be split up into several Cells.">Cell</a>s that the <a class="el" href="classmio_1_1abm_1_1Person.html" title="Agents in the simulated World that can carry and spread the Infection.">Person</a> visits at the new <a class="el" href="classmio_1_1abm_1_1Location.html" title="All Locations in the simulated World where Persons gather.">Location</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a641659ecac89e6e5e6756e5a9ecbaa4b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a641659ecac89e6e5e6756e5a9ecbaa4b">&#9670;&nbsp;</a></span>migrate_to() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mio::abm::Person::migrate_to </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classmio_1_1abm_1_1Location.html">Location</a> &amp;&#160;</td>
+          <td class="paramname"><em>loc_new</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacemio_1_1abm.html#a57d768cc04c782f46491781226920ff9">mio::abm::TransportMode</a>&#160;</td>
+          <td class="paramname"><em>transport_mode</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; uint32_t &gt; &amp;&#160;</td>
+          <td class="paramname"><em>cells</em> = <code>{0}</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Migrate to a different <a class="el" href="classmio_1_1abm_1_1Location.html" title="All Locations in the simulated World where Persons gather.">Location</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">loc_new</td><td>The new <a class="el" href="classmio_1_1abm_1_1Location.html" title="All Locations in the simulated World where Persons gather.">Location</a> of the <a class="el" href="classmio_1_1abm_1_1Person.html" title="Agents in the simulated World that can carry and spread the Infection.">Person</a>. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">transport_mode</td><td>The TransportMode the <a class="el" href="classmio_1_1abm_1_1Person.html" title="Agents in the simulated World that can carry and spread the Infection.">Person</a> used to get to the new <a class="el" href="classmio_1_1abm_1_1Location.html" title="All Locations in the simulated World where Persons gather.">Location</a>. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">cells_new</td><td>The <a class="el" href="structmio_1_1abm_1_1Cell.html" title="The Location can be split up into several Cells.">Cell</a>s that the <a class="el" href="classmio_1_1abm_1_1Person.html" title="Agents in the simulated World that can carry and spread the Infection.">Person</a> visits at the new <a class="el" href="classmio_1_1abm_1_1Location.html" title="All Locations in the simulated World where Persons gather.">Location</a>. </td></tr>
   </table>
   </dd>
@@ -1597,6 +1670,30 @@ template&lt;class IOContext &gt; </div>
 </div><div class="memdoc">
 
 <p>Vector with all <a class="el" href="classmio_1_1abm_1_1Infection.html">Infection</a>s the <a class="el" href="classmio_1_1abm_1_1Person.html" title="Agents in the simulated World that can carry and spread the Infection.">Person</a> had. </p>
+
+</div>
+</div>
+<a id="ad33027e8fd8036d1e89a8f9c2c9130c0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad33027e8fd8036d1e89a8f9c2c9130c0">&#9670;&nbsp;</a></span>m_last_transport_mode</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacemio_1_1abm.html#a57d768cc04c782f46491781226920ff9">mio::abm::TransportMode</a> mio::abm::Person::m_last_transport_mode</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>TransportMode the <a class="el" href="classmio_1_1abm_1_1Person.html" title="Agents in the simulated World that can carry and spread the Infection.">Person</a> used to get to its current <a class="el" href="classmio_1_1abm_1_1Location.html" title="All Locations in the simulated World where Persons gather.">Location</a>. </p>
 
 </div>
 </div>

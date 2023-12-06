@@ -109,9 +109,6 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aaca84cb2bf00b8c5a8f7d5f07d8ba570"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1abm_1_1World.html#aaca84cb2bf00b8c5a8f7d5f07d8ba570">begin_step</a> (<a class="el" href="classmio_1_1abm_1_1TimePoint.html">TimePoint</a> t, <a class="el" href="classmio_1_1abm_1_1TimeSpan.html">TimeSpan</a> dt)</td></tr>
 <tr class="memdesc:aaca84cb2bf00b8c5a8f7d5f07d8ba570"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prepare the <a class="el" href="classmio_1_1abm_1_1World.html" title="The World of the Simulation.">World</a> for the next <a class="el" href="classmio_1_1abm_1_1Simulation.html" title="Run the Simulation in discrete steps, evolve the World and report results.">Simulation</a> step.  <a href="classmio_1_1abm_1_1World.html#aaca84cb2bf00b8c5a8f7d5f07d8ba570">More...</a><br /></td></tr>
 <tr class="separator:aaca84cb2bf00b8c5a8f7d5f07d8ba570"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aace67983bc781521019cb64b2c8b73a6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1abm_1_1World.html#aace67983bc781521019cb64b2c8b73a6">end_step</a> (<a class="el" href="classmio_1_1abm_1_1TimePoint.html">TimePoint</a> t, <a class="el" href="classmio_1_1abm_1_1TimeSpan.html">TimeSpan</a> dt)</td></tr>
-<tr class="memdesc:aace67983bc781521019cb64b2c8b73a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Follow up on the <a class="el" href="classmio_1_1abm_1_1World.html" title="The World of the Simulation.">World</a> after the <a class="el" href="classmio_1_1abm_1_1Simulation.html" title="Run the Simulation in discrete steps, evolve the World and report results.">Simulation</a> step.  <a href="classmio_1_1abm_1_1World.html#aace67983bc781521019cb64b2c8b73a6">More...</a><br /></td></tr>
-<tr class="separator:aace67983bc781521019cb64b2c8b73a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a64297dda4fb8272a87654ad7f795c97c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1abm_1_1World.html#a64297dda4fb8272a87654ad7f795c97c">evolve</a> (<a class="el" href="classmio_1_1abm_1_1TimePoint.html">TimePoint</a> t, <a class="el" href="classmio_1_1abm_1_1TimeSpan.html">TimeSpan</a> dt)</td></tr>
 <tr class="memdesc:a64297dda4fb8272a87654ad7f795c97c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evolve the world one time step.  <a href="classmio_1_1abm_1_1World.html#a64297dda4fb8272a87654ad7f795c97c">More...</a><br /></td></tr>
 <tr class="separator:a64297dda4fb8272a87654ad7f795c97c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -134,9 +131,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a53671e67dc36fcb8000c545df8b3ff32"><td class="memItemLeft" align="right" valign="top">RandomNumberGenerator &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1abm_1_1World.html#a53671e67dc36fcb8000c545df8b3ff32">get_rng</a> ()</td></tr>
 <tr class="memdesc:a53671e67dc36fcb8000c545df8b3ff32"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the RandomNumberGenerator used by this world for random events.  <a href="classmio_1_1abm_1_1World.html#a53671e67dc36fcb8000c545df8b3ff32">More...</a><br /></td></tr>
 <tr class="separator:a53671e67dc36fcb8000c545df8b3ff32"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8deb1b039ac5ba4e83b44bf60795eb21"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1abm_1_1World.html#a8deb1b039ac5ba4e83b44bf60795eb21">get_subpopulation_combined</a> (<a class="el" href="classmio_1_1abm_1_1TimePoint.html">TimePoint</a> t, <a class="el" href="namespacemio_1_1abm.html#ad1ae0779f53a827b524e1f0925b9d704">InfectionState</a> s, <a class="el" href="namespacemio_1_1abm.html#a83bc98ab43329c10fe9a6e683f2e1d0f">LocationType</a> type) const</td></tr>
-<tr class="memdesc:a8deb1b039ac5ba4e83b44bf60795eb21"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the number of Persons in one <a class="el" href="namespacemio_1_1abm.html#ad1ae0779f53a827b524e1f0925b9d704" title="InfectionState in ABM.">InfectionState</a> at all <a class="el" href="classmio_1_1abm_1_1Location.html" title="All Locations in the simulated World where Persons gather.">Location</a>s of a type.  <a href="classmio_1_1abm_1_1World.html#a8deb1b039ac5ba4e83b44bf60795eb21">More...</a><br /></td></tr>
-<tr class="separator:a8deb1b039ac5ba4e83b44bf60795eb21"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acfde2a2a4ef606ee5018677e32f32623"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1abm_1_1World.html#acfde2a2a4ef606ee5018677e32f32623">get_subpopulation_combined</a> (<a class="el" href="classmio_1_1abm_1_1TimePoint.html">TimePoint</a> t, <a class="el" href="namespacemio_1_1abm.html#ad1ae0779f53a827b524e1f0925b9d704">InfectionState</a> s) const</td></tr>
+<tr class="memdesc:acfde2a2a4ef606ee5018677e32f32623"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the number of Persons in one <a class="el" href="namespacemio_1_1abm.html#ad1ae0779f53a827b524e1f0925b9d704" title="InfectionState in ABM.">InfectionState</a> at all <a class="el" href="classmio_1_1abm_1_1Location.html" title="All Locations in the simulated World where Persons gather.">Location</a>s.  <a href="classmio_1_1abm_1_1World.html#acfde2a2a4ef606ee5018677e32f32623">More...</a><br /></td></tr>
+<tr class="separator:acfde2a2a4ef606ee5018677e32f32623"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd464caefdece8dfeb3492ec50653bb0"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1abm_1_1World.html#afd464caefdece8dfeb3492ec50653bb0">get_subpopulation_combined_per_location_type</a> (<a class="el" href="classmio_1_1abm_1_1TimePoint.html">TimePoint</a> t, <a class="el" href="namespacemio_1_1abm.html#ad1ae0779f53a827b524e1f0925b9d704">InfectionState</a> s, <a class="el" href="namespacemio_1_1abm.html#a83bc98ab43329c10fe9a6e683f2e1d0f">LocationType</a> type) const</td></tr>
+<tr class="memdesc:afd464caefdece8dfeb3492ec50653bb0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the number of Persons in one <a class="el" href="namespacemio_1_1abm.html#ad1ae0779f53a827b524e1f0925b9d704" title="InfectionState in ABM.">InfectionState</a> at all <a class="el" href="classmio_1_1abm_1_1Location.html" title="All Locations in the simulated World where Persons gather.">Location</a>s of a type.  <a href="classmio_1_1abm_1_1World.html#afd464caefdece8dfeb3492ec50653bb0">More...</a><br /></td></tr>
+<tr class="separator:afd464caefdece8dfeb3492ec50653bb0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2b316b040de528b83ecd3764d5205584"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmio_1_1abm_1_1TestingStrategy.html">TestingStrategy</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1abm_1_1World.html#a2b316b040de528b83ecd3764d5205584">get_testing_strategy</a> ()</td></tr>
 <tr class="memdesc:a2b316b040de528b83ecd3764d5205584"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the <a class="el" href="classmio_1_1abm_1_1TestingStrategy.html" title="Set of TestingSchemes that are checked for testing.">TestingStrategy</a>.  <a href="classmio_1_1abm_1_1World.html#a2b316b040de528b83ecd3764d5205584">More...</a><br /></td></tr>
 <tr class="separator:a2b316b040de528b83ecd3764d5205584"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -551,43 +551,6 @@ template&lt;class IOContext &gt; </div>
 
 </div>
 </div>
-<a id="aace67983bc781521019cb64b2c8b73a6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aace67983bc781521019cb64b2c8b73a6">&#9670;&nbsp;</a></span>end_step()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void mio::abm::World::end_step </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classmio_1_1abm_1_1TimePoint.html">TimePoint</a>&#160;</td>
-          <td class="paramname"><em>t</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="classmio_1_1abm_1_1TimeSpan.html">TimeSpan</a>&#160;</td>
-          <td class="paramname"><em>dt</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Follow up on the <a class="el" href="classmio_1_1abm_1_1World.html" title="The World of the Simulation.">World</a> after the <a class="el" href="classmio_1_1abm_1_1Simulation.html" title="Run the Simulation in discrete steps, evolve the World and report results.">Simulation</a> step. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">t</td><td>Current time. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">dt</td><td>Length of the time step. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
 <a id="a64297dda4fb8272a87654ad7f795c97c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a64297dda4fb8272a87654ad7f795c97c">&#9670;&nbsp;</a></span>evolve()</h2>
 
@@ -796,14 +759,51 @@ template&lt;class IOContext &gt; </div>
 
 </div>
 </div>
-<a id="a8deb1b039ac5ba4e83b44bf60795eb21"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8deb1b039ac5ba4e83b44bf60795eb21">&#9670;&nbsp;</a></span>get_subpopulation_combined()</h2>
+<a id="acfde2a2a4ef606ee5018677e32f32623"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acfde2a2a4ef606ee5018677e32f32623">&#9670;&nbsp;</a></span>get_subpopulation_combined()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">size_t mio::abm::World::get_subpopulation_combined </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classmio_1_1abm_1_1TimePoint.html">TimePoint</a>&#160;</td>
+          <td class="paramname"><em>t</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacemio_1_1abm.html#ad1ae0779f53a827b524e1f0925b9d704">InfectionState</a>&#160;</td>
+          <td class="paramname"><em>s</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the number of Persons in one <a class="el" href="namespacemio_1_1abm.html#ad1ae0779f53a827b524e1f0925b9d704" title="InfectionState in ABM.">InfectionState</a> at all <a class="el" href="classmio_1_1abm_1_1Location.html" title="All Locations in the simulated World where Persons gather.">Location</a>s. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">t</td><td>Specified #TimePoint. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">s</td><td>Specified <a class="el" href="namespacemio_1_1abm.html#ad1ae0779f53a827b524e1f0925b9d704" title="InfectionState in ABM.">InfectionState</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="afd464caefdece8dfeb3492ec50653bb0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd464caefdece8dfeb3492ec50653bb0">&#9670;&nbsp;</a></span>get_subpopulation_combined_per_location_type()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t mio::abm::World::get_subpopulation_combined_per_location_type </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classmio_1_1abm_1_1TimePoint.html">TimePoint</a>&#160;</td>
           <td class="paramname"><em>t</em>, </td>
