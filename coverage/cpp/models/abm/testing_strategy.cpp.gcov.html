@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2023-12-06 11:33:23</td>
+            <td class="headerValue">2023-12-07 15:57:02</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">18</td>
@@ -205,27 +205,27 @@
 <a name="143"><span class="lineNum">     143 </span>            :     }</a>
 <a name="144"><span class="lineNum">     144 </span><span class="lineCov">         83 : }</span></a>
 <a name="145"><span class="lineNum">     145 </span>            : </a>
-<a name="146"><span class="lineNum">     146 </span><span class="lineCov">        954 : bool TestingStrategy::run_strategy(Person::RandomNumberGenerator&amp; rng, Person&amp; person, const Location&amp; location,</span></a>
+<a name="146"><span class="lineNum">     146 </span><span class="lineCov">        960 : bool TestingStrategy::run_strategy(Person::RandomNumberGenerator&amp; rng, Person&amp; person, const Location&amp; location,</span></a>
 <a name="147"><span class="lineNum">     147 </span>            :                                    TimePoint t)</a>
 <a name="148"><span class="lineNum">     148 </span>            : {</a>
 <a name="149"><span class="lineNum">     149 </span>            :     // Person who is in quarantine but not yet home should go home. Otherwise they can't because they test positive.</a>
-<a name="150"><span class="lineNum">     150 </span><span class="lineCov">        954 :     if (location.get_type() == mio::abm::LocationType::Home &amp;&amp; person.is_in_quarantine()) {</span></a>
+<a name="150"><span class="lineNum">     150 </span><span class="lineCov">        960 :     if (location.get_type() == mio::abm::LocationType::Home &amp;&amp; person.is_in_quarantine()) {</span></a>
 <a name="151"><span class="lineNum">     151 </span><span class="lineCov">          1 :         return true;</span></a>
 <a name="152"><span class="lineNum">     152 </span>            :     }</a>
 <a name="153"><span class="lineNum">     153 </span>            : </a>
 <a name="154"><span class="lineNum">     154 </span>            :     // Combine two vectors of schemes at corresponding location and location stype</a>
-<a name="155"><span class="lineNum">     155 </span><span class="lineCov">        953 :     std::vector&lt;TestingScheme&gt;* schemes_vector[] = {</span></a>
-<a name="156"><span class="lineNum">     156 </span><span class="lineCov">        953 :         &amp;m_location_to_schemes_map[LocationId{location.get_index(), location.get_type()}],</span></a>
-<a name="157"><span class="lineNum">     157 </span><span class="lineCov">        953 :         &amp;m_location_to_schemes_map[LocationId{INVALID_LOCATION_INDEX, location.get_type()}]};</span></a>
+<a name="155"><span class="lineNum">     155 </span><span class="lineCov">        959 :     std::vector&lt;TestingScheme&gt;* schemes_vector[] = {</span></a>
+<a name="156"><span class="lineNum">     156 </span><span class="lineCov">        959 :         &amp;m_location_to_schemes_map[LocationId{location.get_index(), location.get_type()}],</span></a>
+<a name="157"><span class="lineNum">     157 </span><span class="lineCov">        959 :         &amp;m_location_to_schemes_map[LocationId{INVALID_LOCATION_INDEX, location.get_type()}]};</span></a>
 <a name="158"><span class="lineNum">     158 </span>            : </a>
-<a name="159"><span class="lineNum">     159 </span><span class="lineCov">       2857 :     for (auto vec_ptr : schemes_vector) {</span></a>
-<a name="160"><span class="lineNum">     160 </span><span class="lineCov">       1909 :         if (!std::all_of(vec_ptr-&gt;begin(), vec_ptr-&gt;end(), [&amp;rng, &amp;person, t](TestingScheme&amp; ts) {</span></a>
+<a name="159"><span class="lineNum">     159 </span><span class="lineCov">       2875 :     for (auto vec_ptr : schemes_vector) {</span></a>
+<a name="160"><span class="lineNum">     160 </span><span class="lineCov">       1921 :         if (!std::all_of(vec_ptr-&gt;begin(), vec_ptr-&gt;end(), [&amp;rng, &amp;person, t](TestingScheme&amp; ts) {</span></a>
 <a name="161"><span class="lineNum">     161 </span><span class="lineCov">          8 :                 return !ts.is_active() || ts.run_scheme(rng, person, t);</span></a>
 <a name="162"><span class="lineNum">     162 </span>            :             })) {</a>
 <a name="163"><span class="lineNum">     163 </span><span class="lineCov">          2 :             return false;</span></a>
 <a name="164"><span class="lineNum">     164 </span>            :         }</a>
 <a name="165"><span class="lineNum">     165 </span>            :     }</a>
-<a name="166"><span class="lineNum">     166 </span><span class="lineCov">        951 :     return true;</span></a>
+<a name="166"><span class="lineNum">     166 </span><span class="lineCov">        957 :     return true;</span></a>
 <a name="167"><span class="lineNum">     167 </span>            : }</a>
 <a name="168"><span class="lineNum">     168 </span>            : </a>
 <a name="169"><span class="lineNum">     169 </span>            : } // namespace abm</a>
