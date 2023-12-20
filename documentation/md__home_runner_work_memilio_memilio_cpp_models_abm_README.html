@@ -126,8 +126,8 @@ Get Started</h1>
 <div class="line">child.set_age_weight(age_group_0_to_4, 1);</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> parent = <a class="code" href="classmio_1_1abm_1_1HouseholdMember.html">mio::abm::HouseholdMember</a>(num_age_groups);</div>
-<div class="line">parent.set_age_weight(AGE_GROUP_15_TO_34, 1);</div>
-<div class="line">parent.set_age_weight(AGE_GROUP_35_TO_59, 1);</div>
+<div class="line">parent.set_age_weight(age_groups_15_to_34, 1);</div>
+<div class="line">parent.set_age_weight(age_groups_35_to_59, 1);</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// Two-person household with one parent and one child.</span></div>
 <div class="line"><span class="keyword">auto</span> twoPersonHousehold_group = <a class="code" href="classmio_1_1abm_1_1HouseholdGroup.html">mio::abm::HouseholdGroup</a>();</div>
@@ -136,9 +136,9 @@ Get Started</h1>
 <div class="line">twoPersonHousehold_full.add_members(parent, 1);</div>
 <div class="line">twoPersonHousehold_group.add_households(twoPersonHousehold_full, n_households);</div>
 <div class="line"><a class="code" href="namespacemio_1_1abm.html#a73adb25b82b9429795e0fac81c2e5997">add_household_group_to_world</a>(world, twoPersonHousehold_group);</div>
-<div class="ttc" id="aclassmio_1_1abm_1_1HouseholdGroup_html"><div class="ttname"><a href="classmio_1_1abm_1_1HouseholdGroup.html">mio::abm::HouseholdGroup</a></div><div class="ttdoc">A HouseholdGroup represented by different Households.</div><div class="ttdef"><b>Definition:</b> household.h:155</div></div>
+<div class="ttc" id="aclassmio_1_1abm_1_1HouseholdGroup_html"><div class="ttname"><a href="classmio_1_1abm_1_1HouseholdGroup.html">mio::abm::HouseholdGroup</a></div><div class="ttdoc">A HouseholdGroup represented by different Households.</div><div class="ttdef"><b>Definition:</b> household.h:156</div></div>
 <div class="ttc" id="aclassmio_1_1abm_1_1HouseholdMember_html"><div class="ttname"><a href="classmio_1_1abm_1_1HouseholdMember.html">mio::abm::HouseholdMember</a></div><div class="ttdoc">A HouseholdMember represented by a weighted age distribution.</div><div class="ttdef"><b>Definition:</b> household.h:52</div></div>
-<div class="ttc" id="aclassmio_1_1abm_1_1Household_html"><div class="ttname"><a href="classmio_1_1abm_1_1Household.html">mio::abm::Household</a></div><div class="ttdoc">A Household represented by a vector with HouseholdMembers.</div><div class="ttdef"><b>Definition:</b> household.h:91</div></div>
+<div class="ttc" id="aclassmio_1_1abm_1_1Household_html"><div class="ttname"><a href="classmio_1_1abm_1_1Household.html">mio::abm::Household</a></div><div class="ttdoc">A Household represented by a vector with HouseholdMembers.</div><div class="ttdef"><b>Definition:</b> household.h:92</div></div>
 <div class="ttc" id="anamespacemio_1_1abm_html_a73adb25b82b9429795e0fac81c2e5997"><div class="ttname"><a href="namespacemio_1_1abm.html#a73adb25b82b9429795e0fac81c2e5997">mio::abm::add_household_group_to_world</a></div><div class="ttdeci">void add_household_group_to_world(World &amp;world, const HouseholdGroup &amp;household_group)</div><div class="ttdoc">Adds Households from a HouseholdGroup to the World.</div><div class="ttdef"><b>Definition:</b> household.cpp:81</div></div>
 </div><!-- fragment --><p>During the simulation, people can get tested, and we have to specify the scheme for that:</p>
 <div class="fragment"><div class="line"><span class="keyword">auto</span> testing_min_time = <a class="code" href="namespacemio_1_1abm.html#ac50d53d4d672f332b55133479478fe6a">mio::abm::days</a>(1);</div>
