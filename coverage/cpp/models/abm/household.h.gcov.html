@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2023-12-20 14:17:57</td>
+            <td class="headerValue">2023-12-20 16:51:10</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">9</td>
@@ -130,7 +130,7 @@
 <a name="68"><span class="lineNum">      68 </span>            :      */</a>
 <a name="69"><span class="lineNum">      69 </span><span class="lineCov">          4 :     void set_age_weight(mio::AgeGroup age_group, int weight)</span></a>
 <a name="70"><span class="lineNum">      70 </span>            :     {</a>
-<a name="71"><span class="lineNum">      71 </span><span class="lineCov">          4 :         assert((size_t)age_group.size &lt; m_age_weights.numel());</span></a>
+<a name="71"><span class="lineNum">      71 </span><span class="lineCov">          4 :         assert(age_group &lt; m_age_weights.size&lt;mio::AgeGroup&gt;());</span></a>
 <a name="72"><span class="lineNum">      72 </span><span class="lineCov">          4 :         m_age_weights[age_group] = weight;</span></a>
 <a name="73"><span class="lineNum">      73 </span><span class="lineCov">          4 :     }</span></a>
 <a name="74"><span class="lineNum">      74 </span>            : </a>
