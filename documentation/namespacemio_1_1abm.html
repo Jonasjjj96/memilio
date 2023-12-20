@@ -269,7 +269,7 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:ae180078c9cb343ee71042f280a470379"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemio_1_1abm.html#ae180078c9cb343ee71042f280a470379">InputFunctionForProtectionLevel</a> = std::function&lt; <a class="el" href="config_8h.html#acd4f1d492d83a74716a42615e127d641">ScalarType</a>(<a class="el" href="config_8h.html#acd4f1d492d83a74716a42615e127d641">ScalarType</a>)&gt;</td></tr>
+<tr class="memitem:ae180078c9cb343ee71042f280a470379"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemio_1_1abm.html#ae180078c9cb343ee71042f280a470379">InputFunctionForProtectionLevel</a> = std::function&lt; <a class="el" href="memilio_2config_8h.html#acd4f1d492d83a74716a42615e127d641">ScalarType</a>(<a class="el" href="memilio_2config_8h.html#acd4f1d492d83a74716a42615e127d641">ScalarType</a>)&gt;</td></tr>
 <tr class="separator:ae180078c9cb343ee71042f280a470379"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac6894274dd9677808f49212e3d57ab3f"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemio_1_1abm.html#ac6894274dd9677808f49212e3d57ab3f">LocalInfectionParameters</a> = <a class="el" href="classmio_1_1ParameterSet.html">ParameterSet</a>&lt; <a class="el" href="structmio_1_1abm_1_1MaximumContacts.html">MaximumContacts</a>, <a class="el" href="structmio_1_1abm_1_1ContactRates.html">ContactRates</a> &gt;</td></tr>
 <tr class="memdesc:ac6894274dd9677808f49212e3d57ab3f"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classmio_1_1abm_1_1Parameters.html" title="Parameters of the simulation that are the same everywhere within the World.">Parameters</a> of the <a class="el" href="classmio_1_1abm_1_1Infection.html">Infection</a> that depend on the <a class="el" href="classmio_1_1abm_1_1Location.html" title="All Locations in the simulated World where Persons gather.">Location</a>.  <a href="namespacemio_1_1abm.html#ac6894274dd9677808f49212e3d57ab3f">More...</a><br /></td></tr>
@@ -452,6 +452,9 @@ Variables</h2></td></tr>
 <tr class="separator:a3e7419058ea1694a14352a2798a9d6e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a76378fd1909958798084acb78abad563"><td class="memItemLeft" align="right" valign="top">static constexpr uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemio_1_1abm.html#a76378fd1909958798084acb78abad563">INVALID_PERSON_ID</a> = std::numeric_limits&lt;uint32_t&gt;::<a class="el" href="namespacemio.html#a97f6645c13faf4749f34d7e6e191f9ac">max</a>()</td></tr>
 <tr class="separator:a76378fd1909958798084acb78abad563"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ae22e9ec56cc7f9b4d4e5a6507afdb8"><td class="memItemLeft" align="right" valign="top">constexpr const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemio_1_1abm.html#a8ae22e9ec56cc7f9b4d4e5a6507afdb8">MAX_NUM_AGE_GROUPS</a> = 64</td></tr>
+<tr class="memdesc:a8ae22e9ec56cc7f9b4d4e5a6507afdb8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum number of age groups allowed in the model.  <a href="namespacemio_1_1abm.html#a8ae22e9ec56cc7f9b4d4e5a6507afdb8">More...</a><br /></td></tr>
+<tr class="separator:a8ae22e9ec56cc7f9b4d4e5a6507afdb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Typedef Documentation</h2>
 <a id="ae180078c9cb343ee71042f280a470379"></a>
@@ -461,7 +464,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="namespacemio_1_1abm.html#ae180078c9cb343ee71042f280a470379">mio::abm::InputFunctionForProtectionLevel</a> = typedef std::function&lt;<a class="el" href="config_8h.html#acd4f1d492d83a74716a42615e127d641">ScalarType</a>(<a class="el" href="config_8h.html#acd4f1d492d83a74716a42615e127d641">ScalarType</a>)&gt;</td>
+          <td class="memname">using <a class="el" href="namespacemio_1_1abm.html#ae180078c9cb343ee71042f280a470379">mio::abm::InputFunctionForProtectionLevel</a> = typedef std::function&lt;<a class="el" href="memilio_2config_8h.html#acd4f1d492d83a74716a42615e127d641">ScalarType</a>(<a class="el" href="memilio_2config_8h.html#acd4f1d492d83a74716a42615e127d641">ScalarType</a>)&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1701,6 +1704,30 @@ template&lt;class RNG , class T , size_t NumTransitions&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8ae22e9ec56cc7f9b4d4e5a6507afdb8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8ae22e9ec56cc7f9b4d4e5a6507afdb8">&#9670;&nbsp;</a></span>MAX_NUM_AGE_GROUPS</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr const int mio::abm::MAX_NUM_AGE_GROUPS = 64</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Maximum number of age groups allowed in the model. </p>
 
 </div>
 </div>

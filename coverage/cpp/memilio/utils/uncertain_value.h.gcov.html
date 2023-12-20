@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2023-12-20 12:19:57</td>
+            <td class="headerValue">2023-12-20 14:17:57</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">15</td>
@@ -153,22 +153,22 @@
 <a name="91"><span class="lineNum">      91 </span>            :     /**</a>
 <a name="92"><span class="lineNum">      92 </span>            :      * @brief Conversion to scalar reference by returning the scalar contained in UncertainValue</a>
 <a name="93"><span class="lineNum">      93 </span>            :      */</a>
-<a name="94"><span class="lineNum">      94 </span><span class="lineCov">      20106 :     operator ScalarType&amp;()</span></a>
+<a name="94"><span class="lineNum">      94 </span><span class="lineCov">      20116 :     operator ScalarType&amp;()</span></a>
 <a name="95"><span class="lineNum">      95 </span>            :     {</a>
-<a name="96"><span class="lineNum">      96 </span><span class="lineCov">      20106 :         return m_value;</span></a>
+<a name="96"><span class="lineNum">      96 </span><span class="lineCov">      20116 :         return m_value;</span></a>
 <a name="97"><span class="lineNum">      97 </span>            :     }</a>
-<a name="98"><span class="lineNum">      98 </span><span class="lineCov">    1429692 :     operator const ScalarType&amp;() const</span></a>
+<a name="98"><span class="lineNum">      98 </span><span class="lineCov">    1557193 :     operator const ScalarType&amp;() const</span></a>
 <a name="99"><span class="lineNum">      99 </span>            :     {</a>
-<a name="100"><span class="lineNum">     100 </span><span class="lineCov">    1429692 :         return m_value;</span></a>
+<a name="100"><span class="lineNum">     100 </span><span class="lineCov">    1557193 :         return m_value;</span></a>
 <a name="101"><span class="lineNum">     101 </span>            :     }</a>
 <a name="102"><span class="lineNum">     102 </span>            : </a>
 <a name="103"><span class="lineNum">     103 </span>            :     /**</a>
 <a name="104"><span class="lineNum">     104 </span>            :      * @brief Set an UncertainValue from a scalar, distribution remains unchanged.</a>
 <a name="105"><span class="lineNum">     105 </span>            :      */</a>
-<a name="106"><span class="lineNum">     106 </span><span class="lineCov">       5495 :     UncertainValue&amp; operator=(ScalarType v)</span></a>
+<a name="106"><span class="lineNum">     106 </span><span class="lineCov">       5505 :     UncertainValue&amp; operator=(ScalarType v)</span></a>
 <a name="107"><span class="lineNum">     107 </span>            :     {</a>
-<a name="108"><span class="lineNum">     108 </span><span class="lineCov">       5495 :         m_value = v;</span></a>
-<a name="109"><span class="lineNum">     109 </span><span class="lineCov">       5495 :         return *this;</span></a>
+<a name="108"><span class="lineNum">     108 </span><span class="lineCov">       5505 :         m_value = v;</span></a>
+<a name="109"><span class="lineNum">     109 </span><span class="lineCov">       5505 :         return *this;</span></a>
 <a name="110"><span class="lineNum">     110 </span>            :     }</a>
 <a name="111"><span class="lineNum">     111 </span>            : </a>
 <a name="112"><span class="lineNum">     112 </span>            :     /**</a>

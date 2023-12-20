@@ -5,7 +5,7 @@ var searchData=
   ['sanitizing_5fextrapolation_5fmobility_1396',['sanitizing_extrapolation_mobility',['../namespacememilio_1_1epidata_1_1getVaccinationData.html#a5d769ff3c1aa13725b89f6ea22319f41',1,'memilio::epidata::getVaccinationData']]],
   ['sanity_5fchecks_1397',['sanity_checks',['../namespacememilio_1_1epidata_1_1getVaccinationData.html#ae72569321ca9a140c7fe96be8991a800',1,'memilio::epidata::getVaccinationData']]],
   ['save_5finteraction_5fmatrix_1398',['save_interaction_matrix',['../namespacememilio_1_1epidata_1_1getNPIData.html#a808a06783c4f6eda23a30cc480122963',1,'memilio::epidata::getNPIData']]],
-  ['scalartype_1399',['ScalarType',['../config_8h.html#acd4f1d492d83a74716a42615e127d641',1,'config.h']]],
+  ['scalartype_1399',['ScalarType',['../memilio_2config_8h.html#acd4f1d492d83a74716a42615e127d641',1,'config.h']]],
   ['school_1400',['School',['../namespacemio_1_1abm.html#a83bc98ab43329c10fe9a6e683f2e1d0fa955cd8691ca89a6baa6ea10c7787e604',1,'mio::abm']]],
   ['schoolratio_1401',['SchoolRatio',['../structmio_1_1abm_1_1SchoolRatio.html',1,'mio::abm']]],
   ['seasonality_1402',['Seasonality',['../structmio_1_1osecir_1_1Seasonality.html',1,'mio::osecir::Seasonality'],['../structmio_1_1osecirvvs_1_1Seasonality.html',1,'mio::osecirvvs::Seasonality']]],
