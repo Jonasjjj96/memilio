@@ -37,11 +37,11 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2023-12-22 10:20:37</td>
+            <td class="headerValue">2024-01-03 15:16:35</td>
             <td></td>
             <td class="headerItem">Functions:</td>
-            <td class="headerCovTableEntry">749</td>
-            <td class="headerCovTableEntry">867</td>
+            <td class="headerCovTableEntry">750</td>
+            <td class="headerCovTableEntry">868</td>
             <td class="headerCovTableEntryMed">86.4 %</td>
           </tr>
           <tr><td><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
@@ -254,7 +254,7 @@
 <a name="192"><span class="lineNum">     192 </span>            :     /**</a>
 <a name="193"><span class="lineNum">     193 </span>            :      * default constructor, represents success</a>
 <a name="194"><span class="lineNum">     194 </span>            :      */</a>
-<a name="195"><span class="lineNum">     195 </span><span class="lineCov">     394978 :     IOStatus() = default;</span></a>
+<a name="195"><span class="lineNum">     195 </span><span class="lineCov">     397721 :     IOStatus() = default;</span></a>
 <a name="196"><span class="lineNum">     196 </span>            : </a>
 <a name="197"><span class="lineNum">     197 </span>            :     /**</a>
 <a name="198"><span class="lineNum">     198 </span>            :      * constructor with error code and message</a>
@@ -303,9 +303,9 @@
 <a name="241"><span class="lineNum">     241 </span>            :      * @return true if status is success, false otherwise.</a>
 <a name="242"><span class="lineNum">     242 </span>            :      * @{</a>
 <a name="243"><span class="lineNum">     243 </span>            :      */</a>
-<a name="244"><span class="lineNum">     244 </span><span class="lineCov">     329515 :     bool is_ok() const</span></a>
+<a name="244"><span class="lineNum">     244 </span><span class="lineCov">     332149 :     bool is_ok() const</span></a>
 <a name="245"><span class="lineNum">     245 </span>            :     {</a>
-<a name="246"><span class="lineNum">     246 </span><span class="lineCov">     329515 :         return !(bool)m_ec;</span></a>
+<a name="246"><span class="lineNum">     246 </span><span class="lineCov">     332149 :         return !(bool)m_ec;</span></a>
 <a name="247"><span class="lineNum">     247 </span>            :     }</a>
 <a name="248"><span class="lineNum">     248 </span><span class="lineCov">        103 :     operator bool() const</span></a>
 <a name="249"><span class="lineNum">     249 </span>            :     {</a>
@@ -318,9 +318,9 @@
 <a name="256"><span class="lineNum">     256 </span>            :      * @return true if status is failure, false otherwise.</a>
 <a name="257"><span class="lineNum">     257 </span>            :      * @{</a>
 <a name="258"><span class="lineNum">     258 </span>            :      */</a>
-<a name="259"><span class="lineNum">     259 </span><span class="lineCov">     323091 :     bool is_error() const</span></a>
+<a name="259"><span class="lineNum">     259 </span><span class="lineCov">     325725 :     bool is_error() const</span></a>
 <a name="260"><span class="lineNum">     260 </span>            :     {</a>
-<a name="261"><span class="lineNum">     261 </span><span class="lineCov">     323091 :         return !is_ok();</span></a>
+<a name="261"><span class="lineNum">     261 </span><span class="lineCov">     325725 :         return !is_ok();</span></a>
 <a name="262"><span class="lineNum">     262 </span>            :     }</a>
 <a name="263"><span class="lineNum">     263 </span>            : </a>
 <a name="264"><span class="lineNum">     264 </span>            :     /**</a>
@@ -411,9 +411,9 @@
 <a name="349"><span class="lineNum">     349 </span>            :  * Create an object that is implicitly convertible to a succesful IOResult&lt;void&gt;.</a>
 <a name="350"><span class="lineNum">     350 </span>            :  * Use `return success()` to conveniently return a successful result from a function.</a>
 <a name="351"><span class="lineNum">     351 </span>            :  */</a>
-<a name="352"><span class="lineNum">     352 </span><span class="lineCov">        182 : inline auto success()</span></a>
+<a name="352"><span class="lineNum">     352 </span><span class="lineCov">        179 : inline auto success()</span></a>
 <a name="353"><span class="lineNum">     353 </span>            : {</a>
-<a name="354"><span class="lineNum">     354 </span><span class="lineCov">        182 :     return boost::outcome_v2::success();</span></a>
+<a name="354"><span class="lineNum">     354 </span><span class="lineCov">        179 :     return boost::outcome_v2::success();</span></a>
 <a name="355"><span class="lineNum">     355 </span>            : }</a>
 <a name="356"><span class="lineNum">     356 </span>            : </a>
 <a name="357"><span class="lineNum">     357 </span>            : /**</a>
@@ -422,9 +422,9 @@
 <a name="360"><span class="lineNum">     360 </span>            :  * @param t a value that is convertible to the value type of the IOResult</a>
 <a name="361"><span class="lineNum">     361 </span>            :  */</a>
 <a name="362"><span class="lineNum">     362 </span>            : template &lt;class T&gt;</a>
-<a name="363"><span class="lineNum">     363 </span><span class="lineCov">     258242 : auto success(T&amp;&amp; t)</span></a>
+<a name="363"><span class="lineNum">     363 </span><span class="lineCov">     264403 : auto success(T&amp;&amp; t)</span></a>
 <a name="364"><span class="lineNum">     364 </span>            : {</a>
-<a name="365"><span class="lineNum">     365 </span><span class="lineCov">     258242 :     return boost::outcome_v2::success(std::forward&lt;T&gt;(t));</span></a>
+<a name="365"><span class="lineNum">     365 </span><span class="lineCov">     264403 :     return boost::outcome_v2::success(std::forward&lt;T&gt;(t));</span></a>
 <a name="366"><span class="lineNum">     366 </span>            : }</a>
 <a name="367"><span class="lineNum">     367 </span>            : </a>
 <a name="368"><span class="lineNum">     368 </span>            : /**</a>
@@ -501,15 +501,15 @@
 <a name="439"><span class="lineNum">     439 </span>            : //evaluates the function f using the values of the given IOResults as arguments, assumes all IOResults are succesful</a>
 <a name="440"><span class="lineNum">     440 </span>            : //overload for functions that do internal validation, so return an IOResult</a>
 <a name="441"><span class="lineNum">     441 </span>            : template &lt;class F, class... T, std::enable_if_t&lt;IsIOResult&lt;std::invoke_result_t&lt;F, T...&gt;&gt;::value, void*&gt; = nullptr&gt;</a>
-<a name="442"><span class="lineNum">     442 </span><span class="lineCov">      26269 : ApplyResultT&lt;F, T...&gt; eval(F f, const IOResult&lt;T&gt;&amp;... rs)</span></a>
+<a name="442"><span class="lineNum">     442 </span><span class="lineCov">      24797 : ApplyResultT&lt;F, T...&gt; eval(F f, const IOResult&lt;T&gt;&amp;... rs)</span></a>
 <a name="443"><span class="lineNum">     443 </span>            : {</a>
-<a name="444"><span class="lineNum">     444 </span><span class="lineCov">      26269 :     return f(rs.value()...);</span></a>
+<a name="444"><span class="lineNum">     444 </span><span class="lineCov">      24797 :     return f(rs.value()...);</span></a>
 <a name="445"><span class="lineNum">     445 </span>            : }</a>
 <a name="446"><span class="lineNum">     446 </span>            : //overload for functions that can't fail because all values are acceptable, so return some other type</a>
 <a name="447"><span class="lineNum">     447 </span>            : template &lt;class F, class... T, std::enable_if_t&lt;!IsIOResult&lt;std::invoke_result_t&lt;F, T...&gt;&gt;::value, void*&gt; = nullptr&gt;</a>
-<a name="448"><span class="lineNum">     448 </span><span class="lineCov">       6960 : ApplyResultT&lt;F, T...&gt; eval(F f, const IOResult&lt;T&gt;&amp;... rs)</span></a>
+<a name="448"><span class="lineNum">     448 </span><span class="lineCov">       7762 : ApplyResultT&lt;F, T...&gt; eval(F f, const IOResult&lt;T&gt;&amp;... rs)</span></a>
 <a name="449"><span class="lineNum">     449 </span>            : {</a>
-<a name="450"><span class="lineNum">     450 </span><span class="lineCov">       6960 :     return success(f(rs.value()...));</span></a>
+<a name="450"><span class="lineNum">     450 </span><span class="lineCov">       7762 :     return success(f(rs.value()...));</span></a>
 <a name="451"><span class="lineNum">     451 </span>            : }</a>
 <a name="452"><span class="lineNum">     452 </span>            : } // namespace details</a>
 <a name="453"><span class="lineNum">     453 </span>            : </a>
@@ -531,7 +531,7 @@
 <a name="469"><span class="lineNum">     469 </span>            :  * @return the result of f(rs.value()...) if successful, the first error encountered otherwise.</a>
 <a name="470"><span class="lineNum">     470 </span>            :  */</a>
 <a name="471"><span class="lineNum">     471 </span>            : template &lt;class IOContext, class F, class... T&gt;</a>
-<a name="472"><span class="lineNum">     472 </span><span class="lineCov">      33233 : details::ApplyResultT&lt;F, T...&gt; apply(IOContext&amp; io, F f, const IOResult&lt;T&gt;&amp;... rs)</span></a>
+<a name="472"><span class="lineNum">     472 </span><span class="lineCov">      32563 : details::ApplyResultT&lt;F, T...&gt; apply(IOContext&amp; io, F f, const IOResult&lt;T&gt;&amp;... rs)</span></a>
 <a name="473"><span class="lineNum">     473 </span>            : {</a>
 <a name="474"><span class="lineNum">     474 </span>            :     //store the status of each argument in an array to check them.</a>
 <a name="475"><span class="lineNum">     475 </span>            :     //it would be possible to write a recursive template that checks one argument</a>
@@ -541,22 +541,22 @@
 <a name="479"><span class="lineNum">     479 </span>            :     //and slightly worse performance in the case of an error is probably acceptable.</a>
 <a name="480"><span class="lineNum">     480 </span>            : </a>
 <a name="481"><span class="lineNum">     481 </span>            :     //check for errors in the arguments</a>
-<a name="482"><span class="lineNum">     482 </span><span class="lineCov">     202504 :     IOStatus status[] = {(rs ? IOStatus{} : rs.error())...};</span></a>
-<a name="483"><span class="lineNum">     483 </span><span class="lineCov">     169265 :     auto iter_err     = std::find_if(std::begin(status), std::end(status), [](auto&amp; s) {</span></a>
-<a name="484"><span class="lineNum">     484 </span><span class="lineCov">     136032 :         return s.is_error();</span></a>
+<a name="482"><span class="lineNum">     482 </span><span class="lineCov">     197748 :     IOStatus status[] = {(rs ? IOStatus{} : rs.error())...};</span></a>
+<a name="483"><span class="lineNum">     483 </span><span class="lineCov">     165179 :     auto iter_err     = std::find_if(std::begin(status), std::end(status), [](auto&amp; s) {</span></a>
+<a name="484"><span class="lineNum">     484 </span><span class="lineCov">     132616 :         return s.is_error();</span></a>
 <a name="485"><span class="lineNum">     485 </span>            :     });</a>
 <a name="486"><span class="lineNum">     486 </span>            : </a>
 <a name="487"><span class="lineNum">     487 </span>            :     //evaluate f if all succesful</a>
-<a name="488"><span class="lineNum">     488 </span><span class="lineCov">      33237 :     auto result =</span></a>
-<a name="489"><span class="lineNum">     489 </span><span class="lineCov">      33233 :         iter_err == std::end(status) ? details::eval(f, rs...) : details::ApplyResultT&lt;F, T...&gt;(failure(*iter_err));</span></a>
+<a name="488"><span class="lineNum">     488 </span><span class="lineCov">      32567 :     auto result =</span></a>
+<a name="489"><span class="lineNum">     489 </span><span class="lineCov">      32563 :         iter_err == std::end(status) ? details::eval(f, rs...) : details::ApplyResultT&lt;F, T...&gt;(failure(*iter_err));</span></a>
 <a name="490"><span class="lineNum">     490 </span>            : </a>
-<a name="491"><span class="lineNum">     491 </span><span class="lineCov">      33233 :     if (!result) {</span></a>
+<a name="491"><span class="lineNum">     491 </span><span class="lineCov">      32563 :     if (!result) {</span></a>
 <a name="492"><span class="lineNum">     492 </span>            :         //save error in context</a>
 <a name="493"><span class="lineNum">     493 </span>            :         //if the error was generated by the applied function, the context hasn't seen it yet.</a>
 <a name="494"><span class="lineNum">     494 </span>            :         //this allows the context to fail fast and not continue to parse more.</a>
 <a name="495"><span class="lineNum">     495 </span><span class="lineCov">          7 :         io.set_error(result.error());</span></a>
 <a name="496"><span class="lineNum">     496 </span>            :     }</a>
-<a name="497"><span class="lineNum">     497 </span><span class="lineCov">      66466 :     return result;</span></a>
+<a name="497"><span class="lineNum">     497 </span><span class="lineCov">      65126 :     return result;</span></a>
 <a name="498"><span class="lineNum">     498 </span>            : }</a>
 <a name="499"><span class="lineNum">     499 </span>            : </a>
 <a name="500"><span class="lineNum">     500 </span>            : //utility for (de-)serializing tuple-like objects</a>
@@ -761,9 +761,9 @@
 <a name="699"><span class="lineNum">     699 </span>            :  * @return the restored object if succesful, an error otherwise.</a>
 <a name="700"><span class="lineNum">     700 </span>            :  */</a>
 <a name="701"><span class="lineNum">     701 </span>            : template &lt;class IOContext, class T, std::enable_if_t&lt;has_deserialize&lt;IOContext, T&gt;::value, void*&gt; = nullptr&gt;</a>
-<a name="702"><span class="lineNum">     702 </span><span class="lineCov">      50167 : IOResult&lt;T&gt; deserialize_internal(IOContext&amp; io, Tag&lt;T&gt; /*tag*/)</span></a>
+<a name="702"><span class="lineNum">     702 </span><span class="lineCov">      50207 : IOResult&lt;T&gt; deserialize_internal(IOContext&amp; io, Tag&lt;T&gt; /*tag*/)</span></a>
 <a name="703"><span class="lineNum">     703 </span>            : {</a>
-<a name="704"><span class="lineNum">     704 </span><span class="lineCov">      50167 :     return T::deserialize(io);</span></a>
+<a name="704"><span class="lineNum">     704 </span><span class="lineCov">      50207 :     return T::deserialize(io);</span></a>
 <a name="705"><span class="lineNum">     705 </span>            : }</a>
 <a name="706"><span class="lineNum">     706 </span>            : </a>
 <a name="707"><span class="lineNum">     707 </span>            : //utilities for (de-)serializing STL containers</a>
@@ -868,10 +868,10 @@
 <a name="806"><span class="lineNum">     806 </span>            :  * @return the restored T if succesful, an error code otherwise.</a>
 <a name="807"><span class="lineNum">     807 </span>            :  */</a>
 <a name="808"><span class="lineNum">     808 </span>            : template &lt;class IOContext, class T&gt;</a>
-<a name="809"><span class="lineNum">     809 </span><span class="lineCov">      81694 : IOResult&lt;T&gt; deserialize(IOContext&amp; io, Tag&lt;T&gt; tag)</span></a>
+<a name="809"><span class="lineNum">     809 </span><span class="lineCov">      81709 : IOResult&lt;T&gt; deserialize(IOContext&amp; io, Tag&lt;T&gt; tag)</span></a>
 <a name="810"><span class="lineNum">     810 </span>            : {</a>
 <a name="811"><span class="lineNum">     811 </span>            :     using mio::deserialize_internal;</a>
-<a name="812"><span class="lineNum">     812 </span><span class="lineCov">      81694 :     return deserialize_internal(io, tag);</span></a>
+<a name="812"><span class="lineNum">     812 </span><span class="lineCov">      81709 :     return deserialize_internal(io, tag);</span></a>
 <a name="813"><span class="lineNum">     813 </span>            : }</a>
 <a name="814"><span class="lineNum">     814 </span>            : </a>
 <a name="815"><span class="lineNum">     815 </span>            : /**</a>

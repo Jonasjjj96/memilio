@@ -137,7 +137,7 @@ $(function() {
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="keyword">class </span>ConfirmedCasesDataEntry</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;{</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> std::array&lt;const char*, 6&gt; age_group_names;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keyword">static</span> std::vector&lt;const char*&gt; age_group_names;</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keywordtype">double</span> num_confirmed;</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keywordtype">double</span> num_recovered;</div>
@@ -254,7 +254,7 @@ $(function() {
 <div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;<span class="keyword">class </span>PopulationDataEntry</div>
 <div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;{</div>
 <div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> std::array&lt;const char*, 11&gt; age_group_names;</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    <span class="keyword">static</span> std::vector&lt;const char*&gt; age_group_names;</div>
 <div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160; </div>
 <div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;    CustomIndexArray&lt;double, AgeGroup&gt; population;</div>
 <div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;    boost::optional&lt;regions::StateId&gt; state_id;</div>
@@ -291,8 +291,8 @@ $(function() {
 <div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;                                                   std::vector&lt;bool&gt;&amp; carry_over)</div>
 <div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;{</div>
 <div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;    std::array&lt;double, 6&gt; param_ranges = {5., 10., 20., 25., 20., 20.};</div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;    static_assert(param_ranges.size() == ConfirmedCasesDataEntry::age_group_names.size(),</div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;                  <span class="stringliteral">&quot;Number of RKI age groups does not match number of age ranges.&quot;</span>);</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;    assert(param_ranges.size() == ConfirmedCasesDataEntry::age_group_names.size() &amp;&amp;</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;           <span class="stringliteral">&quot;Number of RKI age groups does not match number of age ranges.&quot;</span>);</div>
 <div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160; </div>
 <div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;    <span class="comment">//counter for parameter age groups</span></div>
 <div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;    <span class="keywordtype">size_t</span> counter = 0;</div>
@@ -369,75 +369,88 @@ $(function() {
 <div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;}</div>
 <div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;} <span class="comment">// namespace details</span></div>
 <div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160; </div>
-<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;<span class="keyword">inline</span> IOResult&lt;std::vector&lt;PopulationDataEntry&gt;&gt; deserialize_population_data(<span class="keyword">const</span> Json::Value&amp; jsvalue)</div>
-<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;{</div>
-<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;    BOOST_OUTCOME_TRY(population_data, deserialize_json(jsvalue, <a class="code" href="namespacemio.html#a2f858e287c3935240954cf75cf53cfeb">Tag</a>&lt;std::vector&lt;PopulationDataEntry&gt;&gt;{}));</div>
-<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="namespacemio.html#a80d7fd30c9669e05b537b2caedd82bb8">success</a>(details::interpolate_to_rki_age_groups(population_data));</div>
-<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;}</div>
-<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160; </div>
-<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;<span class="keyword">inline</span> IOResult&lt;std::vector&lt;PopulationDataEntry&gt;&gt; <a class="code" href="namespacememilio_1_1epidata_1_1getPopulationData.html#a0e312f4b04cc3f72953d6bef99e797ef">read_population_data</a>(<span class="keyword">const</span> std::string&amp; filename)</div>
-<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;{</div>
-<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;    BOOST_OUTCOME_TRY(jsvalue, read_json(filename));</div>
-<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;    <span class="keywordflow">return</span> deserialize_population_data(jsvalue);</div>
-<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;}</div>
-<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160; </div>
-<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;IOResult&lt;std::vector&lt;int&gt;&gt; get_node_ids(<span class="keyword">const</span> std::string&amp; path, <span class="keywordtype">bool</span> is_node_for_county);</div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;<span class="keyword">inline</span> IOResult&lt;std::vector&lt;PopulationDataEntry&gt;&gt; deserialize_population_data(<span class="keyword">const</span> Json::Value&amp; jsvalue,</div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;                                                                              <span class="keywordtype">bool</span> rki_age_groups = <span class="keyword">true</span>)</div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;{</div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;    BOOST_OUTCOME_TRY(population_data, deserialize_json(jsvalue, <a class="code" href="namespacemio.html#a2f858e287c3935240954cf75cf53cfeb">Tag</a>&lt;std::vector&lt;PopulationDataEntry&gt;&gt;{}));</div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;    <span class="keywordflow">if</span> (rki_age_groups) {</div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="namespacemio.html#a80d7fd30c9669e05b537b2caedd82bb8">success</a>(details::interpolate_to_rki_age_groups(population_data));</div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;    }</div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;    <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="namespacemio.html#a80d7fd30c9669e05b537b2caedd82bb8">success</a>(population_data);</div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;    }</div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;}</div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160; </div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;<span class="keyword">inline</span> IOResult&lt;std::vector&lt;PopulationDataEntry&gt;&gt; <a class="code" href="namespacememilio_1_1epidata_1_1getPopulationData.html#a0e312f4b04cc3f72953d6bef99e797ef">read_population_data</a>(<span class="keyword">const</span> std::string&amp; filename,</div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;                                                                       <span class="keywordtype">bool</span> rki_age_group = <span class="keyword">true</span>)</div>
+<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;{</div>
+<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;    BOOST_OUTCOME_TRY(jsvalue, read_json(filename));</div>
+<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;    <span class="keywordflow">return</span> deserialize_population_data(jsvalue, rki_age_group);</div>
+<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;}</div>
 <div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160; </div>
-<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;<span class="keyword">class </span>VaccinationDataEntry</div>
-<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;{</div>
-<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> std::array&lt;const char*, 6&gt; age_group_names;</div>
-<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160; </div>
-<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;    <span class="keywordtype">double</span> num_vaccinations_completed;</div>
-<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;    Date date;</div>
-<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;    AgeGroup age_group;</div>
-<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;    boost::optional&lt;regions::StateId&gt; state_id;</div>
-<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;    boost::optional&lt;regions::CountyId&gt; county_id;</div>
-<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;    boost::optional&lt;regions::DistrictId&gt; district_id;</div>
-<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160; </div>
-<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">class</span> IoContext&gt;</div>
-<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;    <span class="keyword">static</span> IOResult&lt;VaccinationDataEntry&gt; <a class="code" href="namespacemio.html#a1eecf99ef3a231d628f968aeb2136865">deserialize</a>(IoContext&amp; io)</div>
-<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;    {</div>
-<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;        <span class="keyword">auto</span> obj                        = io.expect_object(<span class="stringliteral">&quot;VaccinationDataEntry&quot;</span>);</div>
-<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;        <span class="keyword">auto</span> num_vaccinations_completed = obj.expect_element(<span class="stringliteral">&quot;Vacc_completed&quot;</span>, Tag&lt;double&gt;{});</div>
-<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;        <span class="keyword">auto</span> date                       = obj.expect_element(<span class="stringliteral">&quot;Date&quot;</span>, Tag&lt;StringDate&gt;{});</div>
-<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;        <span class="keyword">auto</span> age_group_str              = obj.expect_element(<span class="stringliteral">&quot;Age_RKI&quot;</span>, Tag&lt;std::string&gt;{});</div>
-<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;        <span class="keyword">auto</span> state_id                   = obj.expect_optional(<span class="stringliteral">&quot;ID_State&quot;</span>, Tag&lt;regions::StateId&gt;{});</div>
-<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;        <span class="keyword">auto</span> county_id                  = obj.expect_optional(<span class="stringliteral">&quot;ID_County&quot;</span>, Tag&lt;regions::CountyId&gt;{});</div>
-<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;        <span class="keyword">auto</span> district_id                = obj.expect_optional(<span class="stringliteral">&quot;ID_District&quot;</span>, Tag&lt;regions::DistrictId&gt;{});</div>
-<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="namespacemio.html#a3cd34c233549e8b0e086c67fd82809d3">mio::apply</a>(</div>
-<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;            io,</div>
-<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;            [](<span class="keyword">auto</span> nf, <span class="keyword">auto</span> d, <span class="keyword">auto</span>&amp;&amp; a_str, <span class="keyword">auto</span> sid, <span class="keyword">auto</span> cid, <span class="keyword">auto</span> did) -&gt; IOResult&lt;VaccinationDataEntry&gt; {</div>
-<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;                <span class="keyword">auto</span> it = std::find(age_group_names.begin(), age_group_names.end(), a_str);</div>
-<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;                <span class="keyword">auto</span> a  = AgeGroup(0);</div>
-<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;                <span class="keywordflow">if</span> (it != age_group_names.end()) {</div>
-<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;                    a = AgeGroup(<span class="keywordtype">size_t</span>(it - age_group_names.begin()));</div>
-<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;                }</div>
-<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;                <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;                    <span class="keywordflow">return</span> <a class="code" href="namespacemio.html#a23604adfeac7ebc8418d741959e80906">failure</a>(StatusCode::InvalidValue, <span class="stringliteral">&quot;Invalid vaccination data age group.&quot;</span>);</div>
-<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;                }</div>
-<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="namespacemio.html#a80d7fd30c9669e05b537b2caedd82bb8">success</a>(VaccinationDataEntry{nf, d, a, sid, cid, did});</div>
-<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;            },</div>
-<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;            num_vaccinations_completed, date, age_group_str, state_id, county_id, district_id);</div>
-<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;    }</div>
-<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;};</div>
-<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160; </div>
-<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;<span class="keyword">inline</span> IOResult&lt;std::vector&lt;VaccinationDataEntry&gt;&gt; deserialize_vaccination_data(<span class="keyword">const</span> Json::Value&amp; jsvalue)</div>
-<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;{</div>
-<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;    <span class="keywordflow">return</span> deserialize_json(jsvalue, <a class="code" href="namespacemio.html#a2f858e287c3935240954cf75cf53cfeb">Tag</a>&lt;std::vector&lt;VaccinationDataEntry&gt;&gt;{});</div>
-<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;}</div>
-<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160; </div>
-<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;<span class="keyword">inline</span> IOResult&lt;std::vector&lt;VaccinationDataEntry&gt;&gt; read_vaccination_data(<span class="keyword">const</span> std::string&amp; filename)</div>
-<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;{</div>
-<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;    BOOST_OUTCOME_TRY(jsvalue, read_json(filename));</div>
-<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;    <span class="keywordflow">return</span> deserialize_vaccination_data(jsvalue);</div>
-<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;}</div>
-<div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160; </div>
-<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;} <span class="comment">// namespace mio</span></div>
-<div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160; </div>
-<div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;<span class="preprocessor">#endif </span><span class="comment">//MEMILIO_HAS_JSONCPP</span></div>
-<div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160; </div>
-<div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;<span class="preprocessor">#endif </span><span class="comment">//MEMILIO_IO_EPI_DATA_H</span></div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;IOResult&lt;void&gt; set_confirmed_cases_age_group_names(std::vector&lt;const char*&gt; names);</div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160; </div>
+<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;IOResult&lt;void&gt; set_population_data_age_group_names(std::vector&lt;const char*&gt; names);</div>
+<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160; </div>
+<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;IOResult&lt;void&gt; set_vaccination_data_age_group_names(std::vector&lt;const char*&gt; names);</div>
+<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160; </div>
+<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;IOResult&lt;std::vector&lt;int&gt;&gt; get_node_ids(<span class="keyword">const</span> std::string&amp; path, <span class="keywordtype">bool</span> is_node_for_county, <span class="keywordtype">bool</span> rki_age_groups = <span class="keyword">true</span>);</div>
+<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160; </div>
+<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;<span class="keyword">class </span>VaccinationDataEntry</div>
+<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;{</div>
+<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;    <span class="keyword">static</span> std::vector&lt;const char*&gt; age_group_names;</div>
+<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160; </div>
+<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;    <span class="keywordtype">double</span> num_vaccinations_completed;</div>
+<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;    Date date;</div>
+<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;    AgeGroup age_group;</div>
+<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;    boost::optional&lt;regions::StateId&gt; state_id;</div>
+<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;    boost::optional&lt;regions::CountyId&gt; county_id;</div>
+<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;    boost::optional&lt;regions::DistrictId&gt; district_id;</div>
+<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160; </div>
+<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">class</span> IoContext&gt;</div>
+<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;    <span class="keyword">static</span> IOResult&lt;VaccinationDataEntry&gt; <a class="code" href="namespacemio.html#a1eecf99ef3a231d628f968aeb2136865">deserialize</a>(IoContext&amp; io)</div>
+<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;    {</div>
+<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;        <span class="keyword">auto</span> obj                        = io.expect_object(<span class="stringliteral">&quot;VaccinationDataEntry&quot;</span>);</div>
+<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;        <span class="keyword">auto</span> num_vaccinations_completed = obj.expect_element(<span class="stringliteral">&quot;Vacc_completed&quot;</span>, Tag&lt;double&gt;{});</div>
+<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;        <span class="keyword">auto</span> date                       = obj.expect_element(<span class="stringliteral">&quot;Date&quot;</span>, Tag&lt;StringDate&gt;{});</div>
+<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;        <span class="keyword">auto</span> age_group_str              = obj.expect_element(<span class="stringliteral">&quot;Age_RKI&quot;</span>, Tag&lt;std::string&gt;{});</div>
+<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;        <span class="keyword">auto</span> state_id                   = obj.expect_optional(<span class="stringliteral">&quot;ID_State&quot;</span>, Tag&lt;regions::StateId&gt;{});</div>
+<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;        <span class="keyword">auto</span> county_id                  = obj.expect_optional(<span class="stringliteral">&quot;ID_County&quot;</span>, Tag&lt;regions::CountyId&gt;{});</div>
+<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;        <span class="keyword">auto</span> district_id                = obj.expect_optional(<span class="stringliteral">&quot;ID_District&quot;</span>, Tag&lt;regions::DistrictId&gt;{});</div>
+<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="namespacemio.html#a3cd34c233549e8b0e086c67fd82809d3">mio::apply</a>(</div>
+<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;            io,</div>
+<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;            [](<span class="keyword">auto</span> nf, <span class="keyword">auto</span> d, <span class="keyword">auto</span>&amp;&amp; a_str, <span class="keyword">auto</span> sid, <span class="keyword">auto</span> cid, <span class="keyword">auto</span> did) -&gt; IOResult&lt;VaccinationDataEntry&gt; {</div>
+<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;                <span class="keyword">auto</span> it = std::find(age_group_names.begin(), age_group_names.end(), a_str);</div>
+<div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;                <span class="keyword">auto</span> a  = AgeGroup(0);</div>
+<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;                <span class="keywordflow">if</span> (it != age_group_names.end()) {</div>
+<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;                    a = AgeGroup(<span class="keywordtype">size_t</span>(it - age_group_names.begin()));</div>
+<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;                }</div>
+<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;                <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;                    <span class="keywordflow">return</span> <a class="code" href="namespacemio.html#a23604adfeac7ebc8418d741959e80906">failure</a>(StatusCode::InvalidValue, <span class="stringliteral">&quot;Invalid vaccination data age group.&quot;</span>);</div>
+<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;                }</div>
+<div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="namespacemio.html#a80d7fd30c9669e05b537b2caedd82bb8">success</a>(VaccinationDataEntry{nf, d, a, sid, cid, did});</div>
+<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;            },</div>
+<div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;            num_vaccinations_completed, date, age_group_str, state_id, county_id, district_id);</div>
+<div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;    }</div>
+<div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;};</div>
+<div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160; </div>
+<div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160;<span class="keyword">inline</span> IOResult&lt;std::vector&lt;VaccinationDataEntry&gt;&gt; deserialize_vaccination_data(<span class="keyword">const</span> Json::Value&amp; jsvalue)</div>
+<div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160;{</div>
+<div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160;    <span class="keywordflow">return</span> deserialize_json(jsvalue, <a class="code" href="namespacemio.html#a2f858e287c3935240954cf75cf53cfeb">Tag</a>&lt;std::vector&lt;VaccinationDataEntry&gt;&gt;{});</div>
+<div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160;}</div>
+<div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160; </div>
+<div class="line"><a name="l00456"></a><span class="lineno">  456</span>&#160;<span class="keyword">inline</span> IOResult&lt;std::vector&lt;VaccinationDataEntry&gt;&gt; read_vaccination_data(<span class="keyword">const</span> std::string&amp; filename)</div>
+<div class="line"><a name="l00457"></a><span class="lineno">  457</span>&#160;{</div>
+<div class="line"><a name="l00458"></a><span class="lineno">  458</span>&#160;    BOOST_OUTCOME_TRY(jsvalue, read_json(filename));</div>
+<div class="line"><a name="l00459"></a><span class="lineno">  459</span>&#160;    <span class="keywordflow">return</span> deserialize_vaccination_data(jsvalue);</div>
+<div class="line"><a name="l00460"></a><span class="lineno">  460</span>&#160;}</div>
+<div class="line"><a name="l00461"></a><span class="lineno">  461</span>&#160; </div>
+<div class="line"><a name="l00462"></a><span class="lineno">  462</span>&#160;} <span class="comment">// namespace mio</span></div>
+<div class="line"><a name="l00463"></a><span class="lineno">  463</span>&#160; </div>
+<div class="line"><a name="l00464"></a><span class="lineno">  464</span>&#160;<span class="preprocessor">#endif </span><span class="comment">//MEMILIO_HAS_JSONCPP</span></div>
+<div class="line"><a name="l00465"></a><span class="lineno">  465</span>&#160; </div>
+<div class="line"><a name="l00466"></a><span class="lineno">  466</span>&#160;<span class="preprocessor">#endif </span><span class="comment">//MEMILIO_IO_EPI_DATA_H</span></div>
 <div class="ttc" id="aage__group_8h_html"><div class="ttname"><a href="age__group_8h.html">age_group.h</a></div></div>
 <div class="ttc" id="acustom__index__array_8h_html"><div class="ttname"><a href="custom__index__array_8h.html">custom_index_array.h</a></div></div>
 <div class="ttc" id="adate_8h_html"><div class="ttname"><a href="date_8h.html">date.h</a></div></div>

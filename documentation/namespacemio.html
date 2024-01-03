@@ -1049,10 +1049,10 @@ Functions</h2></td></tr>
 <tr class="memitem:ac76d1d8f469ab547ed1ceb5e8c96f271"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemio.html#ac76d1d8f469ab547ed1ceb5e8c96f271">set_log_level</a> (<a class="el" href="namespacemio.html#a67881790c6dfd8c058d27e5f1fe24220">LogLevel</a> level)</td></tr>
 <tr class="memdesc:ac76d1d8f469ab547ed1ceb5e8c96f271"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the verbosity of the logger.  <a href="namespacemio.html#ac76d1d8f469ab547ed1ceb5e8c96f271">More...</a><br /></td></tr>
 <tr class="separator:ac76d1d8f469ab547ed1ceb5e8c96f271"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a62370f41f294bb6b3a1f32fc7a37473c"><td class="memTemplParams" colspan="2">template&lt;class TestAndTrace , class ContactPattern , class Model , class MigrationParams , class Parameters , class ReadFunction , class NodeIdFunction &gt; </td></tr>
-<tr class="memitem:a62370f41f294bb6b3a1f32fc7a37473c"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="namespacemio.html#ae556a666d14183eb2bf3a3efc11551ec">IOResult</a>&lt; void &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemio.html#a62370f41f294bb6b3a1f32fc7a37473c">set_nodes</a> (const Parameters &amp;params, <a class="el" href="structmio_1_1Date.html">Date</a> start_date, <a class="el" href="structmio_1_1Date.html">Date</a> end_date, const fs::path &amp;data_dir, const std::string &amp;population_data_path, bool is_node_for_county, <a class="el" href="classmio_1_1Graph.html">Graph</a>&lt; Model, MigrationParams &gt; &amp;params_graph, ReadFunction &amp;&amp;read_func, NodeIdFunction &amp;&amp;node_func, const std::vector&lt; double &gt; &amp;scaling_factor_inf, double scaling_factor_icu, double tnt_capacity_factor, int num_days=0, bool export_time_series=false)</td></tr>
-<tr class="memdesc:a62370f41f294bb6b3a1f32fc7a37473c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the graph nodes for counties or districts.  <a href="namespacemio.html#a62370f41f294bb6b3a1f32fc7a37473c">More...</a><br /></td></tr>
-<tr class="separator:a62370f41f294bb6b3a1f32fc7a37473c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7cf88d851af8328a99b9e00645fd3a33"><td class="memTemplParams" colspan="2">template&lt;class TestAndTrace , class ContactPattern , class Model , class MigrationParams , class Parameters , class ReadFunction , class NodeIdFunction &gt; </td></tr>
+<tr class="memitem:a7cf88d851af8328a99b9e00645fd3a33"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="namespacemio.html#ae556a666d14183eb2bf3a3efc11551ec">IOResult</a>&lt; void &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemio.html#a7cf88d851af8328a99b9e00645fd3a33">set_nodes</a> (const Parameters &amp;params, <a class="el" href="structmio_1_1Date.html">Date</a> start_date, <a class="el" href="structmio_1_1Date.html">Date</a> end_date, const fs::path &amp;data_dir, const std::string &amp;population_data_path, bool is_node_for_county, <a class="el" href="classmio_1_1Graph.html">Graph</a>&lt; Model, MigrationParams &gt; &amp;params_graph, ReadFunction &amp;&amp;read_func, NodeIdFunction &amp;&amp;node_func, const std::vector&lt; double &gt; &amp;scaling_factor_inf, double scaling_factor_icu, double tnt_capacity_factor, int num_days=0, bool export_time_series=false, bool rki_age_groups=true)</td></tr>
+<tr class="memdesc:a7cf88d851af8328a99b9e00645fd3a33"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the graph nodes for counties or districts.  <a href="namespacemio.html#a7cf88d851af8328a99b9e00645fd3a33">More...</a><br /></td></tr>
+<tr class="separator:a7cf88d851af8328a99b9e00645fd3a33"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9109ed83aaeea1ebec958b6ac8cb48dd"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemio.html#a9109ed83aaeea1ebec958b6ac8cb48dd">set_ostream_format</a> (std::ostream &amp;out, size_t width, size_t precision, char fill=' ')</td></tr>
 <tr class="memdesc:a9109ed83aaeea1ebec958b6ac8cb48dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds manipulators for width, (fixed) precision and fill character to an ostream.  <a href="namespacemio.html#a9109ed83aaeea1ebec958b6ac8cb48dd">More...</a><br /></td></tr>
 <tr class="separator:a9109ed83aaeea1ebec958b6ac8cb48dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -6777,8 +6777,8 @@ template&lt;class ContactLocation , class Model , class MigrationParams , class 
 
 </div>
 </div>
-<a id="a62370f41f294bb6b3a1f32fc7a37473c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a62370f41f294bb6b3a1f32fc7a37473c">&#9670;&nbsp;</a></span>set_nodes()</h2>
+<a id="a7cf88d851af8328a99b9e00645fd3a33"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7cf88d851af8328a99b9e00645fd3a33">&#9670;&nbsp;</a></span>set_nodes()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -6867,7 +6867,13 @@ template&lt;class TestAndTrace , class ContactPattern , class Model , class Migr
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>export_time_series</em> = <code>false</code>&#160;</td>
+          <td class="paramname"><em>export_time_series</em> = <code>false</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>rki_age_groups</em> = <code>true</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -6894,6 +6900,7 @@ template&lt;class TestAndTrace , class ContactPattern , class Model , class Migr
     <tr><td class="paramdir">[in]</td><td class="paramname">tnt_capacity_factor</td><td>Factor for test and trace capacity. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">num_days</td><td>Number of days to be simulated; required to load data for vaccinations during the simulation. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">export_time_series</td><td>If true, reads data for each day of simulation and writes it in the same directory as the input files. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">rki_age_groups</td><td>Specifies whether rki-age_groups should be used. </td></tr>
   </table>
   </dd>
 </dl>
