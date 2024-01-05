@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2024-01-03 15:16:35</td>
+            <td class="headerValue">2024-01-05 13:09:09</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">4</td>
@@ -99,10 +99,10 @@
 <a name="37"><span class="lineNum">      37 </span>            :  * @param[out] unnamed Interpolation result.</a>
 <a name="38"><span class="lineNum">      38 </span>            :  */</a>
 <a name="39"><span class="lineNum">      39 </span>            : template &lt;typename X, typename V&gt;</a>
-<a name="40"><span class="lineNum">      40 </span><span class="lineCov">        271 : auto linear_interpolation(const X&amp; x_eval, const X&amp; x_1, const X&amp; x_2, const V&amp; y1, const V&amp; y2)</span></a>
+<a name="40"><span class="lineNum">      40 </span><span class="lineCov">        274 : auto linear_interpolation(const X&amp; x_eval, const X&amp; x_1, const X&amp; x_2, const V&amp; y1, const V&amp; y2)</span></a>
 <a name="41"><span class="lineNum">      41 </span>            : {</a>
-<a name="42"><span class="lineNum">      42 </span><span class="lineCov">        271 :     auto weight = (x_eval - x_1) / (x_2 - x_1);</span></a>
-<a name="43"><span class="lineNum">      43 </span><span class="lineCov">        532 :     return y1 + weight * (y2 - y1);</span></a>
+<a name="42"><span class="lineNum">      42 </span><span class="lineCov">        274 :     auto weight = (x_eval - x_1) / (x_2 - x_1);</span></a>
+<a name="43"><span class="lineNum">      43 </span><span class="lineCov">        535 :     return y1 + weight * (y2 - y1);</span></a>
 <a name="44"><span class="lineNum">      44 </span>            : }</a>
 <a name="45"><span class="lineNum">      45 </span>            : </a>
 <a name="46"><span class="lineNum">      46 </span>            : /**</a>
