@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2024-01-12 14:31:54</td>
+            <td class="headerValue">2024-01-16 09:10:56</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">5</td>
@@ -122,20 +122,20 @@
 <a name="60"><span class="lineNum">      60 </span>            :     {</a>
 <a name="61"><span class="lineNum">      61 </span><span class="lineCov">         14 :     }</span></a>
 <a name="62"><span class="lineNum">      62 </span>            : </a>
-<a name="63"><span class="lineNum">      63 </span><span class="lineCov">      43473 :     void get_flows(Eigen::Ref&lt;const Eigen::VectorXd&gt; pop, Eigen::Ref&lt;const Eigen::VectorXd&gt; y, double t,</span></a>
+<a name="63"><span class="lineNum">      63 </span><span class="lineCov">      43449 :     void get_flows(Eigen::Ref&lt;const Eigen::VectorXd&gt; pop, Eigen::Ref&lt;const Eigen::VectorXd&gt; y, double t,</span></a>
 <a name="64"><span class="lineNum">      64 </span>            :                    Eigen::Ref&lt;Eigen::VectorXd&gt; flows) const override</a>
 <a name="65"><span class="lineNum">      65 </span>            :     {</a>
-<a name="66"><span class="lineNum">      66 </span><span class="lineCov">      43473 :         auto&amp; params     = this-&gt;parameters;</span></a>
-<a name="67"><span class="lineNum">      67 </span><span class="lineCov">      86946 :         double coeffStoE = params.get&lt;ContactPatterns&gt;().get_matrix_at(t)(0, 0) *</span></a>
-<a name="68"><span class="lineNum">      68 </span><span class="lineCov">     130419 :                            params.get&lt;TransmissionProbabilityOnContact&gt;() / populations.get_total();</span></a>
+<a name="66"><span class="lineNum">      66 </span><span class="lineCov">      43449 :         auto&amp; params     = this-&gt;parameters;</span></a>
+<a name="67"><span class="lineNum">      67 </span><span class="lineCov">      86898 :         double coeffStoE = params.get&lt;ContactPatterns&gt;().get_matrix_at(t)(0, 0) *</span></a>
+<a name="68"><span class="lineNum">      68 </span><span class="lineCov">     130347 :                            params.get&lt;TransmissionProbabilityOnContact&gt;() / populations.get_total();</span></a>
 <a name="69"><span class="lineNum">      69 </span>            : </a>
-<a name="70"><span class="lineNum">      70 </span><span class="lineCov">      43473 :         flows[get_flat_flow_index&lt;InfectionState::Susceptible, InfectionState::Exposed&gt;()] =</span></a>
-<a name="71"><span class="lineNum">      71 </span><span class="lineCov">      43473 :             coeffStoE * y[(size_t)InfectionState::Susceptible] * pop[(size_t)InfectionState::Infected];</span></a>
-<a name="72"><span class="lineNum">      72 </span><span class="lineCov">      43473 :         flows[get_flat_flow_index&lt;InfectionState::Exposed, InfectionState::Infected&gt;()] =</span></a>
-<a name="73"><span class="lineNum">      73 </span><span class="lineCov">      43473 :             (1.0 / params.get&lt;TimeExposed&gt;()) * y[(size_t)InfectionState::Exposed];</span></a>
-<a name="74"><span class="lineNum">      74 </span><span class="lineCov">      43473 :         flows[get_flat_flow_index&lt;InfectionState::Infected, InfectionState::Recovered&gt;()] =</span></a>
-<a name="75"><span class="lineNum">      75 </span><span class="lineCov">      43473 :             (1.0 / params.get&lt;TimeInfected&gt;()) * y[(size_t)InfectionState::Infected];</span></a>
-<a name="76"><span class="lineNum">      76 </span><span class="lineCov">      43473 :     }</span></a>
+<a name="70"><span class="lineNum">      70 </span><span class="lineCov">      43449 :         flows[get_flat_flow_index&lt;InfectionState::Susceptible, InfectionState::Exposed&gt;()] =</span></a>
+<a name="71"><span class="lineNum">      71 </span><span class="lineCov">      43449 :             coeffStoE * y[(size_t)InfectionState::Susceptible] * pop[(size_t)InfectionState::Infected];</span></a>
+<a name="72"><span class="lineNum">      72 </span><span class="lineCov">      43449 :         flows[get_flat_flow_index&lt;InfectionState::Exposed, InfectionState::Infected&gt;()] =</span></a>
+<a name="73"><span class="lineNum">      73 </span><span class="lineCov">      43449 :             (1.0 / params.get&lt;TimeExposed&gt;()) * y[(size_t)InfectionState::Exposed];</span></a>
+<a name="74"><span class="lineNum">      74 </span><span class="lineCov">      43449 :         flows[get_flat_flow_index&lt;InfectionState::Infected, InfectionState::Recovered&gt;()] =</span></a>
+<a name="75"><span class="lineNum">      75 </span><span class="lineCov">      43449 :             (1.0 / params.get&lt;TimeInfected&gt;()) * y[(size_t)InfectionState::Infected];</span></a>
+<a name="76"><span class="lineNum">      76 </span><span class="lineCov">      43449 :     }</span></a>
 <a name="77"><span class="lineNum">      77 </span>            : </a>
 <a name="78"><span class="lineNum">      78 </span>            :     /**</a>
 <a name="79"><span class="lineNum">      79 </span>            :     *@brief Computes the reproduction number at a given index time of the Model output obtained by the Simulation.</a>
