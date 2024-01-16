@@ -11115,15 +11115,13 @@ from memilio.epidata import defaultDict as dd</pre></td>
                 <td><pre>Similar lines in 2 files
 ==memilio.epidata.getJHData:[97:106]
 ==memilio.epidata_test.test_epidata_get_jh_data:[122:129]
-    directory_ger = os.path.join(out_folder, &#39;Germany/&#39;)
-    directory_es = os.path.join(out_folder, &#39;Spain/&#39;)
-    directory_fr = os.path.join(out_folder, &#39;France/&#39;)
-    directory_it = os.path.join(out_folder, &#39;Italy/&#39;)
-    directory_us = os.path.join(out_folder, &#39;US/&#39;)
-    directory_rok = os.path.join(out_folder, &#39;SouthKorea/&#39;)
-    directory_prc = os.path.join(out_folder, &#39;China/&#39;)
-
-    # dictionary of countries</pre></td>
+        directory_ger = os.path.join(out_folder, &#39;Germany/&#39;)
+        directory_es = os.path.join(out_folder, &#39;Spain/&#39;)
+        directory_fr = os.path.join(out_folder, &#39;France/&#39;)
+        directory_it = os.path.join(out_folder, &#39;Italy/&#39;)
+        directory_us = os.path.join(out_folder, &#39;US/&#39;)
+        directory_rok = os.path.join(out_folder, &#39;SouthKorea/&#39;)
+        directory_prc = os.path.join(out_folder, &#39;China/&#39;)</pre></td>
             </tr>
             
             <tr>
@@ -11163,11 +11161,8 @@ from memilio.epidata import defaultDict as dd</pre></td>
         self.setUpPyfakefs()
         progress_indicator.ProgressIndicator.disable_indicators(True)
 
-    @patch(&#39;memilio.epidata.getVaccinationData.download_vaccination_data&#39;,
-           return_value=df_vacc_data_altern)
-    @patch(&#39;memilio.epidata.getPopulationData.get_population_data&#39;, return_value=df_pop)
-    @patch(&#39;builtins.input&#39;, return_value=&#39;y&#39;)
-    def test_get_vaccination_data_alternative_ages(self, mockin, mockp, mockv):</pre></td>
+    @patch(&#39;builtins.print&#39;)
+    def test_verify_sorted(self, mock_print):</pre></td>
             </tr>
             
             <tr>
@@ -11226,7 +11221,9 @@ import pandas as pd
 from memilio.epidata import defaultDict as dd
 from memilio.epidata import geoModificationGermany as geoger
 from memilio.epidata import getDataIntoPandasDataFrame as gd
-from memilio.epidata import modifyDataframeSeries as mdfs</pre></td>
+from memilio.epidata import modifyDataframeSeries as mdfs
+
+# activate CoW for more predictable behaviour of pandas DataFrames</pre></td>
             </tr>
             
             <tr>
@@ -11368,9 +11365,7 @@ import pandas as pd
 
 from memilio.epidata import defaultDict as dd
 from memilio.epidata import geoModificationGermany as geoger
-from memilio.epidata import getDataIntoPandasDataFrame as gd
-
-# activate CoW for more predictable behaviour of pandas DataFrames</pre></td>
+from memilio.epidata import getDataIntoPandasDataFrame as gd</pre></td>
             </tr>
             
             <tr>
