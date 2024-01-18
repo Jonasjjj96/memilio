@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2024-01-16 15:19:34</td>
+            <td class="headerValue">2024-01-18 16:35:19</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">3</td>
@@ -186,41 +186,26 @@
 <a name="124"><span class="lineNum">     124 </span>            :         return m_dt;</a>
 <a name="125"><span class="lineNum">     125 </span>            :     }</a>
 <a name="126"><span class="lineNum">     126 </span>            : </a>
-<a name="127"><span class="lineNum">     127 </span>            :     /**</a>
-<a name="128"><span class="lineNum">     128 </span>            :      * @brief Print the transition part of the simulation result.</a>
-<a name="129"><span class="lineNum">     129 </span>            :      * </a>
-<a name="130"><span class="lineNum">     130 </span>            :      * The TimeSeries m_transitions with initial values used for the simulation and calculated transitions by the </a>
-<a name="131"><span class="lineNum">     131 </span>            :      * simulation are printed. </a>
-<a name="132"><span class="lineNum">     132 </span>            :      */</a>
-<a name="133"><span class="lineNum">     133 </span>            :     void print_transitions() const;</a>
-<a name="134"><span class="lineNum">     134 </span>            : </a>
-<a name="135"><span class="lineNum">     135 </span>            :     /**</a>
-<a name="136"><span class="lineNum">     136 </span>            :      * @brief Print the simulated numbers of individuals in each compartment for each time step.</a>
-<a name="137"><span class="lineNum">     137 </span>            :      * </a>
-<a name="138"><span class="lineNum">     138 </span>            :      * The TimeSeries m_populations with simulated numbers of individuals in each compartment for each time step are printed. </a>
-<a name="139"><span class="lineNum">     139 </span>            :      */</a>
-<a name="140"><span class="lineNum">     140 </span>            :     void print_compartments() const;</a>
-<a name="141"><span class="lineNum">     141 </span>            : </a>
-<a name="142"><span class="lineNum">     142 </span>            : private:</a>
-<a name="143"><span class="lineNum">     143 </span>            :     std::unique_ptr&lt;Model&gt; m_model; ///&lt; Unique pointer to the Model simulated.</a>
-<a name="144"><span class="lineNum">     144 </span>            :     ScalarType m_t0; ///&lt; Start time used for simulation.</a>
-<a name="145"><span class="lineNum">     145 </span>            :     ScalarType m_dt; ///&lt; Time step used for numerical computations in simulation.</a>
-<a name="146"><span class="lineNum">     146 </span>            : };</a>
-<a name="147"><span class="lineNum">     147 </span>            : </a>
-<a name="148"><span class="lineNum">     148 </span>            : /**</a>
-<a name="149"><span class="lineNum">     149 </span>            :  * @brief simulates a compartmental model</a>
-<a name="150"><span class="lineNum">     150 </span>            :  * @param[in] t0 start time</a>
-<a name="151"><span class="lineNum">     151 </span>            :  * @param[in] tmax end time</a>
-<a name="152"><span class="lineNum">     152 </span>            :  * @param[in] dt initial step size of integration</a>
-<a name="153"><span class="lineNum">     153 </span>            :  * @param[in] model an instance of a compartmental model</a>
-<a name="154"><span class="lineNum">     154 </span>            :  * @return a TimeSeries to represent the final simulation result</a>
-<a name="155"><span class="lineNum">     155 </span>            :  */</a>
-<a name="156"><span class="lineNum">     156 </span>            : TimeSeries&lt;ScalarType&gt; simulate(double t0, double tmax, double dt, Model const&amp; model);</a>
-<a name="157"><span class="lineNum">     157 </span>            : </a>
-<a name="158"><span class="lineNum">     158 </span>            : } // namespace isecir</a>
-<a name="159"><span class="lineNum">     159 </span>            : } // namespace mio</a>
-<a name="160"><span class="lineNum">     160 </span>            : </a>
-<a name="161"><span class="lineNum">     161 </span>            : #endif //IDE_SECIR_SIMULATION_H</a>
+<a name="127"><span class="lineNum">     127 </span>            : private:</a>
+<a name="128"><span class="lineNum">     128 </span>            :     std::unique_ptr&lt;Model&gt; m_model; ///&lt; Unique pointer to the Model simulated.</a>
+<a name="129"><span class="lineNum">     129 </span>            :     ScalarType m_t0; ///&lt; Start time used for simulation.</a>
+<a name="130"><span class="lineNum">     130 </span>            :     ScalarType m_dt; ///&lt; Time step used for numerical computations in simulation.</a>
+<a name="131"><span class="lineNum">     131 </span>            : };</a>
+<a name="132"><span class="lineNum">     132 </span>            : </a>
+<a name="133"><span class="lineNum">     133 </span>            : /**</a>
+<a name="134"><span class="lineNum">     134 </span>            :  * @brief simulates a compartmental model</a>
+<a name="135"><span class="lineNum">     135 </span>            :  * @param[in] t0 start time</a>
+<a name="136"><span class="lineNum">     136 </span>            :  * @param[in] tmax end time</a>
+<a name="137"><span class="lineNum">     137 </span>            :  * @param[in] dt initial step size of integration</a>
+<a name="138"><span class="lineNum">     138 </span>            :  * @param[in] model an instance of a compartmental model</a>
+<a name="139"><span class="lineNum">     139 </span>            :  * @return a TimeSeries to represent the final simulation result</a>
+<a name="140"><span class="lineNum">     140 </span>            :  */</a>
+<a name="141"><span class="lineNum">     141 </span>            : TimeSeries&lt;ScalarType&gt; simulate(double t0, double tmax, double dt, Model const&amp; model);</a>
+<a name="142"><span class="lineNum">     142 </span>            : </a>
+<a name="143"><span class="lineNum">     143 </span>            : } // namespace isecir</a>
+<a name="144"><span class="lineNum">     144 </span>            : } // namespace mio</a>
+<a name="145"><span class="lineNum">     145 </span>            : </a>
+<a name="146"><span class="lineNum">     146 </span>            : #endif //IDE_SECIR_SIMULATION_H</a>
 </pre>
       </td>
     </tr>

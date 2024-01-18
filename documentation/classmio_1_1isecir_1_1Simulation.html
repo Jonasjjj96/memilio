@@ -106,12 +106,6 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a3b15d155ee81ba86da8ba262d1a1a2a9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmio_1_1TimeSeries.html">TimeSeries</a>&lt; <a class="el" href="memilio_2config_8h.html#acd4f1d492d83a74716a42615e127d641">ScalarType</a> &gt; const  &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1isecir_1_1Simulation.html#a3b15d155ee81ba86da8ba262d1a1a2a9">get_transitions</a> ()</td></tr>
 <tr class="memdesc:a3b15d155ee81ba86da8ba262d1a1a2a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the transitions between the different <a class="el" href="namespacemio_1_1isecir.html#a4765e077a33191fc1125ca33a6ad8697" title="The InfectionState enum describes the possible categories for the infectious state of persons.">InfectionState</a>s.  <a href="classmio_1_1isecir_1_1Simulation.html#a3b15d155ee81ba86da8ba262d1a1a2a9">More...</a><br /></td></tr>
 <tr class="separator:a3b15d155ee81ba86da8ba262d1a1a2a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5e1eb432f04748a24bed35a60615cd9c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1isecir_1_1Simulation.html#a5e1eb432f04748a24bed35a60615cd9c">print_compartments</a> () const</td></tr>
-<tr class="memdesc:a5e1eb432f04748a24bed35a60615cd9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Print the simulated numbers of individuals in each compartment for each time step.  <a href="classmio_1_1isecir_1_1Simulation.html#a5e1eb432f04748a24bed35a60615cd9c">More...</a><br /></td></tr>
-<tr class="separator:a5e1eb432f04748a24bed35a60615cd9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a598caa787c7d82b07f582326012218df"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1isecir_1_1Simulation.html#a598caa787c7d82b07f582326012218df">print_transitions</a> () const</td></tr>
-<tr class="memdesc:a598caa787c7d82b07f582326012218df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Print the transition part of the simulation result.  <a href="classmio_1_1isecir_1_1Simulation.html#a598caa787c7d82b07f582326012218df">More...</a><br /></td></tr>
-<tr class="separator:a598caa787c7d82b07f582326012218df"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9d63ac59ea23181535d7c45b3bd445c3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1isecir_1_1Simulation.html#a9d63ac59ea23181535d7c45b3bd445c3">Simulation</a> (<a class="el" href="classmio_1_1isecir_1_1Model.html">Model</a> const &amp;model, <a class="el" href="memilio_2config_8h.html#acd4f1d492d83a74716a42615e127d641">ScalarType</a> t0=0., <a class="el" href="memilio_2config_8h.html#acd4f1d492d83a74716a42615e127d641">ScalarType</a> dt=0.1)</td></tr>
 <tr class="memdesc:a9d63ac59ea23181535d7c45b3bd445c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">setup the <a class="el" href="classmio_1_1isecir_1_1Simulation.html" title="run the simulation in discrete steps and report results.">Simulation</a> for an IDE model.  <a href="classmio_1_1isecir_1_1Simulation.html#a9d63ac59ea23181535d7c45b3bd445c3">More...</a><br /></td></tr>
 <tr class="separator:a9d63ac59ea23181535d7c45b3bd445c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -335,46 +329,6 @@ Private Attributes</h2></td></tr>
 
 <p>Get the transitions between the different <a class="el" href="namespacemio_1_1isecir.html#a4765e077a33191fc1125ca33a6ad8697" title="The InfectionState enum describes the possible categories for the infectious state of persons.">InfectionState</a>s. </p>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="classmio_1_1TimeSeries.html" title="stores vectors of values at time points (or some other abstract variable) the value at each time poin...">TimeSeries</a> with stored transitions calculated in the simulation. </dd></dl>
-
-</div>
-</div>
-<a id="a5e1eb432f04748a24bed35a60615cd9c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5e1eb432f04748a24bed35a60615cd9c">&#9670;&nbsp;</a></span>print_compartments()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void mio::isecir::Simulation::print_compartments </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Print the simulated numbers of individuals in each compartment for each time step. </p>
-<p>The <a class="el" href="classmio_1_1TimeSeries.html" title="stores vectors of values at time points (or some other abstract variable) the value at each time poin...">TimeSeries</a> m_populations with simulated numbers of individuals in each compartment for each time step are printed. </p>
-
-</div>
-</div>
-<a id="a598caa787c7d82b07f582326012218df"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a598caa787c7d82b07f582326012218df">&#9670;&nbsp;</a></span>print_transitions()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void mio::isecir::Simulation::print_transitions </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Print the transition part of the simulation result. </p>
-<p>The <a class="el" href="classmio_1_1TimeSeries.html" title="stores vectors of values at time points (or some other abstract variable) the value at each time poin...">TimeSeries</a> m_transitions with initial values used for the simulation and calculated transitions by the simulation are printed. </p>
 
 </div>
 </div>

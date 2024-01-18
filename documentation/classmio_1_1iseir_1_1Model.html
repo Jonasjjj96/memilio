@@ -88,9 +88,6 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a1a2207198d9f9665ac77f0c2492edd4e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1iseir_1_1Model.html#a1a2207198d9f9665ac77f0c2492edd4e">Model</a> (<a class="el" href="classmio_1_1TimeSeries.html">TimeSeries</a>&lt; double &gt; &amp;&amp;init, double dt_init, int N_init, const <a class="el" href="classmio_1_1iseir_1_1Model.html#a2def35e2d4380bcb7ea8eac0c9cc43b5">Pa</a> &amp;Parameterset_init=<a class="el" href="classmio_1_1iseir_1_1Model.html#a2def35e2d4380bcb7ea8eac0c9cc43b5">Pa</a>())</td></tr>
 <tr class="memdesc:a1a2207198d9f9665ac77f0c2492edd4e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create an IDE SEIR model.  <a href="classmio_1_1iseir_1_1Model.html#a1a2207198d9f9665ac77f0c2492edd4e">More...</a><br /></td></tr>
 <tr class="separator:a1a2207198d9f9665ac77f0c2492edd4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af027860becb3ac329c88d34ce6021e4d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1iseir_1_1Model.html#af027860becb3ac329c88d34ce6021e4d">print_result</a> (bool calculated_SEIR=false) const</td></tr>
-<tr class="memdesc:af027860becb3ac329c88d34ce6021e4d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays the results of the simulation.  <a href="classmio_1_1iseir_1_1Model.html#af027860becb3ac329c88d34ce6021e4d">More...</a><br /></td></tr>
-<tr class="separator:af027860becb3ac329c88d34ce6021e4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa73cc17dbb36a7818c1f543653f15d15"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmio_1_1TimeSeries.html">TimeSeries</a>&lt; double &gt; const  &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1iseir_1_1Model.html#aa73cc17dbb36a7818c1f543653f15d15">simulate</a> (int t_max)</td></tr>
 <tr class="memdesc:aa73cc17dbb36a7818c1f543653f15d15"><td class="mdescLeft">&#160;</td><td class="mdescRight">Simulate the evolution of infection numbers with the given IDE SEIR model.  <a href="classmio_1_1iseir_1_1Model.html#aa73cc17dbb36a7818c1f543653f15d15">More...</a><br /></td></tr>
 <tr class="separator:aa73cc17dbb36a7818c1f543653f15d15"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -366,33 +363,6 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Result of the numerical integration. </dd></dl>
-
-</div>
-</div>
-<a id="af027860becb3ac329c88d34ce6021e4d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af027860becb3ac329c88d34ce6021e4d">&#9670;&nbsp;</a></span>print_result()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void mio::iseir::Model::print_result </td>
-          <td>(</td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>calculated_SEIR</em> = <code>false</code></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Displays the results of the simulation. </p>
-<p>You can either output only the simulation times with the simulated values for S, or additionally the calculated numbers for E, I and R. In any case, the function <a class="el" href="classmio_1_1iseir_1_1Model.html#aa73cc17dbb36a7818c1f543653f15d15" title="Simulate the evolution of infection numbers with the given IDE SEIR model.">simulate()</a> should have been called before. If the values for E, I and R are to be displayed, the function <a class="el" href="classmio_1_1iseir_1_1Model.html#a22539340857ab3bed1bc0f3806857385" title="Calculate the distribution of the population in E, I and, R based on the calculated values for S.">calculate_EIR()</a> must be executed beforehand.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">calculated_SEIR</td><td>If true, the calculated numbers for E, I and R are displayed in addition to the results for S. </td></tr>
-  </table>
-  </dd>
-</dl>
 
 </div>
 </div>
