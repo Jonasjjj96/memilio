@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2024-01-18 16:35:19</td>
+            <td class="headerValue">2024-01-25 08:01:30</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">44</td>
@@ -140,7 +140,7 @@
 <a name="78"><span class="lineNum">      78 </span>            :     {</a>
 <a name="79"><span class="lineNum">      79 </span><span class="lineCov">          2 :     }</span></a>
 <a name="80"><span class="lineNum">      80 </span>            : </a>
-<a name="81"><span class="lineNum">      81 </span><span class="lineCov">      25418 :     virtual ~ParameterDistribution() = default;</span></a>
+<a name="81"><span class="lineNum">      81 </span><span class="lineCov">      25583 :     virtual ~ParameterDistribution() = default;</span></a>
 <a name="82"><span class="lineNum">      82 </span>            : </a>
 <a name="83"><span class="lineNum">      83 </span><span class="lineCov">          2 :     void set_lower_bound(double lower_bound)</span></a>
 <a name="84"><span class="lineNum">      84 </span>            :     {</a>
@@ -362,10 +362,10 @@
 <a name="300"><span class="lineNum">     300 </span><span class="lineCov">       1571 :         int i        = 0;</span></a>
 <a name="301"><span class="lineNum">     301 </span><span class="lineCov">       1571 :         int retries  = 10;</span></a>
 <a name="302"><span class="lineNum">     302 </span><span class="lineCov">       1571 :         double rnumb = m_distribution(thread_local_rng());</span></a>
-<a name="303"><span class="lineNum">     303 </span><span class="lineCov">       1581 :         while ((rnumb &gt; m_upper_bound || rnumb &lt; m_lower_bound) &amp;&amp; i &lt; retries) {</span></a>
-<a name="304"><span class="lineNum">     304 </span><span class="lineCov">         10 :             rnumb = m_distribution(thread_local_rng());</span></a>
-<a name="305"><span class="lineNum">     305 </span><span class="lineCov">         10 :             i++;</span></a>
-<a name="306"><span class="lineNum">     306 </span><span class="lineCov">         10 :             if (i == retries) {</span></a>
+<a name="303"><span class="lineNum">     303 </span><span class="lineCov">       1576 :         while ((rnumb &gt; m_upper_bound || rnumb &lt; m_lower_bound) &amp;&amp; i &lt; retries) {</span></a>
+<a name="304"><span class="lineNum">     304 </span><span class="lineCov">          5 :             rnumb = m_distribution(thread_local_rng());</span></a>
+<a name="305"><span class="lineNum">     305 </span><span class="lineCov">          5 :             i++;</span></a>
+<a name="306"><span class="lineNum">     306 </span><span class="lineCov">          5 :             if (i == retries) {</span></a>
 <a name="307"><span class="lineNum">     307 </span><span class="lineNoCov">          0 :                 log_warning(&quot;Not successfully sampled within [min,max].&quot;);</span></a>
 <a name="308"><span class="lineNum">     308 </span><span class="lineNoCov">          0 :                 if (rnumb &gt; m_upper_bound) {</span></a>
 <a name="309"><span class="lineNum">     309 </span><span class="lineNoCov">          0 :                     rnumb = m_upper_bound;</span></a>
@@ -476,9 +476,9 @@
 <a name="414"><span class="lineNum">     414 </span><span class="lineCov">       3053 :         return m_distribution(thread_local_rng());</span></a>
 <a name="415"><span class="lineNum">     415 </span>            :     }</a>
 <a name="416"><span class="lineNum">     416 </span>            : </a>
-<a name="417"><span class="lineNum">     417 </span><span class="lineCov">      12768 :     ParameterDistribution* clone() const override</span></a>
+<a name="417"><span class="lineNum">     417 </span><span class="lineCov">      12933 :     ParameterDistribution* clone() const override</span></a>
 <a name="418"><span class="lineNum">     418 </span>            :     {</a>
-<a name="419"><span class="lineNum">     419 </span><span class="lineCov">      12768 :         return new ParameterDistributionUniform(*this);</span></a>
+<a name="419"><span class="lineNum">     419 </span><span class="lineCov">      12933 :         return new ParameterDistributionUniform(*this);</span></a>
 <a name="420"><span class="lineNum">     420 </span>            :     }</a>
 <a name="421"><span class="lineNum">     421 </span>            : </a>
 <a name="422"><span class="lineNum">     422 </span>            :     template&lt;class IOObject&gt;</a>

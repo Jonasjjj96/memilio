@@ -31,13 +31,13 @@
             <td class="headerValue">coverage.info</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntry">97</td>
-            <td class="headerCovTableEntry">108</td>
-            <td class="headerCovTableEntryMed">89.8 %</td>
+            <td class="headerCovTableEntry">94</td>
+            <td class="headerCovTableEntry">105</td>
+            <td class="headerCovTableEntryMed">89.5 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2024-01-18 16:35:19</td>
+            <td class="headerValue">2024-01-25 08:01:30</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">3</td>
@@ -211,50 +211,47 @@
 <a name="149"><span class="lineNum">     149 </span>            : </a>
 <a name="150"><span class="lineNum">     150 </span>            :     //infectiousness of virus variants is not sampled independently but depend on base infectiousness</a>
 <a name="151"><span class="lineNum">     151 </span><span class="lineCov">         67 :     for (auto i = AgeGroup(0); i &lt; shared_params_model.parameters.get_num_groups(); ++i) {</span></a>
-<a name="152"><span class="lineNum">     152 </span><span class="lineCov">         56 :         shared_params_model.parameters.template get&lt;BaseInfectiousnessB117&gt;()[i] =</span></a>
-<a name="153"><span class="lineNum">     153 </span><span class="lineCov">         56 :             shared_params_model.parameters.template get&lt;TransmissionProbabilityOnContact&gt;()[i];</span></a>
-<a name="154"><span class="lineNum">     154 </span><span class="lineCov">         56 :         shared_params_model.parameters.template get&lt;BaseInfectiousnessB161&gt;()[i] =</span></a>
-<a name="155"><span class="lineNum">     155 </span><span class="lineCov">         56 :             shared_params_model.parameters.template get&lt;TransmissionProbabilityOnContact&gt;()[i] * delta_fac;</span></a>
-<a name="156"><span class="lineNum">     156 </span>            :     }</a>
+<a name="152"><span class="lineNum">     152 </span><span class="lineCov">         56 :         shared_params_model.parameters.template get&lt;InfectiousnessNewVariant&gt;()[i] = delta_fac;</span></a>
+<a name="153"><span class="lineNum">     153 </span>            :     }</a>
+<a name="154"><span class="lineNum">     154 </span>            : </a>
+<a name="155"><span class="lineNum">     155 </span><span class="lineCov">         23 :     for (auto&amp; params_node : graph.nodes()) {</span></a>
+<a name="156"><span class="lineNum">     156 </span><span class="lineCov">         12 :         auto&amp; node_model = params_node.property;</span></a>
 <a name="157"><span class="lineNum">     157 </span>            : </a>
-<a name="158"><span class="lineNum">     158 </span><span class="lineCov">         23 :     for (auto&amp; params_node : graph.nodes()) {</span></a>
-<a name="159"><span class="lineNum">     159 </span><span class="lineCov">         12 :         auto&amp; node_model = params_node.property;</span></a>
+<a name="158"><span class="lineNum">     158 </span>            :         //sample local parameters</a>
+<a name="159"><span class="lineNum">     159 </span><span class="lineCov">         12 :         draw_sample_demographics(params_node.property);</span></a>
 <a name="160"><span class="lineNum">     160 </span>            : </a>
-<a name="161"><span class="lineNum">     161 </span>            :         //sample local parameters</a>
-<a name="162"><span class="lineNum">     162 </span><span class="lineCov">         12 :         draw_sample_demographics(params_node.property);</span></a>
-<a name="163"><span class="lineNum">     163 </span>            : </a>
-<a name="164"><span class="lineNum">     164 </span>            :         //copy global parameters</a>
-<a name="165"><span class="lineNum">     165 </span>            :         //save demographic parameters so they aren't overwritten</a>
-<a name="166"><span class="lineNum">     166 </span><span class="lineCov">         24 :         auto local_icu_capacity = node_model.parameters.template get&lt;ICUCapacity&gt;();</span></a>
-<a name="167"><span class="lineNum">     167 </span><span class="lineCov">         24 :         auto local_tnt_capacity = node_model.parameters.template get&lt;TestAndTraceCapacity&gt;();</span></a>
-<a name="168"><span class="lineNum">     168 </span><span class="lineCov">         24 :         auto local_holidays     = node_model.parameters.template get&lt;ContactPatterns&gt;().get_school_holidays();</span></a>
-<a name="169"><span class="lineNum">     169 </span><span class="lineCov">         24 :         auto local_daily_v1     = node_model.parameters.template get&lt;DailyFirstVaccination&gt;();</span></a>
-<a name="170"><span class="lineNum">     170 </span><span class="lineCov">         24 :         auto local_daily_v2     = node_model.parameters.template get&lt;DailyFullVaccination&gt;();</span></a>
-<a name="171"><span class="lineNum">     171 </span><span class="lineCov">         12 :         node_model.parameters   = shared_params_model.parameters;</span></a>
-<a name="172"><span class="lineNum">     172 </span><span class="lineCov">         12 :         node_model.parameters.template get&lt;ICUCapacity&gt;()                           = local_icu_capacity;</span></a>
-<a name="173"><span class="lineNum">     173 </span><span class="lineCov">         12 :         node_model.parameters.template get&lt;TestAndTraceCapacity&gt;()                  = local_tnt_capacity;</span></a>
-<a name="174"><span class="lineNum">     174 </span><span class="lineCov">         12 :         node_model.parameters.template get&lt;ContactPatterns&gt;().get_school_holidays() = local_holidays;</span></a>
-<a name="175"><span class="lineNum">     175 </span><span class="lineCov">         12 :         node_model.parameters.template get&lt;DailyFirstVaccination&gt;()                 = local_daily_v1;</span></a>
-<a name="176"><span class="lineNum">     176 </span><span class="lineCov">         12 :         node_model.parameters.template get&lt;DailyFullVaccination&gt;()                  = local_daily_v2;</span></a>
+<a name="161"><span class="lineNum">     161 </span>            :         //copy global parameters</a>
+<a name="162"><span class="lineNum">     162 </span>            :         //save demographic parameters so they aren't overwritten</a>
+<a name="163"><span class="lineNum">     163 </span><span class="lineCov">         24 :         auto local_icu_capacity = node_model.parameters.template get&lt;ICUCapacity&gt;();</span></a>
+<a name="164"><span class="lineNum">     164 </span><span class="lineCov">         24 :         auto local_tnt_capacity = node_model.parameters.template get&lt;TestAndTraceCapacity&gt;();</span></a>
+<a name="165"><span class="lineNum">     165 </span><span class="lineCov">         24 :         auto local_holidays     = node_model.parameters.template get&lt;ContactPatterns&gt;().get_school_holidays();</span></a>
+<a name="166"><span class="lineNum">     166 </span><span class="lineCov">         24 :         auto local_daily_v1     = node_model.parameters.template get&lt;DailyFirstVaccination&gt;();</span></a>
+<a name="167"><span class="lineNum">     167 </span><span class="lineCov">         24 :         auto local_daily_v2     = node_model.parameters.template get&lt;DailyFullVaccination&gt;();</span></a>
+<a name="168"><span class="lineNum">     168 </span><span class="lineCov">         12 :         node_model.parameters   = shared_params_model.parameters;</span></a>
+<a name="169"><span class="lineNum">     169 </span><span class="lineCov">         12 :         node_model.parameters.template get&lt;ICUCapacity&gt;()                           = local_icu_capacity;</span></a>
+<a name="170"><span class="lineNum">     170 </span><span class="lineCov">         12 :         node_model.parameters.template get&lt;TestAndTraceCapacity&gt;()                  = local_tnt_capacity;</span></a>
+<a name="171"><span class="lineNum">     171 </span><span class="lineCov">         12 :         node_model.parameters.template get&lt;ContactPatterns&gt;().get_school_holidays() = local_holidays;</span></a>
+<a name="172"><span class="lineNum">     172 </span><span class="lineCov">         12 :         node_model.parameters.template get&lt;DailyFirstVaccination&gt;()                 = local_daily_v1;</span></a>
+<a name="173"><span class="lineNum">     173 </span><span class="lineCov">         12 :         node_model.parameters.template get&lt;DailyFullVaccination&gt;()                  = local_daily_v2;</span></a>
+<a name="174"><span class="lineNum">     174 </span>            : </a>
+<a name="175"><span class="lineNum">     175 </span><span class="lineCov">         12 :         node_model.parameters.template get&lt;ContactPatterns&gt;().make_matrix();</span></a>
+<a name="176"><span class="lineNum">     176 </span><span class="lineCov">         12 :         node_model.apply_constraints();</span></a>
 <a name="177"><span class="lineNum">     177 </span>            : </a>
-<a name="178"><span class="lineNum">     178 </span><span class="lineCov">         12 :         node_model.parameters.template get&lt;ContactPatterns&gt;().make_matrix();</span></a>
-<a name="179"><span class="lineNum">     179 </span><span class="lineCov">         12 :         node_model.apply_constraints();</span></a>
+<a name="178"><span class="lineNum">     178 </span><span class="lineCov">         12 :         sampled_graph.add_node(params_node.id, node_model);</span></a>
+<a name="179"><span class="lineNum">     179 </span>            :     }</a>
 <a name="180"><span class="lineNum">     180 </span>            : </a>
-<a name="181"><span class="lineNum">     181 </span><span class="lineCov">         12 :         sampled_graph.add_node(params_node.id, node_model);</span></a>
-<a name="182"><span class="lineNum">     182 </span>            :     }</a>
-<a name="183"><span class="lineNum">     183 </span>            : </a>
-<a name="184"><span class="lineNum">     184 </span><span class="lineCov">         12 :     for (auto&amp; edge : graph.edges()) {</span></a>
-<a name="185"><span class="lineNum">     185 </span><span class="lineCov">          2 :         auto edge_params = edge.property;</span></a>
-<a name="186"><span class="lineNum">     186 </span>            :         //no dynamic NPIs</a>
-<a name="187"><span class="lineNum">     187 </span>            :         //TODO: add switch to optionally enable dynamic NPIs to edges</a>
-<a name="188"><span class="lineNum">     188 </span><span class="lineCov">          1 :         sampled_graph.add_edge(edge.start_node_idx, edge.end_node_idx, edge_params);</span></a>
-<a name="189"><span class="lineNum">     189 </span>            :     }</a>
+<a name="181"><span class="lineNum">     181 </span><span class="lineCov">         12 :     for (auto&amp; edge : graph.edges()) {</span></a>
+<a name="182"><span class="lineNum">     182 </span><span class="lineCov">          2 :         auto edge_params = edge.property;</span></a>
+<a name="183"><span class="lineNum">     183 </span>            :         //no dynamic NPIs</a>
+<a name="184"><span class="lineNum">     184 </span>            :         //TODO: add switch to optionally enable dynamic NPIs to edges</a>
+<a name="185"><span class="lineNum">     185 </span><span class="lineCov">          1 :         sampled_graph.add_edge(edge.start_node_idx, edge.end_node_idx, edge_params);</span></a>
+<a name="186"><span class="lineNum">     186 </span>            :     }</a>
+<a name="187"><span class="lineNum">     187 </span>            : </a>
+<a name="188"><span class="lineNum">     188 </span><span class="lineCov">         11 :     return sampled_graph;</span></a>
+<a name="189"><span class="lineNum">     189 </span>            : }</a>
 <a name="190"><span class="lineNum">     190 </span>            : </a>
-<a name="191"><span class="lineNum">     191 </span><span class="lineCov">         11 :     return sampled_graph;</span></a>
-<a name="192"><span class="lineNum">     192 </span>            : }</a>
-<a name="193"><span class="lineNum">     193 </span>            : </a>
-<a name="194"><span class="lineNum">     194 </span>            : } // namespace osecirvvs</a>
-<a name="195"><span class="lineNum">     195 </span>            : } // namespace mio</a>
+<a name="191"><span class="lineNum">     191 </span>            : } // namespace osecirvvs</a>
+<a name="192"><span class="lineNum">     192 </span>            : } // namespace mio</a>
 </pre>
       </td>
     </tr>

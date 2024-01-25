@@ -31,17 +31,17 @@
             <td class="headerValue">coverage.info</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntry">112</td>
-            <td class="headerCovTableEntry">112</td>
+            <td class="headerCovTableEntry">109</td>
+            <td class="headerCovTableEntry">109</td>
             <td class="headerCovTableEntryHi">100.0 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2024-01-18 16:35:19</td>
+            <td class="headerValue">2024-01-25 08:01:30</td>
             <td></td>
             <td class="headerItem">Functions:</td>
-            <td class="headerCovTableEntry">94</td>
-            <td class="headerCovTableEntry">94</td>
+            <td class="headerCovTableEntry">91</td>
+            <td class="headerCovTableEntry">91</td>
             <td class="headerCovTableEntryHi">100.0 %</td>
           </tr>
           <tr><td><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
@@ -113,15 +113,15 @@
 <a name="51"><span class="lineNum">      51 </span>            : </a>
 <a name="52"><span class="lineNum">      52 </span>            :     // lambda function that calculates the percentile of a single parameter</a>
 <a name="53"><span class="lineNum">      53 </span><span class="lineCov">          3 :     std::vector&lt;Model&gt; percentile(num_nodes, Model((int)num_groups));</span></a>
-<a name="54"><span class="lineNum">      54 </span><span class="lineCov">     379732 :     auto param_percentil = [&amp;ensemble_params, p, num_runs, &amp;percentile](auto n, auto get_param) mutable {</span></a>
-<a name="55"><span class="lineNum">      55 </span><span class="lineCov">      31042 :         std::vector&lt;double&gt; single_element(num_runs);</span></a>
-<a name="56"><span class="lineNum">      56 </span><span class="lineCov">     123156 :         for (size_t run = 0; run &lt; num_runs; run++) {</span></a>
-<a name="57"><span class="lineNum">      57 </span><span class="lineCov">     205260 :             auto const&amp; params  = ensemble_params[run][n];</span></a>
-<a name="58"><span class="lineNum">      58 </span><span class="lineCov">     102630 :             single_element[run] = get_param(params);</span></a>
+<a name="54"><span class="lineNum">      54 </span><span class="lineCov">     379547 :     auto param_percentil = [&amp;ensemble_params, p, num_runs, &amp;percentile](auto n, auto get_param) mutable {</span></a>
+<a name="55"><span class="lineNum">      55 </span><span class="lineCov">      31027 :         std::vector&lt;double&gt; single_element(num_runs);</span></a>
+<a name="56"><span class="lineNum">      56 </span><span class="lineCov">     123096 :         for (size_t run = 0; run &lt; num_runs; run++) {</span></a>
+<a name="57"><span class="lineNum">      57 </span><span class="lineCov">     205160 :             auto const&amp; params  = ensemble_params[run][n];</span></a>
+<a name="58"><span class="lineNum">      58 </span><span class="lineCov">     102580 :             single_element[run] = get_param(params);</span></a>
 <a name="59"><span class="lineNum">      59 </span>            :         }</a>
-<a name="60"><span class="lineNum">      60 </span><span class="lineCov">      10263 :         std::sort(single_element.begin(), single_element.end());</span></a>
-<a name="61"><span class="lineNum">      61 </span><span class="lineCov">      20526 :         auto&amp; new_params = get_param(percentile[n]);</span></a>
-<a name="62"><span class="lineNum">      62 </span><span class="lineCov">      20526 :         new_params       = single_element[static_cast&lt;size_t&gt;(num_runs * p)];</span></a>
+<a name="60"><span class="lineNum">      60 </span><span class="lineCov">      10258 :         std::sort(single_element.begin(), single_element.end());</span></a>
+<a name="61"><span class="lineNum">      61 </span><span class="lineCov">      20516 :         auto&amp; new_params = get_param(percentile[n]);</span></a>
+<a name="62"><span class="lineNum">      62 </span><span class="lineCov">      20516 :         new_params       = single_element[static_cast&lt;size_t&gt;(num_runs * p)];</span></a>
 <a name="63"><span class="lineNum">      63 </span>            :     };</a>
 <a name="64"><span class="lineNum">      64 </span>            : </a>
 <a name="65"><span class="lineNum">      65 </span><span class="lineCov">          2 :     for (size_t node = 0; node &lt; num_nodes; node++) {</span></a>
@@ -227,38 +227,34 @@
 <a name="165"><span class="lineNum">     165 </span>            :             //virus variants</a>
 <a name="166"><span class="lineNum">     166 </span><span class="lineCov">          5 :             param_percentil(</span></a>
 <a name="167"><span class="lineNum">     167 </span><span class="lineCov">         55 :                 node, [i](auto&amp;&amp; model) -&gt; auto&amp; {</span></a>
-<a name="168"><span class="lineNum">     168 </span><span class="lineCov">         55 :                     return model.parameters.template get&lt;BaseInfectiousnessB161&gt;()[i];</span></a>
+<a name="168"><span class="lineNum">     168 </span><span class="lineCov">         55 :                     return model.parameters.template get&lt;InfectiousnessNewVariant&gt;()[i];</span></a>
 <a name="169"><span class="lineNum">     169 </span>            :                 });</a>
-<a name="170"><span class="lineNum">     170 </span><span class="lineCov">          5 :             param_percentil(</span></a>
-<a name="171"><span class="lineNum">     171 </span><span class="lineCov">         55 :                 node, [i](auto&amp;&amp; model) -&gt; auto&amp; {</span></a>
-<a name="172"><span class="lineNum">     172 </span><span class="lineCov">         55 :                     return model.parameters.template get&lt;BaseInfectiousnessB117&gt;()[i];</span></a>
-<a name="173"><span class="lineNum">     173 </span>            :                 });</a>
-<a name="174"><span class="lineNum">     174 </span>            :         }</a>
-<a name="175"><span class="lineNum">     175 </span>            :         // group independent params</a>
+<a name="170"><span class="lineNum">     170 </span>            :         }</a>
+<a name="171"><span class="lineNum">     171 </span>            :         // group independent params</a>
+<a name="172"><span class="lineNum">     172 </span><span class="lineCov">          1 :         param_percentil(</span></a>
+<a name="173"><span class="lineNum">     173 </span><span class="lineCov">         11 :             node, [](auto&amp;&amp; model) -&gt; auto&amp; { return model.parameters.template get&lt;Seasonality&gt;(); });</span></a>
+<a name="174"><span class="lineNum">     174 </span><span class="lineCov">          1 :         param_percentil(</span></a>
+<a name="175"><span class="lineNum">     175 </span><span class="lineCov">         11 :             node, [](auto&amp;&amp; model) -&gt; auto&amp; { return model.parameters.template get&lt;TestAndTraceCapacity&gt;(); });</span></a>
 <a name="176"><span class="lineNum">     176 </span><span class="lineCov">          1 :         param_percentil(</span></a>
-<a name="177"><span class="lineNum">     177 </span><span class="lineCov">         11 :             node, [](auto&amp;&amp; model) -&gt; auto&amp; { return model.parameters.template get&lt;Seasonality&gt;(); });</span></a>
-<a name="178"><span class="lineNum">     178 </span><span class="lineCov">          1 :         param_percentil(</span></a>
-<a name="179"><span class="lineNum">     179 </span><span class="lineCov">         11 :             node, [](auto&amp;&amp; model) -&gt; auto&amp; { return model.parameters.template get&lt;TestAndTraceCapacity&gt;(); });</span></a>
-<a name="180"><span class="lineNum">     180 </span><span class="lineCov">          1 :         param_percentil(</span></a>
-<a name="181"><span class="lineNum">     181 </span><span class="lineCov">         11 :             node, [](auto&amp;&amp; model) -&gt; auto&amp; { return model.parameters.template get&lt;ICUCapacity&gt;(); });</span></a>
-<a name="182"><span class="lineNum">     182 </span>            : </a>
-<a name="183"><span class="lineNum">     183 </span><span class="lineCov">         11 :         for (size_t run = 0; run &lt; num_runs; run++) {</span></a>
-<a name="184"><span class="lineNum">     184 </span>            : </a>
-<a name="185"><span class="lineNum">     185 </span><span class="lineCov">         10 :             auto const&amp; params = ensemble_params[run][node];</span></a>
-<a name="186"><span class="lineNum">     186 </span><span class="lineCov">         10 :             single_element_ensemble[run] =</span></a>
-<a name="187"><span class="lineNum">     187 </span><span class="lineCov">         10 :                 params.parameters.template get&lt;ICUCapacity&gt;() * params.populations.get_total();</span></a>
-<a name="188"><span class="lineNum">     188 </span>            :         }</a>
-<a name="189"><span class="lineNum">     189 </span><span class="lineCov">          1 :         std::sort(single_element_ensemble.begin(), single_element_ensemble.end());</span></a>
-<a name="190"><span class="lineNum">     190 </span><span class="lineCov">          2 :         percentile[node].parameters.template set&lt;ICUCapacity&gt;(</span></a>
-<a name="191"><span class="lineNum">     191 </span><span class="lineCov">          1 :             single_element_ensemble[static_cast&lt;size_t&gt;(num_runs * p)]);</span></a>
-<a name="192"><span class="lineNum">     192 </span>            :     }</a>
-<a name="193"><span class="lineNum">     193 </span><span class="lineCov">          2 :     return percentile;</span></a>
-<a name="194"><span class="lineNum">     194 </span>            : }</a>
-<a name="195"><span class="lineNum">     195 </span>            : </a>
-<a name="196"><span class="lineNum">     196 </span>            : } // namespace osecirvvs</a>
-<a name="197"><span class="lineNum">     197 </span>            : } // namespace mio</a>
-<a name="198"><span class="lineNum">     198 </span>            : </a>
-<a name="199"><span class="lineNum">     199 </span>            : #endif //ODESECIRVVS</a>
+<a name="177"><span class="lineNum">     177 </span><span class="lineCov">         11 :             node, [](auto&amp;&amp; model) -&gt; auto&amp; { return model.parameters.template get&lt;ICUCapacity&gt;(); });</span></a>
+<a name="178"><span class="lineNum">     178 </span>            : </a>
+<a name="179"><span class="lineNum">     179 </span><span class="lineCov">         11 :         for (size_t run = 0; run &lt; num_runs; run++) {</span></a>
+<a name="180"><span class="lineNum">     180 </span>            : </a>
+<a name="181"><span class="lineNum">     181 </span><span class="lineCov">         10 :             auto const&amp; params = ensemble_params[run][node];</span></a>
+<a name="182"><span class="lineNum">     182 </span><span class="lineCov">         10 :             single_element_ensemble[run] =</span></a>
+<a name="183"><span class="lineNum">     183 </span><span class="lineCov">         10 :                 params.parameters.template get&lt;ICUCapacity&gt;() * params.populations.get_total();</span></a>
+<a name="184"><span class="lineNum">     184 </span>            :         }</a>
+<a name="185"><span class="lineNum">     185 </span><span class="lineCov">          1 :         std::sort(single_element_ensemble.begin(), single_element_ensemble.end());</span></a>
+<a name="186"><span class="lineNum">     186 </span><span class="lineCov">          2 :         percentile[node].parameters.template set&lt;ICUCapacity&gt;(</span></a>
+<a name="187"><span class="lineNum">     187 </span><span class="lineCov">          1 :             single_element_ensemble[static_cast&lt;size_t&gt;(num_runs * p)]);</span></a>
+<a name="188"><span class="lineNum">     188 </span>            :     }</a>
+<a name="189"><span class="lineNum">     189 </span><span class="lineCov">          2 :     return percentile;</span></a>
+<a name="190"><span class="lineNum">     190 </span>            : }</a>
+<a name="191"><span class="lineNum">     191 </span>            : </a>
+<a name="192"><span class="lineNum">     192 </span>            : } // namespace osecirvvs</a>
+<a name="193"><span class="lineNum">     193 </span>            : } // namespace mio</a>
+<a name="194"><span class="lineNum">     194 </span>            : </a>
+<a name="195"><span class="lineNum">     195 </span>            : #endif //ODESECIRVVS</a>
 </pre>
       </td>
     </tr>

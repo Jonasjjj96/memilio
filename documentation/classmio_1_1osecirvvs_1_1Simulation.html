@@ -91,10 +91,11 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a36b38a7d2b9f565055d90d1b08b5d6e4"><td class="memItemLeft" align="right" valign="top">Eigen::Ref&lt; Eigen::VectorXd &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1osecirvvs_1_1Simulation.html#a36b38a7d2b9f565055d90d1b08b5d6e4">advance</a> (double tmax)</td></tr>
 <tr class="memdesc:a36b38a7d2b9f565055d90d1b08b5d6e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">advance simulation to tmax.  <a href="classmio_1_1osecirvvs_1_1Simulation.html#a36b38a7d2b9f565055d90d1b08b5d6e4">More...</a><br /></td></tr>
 <tr class="separator:a36b38a7d2b9f565055d90d1b08b5d6e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3877d39f3fb7684ed9a433ac2a007019"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1osecirvvs_1_1Simulation.html#a3877d39f3fb7684ed9a433ac2a007019">apply_b161</a> (double t)</td></tr>
-<tr class="separator:a3877d39f3fb7684ed9a433ac2a007019"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae9341ae2c80f535f3f68fa05066da7e5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1osecirvvs_1_1Simulation.html#ae9341ae2c80f535f3f68fa05066da7e5">apply_vaccination</a> (double t)</td></tr>
 <tr class="separator:ae9341ae2c80f535f3f68fa05066da7e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a71e7378f1546b84daa8a0d3f8420d1c7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1osecirvvs_1_1Simulation.html#a71e7378f1546b84daa8a0d3f8420d1c7">apply_variant</a> (const double t, const <a class="el" href="classmio_1_1CustomIndexArray.html">CustomIndexArray</a>&lt; <a class="el" href="classmio_1_1UncertainValue.html">UncertainValue</a>, <a class="el" href="structmio_1_1AgeGroup.html">AgeGroup</a> &gt; base_infectiousness)</td></tr>
+<tr class="memdesc:a71e7378f1546b84daa8a0d3f8420d1c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies the effect of a new variant of a disease to the transmission probability of the model.  <a href="classmio_1_1osecirvvs_1_1Simulation.html#a71e7378f1546b84daa8a0d3f8420d1c7">More...</a><br /></td></tr>
+<tr class="separator:a71e7378f1546b84daa8a0d3f8420d1c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5e312b73f650152f6df4b7b62beb377c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1osecirvvs_1_1Simulation.html#a5e312b73f650152f6df4b7b62beb377c">Simulation</a> (<a class="el" href="classmio_1_1osecirvvs_1_1Model.html">Model</a> const &amp;model, double t0=0., double dt=0.1)</td></tr>
 <tr class="memdesc:a5e312b73f650152f6df4b7b62beb377c"><td class="mdescLeft">&#160;</td><td class="mdescRight">construct a simulation.  <a href="classmio_1_1osecirvvs_1_1Simulation.html#a5e312b73f650152f6df4b7b62beb377c">More...</a><br /></td></tr>
 <tr class="separator:a5e312b73f650152f6df4b7b62beb377c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -195,26 +196,6 @@ template&lt;class BaseT &gt; </div>
 
 </div>
 </div>
-<a id="a3877d39f3fb7684ed9a433ac2a007019"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3877d39f3fb7684ed9a433ac2a007019">&#9670;&nbsp;</a></span>apply_b161()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class BaseT &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="classmio_1_1osecirvvs_1_1Simulation.html">mio::osecirvvs::Simulation</a>&lt; BaseT &gt;::apply_b161 </td>
-          <td>(</td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>t</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="ae9341ae2c80f535f3f68fa05066da7e5"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae9341ae2c80f535f3f68fa05066da7e5">&#9670;&nbsp;</a></span>apply_vaccination()</h2>
 
@@ -232,6 +213,47 @@ template&lt;class BaseT &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+</div>
+</div>
+<a id="a71e7378f1546b84daa8a0d3f8420d1c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a71e7378f1546b84daa8a0d3f8420d1c7">&#9670;&nbsp;</a></span>apply_variant()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class BaseT &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classmio_1_1osecirvvs_1_1Simulation.html">mio::osecirvvs::Simulation</a>&lt; BaseT &gt;::apply_variant </td>
+          <td>(</td>
+          <td class="paramtype">const double&#160;</td>
+          <td class="paramname"><em>t</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classmio_1_1CustomIndexArray.html">CustomIndexArray</a>&lt; <a class="el" href="classmio_1_1UncertainValue.html">UncertainValue</a>, <a class="el" href="structmio_1_1AgeGroup.html">AgeGroup</a> &gt;&#160;</td>
+          <td class="paramname"><em>base_infectiousness</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Applies the effect of a new variant of a disease to the transmission probability of the model. </p>
+<p>This function adjusts the transmission probability of the disease for each age group based on the share of the new variant. The share of the new variant is calculated based on the time <code>t</code> and the start day of the new variant. The transmission probability is then updated for each age group in the model.</p>
+<p>Based on Equation (35) and (36) in doi.org/10.1371/journal.pcbi.1010054</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">t</td><td>The current time. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">base_infectiousness</td><td>The base infectiousness of the old variant for each age group. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2024-01-18 16:35:19</td>
+            <td class="headerValue">2024-01-25 08:01:30</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">9</td>
@@ -152,9 +152,9 @@
 <a name="90"><span class="lineNum">      90 </span>            :     {</a>
 <a name="91"><span class="lineNum">      91 </span><span class="lineCov">          4 :         return m_coefficients;</span></a>
 <a name="92"><span class="lineNum">      92 </span>            :     }</a>
-<a name="93"><span class="lineNum">      93 </span><span class="lineCov">        180 :     MigrationCoefficients&amp; get_coefficients()</span></a>
+<a name="93"><span class="lineNum">      93 </span><span class="lineCov">        176 :     MigrationCoefficients&amp; get_coefficients()</span></a>
 <a name="94"><span class="lineNum">      94 </span>            :     {</a>
-<a name="95"><span class="lineNum">      95 </span><span class="lineCov">        180 :         return m_coefficients;</span></a>
+<a name="95"><span class="lineNum">      95 </span><span class="lineCov">        176 :         return m_coefficients;</span></a>
 <a name="96"><span class="lineNum">      96 </span>            :     }</a>
 <a name="97"><span class="lineNum">      97 </span>            :     /**</a>
 <a name="98"><span class="lineNum">      98 </span>            :      * @param coeffs the migration coefficients.</a>
@@ -233,14 +233,14 @@
 <a name="171"><span class="lineNum">     171 </span>            :      * get the cumulative transition rate of the edge.</a>
 <a name="172"><span class="lineNum">     172 </span>            :     */</a>
 <a name="173"><span class="lineNum">     173 </span>            :     template &lt;class Sim&gt;</a>
-<a name="174"><span class="lineNum">     174 </span><span class="lineCov">         45 :     Eigen::VectorXd get_transition_rates(SimulationNode&lt;Sim&gt;&amp; node_from)</span></a>
+<a name="174"><span class="lineNum">     174 </span><span class="lineCov">         44 :     Eigen::VectorXd get_transition_rates(SimulationNode&lt;Sim&gt;&amp; node_from)</span></a>
 <a name="175"><span class="lineNum">     175 </span>            :     {</a>
-<a name="176"><span class="lineNum">     176 </span><span class="lineCov">         90 :         Eigen::VectorXd transitionRates(node_from.get_last_state().size());</span></a>
-<a name="177"><span class="lineNum">     177 </span><span class="lineCov">        225 :         for (Eigen::Index i = 0; i &lt; node_from.get_last_state().size(); ++i) {</span></a>
-<a name="178"><span class="lineNum">     178 </span><span class="lineCov">        360 :             transitionRates[i] =</span></a>
-<a name="179"><span class="lineNum">     179 </span><span class="lineCov">        360 :                 node_from.get_last_state()(i) * m_parameters.get_coefficients().get_baseline()[(size_t)i];</span></a>
+<a name="176"><span class="lineNum">     176 </span><span class="lineCov">         88 :         Eigen::VectorXd transitionRates(node_from.get_last_state().size());</span></a>
+<a name="177"><span class="lineNum">     177 </span><span class="lineCov">        220 :         for (Eigen::Index i = 0; i &lt; node_from.get_last_state().size(); ++i) {</span></a>
+<a name="178"><span class="lineNum">     178 </span><span class="lineCov">        352 :             transitionRates[i] =</span></a>
+<a name="179"><span class="lineNum">     179 </span><span class="lineCov">        352 :                 node_from.get_last_state()(i) * m_parameters.get_coefficients().get_baseline()[(size_t)i];</span></a>
 <a name="180"><span class="lineNum">     180 </span>            :         }</a>
-<a name="181"><span class="lineNum">     181 </span><span class="lineCov">         45 :         return transitionRates;</span></a>
+<a name="181"><span class="lineNum">     181 </span><span class="lineCov">         44 :         return transitionRates;</span></a>
 <a name="182"><span class="lineNum">     182 </span>            :     }</a>
 <a name="183"><span class="lineNum">     183 </span>            : </a>
 <a name="184"><span class="lineNum">     184 </span>            :     /**</a>
