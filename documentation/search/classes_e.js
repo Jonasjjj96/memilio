@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['quarantineduration_1913',['QuarantineDuration',['../structmio_1_1abm_1_1QuarantineDuration.html',1,'mio::abm']]]
+  ['quarantineduration_1929',['QuarantineDuration',['../structmio_1_1abm_1_1QuarantineDuration.html',1,'mio::abm']]]
 ];

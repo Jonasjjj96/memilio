@@ -79,9 +79,9 @@ Functions</h2></td></tr>
 <tr class="memitem:aeaaee0713d88ec4a9e31d7862241ca26"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacememilio_1_1epidata_1_1transformWeatherData.html#aeaaee0713d88ec4a9e31d7862241ca26">main</a> ()</td></tr>
 <tr class="memdesc:aeaaee0713d88ec4a9e31d7862241ca26"><td class="mdescLeft">&#160;</td><td class="mdescRight">Main program entry.  <a href="namespacememilio_1_1epidata_1_1transformWeatherData.html#aeaaee0713d88ec4a9e31d7862241ca26">More...</a><br /></td></tr>
 <tr class="separator:aeaaee0713d88ec4a9e31d7862241ca26"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0a939b6951f99dbbc172136f05c28213"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacememilio_1_1epidata_1_1transformWeatherData.html#a0a939b6951f99dbbc172136f05c28213">transformWeatherData</a> (read_data=dd.defaultDict['read_data'], file_format=dd.defaultDict['file_format'], out_folder=dd.defaultDict['out_folder'], start_date=dd.defaultDict['start_date'], end_date=dd.defaultDict['end_date'], make_plot=dd.defaultDict['make_plot'], moving_average=dd.defaultDict['moving_average'], merge_berlin=True, merge_eisenach=False)</td></tr>
-<tr class="memdesc:a0a939b6951f99dbbc172136f05c28213"><td class="mdescLeft">&#160;</td><td class="mdescRight">...  <a href="namespacememilio_1_1epidata_1_1transformWeatherData.html#a0a939b6951f99dbbc172136f05c28213">More...</a><br /></td></tr>
-<tr class="separator:a0a939b6951f99dbbc172136f05c28213"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a87ac669281d134ac276f802c833a2ba8"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacememilio_1_1epidata_1_1transformWeatherData.html#a87ac669281d134ac276f802c833a2ba8">transformWeatherData</a> (read_data=dd.defaultDict['read_data'], file_format=dd.defaultDict['file_format'], out_folder=dd.defaultDict['out_folder'], start_date=dd.defaultDict['start_date'], end_date=dd.defaultDict['end_date'], moving_average=dd.defaultDict['moving_average'], merge_berlin=True, merge_eisenach=False, **kwargs)</td></tr>
+<tr class="memdesc:a87ac669281d134ac276f802c833a2ba8"><td class="mdescLeft">&#160;</td><td class="mdescRight">...  <a href="namespacememilio_1_1epidata_1_1transformWeatherData.html#a87ac669281d134ac276f802c833a2ba8">More...</a><br /></td></tr>
+<tr class="separator:a87ac669281d134ac276f802c833a2ba8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
@@ -108,8 +108,8 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a0a939b6951f99dbbc172136f05c28213"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0a939b6951f99dbbc172136f05c28213">&#9670;&nbsp;</a></span>transformWeatherData()</h2>
+<a id="a87ac669281d134ac276f802c833a2ba8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a87ac669281d134ac276f802c833a2ba8">&#9670;&nbsp;</a></span>transformWeatherData()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -148,12 +148,6 @@ Variables</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>make_plot</em> = <code>dd.defaultDict['make_plot']</code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
           <td class="paramname"><em>moving_average</em> = <code>dd.defaultDict['moving_average']</code>, </td>
         </tr>
         <tr>
@@ -166,7 +160,13 @@ Variables</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>merge_eisenach</em> = <code>False</code>&#160;</td>
+          <td class="paramname"><em>merge_eisenach</em> = <code>False</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">**&#160;</td>
+          <td class="paramname"><em>kwargs</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -183,7 +183,6 @@ Variables</h2></td></tr>
     <tr><td class="paramname">out_folder</td><td>Path to folder where data is written in folder out_folder/Germany. </td></tr>
     <tr><td class="paramname">start_date</td><td>[Default = '', taken from read data] Start date of stored data frames. </td></tr>
     <tr><td class="paramname">end_date</td><td>[Default = '', taken from read data] End date of stored data frames. </td></tr>
-    <tr><td class="paramname">make_plot</td><td>False [Default] or True. Defines if plots are generated with matplotlib. </td></tr>
     <tr><td class="paramname">moving_average</td><td>0 [Default] or Number &gt; 0. Defines the number of days for which a centered moving average is computed. </td></tr>
   </table>
   </dd>
