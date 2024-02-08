@@ -111,6 +111,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a5d865d661bcd4e727c462667a8546e63"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1isecir_1_1Model.html#a5d865d661bcd4e727c462667a8546e63">other_compartments_current_timestep</a> (<a class="el" href="memilio_2config_8h.html#acd4f1d492d83a74716a42615e127d641">ScalarType</a> dt)</td></tr>
 <tr class="memdesc:a5d865d661bcd4e727c462667a8546e63"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets all values of remaining compartments (compartments apart from S, R, D) for the current last timestep in m_populations.  <a href="classmio_1_1isecir_1_1Model.html#a5d865d661bcd4e727c462667a8546e63">More...</a><br /></td></tr>
 <tr class="separator:a5d865d661bcd4e727c462667a8546e63"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a21dc62481c194f9923fbcc4343e6a2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1isecir_1_1Model.html#a7a21dc62481c194f9923fbcc4343e6a2">set_tol_for_support_max</a> (<a class="el" href="memilio_2config_8h.html#acd4f1d492d83a74716a42615e127d641">ScalarType</a> new_tol)</td></tr>
+<tr class="memdesc:a7a21dc62481c194f9923fbcc4343e6a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setter for the tolerance used to calculate the maximum support of the <a class="el" href="structmio_1_1isecir_1_1TransitionDistributions.html" title="Transition distribution for each transition in InfectionTransition.">TransitionDistributions</a>.  <a href="classmio_1_1isecir_1_1Model.html#a7a21dc62481c194f9923fbcc4343e6a2">More...</a><br /></td></tr>
+<tr class="separator:a7a21dc62481c194f9923fbcc4343e6a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0e8fbb324b5afbc4e69d8435ddf0b61b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1isecir_1_1Model.html#a0e8fbb324b5afbc4e69d8435ddf0b61b">update_forceofinfection</a> (<a class="el" href="memilio_2config_8h.html#acd4f1d492d83a74716a42615e127d641">ScalarType</a> dt, bool initialization=false)</td></tr>
 <tr class="memdesc:a0e8fbb324b5afbc4e69d8435ddf0b61b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes force of infection for the current last time in m_transitions.  <a href="classmio_1_1isecir_1_1Model.html#a0e8fbb324b5afbc4e69d8435ddf0b61b">More...</a><br /></td></tr>
 <tr class="separator:a0e8fbb324b5afbc4e69d8435ddf0b61b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -143,6 +146,9 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:aa2153efbcfbed7df8ab91ca9ead82175"><td class="memItemLeft" align="right" valign="top"><a class="el" href="memilio_2config_8h.html#acd4f1d492d83a74716a42615e127d641">ScalarType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1isecir_1_1Model.html#aa2153efbcfbed7df8ab91ca9ead82175">m_N</a> {0}</td></tr>
 <tr class="memdesc:aa2153efbcfbed7df8ab91ca9ead82175"><td class="mdescLeft">&#160;</td><td class="mdescRight">Total population size of the considered region.  <a href="classmio_1_1isecir_1_1Model.html#aa2153efbcfbed7df8ab91ca9ead82175">More...</a><br /></td></tr>
 <tr class="separator:aa2153efbcfbed7df8ab91ca9ead82175"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a16e97568761d0af6818194a93f1b51c7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="memilio_2config_8h.html#acd4f1d492d83a74716a42615e127d641">ScalarType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1isecir_1_1Model.html#a16e97568761d0af6818194a93f1b51c7">m_tol</a> {1e-10}</td></tr>
+<tr class="memdesc:a16e97568761d0af6818194a93f1b51c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tolerance used to calculate the maximum support of the <a class="el" href="structmio_1_1isecir_1_1TransitionDistributions.html" title="Transition distribution for each transition in InfectionTransition.">TransitionDistributions</a>.  <a href="classmio_1_1isecir_1_1Model.html#a16e97568761d0af6818194a93f1b51c7">More...</a><br /></td></tr>
+<tr class="separator:a16e97568761d0af6818194a93f1b51c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="aeaa245527257d77cc8a2247decc03485"></a>
@@ -493,6 +499,32 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a7a21dc62481c194f9923fbcc4343e6a2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7a21dc62481c194f9923fbcc4343e6a2">&#9670;&nbsp;</a></span>set_tol_for_support_max()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mio::isecir::Model::set_tol_for_support_max </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="memilio_2config_8h.html#acd4f1d492d83a74716a42615e127d641">ScalarType</a>&#160;</td>
+          <td class="paramname"><em>new_tol</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Setter for the tolerance used to calculate the maximum support of the <a class="el" href="structmio_1_1isecir_1_1TransitionDistributions.html" title="Transition distribution for each transition in InfectionTransition.">TransitionDistributions</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">new_tol</td><td>New tolerance. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a0e8fbb324b5afbc4e69d8435ddf0b61b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0e8fbb324b5afbc4e69d8435ddf0b61b">&#9670;&nbsp;</a></span>update_forceofinfection()</h2>
 
@@ -618,6 +650,30 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p><a class="el" href="classmio_1_1TimeSeries.html" title="stores vectors of values at time points (or some other abstract variable) the value at each time poin...">TimeSeries</a> containing points of time and the corresponding number of people in defined <a class="el" href="namespacemio_1_1isecir.html#a4765e077a33191fc1125ca33a6ad8697" title="The InfectionState enum describes the possible categories for the infectious state of persons.">InfectionState</a>s. </p>
+
+</div>
+</div>
+<a id="a16e97568761d0af6818194a93f1b51c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a16e97568761d0af6818194a93f1b51c7">&#9670;&nbsp;</a></span>m_tol</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="memilio_2config_8h.html#acd4f1d492d83a74716a42615e127d641">ScalarType</a> mio::isecir::Model::m_tol {1e-10}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Tolerance used to calculate the maximum support of the <a class="el" href="structmio_1_1isecir_1_1TransitionDistributions.html" title="Transition distribution for each transition in InfectionTransition.">TransitionDistributions</a>. </p>
 
 </div>
 </div>

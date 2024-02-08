@@ -31,17 +31,17 @@
             <td class="headerValue">coverage.info</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntry">27</td>
-            <td class="headerCovTableEntry">31</td>
-            <td class="headerCovTableEntryMed">87.1 %</td>
+            <td class="headerCovTableEntry">30</td>
+            <td class="headerCovTableEntry">34</td>
+            <td class="headerCovTableEntryMed">88.2 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2024-02-06 15:37:59</td>
+            <td class="headerValue">2024-02-08 14:08:56</td>
             <td></td>
             <td class="headerItem">Functions:</td>
-            <td class="headerCovTableEntry">1</td>
-            <td class="headerCovTableEntry">1</td>
+            <td class="headerCovTableEntry">2</td>
+            <td class="headerCovTableEntry">2</td>
             <td class="headerCovTableEntryHi">100.0 %</td>
           </tr>
           <tr><td><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
@@ -136,23 +136,23 @@
 <a name="74"><span class="lineNum">      74 </span>            : </a>
 <a name="75"><span class="lineNum">      75 </span><span class="lineCov">          4 :         ScalarType support_max = std::max(</span></a>
 <a name="76"><span class="lineNum">      76 </span><span class="lineCov">          2 :             {parameters.get&lt;TransitionDistributions&gt;()[(int)InfectionTransition::ExposedToInfectedNoSymptoms]</span></a>
-<a name="77"><span class="lineNum">      77 </span><span class="lineCov">          2 :                  .get_support_max(dt),</span></a>
+<a name="77"><span class="lineNum">      77 </span><span class="lineCov">          2 :                  .get_support_max(dt, m_tol),</span></a>
 <a name="78"><span class="lineNum">      78 </span><span class="lineCov">          2 :              parameters.get&lt;TransitionDistributions&gt;()[(int)InfectionTransition::InfectedNoSymptomsToInfectedSymptoms]</span></a>
-<a name="79"><span class="lineNum">      79 </span><span class="lineCov">          2 :                  .get_support_max(dt),</span></a>
+<a name="79"><span class="lineNum">      79 </span><span class="lineCov">          2 :                  .get_support_max(dt, m_tol),</span></a>
 <a name="80"><span class="lineNum">      80 </span><span class="lineCov">          2 :              parameters.get&lt;TransitionDistributions&gt;()[(int)InfectionTransition::InfectedNoSymptomsToRecovered]</span></a>
-<a name="81"><span class="lineNum">      81 </span><span class="lineCov">          2 :                  .get_support_max(dt),</span></a>
+<a name="81"><span class="lineNum">      81 </span><span class="lineCov">          2 :                  .get_support_max(dt, m_tol),</span></a>
 <a name="82"><span class="lineNum">      82 </span><span class="lineCov">          2 :              parameters.get&lt;TransitionDistributions&gt;()[(int)InfectionTransition::InfectedSymptomsToInfectedSevere]</span></a>
-<a name="83"><span class="lineNum">      83 </span><span class="lineCov">          2 :                  .get_support_max(dt),</span></a>
+<a name="83"><span class="lineNum">      83 </span><span class="lineCov">          2 :                  .get_support_max(dt, m_tol),</span></a>
 <a name="84"><span class="lineNum">      84 </span><span class="lineCov">          2 :              parameters.get&lt;TransitionDistributions&gt;()[(int)InfectionTransition::InfectedSymptomsToRecovered]</span></a>
-<a name="85"><span class="lineNum">      85 </span><span class="lineCov">          2 :                  .get_support_max(dt),</span></a>
+<a name="85"><span class="lineNum">      85 </span><span class="lineCov">          2 :                  .get_support_max(dt, m_tol),</span></a>
 <a name="86"><span class="lineNum">      86 </span><span class="lineCov">          2 :              parameters.get&lt;TransitionDistributions&gt;()[(int)InfectionTransition::InfectedSevereToInfectedCritical]</span></a>
-<a name="87"><span class="lineNum">      87 </span><span class="lineCov">          2 :                  .get_support_max(dt),</span></a>
+<a name="87"><span class="lineNum">      87 </span><span class="lineCov">          2 :                  .get_support_max(dt, m_tol),</span></a>
 <a name="88"><span class="lineNum">      88 </span><span class="lineCov">          2 :              parameters.get&lt;TransitionDistributions&gt;()[(int)InfectionTransition::InfectedSevereToRecovered]</span></a>
-<a name="89"><span class="lineNum">      89 </span><span class="lineCov">          2 :                  .get_support_max(dt),</span></a>
+<a name="89"><span class="lineNum">      89 </span><span class="lineCov">          2 :                  .get_support_max(dt, m_tol),</span></a>
 <a name="90"><span class="lineNum">      90 </span><span class="lineCov">          2 :              parameters.get&lt;TransitionDistributions&gt;()[(int)InfectionTransition::InfectedCriticalToDead]</span></a>
-<a name="91"><span class="lineNum">      91 </span><span class="lineCov">          2 :                  .get_support_max(dt),</span></a>
+<a name="91"><span class="lineNum">      91 </span><span class="lineCov">          2 :                  .get_support_max(dt, m_tol),</span></a>
 <a name="92"><span class="lineNum">      92 </span><span class="lineCov">          2 :              parameters.get&lt;TransitionDistributions&gt;()[(int)InfectionTransition::InfectedCriticalToRecovered]</span></a>
-<a name="93"><span class="lineNum">      93 </span><span class="lineCov">          2 :                  .get_support_max(dt)});</span></a>
+<a name="93"><span class="lineNum">      93 </span><span class="lineCov">          2 :                  .get_support_max(dt, m_tol)});</span></a>
 <a name="94"><span class="lineNum">      94 </span>            : </a>
 <a name="95"><span class="lineNum">      95 </span><span class="lineCov">          2 :         if (m_transitions.get_num_time_points() &lt; (Eigen::Index)std::ceil(support_max / dt)) {</span></a>
 <a name="96"><span class="lineNum">      96 </span><span class="lineNoCov">          0 :             log_error(</span></a>
@@ -257,23 +257,34 @@
 <a name="195"><span class="lineNum">     195 </span>            :      */</a>
 <a name="196"><span class="lineNum">     196 </span>            :     void compute_recovered();</a>
 <a name="197"><span class="lineNum">     197 </span>            : </a>
-<a name="198"><span class="lineNum">     198 </span>            :     ParameterSet parameters{}; ///&lt; ParameterSet of Model Parameters.</a>
-<a name="199"><span class="lineNum">     199 </span>            :     /* Attention: m_populations and m_transitions do not necessarily have the same number of time points due to the initialization part. */</a>
-<a name="200"><span class="lineNum">     200 </span>            :     TimeSeries&lt;ScalarType&gt;</a>
-<a name="201"><span class="lineNum">     201 </span>            :         m_transitions; ///&lt; TimeSeries containing points of time and the corresponding number of transitions.</a>
-<a name="202"><span class="lineNum">     202 </span>            :     TimeSeries&lt;ScalarType&gt;</a>
-<a name="203"><span class="lineNum">     203 </span>            :         m_populations; ///&lt; TimeSeries containing points of time and the corresponding number of people in defined #InfectionState%s.</a>
-<a name="204"><span class="lineNum">     204 </span>            : </a>
-<a name="205"><span class="lineNum">     205 </span>            : private:</a>
-<a name="206"><span class="lineNum">     206 </span>            :     ScalarType m_forceofinfection{0}; ///&lt; Force of infection term needed for numerical scheme.</a>
-<a name="207"><span class="lineNum">     207 </span>            :     ScalarType m_N{0}; ///&lt; Total population size of the considered region.</a>
-<a name="208"><span class="lineNum">     208 </span>            :     ScalarType m_deaths_before{0}; ///&lt; Deaths before start of simulation (at time -m_dt).</a>
-<a name="209"><span class="lineNum">     209 </span>            : };</a>
-<a name="210"><span class="lineNum">     210 </span>            : </a>
-<a name="211"><span class="lineNum">     211 </span>            : } // namespace isecir</a>
-<a name="212"><span class="lineNum">     212 </span>            : } // namespace mio</a>
-<a name="213"><span class="lineNum">     213 </span>            : </a>
-<a name="214"><span class="lineNum">     214 </span>            : #endif // IDESECIR_MODEL_H</a>
+<a name="198"><span class="lineNum">     198 </span>            :     /**</a>
+<a name="199"><span class="lineNum">     199 </span>            :      * @brief Setter for the tolerance used to calculate the maximum support of the TransitionDistributions.</a>
+<a name="200"><span class="lineNum">     200 </span>            :      *</a>
+<a name="201"><span class="lineNum">     201 </span>            :      * @param[in] new_tol New tolerance.</a>
+<a name="202"><span class="lineNum">     202 </span>            :      */</a>
+<a name="203"><span class="lineNum">     203 </span><span class="lineCov">          3 :     void set_tol_for_support_max(ScalarType new_tol)</span></a>
+<a name="204"><span class="lineNum">     204 </span>            :     {</a>
+<a name="205"><span class="lineNum">     205 </span><span class="lineCov">          3 :         m_tol = new_tol;</span></a>
+<a name="206"><span class="lineNum">     206 </span><span class="lineCov">          3 :     }</span></a>
+<a name="207"><span class="lineNum">     207 </span>            : </a>
+<a name="208"><span class="lineNum">     208 </span>            :     ParameterSet parameters{}; ///&lt; ParameterSet of Model Parameters.</a>
+<a name="209"><span class="lineNum">     209 </span>            :     /* Attention: m_populations and m_transitions do not necessarily have the same number of time points due to the initialization part. */</a>
+<a name="210"><span class="lineNum">     210 </span>            :     TimeSeries&lt;ScalarType&gt;</a>
+<a name="211"><span class="lineNum">     211 </span>            :         m_transitions; ///&lt; TimeSeries containing points of time and the corresponding number of transitions.</a>
+<a name="212"><span class="lineNum">     212 </span>            :     TimeSeries&lt;ScalarType&gt;</a>
+<a name="213"><span class="lineNum">     213 </span>            :         m_populations; ///&lt; TimeSeries containing points of time and the corresponding number of people in defined #InfectionState%s.</a>
+<a name="214"><span class="lineNum">     214 </span>            : </a>
+<a name="215"><span class="lineNum">     215 </span>            : private:</a>
+<a name="216"><span class="lineNum">     216 </span>            :     ScalarType m_forceofinfection{0}; ///&lt; Force of infection term needed for numerical scheme.</a>
+<a name="217"><span class="lineNum">     217 </span>            :     ScalarType m_N{0}; ///&lt; Total population size of the considered region.</a>
+<a name="218"><span class="lineNum">     218 </span>            :     ScalarType m_deaths_before{0}; ///&lt; Deaths before start of simulation (at time -m_dt).</a>
+<a name="219"><span class="lineNum">     219 </span>            :     ScalarType m_tol{1e-10}; ///&lt; Tolerance used to calculate the maximum support of the TransitionDistributions.</a>
+<a name="220"><span class="lineNum">     220 </span>            : };</a>
+<a name="221"><span class="lineNum">     221 </span>            : </a>
+<a name="222"><span class="lineNum">     222 </span>            : } // namespace isecir</a>
+<a name="223"><span class="lineNum">     223 </span>            : } // namespace mio</a>
+<a name="224"><span class="lineNum">     224 </span>            : </a>
+<a name="225"><span class="lineNum">     225 </span>            : #endif // IDESECIR_MODEL_H</a>
 </pre>
       </td>
     </tr>
