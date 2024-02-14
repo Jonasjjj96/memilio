@@ -88,7 +88,7 @@ Inheritance diagram for memilio.epidata.progress_indicator.ProgressIndicator:</d
   <img src="classmemilio_1_1epidata_1_1progress__indicator_1_1ProgressIndicator.png" usemap="#memilio.epidata.progress_5Findicator.ProgressIndicator_map" alt=""/>
   <map id="memilio.epidata.progress_5Findicator.ProgressIndicator_map" name="memilio.epidata.progress_5Findicator.ProgressIndicator_map">
 <area href="classmemilio_1_1epidata_1_1progress__indicator_1_1Dots.html" title="Subclass of ProgressIndicator with a predefined animation." alt="memilio.epidata.progress_indicator.Dots" shape="rect" coords="0,56,312,80"/>
-<area href="classmemilio_1_1epidata_1_1progress__indicator_1_1Percentage.html" title="Manages a ProgressIndicator with a predefined animation." alt="memilio.epidata.progress_indicator.Percentage" shape="rect" coords="322,56,634,80"/>
+<area href="classmemilio_1_1epidata_1_1progress__indicator_1_1Percentage.html" title="Subclass of ProgressIndicator with a predefined animation." alt="memilio.epidata.progress_indicator.Percentage" shape="rect" coords="322,56,634,80"/>
 <area href="classmemilio_1_1epidata_1_1progress__indicator_1_1Spinner.html" title="Subclass of ProgressIndicator with a predefined animation." alt="memilio.epidata.progress_indicator.Spinner" shape="rect" coords="644,56,956,80"/>
   </map>
 </div></div>
@@ -96,8 +96,10 @@ Inheritance diagram for memilio.epidata.progress_indicator.ProgressIndicator:</d
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ac7ca7e5ab94569df581629eb72118c31"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmemilio_1_1epidata_1_1progress__indicator_1_1ProgressIndicator.html#ac7ca7e5ab94569df581629eb72118c31">__enter__</a> (self)</td></tr>
+<tr class="memdesc:ac7ca7e5ab94569df581629eb72118c31"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls start at the beginning of a 'with' block.  <a href="classmemilio_1_1epidata_1_1progress__indicator_1_1ProgressIndicator.html#ac7ca7e5ab94569df581629eb72118c31">More...</a><br /></td></tr>
 <tr class="separator:ac7ca7e5ab94569df581629eb72118c31"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a44e99896f072aa1ae20cf0825798b944"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmemilio_1_1epidata_1_1progress__indicator_1_1ProgressIndicator.html#a44e99896f072aa1ae20cf0825798b944">__exit__</a> (self, exception, value, trace)</td></tr>
+<tr class="memdesc:a44e99896f072aa1ae20cf0825798b944"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls stop at the end of a 'with' block.  <a href="classmemilio_1_1epidata_1_1progress__indicator_1_1ProgressIndicator.html#a44e99896f072aa1ae20cf0825798b944">More...</a><br /></td></tr>
 <tr class="separator:a44e99896f072aa1ae20cf0825798b944"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a92a96a07d00f2eb88a934dd935c7fec2"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmemilio_1_1epidata_1_1progress__indicator_1_1ProgressIndicator.html#a92a96a07d00f2eb88a934dd935c7fec2">__init__</a> (self, message, animator, delay, auto_adjust=False)</td></tr>
 <tr class="memdesc:a92a96a07d00f2eb88a934dd935c7fec2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a <a class="el" href="classmemilio_1_1epidata_1_1progress__indicator_1_1ProgressIndicator.html" title="Print an animation to show that something is happening.">ProgressIndicator</a>.  <a href="classmemilio_1_1epidata_1_1progress__indicator_1_1ProgressIndicator.html#a92a96a07d00f2eb88a934dd935c7fec2">More...</a><br /></td></tr>
@@ -139,6 +141,7 @@ Private Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-methods"></a>
 Static Private Member Functions</h2></td></tr>
 <tr class="memitem:aa032fa2eb353b8ca2f71c3c60ea40989"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmemilio_1_1epidata_1_1progress__indicator_1_1ProgressIndicator.html#aa032fa2eb353b8ca2f71c3c60ea40989">_console_setup</a> ()</td></tr>
+<tr class="memdesc:aa032fa2eb353b8ca2f71c3c60ea40989"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set up the console evironment.  <a href="classmemilio_1_1epidata_1_1progress__indicator_1_1ProgressIndicator.html#aa032fa2eb353b8ca2f71c3c60ea40989">More...</a><br /></td></tr>
 <tr class="separator:aa032fa2eb353b8ca2f71c3c60ea40989"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
@@ -169,7 +172,7 @@ Static Private Attributes</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Print an animation to show that something is happening. </p>
-<p>Animations are rendered in a new thread, which is set up as deamon so that it stops on main thread exit. The methods <a class="el" href="classmemilio_1_1epidata_1_1progress__indicator_1_1Dots.html" title="Subclass of ProgressIndicator with a predefined animation.">Dots</a>, <a class="el" href="classmemilio_1_1epidata_1_1progress__indicator_1_1Spinner.html" title="Subclass of ProgressIndicator with a predefined animation.">Spinner</a> and <a class="el" href="classmemilio_1_1epidata_1_1progress__indicator_1_1Percentage.html" title="Manages a ProgressIndicator with a predefined animation.">Percentage</a> provide some default animations. Start the animation by either using the <code>start</code>/<code>stop</code> functions or a 'with as' block, e.g </p><div class="fragment"><div class="line"><span class="keyword">with</span> ProgressIndicator.Spinner():</div>
+<p>Animations are rendered in a new thread, which is set up as deamon so that it stops on main thread exit. The subclasses <a class="el" href="classmemilio_1_1epidata_1_1progress__indicator_1_1Dots.html" title="Subclass of ProgressIndicator with a predefined animation.">Dots</a>, <a class="el" href="classmemilio_1_1epidata_1_1progress__indicator_1_1Spinner.html" title="Subclass of ProgressIndicator with a predefined animation.">Spinner</a> and <a class="el" href="classmemilio_1_1epidata_1_1progress__indicator_1_1Percentage.html" title="Subclass of ProgressIndicator with a predefined animation.">Percentage</a> provide some default animations. Start the animation by either using the <code>start</code>/<code>stop</code> functions or a 'with as' block, e.g </p><div class="fragment"><div class="line"><span class="keyword">with</span> ProgressIndicator.Spinner():</div>
 <div class="line">    do_something...</div>
 </div><!-- fragment --><p> or </p><div class="fragment"><div class="line"><span class="keyword">with</span> ProgressIndicator.Percentage() <span class="keyword">as</span> indicator:</div>
 <div class="line">    <span class="keywordflow">for</span> i <span class="keywordflow">in</span> range(n):</div>
@@ -221,21 +224,16 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Create a <a class="el" href="classmemilio_1_1epidata_1_1progress__indicator_1_1ProgressIndicator.html" title="Print an animation to show that something is happening.">ProgressIndicator</a>. </p>
-<pre class="fragment">   @param message String. Shown in front of the animation without
-       seperator. If it would not fit in a single line with the
-       animation, it will be printed once in a new line above the
-       animation instead. Must not contain `\\r` or `\\n`.
-   @param animator Generator expression. The expression must loop, i.e.
-       it should never return StopIteration. `next(animator)` must be a
-       string of length &lt; `os.get_terminal_size().columns`. The length
-       should be constant, otherwise animations may leave artifacts (this
-       can be worked around by prepending `"\\033[K"` to each string).
-   @param delay Positive real number. Sets delay in seconds between
-       drawing animation frames.
-   @param auto_adjust [Default: False] Bool. Specify whether each frame
-       of the animation should be forced to fit in a single line. Can be
-       usefull for long, line filling animations.
-</pre> 
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">message</td><td>String. Shown in front of the animation without seperator. If it would not fit in a single line with the animation, it will be printed once in a new line above the animation instead. Must not contain <code>\r</code> or <code>\n</code>. </td></tr>
+    <tr><td class="paramname">animator</td><td>Generator expression. The expression must loop, i.e. it should never return StopIteration. <code>next(animator)</code> must be a string of length &lt; <code>os.get_terminal_size().columns</code>. The length should be constant, otherwise animations may leave artifacts (this can be worked around by prepending <code>"\033[K"</code> to each string). </td></tr>
+    <tr><td class="paramname">delay</td><td>Positive real number. Sets delay in seconds between drawing animation frames. </td></tr>
+    <tr><td class="paramname">auto_adjust</td><td>[Default: False] Bool. Specify whether each frame of the animation should be forced to fit in a single line. Can be usefull for long, line filling animations. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -254,6 +252,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Calls start at the beginning of a 'with' block. </p>
 
 </div>
 </div>
@@ -294,6 +294,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Calls stop at the end of a 'with' block. </p>
 
 </div>
 </div>
@@ -388,6 +390,8 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Set up the console evironment. </p>
+
 </div>
 </div>
 <a id="aeeabf64eff5c6e33c418496acc69b9a9"></a>
@@ -444,11 +448,14 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Globally prevents new indicators from starting. </p>
-<pre class="fragment">   This does not affect currently running indicators.
+<p>This does not affect currently running indicators.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">disable</td><td>Bool. If True, no new indicators can be started. If False, resume default behaviour. </td></tr>
+  </table>
+  </dd>
+</dl>
 
-   @param disable Bool. If True, no new indicators can be started.
-       If False, resume default behaviour.
-</pre> 
 </div>
 </div>
 <a id="aa22bf51c4b6ef1b85495007fa1474dc2"></a>
@@ -480,7 +487,7 @@ Static Private Attributes</h2></td></tr>
 <p>Change the message displayed in front of the animation. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">message</td><td>String. Shown in front of the animation without seperator. If it would not fit in a single line with the animation, it will be printed once in a new line above the animation instead. Must not contain <code>\\r</code> or <code>\\n</code>. </td></tr>
+    <tr><td class="paramname">message</td><td>String. Shown in front of the animation without seperator. If it would not fit in a single line with the animation, it will be printed once in a new line above the animation instead. Must not contain <code>\r</code> or <code>\n</code>. </td></tr>
   </table>
   </dd>
 </dl>
@@ -524,8 +531,8 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Start the animation in a new thread. </p>
-<pre class="fragment">   Must call stop() afterwards.
-</pre> 
+<p>Must call stop afterwards. </p>
+
 <p>Reimplemented in <a class="el" href="classmemilio_1_1epidata_1_1progress__indicator_1_1Percentage.html#ae622bf455afb6352d71d387a8afa79a7">memilio.epidata.progress_indicator.Percentage</a>.</p>
 
 </div>
