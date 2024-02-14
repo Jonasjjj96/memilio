@@ -137,6 +137,9 @@ $(function() {
 <li>m_core
 : <a class="el" href="classmio_1_1OdeIntegrator.html#aff4ac43c83f70b0184adf9f716831514">mio::OdeIntegrator</a>
 </li>
+<li>m_count
+: <a class="el" href="classmio_1_1lsecir_1_1InfectionState.html#a08caac5408e0e1a8ab5440f3d90200a4">mio::lsecir::InfectionState</a>
+</li>
 <li>m_counter
 : <a class="el" href="classmio_1_1abm_1_1Person_1_1RandomNumberGenerator.html#a06e586cfff2243b33e4b9a6a95f43bbe">mio::abm::Person::RandomNumberGenerator</a>
 </li>
@@ -178,6 +181,7 @@ $(function() {
 , <a class="el" href="classmio_1_1GraphSimulationBase.html#a483b9447d2554ad43e5187767ffef24f">mio::GraphSimulationBase&lt; Graph, edge_f &gt;</a>
 , <a class="el" href="classmio_1_1isecir_1_1Simulation.html#a93f0ec16d2579a2ea49ad42043cffaac">mio::isecir::Simulation</a>
 , <a class="el" href="classmio_1_1iseir_1_1Model.html#a4285ab8c401c1cf7ae010072975db729">mio::iseir::Model</a>
+, <a class="el" href="classmio_1_1lsecir_1_1Simulation.html#aec01970534bcfd3405b7804fa3a4d5e2">mio::lsecir::Simulation</a>
 , <a class="el" href="classmio_1_1Simulation.html#a146e727d8084f2288c54407fe9433e00">mio::Simulation&lt; M &gt;</a>
 </li>
 <li>m_dt_graph_sim
@@ -282,11 +286,16 @@ $(function() {
 <li>m_infections
 : <a class="el" href="classmio_1_1abm_1_1Person.html#a62c7a503913e9e0b02fc22eff56b6e08">mio::abm::Person</a>
 </li>
+<li>m_initial_values
+: <a class="el" href="classmio_1_1lsecir_1_1Model.html#a7833c1ce8850159eee40a834396c2764">mio::lsecir::Model</a>
+</li>
 <li>m_integrator
-: <a class="el" href="classmio_1_1Simulation.html#ad4598248a61b3f9bbe3503d63261f902">mio::Simulation&lt; M &gt;</a>
+: <a class="el" href="classmio_1_1lsecir_1_1Simulation.html#a79991441818b2d03a36200a2d00dd993">mio::lsecir::Simulation</a>
+, <a class="el" href="classmio_1_1Simulation.html#ad4598248a61b3f9bbe3503d63261f902">mio::Simulation&lt; M &gt;</a>
 </li>
 <li>m_integratorCore
-: <a class="el" href="classmio_1_1Simulation.html#aab0e13671e1282b27b0effec75c4de0c">mio::Simulation&lt; M &gt;</a>
+: <a class="el" href="classmio_1_1lsecir_1_1Simulation.html#a814d732eda4f4a47bb6d549de2e33334">mio::lsecir::Simulation</a>
+, <a class="el" href="classmio_1_1Simulation.html#aab0e13671e1282b27b0effec75c4de0c">mio::Simulation&lt; M &gt;</a>
 </li>
 <li>m_interval
 : <a class="el" href="classmio_1_1DynamicNPIs.html#a25cda321565b84c23e7f30c6efd21f1f">mio::DynamicNPIs</a>
@@ -375,6 +384,7 @@ $(function() {
 </li>
 <li>m_model
 : <a class="el" href="classmio_1_1isecir_1_1Simulation.html#af162c87f68cb72c955f3c8dce897fdd8">mio::isecir::Simulation</a>
+, <a class="el" href="classmio_1_1lsecir_1_1Simulation.html#a92611384aa2bf92616cc8b9f0724a95a">mio::lsecir::Simulation</a>
 , <a class="el" href="classmio_1_1Simulation.html#aced66d30b80308bfe43fc5bef74e7a7e">mio::Simulation&lt; M &gt;</a>
 </li>
 <li>m_msg
@@ -386,6 +396,9 @@ $(function() {
 <li>m_N
 : <a class="el" href="classmio_1_1isecir_1_1Model.html#aa2153efbcfbed7df8ab91ca9ead82175">mio::isecir::Model</a>
 , <a class="el" href="classmio_1_1iseir_1_1Model.html#a0cbe4e171029bb976b1c27675d9498c3">mio::iseir::Model</a>
+</li>
+<li>m_N0
+: <a class="el" href="classmio_1_1lsecir_1_1Model.html#af6be21ea497869f2a4468e154fd002ea">mio::lsecir::Model</a>
 </li>
 <li>m_node_func
 : <a class="el" href="classmio_1_1GraphSimulationBase.html#a24bcc73294f3d4efb102521b6aef5767">mio::GraphSimulationBase&lt; Graph, edge_f &gt;</a>
@@ -488,6 +501,7 @@ $(function() {
 </li>
 <li>m_result
 : <a class="el" href="classmio_1_1iseir_1_1Model.html#a3b884683323af22f0b2853b84a787fc7">mio::iseir::Model</a>
+, <a class="el" href="classmio_1_1lsecir_1_1Simulation.html#a02a5fe7e0058f972721c34d2bf2f5c32">mio::lsecir::Simulation</a>
 , <a class="el" href="classmio_1_1Simulation.html#aa6f5420861cfd753a044e1288fa36c54">mio::Simulation&lt; M &gt;</a>
 </li>
 <li>m_result_SEIR
@@ -553,6 +567,12 @@ $(function() {
 <li>m_stream
 : <a class="el" href="classmio_1_1BinarySerializerContext.html#a2bc33c0feefb96d04e74b4e671530053">mio::BinarySerializerContext</a>
 , <a class="el" href="classmio_1_1BinarySerializerObject.html#aebccc6c7621d1c2ab417fe8bcfd04fb1">mio::BinarySerializerObject</a>
+</li>
+<li>m_subcompartment_indexfirst
+: <a class="el" href="classmio_1_1lsecir_1_1InfectionState.html#af59121822eec1f3f6178dbe88f128bb3">mio::lsecir::InfectionState</a>
+</li>
+<li>m_subcompartment_numbers
+: <a class="el" href="classmio_1_1lsecir_1_1InfectionState.html#a4337646f720b60182c39d839931976a5">mio::lsecir::InfectionState</a>
 </li>
 <li>m_support_max
 : <a class="el" href="structmio_1_1StateAgeFunction.html#a3cf36b541cce1a757f959c4a51d57599">mio::StateAgeFunction</a>
