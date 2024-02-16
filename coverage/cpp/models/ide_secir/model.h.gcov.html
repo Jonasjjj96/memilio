@@ -31,17 +31,17 @@
             <td class="headerValue">coverage.info</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntry">30</td>
-            <td class="headerCovTableEntry">34</td>
-            <td class="headerCovTableEntryMed">88.2 %</td>
+            <td class="headerCovTableEntry">32</td>
+            <td class="headerCovTableEntry">36</td>
+            <td class="headerCovTableEntryMed">88.9 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2024-02-16 11:16:14</td>
+            <td class="headerValue">2024-02-16 11:51:33</td>
             <td></td>
             <td class="headerItem">Functions:</td>
-            <td class="headerCovTableEntry">2</td>
-            <td class="headerCovTableEntry">2</td>
+            <td class="headerCovTableEntry">3</td>
+            <td class="headerCovTableEntry">3</td>
             <td class="headerCovTableEntryHi">100.0 %</td>
           </tr>
           <tr><td><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
@@ -101,17 +101,17 @@
 <a name="39"><span class="lineNum">      39 </span>            :     * @brief Constructor to create an IDE SECIR model.</a>
 <a name="40"><span class="lineNum">      40 </span>            :     *</a>
 <a name="41"><span class="lineNum">      41 </span>            :     * @param[in, out] init TimeSeries with the initial values of the number of individuals, </a>
-<a name="42"><span class="lineNum">      42 </span>            :     *   which transit within one timestep dt_init from one compartment to another.</a>
+<a name="42"><span class="lineNum">      42 </span>            :     *   which transit within one timestep dt from one compartment to another.</a>
 <a name="43"><span class="lineNum">      43 </span>            :     *   Possible transitions are specified in as #InfectionTransition%s.</a>
-<a name="44"><span class="lineNum">      44 </span>            :     *   Considered points of times should have the distance dt_init and the last time point should be 0. </a>
+<a name="44"><span class="lineNum">      44 </span>            :     *   Considered points of times should have the distance dt and the last time point should be 0. </a>
 <a name="45"><span class="lineNum">      45 </span>            :     *   The time history must reach a certain point in the past so that the simulation can be performed.</a>
 <a name="46"><span class="lineNum">      46 </span>            :     *   A warning is displayed if the condition is violated.</a>
-<a name="47"><span class="lineNum">      47 </span>            :     * @param[in] dt_init The size of the time step used for numerical simulation.</a>
-<a name="48"><span class="lineNum">      48 </span>            :     * @param[in] N_init The population of the considered region.</a>
-<a name="49"><span class="lineNum">      49 </span>            :     * @param[in] Dead_before The total number of deaths at the time point - dt_init.</a>
+<a name="47"><span class="lineNum">      47 </span>            :     * @param[in] N_init The population of the considered region.</a>
+<a name="48"><span class="lineNum">      48 </span>            :     * @param[in] deaths The total number of deaths at the time zero.</a>
+<a name="49"><span class="lineNum">      49 </span>            :     * @param[in] total_confirmed_cases Total confirmed cases at time t0 can be set if it should be used for initialisation.</a>
 <a name="50"><span class="lineNum">      50 </span>            :     * @param[in, out] Parameterset_init Used Parameters for simulation. </a>
 <a name="51"><span class="lineNum">      51 </span>            :     */</a>
-<a name="52"><span class="lineNum">      52 </span>            :     Model(TimeSeries&lt;ScalarType&gt;&amp;&amp; init, ScalarType N_init, ScalarType Dead_before,</a>
+<a name="52"><span class="lineNum">      52 </span>            :     Model(TimeSeries&lt;ScalarType&gt;&amp;&amp; init, ScalarType N_init, ScalarType deaths, ScalarType total_confirmed_cases = 0,</a>
 <a name="53"><span class="lineNum">      53 </span>            :           const ParameterSet&amp; Parameterset_init = ParameterSet());</a>
 <a name="54"><span class="lineNum">      54 </span>            : </a>
 <a name="55"><span class="lineNum">      55 </span>            :     /**</a>
@@ -269,24 +269,42 @@
 <a name="207"><span class="lineNum">     207 </span><span class="lineCov">          3 :         m_tol = new_tol;</span></a>
 <a name="208"><span class="lineNum">     208 </span><span class="lineCov">          3 :     }</span></a>
 <a name="209"><span class="lineNum">     209 </span>            : </a>
-<a name="210"><span class="lineNum">     210 </span>            :     ParameterSet parameters{}; ///&lt; ParameterSet of Model Parameters.</a>
-<a name="211"><span class="lineNum">     211 </span>            :     /* Attention: m_populations and m_transitions do not necessarily have the same number of time points due to the initialization part. */</a>
-<a name="212"><span class="lineNum">     212 </span>            :     TimeSeries&lt;ScalarType&gt;</a>
-<a name="213"><span class="lineNum">     213 </span>            :         m_transitions; ///&lt; TimeSeries containing points of time and the corresponding number of transitions.</a>
-<a name="214"><span class="lineNum">     214 </span>            :     TimeSeries&lt;ScalarType&gt;</a>
-<a name="215"><span class="lineNum">     215 </span>            :         m_populations; ///&lt; TimeSeries containing points of time and the corresponding number of people in defined #InfectionState%s.</a>
-<a name="216"><span class="lineNum">     216 </span>            : </a>
-<a name="217"><span class="lineNum">     217 </span>            : private:</a>
-<a name="218"><span class="lineNum">     218 </span>            :     ScalarType m_forceofinfection{0}; ///&lt; Force of infection term needed for numerical scheme.</a>
-<a name="219"><span class="lineNum">     219 </span>            :     ScalarType m_N{0}; ///&lt; Total population size of the considered region.</a>
-<a name="220"><span class="lineNum">     220 </span>            :     ScalarType m_deaths_before{0}; ///&lt; Deaths before start of simulation (at time -m_dt).</a>
-<a name="221"><span class="lineNum">     221 </span>            :     ScalarType m_tol{1e-10}; ///&lt; Tolerance used to calculate the maximum support of the TransitionDistributions.</a>
-<a name="222"><span class="lineNum">     222 </span>            : };</a>
-<a name="223"><span class="lineNum">     223 </span>            : </a>
-<a name="224"><span class="lineNum">     224 </span>            : } // namespace isecir</a>
-<a name="225"><span class="lineNum">     225 </span>            : } // namespace mio</a>
-<a name="226"><span class="lineNum">     226 </span>            : </a>
-<a name="227"><span class="lineNum">     227 </span>            : #endif // IDESECIR_MODEL_H</a>
+<a name="210"><span class="lineNum">     210 </span>            :     /**</a>
+<a name="211"><span class="lineNum">     211 </span>            :      * @brief Specifies a number associated with the method used for initialization.</a>
+<a name="212"><span class="lineNum">     212 </span>            :      *</a>
+<a name="213"><span class="lineNum">     213 </span>            :      * @returns 0 if the initialization method has not yet been selected,</a>
+<a name="214"><span class="lineNum">     214 </span>            :      *      1 if the method using the total number of confirmed cases at time 0 is used,</a>
+<a name="215"><span class="lineNum">     215 </span>            :      *      2 if the force of infection method is used,</a>
+<a name="216"><span class="lineNum">     216 </span>            :      *      3 if the initialization is calculated using a prior set value for S,</a>
+<a name="217"><span class="lineNum">     217 </span>            :      *      4 if the initialization is calculated using a prior set value for R and</a>
+<a name="218"><span class="lineNum">     218 </span>            :      *      -1 if the initialization was not possible using any of the methods.</a>
+<a name="219"><span class="lineNum">     219 </span>            :      */</a>
+<a name="220"><span class="lineNum">     220 </span><span class="lineCov">          6 :     int get_initialization_method()</span></a>
+<a name="221"><span class="lineNum">     221 </span>            :     {</a>
+<a name="222"><span class="lineNum">     222 </span><span class="lineCov">          6 :         return m_initialization_method;</span></a>
+<a name="223"><span class="lineNum">     223 </span>            :     }</a>
+<a name="224"><span class="lineNum">     224 </span>            : </a>
+<a name="225"><span class="lineNum">     225 </span>            :     ParameterSet parameters{}; ///&lt; ParameterSet of Model Parameters.</a>
+<a name="226"><span class="lineNum">     226 </span>            :     /* Attention: m_populations and m_transitions do not necessarily have the same number of time points due to the initialization part. */</a>
+<a name="227"><span class="lineNum">     227 </span>            :     TimeSeries&lt;ScalarType&gt;</a>
+<a name="228"><span class="lineNum">     228 </span>            :         m_transitions; ///&lt; TimeSeries containing points of time and the corresponding number of transitions.</a>
+<a name="229"><span class="lineNum">     229 </span>            :     TimeSeries&lt;ScalarType&gt;</a>
+<a name="230"><span class="lineNum">     230 </span>            :         m_populations; ///&lt; TimeSeries containing points of time and the corresponding number of people in defined #InfectionState%s.</a>
+<a name="231"><span class="lineNum">     231 </span>            : </a>
+<a name="232"><span class="lineNum">     232 </span>            : private:</a>
+<a name="233"><span class="lineNum">     233 </span>            :     ScalarType m_forceofinfection{0}; ///&lt; Force of infection term needed for numerical scheme.</a>
+<a name="234"><span class="lineNum">     234 </span>            :     ScalarType m_N{0}; ///&lt; Total population size of the considered region.</a>
+<a name="235"><span class="lineNum">     235 </span>            :     ScalarType m_deaths_before{0}; ///&lt; Total number of deaths at the time point - dt.</a>
+<a name="236"><span class="lineNum">     236 </span>            :     ScalarType m_total_confirmed_cases{0}; ///&lt; Total number of confirmed cases at time t0.</a>
+<a name="237"><span class="lineNum">     237 </span>            :     ScalarType m_tol{1e-10}; ///&lt; Tolerance used to calculate the maximum support of the TransitionDistributions.</a>
+<a name="238"><span class="lineNum">     238 </span>            :     int m_initialization_method{</a>
+<a name="239"><span class="lineNum">     239 </span>            :         0}; ///&lt; Gives the index of the method used for the initialization of the model. See also get_initialization_method() for the number code.</a>
+<a name="240"><span class="lineNum">     240 </span>            : };</a>
+<a name="241"><span class="lineNum">     241 </span>            : </a>
+<a name="242"><span class="lineNum">     242 </span>            : } // namespace isecir</a>
+<a name="243"><span class="lineNum">     243 </span>            : } // namespace mio</a>
+<a name="244"><span class="lineNum">     244 </span>            : </a>
+<a name="245"><span class="lineNum">     245 </span>            : #endif // IDESECIR_MODEL_H</a>
 </pre>
       </td>
     </tr>
