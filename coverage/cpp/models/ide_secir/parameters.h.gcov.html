@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2024-02-14 16:13:23</td>
+            <td class="headerValue">2024-02-16 11:16:14</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">8</td>
@@ -331,39 +331,40 @@
 <a name="269"><span class="lineNum">     269 </span><span class="lineCov">          2 :                       1);</span></a>
 <a name="270"><span class="lineNum">     270 </span><span class="lineCov">          1 :             return true;</span></a>
 <a name="271"><span class="lineNum">     271 </span>            :         }</a>
-<a name="272"><span class="lineNum">     272 </span>            : </a>
-<a name="273"><span class="lineNum">     273 </span><span class="lineCov">         34 :         for (size_t i = 0; i &lt; (int)InfectionTransition::Count; i++) {</span></a>
-<a name="274"><span class="lineNum">     274 </span><span class="lineCov">         31 :             if (floating_point_less(this-&gt;get&lt;TransitionDistributions&gt;()[i].get_support_max(10), 0.0, 1e-14)) {</span></a>
-<a name="275"><span class="lineNum">     275 </span><span class="lineCov">          2 :                 log_error(&quot;Constraint check: One parameter in TransitionDistributions has invalid support.&quot;);</span></a>
-<a name="276"><span class="lineNum">     276 </span><span class="lineCov">          1 :                 return true;</span></a>
-<a name="277"><span class="lineNum">     277 </span>            :             }</a>
-<a name="278"><span class="lineNum">     278 </span>            :         }</a>
-<a name="279"><span class="lineNum">     279 </span>            : </a>
-<a name="280"><span class="lineNum">     280 </span><span class="lineCov">          3 :         return false;</span></a>
-<a name="281"><span class="lineNum">     281 </span>            :     }</a>
-<a name="282"><span class="lineNum">     282 </span>            : </a>
-<a name="283"><span class="lineNum">     283 </span>            :     /**</a>
-<a name="284"><span class="lineNum">     284 </span>            :      * deserialize an object of this class.</a>
-<a name="285"><span class="lineNum">     285 </span>            :      * @see mio::deserialize</a>
-<a name="286"><span class="lineNum">     286 </span>            :      */</a>
-<a name="287"><span class="lineNum">     287 </span>            :     template &lt;class IOContext&gt;</a>
-<a name="288"><span class="lineNum">     288 </span>            :     static IOResult&lt;Parameters&gt; deserialize(IOContext&amp; io)</a>
-<a name="289"><span class="lineNum">     289 </span>            :     {</a>
-<a name="290"><span class="lineNum">     290 </span>            :         BOOST_OUTCOME_TRY(base, ParametersBase::deserialize(io));</a>
-<a name="291"><span class="lineNum">     291 </span>            :         return success(Parameters(std::move(base)));</a>
-<a name="292"><span class="lineNum">     292 </span>            :     }</a>
-<a name="293"><span class="lineNum">     293 </span>            : </a>
-<a name="294"><span class="lineNum">     294 </span>            : private:</a>
-<a name="295"><span class="lineNum">     295 </span>            :     Parameters(ParametersBase&amp;&amp; base)</a>
-<a name="296"><span class="lineNum">     296 </span>            :         : ParametersBase(std::move(base))</a>
-<a name="297"><span class="lineNum">     297 </span>            :     {</a>
-<a name="298"><span class="lineNum">     298 </span>            :     }</a>
-<a name="299"><span class="lineNum">     299 </span>            : };</a>
-<a name="300"><span class="lineNum">     300 </span>            : </a>
-<a name="301"><span class="lineNum">     301 </span>            : } // namespace isecir</a>
-<a name="302"><span class="lineNum">     302 </span>            : } // namespace mio</a>
-<a name="303"><span class="lineNum">     303 </span>            : </a>
-<a name="304"><span class="lineNum">     304 </span>            : #endif // IDE_SECIR_PARAMS_H</a>
+<a name="272"><span class="lineNum">     272 </span>            :         /* The first entry of TransitionDistributions is not checked because the distribution S-&gt;E is never used </a>
+<a name="273"><span class="lineNum">     273 </span>            :         (and it makes no sense to use the distribution). The support does not need to be valid.*/</a>
+<a name="274"><span class="lineNum">     274 </span><span class="lineCov">         31 :         for (size_t i = 1; i &lt; (int)InfectionTransition::Count; i++) {</span></a>
+<a name="275"><span class="lineNum">     275 </span><span class="lineCov">         28 :             if (floating_point_less(this-&gt;get&lt;TransitionDistributions&gt;()[i].get_support_max(10), 0.0, 1e-14)) {</span></a>
+<a name="276"><span class="lineNum">     276 </span><span class="lineCov">          2 :                 log_error(&quot;Constraint check: One function in TransitionDistributions has invalid support.&quot;);</span></a>
+<a name="277"><span class="lineNum">     277 </span><span class="lineCov">          1 :                 return true;</span></a>
+<a name="278"><span class="lineNum">     278 </span>            :             }</a>
+<a name="279"><span class="lineNum">     279 </span>            :         }</a>
+<a name="280"><span class="lineNum">     280 </span>            : </a>
+<a name="281"><span class="lineNum">     281 </span><span class="lineCov">          3 :         return false;</span></a>
+<a name="282"><span class="lineNum">     282 </span>            :     }</a>
+<a name="283"><span class="lineNum">     283 </span>            : </a>
+<a name="284"><span class="lineNum">     284 </span>            :     /**</a>
+<a name="285"><span class="lineNum">     285 </span>            :      * deserialize an object of this class.</a>
+<a name="286"><span class="lineNum">     286 </span>            :      * @see mio::deserialize</a>
+<a name="287"><span class="lineNum">     287 </span>            :      */</a>
+<a name="288"><span class="lineNum">     288 </span>            :     template &lt;class IOContext&gt;</a>
+<a name="289"><span class="lineNum">     289 </span>            :     static IOResult&lt;Parameters&gt; deserialize(IOContext&amp; io)</a>
+<a name="290"><span class="lineNum">     290 </span>            :     {</a>
+<a name="291"><span class="lineNum">     291 </span>            :         BOOST_OUTCOME_TRY(base, ParametersBase::deserialize(io));</a>
+<a name="292"><span class="lineNum">     292 </span>            :         return success(Parameters(std::move(base)));</a>
+<a name="293"><span class="lineNum">     293 </span>            :     }</a>
+<a name="294"><span class="lineNum">     294 </span>            : </a>
+<a name="295"><span class="lineNum">     295 </span>            : private:</a>
+<a name="296"><span class="lineNum">     296 </span>            :     Parameters(ParametersBase&amp;&amp; base)</a>
+<a name="297"><span class="lineNum">     297 </span>            :         : ParametersBase(std::move(base))</a>
+<a name="298"><span class="lineNum">     298 </span>            :     {</a>
+<a name="299"><span class="lineNum">     299 </span>            :     }</a>
+<a name="300"><span class="lineNum">     300 </span>            : };</a>
+<a name="301"><span class="lineNum">     301 </span>            : </a>
+<a name="302"><span class="lineNum">     302 </span>            : } // namespace isecir</a>
+<a name="303"><span class="lineNum">     303 </span>            : } // namespace mio</a>
+<a name="304"><span class="lineNum">     304 </span>            : </a>
+<a name="305"><span class="lineNum">     305 </span>            : #endif // IDE_SECIR_PARAMS_H</a>
 </pre>
       </td>
     </tr>
