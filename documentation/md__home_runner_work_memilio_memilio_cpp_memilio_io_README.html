@@ -199,7 +199,7 @@ Loggers</h2>
 <div class="line">          <span class="keywordflow">return</span> <span class="comment">/* true or false */</span></div>
 <div class="line">    }</div>
 <div class="line">};</div>
-<div class="ttc" id="anamespacemio_html_a7a8e658f565465ae076eab415d976e1b"><div class="ttname"><a href="namespacemio.html#a7a8e658f565465ae076eab415d976e1b">mio::log</a></div><div class="ttdeci">void log(LogLevel level, spdlog::string_view_t fmt, const Args &amp;... args)</div><div class="ttdef"><b>Definition:</b> logging.h:118</div></div>
+<div class="ttc" id="anamespacemio_html_a7a8e658f565465ae076eab415d976e1b"><div class="ttname"><a href="namespacemio.html#a7a8e658f565465ae076eab415d976e1b">mio::log</a></div><div class="ttdeci">void log(LogLevel level, spdlog::string_view_t fmt, const Args &amp;... args)</div><div class="ttdef"><b>Definition:</b> logging.h:122</div></div>
 </div><!-- fragment --><h2><a class="anchor" id="autotoc_md24"></a>
 Writers</h2>
 <p>The <code>Writer</code> struct defines how to store the logged data from one or more implemented <code>Loggers</code>. Each user-implemented <code>Writer</code> must have a <code>Data</code> Type and implement the <code>template &lt;class Logger&gt; static void add_record(const typename Logger::Type&amp; t, Data&amp; data)</code> function.</p>
