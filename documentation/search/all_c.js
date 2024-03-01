@@ -1,8 +1,11 @@
 var searchData=
 [
-  ['latencytime_870',['LatencyTime',['../structmio_1_1iseir_1_1LatencyTime.html',1,'mio::iseir']]],
-  ['latitude_871',['latitude',['../structmio_1_1abm_1_1GeographicalLocation.html#a3185effdc9a95903244b6ede3d532670',1,'mio::abm::GeographicalLocation']]],
-  ['lct_20secir_20model_872',['LCT SECIR model',['../md__home_runner_work_memilio_memilio_cpp_models_lct_secir_README.html',1,'']]],
+  ['latencytime_867',['LatencyTime',['../structmio_1_1iseir_1_1LatencyTime.html',1,'mio::iseir']]],
+  ['latitude_868',['latitude',['../structmio_1_1abm_1_1GeographicalLocation.html#a3185effdc9a95903244b6ede3d532670',1,'mio::abm::GeographicalLocation']]],
+  ['lct_20secir_20model_869',['LCT SECIR model',['../md__home_runner_work_memilio_memilio_cpp_models_lct_secir_README.html',1,'']]],
+  ['lct_5finfection_5fstate_2eh_870',['lct_infection_state.h',['../lct__infection__state_8h.html',1,'']]],
+  ['lctinfectionstate_871',['LctInfectionState',['../classmio_1_1LctInfectionState.html',1,'mio']]],
+  ['lctstate_872',['LctState',['../classmio_1_1lsecir_1_1Model.html#a317ebd354e298a750604c24485892561',1,'mio::lsecir::Model']]],
   ['leisure_873',['Leisure',['../namespacemio_1_1abm.html#a87b19348d6ba20fbe8bcb16485029ce5a43defa6c9129fabc91490e8bf2ae1e59',1,'mio::abm']]],
   ['linear_5finterpolation_874',['linear_interpolation',['../namespacemio.html#a46a8c32ccd44e57584abc88bf22eee11',1,'mio']]],
   ['linear_5finterpolation_5fof_5fdata_5fset_875',['linear_interpolation_of_data_set',['../namespacemio.html#a2f961972292a81681062a6c8fdc03041',1,'mio']]],
@@ -17,7 +20,7 @@ var searchData=
   ['lockdown_5frules_2ecpp_884',['lockdown_rules.cpp',['../lockdown__rules_8cpp.html',1,'']]],
   ['lockdown_5frules_2eh_885',['lockdown_rules.h',['../lockdown__rules_8h.html',1,'']]],
   ['lockdowndate_886',['LockdownDate',['../structmio_1_1abm_1_1LockdownDate.html',1,'mio::abm']]],
-  ['log_887',['log',['../namespacemio.html#a7a8e658f565465ae076eab415d976e1b',1,'mio::log()'],['../structmio_1_1abm_1_1LogInfectionState.html#a213321ba1c0365fc4cd11f3907832021',1,'mio::abm::LogInfectionState::log()'],['../structmio_1_1abm_1_1LogDataForMovement.html#a294a6af0f1c0225d6ba9a44a8120c11b',1,'mio::abm::LogDataForMovement::log()'],['../structmio_1_1abm_1_1LogPersonInformation.html#aa072825ecf015c40d5d2a55de0208cd2',1,'mio::abm::LogPersonInformation::log()'],['../structmio_1_1abm_1_1LogLocationInformation.html#af3f764ed0fe49ca9fa3b39a98a5384ae',1,'mio::abm::LogLocationInformation::log()'],['../classmio_1_1History.html#a9c7534939a88226f8e17ac58c32a051d',1,'mio::History::log()']]],
+  ['log_887',['log',['../classmio_1_1History.html#a9c7534939a88226f8e17ac58c32a051d',1,'mio::History::log()'],['../namespacemio.html#a7a8e658f565465ae076eab415d976e1b',1,'mio::log()'],['../structmio_1_1abm_1_1LogInfectionState.html#a213321ba1c0365fc4cd11f3907832021',1,'mio::abm::LogInfectionState::log()'],['../structmio_1_1abm_1_1LogDataForMovement.html#a294a6af0f1c0225d6ba9a44a8120c11b',1,'mio::abm::LogDataForMovement::log()'],['../structmio_1_1abm_1_1LogLocationInformation.html#af3f764ed0fe49ca9fa3b39a98a5384ae',1,'mio::abm::LogLocationInformation::log()'],['../structmio_1_1abm_1_1LogPersonInformation.html#aa072825ecf015c40d5d2a55de0208cd2',1,'mio::abm::LogPersonInformation::log()']]],
   ['log_5fdebug_888',['log_debug',['../namespacemio.html#a9760c798e6f1ea1678ca898d35f201a6',1,'mio']]],
   ['log_5ferror_889',['log_error',['../namespacemio.html#a89afc3ebfa2c5ab994ec3c76dcad85d1',1,'mio']]],
   ['log_5fimpl_890',['log_impl',['../classmio_1_1History.html#ad041f305b1385e0e5af783399d55eadf',1,'mio::History']]],
