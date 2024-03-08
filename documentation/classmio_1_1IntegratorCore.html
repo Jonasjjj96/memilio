@@ -90,7 +90,7 @@ Inheritance diagram for mio::IntegratorCore:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a5b3dd3a133ced17654f1d63b466c1ee9"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1IntegratorCore.html#a5b3dd3a133ced17654f1d63b466c1ee9">step</a> (const <a class="el" href="namespacemio.html#a6164d4e8f4df5089a14e927650c5a638">DerivFunction</a> &amp;f, Eigen::Ref&lt; const Eigen::VectorXd &gt; yt, double &amp;t, double &amp;dt, Eigen::Ref&lt; Eigen::VectorXd &gt; ytp1) const =0</td></tr>
-<tr class="memdesc:a5b3dd3a133ced17654f1d63b466c1ee9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Step of the integration with possible adaptive with.  <a href="classmio_1_1IntegratorCore.html#a5b3dd3a133ced17654f1d63b466c1ee9">More...</a><br /></td></tr>
+<tr class="memdesc:a5b3dd3a133ced17654f1d63b466c1ee9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Make a single integration step.  <a href="classmio_1_1IntegratorCore.html#a5b3dd3a133ced17654f1d63b466c1ee9">More...</a><br /></td></tr>
 <tr class="separator:a5b3dd3a133ced17654f1d63b466c1ee9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af5118fda75274c86472e7c1dfc4a6479"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1IntegratorCore.html#af5118fda75274c86472e7c1dfc4a6479">~IntegratorCore</a> ()</td></tr>
 <tr class="separator:af5118fda75274c86472e7c1dfc4a6479"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -174,17 +174,19 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Step of the integration with possible adaptive with. </p>
+<p>Make a single integration step. </p>
+<p>The behaviour of this method changes when the integration scheme has adaptive step sizing. These changes are noted in the parentheses (...) below. Adaptive integrators must have bounds dt_min and dt_max for dt. The adaptive step sizing is considered to be successful, if a step of at least size dt_min sufficed tolerances. Tolerances are defined in each implementation, usually using a criterion with absolute and relative tolerances. Even if the step sizing failed, the integrator will make a step of at least size dt_min.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">f</td><td>Right hand side of ODE </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">yt</td><td>value of y at t, y(t) </td></tr>
-    <tr><td class="paramdir">[in,out]</td><td class="paramname">t</td><td>current time step h=dt </td></tr>
-    <tr><td class="paramdir">[in,out]</td><td class="paramname">dt</td><td>current time step h=dt </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">ytp1</td><td>approximated value y(t+1) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">f</td><td>Right hand side of the ODE. May be called multiple times with different arguments. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">yt</td><td>The known value of y at time t. </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">t</td><td>The current time. It will be increased by dt. (If adaptive, the increment is instead within [dt_min, dt].) </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">dt</td><td>The current step size h=dt. Will not be changed. (If adaptive, the given dt is used as the maximum step size, and must be within [dt_min, dt_max]. During integration, dt is adjusted in [dt_min, dt_max] to have an optimal size for the next step.) </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">ytp1</td><td>Set to the approximated value of y at time t + dt. (If adaptive, this time may be smaller, but it is at least t + dt_min, at most t + dt_max. Note that the increment on t may be different from the returned value of dt.) </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section return"><dt>Returns</dt><dd>Always true for nonadaptive methods. (If adaptive, returns whether the adaptive step sizing was successful.) </dd></dl>
 
 <p>Implemented in <a class="el" href="classmio_1_1ControlledStepperWrapper.html#ac95b744a0349378bfbf7fac4266b35d8">mio::ControlledStepperWrapper&lt; ControlledStepper &gt;</a>, <a class="el" href="classmio_1_1RKIntegratorCore.html#ad6c8479ddbd8e1580d237db1984bbb5b">mio::RKIntegratorCore</a>, and <a class="el" href="classmio_1_1EulerIntegratorCore.html#a62a7d82ed0f292f427d0a238462c34cc">mio::EulerIntegratorCore</a>.</p>
 

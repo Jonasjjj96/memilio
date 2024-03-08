@@ -68,8 +68,10 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-types">Private Types</a> &#124;
 <a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
+<a href="#pri-static-attribs">Static Private Attributes</a> &#124;
 <a href="classmio_1_1ControlledStepperWrapper-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">mio::ControlledStepperWrapper&lt; ControlledStepper &gt; Class Template Reference</div>  </div>
@@ -104,38 +106,80 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a3703f4643b6b0fb29e5b35a16d3fffec"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1ControlledStepperWrapper.html#a3703f4643b6b0fb29e5b35a16d3fffec">set_rel_tolerance</a> (double rel_tol)</td></tr>
 <tr class="separator:a3703f4643b6b0fb29e5b35a16d3fffec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac95b744a0349378bfbf7fac4266b35d8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1ControlledStepperWrapper.html#ac95b744a0349378bfbf7fac4266b35d8">step</a> (const <a class="el" href="namespacemio.html#a6164d4e8f4df5089a14e927650c5a638">mio::DerivFunction</a> &amp;f, Eigen::Ref&lt; Eigen::VectorXd const &gt; yt, double &amp;t, double &amp;dt, Eigen::Ref&lt; Eigen::VectorXd &gt; ytp1) const override</td></tr>
-<tr class="memdesc:ac95b744a0349378bfbf7fac4266b35d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Make a single integration step of a system of ODEs and adapt step width.  <a href="classmio_1_1ControlledStepperWrapper.html#ac95b744a0349378bfbf7fac4266b35d8">More...</a><br /></td></tr>
+<tr class="memdesc:ac95b744a0349378bfbf7fac4266b35d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Make a single integration step on a system of ODEs and adapt the step size dt.  <a href="classmio_1_1ControlledStepperWrapper.html#ac95b744a0349378bfbf7fac4266b35d8">More...</a><br /></td></tr>
 <tr class="separator:ac95b744a0349378bfbf7fac4266b35d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classmio_1_1IntegratorCore"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classmio_1_1IntegratorCore')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classmio_1_1IntegratorCore.html">mio::IntegratorCore</a></td></tr>
 <tr class="memitem:af5118fda75274c86472e7c1dfc4a6479 inherit pub_methods_classmio_1_1IntegratorCore"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1IntegratorCore.html#af5118fda75274c86472e7c1dfc4a6479">~IntegratorCore</a> ()</td></tr>
 <tr class="separator:af5118fda75274c86472e7c1dfc4a6479 inherit pub_methods_classmio_1_1IntegratorCore"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-types"></a>
+Private Types</h2></td></tr>
+<tr class="memitem:ab22e79ac8fd4badf5fadc6b55840923e"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1ControlledStepperWrapper.html#ab22e79ac8fd4badf5fadc6b55840923e">Stepper</a> = boost::numeric::odeint::controlled_runge_kutta&lt; ControlledStepper&lt;&gt; &gt;</td></tr>
+<tr class="separator:ab22e79ac8fd4badf5fadc6b55840923e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
-<tr class="memitem:aa83dc9ea3da5a44ac73c6646c2a81128"><td class="memItemLeft" align="right" valign="top">boost::numeric::odeint::controlled_runge_kutta&lt; ControlledStepper&lt;&gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1ControlledStepperWrapper.html#aa83dc9ea3da5a44ac73c6646c2a81128">create_stepper</a> ()</td></tr>
-<tr class="separator:aa83dc9ea3da5a44ac73c6646c2a81128"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4685ddcaf4e4c7f3236defc180ab9dee"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmio_1_1ControlledStepperWrapper.html#ab22e79ac8fd4badf5fadc6b55840923e">Stepper</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1ControlledStepperWrapper.html#a4685ddcaf4e4c7f3236defc180ab9dee">create_stepper</a> ()</td></tr>
+<tr class="memdesc:a4685ddcaf4e4c7f3236defc180ab9dee"><td class="mdescLeft">&#160;</td><td class="mdescRight">(Re)initialize the internal stepper.  <a href="classmio_1_1ControlledStepperWrapper.html#a4685ddcaf4e4c7f3236defc180ab9dee">More...</a><br /></td></tr>
+<tr class="separator:a4685ddcaf4e4c7f3236defc180ab9dee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:ad7681bd25e17edda65e881a80b17558a"><td class="memItemLeft" align="right" valign="top">Eigen::VectorXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1ControlledStepperWrapper.html#ad7681bd25e17edda65e881a80b17558a">dydt</a></td></tr>
-<tr class="separator:ad7681bd25e17edda65e881a80b17558a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad482d1293a735580ab019e5cc404eb1a"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1ControlledStepperWrapper.html#ad482d1293a735580ab019e5cc404eb1a">m_abs_tol</a></td></tr>
 <tr class="separator:ad482d1293a735580ab019e5cc404eb1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a17eea2ab328fce1e412e6c53f9b57dbd"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1ControlledStepperWrapper.html#a17eea2ab328fce1e412e6c53f9b57dbd">m_dt_max</a></td></tr>
+<tr class="memdesc:a17eea2ab328fce1e412e6c53f9b57dbd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lower and upper bound to the step size dt.  <a href="classmio_1_1ControlledStepperWrapper.html#a17eea2ab328fce1e412e6c53f9b57dbd">More...</a><br /></td></tr>
 <tr class="separator:a17eea2ab328fce1e412e6c53f9b57dbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aca19b59d8afa730268c3ef8f48a00f39"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1ControlledStepperWrapper.html#aca19b59d8afa730268c3ef8f48a00f39">m_dt_min</a></td></tr>
 <tr class="separator:aca19b59d8afa730268c3ef8f48a00f39"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a49cf81988c46a9c6bb78d851dd5f90f5"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1ControlledStepperWrapper.html#a49cf81988c46a9c6bb78d851dd5f90f5">m_rel_tol</a></td></tr>
+<tr class="memdesc:a49cf81988c46a9c6bb78d851dd5f90f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Absolute and relative tolerances for integration.  <a href="classmio_1_1ControlledStepperWrapper.html#a49cf81988c46a9c6bb78d851dd5f90f5">More...</a><br /></td></tr>
 <tr class="separator:a49cf81988c46a9c6bb78d851dd5f90f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a51d002624089487d1e2a63676752de88"><td class="memItemLeft" align="right" valign="top">boost::numeric::odeint::controlled_runge_kutta&lt; ControlledStepper&lt;&gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1ControlledStepperWrapper.html#a51d002624089487d1e2a63676752de88">m_stepper</a></td></tr>
-<tr class="separator:a51d002624089487d1e2a63676752de88"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeafd754a2d349a4e3ebfe78ea9898186"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmio_1_1ControlledStepperWrapper.html#ab22e79ac8fd4badf5fadc6b55840923e">Stepper</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1ControlledStepperWrapper.html#aeafd754a2d349a4e3ebfe78ea9898186">m_stepper</a></td></tr>
+<tr class="memdesc:aeafd754a2d349a4e3ebfe78ea9898186"><td class="mdescLeft">&#160;</td><td class="mdescRight">A stepper instance used for integration.  <a href="classmio_1_1ControlledStepperWrapper.html#aeafd754a2d349a4e3ebfe78ea9898186">More...</a><br /></td></tr>
+<tr class="separator:aeafd754a2d349a4e3ebfe78ea9898186"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd5f6444597f2bea5aa5cf9ef7c6a74d"><td class="memItemLeft" align="right" valign="top">Eigen::VectorXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1ControlledStepperWrapper.html#acd5f6444597f2bea5aa5cf9ef7c6a74d">m_yt</a></td></tr>
+<tr class="memdesc:acd5f6444597f2bea5aa5cf9ef7c6a74d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Temporary storage to avoid allocations in step function.  <a href="classmio_1_1ControlledStepperWrapper.html#acd5f6444597f2bea5aa5cf9ef7c6a74d">More...</a><br /></td></tr>
+<tr class="separator:acd5f6444597f2bea5aa5cf9ef7c6a74d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a579cab31fb838be4b34d7b0a44524b34"><td class="memItemLeft" align="right" valign="top">Eigen::VectorXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1ControlledStepperWrapper.html#a579cab31fb838be4b34d7b0a44524b34">m_ytp1</a></td></tr>
+<tr class="separator:a579cab31fb838be4b34d7b0a44524b34"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-attribs"></a>
+Static Private Attributes</h2></td></tr>
+<tr class="memitem:abebd4411e520b2954d656543d1a31800"><td class="memItemLeft" align="right" valign="top">static constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1ControlledStepperWrapper.html#abebd4411e520b2954d656543d1a31800">is_fsal_stepper</a></td></tr>
+<tr class="separator:abebd4411e520b2954d656543d1a31800"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><h3>template&lt;template&lt; class State=Eigen::VectorXd, class Value=double, class Deriv=State, class Time=double, class Algebra=boost::numeric::odeint::vector_space_algebra, class Operations=typename boost::numeric::odeint::operations_dispatcher&lt; State &gt;::operations_type, class Resizer=boost::numeric::odeint::never_resizer &gt; class ControlledStepper&gt;<br />
 class mio::ControlledStepperWrapper&lt; ControlledStepper &gt;</h3>
 
 <p>Creates and manages an instance of a boost::numeric::odeint::controlled_runge_kutta integrator, wrapped as <a class="el" href="classmio_1_1IntegratorCore.html">mio::IntegratorCore</a>. </p>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<a id="ab22e79ac8fd4badf5fadc6b55840923e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab22e79ac8fd4badf5fadc6b55840923e">&#9670;&nbsp;</a></span>Stepper</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;template&lt; class State=Eigen::VectorXd, class Value=double, class Deriv=State, class Time=double, class Algebra=boost::numeric::odeint::vector_space_algebra, class Operations=typename boost::numeric::odeint::operations_dispatcher&lt; State &gt;::operations_type, class Resizer=boost::numeric::odeint::never_resizer &gt; class ControlledStepper&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classmio_1_1ControlledStepperWrapper.html">mio::ControlledStepperWrapper</a>&lt; ControlledStepper &gt;::<a class="el" href="classmio_1_1ControlledStepperWrapper.html#ab22e79ac8fd4badf5fadc6b55840923e">Stepper</a> =  boost::numeric::odeint::controlled_runge_kutta&lt;ControlledStepper&lt;&gt; &gt;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="abb23a32f35e561cb2689a277c433055f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#abb23a32f35e561cb2689a277c433055f">&#9670;&nbsp;</a></span>ControlledStepperWrapper()</h2>
 
@@ -190,8 +234,8 @@ template&lt;template&lt; class State=Eigen::VectorXd, class Value=double, class 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="aa83dc9ea3da5a44ac73c6646c2a81128"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa83dc9ea3da5a44ac73c6646c2a81128">&#9670;&nbsp;</a></span>create_stepper()</h2>
+<a id="a4685ddcaf4e4c7f3236defc180ab9dee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4685ddcaf4e4c7f3236defc180ab9dee">&#9670;&nbsp;</a></span>create_stepper()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -202,7 +246,7 @@ template&lt;template&lt; class State=Eigen::VectorXd, class Value=double, class 
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">boost::numeric::odeint::controlled_runge_kutta&lt;ControlledStepper&lt;&gt; &gt; <a class="el" href="classmio_1_1ControlledStepperWrapper.html">mio::ControlledStepperWrapper</a>&lt; ControlledStepper &gt;::create_stepper </td>
+          <td class="memname"><a class="el" href="classmio_1_1ControlledStepperWrapper.html#ab22e79ac8fd4badf5fadc6b55840923e">Stepper</a> <a class="el" href="classmio_1_1ControlledStepperWrapper.html">mio::ControlledStepperWrapper</a>&lt; ControlledStepper &gt;::create_stepper </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -214,6 +258,8 @@ template&lt;template&lt; class State=Eigen::VectorXd, class Value=double, class 
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>(Re)initialize the internal stepper. </p>
 
 </div>
 </div>
@@ -375,13 +421,13 @@ template&lt;template&lt; class State=Eigen::VectorXd, class Value=double, class 
 </table>
 </div><div class="memdoc">
 
-<p>Make a single integration step of a system of ODEs and adapt step width. </p>
+<p>Make a single integration step on a system of ODEs and adapt the step size dt. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">yt</td><td>value of y at t, y(t) </td></tr>
-    <tr><td class="paramdir">[in,out]</td><td class="paramname">t</td><td>current time step h=dt </td></tr>
-    <tr><td class="paramdir">[in,out]</td><td class="paramname">dt</td><td>current time step h=dt </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">ytp1</td><td>approximated value y(t+1) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">yt</td><td>Value of y at t_{k}, y(t_{k}). </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">t</td><td>Current time step t_{k} for some k. Will be set to t_{k+1} in [t_{k} + dt_min, t_{k} + dt]. </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">dt</td><td>Current time step size h=dt. Overwritten by an estimated optimal step size for the next step. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">ytp1</td><td>The approximated value of y(t_{k+1}). </td></tr>
   </table>
   </dd>
 </dl>
@@ -391,8 +437,8 @@ template&lt;template&lt; class State=Eigen::VectorXd, class Value=double, class 
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="ad7681bd25e17edda65e881a80b17558a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad7681bd25e17edda65e881a80b17558a">&#9670;&nbsp;</a></span>dydt</h2>
+<a id="abebd4411e520b2954d656543d1a31800"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abebd4411e520b2954d656543d1a31800">&#9670;&nbsp;</a></span>is_fsal_stepper</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -403,16 +449,18 @@ template&lt;template&lt; class State=Eigen::VectorXd, class Value=double, class 
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">Eigen::VectorXd <a class="el" href="classmio_1_1ControlledStepperWrapper.html">mio::ControlledStepperWrapper</a>&lt; ControlledStepper &gt;::dydt</td>
+          <td class="memname">constexpr bool <a class="el" href="classmio_1_1ControlledStepperWrapper.html">mio::ControlledStepperWrapper</a>&lt; ControlledStepper &gt;::is_fsal_stepper</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">mutable</span><span class="mlabel">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span><span class="mlabel">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
-
+<b>Initial value:</b><div class="fragment"><div class="line">= std::is_same_v&lt;<span class="keyword">typename</span> Stepper::stepper_type::stepper_category,</div>
+<div class="line">                                                           boost::numeric::odeint::explicit_error_stepper_fsal_tag&gt;</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="ad482d1293a735580ab019e5cc404eb1a"></a>
@@ -460,6 +508,8 @@ template&lt;template&lt; class State=Eigen::VectorXd, class Value=double, class 
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Lower and upper bound to the step size dt. </p>
 
 </div>
 </div>
@@ -509,10 +559,12 @@ template&lt;template&lt; class State=Eigen::VectorXd, class Value=double, class 
 </table>
 </div><div class="memdoc">
 
+<p>Absolute and relative tolerances for integration. </p>
+
 </div>
 </div>
-<a id="a51d002624089487d1e2a63676752de88"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a51d002624089487d1e2a63676752de88">&#9670;&nbsp;</a></span>m_stepper</h2>
+<a id="aeafd754a2d349a4e3ebfe78ea9898186"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeafd754a2d349a4e3ebfe78ea9898186">&#9670;&nbsp;</a></span>m_stepper</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -523,7 +575,59 @@ template&lt;template&lt; class State=Eigen::VectorXd, class Value=double, class 
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">boost::numeric::odeint::controlled_runge_kutta&lt;ControlledStepper&lt;&gt; &gt; <a class="el" href="classmio_1_1ControlledStepperWrapper.html">mio::ControlledStepperWrapper</a>&lt; ControlledStepper &gt;::m_stepper</td>
+          <td class="memname"><a class="el" href="classmio_1_1ControlledStepperWrapper.html#ab22e79ac8fd4badf5fadc6b55840923e">Stepper</a> <a class="el" href="classmio_1_1ControlledStepperWrapper.html">mio::ControlledStepperWrapper</a>&lt; ControlledStepper &gt;::m_stepper</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">mutable</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>A stepper instance used for integration. </p>
+
+</div>
+</div>
+<a id="acd5f6444597f2bea5aa5cf9ef7c6a74d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acd5f6444597f2bea5aa5cf9ef7c6a74d">&#9670;&nbsp;</a></span>m_yt</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;template&lt; class State=Eigen::VectorXd, class Value=double, class Deriv=State, class Time=double, class Algebra=boost::numeric::odeint::vector_space_algebra, class Operations=typename boost::numeric::odeint::operations_dispatcher&lt; State &gt;::operations_type, class Resizer=boost::numeric::odeint::never_resizer &gt; class ControlledStepper&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Eigen::VectorXd <a class="el" href="classmio_1_1ControlledStepperWrapper.html">mio::ControlledStepperWrapper</a>&lt; ControlledStepper &gt;::m_yt</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Temporary storage to avoid allocations in step function. </p>
+
+</div>
+</div>
+<a id="a579cab31fb838be4b34d7b0a44524b34"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a579cab31fb838be4b34d7b0a44524b34">&#9670;&nbsp;</a></span>m_ytp1</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;template&lt; class State=Eigen::VectorXd, class Value=double, class Deriv=State, class Time=double, class Algebra=boost::numeric::odeint::vector_space_algebra, class Operations=typename boost::numeric::odeint::operations_dispatcher&lt; State &gt;::operations_type, class Resizer=boost::numeric::odeint::never_resizer &gt; class ControlledStepper&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Eigen::VectorXd <a class="el" href="classmio_1_1ControlledStepperWrapper.html">mio::ControlledStepperWrapper</a>&lt; ControlledStepper &gt;::m_ytp1</td>
         </tr>
       </table>
   </td>
