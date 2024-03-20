@@ -37,12 +37,12 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2024-03-18 17:40:01</td>
+            <td class="headerValue">2024-03-20 07:13:22</td>
             <td></td>
             <td class="headerItem">Functions:</td>
-            <td class="headerCovTableEntry">750</td>
-            <td class="headerCovTableEntry">868</td>
-            <td class="headerCovTableEntryMed">86.4 %</td>
+            <td class="headerCovTableEntry">758</td>
+            <td class="headerCovTableEntry">876</td>
+            <td class="headerCovTableEntryMed">86.5 %</td>
           </tr>
           <tr><td><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
         </table>
@@ -2316,15 +2316,19 @@
               <td class="coverFnHi">5</td>
             </tr>
     <tr>
+              <td class="coverFn"><a href="io.h.gcov.html#807">boost::outcome_v2::basic_result&lt;std::vector&lt;mio::ConfirmedCasesNoAgeEntry, std::allocator&lt;mio::ConfirmedCasesNoAgeEntry&gt; &gt;, mio::IOStatus, boost::outcome_v2::policy::all_narrow&gt; mio::deserialize&lt;mio::JsonContext, std::vector&lt;mio::ConfirmedCasesNoAgeEntry, std::allocator&lt;mio::ConfirmedCasesNoAgeEntry&gt; &gt; &gt;(mio::JsonContext&amp;, std::in_place_type_t&lt;std::vector&lt;mio::ConfirmedCasesNoAgeEntry, std::allocator&lt;mio::ConfirmedCasesNoAgeEntry&gt; &gt; &gt;)</a></td>
+              <td class="coverFnHi">6</td>
+            </tr>
+    <tr>
               <td class="coverFn"><a href="io.h.gcov.html#679">void mio::serialize_internal&lt;mio::JsonContext, mio::abm::Location, (void*)0&gt;(mio::JsonContext&amp;, mio::abm::Location const&amp;)</a></td>
               <td class="coverFnHi">6</td>
             </tr>
     <tr>
-              <td class="coverFn"><a href="io.h.gcov.html#783">void mio::serialize&lt;mio::JsonContext, mio::abm::Location&gt;(mio::JsonContext&amp;, mio::abm::Location const&amp;)</a></td>
+              <td class="coverFn"><a href="io.h.gcov.html#361">auto mio::success&lt;std::vector&lt;mio::ConfirmedCasesNoAgeEntry, std::allocator&lt;mio::ConfirmedCasesNoAgeEntry&gt; &gt; &gt;(std::vector&lt;mio::ConfirmedCasesNoAgeEntry, std::allocator&lt;mio::ConfirmedCasesNoAgeEntry&gt; &gt;&amp;&amp;)</a></td>
               <td class="coverFnHi">6</td>
             </tr>
     <tr>
-              <td class="coverFn"><a href="io.h.gcov.html#223">mio::IOStatus::code() const</a></td>
+              <td class="coverFn"><a href="io.h.gcov.html#783">void mio::serialize&lt;mio::JsonContext, mio::abm::Location&gt;(mio::JsonContext&amp;, mio::abm::Location const&amp;)</a></td>
               <td class="coverFnHi">6</td>
             </tr>
     <tr>
@@ -2557,6 +2561,10 @@
             </tr>
     <tr>
               <td class="coverFn"><a href="io.h.gcov.html#361">auto mio::success&lt;std::vector&lt;mio::Damping&lt;mio::SquareMatrixShape&gt;, std::allocator&lt;mio::Damping&lt;mio::SquareMatrixShape&gt; &gt; &gt; &gt;(std::vector&lt;mio::Damping&lt;mio::SquareMatrixShape&gt;, std::allocator&lt;mio::Damping&lt;mio::SquareMatrixShape&gt; &gt; &gt;&amp;&amp;)</a></td>
+              <td class="coverFnHi">9</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="io.h.gcov.html#223">mio::IOStatus::code() const</a></td>
               <td class="coverFnHi">9</td>
             </tr>
     <tr>
@@ -2968,16 +2976,12 @@
               <td class="coverFnHi">27</td>
             </tr>
     <tr>
-              <td class="coverFn"><a href="io.h.gcov.html#382">mio::failure(std::error_code, std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt; const&amp;)</a></td>
-              <td class="coverFnHi">28</td>
-            </tr>
-    <tr>
               <td class="coverFn"><a href="io.h.gcov.html#361">auto mio::success&lt;Eigen::Matrix&lt;double, -1, -1, 0, -1, -1&gt; &gt;(Eigen::Matrix&lt;double, -1, -1, 0, -1, -1&gt;&amp;&amp;)</a></td>
               <td class="coverFnHi">30</td>
             </tr>
     <tr>
-              <td class="coverFn"><a href="io.h.gcov.html#200">mio::IOStatus::IOStatus(std::error_code, std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt; const&amp;)</a></td>
-              <td class="coverFnHi">30</td>
+              <td class="coverFn"><a href="io.h.gcov.html#382">mio::failure(std::error_code, std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt; const&amp;)</a></td>
+              <td class="coverFnHi">31</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="io.h.gcov.html#481">auto mio::apply&lt;mio::JsonContext, mio::Damping&lt;mio::SquareMatrixShape&gt;::deserialize&lt;mio::JsonContext&gt;(mio::JsonContext&amp;)::{lambda(auto:1&amp;&amp;, auto:2&amp;&amp;, auto:3&amp;&amp;, auto:4&amp;&amp;)#1}, mio::SimulationTime, mio::DampingType, mio::DampingLevel, Eigen::Matrix&lt;double, -1, -1, 0, -1, -1&gt; &gt;(mio::JsonContext&amp;, mio::Damping&lt;mio::SquareMatrixShape&gt;::deserialize&lt;mio::JsonContext&gt;(mio::JsonContext&amp;)::{lambda(auto:1&amp;&amp;, auto:2&amp;&amp;, auto:3&amp;&amp;, auto:4&amp;&amp;)#1}, boost::outcome_v2::basic_result&lt;mio::SimulationTime, mio::IOStatus, boost::outcome_v2::policy::all_narrow&gt; const&amp;, boost::outcome_v2::basic_result&lt;mio::DampingType, mio::IOStatus, boost::outcome_v2::policy::all_narrow&gt; const&amp;, boost::outcome_v2::basic_result&lt;mio::DampingLevel, mio::IOStatus, boost::outcome_v2::policy::all_narrow&gt; const&amp;, boost::outcome_v2::basic_result&lt;Eigen::Matrix&lt;double, -1, -1, 0, -1, -1&gt;, mio::IOStatus, boost::outcome_v2::policy::all_narrow&gt; const&amp;)::{lambda(auto:1&amp;)#1}::operator()&lt;mio::IOStatus&gt;(mio::JsonContext&amp;) const</a></td>
@@ -2988,24 +2992,24 @@
               <td class="coverFnHi">33</td>
             </tr>
     <tr>
-              <td class="coverFn"><a href="io.h.gcov.html#481">_ZZN3mio5applyINS_11JsonContextEZNS_12ParameterSetIJNS_9osecirvvs8StartDayENS3_11SeasonalityENS3_11ICUCapacityENS3_20TestAndTraceCapacityENS3_15ContactPatternsENS3_27DynamicNPIsInfectedSymptomsENS3_11TimeExposedENS3_22TimeInfectedNoSymptomsENS3_20TimeInfectedSymptomsENS3_18TimeInfectedSevereENS3_20TimeInfectedCriticalENS3_32TransmissionProbabilityOnContactENS3_30RelativeTransmissionNoSymptomsENS3_30RecoveredPerInfectedNoSymptomsENS3_30RiskOfInfectionFromSymptomaticENS3_33MaxRiskOfInfectionFromSymptomaticENS3_25SeverePerInfectedSymptomsENS3_17CriticalPerSevereENS3_17DeathsPerCriticalENS3_14VaccinationGapENS3_33DaysUntilEffectivePartialImmunityENS3_34DaysUntilEffectiveImprovedImmunityENS3_20DailyFullVaccinationENS3_21DailyFirstVaccinationENS3_27ReducExposedPartialImmunityENS3_28ReducExposedImprovedImmunityENS3_36ReducInfectedSymptomsPartialImmunityENS3_37ReducInfectedSymptomsImprovedImmunityENS3_46ReducInfectedSevereCriticalDeadPartialImmunityENS3_47ReducInfectedSevereCriticalDeadImprovedImmunityENS3_21ReducTimeInfectedMildENS3_24InfectiousnessNewVariantENS3_18StartDayNewVariantEEE21deserialize_recursiveIS1_NS_10JsonObjectEJN5boost10outcome_v212basic_resultIdNS_8IOStatusENS15_6policy10all_narrowEEENS16_INS_14UncertainValueES17_S19_EES1C_S1C_NS16_INS_22UncertainContactMatrixES17_S19_EENS16_INS_11DynamicNPIsES17_S19_EENS16_INS_16CustomIndexArrayIS1B_JNS_8AgeGroupEEEES17_S19_EES1K_S1K_S1K_S1K_S1K_S1K_S1K_S1K_S1K_S1K_S1K_S1K_S1K_S1K_S1K_NS16_INS1H_IdJS1I_NS_13SimulationDayEEEES17_S19_EES1N_S1K_S1K_S1K_S1K_S1K_S1K_S1K_NS16_INS1H_IdJS1I_EEES17_S19_EES1A_ELPv0EEENS16_IS11_S17_S19_EERT_RT0_DpOT1_EUlRKdRKS1B_S22_S22_RKS1D_RKS1F_RKS1J_S28_S28_S28_S28_S28_S28_S28_S28_S28_S28_S28_S28_S28_S28_S28_RKS1M_S2A_S28_S28_S28_S28_S28_S28_S28_RKS1O_S20_E_JdS1B_S1B_S1B_S1D_S1F_S1J_S1J_S1J_S1J_S1J_S1J_S1J_S1J_S1J_S1J_S1J_S1J_S1J_S1J_S1J_S1J_S1M_S1M_S1J_S1J_S1J_S1J_S1J_S1J_S1J_S1O_dEEENS_7details15FlattenIOResultINSt13invoke_resultIS1U_JDpS1W_EE4typeEE4TypeES1T_S1U_DpRKNS16_IS1W_S17_S19_EEENKUlS1T_E_clIS17_EEDaS1T_</a></td>
+              <td class="coverFn"><a href="io.h.gcov.html#200">mio::IOStatus::IOStatus(std::error_code, std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt; const&amp;)</a></td>
               <td class="coverFnHi">33</td>
             </tr>
     <tr>
-              <td class="coverFn"><a href="io.h.gcov.html#175">mio::make_error_code(mio::StatusCode)</a></td>
-              <td class="coverFnHi">34</td>
-            </tr>
-    <tr>
-              <td class="coverFn"><a href="io.h.gcov.html#165">mio::status_code_category()</a></td>
-              <td class="coverFnHi">34</td>
+              <td class="coverFn"><a href="io.h.gcov.html#481">_ZZN3mio5applyINS_11JsonContextEZNS_12ParameterSetIJNS_9osecirvvs8StartDayENS3_11SeasonalityENS3_11ICUCapacityENS3_20TestAndTraceCapacityENS3_15ContactPatternsENS3_27DynamicNPIsInfectedSymptomsENS3_11TimeExposedENS3_22TimeInfectedNoSymptomsENS3_20TimeInfectedSymptomsENS3_18TimeInfectedSevereENS3_20TimeInfectedCriticalENS3_32TransmissionProbabilityOnContactENS3_30RelativeTransmissionNoSymptomsENS3_30RecoveredPerInfectedNoSymptomsENS3_30RiskOfInfectionFromSymptomaticENS3_33MaxRiskOfInfectionFromSymptomaticENS3_25SeverePerInfectedSymptomsENS3_17CriticalPerSevereENS3_17DeathsPerCriticalENS3_14VaccinationGapENS3_33DaysUntilEffectivePartialImmunityENS3_34DaysUntilEffectiveImprovedImmunityENS3_20DailyFullVaccinationENS3_21DailyFirstVaccinationENS3_27ReducExposedPartialImmunityENS3_28ReducExposedImprovedImmunityENS3_36ReducInfectedSymptomsPartialImmunityENS3_37ReducInfectedSymptomsImprovedImmunityENS3_46ReducInfectedSevereCriticalDeadPartialImmunityENS3_47ReducInfectedSevereCriticalDeadImprovedImmunityENS3_21ReducTimeInfectedMildENS3_24InfectiousnessNewVariantENS3_18StartDayNewVariantEEE21deserialize_recursiveIS1_NS_10JsonObjectEJN5boost10outcome_v212basic_resultIdNS_8IOStatusENS15_6policy10all_narrowEEENS16_INS_14UncertainValueES17_S19_EES1C_S1C_NS16_INS_22UncertainContactMatrixES17_S19_EENS16_INS_11DynamicNPIsES17_S19_EENS16_INS_16CustomIndexArrayIS1B_JNS_8AgeGroupEEEES17_S19_EES1K_S1K_S1K_S1K_S1K_S1K_S1K_S1K_S1K_S1K_S1K_S1K_S1K_S1K_S1K_NS16_INS1H_IdJS1I_NS_13SimulationDayEEEES17_S19_EES1N_S1K_S1K_S1K_S1K_S1K_S1K_S1K_NS16_INS1H_IdJS1I_EEES17_S19_EES1A_ELPv0EEENS16_IS11_S17_S19_EERT_RT0_DpOT1_EUlRKdRKS1B_S22_S22_RKS1D_RKS1F_RKS1J_S28_S28_S28_S28_S28_S28_S28_S28_S28_S28_S28_S28_S28_S28_S28_RKS1M_S2A_S28_S28_S28_S28_S28_S28_S28_RKS1O_S20_E_JdS1B_S1B_S1B_S1D_S1F_S1J_S1J_S1J_S1J_S1J_S1J_S1J_S1J_S1J_S1J_S1J_S1J_S1J_S1J_S1J_S1J_S1M_S1M_S1J_S1J_S1J_S1J_S1J_S1J_S1J_S1O_dEEENS_7details15FlattenIOResultINSt13invoke_resultIS1U_JDpS1W_EE4typeEE4TypeES1T_S1U_DpRKNS16_IS1W_S17_S19_EEENKUlS1T_E_clIS17_EEDaS1T_</a></td>
+              <td class="coverFnHi">33</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="io.h.gcov.html#361">auto mio::success&lt;std::vector&lt;mio::ConfirmedCasesDataEntry, std::allocator&lt;mio::ConfirmedCasesDataEntry&gt; &gt; &gt;(std::vector&lt;mio::ConfirmedCasesDataEntry, std::allocator&lt;mio::ConfirmedCasesDataEntry&gt; &gt;&amp;&amp;)</a></td>
               <td class="coverFnHi">36</td>
             </tr>
     <tr>
-              <td class="coverFn"><a href="io.h.gcov.html#371">mio::failure(mio::IOStatus const&amp;)</a></td>
-              <td class="coverFnHi">39</td>
+              <td class="coverFn"><a href="io.h.gcov.html#175">mio::make_error_code(mio::StatusCode)</a></td>
+              <td class="coverFnHi">40</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="io.h.gcov.html#165">mio::status_code_category()</a></td>
+              <td class="coverFnHi">40</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="io.h.gcov.html#807">boost::outcome_v2::basic_result&lt;mio::SimulationTime, mio::IOStatus, boost::outcome_v2::policy::all_narrow&gt; mio::deserialize&lt;mio::JsonContext, mio::SimulationTime&gt;(mio::JsonContext&amp;, std::in_place_type_t&lt;mio::SimulationTime&gt;)</a></td>
@@ -3021,6 +3025,10 @@
             </tr>
     <tr>
               <td class="coverFn"><a href="io.h.gcov.html#502">std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt; mio::details::make_tuple_element_name&lt;1ul&gt;()</a></td>
+              <td class="coverFnHi">42</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="io.h.gcov.html#371">mio::failure(mio::IOStatus const&amp;)</a></td>
               <td class="coverFnHi">42</td>
             </tr>
     <tr>
@@ -3052,8 +3060,28 @@
               <td class="coverFnHi">60</td>
             </tr>
     <tr>
+              <td class="coverFn"><a href="io.h.gcov.html#807">boost::outcome_v2::basic_result&lt;mio::ConfirmedCasesNoAgeEntry, mio::IOStatus, boost::outcome_v2::policy::all_narrow&gt; mio::deserialize&lt;mio::JsonContext, mio::ConfirmedCasesNoAgeEntry&gt;(mio::JsonContext&amp;, std::in_place_type_t&lt;mio::ConfirmedCasesNoAgeEntry&gt;)</a></td>
+              <td class="coverFnHi">62</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="io.h.gcov.html#700">boost::outcome_v2::basic_result&lt;mio::ConfirmedCasesNoAgeEntry, mio::IOStatus, boost::outcome_v2::policy::all_narrow&gt; mio::deserialize_internal&lt;mio::JsonContext, mio::ConfirmedCasesNoAgeEntry, (void*)0&gt;(mio::JsonContext&amp;, std::in_place_type_t&lt;mio::ConfirmedCasesNoAgeEntry&gt;)</a></td>
+              <td class="coverFnHi">62</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="io.h.gcov.html#470">mio::details::FlattenIOResult&lt;std::invoke_result&lt;mio::ConfirmedCasesNoAgeEntry::deserialize&lt;mio::JsonContext&gt;(mio::JsonContext&amp;)::{lambda(auto:1&amp;&amp;, auto:2&amp;&amp;, auto:3&amp;&amp;, auto:4&amp;&amp;)#1}, double, double, double, mio::StringDate&gt;::type&gt;::Type mio::apply&lt;mio::JsonContext, mio::ConfirmedCasesNoAgeEntry::deserialize&lt;mio::JsonContext&gt;(mio::JsonContext&amp;)::{lambda(auto:1&amp;&amp;, auto:2&amp;&amp;, auto:3&amp;&amp;, auto:4&amp;&amp;)#1}, double, double, double, mio::StringDate&gt;(mio::JsonContext&amp;, mio::ConfirmedCasesNoAgeEntry::deserialize&lt;mio::JsonContext&gt;(mio::JsonContext&amp;)::{lambda(auto:1&amp;&amp;, auto:2&amp;&amp;, auto:3&amp;&amp;, auto:4&amp;&amp;)#1}, boost::outcome_v2::basic_result&lt;double, mio::IOStatus, boost::outcome_v2::policy::all_narrow&gt; const&amp;, boost::outcome_v2::basic_result&lt;double, mio::IOStatus, boost::outcome_v2::policy::all_narrow&gt; const&amp;, boost::outcome_v2::basic_result&lt;double, mio::IOStatus, boost::outcome_v2::policy::all_narrow&gt; const&amp;, boost::outcome_v2::basic_result&lt;mio::StringDate, mio::IOStatus, boost::outcome_v2::policy::all_narrow&gt; const&amp;)</a></td>
+              <td class="coverFnHi">62</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="io.h.gcov.html#446">mio::details::FlattenIOResult&lt;std::invoke_result&lt;mio::ConfirmedCasesNoAgeEntry::deserialize&lt;mio::JsonContext&gt;(mio::JsonContext&amp;)::{lambda(auto:1&amp;&amp;, auto:2&amp;&amp;, auto:3&amp;&amp;, auto:4&amp;&amp;)#1}, double, double, double, mio::StringDate&gt;::type&gt;::Type mio::details::eval&lt;mio::ConfirmedCasesNoAgeEntry::deserialize&lt;mio::JsonContext&gt;(mio::JsonContext&amp;)::{lambda(auto:1&amp;&amp;, auto:2&amp;&amp;, auto:3&amp;&amp;, auto:4&amp;&amp;)#1}, double, double, double, mio::StringDate, (void*)0&gt;(mio::ConfirmedCasesNoAgeEntry::deserialize&lt;mio::JsonContext&gt;(mio::JsonContext&amp;)::{lambda(auto:1&amp;&amp;, auto:2&amp;&amp;, auto:3&amp;&amp;, auto:4&amp;&amp;)#1}, boost::outcome_v2::basic_result&lt;double, mio::IOStatus, boost::outcome_v2::policy::all_narrow&gt; const&amp;, boost::outcome_v2::basic_result&lt;double, mio::IOStatus, boost::outcome_v2::policy::all_narrow&gt; const&amp;, boost::outcome_v2::basic_result&lt;double, mio::IOStatus, boost::outcome_v2::policy::all_narrow&gt; const&amp;, boost::outcome_v2::basic_result&lt;mio::StringDate, mio::IOStatus, boost::outcome_v2::policy::all_narrow&gt; const&amp;)</a></td>
+              <td class="coverFnHi">62</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="io.h.gcov.html#361">auto mio::success&lt;mio::ConfirmedCasesNoAgeEntry&gt;(mio::ConfirmedCasesNoAgeEntry&amp;&amp;)</a></td>
+              <td class="coverFnHi">62</td>
+            </tr>
+    <tr>
               <td class="coverFn"><a href="io.h.gcov.html#361">auto mio::success&lt;Json::Value&amp;&gt;(Json::Value&amp;)</a></td>
-              <td class="coverFnHi">65</td>
+              <td class="coverFnHi">70</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="io.h.gcov.html#679">void mio::serialize_internal&lt;mio::JsonContext, mio::SimulationTime, (void*)0&gt;(mio::JsonContext&amp;, mio::SimulationTime const&amp;)</a></td>
@@ -3197,7 +3225,7 @@
             </tr>
     <tr>
               <td class="coverFn"><a href="io.h.gcov.html#350">mio::success()</a></td>
-              <td class="coverFnHi">179</td>
+              <td class="coverFnHi">180</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="io.h.gcov.html#361">auto mio::success&lt;boost::optional&lt;std::shared_ptr&lt;mio::ParameterDistribution&gt; &gt; &gt;(boost::optional&lt;std::shared_ptr&lt;mio::ParameterDistribution&gt; &gt;&amp;&amp;)</a></td>
@@ -3210,6 +3238,10 @@
     <tr>
               <td class="coverFn"><a href="io.h.gcov.html#481">auto mio::apply&lt;mio::BinarySerializerContext, mio::UncertainValue::deserialize&lt;mio::BinarySerializerContext&gt;(mio::BinarySerializerContext&amp;)::{lambda(auto:1&amp;&amp;, auto:2&amp;&amp;)#1}, double, boost::optional&lt;std::shared_ptr&lt;mio::ParameterDistribution&gt; &gt; &gt;(mio::BinarySerializerContext&amp;, mio::UncertainValue::deserialize&lt;mio::BinarySerializerContext&gt;(mio::BinarySerializerContext&amp;)::{lambda(auto:1&amp;&amp;, auto:2&amp;&amp;)#1}, boost::outcome_v2::basic_result&lt;double, mio::IOStatus, boost::outcome_v2::policy::all_narrow&gt; const&amp;, boost::outcome_v2::basic_result&lt;boost::optional&lt;std::shared_ptr&lt;mio::ParameterDistribution&gt; &gt;, mio::IOStatus, boost::outcome_v2::policy::all_narrow&gt; const&amp;)::{lambda(auto:1&amp;)#1}::operator()&lt;mio::IOStatus&gt;(mio::BinarySerializerContext&amp;) const</a></td>
               <td class="coverFnHi">240</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="io.h.gcov.html#481">auto mio::apply&lt;mio::JsonContext, mio::ConfirmedCasesNoAgeEntry::deserialize&lt;mio::JsonContext&gt;(mio::JsonContext&amp;)::{lambda(auto:1&amp;&amp;, auto:2&amp;&amp;, auto:3&amp;&amp;, auto:4&amp;&amp;)#1}, double, double, double, mio::StringDate&gt;(mio::JsonContext&amp;, mio::ConfirmedCasesNoAgeEntry::deserialize&lt;mio::JsonContext&gt;(mio::JsonContext&amp;)::{lambda(auto:1&amp;&amp;, auto:2&amp;&amp;, auto:3&amp;&amp;, auto:4&amp;&amp;)#1}, boost::outcome_v2::basic_result&lt;double, mio::IOStatus, boost::outcome_v2::policy::all_narrow&gt; const&amp;, boost::outcome_v2::basic_result&lt;double, mio::IOStatus, boost::outcome_v2::policy::all_narrow&gt; const&amp;, boost::outcome_v2::basic_result&lt;double, mio::IOStatus, boost::outcome_v2::policy::all_narrow&gt; const&amp;, boost::outcome_v2::basic_result&lt;mio::StringDate, mio::IOStatus, boost::outcome_v2::policy::all_narrow&gt; const&amp;)::{lambda(auto:1&amp;)#1}::operator()&lt;mio::IOStatus&gt;(mio::JsonContext&amp;) const</a></td>
+              <td class="coverFnHi">248</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="io.h.gcov.html#361">auto mio::success&lt;mio::ParameterDistributionNormal&gt;(mio::ParameterDistributionNormal&amp;&amp;)</a></td>
@@ -3441,27 +3473,27 @@
             </tr>
     <tr>
               <td class="coverFn"><a href="io.h.gcov.html#807">boost::outcome_v2::basic_result&lt;mio::StringDate, mio::IOStatus, boost::outcome_v2::policy::all_narrow&gt; mio::deserialize&lt;mio::JsonContext, mio::StringDate&gt;(mio::JsonContext&amp;, std::in_place_type_t&lt;mio::StringDate&gt;)</a></td>
-              <td class="coverFnHi">12817</td>
+              <td class="coverFnHi">12879</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="io.h.gcov.html#700">boost::outcome_v2::basic_result&lt;mio::StringDate, mio::IOStatus, boost::outcome_v2::policy::all_narrow&gt; mio::deserialize_internal&lt;mio::JsonContext, mio::StringDate, (void*)0&gt;(mio::JsonContext&amp;, std::in_place_type_t&lt;mio::StringDate&gt;)</a></td>
-              <td class="coverFnHi">12817</td>
+              <td class="coverFnHi">12879</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="io.h.gcov.html#470">mio::details::FlattenIOResult&lt;std::invoke_result&lt;mio::StringDate::deserialize&lt;mio::JsonContext&gt;(mio::JsonContext&amp;)::{lambda(auto:1&amp;&amp;)#1}, std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt; &gt;::type&gt;::Type mio::apply&lt;mio::JsonContext, mio::StringDate::deserialize&lt;mio::JsonContext&gt;(mio::JsonContext&amp;)::{lambda(auto:1&amp;&amp;)#1}, std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt; &gt;(mio::JsonContext&amp;, mio::StringDate::deserialize&lt;mio::JsonContext&gt;(mio::JsonContext&amp;)::{lambda(auto:1&amp;&amp;)#1}, boost::outcome_v2::basic_result&lt;std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt;, mio::IOStatus, boost::outcome_v2::policy::all_narrow&gt; const&amp;)</a></td>
-              <td class="coverFnHi">12817</td>
+              <td class="coverFnHi">12879</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="io.h.gcov.html#440">mio::details::FlattenIOResult&lt;std::invoke_result&lt;mio::StringDate::deserialize&lt;mio::JsonContext&gt;(mio::JsonContext&amp;)::{lambda(auto:1&amp;&amp;)#1}, std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt; &gt;::type&gt;::Type mio::details::eval&lt;mio::StringDate::deserialize&lt;mio::JsonContext&gt;(mio::JsonContext&amp;)::{lambda(auto:1&amp;&amp;)#1}, std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt;, (void*)0&gt;(mio::StringDate::deserialize&lt;mio::JsonContext&gt;(mio::JsonContext&amp;)::{lambda(auto:1&amp;&amp;)#1}, boost::outcome_v2::basic_result&lt;std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt;, mio::IOStatus, boost::outcome_v2::policy::all_narrow&gt; const&amp;)</a></td>
-              <td class="coverFnHi">12817</td>
+              <td class="coverFnHi">12879</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="io.h.gcov.html#481">auto mio::apply&lt;mio::JsonContext, mio::StringDate::deserialize&lt;mio::JsonContext&gt;(mio::JsonContext&amp;)::{lambda(auto:1&amp;&amp;)#1}, std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt; &gt;(mio::JsonContext&amp;, mio::StringDate::deserialize&lt;mio::JsonContext&gt;(mio::JsonContext&amp;)::{lambda(auto:1&amp;&amp;)#1}, boost::outcome_v2::basic_result&lt;std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt;, mio::IOStatus, boost::outcome_v2::policy::all_narrow&gt; const&amp;)::{lambda(auto:1&amp;)#1}::operator()&lt;mio::IOStatus&gt;(mio::JsonContext&amp;) const</a></td>
-              <td class="coverFnHi">12817</td>
+              <td class="coverFnHi">12879</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="io.h.gcov.html#807">boost::outcome_v2::basic_result&lt;std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt;, mio::IOStatus, boost::outcome_v2::policy::all_narrow&gt; mio::deserialize&lt;mio::JsonContext, std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt; &gt;(mio::JsonContext&amp;, std::in_place_type_t&lt;std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt; &gt;)</a></td>
-              <td class="coverFnHi">12826</td>
+              <td class="coverFnHi">12888</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="io.h.gcov.html#807">boost::outcome_v2::basic_result&lt;mio::regions::CountyId, mio::IOStatus, boost::outcome_v2::policy::all_narrow&gt; mio::deserialize&lt;mio::JsonContext, mio::regions::CountyId&gt;(mio::JsonContext&amp;, std::in_place_type_t&lt;mio::regions::CountyId&gt;)</a></td>
@@ -3505,11 +3537,11 @@
             </tr>
     <tr>
               <td class="coverFn"><a href="io.h.gcov.html#361">auto mio::success&lt;std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt; &gt;(std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt;&amp;&amp;)</a></td>
-              <td class="coverFnHi">24771</td>
+              <td class="coverFnHi">24833</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="io.h.gcov.html#361">auto mio::success&lt;mio::Date&amp;&gt;(mio::Date&amp;)</a></td>
-              <td class="coverFnHi">25639</td>
+              <td class="coverFnHi">25763</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="io.h.gcov.html#481">auto mio::apply&lt;mio::JsonContext, mio::ConfirmedCasesDataEntry::deserialize&lt;mio::JsonContext&gt;(mio::JsonContext&amp;)::{lambda(auto:1&amp;&amp;, auto:2&amp;&amp;, auto:3&amp;&amp;, auto:4&amp;&amp;, auto:5&amp;&amp;, auto:6&amp;&amp;, auto:7&amp;&amp;, auto:8&amp;&amp;)#1}, double, double, double, mio::StringDate, std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt;, boost::optional&lt;mio::regions::StateId&gt;, boost::optional&lt;mio::regions::CountyId&gt;, boost::optional&lt;mio::regions::DistrictId&gt; &gt;(mio::JsonContext&amp;, mio::ConfirmedCasesDataEntry::deserialize&lt;mio::JsonContext&gt;(mio::JsonContext&amp;)::{lambda(auto:1&amp;&amp;, auto:2&amp;&amp;, auto:3&amp;&amp;, auto:4&amp;&amp;, auto:5&amp;&amp;, auto:6&amp;&amp;, auto:7&amp;&amp;, auto:8&amp;&amp;)#1}, boost::outcome_v2::basic_result&lt;double, mio::IOStatus, boost::outcome_v2::policy::all_narrow&gt; const&amp;, boost::outcome_v2::basic_result&lt;double, mio::IOStatus, boost::outcome_v2::policy::all_narrow&gt; const&amp;, boost::outcome_v2::basic_result&lt;double, mio::IOStatus, boost::outcome_v2::policy::all_narrow&gt; const&amp;, boost::outcome_v2::basic_result&lt;mio::StringDate, mio::IOStatus, boost::outcome_v2::policy::all_narrow&gt; const&amp;, boost::outcome_v2::basic_result&lt;std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt;, mio::IOStatus, boost::outcome_v2::policy::all_narrow&gt; const&amp;, boost::outcome_v2::basic_result&lt;boost::optional&lt;mio::regions::StateId&gt;, mio::IOStatus, boost::outcome_v2::policy::all_narrow&gt; const&amp;, boost::outcome_v2::basic_result&lt;boost::optional&lt;mio::regions::CountyId&gt;, mio::IOStatus, boost::outcome_v2::policy::all_narrow&gt; const&amp;, boost::outcome_v2::basic_result&lt;boost::optional&lt;mio::regions::DistrictId&gt;, mio::IOStatus, boost::outcome_v2::policy::all_narrow&gt; const&amp;)::{lambda(auto:1&amp;)#1}::operator()&lt;mio::IOStatus&gt;(mio::JsonContext&amp;) const</a></td>
@@ -3517,19 +3549,19 @@
             </tr>
     <tr>
               <td class="coverFn"><a href="io.h.gcov.html#361">auto mio::success&lt;double&gt;(double&amp;&amp;)</a></td>
-              <td class="coverFnHi">94232</td>
+              <td class="coverFnHi">94418</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="io.h.gcov.html#257">mio::IOStatus::is_error() const</a></td>
-              <td class="coverFnHi">325721</td>
+              <td class="coverFnHi">326279</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="io.h.gcov.html#242">mio::IOStatus::is_ok() const</a></td>
-              <td class="coverFnHi">332143</td>
+              <td class="coverFnHi">332701</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="io.h.gcov.html#193">mio::IOStatus::IOStatus()</a></td>
-              <td class="coverFnHi">397732</td>
+              <td class="coverFnHi">398494</td>
             </tr>
   </table>
   <br>
