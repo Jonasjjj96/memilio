@@ -81,9 +81,9 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a74d48585e1d0e9c5709988cf306b52e0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1isecir_1_1Model.html#a74d48585e1d0e9c5709988cf306b52e0">check_constraints</a> (<a class="el" href="memilio_2config_8h.html#acd4f1d492d83a74716a42615e127d641">ScalarType</a> dt) const</td></tr>
-<tr class="memdesc:a74d48585e1d0e9c5709988cf306b52e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks constraints on model parameters.  <a href="classmio_1_1isecir_1_1Model.html#a74d48585e1d0e9c5709988cf306b52e0">More...</a><br /></td></tr>
-<tr class="separator:a74d48585e1d0e9c5709988cf306b52e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a31ac84e9be3c2fa27d9e4915daa2f744"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1isecir_1_1Model.html#a31ac84e9be3c2fa27d9e4915daa2f744">check_constraints</a> (<a class="el" href="memilio_2config_8h.html#acd4f1d492d83a74716a42615e127d641">ScalarType</a> dt) const</td></tr>
+<tr class="memdesc:a31ac84e9be3c2fa27d9e4915daa2f744"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks constraints on model parameters and initial data.  <a href="classmio_1_1isecir_1_1Model.html#a31ac84e9be3c2fa27d9e4915daa2f744">More...</a><br /></td></tr>
+<tr class="separator:a31ac84e9be3c2fa27d9e4915daa2f744"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5f5f94598b8ee34ade217c5974827692"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1isecir_1_1Model.html#a5f5f94598b8ee34ade217c5974827692">compute_compartment</a> (Eigen::Index idx_InfectionState, Eigen::Index idx_IncomingFlow, int idx_TransitionDistribution1, int idx_TransitionDistribution2, <a class="el" href="memilio_2config_8h.html#acd4f1d492d83a74716a42615e127d641">ScalarType</a> dt)</td></tr>
 <tr class="memdesc:a5f5f94598b8ee34ade217c5974827692"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the size of the compartment specified in idx_InfectionState at the current last time in m_populations.  <a href="classmio_1_1isecir_1_1Model.html#a5f5f94598b8ee34ade217c5974827692">More...</a><br /></td></tr>
 <tr class="separator:a5f5f94598b8ee34ade217c5974827692"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -103,10 +103,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a07c3eb1454c4145b3870110cf618fc0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets all required flows for the current last timestep in m_transitions.  <a href="classmio_1_1isecir_1_1Model.html#a07c3eb1454c4145b3870110cf618fc0e">More...</a><br /></td></tr>
 <tr class="separator:a07c3eb1454c4145b3870110cf618fc0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6b45a9bde3d8d71a753101af77ab03ae"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1isecir_1_1Model.html#a6b45a9bde3d8d71a753101af77ab03ae">get_initialization_method</a> ()</td></tr>
-<tr class="memdesc:a6b45a9bde3d8d71a753101af77ab03ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specifies a number associated with the method used for initialization.  <a href="classmio_1_1isecir_1_1Model.html#a6b45a9bde3d8d71a753101af77ab03ae">More...</a><br /></td></tr>
+<tr class="memdesc:a6b45a9bde3d8d71a753101af77ab03ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number associated with the method selected automatically for initialization.  <a href="classmio_1_1isecir_1_1Model.html#a6b45a9bde3d8d71a753101af77ab03ae">More...</a><br /></td></tr>
 <tr class="separator:a6b45a9bde3d8d71a753101af77ab03ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a86795e6d06058104311acd10d57d622d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1isecir_1_1Model.html#a86795e6d06058104311acd10d57d622d">initialize</a> (<a class="el" href="memilio_2config_8h.html#acd4f1d492d83a74716a42615e127d641">ScalarType</a> dt)</td></tr>
-<tr class="memdesc:a86795e6d06058104311acd10d57d622d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate the number of individuals in each compartment for time 0.  <a href="classmio_1_1isecir_1_1Model.html#a86795e6d06058104311acd10d57d622d">More...</a><br /></td></tr>
+<tr class="memdesc:a86795e6d06058104311acd10d57d622d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the model and sets compartment values at time zero.  <a href="classmio_1_1isecir_1_1Model.html#a86795e6d06058104311acd10d57d622d">More...</a><br /></td></tr>
 <tr class="separator:a86795e6d06058104311acd10d57d622d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5552b1cfa2077bfb2097d502a706d37f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1isecir_1_1Model.html#a5552b1cfa2077bfb2097d502a706d37f">Model</a> (<a class="el" href="classmio_1_1TimeSeries.html">TimeSeries</a>&lt; <a class="el" href="memilio_2config_8h.html#acd4f1d492d83a74716a42615e127d641">ScalarType</a> &gt; &amp;&amp;init, <a class="el" href="memilio_2config_8h.html#acd4f1d492d83a74716a42615e127d641">ScalarType</a> N_init, <a class="el" href="memilio_2config_8h.html#acd4f1d492d83a74716a42615e127d641">ScalarType</a> deaths, <a class="el" href="memilio_2config_8h.html#acd4f1d492d83a74716a42615e127d641">ScalarType</a> total_confirmed_cases=0, const <a class="el" href="classmio_1_1isecir_1_1Model.html#aeaa245527257d77cc8a2247decc03485">ParameterSet</a> &amp;Parameterset_init=<a class="el" href="classmio_1_1isecir_1_1Model.html#aeaa245527257d77cc8a2247decc03485">ParameterSet</a>())</td></tr>
 <tr class="memdesc:a5552b1cfa2077bfb2097d502a706d37f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor to create an IDE SECIR model.  <a href="classmio_1_1isecir_1_1Model.html#a5552b1cfa2077bfb2097d502a706d37f">More...</a><br /></td></tr>
@@ -147,7 +147,7 @@ Private Attributes</h2></td></tr>
 <tr class="memdesc:a24e9fd04784fd77bab8424fd8d2599dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Force of infection term needed for numerical scheme.  <a href="classmio_1_1isecir_1_1Model.html#a24e9fd04784fd77bab8424fd8d2599dd">More...</a><br /></td></tr>
 <tr class="separator:a24e9fd04784fd77bab8424fd8d2599dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af8488a4c5ad81d8f90f061df29c19a6e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1isecir_1_1Model.html#af8488a4c5ad81d8f90f061df29c19a6e">m_initialization_method</a></td></tr>
-<tr class="memdesc:af8488a4c5ad81d8f90f061df29c19a6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gives the index of the method used for the initialization of the model. See also <a class="el" href="classmio_1_1isecir_1_1Model.html#a6b45a9bde3d8d71a753101af77ab03ae" title="Specifies a number associated with the method used for initialization.">get_initialization_method()</a> for the number code.  <a href="classmio_1_1isecir_1_1Model.html#af8488a4c5ad81d8f90f061df29c19a6e">More...</a><br /></td></tr>
+<tr class="memdesc:af8488a4c5ad81d8f90f061df29c19a6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gives the index of the method used for the initialization of the model. See also <a class="el" href="classmio_1_1isecir_1_1Model.html#a6b45a9bde3d8d71a753101af77ab03ae" title="Returns the number associated with the method selected automatically for initialization.">get_initialization_method()</a> for the number code.  <a href="classmio_1_1isecir_1_1Model.html#af8488a4c5ad81d8f90f061df29c19a6e">More...</a><br /></td></tr>
 <tr class="separator:af8488a4c5ad81d8f90f061df29c19a6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa2153efbcfbed7df8ab91ca9ead82175"><td class="memItemLeft" align="right" valign="top"><a class="el" href="memilio_2config_8h.html#acd4f1d492d83a74716a42615e127d641">ScalarType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1isecir_1_1Model.html#aa2153efbcfbed7df8ab91ca9ead82175">m_N</a> {0}</td></tr>
 <tr class="memdesc:aa2153efbcfbed7df8ab91ca9ead82175"><td class="mdescLeft">&#160;</td><td class="mdescRight">Total population size of the considered region.  <a href="classmio_1_1isecir_1_1Model.html#aa2153efbcfbed7df8ab91ca9ead82175">More...</a><br /></td></tr>
@@ -242,14 +242,14 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a74d48585e1d0e9c5709988cf306b52e0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a74d48585e1d0e9c5709988cf306b52e0">&#9670;&nbsp;</a></span>check_constraints()</h2>
+<a id="a31ac84e9be3c2fa27d9e4915daa2f744"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a31ac84e9be3c2fa27d9e4915daa2f744">&#9670;&nbsp;</a></span>check_constraints()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void mio::isecir::Model::check_constraints </td>
+          <td class="memname">bool mio::isecir::Model::check_constraints </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="memilio_2config_8h.html#acd4f1d492d83a74716a42615e127d641">ScalarType</a>&#160;</td>
           <td class="paramname"><em>dt</em></td><td>)</td>
@@ -258,7 +258,8 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Checks constraints on model parameters. </p>
+<p>Checks constraints on model parameters and initial data. </p>
+<dl class="section return"><dt>Returns</dt><dd>Returns true if one (or more) constraint(s) are not satisfied, otherwise false. </dd></dl>
 
 </div>
 </div>
@@ -475,8 +476,8 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Specifies a number associated with the method used for initialization. </p>
-<dl class="section return"><dt>Returns</dt><dd>0 if the initialization method has not yet been selected, 1 if the method using the total number of confirmed cases at time 0 is used, 2 if the force of infection method is used, 3 if the initialization is calculated using a prior set value for S, 4 if the initialization is calculated using a prior set value for R and -1 if the initialization was not possible using any of the methods. </dd></dl>
+<p>Returns the number associated with the method selected automatically for initialization. </p>
+<dl class="section return"><dt>Returns</dt><dd>0 if the model has not yet been initialized and the method has not yet been selected, 1 if the method using the total number of confirmed cases at time 0 is used, 2 if the initialization is calculated using a beforehand set value for S, 3 if the initialization is calculated using a beforehand set value for R, 4 if the force of infection method is used, -1 if the initialization was not possible using any of the methods and -2 if the initialization was possible using one of the provided methods but the result is not appropriate. </dd></dl>
 
 </div>
 </div>
@@ -496,8 +497,9 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Calculate the number of individuals in each compartment for time 0. </p>
-<p>Initial transitions are used to calculate the initial compartment sizes. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Initializes the model and sets compartment values at time zero. </p>
+<p>The initialization method is selected automatically based on the different values that need to be set beforehand. Infection compartments are always computed through historic flow. Initialization methods for susceptibles and recovered are tested in the following order: 1.) If a positive number for the total number of confirmed cases is set, recovered is set according to that value and #Susceptibles are derived. 2.) If #Susceptibles are set, recovered will be derived. 3.) If #Recovered are set directly, #Susceptibles are derived. 4.) If none of the above is set with positive value, the force of infection is used as in Messina et al (2021) to set the #Susceptibles.</p>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">dt</td><td>Time discretization step size. <br  />
  </td></tr>
@@ -670,7 +672,7 @@ Private Attributes</h2></td></tr>
 <b>Initial value:</b><div class="fragment"><div class="line">{</div>
 <div class="line">        0}</div>
 </div><!-- fragment -->
-<p>Gives the index of the method used for the initialization of the model. See also <a class="el" href="classmio_1_1isecir_1_1Model.html#a6b45a9bde3d8d71a753101af77ab03ae" title="Specifies a number associated with the method used for initialization.">get_initialization_method()</a> for the number code. </p>
+<p>Gives the index of the method used for the initialization of the model. See also <a class="el" href="classmio_1_1isecir_1_1Model.html#a6b45a9bde3d8d71a753101af77ab03ae" title="Returns the number associated with the method selected automatically for initialization.">get_initialization_method()</a> for the number code. </p>
 
 </div>
 </div>
