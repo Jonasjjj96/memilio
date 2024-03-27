@@ -37,12 +37,12 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2024-03-22 11:53:48</td>
+            <td class="headerValue">2024-03-27 12:21:29</td>
             <td></td>
             <td class="headerItem">Functions:</td>
-            <td class="headerCovTableEntry">49</td>
-            <td class="headerCovTableEntry">49</td>
-            <td class="headerCovTableEntryHi">100.0 %</td>
+            <td class="headerCovTableEntry">55</td>
+            <td class="headerCovTableEntry">57</td>
+            <td class="headerCovTableEntryHi">96.5 %</td>
           </tr>
           <tr><td><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
         </table>
@@ -84,6 +84,10 @@
               <td class="coverFnHi">5</td>
             </tr>
     <tr>
+              <td class="coverFn"><a href="populations.h.gcov.html#59">mio::Populations&lt;mio::ssir::InfectionState&gt;::Populations&lt;double, (void*)0&gt;(mio::Index&lt;mio::ssir::InfectionState&gt; const&amp;, double)</a></td>
+              <td class="coverFnHi">1</td>
+            </tr>
+    <tr>
               <td class="coverFn"><a href="populations.h.gcov.html#59">mio::Populations&lt;mio::oseir::InfectionState, CatA, CatB, CatC&gt;::Populations&lt;double, (void*)0&gt;(mio::Index&lt;mio::oseir::InfectionState, CatA, CatB, CatC&gt; const&amp;, double)</a></td>
               <td class="coverFnHi">1</td>
             </tr>
@@ -98,6 +102,10 @@
     <tr>
               <td class="coverFn"><a href="populations.h.gcov.html#59">mio::Populations&lt;mio::oseir::InfectionState&gt;::Populations&lt;double, (void*)0&gt;(mio::Index&lt;mio::oseir::InfectionState&gt; const&amp;, double)</a></td>
               <td class="coverFnHi">14</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="populations.h.gcov.html#59">mio::Populations&lt;mio::ssirs::InfectionState&gt;::Populations&lt;double, (void*)0&gt;(mio::Index&lt;mio::ssirs::InfectionState&gt; const&amp;, double)</a></td>
+              <td class="coverFnHi">1</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="populations.h.gcov.html#265">boost::outcome_v2::basic_result&lt;mio::Populations&lt;mio::AgeGroup, mio::osecir::InfectionState&gt;, mio::IOStatus, boost::outcome_v2::policy::all_narrow&gt; mio::Populations&lt;mio::AgeGroup, mio::osecir::InfectionState&gt;::deserialize&lt;mio::JsonContext&gt;(mio::JsonContext&amp;)</a></td>
@@ -184,6 +192,18 @@
               <td class="coverFnHi">492</td>
             </tr>
     <tr>
+              <td class="coverFn"><a href="populations.h.gcov.html#81">mio::Populations&lt;mio::ssir::InfectionState&gt;::get_compartments() const</a></td>
+              <td class="coverFnHi">3</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="populations.h.gcov.html#251">mio::Populations&lt;mio::ssir::InfectionState&gt;::check_constraints() const</a></td>
+              <td class="coverFnLo">0</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="populations.h.gcov.html#153">mio::Populations&lt;mio::ssir::InfectionState&gt;::get_total() const</a></td>
+              <td class="coverFnHi">6</td>
+            </tr>
+    <tr>
               <td class="coverFn"><a href="populations.h.gcov.html#81">mio::Populations&lt;mio::oseir::InfectionState&gt;::get_compartments() const</a></td>
               <td class="coverFnHi">25</td>
             </tr>
@@ -197,11 +217,23 @@
             </tr>
     <tr>
               <td class="coverFn"><a href="populations.h.gcov.html#153">mio::Populations&lt;mio::oseir::InfectionState&gt;::get_total() const</a></td>
-              <td class="coverFnHi">43272</td>
+              <td class="coverFnHi">43248</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="populations.h.gcov.html#81">mio::Populations&lt;mio::ssirs::InfectionState&gt;::get_compartments() const</a></td>
+              <td class="coverFnHi">3</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="populations.h.gcov.html#251">mio::Populations&lt;mio::ssirs::InfectionState&gt;::check_constraints() const</a></td>
+              <td class="coverFnLo">0</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="populations.h.gcov.html#153">mio::Populations&lt;mio::ssirs::InfectionState&gt;::get_total() const</a></td>
+              <td class="coverFnHi">6</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="populations.h.gcov.html#114">double mio::Populations&lt;mio::AgeGroup, mio::osecir::InfectionState&gt;::get_group_total&lt;mio::AgeGroup&gt;(mio::Index&lt;mio::AgeGroup&gt;) const</a></td>
-              <td class="coverFnHi">367</td>
+              <td class="coverFnHi">350</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="populations.h.gcov.html#81">mio::Populations&lt;mio::AgeGroup, mio::osecir::InfectionState&gt;::get_compartments() const</a></td>
@@ -221,7 +253,7 @@
             </tr>
     <tr>
               <td class="coverFn"><a href="populations.h.gcov.html#101">decltype(auto) mio::Populations&lt;mio::AgeGroup, mio::osecir::InfectionState&gt;::get_from&lt;Eigen::Ref&lt;Eigen::Matrix&lt;double, -1, 1, 0, -1, 1&gt; const, 0, Eigen::InnerStride&lt;1&gt; &gt;&amp;&gt;(Eigen::Ref&lt;Eigen::Matrix&lt;double, -1, 1, 0, -1, 1&gt; const, 0, Eigen::InnerStride&lt;1&gt; &gt;&amp;, mio::Index&lt;mio::AgeGroup, mio::osecir::InfectionState&gt; const&amp;) const</a></td>
-              <td class="coverFnHi">38228</td>
+              <td class="coverFnHi">37148</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="populations.h.gcov.html#153">mio::Populations&lt;mio::AgeGroup, mio::osecir::InfectionState&gt;::get_total() const</a></td>

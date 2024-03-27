@@ -28,7 +28,7 @@
 
         
         <h2>Score</h2>
-        7.43 / 10
+        7.38 / 10
             
         
 
@@ -754,6 +754,520 @@
                 <td>W0012</td>
                 <td></td>
                 <td><pre>Unknown option value for &#39;--disable&#39;, expected a valid pylint message and got &#39;eq-without-hash&#39;</pre></td>
+            </tr>
+            
+        </table>
+        
+        <h3>Module <code>memilio.epidata.assessNPIEffects</code> (<code>memilio/epidata/assessNPIEffects.py</code>)</h3>
+        <table>
+            <tr>
+                <th>Line</th>
+                <th>Col.</th>
+                <th>Type</th>
+                <th>Symbol</th>
+                <th>ID</th>
+                <th>Obj</th>
+                <th>Message</th>
+            </tr>
+            
+            <tr>
+                <td>1</td>
+                <td>0</td>
+                <td>convention</td>
+                <td><code>missing-module-docstring</code></td>
+                <td>C0114</td>
+                <td></td>
+                <td><pre>Missing module docstring</pre></td>
+            </tr>
+            
+            <tr>
+                <td>1</td>
+                <td>0</td>
+                <td>convention</td>
+                <td><code>invalid-name</code></td>
+                <td>C0103</td>
+                <td></td>
+                <td><pre>Module name &#34;assessNPIEffects&#34; doesn&#39;t conform to snake_case naming style</pre></td>
+            </tr>
+            
+            <tr>
+                <td>21</td>
+                <td>0</td>
+                <td>error</td>
+                <td><code>import-error</code></td>
+                <td>E0401</td>
+                <td></td>
+                <td><pre>Unable to import &#39;matplotlib.pyplot&#39;</pre></td>
+            </tr>
+            
+            <tr>
+                <td>22</td>
+                <td>0</td>
+                <td>refactor</td>
+                <td><code>consider-using-from-import</code></td>
+                <td>R0402</td>
+                <td></td>
+                <td><pre>Use &#39;from matplotlib import cm&#39; instead</pre></td>
+            </tr>
+            
+            <tr>
+                <td>22</td>
+                <td>0</td>
+                <td>error</td>
+                <td><code>import-error</code></td>
+                <td>E0401</td>
+                <td></td>
+                <td><pre>Unable to import &#39;matplotlib.cm&#39;</pre></td>
+            </tr>
+            
+            <tr>
+                <td>23</td>
+                <td>0</td>
+                <td>error</td>
+                <td><code>import-error</code></td>
+                <td>E0401</td>
+                <td></td>
+                <td><pre>Unable to import &#39;numpy&#39;</pre></td>
+            </tr>
+            
+            <tr>
+                <td>24</td>
+                <td>0</td>
+                <td>error</td>
+                <td><code>import-error</code></td>
+                <td>E0401</td>
+                <td></td>
+                <td><pre>Unable to import &#39;pandas&#39;</pre></td>
+            </tr>
+            
+            <tr>
+                <td>29</td>
+                <td>0</td>
+                <td>error</td>
+                <td><code>import-error</code></td>
+                <td>E0401</td>
+                <td></td>
+                <td><pre>Unable to import &#39;scipy.cluster&#39;</pre></td>
+            </tr>
+            
+            <tr>
+                <td>29</td>
+                <td>0</td>
+                <td>convention</td>
+                <td><code>wrong-import-order</code></td>
+                <td>C0411</td>
+                <td></td>
+                <td><pre>third party import &#34;from scipy.cluster import hierarchy&#34; should be placed before &#34;from memilio.epidata import customPlot&#34;</pre></td>
+            </tr>
+            
+            <tr>
+                <td>30</td>
+                <td>0</td>
+                <td>error</td>
+                <td><code>import-error</code></td>
+                <td>E0401</td>
+                <td></td>
+                <td><pre>Unable to import &#39;scipy.spatial&#39;</pre></td>
+            </tr>
+            
+            <tr>
+                <td>30</td>
+                <td>0</td>
+                <td>convention</td>
+                <td><code>wrong-import-order</code></td>
+                <td>C0411</td>
+                <td></td>
+                <td><pre>third party import &#34;from scipy.spatial import distance&#34; should be placed before &#34;from memilio.epidata import customPlot&#34;</pre></td>
+            </tr>
+            
+            <tr>
+                <td>31</td>
+                <td>0</td>
+                <td>error</td>
+                <td><code>import-error</code></td>
+                <td>E0401</td>
+                <td></td>
+                <td><pre>Unable to import &#39;sklearn.metrics&#39;</pre></td>
+            </tr>
+            
+            <tr>
+                <td>31</td>
+                <td>0</td>
+                <td>convention</td>
+                <td><code>wrong-import-order</code></td>
+                <td>C0411</td>
+                <td></td>
+                <td><pre>third party import &#34;from sklearn.metrics import silhouette_samples, silhouette_score&#34; should be placed before &#34;from memilio.epidata import customPlot&#34;</pre></td>
+            </tr>
+            
+            <tr>
+                <td>57</td>
+                <td>4</td>
+                <td>convention</td>
+                <td><code>consider-using-enumerate</code></td>
+                <td>C0200</td>
+                <td>evaluate_clustering</td>
+                <td><pre>Consider using enumerate instead of iterating with range and len</pre></td>
+            </tr>
+            
+            <tr>
+                <td>57</td>
+                <td>8</td>
+                <td>convention</td>
+                <td><code>invalid-name</code></td>
+                <td>C0103</td>
+                <td>evaluate_clustering</td>
+                <td><pre>Variable name &#34;ii&#34; doesn&#39;t conform to snake_case naming style</pre></td>
+            </tr>
+            
+            <tr>
+                <td>61</td>
+                <td>4</td>
+                <td>convention</td>
+                <td><code>consider-using-enumerate</code></td>
+                <td>C0200</td>
+                <td>evaluate_clustering</td>
+                <td><pre>Consider using enumerate instead of iterating with range and len</pre></td>
+            </tr>
+            
+            <tr>
+                <td>61</td>
+                <td>8</td>
+                <td>convention</td>
+                <td><code>invalid-name</code></td>
+                <td>C0103</td>
+                <td>evaluate_clustering</td>
+                <td><pre>Variable name &#34;ii&#34; doesn&#39;t conform to snake_case naming style</pre></td>
+            </tr>
+            
+            <tr>
+                <td>65</td>
+                <td>4</td>
+                <td>warning</td>
+                <td><code>pointless-string-statement</code></td>
+                <td>W0105</td>
+                <td>evaluate_clustering</td>
+                <td><pre>String statement has no effect</pre></td>
+            </tr>
+            
+            <tr>
+                <td>100</td>
+                <td>4</td>
+                <td>refactor</td>
+                <td><code>no-else-return</code></td>
+                <td>R1705</td>
+                <td>evaluate_clustering</td>
+                <td><pre>Unnecessary &#34;else&#34; after &#34;return&#34;, remove the &#34;else&#34; and de-indent the code inside it</pre></td>
+            </tr>
+            
+            <tr>
+                <td>107</td>
+                <td>0</td>
+                <td>warning</td>
+                <td><code>dangerous-default-value</code></td>
+                <td>W0102</td>
+                <td>compute_hierarch_clustering</td>
+                <td><pre>Dangerous default value [] as argument</pre></td>
+            </tr>
+            
+            <tr>
+                <td>131</td>
+                <td>13</td>
+                <td>refactor</td>
+                <td><code>use-dict-literal</code></td>
+                <td>R1735</td>
+                <td>compute_hierarch_clustering</td>
+                <td><pre>Consider using {} instead of dict()</pre></td>
+            </tr>
+            
+            <tr>
+                <td>157</td>
+                <td>69</td>
+                <td>warning</td>
+                <td><code>unused-argument</code></td>
+                <td>W0613</td>
+                <td>flatten_hierarch_clustering</td>
+                <td><pre>Unused argument &#39;method&#39;</pre></td>
+            </tr>
+            
+            <tr>
+                <td>182</td>
+                <td>4</td>
+                <td>convention</td>
+                <td><code>invalid-name</code></td>
+                <td>C0103</td>
+                <td>flatten_hierarch_clustering</td>
+                <td><pre>Variable name &#34;n&#34; doesn&#39;t conform to snake_case naming style</pre></td>
+            </tr>
+            
+            <tr>
+                <td>191</td>
+                <td>8</td>
+                <td>warning</td>
+                <td><code>unused-variable</code></td>
+                <td>W0612</td>
+                <td>flatten_hierarch_clustering</td>
+                <td><pre>Unused variable &#39;clusters&#39;</pre></td>
+            </tr>
+            
+            <tr>
+                <td>214</td>
+                <td>0</td>
+                <td>convention</td>
+                <td><code>missing-function-docstring</code></td>
+                <td>C0116</td>
+                <td>silhouette</td>
+                <td><pre>Missing function or method docstring</pre></td>
+            </tr>
+            
+            <tr>
+                <td>214</td>
+                <td>15</td>
+                <td>convention</td>
+                <td><code>invalid-name</code></td>
+                <td>C0103</td>
+                <td>silhouette</td>
+                <td><pre>Argument name &#34;X&#34; doesn&#39;t conform to snake_case naming style</pre></td>
+            </tr>
+            
+            <tr>
+                <td>214</td>
+                <td>0</td>
+                <td>refactor</td>
+                <td><code>inconsistent-return-statements</code></td>
+                <td>R1710</td>
+                <td>silhouette</td>
+                <td><pre>Either all return statements in a function should return an expression, or none of them should.</pre></td>
+            </tr>
+            
+            <tr>
+                <td>273</td>
+                <td>0</td>
+                <td>convention</td>
+                <td><code>missing-function-docstring</code></td>
+                <td>C0116</td>
+                <td>analyze_npi_data</td>
+                <td><pre>Missing function or method docstring</pre></td>
+            </tr>
+            
+            <tr>
+                <td>273</td>
+                <td>0</td>
+                <td>refactor</td>
+                <td><code>too-many-arguments</code></td>
+                <td>R0913</td>
+                <td>analyze_npi_data</td>
+                <td><pre>Too many arguments (7/5)</pre></td>
+            </tr>
+            
+            <tr>
+                <td>273</td>
+                <td>0</td>
+                <td>refactor</td>
+                <td><code>too-many-locals</code></td>
+                <td>R0914</td>
+                <td>analyze_npi_data</td>
+                <td><pre>Too many local variables (43/15)</pre></td>
+            </tr>
+            
+            <tr>
+                <td>273</td>
+                <td>0</td>
+                <td>refactor</td>
+                <td><code>too-many-branches</code></td>
+                <td>R0912</td>
+                <td>analyze_npi_data</td>
+                <td><pre>Too many branches (41/12)</pre></td>
+            </tr>
+            
+            <tr>
+                <td>273</td>
+                <td>0</td>
+                <td>refactor</td>
+                <td><code>too-many-statements</code></td>
+                <td>R0915</td>
+                <td>analyze_npi_data</td>
+                <td><pre>Too many statements (160/50)</pre></td>
+            </tr>
+            
+            <tr>
+                <td>347</td>
+                <td>8</td>
+                <td>convention</td>
+                <td><code>consider-using-enumerate</code></td>
+                <td>C0200</td>
+                <td>analyze_npi_data</td>
+                <td><pre>Consider using enumerate instead of iterating with range and len</pre></td>
+            </tr>
+            
+            <tr>
+                <td>373</td>
+                <td>19</td>
+                <td>warning</td>
+                <td><code>unspecified-encoding</code></td>
+                <td>W1514</td>
+                <td>analyze_npi_data</td>
+                <td><pre>Using open without explicitly specifying an encoding</pre></td>
+            </tr>
+            
+            <tr>
+                <td>373</td>
+                <td>19</td>
+                <td>refactor</td>
+                <td><code>consider-using-with</code></td>
+                <td>R1732</td>
+                <td>analyze_npi_data</td>
+                <td><pre>Consider using &#39;with&#39; for resource-allocating operations</pre></td>
+            </tr>
+            
+            <tr>
+                <td>375</td>
+                <td>8</td>
+                <td>convention</td>
+                <td><code>consider-using-enumerate</code></td>
+                <td>C0200</td>
+                <td>analyze_npi_data</td>
+                <td><pre>Consider using enumerate instead of iterating with range and len</pre></td>
+            </tr>
+            
+            <tr>
+                <td>389</td>
+                <td>19</td>
+                <td>warning</td>
+                <td><code>unspecified-encoding</code></td>
+                <td>W1514</td>
+                <td>analyze_npi_data</td>
+                <td><pre>Using open without explicitly specifying an encoding</pre></td>
+            </tr>
+            
+            <tr>
+                <td>389</td>
+                <td>19</td>
+                <td>refactor</td>
+                <td><code>consider-using-with</code></td>
+                <td>R1732</td>
+                <td>analyze_npi_data</td>
+                <td><pre>Consider using &#39;with&#39; for resource-allocating operations</pre></td>
+            </tr>
+            
+            <tr>
+                <td>391</td>
+                <td>8</td>
+                <td>convention</td>
+                <td><code>consider-using-enumerate</code></td>
+                <td>C0200</td>
+                <td>analyze_npi_data</td>
+                <td><pre>Consider using enumerate instead of iterating with range and len</pre></td>
+            </tr>
+            
+            <tr>
+                <td>444</td>
+                <td>37</td>
+                <td>error</td>
+                <td><code>no-value-for-parameter</code></td>
+                <td>E1120</td>
+                <td>analyze_npi_data</td>
+                <td><pre>No value for argument &#39;method&#39; in function call</pre></td>
+            </tr>
+            
+            <tr>
+                <td>449</td>
+                <td>12</td>
+                <td>warning</td>
+                <td><code>unused-variable</code></td>
+                <td>W0612</td>
+                <td>analyze_npi_data</td>
+                <td><pre>Unused variable &#39;samples&#39;</pre></td>
+            </tr>
+            
+            <tr>
+                <td>462</td>
+                <td>37</td>
+                <td>error</td>
+                <td><code>no-value-for-parameter</code></td>
+                <td>E1120</td>
+                <td>analyze_npi_data</td>
+                <td><pre>No value for argument &#39;method&#39; in function call</pre></td>
+            </tr>
+            
+            <tr>
+                <td>479</td>
+                <td>37</td>
+                <td>error</td>
+                <td><code>no-value-for-parameter</code></td>
+                <td>E1120</td>
+                <td>analyze_npi_data</td>
+                <td><pre>No value for argument &#39;method&#39; in function call</pre></td>
+            </tr>
+            
+            <tr>
+                <td>509</td>
+                <td>23</td>
+                <td>refactor</td>
+                <td><code>use-dict-literal</code></td>
+                <td>R1735</td>
+                <td>analyze_npi_data</td>
+                <td><pre>Consider using {} instead of dict()</pre></td>
+            </tr>
+            
+            <tr>
+                <td>512</td>
+                <td>8</td>
+                <td>convention</td>
+                <td><code>consider-using-enumerate</code></td>
+                <td>C0200</td>
+                <td>analyze_npi_data</td>
+                <td><pre>Consider using enumerate instead of iterating with range and len</pre></td>
+            </tr>
+            
+            <tr>
+                <td>524</td>
+                <td>8</td>
+                <td>convention</td>
+                <td><code>consider-using-enumerate</code></td>
+                <td>C0200</td>
+                <td>analyze_npi_data</td>
+                <td><pre>Consider using enumerate instead of iterating with range and len</pre></td>
+            </tr>
+            
+            <tr>
+                <td>544</td>
+                <td>19</td>
+                <td>warning</td>
+                <td><code>unspecified-encoding</code></td>
+                <td>W1514</td>
+                <td>analyze_npi_data</td>
+                <td><pre>Using open without explicitly specifying an encoding</pre></td>
+            </tr>
+            
+            <tr>
+                <td>544</td>
+                <td>19</td>
+                <td>refactor</td>
+                <td><code>consider-using-with</code></td>
+                <td>R1732</td>
+                <td>analyze_npi_data</td>
+                <td><pre>Consider using &#39;with&#39; for resource-allocating operations</pre></td>
+            </tr>
+            
+            <tr>
+                <td>546</td>
+                <td>8</td>
+                <td>convention</td>
+                <td><code>consider-using-enumerate</code></td>
+                <td>C0200</td>
+                <td>analyze_npi_data</td>
+                <td><pre>Consider using enumerate instead of iterating with range and len</pre></td>
+            </tr>
+            
+            <tr>
+                <td>593</td>
+                <td>16</td>
+                <td>error</td>
+                <td><code>no-member</code></td>
+                <td>E1101</td>
+                <td>analyze_npi_data</td>
+                <td><pre>Module &#39;memilio.epidata.customPlot&#39; has no &#39;plotList&#39; member</pre></td>
             </tr>
             
         </table>
@@ -12384,6 +12898,25 @@ from memilio.epidata import defaultDict as dd</pre></td>
                 <td>R0801</td>
                 <td></td>
                 <td><pre>Similar lines in 2 files
+==memilio.epidata.assessNPIEffects:[291:298]
+==memilio.epidata.getNPIData:[1289:1296]
+    if fine_resolution &gt; 0:
+        if fine_resolution == 1:
+            filename = &#39;germany_counties_npi_subcat_incgrouped&#39;
+        else:
+            filename = &#39;germany_counties_npi_subcat&#39;
+    else:
+        filename = &#39;germany_counties_npi_maincat&#39;</pre></td>
+            </tr>
+            
+            <tr>
+                <td>1</td>
+                <td>0</td>
+                <td>refactor</td>
+                <td><code>duplicate-code</code></td>
+                <td>R0801</td>
+                <td></td>
+                <td><pre>Similar lines in 2 files
 ==memilio.epidata_test.test_epidata_getHospitalizationData:[103:109]
 ==memilio.epidata_test.test_epidata_get_divi_data:[207:213]
         df = pd.DataFrame(
@@ -12430,7 +12963,9 @@ import pandas as pd
 from memilio.epidata import defaultDict as dd
 from memilio.epidata import geoModificationGermany as geoger
 from memilio.epidata import getDataIntoPandasDataFrame as gd
-from memilio.epidata import modifyDataframeSeries as mdfs</pre></td>
+from memilio.epidata import modifyDataframeSeries as mdfs
+
+# activate CoW for more predictable behaviour of pandas DataFrames</pre></td>
             </tr>
             
             <tr>
@@ -12482,12 +13017,15 @@ from memilio.epidata import defaultDict as dd</pre></td>
 ==memilio.epidata.getCommuterMobility:[25:32]
 ==memilio.epidata.transformMobilityData:[19:29]
 import os
+
 import numpy as np
 import pandas as pd
 
 from memilio.epidata import defaultDict as dd
 from memilio.epidata import geoModificationGermany as geoger
-from memilio.epidata import getDataIntoPandasDataFrame as gd</pre></td>
+from memilio.epidata import getDataIntoPandasDataFrame as gd
+
+# activate CoW for more predictable behaviour of pandas DataFrames</pre></td>
             </tr>
             
             <tr>
@@ -12511,14 +13049,17 @@ from memilio.epidata import getDataIntoPandasDataFrame as gd
 pd.options.mode.copy_on_write = True
 
 
-def getMobilityFromFile(directory, mobility_file):
-    &#34;&#34;&#34;! Gets a mobility matrix that is written in a plain txt file
-    under the given directory into a pandas data frame.
+def read_population_data(username, password):
+    &#39;&#39;&#39;! Reads Population data from regionalstatistik.de
 
-    @param directory Path to folder where data is read.
-    @param mobility_file Mobility matrix file which has to be updated.
-    @return Mobility matrix data frame.
-    &#34;&#34;&#34;</pre></td>
+    Username and Password are required to sign in on regionalstatistik.de.
+    A request is made to regionalstatistik.de and the StringIO is read in as a csv into the dataframe format.
+
+    @param username Username to sign in at regionalstatistik.de.
+    @param password Password to sign in at regionalstatistik.de.
+    @return DataFrame
+    &#39;&#39;&#39;
+</pre></td>
             </tr>
             
             <tr>
@@ -12539,8 +13080,11 @@ def getMobilityFromFile(directory, mobility_file):
     def setUp(self):
         self.setUpPyfakefs()
 
-    @patch(&#39;builtins.print&#39;)
-    def test_verify_sorted(self, mock_print):</pre></td>
+    @patch(&#39;memilio.epidata.getVaccinationData.download_vaccination_data&#39;,
+           return_value=df_vacc_data_altern)
+    @patch(&#39;memilio.epidata.getPopulationData.get_population_data&#39;, return_value=df_pop)
+    @patch(&#39;memilio.epidata.getDataIntoPandasDataFrame.user_choice&#39;, return_value=True)
+    def test_get_vaccination_data_alternative_ages(self, mockin, mockp, mockv):</pre></td>
             </tr>
             
             <tr>
@@ -12553,53 +13097,6 @@ def getMobilityFromFile(directory, mobility_file):
                 <td><pre>Similar lines in 2 files
 ==memilio.epidata.getJHData:[31:69]
 ==memilio.epidata.transformWeatherData:[28:60]
-from memilio.epidata import getDataIntoPandasDataFrame as gd
-from memilio.epidata import modifyDataframeSeries as mdfs
-
-# activate CoW for more predictable behaviour of pandas DataFrames
-pd.options.mode.copy_on_write = True
-
-
-def transformWeatherData(read_data=dd.defaultDict[&#39;read_data&#39;],
-                         file_format=dd.defaultDict[&#39;file_format&#39;],
-                         out_folder=dd.defaultDict[&#39;out_folder&#39;],
-                         start_date=dd.defaultDict[&#39;start_date&#39;],
-                         end_date=dd.defaultDict[&#39;end_date&#39;],
-                         moving_average=dd.defaultDict[&#39;moving_average&#39;],
-                         merge_berlin=True,
-                         merge_eisenach=False,
-                         **kwargs
-                         ):
-    &#34;&#34;&#34;! ...
-    @param file_format File format which is used for writing the data.
-        Default defined in defaultDict.
-    @param out_folder Path to folder where data is written in folder
-        out_folder/Germany.
-    @param start_date [Default = &#39;&#39;, taken from read data] Start date
-        of stored data frames.
-    @param end_date [Default = &#39;&#39;, taken from read data] End date of
-        stored data frames.
-    @param moving_average 0 [Default] or Number &gt; 0. Defines the number of
-        days for which a centered moving average is computed.
-    &#34;&#34;&#34;
-    conf = gd.Conf(out_folder, **kwargs)
-    out_folder = conf.path_to_use
-</pre></td>
-            </tr>
-            
-            <tr>
-                <td>1</td>
-                <td>0</td>
-                <td>refactor</td>
-                <td><code>duplicate-code</code></td>
-                <td>R0801</td>
-                <td></td>
-                <td><pre>Similar lines in 2 files
-==memilio.epidata.getHospitalizationData:[32:51]
-==memilio.epidata.getJHData:[28:67]
-import pandas as pd
-
-from memilio.epidata import defaultDict as dd
 from memilio.epidata import getDataIntoPandasDataFrame as gd
 from memilio.epidata import modifyDataframeSeries as mdfs
 
@@ -12635,7 +13132,40 @@ def get_jh_data(read_data=dd.defaultDict[&#39;read_data&#39;],
     @param impute_dates [Currently not used] True or False. Defines if values for dates without new information are imputed. Default defined in defaultDict.
     @param moving_average [Currently not used] Integers &gt;=0. Applies an &#39;moving_average&#39;-days moving average on all time series
         to smooth out effects of irregular reporting. Default defined in defaultDict.
-   &#34;&#34;&#34;</pre></td>
+   &#34;&#34;&#34;
+    conf = gd.Conf(out_folder, **kwargs)
+    out_folder = conf.path_to_use</pre></td>
+            </tr>
+            
+            <tr>
+                <td>1</td>
+                <td>0</td>
+                <td>refactor</td>
+                <td><code>duplicate-code</code></td>
+                <td>R0801</td>
+                <td></td>
+                <td><pre>Similar lines in 2 files
+==memilio.epidata.getHospitalizationData:[32:51]
+==memilio.epidata.getJHData:[28:67]
+import pandas as pd
+
+from memilio.epidata import defaultDict as dd
+from memilio.epidata import getDataIntoPandasDataFrame as gd
+from memilio.epidata import modifyDataframeSeries as mdfs
+
+# activate CoW for more predictable behaviour of pandas DataFrames
+pd.options.mode.copy_on_write = True
+
+
+def hospit_sanity_checks(df):
+    &#34;&#34;&#34;! Checks the sanity of the hospitalization_data dataframe
+
+    Checks if type of the given data is a dataframe
+    Checks if the headers of the dataframe are those which are needed
+
+    @param df The dataframe which has to be checked
+    &#34;&#34;&#34;
+    # test if dataframe is empty</pre></td>
             </tr>
             
             <tr>
@@ -12684,9 +13214,7 @@ import pandas as pd
 
 from memilio.epidata import defaultDict as dd
 from memilio.epidata import geoModificationGermany as geoger
-from memilio.epidata import getDataIntoPandasDataFrame as gd
-
-# activate CoW for more predictable behaviour of pandas DataFrames</pre></td>
+from memilio.epidata import getDataIntoPandasDataFrame as gd</pre></td>
             </tr>
             
             <tr>
@@ -12722,7 +13250,9 @@ import pandas as pd
 
 from memilio.epidata import defaultDict as dd
 from memilio.epidata import geoModificationGermany as geoger
-from memilio.epidata import getDataIntoPandasDataFrame as gd</pre></td>
+from memilio.epidata import getDataIntoPandasDataFrame as gd
+
+# activate CoW for more predictable behaviour of pandas DataFrames</pre></td>
             </tr>
             
             <tr>
@@ -13094,22 +13624,22 @@ from memilio.epidata import getDataIntoPandasDataFrame as gd</pre></td>
             
             <tr>
                 <td>refactor</td>
-                <td>260</td>
+                <td>273</td>
             </tr>
             
             <tr>
                 <td>warning</td>
-                <td>173</td>
+                <td>181</td>
             </tr>
             
             <tr>
                 <td>convention</td>
-                <td>709</td>
+                <td>728</td>
             </tr>
             
             <tr>
                 <td>error</td>
-                <td>85</td>
+                <td>96</td>
             </tr>
             
         </table>
@@ -13139,22 +13669,22 @@ from memilio.epidata import getDataIntoPandasDataFrame as gd</pre></td>
             
             <tr>
                 <td>missing-module-docstring</td>
-                <td>24</td>
+                <td>25</td>
             </tr>
             
             <tr>
                 <td>invalid-name</td>
-                <td>232</td>
+                <td>237</td>
             </tr>
             
             <tr>
                 <td>import-error</td>
-                <td>53</td>
+                <td>60</td>
             </tr>
             
             <tr>
                 <td>no-else-return</td>
-                <td>10</td>
+                <td>11</td>
             </tr>
             
             <tr>
@@ -13189,12 +13719,12 @@ from memilio.epidata import getDataIntoPandasDataFrame as gd</pre></td>
             
             <tr>
                 <td>missing-function-docstring</td>
-                <td>142</td>
+                <td>144</td>
             </tr>
             
             <tr>
                 <td>unused-argument</td>
-                <td>51</td>
+                <td>52</td>
             </tr>
             
             <tr>
@@ -13204,7 +13734,7 @@ from memilio.epidata import getDataIntoPandasDataFrame as gd</pre></td>
             
             <tr>
                 <td>consider-using-enumerate</td>
-                <td>46</td>
+                <td>54</td>
             </tr>
             
             <tr>
@@ -13214,12 +13744,12 @@ from memilio.epidata import getDataIntoPandasDataFrame as gd</pre></td>
             
             <tr>
                 <td>dangerous-default-value</td>
-                <td>4</td>
+                <td>5</td>
             </tr>
             
             <tr>
                 <td>too-many-locals</td>
-                <td>44</td>
+                <td>45</td>
             </tr>
             
             <tr>
@@ -13229,7 +13759,7 @@ from memilio.epidata import getDataIntoPandasDataFrame as gd</pre></td>
             
             <tr>
                 <td>too-many-branches</td>
-                <td>14</td>
+                <td>15</td>
             </tr>
             
             <tr>
@@ -13239,7 +13769,7 @@ from memilio.epidata import getDataIntoPandasDataFrame as gd</pre></td>
             
             <tr>
                 <td>wrong-import-order</td>
-                <td>20</td>
+                <td>23</td>
             </tr>
             
             <tr>
@@ -13249,7 +13779,7 @@ from memilio.epidata import getDataIntoPandasDataFrame as gd</pre></td>
             
             <tr>
                 <td>too-many-arguments</td>
-                <td>26</td>
+                <td>27</td>
             </tr>
             
             <tr>
@@ -13259,7 +13789,7 @@ from memilio.epidata import getDataIntoPandasDataFrame as gd</pre></td>
             
             <tr>
                 <td>too-many-statements</td>
-                <td>20</td>
+                <td>21</td>
             </tr>
             
             <tr>
@@ -13279,7 +13809,7 @@ from memilio.epidata import getDataIntoPandasDataFrame as gd</pre></td>
             
             <tr>
                 <td>unspecified-encoding</td>
-                <td>39</td>
+                <td>42</td>
             </tr>
             
             <tr>
@@ -13289,7 +13819,7 @@ from memilio.epidata import getDataIntoPandasDataFrame as gd</pre></td>
             
             <tr>
                 <td>no-member</td>
-                <td>12</td>
+                <td>13</td>
             </tr>
             
             <tr>
@@ -13324,12 +13854,12 @@ from memilio.epidata import getDataIntoPandasDataFrame as gd</pre></td>
             
             <tr>
                 <td>unused-variable</td>
-                <td>8</td>
+                <td>10</td>
             </tr>
             
             <tr>
                 <td>use-dict-literal</td>
-                <td>3</td>
+                <td>5</td>
             </tr>
             
             <tr>
@@ -13360,6 +13890,31 @@ from memilio.epidata import getDataIntoPandasDataFrame as gd</pre></td>
             <tr>
                 <td>too-many-boolean-expressions</td>
                 <td>1</td>
+            </tr>
+            
+            <tr>
+                <td>consider-using-from-import</td>
+                <td>1</td>
+            </tr>
+            
+            <tr>
+                <td>pointless-string-statement</td>
+                <td>1</td>
+            </tr>
+            
+            <tr>
+                <td>inconsistent-return-statements</td>
+                <td>1</td>
+            </tr>
+            
+            <tr>
+                <td>consider-using-with</td>
+                <td>5</td>
+            </tr>
+            
+            <tr>
+                <td>no-value-for-parameter</td>
+                <td>3</td>
             </tr>
             
             <tr>
@@ -13413,11 +13968,6 @@ from memilio.epidata import getDataIntoPandasDataFrame as gd</pre></td>
             </tr>
             
             <tr>
-                <td>consider-using-with</td>
-                <td>2</td>
-            </tr>
-            
-            <tr>
                 <td>redundant-unittest-assert</td>
                 <td>1</td>
             </tr>
@@ -13429,7 +13979,7 @@ from memilio.epidata import getDataIntoPandasDataFrame as gd</pre></td>
             
             <tr>
                 <td>duplicate-code</td>
-                <td>16</td>
+                <td>17</td>
             </tr>
             
         </table>
@@ -13515,6 +14065,11 @@ from memilio.epidata import getDataIntoPandasDataFrame as gd</pre></td>
             <tr>
                 <td>memilio.epidata.getHospitalizationData</td>
                 <td>17</td>
+            </tr>
+            
+            <tr>
+                <td>memilio.epidata.assessNPIEffects</td>
+                <td>50</td>
             </tr>
             
             <tr>
@@ -13634,7 +14189,7 @@ from memilio.epidata import getDataIntoPandasDataFrame as gd</pre></td>
             
             <tr>
                 <td>memilio.epidata_test.test_epidata_progress_indicator</td>
-                <td>36</td>
+                <td>37</td>
             </tr>
             
         </table>
@@ -13720,6 +14275,11 @@ from memilio.epidata import getDataIntoPandasDataFrame as gd</pre></td>
             <tr>
                 <td>memilio/epidata/getHospitalizationData.py</td>
                 <td>17</td>
+            </tr>
+            
+            <tr>
+                <td>memilio/epidata/assessNPIEffects.py</td>
+                <td>50</td>
             </tr>
             
             <tr>
@@ -13839,7 +14399,7 @@ from memilio.epidata import getDataIntoPandasDataFrame as gd</pre></td>
             
             <tr>
                 <td>memilio/epidata_test/test_epidata_progress_indicator.py</td>
-                <td>36</td>
+                <td>37</td>
             </tr>
             
         </table>

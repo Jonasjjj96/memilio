@@ -69,7 +69,8 @@ $(function() {
   <div class="summary">
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classmio_1_1FlowSimulation-members.html">List of all members</a>  </div>
   <div class="headertitle">
@@ -143,27 +144,27 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a1ea99fbb5968c4e407d052707480b946 inherit pub_methods_classmio_1_1Simulation"><td class="memItemLeft" align="right" valign="top">const double &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1Simulation.html#a1ea99fbb5968c4e407d052707480b946">get_dt</a> () const</td></tr>
 <tr class="separator:a1ea99fbb5968c4e407d052707480b946 inherit pub_methods_classmio_1_1Simulation"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
-Private Member Functions</h2></td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
 <tr class="memitem:a843e862eb1962afd66d28b99e4c71a83"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1FlowSimulation.html#a843e862eb1962afd66d28b99e4c71a83">compute_population_results</a> ()</td></tr>
 <tr class="memdesc:a843e862eb1962afd66d28b99e4c71a83"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the distribution of the Population to the InfectionStates based on the simulated flows.  <a href="classmio_1_1FlowSimulation.html#a843e862eb1962afd66d28b99e4c71a83">More...</a><br /></td></tr>
 <tr class="separator:a843e862eb1962afd66d28b99e4c71a83"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_methods_classmio_1_1Simulation"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classmio_1_1Simulation')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classmio_1_1Simulation.html">mio::Simulation&lt; M &gt;</a></td></tr>
+<tr class="memitem:a10b829848d03147ba33fb12a0e1870a0 inherit pro_methods_classmio_1_1Simulation"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmio_1_1OdeIntegrator.html">OdeIntegrator</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1Simulation.html#a10b829848d03147ba33fb12a0e1870a0">get_ode_integrator</a> ()</td></tr>
+<tr class="memdesc:a10b829848d03147ba33fb12a0e1870a0 inherit pro_methods_classmio_1_1Simulation"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a reference to the integrater. Can be used to overwrite advance.  <a href="classmio_1_1Simulation.html#a10b829848d03147ba33fb12a0e1870a0">More...</a><br /></td></tr>
+<tr class="separator:a10b829848d03147ba33fb12a0e1870a0 inherit pro_methods_classmio_1_1Simulation"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
+Protected Attributes</h2></td></tr>
+<tr class="memitem:a4793dc47609848f94c611e4ed5f82723"><td class="memItemLeft" align="right" valign="top">Eigen::VectorXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1FlowSimulation.html#a4793dc47609848f94c611e4ed5f82723">m_pop</a></td></tr>
+<tr class="memdesc:a4793dc47609848f94c611e4ed5f82723"><td class="mdescLeft">&#160;</td><td class="mdescRight">pre-allocated temporary, used in right_hand_side()  <a href="classmio_1_1FlowSimulation.html#a4793dc47609848f94c611e4ed5f82723">More...</a><br /></td></tr>
+<tr class="separator:a4793dc47609848f94c611e4ed5f82723"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:a71399bf8d9786a741a7e6848dd7c1dcd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmio_1_1TimeSeries.html">mio::TimeSeries</a>&lt; <a class="el" href="memilio_2config_8h.html#acd4f1d492d83a74716a42615e127d641">ScalarType</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1FlowSimulation.html#a71399bf8d9786a741a7e6848dd7c1dcd">m_flow_result</a></td></tr>
 <tr class="memdesc:a71399bf8d9786a741a7e6848dd7c1dcd"><td class="mdescLeft">&#160;</td><td class="mdescRight">flow result of the simulation  <a href="classmio_1_1FlowSimulation.html#a71399bf8d9786a741a7e6848dd7c1dcd">More...</a><br /></td></tr>
 <tr class="separator:a71399bf8d9786a741a7e6848dd7c1dcd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4793dc47609848f94c611e4ed5f82723"><td class="memItemLeft" align="right" valign="top">Eigen::VectorXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1FlowSimulation.html#a4793dc47609848f94c611e4ed5f82723">m_pop</a></td></tr>
-<tr class="memdesc:a4793dc47609848f94c611e4ed5f82723"><td class="mdescLeft">&#160;</td><td class="mdescRight">pre-allocated temporary, used in right_hand_side()  <a href="classmio_1_1FlowSimulation.html#a4793dc47609848f94c611e4ed5f82723">More...</a><br /></td></tr>
-<tr class="separator:a4793dc47609848f94c611e4ed5f82723"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
-Additional Inherited Members</h2></td></tr>
-<tr class="inherit_header pro_methods_classmio_1_1Simulation"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classmio_1_1Simulation')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classmio_1_1Simulation.html">mio::Simulation&lt; M &gt;</a></td></tr>
-<tr class="memitem:a10b829848d03147ba33fb12a0e1870a0 inherit pro_methods_classmio_1_1Simulation"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmio_1_1OdeIntegrator.html">OdeIntegrator</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1Simulation.html#a10b829848d03147ba33fb12a0e1870a0">get_ode_integrator</a> ()</td></tr>
-<tr class="memdesc:a10b829848d03147ba33fb12a0e1870a0 inherit pro_methods_classmio_1_1Simulation"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a reference to the integrater. Can be used to overwrite advance.  <a href="classmio_1_1Simulation.html#a10b829848d03147ba33fb12a0e1870a0">More...</a><br /></td></tr>
-<tr class="separator:a10b829848d03147ba33fb12a0e1870a0 inherit pro_methods_classmio_1_1Simulation"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="ad6cedde56618d2beed5c217b51cfecb3"></a>
@@ -236,7 +237,7 @@ template&lt;class M &gt; </div>
 <p>Set up the simulation with an ODE solver. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">model</td><td>An instance of a compartmental model. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">model</td><td>An instance of a flow model. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">t0</td><td>Start time. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">dt</td><td>Initial step size of integration. </td></tr>
   </table>
@@ -294,7 +295,7 @@ template&lt;class M &gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -390,7 +391,7 @@ template&lt;class M &gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
