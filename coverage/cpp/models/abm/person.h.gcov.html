@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2024-04-02 09:44:16</td>
+            <td class="headerValue">2024-04-02 10:45:33</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">20</td>
@@ -387,9 +387,9 @@
 <a name="325"><span class="lineNum">     325 </span>            :      * @param[in] params Parameter that includes the length of a quarantine.</a>
 <a name="326"><span class="lineNum">     326 </span>            :      * @return True if the Person is in quarantine.</a>
 <a name="327"><span class="lineNum">     327 </span>            :      */</a>
-<a name="328"><span class="lineNum">     328 </span><span class="lineCov">        154 :     bool is_in_quarantine(TimePoint t, const Parameters&amp; params) const</span></a>
+<a name="328"><span class="lineNum">     328 </span><span class="lineCov">        152 :     bool is_in_quarantine(TimePoint t, const Parameters&amp; params) const</span></a>
 <a name="329"><span class="lineNum">     329 </span>            :     {</a>
-<a name="330"><span class="lineNum">     330 </span><span class="lineCov">        154 :         return t &lt; m_quarantine_start + params.get&lt;mio::abm::QuarantineDuration&gt;();</span></a>
+<a name="330"><span class="lineNum">     330 </span><span class="lineCov">        152 :         return t &lt; m_quarantine_start + params.get&lt;mio::abm::QuarantineDuration&gt;();</span></a>
 <a name="331"><span class="lineNum">     331 </span>            :     }</a>
 <a name="332"><span class="lineNum">     332 </span>            :     </a>
 <a name="333"><span class="lineNum">     333 </span>            :     /**</a>

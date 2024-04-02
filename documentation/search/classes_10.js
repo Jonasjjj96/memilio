@@ -1,7 +1,7 @@
 var searchData=
 [
   ['schoolratio_1977',['SchoolRatio',['../structmio_1_1abm_1_1SchoolRatio.html',1,'mio::abm']]],
-  ['seasonality_1978',['Seasonality',['../structmio_1_1lsecir_1_1Seasonality.html',1,'mio::lsecir::Seasonality'],['../structmio_1_1osecir_1_1Seasonality.html',1,'mio::osecir::Seasonality'],['../structmio_1_1osecirvvs_1_1Seasonality.html',1,'mio::osecirvvs::Seasonality']]],
+  ['seasonality_1978',['Seasonality',['../structmio_1_1isecir_1_1Seasonality.html',1,'mio::isecir::Seasonality'],['../structmio_1_1lsecir_1_1Seasonality.html',1,'mio::lsecir::Seasonality'],['../structmio_1_1osecir_1_1Seasonality.html',1,'mio::osecir::Seasonality'],['../structmio_1_1osecirvvs_1_1Seasonality.html',1,'mio::osecirvvs::Seasonality']]],
   ['seq_1979',['Seq',['../structmio_1_1Seq.html',1,'mio']]],
   ['seq_3c_20size_5ft_20_3e_1980',['Seq&lt; size_t &gt;',['../structmio_1_1Seq.html',1,'mio']]],
   ['serializationvisitor_1981',['SerializationVisitor',['../structmio_1_1details_1_1SerializationVisitor.html',1,'mio::details']]],
@@ -21,7 +21,7 @@ var searchData=
   ['span_1995',['Span',['../classmio_1_1Span.html',1,'mio']]],
   ['spinner_1996',['Spinner',['../classmemilio_1_1epidata_1_1progress__indicator_1_1Spinner.html',1,'memilio::epidata::progress_indicator']]],
   ['squarematrixshape_1997',['SquareMatrixShape',['../classmio_1_1SquareMatrixShape.html',1,'mio']]],
-  ['startday_1998',['StartDay',['../structmio_1_1lsecir_1_1StartDay.html',1,'mio::lsecir::StartDay'],['../structmio_1_1osecir_1_1StartDay.html',1,'mio::osecir::StartDay'],['../structmio_1_1osecirvvs_1_1StartDay.html',1,'mio::osecirvvs::StartDay']]],
+  ['startday_1998',['StartDay',['../structmio_1_1isecir_1_1StartDay.html',1,'mio::isecir::StartDay'],['../structmio_1_1lsecir_1_1StartDay.html',1,'mio::lsecir::StartDay'],['../structmio_1_1osecir_1_1StartDay.html',1,'mio::osecir::StartDay'],['../structmio_1_1osecirvvs_1_1StartDay.html',1,'mio::osecirvvs::StartDay']]],
   ['startdaynewvariant_1999',['StartDayNewVariant',['../structmio_1_1osecirvvs_1_1StartDayNewVariant.html',1,'mio::osecirvvs']]],
   ['stateagefunction_2000',['StateAgeFunction',['../structmio_1_1StateAgeFunction.html',1,'mio']]],
   ['stateagefunctionwrapper_2001',['StateAgeFunctionWrapper',['../structmio_1_1StateAgeFunctionWrapper.html',1,'mio']]],
