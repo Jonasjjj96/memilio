@@ -9,5 +9,6 @@ var searchData=
   ['entries_5flow_3054',['entries_low',['../classmio_1_1TableauFinal.html#aeb2f12991a73dd24a3fedb785a0fe98f',1,'mio::TableauFinal']]],
   ['error_3055',['Error',['../classmemilio_1_1epidata_1_1getDataIntoPandasDataFrame_1_1VerbosityLevel.html#a82be2ed59668c3aebf8086b85c1b224f',1,'memilio::epidata::getDataIntoPandasDataFrame::VerbosityLevel']]],
   ['eseng_3056',['EsEng',['../namespacememilio_1_1epidata_1_1defaultDict.html#aaa3de84e2091fed442b22dcfaf70bd9b',1,'memilio::epidata::defaultDict']]],
-  ['exposure_5ftype_3057',['exposure_type',['../structmio_1_1abm_1_1Vaccination.html#a69a5b98c37e61b0e72d6d4bd6036d7ef',1,'mio::abm::Vaccination']]]
+  ['excel_5fengine_3057',['excel_engine',['../classmemilio_1_1epidata_1_1getDataIntoPandasDataFrame_1_1Conf.html#a0cf6706aacc994ead0e70e188dcdbf2f',1,'memilio::epidata::getDataIntoPandasDataFrame::Conf']]],
+  ['exposure_5ftype_3058',['exposure_type',['../structmio_1_1abm_1_1Vaccination.html#a69a5b98c37e61b0e72d6d4bd6036d7ef',1,'mio::abm::Vaccination']]]
 ];
