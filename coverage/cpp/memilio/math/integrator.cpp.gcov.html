@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2024-04-10 16:12:17</td>
+            <td class="headerValue">2024-04-11 08:34:59</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">1</td>
@@ -104,23 +104,23 @@
 <a name="42"><span class="lineNum">      42 </span><span class="lineCov">       6254 :     double dt_restore = 0; // used to restore dt if dt was decreased to reach tmax</span></a>
 <a name="43"><span class="lineNum">      43 </span><span class="lineCov">       6254 :     double t          = t0;</span></a>
 <a name="44"><span class="lineNum">      44 </span>            : </a>
-<a name="45"><span class="lineNum">      45 </span><span class="lineCov">      15248 :     for (size_t i = results.get_num_time_points() - 1; std::abs((tmax - t) / (tmax - t0)) &gt; 1e-10; ++i) {</span></a>
+<a name="45"><span class="lineNum">      45 </span><span class="lineCov">      15225 :     for (size_t i = results.get_num_time_points() - 1; std::abs((tmax - t) / (tmax - t0)) &gt; 1e-10; ++i) {</span></a>
 <a name="46"><span class="lineNum">      46 </span>            :         //we don't make timesteps too small as the error estimator of an adaptive integrator</a>
 <a name="47"><span class="lineNum">      47 </span>            :         //may not be able to handle it. this is very conservative and maybe unnecessary,</a>
 <a name="48"><span class="lineNum">      48 </span>            :         //but also unlikely to happen. may need to be reevaluated</a>
 <a name="49"><span class="lineNum">      49 </span>            : </a>
-<a name="50"><span class="lineNum">      50 </span><span class="lineCov">       8994 :         if (dt &gt; tmax - t) {</span></a>
-<a name="51"><span class="lineNum">      51 </span><span class="lineCov">       6236 :             dt_restore = dt;</span></a>
-<a name="52"><span class="lineNum">      52 </span><span class="lineCov">       6236 :             dt         = tmax - t;</span></a>
+<a name="50"><span class="lineNum">      50 </span><span class="lineCov">       8971 :         if (dt &gt; tmax - t) {</span></a>
+<a name="51"><span class="lineNum">      51 </span><span class="lineCov">       6237 :             dt_restore = dt;</span></a>
+<a name="52"><span class="lineNum">      52 </span><span class="lineCov">       6237 :             dt         = tmax - t;</span></a>
 <a name="53"><span class="lineNum">      53 </span>            :         }</a>
-<a name="54"><span class="lineNum">      54 </span><span class="lineCov">       8994 :         dt_cp = dt;</span></a>
+<a name="54"><span class="lineNum">      54 </span><span class="lineCov">       8971 :         dt_cp = dt;</span></a>
 <a name="55"><span class="lineNum">      55 </span>            : </a>
-<a name="56"><span class="lineNum">      56 </span><span class="lineCov">       8994 :         results.add_time_point();</span></a>
-<a name="57"><span class="lineNum">      57 </span><span class="lineCov">       8994 :         step_okay &amp;= m_core-&gt;step(f, results[i], t, dt, results[i + 1]);</span></a>
-<a name="58"><span class="lineNum">      58 </span><span class="lineCov">       8994 :         results.get_last_time() = t;</span></a>
+<a name="56"><span class="lineNum">      56 </span><span class="lineCov">       8971 :         results.add_time_point();</span></a>
+<a name="57"><span class="lineNum">      57 </span><span class="lineCov">       8971 :         step_okay &amp;= m_core-&gt;step(f, results[i], t, dt, results[i + 1]);</span></a>
+<a name="58"><span class="lineNum">      58 </span><span class="lineCov">       8971 :         results.get_last_time() = t;</span></a>
 <a name="59"><span class="lineNum">      59 </span>            : </a>
 <a name="60"><span class="lineNum">      60 </span>            :         // if dt has been changed (even slighly) by step, register the current m_core as adaptive</a>
-<a name="61"><span class="lineNum">      61 </span><span class="lineCov">       8994 :         m_is_adaptive |= !floating_point_equal(dt, dt_cp);</span></a>
+<a name="61"><span class="lineNum">      61 </span><span class="lineCov">       8971 :         m_is_adaptive |= !floating_point_equal(dt, dt_cp);</span></a>
 <a name="62"><span class="lineNum">      62 </span>            :     }</a>
 <a name="63"><span class="lineNum">      63 </span>            :     // if dt was decreased to reach tmax in the last time iteration,</a>
 <a name="64"><span class="lineNum">      64 </span>            :     // we restore it as it is now probably smaller than required for tolerances</a>
