@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2024-04-18 14:48:56</td>
+            <td class="headerValue">2024-04-18 14:58:14</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">7</td>
@@ -176,7 +176,7 @@
 <a name="114"><span class="lineNum">     114 </span><span class="lineCov">          4 :     assert(scaling_factor_inf.size() == num_age_groups); //TODO: allow vector or scalar valued scaling factors</span></a>
 <a name="115"><span class="lineNum">     115 </span><span class="lineCov">          4 :     assert(ConfirmedCasesDataEntry::age_group_names.size() == num_age_groups);</span></a>
 <a name="116"><span class="lineNum">     116 </span>            : </a>
-<a name="117"><span class="lineNum">     117 </span><span class="lineCov">          8 :     BOOST_OUTCOME_TRY(rki_data, mio::read_confirmed_cases_data(path));</span></a>
+<a name="117"><span class="lineNum">     117 </span><span class="lineCov">          8 :     BOOST_OUTCOME_TRY(auto&amp;&amp; rki_data, mio::read_confirmed_cases_data(path));</span></a>
 <a name="118"><span class="lineNum">     118 </span>            : </a>
 <a name="119"><span class="lineNum">     119 </span><span class="lineCov">         12 :     std::vector&lt;std::vector&lt;int&gt;&gt; t_Exposed{model.size()};</span></a>
 <a name="120"><span class="lineNum">     120 </span><span class="lineCov">         12 :     std::vector&lt;std::vector&lt;int&gt;&gt; t_InfectedNoSymptoms{model.size()};</span></a>
@@ -492,7 +492,7 @@
 <a name="430"><span class="lineNum">     430 </span><span class="lineCov">          4 : IOResult&lt;void&gt; set_population_data(std::vector&lt;Model&gt;&amp; model, const std::string&amp; path, const std::string&amp; path_rki,</span></a>
 <a name="431"><span class="lineNum">     431 </span>            :                                    const std::vector&lt;int&gt;&amp; vregion, Date date)</a>
 <a name="432"><span class="lineNum">     432 </span>            : {</a>
-<a name="433"><span class="lineNum">     433 </span><span class="lineCov">          8 :     BOOST_OUTCOME_TRY(num_population, read_population_data(path, vregion));</span></a>
+<a name="433"><span class="lineNum">     433 </span><span class="lineCov">          8 :     BOOST_OUTCOME_TRY(auto&amp;&amp; num_population, read_population_data(path, vregion));</span></a>
 <a name="434"><span class="lineNum">     434 </span>            : </a>
 <a name="435"><span class="lineNum">     435 </span><span class="lineCov">          4 :     auto num_age_groups = ConfirmedCasesDataEntry::age_group_names.size();</span></a>
 <a name="436"><span class="lineNum">     436 </span><span class="lineCov">         20 :     std::vector&lt;std::vector&lt;double&gt;&gt; num_rec(model.size(), std::vector&lt;double&gt;(num_age_groups, 0.0));</span></a>
@@ -696,9 +696,9 @@
 <a name="634"><span class="lineNum">     634 </span><span class="lineCov">          1 :     assert(num_age_groups == ConfirmedCasesDataEntry::age_group_names.size());</span></a>
 <a name="635"><span class="lineNum">     635 </span><span class="lineCov">          1 :     assert(model.size() == region.size());</span></a>
 <a name="636"><span class="lineNum">     636 </span>            : </a>
-<a name="637"><span class="lineNum">     637 </span><span class="lineCov">          2 :     BOOST_OUTCOME_TRY(rki_data, read_confirmed_cases_data(confirmed_cases_path));</span></a>
-<a name="638"><span class="lineNum">     638 </span><span class="lineCov">          2 :     BOOST_OUTCOME_TRY(population_data, read_population_data(population_data_path));</span></a>
-<a name="639"><span class="lineNum">     639 </span><span class="lineCov">          2 :     BOOST_OUTCOME_TRY(divi_data, read_divi_data(divi_data_path));</span></a>
+<a name="637"><span class="lineNum">     637 </span><span class="lineCov">          2 :     BOOST_OUTCOME_TRY(auto&amp;&amp; rki_data, read_confirmed_cases_data(confirmed_cases_path));</span></a>
+<a name="638"><span class="lineNum">     638 </span><span class="lineCov">          2 :     BOOST_OUTCOME_TRY(auto&amp;&amp; population_data, read_population_data(population_data_path));</span></a>
+<a name="639"><span class="lineNum">     639 </span><span class="lineCov">          2 :     BOOST_OUTCOME_TRY(auto&amp;&amp; divi_data, read_divi_data(divi_data_path));</span></a>
 <a name="640"><span class="lineNum">     640 </span>            : </a>
 <a name="641"><span class="lineNum">     641 </span>            :     /* functionality copy from set_confirmed_cases_data() here splitted in params */</a>
 <a name="642"><span class="lineNum">     642 </span>            :     /* which do not need to be reset for each day and compartments sizes that are */</a>
@@ -975,7 +975,7 @@
 <a name="913"><span class="lineNum">     913 </span>            :         }</a>
 <a name="914"><span class="lineNum">     914 </span>            : </a>
 <a name="915"><span class="lineNum">     915 </span>            :         // read population basics</a>
-<a name="916"><span class="lineNum">     916 </span><span class="lineCov">          3 :         BOOST_OUTCOME_TRY(num_population, details::read_population_data(population_data, region));</span></a>
+<a name="916"><span class="lineNum">     916 </span><span class="lineCov">          3 :         BOOST_OUTCOME_TRY(auto&amp;&amp; num_population, details::read_population_data(population_data, region));</span></a>
 <a name="917"><span class="lineNum">     917 </span>            : </a>
 <a name="918"><span class="lineNum">     918 </span><span class="lineCov">         12 :         std::vector&lt;std::vector&lt;double&gt;&gt; num_rec(model.size(), std::vector&lt;double&gt;(num_age_groups, 0.0));</span></a>
 <a name="919"><span class="lineNum">     919 </span><span class="lineCov">          3 :         BOOST_OUTCOME_TRY(details::read_confirmed_cases_data_fix_recovered(rki_data, region, date, num_rec, 14.));</span></a>
@@ -986,10 +986,10 @@
 <a name="924"><span class="lineNum">     924 </span>            : </a>
 <a name="925"><span class="lineNum">     925 </span><span class="lineCov">         18 :                     auto age_group_offset = age * (size_t)InfectionState::Count;</span></a>
 <a name="926"><span class="lineNum">     926 </span><span class="lineCov">         36 :                     double S_v            = std::min(</span></a>
-<a name="927"><span class="lineNum">     927 </span><span class="lineCov">         18 :                         model[county]</span></a>
-<a name="928"><span class="lineNum">     928 </span><span class="lineCov">         54 :                                 .parameters.template get&lt;DailyFullVaccination&gt;()[{AgeGroup(age), SimulationDay(day)}] +</span></a>
-<a name="929"><span class="lineNum">     929 </span>            :                             num_rec[county][age],</a>
-<a name="930"><span class="lineNum">     930 </span>            :                         num_population[county][age]);</a>
+<a name="927"><span class="lineNum">     927 </span><span class="lineCov">         18 :                                    model[county]</span></a>
+<a name="928"><span class="lineNum">     928 </span><span class="lineCov">         54 :                                            .parameters.template get&lt;DailyFullVaccination&gt;()[{AgeGroup(age), SimulationDay(day)}] +</span></a>
+<a name="929"><span class="lineNum">     929 </span>            :                                        num_rec[county][age],</a>
+<a name="930"><span class="lineNum">     930 </span>            :                                    num_population[county][age]);</a>
 <a name="931"><span class="lineNum">     931 </span><span class="lineCov">         36 :                     double S_pv = std::max(</span></a>
 <a name="932"><span class="lineNum">     932 </span><span class="lineCov">         18 :                         model[county]</span></a>
 <a name="933"><span class="lineNum">     933 </span><span class="lineCov">         90 :                                 .parameters.template get&lt;DailyFirstVaccination&gt;()[{AgeGroup(age), SimulationDay(day)}] -</span></a>
@@ -1260,10 +1260,10 @@
 <a name="1198"><span class="lineNum">    1198 </span>            :     }</a>
 <a name="1199"><span class="lineNum">    1199 </span>            :     /* end: similar functionality in set_confirmed_cases_data(), here only for vector of TimeSeries */</a>
 <a name="1200"><span class="lineNum">    1200 </span><span class="lineCov">          1 :     auto num_groups = (int)(size_t)model[0].parameters.get_num_groups();</span></a>
-<a name="1201"><span class="lineNum">    1201 </span><span class="lineCov">          2 :     BOOST_OUTCOME_TRY(save_result(extrapolated_rki, region, num_groups, path_join(dir, &quot;Results_rki.h5&quot;)));</span></a>
+<a name="1201"><span class="lineNum">    1201 </span><span class="lineCov">          3 :     BOOST_OUTCOME_TRY(save_result(extrapolated_rki, region, num_groups, path_join(dir, &quot;Results_rki.h5&quot;)));</span></a>
 <a name="1202"><span class="lineNum">    1202 </span>            : </a>
 <a name="1203"><span class="lineNum">    1203 </span><span class="lineCov">          6 :     auto extrapolated_rki_data_sum = sum_nodes(std::vector&lt;std::vector&lt;TimeSeries&lt;double&gt;&gt;&gt;{extrapolated_rki});</span></a>
-<a name="1204"><span class="lineNum">    1204 </span><span class="lineCov">          3 :     BOOST_OUTCOME_TRY(</span></a>
+<a name="1204"><span class="lineNum">    1204 </span><span class="lineCov">          9 :     BOOST_OUTCOME_TRY(</span></a>
 <a name="1205"><span class="lineNum">    1205 </span>            :         save_result({extrapolated_rki_data_sum[0][0]}, {0}, num_groups, path_join(dir, &quot;Results_rki_sum.h5&quot;)));</a>
 <a name="1206"><span class="lineNum">    1206 </span>            : </a>
 <a name="1207"><span class="lineNum">    1207 </span><span class="lineCov">          2 :     return success();</span></a>
@@ -1327,22 +1327,22 @@
 <a name="1265"><span class="lineNum">    1265 </span>            :                                       const std::vector&lt;double&gt;&amp; scaling_factor_inf, double scaling_factor_icu,</a>
 <a name="1266"><span class="lineNum">    1266 </span>            :                                       const std::string&amp; dir, int num_days, bool export_time_series = false)</a>
 <a name="1267"><span class="lineNum">    1267 </span>            : {</a>
-<a name="1268"><span class="lineNum">    1268 </span><span class="lineCov">          4 :     BOOST_OUTCOME_TRY(details::set_vaccination_data(</span></a>
+<a name="1268"><span class="lineNum">    1268 </span><span class="lineCov">          6 :     BOOST_OUTCOME_TRY(details::set_vaccination_data(</span></a>
 <a name="1269"><span class="lineNum">    1269 </span>            :         model, path_join(dir, &quot;pydata/Germany&quot;, &quot;all_county_ageinf_vacc_ma7.json&quot;), date, county, num_days));</a>
 <a name="1270"><span class="lineNum">    1270 </span>            : </a>
 <a name="1271"><span class="lineNum">    1271 </span>            :     // TODO: Reuse more code, e.g., set_divi_data (in secir) and a set_divi_data (here) only need a different ModelType.</a>
 <a name="1272"><span class="lineNum">    1272 </span>            :     // TODO: add option to set ICU data from confirmed cases if DIVI or other data is not available.</a>
 <a name="1273"><span class="lineNum">    1273 </span><span class="lineCov">          2 :     if (date &gt; Date(2020, 4, 23)) {</span></a>
-<a name="1274"><span class="lineNum">    1274 </span><span class="lineCov">          2 :         BOOST_OUTCOME_TRY(details::set_divi_data(model, path_join(dir, &quot;pydata/Germany&quot;, &quot;county_divi_ma7.json&quot;),</span></a>
+<a name="1274"><span class="lineNum">    1274 </span><span class="lineCov">          4 :         BOOST_OUTCOME_TRY(details::set_divi_data(model, path_join(dir, &quot;pydata/Germany&quot;, &quot;county_divi_ma7.json&quot;),</span></a>
 <a name="1275"><span class="lineNum">    1275 </span>            :                                                  county, date, scaling_factor_icu));</a>
 <a name="1276"><span class="lineNum">    1276 </span>            :     }</a>
 <a name="1277"><span class="lineNum">    1277 </span>            :     else {</a>
 <a name="1278"><span class="lineNum">    1278 </span><span class="lineNoCov">          0 :         log_warning(&quot;No DIVI data available for this date&quot;);</span></a>
 <a name="1279"><span class="lineNum">    1279 </span>            :     }</a>
 <a name="1280"><span class="lineNum">    1280 </span>            : </a>
-<a name="1281"><span class="lineNum">    1281 </span><span class="lineCov">          4 :     BOOST_OUTCOME_TRY(details::set_confirmed_cases_data(</span></a>
+<a name="1281"><span class="lineNum">    1281 </span><span class="lineCov">          6 :     BOOST_OUTCOME_TRY(details::set_confirmed_cases_data(</span></a>
 <a name="1282"><span class="lineNum">    1282 </span>            :         model, path_join(dir, &quot;pydata/Germany&quot;, &quot;cases_all_county_age_ma7.json&quot;), county, date, scaling_factor_inf));</a>
-<a name="1283"><span class="lineNum">    1283 </span><span class="lineCov">          4 :     BOOST_OUTCOME_TRY(</span></a>
+<a name="1283"><span class="lineNum">    1283 </span><span class="lineCov">          8 :     BOOST_OUTCOME_TRY(</span></a>
 <a name="1284"><span class="lineNum">    1284 </span>            :         details::set_population_data(model, path_join(dir, &quot;pydata/Germany&quot;, &quot;county_current_population.json&quot;),</a>
 <a name="1285"><span class="lineNum">    1285 </span>            :                                      path_join(dir, &quot;pydata/Germany&quot;, &quot;cases_all_county_age_ma7.json&quot;), county, date));</a>
 <a name="1286"><span class="lineNum">    1286 </span>            : </a>
@@ -1382,22 +1382,22 @@
 <a name="1320"><span class="lineNum">    1320 </span>            :                                const std::string&amp; data_dir, int num_days, bool export_time_series = false)</a>
 <a name="1321"><span class="lineNum">    1321 </span>            : {</a>
 <a name="1322"><span class="lineNum">    1322 </span>            : </a>
-<a name="1323"><span class="lineNum">    1323 </span><span class="lineCov">          4 :     BOOST_OUTCOME_TRY(</span></a>
+<a name="1323"><span class="lineNum">    1323 </span><span class="lineCov">          6 :     BOOST_OUTCOME_TRY(</span></a>
 <a name="1324"><span class="lineNum">    1324 </span>            :         details::set_vaccination_data(model, path_join(data_dir, &quot;vaccination_data.json&quot;), date, node_ids, num_days));</a>
 <a name="1325"><span class="lineNum">    1325 </span>            : </a>
 <a name="1326"><span class="lineNum">    1326 </span>            :     // TODO: Reuse more code, e.g., set_divi_data (in secir) and a set_divi_data (here) only need a different ModelType.</a>
 <a name="1327"><span class="lineNum">    1327 </span>            :     // TODO: add option to set ICU data from confirmed cases if DIVI or other data is not available.</a>
 <a name="1328"><span class="lineNum">    1328 </span><span class="lineCov">          2 :     if (date &gt; Date(2020, 4, 23)) {</span></a>
-<a name="1329"><span class="lineNum">    1329 </span><span class="lineCov">          2 :         BOOST_OUTCOME_TRY(details::set_divi_data(model, path_join(data_dir, &quot;critical_cases.json&quot;), node_ids, date,</span></a>
+<a name="1329"><span class="lineNum">    1329 </span><span class="lineCov">          4 :         BOOST_OUTCOME_TRY(details::set_divi_data(model, path_join(data_dir, &quot;critical_cases.json&quot;), node_ids, date,</span></a>
 <a name="1330"><span class="lineNum">    1330 </span>            :                                                  scaling_factor_icu));</a>
 <a name="1331"><span class="lineNum">    1331 </span>            :     }</a>
 <a name="1332"><span class="lineNum">    1332 </span>            :     else {</a>
 <a name="1333"><span class="lineNum">    1333 </span><span class="lineNoCov">          0 :         log_warning(&quot;No DIVI data available for this date&quot;);</span></a>
 <a name="1334"><span class="lineNum">    1334 </span>            :     }</a>
 <a name="1335"><span class="lineNum">    1335 </span>            : </a>
-<a name="1336"><span class="lineNum">    1336 </span><span class="lineCov">          4 :     BOOST_OUTCOME_TRY(details::set_confirmed_cases_data(model, path_join(data_dir, &quot;confirmed_cases.json&quot;), node_ids,</span></a>
+<a name="1336"><span class="lineNum">    1336 </span><span class="lineCov">          6 :     BOOST_OUTCOME_TRY(details::set_confirmed_cases_data(model, path_join(data_dir, &quot;confirmed_cases.json&quot;), node_ids,</span></a>
 <a name="1337"><span class="lineNum">    1337 </span>            :                                                         date, scaling_factor_inf));</a>
-<a name="1338"><span class="lineNum">    1338 </span><span class="lineCov">          4 :     BOOST_OUTCOME_TRY(details::set_population_data(model, path_join(data_dir, &quot;population_data.json&quot;),</span></a>
+<a name="1338"><span class="lineNum">    1338 </span><span class="lineCov">          8 :     BOOST_OUTCOME_TRY(details::set_population_data(model, path_join(data_dir, &quot;population_data.json&quot;),</span></a>
 <a name="1339"><span class="lineNum">    1339 </span>            :                                                    path_join(data_dir, &quot;confirmed_cases.json&quot;), node_ids, date));</a>
 <a name="1340"><span class="lineNum">    1340 </span>            : </a>
 <a name="1341"><span class="lineNum">    1341 </span><span class="lineCov">          2 :     if (export_time_series) {</span></a>

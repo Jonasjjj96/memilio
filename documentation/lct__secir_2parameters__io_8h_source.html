@@ -120,7 +120,7 @@ $(function() {
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keyword">using</span> LctState = <span class="keyword">typename</span> <a class="code" href="classmio_1_1lsecir_1_1Model.html#a317ebd354e298a750604c24485892561">Model::LctState</a>;</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="comment">// Try to get rki data from path.</span></div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    BOOST_OUTCOME_TRY(rki_data, mio::read_confirmed_cases_noage(path));</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    BOOST_OUTCOME_TRY(<span class="keyword">auto</span>&amp;&amp; rki_data, mio::read_confirmed_cases_noage(path));</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keyword">auto</span> max_date_entry = std::max_element(rki_data.begin(), rki_data.end(), [](<span class="keyword">auto</span>&amp;&amp; a, <span class="keyword">auto</span>&amp;&amp; b) {</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        return a.date &lt; b.date;</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    });</div>

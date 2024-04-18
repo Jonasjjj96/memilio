@@ -151,7 +151,7 @@ $(function() {
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    assert(scaling_factor_inf.size() == num_age_groups); <span class="comment">//TODO: allow vector or scalar valued scaling factors</span></div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    assert(ConfirmedCasesDataEntry::age_group_names.size() == num_age_groups);</div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160; </div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    BOOST_OUTCOME_TRY(rki_data, mio::read_confirmed_cases_data(path));</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    BOOST_OUTCOME_TRY(<span class="keyword">auto</span>&amp;&amp; rki_data, mio::read_confirmed_cases_data(path));</div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    std::vector&lt;std::vector&lt;int&gt;&gt; t_Exposed{model.size()};</div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    std::vector&lt;std::vector&lt;int&gt;&gt; t_InfectedNoSymptoms{model.size()};</div>
@@ -439,7 +439,7 @@ $(function() {
 <div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;IOResult&lt;void&gt; set_population_data(std::vector&lt;Model&gt;&amp; model, <span class="keyword">const</span> std::string&amp; path, <span class="keyword">const</span> std::string&amp; path_rki,</div>
 <div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;                                   <span class="keyword">const</span> std::vector&lt;int&gt;&amp; vregion, Date date)</div>
 <div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;{</div>
-<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;    BOOST_OUTCOME_TRY(num_population, <a class="code" href="namespacememilio_1_1epidata_1_1getPopulationData.html#ac66417653f81cb2389a16c6eb839fedf">read_population_data</a>(path, vregion));</div>
+<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;    BOOST_OUTCOME_TRY(<span class="keyword">auto</span>&amp;&amp; num_population, <a class="code" href="namespacememilio_1_1epidata_1_1getPopulationData.html#ac66417653f81cb2389a16c6eb839fedf">read_population_data</a>(path, vregion));</div>
 <div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160; </div>
 <div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;    <span class="keyword">auto</span> num_age_groups = ConfirmedCasesDataEntry::age_group_names.size();</div>
 <div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;    std::vector&lt;std::vector&lt;double&gt;&gt; num_rec(model.size(), std::vector&lt;double&gt;(num_age_groups, 0.0));</div>
@@ -626,9 +626,9 @@ $(function() {
 <div class="line"><a name="l00634"></a><span class="lineno">  634</span>&#160;    assert(num_age_groups == ConfirmedCasesDataEntry::age_group_names.size());</div>
 <div class="line"><a name="l00635"></a><span class="lineno">  635</span>&#160;    assert(model.size() == region.size());</div>
 <div class="line"><a name="l00636"></a><span class="lineno">  636</span>&#160; </div>
-<div class="line"><a name="l00637"></a><span class="lineno">  637</span>&#160;    BOOST_OUTCOME_TRY(rki_data, read_confirmed_cases_data(confirmed_cases_path));</div>
-<div class="line"><a name="l00638"></a><span class="lineno">  638</span>&#160;    BOOST_OUTCOME_TRY(population_data, <a class="code" href="namespacememilio_1_1epidata_1_1getPopulationData.html#ac66417653f81cb2389a16c6eb839fedf">read_population_data</a>(population_data_path));</div>
-<div class="line"><a name="l00639"></a><span class="lineno">  639</span>&#160;    BOOST_OUTCOME_TRY(divi_data, read_divi_data(divi_data_path));</div>
+<div class="line"><a name="l00637"></a><span class="lineno">  637</span>&#160;    BOOST_OUTCOME_TRY(<span class="keyword">auto</span>&amp;&amp; rki_data, read_confirmed_cases_data(confirmed_cases_path));</div>
+<div class="line"><a name="l00638"></a><span class="lineno">  638</span>&#160;    BOOST_OUTCOME_TRY(<span class="keyword">auto</span>&amp;&amp; population_data, <a class="code" href="namespacememilio_1_1epidata_1_1getPopulationData.html#ac66417653f81cb2389a16c6eb839fedf">read_population_data</a>(population_data_path));</div>
+<div class="line"><a name="l00639"></a><span class="lineno">  639</span>&#160;    BOOST_OUTCOME_TRY(<span class="keyword">auto</span>&amp;&amp; divi_data, read_divi_data(divi_data_path));</div>
 <div class="line"><a name="l00640"></a><span class="lineno">  640</span>&#160; </div>
 <div class="line"><a name="l00641"></a><span class="lineno">  641</span>&#160;    <span class="comment">/* functionality copy from set_confirmed_cases_data() here splitted in params */</span></div>
 <div class="line"><a name="l00642"></a><span class="lineno">  642</span>&#160;    <span class="comment">/* which do not need to be reset for each day and compartments sizes that are */</span></div>
@@ -905,7 +905,7 @@ $(function() {
 <div class="line"><a name="l00913"></a><span class="lineno">  913</span>&#160;        }</div>
 <div class="line"><a name="l00914"></a><span class="lineno">  914</span>&#160; </div>
 <div class="line"><a name="l00915"></a><span class="lineno">  915</span>&#160;        <span class="comment">// read population basics</span></div>
-<div class="line"><a name="l00916"></a><span class="lineno">  916</span>&#160;        BOOST_OUTCOME_TRY(num_population, <a class="code" href="namespacememilio_1_1epidata_1_1getPopulationData.html#ac66417653f81cb2389a16c6eb839fedf">details::read_population_data</a>(population_data, region));</div>
+<div class="line"><a name="l00916"></a><span class="lineno">  916</span>&#160;        BOOST_OUTCOME_TRY(<span class="keyword">auto</span>&amp;&amp; num_population, <a class="code" href="namespacememilio_1_1epidata_1_1getPopulationData.html#ac66417653f81cb2389a16c6eb839fedf">details::read_population_data</a>(population_data, region));</div>
 <div class="line"><a name="l00917"></a><span class="lineno">  917</span>&#160; </div>
 <div class="line"><a name="l00918"></a><span class="lineno">  918</span>&#160;        std::vector&lt;std::vector&lt;double&gt;&gt; num_rec(model.size(), std::vector&lt;double&gt;(num_age_groups, 0.0));</div>
 <div class="line"><a name="l00919"></a><span class="lineno">  919</span>&#160;        BOOST_OUTCOME_TRY(details::read_confirmed_cases_data_fix_recovered(rki_data, region, date, num_rec, 14.));</div>
@@ -916,10 +916,10 @@ $(function() {
 <div class="line"><a name="l00924"></a><span class="lineno">  924</span>&#160; </div>
 <div class="line"><a name="l00925"></a><span class="lineno">  925</span>&#160;                    <span class="keyword">auto</span> age_group_offset = age * (size_t)<a class="code" href="namespacemio_1_1osecirvvs.html#a429bf3ed03ff6928629f5d786b547023ae93f994f01c537c4e2f7d8528c3eb5e9">InfectionState::Count</a>;</div>
 <div class="line"><a name="l00926"></a><span class="lineno">  926</span>&#160;                    <span class="keywordtype">double</span> S_v            = std::min(</div>
-<div class="line"><a name="l00927"></a><span class="lineno">  927</span>&#160;                        model[county]</div>
-<div class="line"><a name="l00928"></a><span class="lineno">  928</span>&#160;                                .parameters.template get&lt;DailyFullVaccination&gt;()[{AgeGroup(age), SimulationDay(day)}] +</div>
-<div class="line"><a name="l00929"></a><span class="lineno">  929</span>&#160;                            num_rec[county][age],</div>
-<div class="line"><a name="l00930"></a><span class="lineno">  930</span>&#160;                        num_population[county][age]);</div>
+<div class="line"><a name="l00927"></a><span class="lineno">  927</span>&#160;                                   model[county]</div>
+<div class="line"><a name="l00928"></a><span class="lineno">  928</span>&#160;                                           .parameters.template get&lt;DailyFullVaccination&gt;()[{AgeGroup(age), SimulationDay(day)}] +</div>
+<div class="line"><a name="l00929"></a><span class="lineno">  929</span>&#160;                                       num_rec[county][age],</div>
+<div class="line"><a name="l00930"></a><span class="lineno">  930</span>&#160;                                   num_population[county][age]);</div>
 <div class="line"><a name="l00931"></a><span class="lineno">  931</span>&#160;                    <span class="keywordtype">double</span> S_pv = <a class="code" href="namespacemio.html#a97f6645c13faf4749f34d7e6e191f9ac">std::max</a>(</div>
 <div class="line"><a name="l00932"></a><span class="lineno">  932</span>&#160;                        model[county]</div>
 <div class="line"><a name="l00933"></a><span class="lineno">  933</span>&#160;                                .parameters.template get&lt;DailyFirstVaccination&gt;()[{AgeGroup(age), SimulationDay(day)}] -</div>

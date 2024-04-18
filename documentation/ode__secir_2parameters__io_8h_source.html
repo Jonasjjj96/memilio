@@ -172,7 +172,7 @@ $(function() {
 <div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160; </div>
 <div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">size_t</span> num_age_groups = ConfirmedCasesDataEntry::age_group_names.size();</div>
 <div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160; </div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    BOOST_OUTCOME_TRY(case_data, mio::read_confirmed_cases_data(confirmed_cases_path));</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    BOOST_OUTCOME_TRY(<span class="keyword">auto</span>&amp;&amp; case_data, mio::read_confirmed_cases_data(confirmed_cases_path));</div>
 <div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160; </div>
 <div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> node = 0; node &lt; model.size(); node++) {</div>
 <div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> group = 0; group &lt; ConfirmedCasesDataEntry::age_group_names.size(); group++) {</div>
@@ -231,7 +231,7 @@ $(function() {
 <div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;            t_InfectedSevere, t_InfectedCritical, mu_C_R, mu_I_H, mu_H_U, scaling_factor_inf));</div>
 <div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;        BOOST_OUTCOME_TRY(details::read_divi_data(divi_data_path, region, date, num_icu));</div>
 <div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;        <span class="keywordtype">bool</span> interpolate_rki_age_groups = num_age_groups == 1 ? true : <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;        BOOST_OUTCOME_TRY(num_population,</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;        BOOST_OUTCOME_TRY(<span class="keyword">auto</span>&amp;&amp; num_population,</div>
 <div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;                          <a class="code" href="namespacememilio_1_1epidata_1_1getPopulationData.html#ac66417653f81cb2389a16c6eb839fedf">details::read_population_data</a>(population_data_path, region, interpolate_rki_age_groups));</div>
 <div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160; </div>
 <div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; region.size(); i++) {</div>

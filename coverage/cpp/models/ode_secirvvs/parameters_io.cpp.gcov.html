@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2024-04-18 14:48:56</td>
+            <td class="headerValue">2024-04-18 14:58:14</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">22</td>
@@ -134,7 +134,7 @@
 <a name="72"><span class="lineNum">      72 </span>            :     const std::vector&lt;std::vector&lt;double&gt;&gt;&amp; vmu_I_H, const std::vector&lt;std::vector&lt;double&gt;&gt;&amp; vmu_H_U,</a>
 <a name="73"><span class="lineNum">      73 </span>            :     const std::vector&lt;double&gt;&amp; scaling_factor_inf)</a>
 <a name="74"><span class="lineNum">      74 </span>            : {</a>
-<a name="75"><span class="lineNum">      75 </span><span class="lineCov">          2 :     BOOST_OUTCOME_TRY(rki_data, mio::read_confirmed_cases_data(path));</span></a>
+<a name="75"><span class="lineNum">      75 </span><span class="lineCov">          2 :     BOOST_OUTCOME_TRY(auto&amp;&amp; rki_data, mio::read_confirmed_cases_data(path));</span></a>
 <a name="76"><span class="lineNum">      76 </span>            :     return read_confirmed_cases_data(rki_data, vregion, date, vnum_Exposed, vnum_InfectedNoSymptoms,</a>
 <a name="77"><span class="lineNum">      77 </span>            :                                      vnum_InfectedSymptoms, vnum_InfectedSevere, vnum_icu, vnum_death, vnum_rec,</a>
 <a name="78"><span class="lineNum">      78 </span>            :                                      vt_Exposed, vt_InfectedNoSymptoms, vt_InfectedSymptoms, vt_InfectedSevere,</a>
@@ -292,7 +292,7 @@
 <a name="230"><span class="lineNum">     230 </span>            :                                                        Date date, std::vector&lt;std::vector&lt;double&gt;&gt;&amp; vnum_rec,</a>
 <a name="231"><span class="lineNum">     231 </span>            :                                                        double delay)</a>
 <a name="232"><span class="lineNum">     232 </span>            : {</a>
-<a name="233"><span class="lineNum">     233 </span><span class="lineCov">          8 :     BOOST_OUTCOME_TRY(rki_data, mio::read_confirmed_cases_data(path));</span></a>
+<a name="233"><span class="lineNum">     233 </span><span class="lineCov">          8 :     BOOST_OUTCOME_TRY(auto&amp;&amp; rki_data, mio::read_confirmed_cases_data(path));</span></a>
 <a name="234"><span class="lineNum">     234 </span><span class="lineCov">          4 :     return read_confirmed_cases_data_fix_recovered(rki_data, vregion, date, vnum_rec, delay);</span></a>
 <a name="235"><span class="lineNum">     235 </span>            : }</a>
 <a name="236"><span class="lineNum">     236 </span>            : </a>
@@ -366,7 +366,7 @@
 <a name="304"><span class="lineNum">     304 </span><span class="lineCov">          4 : IOResult&lt;void&gt; read_divi_data(const std::string&amp; path, const std::vector&lt;int&gt;&amp; vregion, Date date,</span></a>
 <a name="305"><span class="lineNum">     305 </span>            :                               std::vector&lt;double&gt;&amp; vnum_icu)</a>
 <a name="306"><span class="lineNum">     306 </span>            : {</a>
-<a name="307"><span class="lineNum">     307 </span><span class="lineCov">          8 :     BOOST_OUTCOME_TRY(divi_data, mio::read_divi_data(path));</span></a>
+<a name="307"><span class="lineNum">     307 </span><span class="lineCov">          8 :     BOOST_OUTCOME_TRY(auto&amp;&amp; divi_data, mio::read_divi_data(path));</span></a>
 <a name="308"><span class="lineNum">     308 </span><span class="lineCov">          4 :     return read_divi_data(divi_data, vregion, date, vnum_icu);</span></a>
 <a name="309"><span class="lineNum">     309 </span>            : }</a>
 <a name="310"><span class="lineNum">     310 </span>            : </a>
@@ -389,7 +389,7 @@
 <a name="327"><span class="lineNum">     327 </span><span class="lineCov">        651 :     for (auto&amp;&amp; entry : divi_data) {</span></a>
 <a name="328"><span class="lineNum">     328 </span><span class="lineCov">       1564 :         auto it      = std::find_if(vregion.begin(), vregion.end(), [&amp;entry](auto r) {</span></a>
 <a name="329"><span class="lineNum">     329 </span><span class="lineCov">        920 :             return r == 0 || r == get_region_id(entry);</span></a>
-<a name="330"><span class="lineNum">     330 </span><span class="lineCov">       1288 :         });</span></a>
+<a name="330"><span class="lineNum">     330 </span><span class="lineCov">       1288 :              });</span></a>
 <a name="331"><span class="lineNum">     331 </span><span class="lineCov">        644 :         auto date_df = entry.date;</span></a>
 <a name="332"><span class="lineNum">     332 </span><span class="lineCov">        644 :         if (it != vregion.end() &amp;&amp; date_df == date) {</span></a>
 <a name="333"><span class="lineNum">     333 </span><span class="lineCov">          7 :             auto region_idx      = size_t(it - vregion.begin());</span></a>
@@ -403,7 +403,7 @@
 <a name="341"><span class="lineNum">     341 </span><span class="lineCov">          4 : IOResult&lt;std::vector&lt;std::vector&lt;double&gt;&gt;&gt; read_population_data(const std::string&amp; path,</span></a>
 <a name="342"><span class="lineNum">     342 </span>            :                                                                 const std::vector&lt;int&gt;&amp; vregion)</a>
 <a name="343"><span class="lineNum">     343 </span>            : {</a>
-<a name="344"><span class="lineNum">     344 </span><span class="lineCov">          8 :     BOOST_OUTCOME_TRY(population_data, mio::read_population_data(path));</span></a>
+<a name="344"><span class="lineNum">     344 </span><span class="lineCov">          8 :     BOOST_OUTCOME_TRY(auto&amp;&amp; population_data, mio::read_population_data(path));</span></a>
 <a name="345"><span class="lineNum">     345 </span><span class="lineCov">          4 :     return read_population_data(population_data, vregion);</span></a>
 <a name="346"><span class="lineNum">     346 </span>            : }</a>
 <a name="347"><span class="lineNum">     347 </span>            : </a>
@@ -442,7 +442,7 @@
 <a name="380"><span class="lineNum">     380 </span><span class="lineCov">          6 : IOResult&lt;void&gt; set_vaccination_data(std::vector&lt;Model&gt;&amp; model, const std::string&amp; path, Date date,</span></a>
 <a name="381"><span class="lineNum">     381 </span>            :                                     const std::vector&lt;int&gt;&amp; vregion, int num_days)</a>
 <a name="382"><span class="lineNum">     382 </span>            : {</a>
-<a name="383"><span class="lineNum">     383 </span><span class="lineCov">         12 :     BOOST_OUTCOME_TRY(vacc_data, read_vaccination_data(path));</span></a>
+<a name="383"><span class="lineNum">     383 </span><span class="lineCov">         12 :     BOOST_OUTCOME_TRY(auto&amp;&amp; vacc_data, read_vaccination_data(path));</span></a>
 <a name="384"><span class="lineNum">     384 </span>            : </a>
 <a name="385"><span class="lineNum">     385 </span><span class="lineCov">          6 :     auto num_groups = model[0].parameters.get_num_groups();</span></a>
 <a name="386"><span class="lineNum">     386 </span>            : </a>
@@ -478,7 +478,7 @@
 <a name="416"><span class="lineNum">     416 </span><span class="lineCov">       8335 :             return r == 0 || (vacc_data_entry.county_id &amp;&amp; vacc_data_entry.county_id == regions::CountyId(r)) ||</span></a>
 <a name="417"><span class="lineNum">     417 </span><span class="lineCov">       8313 :                    (vacc_data_entry.state_id &amp;&amp; vacc_data_entry.state_id == regions::StateId(r)) ||</span></a>
 <a name="418"><span class="lineNum">     418 </span><span class="lineCov">       7198 :                    (vacc_data_entry.district_id &amp;&amp; vacc_data_entry.district_id == regions::DistrictId(r));</span></a>
-<a name="419"><span class="lineNum">     419 </span><span class="lineCov">       5542 :         });</span></a>
+<a name="419"><span class="lineNum">     419 </span><span class="lineCov">       5542 :              });</span></a>
 <a name="420"><span class="lineNum">     420 </span><span class="lineCov">       2771 :         auto date_df = vacc_data_entry.date;</span></a>
 <a name="421"><span class="lineNum">     421 </span><span class="lineCov">       2771 :         if (it != vregion.end()) {</span></a>
 <a name="422"><span class="lineNum">     422 </span><span class="lineCov">       2771 :             auto region_idx = size_t(it - vregion.begin());</span></a>

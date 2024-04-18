@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2024-04-18 14:48:56</td>
+            <td class="headerValue">2024-04-18 14:58:14</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">48</td>
@@ -415,9 +415,9 @@
 <a name="353"><span class="lineNum">     353 </span>            :     {</a>
 <a name="354"><span class="lineNum">     354 </span><span class="lineCov">         52 :     }</span></a>
 <a name="355"><span class="lineNum">     355 </span>            : </a>
-<a name="356"><span class="lineNum">     356 </span><span class="lineCov">      17194 :     AgeGroup get_num_groups() const</span></a>
+<a name="356"><span class="lineNum">     356 </span><span class="lineCov">      16942 :     AgeGroup get_num_groups() const</span></a>
 <a name="357"><span class="lineNum">     357 </span>            :     {</a>
-<a name="358"><span class="lineNum">     358 </span><span class="lineCov">      17194 :         return m_num_groups;</span></a>
+<a name="358"><span class="lineNum">     358 </span><span class="lineCov">      16942 :         return m_num_groups;</span></a>
 <a name="359"><span class="lineNum">     359 </span>            :     }</a>
 <a name="360"><span class="lineNum">     360 </span>            : </a>
 <a name="361"><span class="lineNum">     361 </span>            :     /**</a>
@@ -713,7 +713,7 @@
 <a name="651"><span class="lineNum">     651 </span>            :     template &lt;class IOContext&gt;</a>
 <a name="652"><span class="lineNum">     652 </span><span class="lineCov">          9 :     static IOResult&lt;Parameters&gt; deserialize(IOContext&amp; io)</span></a>
 <a name="653"><span class="lineNum">     653 </span>            :     {</a>
-<a name="654"><span class="lineNum">     654 </span><span class="lineCov">         18 :         BOOST_OUTCOME_TRY(base, ParametersBase::deserialize(io));</span></a>
+<a name="654"><span class="lineNum">     654 </span><span class="lineCov">         18 :         BOOST_OUTCOME_TRY(auto&amp;&amp; base, ParametersBase::deserialize(io));</span></a>
 <a name="655"><span class="lineNum">     655 </span><span class="lineCov">          9 :         return success(Parameters(std::move(base)));</span></a>
 <a name="656"><span class="lineNum">     656 </span>            :     }</a>
 <a name="657"><span class="lineNum">     657 </span>            : </a>

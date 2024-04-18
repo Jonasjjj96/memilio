@@ -122,7 +122,7 @@ $(function() {
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    assert(graph.nodes().size() &gt; 0 &amp;&amp; <span class="stringliteral">&quot;Graph Nodes are empty&quot;</span>);</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    std::string abs_path;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    BOOST_OUTCOME_TRY(created, <a class="code" href="namespacemio.html#a075272e6cfaf25ad2292e4108c2309a9">create_directory</a>(directory, abs_path));</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    BOOST_OUTCOME_TRY(<span class="keyword">auto</span>&amp;&amp; created, <a class="code" href="namespacemio.html#a075272e6cfaf25ad2292e4108c2309a9">create_directory</a>(directory, abs_path));</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keywordflow">if</span> (created) {</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <a class="code" href="namespacemio.html#aef6967891e4710c8a2305b434043c0b2">log_info</a>(<span class="stringliteral">&quot;Results are stored in {:s}/results.&quot;</span>, <a class="code" href="namespacemio.html#a25d08a85d7a7fb01a5ff6899c6003164">mio::get_current_dir_name</a>());</div>
@@ -140,7 +140,7 @@ $(function() {
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span> inode = <span class="keywordtype">size_t</span>(0); inode &lt; graph.nodes().size(); ++inode) {</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        <span class="comment">//node</span></div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> node = graph.nodes()[inode];</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        BOOST_OUTCOME_TRY(js_node_model, serialize_json(node.property, ioflags));</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        BOOST_OUTCOME_TRY(<span class="keyword">auto</span>&amp;&amp; js_node_model, serialize_json(node.property, ioflags));</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        Json::Value js_node(Json::objectValue);</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        js_node[<span class="stringliteral">&quot;NodeId&quot;</span>]  = node.id;</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        js_node[<span class="stringliteral">&quot;Model&quot;</span>]   = js_node_model;</div>
@@ -152,7 +152,7 @@ $(function() {
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        <span class="keywordflow">if</span> (out_edges.size()) {</div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;            Json::Value js_edges(Json::arrayValue);</div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;            <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; e : graph.out_edges(inode)) {</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;                BOOST_OUTCOME_TRY(js_edge_params, serialize_json(e.property, ioflags));</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;                BOOST_OUTCOME_TRY(<span class="keyword">auto</span>&amp;&amp; js_edge_params, serialize_json(e.property, ioflags));</div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;                Json::Value js_edge{Json::objectValue};</div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;                js_edge[<span class="stringliteral">&quot;StartNodeIndex&quot;</span>] = Json::UInt64(e.start_node_idx);</div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;                js_edge[<span class="stringliteral">&quot;EndNodeIndex&quot;</span>]   = Json::UInt64(e.end_node_idx);</div>
@@ -185,13 +185,13 @@ $(function() {
 <div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        <span class="keywordflow">if</span> (!<a class="code" href="namespacemio.html#aa59f4cb5fc6b5dd160a8e1a9b049da85">file_exists</a>(node_filename, node_filename)) {</div>
 <div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;            <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;        }</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;        BOOST_OUTCOME_TRY(js_node, read_json(node_filename));</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;        BOOST_OUTCOME_TRY(<span class="keyword">auto</span>&amp;&amp; js_node, read_json(node_filename));</div>
 <div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;        <span class="keywordflow">if</span> (!js_node[<span class="stringliteral">&quot;NodeId&quot;</span>].isInt()) {</div>
 <div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;            <a class="code" href="namespacemio.html#a89afc3ebfa2c5ab994ec3c76dcad85d1">log_error</a>(<span class="stringliteral">&quot;NodeId field must be an integer.&quot;</span>);</div>
 <div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="namespacemio.html#a23604adfeac7ebc8418d741959e80906">failure</a>(<a class="code" href="namespacemio.html#a2799d348d433018d5b183d75bfbdd699ac85f85f7c13ed006eed130ec183aa810">StatusCode::InvalidType</a>, node_filename + <span class="stringliteral">&quot;, NodeId must be an integer.&quot;</span>);</div>
 <div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;        }</div>
 <div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;        <span class="keyword">auto</span> node_id = js_node[<span class="stringliteral">&quot;NodeId&quot;</span>].asInt();</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;        BOOST_OUTCOME_TRY(model, deserialize_json(js_node[<span class="stringliteral">&quot;Model&quot;</span>], Tag&lt;Model&gt;{}, ioflags));</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;        BOOST_OUTCOME_TRY(<span class="keyword">auto</span>&amp;&amp; model, deserialize_json(js_node[<span class="stringliteral">&quot;Model&quot;</span>], Tag&lt;Model&gt;{}, ioflags));</div>
 <div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;        graph.add_node(node_id, model);</div>
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    }</div>
 <div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160; </div>
@@ -200,7 +200,7 @@ $(function() {
 <div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span> inode = <span class="keywordtype">size_t</span>(0); inode &lt; graph.nodes().size(); ++inode) {</div>
 <div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;            <span class="comment">//list of edges</span></div>
 <div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;            <span class="keyword">auto</span> edge_filename = <a class="code" href="namespacemio.html#ad5d271b1fc1bc5f9ef54eb91c695f239">path_join</a>(abs_path, <span class="stringliteral">&quot;GraphEdges_node&quot;</span> + std::to_string(inode) + <span class="stringliteral">&quot;.json&quot;</span>);</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;            BOOST_OUTCOME_TRY(js_edges, read_json(edge_filename));</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;            BOOST_OUTCOME_TRY(<span class="keyword">auto</span>&amp;&amp; js_edges, read_json(edge_filename));</div>
 <div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160; </div>
 <div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;            <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; e : js_edges) {</div>
 <div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;                <span class="keyword">auto</span> start_node_idx  = inode;</div>
@@ -215,20 +215,21 @@ $(function() {
 <div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;                    <span class="keywordflow">return</span> <a class="code" href="namespacemio.html#a23604adfeac7ebc8418d741959e80906">failure</a>(<a class="code" href="namespacemio.html#a2799d348d433018d5b183d75bfbdd699a365b2699d38b61ef4b4c8a1066c8468f">StatusCode::OutOfRange</a>,</div>
 <div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;                                   edge_filename + <span class="stringliteral">&quot;, EndNodeIndex not in range of number of graph nodes.&quot;</span>);</div>
 <div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;                }</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;                BOOST_OUTCOME_TRY(parameters, deserialize_json(e[<span class="stringliteral">&quot;Parameters&quot;</span>], Tag&lt;MigrationParameters&gt;{}, ioflags));</div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;                graph.add_edge(start_node_idx, end_node_idx, parameters);</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;            }</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;        }</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    }</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160; </div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="namespacemio.html#a80d7fd30c9669e05b537b2caedd82bb8">success</a>(graph);</div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;}</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160; </div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;<span class="preprocessor">#endif </span><span class="comment">//MEMILIO_HAS_JSONCPP</span></div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160; </div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;} <span class="comment">// namespace mio</span></div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160; </div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// READ_TWITTER_H</span></div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;                BOOST_OUTCOME_TRY(<span class="keyword">auto</span>&amp;&amp; parameters,</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;                                  deserialize_json(e[<span class="stringliteral">&quot;Parameters&quot;</span>], Tag&lt;MigrationParameters&gt;{}, ioflags));</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;                graph.add_edge(start_node_idx, end_node_idx, parameters);</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;            }</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;        }</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    }</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160; </div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="namespacemio.html#a80d7fd30c9669e05b537b2caedd82bb8">success</a>(graph);</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;}</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160; </div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;<span class="preprocessor">#endif </span><span class="comment">//MEMILIO_HAS_JSONCPP</span></div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160; </div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;} <span class="comment">// namespace mio</span></div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160; </div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// READ_TWITTER_H</span></div>
 <div class="ttc" id="aeigen_8h_html"><div class="ttname"><a href="eigen_8h.html">eigen.h</a></div></div>
 <div class="ttc" id="agraph_8h_html"><div class="ttname"><a href="graph_8h.html">graph.h</a></div></div>
 <div class="ttc" id="ajson__serializer_8h_html"><div class="ttname"><a href="json__serializer_8h.html">json_serializer.h</a></div></div>

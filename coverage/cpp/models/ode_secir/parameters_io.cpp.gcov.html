@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2024-04-18 14:48:56</td>
+            <td class="headerValue">2024-04-18 14:58:14</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">17</td>
@@ -299,7 +299,7 @@
 <a name="237"><span class="lineNum">     237 </span><span class="lineCov">         15 :     std::vector&lt;std::vector&lt;double&gt;&gt; mu_H_U{model.size()};</span></a>
 <a name="238"><span class="lineNum">     238 </span><span class="lineCov">         15 :     std::vector&lt;std::vector&lt;double&gt;&gt; mu_U_D{model.size()};</span></a>
 <a name="239"><span class="lineNum">     239 </span>            : </a>
-<a name="240"><span class="lineNum">     240 </span><span class="lineCov">         10 :     BOOST_OUTCOME_TRY(case_data, mio::read_confirmed_cases_data(path));</span></a>
+<a name="240"><span class="lineNum">     240 </span><span class="lineCov">         10 :     BOOST_OUTCOME_TRY(auto&amp;&amp; case_data, mio::read_confirmed_cases_data(path));</span></a>
 <a name="241"><span class="lineNum">     241 </span>            : </a>
 <a name="242"><span class="lineNum">     242 </span><span class="lineCov">         10 :     for (size_t node = 0; node &lt; model.size(); ++node) {</span></a>
 <a name="243"><span class="lineNum">     243 </span><span class="lineCov">         35 :         for (size_t group = 0; group &lt; num_age_groups; group++) {</span></a>
@@ -362,7 +362,7 @@
 <a name="300"><span class="lineNum">     300 </span><span class="lineCov">          6 : IOResult&lt;void&gt; read_divi_data(const std::string&amp; path, const std::vector&lt;int&gt;&amp; vregion, Date date,</span></a>
 <a name="301"><span class="lineNum">     301 </span>            :                               std::vector&lt;double&gt;&amp; vnum_icu)</a>
 <a name="302"><span class="lineNum">     302 </span>            : {</a>
-<a name="303"><span class="lineNum">     303 </span><span class="lineCov">         12 :     BOOST_OUTCOME_TRY(divi_data, mio::read_divi_data(path));</span></a>
+<a name="303"><span class="lineNum">     303 </span><span class="lineCov">         12 :     BOOST_OUTCOME_TRY(auto&amp;&amp; divi_data, mio::read_divi_data(path));</span></a>
 <a name="304"><span class="lineNum">     304 </span>            : </a>
 <a name="305"><span class="lineNum">     305 </span><span class="lineCov">         12 :     auto max_date_entry = std::max_element(divi_data.begin(), divi_data.end(), [](auto&amp;&amp; a, auto&amp;&amp; b) {</span></a>
 <a name="306"><span class="lineNum">     306 </span><span class="lineCov">        546 :         return a.date &lt; b.date;</span></a>
@@ -380,7 +380,7 @@
 <a name="318"><span class="lineNum">     318 </span><span class="lineCov">        558 :     for (auto&amp;&amp; entry : divi_data) {</span></a>
 <a name="319"><span class="lineNum">     319 </span><span class="lineCov">       2024 :         auto it      = std::find_if(vregion.begin(), vregion.end(), [&amp;entry](auto r) {</span></a>
 <a name="320"><span class="lineNum">     320 </span><span class="lineCov">       1472 :             return r == 0 || r == get_region_id(entry);</span></a>
-<a name="321"><span class="lineNum">     321 </span><span class="lineCov">       1104 :         });</span></a>
+<a name="321"><span class="lineNum">     321 </span><span class="lineCov">       1104 :              });</span></a>
 <a name="322"><span class="lineNum">     322 </span><span class="lineCov">        552 :         auto date_df = entry.date;</span></a>
 <a name="323"><span class="lineNum">     323 </span><span class="lineCov">        552 :         if (it != vregion.end() &amp;&amp; date_df == date) {</span></a>
 <a name="324"><span class="lineNum">     324 </span><span class="lineCov">          6 :             auto region_idx      = size_t(it - vregion.begin());</span></a>
@@ -394,7 +394,7 @@
 <a name="332"><span class="lineNum">     332 </span>            : IOResult&lt;std::vector&lt;std::vector&lt;double&gt;&gt;&gt;</a>
 <a name="333"><span class="lineNum">     333 </span><span class="lineCov">          8 : read_population_data(const std::string&amp; path, const std::vector&lt;int&gt;&amp; vregion, bool accumulate_age_groups)</span></a>
 <a name="334"><span class="lineNum">     334 </span>            : {</a>
-<a name="335"><span class="lineNum">     335 </span><span class="lineCov">         16 :     BOOST_OUTCOME_TRY(population_data, mio::read_population_data(path, !accumulate_age_groups));</span></a>
+<a name="335"><span class="lineNum">     335 </span><span class="lineCov">         16 :     BOOST_OUTCOME_TRY(auto&amp;&amp; population_data, mio::read_population_data(path, !accumulate_age_groups));</span></a>
 <a name="336"><span class="lineNum">     336 </span>            :     //if we set up the model for one age group, the population data should be read in with the</a>
 <a name="337"><span class="lineNum">     337 </span>            :     //age groups given in the population data json file and are accumulated later</a>
 <a name="338"><span class="lineNum">     338 </span>            :     //otherwise the populations are directly saved for the correct model age groups</a>
@@ -432,7 +432,7 @@
 <a name="370"><span class="lineNum">     370 </span><span class="lineCov">          5 : IOResult&lt;void&gt; set_population_data(std::vector&lt;Model&gt;&amp; model, const std::string&amp; path, const std::vector&lt;int&gt;&amp; vregion,</span></a>
 <a name="371"><span class="lineNum">     371 </span>            :                                    bool accumulate_age_groups)</a>
 <a name="372"><span class="lineNum">     372 </span>            : {</a>
-<a name="373"><span class="lineNum">     373 </span><span class="lineCov">         10 :     BOOST_OUTCOME_TRY(num_population, read_population_data(path, vregion, accumulate_age_groups));</span></a>
+<a name="373"><span class="lineNum">     373 </span><span class="lineCov">         10 :     BOOST_OUTCOME_TRY(auto&amp;&amp; num_population, read_population_data(path, vregion, accumulate_age_groups));</span></a>
 <a name="374"><span class="lineNum">     374 </span>            : </a>
 <a name="375"><span class="lineNum">     375 </span><span class="lineCov">         10 :     for (size_t region = 0; region &lt; vregion.size(); region++) {</span></a>
 <a name="376"><span class="lineNum">     376 </span><span class="lineCov">          5 :         if (std::accumulate(num_population[region].begin(), num_population[region].end(), 0.0) &gt; 0) {</span></a>

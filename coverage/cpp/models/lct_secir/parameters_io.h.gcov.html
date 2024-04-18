@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2024-04-18 14:48:56</td>
+            <td class="headerValue">2024-04-18 14:58:14</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">2</td>
@@ -130,7 +130,7 @@
 <a name="68"><span class="lineNum">      68 </span>            :     using LctState = typename Model::LctState;</a>
 <a name="69"><span class="lineNum">      69 </span>            : </a>
 <a name="70"><span class="lineNum">      70 </span>            :     // Try to get rki data from path.</a>
-<a name="71"><span class="lineNum">      71 </span><span class="lineCov">          8 :     BOOST_OUTCOME_TRY(rki_data, mio::read_confirmed_cases_noage(path));</span></a>
+<a name="71"><span class="lineNum">      71 </span><span class="lineCov">          8 :     BOOST_OUTCOME_TRY(auto&amp;&amp; rki_data, mio::read_confirmed_cases_noage(path));</span></a>
 <a name="72"><span class="lineNum">      72 </span><span class="lineCov">          4 :     auto max_date_entry = std::max_element(rki_data.begin(), rki_data.end(), [](auto&amp;&amp; a, auto&amp;&amp; b) {</span></a>
 <a name="73"><span class="lineNum">      73 </span><span class="lineCov">         42 :         return a.date &lt; b.date;</span></a>
 <a name="74"><span class="lineNum">      74 </span>            :     });</a>
