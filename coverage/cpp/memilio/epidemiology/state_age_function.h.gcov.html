@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2024-04-25 11:27:53</td>
+            <td class="headerValue">2024-04-26 14:15:47</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">32</td>
@@ -222,11 +222,11 @@
 <a name="160"><span class="lineNum">     160 </span>            :      * @param[in] tol Tolerance used for cutting the support if the function value falls below. </a>
 <a name="161"><span class="lineNum">     161 </span>            :      * @return ScalarType support_max</a>
 <a name="162"><span class="lineNum">     162 </span>            :      */</a>
-<a name="163"><span class="lineNum">     163 </span><span class="lineCov">        774 :     virtual ScalarType get_support_max(ScalarType dt, ScalarType tol = 1e-10)</span></a>
+<a name="163"><span class="lineNum">     163 </span><span class="lineCov">        474 :     virtual ScalarType get_support_max(ScalarType dt, ScalarType tol = 1e-10)</span></a>
 <a name="164"><span class="lineNum">     164 </span>            :     {</a>
-<a name="165"><span class="lineNum">     165 </span><span class="lineCov">        774 :         ScalarType support_max = 0.;</span></a>
+<a name="165"><span class="lineNum">     165 </span><span class="lineCov">        474 :         ScalarType support_max = 0.;</span></a>
 <a name="166"><span class="lineNum">     166 </span>            : </a>
-<a name="167"><span class="lineNum">     167 </span><span class="lineCov">        774 :         if (!floating_point_equal(m_support_tol, tol, 1e-14) || floating_point_equal(m_support_max, -1., 1e-14)) {</span></a>
+<a name="167"><span class="lineNum">     167 </span><span class="lineCov">        474 :         if (!floating_point_equal(m_support_tol, tol, 1e-14) || floating_point_equal(m_support_max, -1., 1e-14)) {</span></a>
 <a name="168"><span class="lineNum">     168 </span><span class="lineCov">        274 :             while (eval(support_max) &gt;= tol) {</span></a>
 <a name="169"><span class="lineNum">     169 </span><span class="lineCov">        243 :                 support_max += dt;</span></a>
 <a name="170"><span class="lineNum">     170 </span>            :             }</a>
@@ -235,7 +235,7 @@
 <a name="173"><span class="lineNum">     173 </span><span class="lineCov">         31 :             m_support_tol = tol;</span></a>
 <a name="174"><span class="lineNum">     174 </span>            :         }</a>
 <a name="175"><span class="lineNum">     175 </span>            : </a>
-<a name="176"><span class="lineNum">     176 </span><span class="lineCov">        774 :         return m_support_max;</span></a>
+<a name="176"><span class="lineNum">     176 </span><span class="lineCov">        474 :         return m_support_max;</span></a>
 <a name="177"><span class="lineNum">     177 </span>            :     }</a>
 <a name="178"><span class="lineNum">     178 </span>            : </a>
 <a name="179"><span class="lineNum">     179 </span>            :     /**</a>
@@ -298,9 +298,9 @@
 <a name="236"><span class="lineNum">     236 </span>            :      * @param[in] state_age Time at which the function is evaluated.</a>
 <a name="237"><span class="lineNum">     237 </span>            :      * @return Evaluation of the function at state_age. </a>
 <a name="238"><span class="lineNum">     238 </span>            :      */</a>
-<a name="239"><span class="lineNum">     239 </span><span class="lineCov">       7253 :     ScalarType eval(ScalarType state_age) override</span></a>
+<a name="239"><span class="lineNum">     239 </span><span class="lineCov">       5633 :     ScalarType eval(ScalarType state_age) override</span></a>
 <a name="240"><span class="lineNum">     240 </span>            :     {</a>
-<a name="241"><span class="lineNum">     241 </span><span class="lineCov">       7253 :         return std::exp(-m_parameter * state_age);</span></a>
+<a name="241"><span class="lineNum">     241 </span><span class="lineCov">       5633 :         return std::exp(-m_parameter * state_age);</span></a>
 <a name="242"><span class="lineNum">     242 </span>            :     }</a>
 <a name="243"><span class="lineNum">     243 </span>            : </a>
 <a name="244"><span class="lineNum">     244 </span>            : protected:</a>
@@ -338,9 +338,9 @@
 <a name="276"><span class="lineNum">     276 </span>            :      * @param[in] state_age Time at which the function is evaluated.</a>
 <a name="277"><span class="lineNum">     277 </span>            :      * @return Evaluation of the function at state_age. </a>
 <a name="278"><span class="lineNum">     278 </span>            :      */</a>
-<a name="279"><span class="lineNum">     279 </span><span class="lineCov">       4271 :     ScalarType eval(ScalarType state_age) override</span></a>
+<a name="279"><span class="lineNum">     279 </span><span class="lineCov">       3361 :     ScalarType eval(ScalarType state_age) override</span></a>
 <a name="280"><span class="lineNum">     280 </span>            :     {</a>
-<a name="281"><span class="lineNum">     281 </span><span class="lineCov">       4271 :         return smoother_cosine(state_age, 0.0, m_parameter, 1.0, 0.0);</span></a>
+<a name="281"><span class="lineNum">     281 </span><span class="lineCov">       3361 :         return smoother_cosine(state_age, 0.0, m_parameter, 1.0, 0.0);</span></a>
 <a name="282"><span class="lineNum">     282 </span>            :     }</a>
 <a name="283"><span class="lineNum">     283 </span>            : </a>
 <a name="284"><span class="lineNum">     284 </span>            :     /**</a>
@@ -352,12 +352,12 @@
 <a name="290"><span class="lineNum">     290 </span>            :      * @param[in] tol Tolerance used for cutting the support if the function value falls below. </a>
 <a name="291"><span class="lineNum">     291 </span>            :      * @return ScalarType support_max</a>
 <a name="292"><span class="lineNum">     292 </span>            :      */</a>
-<a name="293"><span class="lineNum">     293 </span><span class="lineCov">       1939 :     ScalarType get_support_max(ScalarType dt, ScalarType tol = 1e-10) override</span></a>
+<a name="293"><span class="lineNum">     293 </span><span class="lineCov">       1229 :     ScalarType get_support_max(ScalarType dt, ScalarType tol = 1e-10) override</span></a>
 <a name="294"><span class="lineNum">     294 </span>            :     {</a>
-<a name="295"><span class="lineNum">     295 </span><span class="lineCov">       1939 :         unused(dt);</span></a>
-<a name="296"><span class="lineNum">     296 </span><span class="lineCov">       1939 :         unused(tol);</span></a>
-<a name="297"><span class="lineNum">     297 </span><span class="lineCov">       1939 :         m_support_max = m_parameter;</span></a>
-<a name="298"><span class="lineNum">     298 </span><span class="lineCov">       1939 :         return m_support_max;</span></a>
+<a name="295"><span class="lineNum">     295 </span><span class="lineCov">       1229 :         unused(dt);</span></a>
+<a name="296"><span class="lineNum">     296 </span><span class="lineCov">       1229 :         unused(tol);</span></a>
+<a name="297"><span class="lineNum">     297 </span><span class="lineCov">       1229 :         m_support_max = m_parameter;</span></a>
+<a name="298"><span class="lineNum">     298 </span><span class="lineCov">       1229 :         return m_support_max;</span></a>
 <a name="299"><span class="lineNum">     299 </span>            :     }</a>
 <a name="300"><span class="lineNum">     300 </span>            : </a>
 <a name="301"><span class="lineNum">     301 </span>            : protected:</a>
@@ -535,9 +535,9 @@
 <a name="473"><span class="lineNum">     473 </span>            :      * @param[in] state_age Time at which the function is evaluated.</a>
 <a name="474"><span class="lineNum">     474 </span>            :      * @return Evaluation of the function at state_age. </a>
 <a name="475"><span class="lineNum">     475 </span>            :      */</a>
-<a name="476"><span class="lineNum">     476 </span><span class="lineCov">      14907 :     ScalarType eval(ScalarType state_age) const</span></a>
+<a name="476"><span class="lineNum">     476 </span><span class="lineCov">      12377 :     ScalarType eval(ScalarType state_age) const</span></a>
 <a name="477"><span class="lineNum">     477 </span>            :     {</a>
-<a name="478"><span class="lineNum">     478 </span><span class="lineCov">      14907 :         return m_function-&gt;eval(state_age);</span></a>
+<a name="478"><span class="lineNum">     478 </span><span class="lineCov">      12377 :         return m_function-&gt;eval(state_age);</span></a>
 <a name="479"><span class="lineNum">     479 </span>            :     }</a>
 <a name="480"><span class="lineNum">     480 </span>            : </a>
 <a name="481"><span class="lineNum">     481 </span>            :     /**</a>
@@ -560,9 +560,9 @@
 <a name="498"><span class="lineNum">     498 </span><span class="lineCov">          7 :         m_function-&gt;set_parameter(new_parameter);</span></a>
 <a name="499"><span class="lineNum">     499 </span><span class="lineCov">          7 :     }</span></a>
 <a name="500"><span class="lineNum">     500 </span>            : </a>
-<a name="501"><span class="lineNum">     501 </span><span class="lineCov">       2702 :     ScalarType get_support_max(ScalarType dt, ScalarType tol = 1e-10) const</span></a>
+<a name="501"><span class="lineNum">     501 </span><span class="lineCov">       1692 :     ScalarType get_support_max(ScalarType dt, ScalarType tol = 1e-10) const</span></a>
 <a name="502"><span class="lineNum">     502 </span>            :     {</a>
-<a name="503"><span class="lineNum">     503 </span><span class="lineCov">       2702 :         return m_function-&gt;get_support_max(dt, tol);</span></a>
+<a name="503"><span class="lineNum">     503 </span><span class="lineCov">       1692 :         return m_function-&gt;get_support_max(dt, tol);</span></a>
 <a name="504"><span class="lineNum">     504 </span>            :     }</a>
 <a name="505"><span class="lineNum">     505 </span>            : </a>
 <a name="506"><span class="lineNum">     506 </span>            : private:</a>
