@@ -4,7 +4,7 @@ var searchData=
   ['cellcapacity_1769',['CellCapacity',['../structmio_1_1abm_1_1CellCapacity.html',1,'mio::abm']]],
   ['columnvectorshape_1770',['ColumnVectorShape',['../classmio_1_1ColumnVectorShape.html',1,'mio']]],
   ['compartmentalmodel_1771',['CompartmentalModel',['../structmio_1_1CompartmentalModel.html',1,'mio']]],
-  ['compartmentalmodel_3c_20infectionstate_2c_20populations_3c_20infectionstate_20_3e_2c_20parameters_20_3e_1772',['CompartmentalModel&lt; InfectionState, Populations&lt; InfectionState &gt;, Parameters &gt;',['../structmio_1_1CompartmentalModel.html',1,'mio']]],
+  ['compartmentalmodel_3c_20infectionstate_2c_20populations_3c_20agegroup_2c_20infectionstate_20_3e_2c_20parameters_20_3e_1772',['CompartmentalModel&lt; InfectionState, Populations&lt; AgeGroup, InfectionState &gt;, Parameters &gt;',['../structmio_1_1CompartmentalModel.html',1,'mio']]],
   ['conf_1773',['Conf',['../classmemilio_1_1epidata_1_1getDataIntoPandasDataFrame_1_1Conf.html',1,'memilio::epidata::getDataIntoPandasDataFrame']]],
   ['conjunction_1774',['conjunction',['../structmio_1_1conjunction.html',1,'mio']]],
   ['conjunction_3c_20b1_20_3e_1775',['conjunction&lt; B1 &gt;',['../structmio_1_1conjunction_3_01B1_01_4.html',1,'mio']]],
