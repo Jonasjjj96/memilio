@@ -92,8 +92,8 @@ if(MEMILIO_USE_BUNDLED_BOOST)
     add_library(Boost::boost ALIAS boost)
     target_include_directories(boost SYSTEM INTERFACE $<BUILD_INTERFACE:${boost_SOURCE_DIR}>)
     
-    if (NOT MSVC)
-        target_compile_options(boost INTERFACE "-Wno-c++20-attribute-extensions")
+    if (CMAKE_CXX_COMPILER_ID MATCHES "Clang")
+        target_compile_options(boost INTERFACE "-Wno-c++20-extensions")
     endif()
 
     add_library(boost_disable_autolink INTERFACE)
