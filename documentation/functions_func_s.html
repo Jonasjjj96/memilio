@@ -123,7 +123,7 @@ $(function() {
 : <a class="el" href="classmio_1_1abm_1_1HouseholdMember.html#abc209d78aa8769994b99a25689a52b9c">mio::abm::HouseholdMember</a>
 </li>
 <li>set_assigned_location()
-: <a class="el" href="classmio_1_1abm_1_1Person.html#a859d4c7d4d68bbfd2907898a474631e2">mio::abm::Person</a>
+: <a class="el" href="classmio_1_1abm_1_1Person.html#ad2b7ad6d2849bb2de97be0c853e71c4a">mio::abm::Person</a>
 </li>
 <li>set_automatic_cache_update()
 : <a class="el" href="classmio_1_1DampingMatrixExpression.html#a02b5dd4d85021fc0efbb0156c47f463a">mio::DampingMatrixExpression&lt; D &gt;</a>
@@ -157,6 +157,10 @@ $(function() {
 </li>
 <li>set_distribution()
 : <a class="el" href="classmio_1_1UncertainValue.html#a0a8b1ad066c17483ab9b059ba90bb377">mio::UncertainValue</a>
+</li>
+<li>set_distribution_parameter()
+: <a class="el" href="structmio_1_1StateAgeFunction.html#a9c29c96af18d8605776fbae9e0bef693">mio::StateAgeFunction</a>
+, <a class="el" href="structmio_1_1StateAgeFunctionWrapper.html#a980ab7604b110dd80dc58309b5e25f67">mio::StateAgeFunctionWrapper</a>
 </li>
 <li>set_dt_max()
 : <a class="el" href="classmio_1_1ControlledStepperWrapper.html#a4846e91be50c9bf098843be75951fd66">mio::ControlledStepperWrapper&lt; ControlledStepper &gt;</a>
@@ -201,6 +205,10 @@ $(function() {
 <li>set_level()
 : <a class="el" href="classmio_1_1DampingSampling.html#a52d645ea1c362f5eca148b4adcb5d551">mio::DampingSampling</a>
 </li>
+<li>set_location()
+: <a class="el" href="structmio_1_1StateAgeFunction.html#a7dda801d47f25cf5d3dc37293977cf28">mio::StateAgeFunction</a>
+, <a class="el" href="structmio_1_1StateAgeFunctionWrapper.html#ab069eb3e2a93c367c6cb7819d2468731">mio::StateAgeFunctionWrapper</a>
+</li>
 <li>set_lower_bound()
 : <a class="el" href="classmio_1_1ParameterDistribution.html#af0ba0430cf0e43f34b8c4f366867f4e5">mio::ParameterDistribution</a>
 </li>
@@ -225,10 +233,6 @@ $(function() {
 <li>set_num_runs()
 : <a class="el" href="classmio_1_1ParameterStudy.html#abbea6f600c2af118a0da2db40a4a6338">mio::ParameterStudy&lt; S &gt;</a>
 </li>
-<li>set_parameter()
-: <a class="el" href="structmio_1_1StateAgeFunction.html#a16785c5752b8b585fd951d0cecdd577b">mio::StateAgeFunction</a>
-, <a class="el" href="structmio_1_1StateAgeFunctionWrapper.html#a9fa164edcbbf66423cafc0664dac8d2b">mio::StateAgeFunctionWrapper</a>
-</li>
 <li>set_progress()
 : <a class="el" href="classmemilio_1_1epidata_1_1progress__indicator_1_1Percentage.html#af5e858c2a6aab5ebba7a410c31cdda18">memilio.epidata.progress_indicator.Percentage</a>
 </li>
@@ -238,6 +242,10 @@ $(function() {
 </li>
 <li>set_required_mask()
 : <a class="el" href="classmio_1_1abm_1_1Location.html#a2a2c6c16b49c14d618675d6095eb2b2a">mio::abm::Location</a>
+</li>
+<li>set_scale()
+: <a class="el" href="structmio_1_1StateAgeFunction.html#a8e046ff8e04b40ec84eccef67d649f28">mio::StateAgeFunction</a>
+, <a class="el" href="structmio_1_1StateAgeFunctionWrapper.html#aae71723bd111ac603ca521c2a990ea6e">mio::StateAgeFunctionWrapper</a>
 </li>
 <li>set_space_per_member()
 : <a class="el" href="classmio_1_1abm_1_1Household.html#aa0b26a781dbef64181e485aba099c4a4">mio::abm::Household</a>
@@ -292,7 +300,7 @@ $(function() {
 : <a class="el" href="classmio_1_1iseir_1_1Model.html#aa73cc17dbb36a7818c1f543653f15d15">mio::iseir::Model</a>
 </li>
 <li>Simulation()
-: <a class="el" href="classmio_1_1abm_1_1Simulation.html#ab3a4adeb9cff288b915d5b7618aa713d">mio::abm::Simulation</a>
+: <a class="el" href="classmio_1_1abm_1_1Simulation.html#ae7095977edf8ffdba93c116296b5e485">mio::abm::Simulation</a>
 , <a class="el" href="classmio_1_1isecir_1_1Simulation.html#a92c92ff4c398d0de603d1182e0cadf20">mio::isecir::Simulation</a>
 , <a class="el" href="classmio_1_1lsecir_1_1Simulation.html#a6e533e874e28fc44a69793aafa7a29a9">mio::lsecir::Simulation&lt; Model &gt;</a>
 , <a class="el" href="classmio_1_1osecir_1_1Simulation.html#a46eecb9eeb276fba54a1e15abd1d633b">mio::osecir::Simulation&lt; BaseT &gt;</a>
@@ -315,18 +323,19 @@ $(function() {
 </li>
 <li>slice()
 : <a class="el" href="classmio_1_1CustomIndexArray.html#a3d71f9ca09c82e0d4e4c54e4aa93ed42">mio::CustomIndexArray&lt; Typ, Tags &gt;</a>
+, <a class="el" href="classmio_1_1CustomIndexArray_1_1Slice.html#ab7d8b44162004acfd0427c026faf9fab">mio::CustomIndexArray&lt; Typ, Tags &gt;::Slice&lt; Tag, iter_type, &gt;</a>
 </li>
 <li>Slice()
 : <a class="el" href="classmio_1_1CustomIndexArray_1_1Slice.html#adc2c75489c3fb45c36b3ad15254328e9">mio::CustomIndexArray&lt; Typ, Tags &gt;::Slice&lt; Tag, iter_type, &gt;</a>
 </li>
 <li>slice()
-: <a class="el" href="classmio_1_1CustomIndexArray_1_1Slice.html#ab7d8b44162004acfd0427c026faf9fab">mio::CustomIndexArray&lt; Typ, Tags &gt;::Slice&lt; Tag, iter_type, &gt;</a>
+: <a class="el" href="classmio_1_1CustomIndexArray_1_1Slice.html#a02609d5d3777762ae16d08d834b53df6">mio::CustomIndexArray&lt; Typ, Tags &gt;::Slice&lt; Tag, iter_type, &gt;</a>
 </li>
 <li>SmootherCosine()
-: <a class="el" href="structmio_1_1SmootherCosine.html#a56320b0bcd7a08c3d694cc3b40be2b94">mio::SmootherCosine</a>
+: <a class="el" href="structmio_1_1SmootherCosine.html#a2df040287ac8b5162530cd8a464988e7">mio::SmootherCosine</a>
 </li>
 <li>Span()
-: <a class="el" href="classmio_1_1Span.html#a355d562288ae1da9f27d00f743b91646">mio::Span&lt; T &gt;</a>
+: <a class="el" href="classmio_1_1Span.html#a52ed3fac1ba6e3558874bc4a4d3f3247">mio::Span&lt; T &gt;</a>
 </li>
 <li>SquareMatrixShape()
 : <a class="el" href="classmio_1_1SquareMatrixShape.html#a1cedbd28eb3aebe3b52b80b714587120">mio::SquareMatrixShape</a>
@@ -336,10 +345,10 @@ $(function() {
 , <a class="el" href="classmemilio_1_1epidata_1_1progress__indicator_1_1ProgressIndicator.html#a4732e93203e32c937d98631279f7fb46">memilio.epidata.progress_indicator.ProgressIndicator</a>
 </li>
 <li>StateAgeFunction()
-: <a class="el" href="structmio_1_1StateAgeFunction.html#a18945462efbf27a476c694a1ccef06fb">mio::StateAgeFunction</a>
+: <a class="el" href="structmio_1_1StateAgeFunction.html#a344c6b0c45a456911ac919d31f02307c">mio::StateAgeFunction</a>
 </li>
 <li>StateAgeFunctionWrapper()
-: <a class="el" href="structmio_1_1StateAgeFunctionWrapper.html#a3895b6a23e8403ff30cdd5ab57ea2ac5">mio::StateAgeFunctionWrapper</a>
+: <a class="el" href="structmio_1_1StateAgeFunctionWrapper.html#a7e2896a9d17e78c6af6df438989464ba">mio::StateAgeFunctionWrapper</a>
 </li>
 <li>status()
 : <a class="el" href="classmio_1_1SerializerBase.html#a0bd52a6a99f7137cf74cc471c3c9f6b8">mio::SerializerBase</a>

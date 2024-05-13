@@ -1,15 +1,16 @@
 var searchData=
 [
-  ['generictest_1837',['GenericTest',['../structmio_1_1abm_1_1GenericTest.html',1,'mio::abm']]],
-  ['geographicallocation_1838',['GeographicalLocation',['../structmio_1_1abm_1_1GeographicalLocation.html',1,'mio::abm']]],
-  ['gotoschooltimemaximum_1839',['GotoSchoolTimeMaximum',['../structmio_1_1abm_1_1GotoSchoolTimeMaximum.html',1,'mio::abm']]],
-  ['gotoschooltimeminimum_1840',['GotoSchoolTimeMinimum',['../structmio_1_1abm_1_1GotoSchoolTimeMinimum.html',1,'mio::abm']]],
-  ['gotoworktimemaximum_1841',['GotoWorkTimeMaximum',['../structmio_1_1abm_1_1GotoWorkTimeMaximum.html',1,'mio::abm']]],
-  ['gotoworktimeminimum_1842',['GotoWorkTimeMinimum',['../structmio_1_1abm_1_1GotoWorkTimeMinimum.html',1,'mio::abm']]],
-  ['graph_1843',['Graph',['../classmio_1_1Graph.html',1,'mio']]],
-  ['graph_3c_20typename_20simulation_3a_3amodel_2c_20mio_3a_3amigrationparameters_20_3e_1844',['Graph&lt; typename Simulation::Model, mio::MigrationParameters &gt;',['../classmio_1_1Graph.html',1,'mio']]],
-  ['graphsimulation_1845',['GraphSimulation',['../classmio_1_1GraphSimulation.html',1,'mio']]],
-  ['graphsimulationbase_1846',['GraphSimulationBase',['../classmio_1_1GraphSimulationBase.html',1,'mio']]],
-  ['graphsimulationbase_3c_20graph_2c_20std_3a_3afunction_3c_20void_28graph_3a_3aedgeproperty_20_26_2c_20size_5ft_2c_20graph_3a_3anodeproperty_20_26_2c_20graph_3a_3anodeproperty_20_26_29_3e_20_3e_1847',['GraphSimulationBase&lt; Graph, std::function&lt; void(Graph::EdgeProperty &amp;, size_t, Graph::NodeProperty &amp;, Graph::NodeProperty &amp;)&gt; &gt;',['../classmio_1_1GraphSimulationBase.html',1,'mio']]],
-  ['graphsimulationstochastic_1848',['GraphSimulationStochastic',['../classmio_1_1GraphSimulationStochastic.html',1,'mio']]]
+  ['gammasurvivalfunction_1847',['GammaSurvivalFunction',['../structmio_1_1GammaSurvivalFunction.html',1,'mio']]],
+  ['generictest_1848',['GenericTest',['../structmio_1_1abm_1_1GenericTest.html',1,'mio::abm']]],
+  ['geographicallocation_1849',['GeographicalLocation',['../structmio_1_1abm_1_1GeographicalLocation.html',1,'mio::abm']]],
+  ['gotoschooltimemaximum_1850',['GotoSchoolTimeMaximum',['../structmio_1_1abm_1_1GotoSchoolTimeMaximum.html',1,'mio::abm']]],
+  ['gotoschooltimeminimum_1851',['GotoSchoolTimeMinimum',['../structmio_1_1abm_1_1GotoSchoolTimeMinimum.html',1,'mio::abm']]],
+  ['gotoworktimemaximum_1852',['GotoWorkTimeMaximum',['../structmio_1_1abm_1_1GotoWorkTimeMaximum.html',1,'mio::abm']]],
+  ['gotoworktimeminimum_1853',['GotoWorkTimeMinimum',['../structmio_1_1abm_1_1GotoWorkTimeMinimum.html',1,'mio::abm']]],
+  ['graph_1854',['Graph',['../classmio_1_1Graph.html',1,'mio']]],
+  ['graph_3c_20typename_20simulation_3a_3amodel_2c_20mio_3a_3amigrationparameters_20_3e_1855',['Graph&lt; typename Simulation::Model, mio::MigrationParameters &gt;',['../classmio_1_1Graph.html',1,'mio']]],
+  ['graphsimulation_1856',['GraphSimulation',['../classmio_1_1GraphSimulation.html',1,'mio']]],
+  ['graphsimulationbase_1857',['GraphSimulationBase',['../classmio_1_1GraphSimulationBase.html',1,'mio']]],
+  ['graphsimulationbase_3c_20graph_2c_20std_3a_3afunction_3c_20void_28graph_3a_3aedgeproperty_20_26_2c_20size_5ft_2c_20graph_3a_3anodeproperty_20_26_2c_20graph_3a_3anodeproperty_20_26_29_3e_20_3e_1858',['GraphSimulationBase&lt; Graph, std::function&lt; void(Graph::EdgeProperty &amp;, size_t, Graph::NodeProperty &amp;, Graph::NodeProperty &amp;)&gt; &gt;',['../classmio_1_1GraphSimulationBase.html',1,'mio']]],
+  ['graphsimulationstochastic_1859',['GraphSimulationStochastic',['../classmio_1_1GraphSimulationStochastic.html',1,'mio']]]
 ];
