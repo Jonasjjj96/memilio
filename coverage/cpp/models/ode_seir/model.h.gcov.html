@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2024-05-13 15:50:57</td>
+            <td class="headerValue">2024-05-15 12:41:31</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">5</td>
@@ -121,42 +121,42 @@
 <a name="59"><span class="lineNum">      59 </span>            :     {</a>
 <a name="60"><span class="lineNum">      60 </span><span class="lineCov">         16 :     }</span></a>
 <a name="61"><span class="lineNum">      61 </span>            : </a>
-<a name="62"><span class="lineNum">      62 </span><span class="lineCov">      42989 :     void get_flows(Eigen::Ref&lt;const Eigen::VectorXd&gt; pop, Eigen::Ref&lt;const Eigen::VectorXd&gt; y, double t,</span></a>
+<a name="62"><span class="lineNum">      62 </span><span class="lineCov">      43013 :     void get_flows(Eigen::Ref&lt;const Eigen::VectorXd&gt; pop, Eigen::Ref&lt;const Eigen::VectorXd&gt; y, double t,</span></a>
 <a name="63"><span class="lineNum">      63 </span>            :                    Eigen::Ref&lt;Eigen::VectorXd&gt; flows) const override</a>
 <a name="64"><span class="lineNum">      64 </span>            :     {</a>
-<a name="65"><span class="lineNum">      65 </span><span class="lineCov">      42989 :         auto&amp; params                             = this-&gt;parameters;</span></a>
-<a name="66"><span class="lineNum">      66 </span><span class="lineCov">      42989 :         AgeGroup n_agegroups                     = params.get_num_groups();</span></a>
-<a name="67"><span class="lineNum">      67 </span><span class="lineCov">      42989 :         ContactMatrixGroup const&amp; contact_matrix = params.get&lt;ContactPatterns&gt;();</span></a>
+<a name="65"><span class="lineNum">      65 </span><span class="lineCov">      43013 :         auto&amp; params                             = this-&gt;parameters;</span></a>
+<a name="66"><span class="lineNum">      66 </span><span class="lineCov">      43013 :         AgeGroup n_agegroups                     = params.get_num_groups();</span></a>
+<a name="67"><span class="lineNum">      67 </span><span class="lineCov">      43013 :         ContactMatrixGroup const&amp; contact_matrix = params.get&lt;ContactPatterns&gt;();</span></a>
 <a name="68"><span class="lineNum">      68 </span>            : </a>
-<a name="69"><span class="lineNum">      69 </span><span class="lineCov">      85978 :         for (auto i = AgeGroup(0); i &lt; n_agegroups; i++) {</span></a>
-<a name="70"><span class="lineNum">      70 </span><span class="lineCov">      42989 :             size_t Si = this-&gt;populations.get_flat_index({i, InfectionState::Susceptible});</span></a>
-<a name="71"><span class="lineNum">      71 </span><span class="lineCov">      42989 :             size_t Ei = this-&gt;populations.get_flat_index({i, InfectionState::Exposed});</span></a>
-<a name="72"><span class="lineNum">      72 </span><span class="lineCov">      42989 :             size_t Ii = this-&gt;populations.get_flat_index({i, InfectionState::Infected});</span></a>
+<a name="69"><span class="lineNum">      69 </span><span class="lineCov">      86026 :         for (auto i = AgeGroup(0); i &lt; n_agegroups; i++) {</span></a>
+<a name="70"><span class="lineNum">      70 </span><span class="lineCov">      43013 :             size_t Si = this-&gt;populations.get_flat_index({i, InfectionState::Susceptible});</span></a>
+<a name="71"><span class="lineNum">      71 </span><span class="lineCov">      43013 :             size_t Ei = this-&gt;populations.get_flat_index({i, InfectionState::Exposed});</span></a>
+<a name="72"><span class="lineNum">      72 </span><span class="lineCov">      43013 :             size_t Ii = this-&gt;populations.get_flat_index({i, InfectionState::Infected});</span></a>
 <a name="73"><span class="lineNum">      73 </span>            : </a>
-<a name="74"><span class="lineNum">      74 </span><span class="lineCov">      85978 :             for (auto j = AgeGroup(0); j &lt; n_agegroups; j++) {</span></a>
+<a name="74"><span class="lineNum">      74 </span><span class="lineCov">      86026 :             for (auto j = AgeGroup(0); j &lt; n_agegroups; j++) {</span></a>
 <a name="75"><span class="lineNum">      75 </span>            : </a>
-<a name="76"><span class="lineNum">      76 </span><span class="lineCov">      42989 :                 size_t Sj = this-&gt;populations.get_flat_index({j, InfectionState::Susceptible});</span></a>
-<a name="77"><span class="lineNum">      77 </span><span class="lineCov">      42989 :                 size_t Ej = this-&gt;populations.get_flat_index({j, InfectionState::Exposed});</span></a>
-<a name="78"><span class="lineNum">      78 </span><span class="lineCov">      42989 :                 size_t Ij = this-&gt;populations.get_flat_index({j, InfectionState::Infected});</span></a>
-<a name="79"><span class="lineNum">      79 </span><span class="lineCov">      42989 :                 size_t Rj = this-&gt;populations.get_flat_index({j, InfectionState::Recovered});</span></a>
+<a name="76"><span class="lineNum">      76 </span><span class="lineCov">      43013 :                 size_t Sj = this-&gt;populations.get_flat_index({j, InfectionState::Susceptible});</span></a>
+<a name="77"><span class="lineNum">      77 </span><span class="lineCov">      43013 :                 size_t Ej = this-&gt;populations.get_flat_index({j, InfectionState::Exposed});</span></a>
+<a name="78"><span class="lineNum">      78 </span><span class="lineCov">      43013 :                 size_t Ij = this-&gt;populations.get_flat_index({j, InfectionState::Infected});</span></a>
+<a name="79"><span class="lineNum">      79 </span><span class="lineCov">      43013 :                 size_t Rj = this-&gt;populations.get_flat_index({j, InfectionState::Recovered});</span></a>
 <a name="80"><span class="lineNum">      80 </span>            : </a>
-<a name="81"><span class="lineNum">      81 </span><span class="lineCov">      42989 :                 double Nj    = pop[Sj] + pop[Ej] + pop[Ij] + pop[Rj];</span></a>
-<a name="82"><span class="lineNum">      82 </span><span class="lineCov">      42989 :                 double divNj = 1.0 / Nj;</span></a>
+<a name="81"><span class="lineNum">      81 </span><span class="lineCov">      43013 :                 double Nj    = pop[Sj] + pop[Ej] + pop[Ij] + pop[Rj];</span></a>
+<a name="82"><span class="lineNum">      82 </span><span class="lineCov">      43013 :                 double divNj = 1.0 / Nj;</span></a>
 <a name="83"><span class="lineNum">      83 </span>            : </a>
-<a name="84"><span class="lineNum">      84 </span><span class="lineCov">      85978 :                 double coeffStoE = contact_matrix.get_matrix_at(t)(static_cast&lt;Eigen::Index&gt;((size_t)i),</span></a>
-<a name="85"><span class="lineNum">      85 </span><span class="lineCov">      85978 :                                                                    static_cast&lt;Eigen::Index&gt;((size_t)j)) *</span></a>
-<a name="86"><span class="lineNum">      86 </span><span class="lineCov">     128967 :                                    params.get&lt;TransmissionProbabilityOnContact&gt;()[i] * divNj;</span></a>
+<a name="84"><span class="lineNum">      84 </span><span class="lineCov">      86026 :                 double coeffStoE = contact_matrix.get_matrix_at(t)(static_cast&lt;Eigen::Index&gt;((size_t)i),</span></a>
+<a name="85"><span class="lineNum">      85 </span><span class="lineCov">      86026 :                                                                    static_cast&lt;Eigen::Index&gt;((size_t)j)) *</span></a>
+<a name="86"><span class="lineNum">      86 </span><span class="lineCov">     129039 :                                    params.get&lt;TransmissionProbabilityOnContact&gt;()[i] * divNj;</span></a>
 <a name="87"><span class="lineNum">      87 </span>            : </a>
-<a name="88"><span class="lineNum">      88 </span><span class="lineCov">      42989 :                 double dummy_S = y[Si] * y[Ij] * coeffStoE;</span></a>
+<a name="88"><span class="lineNum">      88 </span><span class="lineCov">      43013 :                 double dummy_S = y[Si] * y[Ij] * coeffStoE;</span></a>
 <a name="89"><span class="lineNum">      89 </span>            : </a>
-<a name="90"><span class="lineNum">      90 </span><span class="lineCov">      42989 :                 flows[get_flat_flow_index&lt;InfectionState::Susceptible, InfectionState::Exposed&gt;({i})] += dummy_S;</span></a>
+<a name="90"><span class="lineNum">      90 </span><span class="lineCov">      43013 :                 flows[get_flat_flow_index&lt;InfectionState::Susceptible, InfectionState::Exposed&gt;({i})] += dummy_S;</span></a>
 <a name="91"><span class="lineNum">      91 </span>            :             }</a>
-<a name="92"><span class="lineNum">      92 </span><span class="lineCov">      42989 :             flows[get_flat_flow_index&lt;InfectionState::Exposed, InfectionState::Infected&gt;({i})] =</span></a>
-<a name="93"><span class="lineNum">      93 </span><span class="lineCov">      42989 :                 (1.0 / params.get&lt;TimeExposed&gt;()[i]) * y[Ei];</span></a>
-<a name="94"><span class="lineNum">      94 </span><span class="lineCov">      42989 :             flows[get_flat_flow_index&lt;InfectionState::Infected, InfectionState::Recovered&gt;({i})] =</span></a>
-<a name="95"><span class="lineNum">      95 </span><span class="lineCov">      42989 :                 (1.0 / params.get&lt;TimeInfected&gt;()[i]) * y[Ii];</span></a>
+<a name="92"><span class="lineNum">      92 </span><span class="lineCov">      43013 :             flows[get_flat_flow_index&lt;InfectionState::Exposed, InfectionState::Infected&gt;({i})] =</span></a>
+<a name="93"><span class="lineNum">      93 </span><span class="lineCov">      43013 :                 (1.0 / params.get&lt;TimeExposed&gt;()[i]) * y[Ei];</span></a>
+<a name="94"><span class="lineNum">      94 </span><span class="lineCov">      43013 :             flows[get_flat_flow_index&lt;InfectionState::Infected, InfectionState::Recovered&gt;({i})] =</span></a>
+<a name="95"><span class="lineNum">      95 </span><span class="lineCov">      43013 :                 (1.0 / params.get&lt;TimeInfected&gt;()[i]) * y[Ii];</span></a>
 <a name="96"><span class="lineNum">      96 </span>            :         }</a>
-<a name="97"><span class="lineNum">      97 </span><span class="lineCov">      42989 :     }</span></a>
+<a name="97"><span class="lineNum">      97 </span><span class="lineCov">      43013 :     }</span></a>
 <a name="98"><span class="lineNum">      98 </span>            : </a>
 <a name="99"><span class="lineNum">      99 </span>            :     /**</a>
 <a name="100"><span class="lineNum">     100 </span>            :     *@brief Computes the reproduction number at a given index time of the Model output obtained by the Simulation.</a>
