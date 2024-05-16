@@ -68,6 +68,7 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#pri-types">Private Types</a> &#124;
 <a href="classmio_1_1osir_1_1Model-members.html">List of all members</a>  </div>
   <div class="headertitle">
@@ -90,8 +91,14 @@ Inheritance diagram for mio::osir::Model:</div>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ae9d4ad457d93aa812e32c70e87d35943"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1osir_1_1Model.html#ae9d4ad457d93aa812e32c70e87d35943">get_derivatives</a> (Eigen::Ref&lt; const Eigen::VectorXd &gt; pop, Eigen::Ref&lt; const Eigen::VectorXd &gt; y, double t, Eigen::Ref&lt; Eigen::VectorXd &gt; dydt) const override</td></tr>
 <tr class="separator:ae9d4ad457d93aa812e32c70e87d35943"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5bd4627f004ee73064d8fa555195af62"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1osir_1_1Model.html#a5bd4627f004ee73064d8fa555195af62">Model</a> (const <a class="el" href="structmio_1_1CompartmentalModel.html#a3068432f259b67c5bbb6fa6980bead98">Populations</a> &amp;pop, const <a class="el" href="structmio_1_1CompartmentalModel.html#a93a156eb496bb738cd820cb720a1781e">ParameterSet</a> &amp;params)</td></tr>
+<tr class="separator:a5bd4627f004ee73064d8fa555195af62"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9ef488cdf77a00711e70b644b51da187"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1osir_1_1Model.html#a9ef488cdf77a00711e70b644b51da187">Model</a> (int num_agegroups)</td></tr>
 <tr class="separator:a9ef488cdf77a00711e70b644b51da187"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af0b17d2c3d25badff83298c00046386e"><td class="memTemplParams" colspan="2">template&lt;class IOContext &gt; </td></tr>
+<tr class="memitem:af0b17d2c3d25badff83298c00046386e"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classmio_1_1osir_1_1Model.html#af0b17d2c3d25badff83298c00046386e">serialize</a> (IOContext &amp;io) const</td></tr>
+<tr class="memdesc:af0b17d2c3d25badff83298c00046386e"><td class="mdescLeft">&#160;</td><td class="mdescRight">serialize this.  <a href="classmio_1_1osir_1_1Model.html#af0b17d2c3d25badff83298c00046386e">More...</a><br /></td></tr>
+<tr class="separator:af0b17d2c3d25badff83298c00046386e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_structmio_1_1CompartmentalModel"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_structmio_1_1CompartmentalModel')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="structmio_1_1CompartmentalModel.html">mio::CompartmentalModel&lt; InfectionState, Populations&lt; AgeGroup, InfectionState &gt;, Parameters &gt;</a></td></tr>
 <tr class="memitem:a5bc2e7923a3e11009f72db4a5eb681f0 inherit pub_methods_structmio_1_1CompartmentalModel"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmio_1_1CompartmentalModel.html#a5bc2e7923a3e11009f72db4a5eb681f0">apply_constraints</a> ()</td></tr>
 <tr class="separator:a5bc2e7923a3e11009f72db4a5eb681f0 inherit pub_methods_structmio_1_1CompartmentalModel"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -116,6 +123,13 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:aa2e112fd20b10c6c31bbe0c412079c8d inherit pub_methods_structmio_1_1CompartmentalModel"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a73124ecdef8601837f2765930aac927b inherit pub_methods_structmio_1_1CompartmentalModel"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmio_1_1CompartmentalModel.html#a73124ecdef8601837f2765930aac927b">~CompartmentalModel</a> ()=default</td></tr>
 <tr class="separator:a73124ecdef8601837f2765930aac927b inherit pub_methods_structmio_1_1CompartmentalModel"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:aa33c32b5720222878413831c81a43b46"><td class="memTemplParams" colspan="2">template&lt;class IOContext &gt; </td></tr>
+<tr class="memitem:aa33c32b5720222878413831c81a43b46"><td class="memTemplItemLeft" align="right" valign="top">static <a class="el" href="namespacemio.html#ae556a666d14183eb2bf3a3efc11551ec">IOResult</a>&lt; <a class="el" href="classmio_1_1osir_1_1Model.html">Model</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classmio_1_1osir_1_1Model.html#aa33c32b5720222878413831c81a43b46">deserialize</a> (IOContext &amp;io)</td></tr>
+<tr class="memdesc:aa33c32b5720222878413831c81a43b46"><td class="mdescLeft">&#160;</td><td class="mdescRight">deserialize an object of this class.  <a href="classmio_1_1osir_1_1Model.html#aa33c32b5720222878413831c81a43b46">More...</a><br /></td></tr>
+<tr class="separator:aa33c32b5720222878413831c81a43b46"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-types"></a>
 Private Types</h2></td></tr>
@@ -161,8 +175,36 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a5bd4627f004ee73064d8fa555195af62"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5bd4627f004ee73064d8fa555195af62">&#9670;&nbsp;</a></span>Model() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">mio::osir::Model::Model </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structmio_1_1CompartmentalModel.html#a3068432f259b67c5bbb6fa6980bead98">Populations</a> &amp;&#160;</td>
+          <td class="paramname"><em>pop</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structmio_1_1CompartmentalModel.html#a93a156eb496bb738cd820cb720a1781e">ParameterSet</a> &amp;&#160;</td>
+          <td class="paramname"><em>params</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a9ef488cdf77a00711e70b644b51da187"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9ef488cdf77a00711e70b644b51da187">&#9670;&nbsp;</a></span>Model()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a9ef488cdf77a00711e70b644b51da187">&#9670;&nbsp;</a></span>Model() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -180,6 +222,37 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="aa33c32b5720222878413831c81a43b46"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa33c32b5720222878413831c81a43b46">&#9670;&nbsp;</a></span>deserialize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class IOContext &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="namespacemio.html#ae556a666d14183eb2bf3a3efc11551ec">IOResult</a>&lt;<a class="el" href="classmio_1_1osir_1_1Model.html">Model</a>&gt; mio::osir::Model::deserialize </td>
+          <td>(</td>
+          <td class="paramtype">IOContext &amp;&#160;</td>
+          <td class="paramname"><em>io</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>deserialize an object of this class. </p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="namespacemio.html#a1eecf99ef3a231d628f968aeb2136865" title="Restores an object from the data stored in an IO context.">mio::deserialize</a> </dd></dl>
+
+</div>
+</div>
 <a id="ae9d4ad457d93aa812e32c70e87d35943"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae9d4ad457d93aa812e32c70e87d35943">&#9670;&nbsp;</a></span>get_derivatives()</h2>
 
@@ -227,6 +300,29 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Reimplemented from <a class="el" href="structmio_1_1CompartmentalModel.html#a79206f894563096b699dc20bac32bf1c">mio::CompartmentalModel&lt; InfectionState, Populations&lt; AgeGroup, InfectionState &gt;, Parameters &gt;</a>.</p>
+
+</div>
+</div>
+<a id="af0b17d2c3d25badff83298c00046386e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af0b17d2c3d25badff83298c00046386e">&#9670;&nbsp;</a></span>serialize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class IOContext &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void mio::osir::Model::serialize </td>
+          <td>(</td>
+          <td class="paramtype">IOContext &amp;&#160;</td>
+          <td class="paramname"><em>io</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>serialize this. </p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="namespacemio.html#a27a24b9e6cb629e04e9613446f07d6ba" title="Save data that describes an object in a format determined by the given context.">mio::serialize</a> </dd></dl>
 
 </div>
 </div>
