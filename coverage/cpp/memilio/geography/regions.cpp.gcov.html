@@ -31,13 +31,13 @@
             <td class="headerValue">coverage.info</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntry">64</td>
-            <td class="headerCovTableEntry">66</td>
-            <td class="headerCovTableEntryHi">97.0 %</td>
+            <td class="headerCovTableEntry">63</td>
+            <td class="headerCovTableEntry">65</td>
+            <td class="headerCovTableEntryHi">96.9 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2024-05-17 10:31:17</td>
+            <td class="headerValue">2024-05-17 12:46:19</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">4</td>
@@ -154,7 +154,7 @@
 <a name="92"><span class="lineNum">      92 </span><span class="lineNoCov">          0 :     default:</span></a>
 <a name="93"><span class="lineNum">      93 </span><span class="lineNoCov">          0 :         break;</span></a>
 <a name="94"><span class="lineNum">      94 </span>            :     }</a>
-<a name="95"><span class="lineNum">      95 </span><span class="lineCov">         40 :     return make_range(data-&gt;cbegin(), data-&gt;cend());</span></a>
+<a name="95"><span class="lineNum">      95 </span><span class="lineCov">         20 :     return make_range(data-&gt;cbegin(), data-&gt;cend());</span></a>
 <a name="96"><span class="lineNum">      96 </span>            : }</a>
 <a name="97"><span class="lineNum">      97 </span>            : </a>
 <a name="98"><span class="lineNum">      98 </span>            : Range&lt;std::pair&lt;std::vector&lt;std::pair&lt;Date, Date&gt;&gt;::const_iterator, std::vector&lt;std::pair&lt;Date, Date&gt;&gt;::const_iterator&gt;&gt;</a>
@@ -164,10 +164,10 @@
 <a name="102"><span class="lineNum">     102 </span>            : </a>
 <a name="103"><span class="lineNum">     103 </span>            :     //all holiday periods that overlap with the specified period</a>
 <a name="104"><span class="lineNum">     104 </span><span class="lineCov">         20 :     auto holidays_in_range =</span></a>
-<a name="105"><span class="lineNum">     105 </span><span class="lineCov">         40 :         std::equal_range(all.begin(), all.end(), std::make_pair(start_date, end_date), [](auto&amp; p1, auto&amp; p2) {</span></a>
+<a name="105"><span class="lineNum">     105 </span><span class="lineCov">         20 :         std::equal_range(all.begin(), all.end(), std::make_pair(start_date, end_date), [](auto&amp; p1, auto&amp; p2) {</span></a>
 <a name="106"><span class="lineNum">     106 </span><span class="lineCov">        519 :             return std::tie(p1.second.year, p1.second.month, p1.second.day) &lt;</span></a>
 <a name="107"><span class="lineNum">     107 </span><span class="lineCov">        519 :                    std::tie(p2.first.year, p2.first.month, p2.first.day);</span></a>
-<a name="108"><span class="lineNum">     108 </span><span class="lineCov">         20 :         });</span></a>
+<a name="108"><span class="lineNum">     108 </span>            :         });</a>
 <a name="109"><span class="lineNum">     109 </span>            : </a>
 <a name="110"><span class="lineNum">     110 </span><span class="lineCov">         40 :     return {holidays_in_range};</span></a>
 <a name="111"><span class="lineNum">     111 </span>            : }</a>

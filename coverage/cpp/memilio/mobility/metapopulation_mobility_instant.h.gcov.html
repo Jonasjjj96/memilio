@@ -31,13 +31,13 @@
             <td class="headerValue">coverage.info</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntry">125</td>
-            <td class="headerCovTableEntry">139</td>
-            <td class="headerCovTableEntryMed">89.9 %</td>
+            <td class="headerCovTableEntry">131</td>
+            <td class="headerCovTableEntry">146</td>
+            <td class="headerCovTableEntryMed">89.7 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2024-05-17 10:31:17</td>
+            <td class="headerValue">2024-05-17 12:46:19</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">74</td>
@@ -110,9 +110,9 @@
 <a name="48"><span class="lineNum">      48 </span>            : public:</a>
 <a name="49"><span class="lineNum">      49 </span>            :     template &lt;class... Args, typename = std::enable_if_t&lt;std::is_constructible&lt;Sim, Args...&gt;::value, void&gt;&gt;</a>
 <a name="50"><span class="lineNum">      50 </span><span class="lineCov">         34 :     SimulationNode(Args&amp;&amp;... args)</span></a>
-<a name="51"><span class="lineNum">      51 </span><span class="lineCov">         79 :         : m_simulation(std::forward&lt;Args&gt;(args)...)</span></a>
+<a name="51"><span class="lineNum">      51 </span><span class="lineCov">         34 :         : m_simulation(std::forward&lt;Args&gt;(args)...)</span></a>
 <a name="52"><span class="lineNum">      52 </span><span class="lineCov">         34 :         , m_last_state(m_simulation.get_result().get_last_value())</span></a>
-<a name="53"><span class="lineNum">      53 </span><span class="lineCov">        147 :         , m_t0(m_simulation.get_result().get_last_time())</span></a>
+<a name="53"><span class="lineNum">      53 </span><span class="lineCov">         34 :         , m_t0(m_simulation.get_result().get_last_time())</span></a>
 <a name="54"><span class="lineNum">      54 </span>            :     {</a>
 <a name="55"><span class="lineNum">      55 </span><span class="lineCov">         34 :     }</span></a>
 <a name="56"><span class="lineNum">      56 </span>            : </a>
@@ -275,10 +275,10 @@
 <a name="213"><span class="lineNum">     213 </span>            :     template &lt;class IOContext&gt;</a>
 <a name="214"><span class="lineNum">     214 </span><span class="lineCov">          2 :     void serialize(IOContext&amp; io) const</span></a>
 <a name="215"><span class="lineNum">     215 </span>            :     {</a>
-<a name="216"><span class="lineNum">     216 </span><span class="lineCov">          8 :         auto obj = io.create_object(&quot;MigrationParameters&quot;);</span></a>
+<a name="216"><span class="lineNum">     216 </span><span class="lineCov">          6 :         auto obj = io.create_object(&quot;MigrationParameters&quot;);</span></a>
 <a name="217"><span class="lineNum">     217 </span><span class="lineCov">          2 :         obj.add_element(&quot;Coefficients&quot;, m_coefficients);</span></a>
 <a name="218"><span class="lineNum">     218 </span><span class="lineCov">          2 :         obj.add_element(&quot;DynamicNPIs&quot;, m_dynamic_npis);</span></a>
-<a name="219"><span class="lineNum">     219 </span><span class="lineCov">          2 :     }</span></a>
+<a name="219"><span class="lineNum">     219 </span><span class="lineCov">          4 :     }</span></a>
 <a name="220"><span class="lineNum">     220 </span>            : </a>
 <a name="221"><span class="lineNum">     221 </span>            :     /**</a>
 <a name="222"><span class="lineNum">     222 </span>            :      * deserialize an object of this class.</a>
@@ -287,18 +287,18 @@
 <a name="225"><span class="lineNum">     225 </span>            :     template &lt;class IOContext&gt;</a>
 <a name="226"><span class="lineNum">     226 </span><span class="lineCov">          2 :     static IOResult&lt;MigrationParameters&gt; deserialize(IOContext&amp; io)</span></a>
 <a name="227"><span class="lineNum">     227 </span>            :     {</a>
-<a name="228"><span class="lineNum">     228 </span><span class="lineCov">          8 :         auto obj = io.expect_object(&quot;MigrationParameters&quot;);</span></a>
-<a name="229"><span class="lineNum">     229 </span><span class="lineCov">          8 :         auto c   = obj.expect_element(&quot;Coefficients&quot;, Tag&lt;MigrationCoefficientGroup&gt;{});</span></a>
-<a name="230"><span class="lineNum">     230 </span><span class="lineCov">          8 :         auto d   = obj.expect_element(&quot;DynamicNPIs&quot;, Tag&lt;DynamicNPIs&lt;FP&gt;&gt;{});</span></a>
+<a name="228"><span class="lineNum">     228 </span><span class="lineCov">          6 :         auto obj = io.expect_object(&quot;MigrationParameters&quot;);</span></a>
+<a name="229"><span class="lineNum">     229 </span><span class="lineCov">          6 :         auto c   = obj.expect_element(&quot;Coefficients&quot;, Tag&lt;MigrationCoefficientGroup&gt;{});</span></a>
+<a name="230"><span class="lineNum">     230 </span><span class="lineCov">          6 :         auto d   = obj.expect_element(&quot;DynamicNPIs&quot;, Tag&lt;DynamicNPIs&lt;FP&gt;&gt;{});</span></a>
 <a name="231"><span class="lineNum">     231 </span>            :         return apply(</a>
 <a name="232"><span class="lineNum">     232 </span>            :             io,</a>
 <a name="233"><span class="lineNum">     233 </span><span class="lineCov">          2 :             [](auto&amp;&amp; c_, auto&amp;&amp; d_) {</span></a>
 <a name="234"><span class="lineNum">     234 </span><span class="lineCov">          2 :                 MigrationParameters params(c_);</span></a>
 <a name="235"><span class="lineNum">     235 </span><span class="lineCov">          2 :                 params.set_dynamic_npis_infected(d_);</span></a>
 <a name="236"><span class="lineNum">     236 </span><span class="lineCov">          2 :                 return params;</span></a>
-<a name="237"><span class="lineNum">     237 </span>            :             },</a>
+<a name="237"><span class="lineNum">     237 </span><span class="lineNoCov">          0 :             },</span></a>
 <a name="238"><span class="lineNum">     238 </span><span class="lineCov">          4 :             c, d);</span></a>
-<a name="239"><span class="lineNum">     239 </span>            :     }</a>
+<a name="239"><span class="lineNum">     239 </span><span class="lineCov">          2 :     }</span></a>
 <a name="240"><span class="lineNum">     240 </span>            : </a>
 <a name="241"><span class="lineNum">     241 </span>            : private:</a>
 <a name="242"><span class="lineNum">     242 </span>            :     MigrationCoefficientGroup m_coefficients; //one per group and compartment</a>
@@ -317,10 +317,10 @@
 <a name="255"><span class="lineNum">     255 </span>            :      * @param coeffs % of people in each group and compartment that migrate in each time step.</a>
 <a name="256"><span class="lineNum">     256 </span>            :      */</a>
 <a name="257"><span class="lineNum">     257 </span><span class="lineCov">          8 :     MigrationEdge(const MigrationParameters&lt;FP&gt;&amp; params)</span></a>
-<a name="258"><span class="lineNum">     258 </span>            :         : m_parameters(params)</a>
-<a name="259"><span class="lineNum">     259 </span><span class="lineCov">         16 :         , m_migrated(params.get_coefficients().get_shape().rows())</span></a>
-<a name="260"><span class="lineNum">     260 </span>            :         , m_return_times(0)</a>
-<a name="261"><span class="lineNum">     261 </span><span class="lineCov">         24 :         , m_return_migrated(false)</span></a>
+<a name="258"><span class="lineNum">     258 </span><span class="lineCov">          8 :         : m_parameters(params)</span></a>
+<a name="259"><span class="lineNum">     259 </span><span class="lineCov">          8 :         , m_migrated(params.get_coefficients().get_shape().rows())</span></a>
+<a name="260"><span class="lineNum">     260 </span><span class="lineCov">          8 :         , m_return_times(0)</span></a>
+<a name="261"><span class="lineNum">     261 </span><span class="lineCov">          8 :         , m_return_migrated(false)</span></a>
 <a name="262"><span class="lineNum">     262 </span>            :     {</a>
 <a name="263"><span class="lineNum">     263 </span><span class="lineCov">          8 :     }</span></a>
 <a name="264"><span class="lineNum">     264 </span>            : </a>
@@ -329,10 +329,10 @@
 <a name="267"><span class="lineNum">     267 </span>            :      * @param coeffs % of people in each group and compartment that migrate in each time step.</a>
 <a name="268"><span class="lineNum">     268 </span>            :      */</a>
 <a name="269"><span class="lineNum">     269 </span><span class="lineCov">         15 :     MigrationEdge(const Eigen::VectorXd&amp; coeffs)</span></a>
-<a name="270"><span class="lineNum">     270 </span>            :         : m_parameters(coeffs)</a>
+<a name="270"><span class="lineNum">     270 </span><span class="lineCov">         15 :         : m_parameters(coeffs)</span></a>
 <a name="271"><span class="lineNum">     271 </span><span class="lineCov">         15 :         , m_migrated(coeffs.rows())</span></a>
-<a name="272"><span class="lineNum">     272 </span>            :         , m_return_times(0)</a>
-<a name="273"><span class="lineNum">     273 </span><span class="lineCov">         30 :         , m_return_migrated(false)</span></a>
+<a name="272"><span class="lineNum">     272 </span><span class="lineCov">         15 :         , m_return_times(0)</span></a>
+<a name="273"><span class="lineNum">     273 </span><span class="lineCov">         15 :         , m_return_migrated(false)</span></a>
 <a name="274"><span class="lineNum">     274 </span>            :     {</a>
 <a name="275"><span class="lineNum">     275 </span><span class="lineCov">         15 :     }</span></a>
 <a name="276"><span class="lineNum">     276 </span>            : </a>
@@ -381,14 +381,14 @@
 <a name="319"><span class="lineNum">     319 </span><span class="lineCov">       6001 : void calculate_migration_returns(Eigen::Ref&lt;typename TimeSeries&lt;FP&gt;::Vector&gt; migrated, const Sim&amp; sim,</span></a>
 <a name="320"><span class="lineNum">     320 </span>            :                                  Eigen::Ref&lt;const typename TimeSeries&lt;FP&gt;::Vector&gt; total, FP t, FP dt)</a>
 <a name="321"><span class="lineNum">     321 </span>            : {</a>
-<a name="322"><span class="lineNum">     322 </span><span class="lineCov">      12002 :     auto y0 = migrated.eval();</span></a>
+<a name="322"><span class="lineNum">     322 </span><span class="lineCov">       6001 :     auto y0 = migrated.eval();</span></a>
 <a name="323"><span class="lineNum">     323 </span><span class="lineCov">       6001 :     auto y1 = migrated;</span></a>
 <a name="324"><span class="lineNum">     324 </span><span class="lineCov">       6001 :     EulerIntegratorCore&lt;FP&gt;().step(</span></a>
 <a name="325"><span class="lineNum">     325 </span><span class="lineCov">      30005 :         [&amp;](auto&amp;&amp; y, auto&amp;&amp; t_, auto&amp;&amp; dydt) {</span></a>
 <a name="326"><span class="lineNum">     326 </span><span class="lineCov">      24004 :             sim.get_model().get_derivatives(total, y, t_, dydt);</span></a>
 <a name="327"><span class="lineNum">     327 </span>            :         },</a>
 <a name="328"><span class="lineNum">     328 </span>            :         y0, t, dt, y1);</a>
-<a name="329"><span class="lineNum">     329 </span><span class="lineCov">       6001 : }</span></a>
+<a name="329"><span class="lineNum">     329 </span><span class="lineCov">      12002 : }</span></a>
 <a name="330"><span class="lineNum">     330 </span>            : </a>
 <a name="331"><span class="lineNum">     331 </span>            : /**</a>
 <a name="332"><span class="lineNum">     332 </span>            :  * detect a get_infections_relative function for the Model type.</a>
@@ -515,7 +515,7 @@
 <a name="453"><span class="lineNum">     453 </span>            :             //the lower-order return calculation may in rare cases produce negative compartments,</a>
 <a name="454"><span class="lineNum">     454 </span>            :             //especially at the beginning of the simulation.</a>
 <a name="455"><span class="lineNum">     455 </span>            :             //fix by subtracting the supernumerous returns from the biggest compartment of the age group.</a>
-<a name="456"><span class="lineNum">     456 </span><span class="lineCov">      12002 :             Eigen::VectorXd remaining_after_return = (node_to.get_result().get_last_value() - m_migrated[i]).eval();</span></a>
+<a name="456"><span class="lineNum">     456 </span><span class="lineCov">       6001 :             Eigen::VectorXd remaining_after_return = (node_to.get_result().get_last_value() - m_migrated[i]).eval();</span></a>
 <a name="457"><span class="lineNum">     457 </span><span class="lineCov">      30323 :             for (Eigen::Index j = 0; j &lt; node_to.get_result().get_last_value().size(); ++j) {</span></a>
 <a name="458"><span class="lineNum">     458 </span><span class="lineCov">      24322 :                 if (remaining_after_return(j) &lt; 0) {</span></a>
 <a name="459"><span class="lineNum">     459 </span><span class="lineNoCov">          0 :                     auto num_comparts = (Eigen::Index)Sim::Model::Compartments::Count;</span></a>
@@ -536,7 +536,7 @@
 <a name="474"><span class="lineNum">     474 </span><span class="lineCov">       6001 :             node_to.get_result().get_last_value() -= m_migrated[i];</span></a>
 <a name="475"><span class="lineNum">     475 </span><span class="lineCov">       6001 :             m_migrated.remove_time_point(i);</span></a>
 <a name="476"><span class="lineNum">     476 </span><span class="lineCov">       6001 :             m_return_times.remove_time_point(i);</span></a>
-<a name="477"><span class="lineNum">     477 </span>            :         }</a>
+<a name="477"><span class="lineNum">     477 </span><span class="lineCov">       6001 :         }</span></a>
 <a name="478"><span class="lineNum">     478 </span>            :     }</a>
 <a name="479"><span class="lineNum">     479 </span>            : </a>
 <a name="480"><span class="lineNum">     480 </span><span class="lineCov">      12051 :     if (!m_return_migrated &amp;&amp; (m_parameters.get_coefficients().get_matrix_at(t).array() &gt; 0.0).any()) {</span></a>

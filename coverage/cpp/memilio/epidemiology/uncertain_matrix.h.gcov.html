@@ -31,13 +31,13 @@
             <td class="headerValue">coverage.info</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntry">71</td>
-            <td class="headerCovTableEntry">74</td>
-            <td class="headerCovTableEntryHi">95.9 %</td>
+            <td class="headerCovTableEntry">77</td>
+            <td class="headerCovTableEntry">81</td>
+            <td class="headerCovTableEntryHi">95.1 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2024-05-17 10:31:17</td>
+            <td class="headerValue">2024-05-17 12:46:19</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">21</td>
@@ -111,11 +111,11 @@
 <a name="49"><span class="lineNum">      49 </span><span class="lineCov">        100 :     }</span></a>
 <a name="50"><span class="lineNum">      50 </span>            : </a>
 <a name="51"><span class="lineNum">      51 </span><span class="lineCov">        151 :     UncertainContactMatrix(const ContactMatrixGroup&amp; cont_freq)</span></a>
-<a name="52"><span class="lineNum">      52 </span>            :         : m_cont_freq(cont_freq)</a>
-<a name="53"><span class="lineNum">      53 </span>            :         , m_dampings()</a>
-<a name="54"><span class="lineNum">      54 </span>            :         , m_school_holiday_damping(0.0, mio::DampingLevel(0), mio::DampingType(0), mio::SimulationTime(0), {},</a>
+<a name="52"><span class="lineNum">      52 </span><span class="lineCov">        151 :         : m_cont_freq(cont_freq)</span></a>
+<a name="53"><span class="lineNum">      53 </span><span class="lineCov">        151 :         , m_dampings()</span></a>
+<a name="54"><span class="lineNum">      54 </span><span class="lineCov">        302 :         , m_school_holiday_damping(0.0, mio::DampingLevel(0), mio::DampingType(0), mio::SimulationTime(0), {},</span></a>
 <a name="55"><span class="lineNum">      55 </span><span class="lineCov">        151 :                                    Eigen::VectorXd::Zero(cont_freq.get_num_groups()))</span></a>
-<a name="56"><span class="lineNum">      56 </span><span class="lineCov">        302 :         , m_school_holidays()</span></a>
+<a name="56"><span class="lineNum">      56 </span><span class="lineCov">        151 :         , m_school_holidays()</span></a>
 <a name="57"><span class="lineNum">      57 </span>            :     {</a>
 <a name="58"><span class="lineNum">      58 </span><span class="lineCov">        151 :     }</span></a>
 <a name="59"><span class="lineNum">      59 </span>            : </a>
@@ -123,9 +123,9 @@
 <a name="61"><span class="lineNum">      61 </span>            :      * @brief Conversion to const ContactMatrix reference by returning the </a>
 <a name="62"><span class="lineNum">      62 </span>            :      *        ContactMatrix contained in UncertainContactMatrix</a>
 <a name="63"><span class="lineNum">      63 </span>            :      */</a>
-<a name="64"><span class="lineNum">      64 </span><span class="lineCov">      44927 :     operator ContactMatrixGroup const &amp;() const</span></a>
+<a name="64"><span class="lineNum">      64 </span><span class="lineCov">      47003 :     operator ContactMatrixGroup const &amp;() const</span></a>
 <a name="65"><span class="lineNum">      65 </span>            :     {</a>
-<a name="66"><span class="lineNum">      66 </span><span class="lineCov">      44927 :         return m_cont_freq;</span></a>
+<a name="66"><span class="lineNum">      66 </span><span class="lineCov">      47003 :         return m_cont_freq;</span></a>
 <a name="67"><span class="lineNum">      67 </span>            :     }</a>
 <a name="68"><span class="lineNum">      68 </span>            : </a>
 <a name="69"><span class="lineNum">      69 </span>            :     /**</a>
@@ -248,9 +248,9 @@
 <a name="186"><span class="lineNum">     186 </span>            :         };</a>
 <a name="187"><span class="lineNum">     187 </span><span class="lineCov">         40 :         mio::apply_dampings(m_cont_freq, m_dampings, make_matrix);</span></a>
 <a name="188"><span class="lineNum">     188 </span>            : </a>
-<a name="189"><span class="lineNum">     189 </span><span class="lineCov">         42 :         for (auto h : m_school_holidays) {</span></a>
+<a name="189"><span class="lineNum">     189 </span><span class="lineCov">         44 :         for (auto h : m_school_holidays) {</span></a>
 <a name="190"><span class="lineNum">     190 </span>            :             //enable damping at the start of the period</a>
-<a name="191"><span class="lineNum">     191 </span><span class="lineCov">          4 :             auto damping = m_school_holiday_damping;</span></a>
+<a name="191"><span class="lineNum">     191 </span><span class="lineCov">          2 :             auto damping = m_school_holiday_damping;</span></a>
 <a name="192"><span class="lineNum">     192 </span><span class="lineCov">          2 :             damping.set_time(h.first);</span></a>
 <a name="193"><span class="lineNum">     193 </span><span class="lineCov">          2 :             mio::apply_dampings(m_cont_freq, make_range(&amp;damping, &amp;damping + 1), make_matrix);</span></a>
 <a name="194"><span class="lineNum">     194 </span>            : </a>
@@ -270,14 +270,14 @@
 <a name="208"><span class="lineNum">     208 </span>            :     template &lt;class IOContext&gt;</a>
 <a name="209"><span class="lineNum">     209 </span><span class="lineCov">         24 :     void serialize(IOContext&amp; io) const</span></a>
 <a name="210"><span class="lineNum">     210 </span>            :     {</a>
-<a name="211"><span class="lineNum">     211 </span><span class="lineCov">         96 :         auto obj = io.create_object(&quot;UncertainContactMatrix&quot;);</span></a>
+<a name="211"><span class="lineNum">     211 </span><span class="lineCov">         72 :         auto obj = io.create_object(&quot;UncertainContactMatrix&quot;);</span></a>
 <a name="212"><span class="lineNum">     212 </span><span class="lineCov">         24 :         obj.add_element(&quot;ContactMatrix&quot;, m_cont_freq);</span></a>
 <a name="213"><span class="lineNum">     213 </span><span class="lineCov">         24 :         if (!(io.flags() &amp; IOF_OmitDistributions)) {</span></a>
 <a name="214"><span class="lineNum">     214 </span><span class="lineCov">          8 :             obj.add_element(&quot;SchoolHolidayDamping&quot;, m_school_holiday_damping);</span></a>
 <a name="215"><span class="lineNum">     215 </span><span class="lineCov">          8 :             obj.add_list(&quot;SchoolHolidays&quot;, m_school_holidays.begin(), m_school_holidays.end());</span></a>
 <a name="216"><span class="lineNum">     216 </span><span class="lineCov">          8 :             obj.add_list(&quot;Dampings&quot;, m_dampings.begin(), m_dampings.end());</span></a>
 <a name="217"><span class="lineNum">     217 </span>            :         }</a>
-<a name="218"><span class="lineNum">     218 </span><span class="lineCov">         24 :     }</span></a>
+<a name="218"><span class="lineNum">     218 </span><span class="lineCov">         48 :     }</span></a>
 <a name="219"><span class="lineNum">     219 </span>            : </a>
 <a name="220"><span class="lineNum">     220 </span>            :     /**</a>
 <a name="221"><span class="lineNum">     221 </span>            :      * deserialize an object of this class.</a>
@@ -286,12 +286,12 @@
 <a name="224"><span class="lineNum">     224 </span>            :     template &lt;class IOContext&gt;</a>
 <a name="225"><span class="lineNum">     225 </span><span class="lineCov">         10 :     static IOResult&lt;UncertainContactMatrix&gt; deserialize(IOContext&amp; io)</span></a>
 <a name="226"><span class="lineNum">     226 </span>            :     {</a>
-<a name="227"><span class="lineNum">     227 </span><span class="lineCov">         40 :         auto obj = io.expect_object(&quot;UncertainContactMatrix&quot;);</span></a>
+<a name="227"><span class="lineNum">     227 </span><span class="lineCov">         30 :         auto obj = io.expect_object(&quot;UncertainContactMatrix&quot;);</span></a>
 <a name="228"><span class="lineNum">     228 </span><span class="lineCov">         10 :         if (!(io.flags() &amp; IOF_OmitDistributions)) {</span></a>
-<a name="229"><span class="lineNum">     229 </span><span class="lineCov">         24 :             auto c = obj.expect_element(&quot;ContactMatrix&quot;, Tag&lt;ContactMatrixGroup&gt;{});</span></a>
-<a name="230"><span class="lineNum">     230 </span><span class="lineCov">         24 :             auto e = obj.expect_element(&quot;SchoolHolidayDamping&quot;, Tag&lt;DampingSampling&lt;FP&gt;&gt;{});</span></a>
-<a name="231"><span class="lineNum">     231 </span><span class="lineCov">         24 :             auto f = obj.expect_list(&quot;SchoolHolidays&quot;, Tag&lt;std::pair&lt;SimulationTime, SimulationTime&gt;&gt;{});</span></a>
-<a name="232"><span class="lineNum">     232 </span><span class="lineCov">         24 :             auto d = obj.expect_list(&quot;Dampings&quot;, Tag&lt;DampingSampling&lt;FP&gt;&gt;{});</span></a>
+<a name="229"><span class="lineNum">     229 </span><span class="lineCov">         18 :             auto c = obj.expect_element(&quot;ContactMatrix&quot;, Tag&lt;ContactMatrixGroup&gt;{});</span></a>
+<a name="230"><span class="lineNum">     230 </span><span class="lineCov">         18 :             auto e = obj.expect_element(&quot;SchoolHolidayDamping&quot;, Tag&lt;DampingSampling&lt;FP&gt;&gt;{});</span></a>
+<a name="231"><span class="lineNum">     231 </span><span class="lineCov">         18 :             auto f = obj.expect_list(&quot;SchoolHolidays&quot;, Tag&lt;std::pair&lt;SimulationTime, SimulationTime&gt;&gt;{});</span></a>
+<a name="232"><span class="lineNum">     232 </span><span class="lineCov">         18 :             auto d = obj.expect_list(&quot;Dampings&quot;, Tag&lt;DampingSampling&lt;FP&gt;&gt;{});</span></a>
 <a name="233"><span class="lineNum">     233 </span>            :             return apply(</a>
 <a name="234"><span class="lineNum">     234 </span>            :                 io,</a>
 <a name="235"><span class="lineNum">     235 </span><span class="lineCov">          6 :                 [](auto&amp;&amp; c_, auto&amp;&amp; d_, auto&amp;&amp; e_, auto&amp;&amp; f_) {</span></a>
@@ -300,19 +300,19 @@
 <a name="238"><span class="lineNum">     238 </span><span class="lineCov">          6 :                     m.get_school_holiday_damping() = e_;</span></a>
 <a name="239"><span class="lineNum">     239 </span><span class="lineCov">          6 :                     m.get_school_holidays()        = f_;</span></a>
 <a name="240"><span class="lineNum">     240 </span><span class="lineCov">          6 :                     return m;</span></a>
-<a name="241"><span class="lineNum">     241 </span>            :                 },</a>
+<a name="241"><span class="lineNum">     241 </span><span class="lineNoCov">          0 :                 },</span></a>
 <a name="242"><span class="lineNum">     242 </span><span class="lineCov">          6 :                 c, d, e, f);</span></a>
-<a name="243"><span class="lineNum">     243 </span>            :         }</a>
+<a name="243"><span class="lineNum">     243 </span><span class="lineCov">          6 :         }</span></a>
 <a name="244"><span class="lineNum">     244 </span>            :         else {</a>
-<a name="245"><span class="lineNum">     245 </span><span class="lineCov">         16 :             auto c = obj.expect_element(&quot;ContactMatrix&quot;, Tag&lt;ContactMatrixGroup&gt;{});</span></a>
+<a name="245"><span class="lineNum">     245 </span><span class="lineCov">         12 :             auto c = obj.expect_element(&quot;ContactMatrix&quot;, Tag&lt;ContactMatrixGroup&gt;{});</span></a>
 <a name="246"><span class="lineNum">     246 </span>            :             return apply(</a>
 <a name="247"><span class="lineNum">     247 </span>            :                 io,</a>
 <a name="248"><span class="lineNum">     248 </span><span class="lineCov">          4 :                 [](auto&amp;&amp; c_) {</span></a>
 <a name="249"><span class="lineNum">     249 </span><span class="lineCov">          4 :                     return UncertainContactMatrix{c_};</span></a>
 <a name="250"><span class="lineNum">     250 </span>            :                 },</a>
 <a name="251"><span class="lineNum">     251 </span><span class="lineCov">          4 :                 c);</span></a>
-<a name="252"><span class="lineNum">     252 </span>            :         }</a>
-<a name="253"><span class="lineNum">     253 </span>            :     }</a>
+<a name="252"><span class="lineNum">     252 </span><span class="lineCov">          4 :         }</span></a>
+<a name="253"><span class="lineNum">     253 </span><span class="lineCov">         10 :     }</span></a>
 <a name="254"><span class="lineNum">     254 </span>            : </a>
 <a name="255"><span class="lineNum">     255 </span>            : private:</a>
 <a name="256"><span class="lineNum">     256 </span>            :     ContactMatrixGroup m_cont_freq;</a>

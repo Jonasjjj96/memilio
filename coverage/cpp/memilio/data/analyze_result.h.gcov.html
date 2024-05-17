@@ -32,12 +32,12 @@
             <td></td>
             <td class="headerItem">Lines:</td>
             <td class="headerCovTableEntry">31</td>
-            <td class="headerCovTableEntry">31</td>
-            <td class="headerCovTableEntryHi">100.0 %</td>
+            <td class="headerCovTableEntry">33</td>
+            <td class="headerCovTableEntryHi">93.9 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2024-05-17 10:31:17</td>
+            <td class="headerValue">2024-05-17 12:46:19</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">7</td>
@@ -135,7 +135,7 @@
 <a name="73"><span class="lineNum">      73 </span><span class="lineCov">          2 :         return interpolate_simulation_result(run);</span></a>
 <a name="74"><span class="lineNum">      74 </span>            :     });</a>
 <a name="75"><span class="lineNum">      75 </span><span class="lineCov">          1 :     return interpolated;</span></a>
-<a name="76"><span class="lineNum">      76 </span>            : }</a>
+<a name="76"><span class="lineNum">      76 </span><span class="lineNoCov">          0 : }</span></a>
 <a name="77"><span class="lineNum">      77 </span>            : </a>
 <a name="78"><span class="lineNum">      78 </span>            : std::vector&lt;std::vector&lt;TimeSeries&lt;double&gt;&gt;&gt;</a>
 <a name="79"><span class="lineNum">      79 </span>            : sum_nodes(const std::vector&lt;std::vector&lt;TimeSeries&lt;double&gt;&gt;&gt;&amp; ensemble_result);</a>
@@ -180,7 +180,7 @@
 <a name="118"><span class="lineNum">     118 </span><span class="lineCov">         14 :                        return interpolate_simulation_result(n.property.get_result());</span></a>
 <a name="119"><span class="lineNum">     119 </span>            :                    });</a>
 <a name="120"><span class="lineNum">     120 </span><span class="lineCov">          7 :     return interpolated;</span></a>
-<a name="121"><span class="lineNum">     121 </span>            : }</a>
+<a name="121"><span class="lineNum">     121 </span><span class="lineNoCov">          0 : }</span></a>
 <a name="122"><span class="lineNum">     122 </span>            : </a>
 <a name="123"><span class="lineNum">     123 </span>            : /**</a>
 <a name="124"><span class="lineNum">     124 </span>            :  * Compute the distance between two SECIR simulation results.</a>
@@ -218,9 +218,9 @@
 <a name="156"><span class="lineNum">     156 </span><span class="lineCov">          2 :     auto norm_sqr = 0.0;</span></a>
 <a name="157"><span class="lineNum">     157 </span><span class="lineCov">          6 :     for (auto iter_node1 = result1.begin(), iter_node2 = result2.begin(); iter_node1 &lt; result1.end();</span></a>
 <a name="158"><span class="lineNum">     158 </span><span class="lineCov">          4 :          ++iter_node1, ++iter_node2) {</span></a>
-<a name="159"><span class="lineNum">     159 </span><span class="lineCov">         12 :         for (Eigen::Index time_idx = 0; time_idx &lt; iter_node1-&gt;get_num_time_points(); ++time_idx) {</span></a>
-<a name="160"><span class="lineNum">     160 </span><span class="lineCov">         16 :             auto v1 = (*iter_node1)[time_idx];</span></a>
-<a name="161"><span class="lineNum">     161 </span><span class="lineCov">         16 :             auto v2 = (*iter_node2)[time_idx];</span></a>
+<a name="159"><span class="lineNum">     159 </span><span class="lineCov">         20 :         for (Eigen::Index time_idx = 0; time_idx &lt; iter_node1-&gt;get_num_time_points(); ++time_idx) {</span></a>
+<a name="160"><span class="lineNum">     160 </span><span class="lineCov">          8 :             auto v1 = (*iter_node1)[time_idx];</span></a>
+<a name="161"><span class="lineNum">     161 </span><span class="lineCov">          8 :             auto v2 = (*iter_node2)[time_idx];</span></a>
 <a name="162"><span class="lineNum">     162 </span><span class="lineCov">         16 :             for (Eigen::Index age_idx = 0; age_idx &lt; num_age_groups; ++age_idx) {</span></a>
 <a name="163"><span class="lineNum">     163 </span><span class="lineCov">          8 :                 auto d1 = v1[age_idx * num_compartments + Eigen::Index(compartment)];</span></a>
 <a name="164"><span class="lineNum">     164 </span><span class="lineCov">          8 :                 auto d2 = v2[age_idx * num_compartments + Eigen::Index(compartment)];</span></a>

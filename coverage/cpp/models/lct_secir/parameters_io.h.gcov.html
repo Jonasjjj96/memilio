@@ -31,13 +31,13 @@
             <td class="headerValue">coverage.info</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntry">188</td>
-            <td class="headerCovTableEntry">188</td>
+            <td class="headerCovTableEntry">189</td>
+            <td class="headerCovTableEntry">189</td>
             <td class="headerCovTableEntryHi">100.0 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2024-05-17 10:31:17</td>
+            <td class="headerValue">2024-05-17 12:46:19</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">2</td>
@@ -130,7 +130,7 @@
 <a name="68"><span class="lineNum">      68 </span>            :     using LctState = typename Model::LctState;</a>
 <a name="69"><span class="lineNum">      69 </span>            : </a>
 <a name="70"><span class="lineNum">      70 </span>            :     // Try to get rki data from path.</a>
-<a name="71"><span class="lineNum">      71 </span><span class="lineCov">          8 :     BOOST_OUTCOME_TRY(auto&amp;&amp; rki_data, mio::read_confirmed_cases_noage(path));</span></a>
+<a name="71"><span class="lineNum">      71 </span><span class="lineCov">          4 :     BOOST_OUTCOME_TRY(auto&amp;&amp; rki_data, mio::read_confirmed_cases_noage(path));</span></a>
 <a name="72"><span class="lineNum">      72 </span><span class="lineCov">          4 :     auto max_date_entry = std::max_element(rki_data.begin(), rki_data.end(), [](auto&amp;&amp; a, auto&amp;&amp; b) {</span></a>
 <a name="73"><span class="lineNum">      73 </span><span class="lineCov">         42 :         return a.date &lt; b.date;</span></a>
 <a name="74"><span class="lineNum">      74 </span>            :     });</a>
@@ -144,7 +144,7 @@
 <a name="82"><span class="lineNum">      82 </span><span class="lineCov">          1 :         return failure(StatusCode::OutOfRange, path + &quot;, specified date does not exist in RKI data.&quot;);</span></a>
 <a name="83"><span class="lineNum">      83 </span>            :     }</a>
 <a name="84"><span class="lineNum">      84 </span>            :     // Compute initial values for all subcompartments.</a>
-<a name="85"><span class="lineNum">      85 </span><span class="lineCov">          4 :     Eigen::VectorXd init = Eigen::VectorXd::Zero(LctState::Count);</span></a>
+<a name="85"><span class="lineNum">      85 </span><span class="lineCov">          2 :     Eigen::VectorXd init = Eigen::VectorXd::Zero(LctState::Count);</span></a>
 <a name="86"><span class="lineNum">      86 </span>            :     // Define variables for parameters that are often needed.</a>
 <a name="87"><span class="lineNum">      87 </span>            : </a>
 <a name="88"><span class="lineNum">      88 </span><span class="lineCov">          2 :     ScalarType timeExposed            = model.parameters.template get&lt;TimeExposed&gt;();</span></a>
@@ -408,7 +408,7 @@
 <a name="346"><span class="lineNum">     346 </span><span class="lineCov">          1 :     model.set_initial_values(std::move(init));</span></a>
 <a name="347"><span class="lineNum">     347 </span>            : </a>
 <a name="348"><span class="lineNum">     348 </span><span class="lineCov">          2 :     return mio::success();</span></a>
-<a name="349"><span class="lineNum">     349 </span>            : }</a>
+<a name="349"><span class="lineNum">     349 </span><span class="lineCov">          4 : }</span></a>
 <a name="350"><span class="lineNum">     350 </span>            : </a>
 <a name="351"><span class="lineNum">     351 </span>            : } // namespace lsecir</a>
 <a name="352"><span class="lineNum">     352 </span>            : } // namespace mio</a>

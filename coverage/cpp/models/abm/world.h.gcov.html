@@ -31,13 +31,13 @@
             <td class="headerValue">coverage.info</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntry">46</td>
-            <td class="headerCovTableEntry">46</td>
+            <td class="headerCovTableEntry">50</td>
+            <td class="headerCovTableEntry">50</td>
             <td class="headerCovTableEntryHi">100.0 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2024-05-17 10:31:17</td>
+            <td class="headerValue">2024-05-17 12:46:19</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">8</td>
@@ -122,9 +122,9 @@
 <a name="60"><span class="lineNum">      60 </span>            :      */</a>
 <a name="61"><span class="lineNum">      61 </span><span class="lineCov">         24 :     World(size_t num_agegroups)</span></a>
 <a name="62"><span class="lineNum">      62 </span><span class="lineCov">         24 :         : parameters(num_agegroups)</span></a>
-<a name="63"><span class="lineNum">      63 </span>            :         , m_trip_list()</a>
-<a name="64"><span class="lineNum">      64 </span>            :         , m_use_migration_rules(true)</a>
-<a name="65"><span class="lineNum">      65 </span><span class="lineCov">         24 :         , m_cemetery_id(add_location(LocationType::Cemetery))</span></a>
+<a name="63"><span class="lineNum">      63 </span><span class="lineCov">         24 :         , m_trip_list()</span></a>
+<a name="64"><span class="lineNum">      64 </span><span class="lineCov">         24 :         , m_use_migration_rules(true)</span></a>
+<a name="65"><span class="lineNum">      65 </span><span class="lineCov">         48 :         , m_cemetery_id(add_location(LocationType::Cemetery))</span></a>
 <a name="66"><span class="lineNum">      66 </span>            :     {</a>
 <a name="67"><span class="lineNum">      67 </span><span class="lineCov">         24 :         assert(num_agegroups &lt; MAX_NUM_AGE_GROUPS &amp;&amp; &quot;MAX_NUM_AGE_GROUPS exceeded.&quot;);</span></a>
 <a name="68"><span class="lineNum">      68 </span><span class="lineCov">         24 :     }</span></a>
@@ -135,16 +135,16 @@
 <a name="73"><span class="lineNum">      73 </span>            :      */</a>
 <a name="74"><span class="lineNum">      74 </span><span class="lineCov">         21 :     World(const World&amp; other)</span></a>
 <a name="75"><span class="lineNum">      75 </span><span class="lineCov">         21 :         : parameters(other.parameters)</span></a>
-<a name="76"><span class="lineNum">      76 </span>            :         , m_persons()</a>
-<a name="77"><span class="lineNum">      77 </span>            :         , m_locations()</a>
+<a name="76"><span class="lineNum">      76 </span><span class="lineCov">         21 :         , m_persons()</span></a>
+<a name="77"><span class="lineNum">      77 </span><span class="lineCov">         21 :         , m_locations()</span></a>
 <a name="78"><span class="lineNum">      78 </span><span class="lineCov">         21 :         , m_trip_list(other.m_trip_list)</span></a>
-<a name="79"><span class="lineNum">      79 </span><span class="lineCov">         63 :         , m_cemetery_id(add_location(LocationType::Cemetery))</span></a>
+<a name="79"><span class="lineNum">      79 </span><span class="lineCov">         42 :         , m_cemetery_id(add_location(LocationType::Cemetery))</span></a>
 <a name="80"><span class="lineNum">      80 </span>            :     {</a>
 <a name="81"><span class="lineNum">      81 </span><span class="lineCov">         46 :         for (auto&amp; origin_loc : other.get_locations()) {</span></a>
 <a name="82"><span class="lineNum">      82 </span><span class="lineCov">         25 :             if (origin_loc.get_type() != LocationType::Cemetery) {</span></a>
 <a name="83"><span class="lineNum">      83 </span>            :                 // Copy a location</a>
-<a name="84"><span class="lineNum">      84 </span><span class="lineCov">          4 :                 m_locations.emplace_back(</span></a>
-<a name="85"><span class="lineNum">      85 </span><span class="lineCov">          4 :                     std::make_unique&lt;Location&gt;(origin_loc.copy_location_without_persons(parameters.get_num_groups())));</span></a>
+<a name="84"><span class="lineNum">      84 </span><span class="lineCov">          8 :                 m_locations.emplace_back(</span></a>
+<a name="85"><span class="lineNum">      85 </span><span class="lineCov">          8 :                     std::make_unique&lt;Location&gt;(origin_loc.copy_location_without_persons(parameters.get_num_groups())));</span></a>
 <a name="86"><span class="lineNum">      86 </span>            :             }</a>
 <a name="87"><span class="lineNum">      87 </span><span class="lineCov">         35 :             for (auto&amp; person : other.get_persons()) {</span></a>
 <a name="88"><span class="lineNum">      88 </span>            :                 // If a person is in this location, copy this person and add it to this location.</a>
@@ -170,10 +170,10 @@
 <a name="108"><span class="lineNum">     108 </span>            :     template &lt;class IOContext&gt;</a>
 <a name="109"><span class="lineNum">     109 </span><span class="lineCov">          1 :     void serialize(IOContext&amp; io) const</span></a>
 <a name="110"><span class="lineNum">     110 </span>            :     {</a>
-<a name="111"><span class="lineNum">     111 </span><span class="lineCov">          4 :         auto obj = io.create_object(&quot;World&quot;);</span></a>
+<a name="111"><span class="lineNum">     111 </span><span class="lineCov">          3 :         auto obj = io.create_object(&quot;World&quot;);</span></a>
 <a name="112"><span class="lineNum">     112 </span><span class="lineCov">          1 :         obj.add_element(&quot;num_agegroups&quot;, parameters.get_num_groups());</span></a>
-<a name="113"><span class="lineNum">     113 </span><span class="lineCov">          2 :         std::vector&lt;Trip&gt; trips;</span></a>
-<a name="114"><span class="lineNum">     114 </span><span class="lineCov">          2 :         TripList trip_list = get_trip_list();</span></a>
+<a name="113"><span class="lineNum">     113 </span><span class="lineCov">          1 :         std::vector&lt;Trip&gt; trips;</span></a>
+<a name="114"><span class="lineNum">     114 </span><span class="lineCov">          1 :         TripList trip_list = get_trip_list();</span></a>
 <a name="115"><span class="lineNum">     115 </span><span class="lineCov">          2 :         for (size_t i = 0; i &lt; trip_list.num_trips(false); i++) {</span></a>
 <a name="116"><span class="lineNum">     116 </span><span class="lineCov">          1 :             trips.push_back(trip_list.get_next_trip(false));</span></a>
 <a name="117"><span class="lineNum">     117 </span><span class="lineCov">          1 :             trip_list.increase_index();</span></a>
@@ -187,7 +187,7 @@
 <a name="125"><span class="lineNum">     125 </span><span class="lineCov">          1 :         obj.add_list(&quot;locations&quot;, get_locations().begin(), get_locations().end());</span></a>
 <a name="126"><span class="lineNum">     126 </span><span class="lineCov">          1 :         obj.add_list(&quot;persons&quot;, get_persons().begin(), get_persons().end());</span></a>
 <a name="127"><span class="lineNum">     127 </span><span class="lineCov">          1 :         obj.add_element(&quot;use_migration_rules&quot;, m_use_migration_rules);</span></a>
-<a name="128"><span class="lineNum">     128 </span><span class="lineCov">          1 :     }</span></a>
+<a name="128"><span class="lineNum">     128 </span><span class="lineCov">          2 :     }</span></a>
 <a name="129"><span class="lineNum">     129 </span>            : </a>
 <a name="130"><span class="lineNum">     130 </span>            :     /**</a>
 <a name="131"><span class="lineNum">     131 </span>            :      * deserialize an object of this class.</a>
@@ -307,9 +307,9 @@
 <a name="245"><span class="lineNum">     245 </span>            :     * @brief Check if at least one Location with a specified LocationType exists.</a>
 <a name="246"><span class="lineNum">     246 </span>            :     * @return True if there is at least one Location of LocationType `type`. False otherwise.</a>
 <a name="247"><span class="lineNum">     247 </span>            :     */</a>
-<a name="248"><span class="lineNum">     248 </span><span class="lineCov">       3139 :     bool has_location(LocationType type) const</span></a>
+<a name="248"><span class="lineNum">     248 </span><span class="lineCov">       3145 :     bool has_location(LocationType type) const</span></a>
 <a name="249"><span class="lineNum">     249 </span>            :     {</a>
-<a name="250"><span class="lineNum">     250 </span><span class="lineCov">       3139 :         return m_has_locations[size_t(type)];</span></a>
+<a name="250"><span class="lineNum">     250 </span><span class="lineCov">       3145 :         return m_has_locations[size_t(type)];</span></a>
 <a name="251"><span class="lineNum">     251 </span>            :     }</a>
 <a name="252"><span class="lineNum">     252 </span>            : </a>
 <a name="253"><span class="lineNum">     253 </span>            :     /**</a>
@@ -319,11 +319,11 @@
 <a name="257"><span class="lineNum">     257 </span>            :     * @return True if there is at least one Location of every LocationType in `location_types`. False otherwise.</a>
 <a name="258"><span class="lineNum">     258 </span>            :     */</a>
 <a name="259"><span class="lineNum">     259 </span>            :     template &lt;class C = std::initializer_list&lt;LocationType&gt;&gt;</a>
-<a name="260"><span class="lineNum">     260 </span><span class="lineCov">       2621 :     bool has_locations(const C&amp; location_types) const</span></a>
+<a name="260"><span class="lineNum">     260 </span><span class="lineCov">       2625 :     bool has_locations(const C&amp; location_types) const</span></a>
 <a name="261"><span class="lineNum">     261 </span>            :     {</a>
-<a name="262"><span class="lineNum">     262 </span><span class="lineCov">       8899 :         return std::all_of(location_types.begin(), location_types.end(), [&amp;](auto loc) {</span></a>
-<a name="263"><span class="lineNum">     263 </span><span class="lineCov">       6278 :             return has_location(loc);</span></a>
-<a name="264"><span class="lineNum">     264 </span><span class="lineCov">       2621 :         });</span></a>
+<a name="262"><span class="lineNum">     262 </span><span class="lineCov">       8915 :         return std::all_of(location_types.begin(), location_types.end(), [&amp;](auto loc) {</span></a>
+<a name="263"><span class="lineNum">     263 </span><span class="lineCov">       6290 :             return has_location(loc);</span></a>
+<a name="264"><span class="lineNum">     264 </span><span class="lineCov">       2625 :         });</span></a>
 <a name="265"><span class="lineNum">     265 </span>            :     }</a>
 <a name="266"><span class="lineNum">     266 </span>            : </a>
 <a name="267"><span class="lineNum">     267 </span>            :     /** </a>

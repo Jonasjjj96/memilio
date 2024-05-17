@@ -31,13 +31,13 @@
             <td class="headerValue">coverage.info</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntry">77</td>
-            <td class="headerCovTableEntry">77</td>
-            <td class="headerCovTableEntryHi">100.0 %</td>
+            <td class="headerCovTableEntry">79</td>
+            <td class="headerCovTableEntry">80</td>
+            <td class="headerCovTableEntryHi">98.8 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2024-05-17 10:31:17</td>
+            <td class="headerValue">2024-05-17 12:46:19</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">5</td>
@@ -136,12 +136,12 @@
 <a name="74"><span class="lineNum">      74 </span><span class="lineCov">      42989 :         const Index&lt;AgeGroup&gt; age_groups = reduce_index&lt;Index&lt;AgeGroup&gt;&gt;(this-&gt;populations.size());</span></a>
 <a name="75"><span class="lineNum">      75 </span><span class="lineCov">      42989 :         const auto&amp; params               = this-&gt;parameters;</span></a>
 <a name="76"><span class="lineNum">      76 </span>            : </a>
-<a name="77"><span class="lineNum">      77 </span><span class="lineCov">      85978 :         for (auto i : make_index_range(age_groups)) {</span></a>
+<a name="77"><span class="lineNum">      77 </span><span class="lineCov">     128967 :         for (auto i : make_index_range(age_groups)) {</span></a>
 <a name="78"><span class="lineNum">      78 </span><span class="lineCov">      42989 :             const size_t Si = this-&gt;populations.get_flat_index({i, InfectionState::Susceptible});</span></a>
 <a name="79"><span class="lineNum">      79 </span><span class="lineCov">      42989 :             const size_t Ei = this-&gt;populations.get_flat_index({i, InfectionState::Exposed});</span></a>
 <a name="80"><span class="lineNum">      80 </span><span class="lineCov">      42989 :             const size_t Ii = this-&gt;populations.get_flat_index({i, InfectionState::Infected});</span></a>
 <a name="81"><span class="lineNum">      81 </span>            : </a>
-<a name="82"><span class="lineNum">      82 </span><span class="lineCov">      85978 :             for (auto j : make_index_range(age_groups)) {</span></a>
+<a name="82"><span class="lineNum">      82 </span><span class="lineCov">     128967 :             for (auto j : make_index_range(age_groups)) {</span></a>
 <a name="83"><span class="lineNum">      83 </span><span class="lineCov">      42989 :                 const size_t Sj = this-&gt;populations.get_flat_index({i, InfectionState::Susceptible});</span></a>
 <a name="84"><span class="lineNum">      84 </span><span class="lineCov">      42989 :                 const size_t Ej = this-&gt;populations.get_flat_index({j, InfectionState::Exposed});</span></a>
 <a name="85"><span class="lineNum">      85 </span><span class="lineCov">      42989 :                 const size_t Ij = this-&gt;populations.get_flat_index({j, InfectionState::Infected});</span></a>
@@ -182,8 +182,8 @@
 <a name="120"><span class="lineNum">     120 </span>            : </a>
 <a name="121"><span class="lineNum">     121 </span><span class="lineCov">         36 :         ContactMatrixGroup const&amp; contact_matrix = params.template get&lt;ContactPatterns&lt;ScalarType&gt;&gt;();</span></a>
 <a name="122"><span class="lineNum">     122 </span>            : </a>
-<a name="123"><span class="lineNum">     123 </span><span class="lineCov">         72 :         Eigen::MatrixXd F = Eigen::MatrixXd::Zero(total_infected_compartments, total_infected_compartments);</span></a>
-<a name="124"><span class="lineNum">     124 </span><span class="lineCov">         72 :         Eigen::MatrixXd V = Eigen::MatrixXd::Zero(total_infected_compartments, total_infected_compartments);</span></a>
+<a name="123"><span class="lineNum">     123 </span><span class="lineCov">         36 :         Eigen::MatrixXd F = Eigen::MatrixXd::Zero(total_infected_compartments, total_infected_compartments);</span></a>
+<a name="124"><span class="lineNum">     124 </span><span class="lineCov">         36 :         Eigen::MatrixXd V = Eigen::MatrixXd::Zero(total_infected_compartments, total_infected_compartments);</span></a>
 <a name="125"><span class="lineNum">     125 </span>            : </a>
 <a name="126"><span class="lineNum">     126 </span><span class="lineCov">         72 :         for (auto i = AgeGroup(0); i &lt; AgeGroup(num_groups); i++) {</span></a>
 <a name="127"><span class="lineNum">     127 </span><span class="lineCov">         36 :             size_t Si = this-&gt;populations.get_flat_index({i, InfectionState::Susceptible});</span></a>
@@ -206,23 +206,23 @@
 <a name="144"><span class="lineNum">     144 </span>            : </a>
 <a name="145"><span class="lineNum">     145 </span><span class="lineCov">         36 :         V = V.inverse();</span></a>
 <a name="146"><span class="lineNum">     146 </span>            : </a>
-<a name="147"><span class="lineNum">     147 </span><span class="lineCov">         72 :         Eigen::MatrixXd NextGenMatrix = Eigen::MatrixXd::Zero(total_infected_compartments, total_infected_compartments);</span></a>
+<a name="147"><span class="lineNum">     147 </span><span class="lineCov">         36 :         Eigen::MatrixXd NextGenMatrix = Eigen::MatrixXd::Zero(total_infected_compartments, total_infected_compartments);</span></a>
 <a name="148"><span class="lineNum">     148 </span><span class="lineCov">         36 :         NextGenMatrix                 = F * V;</span></a>
 <a name="149"><span class="lineNum">     149 </span>            : </a>
 <a name="150"><span class="lineNum">     150 </span>            :         //Compute the largest eigenvalue in absolute value</a>
-<a name="151"><span class="lineNum">     151 </span><span class="lineCov">         72 :         Eigen::ComplexEigenSolver&lt;Eigen::MatrixXd&gt; ces;</span></a>
+<a name="151"><span class="lineNum">     151 </span><span class="lineCov">         36 :         Eigen::ComplexEigenSolver&lt;Eigen::MatrixXd&gt; ces;</span></a>
 <a name="152"><span class="lineNum">     152 </span>            : </a>
 <a name="153"><span class="lineNum">     153 </span><span class="lineCov">         36 :         ces.compute(NextGenMatrix);</span></a>
-<a name="154"><span class="lineNum">     154 </span><span class="lineCov">         72 :         const Eigen::VectorXcd eigen_vals = ces.eigenvalues();</span></a>
+<a name="154"><span class="lineNum">     154 </span><span class="lineCov">         36 :         const Eigen::VectorXcd eigen_vals = ces.eigenvalues();</span></a>
 <a name="155"><span class="lineNum">     155 </span>            : </a>
-<a name="156"><span class="lineNum">     156 </span><span class="lineCov">         72 :         Eigen::VectorXd eigen_vals_abs;</span></a>
+<a name="156"><span class="lineNum">     156 </span><span class="lineCov">         36 :         Eigen::VectorXd eigen_vals_abs;</span></a>
 <a name="157"><span class="lineNum">     157 </span><span class="lineCov">         36 :         eigen_vals_abs.resize(eigen_vals.size());</span></a>
 <a name="158"><span class="lineNum">     158 </span>            : </a>
 <a name="159"><span class="lineNum">     159 </span><span class="lineCov">        108 :         for (int i = 0; i &lt; eigen_vals.size(); i++) {</span></a>
 <a name="160"><span class="lineNum">     160 </span><span class="lineCov">         72 :             eigen_vals_abs[i] = std::abs(eigen_vals[i]);</span></a>
 <a name="161"><span class="lineNum">     161 </span>            :         }</a>
 <a name="162"><span class="lineNum">     162 </span><span class="lineCov">         36 :         return mio::success(eigen_vals_abs.maxCoeff());</span></a>
-<a name="163"><span class="lineNum">     163 </span>            :     }</a>
+<a name="163"><span class="lineNum">     163 </span><span class="lineCov">         36 :     }</span></a>
 <a name="164"><span class="lineNum">     164 </span>            : </a>
 <a name="165"><span class="lineNum">     165 </span>            :     /**</a>
 <a name="166"><span class="lineNum">     166 </span>            :     *@brief Computes the reproduction number for all time points of the Model output obtained by the Simulation.</a>
@@ -237,7 +237,7 @@
 <a name="175"><span class="lineNum">     175 </span><span class="lineCov">         21 :             temp[i] = get_reproduction_number(i, y).value();</span></a>
 <a name="176"><span class="lineNum">     176 </span>            :         }</a>
 <a name="177"><span class="lineNum">     177 </span><span class="lineCov">          6 :         return temp;</span></a>
-<a name="178"><span class="lineNum">     178 </span>            :     }</a>
+<a name="178"><span class="lineNum">     178 </span><span class="lineNoCov">          0 :     }</span></a>
 <a name="179"><span class="lineNum">     179 </span>            : </a>
 <a name="180"><span class="lineNum">     180 </span>            :     /**</a>
 <a name="181"><span class="lineNum">     181 </span>            :     *@brief Computes the reproduction number at a given time point of the Model output obtained by the Simulation. If the particular time point is not inside the output, a linearly interpolated value is returned.</a>
@@ -256,7 +256,7 @@
 <a name="194"><span class="lineNum">     194 </span><span class="lineCov">          2 :             return mio::success(get_reproduction_number((size_t)0, y).value());</span></a>
 <a name="195"><span class="lineNum">     195 </span>            :         }</a>
 <a name="196"><span class="lineNum">     196 </span>            : </a>
-<a name="197"><span class="lineNum">     197 </span><span class="lineCov">         18 :         auto times = std::vector&lt;ScalarType&gt;(y.get_times().begin(), y.get_times().end());</span></a>
+<a name="197"><span class="lineNum">     197 </span><span class="lineCov">         12 :         auto times = std::vector&lt;ScalarType&gt;(y.get_times().begin(), y.get_times().end());</span></a>
 <a name="198"><span class="lineNum">     198 </span>            : </a>
 <a name="199"><span class="lineNum">     199 </span><span class="lineCov">          6 :         auto time_late = std::distance(times.begin(), std::lower_bound(times.begin(), times.end(), t_value));</span></a>
 <a name="200"><span class="lineNum">     200 </span>            : </a>
@@ -265,7 +265,7 @@
 <a name="203"><span class="lineNum">     203 </span>            : </a>
 <a name="204"><span class="lineNum">     204 </span><span class="lineCov">          6 :         auto result = linear_interpolation(t_value, y.get_time(time_late - 1), y.get_time(time_late), y1, y2);</span></a>
 <a name="205"><span class="lineNum">     205 </span><span class="lineCov">          6 :         return mio::success(static_cast&lt;ScalarType&gt;(result));</span></a>
-<a name="206"><span class="lineNum">     206 </span>            :     }</a>
+<a name="206"><span class="lineNum">     206 </span><span class="lineCov">          6 :     }</span></a>
 <a name="207"><span class="lineNum">     207 </span>            : </a>
 <a name="208"><span class="lineNum">     208 </span>            :     /**</a>
 <a name="209"><span class="lineNum">     209 </span>            :      * serialize this. </a>

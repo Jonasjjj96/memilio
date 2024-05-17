@@ -31,13 +31,13 @@
             <td class="headerValue">coverage.info</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntry">109</td>
-            <td class="headerCovTableEntry">149</td>
-            <td class="headerCovTableEntryLo">73.2 %</td>
+            <td class="headerCovTableEntry">114</td>
+            <td class="headerCovTableEntry">156</td>
+            <td class="headerCovTableEntryLo">73.1 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2024-05-17 10:31:17</td>
+            <td class="headerValue">2024-05-17 12:46:19</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">758</td>
@@ -557,7 +557,7 @@
 <a name="495"><span class="lineNum">     495 </span><span class="lineCov">          7 :         io.set_error(result.error());</span></a>
 <a name="496"><span class="lineNum">     496 </span>            :     }</a>
 <a name="497"><span class="lineNum">     497 </span><span class="lineCov">      65552 :     return result;</span></a>
-<a name="498"><span class="lineNum">     498 </span>            : }</a>
+<a name="498"><span class="lineNum">     498 </span><span class="lineCov">     165931 : }</span></a>
 <a name="499"><span class="lineNum">     499 </span>            : </a>
 <a name="500"><span class="lineNum">     500 </span>            : //utility for (de-)serializing tuple-like objects</a>
 <a name="501"><span class="lineNum">     501 </span>            : namespace details</a>
@@ -606,10 +606,10 @@
 <a name="544"><span class="lineNum">     544 </span>            : {</a>
 <a name="545"><span class="lineNum">     545 </span>            :     //get the next element of the tuple from the IO object</a>
 <a name="546"><span class="lineNum">     546 </span><span class="lineCov">         29 :     const size_t Idx = sizeof...(Ts);</span></a>
-<a name="547"><span class="lineNum">     547 </span><span class="lineCov">         87 :     auto r           = obj.expect_element(make_tuple_element_name&lt;Idx&gt;(), Tag&lt;std::tuple_element_t&lt;Idx, Tup&gt;&gt;{});</span></a>
+<a name="547"><span class="lineNum">     547 </span><span class="lineCov">         58 :     auto r           = obj.expect_element(make_tuple_element_name&lt;Idx&gt;(), Tag&lt;std::tuple_element_t&lt;Idx, Tup&gt;&gt;{});</span></a>
 <a name="548"><span class="lineNum">     548 </span>            :     //recurse, append the new element to the pack of arguments</a>
 <a name="549"><span class="lineNum">     549 </span><span class="lineCov">         58 :     return deserialize_tuple_element(obj, tag, rs..., r);</span></a>
-<a name="550"><span class="lineNum">     550 </span>            : }</a>
+<a name="550"><span class="lineNum">     550 </span><span class="lineCov">         29 : }</span></a>
 <a name="551"><span class="lineNum">     551 </span>            : </a>
 <a name="552"><span class="lineNum">     552 </span>            : //detect tuple-like types, e.g. std::tuple or std::pair</a>
 <a name="553"><span class="lineNum">     553 </span>            : template &lt;class Tup&gt;</a>
@@ -627,9 +627,9 @@
 <a name="565"><span class="lineNum">     565 </span>            :           class = std::enable_if_t&lt;is_expression_valid&lt;details::tuple_size_value_t, Tup&gt;::value&gt;&gt;</a>
 <a name="566"><span class="lineNum">     566 </span><span class="lineCov">         28 : void serialize_internal(IOContext&amp; io, const Tup&amp; tup)</span></a>
 <a name="567"><span class="lineNum">     567 </span>            : {</a>
-<a name="568"><span class="lineNum">     568 </span><span class="lineCov">        112 :     auto obj = io.create_object(&quot;Tuple&quot;);</span></a>
+<a name="568"><span class="lineNum">     568 </span><span class="lineCov">         84 :     auto obj = io.create_object(&quot;Tuple&quot;);</span></a>
 <a name="569"><span class="lineNum">     569 </span><span class="lineCov">         28 :     details::serialize_tuple_element&lt;0&gt;(obj, tup);</span></a>
-<a name="570"><span class="lineNum">     570 </span><span class="lineCov">         28 : }</span></a>
+<a name="570"><span class="lineNum">     570 </span><span class="lineCov">         56 : }</span></a>
 <a name="571"><span class="lineNum">     571 </span>            : </a>
 <a name="572"><span class="lineNum">     572 </span>            : /**</a>
 <a name="573"><span class="lineNum">     573 </span>            :  * deserialize a tuple-like object, e.g. std::tuple or std::pair.</a>
@@ -643,9 +643,9 @@
 <a name="581"><span class="lineNum">     581 </span>            :           class = std::enable_if_t&lt;is_expression_valid&lt;details::tuple_size_value_t, Tup&gt;::value&gt;&gt;</a>
 <a name="582"><span class="lineNum">     582 </span><span class="lineCov">         14 : IOResult&lt;Tup&gt; deserialize_internal(IOContext&amp; io, Tag&lt;Tup&gt; tag)</span></a>
 <a name="583"><span class="lineNum">     583 </span>            : {</a>
-<a name="584"><span class="lineNum">     584 </span><span class="lineCov">         56 :     auto obj = io.expect_object(&quot;Tuple&quot;);</span></a>
+<a name="584"><span class="lineNum">     584 </span><span class="lineCov">         42 :     auto obj = io.expect_object(&quot;Tuple&quot;);</span></a>
 <a name="585"><span class="lineNum">     585 </span><span class="lineCov">         28 :     return details::deserialize_tuple_element(obj, tag);</span></a>
-<a name="586"><span class="lineNum">     586 </span>            : }</a>
+<a name="586"><span class="lineNum">     586 </span><span class="lineCov">         14 : }</span></a>
 <a name="587"><span class="lineNum">     587 </span>            : </a>
 <a name="588"><span class="lineNum">     588 </span>            : /**</a>
 <a name="589"><span class="lineNum">     589 </span>            :  * serialize an Eigen matrix expression.</a>
@@ -657,11 +657,11 @@
 <a name="595"><span class="lineNum">     595 </span>            : template &lt;class IOContext, class M&gt;</a>
 <a name="596"><span class="lineNum">     596 </span><span class="lineCov">         80 : void serialize_internal(IOContext&amp; io, const Eigen::EigenBase&lt;M&gt;&amp; mat)</span></a>
 <a name="597"><span class="lineNum">     597 </span>            : {</a>
-<a name="598"><span class="lineNum">     598 </span><span class="lineCov">        320 :     auto obj = io.create_object(&quot;Matrix&quot;);</span></a>
+<a name="598"><span class="lineNum">     598 </span><span class="lineCov">        240 :     auto obj = io.create_object(&quot;Matrix&quot;);</span></a>
 <a name="599"><span class="lineNum">     599 </span><span class="lineCov">         80 :     obj.add_element(&quot;Rows&quot;, mat.rows());</span></a>
 <a name="600"><span class="lineNum">     600 </span><span class="lineCov">         80 :     obj.add_element(&quot;Columns&quot;, mat.cols());</span></a>
 <a name="601"><span class="lineNum">     601 </span><span class="lineCov">         80 :     obj.add_list(&quot;Elements&quot;, begin(static_cast&lt;const M&amp;&gt;(mat)), end(static_cast&lt;const M&amp;&gt;(mat)));</span></a>
-<a name="602"><span class="lineNum">     602 </span><span class="lineCov">         80 : }</span></a>
+<a name="602"><span class="lineNum">     602 </span><span class="lineCov">        160 : }</span></a>
 <a name="603"><span class="lineNum">     603 </span>            : </a>
 <a name="604"><span class="lineNum">     604 </span>            : /**</a>
 <a name="605"><span class="lineNum">     605 </span>            :  * deserialize an Eigen matrix.</a>
@@ -676,10 +676,10 @@
 <a name="614"><span class="lineNum">     614 </span>            : template &lt;class IOContext, class M, std::enable_if_t&lt;std::is_base_of&lt;Eigen::EigenBase&lt;M&gt;, M&gt;::value, void*&gt; = nullptr&gt;</a>
 <a name="615"><span class="lineNum">     615 </span><span class="lineCov">         46 : IOResult&lt;M&gt; deserialize_internal(IOContext&amp; io, Tag&lt;M&gt; /*tag*/)</span></a>
 <a name="616"><span class="lineNum">     616 </span>            : {</a>
-<a name="617"><span class="lineNum">     617 </span><span class="lineCov">        184 :     auto obj      = io.expect_object(&quot;Matrix&quot;);</span></a>
-<a name="618"><span class="lineNum">     618 </span><span class="lineCov">        184 :     auto rows     = obj.expect_element(&quot;Rows&quot;, Tag&lt;Eigen::Index&gt;{});</span></a>
-<a name="619"><span class="lineNum">     619 </span><span class="lineCov">        184 :     auto cols     = obj.expect_element(&quot;Columns&quot;, Tag&lt;Eigen::Index&gt;{});</span></a>
-<a name="620"><span class="lineNum">     620 </span><span class="lineCov">        184 :     auto elements = obj.expect_list(&quot;Elements&quot;, Tag&lt;typename M::Scalar&gt;{});</span></a>
+<a name="617"><span class="lineNum">     617 </span><span class="lineCov">        138 :     auto obj      = io.expect_object(&quot;Matrix&quot;);</span></a>
+<a name="618"><span class="lineNum">     618 </span><span class="lineCov">        138 :     auto rows     = obj.expect_element(&quot;Rows&quot;, Tag&lt;Eigen::Index&gt;{});</span></a>
+<a name="619"><span class="lineNum">     619 </span><span class="lineCov">        138 :     auto cols     = obj.expect_element(&quot;Columns&quot;, Tag&lt;Eigen::Index&gt;{});</span></a>
+<a name="620"><span class="lineNum">     620 </span><span class="lineCov">        138 :     auto elements = obj.expect_list(&quot;Elements&quot;, Tag&lt;typename M::Scalar&gt;{});</span></a>
 <a name="621"><span class="lineNum">     621 </span>            :     return mio::apply(</a>
 <a name="622"><span class="lineNum">     622 </span>            :         io,</a>
 <a name="623"><span class="lineNum">     623 </span><span class="lineCov">         46 :         [](auto&amp;&amp; r, auto&amp;&amp; c, auto&amp;&amp; v) {</span></a>
@@ -690,9 +690,9 @@
 <a name="628"><span class="lineNum">     628 </span>            :                 }</a>
 <a name="629"><span class="lineNum">     629 </span>            :             }</a>
 <a name="630"><span class="lineNum">     630 </span><span class="lineCov">         46 :             return m;</span></a>
-<a name="631"><span class="lineNum">     631 </span>            :         },</a>
+<a name="631"><span class="lineNum">     631 </span><span class="lineNoCov">          0 :         },</span></a>
 <a name="632"><span class="lineNum">     632 </span><span class="lineCov">         92 :         rows, cols, elements);</span></a>
-<a name="633"><span class="lineNum">     633 </span>            : }</a>
+<a name="633"><span class="lineNum">     633 </span><span class="lineCov">         46 : }</span></a>
 <a name="634"><span class="lineNum">     634 </span>            : </a>
 <a name="635"><span class="lineNum">     635 </span>            : /**</a>
 <a name="636"><span class="lineNum">     636 </span>            :  * serialize an enum value as its underlying type.</a>
@@ -720,9 +720,9 @@
 <a name="658"><span class="lineNum">     658 </span>            : template &lt;class IOContext, class E, std::enable_if_t&lt;std::is_enum&lt;E&gt;::value, void*&gt; = nullptr&gt;</a>
 <a name="659"><span class="lineNum">     659 </span><span class="lineCov">          2 : IOResult&lt;E&gt; deserialize_internal(IOContext&amp; io, Tag&lt;E&gt; /*tag*/)</span></a>
 <a name="660"><span class="lineNum">     660 </span>            : {</a>
-<a name="661"><span class="lineNum">     661 </span><span class="lineCov">          4 :     BOOST_OUTCOME_TRY(auto&amp;&amp; i, mio::deserialize(io, mio::Tag&lt;std::underlying_type_t&lt;E&gt;&gt;{}));</span></a>
+<a name="661"><span class="lineNum">     661 </span><span class="lineCov">          2 :     BOOST_OUTCOME_TRY(auto&amp;&amp; i, mio::deserialize(io, mio::Tag&lt;std::underlying_type_t&lt;E&gt;&gt;{}));</span></a>
 <a name="662"><span class="lineNum">     662 </span><span class="lineCov">          2 :     return success(E(i));</span></a>
-<a name="663"><span class="lineNum">     663 </span>            : }</a>
+<a name="663"><span class="lineNum">     663 </span><span class="lineCov">          2 : }</span></a>
 <a name="664"><span class="lineNum">     664 </span>            : </a>
 <a name="665"><span class="lineNum">     665 </span>            : //detect a serialize member function</a>
 <a name="666"><span class="lineNum">     666 </span>            : template &lt;class IOContext, class T&gt;</a>
@@ -824,7 +824,7 @@
 <a name="762"><span class="lineNum">     762 </span><span class="lineNoCov">          0 :             return Container(i_.begin(), i_.end());</span></a>
 <a name="763"><span class="lineNum">     763 </span>            :         },</a>
 <a name="764"><span class="lineNum">     764 </span><span class="lineNoCov">          0 :         i);</span></a>
-<a name="765"><span class="lineNum">     765 </span>            : }</a>
+<a name="765"><span class="lineNum">     765 </span><span class="lineNoCov">          0 : }</span></a>
 <a name="766"><span class="lineNum">     766 </span>            : </a>
 <a name="767"><span class="lineNum">     767 </span>            : /**</a>
 <a name="768"><span class="lineNum">     768 </span>            :  * Save data that describes an object in a format determined by the given context.</a>

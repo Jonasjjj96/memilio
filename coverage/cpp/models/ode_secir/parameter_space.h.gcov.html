@@ -32,12 +32,12 @@
             <td></td>
             <td class="headerItem">Lines:</td>
             <td class="headerCovTableEntry">114</td>
-            <td class="headerCovTableEntry">114</td>
-            <td class="headerCovTableEntryHi">100.0 %</td>
+            <td class="headerCovTableEntry">115</td>
+            <td class="headerCovTableEntryHi">99.1 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2024-05-17 10:31:17</td>
+            <td class="headerValue">2024-05-17 12:46:19</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">7</td>
@@ -155,7 +155,7 @@
 <a name="93"><span class="lineNum">      93 </span>            :     }</a>
 <a name="94"><span class="lineNum">      94 </span>            : </a>
 <a name="95"><span class="lineNum">      95 </span>            :     // dampings</a>
-<a name="96"><span class="lineNum">      96 </span><span class="lineCov">         18 :     auto matrices = std::vector&lt;size_t&gt;();</span></a>
+<a name="96"><span class="lineNum">      96 </span><span class="lineCov">          9 :     auto matrices = std::vector&lt;size_t&gt;();</span></a>
 <a name="97"><span class="lineNum">      97 </span><span class="lineCov">         18 :     for (size_t i = 0; i &lt; model.parameters.template get&lt;ContactPatterns&lt;FP&gt;&gt;().get_cont_freq_mat().get_num_matrices();</span></a>
 <a name="98"><span class="lineNum">      98 </span>            :          ++i) {</a>
 <a name="99"><span class="lineNum">      99 </span><span class="lineCov">          9 :         matrices.push_back(i);</span></a>
@@ -165,7 +165,7 @@
 <a name="103"><span class="lineNum">     103 </span><span class="lineCov">         18 :         mio::UncertainValue(0.5), mio::DampingLevel(0), mio::DampingType(0), mio::SimulationTime(t0 + (tmax - t0) / 2),</span></a>
 <a name="104"><span class="lineNum">     104 </span>            :         matrices, groups);</a>
 <a name="105"><span class="lineNum">     105 </span><span class="lineCov">          9 :     set_distribution(model.parameters.template get&lt;ContactPatterns&lt;FP&gt;&gt;().get_dampings()[0].get_value(), 0.0);</span></a>
-<a name="106"><span class="lineNum">     106 </span><span class="lineCov">          9 : }</span></a>
+<a name="106"><span class="lineNum">     106 </span><span class="lineCov">         18 : }</span></a>
 <a name="107"><span class="lineNum">     107 </span>            : </a>
 <a name="108"><span class="lineNum">     108 </span>            : /**</a>
 <a name="109"><span class="lineNum">     109 </span>            :  * draws a sample from the specified distributions for all parameters related to the demographics, e.g. population.</a>
@@ -266,7 +266,7 @@
 <a name="204"><span class="lineNum">     204 </span><span class="lineCov">          8 :     auto&amp; shared_dynamic_npis = shared_params_model.parameters.template get&lt;DynamicNPIsInfectedSymptoms&lt;FP&gt;&gt;();</span></a>
 <a name="205"><span class="lineNum">     205 </span><span class="lineCov">          8 :     shared_dynamic_npis.draw_sample();</span></a>
 <a name="206"><span class="lineNum">     206 </span>            : </a>
-<a name="207"><span class="lineNum">     207 </span><span class="lineCov">         23 :     for (auto&amp; params_node : graph.nodes()) {</span></a>
+<a name="207"><span class="lineNum">     207 </span><span class="lineCov">         38 :     for (auto&amp; params_node : graph.nodes()) {</span></a>
 <a name="208"><span class="lineNum">     208 </span><span class="lineCov">         15 :         auto&amp; node_model = params_node.property;</span></a>
 <a name="209"><span class="lineNum">     209 </span>            : </a>
 <a name="210"><span class="lineNum">     210 </span>            :         //sample local parameters</a>
@@ -274,9 +274,9 @@
 <a name="212"><span class="lineNum">     212 </span>            : </a>
 <a name="213"><span class="lineNum">     213 </span>            :         //copy global parameters</a>
 <a name="214"><span class="lineNum">     214 </span>            :         //save demographic parameters so they aren't overwritten</a>
-<a name="215"><span class="lineNum">     215 </span><span class="lineCov">         30 :         auto local_icu_capacity = node_model.parameters.template get&lt;ICUCapacity&lt;FP&gt;&gt;();</span></a>
-<a name="216"><span class="lineNum">     216 </span><span class="lineCov">         30 :         auto local_tnt_capacity = node_model.parameters.template get&lt;TestAndTraceCapacity&lt;FP&gt;&gt;();</span></a>
-<a name="217"><span class="lineNum">     217 </span><span class="lineCov">         30 :         auto local_holidays     = node_model.parameters.template get&lt;ContactPatterns&lt;FP&gt;&gt;().get_school_holidays();</span></a>
+<a name="215"><span class="lineNum">     215 </span><span class="lineCov">         15 :         auto local_icu_capacity = node_model.parameters.template get&lt;ICUCapacity&lt;FP&gt;&gt;();</span></a>
+<a name="216"><span class="lineNum">     216 </span><span class="lineCov">         15 :         auto local_tnt_capacity = node_model.parameters.template get&lt;TestAndTraceCapacity&lt;FP&gt;&gt;();</span></a>
+<a name="217"><span class="lineNum">     217 </span><span class="lineCov">         15 :         auto local_holidays     = node_model.parameters.template get&lt;ContactPatterns&lt;FP&gt;&gt;().get_school_holidays();</span></a>
 <a name="218"><span class="lineNum">     218 </span><span class="lineCov">         15 :         node_model.parameters   = shared_params_model.parameters;</span></a>
 <a name="219"><span class="lineNum">     219 </span><span class="lineCov">         15 :         node_model.parameters.template get&lt;ICUCapacity&lt;FP&gt;&gt;()                           = local_icu_capacity;</span></a>
 <a name="220"><span class="lineNum">     220 </span><span class="lineCov">         15 :         node_model.parameters.template get&lt;TestAndTraceCapacity&lt;FP&gt;&gt;()                  = local_tnt_capacity;</span></a>
@@ -288,8 +288,8 @@
 <a name="226"><span class="lineNum">     226 </span><span class="lineCov">         15 :         sampled_graph.add_node(params_node.id, node_model);</span></a>
 <a name="227"><span class="lineNum">     227 </span>            :     }</a>
 <a name="228"><span class="lineNum">     228 </span>            : </a>
-<a name="229"><span class="lineNum">     229 </span><span class="lineCov">         15 :     for (auto&amp; edge : graph.edges()) {</span></a>
-<a name="230"><span class="lineNum">     230 </span><span class="lineCov">         14 :         auto edge_params = edge.property;</span></a>
+<a name="229"><span class="lineNum">     229 </span><span class="lineCov">         22 :     for (auto&amp; edge : graph.edges()) {</span></a>
+<a name="230"><span class="lineNum">     230 </span><span class="lineCov">          7 :         auto edge_params = edge.property;</span></a>
 <a name="231"><span class="lineNum">     231 </span><span class="lineCov">         21 :         apply_dampings(edge_params.get_coefficients(), shared_contacts.get_dampings(), [&amp;edge_params](auto&amp; v) {</span></a>
 <a name="232"><span class="lineNum">     232 </span><span class="lineCov">         14 :             return make_migration_damping_vector(edge_params.get_coefficients().get_shape(), v);</span></a>
 <a name="233"><span class="lineNum">     233 </span>            :         });</a>
@@ -298,7 +298,7 @@
 <a name="236"><span class="lineNum">     236 </span>            :     }</a>
 <a name="237"><span class="lineNum">     237 </span>            : </a>
 <a name="238"><span class="lineNum">     238 </span><span class="lineCov">          8 :     return sampled_graph;</span></a>
-<a name="239"><span class="lineNum">     239 </span>            : }</a>
+<a name="239"><span class="lineNum">     239 </span><span class="lineNoCov">          0 : }</span></a>
 <a name="240"><span class="lineNum">     240 </span>            : </a>
 <a name="241"><span class="lineNum">     241 </span>            : } // namespace osecir</a>
 <a name="242"><span class="lineNum">     242 </span>            : } // namespace mio</a>

@@ -31,13 +31,13 @@
             <td class="headerValue">coverage.info</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntry">97</td>
             <td class="headerCovTableEntry">98</td>
-            <td class="headerCovTableEntryHi">99.0 %</td>
+            <td class="headerCovTableEntry">101</td>
+            <td class="headerCovTableEntryHi">97.0 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2024-05-17 10:31:17</td>
+            <td class="headerValue">2024-05-17 12:46:19</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">38</td>
@@ -221,12 +221,12 @@
 <a name="159"><span class="lineNum">     159 </span>            :     template &lt;class IOContext&gt;</a>
 <a name="160"><span class="lineNum">     160 </span><span class="lineCov">         26 :     void serialize(IOContext&amp; io) const</span></a>
 <a name="161"><span class="lineNum">     161 </span>            :     {</a>
-<a name="162"><span class="lineNum">     162 </span><span class="lineCov">        104 :         auto obj = io.create_object(&quot;DynamicNPIs&quot;);</span></a>
+<a name="162"><span class="lineNum">     162 </span><span class="lineCov">         78 :         auto obj = io.create_object(&quot;DynamicNPIs&quot;);</span></a>
 <a name="163"><span class="lineNum">     163 </span><span class="lineCov">         26 :         obj.add_list(&quot;Thresholds&quot;, get_thresholds().begin(), get_thresholds().end());</span></a>
 <a name="164"><span class="lineNum">     164 </span><span class="lineCov">         26 :         obj.add_element(&quot;Duration&quot;, get_duration());</span></a>
 <a name="165"><span class="lineNum">     165 </span><span class="lineCov">         26 :         obj.add_element(&quot;Interval&quot;, get_interval());</span></a>
 <a name="166"><span class="lineNum">     166 </span><span class="lineCov">         26 :         obj.add_element(&quot;BaseValue&quot;, get_base_value());</span></a>
-<a name="167"><span class="lineNum">     167 </span><span class="lineCov">         26 :     }</span></a>
+<a name="167"><span class="lineNum">     167 </span><span class="lineCov">         52 :     }</span></a>
 <a name="168"><span class="lineNum">     168 </span>            : </a>
 <a name="169"><span class="lineNum">     169 </span>            :     /**</a>
 <a name="170"><span class="lineNum">     170 </span>            :      * deserialize an object of this class.</a>
@@ -235,11 +235,11 @@
 <a name="173"><span class="lineNum">     173 </span>            :     template &lt;class IOContext&gt;</a>
 <a name="174"><span class="lineNum">     174 </span><span class="lineCov">         12 :     static IOResult&lt;DynamicNPIs&gt; deserialize(IOContext&amp; io)</span></a>
 <a name="175"><span class="lineNum">     175 </span>            :     {</a>
-<a name="176"><span class="lineNum">     176 </span><span class="lineCov">         48 :         auto obj = io.expect_object(&quot;DynamicNPIs&quot;);</span></a>
-<a name="177"><span class="lineNum">     177 </span><span class="lineCov">         48 :         auto t   = obj.expect_list(&quot;Thresholds&quot;, Tag&lt;std::pair&lt;double, std::vector&lt;DampingSampling&lt;FP&gt;&gt;&gt;&gt;{});</span></a>
-<a name="178"><span class="lineNum">     178 </span><span class="lineCov">         48 :         auto d   = obj.expect_element(&quot;Duration&quot;, Tag&lt;SimulationTime&gt;{});</span></a>
-<a name="179"><span class="lineNum">     179 </span><span class="lineCov">         48 :         auto i   = obj.expect_element(&quot;Interval&quot;, Tag&lt;SimulationTime&gt;{});</span></a>
-<a name="180"><span class="lineNum">     180 </span><span class="lineCov">         48 :         auto b   = obj.expect_element(&quot;BaseValue&quot;, Tag&lt;double&gt;{});</span></a>
+<a name="176"><span class="lineNum">     176 </span><span class="lineCov">         36 :         auto obj = io.expect_object(&quot;DynamicNPIs&quot;);</span></a>
+<a name="177"><span class="lineNum">     177 </span><span class="lineCov">         36 :         auto t   = obj.expect_list(&quot;Thresholds&quot;, Tag&lt;std::pair&lt;double, std::vector&lt;DampingSampling&lt;FP&gt;&gt;&gt;&gt;{});</span></a>
+<a name="178"><span class="lineNum">     178 </span><span class="lineCov">         36 :         auto d   = obj.expect_element(&quot;Duration&quot;, Tag&lt;SimulationTime&gt;{});</span></a>
+<a name="179"><span class="lineNum">     179 </span><span class="lineCov">         36 :         auto i   = obj.expect_element(&quot;Interval&quot;, Tag&lt;SimulationTime&gt;{});</span></a>
+<a name="180"><span class="lineNum">     180 </span><span class="lineCov">         36 :         auto b   = obj.expect_element(&quot;BaseValue&quot;, Tag&lt;double&gt;{});</span></a>
 <a name="181"><span class="lineNum">     181 </span>            :         return apply(</a>
 <a name="182"><span class="lineNum">     182 </span>            :             io,</a>
 <a name="183"><span class="lineNum">     183 </span><span class="lineCov">         12 :             [](auto&amp;&amp; t_, auto&amp;&amp; d_, auto&amp;&amp; i_, auto&amp;&amp; b_) {</span></a>
@@ -251,9 +251,9 @@
 <a name="189"><span class="lineNum">     189 </span><span class="lineNoCov">          0 :                     npis.set_threshold(e.first, e.second);</span></a>
 <a name="190"><span class="lineNum">     190 </span>            :                 }</a>
 <a name="191"><span class="lineNum">     191 </span><span class="lineCov">         12 :                 return npis;</span></a>
-<a name="192"><span class="lineNum">     192 </span>            :             },</a>
+<a name="192"><span class="lineNum">     192 </span><span class="lineNoCov">          0 :             },</span></a>
 <a name="193"><span class="lineNum">     193 </span><span class="lineCov">         24 :             t, d, i, b);</span></a>
-<a name="194"><span class="lineNum">     194 </span>            :     }</a>
+<a name="194"><span class="lineNum">     194 </span><span class="lineCov">         12 :     }</span></a>
 <a name="195"><span class="lineNum">     195 </span>            : </a>
 <a name="196"><span class="lineNum">     196 </span>            : private:</a>
 <a name="197"><span class="lineNum">     197 </span>            :     std::vector&lt;std::pair&lt;double, std::vector&lt;DampingSampling&lt;FP&gt;&gt;&gt;&gt; m_thresholds;</a>
@@ -279,15 +279,15 @@
 <a name="217"><span class="lineNum">     217 </span>            :                                         SimulationTime begin, SimulationTime end)</a>
 <a name="218"><span class="lineNum">     218 </span>            : {</a>
 <a name="219"><span class="lineNum">     219 </span><span class="lineCov">         10 :     std::vector&lt;size_t&gt; indices;</span></a>
-<a name="220"><span class="lineNum">     220 </span><span class="lineCov">         38 :     for (size_t i = 0; i &lt; damping_expr.get_dampings().size(); ++i) {</span></a>
-<a name="221"><span class="lineNum">     221 </span><span class="lineCov">         56 :         const auto d = damping_expr.get_dampings()[i];</span></a>
+<a name="220"><span class="lineNum">     220 </span><span class="lineCov">         66 :     for (size_t i = 0; i &lt; damping_expr.get_dampings().size(); ++i) {</span></a>
+<a name="221"><span class="lineNum">     221 </span><span class="lineCov">         28 :         const auto d = damping_expr.get_dampings()[i];</span></a>
 <a name="222"><span class="lineNum">     222 </span><span class="lineCov">         37 :         if (d.get_level() == lvl &amp;&amp; d.get_type() == type &amp;&amp; double(d.get_time()) &gt; double(begin) &amp;&amp;</span></a>
 <a name="223"><span class="lineNum">     223 </span><span class="lineCov">          9 :             double(d.get_time()) &lt; double(end)) {</span></a>
 <a name="224"><span class="lineNum">     224 </span><span class="lineCov">          6 :             indices.push_back(i);</span></a>
 <a name="225"><span class="lineNum">     225 </span>            :         }</a>
 <a name="226"><span class="lineNum">     226 </span>            :     }</a>
 <a name="227"><span class="lineNum">     227 </span><span class="lineCov">         10 :     return indices;</span></a>
-<a name="228"><span class="lineNum">     228 </span>            : }</a>
+<a name="228"><span class="lineNum">     228 </span><span class="lineNoCov">          0 : }</span></a>
 <a name="229"><span class="lineNum">     229 </span>            : </a>
 <a name="230"><span class="lineNum">     230 </span>            : /**</a>
 <a name="231"><span class="lineNum">     231 </span>            :  * Get the value of the damping that matches the given type and level and that is active at the specified time.</a>
@@ -345,15 +345,15 @@
 <a name="283"><span class="lineNum">     283 </span>            :                             SimulationTime begin, SimulationTime end, MakeMatrix&amp;&amp; make_matrix)</a>
 <a name="284"><span class="lineNum">     284 </span>            : {</a>
 <a name="285"><span class="lineNum">     285 </span><span class="lineCov">         14 :     for (auto&amp; npi : npis) {</span></a>
-<a name="286"><span class="lineNum">     286 </span><span class="lineCov">         16 :         for (auto&amp; mat_idx : npi.get_matrix_indices()) {</span></a>
+<a name="286"><span class="lineNum">     286 </span><span class="lineCov">         25 :         for (auto&amp; mat_idx : npi.get_matrix_indices()) {</span></a>
 <a name="287"><span class="lineNum">     287 </span><span class="lineCov">          9 :             auto type          = npi.get_type();</span></a>
 <a name="288"><span class="lineNum">     288 </span><span class="lineCov">          9 :             auto level         = npi.get_level();</span></a>
 <a name="289"><span class="lineNum">     289 </span><span class="lineCov">          9 :             auto&amp; damping_expr = damping_expr_group[mat_idx];</span></a>
 <a name="290"><span class="lineNum">     290 </span>            : </a>
-<a name="291"><span class="lineNum">     291 </span><span class="lineCov">         18 :             auto active = get_active_damping(damping_expr, level, type, begin);</span></a>
-<a name="292"><span class="lineNum">     292 </span><span class="lineCov">         27 :             auto active_end =</span></a>
+<a name="291"><span class="lineNum">     291 </span><span class="lineCov">          9 :             auto active = get_active_damping(damping_expr, level, type, begin);</span></a>
+<a name="292"><span class="lineNum">     292 </span><span class="lineCov">         18 :             auto active_end =</span></a>
 <a name="293"><span class="lineNum">     293 </span>            :                 get_active_damping(damping_expr, level, type, end).eval(); //copy because it may be removed or changed</a>
-<a name="294"><span class="lineNum">     294 </span><span class="lineCov">         12 :             auto value = make_matrix(double(npi.get_value()) * npi.get_group_weights());</span></a>
+<a name="294"><span class="lineNum">     294 </span><span class="lineCov">          9 :             auto value = make_matrix(double(npi.get_value()) * npi.get_group_weights());</span></a>
 <a name="295"><span class="lineNum">     295 </span>            : </a>
 <a name="296"><span class="lineNum">     296 </span><span class="lineCov">          9 :             auto npi_implemented = false;</span></a>
 <a name="297"><span class="lineNum">     297 </span>            : </a>
@@ -364,7 +364,7 @@
 <a name="302"><span class="lineNum">     302 </span>            :             }</a>
 <a name="303"><span class="lineNum">     303 </span>            : </a>
 <a name="304"><span class="lineNum">     304 </span>            :             //replace dampings during the new npi</a>
-<a name="305"><span class="lineNum">     305 </span><span class="lineCov">         18 :             auto damping_indices = get_damping_indices(damping_expr, level, type, begin, end);</span></a>
+<a name="305"><span class="lineNum">     305 </span><span class="lineCov">          9 :             auto damping_indices = get_damping_indices(damping_expr, level, type, begin, end);</span></a>
 <a name="306"><span class="lineNum">     306 </span><span class="lineCov">         13 :             for (auto&amp; i : damping_indices) {</span></a>
 <a name="307"><span class="lineNum">     307 </span><span class="lineCov">          4 :                 auto&amp; d = damping_expr.get_dampings()[i];</span></a>
 <a name="308"><span class="lineNum">     308 </span><span class="lineCov">          4 :                 damping_expr.add_damping(max(d.get_coeffs(), value), level, type, d.get_time());</span></a>

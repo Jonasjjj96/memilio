@@ -31,13 +31,13 @@
             <td class="headerValue">coverage.info</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntry">107</td>
-            <td class="headerCovTableEntry">107</td>
+            <td class="headerCovTableEntry">109</td>
+            <td class="headerCovTableEntry">109</td>
             <td class="headerCovTableEntryHi">100.0 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2024-05-17 10:31:17</td>
+            <td class="headerValue">2024-05-17 12:46:19</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">94</td>
@@ -106,13 +106,13 @@
 <a name="44"><span class="lineNum">      44 </span>            : </a>
 <a name="45"><span class="lineNum">      45 </span><span class="lineCov">          2 :     auto num_runs  = ensemble_params.size();</span></a>
 <a name="46"><span class="lineNum">      46 </span><span class="lineCov">          2 :     auto num_nodes = ensemble_params[0].size();</span></a>
-<a name="47"><span class="lineNum">      47 </span><span class="lineCov">          6 :     std::vector&lt;double&gt; single_element_ensemble(num_runs);</span></a>
+<a name="47"><span class="lineNum">      47 </span><span class="lineCov">          4 :     std::vector&lt;double&gt; single_element_ensemble(num_runs);</span></a>
 <a name="48"><span class="lineNum">      48 </span><span class="lineCov">          2 :     auto num_groups = (size_t)ensemble_params[0][0].parameters.get_num_groups();</span></a>
 <a name="49"><span class="lineNum">      49 </span>            : </a>
 <a name="50"><span class="lineNum">      50 </span>            :     // Lambda function that calculates the percentile of a single parameter</a>
 <a name="51"><span class="lineNum">      51 </span><span class="lineCov">          6 :     std::vector&lt;Model&gt; percentile(num_nodes, Model((int)num_groups));</span></a>
 <a name="52"><span class="lineNum">      52 </span><span class="lineCov">       8634 :     auto param_percentil = [&amp;ensemble_params, p, num_runs, &amp;percentile](auto n, auto get_param) mutable {</span></a>
-<a name="53"><span class="lineNum">      53 </span><span class="lineCov">       2292 :         std::vector&lt;double&gt; single_element(num_runs);</span></a>
+<a name="53"><span class="lineNum">      53 </span><span class="lineCov">       1992 :         std::vector&lt;double&gt; single_element(num_runs);</span></a>
 <a name="54"><span class="lineNum">      54 </span><span class="lineCov">       2656 :         for (size_t run = 0; run &lt; num_runs; run++) {</span></a>
 <a name="55"><span class="lineNum">      55 </span><span class="lineCov">       2656 :             auto const&amp; params  = ensemble_params[run][n];</span></a>
 <a name="56"><span class="lineNum">      56 </span><span class="lineCov">       1328 :             single_element[run] = get_param(params);</span></a>
@@ -120,7 +120,7 @@
 <a name="58"><span class="lineNum">      58 </span><span class="lineCov">        664 :         std::sort(single_element.begin(), single_element.end());</span></a>
 <a name="59"><span class="lineNum">      59 </span><span class="lineCov">       1328 :         auto&amp; new_params = get_param(percentile[n]);</span></a>
 <a name="60"><span class="lineNum">      60 </span><span class="lineCov">       1328 :         new_params       = single_element[static_cast&lt;size_t&gt;(num_runs * p)];</span></a>
-<a name="61"><span class="lineNum">      61 </span>            :     };</a>
+<a name="61"><span class="lineNum">      61 </span><span class="lineCov">        664 :     };</span></a>
 <a name="62"><span class="lineNum">      62 </span>            : </a>
 <a name="63"><span class="lineNum">      63 </span><span class="lineCov">          6 :     for (size_t node = 0; node &lt; num_nodes; node++) {</span></a>
 <a name="64"><span class="lineNum">      64 </span><span class="lineCov">         28 :         for (auto age_group = AgeGroup(0); age_group &lt; AgeGroup(num_groups); age_group++) {</span></a>
@@ -260,7 +260,7 @@
 <a name="198"><span class="lineNum">     198 </span>            :     }</a>
 <a name="199"><span class="lineNum">     199 </span>            : </a>
 <a name="200"><span class="lineNum">     200 </span><span class="lineCov">          4 :     return percentile;</span></a>
-<a name="201"><span class="lineNum">     201 </span>            : }</a>
+<a name="201"><span class="lineNum">     201 </span><span class="lineCov">          2 : }</span></a>
 <a name="202"><span class="lineNum">     202 </span>            : </a>
 <a name="203"><span class="lineNum">     203 </span>            : } // namespace abm</a>
 <a name="204"><span class="lineNum">     204 </span>            : } // namespace mio</a>

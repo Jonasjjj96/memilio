@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2024-05-17 10:31:17</td>
+            <td class="headerValue">2024-05-17 12:46:19</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">2</td>
@@ -133,17 +133,17 @@
 <a name="71"><span class="lineNum">      71 </span><span class="lineCov">         12 :             coeffStoI * y[(size_t)InfectionState::Susceptible] * pop[(size_t)InfectionState::Infected] +</span></a>
 <a name="72"><span class="lineNum">      72 </span><span class="lineCov">          6 :                 sqrt(coeffStoI * y[(size_t)InfectionState::Susceptible] * pop[(size_t)InfectionState::Infected]) *</span></a>
 <a name="73"><span class="lineNum">      73 </span><span class="lineCov">          6 :                     inv_sqrt_dt * si,</span></a>
-<a name="74"><span class="lineNum">      74 </span><span class="lineCov">         18 :             0.0, y[(size_t)InfectionState::Susceptible] / step_size);</span></a>
+<a name="74"><span class="lineNum">      74 </span><span class="lineCov">         12 :             0.0, y[(size_t)InfectionState::Susceptible] / step_size);</span></a>
 <a name="75"><span class="lineNum">      75 </span>            : </a>
 <a name="76"><span class="lineNum">      76 </span><span class="lineCov">          6 :         flows[get_flat_flow_index&lt;InfectionState::Infected, InfectionState::Recovered&gt;()] = std::clamp(</span></a>
 <a name="77"><span class="lineNum">      77 </span><span class="lineCov">         12 :             (1.0 / params.get&lt;TimeInfected&gt;()) * y[(size_t)InfectionState::Infected] +</span></a>
 <a name="78"><span class="lineNum">      78 </span><span class="lineCov">          6 :                 sqrt((1.0 / params.get&lt;TimeInfected&gt;()) * y[(size_t)InfectionState::Infected]) * inv_sqrt_dt * ir,</span></a>
-<a name="79"><span class="lineNum">      79 </span><span class="lineCov">         18 :             0.0, y[(size_t)InfectionState::Infected] / step_size);</span></a>
+<a name="79"><span class="lineNum">      79 </span><span class="lineCov">         12 :             0.0, y[(size_t)InfectionState::Infected] / step_size);</span></a>
 <a name="80"><span class="lineNum">      80 </span>            : </a>
 <a name="81"><span class="lineNum">      81 </span><span class="lineCov">          6 :         flows[get_flat_flow_index&lt;InfectionState::Recovered, InfectionState::Susceptible&gt;()] = std::clamp(</span></a>
 <a name="82"><span class="lineNum">      82 </span><span class="lineCov">         12 :             (1.0 / params.get&lt;TimeImmune&gt;()) * y[(size_t)InfectionState::Recovered] +</span></a>
 <a name="83"><span class="lineNum">      83 </span><span class="lineCov">          6 :                 sqrt((1.0 / params.get&lt;TimeImmune&gt;()) * y[(size_t)InfectionState::Recovered]) * inv_sqrt_dt * rs,</span></a>
-<a name="84"><span class="lineNum">      84 </span><span class="lineCov">         18 :             0.0, y[(size_t)InfectionState::Recovered] / step_size);</span></a>
+<a name="84"><span class="lineNum">      84 </span><span class="lineCov">         12 :             0.0, y[(size_t)InfectionState::Recovered] / step_size);</span></a>
 <a name="85"><span class="lineNum">      85 </span><span class="lineCov">          6 :     }</span></a>
 <a name="86"><span class="lineNum">      86 </span>            : </a>
 <a name="87"><span class="lineNum">      87 </span>            :     ScalarType step_size; ///&lt; A step size of the model with which the stochastic process is realized.</a>

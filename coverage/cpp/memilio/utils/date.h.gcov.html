@@ -31,13 +31,13 @@
             <td class="headerValue">coverage.info</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntry">90</td>
-            <td class="headerCovTableEntry">97</td>
-            <td class="headerCovTableEntryHi">92.8 %</td>
+            <td class="headerCovTableEntry">91</td>
+            <td class="headerCovTableEntry">99</td>
+            <td class="headerCovTableEntryHi">91.9 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2024-05-17 10:31:17</td>
+            <td class="headerValue">2024-05-17 12:46:19</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">15</td>
@@ -123,7 +123,7 @@
 <a name="61"><span class="lineNum">      61 </span><span class="lineCov">     200112 :     Date(int y, int m, int d)</span></a>
 <a name="62"><span class="lineNum">      62 </span>            : </a>
 <a name="63"><span class="lineNum">      63 </span><span class="lineCov">     200112 :         : year(y)</span></a>
-<a name="64"><span class="lineNum">      64 </span>            :         , month(m)</a>
+<a name="64"><span class="lineNum">      64 </span><span class="lineCov">     200112 :         , month(m)</span></a>
 <a name="65"><span class="lineNum">      65 </span><span class="lineCov">     200112 :         , day(d)</span></a>
 <a name="66"><span class="lineNum">      66 </span>            :     {</a>
 <a name="67"><span class="lineNum">      67 </span><span class="lineCov">     200112 :         assert(month &gt; 0 &amp;&amp; month &lt; 13);</span></a>
@@ -266,7 +266,7 @@
 <a name="204"><span class="lineNum">     204 </span>            :     }</a>
 <a name="205"><span class="lineNum">     205 </span><span class="lineNoCov">          0 :     catch (const std::invalid_argument&amp;) {</span></a>
 <a name="206"><span class="lineNum">     206 </span><span class="lineNoCov">          0 :         return failure(StatusCode::InvalidValue, &quot;Argument ist not a valid date string.&quot;);</span></a>
-<a name="207"><span class="lineNum">     207 </span>            :     }</a>
+<a name="207"><span class="lineNum">     207 </span><span class="lineNoCov">          0 :     }</span></a>
 <a name="208"><span class="lineNum">     208 </span>            : }</a>
 <a name="209"><span class="lineNum">     209 </span>            : </a>
 <a name="210"><span class="lineNum">     210 </span>            : /**</a>
@@ -303,10 +303,10 @@
 <a name="241"><span class="lineNum">     241 </span>            :         }</a>
 <a name="242"><span class="lineNum">     242 </span>            :         else {</a>
 <a name="243"><span class="lineNum">     243 </span><span class="lineCov">      21540 :             if (day_in_year &gt; 0) {</span></a>
-<a name="244"><span class="lineNum">     244 </span><span class="lineCov">      21534 :                 return offset_date_by_days({year + 1, 1, 1}, day_in_year - part_sum[11] - 1);</span></a>
+<a name="244"><span class="lineNum">     244 </span><span class="lineCov">      43068 :                 return offset_date_by_days({year + 1, 1, 1}, day_in_year - part_sum[11] - 1);</span></a>
 <a name="245"><span class="lineNum">     245 </span>            :             }</a>
 <a name="246"><span class="lineNum">     246 </span>            :             else {</a>
-<a name="247"><span class="lineNum">     247 </span><span class="lineCov">          6 :                 return offset_date_by_days({year - 1, 12, 31}, day_in_year);</span></a>
+<a name="247"><span class="lineNum">     247 </span><span class="lineCov">         12 :                 return offset_date_by_days({year - 1, 12, 31}, day_in_year);</span></a>
 <a name="248"><span class="lineNum">     248 </span>            :             }</a>
 <a name="249"><span class="lineNum">     249 </span>            :         }</a>
 <a name="250"><span class="lineNum">     250 </span>            :     }</a>

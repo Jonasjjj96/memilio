@@ -31,13 +31,13 @@
             <td class="headerValue">coverage.info</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntry">161</td>
-            <td class="headerCovTableEntry">174</td>
-            <td class="headerCovTableEntryHi">92.5 %</td>
+            <td class="headerCovTableEntry">166</td>
+            <td class="headerCovTableEntry">181</td>
+            <td class="headerCovTableEntryHi">91.7 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2024-05-17 10:31:17</td>
+            <td class="headerValue">2024-05-17 12:46:19</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">44</td>
@@ -130,8 +130,8 @@
 <a name="68"><span class="lineNum">      68 </span>            : {</a>
 <a name="69"><span class="lineNum">      69 </span>            : public:</a>
 <a name="70"><span class="lineNum">      70 </span><span class="lineCov">       3695 :     ParameterDistribution(double lower_bound, double upper_bound)</span></a>
-<a name="71"><span class="lineNum">      71 </span><span class="lineCov">       3695 :         : m_lower_bound(lower_bound)</span></a>
-<a name="72"><span class="lineNum">      72 </span><span class="lineCov">       3695 :         , m_upper_bound(upper_bound)</span></a>
+<a name="71"><span class="lineNum">      71 </span><span class="lineCov">       7390 :         : m_lower_bound(lower_bound)</span></a>
+<a name="72"><span class="lineNum">      72 </span><span class="lineCov">       7390 :         , m_upper_bound(upper_bound)</span></a>
 <a name="73"><span class="lineNum">      73 </span>            :     {</a>
 <a name="74"><span class="lineNum">      74 </span><span class="lineCov">       3695 :     }</span></a>
 <a name="75"><span class="lineNum">      75 </span>            : </a>
@@ -202,10 +202,10 @@
 <a name="140"><span class="lineNum">     140 </span>            :     template &lt;class IOContext&gt;</a>
 <a name="141"><span class="lineNum">     141 </span><span class="lineCov">        252 :     void serialize(IOContext&amp; io) const</span></a>
 <a name="142"><span class="lineNum">     142 </span>            :     {</a>
-<a name="143"><span class="lineNum">     143 </span><span class="lineCov">       1008 :         auto obj     = io.create_object(&quot;ParameterDistribution&quot;);</span></a>
-<a name="144"><span class="lineNum">     144 </span><span class="lineCov">        504 :         auto visitor = details::SerializationVisitor&lt;decltype(obj)&gt;{obj};</span></a>
+<a name="143"><span class="lineNum">     143 </span><span class="lineCov">        756 :         auto obj     = io.create_object(&quot;ParameterDistribution&quot;);</span></a>
+<a name="144"><span class="lineNum">     144 </span><span class="lineCov">        252 :         auto visitor = details::SerializationVisitor&lt;decltype(obj)&gt;{obj};</span></a>
 <a name="145"><span class="lineNum">     145 </span><span class="lineCov">        252 :         this-&gt;accept(visitor);</span></a>
-<a name="146"><span class="lineNum">     146 </span><span class="lineCov">        252 :     }</span></a>
+<a name="146"><span class="lineNum">     146 </span><span class="lineCov">        504 :     }</span></a>
 <a name="147"><span class="lineNum">     147 </span>            : </a>
 <a name="148"><span class="lineNum">     148 </span>            :     virtual double get_rand_sample() = 0;</a>
 <a name="149"><span class="lineNum">     149 </span>            : </a>
@@ -362,10 +362,10 @@
 <a name="300"><span class="lineNum">     300 </span><span class="lineCov">       1581 :         int i        = 0;</span></a>
 <a name="301"><span class="lineNum">     301 </span><span class="lineCov">       1581 :         int retries  = 10;</span></a>
 <a name="302"><span class="lineNum">     302 </span><span class="lineCov">       1581 :         double rnumb = m_distribution(thread_local_rng());</span></a>
-<a name="303"><span class="lineNum">     303 </span><span class="lineCov">       1585 :         while ((rnumb &gt; m_upper_bound || rnumb &lt; m_lower_bound) &amp;&amp; i &lt; retries) {</span></a>
-<a name="304"><span class="lineNum">     304 </span><span class="lineCov">          4 :             rnumb = m_distribution(thread_local_rng());</span></a>
-<a name="305"><span class="lineNum">     305 </span><span class="lineCov">          4 :             i++;</span></a>
-<a name="306"><span class="lineNum">     306 </span><span class="lineCov">          4 :             if (i == retries) {</span></a>
+<a name="303"><span class="lineNum">     303 </span><span class="lineCov">       1589 :         while ((rnumb &gt; m_upper_bound || rnumb &lt; m_lower_bound) &amp;&amp; i &lt; retries) {</span></a>
+<a name="304"><span class="lineNum">     304 </span><span class="lineCov">          8 :             rnumb = m_distribution(thread_local_rng());</span></a>
+<a name="305"><span class="lineNum">     305 </span><span class="lineCov">          8 :             i++;</span></a>
+<a name="306"><span class="lineNum">     306 </span><span class="lineCov">          8 :             if (i == retries) {</span></a>
 <a name="307"><span class="lineNum">     307 </span><span class="lineNoCov">          0 :                 log_warning(&quot;Not successfully sampled within [min,max].&quot;);</span></a>
 <a name="308"><span class="lineNum">     308 </span><span class="lineNoCov">          0 :                 if (rnumb &gt; m_upper_bound) {</span></a>
 <a name="309"><span class="lineNum">     309 </span><span class="lineNoCov">          0 :                     rnumb = m_upper_bound;</span></a>
@@ -398,12 +398,12 @@
 <a name="336"><span class="lineNum">     336 </span>            :     template &lt;class IOContext, class IOObject&gt;</a>
 <a name="337"><span class="lineNum">     337 </span><span class="lineCov">        249 :     static IOResult&lt;ParameterDistributionNormal&gt; deserialize_elements(IOContext&amp; io, IOObject&amp; obj)</span></a>
 <a name="338"><span class="lineNum">     338 </span>            :     {</a>
-<a name="339"><span class="lineNum">     339 </span><span class="lineCov">        996 :         auto m      = obj.expect_element(&quot;Mean&quot;, Tag&lt;double&gt;{});</span></a>
-<a name="340"><span class="lineNum">     340 </span><span class="lineCov">        996 :         auto s      = obj.expect_element(&quot;StandardDev&quot;, Tag&lt;double&gt;{});</span></a>
-<a name="341"><span class="lineNum">     341 </span><span class="lineCov">        996 :         auto lb     = obj.expect_element(&quot;LowerBound&quot;, Tag&lt;double&gt;{});</span></a>
-<a name="342"><span class="lineNum">     342 </span><span class="lineCov">        996 :         auto ub     = obj.expect_element(&quot;UpperBound&quot;, Tag&lt;double&gt;{});</span></a>
-<a name="343"><span class="lineNum">     343 </span><span class="lineCov">        996 :         auto predef = obj.expect_list(&quot;PredefinedSamples&quot;, Tag&lt;double&gt;{});</span></a>
-<a name="344"><span class="lineNum">     344 </span><span class="lineCov">        498 :         auto p      = apply(</span></a>
+<a name="339"><span class="lineNum">     339 </span><span class="lineCov">        747 :         auto m      = obj.expect_element(&quot;Mean&quot;, Tag&lt;double&gt;{});</span></a>
+<a name="340"><span class="lineNum">     340 </span><span class="lineCov">        747 :         auto s      = obj.expect_element(&quot;StandardDev&quot;, Tag&lt;double&gt;{});</span></a>
+<a name="341"><span class="lineNum">     341 </span><span class="lineCov">        747 :         auto lb     = obj.expect_element(&quot;LowerBound&quot;, Tag&lt;double&gt;{});</span></a>
+<a name="342"><span class="lineNum">     342 </span><span class="lineCov">        747 :         auto ub     = obj.expect_element(&quot;UpperBound&quot;, Tag&lt;double&gt;{});</span></a>
+<a name="343"><span class="lineNum">     343 </span><span class="lineCov">        747 :         auto predef = obj.expect_list(&quot;PredefinedSamples&quot;, Tag&lt;double&gt;{});</span></a>
+<a name="344"><span class="lineNum">     344 </span><span class="lineCov">        249 :         auto p      = apply(</span></a>
 <a name="345"><span class="lineNum">     345 </span>            :                  io,</a>
 <a name="346"><span class="lineNum">     346 </span><span class="lineCov">        249 :                  [](auto&amp;&amp; lb_, auto&amp;&amp; ub_, auto&amp;&amp; m_, auto&amp;&amp; s_, auto&amp;&amp; predef_) {</span></a>
 <a name="347"><span class="lineNum">     347 </span><span class="lineCov">        249 :                 auto distr = ParameterDistributionNormal(lb_, ub_, m_, s_);</span></a>
@@ -411,7 +411,7 @@
 <a name="349"><span class="lineNum">     349 </span><span class="lineCov">          1 :                     distr.add_predefined_sample(e);</span></a>
 <a name="350"><span class="lineNum">     350 </span>            :                 }</a>
 <a name="351"><span class="lineNum">     351 </span><span class="lineCov">        249 :                 return distr;</span></a>
-<a name="352"><span class="lineNum">     352 </span>            :                  },</a>
+<a name="352"><span class="lineNum">     352 </span><span class="lineNoCov">          0 :                  },</span></a>
 <a name="353"><span class="lineNum">     353 </span>            :                  lb, ub, m, s, predef);</a>
 <a name="354"><span class="lineNum">     354 </span><span class="lineCov">        249 :         if (p) {</span></a>
 <a name="355"><span class="lineNum">     355 </span><span class="lineCov">        249 :             return success(p.value());</span></a>
@@ -419,7 +419,7 @@
 <a name="357"><span class="lineNum">     357 </span>            :         else {</a>
 <a name="358"><span class="lineNum">     358 </span><span class="lineNoCov">          0 :             return p.as_failure();</span></a>
 <a name="359"><span class="lineNum">     359 </span>            :         }</a>
-<a name="360"><span class="lineNum">     360 </span>            :     }</a>
+<a name="360"><span class="lineNum">     360 </span><span class="lineCov">        249 :     }</span></a>
 <a name="361"><span class="lineNum">     361 </span>            : </a>
 <a name="362"><span class="lineNum">     362 </span>            :     template &lt;class IOContext&gt;</a>
 <a name="363"><span class="lineNum">     363 </span>            :     static IOResult&lt;ParameterDistributionNormal&gt; deserialize(IOContext&amp; io)</a>
@@ -499,10 +499,10 @@
 <a name="437"><span class="lineNum">     437 </span>            :     template &lt;class IOContext, class IOObject&gt;</a>
 <a name="438"><span class="lineNum">     438 </span><span class="lineCov">          3 :     static IOResult&lt;ParameterDistributionUniform&gt; deserialize_elements(IOContext&amp; io, IOObject&amp; obj)</span></a>
 <a name="439"><span class="lineNum">     439 </span>            :     {</a>
-<a name="440"><span class="lineNum">     440 </span><span class="lineCov">         12 :         auto lb     = obj.expect_element(&quot;LowerBound&quot;, Tag&lt;double&gt;{});</span></a>
-<a name="441"><span class="lineNum">     441 </span><span class="lineCov">         12 :         auto ub     = obj.expect_element(&quot;UpperBound&quot;, Tag&lt;double&gt;{});</span></a>
-<a name="442"><span class="lineNum">     442 </span><span class="lineCov">         12 :         auto predef = obj.expect_list(&quot;PredefinedSamples&quot;, Tag&lt;double&gt;{});</span></a>
-<a name="443"><span class="lineNum">     443 </span><span class="lineCov">          6 :         auto p      = apply(</span></a>
+<a name="440"><span class="lineNum">     440 </span><span class="lineCov">          9 :         auto lb     = obj.expect_element(&quot;LowerBound&quot;, Tag&lt;double&gt;{});</span></a>
+<a name="441"><span class="lineNum">     441 </span><span class="lineCov">          9 :         auto ub     = obj.expect_element(&quot;UpperBound&quot;, Tag&lt;double&gt;{});</span></a>
+<a name="442"><span class="lineNum">     442 </span><span class="lineCov">          9 :         auto predef = obj.expect_list(&quot;PredefinedSamples&quot;, Tag&lt;double&gt;{});</span></a>
+<a name="443"><span class="lineNum">     443 </span><span class="lineCov">          3 :         auto p      = apply(</span></a>
 <a name="444"><span class="lineNum">     444 </span>            :                  io,</a>
 <a name="445"><span class="lineNum">     445 </span><span class="lineCov">          3 :                  [](auto&amp;&amp; lb_, auto&amp;&amp; ub_, auto&amp;&amp; predef_) {</span></a>
 <a name="446"><span class="lineNum">     446 </span><span class="lineCov">          3 :                 auto distr = ParameterDistributionUniform(lb_, ub_);</span></a>
@@ -510,7 +510,7 @@
 <a name="448"><span class="lineNum">     448 </span><span class="lineNoCov">          0 :                     distr.add_predefined_sample(e);</span></a>
 <a name="449"><span class="lineNum">     449 </span>            :                 }</a>
 <a name="450"><span class="lineNum">     450 </span><span class="lineCov">          3 :                 return distr;</span></a>
-<a name="451"><span class="lineNum">     451 </span>            :                  },</a>
+<a name="451"><span class="lineNum">     451 </span><span class="lineNoCov">          0 :                  },</span></a>
 <a name="452"><span class="lineNum">     452 </span>            :                  lb, ub, predef);</a>
 <a name="453"><span class="lineNum">     453 </span><span class="lineCov">          3 :         if (p) {</span></a>
 <a name="454"><span class="lineNum">     454 </span><span class="lineCov">          3 :             return success(p.value());</span></a>
@@ -518,7 +518,7 @@
 <a name="456"><span class="lineNum">     456 </span>            :         else {</a>
 <a name="457"><span class="lineNum">     457 </span><span class="lineNoCov">          0 :             return p.as_failure();</span></a>
 <a name="458"><span class="lineNum">     458 </span>            :         }</a>
-<a name="459"><span class="lineNum">     459 </span>            :     }</a>
+<a name="459"><span class="lineNum">     459 </span><span class="lineCov">          3 :     }</span></a>
 <a name="460"><span class="lineNum">     460 </span>            : </a>
 <a name="461"><span class="lineNum">     461 </span>            :     template &lt;class IOContext&gt;</a>
 <a name="462"><span class="lineNum">     462 </span>            :     static IOResult&lt;ParameterDistributionUniform&gt; deserialize(IOContext&amp; io)</a>
@@ -546,23 +546,23 @@
 <a name="484"><span class="lineNum">     484 </span><span class="lineCov">        252 : IOResult&lt;std::shared_ptr&lt;ParameterDistribution&gt;&gt; deserialize_internal(IOContext&amp; io,</span></a>
 <a name="485"><span class="lineNum">     485 </span>            :                                                                       Tag&lt;std::shared_ptr&lt;ParameterDistribution&gt;&gt;)</a>
 <a name="486"><span class="lineNum">     486 </span>            : {</a>
-<a name="487"><span class="lineNum">     487 </span><span class="lineCov">       1008 :     auto obj  = io.expect_object(&quot;ParameterDistribution&quot;);</span></a>
-<a name="488"><span class="lineNum">     488 </span><span class="lineCov">       1008 :     auto type = obj.expect_element(&quot;Type&quot;, Tag&lt;std::string&gt;{});</span></a>
+<a name="487"><span class="lineNum">     487 </span><span class="lineCov">        756 :     auto obj  = io.expect_object(&quot;ParameterDistribution&quot;);</span></a>
+<a name="488"><span class="lineNum">     488 </span><span class="lineCov">        756 :     auto type = obj.expect_element(&quot;Type&quot;, Tag&lt;std::string&gt;{});</span></a>
 <a name="489"><span class="lineNum">     489 </span><span class="lineCov">        252 :     if (type) {</span></a>
 <a name="490"><span class="lineNum">     490 </span><span class="lineCov">        252 :         if (type.value() == &quot;Uniform&quot;) {</span></a>
-<a name="491"><span class="lineNum">     491 </span><span class="lineCov">          6 :             BOOST_OUTCOME_TRY(auto&amp;&amp; r, ParameterDistributionUniform::deserialize_elements(io, obj));</span></a>
+<a name="491"><span class="lineNum">     491 </span><span class="lineCov">          3 :             BOOST_OUTCOME_TRY(auto&amp;&amp; r, ParameterDistributionUniform::deserialize_elements(io, obj));</span></a>
 <a name="492"><span class="lineNum">     492 </span><span class="lineCov">          3 :             return std::make_shared&lt;ParameterDistributionUniform&gt;(r);</span></a>
-<a name="493"><span class="lineNum">     493 </span>            :         }</a>
+<a name="493"><span class="lineNum">     493 </span><span class="lineCov">          3 :         }</span></a>
 <a name="494"><span class="lineNum">     494 </span><span class="lineCov">        249 :         else if (type.value() == &quot;Normal&quot;) {</span></a>
-<a name="495"><span class="lineNum">     495 </span><span class="lineCov">        498 :             BOOST_OUTCOME_TRY(auto&amp;&amp; r, ParameterDistributionNormal::deserialize_elements(io, obj));</span></a>
+<a name="495"><span class="lineNum">     495 </span><span class="lineCov">        249 :             BOOST_OUTCOME_TRY(auto&amp;&amp; r, ParameterDistributionNormal::deserialize_elements(io, obj));</span></a>
 <a name="496"><span class="lineNum">     496 </span><span class="lineCov">        249 :             return std::make_shared&lt;ParameterDistributionNormal&gt;(r);</span></a>
-<a name="497"><span class="lineNum">     497 </span>            :         }</a>
+<a name="497"><span class="lineNum">     497 </span><span class="lineCov">        249 :         }</span></a>
 <a name="498"><span class="lineNum">     498 </span>            :         else {</a>
 <a name="499"><span class="lineNum">     499 </span><span class="lineNoCov">          0 :             return failure(StatusCode::InvalidValue, &quot;Type of ParameterDistribution &quot; + type.value() + &quot; not valid.&quot;);</span></a>
 <a name="500"><span class="lineNum">     500 </span>            :         }</a>
 <a name="501"><span class="lineNum">     501 </span>            :     }</a>
 <a name="502"><span class="lineNum">     502 </span><span class="lineNoCov">          0 :     return failure(type.error());</span></a>
-<a name="503"><span class="lineNum">     503 </span>            : }</a>
+<a name="503"><span class="lineNum">     503 </span><span class="lineCov">        252 : }</span></a>
 <a name="504"><span class="lineNum">     504 </span>            : </a>
 <a name="505"><span class="lineNum">     505 </span>            : } // namespace mio</a>
 <a name="506"><span class="lineNum">     506 </span>            : </a>

@@ -31,13 +31,13 @@
             <td class="headerValue">coverage.info</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntry">157</td>
-            <td class="headerCovTableEntry">160</td>
-            <td class="headerCovTableEntryHi">98.1 %</td>
+            <td class="headerCovTableEntry">170</td>
+            <td class="headerCovTableEntry">173</td>
+            <td class="headerCovTableEntryHi">98.3 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2024-05-17 10:31:17</td>
+            <td class="headerValue">2024-05-17 12:46:19</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">28</td>
@@ -116,15 +116,15 @@
 <a name="54"><span class="lineNum">      54 </span>            :     template &lt;class IoContext&gt;</a>
 <a name="55"><span class="lineNum">      55 </span><span class="lineCov">      12924 :     static IOResult&lt;StringDate&gt; deserialize(IoContext&amp; io)</span></a>
 <a name="56"><span class="lineNum">      56 </span>            :     {</a>
-<a name="57"><span class="lineNum">      57 </span><span class="lineCov">      25848 :         auto str = mio::deserialize(io, Tag&lt;std::string&gt;{});</span></a>
+<a name="57"><span class="lineNum">      57 </span><span class="lineCov">      12924 :         auto str = mio::deserialize(io, Tag&lt;std::string&gt;{});</span></a>
 <a name="58"><span class="lineNum">      58 </span>            :         return apply(</a>
 <a name="59"><span class="lineNum">      59 </span>            :             io,</a>
 <a name="60"><span class="lineNum">      60 </span><span class="lineCov">      12924 :             [](auto&amp;&amp; str_) -&gt; IOResult&lt;StringDate&gt; {</span></a>
-<a name="61"><span class="lineNum">      61 </span><span class="lineCov">      25848 :                 BOOST_OUTCOME_TRY(auto&amp;&amp; date, parse_date(str_));</span></a>
+<a name="61"><span class="lineNum">      61 </span><span class="lineCov">      12924 :                 BOOST_OUTCOME_TRY(auto&amp;&amp; date, parse_date(str_));</span></a>
 <a name="62"><span class="lineNum">      62 </span><span class="lineCov">      25848 :                 return success(date);</span></a>
-<a name="63"><span class="lineNum">      63 </span>            :             },</a>
+<a name="63"><span class="lineNum">      63 </span><span class="lineCov">      12924 :             },</span></a>
 <a name="64"><span class="lineNum">      64 </span><span class="lineCov">      25848 :             str);</span></a>
-<a name="65"><span class="lineNum">      65 </span>            :     }</a>
+<a name="65"><span class="lineNum">      65 </span><span class="lineCov">      12924 :     }</span></a>
 <a name="66"><span class="lineNum">      66 </span>            : };</a>
 <a name="67"><span class="lineNum">      67 </span>            : </a>
 <a name="68"><span class="lineNum">      68 </span>            : /**</a>
@@ -143,18 +143,18 @@
 <a name="81"><span class="lineNum">      81 </span>            :     template &lt;class IOContext&gt;</a>
 <a name="82"><span class="lineNum">      82 </span><span class="lineCov">        107 :     static IOResult&lt;ConfirmedCasesNoAgeEntry&gt; deserialize(IOContext&amp; io)</span></a>
 <a name="83"><span class="lineNum">      83 </span>            :     {</a>
-<a name="84"><span class="lineNum">      84 </span><span class="lineCov">        428 :         auto obj           = io.expect_object(&quot;ConfirmedCasesNoAgeEntry&quot;);</span></a>
-<a name="85"><span class="lineNum">      85 </span><span class="lineCov">        428 :         auto num_confirmed = obj.expect_element(&quot;Confirmed&quot;, Tag&lt;double&gt;{});</span></a>
-<a name="86"><span class="lineNum">      86 </span><span class="lineCov">        428 :         auto num_recovered = obj.expect_element(&quot;Recovered&quot;, Tag&lt;double&gt;{});</span></a>
-<a name="87"><span class="lineNum">      87 </span><span class="lineCov">        428 :         auto num_deaths    = obj.expect_element(&quot;Deaths&quot;, Tag&lt;double&gt;{});</span></a>
-<a name="88"><span class="lineNum">      88 </span><span class="lineCov">        428 :         auto date          = obj.expect_element(&quot;Date&quot;, Tag&lt;StringDate&gt;{});</span></a>
+<a name="84"><span class="lineNum">      84 </span><span class="lineCov">        321 :         auto obj           = io.expect_object(&quot;ConfirmedCasesNoAgeEntry&quot;);</span></a>
+<a name="85"><span class="lineNum">      85 </span><span class="lineCov">        321 :         auto num_confirmed = obj.expect_element(&quot;Confirmed&quot;, Tag&lt;double&gt;{});</span></a>
+<a name="86"><span class="lineNum">      86 </span><span class="lineCov">        321 :         auto num_recovered = obj.expect_element(&quot;Recovered&quot;, Tag&lt;double&gt;{});</span></a>
+<a name="87"><span class="lineNum">      87 </span><span class="lineCov">        321 :         auto num_deaths    = obj.expect_element(&quot;Deaths&quot;, Tag&lt;double&gt;{});</span></a>
+<a name="88"><span class="lineNum">      88 </span><span class="lineCov">        321 :         auto date          = obj.expect_element(&quot;Date&quot;, Tag&lt;StringDate&gt;{});</span></a>
 <a name="89"><span class="lineNum">      89 </span>            :         return apply(</a>
 <a name="90"><span class="lineNum">      90 </span>            :             io,</a>
 <a name="91"><span class="lineNum">      91 </span><span class="lineCov">        107 :             [](auto&amp;&amp; nc, auto&amp;&amp; nr, auto&amp;&amp; nd, auto&amp;&amp; d) {</span></a>
 <a name="92"><span class="lineNum">      92 </span><span class="lineCov">        107 :                 return ConfirmedCasesNoAgeEntry{nc, nr, nd, d};</span></a>
 <a name="93"><span class="lineNum">      93 </span>            :             },</a>
 <a name="94"><span class="lineNum">      94 </span><span class="lineCov">        214 :             num_confirmed, num_recovered, num_deaths, date);</span></a>
-<a name="95"><span class="lineNum">      95 </span>            :     }</a>
+<a name="95"><span class="lineNum">      95 </span><span class="lineCov">        107 :     }</span></a>
 <a name="96"><span class="lineNum">      96 </span>            : };</a>
 <a name="97"><span class="lineNum">      97 </span>            : </a>
 <a name="98"><span class="lineNum">      98 </span>            : /**</a>
@@ -202,15 +202,15 @@
 <a name="140"><span class="lineNum">     140 </span>            :     template &lt;class IOContext&gt;</a>
 <a name="141"><span class="lineNum">     141 </span><span class="lineCov">       9023 :     static IOResult&lt;ConfirmedCasesDataEntry&gt; deserialize(IOContext&amp; io)</span></a>
 <a name="142"><span class="lineNum">     142 </span>            :     {</a>
-<a name="143"><span class="lineNum">     143 </span><span class="lineCov">      36092 :         auto obj           = io.expect_object(&quot;ConfirmedCasesDataEntry&quot;);</span></a>
-<a name="144"><span class="lineNum">     144 </span><span class="lineCov">      36092 :         auto num_confirmed = obj.expect_element(&quot;Confirmed&quot;, Tag&lt;double&gt;{});</span></a>
-<a name="145"><span class="lineNum">     145 </span><span class="lineCov">      36092 :         auto num_recovered = obj.expect_element(&quot;Recovered&quot;, Tag&lt;double&gt;{});</span></a>
-<a name="146"><span class="lineNum">     146 </span><span class="lineCov">      36092 :         auto num_deaths    = obj.expect_element(&quot;Deaths&quot;, Tag&lt;double&gt;{});</span></a>
-<a name="147"><span class="lineNum">     147 </span><span class="lineCov">      36092 :         auto date          = obj.expect_element(&quot;Date&quot;, Tag&lt;StringDate&gt;{});</span></a>
-<a name="148"><span class="lineNum">     148 </span><span class="lineCov">      36092 :         auto age_group_str = obj.expect_element(&quot;Age_RKI&quot;, Tag&lt;std::string&gt;{});</span></a>
-<a name="149"><span class="lineNum">     149 </span><span class="lineCov">      36092 :         auto state_id      = obj.expect_optional(&quot;ID_State&quot;, Tag&lt;regions::StateId&gt;{});</span></a>
-<a name="150"><span class="lineNum">     150 </span><span class="lineCov">      36092 :         auto county_id     = obj.expect_optional(&quot;ID_County&quot;, Tag&lt;regions::CountyId&gt;{});</span></a>
-<a name="151"><span class="lineNum">     151 </span><span class="lineCov">      36092 :         auto district_id   = obj.expect_optional(&quot;ID_District&quot;, Tag&lt;regions::DistrictId&gt;{});</span></a>
+<a name="143"><span class="lineNum">     143 </span><span class="lineCov">      27069 :         auto obj           = io.expect_object(&quot;ConfirmedCasesDataEntry&quot;);</span></a>
+<a name="144"><span class="lineNum">     144 </span><span class="lineCov">      27069 :         auto num_confirmed = obj.expect_element(&quot;Confirmed&quot;, Tag&lt;double&gt;{});</span></a>
+<a name="145"><span class="lineNum">     145 </span><span class="lineCov">      27069 :         auto num_recovered = obj.expect_element(&quot;Recovered&quot;, Tag&lt;double&gt;{});</span></a>
+<a name="146"><span class="lineNum">     146 </span><span class="lineCov">      27069 :         auto num_deaths    = obj.expect_element(&quot;Deaths&quot;, Tag&lt;double&gt;{});</span></a>
+<a name="147"><span class="lineNum">     147 </span><span class="lineCov">      27069 :         auto date          = obj.expect_element(&quot;Date&quot;, Tag&lt;StringDate&gt;{});</span></a>
+<a name="148"><span class="lineNum">     148 </span><span class="lineCov">      27069 :         auto age_group_str = obj.expect_element(&quot;Age_RKI&quot;, Tag&lt;std::string&gt;{});</span></a>
+<a name="149"><span class="lineNum">     149 </span><span class="lineCov">      27069 :         auto state_id      = obj.expect_optional(&quot;ID_State&quot;, Tag&lt;regions::StateId&gt;{});</span></a>
+<a name="150"><span class="lineNum">     150 </span><span class="lineCov">      27069 :         auto county_id     = obj.expect_optional(&quot;ID_County&quot;, Tag&lt;regions::CountyId&gt;{});</span></a>
+<a name="151"><span class="lineNum">     151 </span><span class="lineCov">      27069 :         auto district_id   = obj.expect_optional(&quot;ID_District&quot;, Tag&lt;regions::DistrictId&gt;{});</span></a>
 <a name="152"><span class="lineNum">     152 </span>            :         return apply(</a>
 <a name="153"><span class="lineNum">     153 </span>            :             io,</a>
 <a name="154"><span class="lineNum">     154 </span><span class="lineCov">       9023 :             [](auto&amp;&amp; nc, auto&amp;&amp; nr, auto&amp;&amp; nd, auto&amp;&amp; d, auto&amp;&amp; a_str, auto&amp;&amp; sid, auto&amp;&amp; cid,</span></a>
@@ -229,7 +229,7 @@
 <a name="167"><span class="lineNum">     167 </span><span class="lineCov">       9022 :                 return success(ConfirmedCasesDataEntry{nc, nr, nd, d, a, sid, cid, did});</span></a>
 <a name="168"><span class="lineNum">     168 </span>            :             },</a>
 <a name="169"><span class="lineNum">     169 </span><span class="lineCov">      18046 :             num_confirmed, num_recovered, num_deaths, date, age_group_str, state_id, county_id, district_id);</span></a>
-<a name="170"><span class="lineNum">     170 </span>            :     }</a>
+<a name="170"><span class="lineNum">     170 </span><span class="lineCov">       9023 :     }</span></a>
 <a name="171"><span class="lineNum">     171 </span>            : };</a>
 <a name="172"><span class="lineNum">     172 </span>            : </a>
 <a name="173"><span class="lineNum">     173 </span>            : /**</a>
@@ -239,14 +239,14 @@
 <a name="177"><span class="lineNum">     177 </span>            :  */</a>
 <a name="178"><span class="lineNum">     178 </span><span class="lineCov">         19 : inline IOResult&lt;std::vector&lt;ConfirmedCasesDataEntry&gt;&gt; deserialize_confirmed_cases_data(const Json::Value&amp; jsvalue)</span></a>
 <a name="179"><span class="lineNum">     179 </span>            : {</a>
-<a name="180"><span class="lineNum">     180 </span><span class="lineCov">         38 :     BOOST_OUTCOME_TRY(auto&amp;&amp; cases_data, deserialize_json(jsvalue, Tag&lt;std::vector&lt;ConfirmedCasesDataEntry&gt;&gt;{}));</span></a>
+<a name="180"><span class="lineNum">     180 </span><span class="lineCov">         19 :     BOOST_OUTCOME_TRY(auto&amp;&amp; cases_data, deserialize_json(jsvalue, Tag&lt;std::vector&lt;ConfirmedCasesDataEntry&gt;&gt;{}));</span></a>
 <a name="181"><span class="lineNum">     181 </span>            :     //filter entries with unknown age group</a>
-<a name="182"><span class="lineNum">     182 </span><span class="lineCov">         36 :     auto it = std::remove_if(cases_data.begin(), cases_data.end(), [](auto&amp;&amp; rki_entry) {</span></a>
+<a name="182"><span class="lineNum">     182 </span><span class="lineCov">         18 :     auto it = std::remove_if(cases_data.begin(), cases_data.end(), [](auto&amp;&amp; rki_entry) {</span></a>
 <a name="183"><span class="lineNum">     183 </span><span class="lineCov">       9022 :         return rki_entry.age_group &gt;= AgeGroup(ConfirmedCasesDataEntry::age_group_names.size());</span></a>
-<a name="184"><span class="lineNum">     184 </span><span class="lineCov">         36 :     });</span></a>
+<a name="184"><span class="lineNum">     184 </span>            :     });</a>
 <a name="185"><span class="lineNum">     185 </span><span class="lineCov">         18 :     cases_data.erase(it, cases_data.end());</span></a>
 <a name="186"><span class="lineNum">     186 </span><span class="lineCov">         18 :     return success(std::move(cases_data));</span></a>
-<a name="187"><span class="lineNum">     187 </span>            : }</a>
+<a name="187"><span class="lineNum">     187 </span><span class="lineCov">         19 : }</span></a>
 <a name="188"><span class="lineNum">     188 </span>            : </a>
 <a name="189"><span class="lineNum">     189 </span>            : /**</a>
 <a name="190"><span class="lineNum">     190 </span>            :  * Read list of ConfirmedCasesDataEntry from a json file.</a>
@@ -255,9 +255,9 @@
 <a name="193"><span class="lineNum">     193 </span>            :  */</a>
 <a name="194"><span class="lineNum">     194 </span><span class="lineCov">         17 : inline IOResult&lt;std::vector&lt;ConfirmedCasesDataEntry&gt;&gt; read_confirmed_cases_data(const std::string&amp; filename)</span></a>
 <a name="195"><span class="lineNum">     195 </span>            : {</a>
-<a name="196"><span class="lineNum">     196 </span><span class="lineCov">         34 :     BOOST_OUTCOME_TRY(auto&amp;&amp; jsvalue, read_json(filename));</span></a>
+<a name="196"><span class="lineNum">     196 </span><span class="lineCov">         17 :     BOOST_OUTCOME_TRY(auto&amp;&amp; jsvalue, read_json(filename));</span></a>
 <a name="197"><span class="lineNum">     197 </span><span class="lineCov">         17 :     return deserialize_confirmed_cases_data(jsvalue);</span></a>
-<a name="198"><span class="lineNum">     198 </span>            : }</a>
+<a name="198"><span class="lineNum">     198 </span><span class="lineCov">         17 : }</span></a>
 <a name="199"><span class="lineNum">     199 </span>            : </a>
 <a name="200"><span class="lineNum">     200 </span>            : /**</a>
 <a name="201"><span class="lineNum">     201 </span>            :  * Represents entries in a DIVI data file.</a>
@@ -277,19 +277,19 @@
 <a name="215"><span class="lineNum">     215 </span>            :     template &lt;class IoContext&gt;</a>
 <a name="216"><span class="lineNum">     216 </span><span class="lineCov">       1018 :     static IOResult&lt;DiviEntry&gt; deserialize(IoContext&amp; io)</span></a>
 <a name="217"><span class="lineNum">     217 </span>            :     {</a>
-<a name="218"><span class="lineNum">     218 </span><span class="lineCov">       4072 :         auto obj         = io.expect_object(&quot;DiviEntry&quot;);</span></a>
-<a name="219"><span class="lineNum">     219 </span><span class="lineCov">       4072 :         auto num_icu     = obj.expect_element(&quot;ICU&quot;, Tag&lt;double&gt;{});</span></a>
-<a name="220"><span class="lineNum">     220 </span><span class="lineCov">       4072 :         auto date        = obj.expect_element(&quot;Date&quot;, Tag&lt;StringDate&gt;{});</span></a>
-<a name="221"><span class="lineNum">     221 </span><span class="lineCov">       4072 :         auto state_id    = obj.expect_optional(&quot;ID_State&quot;, Tag&lt;regions::StateId&gt;{});</span></a>
-<a name="222"><span class="lineNum">     222 </span><span class="lineCov">       4072 :         auto county_id   = obj.expect_optional(&quot;ID_County&quot;, Tag&lt;regions::CountyId&gt;{});</span></a>
-<a name="223"><span class="lineNum">     223 </span><span class="lineCov">       4072 :         auto district_id = obj.expect_optional(&quot;ID_District&quot;, Tag&lt;regions::DistrictId&gt;{});</span></a>
+<a name="218"><span class="lineNum">     218 </span><span class="lineCov">       3054 :         auto obj         = io.expect_object(&quot;DiviEntry&quot;);</span></a>
+<a name="219"><span class="lineNum">     219 </span><span class="lineCov">       3054 :         auto num_icu     = obj.expect_element(&quot;ICU&quot;, Tag&lt;double&gt;{});</span></a>
+<a name="220"><span class="lineNum">     220 </span><span class="lineCov">       3054 :         auto date        = obj.expect_element(&quot;Date&quot;, Tag&lt;StringDate&gt;{});</span></a>
+<a name="221"><span class="lineNum">     221 </span><span class="lineCov">       3054 :         auto state_id    = obj.expect_optional(&quot;ID_State&quot;, Tag&lt;regions::StateId&gt;{});</span></a>
+<a name="222"><span class="lineNum">     222 </span><span class="lineCov">       3054 :         auto county_id   = obj.expect_optional(&quot;ID_County&quot;, Tag&lt;regions::CountyId&gt;{});</span></a>
+<a name="223"><span class="lineNum">     223 </span><span class="lineCov">       3054 :         auto district_id = obj.expect_optional(&quot;ID_District&quot;, Tag&lt;regions::DistrictId&gt;{});</span></a>
 <a name="224"><span class="lineNum">     224 </span>            :         return apply(</a>
 <a name="225"><span class="lineNum">     225 </span>            :             io,</a>
 <a name="226"><span class="lineNum">     226 </span><span class="lineCov">       1018 :             [](auto&amp;&amp; ni, auto&amp;&amp; d, auto&amp;&amp; sid, auto&amp;&amp; cid, auto&amp;&amp; did) {</span></a>
 <a name="227"><span class="lineNum">     227 </span><span class="lineCov">       1018 :                 return DiviEntry{ni, d, sid, cid, did};</span></a>
 <a name="228"><span class="lineNum">     228 </span>            :             },</a>
 <a name="229"><span class="lineNum">     229 </span><span class="lineCov">       2036 :             num_icu, date, state_id, county_id, district_id);</span></a>
-<a name="230"><span class="lineNum">     230 </span>            :     }</a>
+<a name="230"><span class="lineNum">     230 </span><span class="lineCov">       1018 :     }</span></a>
 <a name="231"><span class="lineNum">     231 </span>            : };</a>
 <a name="232"><span class="lineNum">     232 </span>            : </a>
 <a name="233"><span class="lineNum">     233 </span>            : /**</a>
@@ -318,14 +318,14 @@
 <a name="256"><span class="lineNum">     256 </span>            : template &lt;class T&gt;</a>
 <a name="257"><span class="lineNum">     257 </span><span class="lineCov">       5621 : IOResult&lt;std::vector&lt;T&gt;&gt; unpack_all(const std::vector&lt;IOResult&lt;T&gt;&gt;&amp; v)</span></a>
 <a name="258"><span class="lineNum">     258 </span>            : {</a>
-<a name="259"><span class="lineNum">     259 </span><span class="lineCov">      11242 :     std::vector&lt;T&gt; w;</span></a>
+<a name="259"><span class="lineNum">     259 </span><span class="lineCov">       5621 :     std::vector&lt;T&gt; w;</span></a>
 <a name="260"><span class="lineNum">     260 </span><span class="lineCov">       5621 :     w.reserve(v.size());</span></a>
-<a name="261"><span class="lineNum">     261 </span><span class="lineCov">      67441 :     for (auto&amp;&amp; r : v) {</span></a>
+<a name="261"><span class="lineNum">     261 </span><span class="lineCov">     129262 :     for (auto&amp;&amp; r : v) {</span></a>
 <a name="262"><span class="lineNum">     262 </span><span class="lineCov">      61821 :         BOOST_OUTCOME_TRY(auto&amp;&amp; t, r);</span></a>
 <a name="263"><span class="lineNum">     263 </span><span class="lineCov">      61820 :         w.push_back(t);</span></a>
 <a name="264"><span class="lineNum">     264 </span>            :     }</a>
 <a name="265"><span class="lineNum">     265 </span><span class="lineCov">       5620 :     return success(w);</span></a>
-<a name="266"><span class="lineNum">     266 </span>            : }</a>
+<a name="266"><span class="lineNum">     266 </span><span class="lineCov">       5621 : }</span></a>
 <a name="267"><span class="lineNum">     267 </span>            : } // namespace details</a>
 <a name="268"><span class="lineNum">     268 </span>            : </a>
 <a name="269"><span class="lineNum">     269 </span>            : /**</a>
@@ -347,11 +347,11 @@
 <a name="285"><span class="lineNum">     285 </span>            :     template &lt;class IoContext&gt;</a>
 <a name="286"><span class="lineNum">     286 </span><span class="lineCov">       5621 :     static IOResult&lt;PopulationDataEntry&gt; deserialize(IoContext&amp; io)</span></a>
 <a name="287"><span class="lineNum">     287 </span>            :     {</a>
-<a name="288"><span class="lineNum">     288 </span><span class="lineCov">      22484 :         auto obj         = io.expect_object(&quot;PopulationDataEntry&quot;);</span></a>
-<a name="289"><span class="lineNum">     289 </span><span class="lineCov">      22484 :         auto state_id    = obj.expect_optional(&quot;ID_State&quot;, Tag&lt;regions::StateId&gt;{});</span></a>
-<a name="290"><span class="lineNum">     290 </span><span class="lineCov">      22484 :         auto county_id   = obj.expect_optional(&quot;ID_County&quot;, Tag&lt;regions::CountyId&gt;{});</span></a>
-<a name="291"><span class="lineNum">     291 </span><span class="lineCov">      22484 :         auto district_id = obj.expect_optional(&quot;ID_District&quot;, Tag&lt;regions::DistrictId&gt;{});</span></a>
-<a name="292"><span class="lineNum">     292 </span><span class="lineCov">      11242 :         std::vector&lt;IOResult&lt;double&gt;&gt; age_groups;</span></a>
+<a name="288"><span class="lineNum">     288 </span><span class="lineCov">      16863 :         auto obj         = io.expect_object(&quot;PopulationDataEntry&quot;);</span></a>
+<a name="289"><span class="lineNum">     289 </span><span class="lineCov">      16863 :         auto state_id    = obj.expect_optional(&quot;ID_State&quot;, Tag&lt;regions::StateId&gt;{});</span></a>
+<a name="290"><span class="lineNum">     290 </span><span class="lineCov">      16863 :         auto county_id   = obj.expect_optional(&quot;ID_County&quot;, Tag&lt;regions::CountyId&gt;{});</span></a>
+<a name="291"><span class="lineNum">     291 </span><span class="lineCov">      16863 :         auto district_id = obj.expect_optional(&quot;ID_District&quot;, Tag&lt;regions::DistrictId&gt;{});</span></a>
+<a name="292"><span class="lineNum">     292 </span><span class="lineCov">       5621 :         std::vector&lt;IOResult&lt;double&gt;&gt; age_groups;</span></a>
 <a name="293"><span class="lineNum">     293 </span><span class="lineCov">       5621 :         age_groups.reserve(age_group_names.size());</span></a>
 <a name="294"><span class="lineNum">     294 </span><span class="lineCov">       5621 :         std::transform(age_group_names.begin(), age_group_names.end(), std::back_inserter(age_groups),</span></a>
 <a name="295"><span class="lineNum">     295 </span><span class="lineCov">      61831 :                        [&amp;obj](auto&amp;&amp; age_name) {</span></a>
@@ -364,7 +364,7 @@
 <a name="302"><span class="lineNum">     302 </span><span class="lineCov">      11240 :                     CustomIndexArray&lt;double, AgeGroup&gt;(AgeGroup(ag.size()), ag.begin(), ag.end()), sid, cid, did};</span></a>
 <a name="303"><span class="lineNum">     303 </span>            :             },</a>
 <a name="304"><span class="lineNum">     304 </span><span class="lineCov">      11242 :             details::unpack_all(age_groups), state_id, county_id, district_id);</span></a>
-<a name="305"><span class="lineNum">     305 </span>            :     }</a>
+<a name="305"><span class="lineNum">     305 </span><span class="lineCov">       5621 :     }</span></a>
 <a name="306"><span class="lineNum">     306 </span>            : };</a>
 <a name="307"><span class="lineNum">     307 </span>            : </a>
 <a name="308"><span class="lineNum">     308 </span>            : namespace details</a>
@@ -426,9 +426,9 @@
 <a name="364"><span class="lineNum">     364 </span>            : inline std::vector&lt;PopulationDataEntry&gt;</a>
 <a name="365"><span class="lineNum">     365 </span><span class="lineCov">         16 : interpolate_to_rki_age_groups(const std::vector&lt;PopulationDataEntry&gt;&amp; population_data)</span></a>
 <a name="366"><span class="lineNum">     366 </span>            : {</a>
-<a name="367"><span class="lineNum">     367 </span><span class="lineCov">         48 :     std::vector&lt;double&gt; age_ranges = {3., 3., 9., 3., 7., 5., 10., 10., 15., 10., 25.};</span></a>
-<a name="368"><span class="lineNum">     368 </span><span class="lineCov">         48 :     std::vector&lt;std::vector&lt;double&gt;&gt; coefficients{age_ranges.size()};</span></a>
-<a name="369"><span class="lineNum">     369 </span><span class="lineCov">         32 :     std::vector&lt;bool&gt; carry_over{};</span></a>
+<a name="367"><span class="lineNum">     367 </span><span class="lineCov">         32 :     std::vector&lt;double&gt; age_ranges = {3., 3., 9., 3., 7., 5., 10., 10., 15., 10., 25.};</span></a>
+<a name="368"><span class="lineNum">     368 </span><span class="lineCov">         32 :     std::vector&lt;std::vector&lt;double&gt;&gt; coefficients{age_ranges.size()};</span></a>
+<a name="369"><span class="lineNum">     369 </span><span class="lineCov">         16 :     std::vector&lt;bool&gt; carry_over{};</span></a>
 <a name="370"><span class="lineNum">     370 </span><span class="lineCov">         16 :     get_rki_age_interpolation_coefficients(age_ranges, coefficients, carry_over);</span></a>
 <a name="371"><span class="lineNum">     371 </span>            : </a>
 <a name="372"><span class="lineNum">     372 </span><span class="lineCov">         16 :     std::vector&lt;PopulationDataEntry&gt; interpolated{population_data};</span></a>
@@ -449,7 +449,7 @@
 <a name="387"><span class="lineNum">     387 </span>            :     }</a>
 <a name="388"><span class="lineNum">     388 </span>            : </a>
 <a name="389"><span class="lineNum">     389 </span><span class="lineCov">         32 :     return interpolated;</span></a>
-<a name="390"><span class="lineNum">     390 </span>            : }</a>
+<a name="390"><span class="lineNum">     390 </span><span class="lineCov">         16 : }</span></a>
 <a name="391"><span class="lineNum">     391 </span>            : } // namespace details</a>
 <a name="392"><span class="lineNum">     392 </span>            : </a>
 <a name="393"><span class="lineNum">     393 </span>            : /**</a>
@@ -462,14 +462,14 @@
 <a name="400"><span class="lineNum">     400 </span><span class="lineCov">         18 : inline IOResult&lt;std::vector&lt;PopulationDataEntry&gt;&gt; deserialize_population_data(const Json::Value&amp; jsvalue,</span></a>
 <a name="401"><span class="lineNum">     401 </span>            :                                                                               bool rki_age_groups = true)</a>
 <a name="402"><span class="lineNum">     402 </span>            : {</a>
-<a name="403"><span class="lineNum">     403 </span><span class="lineCov">         36 :     BOOST_OUTCOME_TRY(auto&amp;&amp; population_data, deserialize_json(jsvalue, Tag&lt;std::vector&lt;PopulationDataEntry&gt;&gt;{}));</span></a>
+<a name="403"><span class="lineNum">     403 </span><span class="lineCov">         18 :     BOOST_OUTCOME_TRY(auto&amp;&amp; population_data, deserialize_json(jsvalue, Tag&lt;std::vector&lt;PopulationDataEntry&gt;&gt;{}));</span></a>
 <a name="404"><span class="lineNum">     404 </span><span class="lineCov">         17 :     if (rki_age_groups) {</span></a>
 <a name="405"><span class="lineNum">     405 </span><span class="lineCov">         16 :         return success(details::interpolate_to_rki_age_groups(population_data));</span></a>
 <a name="406"><span class="lineNum">     406 </span>            :     }</a>
 <a name="407"><span class="lineNum">     407 </span>            :     else {</a>
 <a name="408"><span class="lineNum">     408 </span><span class="lineCov">          1 :         return success(population_data);</span></a>
 <a name="409"><span class="lineNum">     409 </span>            :     }</a>
-<a name="410"><span class="lineNum">     410 </span>            : }</a>
+<a name="410"><span class="lineNum">     410 </span><span class="lineCov">         18 : }</span></a>
 <a name="411"><span class="lineNum">     411 </span>            : </a>
 <a name="412"><span class="lineNum">     412 </span>            : /**</a>
 <a name="413"><span class="lineNum">     413 </span>            :  * Deserialize population data from a JSON file.</a>
@@ -480,9 +480,9 @@
 <a name="418"><span class="lineNum">     418 </span><span class="lineCov">         16 : inline IOResult&lt;std::vector&lt;PopulationDataEntry&gt;&gt; read_population_data(const std::string&amp; filename,</span></a>
 <a name="419"><span class="lineNum">     419 </span>            :                                                                        bool rki_age_group = true)</a>
 <a name="420"><span class="lineNum">     420 </span>            : {</a>
-<a name="421"><span class="lineNum">     421 </span><span class="lineCov">         32 :     BOOST_OUTCOME_TRY(auto&amp;&amp; jsvalue, read_json(filename));</span></a>
+<a name="421"><span class="lineNum">     421 </span><span class="lineCov">         16 :     BOOST_OUTCOME_TRY(auto&amp;&amp; jsvalue, read_json(filename));</span></a>
 <a name="422"><span class="lineNum">     422 </span><span class="lineCov">         16 :     return deserialize_population_data(jsvalue, rki_age_group);</span></a>
-<a name="423"><span class="lineNum">     423 </span>            : }</a>
+<a name="423"><span class="lineNum">     423 </span><span class="lineCov">         16 : }</span></a>
 <a name="424"><span class="lineNum">     424 </span>            : </a>
 <a name="425"><span class="lineNum">     425 </span>            : /**</a>
 <a name="426"><span class="lineNum">     426 </span>            :  * @brief Sets the age groups' names for the ConfirmedCasesDataEntry%s.</a>
@@ -528,13 +528,13 @@
 <a name="466"><span class="lineNum">     466 </span>            :     template &lt;class IoContext&gt;</a>
 <a name="467"><span class="lineNum">     467 </span><span class="lineCov">       2776 :     static IOResult&lt;VaccinationDataEntry&gt; deserialize(IoContext&amp; io)</span></a>
 <a name="468"><span class="lineNum">     468 </span>            :     {</a>
-<a name="469"><span class="lineNum">     469 </span><span class="lineCov">      11104 :         auto obj                        = io.expect_object(&quot;VaccinationDataEntry&quot;);</span></a>
-<a name="470"><span class="lineNum">     470 </span><span class="lineCov">      11104 :         auto num_vaccinations_completed = obj.expect_element(&quot;Vacc_completed&quot;, Tag&lt;double&gt;{});</span></a>
-<a name="471"><span class="lineNum">     471 </span><span class="lineCov">      11104 :         auto date                       = obj.expect_element(&quot;Date&quot;, Tag&lt;StringDate&gt;{});</span></a>
-<a name="472"><span class="lineNum">     472 </span><span class="lineCov">      11104 :         auto age_group_str              = obj.expect_element(&quot;Age_RKI&quot;, Tag&lt;std::string&gt;{});</span></a>
-<a name="473"><span class="lineNum">     473 </span><span class="lineCov">      11104 :         auto state_id                   = obj.expect_optional(&quot;ID_State&quot;, Tag&lt;regions::StateId&gt;{});</span></a>
-<a name="474"><span class="lineNum">     474 </span><span class="lineCov">      11104 :         auto county_id                  = obj.expect_optional(&quot;ID_County&quot;, Tag&lt;regions::CountyId&gt;{});</span></a>
-<a name="475"><span class="lineNum">     475 </span><span class="lineCov">      11104 :         auto district_id                = obj.expect_optional(&quot;ID_District&quot;, Tag&lt;regions::DistrictId&gt;{});</span></a>
+<a name="469"><span class="lineNum">     469 </span><span class="lineCov">       8328 :         auto obj                        = io.expect_object(&quot;VaccinationDataEntry&quot;);</span></a>
+<a name="470"><span class="lineNum">     470 </span><span class="lineCov">       8328 :         auto num_vaccinations_completed = obj.expect_element(&quot;Vacc_completed&quot;, Tag&lt;double&gt;{});</span></a>
+<a name="471"><span class="lineNum">     471 </span><span class="lineCov">       8328 :         auto date                       = obj.expect_element(&quot;Date&quot;, Tag&lt;StringDate&gt;{});</span></a>
+<a name="472"><span class="lineNum">     472 </span><span class="lineCov">       8328 :         auto age_group_str              = obj.expect_element(&quot;Age_RKI&quot;, Tag&lt;std::string&gt;{});</span></a>
+<a name="473"><span class="lineNum">     473 </span><span class="lineCov">       8328 :         auto state_id                   = obj.expect_optional(&quot;ID_State&quot;, Tag&lt;regions::StateId&gt;{});</span></a>
+<a name="474"><span class="lineNum">     474 </span><span class="lineCov">       8328 :         auto county_id                  = obj.expect_optional(&quot;ID_County&quot;, Tag&lt;regions::CountyId&gt;{});</span></a>
+<a name="475"><span class="lineNum">     475 </span><span class="lineCov">       8328 :         auto district_id                = obj.expect_optional(&quot;ID_District&quot;, Tag&lt;regions::DistrictId&gt;{});</span></a>
 <a name="476"><span class="lineNum">     476 </span>            :         return mio::apply(</a>
 <a name="477"><span class="lineNum">     477 </span>            :             io,</a>
 <a name="478"><span class="lineNum">     478 </span><span class="lineCov">       2776 :             [](auto nf, auto d, auto&amp;&amp; a_str, auto sid, auto cid, auto did) -&gt; IOResult&lt;VaccinationDataEntry&gt; {</span></a>
@@ -549,7 +549,7 @@
 <a name="487"><span class="lineNum">     487 </span><span class="lineCov">       2775 :                 return success(VaccinationDataEntry{nf, d, a, sid, cid, did});</span></a>
 <a name="488"><span class="lineNum">     488 </span>            :             },</a>
 <a name="489"><span class="lineNum">     489 </span><span class="lineCov">       5552 :             num_vaccinations_completed, date, age_group_str, state_id, county_id, district_id);</span></a>
-<a name="490"><span class="lineNum">     490 </span>            :     }</a>
+<a name="490"><span class="lineNum">     490 </span><span class="lineCov">       2776 :     }</span></a>
 <a name="491"><span class="lineNum">     491 </span>            : };</a>
 <a name="492"><span class="lineNum">     492 </span>            : </a>
 <a name="493"><span class="lineNum">     493 </span>            : /**</a>
@@ -569,9 +569,9 @@
 <a name="507"><span class="lineNum">     507 </span>            :  */</a>
 <a name="508"><span class="lineNum">     508 </span><span class="lineCov">          7 : inline IOResult&lt;std::vector&lt;VaccinationDataEntry&gt;&gt; read_vaccination_data(const std::string&amp; filename)</span></a>
 <a name="509"><span class="lineNum">     509 </span>            : {</a>
-<a name="510"><span class="lineNum">     510 </span><span class="lineCov">         14 :     BOOST_OUTCOME_TRY(auto&amp;&amp; jsvalue, read_json(filename));</span></a>
+<a name="510"><span class="lineNum">     510 </span><span class="lineCov">          7 :     BOOST_OUTCOME_TRY(auto&amp;&amp; jsvalue, read_json(filename));</span></a>
 <a name="511"><span class="lineNum">     511 </span><span class="lineCov">          7 :     return deserialize_vaccination_data(jsvalue);</span></a>
-<a name="512"><span class="lineNum">     512 </span>            : }</a>
+<a name="512"><span class="lineNum">     512 </span><span class="lineCov">          7 : }</span></a>
 <a name="513"><span class="lineNum">     513 </span>            : </a>
 <a name="514"><span class="lineNum">     514 </span>            : } // namespace mio</a>
 <a name="515"><span class="lineNum">     515 </span>            : </a>

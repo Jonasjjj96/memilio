@@ -31,13 +31,13 @@
             <td class="headerValue">coverage.info</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntry">177</td>
-            <td class="headerCovTableEntry">177</td>
+            <td class="headerCovTableEntry">185</td>
+            <td class="headerCovTableEntry">185</td>
             <td class="headerCovTableEntryHi">100.0 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2024-05-17 10:31:17</td>
+            <td class="headerValue">2024-05-17 12:46:19</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">302</td>
@@ -325,9 +325,9 @@
 <a name="263"><span class="lineNum">     263 </span><span class="lineCov">         18 :     const size_t alias_indent       = 3; // size of &quot;  -&quot;</span></a>
 <a name="264"><span class="lineNum">     264 </span><span class="lineCov">         18 :     const size_t description_indent = 2; // size of &quot;  &quot;</span></a>
 <a name="265"><span class="lineNum">     265 </span>            :     // Get strings. Can assume name is not empty</a>
-<a name="266"><span class="lineNum">     266 </span><span class="lineCov">         36 :     const std::string name        = Name&lt;T&gt;::get();</span></a>
-<a name="267"><span class="lineNum">     267 </span><span class="lineCov">         36 :     const std::string description = Description&lt;T&gt;::get();</span></a>
-<a name="268"><span class="lineNum">     268 </span><span class="lineCov">         36 :     const std::string alias       = Alias&lt;T&gt;::get();</span></a>
+<a name="266"><span class="lineNum">     266 </span><span class="lineCov">         18 :     const std::string name        = Name&lt;T&gt;::get();</span></a>
+<a name="267"><span class="lineNum">     267 </span><span class="lineCov">         18 :     const std::string description = Description&lt;T&gt;::get();</span></a>
+<a name="268"><span class="lineNum">     268 </span><span class="lineCov">         18 :     const std::string alias       = Alias&lt;T&gt;::get();</span></a>
 <a name="269"><span class="lineNum">     269 </span>            :     // Write name with &quot;--&quot; prefix and &quot;  &quot; indent</a>
 <a name="270"><span class="lineNum">     270 </span><span class="lineCov">         18 :     os &lt;&lt; &quot;  --&quot; &lt;&lt; name;</span></a>
 <a name="271"><span class="lineNum">     271 </span><span class="lineCov">         18 :     if (description.size() &gt; 0 || alias.size() &gt; 0) {</span></a>
@@ -353,7 +353,7 @@
 <a name="291"><span class="lineNum">     291 </span><span class="lineCov">         18 :     os &lt;&lt; &quot;\n&quot;;</span></a>
 <a name="292"><span class="lineNum">     292 </span>            :     // Write next entry</a>
 <a name="293"><span class="lineNum">     293 </span><span class="lineCov">         18 :     write_help_impl(typelist&lt;Ts...&gt;(), os);</span></a>
-<a name="294"><span class="lineNum">     294 </span><span class="lineCov">         18 : }</span></a>
+<a name="294"><span class="lineNum">     294 </span><span class="lineCov">         36 : }</span></a>
 <a name="295"><span class="lineNum">     295 </span>            : </a>
 <a name="296"><span class="lineNum">     296 </span>            : /**</a>
 <a name="297"><span class="lineNum">     297 </span>            :  * @brief Writes the output for the --help option.</a>
@@ -388,7 +388,7 @@
 <a name="326"><span class="lineNum">     326 </span>            : {</a>
 <a name="327"><span class="lineNum">     327 </span><span class="lineCov">         29 :     if (Field&lt;T&gt;::get() == name) {</span></a>
 <a name="328"><span class="lineNum">     328 </span>            :         // deserialize the json value to the parameter's type, then assign it</a>
-<a name="329"><span class="lineNum">     329 </span><span class="lineCov">         24 :         auto result = mio::deserialize_json(args, mio::Tag&lt;typename T::Type&gt;());</span></a>
+<a name="329"><span class="lineNum">     329 </span><span class="lineCov">         12 :         auto result = mio::deserialize_json(args, mio::Tag&lt;typename T::Type&gt;());</span></a>
 <a name="330"><span class="lineNum">     330 </span><span class="lineCov">         12 :         if (result) {</span></a>
 <a name="331"><span class="lineNum">     331 </span>            :             // assign the result to the parameter</a>
 <a name="332"><span class="lineNum">     332 </span><span class="lineCov">         11 :             parameters.template get&lt;T&gt;() = result.value();</span></a>
@@ -396,10 +396,10 @@
 <a name="334"><span class="lineNum">     334 </span>            :         }</a>
 <a name="335"><span class="lineNum">     335 </span>            :         else { // deserialize failed</a>
 <a name="336"><span class="lineNum">     336 </span>            :             // insert more information to the error message</a>
-<a name="337"><span class="lineNum">     337 </span><span class="lineCov">          6 :             std::string msg = &quot;While setting \&quot;&quot; + std::string(name) + &quot;\&quot;: &quot; + result.error().message();</span></a>
+<a name="337"><span class="lineNum">     337 </span><span class="lineCov">          5 :             std::string msg = &quot;While setting \&quot;&quot; + std::string(name) + &quot;\&quot;: &quot; + result.error().message();</span></a>
 <a name="338"><span class="lineNum">     338 </span><span class="lineCov">          1 :             return mio::failure(result.error().code(), msg);</span></a>
-<a name="339"><span class="lineNum">     339 </span>            :         }</a>
-<a name="340"><span class="lineNum">     340 </span>            :     }</a>
+<a name="339"><span class="lineNum">     339 </span><span class="lineCov">          1 :         }</span></a>
+<a name="340"><span class="lineNum">     340 </span><span class="lineCov">         12 :     }</span></a>
 <a name="341"><span class="lineNum">     341 </span>            :     else {</a>
 <a name="342"><span class="lineNum">     342 </span>            :         // try next parameter</a>
 <a name="343"><span class="lineNum">     343 </span><span class="lineCov">         17 :         return set_param_impl&lt;Field&gt;(typelist&lt;Ts...&gt;(), parameters, name, args);</span></a>
@@ -451,13 +451,13 @@
 <a name="389"><span class="lineNum">     389 </span><span class="lineCov">         11 : mio::IOResult&lt;void&gt; set_param(Set&lt;T...&gt;&amp; parameters, const Identifier&amp; identifier, const std::string&amp; args)</span></a>
 <a name="390"><span class="lineNum">     390 </span>            : {</a>
 <a name="391"><span class="lineNum">     391 </span>            :     // read json value from args, then pass it to set_param(..., Json::Value)</a>
-<a name="392"><span class="lineNum">     392 </span><span class="lineCov">         22 :     Json::Value js;</span></a>
-<a name="393"><span class="lineNum">     393 </span><span class="lineCov">         22 :     std::string errors;</span></a>
-<a name="394"><span class="lineNum">     394 </span><span class="lineCov">         22 :     Json::CharReaderBuilder builder;</span></a>
-<a name="395"><span class="lineNum">     395 </span><span class="lineCov">         22 :     const std::unique_ptr&lt;Json::CharReader&gt; parser(builder.newCharReader());</span></a>
+<a name="392"><span class="lineNum">     392 </span><span class="lineCov">         11 :     Json::Value js;</span></a>
+<a name="393"><span class="lineNum">     393 </span><span class="lineCov">         11 :     std::string errors;</span></a>
+<a name="394"><span class="lineNum">     394 </span><span class="lineCov">         11 :     Json::CharReaderBuilder builder;</span></a>
+<a name="395"><span class="lineNum">     395 </span><span class="lineCov">         11 :     const std::unique_ptr&lt;Json::CharReader&gt; parser(builder.newCharReader());</span></a>
 <a name="396"><span class="lineNum">     396 </span><span class="lineCov">         11 :     parser-&gt;parse(args.c_str(), args.c_str() + args.size(), &amp;js, &amp;errors);</span></a>
 <a name="397"><span class="lineNum">     397 </span><span class="lineCov">         22 :     return set_param(parameters, identifier, js);</span></a>
-<a name="398"><span class="lineNum">     398 </span>            : }</a>
+<a name="398"><span class="lineNum">     398 </span><span class="lineCov">         11 : }</span></a>
 <a name="399"><span class="lineNum">     399 </span>            : </a>
 <a name="400"><span class="lineNum">     400 </span>            : /// @brief End recursion.</a>
 <a name="401"><span class="lineNum">     401 </span>            : template &lt;class Set&gt;</a>
@@ -500,8 +500,8 @@
 <a name="438"><span class="lineNum">     438 </span>            :     template &lt;template &lt;class&gt; class Field, class OptionA, class OptionB&gt;</a>
 <a name="439"><span class="lineNum">     439 </span><span class="lineCov">        390 :     inline static void verify()</span></a>
 <a name="440"><span class="lineNum">     440 </span>            :     {</a>
-<a name="441"><span class="lineNum">     441 </span><span class="lineCov">        780 :         const auto field_a = Field&lt;OptionA&gt;::get();</span></a>
-<a name="442"><span class="lineNum">     442 </span><span class="lineCov">        735 :         const auto field_b = Field&lt;OptionB&gt;::get();</span></a>
+<a name="441"><span class="lineNum">     441 </span><span class="lineCov">        390 :         const auto field_a = Field&lt;OptionA&gt;::get();</span></a>
+<a name="442"><span class="lineNum">     442 </span><span class="lineCov">        390 :         const auto field_b = Field&lt;OptionB&gt;::get();</span></a>
 <a name="443"><span class="lineNum">     443 </span>            :         if constexpr (std::is_same&lt;OptionA, OptionB&gt;::value) {</a>
 <a name="444"><span class="lineNum">     444 </span><span class="lineCov">         45 :             assert((!is_required&lt;Field, OptionA&gt;::value || field_a != &quot;&quot;) &amp;&amp; &quot;Option is missing required field.&quot;);</span></a>
 <a name="445"><span class="lineNum">     445 </span>            :         }</a>
@@ -514,7 +514,7 @@
 <a name="452"><span class="lineNum">     452 </span>            :                        &quot;Options may not have duplicate fields. (field optional)&quot;);</a>
 <a name="453"><span class="lineNum">     453 </span>            :             }</a>
 <a name="454"><span class="lineNum">     454 </span>            :         }</a>
-<a name="455"><span class="lineNum">     455 </span><span class="lineCov">        390 :     }</span></a>
+<a name="455"><span class="lineNum">     455 </span><span class="lineCov">        780 :     }</span></a>
 <a name="456"><span class="lineNum">     456 </span>            : };</a>
 <a name="457"><span class="lineNum">     457 </span>            : </a>
 <a name="458"><span class="lineNum">     458 </span>            : /// @brief End recursion</a>
@@ -590,17 +590,17 @@
 <a name="528"><span class="lineNum">     528 </span>            : {</a>
 <a name="529"><span class="lineNum">     529 </span>            :     using namespace details::cli;</a>
 <a name="530"><span class="lineNum">     530 </span>            :     // read file into json value</a>
-<a name="531"><span class="lineNum">     531 </span><span class="lineCov">          6 :     auto json_result = mio::read_json(filepath);</span></a>
+<a name="531"><span class="lineNum">     531 </span><span class="lineCov">          3 :     auto json_result = mio::read_json(filepath);</span></a>
 <a name="532"><span class="lineNum">     532 </span><span class="lineCov">          3 :     if (!json_result) {</span></a>
 <a name="533"><span class="lineNum">     533 </span><span class="lineCov">          1 :         return mio::failure(json_result.error());</span></a>
 <a name="534"><span class="lineNum">     534 </span>            :     }</a>
 <a name="535"><span class="lineNum">     535 </span>            :     // set each parameter manually</a>
-<a name="536"><span class="lineNum">     536 </span><span class="lineCov">          6 :     for (auto itr = json_result.value().begin(); itr != json_result.value().end(); itr++) {</span></a>
+<a name="536"><span class="lineNum">     536 </span><span class="lineCov">         10 :     for (auto itr = json_result.value().begin(); itr != json_result.value().end(); itr++) {</span></a>
 <a name="537"><span class="lineNum">     537 </span><span class="lineCov">          8 :         BOOST_OUTCOME_TRY(set_param_impl&lt;details::cli::NameOrAliasMatcher&gt;(typelist&lt;Parameters...&gt;{}, parameters,</span></a>
 <a name="538"><span class="lineNum">     538 </span>            :                                                                            itr.name().c_str(), *itr));</a>
 <a name="539"><span class="lineNum">     539 </span>            :     }</a>
 <a name="540"><span class="lineNum">     540 </span><span class="lineCov">          4 :     return mio::success();</span></a>
-<a name="541"><span class="lineNum">     541 </span>            : }</a>
+<a name="541"><span class="lineNum">     541 </span><span class="lineCov">          3 : }</span></a>
 <a name="542"><span class="lineNum">     542 </span>            : </a>
 <a name="543"><span class="lineNum">     543 </span>            : /**</a>
 <a name="544"><span class="lineNum">     544 </span>            :  * @brief A cli that takes json values and stores them in a parameter set.</a>
@@ -644,7 +644,7 @@
 <a name="582"><span class="lineNum">     582 </span><span class="lineCov">         31 :     for (int i = 1; i &lt; argc; i++) {</span></a>
 <a name="583"><span class="lineNum">     583 </span><span class="lineCov">         27 :         if (Identifier(argv[i]).matches_parameter&lt;PrintOption&gt;()) {</span></a>
 <a name="584"><span class="lineNum">     584 </span><span class="lineCov">          1 :             i++; // skip the PrintOption argument</span></a>
-<a name="585"><span class="lineNum">     585 </span><span class="lineCov">          3 :             for (; i &lt; argc &amp;&amp; !Identifier(argv[i]).is_option(); i++) {</span></a>
+<a name="585"><span class="lineNum">     585 </span><span class="lineCov">          5 :             for (; i &lt; argc &amp;&amp; !Identifier(argv[i]).is_option(); i++) {</span></a>
 <a name="586"><span class="lineNum">     586 </span>            :                 // try to get the parameter's json value</a>
 <a name="587"><span class="lineNum">     587 </span><span class="lineCov">          6 :                 BOOST_OUTCOME_TRY(auto&amp;&amp; value, get_param(parameters, argv[i]));</span></a>
 <a name="588"><span class="lineNum">     588 </span>            :                 // print the name (or alias) and value</a>
@@ -656,7 +656,7 @@
 <a name="594"><span class="lineNum">     594 </span>            :     }</a>
 <a name="595"><span class="lineNum">     595 </span>            :     // handle parameter options that require values iteratively. assign given values or return an error</a>
 <a name="596"><span class="lineNum">     596 </span><span class="lineCov">          4 :     int i = 1;</span></a>
-<a name="597"><span class="lineNum">     597 </span><span class="lineCov">         11 :     while (i &lt; argc) {</span></a>
+<a name="597"><span class="lineNum">     597 </span><span class="lineCov">         21 :     while (i &lt; argc) {</span></a>
 <a name="598"><span class="lineNum">     598 </span><span class="lineCov">         18 :         const Identifier identifier(argv[i]);</span></a>
 <a name="599"><span class="lineNum">     599 </span><span class="lineCov">          9 :         i++; // go to first argument</span></a>
 <a name="600"><span class="lineNum">     600 </span>            :         // assert that the first argument is not an identifier (i.e. name or alias)</a>
@@ -672,14 +672,14 @@
 <a name="610"><span class="lineNum">     610 </span>            :         // handle built-in options</a>
 <a name="611"><span class="lineNum">     611 </span><span class="lineCov">          8 :         if (identifier.matches_parameter&lt;ReadFromJson&gt;()) {</span></a>
 <a name="612"><span class="lineNum">     612 </span><span class="lineCov">          1 :             BOOST_OUTCOME_TRY(read_parameters_from_file(parameters, arguments));</span></a>
-<a name="613"><span class="lineNum">     613 </span>            :         }</a>
+<a name="613"><span class="lineNum">     613 </span><span class="lineCov">          1 :         }</span></a>
 <a name="614"><span class="lineNum">     614 </span><span class="lineCov">          7 :         else if (identifier.matches_parameter&lt;WriteToJson&gt;()) {</span></a>
 <a name="615"><span class="lineNum">     615 </span><span class="lineCov">          1 :             BOOST_OUTCOME_TRY(write_parameters_to_file(parameters, arguments));</span></a>
-<a name="616"><span class="lineNum">     616 </span>            :         }</a>
+<a name="616"><span class="lineNum">     616 </span><span class="lineCov">          1 :         }</span></a>
 <a name="617"><span class="lineNum">     617 </span>            :         // (try to) set the parameter, to the value given by arguments</a>
 <a name="618"><span class="lineNum">     618 </span>            :         else {</a>
 <a name="619"><span class="lineNum">     619 </span><span class="lineCov">          6 :             BOOST_OUTCOME_TRY(set_param(parameters, identifier, arguments));</span></a>
-<a name="620"><span class="lineNum">     620 </span>            :         }</a>
+<a name="620"><span class="lineNum">     620 </span><span class="lineCov">          6 :         }</span></a>
 <a name="621"><span class="lineNum">     621 </span>            :     }</a>
 <a name="622"><span class="lineNum">     622 </span><span class="lineCov">          4 :     return mio::success();</span></a>
 <a name="623"><span class="lineNum">     623 </span>            : }</a>
@@ -713,8 +713,8 @@
 <a name="651"><span class="lineNum">     651 </span>            : {</a>
 <a name="652"><span class="lineNum">     652 </span>            :     static_assert(sizeof...(Parameters) != 0, &quot;At least one Parameter is required.&quot;);</a>
 <a name="653"><span class="lineNum">     653 </span>            :     // create a new parameter set, and pass it and all other arguments to the main cli function</a>
-<a name="654"><span class="lineNum">     654 </span><span class="lineCov">          5 :     Set&lt;Parameters...&gt; parameters{};</span></a>
-<a name="655"><span class="lineNum">     655 </span><span class="lineCov">          6 :     auto result = command_line_interface(executable_name, argc, argv, parameters, os);</span></a>
+<a name="654"><span class="lineNum">     654 </span><span class="lineCov">          3 :     Set&lt;Parameters...&gt; parameters{};</span></a>
+<a name="655"><span class="lineNum">     655 </span><span class="lineCov">          3 :     auto result = command_line_interface(executable_name, argc, argv, parameters, os);</span></a>
 <a name="656"><span class="lineNum">     656 </span>            :     // check the result, return parameters if appropriate</a>
 <a name="657"><span class="lineNum">     657 </span><span class="lineCov">          3 :     if (result) {</span></a>
 <a name="658"><span class="lineNum">     658 </span><span class="lineCov">          1 :         return mio::IOResult&lt;Set&lt;Parameters...&gt;&gt;(mio::success(std::move(parameters)));</span></a>
@@ -722,7 +722,7 @@
 <a name="660"><span class="lineNum">     660 </span>            :     else {</a>
 <a name="661"><span class="lineNum">     661 </span><span class="lineCov">          2 :         return mio::IOResult&lt;Set&lt;Parameters...&gt;&gt;(mio::failure(result.error()));</span></a>
 <a name="662"><span class="lineNum">     662 </span>            :     }</a>
-<a name="663"><span class="lineNum">     663 </span>            : }</a>
+<a name="663"><span class="lineNum">     663 </span><span class="lineCov">          3 : }</span></a>
 <a name="664"><span class="lineNum">     664 </span>            : </a>
 <a name="665"><span class="lineNum">     665 </span>            : } // namespace mio</a>
 <a name="666"><span class="lineNum">     666 </span>            : </a>

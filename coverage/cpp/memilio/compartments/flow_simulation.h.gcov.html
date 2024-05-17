@@ -31,13 +31,13 @@
             <td class="headerValue">coverage.info</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntry">36</td>
-            <td class="headerCovTableEntry">36</td>
+            <td class="headerCovTableEntry">37</td>
+            <td class="headerCovTableEntry">37</td>
             <td class="headerCovTableEntryHi">100.0 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2024-05-17 10:31:17</td>
+            <td class="headerValue">2024-05-17 12:46:19</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">18</td>
@@ -110,8 +110,8 @@
 <a name="48"><span class="lineNum">      48 </span>            :      */</a>
 <a name="49"><span class="lineNum">      49 </span><span class="lineCov">         12 :     FlowSimulation(Model const&amp; model, FP t0 = 0., FP dt = 0.1)</span></a>
 <a name="50"><span class="lineNum">      50 </span>            :         : Base(model, t0, dt)</a>
-<a name="51"><span class="lineNum">      51 </span><span class="lineCov">         24 :         , m_pop(model.get_initial_values().size())</span></a>
-<a name="52"><span class="lineNum">      52 </span><span class="lineCov">         36 :         , m_flow_result(t0, model.get_initial_flows())</span></a>
+<a name="51"><span class="lineNum">      51 </span><span class="lineCov">         12 :         , m_pop(model.get_initial_values().size())</span></a>
+<a name="52"><span class="lineNum">      52 </span><span class="lineCov">         24 :         , m_flow_result(t0, model.get_initial_flows())</span></a>
 <a name="53"><span class="lineNum">      53 </span>            :     {</a>
 <a name="54"><span class="lineNum">      54 </span><span class="lineCov">         12 :     }</span></a>
 <a name="55"><span class="lineNum">      55 </span>            : </a>
@@ -218,13 +218,13 @@
 <a name="156"><span class="lineNum">     156 </span>            :                                            std::shared_ptr&lt;IntegratorCore&lt;FP&gt;&gt; integrator = nullptr)</a>
 <a name="157"><span class="lineNum">     157 </span>            : {</a>
 <a name="158"><span class="lineNum">     158 </span><span class="lineCov">          7 :     model.check_constraints();</span></a>
-<a name="159"><span class="lineNum">     159 </span><span class="lineCov">         14 :     Sim sim(model, t0, dt);</span></a>
+<a name="159"><span class="lineNum">     159 </span><span class="lineCov">          7 :     Sim sim(model, t0, dt);</span></a>
 <a name="160"><span class="lineNum">     160 </span><span class="lineCov">          7 :     if (integrator) {</span></a>
 <a name="161"><span class="lineNum">     161 </span><span class="lineCov">          6 :         sim.set_integrator(integrator);</span></a>
 <a name="162"><span class="lineNum">     162 </span>            :     }</a>
 <a name="163"><span class="lineNum">     163 </span><span class="lineCov">          7 :     sim.advance(tmax);</span></a>
 <a name="164"><span class="lineNum">     164 </span><span class="lineCov">         28 :     return {sim.get_result(), sim.get_flows()};</span></a>
-<a name="165"><span class="lineNum">     165 </span>            : }</a>
+<a name="165"><span class="lineNum">     165 </span><span class="lineCov">          7 : }</span></a>
 <a name="166"><span class="lineNum">     166 </span>            : </a>
 <a name="167"><span class="lineNum">     167 </span>            : } // namespace mio</a>
 <a name="168"><span class="lineNum">     168 </span>            : </a>

@@ -31,13 +31,13 @@
             <td class="headerValue">coverage.info</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntry">53</td>
-            <td class="headerCovTableEntry">55</td>
-            <td class="headerCovTableEntryHi">96.4 %</td>
+            <td class="headerCovTableEntry">56</td>
+            <td class="headerCovTableEntry">58</td>
+            <td class="headerCovTableEntryHi">96.6 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2024-05-17 10:31:17</td>
+            <td class="headerValue">2024-05-17 12:46:19</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">6</td>
@@ -118,11 +118,11 @@
 <a name="56"><span class="lineNum">      56 </span>            :         * @param[in] N_init The population of the considered region. </a>
 <a name="57"><span class="lineNum">      57 </span>            :         */</a>
 <a name="58"><span class="lineNum">      58 </span><span class="lineCov">          2 :     Model(TimeSeries&lt;double&gt;&amp;&amp; init, double dt_init, int N_init, const Pa&amp; Parameterset_init = Pa())</span></a>
-<a name="59"><span class="lineNum">      59 </span>            :         : parameters{Parameterset_init}</a>
+<a name="59"><span class="lineNum">      59 </span><span class="lineCov">          2 :         : parameters{Parameterset_init}</span></a>
 <a name="60"><span class="lineNum">      60 </span><span class="lineCov">          2 :         , m_result{std::move(init)}</span></a>
-<a name="61"><span class="lineNum">      61 </span>            :         , m_result_SEIR{TimeSeries&lt;double&gt;(4)}</a>
-<a name="62"><span class="lineNum">      62 </span>            :         , m_dt{dt_init}</a>
-<a name="63"><span class="lineNum">      63 </span><span class="lineCov">          4 :         , m_N{N_init}</span></a>
+<a name="61"><span class="lineNum">      61 </span><span class="lineCov">          2 :         , m_result_SEIR{TimeSeries&lt;double&gt;(4)}</span></a>
+<a name="62"><span class="lineNum">      62 </span><span class="lineCov">          2 :         , m_dt{dt_init}</span></a>
+<a name="63"><span class="lineNum">      63 </span><span class="lineCov">          2 :         , m_N{N_init}</span></a>
 <a name="64"><span class="lineNum">      64 </span>            :     {</a>
 <a name="65"><span class="lineNum">      65 </span><span class="lineCov">          2 :     }</span></a>
 <a name="66"><span class="lineNum">      66 </span>            : </a>

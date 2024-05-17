@@ -31,13 +31,13 @@
             <td class="headerValue">coverage.info</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntry">68</td>
-            <td class="headerCovTableEntry">68</td>
+            <td class="headerCovTableEntry">70</td>
+            <td class="headerCovTableEntry">70</td>
             <td class="headerCovTableEntryHi">100.0 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2024-05-17 10:31:17</td>
+            <td class="headerValue">2024-05-17 12:46:19</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">429</td>
@@ -317,11 +317,11 @@
 <a name="255"><span class="lineNum">     255 </span>            : template &lt;class String, class... Strings&gt;</a>
 <a name="256"><span class="lineNum">     256 </span><span class="lineCov">        125 : std::string path_join(String&amp;&amp; base, Strings&amp;&amp;... app)</span></a>
 <a name="257"><span class="lineNum">     257 </span>            : {</a>
-<a name="258"><span class="lineNum">     258 </span><span class="lineCov">        250 :     std::stringstream ss;</span></a>
+<a name="258"><span class="lineNum">     258 </span><span class="lineCov">        125 :     std::stringstream ss;</span></a>
 <a name="259"><span class="lineNum">     259 </span><span class="lineCov">        125 :     details::path_join_rec(ss, false, base, app...);</span></a>
 <a name="260"><span class="lineNum">     260 </span><span class="lineCov">        125 :     auto path = ss.str();</span></a>
 <a name="261"><span class="lineNum">     261 </span><span class="lineCov">        250 :     return path;</span></a>
-<a name="262"><span class="lineNum">     262 </span>            : }</a>
+<a name="262"><span class="lineNum">     262 </span><span class="lineCov">        125 : }</span></a>
 <a name="263"><span class="lineNum">     263 </span>            : </a>
 <a name="264"><span class="lineNum">     264 </span>            : /**</a>
 <a name="265"><span class="lineNum">     265 </span>            :  * converts a unique_ptr&lt;T&gt; to unique_ptr&lt;U&gt;.</a>
@@ -334,7 +334,7 @@
 <a name="272"><span class="lineNum">     272 </span>            : template &lt;class U, class T&gt;</a>
 <a name="273"><span class="lineNum">     273 </span><span class="lineCov">          3 : std::unique_ptr&lt;U&gt; dynamic_unique_ptr_cast(std::unique_ptr&lt;T&gt;&amp;&amp; base_ptr)</span></a>
 <a name="274"><span class="lineNum">     274 </span>            : {</a>
-<a name="275"><span class="lineNum">     275 </span><span class="lineCov">          6 :     auto tmp_base_ptr = std::move(base_ptr);</span></a>
+<a name="275"><span class="lineNum">     275 </span><span class="lineCov">          3 :     auto tmp_base_ptr = std::move(base_ptr);</span></a>
 <a name="276"><span class="lineNum">     276 </span><span class="lineCov">          3 :     U* tmp            = dynamic_cast&lt;U*&gt;(tmp_base_ptr.get());</span></a>
 <a name="277"><span class="lineNum">     277 </span><span class="lineCov">          3 :     std::unique_ptr&lt;U&gt; derived_ptr;</span></a>
 <a name="278"><span class="lineNum">     278 </span><span class="lineCov">          3 :     if (tmp != nullptr) {</span></a>
@@ -342,7 +342,7 @@
 <a name="280"><span class="lineNum">     280 </span><span class="lineCov">          1 :         derived_ptr.reset(tmp);</span></a>
 <a name="281"><span class="lineNum">     281 </span>            :     }</a>
 <a name="282"><span class="lineNum">     282 </span><span class="lineCov">          3 :     return derived_ptr;</span></a>
-<a name="283"><span class="lineNum">     283 </span>            : }</a>
+<a name="283"><span class="lineNum">     283 </span><span class="lineCov">          3 : }</span></a>
 <a name="284"><span class="lineNum">     284 </span>            : </a>
 <a name="285"><span class="lineNum">     285 </span>            : /**</a>
 <a name="286"><span class="lineNum">     286 </span>            :  * checks if there is an element in this range that matches a predicate</a>

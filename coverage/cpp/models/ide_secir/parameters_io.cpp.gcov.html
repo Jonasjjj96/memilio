@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2024-05-17 10:31:17</td>
+            <td class="headerValue">2024-05-17 12:46:19</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">2</td>
@@ -105,10 +105,10 @@
 <a name="43"><span class="lineNum">      43 </span>            : {</a>
 <a name="44"><span class="lineNum">      44 </span>            :     //--- Preparations ---</a>
 <a name="45"><span class="lineNum">      45 </span>            :     // Try to get RKI data from path.</a>
-<a name="46"><span class="lineNum">      46 </span><span class="lineCov">          8 :     BOOST_OUTCOME_TRY(auto&amp;&amp; rki_data, mio::read_confirmed_cases_noage(path));</span></a>
-<a name="47"><span class="lineNum">      47 </span><span class="lineCov">          8 :     auto max_date_entry = std::max_element(rki_data.begin(), rki_data.end(), [](auto&amp;&amp; a, auto&amp;&amp; b) {</span></a>
+<a name="46"><span class="lineNum">      46 </span><span class="lineCov">          4 :     BOOST_OUTCOME_TRY(auto&amp;&amp; rki_data, mio::read_confirmed_cases_noage(path));</span></a>
+<a name="47"><span class="lineNum">      47 </span><span class="lineCov">          4 :     auto max_date_entry = std::max_element(rki_data.begin(), rki_data.end(), [](auto&amp;&amp; a, auto&amp;&amp; b) {</span></a>
 <a name="48"><span class="lineNum">      48 </span><span class="lineCov">         42 :         return a.date &lt; b.date;</span></a>
-<a name="49"><span class="lineNum">      49 </span><span class="lineCov">          8 :     });</span></a>
+<a name="49"><span class="lineNum">      49 </span>            :     });</a>
 <a name="50"><span class="lineNum">      50 </span><span class="lineCov">          4 :     if (max_date_entry == rki_data.end()) {</span></a>
 <a name="51"><span class="lineNum">      51 </span><span class="lineCov">          2 :         log_error(&quot;RKI data file is empty.&quot;);</span></a>
 <a name="52"><span class="lineNum">      52 </span><span class="lineCov">          1 :         return failure(StatusCode::InvalidFileFormat, path + &quot;, file is empty.&quot;);</span></a>
@@ -176,8 +176,8 @@
 <a name="114"><span class="lineNum">     114 </span><span class="lineCov">         22 :             idx_needed_first =</span></a>
 <a name="115"><span class="lineNum">     115 </span><span class="lineCov">         22 :                 Eigen::Index(std::max(std::floor((offset - model.m_transitions.get_time(0) - 1) / dt), 0.));</span></a>
 <a name="116"><span class="lineNum">     116 </span>            :             // Biggest index for which the entry is needed.</a>
-<a name="117"><span class="lineNum">     117 </span><span class="lineCov">         44 :             idx_needed_last = Eigen::Index(std::min(std::ceil((offset - model.m_transitions.get_time(0) + 1) / dt),</span></a>
-<a name="118"><span class="lineNum">     118 </span><span class="lineCov">         66 :                                                     double(model.m_transitions.get_num_time_points() - 1)));</span></a>
+<a name="117"><span class="lineNum">     117 </span><span class="lineCov">         22 :             idx_needed_last = Eigen::Index(std::min(std::ceil((offset - model.m_transitions.get_time(0) + 1) / dt),</span></a>
+<a name="118"><span class="lineNum">     118 </span><span class="lineCov">         44 :                                                     double(model.m_transitions.get_num_time_points() - 1)));</span></a>
 <a name="119"><span class="lineNum">     119 </span>            : </a>
 <a name="120"><span class="lineNum">     120 </span><span class="lineCov">        118 :             for (Eigen::Index i = idx_needed_first; i &lt;= idx_needed_last; i++) {</span></a>
 <a name="121"><span class="lineNum">     121 </span><span class="lineCov">         96 :                 time_idx = model.m_transitions.get_time(i);</span></a>
@@ -276,14 +276,14 @@
 <a name="214"><span class="lineNum">     214 </span>            :     }</a>
 <a name="215"><span class="lineNum">     215 </span>            : </a>
 <a name="216"><span class="lineNum">     216 </span>            :     // At the end of the calculation, delete all time points that are not required for the simulation.</a>
-<a name="217"><span class="lineNum">     217 </span><span class="lineCov">          2 :     auto transition_copy(model.m_transitions);</span></a>
+<a name="217"><span class="lineNum">     217 </span><span class="lineCov">          1 :     auto transition_copy(model.m_transitions);</span></a>
 <a name="218"><span class="lineNum">     218 </span><span class="lineCov">          1 :     model.m_transitions = TimeSeries&lt;ScalarType&gt;((int)InfectionTransition::Count);</span></a>
 <a name="219"><span class="lineNum">     219 </span><span class="lineCov">          6 :     for (Eigen::Index i = -global_support_max_index; i &lt;= 0; i++) {</span></a>
 <a name="220"><span class="lineNum">     220 </span><span class="lineCov">          5 :         model.m_transitions.add_time_point(i * dt, transition_copy.get_value(i + start_shift));</span></a>
 <a name="221"><span class="lineNum">     221 </span>            :     }</a>
 <a name="222"><span class="lineNum">     222 </span>            : </a>
 <a name="223"><span class="lineNum">     223 </span><span class="lineCov">          2 :     return mio::success();</span></a>
-<a name="224"><span class="lineNum">     224 </span>            : }</a>
+<a name="224"><span class="lineNum">     224 </span><span class="lineCov">          4 : }</span></a>
 <a name="225"><span class="lineNum">     225 </span>            : </a>
 <a name="226"><span class="lineNum">     226 </span>            : } // namespace isecir</a>
 <a name="227"><span class="lineNum">     227 </span>            : } // namespace mio</a>

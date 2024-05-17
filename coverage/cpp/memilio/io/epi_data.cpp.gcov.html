@@ -31,13 +31,13 @@
             <td class="headerValue">coverage.info</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntry">12</td>
-            <td class="headerCovTableEntry">14</td>
-            <td class="headerCovTableEntryMed">85.7 %</td>
+            <td class="headerCovTableEntry">13</td>
+            <td class="headerCovTableEntry">15</td>
+            <td class="headerCovTableEntryMed">86.7 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2024-05-17 10:31:17</td>
+            <td class="headerValue">2024-05-17 12:46:19</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">1</td>
@@ -98,8 +98,8 @@
 <a name="36"><span class="lineNum">      36 </span>            : </a>
 <a name="37"><span class="lineNum">      37 </span><span class="lineCov">          3 : IOResult&lt;std::vector&lt;int&gt;&gt; get_node_ids(const std::string&amp; path, bool is_node_for_county, bool rki_age_groups)</span></a>
 <a name="38"><span class="lineNum">      38 </span>            : {</a>
-<a name="39"><span class="lineNum">      39 </span><span class="lineCov">          6 :     BOOST_OUTCOME_TRY(auto&amp;&amp; population_data, read_population_data(path, rki_age_groups));</span></a>
-<a name="40"><span class="lineNum">      40 </span><span class="lineCov">          6 :     std::vector&lt;int&gt; id;</span></a>
+<a name="39"><span class="lineNum">      39 </span><span class="lineCov">          3 :     BOOST_OUTCOME_TRY(auto&amp;&amp; population_data, read_population_data(path, rki_age_groups));</span></a>
+<a name="40"><span class="lineNum">      40 </span><span class="lineCov">          3 :     std::vector&lt;int&gt; id;</span></a>
 <a name="41"><span class="lineNum">      41 </span><span class="lineCov">          3 :     id.reserve(population_data.size());</span></a>
 <a name="42"><span class="lineNum">      42 </span><span class="lineCov">        408 :     for (auto&amp;&amp; entry : population_data) {</span></a>
 <a name="43"><span class="lineNum">      43 </span><span class="lineCov">        405 :         if (is_node_for_county) {</span></a>
@@ -123,7 +123,7 @@
 <a name="61"><span class="lineNum">      61 </span>            :     //remove duplicate node ids</a>
 <a name="62"><span class="lineNum">      62 </span><span class="lineCov">          3 :     id.erase(std::unique(id.begin(), id.end()), id.end());</span></a>
 <a name="63"><span class="lineNum">      63 </span><span class="lineCov">          3 :     return success(id);</span></a>
-<a name="64"><span class="lineNum">      64 </span>            : }</a>
+<a name="64"><span class="lineNum">      64 </span><span class="lineCov">          3 : }</span></a>
 <a name="65"><span class="lineNum">      65 </span>            : } // namespace mio</a>
 <a name="66"><span class="lineNum">      66 </span>            : </a>
 <a name="67"><span class="lineNum">      67 </span>            : #endif //MEMILIO_HAS_JSONCPP</a>

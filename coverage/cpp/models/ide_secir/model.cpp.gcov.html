@@ -31,13 +31,13 @@
             <td class="headerValue">coverage.info</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntry">215</td>
-            <td class="headerCovTableEntry">215</td>
+            <td class="headerCovTableEntry">218</td>
+            <td class="headerCovTableEntry">218</td>
             <td class="headerCovTableEntryHi">100.0 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2024-05-17 10:31:17</td>
+            <td class="headerValue">2024-05-17 12:46:19</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">12</td>
@@ -95,11 +95,11 @@
 <a name="33"><span class="lineNum">      33 </span>            : </a>
 <a name="34"><span class="lineNum">      34 </span><span class="lineCov">         20 : Model::Model(TimeSeries&lt;ScalarType&gt;&amp;&amp; init, ScalarType N_init, ScalarType deaths, ScalarType total_confirmed_cases,</span></a>
 <a name="35"><span class="lineNum">      35 </span><span class="lineCov">         20 :              const ParameterSet&amp; Parameterset_init)</span></a>
-<a name="36"><span class="lineNum">      36 </span>            :     : parameters{Parameterset_init}</a>
+<a name="36"><span class="lineNum">      36 </span><span class="lineCov">         20 :     : parameters{Parameterset_init}</span></a>
 <a name="37"><span class="lineNum">      37 </span><span class="lineCov">         20 :     , m_transitions{std::move(init)}</span></a>
-<a name="38"><span class="lineNum">      38 </span>            :     , m_populations{TimeSeries&lt;ScalarType&gt;(Eigen::Index(InfectionState::Count))}</a>
-<a name="39"><span class="lineNum">      39 </span>            :     , m_total_confirmed_cases{total_confirmed_cases}</a>
-<a name="40"><span class="lineNum">      40 </span><span class="lineCov">         40 :     , m_N{N_init}</span></a>
+<a name="38"><span class="lineNum">      38 </span><span class="lineCov">         20 :     , m_populations{TimeSeries&lt;ScalarType&gt;(Eigen::Index(InfectionState::Count))}</span></a>
+<a name="39"><span class="lineNum">      39 </span><span class="lineCov">         20 :     , m_total_confirmed_cases{total_confirmed_cases}</span></a>
+<a name="40"><span class="lineNum">      40 </span><span class="lineCov">         20 :     , m_N{N_init}</span></a>
 <a name="41"><span class="lineNum">      41 </span>            : {</a>
 <a name="42"><span class="lineNum">      42 </span><span class="lineCov">         20 :     if (m_transitions.get_num_time_points() &gt; 0) {</span></a>
 <a name="43"><span class="lineNum">      43 </span>            :         // Add first time point in m_populations according to last time point in m_transitions which is where we start the simulation.</a>
@@ -128,7 +128,7 @@
 <a name="66"><span class="lineNum">      66 </span><span class="lineCov">         70 :     if ((1 - parameters.get&lt;TransitionProbabilities&gt;()[idx_TransitionDistribution1]) &gt; 0) {</span></a>
 <a name="67"><span class="lineNum">      67 </span><span class="lineCov">         47 :         calc_time =</span></a>
 <a name="68"><span class="lineNum">      68 </span><span class="lineCov">         94 :             std::max(parameters.get&lt;TransitionDistributions&gt;()[idx_TransitionDistribution1].get_support_max(dt, m_tol),</span></a>
-<a name="69"><span class="lineNum">      69 </span><span class="lineCov">        141 :                      parameters.get&lt;TransitionDistributions&gt;()[idx_TransitionDistribution2].get_support_max(dt, m_tol));</span></a>
+<a name="69"><span class="lineNum">      69 </span><span class="lineCov">         94 :                      parameters.get&lt;TransitionDistributions&gt;()[idx_TransitionDistribution2].get_support_max(dt, m_tol));</span></a>
 <a name="70"><span class="lineNum">      70 </span>            :     }</a>
 <a name="71"><span class="lineNum">      71 </span>            :     else {</a>
 <a name="72"><span class="lineNum">      72 </span><span class="lineCov">         23 :         calc_time = parameters.get&lt;TransitionDistributions&gt;()[idx_TransitionDistribution1].get_support_max(dt, m_tol);</span></a>

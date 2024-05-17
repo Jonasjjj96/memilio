@@ -31,13 +31,13 @@
             <td class="headerValue">coverage.info</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntry">24</td>
-            <td class="headerCovTableEntry">24</td>
+            <td class="headerCovTableEntry">27</td>
+            <td class="headerCovTableEntry">27</td>
             <td class="headerCovTableEntryHi">100.0 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2024-05-17 10:31:17</td>
+            <td class="headerValue">2024-05-17 12:46:19</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">14</td>
@@ -112,13 +112,13 @@
 <a name="50"><span class="lineNum">      50 </span>            :      * @param[in] dt Initial step size of integration.</a>
 <a name="51"><span class="lineNum">      51 </span>            :      */</a>
 <a name="52"><span class="lineNum">      52 </span><span class="lineCov">          3 :     Simulation(Model const&amp; model, ScalarType t0 = 0., ScalarType dt = 0.1)</span></a>
-<a name="53"><span class="lineNum">      53 </span>            :         : m_integratorCore(</a>
+<a name="53"><span class="lineNum">      53 </span><span class="lineCov">          3 :         : m_integratorCore(</span></a>
 <a name="54"><span class="lineNum">      54 </span>            :               std::make_shared&lt;</a>
 <a name="55"><span class="lineNum">      55 </span>            :                   mio::ControlledStepperWrapper&lt;ScalarType, boost::numeric::odeint::runge_kutta_cash_karp54&gt;&gt;())</a>
-<a name="56"><span class="lineNum">      56 </span>            :         , m_model(std::make_unique&lt;Model&gt;(model))</a>
+<a name="56"><span class="lineNum">      56 </span><span class="lineCov">          3 :         , m_model(std::make_unique&lt;Model&gt;(model))</span></a>
 <a name="57"><span class="lineNum">      57 </span><span class="lineCov">          3 :         , m_integrator(m_integratorCore)</span></a>
 <a name="58"><span class="lineNum">      58 </span><span class="lineCov">          3 :         , m_result(t0, m_model-&gt;get_initial_values())</span></a>
-<a name="59"><span class="lineNum">      59 </span><span class="lineCov">          9 :         , m_dt(dt)</span></a>
+<a name="59"><span class="lineNum">      59 </span><span class="lineCov">          3 :         , m_dt(dt)</span></a>
 <a name="60"><span class="lineNum">      60 </span>            :     {</a>
 <a name="61"><span class="lineNum">      61 </span><span class="lineCov">          3 :     }</span></a>
 <a name="62"><span class="lineNum">      62 </span>            :     /**</a>
@@ -245,13 +245,13 @@
 <a name="183"><span class="lineNum">     183 </span>            :                                 std::shared_ptr&lt;IntegratorCore&lt;ScalarType&gt;&gt; integrator = nullptr)</a>
 <a name="184"><span class="lineNum">     184 </span>            : {</a>
 <a name="185"><span class="lineNum">     185 </span><span class="lineCov">          3 :     model.check_constraints();</span></a>
-<a name="186"><span class="lineNum">     186 </span><span class="lineCov">          6 :     Sim sim(model, t0, dt);</span></a>
+<a name="186"><span class="lineNum">     186 </span><span class="lineCov">          3 :     Sim sim(model, t0, dt);</span></a>
 <a name="187"><span class="lineNum">     187 </span><span class="lineCov">          3 :     if (integrator) {</span></a>
 <a name="188"><span class="lineNum">     188 </span><span class="lineCov">          2 :         sim.set_integrator(integrator);</span></a>
 <a name="189"><span class="lineNum">     189 </span>            :     }</a>
 <a name="190"><span class="lineNum">     190 </span><span class="lineCov">          3 :     sim.advance(tmax);</span></a>
 <a name="191"><span class="lineNum">     191 </span><span class="lineCov">          6 :     return sim.get_result();</span></a>
-<a name="192"><span class="lineNum">     192 </span>            : }</a>
+<a name="192"><span class="lineNum">     192 </span><span class="lineCov">          3 : }</span></a>
 <a name="193"><span class="lineNum">     193 </span>            : </a>
 <a name="194"><span class="lineNum">     194 </span>            : } // namespace lsecir</a>
 <a name="195"><span class="lineNum">     195 </span>            : } // namespace mio</a>

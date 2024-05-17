@@ -31,13 +31,13 @@
             <td class="headerValue">coverage.info</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntry">54</td>
-            <td class="headerCovTableEntry">62</td>
-            <td class="headerCovTableEntryMed">87.1 %</td>
+            <td class="headerCovTableEntry">57</td>
+            <td class="headerCovTableEntry">65</td>
+            <td class="headerCovTableEntryMed">87.7 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2024-05-17 10:31:17</td>
+            <td class="headerValue">2024-05-17 12:46:19</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">2</td>
@@ -134,8 +134,8 @@
 <a name="72"><span class="lineNum">      72 </span>            : {</a>
 <a name="73"><span class="lineNum">      73 </span><span class="lineCov">         10 :     assert(graph.nodes().size() &gt; 0 &amp;&amp; &quot;Graph Nodes are empty&quot;);</span></a>
 <a name="74"><span class="lineNum">      74 </span>            : </a>
-<a name="75"><span class="lineNum">      75 </span><span class="lineCov">         20 :     std::string abs_path;</span></a>
-<a name="76"><span class="lineNum">      76 </span><span class="lineCov">         20 :     BOOST_OUTCOME_TRY(auto&amp;&amp; created, create_directory(directory, abs_path));</span></a>
+<a name="75"><span class="lineNum">      75 </span><span class="lineCov">         10 :     std::string abs_path;</span></a>
+<a name="76"><span class="lineNum">      76 </span><span class="lineCov">         10 :     BOOST_OUTCOME_TRY(auto&amp;&amp; created, create_directory(directory, abs_path));</span></a>
 <a name="77"><span class="lineNum">      77 </span>            : </a>
 <a name="78"><span class="lineNum">      78 </span><span class="lineCov">         10 :     if (created) {</span></a>
 <a name="79"><span class="lineNum">      79 </span><span class="lineCov">          2 :         log_info(&quot;Results are stored in {:s}/results.&quot;, mio::get_current_dir_name());</span></a>
@@ -150,7 +150,7 @@
 <a name="88"><span class="lineNum">      88 </span>            :     //write two files per node</a>
 <a name="89"><span class="lineNum">      89 </span>            :     //one file that contains outgoing edges from the node</a>
 <a name="90"><span class="lineNum">      90 </span>            :     //one file for the model (parameters and population)</a>
-<a name="91"><span class="lineNum">      91 </span><span class="lineCov">         30 :     for (auto inode = size_t(0); inode &lt; graph.nodes().size(); ++inode) {</span></a>
+<a name="91"><span class="lineNum">      91 </span><span class="lineCov">         50 :     for (auto inode = size_t(0); inode &lt; graph.nodes().size(); ++inode) {</span></a>
 <a name="92"><span class="lineNum">      92 </span>            :         //node</a>
 <a name="93"><span class="lineNum">      93 </span><span class="lineCov">         20 :         const auto node = graph.nodes()[inode];</span></a>
 <a name="94"><span class="lineNum">      94 </span><span class="lineCov">         20 :         BOOST_OUTCOME_TRY(auto&amp;&amp; js_node_model, serialize_json(node.property, ioflags));</span></a>
@@ -164,9 +164,9 @@
 <a name="102"><span class="lineNum">     102 </span><span class="lineCov">         20 :         auto out_edges = graph.out_edges(inode);</span></a>
 <a name="103"><span class="lineNum">     103 </span><span class="lineCov">         20 :         if (out_edges.size()) {</span></a>
 <a name="104"><span class="lineNum">     104 </span><span class="lineCov">          2 :             Json::Value js_edges(Json::arrayValue);</span></a>
-<a name="105"><span class="lineNum">     105 </span><span class="lineCov">          4 :             for (auto&amp; e : graph.out_edges(inode)) {</span></a>
+<a name="105"><span class="lineNum">     105 </span><span class="lineCov">          6 :             for (auto&amp; e : graph.out_edges(inode)) {</span></a>
 <a name="106"><span class="lineNum">     106 </span><span class="lineCov">          2 :                 BOOST_OUTCOME_TRY(auto&amp;&amp; js_edge_params, serialize_json(e.property, ioflags));</span></a>
-<a name="107"><span class="lineNum">     107 </span><span class="lineCov">          4 :                 Json::Value js_edge{Json::objectValue};</span></a>
+<a name="107"><span class="lineNum">     107 </span><span class="lineCov">          2 :                 Json::Value js_edge{Json::objectValue};</span></a>
 <a name="108"><span class="lineNum">     108 </span><span class="lineCov">          2 :                 js_edge[&quot;StartNodeIndex&quot;] = Json::UInt64(e.start_node_idx);</span></a>
 <a name="109"><span class="lineNum">     109 </span><span class="lineCov">          2 :                 js_edge[&quot;EndNodeIndex&quot;]   = Json::UInt64(e.end_node_idx);</span></a>
 <a name="110"><span class="lineNum">     110 </span><span class="lineCov">          2 :                 js_edge[&quot;Parameters&quot;]     = js_edge_params;</span></a>
@@ -174,11 +174,11 @@
 <a name="112"><span class="lineNum">     112 </span>            :             }</a>
 <a name="113"><span class="lineNum">     113 </span><span class="lineCov">          8 :             auto edge_filename = path_join(abs_path, &quot;GraphEdges_node&quot; + std::to_string(inode) + &quot;.json&quot;);</span></a>
 <a name="114"><span class="lineNum">     114 </span><span class="lineCov">          2 :             BOOST_OUTCOME_TRY(write_json(edge_filename, js_edges));</span></a>
-<a name="115"><span class="lineNum">     115 </span>            :         }</a>
+<a name="115"><span class="lineNum">     115 </span><span class="lineCov">          2 :         }</span></a>
 <a name="116"><span class="lineNum">     116 </span>            :     }</a>
 <a name="117"><span class="lineNum">     117 </span>            : </a>
 <a name="118"><span class="lineNum">     118 </span><span class="lineCov">         20 :     return success();</span></a>
-<a name="119"><span class="lineNum">     119 </span>            : }</a>
+<a name="119"><span class="lineNum">     119 </span><span class="lineCov">         10 : }</span></a>
 <a name="120"><span class="lineNum">     120 </span>            : </a>
 <a name="121"><span class="lineNum">     121 </span>            : /**</a>
 <a name="122"><span class="lineNum">     122 </span>            :  * @brief reads graph json files and returns a simulation graph.</a>
@@ -192,16 +192,16 @@
 <a name="130"><span class="lineNum">     130 </span><span class="lineCov">          3 : IOResult&lt;Graph&lt;Model, MigrationParameters&lt;FP&gt;&gt;&gt; read_graph(const std::string&amp; directory, int ioflags = IOF_None,</span></a>
 <a name="131"><span class="lineNum">     131 </span>            :                                                            bool read_edges = true)</a>
 <a name="132"><span class="lineNum">     132 </span>            : {</a>
-<a name="133"><span class="lineNum">     133 </span><span class="lineCov">          6 :     std::string abs_path;</span></a>
+<a name="133"><span class="lineNum">     133 </span><span class="lineCov">          3 :     std::string abs_path;</span></a>
 <a name="134"><span class="lineNum">     134 </span><span class="lineCov">          3 :     if (!file_exists(directory, abs_path)) {</span></a>
 <a name="135"><span class="lineNum">     135 </span><span class="lineNoCov">          0 :         log_error(&quot;Directory {} does not exist.&quot;, directory);</span></a>
 <a name="136"><span class="lineNum">     136 </span><span class="lineNoCov">          0 :         return failure(StatusCode::FileNotFound, directory);</span></a>
 <a name="137"><span class="lineNum">     137 </span>            :     }</a>
 <a name="138"><span class="lineNum">     138 </span>            : </a>
-<a name="139"><span class="lineNum">     139 </span><span class="lineCov">          6 :     auto graph = Graph&lt;Model, MigrationParameters&lt;FP&gt;&gt;{};</span></a>
+<a name="139"><span class="lineNum">     139 </span><span class="lineCov">          3 :     auto graph = Graph&lt;Model, MigrationParameters&lt;FP&gt;&gt;{};</span></a>
 <a name="140"><span class="lineNum">     140 </span>            : </a>
 <a name="141"><span class="lineNum">     141 </span>            :     //read nodes, as many as files are available</a>
-<a name="142"><span class="lineNum">     142 </span><span class="lineCov">          9 :     for (auto inode = 0;; ++inode) {</span></a>
+<a name="142"><span class="lineNum">     142 </span><span class="lineCov">         18 :     for (auto inode = 0;; ++inode) {</span></a>
 <a name="143"><span class="lineNum">     143 </span><span class="lineCov">         36 :         auto node_filename = path_join(abs_path, &quot;GraphNode&quot; + std::to_string(inode) + &quot;.json&quot;);</span></a>
 <a name="144"><span class="lineNum">     144 </span><span class="lineCov">          9 :         if (!file_exists(node_filename, node_filename)) {</span></a>
 <a name="145"><span class="lineNum">     145 </span><span class="lineCov">          3 :             break;</span></a>
@@ -218,12 +218,12 @@
 <a name="156"><span class="lineNum">     156 </span>            : </a>
 <a name="157"><span class="lineNum">     157 </span>            :     //read edges; nodes must already be available for that)</a>
 <a name="158"><span class="lineNum">     158 </span><span class="lineCov">          3 :     if (read_edges) {</span></a>
-<a name="159"><span class="lineNum">     159 </span><span class="lineCov">          3 :         for (auto inode = size_t(0); inode &lt; graph.nodes().size(); ++inode) {</span></a>
+<a name="159"><span class="lineNum">     159 </span><span class="lineCov">          5 :         for (auto inode = size_t(0); inode &lt; graph.nodes().size(); ++inode) {</span></a>
 <a name="160"><span class="lineNum">     160 </span>            :             //list of edges</a>
 <a name="161"><span class="lineNum">     161 </span><span class="lineCov">          8 :             auto edge_filename = path_join(abs_path, &quot;GraphEdges_node&quot; + std::to_string(inode) + &quot;.json&quot;);</span></a>
 <a name="162"><span class="lineNum">     162 </span><span class="lineCov">          2 :             BOOST_OUTCOME_TRY(auto&amp;&amp; js_edges, read_json(edge_filename));</span></a>
 <a name="163"><span class="lineNum">     163 </span>            : </a>
-<a name="164"><span class="lineNum">     164 </span><span class="lineCov">          6 :             for (auto&amp; e : js_edges) {</span></a>
+<a name="164"><span class="lineNum">     164 </span><span class="lineCov">          8 :             for (auto&amp; e : js_edges) {</span></a>
 <a name="165"><span class="lineNum">     165 </span><span class="lineCov">          2 :                 auto start_node_idx  = inode;</span></a>
 <a name="166"><span class="lineNum">     166 </span><span class="lineCov">          2 :                 auto js_end_node_idx = e[&quot;EndNodeIndex&quot;];</span></a>
 <a name="167"><span class="lineNum">     167 </span><span class="lineCov">          2 :                 if (!js_end_node_idx.isUInt64()) {</span></a>
@@ -244,7 +244,7 @@
 <a name="182"><span class="lineNum">     182 </span>            :     }</a>
 <a name="183"><span class="lineNum">     183 </span>            : </a>
 <a name="184"><span class="lineNum">     184 </span><span class="lineCov">          3 :     return success(graph);</span></a>
-<a name="185"><span class="lineNum">     185 </span>            : }</a>
+<a name="185"><span class="lineNum">     185 </span><span class="lineCov">          3 : }</span></a>
 <a name="186"><span class="lineNum">     186 </span>            : </a>
 <a name="187"><span class="lineNum">     187 </span>            : #endif //MEMILIO_HAS_JSONCPP</a>
 <a name="188"><span class="lineNum">     188 </span>            : </a>

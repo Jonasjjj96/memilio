@@ -31,13 +31,13 @@
             <td class="headerValue">coverage.info</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntry">479</td>
-            <td class="headerCovTableEntry">487</td>
-            <td class="headerCovTableEntryHi">98.4 %</td>
+            <td class="headerCovTableEntry">481</td>
+            <td class="headerCovTableEntry">490</td>
+            <td class="headerCovTableEntryHi">98.2 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2024-05-17 10:31:17</td>
+            <td class="headerValue">2024-05-17 12:46:19</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">15</td>
@@ -579,10 +579,10 @@
 <a name="517"><span class="lineNum">     517 </span>            :     template &lt;class IOContext&gt;</a>
 <a name="518"><span class="lineNum">     518 </span><span class="lineCov">          1 :     void serialize(IOContext&amp; io) const</span></a>
 <a name="519"><span class="lineNum">     519 </span>            :     {</a>
-<a name="520"><span class="lineNum">     520 </span><span class="lineCov">          4 :         auto obj = io.create_object(&quot;Model&quot;);</span></a>
+<a name="520"><span class="lineNum">     520 </span><span class="lineCov">          3 :         auto obj = io.create_object(&quot;Model&quot;);</span></a>
 <a name="521"><span class="lineNum">     521 </span><span class="lineCov">          1 :         obj.add_element(&quot;Parameters&quot;, this-&gt;parameters);</span></a>
 <a name="522"><span class="lineNum">     522 </span><span class="lineCov">          1 :         obj.add_element(&quot;Populations&quot;, this-&gt;populations);</span></a>
-<a name="523"><span class="lineNum">     523 </span><span class="lineCov">          1 :     }</span></a>
+<a name="523"><span class="lineNum">     523 </span><span class="lineCov">          2 :     }</span></a>
 <a name="524"><span class="lineNum">     524 </span>            : </a>
 <a name="525"><span class="lineNum">     525 </span>            :     /**</a>
 <a name="526"><span class="lineNum">     526 </span>            :     * deserialize an object of this class.</a>
@@ -591,16 +591,16 @@
 <a name="529"><span class="lineNum">     529 </span>            :     template &lt;class IOContext&gt;</a>
 <a name="530"><span class="lineNum">     530 </span><span class="lineCov">          1 :     static IOResult&lt;Model&gt; deserialize(IOContext&amp; io)</span></a>
 <a name="531"><span class="lineNum">     531 </span>            :     {</a>
-<a name="532"><span class="lineNum">     532 </span><span class="lineCov">          4 :         auto obj = io.expect_object(&quot;Model&quot;);</span></a>
-<a name="533"><span class="lineNum">     533 </span><span class="lineCov">          4 :         auto par = obj.expect_element(&quot;Parameters&quot;, Tag&lt;ParameterSet&gt;{});</span></a>
-<a name="534"><span class="lineNum">     534 </span><span class="lineCov">          4 :         auto pop = obj.expect_element(&quot;Populations&quot;, Tag&lt;Populations&gt;{});</span></a>
+<a name="532"><span class="lineNum">     532 </span><span class="lineCov">          3 :         auto obj = io.expect_object(&quot;Model&quot;);</span></a>
+<a name="533"><span class="lineNum">     533 </span><span class="lineCov">          3 :         auto par = obj.expect_element(&quot;Parameters&quot;, Tag&lt;ParameterSet&gt;{});</span></a>
+<a name="534"><span class="lineNum">     534 </span><span class="lineCov">          3 :         auto pop = obj.expect_element(&quot;Populations&quot;, Tag&lt;Populations&gt;{});</span></a>
 <a name="535"><span class="lineNum">     535 </span>            :         return apply(</a>
 <a name="536"><span class="lineNum">     536 </span>            :             io,</a>
 <a name="537"><span class="lineNum">     537 </span><span class="lineCov">          1 :             [](auto&amp;&amp; par_, auto&amp;&amp; pop_) {</span></a>
 <a name="538"><span class="lineNum">     538 </span><span class="lineCov">          1 :                 return Model{pop_, par_};</span></a>
 <a name="539"><span class="lineNum">     539 </span>            :             },</a>
 <a name="540"><span class="lineNum">     540 </span><span class="lineCov">          2 :             par, pop);</span></a>
-<a name="541"><span class="lineNum">     541 </span>            :     }</a>
+<a name="541"><span class="lineNum">     541 </span><span class="lineCov">          1 :     }</span></a>
 <a name="542"><span class="lineNum">     542 </span>            : };</a>
 <a name="543"><span class="lineNum">     543 </span>            : </a>
 <a name="544"><span class="lineNum">     544 </span>            : //forward declaration, see below.</a>
@@ -734,7 +734,7 @@
 <a name="672"><span class="lineNum">     672 </span>            : </a>
 <a name="673"><span class="lineNum">     673 </span>            :         // in the apply_variant function, we adjust the TransmissionProbabilityOnContact parameter. We need to store</a>
 <a name="674"><span class="lineNum">     674 </span>            :         // the base value to use it in the apply_variant function and also to reset the parameter after the simulation.</a>
-<a name="675"><span class="lineNum">     675 </span><span class="lineCov">          6 :         auto base_infectiousness = this-&gt;get_model().parameters.template get&lt;TransmissionProbabilityOnContact&lt;FP&gt;&gt;();</span></a>
+<a name="675"><span class="lineNum">     675 </span><span class="lineCov">          3 :         auto base_infectiousness = this-&gt;get_model().parameters.template get&lt;TransmissionProbabilityOnContact&lt;FP&gt;&gt;();</span></a>
 <a name="676"><span class="lineNum">     676 </span>            : </a>
 <a name="677"><span class="lineNum">     677 </span>            :         double delay_lockdown;</a>
 <a name="678"><span class="lineNum">     678 </span><span class="lineCov">          3 :         auto t        = BaseT::get_result().get_last_time();</span></a>
@@ -797,7 +797,7 @@
 <a name="735"><span class="lineNum">     735 </span><span class="lineCov">          3 :         this-&gt;get_model().parameters.template get&lt;TransmissionProbabilityOnContact&lt;FP&gt;&gt;() = base_infectiousness;</span></a>
 <a name="736"><span class="lineNum">     736 </span>            : </a>
 <a name="737"><span class="lineNum">     737 </span><span class="lineCov">          6 :         return this-&gt;get_result().get_last_value();</span></a>
-<a name="738"><span class="lineNum">     738 </span>            :     }</a>
+<a name="738"><span class="lineNum">     738 </span><span class="lineCov">          3 :     }</span></a>
 <a name="739"><span class="lineNum">     739 </span>            : </a>
 <a name="740"><span class="lineNum">     740 </span>            : private:</a>
 <a name="741"><span class="lineNum">     741 </span>            :     double m_t_last_npi_check;</a>
@@ -911,7 +911,7 @@
 <a name="849"><span class="lineNum">     849 </span><span class="lineCov">          2 :                     Eigen::Index(size_t(params.get_num_groups())), Eigen::Index(InfectionState::Count)})</span></a>
 <a name="850"><span class="lineNum">     850 </span><span class="lineCov">          2 :         .array() = riskFromInfectedSymptomatic;</span></a>
 <a name="851"><span class="lineNum">     851 </span><span class="lineCov">          2 :     return factors;</span></a>
-<a name="852"><span class="lineNum">     852 </span>            : }</a>
+<a name="852"><span class="lineNum">     852 </span><span class="lineNoCov">          0 : }</span></a>
 <a name="853"><span class="lineNum">     853 </span>            : </a>
 <a name="854"><span class="lineNum">     854 </span>            : template &lt;typename FP = double, class Base = mio::Simulation&lt;Model&lt;FP&gt;, FP&gt;&gt;</a>
 <a name="855"><span class="lineNum">     855 </span><span class="lineCov">          1 : auto test_commuters(Simulation&lt;FP, Base&gt;&amp; sim, Eigen::Ref&lt;Vector&lt;FP&gt;&gt; migrated, FP time)</span></a>

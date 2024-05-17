@@ -31,13 +31,13 @@
             <td class="headerValue">coverage.info</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntry">201</td>
-            <td class="headerCovTableEntry">201</td>
+            <td class="headerCovTableEntry">204</td>
+            <td class="headerCovTableEntry">204</td>
             <td class="headerCovTableEntryHi">100.0 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2024-05-17 10:31:17</td>
+            <td class="headerValue">2024-05-17 12:46:19</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">58</td>
@@ -147,11 +147,11 @@
 <a name="85"><span class="lineNum">      85 </span>            :      * @param[in] init_scale A parameter to scale the function. Parameter has to be positive.</a>
 <a name="86"><span class="lineNum">      86 </span>            :      */</a>
 <a name="87"><span class="lineNum">      87 </span><span class="lineCov">        166 :     StateAgeFunction(ScalarType init_distribution_parameter, ScalarType init_location = 0, ScalarType init_scale = 1)</span></a>
-<a name="88"><span class="lineNum">      88 </span><span class="lineCov">        166 :         : m_distribution_parameter{init_distribution_parameter}</span></a>
-<a name="89"><span class="lineNum">      89 </span>            :         , m_location{init_location}</a>
-<a name="90"><span class="lineNum">      90 </span>            :         , m_scale{init_scale}</a>
-<a name="91"><span class="lineNum">      91 </span>            :         , m_mean{-1.} // Initialize mean as not set.</a>
-<a name="92"><span class="lineNum">      92 </span><span class="lineCov">        166 :         , m_support_max{-1.} // Initialize support maximum as not set.</span></a>
+<a name="88"><span class="lineNum">      88 </span><span class="lineCov">        332 :         : m_distribution_parameter{init_distribution_parameter}</span></a>
+<a name="89"><span class="lineNum">      89 </span><span class="lineCov">        166 :         , m_location{init_location}</span></a>
+<a name="90"><span class="lineNum">      90 </span><span class="lineCov">        166 :         , m_scale{init_scale}</span></a>
+<a name="91"><span class="lineNum">      91 </span><span class="lineCov">        166 :         , m_mean{-1.} // Initialize mean as not set.</span></a>
+<a name="92"><span class="lineNum">      92 </span><span class="lineCov">        332 :         , m_support_max{-1.} // Initialize support maximum as not set.</span></a>
 <a name="93"><span class="lineNum">      93 </span>            :     {</a>
 <a name="94"><span class="lineNum">      94 </span><span class="lineCov">        166 :         if (m_scale &lt;= 0) {</span></a>
 <a name="95"><span class="lineNum">      95 </span><span class="lineCov">          2 :             log_error(&quot;The scale parameter of a StateAgeFunction has to be positive. Set scale to 1.&quot;);</span></a>
