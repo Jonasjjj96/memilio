@@ -79,6 +79,7 @@ $(function() {
 <code>#include &quot;<a class="el" href="memilio_2compartments_2simulation_8h_source.html">memilio/compartments/simulation.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="flow__simulation_8h_source.html">memilio/compartments/flow_simulation.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="populations_8h_source.html">memilio/epidemiology/populations.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="models_2ode__secirvvs_2analyze__result_8h_source.html">ode_secirvvs/analyze_result.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="ode__secirvvs_2infection__state_8h_source.html">ode_secirvvs/infection_state.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="ode__secirvvs_2parameters_8h_source.html">ode_secirvvs/parameters.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="smoother_8h_source.html">memilio/math/smoother.h</a>&quot;</code><br />
@@ -88,9 +89,9 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1osecirvvs_1_1Model.html">mio::osecirvvs::Model</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1osecirvvs_1_1Model.html">mio::osecirvvs::Model&lt; FP &gt;</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1osecirvvs_1_1Simulation.html">mio::osecirvvs::Simulation&lt; BaseT &gt;</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1osecirvvs_1_1Simulation.html">mio::osecirvvs::Simulation&lt; FP, BaseT &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">specialization of compartment model simulation for the SECIRVVS model.  <a href="classmio_1_1osecirvvs_1_1Simulation.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -109,23 +110,25 @@ Typedefs</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a28e5d15af8a8e5dfb3fbf19b0697e82e"><td class="memTemplParams" colspan="2">template&lt;class Base  = mio::Simulation&lt;Model&gt;&gt; </td></tr>
-<tr class="memitem:a28e5d15af8a8e5dfb3fbf19b0697e82e"><td class="memTemplItemLeft" align="right" valign="top">double&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemio_1_1osecirvvs.html#a28e5d15af8a8e5dfb3fbf19b0697e82e">mio::osecirvvs::get_infections_relative</a> (const Simulation&lt; Base &gt; &amp;model, double t, const Eigen::Ref&lt; const Eigen::VectorXd &gt; &amp;y)</td></tr>
-<tr class="memdesc:a28e5d15af8a8e5dfb3fbf19b0697e82e"><td class="mdescLeft">&#160;</td><td class="mdescRight">get percentage of infections per total population.  <a href="namespacemio_1_1osecirvvs.html#a28e5d15af8a8e5dfb3fbf19b0697e82e">More...</a><br /></td></tr>
-<tr class="separator:a28e5d15af8a8e5dfb3fbf19b0697e82e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a42bed128caae3a4fbf0bc69739c0dbf4"><td class="memTemplParams" colspan="2">template&lt;class Base  = mio::Simulation&lt;Model&gt;&gt; </td></tr>
-<tr class="memitem:a42bed128caae3a4fbf0bc69739c0dbf4"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemio_1_1osecirvvs.html#a42bed128caae3a4fbf0bc69739c0dbf4">mio::osecirvvs::get_migration_factors</a> (const Simulation&lt; Base &gt; &amp;sim, double, const Eigen::Ref&lt; const Eigen::VectorXd &gt; &amp;y)</td></tr>
-<tr class="memdesc:a42bed128caae3a4fbf0bc69739c0dbf4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get migration factors.  <a href="namespacemio_1_1osecirvvs.html#a42bed128caae3a4fbf0bc69739c0dbf4">More...</a><br /></td></tr>
-<tr class="separator:a42bed128caae3a4fbf0bc69739c0dbf4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad6ed919ce4680cb75624444de252a4b0"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemio_1_1osecirvvs.html#ad6ed919ce4680cb75624444de252a4b0">mio::osecirvvs::simulate</a> (double t0, double tmax, double dt, const Model &amp;model, std::shared_ptr&lt; IntegratorCore &gt; integrator=nullptr)</td></tr>
-<tr class="memdesc:ad6ed919ce4680cb75624444de252a4b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specialization of simulate for SECIRVVS models using <a class="el" href="classmio_1_1osecirvvs_1_1Simulation.html" title="specialization of compartment model simulation for the SECIRVVS model.">Simulation</a>.  <a href="namespacemio_1_1osecirvvs.html#ad6ed919ce4680cb75624444de252a4b0">More...</a><br /></td></tr>
-<tr class="separator:ad6ed919ce4680cb75624444de252a4b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a58f3108ec00a34d5f4ce240cda4927bf"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemio_1_1osecirvvs.html#a58f3108ec00a34d5f4ce240cda4927bf">mio::osecirvvs::simulate_flows</a> (double t0, double tmax, double dt, const Model &amp;model, std::shared_ptr&lt; IntegratorCore &gt; integrator=nullptr)</td></tr>
-<tr class="memdesc:a58f3108ec00a34d5f4ce240cda4927bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specialization of simulate for SECIRVVS models using the <a class="el" href="classmio_1_1FlowSimulation.html">FlowSimulation</a>.  <a href="namespacemio_1_1osecirvvs.html#a58f3108ec00a34d5f4ce240cda4927bf">More...</a><br /></td></tr>
-<tr class="separator:a58f3108ec00a34d5f4ce240cda4927bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa925eeddc27ff699107b8caca2d68048"><td class="memTemplParams" colspan="2">template&lt;class Base  = mio::Simulation&lt;Model&gt;&gt; </td></tr>
-<tr class="memitem:aa925eeddc27ff699107b8caca2d68048"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemio_1_1osecirvvs.html#aa925eeddc27ff699107b8caca2d68048">mio::osecirvvs::test_commuters</a> (Simulation&lt; Base &gt; &amp;sim, Eigen::Ref&lt; Eigen::VectorXd &gt; migrated, double time)</td></tr>
-<tr class="separator:aa925eeddc27ff699107b8caca2d68048"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afccf8466b6ddb03795d76b9b54866e11"><td class="memTemplParams" colspan="2">template&lt;typename FP  = ScalarType, class Base  = mio::Simulation&lt;FP, Model&lt;FP&gt;&gt;&gt; </td></tr>
+<tr class="memitem:afccf8466b6ddb03795d76b9b54866e11"><td class="memTemplItemLeft" align="right" valign="top">FP&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemio_1_1osecirvvs.html#afccf8466b6ddb03795d76b9b54866e11">mio::osecirvvs::get_infections_relative</a> (const Simulation&lt; FP, Base &gt; &amp;model, FP t, const Eigen::Ref&lt; const Vector&lt; FP &gt;&gt; &amp;y)</td></tr>
+<tr class="memdesc:afccf8466b6ddb03795d76b9b54866e11"><td class="mdescLeft">&#160;</td><td class="mdescRight">get percentage of infections per total population.  <a href="namespacemio_1_1osecirvvs.html#afccf8466b6ddb03795d76b9b54866e11">More...</a><br /></td></tr>
+<tr class="separator:afccf8466b6ddb03795d76b9b54866e11"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a09f84749e60620dcd4a5b852f8073cb9"><td class="memTemplParams" colspan="2">template&lt;typename FP  = double, class Base  = mio::Simulation&lt;Model&lt;FP&gt;, FP&gt;&gt; </td></tr>
+<tr class="memitem:a09f84749e60620dcd4a5b852f8073cb9"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemio_1_1osecirvvs.html#a09f84749e60620dcd4a5b852f8073cb9">mio::osecirvvs::get_migration_factors</a> (const Simulation&lt; Base &gt; &amp;sim, FP, const Eigen::Ref&lt; const Vector&lt; FP &gt;&gt; &amp;y)</td></tr>
+<tr class="memdesc:a09f84749e60620dcd4a5b852f8073cb9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get migration factors.  <a href="namespacemio_1_1osecirvvs.html#a09f84749e60620dcd4a5b852f8073cb9">More...</a><br /></td></tr>
+<tr class="separator:a09f84749e60620dcd4a5b852f8073cb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b06cd2d493434763b244c099fd58016"><td class="memTemplParams" colspan="2">template&lt;typename FP  = ScalarType&gt; </td></tr>
+<tr class="memitem:a9b06cd2d493434763b244c099fd58016"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemio_1_1osecirvvs.html#a9b06cd2d493434763b244c099fd58016">mio::osecirvvs::simulate</a> (FP t0, FP tmax, FP dt, const Model&lt; FP &gt; &amp;model, std::shared_ptr&lt; IntegratorCore&lt; FP &gt;&gt; integrator=nullptr)</td></tr>
+<tr class="memdesc:a9b06cd2d493434763b244c099fd58016"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specialization of simulate for SECIRVVS models using <a class="el" href="classmio_1_1osecirvvs_1_1Simulation.html" title="specialization of compartment model simulation for the SECIRVVS model.">Simulation</a>.  <a href="namespacemio_1_1osecirvvs.html#a9b06cd2d493434763b244c099fd58016">More...</a><br /></td></tr>
+<tr class="separator:a9b06cd2d493434763b244c099fd58016"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a850cbe387feac1daff1dba956894a10e"><td class="memTemplParams" colspan="2">template&lt;typename FP  = ScalarType&gt; </td></tr>
+<tr class="memitem:a850cbe387feac1daff1dba956894a10e"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemio_1_1osecirvvs.html#a850cbe387feac1daff1dba956894a10e">mio::osecirvvs::simulate_flows</a> (FP t0, FP tmax, FP dt, const Model&lt; FP &gt; &amp;model, std::shared_ptr&lt; IntegratorCore&lt; FP &gt;&gt; integrator=nullptr)</td></tr>
+<tr class="memdesc:a850cbe387feac1daff1dba956894a10e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specialization of simulate for SECIRVVS models using the <a class="el" href="classmio_1_1FlowSimulation.html" title="A class for the simulation of a flow model.">FlowSimulation</a>.  <a href="namespacemio_1_1osecirvvs.html#a850cbe387feac1daff1dba956894a10e">More...</a><br /></td></tr>
+<tr class="separator:a850cbe387feac1daff1dba956894a10e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a89898b96fa379213ecb2a856adaf1ef9"><td class="memTemplParams" colspan="2">template&lt;typename FP  = double, class Base  = mio::Simulation&lt;Model&lt;FP&gt;, FP&gt;&gt; </td></tr>
+<tr class="memitem:a89898b96fa379213ecb2a856adaf1ef9"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemio_1_1osecirvvs.html#a89898b96fa379213ecb2a856adaf1ef9">mio::osecirvvs::test_commuters</a> (Simulation&lt; FP, Base &gt; &amp;sim, Eigen::Ref&lt; Vector&lt; FP &gt;&gt; migrated, FP time)</td></tr>
+<tr class="separator:a89898b96fa379213ecb2a856adaf1ef9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- start footer part -->

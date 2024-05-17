@@ -69,9 +69,21 @@ $(function() {
 : <a class="el" href="classmio_1_1ParameterDistribution.html#a169ab9f9a07e87b4d3a4cfbcb32a38e9">mio::ParameterDistribution</a>
 , <a class="el" href="structmio_1_1Visitable.html#a257669c2be78bcc3f642c0a44f79d3e2">mio::Visitable&lt; Derived, Base, Visitor, ConstVisitor &gt;</a>
 </li>
+<li>active_t
+: <a class="el" href="classad_1_1gvalue.html#ace4b7a2b89060cfd073641d04c45691d">ad::gvalue&lt; VALUE_T &gt;</a>
+</li>
+<li>active_type()
+: <a class="el" href="structad_1_1internal_1_1active__type.html#aaedd10eb43a852229802853dcb4ff893">ad::internal::active_type&lt; AD_TAPE_REAL, DATA_HANDLER &gt;</a>
+</li>
 <li>activity_type
 : <a class="el" href="structmio_1_1abm_1_1movement__data.html#ab43d5ed53e74635e1c0e4189ba7d92ab">mio::abm::movement_data</a>
 , <a class="el" href="structmio_1_1abm_1_1Trip.html#a88b88e7ff46fb182a83b8f9f9407bec0">mio::abm::Trip</a>
+</li>
+<li>ad::internal::blob_tape
+: <a class="el" href="classad_1_1helper_1_1callback__object__base.html#a49dc5c898cee9af9ece0ca5402cc126d">ad::helper::callback_object_base&lt; AD_TAPE &gt;</a>
+</li>
+<li>AD_TAPE_CLASS
+: <a class="el" href="structad_1_1internal_1_1blob__tape.html#a01bc51411aa1fd2929367cceccbb5d1f">ad::internal::blob_tape&lt; AD_TAPE_REAL, AD_ADJOINT_REAL &gt;</a>
 </li>
 <li>adapt_mean()
 : <a class="el" href="classmio_1_1ParameterDistributionNormal.html#af00322d0b0b2464c3b60e05be557583b">mio::ParameterDistributionNormal</a>
@@ -138,7 +150,7 @@ $(function() {
 , <a class="el" href="structmio_1_1DataWriterToMemory.html#a87ea9ba11bc5ed60e90483edafc11287">mio::DataWriterToMemory&lt; Loggers &gt;</a>
 </li>
 <li>add_testing_scheme()
-: <a class="el" href="classmio_1_1abm_1_1TestingStrategy.html#a5fb57a88fef6b163eafd21da666d5661">mio::abm::TestingStrategy</a>
+: <a class="el" href="classmio_1_1abm_1_1TestingStrategy.html#afb9ab7c6bbce8a6a25745575ac5675ce">mio::abm::TestingStrategy</a>
 , <a class="el" href="classmio_1_1abm_1_1World.html#aa5540539f32cc2b2234c08cedfe334f7">mio::abm::World</a>
 </li>
 <li>add_time_point()
@@ -152,19 +164,19 @@ $(function() {
 </li>
 <li>advance()
 : <a class="el" href="classmio_1_1abm_1_1Simulation.html#aee9725312200f31fb485451802ff7d03">mio::abm::Simulation</a>
-, <a class="el" href="classmio_1_1FlowSimulation.html#a80979752c0dff043cb946ea111d94e3d">mio::FlowSimulation&lt; M &gt;</a>
+, <a class="el" href="classmio_1_1FlowSimulation.html#a70a7bb501ec370d28f42f856c2b1beec">mio::FlowSimulation&lt; FP, M &gt;</a>
 , <a class="el" href="classmio_1_1GraphSimulationBase.html#ab5a15042b87420ec441c39adb5530031">mio::GraphSimulationBase&lt; Graph, edge_f &gt;</a>
 , <a class="el" href="classmio_1_1GraphSimulationStochastic.html#a550c1ed26513a0b7ef43df2896b64ebf">mio::GraphSimulationStochastic&lt; Graph &gt;</a>
 , <a class="el" href="classmio_1_1isecir_1_1Simulation.html#af9d3c0d3a0c022064e4404bc90a69fb1">mio::isecir::Simulation</a>
 , <a class="el" href="classmio_1_1lsecir_1_1Simulation.html#a5be87e5fd9e048815aceccfd7555b8a6">mio::lsecir::Simulation&lt; Model &gt;</a>
-, <a class="el" href="classmio_1_1OdeIntegrator.html#a9beef38ec964e145e5ac1b240cbee464">mio::OdeIntegrator</a>
-, <a class="el" href="classmio_1_1osecir_1_1Simulation.html#a9037a2334f2cfe2398f8d03e742183d0">mio::osecir::Simulation&lt; BaseT &gt;</a>
-, <a class="el" href="classmio_1_1osecirvvs_1_1Simulation.html#a36b38a7d2b9f565055d90d1b08b5d6e4">mio::osecirvvs::Simulation&lt; BaseT &gt;</a>
-, <a class="el" href="classmio_1_1Simulation.html#aa9ed38a19404854c78d9826aa4ce13be">mio::Simulation&lt; M &gt;</a>
-, <a class="el" href="classmio_1_1ssir_1_1FlowSimulation.html#addf58a6370b5225a0a423a88a25719dd">mio::ssir::FlowSimulation</a>
-, <a class="el" href="classmio_1_1ssir_1_1Simulation.html#a6008d3f052ec01aa7530ddfd48fc9d3a">mio::ssir::Simulation</a>
-, <a class="el" href="classmio_1_1ssirs_1_1FlowSimulation.html#a2c14a35d17e216b5f7b5bfe0bf57f0bb">mio::ssirs::FlowSimulation</a>
-, <a class="el" href="classmio_1_1ssirs_1_1Simulation.html#a591cc20daadf6d58ca0711a03d88d4b6">mio::ssirs::Simulation</a>
+, <a class="el" href="classmio_1_1OdeIntegrator.html#a5748901dfe244d2a6ab9eee9a7b748c4">mio::OdeIntegrator&lt; FP &gt;</a>
+, <a class="el" href="classmio_1_1osecir_1_1Simulation.html#adfa04846ac669456a1a38fb230ff27a1">mio::osecir::Simulation&lt; FP, BaseT &gt;</a>
+, <a class="el" href="classmio_1_1osecirvvs_1_1Simulation.html#af269604da19882533a5dee7adcc1341b">mio::osecirvvs::Simulation&lt; FP, BaseT &gt;</a>
+, <a class="el" href="classmio_1_1Simulation.html#ac3f013015e3594ec2669927c31a01fda">mio::Simulation&lt; FP, M &gt;</a>
+, <a class="el" href="classmio_1_1ssir_1_1FlowSimulation.html#a14dc8dc6a9fe06290af735bb2fdd60d0">mio::ssir::FlowSimulation</a>
+, <a class="el" href="classmio_1_1ssir_1_1Simulation.html#a4bea947c5715853f80c19e0e021ffa8b">mio::ssir::Simulation</a>
+, <a class="el" href="classmio_1_1ssirs_1_1FlowSimulation.html#a02b1ea0870fab92b1a500a6365c65a33">mio::ssirs::FlowSimulation</a>
+, <a class="el" href="classmio_1_1ssirs_1_1Simulation.html#a37c4cf822581e6e346e986809bec3681">mio::ssirs::Simulation</a>
 </li>
 <li>AgeGroup()
 : <a class="el" href="structmio_1_1AgeGroup.html#adbce9909e8964fb6e5a2caa9e6d13325">mio::AgeGroup</a>
@@ -172,13 +184,19 @@ $(function() {
 <li>agent_id
 : <a class="el" href="structmio_1_1abm_1_1movement__data.html#af1b89652684e2b43988c1ec234c2762d">mio::abm::movement_data</a>
 </li>
+<li>all_adjoints_read()
+: <a class="el" href="classad_1_1helper_1_1external__adjoint__object__base.html#aff00d4f331a4ed596b3e51581b313cd5">ad::helper::external_adjoint_object_base&lt; AD_TYPE, AD_TAPE &gt;</a>
+</li>
+<li>all_adjoints_written()
+: <a class="el" href="classad_1_1helper_1_1external__adjoint__object__base.html#ab089c3a2517f705f25f7b722287e572b">ad::helper::external_adjoint_object_base&lt; AD_TYPE, AD_TAPE &gt;</a>
+</li>
 <li>apply_constraints()
-: <a class="el" href="structmio_1_1CompartmentalModel.html#a5bc2e7923a3e11009f72db4a5eb681f0">mio::CompartmentalModel&lt; Comp, Pop, Params &gt;</a>
-, <a class="el" href="classmio_1_1osecir_1_1Parameters.html#ad83d98bcfabfddb841821e8322dcf21d">mio::osecir::Parameters</a>
-, <a class="el" href="classmio_1_1osecirvvs_1_1Parameters.html#a2e74d0e7e0c63d60c1cb763844fa6e9e">mio::osecirvvs::Parameters</a>
-, <a class="el" href="classmio_1_1oseir_1_1Parameters.html#ad372ad4873483274822941475774321e">mio::oseir::Parameters</a>
-, <a class="el" href="classmio_1_1osir_1_1Parameters.html#a06b081d4d68d49b9842905f29062c08d">mio::osir::Parameters</a>
-, <a class="el" href="classmio_1_1Populations.html#ad47a6b879c59df9552451f6eb9141fe2">mio::Populations&lt; Categories &gt;</a>
+: <a class="el" href="structmio_1_1CompartmentalModel.html#adc008c543a06aeec95abaaa4ddfab20a">mio::CompartmentalModel&lt; FP, Comp, Pop, Params &gt;</a>
+, <a class="el" href="classmio_1_1osecir_1_1Parameters.html#a8f72bc326eb76b0030daedcdad9a9291">mio::osecir::Parameters&lt; FP &gt;</a>
+, <a class="el" href="classmio_1_1osecirvvs_1_1Parameters.html#a438336773d16cff58584c8fff027c3b9">mio::osecirvvs::Parameters&lt; FP &gt;</a>
+, <a class="el" href="classmio_1_1oseir_1_1Parameters.html#a6909a1509c2899c2a01e2f571a755952">mio::oseir::Parameters&lt; FP &gt;</a>
+, <a class="el" href="classmio_1_1osir_1_1Parameters.html#a6238d0f8fa3fda52e74717e157848cf1">mio::osir::Parameters&lt; FP &gt;</a>
+, <a class="el" href="classmio_1_1Populations.html#a31cdeda7ea51f0b4115bb86baea199b7">mio::Populations&lt; FP, Categories &gt;</a>
 , <a class="el" href="classmio_1_1ssir_1_1Parameters.html#a1189b5810333442dd185a1eb7b40659b">mio::ssir::Parameters</a>
 , <a class="el" href="classmio_1_1ssirs_1_1Parameters.html#a95edfeb88a23c03c83c41dbc974891f3">mio::ssirs::Parameters</a>
 </li>
@@ -186,14 +204,17 @@ $(function() {
 : <a class="el" href="classmio_1_1abm_1_1Person.html#a9f045c41e056f71fa411d6a80265a873">mio::abm::Person</a>
 </li>
 <li>apply_migration()
-: <a class="el" href="classmio_1_1MigrationEdge.html#a210e9760d358e9b84ecda8f04e5881b3">mio::MigrationEdge</a>
+: <a class="el" href="classmio_1_1MigrationEdge.html#a6bf6517c0aab769ab32aa7cd1648ef21">mio::MigrationEdge&lt; FP &gt;</a>
 , <a class="el" href="classmio_1_1MigrationEdgeStochastic.html#ae527b7c26e6e26605a7bb92ba999ef4f">mio::MigrationEdgeStochastic</a>
 </li>
 <li>apply_vaccination()
-: <a class="el" href="classmio_1_1osecirvvs_1_1Simulation.html#ae9341ae2c80f535f3f68fa05066da7e5">mio::osecirvvs::Simulation&lt; BaseT &gt;</a>
+: <a class="el" href="classmio_1_1osecirvvs_1_1Simulation.html#a29ea41d6a3f66aa36957d8ad0569e5b0">mio::osecirvvs::Simulation&lt; FP, BaseT &gt;</a>
 </li>
 <li>apply_variant()
-: <a class="el" href="classmio_1_1osecirvvs_1_1Simulation.html#a71e7378f1546b84daa8a0d3f8420d1c7">mio::osecirvvs::Simulation&lt; BaseT &gt;</a>
+: <a class="el" href="classmio_1_1osecirvvs_1_1Simulation.html#a8c9126764ae05b69325253cfe5743d1e">mio::osecirvvs::Simulation&lt; FP, BaseT &gt;</a>
+</li>
+<li>arg
+: <a class="el" href="structad_1_1internal_1_1blob__tape_1_1TAPE__ENTRY.html#adf4b38ce012582f129027192e3398076">ad::internal::blob_tape&lt; AD_TAPE_REAL, AD_ADJOINT_REAL &gt;::TAPE_ENTRY</a>
 </li>
 <li>array()
 : <a class="el" href="classmio_1_1CustomIndexArray.html#aebe5e9cd4508bacac528accda7394e25">mio::CustomIndexArray&lt; Typ, Tags &gt;</a>

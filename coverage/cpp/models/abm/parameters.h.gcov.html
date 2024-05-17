@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2024-05-16 15:49:56</td>
+            <td class="headerValue">2024-05-17 10:31:17</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">39</td>
@@ -105,7 +105,7 @@
 <a name="43"><span class="lineNum">      43 </span>            :  * @brief Time that a Person is infected but not yet infectious.</a>
 <a name="44"><span class="lineNum">      44 </span>            :  */</a>
 <a name="45"><span class="lineNum">      45 </span>            : struct IncubationPeriod {</a>
-<a name="46"><span class="lineNum">      46 </span>            :     using Type = CustomIndexArray&lt;UncertainValue, VirusVariant, AgeGroup&gt;;</a>
+<a name="46"><span class="lineNum">      46 </span>            :     using Type = CustomIndexArray&lt; UncertainValue&lt;&gt;, VirusVariant, AgeGroup&gt;;</a>
 <a name="47"><span class="lineNum">      47 </span><span class="lineCov">        105 :     static Type get_default(AgeGroup size)</span></a>
 <a name="48"><span class="lineNum">      48 </span>            :     {</a>
 <a name="49"><span class="lineNum">      49 </span><span class="lineCov">        105 :         return Type({VirusVariant::Count, size}, 1.);</span></a>
@@ -117,7 +117,7 @@
 <a name="55"><span class="lineNum">      55 </span>            : };</a>
 <a name="56"><span class="lineNum">      56 </span>            : </a>
 <a name="57"><span class="lineNum">      57 </span>            : struct InfectedNoSymptomsToSymptoms {</a>
-<a name="58"><span class="lineNum">      58 </span>            :     using Type = CustomIndexArray&lt;UncertainValue, VirusVariant, AgeGroup&gt;;</a>
+<a name="58"><span class="lineNum">      58 </span>            :     using Type = CustomIndexArray&lt; UncertainValue&lt;&gt;, VirusVariant, AgeGroup&gt;;</a>
 <a name="59"><span class="lineNum">      59 </span><span class="lineCov">        105 :     static Type get_default(AgeGroup size)</span></a>
 <a name="60"><span class="lineNum">      60 </span>            :     {</a>
 <a name="61"><span class="lineNum">      61 </span><span class="lineCov">        105 :         return Type({VirusVariant::Count, size}, 1.);</span></a>
@@ -129,7 +129,7 @@
 <a name="67"><span class="lineNum">      67 </span>            : };</a>
 <a name="68"><span class="lineNum">      68 </span>            : </a>
 <a name="69"><span class="lineNum">      69 </span>            : struct InfectedNoSymptomsToRecovered {</a>
-<a name="70"><span class="lineNum">      70 </span>            :     using Type = CustomIndexArray&lt;UncertainValue, VirusVariant, AgeGroup&gt;;</a>
+<a name="70"><span class="lineNum">      70 </span>            :     using Type = CustomIndexArray&lt; UncertainValue&lt;&gt;, VirusVariant, AgeGroup&gt;;</a>
 <a name="71"><span class="lineNum">      71 </span><span class="lineCov">        105 :     static Type get_default(AgeGroup size)</span></a>
 <a name="72"><span class="lineNum">      72 </span>            :     {</a>
 <a name="73"><span class="lineNum">      73 </span><span class="lineCov">        105 :         return Type({VirusVariant::Count, size}, 1.);</span></a>
@@ -141,7 +141,7 @@
 <a name="79"><span class="lineNum">      79 </span>            : };</a>
 <a name="80"><span class="lineNum">      80 </span>            : </a>
 <a name="81"><span class="lineNum">      81 </span>            : struct InfectedSymptomsToRecovered {</a>
-<a name="82"><span class="lineNum">      82 </span>            :     using Type = CustomIndexArray&lt;UncertainValue, VirusVariant, AgeGroup&gt;;</a>
+<a name="82"><span class="lineNum">      82 </span>            :     using Type = CustomIndexArray&lt; UncertainValue&lt;&gt;, VirusVariant, AgeGroup&gt;;</a>
 <a name="83"><span class="lineNum">      83 </span><span class="lineCov">        105 :     static Type get_default(AgeGroup size)</span></a>
 <a name="84"><span class="lineNum">      84 </span>            :     {</a>
 <a name="85"><span class="lineNum">      85 </span><span class="lineCov">        105 :         return Type({VirusVariant::Count, size}, 1.);</span></a>
@@ -153,7 +153,7 @@
 <a name="91"><span class="lineNum">      91 </span>            : };</a>
 <a name="92"><span class="lineNum">      92 </span>            : </a>
 <a name="93"><span class="lineNum">      93 </span>            : struct InfectedSymptomsToSevere {</a>
-<a name="94"><span class="lineNum">      94 </span>            :     using Type = CustomIndexArray&lt;UncertainValue, VirusVariant, AgeGroup&gt;;</a>
+<a name="94"><span class="lineNum">      94 </span>            :     using Type = CustomIndexArray&lt; UncertainValue&lt;&gt;, VirusVariant, AgeGroup&gt;;</a>
 <a name="95"><span class="lineNum">      95 </span><span class="lineCov">        105 :     static Type get_default(AgeGroup size)</span></a>
 <a name="96"><span class="lineNum">      96 </span>            :     {</a>
 <a name="97"><span class="lineNum">      97 </span><span class="lineCov">        105 :         return Type({VirusVariant::Count, size}, 1.);</span></a>
@@ -165,7 +165,7 @@
 <a name="103"><span class="lineNum">     103 </span>            : };</a>
 <a name="104"><span class="lineNum">     104 </span>            : </a>
 <a name="105"><span class="lineNum">     105 </span>            : struct SevereToCritical {</a>
-<a name="106"><span class="lineNum">     106 </span>            :     using Type = CustomIndexArray&lt;UncertainValue, VirusVariant, AgeGroup&gt;;</a>
+<a name="106"><span class="lineNum">     106 </span>            :     using Type = CustomIndexArray&lt; UncertainValue&lt;&gt;, VirusVariant, AgeGroup&gt;;</a>
 <a name="107"><span class="lineNum">     107 </span><span class="lineCov">        105 :     static Type get_default(AgeGroup size)</span></a>
 <a name="108"><span class="lineNum">     108 </span>            :     {</a>
 <a name="109"><span class="lineNum">     109 </span><span class="lineCov">        105 :         return Type({VirusVariant::Count, size}, 1.);</span></a>
@@ -177,7 +177,7 @@
 <a name="115"><span class="lineNum">     115 </span>            : };</a>
 <a name="116"><span class="lineNum">     116 </span>            : </a>
 <a name="117"><span class="lineNum">     117 </span>            : struct SevereToRecovered {</a>
-<a name="118"><span class="lineNum">     118 </span>            :     using Type = CustomIndexArray&lt;UncertainValue, VirusVariant, AgeGroup&gt;;</a>
+<a name="118"><span class="lineNum">     118 </span>            :     using Type = CustomIndexArray&lt; UncertainValue&lt;&gt;, VirusVariant, AgeGroup&gt;;</a>
 <a name="119"><span class="lineNum">     119 </span><span class="lineCov">        105 :     static Type get_default(AgeGroup size)</span></a>
 <a name="120"><span class="lineNum">     120 </span>            :     {</a>
 <a name="121"><span class="lineNum">     121 </span><span class="lineCov">        105 :         return Type({VirusVariant::Count, size}, 1.);</span></a>
@@ -189,7 +189,7 @@
 <a name="127"><span class="lineNum">     127 </span>            : };</a>
 <a name="128"><span class="lineNum">     128 </span>            : </a>
 <a name="129"><span class="lineNum">     129 </span>            : struct CriticalToRecovered {</a>
-<a name="130"><span class="lineNum">     130 </span>            :     using Type = CustomIndexArray&lt;UncertainValue, VirusVariant, AgeGroup&gt;;</a>
+<a name="130"><span class="lineNum">     130 </span>            :     using Type = CustomIndexArray&lt; UncertainValue&lt;&gt;, VirusVariant, AgeGroup&gt;;</a>
 <a name="131"><span class="lineNum">     131 </span><span class="lineCov">        105 :     static Type get_default(AgeGroup size)</span></a>
 <a name="132"><span class="lineNum">     132 </span>            :     {</a>
 <a name="133"><span class="lineNum">     133 </span><span class="lineCov">        105 :         return Type({VirusVariant::Count, size}, 1.);</span></a>
@@ -201,7 +201,7 @@
 <a name="139"><span class="lineNum">     139 </span>            : };</a>
 <a name="140"><span class="lineNum">     140 </span>            : </a>
 <a name="141"><span class="lineNum">     141 </span>            : struct CriticalToDead {</a>
-<a name="142"><span class="lineNum">     142 </span>            :     using Type = CustomIndexArray&lt;UncertainValue, VirusVariant, AgeGroup&gt;;</a>
+<a name="142"><span class="lineNum">     142 </span>            :     using Type = CustomIndexArray&lt; UncertainValue&lt;&gt;, VirusVariant, AgeGroup&gt;;</a>
 <a name="143"><span class="lineNum">     143 </span><span class="lineCov">        105 :     static Type get_default(AgeGroup size)</span></a>
 <a name="144"><span class="lineNum">     144 </span>            :     {</a>
 <a name="145"><span class="lineNum">     145 </span><span class="lineCov">        105 :         return Type({VirusVariant::Count, size}, 1.);</span></a>
@@ -213,7 +213,7 @@
 <a name="151"><span class="lineNum">     151 </span>            : };</a>
 <a name="152"><span class="lineNum">     152 </span>            : </a>
 <a name="153"><span class="lineNum">     153 </span>            : struct RecoveredToSusceptible {</a>
-<a name="154"><span class="lineNum">     154 </span>            :     using Type = CustomIndexArray&lt;UncertainValue, VirusVariant, AgeGroup&gt;;</a>
+<a name="154"><span class="lineNum">     154 </span>            :     using Type = CustomIndexArray&lt; UncertainValue&lt;&gt;, VirusVariant, AgeGroup&gt;;</a>
 <a name="155"><span class="lineNum">     155 </span><span class="lineCov">        105 :     static Type get_default(AgeGroup size)</span></a>
 <a name="156"><span class="lineNum">     156 </span>            :     {</a>
 <a name="157"><span class="lineNum">     157 </span><span class="lineCov">        105 :         return Type({VirusVariant::Count, size}, 1.);</span></a>
@@ -274,7 +274,7 @@
 <a name="212"><span class="lineNum">     212 </span>            :  * @brief Probability that an Infection is detected.</a>
 <a name="213"><span class="lineNum">     213 </span>            :  */</a>
 <a name="214"><span class="lineNum">     214 </span>            : struct DetectInfection {</a>
-<a name="215"><span class="lineNum">     215 </span>            :     using Type = CustomIndexArray&lt;UncertainValue, VirusVariant, AgeGroup&gt;;</a>
+<a name="215"><span class="lineNum">     215 </span>            :     using Type = CustomIndexArray&lt; UncertainValue&lt;&gt;, VirusVariant, AgeGroup&gt;;</a>
 <a name="216"><span class="lineNum">     216 </span><span class="lineCov">        105 :     static Type get_default(AgeGroup size)</span></a>
 <a name="217"><span class="lineNum">     217 </span>            :     {</a>
 <a name="218"><span class="lineNum">     218 </span><span class="lineCov">        105 :         return Type({VirusVariant::Count, size}, 1.);</span></a>
@@ -289,7 +289,7 @@
 <a name="227"><span class="lineNum">     227 </span>            :  * @brief Effectiveness of a Mask of a certain MaskType% against an Infection%.</a>
 <a name="228"><span class="lineNum">     228 </span>            :  */</a>
 <a name="229"><span class="lineNum">     229 </span>            : struct MaskProtection {</a>
-<a name="230"><span class="lineNum">     230 </span>            :     using Type = CustomIndexArray&lt;UncertainValue, MaskType&gt;;</a>
+<a name="230"><span class="lineNum">     230 </span>            :     using Type = CustomIndexArray&lt; UncertainValue&lt;&gt;, MaskType&gt;;</a>
 <a name="231"><span class="lineNum">     231 </span><span class="lineCov">        105 :     static Type get_default(AgeGroup /*size*/)</span></a>
 <a name="232"><span class="lineNum">     232 </span>            :     {</a>
 <a name="233"><span class="lineNum">     233 </span><span class="lineCov">        105 :         return Type({MaskType::Count}, 1.);</span></a>
@@ -374,8 +374,8 @@
 <a name="312"><span class="lineNum">     312 </span>            :  * @brief Parameters that describe the reliability of a test.</a>
 <a name="313"><span class="lineNum">     313 </span>            :  */</a>
 <a name="314"><span class="lineNum">     314 </span>            : struct TestParameters {</a>
-<a name="315"><span class="lineNum">     315 </span>            :     UncertainValue sensitivity;</a>
-<a name="316"><span class="lineNum">     316 </span>            :     UncertainValue specificity;</a>
+<a name="315"><span class="lineNum">     315 </span>            :      UncertainValue&lt;&gt; sensitivity;</a>
+<a name="316"><span class="lineNum">     316 </span>            :      UncertainValue&lt;&gt; specificity;</a>
 <a name="317"><span class="lineNum">     317 </span>            : };</a>
 <a name="318"><span class="lineNum">     318 </span>            : </a>
 <a name="319"><span class="lineNum">     319 </span>            : struct GenericTest {</a>
@@ -454,7 +454,7 @@
 <a name="392"><span class="lineNum">     392 </span>            :  * @brief Parameter for the exponential distribution to decide if a Person goes shopping.</a>
 <a name="393"><span class="lineNum">     393 </span>            :  */</a>
 <a name="394"><span class="lineNum">     394 </span>            : struct BasicShoppingRate {</a>
-<a name="395"><span class="lineNum">     395 </span>            :     using Type = CustomIndexArray&lt;UncertainValue, AgeGroup&gt;;</a>
+<a name="395"><span class="lineNum">     395 </span>            :     using Type = CustomIndexArray&lt; UncertainValue&lt;&gt;, AgeGroup&gt;;</a>
 <a name="396"><span class="lineNum">     396 </span><span class="lineCov">        105 :     static auto get_default(AgeGroup size)</span></a>
 <a name="397"><span class="lineNum">     397 </span>            :     {</a>
 <a name="398"><span class="lineNum">     398 </span><span class="lineCov">        210 :         return Type({size}, 1.0);</span></a>

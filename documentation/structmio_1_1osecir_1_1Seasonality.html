@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>MEmilio: mio::osecir::Seasonality Struct Reference</title>
+<title>MEmilio: mio::osecir::Seasonality&lt; FP &gt; Struct Template Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -71,7 +71,7 @@ $(function() {
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="structmio_1_1osecir_1_1Seasonality-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">mio::osecir::Seasonality Struct Reference</div>  </div>
+<div class="title">mio::osecir::Seasonality&lt; FP &gt; Struct Template Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
@@ -82,27 +82,32 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:a08431933e9ea7787c17176a2747d8e72"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmio_1_1osecir_1_1Seasonality.html#a08431933e9ea7787c17176a2747d8e72">Type</a> = <a class="el" href="classmio_1_1UncertainValue.html">UncertainValue</a></td></tr>
-<tr class="separator:a08431933e9ea7787c17176a2747d8e72"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a27ae6a139355c70537044b601f417e48"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmio_1_1osecir_1_1Seasonality.html#a27ae6a139355c70537044b601f417e48">Type</a> = <a class="el" href="classmio_1_1UncertainValue.html">UncertainValue</a>&lt; FP &gt;</td></tr>
+<tr class="separator:a27ae6a139355c70537044b601f417e48"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a8750429aee109244be0ef6f7f880aeb7"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="structmio_1_1osecir_1_1Seasonality.html#a08431933e9ea7787c17176a2747d8e72">Type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmio_1_1osecir_1_1Seasonality.html#a8750429aee109244be0ef6f7f880aeb7">get_default</a> (<a class="el" href="structmio_1_1AgeGroup.html">AgeGroup</a>)</td></tr>
-<tr class="separator:a8750429aee109244be0ef6f7f880aeb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa1d6f613bb2438f624ea500b0f99e280"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmio_1_1osecir_1_1Seasonality.html#aa1d6f613bb2438f624ea500b0f99e280">name</a> ()</td></tr>
-<tr class="separator:aa1d6f613bb2438f624ea500b0f99e280"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5057eebcb537f21db2a7cfbe2889a025"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="structmio_1_1osecir_1_1Seasonality.html#a27ae6a139355c70537044b601f417e48">Type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmio_1_1osecir_1_1Seasonality.html#a5057eebcb537f21db2a7cfbe2889a025">get_default</a> (<a class="el" href="structmio_1_1AgeGroup.html">AgeGroup</a>)</td></tr>
+<tr class="separator:a5057eebcb537f21db2a7cfbe2889a025"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a05d5de8ce98386f375131418795b402b"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmio_1_1osecir_1_1Seasonality.html#a05d5de8ce98386f375131418795b402b">name</a> ()</td></tr>
+<tr class="separator:a05d5de8ce98386f375131418795b402b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>the seasonality in the SECIR model the seasonality is given as (1+k*sin()) where the sine curve is below one in summer and above one in winter </p>
+<div class="textblock"><h3>template&lt;typename FP = double&gt;<br />
+struct mio::osecir::Seasonality&lt; FP &gt;</h3>
+
+<p>the seasonality in the SECIR model the seasonality is given as (1+k*sin()) where the sine curve is below one in summer and above one in winter </p>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
-<a id="a08431933e9ea7787c17176a2747d8e72"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a08431933e9ea7787c17176a2747d8e72">&#9670;&nbsp;</a></span>Type</h2>
+<a id="a27ae6a139355c70537044b601f417e48"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a27ae6a139355c70537044b601f417e48">&#9670;&nbsp;</a></span>Type</h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;typename FP  = double&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="structmio_1_1osecir_1_1Seasonality.html#a08431933e9ea7787c17176a2747d8e72">mio::osecir::Seasonality::Type</a> =  <a class="el" href="classmio_1_1UncertainValue.html">UncertainValue</a></td>
+          <td class="memname">using <a class="el" href="structmio_1_1osecir_1_1Seasonality.html">mio::osecir::Seasonality</a>&lt; FP &gt;::<a class="el" href="structmio_1_1osecir_1_1Seasonality.html#a27ae6a139355c70537044b601f417e48">Type</a> =  <a class="el" href="classmio_1_1UncertainValue.html">UncertainValue</a>&lt;FP&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -110,17 +115,19 @@ Static Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a8750429aee109244be0ef6f7f880aeb7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8750429aee109244be0ef6f7f880aeb7">&#9670;&nbsp;</a></span>get_default()</h2>
+<a id="a5057eebcb537f21db2a7cfbe2889a025"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5057eebcb537f21db2a7cfbe2889a025">&#9670;&nbsp;</a></span>get_default()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;typename FP  = double&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="structmio_1_1osecir_1_1Seasonality.html#a08431933e9ea7787c17176a2747d8e72">Type</a> mio::osecir::Seasonality::get_default </td>
+          <td class="memname">static <a class="el" href="structmio_1_1osecir_1_1Seasonality.html#a27ae6a139355c70537044b601f417e48">Type</a> <a class="el" href="structmio_1_1osecir_1_1Seasonality.html">mio::osecir::Seasonality</a>&lt; FP &gt;::get_default </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structmio_1_1AgeGroup.html">AgeGroup</a>&#160;</td>
           <td class="paramname"></td><td>)</td>
@@ -136,17 +143,19 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="aa1d6f613bb2438f624ea500b0f99e280"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa1d6f613bb2438f624ea500b0f99e280">&#9670;&nbsp;</a></span>name()</h2>
+<a id="a05d5de8ce98386f375131418795b402b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a05d5de8ce98386f375131418795b402b">&#9670;&nbsp;</a></span>name()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;typename FP  = double&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static std::string mio::osecir::Seasonality::name </td>
+          <td class="memname">static std::string <a class="el" href="structmio_1_1osecir_1_1Seasonality.html">mio::osecir::Seasonality</a>&lt; FP &gt;::name </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>

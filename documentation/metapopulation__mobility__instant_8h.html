@@ -93,10 +93,10 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1MigrationEdge.html">mio::MigrationEdge</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1MigrationEdge.html">mio::MigrationEdge&lt; FP &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">represents the migration between two nodes.  <a href="classmio_1_1MigrationEdge.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1MigrationParameters.html">mio::MigrationParameters</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1MigrationParameters.html">mio::MigrationParameters&lt; FP &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">parameters that influence migration.  <a href="classmio_1_1MigrationParameters.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1SimulationNode.html">mio::SimulationNode&lt; Sim &gt;</a></td></tr>
@@ -132,14 +132,14 @@ Typedefs</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a70bce3d20b307a99caf57331c0250537"><td class="memTemplParams" colspan="2">template&lt;class Sim &gt; </td></tr>
-<tr class="memitem:a70bce3d20b307a99caf57331c0250537"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemio.html#a70bce3d20b307a99caf57331c0250537">mio::apply_migration</a> (double t, double dt, MigrationEdge &amp;migrationEdge, SimulationNode&lt; Sim &gt; &amp;node_from, SimulationNode&lt; Sim &gt; &amp;node_to)</td></tr>
-<tr class="memdesc:a70bce3d20b307a99caf57331c0250537"><td class="mdescLeft">&#160;</td><td class="mdescRight">edge functor for migration simulation.  <a href="namespacemio.html#a70bce3d20b307a99caf57331c0250537">More...</a><br /></td></tr>
-<tr class="separator:a70bce3d20b307a99caf57331c0250537"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac756601e49cde978ae849e736f7ffd5e"><td class="memTemplParams" colspan="2">template&lt;class Sim , class  = std::enable_if_t&lt;is_compartment_model_simulation&lt;Sim&gt;::value&gt;&gt; </td></tr>
-<tr class="memitem:ac756601e49cde978ae849e736f7ffd5e"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemio.html#ac756601e49cde978ae849e736f7ffd5e">mio::calculate_migration_returns</a> (Eigen::Ref&lt; TimeSeries&lt; double &gt;::Vector &gt; migrated, const Sim &amp;sim, Eigen::Ref&lt; const TimeSeries&lt; double &gt;::Vector &gt; total, double t, double dt)</td></tr>
-<tr class="memdesc:ac756601e49cde978ae849e736f7ffd5e"><td class="mdescLeft">&#160;</td><td class="mdescRight">adjust number of migrated people when they return according to the model.  <a href="namespacemio.html#ac756601e49cde978ae849e736f7ffd5e">More...</a><br /></td></tr>
-<tr class="separator:ac756601e49cde978ae849e736f7ffd5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af8c09290697dd3d17e83974c0d2c7e90"><td class="memTemplParams" colspan="2">template&lt;typename FP , class Sim &gt; </td></tr>
+<tr class="memitem:af8c09290697dd3d17e83974c0d2c7e90"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemio.html#af8c09290697dd3d17e83974c0d2c7e90">mio::apply_migration</a> (FP t, FP dt, MigrationEdge&lt; FP &gt; &amp;migrationEdge, SimulationNode&lt; Sim &gt; &amp;node_from, SimulationNode&lt; Sim &gt; &amp;node_to)</td></tr>
+<tr class="memdesc:af8c09290697dd3d17e83974c0d2c7e90"><td class="mdescLeft">&#160;</td><td class="mdescRight">edge functor for migration simulation.  <a href="namespacemio.html#af8c09290697dd3d17e83974c0d2c7e90">More...</a><br /></td></tr>
+<tr class="separator:af8c09290697dd3d17e83974c0d2c7e90"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a849bd46fdd0160e78fb873a1b70f39fe"><td class="memTemplParams" colspan="2">template&lt;typename FP , class Sim , class  = std::enable_if_t&lt;is_compartment_model_simulation&lt;FP, Sim&gt;::value&gt;&gt; </td></tr>
+<tr class="memitem:a849bd46fdd0160e78fb873a1b70f39fe"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemio.html#a849bd46fdd0160e78fb873a1b70f39fe">mio::calculate_migration_returns</a> (Eigen::Ref&lt; typename TimeSeries&lt; FP &gt;::Vector &gt; migrated, const Sim &amp;sim, Eigen::Ref&lt; const typename TimeSeries&lt; FP &gt;::Vector &gt; total, FP t, FP dt)</td></tr>
+<tr class="memdesc:a849bd46fdd0160e78fb873a1b70f39fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">adjust number of migrated people when they return according to the model.  <a href="namespacemio.html#a849bd46fdd0160e78fb873a1b70f39fe">More...</a><br /></td></tr>
+<tr class="separator:a849bd46fdd0160e78fb873a1b70f39fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aebf8e2a8ccea82f3bbd91c3d479d1094"><td class="memTemplParams" colspan="2">template&lt;class Sim &gt; </td></tr>
 <tr class="memitem:aebf8e2a8ccea82f3bbd91c3d479d1094"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemio.html#aebf8e2a8ccea82f3bbd91c3d479d1094">mio::evolve_model</a> (double t, double dt, SimulationNode&lt; Sim &gt; &amp;node)</td></tr>
 <tr class="memdesc:aebf8e2a8ccea82f3bbd91c3d479d1094"><td class="mdescLeft">&#160;</td><td class="mdescRight">edge functor for migration simulation.  <a href="namespacemio.html#aebf8e2a8ccea82f3bbd91c3d479d1094">More...</a><br /></td></tr>
@@ -157,13 +157,13 @@ Functions</h2></td></tr>
 <tr class="memdesc:adb526164db4b433fe9e65133f20edd3d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Test persons when migrating from their source node.  <a href="namespacemio.html#adb526164db4b433fe9e65133f20edd3d">More...</a><br /></td></tr>
 <tr class="separator:adb526164db4b433fe9e65133f20edd3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader"></div></td></tr>
-<tr class="memitem:a9afccd5e6410c704b1565079e5837d80"><td class="memTemplParams" colspan="2">template&lt;class Sim &gt; </td></tr>
-<tr class="memitem:a9afccd5e6410c704b1565079e5837d80"><td class="memTemplItemLeft" align="right" valign="top">GraphSimulation&lt; Graph&lt; SimulationNode&lt; Sim &gt;, MigrationEdge &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemio.html#a9afccd5e6410c704b1565079e5837d80">mio::make_migration_sim</a> (double t0, double dt, const Graph&lt; SimulationNode&lt; Sim &gt;, MigrationEdge &gt; &amp;graph)</td></tr>
-<tr class="memdesc:a9afccd5e6410c704b1565079e5837d80"><td class="mdescLeft">&#160;</td><td class="mdescRight">create a migration simulation.  <a href="namespacemio.html#a9afccd5e6410c704b1565079e5837d80">More...</a><br /></td></tr>
-<tr class="separator:a9afccd5e6410c704b1565079e5837d80"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acb7abb9f1e2b136f146af558abba7e28"><td class="memTemplParams" colspan="2">template&lt;class Sim &gt; </td></tr>
-<tr class="memitem:acb7abb9f1e2b136f146af558abba7e28"><td class="memTemplItemLeft" align="right" valign="top">GraphSimulation&lt; Graph&lt; SimulationNode&lt; Sim &gt;, MigrationEdge &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemio.html#acb7abb9f1e2b136f146af558abba7e28">mio::make_migration_sim</a> (double t0, double dt, Graph&lt; SimulationNode&lt; Sim &gt;, MigrationEdge &gt; &amp;&amp;graph)</td></tr>
-<tr class="separator:acb7abb9f1e2b136f146af558abba7e28"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac2e31f3968fe4c7e21e0b8e722cb4c8e"><td class="memTemplParams" colspan="2">template&lt;typename FP , class Sim &gt; </td></tr>
+<tr class="memitem:ac2e31f3968fe4c7e21e0b8e722cb4c8e"><td class="memTemplItemLeft" align="right" valign="top">GraphSimulation&lt; Graph&lt; SimulationNode&lt; Sim &gt;, MigrationEdge&lt; FP &gt; &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemio.html#ac2e31f3968fe4c7e21e0b8e722cb4c8e">mio::make_migration_sim</a> (FP t0, FP dt, const Graph&lt; SimulationNode&lt; Sim &gt;, MigrationEdge&lt; FP &gt;&gt; &amp;graph)</td></tr>
+<tr class="memdesc:ac2e31f3968fe4c7e21e0b8e722cb4c8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">create a migration simulation.  <a href="namespacemio.html#ac2e31f3968fe4c7e21e0b8e722cb4c8e">More...</a><br /></td></tr>
+<tr class="separator:ac2e31f3968fe4c7e21e0b8e722cb4c8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac043ec36c2bdaeb29b291573e965a44"><td class="memTemplParams" colspan="2">template&lt;typename FP , class Sim &gt; </td></tr>
+<tr class="memitem:aac043ec36c2bdaeb29b291573e965a44"><td class="memTemplItemLeft" align="right" valign="top">GraphSimulation&lt; Graph&lt; SimulationNode&lt; Sim &gt;, MigrationEdge&lt; FP &gt; &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemio.html#aac043ec36c2bdaeb29b291573e965a44">mio::make_migration_sim</a> (FP t0, FP dt, Graph&lt; SimulationNode&lt; Sim &gt;, MigrationEdge&lt; FP &gt;&gt; &amp;&amp;graph)</td></tr>
+<tr class="separator:aac043ec36c2bdaeb29b291573e965a44"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- start footer part -->

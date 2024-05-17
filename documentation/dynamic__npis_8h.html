@@ -83,7 +83,7 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1DynamicNPIs.html">mio::DynamicNPIs</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1DynamicNPIs.html">mio::DynamicNPIs&lt; FP &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">represents non-pharmaceutical interventions (NPI) that are activated during the simulation if some value (e.g.  <a href="classmio_1_1DynamicNPIs.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -103,10 +103,10 @@ Functions</h2></td></tr>
 <tr class="memitem:a46e96aa6399be967e2261e9054d45fa3"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; size_t &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemio.html#a46e96aa6399be967e2261e9054d45fa3">mio::get_damping_indices</a> (const DampingExpr &amp;damping_expr, DampingLevel lvl, DampingType type, SimulationTime begin, SimulationTime end)</td></tr>
 <tr class="memdesc:a46e96aa6399be967e2261e9054d45fa3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a list of indices of specified dampings.  <a href="namespacemio.html#a46e96aa6399be967e2261e9054d45fa3">More...</a><br /></td></tr>
 <tr class="separator:a46e96aa6399be967e2261e9054d45fa3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab14a93cf79d658750a62533c6c31d47c"><td class="memTemplParams" colspan="2">template&lt;class DampingExprGroup , class MakeMatrix &gt; </td></tr>
-<tr class="memitem:ab14a93cf79d658750a62533c6c31d47c"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemio.html#ab14a93cf79d658750a62533c6c31d47c">mio::implement_dynamic_npis</a> (DampingExprGroup &amp;damping_expr_group, const std::vector&lt; DampingSampling &gt; &amp;npis, SimulationTime begin, SimulationTime end, MakeMatrix &amp;&amp;make_matrix)</td></tr>
-<tr class="memdesc:ab14a93cf79d658750a62533c6c31d47c"><td class="mdescLeft">&#160;</td><td class="mdescRight">implement dynamic NPIs for a time span.  <a href="namespacemio.html#ab14a93cf79d658750a62533c6c31d47c">More...</a><br /></td></tr>
-<tr class="separator:ab14a93cf79d658750a62533c6c31d47c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a964b42164d9f96774552df5bcf02e934"><td class="memTemplParams" colspan="2">template&lt;class DampingExprGroup , class MakeMatrix , typename FP  = double&gt; </td></tr>
+<tr class="memitem:a964b42164d9f96774552df5bcf02e934"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemio.html#a964b42164d9f96774552df5bcf02e934">mio::implement_dynamic_npis</a> (DampingExprGroup &amp;damping_expr_group, const std::vector&lt; DampingSampling&lt; FP &gt;&gt; &amp;npis, SimulationTime begin, SimulationTime end, MakeMatrix &amp;&amp;make_matrix)</td></tr>
+<tr class="memdesc:a964b42164d9f96774552df5bcf02e934"><td class="mdescLeft">&#160;</td><td class="mdescRight">implement dynamic NPIs for a time span.  <a href="namespacemio.html#a964b42164d9f96774552df5bcf02e934">More...</a><br /></td></tr>
+<tr class="separator:a964b42164d9f96774552df5bcf02e934"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- start footer part -->

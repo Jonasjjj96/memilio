@@ -37,12 +37,12 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2024-05-16 15:49:56</td>
+            <td class="headerValue">2024-05-17 10:31:17</td>
             <td></td>
             <td class="headerItem">Functions:</td>
-            <td class="headerCovTableEntry">52</td>
-            <td class="headerCovTableEntry">54</td>
-            <td class="headerCovTableEntryHi">96.3 %</td>
+            <td class="headerCovTableEntry">67</td>
+            <td class="headerCovTableEntry">70</td>
+            <td class="headerCovTableEntryHi">95.7 %</td>
           </tr>
           <tr><td><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
         </table>
@@ -60,220 +60,284 @@
       <td width="20%" class="tableHead">Hit count <span class="tableHeadSort"><img src="../../glass.png" width=10 height=14 alt="Sort by hit count" title="Sort by hit count" border=0></span></td>
     </tr>
     <tr>
-              <td class="coverFn"><a href="simulation.h.gcov.html#63">mio::Simulation&lt;mio::osecirvvs::Model&gt;::set_integrator(std::shared_ptr&lt;mio::IntegratorCore&gt;)</a></td>
+              <td class="coverFn"><a href="simulation.h.gcov.html#65">mio::Simulation&lt;ad::internal::active_type&lt;double, ad::internal::ts_data&lt;double&gt; &gt;, mio::oseair::Model&lt;ad::internal::active_type&lt;double, ad::internal::ts_data&lt;double&gt; &gt; &gt; &gt;::set_integrator(std::shared_ptr&lt;mio::IntegratorCore&lt;ad::internal::active_type&lt;double, ad::internal::ts_data&lt;double&gt; &gt; &gt; &gt;)</a></td>
               <td class="coverFnLo">0</td>
             </tr>
     <tr>
-              <td class="coverFn"><a href="simulation.h.gcov.html#114">mio::Simulation&lt;mio::osecirvvs::Model&gt;::get_result() const</a></td>
+              <td class="coverFn"><a href="simulation.h.gcov.html#65">mio::Simulation&lt;double, mio::osecirvvs::Model&lt;double&gt; &gt;::set_integrator(std::shared_ptr&lt;mio::IntegratorCore&lt;double&gt; &gt;)</a></td>
               <td class="coverFnLo">0</td>
             </tr>
     <tr>
-              <td class="coverFn"><a href="simulation.h.gcov.html#50">mio::Simulation&lt;TestCompartmentSimulation_integrator_uses_model_reference_Test::TestBody()::MockModel&gt;::Simulation(TestCompartmentSimulation_integrator_uses_model_reference_Test::TestBody()::MockModel const&amp;, double, double)</a></td>
+              <td class="coverFn"><a href="simulation.h.gcov.html#124">mio::Simulation&lt;double, mio::osecirvvs::Model&lt;double&gt; &gt;::get_result() const</a></td>
+              <td class="coverFnLo">0</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="simulation.h.gcov.html#115">mio::Simulation&lt;ad::internal::active_type&lt;double, ad::internal::ts_data&lt;double&gt; &gt;, mio::oseair::Model&lt;ad::internal::active_type&lt;double, ad::internal::ts_data&lt;double&gt; &gt; &gt; &gt;::get_result()</a></td>
               <td class="coverFnHi">1</td>
             </tr>
     <tr>
-              <td class="coverFn"><a href="simulation.h.gcov.html#63">mio::Simulation&lt;mio::osir::Model&gt;::set_integrator(std::shared_ptr&lt;mio::IntegratorCore&gt;)</a></td>
+              <td class="coverFn"><a href="simulation.h.gcov.html#96">mio::Simulation&lt;ad::internal::active_type&lt;double, ad::internal::ts_data&lt;double&gt; &gt;, mio::oseair::Model&lt;ad::internal::active_type&lt;double, ad::internal::ts_data&lt;double&gt; &gt; &gt; &gt;::advance(ad::internal::active_type&lt;double, ad::internal::ts_data&lt;double&gt; &gt;)</a></td>
+              <td class="coverFnHi">1</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="simulation.h.gcov.html#52">mio::Simulation&lt;ad::internal::active_type&lt;double, ad::internal::ts_data&lt;double&gt; &gt;, mio::oseair::Model&lt;ad::internal::active_type&lt;double, ad::internal::ts_data&lt;double&gt; &gt; &gt; &gt;::Simulation(mio::oseair::Model&lt;ad::internal::active_type&lt;double, ad::internal::ts_data&lt;double&gt; &gt; &gt; const&amp;, ad::internal::active_type&lt;double, ad::internal::ts_data&lt;double&gt; &gt;, ad::internal::active_type&lt;double, ad::internal::ts_data&lt;double&gt; &gt;)</a></td>
+              <td class="coverFnHi">1</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="simulation.h.gcov.html#65">mio::Simulation&lt;double, mio::oseair::Model&lt;double&gt; &gt;::set_integrator(std::shared_ptr&lt;mio::IntegratorCore&lt;double&gt; &gt;)</a></td>
+              <td class="coverFnHi">1</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="simulation.h.gcov.html#52">mio::Simulation&lt;double, TestCompartmentSimulation_integrator_uses_model_reference_Test::TestBody()::MockModel&gt;::Simulation(TestCompartmentSimulation_integrator_uses_model_reference_Test::TestBody()::MockModel const&amp;, double, double)</a></td>
+              <td class="coverFnHi">1</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="simulation.h.gcov.html#214">mio::TimeSeries&lt;ad::internal::active_type&lt;double, ad::internal::ts_data&lt;double&gt; &gt; &gt; mio::simulate&lt;ad::internal::active_type&lt;double, ad::internal::ts_data&lt;double&gt; &gt;, mio::oseair::Model&lt;ad::internal::active_type&lt;double, ad::internal::ts_data&lt;double&gt; &gt; &gt;, mio::Simulation&lt;ad::internal::active_type&lt;double, ad::internal::ts_data&lt;double&gt; &gt;, mio::oseair::Model&lt;ad::internal::active_type&lt;double, ad::internal::ts_data&lt;double&gt; &gt; &gt; &gt; &gt;(ad::internal::active_type&lt;double, ad::internal::ts_data&lt;double&gt; &gt;, ad::internal::active_type&lt;double, ad::internal::ts_data&lt;double&gt; &gt;, ad::internal::active_type&lt;double, ad::internal::ts_data&lt;double&gt; &gt;, mio::oseair::Model&lt;ad::internal::active_type&lt;double, ad::internal::ts_data&lt;double&gt; &gt; &gt; const&amp;, std::shared_ptr&lt;mio::IntegratorCore&lt;ad::internal::active_type&lt;double, ad::internal::ts_data&lt;double&gt; &gt; &gt; &gt;)</a></td>
+              <td class="coverFnHi">1</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="simulation.h.gcov.html#214">mio::TimeSeries&lt;double&gt; mio::simulate&lt;double, mio::osecirvvs::Model&lt;double&gt;, mio::Simulation&lt;double, mio::osecirvvs::Model&lt;double&gt; &gt; &gt;(double, double, double, mio::osecirvvs::Model&lt;double&gt; const&amp;, std::shared_ptr&lt;mio::IntegratorCore&lt;double&gt; &gt;)</a></td>
+              <td class="coverFnHi">1</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="simulation.h.gcov.html#65">mio::Simulation&lt;double, mio::osir::Model&lt;double&gt; &gt;::set_integrator(std::shared_ptr&lt;mio::IntegratorCore&lt;double&gt; &gt;)</a></td>
               <td class="coverFnHi">2</td>
             </tr>
     <tr>
-              <td class="coverFn"><a href="simulation.h.gcov.html#63">mio::Simulation&lt;mio::ssir::Model&gt;::set_integrator(std::shared_ptr&lt;mio::IntegratorCore&gt;)</a></td>
+              <td class="coverFn"><a href="simulation.h.gcov.html#65">mio::Simulation&lt;double, mio::ssir::Model&gt;::set_integrator(std::shared_ptr&lt;mio::IntegratorCore&lt;double&gt; &gt;)</a></td>
               <td class="coverFnHi">2</td>
             </tr>
     <tr>
-              <td class="coverFn"><a href="simulation.h.gcov.html#50">mio::Simulation&lt;mio::ssir::Model&gt;::Simulation(mio::ssir::Model const&amp;, double, double)</a></td>
+              <td class="coverFn"><a href="simulation.h.gcov.html#52">mio::Simulation&lt;double, mio::ssir::Model&gt;::Simulation(mio::ssir::Model const&amp;, double, double)</a></td>
               <td class="coverFnHi">2</td>
             </tr>
     <tr>
-              <td class="coverFn"><a href="simulation.h.gcov.html#63">mio::Simulation&lt;mio::ssirs::Model&gt;::set_integrator(std::shared_ptr&lt;mio::IntegratorCore&gt;)</a></td>
+              <td class="coverFn"><a href="simulation.h.gcov.html#65">mio::Simulation&lt;double, mio::ssirs::Model&gt;::set_integrator(std::shared_ptr&lt;mio::IntegratorCore&lt;double&gt; &gt;)</a></td>
               <td class="coverFnHi">2</td>
             </tr>
     <tr>
-              <td class="coverFn"><a href="simulation.h.gcov.html#50">mio::Simulation&lt;mio::ssirs::Model&gt;::Simulation(mio::ssirs::Model const&amp;, double, double)</a></td>
+              <td class="coverFn"><a href="simulation.h.gcov.html#52">mio::Simulation&lt;double, mio::ssirs::Model&gt;::Simulation(mio::ssirs::Model const&amp;, double, double)</a></td>
               <td class="coverFnHi">2</td>
             </tr>
     <tr>
-              <td class="coverFn"><a href="simulation.h.gcov.html#109">mio::Simulation&lt;TestCompartmentSimulation_integrator_uses_model_reference_Test::TestBody()::MockModel&gt;::get_result()</a></td>
+              <td class="coverFn"><a href="simulation.h.gcov.html#115">mio::Simulation&lt;double, TestCompartmentSimulation_integrator_uses_model_reference_Test::TestBody()::MockModel&gt;::get_result()</a></td>
               <td class="coverFnHi">2</td>
             </tr>
     <tr>
-              <td class="coverFn"><a href="simulation.h.gcov.html#90">mio::Simulation&lt;TestCompartmentSimulation_integrator_uses_model_reference_Test::TestBody()::MockModel&gt;::advance(double)</a></td>
+              <td class="coverFn"><a href="simulation.h.gcov.html#96">mio::Simulation&lt;double, TestCompartmentSimulation_integrator_uses_model_reference_Test::TestBody()::MockModel&gt;::advance(double)</a></td>
               <td class="coverFnHi">2</td>
             </tr>
     <tr>
-              <td class="coverFn"><a href="simulation.h.gcov.html#200">mio::TimeSeries&lt;double&gt; mio::simulate&lt;mio::osecirvvs::Model, mio::osecirvvs::Simulation&lt;mio::Simulation&lt;mio::osecirvvs::Model&gt; &gt; &gt;(double, double, double, mio::osecirvvs::Model const&amp;, std::shared_ptr&lt;mio::IntegratorCore&gt;)</a></td>
+              <td class="coverFn"><a href="simulation.h.gcov.html#214">mio::TimeSeries&lt;double&gt; mio::simulate&lt;double, mio::osecirvvs::Model&lt;double&gt;, mio::osecirvvs::Simulation&lt;double, mio::Simulation&lt;double, mio::osecirvvs::Model&lt;double&gt; &gt; &gt; &gt;(double, double, double, mio::osecirvvs::Model&lt;double&gt; const&amp;, std::shared_ptr&lt;mio::IntegratorCore&lt;double&gt; &gt;)</a></td>
+              <td class="coverFnHi">2</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="simulation.h.gcov.html#214">mio::TimeSeries&lt;double&gt; mio::simulate&lt;double, mio::osecir::Model&lt;double&gt;, mio::Simulation&lt;double, mio::osecir::Model&lt;double&gt; &gt; &gt;(double, double, double, mio::osecir::Model&lt;double&gt; const&amp;, std::shared_ptr&lt;mio::IntegratorCore&lt;double&gt; &gt;)</a></td>
               <td class="coverFnHi">3</td>
             </tr>
     <tr>
-              <td class="coverFn"><a href="simulation.h.gcov.html#109">mio::Simulation&lt;mio::osir::Model&gt;::get_result()</a></td>
+              <td class="coverFn"><a href="simulation.h.gcov.html#115">mio::Simulation&lt;double, mio::osir::Model&lt;double&gt; &gt;::get_result()</a></td>
               <td class="coverFnHi">4</td>
             </tr>
     <tr>
-              <td class="coverFn"><a href="simulation.h.gcov.html#90">mio::Simulation&lt;mio::osir::Model&gt;::advance(double)</a></td>
+              <td class="coverFn"><a href="simulation.h.gcov.html#96">mio::Simulation&lt;double, mio::osir::Model&lt;double&gt; &gt;::advance(double)</a></td>
               <td class="coverFnHi">4</td>
             </tr>
     <tr>
-              <td class="coverFn"><a href="simulation.h.gcov.html#50">mio::Simulation&lt;mio::osir::Model&gt;::Simulation(mio::osir::Model const&amp;, double, double)</a></td>
+              <td class="coverFn"><a href="simulation.h.gcov.html#52">mio::Simulation&lt;double, mio::osir::Model&lt;double&gt; &gt;::Simulation(mio::osir::Model&lt;double&gt; const&amp;, double, double)</a></td>
               <td class="coverFnHi">4</td>
             </tr>
     <tr>
-              <td class="coverFn"><a href="simulation.h.gcov.html#155">mio::Simulation&lt;mio::ssir::Model&gt;::get_ode_integrator()</a></td>
+              <td class="coverFn"><a href="simulation.h.gcov.html#165">mio::Simulation&lt;double, mio::ssir::Model&gt;::get_ode_integrator()</a></td>
               <td class="coverFnHi">4</td>
             </tr>
     <tr>
-              <td class="coverFn"><a href="simulation.h.gcov.html#155">mio::Simulation&lt;mio::ssirs::Model&gt;::get_ode_integrator()</a></td>
+              <td class="coverFn"><a href="simulation.h.gcov.html#165">mio::Simulation&lt;double, mio::ssirs::Model&gt;::get_ode_integrator()</a></td>
               <td class="coverFnHi">4</td>
             </tr>
     <tr>
-              <td class="coverFn"><a href="simulation.h.gcov.html#155">mio::Simulation&lt;mio::osecir::Model&gt;::get_ode_integrator()</a></td>
+              <td class="coverFn"><a href="simulation.h.gcov.html#165">mio::Simulation&lt;double, mio::osecir::Model&lt;double&gt; &gt;::get_ode_integrator()</a></td>
               <td class="coverFnHi">4</td>
             </tr>
     <tr>
-              <td class="coverFn"><a href="simulation.h.gcov.html#142">mio::Simulation&lt;mio::osecir::Model&gt;::get_dt()</a></td>
+              <td class="coverFn"><a href="simulation.h.gcov.html#152">mio::Simulation&lt;double, mio::osecir::Model&lt;double&gt; &gt;::get_dt()</a></td>
               <td class="coverFnHi">4</td>
             </tr>
     <tr>
-              <td class="coverFn"><a href="simulation.h.gcov.html#200">mio::TimeSeries&lt;double&gt; mio::simulate&lt;mio::osir::Model, mio::Simulation&lt;mio::osir::Model&gt; &gt;(double, double, double, mio::osir::Model const&amp;, std::shared_ptr&lt;mio::IntegratorCore&gt;)</a></td>
+              <td class="coverFn"><a href="simulation.h.gcov.html#214">mio::TimeSeries&lt;double&gt; mio::simulate&lt;double, mio::osir::Model&lt;double&gt;, mio::Simulation&lt;double, mio::osir::Model&lt;double&gt; &gt; &gt;(double, double, double, mio::osir::Model&lt;double&gt; const&amp;, std::shared_ptr&lt;mio::IntegratorCore&lt;double&gt; &gt;)</a></td>
               <td class="coverFnHi">4</td>
             </tr>
     <tr>
-              <td class="coverFn"><a href="simulation.h.gcov.html#200">mio::TimeSeries&lt;double&gt; mio::simulate&lt;mio::oseir::Model, mio::Simulation&lt;mio::oseir::Model&gt; &gt;(double, double, double, mio::oseir::Model const&amp;, std::shared_ptr&lt;mio::IntegratorCore&gt;)</a></td>
+              <td class="coverFn"><a href="simulation.h.gcov.html#214">mio::TimeSeries&lt;double&gt; mio::simulate&lt;double, mio::oseir::Model&lt;double&gt;, mio::Simulation&lt;double, mio::oseir::Model&lt;double&gt; &gt; &gt;(double, double, double, mio::oseir::Model&lt;double&gt; const&amp;, std::shared_ptr&lt;mio::IntegratorCore&lt;double&gt; &gt;)</a></td>
               <td class="coverFnHi">4</td>
             </tr>
     <tr>
-              <td class="coverFn"><a href="simulation.h.gcov.html#63">mio::Simulation&lt;mio::oseir::Model&gt;::set_integrator(std::shared_ptr&lt;mio::IntegratorCore&gt;)</a></td>
+              <td class="coverFn"><a href="simulation.h.gcov.html#115">mio::Simulation&lt;double, mio::oseair::Model&lt;double&gt; &gt;::get_result()</a></td>
+              <td class="coverFnHi">5</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="simulation.h.gcov.html#96">mio::Simulation&lt;double, mio::oseair::Model&lt;double&gt; &gt;::advance(double)</a></td>
+              <td class="coverFnHi">5</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="simulation.h.gcov.html#52">mio::Simulation&lt;double, mio::oseair::Model&lt;double&gt; &gt;::Simulation(mio::oseair::Model&lt;double&gt; const&amp;, double, double)</a></td>
+              <td class="coverFnHi">5</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="simulation.h.gcov.html#214">mio::TimeSeries&lt;double&gt; mio::simulate&lt;double, mio::oseair::Model&lt;double&gt;, mio::Simulation&lt;double, mio::oseair::Model&lt;double&gt; &gt; &gt;(double, double, double, mio::oseair::Model&lt;double&gt; const&amp;, std::shared_ptr&lt;mio::IntegratorCore&lt;double&gt; &gt;)</a></td>
+              <td class="coverFnHi">5</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="simulation.h.gcov.html#140">mio::Simulation&lt;ad::internal::active_type&lt;double, ad::internal::ts_data&lt;double&gt; &gt;, mio::oseair::Model&lt;ad::internal::active_type&lt;double, ad::internal::ts_data&lt;double&gt; &gt; &gt; &gt;::get_model()</a></td>
+              <td class="coverFnHi">6</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="simulation.h.gcov.html#99">auto mio::Simulation&lt;ad::internal::active_type&lt;double, ad::internal::ts_data&lt;double&gt; &gt;, mio::oseair::Model&lt;ad::internal::active_type&lt;double, ad::internal::ts_data&lt;double&gt; &gt; &gt; &gt;::advance(ad::internal::active_type&lt;double, ad::internal::ts_data&lt;double&gt; &gt;)::{lambda(auto:1&amp;&amp;, auto:2&amp;&amp;, auto:3&amp;&amp;)#1}::operator()&lt;Eigen::Ref&lt;Eigen::Matrix&lt;ad::internal::active_type&lt;double, ad::internal::ts_data&lt;double&gt; &gt;, -1, 1, 0, -1, 1&gt; const, 0, Eigen::InnerStride&lt;1&gt; &gt;, ad::internal::active_type&lt;double, ad::internal::ts_data&lt;double&gt; &gt;, Eigen::Ref&lt;Eigen::Matrix&lt;ad::internal::active_type&lt;double, ad::internal::ts_data&lt;double&gt; &gt;, -1, 1, 0, -1, 1&gt;, 0, Eigen::InnerStride&lt;1&gt; &gt; &gt;(Eigen::Ref&lt;Eigen::Matrix&lt;ad::internal::active_type&lt;double, ad::internal::ts_data&lt;double&gt; &gt;, -1, 1, 0, -1, 1&gt; const, 0, Eigen::InnerStride&lt;1&gt; &gt;&amp;&amp;, ad::internal::active_type&lt;double, ad::internal::ts_data&lt;double&gt; &gt;&amp;&amp;, Eigen::Ref&lt;Eigen::Matrix&lt;ad::internal::active_type&lt;double, ad::internal::ts_data&lt;double&gt; &gt;, -1, 1, 0, -1, 1&gt;, 0, Eigen::InnerStride&lt;1&gt; &gt;&amp;&amp;) const</a></td>
+              <td class="coverFnHi">6</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="simulation.h.gcov.html#65">mio::Simulation&lt;double, mio::oseir::Model&lt;double&gt; &gt;::set_integrator(std::shared_ptr&lt;mio::IntegratorCore&lt;double&gt; &gt;)</a></td>
               <td class="coverFnHi">7</td>
             </tr>
     <tr>
-              <td class="coverFn"><a href="simulation.h.gcov.html#50">mio::Simulation&lt;mio::osecirvvs::Model&gt;::Simulation(mio::osecirvvs::Model const&amp;, double, double)</a></td>
+              <td class="coverFn"><a href="simulation.h.gcov.html#52">mio::Simulation&lt;double, mio::osecirvvs::Model&lt;double&gt; &gt;::Simulation(mio::osecirvvs::Model&lt;double&gt; const&amp;, double, double)</a></td>
               <td class="coverFnHi">7</td>
             </tr>
     <tr>
-              <td class="coverFn"><a href="simulation.h.gcov.html#142">mio::Simulation&lt;mio::ssir::Model&gt;::get_dt()</a></td>
+              <td class="coverFn"><a href="simulation.h.gcov.html#152">mio::Simulation&lt;double, mio::ssir::Model&gt;::get_dt()</a></td>
               <td class="coverFnHi">8</td>
             </tr>
     <tr>
-              <td class="coverFn"><a href="simulation.h.gcov.html#142">mio::Simulation&lt;mio::ssirs::Model&gt;::get_dt()</a></td>
+              <td class="coverFn"><a href="simulation.h.gcov.html#152">mio::Simulation&lt;double, mio::ssirs::Model&gt;::get_dt()</a></td>
               <td class="coverFnHi">8</td>
             </tr>
     <tr>
-              <td class="coverFn"><a href="simulation.h.gcov.html#63">mio::Simulation&lt;mio::osecir::Model&gt;::set_integrator(std::shared_ptr&lt;mio::IntegratorCore&gt;)</a></td>
+              <td class="coverFn"><a href="simulation.h.gcov.html#65">mio::Simulation&lt;double, mio::osecir::Model&lt;double&gt; &gt;::set_integrator(std::shared_ptr&lt;mio::IntegratorCore&lt;double&gt; &gt;)</a></td>
               <td class="coverFnHi">8</td>
             </tr>
     <tr>
-              <td class="coverFn"><a href="simulation.h.gcov.html#109">mio::Simulation&lt;mio::ssir::Model&gt;::get_result()</a></td>
+              <td class="coverFn"><a href="simulation.h.gcov.html#115">mio::Simulation&lt;double, mio::ssir::Model&gt;::get_result()</a></td>
               <td class="coverFnHi">12</td>
             </tr>
     <tr>
-              <td class="coverFn"><a href="simulation.h.gcov.html#130">mio::Simulation&lt;mio::ssir::Model&gt;::get_model()</a></td>
+              <td class="coverFn"><a href="simulation.h.gcov.html#140">mio::Simulation&lt;double, mio::ssir::Model&gt;::get_model()</a></td>
               <td class="coverFnHi">12</td>
             </tr>
     <tr>
-              <td class="coverFn"><a href="simulation.h.gcov.html#109">mio::Simulation&lt;mio::ssirs::Model&gt;::get_result()</a></td>
+              <td class="coverFn"><a href="simulation.h.gcov.html#115">mio::Simulation&lt;double, mio::ssirs::Model&gt;::get_result()</a></td>
               <td class="coverFnHi">12</td>
             </tr>
     <tr>
-              <td class="coverFn"><a href="simulation.h.gcov.html#130">mio::Simulation&lt;mio::ssirs::Model&gt;::get_model()</a></td>
+              <td class="coverFn"><a href="simulation.h.gcov.html#140">mio::Simulation&lt;double, mio::ssirs::Model&gt;::get_model()</a></td>
               <td class="coverFnHi">12</td>
             </tr>
     <tr>
-              <td class="coverFn"><a href="simulation.h.gcov.html#200">mio::TimeSeries&lt;double&gt; mio::simulate&lt;mio::osecir::Model, mio::osecir::Simulation&lt;mio::Simulation&lt;mio::osecir::Model&gt; &gt; &gt;(double, double, double, mio::osecir::Model const&amp;, std::shared_ptr&lt;mio::IntegratorCore&gt;)</a></td>
-              <td class="coverFnHi">20</td>
+              <td class="coverFn"><a href="simulation.h.gcov.html#214">mio::TimeSeries&lt;double&gt; mio::simulate&lt;double, mio::osecir::Model&lt;double&gt;, mio::osecir::Simulation&lt;double, mio::Simulation&lt;double, mio::osecir::Model&lt;double&gt; &gt; &gt; &gt;(double, double, double, mio::osecir::Model&lt;double&gt; const&amp;, std::shared_ptr&lt;mio::IntegratorCore&lt;double&gt; &gt;)</a></td>
+              <td class="coverFnHi">17</td>
             </tr>
     <tr>
-              <td class="coverFn"><a href="simulation.h.gcov.html#50">mio::Simulation&lt;mio::oseir::Model&gt;::Simulation(mio::oseir::Model const&amp;, double, double)</a></td>
+              <td class="coverFn"><a href="simulation.h.gcov.html#52">mio::Simulation&lt;double, mio::oseir::Model&lt;double&gt; &gt;::Simulation(mio::oseir::Model&lt;double&gt; const&amp;, double, double)</a></td>
               <td class="coverFnHi">21</td>
             </tr>
     <tr>
-              <td class="coverFn"><a href="simulation.h.gcov.html#93">auto mio::Simulation&lt;TestCompartmentSimulation_integrator_uses_model_reference_Test::TestBody()::MockModel&gt;::advance(double)::{lambda(auto:1&amp;&amp;, auto:2&amp;&amp;, auto:3&amp;&amp;)#1}::operator()&lt;Eigen::Ref&lt;Eigen::Matrix&lt;double, -1, 1, 0, -1, 1&gt; const, 0, Eigen::InnerStride&lt;1&gt; &gt;, double, Eigen::Ref&lt;Eigen::Matrix&lt;double, -1, 1, 0, -1, 1&gt;, 0, Eigen::InnerStride&lt;1&gt; &gt; &gt;(Eigen::Ref&lt;Eigen::Matrix&lt;double, -1, 1, 0, -1, 1&gt; const, 0, Eigen::InnerStride&lt;1&gt; &gt;&amp;&amp;, double&amp;&amp;, Eigen::Ref&lt;Eigen::Matrix&lt;double, -1, 1, 0, -1, 1&gt;, 0, Eigen::InnerStride&lt;1&gt; &gt;&amp;&amp;) const</a></td>
+              <td class="coverFn"><a href="simulation.h.gcov.html#99">auto mio::Simulation&lt;double, TestCompartmentSimulation_integrator_uses_model_reference_Test::TestBody()::MockModel&gt;::advance(double)::{lambda(auto:1&amp;&amp;, auto:2&amp;&amp;, auto:3&amp;&amp;)#1}::operator()&lt;Eigen::Ref&lt;Eigen::Matrix&lt;double, -1, 1, 0, -1, 1&gt; const, 0, Eigen::InnerStride&lt;1&gt; &gt;, double, Eigen::Ref&lt;Eigen::Matrix&lt;double, -1, 1, 0, -1, 1&gt;, 0, Eigen::InnerStride&lt;1&gt; &gt; &gt;(Eigen::Ref&lt;Eigen::Matrix&lt;double, -1, 1, 0, -1, 1&gt; const, 0, Eigen::InnerStride&lt;1&gt; &gt;&amp;&amp;, double&amp;&amp;, Eigen::Ref&lt;Eigen::Matrix&lt;double, -1, 1, 0, -1, 1&gt;, 0, Eigen::InnerStride&lt;1&gt; &gt;&amp;&amp;) const</a></td>
               <td class="coverFnHi">24</td>
             </tr>
     <tr>
-              <td class="coverFn"><a href="simulation.h.gcov.html#130">mio::Simulation&lt;TestCompartmentSimulation_integrator_uses_model_reference_Test::TestBody()::MockModel&gt;::get_model()</a></td>
+              <td class="coverFn"><a href="simulation.h.gcov.html#140">mio::Simulation&lt;double, TestCompartmentSimulation_integrator_uses_model_reference_Test::TestBody()::MockModel&gt;::get_model()</a></td>
               <td class="coverFnHi">25</td>
             </tr>
     <tr>
-              <td class="coverFn"><a href="simulation.h.gcov.html#50">mio::Simulation&lt;mio::osecir::Model&gt;::Simulation(mio::osecir::Model const&amp;, double, double)</a></td>
+              <td class="coverFn"><a href="simulation.h.gcov.html#52">mio::Simulation&lt;double, mio::osecir::Model&lt;double&gt; &gt;::Simulation(mio::osecir::Model&lt;double&gt; const&amp;, double, double)</a></td>
               <td class="coverFnHi">50</td>
             </tr>
     <tr>
-              <td class="coverFn"><a href="simulation.h.gcov.html#90">mio::Simulation&lt;mio::osecirvvs::Model&gt;::advance(double)</a></td>
+              <td class="coverFn"><a href="simulation.h.gcov.html#96">mio::Simulation&lt;double, mio::osecirvvs::Model&lt;double&gt; &gt;::advance(double)</a></td>
               <td class="coverFnHi">62</td>
             </tr>
     <tr>
-              <td class="coverFn"><a href="simulation.h.gcov.html#90">mio::Simulation&lt;mio::osecir::Model&gt;::advance(double)</a></td>
+              <td class="coverFn"><a href="simulation.h.gcov.html#96">mio::Simulation&lt;double, mio::osecir::Model&lt;double&gt; &gt;::advance(double)</a></td>
               <td class="coverFnHi">76</td>
             </tr>
     <tr>
-              <td class="coverFn"><a href="simulation.h.gcov.html#109">mio::Simulation&lt;mio::osecirvvs::Model&gt;::get_result()</a></td>
-              <td class="coverFnHi">112</td>
+              <td class="coverFn"><a href="simulation.h.gcov.html#115">mio::Simulation&lt;double, mio::osecirvvs::Model&lt;double&gt; &gt;::get_result()</a></td>
+              <td class="coverFnHi">109</td>
             </tr>
     <tr>
-              <td class="coverFn"><a href="simulation.h.gcov.html#125">mio::Simulation&lt;mio::osecirvvs::Model&gt;::get_model() const</a></td>
+              <td class="coverFn"><a href="simulation.h.gcov.html#135">mio::Simulation&lt;double, mio::osecirvvs::Model&lt;double&gt; &gt;::get_model() const</a></td>
               <td class="coverFnHi">134</td>
             </tr>
     <tr>
-              <td class="coverFn"><a href="simulation.h.gcov.html#130">mio::Simulation&lt;mio::osir::Model&gt;::get_model()</a></td>
+              <td class="coverFn"><a href="simulation.h.gcov.html#140">mio::Simulation&lt;double, mio::oseair::Model&lt;double&gt; &gt;::get_model()</a></td>
+              <td class="coverFnHi">427</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="simulation.h.gcov.html#99">auto mio::Simulation&lt;double, mio::oseair::Model&lt;double&gt; &gt;::advance(double)::{lambda(auto:1&amp;&amp;, auto:2&amp;&amp;, auto:3&amp;&amp;)#1}::operator()&lt;Eigen::Ref&lt;Eigen::Matrix&lt;double, -1, 1, 0, -1, 1&gt; const, 0, Eigen::InnerStride&lt;1&gt; &gt;, double, Eigen::Ref&lt;Eigen::Matrix&lt;double, -1, 1, 0, -1, 1&gt;, 0, Eigen::InnerStride&lt;1&gt; &gt; &gt;(Eigen::Ref&lt;Eigen::Matrix&lt;double, -1, 1, 0, -1, 1&gt; const, 0, Eigen::InnerStride&lt;1&gt; &gt;&amp;&amp;, double&amp;&amp;, Eigen::Ref&lt;Eigen::Matrix&lt;double, -1, 1, 0, -1, 1&gt;, 0, Eigen::InnerStride&lt;1&gt; &gt;&amp;&amp;) const</a></td>
+              <td class="coverFnHi">427</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="simulation.h.gcov.html#140">mio::Simulation&lt;double, mio::osir::Model&lt;double&gt; &gt;::get_model()</a></td>
               <td class="coverFnHi">493</td>
             </tr>
     <tr>
-              <td class="coverFn"><a href="simulation.h.gcov.html#93">auto mio::Simulation&lt;mio::osir::Model&gt;::advance(double)::{lambda(auto:1&amp;&amp;, auto:2&amp;&amp;, auto:3&amp;&amp;)#1}::operator()&lt;Eigen::Ref&lt;Eigen::Matrix&lt;double, -1, 1, 0, -1, 1&gt; const, 0, Eigen::InnerStride&lt;1&gt; &gt;, double, Eigen::Ref&lt;Eigen::Matrix&lt;double, -1, 1, 0, -1, 1&gt;, 0, Eigen::InnerStride&lt;1&gt; &gt; &gt;(Eigen::Ref&lt;Eigen::Matrix&lt;double, -1, 1, 0, -1, 1&gt; const, 0, Eigen::InnerStride&lt;1&gt; &gt;&amp;&amp;, double&amp;&amp;, Eigen::Ref&lt;Eigen::Matrix&lt;double, -1, 1, 0, -1, 1&gt;, 0, Eigen::InnerStride&lt;1&gt; &gt;&amp;&amp;) const</a></td>
+              <td class="coverFn"><a href="simulation.h.gcov.html#99">auto mio::Simulation&lt;double, mio::osir::Model&lt;double&gt; &gt;::advance(double)::{lambda(auto:1&amp;&amp;, auto:2&amp;&amp;, auto:3&amp;&amp;)#1}::operator()&lt;Eigen::Ref&lt;Eigen::Matrix&lt;double, -1, 1, 0, -1, 1&gt; const, 0, Eigen::InnerStride&lt;1&gt; &gt;, double, Eigen::Ref&lt;Eigen::Matrix&lt;double, -1, 1, 0, -1, 1&gt;, 0, Eigen::InnerStride&lt;1&gt; &gt; &gt;(Eigen::Ref&lt;Eigen::Matrix&lt;double, -1, 1, 0, -1, 1&gt; const, 0, Eigen::InnerStride&lt;1&gt; &gt;&amp;&amp;, double&amp;&amp;, Eigen::Ref&lt;Eigen::Matrix&lt;double, -1, 1, 0, -1, 1&gt;, 0, Eigen::InnerStride&lt;1&gt; &gt;&amp;&amp;) const</a></td>
               <td class="coverFnHi">493</td>
             </tr>
     <tr>
-              <td class="coverFn"><a href="simulation.h.gcov.html#93">auto mio::Simulation&lt;mio::osecirvvs::Model&gt;::advance(double)::{lambda(auto:1&amp;&amp;, auto:2&amp;&amp;, auto:3&amp;&amp;)#1}::operator()&lt;Eigen::Ref&lt;Eigen::Matrix&lt;double, -1, 1, 0, -1, 1&gt; const, 0, Eigen::InnerStride&lt;1&gt; &gt;, double, Eigen::Ref&lt;Eigen::Matrix&lt;double, -1, 1, 0, -1, 1&gt;, 0, Eigen::InnerStride&lt;1&gt; &gt; &gt;(Eigen::Ref&lt;Eigen::Matrix&lt;double, -1, 1, 0, -1, 1&gt; const, 0, Eigen::InnerStride&lt;1&gt; &gt;&amp;&amp;, double&amp;&amp;, Eigen::Ref&lt;Eigen::Matrix&lt;double, -1, 1, 0, -1, 1&gt;, 0, Eigen::InnerStride&lt;1&gt; &gt;&amp;&amp;) const</a></td>
+              <td class="coverFn"><a href="simulation.h.gcov.html#115">mio::Simulation&lt;double, mio::osecir::Model&lt;double&gt; &gt;::get_result()</a></td>
+              <td class="coverFnHi">638</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="simulation.h.gcov.html#99">auto mio::Simulation&lt;double, mio::osecirvvs::Model&lt;double&gt; &gt;::advance(double)::{lambda(auto:1&amp;&amp;, auto:2&amp;&amp;, auto:3&amp;&amp;)#1}::operator()&lt;Eigen::Ref&lt;Eigen::Matrix&lt;double, -1, 1, 0, -1, 1&gt; const, 0, Eigen::InnerStride&lt;1&gt; &gt;, double, Eigen::Ref&lt;Eigen::Matrix&lt;double, -1, 1, 0, -1, 1&gt;, 0, Eigen::InnerStride&lt;1&gt; &gt; &gt;(Eigen::Ref&lt;Eigen::Matrix&lt;double, -1, 1, 0, -1, 1&gt; const, 0, Eigen::InnerStride&lt;1&gt; &gt;&amp;&amp;, double&amp;&amp;, Eigen::Ref&lt;Eigen::Matrix&lt;double, -1, 1, 0, -1, 1&gt;, 0, Eigen::InnerStride&lt;1&gt; &gt;&amp;&amp;) const</a></td>
               <td class="coverFnHi">768</td>
             </tr>
     <tr>
-              <td class="coverFn"><a href="simulation.h.gcov.html#109">mio::Simulation&lt;mio::osecir::Model&gt;::get_result()</a></td>
-              <td class="coverFnHi">790</td>
+              <td class="coverFn"><a href="simulation.h.gcov.html#140">mio::Simulation&lt;double, mio::osecirvvs::Model&lt;double&gt; &gt;::get_model()</a></td>
+              <td class="coverFnHi">1002</td>
             </tr>
     <tr>
-              <td class="coverFn"><a href="simulation.h.gcov.html#130">mio::Simulation&lt;mio::osecirvvs::Model&gt;::get_model()</a></td>
-              <td class="coverFnHi">1012</td>
-            </tr>
-    <tr>
-              <td class="coverFn"><a href="simulation.h.gcov.html#114">mio::Simulation&lt;mio::osecir::Model&gt;::get_result() const</a></td>
+              <td class="coverFn"><a href="simulation.h.gcov.html#124">mio::Simulation&lt;double, mio::osecir::Model&lt;double&gt; &gt;::get_result() const</a></td>
               <td class="coverFnHi">1113</td>
             </tr>
     <tr>
-              <td class="coverFn"><a href="simulation.h.gcov.html#125">mio::Simulation&lt;mio::osecir::Model&gt;::get_model() const</a></td>
+              <td class="coverFn"><a href="simulation.h.gcov.html#135">mio::Simulation&lt;double, mio::osecir::Model&lt;double&gt; &gt;::get_model() const</a></td>
               <td class="coverFnHi">1142</td>
             </tr>
     <tr>
-              <td class="coverFn"><a href="simulation.h.gcov.html#155">mio::Simulation&lt;mio::oseir::Model&gt;::get_ode_integrator()</a></td>
+              <td class="coverFn"><a href="simulation.h.gcov.html#165">mio::Simulation&lt;double, mio::oseir::Model&lt;double&gt; &gt;::get_ode_integrator()</a></td>
               <td class="coverFnHi">3003</td>
             </tr>
     <tr>
-              <td class="coverFn"><a href="simulation.h.gcov.html#142">mio::Simulation&lt;mio::oseir::Model&gt;::get_dt()</a></td>
+              <td class="coverFn"><a href="simulation.h.gcov.html#152">mio::Simulation&lt;double, mio::oseir::Model&lt;double&gt; &gt;::get_dt()</a></td>
               <td class="coverFnHi">3039</td>
             </tr>
     <tr>
-              <td class="coverFn"><a href="simulation.h.gcov.html#90">mio::Simulation&lt;mio::oseir::Model&gt;::advance(double)</a></td>
-              <td class="coverFnHi">3086</td>
+              <td class="coverFn"><a href="simulation.h.gcov.html#96">mio::Simulation&lt;double, mio::oseir::Model&lt;double&gt; &gt;::advance(double)</a></td>
+              <td class="coverFnHi">3088</td>
             </tr>
     <tr>
-              <td class="coverFn"><a href="simulation.h.gcov.html#125">mio::Simulation&lt;mio::oseir::Model&gt;::get_model() const</a></td>
+              <td class="coverFn"><a href="simulation.h.gcov.html#135">mio::Simulation&lt;double, mio::oseir::Model&lt;double&gt; &gt;::get_model() const</a></td>
               <td class="coverFnHi">5988</td>
             </tr>
     <tr>
-              <td class="coverFn"><a href="simulation.h.gcov.html#93">auto mio::Simulation&lt;mio::osecir::Model&gt;::advance(double)::{lambda(auto:1&amp;&amp;, auto:2&amp;&amp;, auto:3&amp;&amp;)#1}::operator()&lt;Eigen::Ref&lt;Eigen::Matrix&lt;double, -1, 1, 0, -1, 1&gt; const, 0, Eigen::InnerStride&lt;1&gt; &gt;, double, Eigen::Ref&lt;Eigen::Matrix&lt;double, -1, 1, 0, -1, 1&gt;, 0, Eigen::InnerStride&lt;1&gt; &gt; &gt;(Eigen::Ref&lt;Eigen::Matrix&lt;double, -1, 1, 0, -1, 1&gt; const, 0, Eigen::InnerStride&lt;1&gt; &gt;&amp;&amp;, double&amp;&amp;, Eigen::Ref&lt;Eigen::Matrix&lt;double, -1, 1, 0, -1, 1&gt;, 0, Eigen::InnerStride&lt;1&gt; &gt;&amp;&amp;) const</a></td>
-              <td class="coverFnHi">16320</td>
+              <td class="coverFn"><a href="simulation.h.gcov.html#99">auto mio::Simulation&lt;double, mio::oseir::Model&lt;double&gt; &gt;::advance(double)::{lambda(auto:1&amp;&amp;, auto:2&amp;&amp;, auto:3&amp;&amp;)#1}::operator()&lt;Eigen::Ref&lt;Eigen::Matrix&lt;double, -1, 1, 0, -1, 1&gt; const, 0, Eigen::InnerStride&lt;1&gt; &gt;, double, Eigen::Ref&lt;Eigen::Matrix&lt;double, -1, 1, 0, -1, 1&gt;, 0, Eigen::InnerStride&lt;1&gt; &gt; &gt;(Eigen::Ref&lt;Eigen::Matrix&lt;double, -1, 1, 0, -1, 1&gt; const, 0, Eigen::InnerStride&lt;1&gt; &gt;&amp;&amp;, double&amp;&amp;, Eigen::Ref&lt;Eigen::Matrix&lt;double, -1, 1, 0, -1, 1&gt;, 0, Eigen::InnerStride&lt;1&gt; &gt;&amp;&amp;) const</a></td>
+              <td class="coverFnHi">18927</td>
             </tr>
     <tr>
-              <td class="coverFn"><a href="simulation.h.gcov.html#130">mio::Simulation&lt;mio::osecir::Model&gt;::get_model()</a></td>
-              <td class="coverFnHi">16514</td>
+              <td class="coverFn"><a href="simulation.h.gcov.html#140">mio::Simulation&lt;double, mio::oseir::Model&lt;double&gt; &gt;::get_model()</a></td>
+              <td class="coverFnHi">40003</td>
             </tr>
     <tr>
-              <td class="coverFn"><a href="simulation.h.gcov.html#93">auto mio::Simulation&lt;mio::oseir::Model&gt;::advance(double)::{lambda(auto:1&amp;&amp;, auto:2&amp;&amp;, auto:3&amp;&amp;)#1}::operator()&lt;Eigen::Ref&lt;Eigen::Matrix&lt;double, -1, 1, 0, -1, 1&gt; const, 0, Eigen::InnerStride&lt;1&gt; &gt;, double, Eigen::Ref&lt;Eigen::Matrix&lt;double, -1, 1, 0, -1, 1&gt;, 0, Eigen::InnerStride&lt;1&gt; &gt; &gt;(Eigen::Ref&lt;Eigen::Matrix&lt;double, -1, 1, 0, -1, 1&gt; const, 0, Eigen::InnerStride&lt;1&gt; &gt;&amp;&amp;, double&amp;&amp;, Eigen::Ref&lt;Eigen::Matrix&lt;double, -1, 1, 0, -1, 1&gt;, 0, Eigen::InnerStride&lt;1&gt; &gt;&amp;&amp;) const</a></td>
-              <td class="coverFnHi">18915</td>
+              <td class="coverFn"><a href="simulation.h.gcov.html#99">auto mio::Simulation&lt;double, mio::osecir::Model&lt;double&gt; &gt;::advance(double)::{lambda(auto:1&amp;&amp;, auto:2&amp;&amp;, auto:3&amp;&amp;)#1}::operator()&lt;Eigen::Ref&lt;Eigen::Matrix&lt;double, -1, 1, 0, -1, 1&gt; const, 0, Eigen::InnerStride&lt;1&gt; &gt;, double, Eigen::Ref&lt;Eigen::Matrix&lt;double, -1, 1, 0, -1, 1&gt;, 0, Eigen::InnerStride&lt;1&gt; &gt; &gt;(Eigen::Ref&lt;Eigen::Matrix&lt;double, -1, 1, 0, -1, 1&gt; const, 0, Eigen::InnerStride&lt;1&gt; &gt;&amp;&amp;, double&amp;&amp;, Eigen::Ref&lt;Eigen::Matrix&lt;double, -1, 1, 0, -1, 1&gt;, 0, Eigen::InnerStride&lt;1&gt; &gt;&amp;&amp;) const</a></td>
+              <td class="coverFnHi">44088</td>
             </tr>
     <tr>
-              <td class="coverFn"><a href="simulation.h.gcov.html#130">mio::Simulation&lt;mio::oseir::Model&gt;::get_model()</a></td>
-              <td class="coverFnHi">39991</td>
+              <td class="coverFn"><a href="simulation.h.gcov.html#140">mio::Simulation&lt;double, mio::osecir::Model&lt;double&gt; &gt;::get_model()</a></td>
+              <td class="coverFnHi">44254</td>
             </tr>
     <tr>
-              <td class="coverFn"><a href="simulation.h.gcov.html#109">mio::Simulation&lt;mio::oseir::Model&gt;::get_result()</a></td>
-              <td class="coverFnHi">102159</td>
+              <td class="coverFn"><a href="simulation.h.gcov.html#115">mio::Simulation&lt;double, mio::oseir::Model&lt;double&gt; &gt;::get_result()</a></td>
+              <td class="coverFnHi">102167</td>
             </tr>
   </table>
   <br>

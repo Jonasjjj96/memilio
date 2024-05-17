@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2024-05-16 15:49:56</td>
+            <td class="headerValue">2024-05-17 10:31:17</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">6</td>
@@ -178,7 +178,7 @@
 <a name="116"><span class="lineNum">     116 </span><span class="lineCov">          6 :     BOOST_OUTCOME_TRY(create_directory(result_dir_run.string()));</span></a>
 <a name="117"><span class="lineNum">     117 </span><span class="lineCov">         15 :     BOOST_OUTCOME_TRY(save_result(result, county_ids, (int)(size_t)params[0].parameters.get_num_groups(),</span></a>
 <a name="118"><span class="lineNum">     118 </span>            :                                   (result_dir_run / &quot;Result.h5&quot;).string()));</a>
-<a name="119"><span class="lineNum">     119 </span><span class="lineCov">          9 :     BOOST_OUTCOME_TRY(write_graph(create_graph_without_edges&lt;Model, MigrationParameters&gt;(params, county_ids),</span></a>
+<a name="119"><span class="lineNum">     119 </span><span class="lineCov">          9 :     BOOST_OUTCOME_TRY(write_graph(create_graph_without_edges&lt;Model, MigrationParameters&lt;double&gt;&gt;(params, county_ids),</span></a>
 <a name="120"><span class="lineNum">     120 </span>            :                                   result_dir_run.string(), IOF_OmitDistributions));</a>
 <a name="121"><span class="lineNum">     121 </span><span class="lineCov">          6 :     return success();</span></a>
 <a name="122"><span class="lineNum">     122 </span>            : }</a>
@@ -273,7 +273,7 @@
 <a name="211"><span class="lineNum">     211 </span><span class="lineCov">          1 :             auto ensemble_params_p95 = ensemble_params_percentile(ensemble_params, 0.95);</span></a>
 <a name="212"><span class="lineNum">     212 </span>            : </a>
 <a name="213"><span class="lineNum">     213 </span><span class="lineCov">          6 :             auto make_graph = [&amp;county_ids](auto&amp;&amp; params) {</span></a>
-<a name="214"><span class="lineNum">     214 </span><span class="lineCov">          5 :                 return create_graph_without_edges&lt;Model, MigrationParameters&gt;(params, county_ids);</span></a>
+<a name="214"><span class="lineNum">     214 </span><span class="lineCov">          5 :                 return create_graph_without_edges&lt;Model, MigrationParameters&lt;double&gt;&gt;(params, county_ids);</span></a>
 <a name="215"><span class="lineNum">     215 </span>            :             };</a>
 <a name="216"><span class="lineNum">     216 </span><span class="lineCov">          2 :             BOOST_OUTCOME_TRY(</span></a>
 <a name="217"><span class="lineNum">     217 </span>            :                 write_graph(make_graph(ensemble_params_p05), result_dir_p05.string(), IOF_OmitDistributions));</a>

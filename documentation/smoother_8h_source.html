@@ -107,7 +107,7 @@ $(function() {
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keywordflow">return</span> yright;</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    }</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordflow">return</span> 0.5 * (yleft - yright) * std::cos(3.14159265358979323846 / (xright - xleft) * (x - xleft)) +</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordflow">return</span> 0.5 * (yleft - yright) * <a class="code" href="namespacead_1_1internal.html#aafb7f48d6eb8a584795198963fd7edd9">std::cos</a>(3.14159265358979323846 / (xright - xleft) * (x - xleft)) +</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;           0.5 * (yleft + yright);</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;}</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
@@ -124,6 +124,7 @@ $(function() {
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="preprocessor">#endif </span><span class="comment">//EPI_MATH_SMOOTHER_H</span></div>
 <div class="ttc" id="aeigen_8h_html"><div class="ttname"><a href="eigen_8h.html">eigen.h</a></div></div>
+<div class="ttc" id="anamespacead_1_1internal_html_aafb7f48d6eb8a584795198963fd7edd9"><div class="ttname"><a href="namespacead_1_1internal.html#aafb7f48d6eb8a584795198963fd7edd9">ad::internal::cos</a></div><div class="ttdeci">ad::internal::unary_intermediate&lt; AD_TAPE_REAL, ad::internal::active_type&lt; AD_TAPE_REAL, DATA_HANDLER_1 &gt;, ad::operations::ad_cos&lt; AD_TAPE_REAL &gt; &gt; cos(const ad::internal::active_type&lt; AD_TAPE_REAL, DATA_HANDLER_1 &gt; &amp;x1)</div><div class="ttdef"><b>Definition:</b> ad.hpp:924</div></div>
 <div class="ttc" id="anamespacemio_html"><div class="ttname"><a href="namespacemio.html">mio</a></div><div class="ttdoc">A collection of classes to simplify handling of matrix shapes in meta programming.</div><div class="ttdef"><b>Definition:</b> compartmentalmodel.h:33</div></div>
 <div class="ttc" id="anamespacemio_html_a472d6437e9b34e277b8ccc551b0630b8"><div class="ttname"><a href="namespacemio.html#a472d6437e9b34e277b8ccc551b0630b8">mio::smoother_cosine</a></div><div class="ttdeci">double smoother_cosine(double x, double xleft, double xright, double yleft, double yright)</div><div class="ttdoc">Returns the smoothed evaluation of a discrete jump of function values   yleft and yright on xleft and...</div><div class="ttdef"><b>Definition:</b> smoother.h:43</div></div>
 </div><!-- fragment --></div><!-- contents -->

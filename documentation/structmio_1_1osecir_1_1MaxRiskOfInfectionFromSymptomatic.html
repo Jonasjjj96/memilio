@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>MEmilio: mio::osecir::MaxRiskOfInfectionFromSymptomatic Struct Reference</title>
+<title>MEmilio: mio::osecir::MaxRiskOfInfectionFromSymptomatic&lt; FP &gt; Struct Template Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -71,7 +71,7 @@ $(function() {
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="structmio_1_1osecir_1_1MaxRiskOfInfectionFromSymptomatic-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">mio::osecir::MaxRiskOfInfectionFromSymptomatic Struct Reference</div>  </div>
+<div class="title">mio::osecir::MaxRiskOfInfectionFromSymptomatic&lt; FP &gt; Struct Template Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
@@ -82,27 +82,32 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:af916a6ed6095960f14f56e925b9fbafe"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmio_1_1osecir_1_1MaxRiskOfInfectionFromSymptomatic.html#af916a6ed6095960f14f56e925b9fbafe">Type</a> = <a class="el" href="classmio_1_1CustomIndexArray.html">CustomIndexArray</a>&lt; <a class="el" href="classmio_1_1UncertainValue.html">UncertainValue</a>, <a class="el" href="structmio_1_1AgeGroup.html">AgeGroup</a> &gt;</td></tr>
-<tr class="separator:af916a6ed6095960f14f56e925b9fbafe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a52877ce836031ed3f709d83fce428712"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmio_1_1osecir_1_1MaxRiskOfInfectionFromSymptomatic.html#a52877ce836031ed3f709d83fce428712">Type</a> = <a class="el" href="classmio_1_1CustomIndexArray.html">CustomIndexArray</a>&lt; <a class="el" href="classmio_1_1UncertainValue.html">UncertainValue</a>&lt; FP &gt;, <a class="el" href="structmio_1_1AgeGroup.html">AgeGroup</a> &gt;</td></tr>
+<tr class="separator:a52877ce836031ed3f709d83fce428712"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a972133dec03f527dcfd6c3320ff9a887"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="structmio_1_1osecir_1_1MaxRiskOfInfectionFromSymptomatic.html#af916a6ed6095960f14f56e925b9fbafe">Type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmio_1_1osecir_1_1MaxRiskOfInfectionFromSymptomatic.html#a972133dec03f527dcfd6c3320ff9a887">get_default</a> (<a class="el" href="structmio_1_1AgeGroup.html">AgeGroup</a> size)</td></tr>
-<tr class="separator:a972133dec03f527dcfd6c3320ff9a887"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab454c9e7489f2473e34b09de0a193f6c"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmio_1_1osecir_1_1MaxRiskOfInfectionFromSymptomatic.html#ab454c9e7489f2473e34b09de0a193f6c">name</a> ()</td></tr>
-<tr class="separator:ab454c9e7489f2473e34b09de0a193f6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abce77cf28e953f9aefb2ebdd369401f3"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="structmio_1_1osecir_1_1MaxRiskOfInfectionFromSymptomatic.html#a52877ce836031ed3f709d83fce428712">Type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmio_1_1osecir_1_1MaxRiskOfInfectionFromSymptomatic.html#abce77cf28e953f9aefb2ebdd369401f3">get_default</a> (<a class="el" href="structmio_1_1AgeGroup.html">AgeGroup</a> size)</td></tr>
+<tr class="separator:abce77cf28e953f9aefb2ebdd369401f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abfb89142d4863d8b637ade566b2458a0"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmio_1_1osecir_1_1MaxRiskOfInfectionFromSymptomatic.html#abfb89142d4863d8b637ade566b2458a0">name</a> ()</td></tr>
+<tr class="separator:abfb89142d4863d8b637ade566b2458a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>risk of infection from symptomatic cases increases as test and trace capacity is exceeded. </p>
+<div class="textblock"><h3>template&lt;typename FP = double&gt;<br />
+struct mio::osecir::MaxRiskOfInfectionFromSymptomatic&lt; FP &gt;</h3>
+
+<p>risk of infection from symptomatic cases increases as test and trace capacity is exceeded. </p>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
-<a id="af916a6ed6095960f14f56e925b9fbafe"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af916a6ed6095960f14f56e925b9fbafe">&#9670;&nbsp;</a></span>Type</h2>
+<a id="a52877ce836031ed3f709d83fce428712"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a52877ce836031ed3f709d83fce428712">&#9670;&nbsp;</a></span>Type</h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;typename FP  = double&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="structmio_1_1osecir_1_1MaxRiskOfInfectionFromSymptomatic.html#af916a6ed6095960f14f56e925b9fbafe">mio::osecir::MaxRiskOfInfectionFromSymptomatic::Type</a> =  <a class="el" href="classmio_1_1CustomIndexArray.html">CustomIndexArray</a>&lt;<a class="el" href="classmio_1_1UncertainValue.html">UncertainValue</a>, <a class="el" href="structmio_1_1AgeGroup.html">AgeGroup</a>&gt;</td>
+          <td class="memname">using <a class="el" href="structmio_1_1osecir_1_1MaxRiskOfInfectionFromSymptomatic.html">mio::osecir::MaxRiskOfInfectionFromSymptomatic</a>&lt; FP &gt;::<a class="el" href="structmio_1_1osecir_1_1MaxRiskOfInfectionFromSymptomatic.html#a52877ce836031ed3f709d83fce428712">Type</a> =  <a class="el" href="classmio_1_1CustomIndexArray.html">CustomIndexArray</a>&lt;<a class="el" href="classmio_1_1UncertainValue.html">UncertainValue</a>&lt;FP&gt;, <a class="el" href="structmio_1_1AgeGroup.html">AgeGroup</a>&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -110,17 +115,19 @@ Static Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a972133dec03f527dcfd6c3320ff9a887"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a972133dec03f527dcfd6c3320ff9a887">&#9670;&nbsp;</a></span>get_default()</h2>
+<a id="abce77cf28e953f9aefb2ebdd369401f3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abce77cf28e953f9aefb2ebdd369401f3">&#9670;&nbsp;</a></span>get_default()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;typename FP  = double&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="structmio_1_1osecir_1_1MaxRiskOfInfectionFromSymptomatic.html#af916a6ed6095960f14f56e925b9fbafe">Type</a> mio::osecir::MaxRiskOfInfectionFromSymptomatic::get_default </td>
+          <td class="memname">static <a class="el" href="structmio_1_1osecir_1_1MaxRiskOfInfectionFromSymptomatic.html#a52877ce836031ed3f709d83fce428712">Type</a> <a class="el" href="structmio_1_1osecir_1_1MaxRiskOfInfectionFromSymptomatic.html">mio::osecir::MaxRiskOfInfectionFromSymptomatic</a>&lt; FP &gt;::get_default </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structmio_1_1AgeGroup.html">AgeGroup</a>&#160;</td>
           <td class="paramname"><em>size</em></td><td>)</td>
@@ -136,17 +143,19 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ab454c9e7489f2473e34b09de0a193f6c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab454c9e7489f2473e34b09de0a193f6c">&#9670;&nbsp;</a></span>name()</h2>
+<a id="abfb89142d4863d8b637ade566b2458a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abfb89142d4863d8b637ade566b2458a0">&#9670;&nbsp;</a></span>name()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;typename FP  = double&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static std::string mio::osecir::MaxRiskOfInfectionFromSymptomatic::name </td>
+          <td class="memname">static std::string <a class="el" href="structmio_1_1osecir_1_1MaxRiskOfInfectionFromSymptomatic.html">mio::osecir::MaxRiskOfInfectionFromSymptomatic</a>&lt; FP &gt;::name </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>

@@ -75,6 +75,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="time__series_8h_source.html">memilio/utils/time_series.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="logging_8h_source.html">memilio/utils/logging.h</a>&quot;</code><br />
 <code>#include &lt;memory&gt;</code><br />
 <code>#include &lt;functional&gt;</code><br />
 </div>
@@ -82,9 +83,9 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1IntegratorCore.html">mio::IntegratorCore</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1IntegratorCore.html">mio::IntegratorCore&lt; FP &gt;</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1OdeIntegrator.html">mio::OdeIntegrator</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1OdeIntegrator.html">mio::OdeIntegrator&lt; FP &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Integrate initial value problems (IVP) of ordinary differential equations (ODE) of the form y' = f(y, t), y(t0) = y0.  <a href="classmio_1_1OdeIntegrator.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -96,9 +97,10 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:a6164d4e8f4df5089a14e927650c5a638"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemio.html#a6164d4e8f4df5089a14e927650c5a638">mio::DerivFunction</a> = std::function&lt; void(Eigen::Ref&lt; const Eigen::VectorXd &gt; y, double t, Eigen::Ref&lt; Eigen::VectorXd &gt; dydt)&gt;</td></tr>
-<tr class="memdesc:a6164d4e8f4df5089a14e927650c5a638"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function template to be integrated.  <a href="namespacemio.html#a6164d4e8f4df5089a14e927650c5a638">More...</a><br /></td></tr>
-<tr class="separator:a6164d4e8f4df5089a14e927650c5a638"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a79d7d0d1b2caddc5ad68e40935ef477a"><td class="memTemplParams" colspan="2">template&lt;typename FP  = double&gt; </td></tr>
+<tr class="memitem:a79d7d0d1b2caddc5ad68e40935ef477a"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemio.html#a79d7d0d1b2caddc5ad68e40935ef477a">mio::DerivFunction</a> = std::function&lt; void(Eigen::Ref&lt; const <a class="el" href="namespacemio.html#a4980272f784bde5ee00a3385538950de">mio::Vector</a>&lt; FP &gt; &gt; y, FP t, Eigen::Ref&lt; <a class="el" href="namespacemio.html#a4980272f784bde5ee00a3385538950de">mio::Vector</a>&lt; FP &gt; &gt; dydt)&gt;</td></tr>
+<tr class="memdesc:a79d7d0d1b2caddc5ad68e40935ef477a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function template to be integrated.  <a href="namespacemio.html#a79d7d0d1b2caddc5ad68e40935ef477a">More...</a><br /></td></tr>
+<tr class="separator:a79d7d0d1b2caddc5ad68e40935ef477a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- start footer part -->

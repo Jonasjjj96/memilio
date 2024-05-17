@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>MEmilio: mio::IntegratorCore Class Reference</title>
+<title>MEmilio: mio::IntegratorCore&lt; FP &gt; Class Template Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -70,43 +70,34 @@ $(function() {
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="classmio_1_1IntegratorCore-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">mio::IntegratorCore Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
+<div class="title">mio::IntegratorCore&lt; FP &gt; Class Template Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
 </div><!--header-->
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="integrator_8h_source.html">integrator.h</a>&gt;</code></p>
-<div class="dynheader">
-Inheritance diagram for mio::IntegratorCore:</div>
-<div class="dyncontent">
- <div class="center">
-  <img src="classmio_1_1IntegratorCore.png" usemap="#mio::IntegratorCore_map" alt=""/>
-  <map id="mio::IntegratorCore_map" name="mio::IntegratorCore_map">
-<area href="classmio_1_1ControlledStepperWrapper.html" title="Creates and manages an instance of a boost::numeric::odeint::controlled_runge_kutta integrator,..." alt="mio::ControlledStepperWrapper&lt; ControlledStepper &gt;" shape="rect" coords="0,56,314,80"/>
-<area href="classmio_1_1EulerIntegratorCore.html" title="Simple explicit euler integration y(t+1) = y(t) + h*f(t,y) for ODE y&#39;(t) = f(t,y)" alt="mio::EulerIntegratorCore" shape="rect" coords="324,56,638,80"/>
-<area href="classmio_1_1RKIntegratorCore.html" title="Two scheme Runge-Kutta numerical integrator with adaptive step width." alt="mio::RKIntegratorCore" shape="rect" coords="648,56,962,80"/>
-  </map>
-</div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a5b3dd3a133ced17654f1d63b466c1ee9"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1IntegratorCore.html#a5b3dd3a133ced17654f1d63b466c1ee9">step</a> (const <a class="el" href="namespacemio.html#a6164d4e8f4df5089a14e927650c5a638">DerivFunction</a> &amp;f, Eigen::Ref&lt; const Eigen::VectorXd &gt; yt, double &amp;t, double &amp;dt, Eigen::Ref&lt; Eigen::VectorXd &gt; ytp1) const =0</td></tr>
-<tr class="memdesc:a5b3dd3a133ced17654f1d63b466c1ee9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Make a single integration step.  <a href="classmio_1_1IntegratorCore.html#a5b3dd3a133ced17654f1d63b466c1ee9">More...</a><br /></td></tr>
-<tr class="separator:a5b3dd3a133ced17654f1d63b466c1ee9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af5118fda75274c86472e7c1dfc4a6479"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1IntegratorCore.html#af5118fda75274c86472e7c1dfc4a6479">~IntegratorCore</a> ()</td></tr>
-<tr class="separator:af5118fda75274c86472e7c1dfc4a6479"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a985f7da343d8ac4fd4a89ce35e1fbf2e"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1IntegratorCore.html#a985f7da343d8ac4fd4a89ce35e1fbf2e">step</a> (const <a class="el" href="namespacemio.html#a79d7d0d1b2caddc5ad68e40935ef477a">DerivFunction</a>&lt; FP &gt; &amp;f, Eigen::Ref&lt; const <a class="el" href="namespacemio.html#a4980272f784bde5ee00a3385538950de">Vector</a>&lt; FP &gt;&gt; yt, FP &amp;t, FP &amp;dt, Eigen::Ref&lt; <a class="el" href="namespacemio.html#a4980272f784bde5ee00a3385538950de">Vector</a>&lt; FP &gt;&gt; ytp1) const =0</td></tr>
+<tr class="memdesc:a985f7da343d8ac4fd4a89ce35e1fbf2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Make a single integration step.  <a href="classmio_1_1IntegratorCore.html#a985f7da343d8ac4fd4a89ce35e1fbf2e">More...</a><br /></td></tr>
+<tr class="separator:a985f7da343d8ac4fd4a89ce35e1fbf2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab3d8fda3027e7d46baf161b781185f99"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1IntegratorCore.html#ab3d8fda3027e7d46baf161b781185f99">~IntegratorCore</a> ()</td></tr>
+<tr class="separator:ab3d8fda3027e7d46baf161b781185f99"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="af5118fda75274c86472e7c1dfc4a6479"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af5118fda75274c86472e7c1dfc4a6479">&#9670;&nbsp;</a></span>~IntegratorCore()</h2>
+<a id="ab3d8fda3027e7d46baf161b781185f99"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab3d8fda3027e7d46baf161b781185f99">&#9670;&nbsp;</a></span>~IntegratorCore()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;typename FP  = double&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual mio::IntegratorCore::~IntegratorCore </td>
+          <td class="memname">virtual <a class="el" href="classmio_1_1IntegratorCore.html">mio::IntegratorCore</a>&lt; FP &gt;::~<a class="el" href="classmio_1_1IntegratorCore.html">IntegratorCore</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -122,43 +113,45 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a5b3dd3a133ced17654f1d63b466c1ee9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5b3dd3a133ced17654f1d63b466c1ee9">&#9670;&nbsp;</a></span>step()</h2>
+<a id="a985f7da343d8ac4fd4a89ce35e1fbf2e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a985f7da343d8ac4fd4a89ce35e1fbf2e">&#9670;&nbsp;</a></span>step()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;typename FP  = double&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual bool mio::IntegratorCore::step </td>
+          <td class="memname">virtual bool <a class="el" href="classmio_1_1IntegratorCore.html">mio::IntegratorCore</a>&lt; FP &gt;::step </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="namespacemio.html#a6164d4e8f4df5089a14e927650c5a638">DerivFunction</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="namespacemio.html#a79d7d0d1b2caddc5ad68e40935ef477a">DerivFunction</a>&lt; FP &gt; &amp;&#160;</td>
           <td class="paramname"><em>f</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">Eigen::Ref&lt; const Eigen::VectorXd &gt;&#160;</td>
+          <td class="paramtype">Eigen::Ref&lt; const <a class="el" href="namespacemio.html#a4980272f784bde5ee00a3385538950de">Vector</a>&lt; FP &gt;&gt;&#160;</td>
           <td class="paramname"><em>yt</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">double &amp;&#160;</td>
+          <td class="paramtype">FP &amp;&#160;</td>
           <td class="paramname"><em>t</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">double &amp;&#160;</td>
+          <td class="paramtype">FP &amp;&#160;</td>
           <td class="paramname"><em>dt</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">Eigen::Ref&lt; Eigen::VectorXd &gt;&#160;</td>
+          <td class="paramtype">Eigen::Ref&lt; <a class="el" href="namespacemio.html#a4980272f784bde5ee00a3385538950de">Vector</a>&lt; FP &gt;&gt;&#160;</td>
           <td class="paramname"><em>ytp1</em>&#160;</td>
         </tr>
         <tr>
@@ -187,8 +180,6 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Always true for nonadaptive methods. (If adaptive, returns whether the adaptive step sizing was successful.) </dd></dl>
-
-<p>Implemented in <a class="el" href="classmio_1_1ControlledStepperWrapper.html#ac95b744a0349378bfbf7fac4266b35d8">mio::ControlledStepperWrapper&lt; ControlledStepper &gt;</a>, <a class="el" href="classmio_1_1RKIntegratorCore.html#ad6c8479ddbd8e1580d237db1984bbb5b">mio::RKIntegratorCore</a>, and <a class="el" href="classmio_1_1EulerIntegratorCore.html#a62a7d82ed0f292f427d0a238462c34cc">mio::EulerIntegratorCore</a>.</p>
 
 </div>
 </div>

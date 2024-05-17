@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['basicsshop_3488',['BasicsShop',['../namespacemio_1_1abm.html#a83bc98ab43329c10fe9a6e683f2e1d0fa0c09a8f523b937dae1ff7e3588566465',1,'mio::abm']]],
-  ['bike_3489',['Bike',['../namespacemio_1_1abm.html#a57d768cc04c782f46491781226920ff9a5f6d03332cb0c9971cf6cbf2b07a524a',1,'mio::abm']]]
+  ['asymptomatic_4251',['Asymptomatic',['../namespacemio_1_1oseair.html#a289e5c3e59772dac90a736f54b1fc548a5b6d524f05c5c3a608463b08ee7d31e5',1,'mio::oseair']]]
 ];

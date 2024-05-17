@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2024-05-16 15:49:56</td>
+            <td class="headerValue">2024-05-17 10:31:17</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">17</td>
@@ -195,7 +195,7 @@
 <a name="133"><span class="lineNum">     133 </span>            :  * @brief The contact patterns within the society are modelled using an UncertainContactMatrix.</a>
 <a name="134"><span class="lineNum">     134 </span>            :  */</a>
 <a name="135"><span class="lineNum">     135 </span>            : struct ContactPatterns {</a>
-<a name="136"><span class="lineNum">     136 </span>            :     using Type = UncertainContactMatrix;</a>
+<a name="136"><span class="lineNum">     136 </span>            :     using Type = UncertainContactMatrix&lt;ScalarType&gt;;</a>
 <a name="137"><span class="lineNum">     137 </span>            : </a>
 <a name="138"><span class="lineNum">     138 </span><span class="lineCov">          9 :     static Type get_default()</span></a>
 <a name="139"><span class="lineNum">     139 </span>            :     {</a>

@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['year_3352',['year',['../structmio_1_1Date.html#ab171e645aefa796cc0d4980b5e7b40c8',1,'mio::Date']]]
+  ['warning_4083',['Warning',['../classmemilio_1_1epidata_1_1getDataIntoPandasDataFrame_1_1VerbosityLevel.html#aae2b277f472edf90340e827daf279630',1,'memilio::epidata::getDataIntoPandasDataFrame::VerbosityLevel']]],
+  ['was_5flogged_4084',['was_logged',['../structmio_1_1LogOnce.html#ad51f77a13057feda19ef321a0cedb5e8',1,'mio::LogOnce']]]
 ];

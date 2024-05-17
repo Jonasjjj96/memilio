@@ -338,18 +338,18 @@ $(function() {
 <div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160; </div>
 <div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;        <span class="comment">// if current param age group didn&#39;t fit into previous rki age group, transfer residual to current age group</span></div>
 <div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;        <span class="keywordflow">if</span> (res &lt; 0) {</div>
-<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;            interpolation[i].push_back(std::min(-res / age_ranges[i], 1.0));</div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;            interpolation[i].push_back(<a class="code" href="namespacead_1_1internal.html#a7ba0a5b242bd0af8fe3f76bcc798c956">std::min</a>(-res / age_ranges[i], 1.0));</div>
 <div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;        }</div>
 <div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160; </div>
 <div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;        <span class="keywordflow">if</span> (counter &lt; param_ranges.size() - 1) {</div>
 <div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;            res += age_ranges[i];</div>
-<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;            <span class="keywordflow">if</span> (std::abs(res) &lt; age_ranges[i]) {</div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="namespacead_1_1internal.html#a8836d835b8cfe539105246268f69cff9">std::abs</a>(res) &lt; age_ranges[i]) {</div>
 <div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;                counter++;</div>
 <div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;            }</div>
 <div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;            <span class="comment">// iterate over param age groups while there is still room in the current rki age group</span></div>
 <div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;            <span class="keywordflow">while</span> (res &gt; 0) {</div>
 <div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;                res -= param_ranges[counter];</div>
-<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;                interpolation[i].push_back((param_ranges[counter] + std::min(res, 0.0)) / age_ranges[i]);</div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;                interpolation[i].push_back((param_ranges[counter] + <a class="code" href="namespacead_1_1internal.html#a7ba0a5b242bd0af8fe3f76bcc798c956">std::min</a>(res, 0.0)) / age_ranges[i]);</div>
 <div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;                <span class="keywordflow">if</span> (res &gt;= 0) {</div>
 <div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;                    counter++;</div>
 <div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;                }</div>
@@ -492,6 +492,8 @@ $(function() {
 <div class="ttc" id="aio_8h_html"><div class="ttname"><a href="io_8h.html">io.h</a></div></div>
 <div class="ttc" id="ajson__serializer_8h_html"><div class="ttname"><a href="json__serializer_8h.html">json_serializer.h</a></div></div>
 <div class="ttc" id="amemilio_2config_8h_html"><div class="ttname"><a href="memilio_2config_8h.html">config.h</a></div></div>
+<div class="ttc" id="anamespacead_1_1internal_html_a7ba0a5b242bd0af8fe3f76bcc798c956"><div class="ttname"><a href="namespacead_1_1internal.html#a7ba0a5b242bd0af8fe3f76bcc798c956">ad::internal::min</a></div><div class="ttdeci">static min_max_return_type&lt; ad::internal::active_type&lt; AD_TAPE_REAL, DATA_HANDLER_1 &gt;, ad::internal::active_type&lt; AD_TAPE_REAL, DATA_HANDLER_1 &gt; &gt;::type min(const ad::internal::active_type&lt; AD_TAPE_REAL, DATA_HANDLER_1 &gt; &amp;a, const ad::internal::active_type&lt; AD_TAPE_REAL, DATA_HANDLER_1 &gt; &amp;b)</div><div class="ttdef"><b>Definition:</b> ad.hpp:2599</div></div>
+<div class="ttc" id="anamespacead_1_1internal_html_a8836d835b8cfe539105246268f69cff9"><div class="ttname"><a href="namespacead_1_1internal.html#a8836d835b8cfe539105246268f69cff9">ad::internal::abs</a></div><div class="ttdeci">ad::internal::unary_intermediate&lt; AD_TAPE_REAL, ad::internal::active_type&lt; AD_TAPE_REAL, DATA_HANDLER_1 &gt;, ad::operations::ad_fabs&lt; AD_TAPE_REAL &gt; &gt; abs(const ad::internal::active_type&lt; AD_TAPE_REAL, DATA_HANDLER_1 &gt; &amp;x1)</div><div class="ttdef"><b>Definition:</b> ad.hpp:1144</div></div>
 <div class="ttc" id="anamespacememilio_1_1epidata_1_1getPopulationData_html_ac66417653f81cb2389a16c6eb839fedf"><div class="ttname"><a href="namespacememilio_1_1epidata_1_1getPopulationData.html#ac66417653f81cb2389a16c6eb839fedf">memilio.epidata.getPopulationData.read_population_data</a></div><div class="ttdeci">def read_population_data(username, password)</div><div class="ttdoc">Reads Population data from regionalstatistik.de.</div><div class="ttdef"><b>Definition:</b> getPopulationData.py:44</div></div>
 <div class="ttc" id="anamespacemio_html"><div class="ttname"><a href="namespacemio.html">mio</a></div><div class="ttdoc">A collection of classes to simplify handling of matrix shapes in meta programming.</div><div class="ttdef"><b>Definition:</b> compartmentalmodel.h:33</div></div>
 <div class="ttc" id="anamespacemio_html_a1eecf99ef3a231d628f968aeb2136865"><div class="ttname"><a href="namespacemio.html#a1eecf99ef3a231d628f968aeb2136865">mio::deserialize</a></div><div class="ttdeci">IOResult&lt; T &gt; deserialize(IOContext &amp;io, Tag&lt; T &gt; tag)</div><div class="ttdoc">Restores an object from the data stored in an IO context.</div><div class="ttdef"><b>Definition:</b> io.h:809</div></div>

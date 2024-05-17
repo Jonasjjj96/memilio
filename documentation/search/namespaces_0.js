@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['de_2071',['de',['../namespaceholidays_1_1de.html',1,'holidays']]],
-  ['holidays_2072',['holidays',['../namespaceholidays.html',1,'']]]
+  ['ad_2604',['ad',['../namespacead.html',1,'']]],
+  ['helper_2605',['helper',['../namespacead_1_1helper.html',1,'ad']]],
+  ['internal_2606',['internal',['../namespacead_1_1internal.html',1,'ad']]],
+  ['operations_2607',['operations',['../namespacead_1_1operations.html',1,'ad']]]
 ];

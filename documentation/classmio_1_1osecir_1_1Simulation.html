@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>MEmilio: mio::osecir::Simulation&lt; BaseT &gt; Class Template Reference</title>
+<title>MEmilio: mio::osecir::Simulation&lt; FP, BaseT &gt; Class Template Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -71,7 +71,7 @@ $(function() {
 <a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classmio_1_1osecir_1_1Simulation-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">mio::osecir::Simulation&lt; BaseT &gt; Class Template Reference</div>  </div>
+<div class="title">mio::osecir::Simulation&lt; FP, BaseT &gt; Class Template Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
@@ -80,7 +80,7 @@ $(function() {
 
 <p><code>#include &lt;<a class="el" href="ode__secir_2model_8h_source.html">model.h</a>&gt;</code></p>
 <div class="dynheader">
-Inheritance diagram for mio::osecir::Simulation&lt; BaseT &gt;:</div>
+Inheritance diagram for mio::osecir::Simulation&lt; FP, BaseT &gt;:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="classmio_1_1osecir_1_1Simulation.png" alt=""/>
@@ -88,56 +88,57 @@ Inheritance diagram for mio::osecir::Simulation&lt; BaseT &gt;:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a9037a2334f2cfe2398f8d03e742183d0"><td class="memItemLeft" align="right" valign="top">Eigen::Ref&lt; Eigen::VectorXd &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1osecir_1_1Simulation.html#a9037a2334f2cfe2398f8d03e742183d0">advance</a> (double tmax)</td></tr>
-<tr class="memdesc:a9037a2334f2cfe2398f8d03e742183d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">advance simulation to tmax.  <a href="classmio_1_1osecir_1_1Simulation.html#a9037a2334f2cfe2398f8d03e742183d0">More...</a><br /></td></tr>
-<tr class="separator:a9037a2334f2cfe2398f8d03e742183d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a46eecb9eeb276fba54a1e15abd1d633b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1osecir_1_1Simulation.html#a46eecb9eeb276fba54a1e15abd1d633b">Simulation</a> (<a class="el" href="classmio_1_1osecir_1_1Model.html">Model</a> const &amp;model, double t0=0., double dt=0.1)</td></tr>
-<tr class="memdesc:a46eecb9eeb276fba54a1e15abd1d633b"><td class="mdescLeft">&#160;</td><td class="mdescRight">construct a simulation.  <a href="classmio_1_1osecir_1_1Simulation.html#a46eecb9eeb276fba54a1e15abd1d633b">More...</a><br /></td></tr>
-<tr class="separator:a46eecb9eeb276fba54a1e15abd1d633b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adfa04846ac669456a1a38fb230ff27a1"><td class="memItemLeft" align="right" valign="top">Eigen::Ref&lt; <a class="el" href="namespacemio.html#a4980272f784bde5ee00a3385538950de">Vector</a>&lt; FP &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1osecir_1_1Simulation.html#adfa04846ac669456a1a38fb230ff27a1">advance</a> (FP tmax)</td></tr>
+<tr class="memdesc:adfa04846ac669456a1a38fb230ff27a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">advance simulation to tmax.  <a href="classmio_1_1osecir_1_1Simulation.html#adfa04846ac669456a1a38fb230ff27a1">More...</a><br /></td></tr>
+<tr class="separator:adfa04846ac669456a1a38fb230ff27a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af3d12f3d6ccec3fcdeb89989624e02a2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1osecir_1_1Simulation.html#af3d12f3d6ccec3fcdeb89989624e02a2">Simulation</a> (<a class="el" href="classmio_1_1osecir_1_1Model.html">mio::osecir::Model</a>&lt; FP &gt; const &amp;model, FP t0=0., FP dt=0.1)</td></tr>
+<tr class="memdesc:af3d12f3d6ccec3fcdeb89989624e02a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">construct a simulation.  <a href="classmio_1_1osecir_1_1Simulation.html#af3d12f3d6ccec3fcdeb89989624e02a2">More...</a><br /></td></tr>
+<tr class="separator:af3d12f3d6ccec3fcdeb89989624e02a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:a48fb0a55d1103e9d5bcced53511d0b72"><td class="memItemLeft" align="right" valign="top">std::pair&lt; double, <a class="el" href="classmio_1_1SimulationTime.html">SimulationTime</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1osecir_1_1Simulation.html#a48fb0a55d1103e9d5bcced53511d0b72">m_dynamic_npi</a> = {-std::numeric_limits&lt;double&gt;::<a class="el" href="namespacemio.html#a97f6645c13faf4749f34d7e6e191f9ac">max</a>(), <a class="el" href="classmio_1_1SimulationTime.html">mio::SimulationTime</a>(0)}</td></tr>
-<tr class="separator:a48fb0a55d1103e9d5bcced53511d0b72"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9a60bdad1fd2b753f8c31ddea2d58b5e"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1osecir_1_1Simulation.html#a9a60bdad1fd2b753f8c31ddea2d58b5e">m_t_last_npi_check</a></td></tr>
-<tr class="separator:a9a60bdad1fd2b753f8c31ddea2d58b5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abdd2d5ed58a218ce45100f0522e342f8"><td class="memItemLeft" align="right" valign="top">std::pair&lt; double, <a class="el" href="classmio_1_1SimulationTime.html">SimulationTime</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1osecir_1_1Simulation.html#abdd2d5ed58a218ce45100f0522e342f8">m_dynamic_npi</a> = {-std::numeric_limits&lt;double&gt;::<a class="el" href="namespacemio.html#a97f6645c13faf4749f34d7e6e191f9ac">max</a>(), <a class="el" href="classmio_1_1SimulationTime.html">mio::SimulationTime</a>(0)}</td></tr>
+<tr class="separator:abdd2d5ed58a218ce45100f0522e342f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a32c0a0d3b0d358f43b5dc322ac6c69dd"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1osecir_1_1Simulation.html#a32c0a0d3b0d358f43b5dc322ac6c69dd">m_t_last_npi_check</a></td></tr>
+<tr class="separator:a32c0a0d3b0d358f43b5dc322ac6c69dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><h3>template&lt;class BaseT&gt;<br />
-class mio::osecir::Simulation&lt; BaseT &gt;</h3>
+<div class="textblock"><h3>template&lt;typename FP, class BaseT&gt;<br />
+class mio::osecir::Simulation&lt; FP, BaseT &gt;</h3>
 
 <p>specialization of compartment model simulation for secir models. </p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
+    <tr><td class="paramname">FP</td><td>floating point type, e.g., double. </td></tr>
     <tr><td class="paramname">BaseT</td><td>simulation type that uses a secir compartment model. default <a class="el" href="classmio_1_1Simulation.html" title="A class for the simulation of a compartment model.">mio::Simulation</a>. For testing purposes only! </td></tr>
   </table>
   </dd>
 </dl>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a46eecb9eeb276fba54a1e15abd1d633b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a46eecb9eeb276fba54a1e15abd1d633b">&#9670;&nbsp;</a></span>Simulation()</h2>
+<a id="af3d12f3d6ccec3fcdeb89989624e02a2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af3d12f3d6ccec3fcdeb89989624e02a2">&#9670;&nbsp;</a></span>Simulation()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class BaseT &gt; </div>
+template&lt;typename FP , class BaseT &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classmio_1_1osecir_1_1Simulation.html">mio::osecir::Simulation</a>&lt; BaseT &gt;::<a class="el" href="classmio_1_1osecir_1_1Simulation.html">Simulation</a> </td>
+          <td class="memname"><a class="el" href="classmio_1_1osecir_1_1Simulation.html">mio::osecir::Simulation</a>&lt; FP, BaseT &gt;::<a class="el" href="classmio_1_1osecir_1_1Simulation.html">Simulation</a> </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classmio_1_1osecir_1_1Model.html">Model</a> const &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classmio_1_1osecir_1_1Model.html">mio::osecir::Model</a>&lt; FP &gt; const &amp;&#160;</td>
           <td class="paramname"><em>model</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">double&#160;</td>
+          <td class="paramtype">FP&#160;</td>
           <td class="paramname"><em>t0</em> = <code>0.</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">double&#160;</td>
+          <td class="paramtype">FP&#160;</td>
           <td class="paramname"><em>dt</em> = <code>0.1</code>&#160;</td>
         </tr>
         <tr>
@@ -161,18 +162,18 @@ template&lt;class BaseT &gt; </div>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a9037a2334f2cfe2398f8d03e742183d0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9037a2334f2cfe2398f8d03e742183d0">&#9670;&nbsp;</a></span>advance()</h2>
+<a id="adfa04846ac669456a1a38fb230ff27a1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adfa04846ac669456a1a38fb230ff27a1">&#9670;&nbsp;</a></span>advance()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class BaseT &gt; </div>
+template&lt;typename FP , class BaseT &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">Eigen::Ref&lt;Eigen::VectorXd&gt; <a class="el" href="classmio_1_1osecir_1_1Simulation.html">mio::osecir::Simulation</a>&lt; BaseT &gt;::advance </td>
+          <td class="memname">Eigen::Ref&lt;<a class="el" href="namespacemio.html#a4980272f784bde5ee00a3385538950de">Vector</a>&lt;FP&gt; &gt; <a class="el" href="classmio_1_1osecir_1_1Simulation.html">mio::osecir::Simulation</a>&lt; FP, BaseT &gt;::advance </td>
           <td>(</td>
-          <td class="paramtype">double&#160;</td>
+          <td class="paramtype">FP&#160;</td>
           <td class="paramname"><em>tmax</em></td><td>)</td>
           <td></td>
         </tr>
@@ -180,7 +181,7 @@ template&lt;class BaseT &gt; </div>
 </div><div class="memdoc">
 
 <p>advance simulation to tmax. </p>
-<p>Overwrites <a class="el" href="classmio_1_1osecir_1_1Simulation.html#a9037a2334f2cfe2398f8d03e742183d0" title="advance simulation to tmax.">Simulation::advance</a> and includes a check for dynamic NPIs in regular intervals. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="classmio_1_1osecir_1_1Simulation.html#a9037a2334f2cfe2398f8d03e742183d0" title="advance simulation to tmax.">Simulation::advance</a> </dd></dl>
+<p>Overwrites <a class="el" href="classmio_1_1osecir_1_1Simulation.html#adfa04846ac669456a1a38fb230ff27a1" title="advance simulation to tmax.">Simulation::advance</a> and includes a check for dynamic NPIs in regular intervals. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="classmio_1_1osecir_1_1Simulation.html#adfa04846ac669456a1a38fb230ff27a1" title="advance simulation to tmax.">Simulation::advance</a> </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">tmax</td><td>next stopping point of simulation </td></tr>
@@ -192,19 +193,19 @@ template&lt;class BaseT &gt; </div>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="a48fb0a55d1103e9d5bcced53511d0b72"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a48fb0a55d1103e9d5bcced53511d0b72">&#9670;&nbsp;</a></span>m_dynamic_npi</h2>
+<a id="abdd2d5ed58a218ce45100f0522e342f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abdd2d5ed58a218ce45100f0522e342f8">&#9670;&nbsp;</a></span>m_dynamic_npi</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class BaseT &gt; </div>
+template&lt;typename FP , class BaseT &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::pair&lt;double, <a class="el" href="classmio_1_1SimulationTime.html">SimulationTime</a>&gt; <a class="el" href="classmio_1_1osecir_1_1Simulation.html">mio::osecir::Simulation</a>&lt; BaseT &gt;::m_dynamic_npi = {-std::numeric_limits&lt;double&gt;::<a class="el" href="namespacemio.html#a97f6645c13faf4749f34d7e6e191f9ac">max</a>(), <a class="el" href="classmio_1_1SimulationTime.html">mio::SimulationTime</a>(0)}</td>
+          <td class="memname">std::pair&lt;double, <a class="el" href="classmio_1_1SimulationTime.html">SimulationTime</a>&gt; <a class="el" href="classmio_1_1osecir_1_1Simulation.html">mio::osecir::Simulation</a>&lt; FP, BaseT &gt;::m_dynamic_npi = {-std::numeric_limits&lt;double&gt;::<a class="el" href="namespacemio.html#a97f6645c13faf4749f34d7e6e191f9ac">max</a>(), <a class="el" href="classmio_1_1SimulationTime.html">mio::SimulationTime</a>(0)}</td>
         </tr>
       </table>
   </td>
@@ -216,19 +217,19 @@ template&lt;class BaseT &gt; </div>
 
 </div>
 </div>
-<a id="a9a60bdad1fd2b753f8c31ddea2d58b5e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9a60bdad1fd2b753f8c31ddea2d58b5e">&#9670;&nbsp;</a></span>m_t_last_npi_check</h2>
+<a id="a32c0a0d3b0d358f43b5dc322ac6c69dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a32c0a0d3b0d358f43b5dc322ac6c69dd">&#9670;&nbsp;</a></span>m_t_last_npi_check</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class BaseT &gt; </div>
+template&lt;typename FP , class BaseT &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">double <a class="el" href="classmio_1_1osecir_1_1Simulation.html">mio::osecir::Simulation</a>&lt; BaseT &gt;::m_t_last_npi_check</td>
+          <td class="memname">double <a class="el" href="classmio_1_1osecir_1_1Simulation.html">mio::osecir::Simulation</a>&lt; FP, BaseT &gt;::m_t_last_npi_check</td>
         </tr>
       </table>
   </td>

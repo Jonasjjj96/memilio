@@ -127,7 +127,7 @@ $(function() {
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;};</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="comment">//all integers less than 32 bit must be stored as int</span></div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="keyword">using</span> is_small_integral = std::integral_constant&lt;bool, (std::is_integral&lt;T&gt;::value &amp;&amp; <span class="keyword">sizeof</span>(T) &lt;= 4)&gt;;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="keyword">using</span> is_small_integral = std::integral_constant&lt;bool, (<a class="code" href="namespacead.html#ae3b24063a8792ec27e283f71088c91c0">std::is_integral&lt;T&gt;::value</a> &amp;&amp; <span class="keyword">sizeof</span>(T) &lt;= 4)&gt;;</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="comment">//signed small ints</span></div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="keyword">struct </span>JsonType&lt;T, <a class="code" href="namespacestd.html">std</a>::enable_if_t&lt;conjunction_v&lt;is_small_integral&lt;T&gt;, std::is_signed&lt;T&gt;&gt;&gt;&gt; : std::true_type {</div>
@@ -135,7 +135,7 @@ $(function() {
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    {</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <span class="keywordflow">if</span> (js.isInt()) {</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            <span class="keywordtype">int</span> i = js.asInt();</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            <span class="keywordflow">if</span> (i &gt;= <span class="keywordtype">int</span>(std::numeric_limits&lt;T&gt;::min()) &amp;&amp; i &lt;= <span class="keywordtype">int</span>(<a class="code" href="namespacemio.html#a97f6645c13faf4749f34d7e6e191f9ac">std::numeric_limits&lt;T&gt;::max</a>())) {</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            <span class="keywordflow">if</span> (i &gt;= <span class="keywordtype">int</span>(<a class="code" href="namespacead_1_1internal.html#a7ba0a5b242bd0af8fe3f76bcc798c956">std::numeric_limits&lt;T&gt;::min</a>()) &amp;&amp; i &lt;= <span class="keywordtype">int</span>(<a class="code" href="namespacead_1_1internal.html#aa51c892c87b65f08c37a87e280c8b123">std::numeric_limits&lt;T&gt;::max</a>())) {</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="namespacemio.html#a80d7fd30c9669e05b537b2caedd82bb8">success</a>(T(i));</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            }</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="namespacemio.html#a23604adfeac7ebc8418d741959e80906">failure</a>(<a class="code" href="namespacemio.html#a2799d348d433018d5b183d75bfbdd699a365b2699d38b61ef4b4c8a1066c8468f">StatusCode::OutOfRange</a>, <span class="stringliteral">&quot;Json value is not in range of the requested integer type.&quot;</span>);</div>
@@ -154,7 +154,7 @@ $(function() {
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    {</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <span class="keywordflow">if</span> (js.isUInt()) {</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i = js.asUInt();</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;            <span class="keywordflow">if</span> (i &lt;= (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>)<a class="code" href="namespacemio.html#a97f6645c13faf4749f34d7e6e191f9ac">std::numeric_limits&lt;T&gt;::max</a>()) {</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;            <span class="keywordflow">if</span> (i &lt;= (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>)<a class="code" href="namespacead_1_1internal.html#aa51c892c87b65f08c37a87e280c8b123">std::numeric_limits&lt;T&gt;::max</a>()) {</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="namespacemio.html#a80d7fd30c9669e05b537b2caedd82bb8">success</a>(T(i));</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;            }</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="namespacemio.html#a23604adfeac7ebc8418d741959e80906">failure</a>(<a class="code" href="namespacemio.html#a2799d348d433018d5b183d75bfbdd699a365b2699d38b61ef4b4c8a1066c8468f">StatusCode::OutOfRange</a>,</div>
@@ -168,7 +168,7 @@ $(function() {
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    }</div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;};</div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="keyword">using</span> is_64bit_integral = std::integral_constant&lt;bool, (std::is_integral&lt;T&gt;::value &amp;&amp; <span class="keyword">sizeof</span>(T) == 8)&gt;;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="keyword">using</span> is_64bit_integral = std::integral_constant&lt;bool, (<a class="code" href="namespacead.html#ae3b24063a8792ec27e283f71088c91c0">std::is_integral&lt;T&gt;::value</a> &amp;&amp; <span class="keyword">sizeof</span>(T) == 8)&gt;;</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<span class="comment">//signed big ints</span></div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="keyword">struct </span>JsonType&lt;T, <a class="code" href="namespacestd.html">std</a>::enable_if_t&lt;conjunction_v&lt;is_64bit_integral&lt;T&gt;, std::is_signed&lt;T&gt;&gt;&gt;&gt; : std::true_type {</div>
@@ -222,7 +222,7 @@ $(function() {
 <div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    {</div>
 <div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;        <span class="keywordflow">if</span> (js.isDouble()) {</div>
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;            <span class="keyword">auto</span> d = js.asDouble();</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;            <span class="keywordflow">if</span> (d &gt; <span class="keywordtype">double</span>(<a class="code" href="namespacemio.html#a97f6645c13faf4749f34d7e6e191f9ac">std::numeric_limits&lt;float&gt;::max</a>()) || d &lt; -<span class="keywordtype">double</span>(<a class="code" href="namespacemio.html#a97f6645c13faf4749f34d7e6e191f9ac">std::numeric_limits&lt;float&gt;::max</a>())) {</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;            <span class="keywordflow">if</span> (d &gt; <span class="keywordtype">double</span>(<a class="code" href="namespacead_1_1internal.html#aa51c892c87b65f08c37a87e280c8b123">std::numeric_limits&lt;float&gt;::max</a>()) || d &lt; -<span class="keywordtype">double</span>(<a class="code" href="namespacead_1_1internal.html#aa51c892c87b65f08c37a87e280c8b123">std::numeric_limits&lt;float&gt;::max</a>())) {</div>
 <div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="namespacemio.html#a23604adfeac7ebc8418d741959e80906">failure</a>(<a class="code" href="namespacemio.html#a2799d348d433018d5b183d75bfbdd699a365b2699d38b61ef4b4c8a1066c8468f">StatusCode::OutOfRange</a>, <span class="stringliteral">&quot;Json value is not in single precision floating point range.&quot;</span>);</div>
 <div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;            }</div>
 <div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="namespacemio.html#a80d7fd30c9669e05b537b2caedd82bb8">success</a>(<span class="keywordtype">float</span>(d));</div>
@@ -261,25 +261,25 @@ $(function() {
 <div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;<span class="keyword">class </span>JsonObject : <span class="keyword">public</span> SerializerBase</div>
 <div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;{</div>
 <div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;    JsonObject(Json::Value&amp; value, <span class="keyword">const</span> std::shared_ptr&lt;IOStatus&gt;&amp; status, <span class="keywordtype">int</span> flags)</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;    JsonObject(Json::Value&amp; <a class="code" href="namespacead.html#ae3b24063a8792ec27e283f71088c91c0">value</a>, <span class="keyword">const</span> std::shared_ptr&lt;IOStatus&gt;&amp; status, <span class="keywordtype">int</span> flags)</div>
 <div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;        : SerializerBase{status, flags}</div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;        , m_value{value}</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;        , m_value{<a class="code" href="namespacead.html#ae3b24063a8792ec27e283f71088c91c0">value</a>}</div>
 <div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;    {</div>
 <div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;    }</div>
 <div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160; </div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;    template &lt;class T, std::enable_if_t&lt;JsonType&lt;T&gt;::value, <span class="keywordtype">void</span>*&gt; = <span class="keyword">nullptr</span>&gt;</div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    <span class="keywordtype">void</span> add_element(<span class="keyword">const</span> std::string&amp; name, <span class="keyword">const</span> T&amp; value);</div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;    template &lt;class T, std::enable_if_t&lt;!JsonType&lt;T&gt;::value, <span class="keywordtype">void</span>*&gt; = <span class="keyword">nullptr</span>&gt;</div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;    <span class="keywordtype">void</span> add_element(<span class="keyword">const</span> std::string&amp; name, <span class="keyword">const</span> T&amp; value);</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;    <a class="code" href="namespacead.html#ae3b24063a8792ec27e283f71088c91c0">template &lt;class T, std::enable_if_t&lt;JsonType&lt;T&gt;::value</a>, <span class="keywordtype">void</span>*&gt; = <span class="keyword">nullptr</span>&gt;</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    <span class="keywordtype">void</span> add_element(<span class="keyword">const</span> std::string&amp; name, <span class="keyword">const</span> T&amp; <a class="code" href="namespacead.html#ae3b24063a8792ec27e283f71088c91c0">value</a>);</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;    <a class="code" href="namespacead.html#ae3b24063a8792ec27e283f71088c91c0">template &lt;class T, std::enable_if_t&lt;!JsonType&lt;T&gt;::value</a>, <span class="keywordtype">void</span>*&gt; = <span class="keyword">nullptr</span>&gt;</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;    <span class="keywordtype">void</span> add_element(<span class="keyword">const</span> std::string&amp; name, <span class="keyword">const</span> T&amp; <a class="code" href="namespacead.html#ae3b24063a8792ec27e283f71088c91c0">value</a>);</div>
 <div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;    <span class="keywordtype">void</span> add_optional(<span class="keyword">const</span> std::string&amp; name, <span class="keyword">const</span> T* value);</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;    <span class="keywordtype">void</span> add_optional(<span class="keyword">const</span> std::string&amp; name, <span class="keyword">const</span> T* <a class="code" href="namespacead.html#ae3b24063a8792ec27e283f71088c91c0">value</a>);</div>
 <div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160; </div>
 <div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">class</span> Iter&gt;</div>
 <div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    <span class="keywordtype">void</span> add_list(<span class="keyword">const</span> std::string&amp; name, Iter b, Iter e);</div>
 <div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160; </div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;    template &lt;class T, std::enable_if_t&lt;JsonType&lt;T&gt;::value, <span class="keywordtype">void</span>*&gt; = <span class="keyword">nullptr</span>&gt;</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;    <a class="code" href="namespacead.html#ae3b24063a8792ec27e283f71088c91c0">template &lt;class T, std::enable_if_t&lt;JsonType&lt;T&gt;::value</a>, <span class="keywordtype">void</span>*&gt; = <span class="keyword">nullptr</span>&gt;</div>
 <div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;    IOResult&lt;T&gt; expect_element(<span class="keyword">const</span> std::string&amp; name, Tag&lt;T&gt; tag) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;    template &lt;class T, std::enable_if_t&lt;!JsonType&lt;T&gt;::value, <span class="keywordtype">void</span>*&gt; = <span class="keyword">nullptr</span>&gt;</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;    <a class="code" href="namespacead.html#ae3b24063a8792ec27e283f71088c91c0">template &lt;class T, std::enable_if_t&lt;!JsonType&lt;T&gt;::value</a>, <span class="keywordtype">void</span>*&gt; = <span class="keyword">nullptr</span>&gt;</div>
 <div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;    IOResult&lt;T&gt; expect_element(<span class="keyword">const</span> std::string&amp; name, Tag&lt;T&gt; tag) <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
 <div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;    IOResult&lt;boost::optional&lt;T&gt;&gt; expect_optional(<span class="keyword">const</span> std::string&amp; name, <a class="code" href="namespacemio.html#a2f858e287c3935240954cf75cf53cfeb">mio::Tag&lt;T&gt;</a> tag);</div>
@@ -287,7 +287,7 @@ $(function() {
 <div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
 <div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;    IOResult&lt;std::vector&lt;T&gt;&gt; expect_list(<span class="keyword">const</span> std::string&amp; name, Tag&lt;T&gt; tag);</div>
 <div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160; </div>
-<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span>&amp; value() const&amp;</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span>&amp; <a class="code" href="namespacead.html#ae3b24063a8792ec27e283f71088c91c0">value</a>() const&amp;</div>
 <div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;    {</div>
 <div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;        <span class="keywordflow">return</span> m_value;</div>
 <div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;    }</div>
@@ -305,9 +305,9 @@ $(function() {
 <div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;    {</div>
 <div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;    }</div>
 <div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160; </div>
-<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;    JsonContext(<span class="keyword">const</span> Json::Value&amp; value, <span class="keyword">const</span> std::shared_ptr&lt;IOStatus&gt;&amp; status, <span class="keywordtype">int</span> flags)</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;    JsonContext(<span class="keyword">const</span> Json::Value&amp; <a class="code" href="namespacead.html#ae3b24063a8792ec27e283f71088c91c0">value</a>, <span class="keyword">const</span> std::shared_ptr&lt;IOStatus&gt;&amp; status, <span class="keywordtype">int</span> flags)</div>
 <div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;        : SerializerBase(status, flags)</div>
-<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;        , m_value(value)</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;        , m_value(<a class="code" href="namespacead.html#ae3b24063a8792ec27e283f71088c91c0">value</a>)</div>
 <div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;    {</div>
 <div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;    }</div>
 <div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160; </div>
@@ -327,21 +327,21 @@ $(function() {
 <div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;        <span class="keywordflow">return</span> JsonObject(m_value, m_status, m_flags);</div>
 <div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;    }</div>
 <div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160; </div>
-<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;    <span class="keyword">const</span> Json::Value&amp; value() const&amp;</div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;    <span class="keyword">const</span> Json::Value&amp; <a class="code" href="namespacead.html#ae3b24063a8792ec27e283f71088c91c0">value</a>() const&amp;</div>
 <div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;    {</div>
 <div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;        <span class="keywordflow">return</span> m_value;</div>
 <div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;    }</div>
-<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;    Json::Value&amp;&amp; value() &amp;&amp;</div>
+<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;    Json::Value&amp;&amp; <a class="code" href="namespacead.html#ae3b24063a8792ec27e283f71088c91c0">value</a>() &amp;&amp;</div>
 <div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;    {</div>
 <div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;        <span class="keywordflow">return</span> std::move(m_value);</div>
 <div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;    }</div>
-<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;    template &lt;class T, std::enable_if_t&lt;JsonType&lt;T&gt;::value, <span class="keywordtype">void</span>*&gt; = <span class="keyword">nullptr</span>&gt;</div>
+<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;    <a class="code" href="namespacead.html#ae3b24063a8792ec27e283f71088c91c0">template &lt;class T, std::enable_if_t&lt;JsonType&lt;T&gt;::value</a>, <span class="keywordtype">void</span>*&gt; = <span class="keyword">nullptr</span>&gt;</div>
 <div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;    <span class="keyword">friend</span> <span class="keywordtype">void</span> <a class="code" href="namespacemio.html#a9f158d720a7cadd39e482f6c2302a087">serialize_internal</a>(JsonContext&amp; io, <span class="keyword">const</span> T&amp; t)</div>
 <div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;    {</div>
 <div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;        io.m_value = JsonType&lt;T&gt;::transform(t);</div>
 <div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;    }</div>
 <div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160; </div>
-<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;    template &lt;class T, std::enable_if_t&lt;JsonType&lt;T&gt;::value, <span class="keywordtype">void</span>*&gt; = <span class="keyword">nullptr</span>&gt;</div>
+<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;    <a class="code" href="namespacead.html#ae3b24063a8792ec27e283f71088c91c0">template &lt;class T, std::enable_if_t&lt;JsonType&lt;T&gt;::value</a>, <span class="keywordtype">void</span>*&gt; = <span class="keyword">nullptr</span>&gt;</div>
 <div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;    <span class="keyword">friend</span> IOResult&lt;T&gt; <a class="code" href="namespacemio.html#a00cf52f73f21f24b421264732496fe81">deserialize_internal</a>(JsonContext&amp; io, Tag&lt;T&gt;)</div>
 <div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;    {</div>
 <div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;        <span class="keywordflow">return</span> JsonType&lt;T&gt;::transform(io.m_value);</div>
@@ -360,7 +360,7 @@ $(function() {
 <div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;                <span class="keyword">auto</span> ctxt = JsonContext(io.m_status, io.m_flags);</div>
 <div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;                <a class="code" href="namespacemio.html#a27a24b9e6cb629e04e9613446f07d6ba">mio::serialize</a>(ctxt, *it);</div>
 <div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;                <span class="keywordflow">if</span> (io.m_status) {</div>
-<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;                    array.append(std::move(ctxt).value());</div>
+<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;                    array.append(std::move(ctxt).<a class="code" href="namespacead.html#ae3b24063a8792ec27e283f71088c91c0">value</a>());</div>
 <div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;                }</div>
 <div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;            }</div>
 <div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;            io.m_value = std::move(array);</div>
@@ -457,20 +457,20 @@ $(function() {
 <div class="line"><a name="l00558"></a><span class="lineno">  558</span>&#160; </div>
 <div class="line"><a name="l00560"></a><span class="lineno">  560</span>&#160;<span class="comment">//Implementations for JsonContext/Object member functions below//</span></div>
 <div class="line"><a name="l00562"></a><span class="lineno">  562</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00563"></a><span class="lineno">  563</span>&#160;template &lt;class T, std::enable_if_t&lt;JsonType&lt;T&gt;::value, <span class="keywordtype">void</span>*&gt;&gt;</div>
-<div class="line"><a name="l00564"></a><span class="lineno">  564</span>&#160;<span class="keywordtype">void</span> JsonObject::add_element(<span class="keyword">const</span> std::string&amp; name, <span class="keyword">const</span> T&amp; value)</div>
+<div class="line"><a name="l00563"></a><span class="lineno">  563</span>&#160;<a class="code" href="namespacead.html#ae3b24063a8792ec27e283f71088c91c0">template &lt;class T, std::enable_if_t&lt;JsonType&lt;T&gt;::value</a>, <span class="keywordtype">void</span>*&gt;&gt;</div>
+<div class="line"><a name="l00564"></a><span class="lineno">  564</span>&#160;<span class="keywordtype">void</span> JsonObject::add_element(<span class="keyword">const</span> std::string&amp; name, <span class="keyword">const</span> T&amp; <a class="code" href="namespacead.html#ae3b24063a8792ec27e283f71088c91c0">value</a>)</div>
 <div class="line"><a name="l00565"></a><span class="lineno">  565</span>&#160;{</div>
 <div class="line"><a name="l00566"></a><span class="lineno">  566</span>&#160;    <span class="keywordflow">if</span> (m_status-&gt;is_ok()) {</div>
-<div class="line"><a name="l00567"></a><span class="lineno">  567</span>&#160;        m_value[name] = JsonType&lt;T&gt;::transform(value);</div>
+<div class="line"><a name="l00567"></a><span class="lineno">  567</span>&#160;        m_value[name] = JsonType&lt;T&gt;::transform(<a class="code" href="namespacead.html#ae3b24063a8792ec27e283f71088c91c0">value</a>);</div>
 <div class="line"><a name="l00568"></a><span class="lineno">  568</span>&#160;    }</div>
 <div class="line"><a name="l00569"></a><span class="lineno">  569</span>&#160;}</div>
 <div class="line"><a name="l00570"></a><span class="lineno">  570</span>&#160; </div>
-<div class="line"><a name="l00571"></a><span class="lineno">  571</span>&#160;template &lt;class T, std::enable_if_t&lt;!JsonType&lt;T&gt;::value, <span class="keywordtype">void</span>*&gt;&gt;</div>
-<div class="line"><a name="l00572"></a><span class="lineno">  572</span>&#160;<span class="keywordtype">void</span> JsonObject::add_element(<span class="keyword">const</span> std::string&amp; name, <span class="keyword">const</span> T&amp; value)</div>
+<div class="line"><a name="l00571"></a><span class="lineno">  571</span>&#160;<a class="code" href="namespacead.html#ae3b24063a8792ec27e283f71088c91c0">template &lt;class T, std::enable_if_t&lt;!JsonType&lt;T&gt;::value</a>, <span class="keywordtype">void</span>*&gt;&gt;</div>
+<div class="line"><a name="l00572"></a><span class="lineno">  572</span>&#160;<span class="keywordtype">void</span> JsonObject::add_element(<span class="keyword">const</span> std::string&amp; name, <span class="keyword">const</span> T&amp; <a class="code" href="namespacead.html#ae3b24063a8792ec27e283f71088c91c0">value</a>)</div>
 <div class="line"><a name="l00573"></a><span class="lineno">  573</span>&#160;{</div>
 <div class="line"><a name="l00574"></a><span class="lineno">  574</span>&#160;    <span class="keywordflow">if</span> (m_status-&gt;is_ok()) {</div>
 <div class="line"><a name="l00575"></a><span class="lineno">  575</span>&#160;        <span class="keyword">auto</span> ctxt = JsonContext(m_status, m_flags);</div>
-<div class="line"><a name="l00576"></a><span class="lineno">  576</span>&#160;        <a class="code" href="namespacemio.html#a27a24b9e6cb629e04e9613446f07d6ba">mio::serialize</a>(ctxt, value);</div>
+<div class="line"><a name="l00576"></a><span class="lineno">  576</span>&#160;        <a class="code" href="namespacemio.html#a27a24b9e6cb629e04e9613446f07d6ba">mio::serialize</a>(ctxt, <a class="code" href="namespacead.html#ae3b24063a8792ec27e283f71088c91c0">value</a>);</div>
 <div class="line"><a name="l00577"></a><span class="lineno">  577</span>&#160;        <span class="keywordflow">if</span> (m_status) {</div>
 <div class="line"><a name="l00578"></a><span class="lineno">  578</span>&#160;            m_value[name] = std::move(ctxt).value();</div>
 <div class="line"><a name="l00579"></a><span class="lineno">  579</span>&#160;        }</div>
@@ -478,10 +478,10 @@ $(function() {
 <div class="line"><a name="l00581"></a><span class="lineno">  581</span>&#160;}</div>
 <div class="line"><a name="l00582"></a><span class="lineno">  582</span>&#160; </div>
 <div class="line"><a name="l00583"></a><span class="lineno">  583</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
-<div class="line"><a name="l00584"></a><span class="lineno">  584</span>&#160;<span class="keywordtype">void</span> JsonObject::add_optional(<span class="keyword">const</span> std::string&amp; name, <span class="keyword">const</span> T* value)</div>
+<div class="line"><a name="l00584"></a><span class="lineno">  584</span>&#160;<span class="keywordtype">void</span> JsonObject::add_optional(<span class="keyword">const</span> std::string&amp; name, <span class="keyword">const</span> T* <a class="code" href="namespacead.html#ae3b24063a8792ec27e283f71088c91c0">value</a>)</div>
 <div class="line"><a name="l00585"></a><span class="lineno">  585</span>&#160;{</div>
-<div class="line"><a name="l00586"></a><span class="lineno">  586</span>&#160;    <span class="keywordflow">if</span> (value) {</div>
-<div class="line"><a name="l00587"></a><span class="lineno">  587</span>&#160;        add_element(name, *value);</div>
+<div class="line"><a name="l00586"></a><span class="lineno">  586</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="namespacead.html#ae3b24063a8792ec27e283f71088c91c0">value</a>) {</div>
+<div class="line"><a name="l00587"></a><span class="lineno">  587</span>&#160;        add_element(name, *<a class="code" href="namespacead.html#ae3b24063a8792ec27e283f71088c91c0">value</a>);</div>
 <div class="line"><a name="l00588"></a><span class="lineno">  588</span>&#160;    }</div>
 <div class="line"><a name="l00589"></a><span class="lineno">  589</span>&#160;}</div>
 <div class="line"><a name="l00590"></a><span class="lineno">  590</span>&#160; </div>
@@ -494,14 +494,14 @@ $(function() {
 <div class="line"><a name="l00597"></a><span class="lineno">  597</span>&#160;            <span class="keyword">auto</span> ctxt = JsonContext(m_status, m_flags);</div>
 <div class="line"><a name="l00598"></a><span class="lineno">  598</span>&#160;            <a class="code" href="namespacemio.html#a27a24b9e6cb629e04e9613446f07d6ba">mio::serialize</a>(ctxt, *it);</div>
 <div class="line"><a name="l00599"></a><span class="lineno">  599</span>&#160;            <span class="keywordflow">if</span> (m_status) {</div>
-<div class="line"><a name="l00600"></a><span class="lineno">  600</span>&#160;                array.append(std::move(ctxt).value());</div>
+<div class="line"><a name="l00600"></a><span class="lineno">  600</span>&#160;                array.append(std::move(ctxt).<a class="code" href="namespacead.html#ae3b24063a8792ec27e283f71088c91c0">value</a>());</div>
 <div class="line"><a name="l00601"></a><span class="lineno">  601</span>&#160;            }</div>
 <div class="line"><a name="l00602"></a><span class="lineno">  602</span>&#160;        }</div>
 <div class="line"><a name="l00603"></a><span class="lineno">  603</span>&#160;        m_value[name] = std::move(array);</div>
 <div class="line"><a name="l00604"></a><span class="lineno">  604</span>&#160;    }</div>
 <div class="line"><a name="l00605"></a><span class="lineno">  605</span>&#160;}</div>
 <div class="line"><a name="l00606"></a><span class="lineno">  606</span>&#160; </div>
-<div class="line"><a name="l00607"></a><span class="lineno">  607</span>&#160;template &lt;class T, std::enable_if_t&lt;JsonType&lt;T&gt;::value, <span class="keywordtype">void</span>*&gt;&gt;</div>
+<div class="line"><a name="l00607"></a><span class="lineno">  607</span>&#160;<a class="code" href="namespacead.html#ae3b24063a8792ec27e283f71088c91c0">template &lt;class T, std::enable_if_t&lt;JsonType&lt;T&gt;::value</a>, <span class="keywordtype">void</span>*&gt;&gt;</div>
 <div class="line"><a name="l00608"></a><span class="lineno">  608</span>&#160;IOResult&lt;T&gt; JsonObject::expect_element(<span class="keyword">const</span> std::string&amp; name, Tag&lt;T&gt; <span class="comment">/*tag*/</span>)<span class="keyword"> const</span></div>
 <div class="line"><a name="l00609"></a><span class="lineno">  609</span>&#160;<span class="keyword"></span>{</div>
 <div class="line"><a name="l00610"></a><span class="lineno">  610</span>&#160;    <span class="keywordflow">if</span> (m_status-&gt;is_error()) {</div>
@@ -521,7 +521,7 @@ $(function() {
 <div class="line"><a name="l00624"></a><span class="lineno">  624</span>&#160;                   r.error().message() + <span class="stringliteral">&quot; (&quot;</span> + name + <span class="stringliteral">&quot;)&quot;</span>); <span class="comment">//annotate type error message with element name</span></div>
 <div class="line"><a name="l00625"></a><span class="lineno">  625</span>&#160;}</div>
 <div class="line"><a name="l00626"></a><span class="lineno">  626</span>&#160; </div>
-<div class="line"><a name="l00627"></a><span class="lineno">  627</span>&#160;template &lt;class T, std::enable_if_t&lt;!JsonType&lt;T&gt;::value, <span class="keywordtype">void</span>*&gt;&gt;</div>
+<div class="line"><a name="l00627"></a><span class="lineno">  627</span>&#160;<a class="code" href="namespacead.html#ae3b24063a8792ec27e283f71088c91c0">template &lt;class T, std::enable_if_t&lt;!JsonType&lt;T&gt;::value</a>, <span class="keywordtype">void</span>*&gt;&gt;</div>
 <div class="line"><a name="l00628"></a><span class="lineno">  628</span>&#160;IOResult&lt;T&gt; JsonObject::expect_element(<span class="keyword">const</span> std::string&amp; name, Tag&lt;T&gt; tag)<span class="keyword"> const</span></div>
 <div class="line"><a name="l00629"></a><span class="lineno">  629</span>&#160;<span class="keyword"></span>{</div>
 <div class="line"><a name="l00630"></a><span class="lineno">  630</span>&#160;    <span class="keywordflow">if</span> (m_status-&gt;is_error()) {</div>
@@ -586,6 +586,9 @@ $(function() {
 <div class="ttc" id="aio_8h_html"><div class="ttname"><a href="io_8h.html">io.h</a></div></div>
 <div class="ttc" id="amemilio_2config_8h_html"><div class="ttname"><a href="memilio_2config_8h.html">config.h</a></div></div>
 <div class="ttc" id="ametaprogramming_8h_html"><div class="ttname"><a href="metaprogramming_8h.html">metaprogramming.h</a></div></div>
+<div class="ttc" id="anamespacead_1_1internal_html_a7ba0a5b242bd0af8fe3f76bcc798c956"><div class="ttname"><a href="namespacead_1_1internal.html#a7ba0a5b242bd0af8fe3f76bcc798c956">ad::internal::min</a></div><div class="ttdeci">static min_max_return_type&lt; ad::internal::active_type&lt; AD_TAPE_REAL, DATA_HANDLER_1 &gt;, ad::internal::active_type&lt; AD_TAPE_REAL, DATA_HANDLER_1 &gt; &gt;::type min(const ad::internal::active_type&lt; AD_TAPE_REAL, DATA_HANDLER_1 &gt; &amp;a, const ad::internal::active_type&lt; AD_TAPE_REAL, DATA_HANDLER_1 &gt; &amp;b)</div><div class="ttdef"><b>Definition:</b> ad.hpp:2599</div></div>
+<div class="ttc" id="anamespacead_1_1internal_html_aa51c892c87b65f08c37a87e280c8b123"><div class="ttname"><a href="namespacead_1_1internal.html#aa51c892c87b65f08c37a87e280c8b123">ad::internal::max</a></div><div class="ttdeci">static min_max_return_type&lt; ad::internal::active_type&lt; AD_TAPE_REAL, DATA_HANDLER_1 &gt;, ad::internal::active_type&lt; AD_TAPE_REAL, DATA_HANDLER_1 &gt; &gt;::type max(const ad::internal::active_type&lt; AD_TAPE_REAL, DATA_HANDLER_1 &gt; &amp;a, const ad::internal::active_type&lt; AD_TAPE_REAL, DATA_HANDLER_1 &gt; &amp;b)</div><div class="ttdef"><b>Definition:</b> ad.hpp:2596</div></div>
+<div class="ttc" id="anamespacead_html_ae3b24063a8792ec27e283f71088c91c0"><div class="ttname"><a href="namespacead.html#ae3b24063a8792ec27e283f71088c91c0">ad::value</a></div><div class="ttdeci">trait_value&lt; T &gt;::RETURN_TYPE &amp; value(T &amp;x)</div><div class="ttdef"><b>Definition:</b> ad.hpp:3308</div></div>
 <div class="ttc" id="anamespacemio_html"><div class="ttname"><a href="namespacemio.html">mio</a></div><div class="ttdoc">A collection of classes to simplify handling of matrix shapes in meta programming.</div><div class="ttdef"><b>Definition:</b> compartmentalmodel.h:33</div></div>
 <div class="ttc" id="anamespacemio_html_a00cf52f73f21f24b421264732496fe81"><div class="ttname"><a href="namespacemio.html#a00cf52f73f21f24b421264732496fe81">mio::deserialize_internal</a></div><div class="ttdeci">IOResult&lt; Tup &gt; deserialize_internal(IOContext &amp;io, Tag&lt; Tup &gt; tag)</div><div class="ttdoc">deserialize a tuple-like object, e.g.</div><div class="ttdef"><b>Definition:</b> io.h:582</div></div>
 <div class="ttc" id="anamespacemio_html_a1eecf99ef3a231d628f968aeb2136865"><div class="ttname"><a href="namespacemio.html#a1eecf99ef3a231d628f968aeb2136865">mio::deserialize</a></div><div class="ttdeci">IOResult&lt; T &gt; deserialize(IOContext &amp;io, Tag&lt; T &gt; tag)</div><div class="ttdoc">Restores an object from the data stored in an IO context.</div><div class="ttdef"><b>Definition:</b> io.h:809</div></div>
@@ -599,7 +602,6 @@ $(function() {
 <div class="ttc" id="anamespacemio_html_a2f858e287c3935240954cf75cf53cfeb"><div class="ttname"><a href="namespacemio.html#a2f858e287c3935240954cf75cf53cfeb">mio::Tag</a></div><div class="ttdeci">boost::outcome_v2::in_place_type_t&lt; T &gt; Tag</div><div class="ttdoc">Type that is used for overload resolution.</div><div class="ttdef"><b>Definition:</b> io.h:400</div></div>
 <div class="ttc" id="anamespacemio_html_a80d7fd30c9669e05b537b2caedd82bb8"><div class="ttname"><a href="namespacemio.html#a80d7fd30c9669e05b537b2caedd82bb8">mio::success</a></div><div class="ttdeci">auto success()</div><div class="ttdoc">Create an object that is implicitly convertible to a succesful IOResult&lt;void&gt;.</div><div class="ttdef"><b>Definition:</b> io.h:352</div></div>
 <div class="ttc" id="anamespacemio_html_a81e603f62801572c7afdf910bc057681"><div class="ttname"><a href="namespacemio.html#a81e603f62801572c7afdf910bc057681">mio::end</a></div><div class="ttdeci">std::enable_if_t&lt; conjunction_v&lt; std::is_base_of&lt; Eigen::EigenBase&lt; M &gt;, M &gt;, details::IsElementReference&lt; M &gt; &gt;, RowMajorIterator&lt; M, false &gt; &gt; end(M &amp;m)</div><div class="ttdoc">create a non-const end iterator for the matrix m.</div><div class="ttdef"><b>Definition:</b> eigen_util.h:452</div></div>
-<div class="ttc" id="anamespacemio_html_a97f6645c13faf4749f34d7e6e191f9ac"><div class="ttname"><a href="namespacemio.html#a97f6645c13faf4749f34d7e6e191f9ac">mio::max</a></div><div class="ttdeci">auto max(const Eigen::MatrixBase&lt; A &gt; &amp;a, B &amp;&amp;b)</div><div class="ttdoc">coefficient wise maximum of two matrices.</div><div class="ttdef"><b>Definition:</b> eigen_util.h:179</div></div>
 <div class="ttc" id="anamespacemio_html_a9f158d720a7cadd39e482f6c2302a087"><div class="ttname"><a href="namespacemio.html#a9f158d720a7cadd39e482f6c2302a087">mio::serialize_internal</a></div><div class="ttdeci">void serialize_internal(IOContext &amp;io, const Tup &amp;tup)</div><div class="ttdoc">serialize a tuple-like object, e.g.</div><div class="ttdef"><b>Definition:</b> io.h:566</div></div>
 <div class="ttc" id="anamespacemio_html_a9fab9e6d67aeaa98bb74dac0d52ac4fc"><div class="ttname"><a href="namespacemio.html#a9fab9e6d67aeaa98bb74dac0d52ac4fc">mio::unused</a></div><div class="ttdeci">void unused(T &amp;&amp;...)</div><div class="ttdoc">does nothing, can be used to mark variables as not used.</div><div class="ttdef"><b>Definition:</b> compiler_diagnostics.h:30</div></div>
 <div class="ttc" id="anamespacemio_html_aa6c974748a742fac0093de2634750791"><div class="ttname"><a href="namespacemio.html#aa6c974748a742fac0093de2634750791">mio::begin</a></div><div class="ttdeci">std::enable_if_t&lt; conjunction_v&lt; std::is_base_of&lt; Eigen::EigenBase&lt; M &gt;, M &gt;, details::IsElementReference&lt; M &gt; &gt;, RowMajorIterator&lt; M, false &gt; &gt; begin(M &amp;m)</div><div class="ttdoc">create a non-const iterator to first element of the matrix m.</div><div class="ttdef"><b>Definition:</b> eigen_util.h:423</div></div>

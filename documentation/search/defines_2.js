@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['memilio_5fenable_5febo_3604',['MEMILIO_ENABLE_EBO',['../compiler__diagnostics_8h.html#aae95afe748c78c6edadb3f3783ceebc1',1,'compiler_diagnostics.h']]],
-  ['msvc_5fwarning_5fdisable_5fpush_3605',['MSVC_WARNING_DISABLE_PUSH',['../compiler__diagnostics_8h.html#a222996f9b3656a6d4dbc4e9a57c72e2e',1,'compiler_diagnostics.h']]],
-  ['msvc_5fwarning_5fpop_3606',['MSVC_WARNING_POP',['../compiler__diagnostics_8h.html#ab1a582833b695bfecd10965e3b52e733',1,'compiler_diagnostics.h']]]
+  ['decl_5ftypesafe_4375',['DECL_TYPESAFE',['../type__safe_8h.html#a4c53d89a42d456f18c61ae7dba90e653',1,'type_safe.h']]],
+  ['deprecated_4376',['DEPRECATED',['../ad_8hpp.html#ac1e8a42306d8e67cb94ca31c3956ee78',1,'ad.hpp']]]
 ];

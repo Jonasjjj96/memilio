@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['deserialize_5finternal_3591',['deserialize_internal',['../classmio_1_1BinarySerializerContext.html#a27e4aa4c728886bb91e878f90fd2e4f7',1,'mio::BinarySerializerContext']]]
+  ['blob_5ftape_4355',['blob_tape',['../classad_1_1helper_1_1callback__object__base.html#a49dc5c898cee9af9ece0ca5402cc126d',1,'ad::helper::callback_object_base']]]
 ];
