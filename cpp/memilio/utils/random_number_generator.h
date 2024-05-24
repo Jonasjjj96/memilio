@@ -357,6 +357,43 @@ public:
 #endif
     }
 
+    /**
+     * serialize this. 
+     * @see mio::serialize
+     */
+    template <class IOContext>
+    void serialize(IOContext& io) const
+    {
+        auto obj = io.create_object("RandomNumberGenerator");
+        obj.add_element("key", m_key.get());
+        obj.add_element("counter", m_counter.get());
+        obj.add_list("seeds", m_seeds.cbegin(), m_seeds.cend());
+    }
+
+    /**
+     * deserialize an object of this class.
+     * @see mio::deserialize
+     */
+    template <class IOContext>
+    static IOResult<RandomNumberGenerator> deserialize(IOContext& io)
+    {
+        auto obj     = io.expect_object("RandomNumberGenerator");
+        auto key     = obj.expect_element("key", Tag<uint64_t>{});
+        auto counter = obj.expect_element("counter", Tag<uint64_t>{});
+        auto seeds   = obj.expect_list("seeds", Tag<uint32_t>{});
+        return apply(
+            io,
+
+            [](auto&& key_, auto&& counter_, auto&& seeds_) {
+                RandomNumberGenerator rng;
+                rng.m_key     = Key<uint64_t>(key_);
+                rng.m_counter = Counter<uint64_t>(counter_);
+                rng.m_seeds.assign(seeds_.cbegin(), seeds_.cend());
+                return rng;
+            },
+            key, counter, seeds);
+    }
+
 private:
     Key<uint64_t> m_key;
     Counter<uint64_t> m_counter;

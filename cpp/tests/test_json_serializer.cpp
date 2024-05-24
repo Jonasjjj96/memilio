@@ -563,9 +563,10 @@ TEST(TestJsonSerializer, abmWorld)
     expected_json["persons"][0]["age"]               = Json::UInt(2);
     expected_json["persons"][0]["id"]                = Json::UInt(person);
     expected_json["use_migration_rules"]             = Json::Value(true);
-    ASSERT_EQ(js.value(), expected_json);
+    EXPECT_EQ(js.value(), expected_json) << "Failure expected - make sure the next EXPECT works.";
 
     // auto r = mio::deserialize_json(expected_json, mio::Tag<mio::abm::World>());
-    // ASSERT_THAT(print_wrap(r), IsSuccess());
+    auto r = mio::deserialize_json(js.value(), mio::Tag<mio::abm::World>());
+    EXPECT_THAT(print_wrap(r), IsSuccess()) << "It did not.";
     // EXPECT_EQ(r.value(), world);
 }

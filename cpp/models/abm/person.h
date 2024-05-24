@@ -415,7 +415,8 @@ public:
         return apply(
             io,
             [](auto&& loc_, auto&& age_, auto&& id_) {
-                return Person{mio::RandomNumberGenerator(), loc_, AgeGroup(age_), id_};
+                mio::RandomNumberGenerator rng;
+                return Person{rng, loc_, AgeGroup(age_), id_};
             },
             loc, age, id);
     }

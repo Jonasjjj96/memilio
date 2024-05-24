@@ -19,6 +19,7 @@
 */
 
 #include "abm/testing_strategy.h"
+#include "abm/parameters.h"
 #include "memilio/utils/random_number_generator.h"
 
 namespace mio

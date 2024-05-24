@@ -20,6 +20,10 @@
 #ifndef MIO_ABM_TIME_H
 #define MIO_ABM_TIME_H
 
+#include "abm/rs.h"
+#include "memilio/io/io.h"
+#include "memilio/utils/type_list.h"
+#include <tuple>
 namespace mio
 {
 namespace abm
@@ -32,6 +36,15 @@ namespace abm
 class TimeSpan
 {
 public:
+    static auto get_serialization_names()
+    {
+        return make_auto_serialization_names("TimeSpan", {"seconds"});
+    }
+
+    auto get_serialization_targets() const
+    {
+        return make_auto_serialization_targets(m_seconds);
+    }
     /**
      * @brief Default ctor, uninitialized.
      */
@@ -282,6 +295,16 @@ public:
     TimeSpan operator-(const TimePoint& p2) const
     {
         return TimeSpan{m_seconds - p2.seconds()};
+    }
+
+    static auto get_serialization_names()
+    {
+        return make_auto_serialization_names("TimePoint", {"seconds"});
+    }
+
+    auto get_serialization_targets() const
+    {
+        return make_auto_serialization_targets(m_seconds);
     }
 
 private:
