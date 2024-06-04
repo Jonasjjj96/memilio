@@ -26,6 +26,7 @@
 #include "abm/virus_variant.h"
 #include "abm/vaccine.h"
 #include "memilio/config.h"
+#include "memilio/io/io.h"
 #include "memilio/math/interpolation.h"
 #include "memilio/utils/custom_index_array.h"
 #include "memilio/utils/uncertain_value.h"
@@ -33,11 +34,38 @@
 #include "memilio/epidemiology/age_group.h"
 #include "memilio/epidemiology/damping.h"
 #include "memilio/epidemiology/contact_matrix.h"
+#include <algorithm>
 #include <cassert>
 #include <limits>
+#include <utility>
+#include <vector>
 
 namespace mio
 {
+
+template <class IOContext>
+void serialize_internal(IOContext& io, const UniformDistribution<double>::ParamType& p)
+{
+    auto obj = io.create_object("UniformDistributionParams");
+    obj.add_element("a", p.params.a());
+    obj.add_element("b", p.params.b());
+}
+
+template <class IOContext>
+IOResult<UniformDistribution<double>::ParamType> deserialize_internal(IOContext& io,
+                                                                      Tag<UniformDistribution<double>::ParamType>)
+{
+    auto obj = io.expect_object("UniformDistributionParams");
+    auto a   = obj.expect_element("a", Tag<double>{});
+    auto b   = obj.expect_element("b", Tag<double>{});
+    return apply(
+        io,
+        [](auto&& a_, auto&& b_) {
+            return UniformDistribution<double>::ParamType{a_, b_};
+        },
+        a, b);
+}
+
 namespace abm
 {
 
@@ -277,28 +305,61 @@ struct AerosolTransmissionRates {
     }
 };
 
-// class TimeDependantParameter
-// {
-//     Eigen::MatrixXd data;
-//     unsigned function_type;
+enum class TimeDependentParameterFunctorType
+{
+    Zero,
+    LinearInterpolation,
+};
 
-//     ScalarType operator()(ScalarType time)
-//     {
-//         switch (function_type) {
-//         case 0:
-//             assert(data.cols() == 1 && data.rows() == 2);
-//             return linear_interpolation_of_data_set(std::vector<std::pair<X, Y>> vector, time);
-//         default:
-//             if (data.rows() && data.cols()) {
-//                 return data(0, 0);
-//             }
-//             else
-//                 return 0;
-//         }
-//     }
-// };
+class TimeDependentParameterFunctor
+{
+public:
+    using DataType = std::vector<std::vector<ScalarType>>;
+    TimeDependentParameterFunctor(TimeDependentParameterFunctorType type, DataType data)
+        : m_type(type)
+        , m_data(data)
+    {
+    }
 
-using InputFunctionForProtectionLevel = std::function<ScalarType(ScalarType)>;
+    TimeDependentParameterFunctor()
+        : TimeDependentParameterFunctor(TimeDependentParameterFunctorType::Zero, {})
+    {
+    }
+
+    ScalarType operator()(ScalarType time) const
+    {
+        switch (m_type) {
+        case TimeDependentParameterFunctorType::Zero:
+            return 0.0;
+        case TimeDependentParameterFunctorType::LinearInterpolation:
+            std::vector<std::pair<ScalarType, ScalarType>> dataset(m_data.size());
+            std::transform(m_data.begin(), m_data.end(), dataset.begin(), [](auto&& datapoint) {
+                assert(datapoint.size() >= 2);
+                return std::make_pair(datapoint[0], datapoint[1]);
+            });
+            return linear_interpolation_of_data_set(dataset, time);
+        }
+
+        return 0.0; // should be unreachable, but without this the compiler may complain about a missing return.
+    }
+
+    static auto get_serialization_names()
+    {
+        return make_auto_serialization_names("TimeDependentParameterFunctor", {"type", "data"});
+    }
+
+    auto get_serialization_targets() const
+    {
+        return make_auto_serialization_targets(m_type, m_data);
+    }
+
+private:
+    TimeDependentParameterFunctorType m_type;
+    DataType m_data;
+};
+
+// using InputFunctionForProtectionLevel = std::function<ScalarType(ScalarType)>;
+using InputFunctionForProtectionLevel = TimeDependentParameterFunctor;
 
 /**
  * @brief Personal protection factor against #Infection% after #Infection and #Vaccination, which depends on #ExposureType,
@@ -308,9 +369,8 @@ struct InfectionProtectionFactor {
     using Type = CustomIndexArray<InputFunctionForProtectionLevel, ExposureType, AgeGroup, VirusVariant>;
     static auto get_default(AgeGroup size)
     {
-        return Type({ExposureType::Count, size, VirusVariant::Count}, [](ScalarType /*days*/) -> ScalarType {
-            return 0;
-        });
+        return Type({ExposureType::Count, size, VirusVariant::Count},
+                    Type::value_type(TimeDependentParameterFunctorType::Zero, {}));
     }
     static std::string name()
     {
@@ -326,9 +386,8 @@ struct SeverityProtectionFactor {
     using Type = CustomIndexArray<InputFunctionForProtectionLevel, ExposureType, AgeGroup, VirusVariant>;
     static auto get_default(AgeGroup size)
     {
-        return Type({ExposureType::Count, size, VirusVariant::Count}, [](ScalarType /*days*/) -> ScalarType {
-            return 0;
-        });
+        return Type({ExposureType::Count, size, VirusVariant::Count},
+                    Type::value_type(TimeDependentParameterFunctorType::Zero, {}));
     }
     static std::string name()
     {
@@ -343,9 +402,7 @@ struct HighViralLoadProtectionFactor {
     using Type = InputFunctionForProtectionLevel;
     static auto get_default()
     {
-        return Type([](ScalarType /*days*/) -> ScalarType {
-            return 0;
-        });
+        return Type(TimeDependentParameterFunctorType::Zero, {});
     }
     static std::string name()
     {
@@ -663,6 +720,14 @@ public:
     {
     }
 
+private:
+    Parameters(ParametersBase&& base)
+        : ParametersBase(std::move(base))
+        , m_num_groups(this->get<AgeGroupGotoWork>().size<AgeGroup>().get())
+    {
+    }
+
+public:
     /**
     * @brief Get the number of the age groups.
     */
@@ -811,6 +876,17 @@ public:
         }
 
         return false;
+    }
+
+    /**
+     * deserialize an object of this class.
+     * @see epi::deserialize
+     */
+    template <class IOContext>
+    static IOResult<Parameters> deserialize(IOContext& io)
+    {
+        BOOST_OUTCOME_TRY(auto&& base, ParametersBase::deserialize(io));
+        return success(Parameters(std::move(base)));
     }
 
 private:

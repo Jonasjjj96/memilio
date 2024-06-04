@@ -26,7 +26,6 @@
 #include "abm/parameters.h"
 #include "abm/location.h"
 #include "abm/person.h"
-#include "abm/rs.h"
 #include "abm/time.h"
 #include "abm/trip_list.h"
 #include "abm/random_events.h"
@@ -112,7 +111,7 @@ public:
     void serialize(IOContext& io) const
     {
         auto obj = io.create_object("World");
-        // obj.add_element("parameters", parameters);
+        obj.add_element("parameters", parameters);
         // skip caches, they are rebuild by the deserialized world
         obj.add_list("persons", get_persons().begin(), get_persons().end());
         obj.add_list("locations", get_locations().begin(), get_locations().end());
@@ -131,8 +130,8 @@ public:
     template <class IOContext>
     static IOResult<World> deserialize(IOContext& io)
     {
-        auto obj = io.expect_object("World");
-        // auto params              = obj.expect_element("parameters", Tag<Parameters>{});
+        auto obj                 = io.expect_object("World");
+        auto params              = obj.expect_element("parameters", Tag<Parameters>{});
         auto persons             = obj.expect_list("persons", Tag<Person>{});
         auto locations           = obj.expect_list("locations", Tag<Location>{});
         auto trip_list           = obj.expect_element("trip_list", Tag<TripList>{});
@@ -141,10 +140,9 @@ public:
         auto rng                 = obj.expect_element("rng", Tag<RandomNumberGenerator>{});
         return apply(
             io,
-            // [](auto&& params_, auto&& persons_, auto&& locations_, auto&& trip_list_, auto&& use_migration_rule_,
-            [](auto&& persons_, auto&& locations_, auto&& trip_list_, auto&& use_migration_rule_, auto&& cemetery_id_,
-               auto&& rng_) {
-                World world{5};
+            [](auto&& params_, auto&& persons_, auto&& locations_, auto&& trip_list_, auto&& use_migration_rule_,
+               auto&& cemetery_id_, auto&& rng_) {
+                World world{params_};
                 world.m_persons.assign(persons_.cbegin(), persons_.cend());
                 world.m_locations.assign(locations_.cbegin(), locations_.cend());
                 world.m_trip_list           = trip_list_;
@@ -153,8 +151,7 @@ public:
                 world.m_rng                 = rng_;
                 return world;
             },
-            // params,
-            persons, locations, trip_list, use_migration_rules, cemetery_id, rng);
+            params, persons, locations, trip_list, use_migration_rules, cemetery_id, rng);
     }
 
     /** 
