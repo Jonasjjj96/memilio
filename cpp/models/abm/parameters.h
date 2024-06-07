@@ -207,9 +207,16 @@ struct ViralLoadDistributionsParameters {
                                              {"viral_load_peak", "viral_load_incline", "viral_load_decline"});
     }
 
-    auto get_serialization_targets() const
+    auto get_serialization_targets()
     {
         return make_auto_serialization_targets(viral_load_peak, viral_load_incline, viral_load_decline);
+    }
+
+    auto auto_serialize()
+    {
+        return make_auto_serialization("ViralLoadDistributionsParameters", NVP("viral_load_peak", viral_load_peak),
+                                       NVP("viral_load_incline", viral_load_incline),
+                                       NVP("viral_load_decline", viral_load_decline));
     }
 };
 
@@ -237,13 +244,20 @@ struct InfectivityDistributionsParameters {
 
     static auto get_serialization_names()
     {
-        return make_auto_serialization_names("ViralLoadDistributionsParameters",
+        return make_auto_serialization_names("InfectivityDistributionsParameters",
                                              {"infectivity_alpha", "infectivity_beta"});
     }
 
-    auto get_serialization_targets() const
+    auto get_serialization_targets()
     {
         return make_auto_serialization_targets(infectivity_alpha, infectivity_beta);
+    }
+
+    auto auto_serialize()
+    {
+        return make_auto_serialization("InfectivityDistributionsParameters",
+                                       NVP("infectivity_alpha", infectivity_alpha),
+                                       NVP("infectivity_beta", infectivity_beta));
     }
 };
 
@@ -348,9 +362,14 @@ public:
         return make_auto_serialization_names("TimeDependentParameterFunctor", {"type", "data"});
     }
 
-    auto get_serialization_targets() const
+    auto get_serialization_targets()
     {
         return make_auto_serialization_targets(m_type, m_data);
+    }
+
+    auto auto_serialize()
+    {
+        return make_auto_serialization("TimeDependentParameterFunctor", NVP("type", m_type), NVP("data", m_data));
     }
 
 private:
@@ -422,9 +441,15 @@ struct TestParameters {
         return make_auto_serialization_names("TestParameters", {"sensitivity", "specificity"});
     }
 
-    auto get_serialization_targets() const
+    auto get_serialization_targets()
     {
         return make_auto_serialization_targets(sensitivity, specificity);
+    }
+
+    auto auto_serialize()
+    {
+        return make_auto_serialization("TestParameters", NVP("sensitivity", sensitivity),
+                                       NVP("specificity", specificity));
     }
 };
 

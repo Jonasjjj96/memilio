@@ -41,7 +41,7 @@ public:
         return make_auto_serialization_names("TimeSpan", {"seconds"});
     }
 
-    auto get_serialization_targets() const
+    auto get_serialization_targets()
     {
         return make_auto_serialization_targets(m_seconds);
     }
@@ -302,7 +302,7 @@ public:
         return make_auto_serialization_names("TimePoint", {"seconds"});
     }
 
-    auto get_serialization_targets() const
+    auto get_serialization_targets()
     {
         return make_auto_serialization_targets(m_seconds);
     }
