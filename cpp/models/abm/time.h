@@ -36,15 +36,6 @@ namespace abm
 class TimeSpan
 {
 public:
-    static auto get_serialization_names()
-    {
-        return make_auto_serialization_names("TimeSpan", {"seconds"});
-    }
-
-    auto get_serialization_targets()
-    {
-        return make_auto_serialization_targets(m_seconds);
-    }
     /**
      * @brief Default ctor, uninitialized.
      */
@@ -155,6 +146,11 @@ public:
         return *this;
     }
     /**@}*/
+
+    auto auto_serialize()
+    {
+        return make_auto_serialization("TimeSpan", NVP("seconds", m_seconds));
+    }
 
 private:
     int m_seconds; ///< The duration of time in seconds.
@@ -297,14 +293,9 @@ public:
         return TimeSpan{m_seconds - p2.seconds()};
     }
 
-    static auto get_serialization_names()
+    auto auto_serialize()
     {
-        return make_auto_serialization_names("TimePoint", {"seconds"});
-    }
-
-    auto get_serialization_targets()
-    {
-        return make_auto_serialization_targets(m_seconds);
+        return make_auto_serialization("TimePoint", NVP("seconds", m_seconds));
     }
 
 private:

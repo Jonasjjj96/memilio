@@ -201,17 +201,6 @@ struct ViralLoadDistributionsParameters {
     UniformDistribution<double>::ParamType viral_load_incline;
     UniformDistribution<double>::ParamType viral_load_decline;
 
-    static auto get_serialization_names()
-    {
-        return make_auto_serialization_names("ViralLoadDistributionsParameters",
-                                             {"viral_load_peak", "viral_load_incline", "viral_load_decline"});
-    }
-
-    auto get_serialization_targets()
-    {
-        return make_auto_serialization_targets(viral_load_peak, viral_load_incline, viral_load_decline);
-    }
-
     auto auto_serialize()
     {
         return make_auto_serialization("ViralLoadDistributionsParameters", NVP("viral_load_peak", viral_load_peak),
@@ -241,17 +230,6 @@ struct ViralLoadDistributions {
 struct InfectivityDistributionsParameters {
     UniformDistribution<double>::ParamType infectivity_alpha;
     UniformDistribution<double>::ParamType infectivity_beta;
-
-    static auto get_serialization_names()
-    {
-        return make_auto_serialization_names("InfectivityDistributionsParameters",
-                                             {"infectivity_alpha", "infectivity_beta"});
-    }
-
-    auto get_serialization_targets()
-    {
-        return make_auto_serialization_targets(infectivity_alpha, infectivity_beta);
-    }
 
     auto auto_serialize()
     {
@@ -357,16 +335,6 @@ public:
         return 0.0; // should be unreachable, but without this the compiler may complain about a missing return.
     }
 
-    static auto get_serialization_names()
-    {
-        return make_auto_serialization_names("TimeDependentParameterFunctor", {"type", "data"});
-    }
-
-    auto get_serialization_targets()
-    {
-        return make_auto_serialization_targets(m_type, m_data);
-    }
-
     auto auto_serialize()
     {
         return make_auto_serialization("TimeDependentParameterFunctor", NVP("type", m_type), NVP("data", m_data));
@@ -435,16 +403,6 @@ struct HighViralLoadProtectionFactor {
 struct TestParameters {
     UncertainValue<> sensitivity;
     UncertainValue<> specificity;
-
-    static auto get_serialization_names()
-    {
-        return make_auto_serialization_names("TestParameters", {"sensitivity", "specificity"});
-    }
-
-    auto get_serialization_targets()
-    {
-        return make_auto_serialization_targets(sensitivity, specificity);
-    }
 
     auto auto_serialize()
     {

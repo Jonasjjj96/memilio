@@ -101,78 +101,84 @@ struct NVP {
     }
     const std::string_view name;
     Type value;
+
+    NVP()                      = delete;
+    NVP(const NVP&)            = delete;
+    NVP(NVP&&)                 = default;
+    NVP& operator=(const NVP&) = delete;
+    NVP& operator=(NVP&&)      = delete;
 };
 
+// package names and member references together. always take return type by value!
 template <class... Targets>
 inline auto make_auto_serialization(const std::string_view type_name, NVP<Targets>... member_variables)
 {
-    // return std::tie(type_name, member_variables...);
-    return std::make_pair(type_name, std::make_tuple(member_variables...));
+    return std::make_pair(type_name, std::make_tuple(std::move(member_variables)...));
 }
 
-// do not accept rvalues. just repackage lvalue refs as const into a tuple. make sure this is not dangling in tests!
-template <class... Targets>
-inline std::tuple<Targets&...> make_auto_serialization_targets(Targets&... member_variables)
-{
-    return std::tie(member_variables...);
-}
+// // do not accept rvalues. just repackage lvalue refs as const into a tuple. make sure this is not dangling in tests!
+// template <class... Targets>
+// inline std::tuple<Targets&...> make_auto_serialization_targets(Targets&... member_variables)
+// {
+//     return std::tie(member_variables...);
+// }
 
-inline names_t make_auto_serialization_names(std::string_view type_name, std::vector<std::string_view> target_names)
-{
-    return std::make_pair(type_name, target_names);
-}
+// inline names_t make_auto_serialization_names(std::string_view type_name, std::vector<std::string_view> target_names)
+// {
+//     return std::make_pair(type_name, target_names);
+// }
 
-template <class IOContext, class... Targets>
-void auto_serialize(IOContext& io, const names_t& serialization_names,
-                    const std::tuple<Targets&...>& serialization_targets)
-{
-    assert(serialization_names.second.size() == sizeof...(Targets));
+// template <class IOContext, class... Targets>
+// void auto_serialize(IOContext& io, const names_t& serialization_names,
+//                     const std::tuple<Targets&...>& serialization_targets)
+// {
+//     assert(serialization_names.second.size() == sizeof...(Targets));
 
-    auto obj = io.create_object(std::string{serialization_names.first});
+//     auto obj = io.create_object(std::string{serialization_names.first});
 
-    auto add_elements = [&obj, &serialization_names](Targets const&... ts) {
-        size_t i = 0;
-        ((obj.add_element(std::string{serialization_names.second[i]}, ts), ++i), ...);
-    };
+//     auto add_elements = [&obj, &serialization_names](Targets const&... ts) {
+//         size_t i = 0;
+//         ((obj.add_element(std::string{serialization_names.second[i]}, ts), ++i), ...);
+//     };
 
-    std::apply(add_elements, serialization_targets);
-}
+//     std::apply(add_elements, serialization_targets);
+// }
 
-template <class Type, class IOContext, class... Targets, size_t... Indices>
-IOResult<Type> inline auto_deserialize_impl(IOContext& io, const names_t& serialization_names,
-                                            Tag<std::tuple<Targets&...>> tag,
-                                            std::index_sequence<Indices...> index_sequence)
-{
-    mio::unused(tag, index_sequence);
-    static_assert(sizeof...(Indices) == sizeof...(Targets), "Wrong Index set.");
+// template <class Type, class IOContext, class... Targets, size_t... Indices>
+// IOResult<Type> inline auto_deserialize_impl(IOContext& io, const names_t& serialization_names,
+//                                             Tag<std::tuple<Targets&...>> tag,
+//                                             std::index_sequence<Indices...> index_sequence)
+// {
+//     mio::unused(tag, index_sequence);
+//     static_assert(sizeof...(Indices) == sizeof...(Targets), "Wrong Index set.");
 
-    auto obj = io.expect_object(std::string{serialization_names.first});
+//     auto obj = io.expect_object(std::string{serialization_names.first});
 
-    return apply(
-        io,
-        [](Targets const&... ts) {
-            return Type{ts...};
-        },
-        IOResult<Targets>{obj.expect_element(std::string{serialization_names.second[Indices]}, Tag<Targets>{})}...);
-}
+//     return apply(
+//         io,
+//         [](Targets const&... ts) {
+//             return Type{ts...};
+//         },
+//         IOResult<Targets>{obj.expect_element(std::string{serialization_names.second[Indices]}, Tag<Targets>{})}...);
+// }
 
-template <class Type, class... Args>
-using list_initialization_expr = decltype(Type{std::declval<Args>()...});
+// template <class Type, class... Args>
+// using list_initialization_expr = decltype(Type{std::declval<Args>()...});
 
-template <class Type, class... Args>
-using is_list_initializable = is_expression_valid<list_initialization_expr, Type, Args...>;
+// template <class Type, class... Args>
+// using is_list_initializable = is_expression_valid<list_initialization_expr, Type, Args...>;
 
-template <class Type, class... Args>
-constexpr bool is_list_initializable_v = is_list_initializable<Type, Args...>::value;
+// template <class Type, class... Args>
+// constexpr bool is_list_initializable_v = is_list_initializable<Type, Args...>::value;
 
-template <class Type, class IOContext, class... Targets>
-IOResult<Type> auto_deserialize(IOContext& io, const names_t& serialization_names, Tag<std::tuple<Targets&...>> tag)
-{
-    static_assert(std::is_constructible_v<Type, Targets const&...> || is_list_initializable_v<Type, Targets const&...>,
-                  "Need a constructor using all serialization targets in order for auto_deserialize.");
-    assert(serialization_names.second.size() == sizeof...(Targets));
-    return auto_deserialize_impl<Type>(io, serialization_names, tag, std::make_index_sequence<sizeof...(Targets)>{});
-}
+// template <class Type, class IOContext, class... Targets>
+// IOResult<Type> auto_deserialize(IOContext& io, const names_t& serialization_names, Tag<std::tuple<Targets&...>> tag)
+// {
+//     static_assert(std::is_constructible_v<Type, Targets const&...> || is_list_initializable_v<Type, Targets const&...>,
+//                   "Need a constructor using all serialization targets in order for auto_deserialize.");
+//     assert(serialization_names.second.size() == sizeof...(Targets));
+//     return auto_deserialize_impl<Type>(io, serialization_names, tag, std::make_index_sequence<sizeof...(Targets)>{});
+// }
 
 // template <class... Targets>
 // struct AutoSerializerTuple : TypeSafe<std::tuple<std::reference_wrapper<std::pair<Targets, std::string>>...>,
@@ -207,8 +213,8 @@ template <class IOContext, class AutoSerializable,
                            void*> = nullptr>
 void serialize_internal(IOContext& io, const AutoSerializable& t)
 {
-    // TODO: removing const here is a kind of a hack, but the correct way would be to change how serialization works...
-    const auto& targets = const_cast<AutoSerializable*>(&t)->auto_serialize();
+    // Note that this cast is only safe if we do not modify targets.
+    const auto targets = const_cast<AutoSerializable*>(&t)->auto_serialize();
 
     auto obj = io.create_object(std::string{targets.first});
 
@@ -221,7 +227,7 @@ void serialize_internal(IOContext& io, const AutoSerializable& t)
 
 template <class IOContext, class AutoSerializable, class... Targets>
 auto auto_deserialize_impl(IOContext& io, AutoSerializable& a, std::string_view name,
-                           std::tuple<NVP<Targets>...> targets)
+                           std::tuple<NVP<Targets>...>& targets)
 {
     auto obj = io.expect_object(std::string{name});
 
@@ -244,29 +250,31 @@ template <
                      void*> = nullptr>
 IOResult<AutoSerializable> deserialize_internal(IOContext& io, Tag<AutoSerializable>)
 {
+    static_assert(std::is_default_constructible_v<AutoSerializable>,
+                  "Automatic deserialization requires a default constructor.");
     AutoSerializable a;
     auto targets = a.auto_serialize();
     return auto_deserialize_impl(io, a, targets.first, targets.second);
 }
 
-template <
-    class IOContext, class AutoSerializable,
-    std::enable_if_t<is_auto_serializable_v<AutoSerializable> && !has_serialize<IOContext, AutoSerializable>::value,
-                     void*> = nullptr>
-void serialize_internal(IOContext& io, const AutoSerializable& t)
-{
-    // TODO: removing const here is a HACK, but the correct way would be to change how serialization works...
-    auto_serialize(io, t.get_serialization_names(), (const_cast<AutoSerializable*>(&t))->get_serialization_targets());
-}
+// template <
+//     class IOContext, class AutoSerializable,
+//     std::enable_if_t<is_auto_serializable_v<AutoSerializable> && !has_serialize<IOContext, AutoSerializable>::value,
+//                      void*> = nullptr>
+// void serialize_internal(IOContext& io, const AutoSerializable& t)
+// {
+//     // TODO: removing const here is a HACK, but the correct way would be to change how serialization works...
+//     auto_serialize(io, t.get_serialization_names(), (const_cast<AutoSerializable*>(&t))->get_serialization_targets());
+// }
 
-template <
-    class IOContext, class AutoSerializable,
-    std::enable_if_t<is_auto_serializable_v<AutoSerializable> && !has_deserialize<IOContext, AutoSerializable>::value,
-                     void*> = nullptr>
-IOResult<AutoSerializable> deserialize_internal(IOContext& io, Tag<AutoSerializable>)
-{
-    using Targets = decltype(std::declval<AutoSerializable>().get_serialization_targets());
-    return auto_deserialize<AutoSerializable>(io, AutoSerializable::get_serialization_names(), Tag<Targets>{});
-}
+// template <
+//     class IOContext, class AutoSerializable,
+//     std::enable_if_t<is_auto_serializable_v<AutoSerializable> && !has_deserialize<IOContext, AutoSerializable>::value,
+//                      void*> = nullptr>
+// IOResult<AutoSerializable> deserialize_internal(IOContext& io, Tag<AutoSerializable>)
+// {
+//     using Targets = decltype(std::declval<AutoSerializable>().get_serialization_targets());
+//     return auto_deserialize<AutoSerializable>(io, AutoSerializable::get_serialization_names(), Tag<Targets>{});
+// }
 
 } // namespace mio
