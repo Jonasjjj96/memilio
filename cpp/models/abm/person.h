@@ -27,6 +27,7 @@
 #include "abm/parameters.h"
 #include "abm/person_id.h"
 #include "abm/personal_rng.h"
+#include "abm/rs.h"
 #include "abm/time.h"
 #include "abm/vaccine.h"
 #include "abm/mask.h"
@@ -388,40 +389,74 @@ public:
      */
     std::pair<ExposureType, TimePoint> get_latest_protection() const;
 
-    /**
-     * serialize this. 
-     * @see mio::serialize
-     */
-    template <class IOContext>
-    void serialize(IOContext& io) const
-    {
-        auto obj = io.create_object("Person");
-        obj.add_element("Location", m_location);
-        obj.add_element("age", m_age);
-        obj.add_element("id", m_person_id);
-    }
+    // /**
+    //  * serialize this.
+    //  * @see mio::serialize
+    //  */
+    // template <class IOContext>
+    // void serialize(IOContext& io) const
+    // {
+    //     auto obj = io.create_object("Person");
+    //     obj.add_element("Location", m_location);
+    //     obj.add_element("age", m_age);
+    //     obj.add_element("id", m_person_id);
+    // }
 
-    /**
-     * deserialize an object of this class.
-     * @see mio::deserialize
-     */
-    template <class IOContext>
-    static IOResult<Person> deserialize(IOContext& io)
+    // /**
+    //  * deserialize an object of this class.
+    //  * @see mio::deserialize
+    //  */
+    // template <class IOContext>
+    // static IOResult<Person> deserialize(IOContext& io)
+    // {
+    //     auto obj = io.expect_object("Person");
+    //     auto loc = obj.expect_element("Location", mio::Tag<LocationId>{});
+    //     auto age = obj.expect_element("age", Tag<uint32_t>{});
+    //     auto id  = obj.expect_element("id", Tag<PersonId>{});
+    //     return apply(
+    //         io,
+    //         [](auto&& loc_, auto&& age_, auto&& id_) {
+    //             mio::RandomNumberGenerator rng;
+    //             return Person{rng, loc_, AgeGroup(age_), id_};
+    //         },
+    //         loc, age, id);
+    // }
+
+    auto auto_serialize()
     {
-        auto obj = io.expect_object("Person");
-        auto loc = obj.expect_element("Location", mio::Tag<LocationId>{});
-        auto age = obj.expect_element("age", Tag<uint32_t>{});
-        auto id  = obj.expect_element("id", Tag<PersonId>{});
-        return apply(
-            io,
-            [](auto&& loc_, auto&& age_, auto&& id_) {
-                mio::RandomNumberGenerator rng;
-                return Person{rng, loc_, AgeGroup(age_), id_};
-            },
-            loc, age, id);
+        // clang-format off
+        return make_auto_serialization("Person",
+                                       NVP("location", m_location),
+                                       NVP("assigned_locations", m_assigned_locations),
+                                       NVP("vaccinations", m_vaccinations), 
+                                    //    NVP("infections", m_infections),
+                                       NVP("quarantine_start",m_quarantine_start),
+                                       NVP("age_group", m_age),
+                                       NVP("time_at_location", m_time_at_location),
+                                       NVP("rnd_workgroup", m_random_workgroup),
+                                       NVP("rnd_schoolgroup", m_random_schoolgroup),
+                                       NVP("rnd_go_to_work_hour", m_random_goto_work_hour),
+                                       NVP("rnd_go_to_school_hour", m_random_goto_school_hour),
+                                       NVP("time_of_last_test", m_time_of_last_test),
+                                       NVP("mask", m_mask),
+                                       NVP("wears_mask", m_wears_mask),
+                                       NVP("mask_compliance", m_mask_compliance),
+                                       NVP("id", m_person_id),
+                                       NVP("cells", m_cells),
+                                       NVP("last_transport_mode", m_last_transport_mode),
+                                       NVP("rng_counter", m_rng_counter)
+                                       );
+        // clang-format on
     }
 
 private:
+    // friend AutoConstructor<Person>;
+    // Person()
+    //     : m_age(0)
+    //     , m_mask(MaskType::Count)
+    // {
+    // }
+
     LocationId m_location; ///< Current Location of the Person.
     std::vector<uint32_t> m_assigned_locations; /**! Vector with the indices of the assigned Locations so that the 
     Person always visits the same Home or School etc. */
@@ -445,6 +480,14 @@ private:
 };
 
 } // namespace abm
+template <>
+struct AutoConstructor<abm::Person> : abm::Person {
+    AutoConstructor()
+        : Person(thread_local_rng(), abm::LocationId(), AgeGroup(0), abm::PersonId())
+    {
+    }
+};
+
 } // namespace mio
 
 #endif

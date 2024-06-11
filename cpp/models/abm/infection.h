@@ -21,6 +21,7 @@
 #define MIO_ABM_INFECTION_H
 
 #include "abm/personal_rng.h"
+#include "abm/rs.h"
 #include "abm/time.h"
 #include "abm/infection_state.h"
 #include "abm/virus_variant.h"
@@ -44,10 +45,21 @@ struct ViralLoad {
     ScalarType peak; ///< Peak amplitude of the ViralLoad.
     ScalarType incline; ///< Incline of the ViralLoad during incline phase in log_10 scale per day (always positive).
     ScalarType decline; ///< Decline of the ViralLoad during decline phase in log_10 scale per day (always negative).
+
+    auto auto_serialize()
+    {
+        return make_auto_serialization("ViralLoad", NVP("start_date", start_date), NVP("end_date", end_date),
+                                       NVP("peak", peak), NVP("incline", incline), NVP("decline", decline));
+    }
 };
 
 class Infection
 {
+private:
+    friend AutoConstructor<Infection>;
+    Infection()
+    {
+    }
 
 public:
     /**
@@ -113,6 +125,14 @@ public:
      * @returns Get the start date of the infection.
     */
     TimePoint get_start_date() const;
+
+    auto auto_serialize()
+    {
+        return make_auto_serialization("Infection", NVP("infection_course", m_infection_course),
+                                       NVP("virus_variant", m_virus_variant), NVP("viral_load", m_viral_load),
+                                       NVP("log_norm_alpha", m_log_norm_alpha), NVP("log_norm_beta", m_log_norm_beta),
+                                       NVP("detected", m_detected));
+    }
 
 private:
     /**

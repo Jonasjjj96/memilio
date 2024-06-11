@@ -20,6 +20,7 @@
 #ifndef MIO_ABM_VACCINE_H
 #define MIO_ABM_VACCINE_H
 
+#include "abm/rs.h"
 #include "abm/time.h"
 
 #include <cstdint>
@@ -52,11 +53,25 @@ struct Vaccination {
     {
     }
 
+    auto auto_serialize()
+    {
+        return make_auto_serialization("Vaccination", NVP("exposure_type", exposure_type), NVP("time", time));
+    }
+
     ExposureType exposure_type;
     TimePoint time;
 };
 
 } // namespace abm
+
+template <>
+struct AutoConstructor<abm::Vaccination> : abm::Vaccination {
+    AutoConstructor()
+        : Vaccination(abm::ExposureType::Count, abm::TimePoint())
+    {
+    }
+};
+
 } // namespace mio
 
 #endif

@@ -1,23 +1,20 @@
 #pragma once
 
 #include "memilio/io/io.h"
-#include "memilio/utils/compiler_diagnostics.h"
 #include "memilio/utils/metaprogramming.h"
 
-#include <iterator>
 #include <string>
 #include <string_view>
 #include <tuple>
 #include <type_traits>
 #include <utility>
-#include <vector>
 
 namespace mio
 {
 
 // template <class... Targets>
 // using targets_t = std::tuple<Targets&...>;
-using names_t = std::pair<std::string_view, const std::vector<std::string_view>>;
+// using names_t = std::pair<std::string_view, const std::vector<std::string_view>>;
 
 template <class T>
 using auto_serialize_expr = decltype(std::declval<T>().auto_serialize());
@@ -25,17 +22,17 @@ using auto_serialize_expr = decltype(std::declval<T>().auto_serialize());
 template <class T>
 constexpr bool has_auto_serialize_v = is_expression_valid<auto_serialize_expr, T>::value;
 
-template <class T>
-using get_serialization_targets_expr =
-    details::tuple_size_value_t<decltype(std::declval<T>().get_serialization_targets())>;
+// template <class T>
+// using get_serialization_targets_expr =
+//     details::tuple_size_value_t<decltype(std::declval<T>().get_serialization_targets())>;
 
-template <class T>
-using get_serialization_names_expr = decltype(std::declval<names_t>() == T::get_serialization_names());
+// template <class T>
+// using get_serialization_names_expr = decltype(std::declval<names_t>() == T::get_serialization_names());
 
-template <class T>
-constexpr bool is_auto_serializable_v =
-    !has_auto_serialize_v<T> && is_expression_valid<get_serialization_targets_expr, T>::value &&
-    is_expression_valid<get_serialization_names_expr, T>::value;
+// template <class T>
+// constexpr bool is_auto_serializable_v =
+//     !has_auto_serialize_v<T> && is_expression_valid<get_serialization_targets_expr, T>::value &&
+//     is_expression_valid<get_serialization_names_expr, T>::value;
 
 // template <class IOContext>
 // class AutoSerializerObject : public decltype(std::declval<IOContext>().create_object(std::declval<std::string>()))
@@ -111,7 +108,7 @@ struct NVP {
 
 // package names and member references together. always take return type by value!
 template <class... Targets>
-inline auto make_auto_serialization(const std::string_view type_name, NVP<Targets>... member_variables)
+[[nodiscard]] inline auto make_auto_serialization(const std::string_view type_name, NVP<Targets>... member_variables)
 {
     return std::make_pair(type_name, std::make_tuple(std::move(member_variables)...));
 }
@@ -198,12 +195,14 @@ inline auto make_auto_serialization(const std::string_view type_name, NVP<Target
 //     return std::make_tuple(std::cref(targets)...);
 // }
 
-template <class F, class... Targets>
-void apply_each(F&& f, const std::tuple<Targets...>& targets)
+template <class IOContext, class... Targets>
+void auto_serialize_impl(IOContext& io, const std::string_view name, const std::tuple<NVP<Targets>...>& targets)
 {
+    auto obj = io.create_object(std::string{name});
+
     std::apply(
-        [&](const Targets&... ts) {
-            (f(ts), ...);
+        [&obj](const NVP<Targets>&... nvps) {
+            (obj.add_element(std::string{nvps.name}, nvps.value), ...);
         },
         targets);
 }
@@ -215,19 +214,12 @@ void serialize_internal(IOContext& io, const AutoSerializable& t)
 {
     // Note that this cast is only safe if we do not modify targets.
     const auto targets = const_cast<AutoSerializable*>(&t)->auto_serialize();
-
-    auto obj = io.create_object(std::string{targets.first});
-
-    apply_each(
-        [&obj](auto&& nvp) {
-            obj.add_element(std::string{nvp.name}, nvp.value);
-        },
-        targets.second);
+    auto_serialize_impl(io, targets.first, targets.second);
 }
 
 template <class IOContext, class AutoSerializable, class... Targets>
-auto auto_deserialize_impl(IOContext& io, AutoSerializable& a, std::string_view name,
-                           std::tuple<NVP<Targets>...>& targets)
+IOResult<AutoSerializable> auto_deserialize_impl(IOContext& io, AutoSerializable& a, std::string_view name,
+                                                 std::tuple<NVP<Targets>...>& targets)
 {
     auto obj = io.expect_object(std::string{name});
 
@@ -244,17 +236,28 @@ auto auto_deserialize_impl(IOContext& io, AutoSerializable& a, std::string_view 
     return std::apply(unpacked_apply, targets);
 }
 
+template <class AutoSerializable>
+struct AutoConstructor : public AutoSerializable {
+    using AutoSerializable::AutoSerializable;
+};
+
 template <
     class IOContext, class AutoSerializable,
     std::enable_if_t<has_auto_serialize_v<AutoSerializable> && !has_deserialize<IOContext, AutoSerializable>::value,
                      void*> = nullptr>
 IOResult<AutoSerializable> deserialize_internal(IOContext& io, Tag<AutoSerializable>)
 {
-    static_assert(std::is_default_constructible_v<AutoSerializable>,
+    static_assert(std::is_default_constructible_v<AutoConstructor<AutoSerializable>>,
                   "Automatic deserialization requires a default constructor.");
-    AutoSerializable a;
-    auto targets = a.auto_serialize();
-    return auto_deserialize_impl(io, a, targets.first, targets.second);
+    if constexpr (std::is_default_constructible_v<AutoConstructor<AutoSerializable>>) {
+        AutoSerializable a = AutoConstructor<AutoSerializable>{};
+        auto targets       = a.auto_serialize();
+        return auto_deserialize_impl(io, a, targets.first, targets.second);
+    }
+    else {
+        // unreachable (i.e. used if the assert fails to suppress dependent errors)
+        return mio::success();
+    }
 }
 
 // template <

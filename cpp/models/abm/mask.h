@@ -22,6 +22,7 @@
 #define MIO_ABM_MASK_H
 
 #include "abm/mask_type.h"
+#include "abm/rs.h"
 #include "abm/time.h"
 
 namespace mio
@@ -72,11 +73,25 @@ public:
      */
     void change_mask(MaskType new_mask_type);
 
+    auto auto_serialize()
+    {
+        return make_auto_serialization("Mask", NVP("mask_type", m_type), NVP("time_used", m_time_used));
+    }
+
 private:
     MaskType m_type; ///< Type of the Mask.
     TimeSpan m_time_used; ///< Length of time the Mask has been used.
 };
 } // namespace abm
+
+template <>
+struct AutoConstructor<abm::Mask> : abm::Mask {
+    AutoConstructor()
+        : Mask(abm::MaskType::Count)
+    {
+    }
+};
+
 } // namespace mio
 
 #endif

@@ -20,6 +20,7 @@
 #ifndef MIO_ABM_LOCATION_TYPE_H
 #define MIO_ABM_LOCATION_TYPE_H
 
+#include "abm/rs.h"
 #include "memilio/io/io.h"
 #include <cstdint>
 #include <limits>
@@ -137,6 +138,11 @@ struct GeographicalLocation {
     {
         return !(latitude == other.latitude && longitude == other.longitude);
     }
+
+    auto auto_serialize()
+    {
+        return make_auto_serialization("GraphicalLocation", NVP("latitude", latitude), NVP("longitude", longitude));
+    };
 };
 
 } // namespace abm
