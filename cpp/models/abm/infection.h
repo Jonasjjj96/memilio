@@ -21,7 +21,7 @@
 #define MIO_ABM_INFECTION_H
 
 #include "abm/personal_rng.h"
-#include "abm/rs.h"
+#include "memilio/io/auto_serialize.h"
 #include "abm/time.h"
 #include "abm/infection_state.h"
 #include "abm/virus_variant.h"

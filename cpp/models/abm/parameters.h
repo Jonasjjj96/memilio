@@ -21,11 +21,11 @@
 #define MIO_ABM_PARAMETERS_H
 
 #include "abm/mask_type.h"
-#include "abm/rs.h"
 #include "abm/time.h"
 #include "abm/virus_variant.h"
 #include "abm/vaccine.h"
 #include "memilio/config.h"
+#include "memilio/io/auto_serialize.h"
 #include "memilio/io/io.h"
 #include "memilio/math/interpolation.h"
 #include "memilio/utils/custom_index_array.h"

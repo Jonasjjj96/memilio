@@ -20,10 +20,8 @@
 #ifndef MIO_ABM_TIME_H
 #define MIO_ABM_TIME_H
 
-#include "abm/rs.h"
-#include "memilio/io/io.h"
-#include "memilio/utils/type_list.h"
-#include <tuple>
+#include "memilio/io/auto_serialize.h"
+
 namespace mio
 {
 namespace abm

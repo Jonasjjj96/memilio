@@ -20,7 +20,7 @@
 #ifndef MIO_ABM_VACCINE_H
 #define MIO_ABM_VACCINE_H
 
-#include "abm/rs.h"
+#include "memilio/io/auto_serialize.h"
 #include "abm/time.h"
 
 #include <cstdint>

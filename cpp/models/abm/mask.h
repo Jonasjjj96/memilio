@@ -22,7 +22,7 @@
 #define MIO_ABM_MASK_H
 
 #include "abm/mask_type.h"
-#include "abm/rs.h"
+#include "memilio/io/auto_serialize.h"
 #include "abm/time.h"
 
 namespace mio

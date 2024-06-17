@@ -20,7 +20,7 @@
 #ifndef MIO_ABM_LOCATION_TYPE_H
 #define MIO_ABM_LOCATION_TYPE_H
 
-#include "abm/rs.h"
+#include "memilio/io/auto_serialize.h"
 #include "memilio/io/io.h"
 #include <cstdint>
 #include <limits>

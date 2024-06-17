@@ -27,7 +27,7 @@
 #include "abm/parameters.h"
 #include "abm/person_id.h"
 #include "abm/personal_rng.h"
-#include "abm/rs.h"
+#include "memilio/io/auto_serialize.h"
 #include "abm/time.h"
 #include "abm/vaccine.h"
 #include "abm/mask.h"
