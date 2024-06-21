@@ -241,36 +241,6 @@ public:
         m_npi_active = new_status;
     }
 
-    // /**
-    //  * serialize this.
-    //  * @see mio::serialize
-    //  */
-    // template <class IOContext>
-    // void serialize(IOContext& io) const
-    // {
-    //     auto obj = io.create_object("Location");
-    //     obj.add_element("index", m_id.index);
-    //     obj.add_element("type", m_id.type);
-    // }
-
-    // /**
-    //  * deserialize an object of this class.
-    //  * @see mio::deserialize
-    //  */
-    // template <class IOContext>
-    // static IOResult<Location> deserialize(IOContext& io)
-    // {
-    //     auto obj   = io.expect_object("Location");
-    //     auto index = obj.expect_element("index", Tag<uint32_t>{});
-    //     auto type  = obj.expect_element("type", Tag<uint32_t>{});
-    //     return apply(
-    //         io,
-    //         [](auto&& index_, auto&& type_) {
-    //             return Location{LocationId{index_, LocationType(type_)}};
-    //         },
-    //         index, type);
-    // }
-
     /**
      * @brief Get the geographical location of the Location.
      * @return The geographical location of the Location.
@@ -308,9 +278,7 @@ public:
 
 private:
     friend AutoConstructor<Location>;
-    Location()
-    {
-    }
+    Location() = default;
 
     LocationId m_id; ///< Id of the Location including type and index.
     LocalInfectionParameters m_parameters; ///< Infection parameters for the Location.

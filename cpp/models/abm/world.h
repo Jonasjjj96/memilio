@@ -115,7 +115,7 @@ public:
         // skip caches, they are rebuild by the deserialized world
         obj.add_list("persons", get_persons().begin(), get_persons().end());
         obj.add_list("locations", get_locations().begin(), get_locations().end());
-        // skip m_has_locations, regenerated during deserialize
+        obj.add_element("location_types", m_has_locations.to_ulong());
         obj.add_element("testing_strategy", m_testing_strategy);
         obj.add_element("trip_list", m_trip_list);
         obj.add_element("use_migration_rules", m_use_migration_rules);
@@ -134,24 +134,26 @@ public:
         auto params              = obj.expect_element("parameters", Tag<Parameters>{});
         auto persons             = obj.expect_list("persons", Tag<Person>{});
         auto locations           = obj.expect_list("locations", Tag<Location>{});
+        auto location_types      = obj.expect_element("location_types", Tag<unsigned long>{});
         auto trip_list           = obj.expect_element("trip_list", Tag<TripList>{});
         auto use_migration_rules = obj.expect_element("use_migration_rules", Tag<bool>{});
         auto cemetery_id         = obj.expect_element("cemetery_id", Tag<LocationId>{});
         auto rng                 = obj.expect_element("rng", Tag<RandomNumberGenerator>{});
         return apply(
             io,
-            [](auto&& params_, auto&& persons_, auto&& locations_, auto&& trip_list_, auto&& use_migration_rule_,
-               auto&& cemetery_id_, auto&& rng_) {
+            [](auto&& params_, auto&& persons_, auto&& locations_, auto&& location_types_, auto&& trip_list_,
+               auto&& use_migration_rule_, auto&& cemetery_id_, auto&& rng_) {
                 World world{params_};
                 world.m_persons.assign(persons_.cbegin(), persons_.cend());
                 world.m_locations.assign(locations_.cbegin(), locations_.cend());
+                world.m_has_locations       = location_types_;
                 world.m_trip_list           = trip_list_;
                 world.m_use_migration_rules = use_migration_rule_;
                 world.m_cemetery_id         = cemetery_id_;
                 world.m_rng                 = rng_;
                 return world;
             },
-            params, persons, locations, trip_list, use_migration_rules, cemetery_id, rng);
+            params, persons, locations, location_types, trip_list, use_migration_rules, cemetery_id, rng);
     }
 
     /** 

@@ -55,12 +55,6 @@ struct ViralLoad {
 
 class Infection
 {
-private:
-    friend AutoConstructor<Infection>;
-    Infection()
-    {
-    }
-
 public:
     /**
      * @brief Create an Infection for a single Person.
@@ -135,6 +129,9 @@ public:
     }
 
 private:
+    friend AutoConstructor<Infection>;
+    Infection() = default;
+
     /**
      * @brief Determine ViralLoad course and Infection course based on init_state.
      * Calls draw_infection_course_backward for all #InfectionState%s prior and draw_infection_course_forward for all
