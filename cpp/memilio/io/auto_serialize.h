@@ -123,7 +123,7 @@ using has_auto_serialize = is_expression_valid<details::auto_serialize_expr, T>;
 template <class IOContext, class AutoSerializable,
           std::enable_if_t<has_auto_serialize<AutoSerializable>::value &&
                                not has_serialize<IOContext, AutoSerializable>::value,
-                           void*> = nullptr>
+                           AutoSerializable*> = nullptr>
 void serialize_internal(IOContext& io, const AutoSerializable& t)
 {
     // Note that this cast is only safe if we do not modify targets.
@@ -136,7 +136,7 @@ void serialize_internal(IOContext& io, const AutoSerializable& t)
 template <class IOContext, class AutoSerializable,
           std::enable_if_t<has_auto_serialize<AutoSerializable>::value &&
                                not has_deserialize<IOContext, AutoSerializable>::value,
-                           void*> = nullptr>
+                           AutoSerializable*> = nullptr>
 IOResult<AutoSerializable> deserialize_internal(IOContext& io, Tag<AutoSerializable>)
 {
     static_assert(std::is_default_constructible_v<AutoConstructor<AutoSerializable>>,
