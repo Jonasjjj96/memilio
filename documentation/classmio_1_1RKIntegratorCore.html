@@ -112,20 +112,29 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:afeb3d71b62cca99311a1ffbacde6420b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Make a single integration step of a system of ODEs and adapt the step size.  <a href="classmio_1_1RKIntegratorCore.html#afeb3d71b62cca99311a1ffbacde6420b">More...</a><br /></td></tr>
 <tr class="separator:afeb3d71b62cca99311a1ffbacde6420b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classmio_1_1IntegratorCore"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classmio_1_1IntegratorCore')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classmio_1_1IntegratorCore.html">mio::IntegratorCore&lt; double &gt;</a></td></tr>
+<tr class="memitem:a20e042c6553446a16810eed53ca4cfef inherit pub_methods_classmio_1_1IntegratorCore"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1IntegratorCore.html#a20e042c6553446a16810eed53ca4cfef">IntegratorCore</a> (const double &amp;dt_min, const double &amp;dt_max)</td></tr>
+<tr class="memdesc:a20e042c6553446a16810eed53ca4cfef inherit pub_methods_classmio_1_1IntegratorCore"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize an IntegratorCore.  <a href="classmio_1_1IntegratorCore.html#a20e042c6553446a16810eed53ca4cfef">More...</a><br /></td></tr>
+<tr class="separator:a20e042c6553446a16810eed53ca4cfef inherit pub_methods_classmio_1_1IntegratorCore"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a985f7da343d8ac4fd4a89ce35e1fbf2e inherit pub_methods_classmio_1_1IntegratorCore"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1IntegratorCore.html#a985f7da343d8ac4fd4a89ce35e1fbf2e">step</a> (const <a class="el" href="namespacemio.html#a79d7d0d1b2caddc5ad68e40935ef477a">DerivFunction</a>&lt; double &gt; &amp;f, Eigen::Ref&lt; const <a class="el" href="namespacemio.html#a4980272f784bde5ee00a3385538950de">Vector</a>&lt; double &gt;&gt; yt, double &amp;t, double &amp;dt, Eigen::Ref&lt; <a class="el" href="namespacemio.html#a4980272f784bde5ee00a3385538950de">Vector</a>&lt; double &gt;&gt; ytp1) const=0</td></tr>
 <tr class="memdesc:a985f7da343d8ac4fd4a89ce35e1fbf2e inherit pub_methods_classmio_1_1IntegratorCore"><td class="mdescLeft">&#160;</td><td class="mdescRight">Make a single integration step.  <a href="classmio_1_1IntegratorCore.html#a985f7da343d8ac4fd4a89ce35e1fbf2e">More...</a><br /></td></tr>
 <tr class="separator:a985f7da343d8ac4fd4a89ce35e1fbf2e inherit pub_methods_classmio_1_1IntegratorCore"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab3d8fda3027e7d46baf161b781185f99 inherit pub_methods_classmio_1_1IntegratorCore"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1IntegratorCore.html#ab3d8fda3027e7d46baf161b781185f99">~IntegratorCore</a> ()</td></tr>
 <tr class="separator:ab3d8fda3027e7d46baf161b781185f99 inherit pub_methods_classmio_1_1IntegratorCore"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a4745bb9133cc940ace6331df139a0a inherit pub_methods_classmio_1_1IntegratorCore"><td class="memItemLeft" align="right" valign="top">double &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1IntegratorCore.html#a2a4745bb9133cc940ace6331df139a0a">get_dt_min</a> ()</td></tr>
+<tr class="memdesc:a2a4745bb9133cc940ace6331df139a0a inherit pub_methods_classmio_1_1IntegratorCore"><td class="mdescLeft">&#160;</td><td class="mdescRight">Access lower bound to the step size dt.  <a href="classmio_1_1IntegratorCore.html#a2a4745bb9133cc940ace6331df139a0a">More...</a><br /></td></tr>
+<tr class="separator:a2a4745bb9133cc940ace6331df139a0a inherit pub_methods_classmio_1_1IntegratorCore"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a35635792257ee9badb005cd5332e4a91 inherit pub_methods_classmio_1_1IntegratorCore"><td class="memItemLeft" align="right" valign="top">const double &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1IntegratorCore.html#a35635792257ee9badb005cd5332e4a91">get_dt_min</a> () const</td></tr>
+<tr class="separator:a35635792257ee9badb005cd5332e4a91 inherit pub_methods_classmio_1_1IntegratorCore"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0600874e232703c5bb5b74b38eadc20f inherit pub_methods_classmio_1_1IntegratorCore"><td class="memItemLeft" align="right" valign="top">double &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1IntegratorCore.html#a0600874e232703c5bb5b74b38eadc20f">get_dt_max</a> ()</td></tr>
+<tr class="memdesc:a0600874e232703c5bb5b74b38eadc20f inherit pub_methods_classmio_1_1IntegratorCore"><td class="mdescLeft">&#160;</td><td class="mdescRight">Access upper bound to the step size dt.  <a href="classmio_1_1IntegratorCore.html#a0600874e232703c5bb5b74b38eadc20f">More...</a><br /></td></tr>
+<tr class="separator:a0600874e232703c5bb5b74b38eadc20f inherit pub_methods_classmio_1_1IntegratorCore"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afdad7be1a0f7cc218865c7bbd975b2b6 inherit pub_methods_classmio_1_1IntegratorCore"><td class="memItemLeft" align="right" valign="top">const double &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1IntegratorCore.html#afdad7be1a0f7cc218865c7bbd975b2b6">get_dt_max</a> () const</td></tr>
+<tr class="separator:afdad7be1a0f7cc218865c7bbd975b2b6 inherit pub_methods_classmio_1_1IntegratorCore"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
 <tr class="memitem:a0056f12ecace11d0ae28e41029aa6a27"><td class="memItemLeft" align="right" valign="top">FP&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1RKIntegratorCore.html#a0056f12ecace11d0ae28e41029aa6a27">m_abs_tol</a></td></tr>
 <tr class="separator:a0056f12ecace11d0ae28e41029aa6a27"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0c8eeb39d95b25eac7ca2d0e5ba5131b"><td class="memItemLeft" align="right" valign="top">FP&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1RKIntegratorCore.html#a0c8eeb39d95b25eac7ca2d0e5ba5131b">m_dt_max</a></td></tr>
-<tr class="separator:a0c8eeb39d95b25eac7ca2d0e5ba5131b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a40f70c8001726a7c99b18dcf3094d85d"><td class="memItemLeft" align="right" valign="top">FP&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1RKIntegratorCore.html#a40f70c8001726a7c99b18dcf3094d85d">m_dt_min</a></td></tr>
-<tr class="separator:a40f70c8001726a7c99b18dcf3094d85d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4601599650ded2be34a9211686f34ab9"><td class="memItemLeft" align="right" valign="top">Eigen::Matrix&lt; FP, Eigen::Dynamic, Eigen::Dynamic, Eigen::ColMajor &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1RKIntegratorCore.html#a4601599650ded2be34a9211686f34ab9">m_kt_values</a></td></tr>
 <tr class="separator:a4601599650ded2be34a9211686f34ab9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aac11668c25186523f3e3c0418c73a1e8"><td class="memItemLeft" align="right" valign="top">FP&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1RKIntegratorCore.html#aac11668c25186523f3e3c0418c73a1e8">m_rel_tol</a></td></tr>
@@ -441,54 +450,6 @@ template&lt;typename FP  = double&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">FP <a class="el" href="classmio_1_1RKIntegratorCore.html">mio::RKIntegratorCore</a>&lt; FP &gt;::m_abs_tol</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a0c8eeb39d95b25eac7ca2d0e5ba5131b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0c8eeb39d95b25eac7ca2d0e5ba5131b">&#9670;&nbsp;</a></span>m_dt_max</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename FP  = double&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">FP <a class="el" href="classmio_1_1RKIntegratorCore.html">mio::RKIntegratorCore</a>&lt; FP &gt;::m_dt_max</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a40f70c8001726a7c99b18dcf3094d85d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a40f70c8001726a7c99b18dcf3094d85d">&#9670;&nbsp;</a></span>m_dt_min</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename FP  = double&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">FP <a class="el" href="classmio_1_1RKIntegratorCore.html">mio::RKIntegratorCore</a>&lt; FP &gt;::m_dt_min</td>
         </tr>
       </table>
   </td>
