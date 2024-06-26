@@ -297,39 +297,61 @@ struct AerosolTransmissionRates {
     }
 };
 
-enum class TimeDependentParameterFunctorType
-{
-    Zero,
-    LinearInterpolation,
-};
-
 class TimeDependentParameterFunctor
 {
 public:
+    enum class Type
+    {
+        Zero,
+        LinearInterpolation,
+    };
+
     using DataType = std::vector<std::vector<ScalarType>>;
-    TimeDependentParameterFunctor(TimeDependentParameterFunctorType type, DataType data)
+    TimeDependentParameterFunctor(Type type, DataType data)
         : m_type(type)
         , m_data(data)
     {
+        // data preprocessing
+        switch (m_type) {
+        case Type::Zero:
+            // no preprocessing needed
+            break;
+        case Type::LinearInterpolation:
+            // make sure data has the correct shape, i.e. a list of (time, value) pairs
+            assert(m_data.size() > 0);
+            assert(std::all_of(m_data.begin(), m_data.end(), [](auto&& a) {
+                return a.size() == 2;
+            }));
+            // sort by time
+            std::sort(m_data.begin(), m_data.end(), [](auto&& a, auto&& b) {
+                return a[0] < b[0];
+            });
+        }
     }
 
     TimeDependentParameterFunctor()
-        : TimeDependentParameterFunctor(TimeDependentParameterFunctorType::Zero, {})
+        : TimeDependentParameterFunctor(Type::Zero, {})
     {
     }
 
     ScalarType operator()(ScalarType time) const
     {
         switch (m_type) {
-        case TimeDependentParameterFunctorType::Zero:
+        case Type::Zero:
             return 0.0;
-        case TimeDependentParameterFunctorType::LinearInterpolation:
-            std::vector<std::pair<ScalarType, ScalarType>> dataset(m_data.size());
-            std::transform(m_data.begin(), m_data.end(), dataset.begin(), [](auto&& datapoint) {
-                assert(datapoint.size() >= 2);
-                return std::make_pair(datapoint[0], datapoint[1]);
+        case Type::LinearInterpolation:
+            // find next time point in m_data (strictly) after time
+            const auto next_tp = std::upper_bound(m_data.begin(), m_data.end(), time, [](auto&& t, auto&& tp) {
+                return t < tp[0];
             });
-            return linear_interpolation_of_data_set(dataset, time);
+            if (next_tp == m_data.begin()) { // time is before first data point
+                return m_data.front()[1];
+            }
+            if (next_tp == m_data.end()) { // time is past last data point
+                return m_data.back()[1];
+            }
+            const auto tp = next_tp - 1;
+            return linear_interpolation(time, (*tp)[0], (*next_tp)[0], (*tp)[1], (*next_tp)[1]);
         }
 
         return 0.0; // should be unreachable, but without this the compiler may complain about a missing return.
@@ -341,7 +363,7 @@ public:
     }
 
 private:
-    TimeDependentParameterFunctorType m_type;
+    Type m_type;
     DataType m_data;
 };
 
@@ -357,7 +379,7 @@ struct InfectionProtectionFactor {
     static auto get_default(AgeGroup size)
     {
         return Type({ExposureType::Count, size, VirusVariant::Count},
-                    Type::value_type(TimeDependentParameterFunctorType::Zero, {}));
+                    Type::value_type(TimeDependentParameterFunctor::Type::Zero, {}));
     }
     static std::string name()
     {
@@ -374,7 +396,7 @@ struct SeverityProtectionFactor {
     static auto get_default(AgeGroup size)
     {
         return Type({ExposureType::Count, size, VirusVariant::Count},
-                    Type::value_type(TimeDependentParameterFunctorType::Zero, {}));
+                    Type::value_type(TimeDependentParameterFunctor::Type::Zero, {}));
     }
     static std::string name()
     {
@@ -389,7 +411,7 @@ struct HighViralLoadProtectionFactor {
     using Type = InputFunctionForProtectionLevel;
     static auto get_default()
     {
-        return Type(TimeDependentParameterFunctorType::Zero, {});
+        return Type(TimeDependentParameterFunctor::Type::Zero, {});
     }
     static std::string name()
     {
