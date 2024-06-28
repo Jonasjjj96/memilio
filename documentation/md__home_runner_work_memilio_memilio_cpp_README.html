@@ -75,6 +75,7 @@ $(function() {
 <li>tests: unit tests for framework and models.</li>
 <li>cmake: build utility code</li>
 <li>thirdparty: configuration of dependencies</li>
+<li>benchmarks: applications to analyze runtime performance of the framework</li>
 </ul>
 <h1><a class="anchor" id="autotoc_md5"></a>
 Requirements</h1>
@@ -117,6 +118,11 @@ Configuring using CMake</h2>
 <li><code>MEMILIO_USE_BUNDLED_SPDLOG/_BOOST/_EIGEN/_JSONCPP</code>: use the corresponding dependency bundled with this project, ON or OFF, default ON.</li>
 <li><code>MEMILIO_BUILD_BENCHMARKS</code>: build the benchmarks for this project, ON or OFF, default OFF.</li>
 <li><code>MEMILIO_SANITIZE_ADDRESS/_UNDEFINED</code>: compile with specified sanitizers to check correctness, ON or OFF, default OFF.</li>
+<li><code>MEMILIO_ENABLE_OPENMP</code>: compile MEmilio with multithreading using OpenMP, ON or OFF, default OFF.</li>
+<li><code>MEMILIO_ENABLE_MPI</code>: compile MEmilio with distributed memory parallelization using MPI. ON or OFF, default OFF. Requires an MPI implementation to be installed on the system.</li>
+<li><code>MEMILIO_ENABLE_WARNINGS</code>: enable compilation warnings (beyond those enabled in the compiler by default). ON or OFF, default ON.</li>
+<li><code>MEMILIO_ENABLE_WARNINGS_AS_ERRORS</code>: compilation warnings are treated as compilation errors. ON or OFF, default ON.</li>
+<li><code>MEMILIO_ENABLE_PROFILING</code>: compile with runtime profiling support. ON or OFF, default OFF. See here for information.</li>
 </ul>
 <p>Other important options may need:</p><ul>
 <li><code>CMAKE_BUILD_TYPE</code>: controls compiler optimizations and diagnostics, Debug, Release, or RelWithDebInfo; not available for Multi-Config CMake Generators like Visual Studio, set the build type in the IDE or when running the compiler.</li>
