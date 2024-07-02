@@ -28,7 +28,7 @@
 
         
         <h2>Score</h2>
-        7.47 / 10
+        7.44 / 10
             
         
 
@@ -1019,7 +1019,7 @@
             </tr>
             
             <tr>
-                <td>113</td>
+                <td>114</td>
                 <td>9</td>
                 <td>warning</td>
                 <td><code>duplicate-key</code></td>
@@ -1029,7 +1029,7 @@
             </tr>
             
             <tr>
-                <td>113</td>
+                <td>114</td>
                 <td>9</td>
                 <td>warning</td>
                 <td><code>duplicate-key</code></td>
@@ -1039,7 +1039,7 @@
             </tr>
             
             <tr>
-                <td>661</td>
+                <td>662</td>
                 <td>0</td>
                 <td>convention</td>
                 <td><code>line-too-long</code></td>
@@ -1049,7 +1049,7 @@
             </tr>
             
             <tr>
-                <td>664</td>
+                <td>665</td>
                 <td>0</td>
                 <td>convention</td>
                 <td><code>line-too-long</code></td>
@@ -1059,7 +1059,7 @@
             </tr>
             
             <tr>
-                <td>665</td>
+                <td>666</td>
                 <td>0</td>
                 <td>convention</td>
                 <td><code>line-too-long</code></td>
@@ -1069,7 +1069,7 @@
             </tr>
             
             <tr>
-                <td>666</td>
+                <td>667</td>
                 <td>0</td>
                 <td>convention</td>
                 <td><code>line-too-long</code></td>
@@ -1079,7 +1079,7 @@
             </tr>
             
             <tr>
-                <td>670</td>
+                <td>671</td>
                 <td>0</td>
                 <td>convention</td>
                 <td><code>line-too-long</code></td>
@@ -1089,7 +1089,7 @@
             </tr>
             
             <tr>
-                <td>672</td>
+                <td>673</td>
                 <td>0</td>
                 <td>convention</td>
                 <td><code>line-too-long</code></td>
@@ -1099,7 +1099,7 @@
             </tr>
             
             <tr>
-                <td>679</td>
+                <td>680</td>
                 <td>0</td>
                 <td>convention</td>
                 <td><code>line-too-long</code></td>
@@ -1109,7 +1109,7 @@
             </tr>
             
             <tr>
-                <td>681</td>
+                <td>682</td>
                 <td>0</td>
                 <td>convention</td>
                 <td><code>line-too-long</code></td>
@@ -1119,7 +1119,7 @@
             </tr>
             
             <tr>
-                <td>689</td>
+                <td>690</td>
                 <td>0</td>
                 <td>convention</td>
                 <td><code>line-too-long</code></td>
@@ -1467,16 +1467,6 @@
             </tr>
             
             <tr>
-                <td>33</td>
-                <td>0</td>
-                <td>warning</td>
-                <td><code>unused-import</code></td>
-                <td>W0611</td>
-                <td></td>
-                <td><pre>Unused date imported from datetime</pre></td>
-            </tr>
-            
-            <tr>
                 <td>35</td>
                 <td>0</td>
                 <td>error</td>
@@ -1484,6 +1474,16 @@
                 <td>E0401</td>
                 <td></td>
                 <td><pre>Unable to import &#39;matplotlib.pyplot&#39;</pre></td>
+            </tr>
+            
+            <tr>
+                <td>35</td>
+                <td>0</td>
+                <td>warning</td>
+                <td><code>unused-import</code></td>
+                <td>W0611</td>
+                <td></td>
+                <td><pre>Unused matplotlib.pyplot imported as plt</pre></td>
             </tr>
             
             <tr>
@@ -1507,7 +1507,17 @@
             </tr>
             
             <tr>
-                <td>49</td>
+                <td>38</td>
+                <td>0</td>
+                <td>convention</td>
+                <td><code>wrong-import-order</code></td>
+                <td>C0411</td>
+                <td></td>
+                <td><pre>standard import &#34;import logging&#34; should be placed before &#34;import matplotlib.pyplot as plt&#34;</pre></td>
+            </tr>
+            
+            <tr>
+                <td>50</td>
                 <td>27</td>
                 <td>convention</td>
                 <td><code>invalid-name</code></td>
@@ -1517,7 +1527,27 @@
             </tr>
             
             <tr>
-                <td>60</td>
+                <td>63</td>
+                <td>0</td>
+                <td>convention</td>
+                <td><code>line-too-long</code></td>
+                <td>C0301</td>
+                <td></td>
+                <td><pre>Line too long (140/120)</pre></td>
+            </tr>
+            
+            <tr>
+                <td>64</td>
+                <td>0</td>
+                <td>convention</td>
+                <td><code>line-too-long</code></td>
+                <td>C0301</td>
+                <td></td>
+                <td><pre>Line too long (143/120)</pre></td>
+            </tr>
+            
+            <tr>
+                <td>69</td>
                 <td>4</td>
                 <td>refactor</td>
                 <td><code>no-else-return</code></td>
@@ -1527,47 +1557,87 @@
             </tr>
             
             <tr>
-                <td>75</td>
-                <td>0</td>
-                <td>refactor</td>
-                <td><code>too-many-arguments</code></td>
-                <td>R0913</td>
-                <td>get_case_data</td>
-                <td><pre>Too many arguments (10/5)</pre></td>
+                <td>117</td>
+                <td>8</td>
+                <td>convention</td>
+                <td><code>invalid-name</code></td>
+                <td>C0103</td>
+                <td>fetch_case_data</td>
+                <td><pre>Variable name &#34;df&#34; doesn&#39;t conform to snake_case naming style</pre></td>
             </tr>
             
             <tr>
-                <td>75</td>
-                <td>0</td>
-                <td>refactor</td>
-                <td><code>too-many-locals</code></td>
-                <td>R0914</td>
-                <td>get_case_data</td>
-                <td><pre>Too many local variables (34/15)</pre></td>
+                <td>120</td>
+                <td>11</td>
+                <td>warning</td>
+                <td><code>broad-except</code></td>
+                <td>W0703</td>
+                <td>fetch_case_data</td>
+                <td><pre>Catching too general exception Exception</pre></td>
             </tr>
             
             <tr>
-                <td>75</td>
-                <td>0</td>
-                <td>refactor</td>
-                <td><code>too-many-branches</code></td>
-                <td>R0912</td>
-                <td>get_case_data</td>
-                <td><pre>Too many branches (30/12)</pre></td>
+                <td>121</td>
+                <td>8</td>
+                <td>warning</td>
+                <td><code>logging-fstring-interpolation</code></td>
+                <td>W1203</td>
+                <td>fetch_case_data</td>
+                <td><pre>Use lazy % formatting in logging functions</pre></td>
             </tr>
             
             <tr>
-                <td>75</td>
-                <td>0</td>
-                <td>refactor</td>
-                <td><code>too-many-statements</code></td>
-                <td>R0915</td>
-                <td>get_case_data</td>
-                <td><pre>Too many statements (126/50)</pre></td>
+                <td>123</td>
+                <td>8</td>
+                <td>warning</td>
+                <td><code>unnecessary-pass</code></td>
+                <td>W0107</td>
+                <td>fetch_case_data</td>
+                <td><pre>Unnecessary pass statement</pre></td>
             </tr>
             
             <tr>
-                <td>105</td>
+                <td>139</td>
+                <td>12</td>
+                <td>convention</td>
+                <td><code>invalid-name</code></td>
+                <td>C0103</td>
+                <td>fetch_case_data</td>
+                <td><pre>Variable name &#34;df&#34; doesn&#39;t conform to snake_case naming style</pre></td>
+            </tr>
+            
+            <tr>
+                <td>143</td>
+                <td>8</td>
+                <td>warning</td>
+                <td><code>bare-except</code></td>
+                <td>W0702</td>
+                <td>fetch_case_data</td>
+                <td><pre>No exception type(s) specified</pre></td>
+            </tr>
+            
+            <tr>
+                <td>153</td>
+                <td>16</td>
+                <td>convention</td>
+                <td><code>invalid-name</code></td>
+                <td>C0103</td>
+                <td>fetch_case_data</td>
+                <td><pre>Variable name &#34;df&#34; doesn&#39;t conform to snake_case naming style</pre></td>
+            </tr>
+            
+            <tr>
+                <td>158</td>
+                <td>12</td>
+                <td>warning</td>
+                <td><code>bare-except</code></td>
+                <td>W0702</td>
+                <td>fetch_case_data</td>
+                <td><pre>No exception type(s) specified</pre></td>
+            </tr>
+            
+            <tr>
+                <td>188</td>
                 <td>0</td>
                 <td>convention</td>
                 <td><code>line-too-long</code></td>
@@ -1577,7 +1647,157 @@
             </tr>
             
             <tr>
-                <td>117</td>
+                <td>193</td>
+                <td>0</td>
+                <td>convention</td>
+                <td><code>line-too-long</code></td>
+                <td>C0301</td>
+                <td></td>
+                <td><pre>Line too long (126/120)</pre></td>
+            </tr>
+            
+            <tr>
+                <td>194</td>
+                <td>0</td>
+                <td>convention</td>
+                <td><code>line-too-long</code></td>
+                <td>C0301</td>
+                <td></td>
+                <td><pre>Line too long (125/120)</pre></td>
+            </tr>
+            
+            <tr>
+                <td>209</td>
+                <td>8</td>
+                <td>convention</td>
+                <td><code>invalid-name</code></td>
+                <td>C0103</td>
+                <td>preprocess_case_data</td>
+                <td><pre>Variable name &#34;df&#34; doesn&#39;t conform to snake_case naming style</pre></td>
+            </tr>
+            
+            <tr>
+                <td>215</td>
+                <td>8</td>
+                <td>convention</td>
+                <td><code>invalid-name</code></td>
+                <td>C0103</td>
+                <td>preprocess_case_data</td>
+                <td><pre>Variable name &#34;AnzahlFall&#34; doesn&#39;t conform to snake_case naming style</pre></td>
+            </tr>
+            
+            <tr>
+                <td>216</td>
+                <td>8</td>
+                <td>convention</td>
+                <td><code>invalid-name</code></td>
+                <td>C0103</td>
+                <td>preprocess_case_data</td>
+                <td><pre>Variable name &#34;AnzahlGenesen&#34; doesn&#39;t conform to snake_case naming style</pre></td>
+            </tr>
+            
+            <tr>
+                <td>217</td>
+                <td>8</td>
+                <td>convention</td>
+                <td><code>invalid-name</code></td>
+                <td>C0103</td>
+                <td>preprocess_case_data</td>
+                <td><pre>Variable name &#34;AnzahlTodesfall&#34; doesn&#39;t conform to snake_case naming style</pre></td>
+            </tr>
+            
+            <tr>
+                <td>228</td>
+                <td>8</td>
+                <td>convention</td>
+                <td><code>invalid-name</code></td>
+                <td>C0103</td>
+                <td>preprocess_case_data</td>
+                <td><pre>Variable name &#34;df&#34; doesn&#39;t conform to snake_case naming style</pre></td>
+            </tr>
+            
+            <tr>
+                <td>249</td>
+                <td>16</td>
+                <td>warning</td>
+                <td><code>raise-missing-from</code></td>
+                <td>W0707</td>
+                <td>preprocess_case_data</td>
+                <td><pre>Consider explicitly re-raising using &#39;except Exception as exc&#39; and &#39;raise gd.DataError(&#34;Time data can&#39;t be transformed to intended format&#34;) from exc&#39;</pre></td>
+            </tr>
+            
+            <tr>
+                <td>254</td>
+                <td>8</td>
+                <td>convention</td>
+                <td><code>invalid-name</code></td>
+                <td>C0103</td>
+                <td>preprocess_case_data</td>
+                <td><pre>Variable name &#34;dateToUse&#34; doesn&#39;t conform to snake_case naming style</pre></td>
+            </tr>
+            
+            <tr>
+                <td>269</td>
+                <td>12</td>
+                <td>convention</td>
+                <td><code>invalid-name</code></td>
+                <td>C0103</td>
+                <td>preprocess_case_data</td>
+                <td><pre>Variable name &#34;df&#34; doesn&#39;t conform to snake_case naming style</pre></td>
+            </tr>
+            
+            <tr>
+                <td>280</td>
+                <td>20</td>
+                <td>convention</td>
+                <td><code>invalid-name</code></td>
+                <td>C0103</td>
+                <td>write_case_data</td>
+                <td><pre>Argument name &#34;df&#34; doesn&#39;t conform to snake_case naming style</pre></td>
+            </tr>
+            
+            <tr>
+                <td>280</td>
+                <td>0</td>
+                <td>refactor</td>
+                <td><code>too-many-arguments</code></td>
+                <td>R0913</td>
+                <td>write_case_data</td>
+                <td><pre>Too many arguments (11/5)</pre></td>
+            </tr>
+            
+            <tr>
+                <td>280</td>
+                <td>0</td>
+                <td>refactor</td>
+                <td><code>too-many-locals</code></td>
+                <td>R0914</td>
+                <td>write_case_data</td>
+                <td><pre>Too many local variables (30/15)</pre></td>
+            </tr>
+            
+            <tr>
+                <td>280</td>
+                <td>0</td>
+                <td>refactor</td>
+                <td><code>too-many-branches</code></td>
+                <td>R0912</td>
+                <td>write_case_data</td>
+                <td><pre>Too many branches (14/12)</pre></td>
+            </tr>
+            
+            <tr>
+                <td>280</td>
+                <td>0</td>
+                <td>refactor</td>
+                <td><code>inconsistent-return-statements</code></td>
+                <td>R1710</td>
+                <td>write_case_data</td>
+                <td><pre>Either all return statements in a function should return an expression, or none of them should.</pre></td>
+            </tr>
+            
+            <tr>
+                <td>304</td>
                 <td>0</td>
                 <td>convention</td>
                 <td><code>line-too-long</code></td>
@@ -1587,37 +1807,197 @@
             </tr>
             
             <tr>
-                <td>127</td>
+                <td>318</td>
                 <td>0</td>
                 <td>convention</td>
                 <td><code>line-too-long</code></td>
                 <td>C0301</td>
                 <td></td>
-                <td><pre>Line too long (135/120)</pre></td>
+                <td><pre>Line too long (141/120)</pre></td>
             </tr>
             
             <tr>
-                <td>130</td>
+                <td>319</td>
                 <td>0</td>
                 <td>convention</td>
                 <td><code>line-too-long</code></td>
                 <td>C0301</td>
                 <td></td>
-                <td><pre>Line too long (135/120)</pre></td>
+                <td><pre>Line too long (186/120)</pre></td>
             </tr>
             
             <tr>
-                <td>131</td>
+                <td>320</td>
                 <td>0</td>
                 <td>convention</td>
                 <td><code>line-too-long</code></td>
                 <td>C0301</td>
                 <td></td>
-                <td><pre>Line too long (135/120)</pre></td>
+                <td><pre>Line too long (140/120)</pre></td>
             </tr>
             
             <tr>
-                <td>132</td>
+                <td>321</td>
+                <td>0</td>
+                <td>convention</td>
+                <td><code>line-too-long</code></td>
+                <td>C0301</td>
+                <td></td>
+                <td><pre>Line too long (141/120)</pre></td>
+            </tr>
+            
+            <tr>
+                <td>322</td>
+                <td>0</td>
+                <td>convention</td>
+                <td><code>line-too-long</code></td>
+                <td>C0301</td>
+                <td></td>
+                <td><pre>Line too long (128/120)</pre></td>
+            </tr>
+            
+            <tr>
+                <td>339</td>
+                <td>7</td>
+                <td>refactor</td>
+                <td><code>consider-using-in</code></td>
+                <td>R1714</td>
+                <td>write_case_data</td>
+                <td><pre>Consider merging these comparisons with &#39;in&#39; by using &#39;files in (&#39;All&#39;, [&#39;All&#39;])&#39;. Use a set instead if elements are hashable.</pre></td>
+            </tr>
+            
+            <tr>
+                <td>344</td>
+                <td>7</td>
+                <td>refactor</td>
+                <td><code>consider-using-in</code></td>
+                <td>R1714</td>
+                <td>write_case_data</td>
+                <td><pre>Consider merging these comparisons with &#39;in&#39; by using &#39;files in (&#39;Plot&#39;, [&#39;Plot&#39;])&#39;. Use a set instead if elements are hashable.</pre></td>
+            </tr>
+            
+            <tr>
+                <td>353</td>
+                <td>4</td>
+                <td>convention</td>
+                <td><code>invalid-name</code></td>
+                <td>C0103</td>
+                <td>write_case_data</td>
+                <td><pre>Variable name &#34;Altersgruppe&#34; doesn&#39;t conform to snake_case naming style</pre></td>
+            </tr>
+            
+            <tr>
+                <td>354</td>
+                <td>4</td>
+                <td>convention</td>
+                <td><code>invalid-name</code></td>
+                <td>C0103</td>
+                <td>write_case_data</td>
+                <td><pre>Variable name &#34;Geschlecht&#34; doesn&#39;t conform to snake_case naming style</pre></td>
+            </tr>
+            
+            <tr>
+                <td>355</td>
+                <td>4</td>
+                <td>convention</td>
+                <td><code>invalid-name</code></td>
+                <td>C0103</td>
+                <td>write_case_data</td>
+                <td><pre>Variable name &#34;AnzahlFall&#34; doesn&#39;t conform to snake_case naming style</pre></td>
+            </tr>
+            
+            <tr>
+                <td>356</td>
+                <td>4</td>
+                <td>convention</td>
+                <td><code>invalid-name</code></td>
+                <td>C0103</td>
+                <td>write_case_data</td>
+                <td><pre>Variable name &#34;AnzahlGenesen&#34; doesn&#39;t conform to snake_case naming style</pre></td>
+            </tr>
+            
+            <tr>
+                <td>357</td>
+                <td>4</td>
+                <td>convention</td>
+                <td><code>invalid-name</code></td>
+                <td>C0103</td>
+                <td>write_case_data</td>
+                <td><pre>Variable name &#34;AnzahlTodesfall&#34; doesn&#39;t conform to snake_case naming style</pre></td>
+            </tr>
+            
+            <tr>
+                <td>358</td>
+                <td>4</td>
+                <td>convention</td>
+                <td><code>invalid-name</code></td>
+                <td>C0103</td>
+                <td>write_case_data</td>
+                <td><pre>Variable name &#34;IdBundesland&#34; doesn&#39;t conform to snake_case naming style</pre></td>
+            </tr>
+            
+            <tr>
+                <td>359</td>
+                <td>4</td>
+                <td>convention</td>
+                <td><code>invalid-name</code></td>
+                <td>C0103</td>
+                <td>write_case_data</td>
+                <td><pre>Variable name &#34;IdLandkreis&#34; doesn&#39;t conform to snake_case naming style</pre></td>
+            </tr>
+            
+            <tr>
+                <td>360</td>
+                <td>4</td>
+                <td>convention</td>
+                <td><code>invalid-name</code></td>
+                <td>C0103</td>
+                <td>write_case_data</td>
+                <td><pre>Variable name &#34;dateToUse&#34; doesn&#39;t conform to snake_case naming style</pre></td>
+            </tr>
+            
+            <tr>
+                <td>411</td>
+                <td>23</td>
+                <td>refactor</td>
+                <td><code>use-dict-literal</code></td>
+                <td>R1735</td>
+                <td>write_case_data</td>
+                <td><pre>Consider using {} instead of dict()</pre></td>
+            </tr>
+            
+            <tr>
+                <td>415</td>
+                <td>27</td>
+                <td>convention</td>
+                <td><code>consider-iterating-dictionary</code></td>
+                <td>C0201</td>
+                <td>write_case_data</td>
+                <td><pre>Consider iterating the dictionary directly instead of calling .keys()</pre></td>
+            </tr>
+            
+            <tr>
+                <td>419</td>
+                <td>12</td>
+                <td>refactor</td>
+                <td><code>simplifiable-if-statement</code></td>
+                <td>R1703</td>
+                <td>write_case_data</td>
+                <td><pre>The if statement can be replaced with &#39;var = bool(test)&#39;</pre></td>
+            </tr>
+            
+            <tr>
+                <td>461</td>
+                <td>0</td>
+                <td>refactor</td>
+                <td><code>too-many-arguments</code></td>
+                <td>R0913</td>
+                <td>get_case_data</td>
+                <td><pre>Too many arguments (11/5)</pre></td>
+            </tr>
+            
+            <tr>
+                <td>492</td>
                 <td>0</td>
                 <td>convention</td>
                 <td><code>line-too-long</code></td>
@@ -1627,223 +2007,63 @@
             </tr>
             
             <tr>
-                <td>139</td>
-                <td>7</td>
-                <td>refactor</td>
-                <td><code>consider-using-in</code></td>
-                <td>R1714</td>
-                <td>get_case_data</td>
-                <td><pre>Consider merging these comparisons with &#39;in&#39; by using &#39;files in (&#39;All&#39;, [&#39;All&#39;])&#39;. Use a set instead if elements are hashable.</pre></td>
-            </tr>
-            
-            <tr>
-                <td>144</td>
-                <td>7</td>
-                <td>refactor</td>
-                <td><code>consider-using-in</code></td>
-                <td>R1714</td>
-                <td>get_case_data</td>
-                <td><pre>Consider merging these comparisons with &#39;in&#39; by using &#39;files in (&#39;Plot&#39;, [&#39;Plot&#39;])&#39;. Use a set instead if elements are hashable.</pre></td>
-            </tr>
-            
-            <tr>
-                <td>160</td>
-                <td>8</td>
+                <td>504</td>
+                <td>0</td>
                 <td>convention</td>
-                <td><code>invalid-name</code></td>
-                <td>C0103</td>
-                <td>get_case_data</td>
-                <td><pre>Variable name &#34;df&#34; doesn&#39;t conform to snake_case naming style</pre></td>
+                <td><code>line-too-long</code></td>
+                <td>C0301</td>
+                <td></td>
+                <td><pre>Line too long (123/120)</pre></td>
             </tr>
             
             <tr>
-                <td>163</td>
+                <td>514</td>
+                <td>0</td>
+                <td>convention</td>
+                <td><code>line-too-long</code></td>
+                <td>C0301</td>
+                <td></td>
+                <td><pre>Line too long (135/120)</pre></td>
+            </tr>
+            
+            <tr>
+                <td>517</td>
+                <td>0</td>
+                <td>convention</td>
+                <td><code>line-too-long</code></td>
+                <td>C0301</td>
+                <td></td>
+                <td><pre>Line too long (135/120)</pre></td>
+            </tr>
+            
+            <tr>
+                <td>518</td>
+                <td>0</td>
+                <td>convention</td>
+                <td><code>line-too-long</code></td>
+                <td>C0301</td>
+                <td></td>
+                <td><pre>Line too long (135/120)</pre></td>
+            </tr>
+            
+            <tr>
+                <td>519</td>
+                <td>0</td>
+                <td>convention</td>
+                <td><code>line-too-long</code></td>
+                <td>C0301</td>
+                <td></td>
+                <td><pre>Line too long (121/120)</pre></td>
+            </tr>
+            
+            <tr>
+                <td>539</td>
                 <td>4</td>
                 <td>warning</td>
-                <td><code>bare-except</code></td>
-                <td>W0702</td>
+                <td><code>unused-variable</code></td>
+                <td>W0612</td>
                 <td>get_case_data</td>
-                <td><pre>No exception type(s) specified</pre></td>
-            </tr>
-            
-            <tr>
-                <td>179</td>
-                <td>12</td>
-                <td>convention</td>
-                <td><code>invalid-name</code></td>
-                <td>C0103</td>
-                <td>get_case_data</td>
-                <td><pre>Variable name &#34;df&#34; doesn&#39;t conform to snake_case naming style</pre></td>
-            </tr>
-            
-            <tr>
-                <td>183</td>
-                <td>8</td>
-                <td>warning</td>
-                <td><code>bare-except</code></td>
-                <td>W0702</td>
-                <td>get_case_data</td>
-                <td><pre>No exception type(s) specified</pre></td>
-            </tr>
-            
-            <tr>
-                <td>192</td>
-                <td>16</td>
-                <td>convention</td>
-                <td><code>invalid-name</code></td>
-                <td>C0103</td>
-                <td>get_case_data</td>
-                <td><pre>Variable name &#34;df&#34; doesn&#39;t conform to snake_case naming style</pre></td>
-            </tr>
-            
-            <tr>
-                <td>197</td>
-                <td>12</td>
-                <td>warning</td>
-                <td><code>bare-except</code></td>
-                <td>W0702</td>
-                <td>get_case_data</td>
-                <td><pre>No exception type(s) specified</pre></td>
-            </tr>
-            
-            <tr>
-                <td>207</td>
-                <td>8</td>
-                <td>convention</td>
-                <td><code>invalid-name</code></td>
-                <td>C0103</td>
-                <td>get_case_data</td>
-                <td><pre>Variable name &#34;df&#34; doesn&#39;t conform to snake_case naming style</pre></td>
-            </tr>
-            
-            <tr>
-                <td>214</td>
-                <td>8</td>
-                <td>convention</td>
-                <td><code>invalid-name</code></td>
-                <td>C0103</td>
-                <td>get_case_data</td>
-                <td><pre>Variable name &#34;Altersgruppe&#34; doesn&#39;t conform to snake_case naming style</pre></td>
-            </tr>
-            
-            <tr>
-                <td>215</td>
-                <td>8</td>
-                <td>convention</td>
-                <td><code>invalid-name</code></td>
-                <td>C0103</td>
-                <td>get_case_data</td>
-                <td><pre>Variable name &#34;Geschlecht&#34; doesn&#39;t conform to snake_case naming style</pre></td>
-            </tr>
-            
-            <tr>
-                <td>216</td>
-                <td>8</td>
-                <td>convention</td>
-                <td><code>invalid-name</code></td>
-                <td>C0103</td>
-                <td>get_case_data</td>
-                <td><pre>Variable name &#34;AnzahlFall&#34; doesn&#39;t conform to snake_case naming style</pre></td>
-            </tr>
-            
-            <tr>
-                <td>217</td>
-                <td>8</td>
-                <td>convention</td>
-                <td><code>invalid-name</code></td>
-                <td>C0103</td>
-                <td>get_case_data</td>
-                <td><pre>Variable name &#34;AnzahlGenesen&#34; doesn&#39;t conform to snake_case naming style</pre></td>
-            </tr>
-            
-            <tr>
-                <td>218</td>
-                <td>8</td>
-                <td>convention</td>
-                <td><code>invalid-name</code></td>
-                <td>C0103</td>
-                <td>get_case_data</td>
-                <td><pre>Variable name &#34;AnzahlTodesfall&#34; doesn&#39;t conform to snake_case naming style</pre></td>
-            </tr>
-            
-            <tr>
-                <td>219</td>
-                <td>8</td>
-                <td>convention</td>
-                <td><code>invalid-name</code></td>
-                <td>C0103</td>
-                <td>get_case_data</td>
-                <td><pre>Variable name &#34;IdBundesland&#34; doesn&#39;t conform to snake_case naming style</pre></td>
-            </tr>
-            
-            <tr>
-                <td>220</td>
-                <td>8</td>
-                <td>convention</td>
-                <td><code>invalid-name</code></td>
-                <td>C0103</td>
-                <td>get_case_data</td>
-                <td><pre>Variable name &#34;IdLandkreis&#34; doesn&#39;t conform to snake_case naming style</pre></td>
-            </tr>
-            
-            <tr>
-                <td>252</td>
-                <td>16</td>
-                <td>warning</td>
-                <td><code>raise-missing-from</code></td>
-                <td>W0707</td>
-                <td>get_case_data</td>
-                <td><pre>Consider explicitly re-raising using &#39;except Exception as exc&#39; and &#39;raise gd.DataError(&#34;Time data can&#39;t be transformed to intended format&#34;) from exc&#39;</pre></td>
-            </tr>
-            
-            <tr>
-                <td>257</td>
-                <td>8</td>
-                <td>convention</td>
-                <td><code>invalid-name</code></td>
-                <td>C0103</td>
-                <td>get_case_data</td>
-                <td><pre>Variable name &#34;dateToUse&#34; doesn&#39;t conform to snake_case naming style</pre></td>
-            </tr>
-            
-            <tr>
-                <td>272</td>
-                <td>12</td>
-                <td>convention</td>
-                <td><code>invalid-name</code></td>
-                <td>C0103</td>
-                <td>get_case_data</td>
-                <td><pre>Variable name &#34;df&#34; doesn&#39;t conform to snake_case naming style</pre></td>
-            </tr>
-            
-            <tr>
-                <td>331</td>
-                <td>27</td>
-                <td>convention</td>
-                <td><code>consider-iterating-dictionary</code></td>
-                <td>C0201</td>
-                <td>get_case_data</td>
-                <td><pre>Consider iterating the dictionary directly instead of calling .keys()</pre></td>
-            </tr>
-            
-            <tr>
-                <td>334</td>
-                <td>12</td>
-                <td>refactor</td>
-                <td><code>simplifiable-if-statement</code></td>
-                <td>R1703</td>
-                <td>get_case_data</td>
-                <td><pre>The if statement can be replaced with &#39;var = bool(test)&#39;</pre></td>
-            </tr>
-            
-            <tr>
-                <td>334</td>
-                <td>39</td>
-                <td>convention</td>
-                <td><code>singleton-comparison</code></td>
-                <td>C0121</td>
-                <td>get_case_data</td>
-                <td><pre>Comparison &#39;split_berlin == True&#39; should be &#39;split_berlin is True&#39; if checking for the singleton value True, or &#39;bool(split_berlin)&#39; if testing for truthiness</pre></td>
+                <td><pre>Unused variable &#39;datasets&#39;</pre></td>
             </tr>
             
         </table>
@@ -2325,7 +2545,7 @@
             </tr>
             
             <tr>
-                <td>41</td>
+                <td>42</td>
                 <td>0</td>
                 <td>error</td>
                 <td><code>import-error</code></td>
@@ -2335,37 +2555,137 @@
             </tr>
             
             <tr>
-                <td>49</td>
+                <td>64</td>
+                <td>0</td>
+                <td>convention</td>
+                <td><code>line-too-long</code></td>
+                <td>C0301</td>
+                <td></td>
+                <td><pre>Line too long (122/120)</pre></td>
+            </tr>
+            
+            <tr>
+                <td>99</td>
+                <td>0</td>
+                <td>refactor</td>
+                <td><code>too-many-arguments</code></td>
+                <td>R0913</td>
+                <td>preprocess_divi_data</td>
+                <td><pre>Too many arguments (6/5)</pre></td>
+            </tr>
+            
+            <tr>
+                <td>114</td>
+                <td>0</td>
+                <td>convention</td>
+                <td><code>line-too-long</code></td>
+                <td>C0301</td>
+                <td></td>
+                <td><pre>Line too long (126/120)</pre></td>
+            </tr>
+            
+            <tr>
+                <td>115</td>
+                <td>0</td>
+                <td>convention</td>
+                <td><code>line-too-long</code></td>
+                <td>C0301</td>
+                <td></td>
+                <td><pre>Line too long (187/120)</pre></td>
+            </tr>
+            
+            <tr>
+                <td>137</td>
+                <td>4</td>
+                <td>convention</td>
+                <td><code>invalid-name</code></td>
+                <td>C0103</td>
+                <td>preprocess_divi_data</td>
+                <td><pre>Variable name &#34;df&#34; doesn&#39;t conform to snake_case naming style</pre></td>
+            </tr>
+            
+            <tr>
+                <td>147</td>
+                <td>12</td>
+                <td>warning</td>
+                <td><code>raise-missing-from</code></td>
+                <td>W0707</td>
+                <td>preprocess_divi_data</td>
+                <td><pre>Consider explicitly re-raising using &#39;except BaseException as exc&#39; and &#39;raise gd.DataError(&#34;Time data can&#39;t be transformed to intended format&#34;) from exc&#39;</pre></td>
+            </tr>
+            
+            <tr>
+                <td>154</td>
+                <td>8</td>
+                <td>convention</td>
+                <td><code>invalid-name</code></td>
+                <td>C0103</td>
+                <td>preprocess_divi_data</td>
+                <td><pre>Variable name &#34;df&#34; doesn&#39;t conform to snake_case naming style</pre></td>
+            </tr>
+            
+            <tr>
+                <td>169</td>
+                <td>4</td>
+                <td>convention</td>
+                <td><code>invalid-name</code></td>
+                <td>C0103</td>
+                <td>preprocess_divi_data</td>
+                <td><pre>Variable name &#34;df&#34; doesn&#39;t conform to snake_case naming style</pre></td>
+            </tr>
+            
+            <tr>
+                <td>174</td>
+                <td>20</td>
+                <td>convention</td>
+                <td><code>invalid-name</code></td>
+                <td>C0103</td>
+                <td>write_divi_data</td>
+                <td><pre>Argument name &#34;df&#34; doesn&#39;t conform to snake_case naming style</pre></td>
+            </tr>
+            
+            <tr>
+                <td>174</td>
+                <td>0</td>
+                <td>refactor</td>
+                <td><code>too-many-arguments</code></td>
+                <td>R0913</td>
+                <td>write_divi_data</td>
+                <td><pre>Too many arguments (6/5)</pre></td>
+            </tr>
+            
+            <tr>
+                <td>191</td>
+                <td>0</td>
+                <td>convention</td>
+                <td><code>line-too-long</code></td>
+                <td>C0301</td>
+                <td></td>
+                <td><pre>Line too long (140/120)</pre></td>
+            </tr>
+            
+            <tr>
+                <td>192</td>
+                <td>0</td>
+                <td>convention</td>
+                <td><code>line-too-long</code></td>
+                <td>C0301</td>
+                <td></td>
+                <td><pre>Line too long (188/120)</pre></td>
+            </tr>
+            
+            <tr>
+                <td>242</td>
                 <td>0</td>
                 <td>refactor</td>
                 <td><code>too-many-arguments</code></td>
                 <td>R0913</td>
                 <td>get_divi_data</td>
-                <td><pre>Too many arguments (7/5)</pre></td>
+                <td><pre>Too many arguments (8/5)</pre></td>
             </tr>
             
             <tr>
-                <td>49</td>
-                <td>0</td>
-                <td>refactor</td>
-                <td><code>too-many-locals</code></td>
-                <td>R0914</td>
-                <td>get_divi_data</td>
-                <td><pre>Too many local variables (22/15)</pre></td>
-            </tr>
-            
-            <tr>
-                <td>49</td>
-                <td>0</td>
-                <td>refactor</td>
-                <td><code>too-many-statements</code></td>
-                <td>R0915</td>
-                <td>get_divi_data</td>
-                <td><pre>Too many statements (54/50)</pre></td>
-            </tr>
-            
-            <tr>
-                <td>78</td>
+                <td>272</td>
                 <td>0</td>
                 <td>convention</td>
                 <td><code>line-too-long</code></td>
@@ -2375,103 +2695,13 @@
             </tr>
             
             <tr>
-                <td>110</td>
-                <td>7</td>
-                <td>convention</td>
-                <td><code>singleton-comparison</code></td>
-                <td>C0121</td>
-                <td>get_divi_data</td>
-                <td><pre>Comparison &#39;conf.checks == True&#39; should be &#39;conf.checks is True&#39; if checking for the singleton value True, or &#39;conf.checks&#39; if testing for truthiness</pre></td>
-            </tr>
-            
-            <tr>
-                <td>115</td>
-                <td>4</td>
-                <td>convention</td>
-                <td><code>invalid-name</code></td>
-                <td>C0103</td>
-                <td>get_divi_data</td>
-                <td><pre>Variable name &#34;df&#34; doesn&#39;t conform to snake_case naming style</pre></td>
-            </tr>
-            
-            <tr>
-                <td>125</td>
-                <td>12</td>
-                <td>warning</td>
-                <td><code>raise-missing-from</code></td>
-                <td>W0707</td>
-                <td>get_divi_data</td>
-                <td><pre>Consider explicitly re-raising using &#39;except Exception as exc&#39; and &#39;raise gd.DataError(&#34;Time data can&#39;t be transformed to intended format&#34;) from exc&#39;</pre></td>
-            </tr>
-            
-            <tr>
-                <td>131</td>
-                <td>8</td>
-                <td>convention</td>
-                <td><code>singleton-comparison</code></td>
-                <td>C0121</td>
-                <td>get_divi_data</td>
-                <td><pre>Comparison &#39;impute_dates == True&#39; should be &#39;impute_dates is True&#39; if checking for the singleton value True, or &#39;bool(impute_dates)&#39; if testing for truthiness</pre></td>
-            </tr>
-            
-            <tr>
-                <td>132</td>
-                <td>8</td>
-                <td>convention</td>
-                <td><code>invalid-name</code></td>
-                <td>C0103</td>
-                <td>get_divi_data</td>
-                <td><pre>Variable name &#34;df&#34; doesn&#39;t conform to snake_case naming style</pre></td>
-            </tr>
-            
-            <tr>
-                <td>141</td>
-                <td>8</td>
-                <td>warning</td>
-                <td><code>redefined-builtin</code></td>
-                <td>W0622</td>
-                <td>get_divi_data</td>
-                <td><pre>Redefining built-in &#39;id&#39;</pre></td>
-            </tr>
-            
-            <tr>
-                <td>141</td>
-                <td>8</td>
-                <td>convention</td>
-                <td><code>invalid-name</code></td>
-                <td>C0103</td>
-                <td>get_divi_data</td>
-                <td><pre>Variable name &#34;id&#34; doesn&#39;t conform to snake_case naming style</pre></td>
-            </tr>
-            
-            <tr>
-                <td>146</td>
-                <td>4</td>
-                <td>convention</td>
-                <td><code>invalid-name</code></td>
-                <td>C0103</td>
-                <td>get_divi_data</td>
-                <td><pre>Variable name &#34;df&#34; doesn&#39;t conform to snake_case naming style</pre></td>
-            </tr>
-            
-            <tr>
-                <td>187</td>
+                <td>308</td>
                 <td>28</td>
                 <td>convention</td>
                 <td><code>invalid-name</code></td>
                 <td>C0103</td>
                 <td>divi_data_sanity_checks</td>
                 <td><pre>Argument name &#34;df&#34; doesn&#39;t conform to snake_case naming style</pre></td>
-            </tr>
-            
-            <tr>
-                <td>212</td>
-                <td>0</td>
-                <td>convention</td>
-                <td><code>superfluous-parens</code></td>
-                <td>C0325</td>
-                <td></td>
-                <td><pre>Unnecessary parens after &#39;if&#39; keyword</pre></td>
             </tr>
             
         </table>
@@ -2995,7 +3225,7 @@
                 <td><code>too-many-branches</code></td>
                 <td>R0912</td>
                 <td>cli</td>
-                <td><pre>Too many branches (19/12)</pre></td>
+                <td><pre>Too many branches (20/12)</pre></td>
             </tr>
             
             <tr>
@@ -3005,7 +3235,7 @@
                 <td><code>too-many-statements</code></td>
                 <td>R0915</td>
                 <td>cli</td>
-                <td><pre>Too many statements (51/50)</pre></td>
+                <td><pre>Too many statements (53/50)</pre></td>
             </tr>
             
             <tr>
@@ -3079,7 +3309,7 @@
             </tr>
             
             <tr>
-                <td>534</td>
+                <td>541</td>
                 <td>20</td>
                 <td>convention</td>
                 <td><code>invalid-name</code></td>
@@ -3089,7 +3319,7 @@
             </tr>
             
             <tr>
-                <td>534</td>
+                <td>541</td>
                 <td>0</td>
                 <td>warning</td>
                 <td><code>dangerous-default-value</code></td>
@@ -3099,7 +3329,7 @@
             </tr>
             
             <tr>
-                <td>557</td>
+                <td>564</td>
                 <td>4</td>
                 <td>convention</td>
                 <td><code>invalid-name</code></td>
@@ -3109,7 +3339,7 @@
             </tr>
             
             <tr>
-                <td>564</td>
+                <td>571</td>
                 <td>8</td>
                 <td>convention</td>
                 <td><code>invalid-name</code></td>
@@ -3119,7 +3349,7 @@
             </tr>
             
             <tr>
-                <td>565</td>
+                <td>572</td>
                 <td>8</td>
                 <td>convention</td>
                 <td><code>invalid-name</code></td>
@@ -3129,7 +3359,7 @@
             </tr>
             
             <tr>
-                <td>567</td>
+                <td>574</td>
                 <td>8</td>
                 <td>warning</td>
                 <td><code>raise-missing-from</code></td>
@@ -3139,7 +3369,7 @@
             </tr>
             
             <tr>
-                <td>592</td>
+                <td>599</td>
                 <td>4</td>
                 <td>warning</td>
                 <td><code>unnecessary-pass</code></td>
@@ -4505,7 +4735,7 @@
             </tr>
             
             <tr>
-                <td>196</td>
+                <td>197</td>
                 <td>59</td>
                 <td>convention</td>
                 <td><code>invalid-name</code></td>
@@ -4515,7 +4745,7 @@
             </tr>
             
             <tr>
-                <td>199</td>
+                <td>200</td>
                 <td>76</td>
                 <td>convention</td>
                 <td><code>trailing-whitespace</code></td>
@@ -4525,7 +4755,7 @@
             </tr>
             
             <tr>
-                <td>201</td>
+                <td>202</td>
                 <td>36</td>
                 <td>convention</td>
                 <td><code>trailing-whitespace</code></td>
@@ -4535,7 +4765,47 @@
             </tr>
             
             <tr>
-                <td>286</td>
+                <td>313</td>
+                <td>7</td>
+                <td>convention</td>
+                <td><code>singleton-comparison</code></td>
+                <td>C0121</td>
+                <td>fetch_population_data</td>
+                <td><pre>Comparison &#39;read_data == True&#39; should be &#39;read_data is True&#39; if checking for the singleton value True, or &#39;read_data&#39; if testing for truthiness</pre></td>
+            </tr>
+            
+            <tr>
+                <td>355</td>
+                <td>38</td>
+                <td>convention</td>
+                <td><code>singleton-comparison</code></td>
+                <td>C0121</td>
+                <td>preprocess_population_data</td>
+                <td><pre>Comparison &#39;df_pop_raw[dd.EngEng[&#39;idCounty&#39;]].str.contains(&#39;__&#39;) == True&#39; should be &#39;df_pop_raw[dd.EngEng[&#39;idCounty&#39;]].str.contains(&#39;__&#39;) is True&#39; if checking for the singleton value True, or &#39;bool(df_pop_raw[dd.EngEng[&#39;idCounty&#39;]].str.contains(&#39;__&#39;))&#39; if testing for truthiness</pre></td>
+            </tr>
+            
+            <tr>
+                <td>358</td>
+                <td>4</td>
+                <td>convention</td>
+                <td><code>invalid-name</code></td>
+                <td>C0103</td>
+                <td>preprocess_population_data</td>
+                <td><pre>Variable name &#34;idCounty_idx&#34; doesn&#39;t conform to snake_case naming style</pre></td>
+            </tr>
+            
+            <tr>
+                <td>367</td>
+                <td>4</td>
+                <td>convention</td>
+                <td><code>consider-using-enumerate</code></td>
+                <td>C0200</td>
+                <td>preprocess_population_data</td>
+                <td><pre>Consider using enumerate instead of iterating with range and len</pre></td>
+            </tr>
+            
+            <tr>
+                <td>413</td>
                 <td>0</td>
                 <td>refactor</td>
                 <td><code>too-many-arguments</code></td>
@@ -4545,17 +4815,7 @@
             </tr>
             
             <tr>
-                <td>286</td>
-                <td>0</td>
-                <td>refactor</td>
-                <td><code>too-many-locals</code></td>
-                <td>R0914</td>
-                <td>get_population_data</td>
-                <td><pre>Too many local variables (20/15)</pre></td>
-            </tr>
-            
-            <tr>
-                <td>297</td>
+                <td>425</td>
                 <td>56</td>
                 <td>convention</td>
                 <td><code>trailing-whitespace</code></td>
@@ -4565,7 +4825,7 @@
             </tr>
             
             <tr>
-                <td>298</td>
+                <td>426</td>
                 <td>28</td>
                 <td>convention</td>
                 <td><code>trailing-whitespace</code></td>
@@ -4575,7 +4835,7 @@
             </tr>
             
             <tr>
-                <td>299</td>
+                <td>427</td>
                 <td>48</td>
                 <td>convention</td>
                 <td><code>trailing-whitespace</code></td>
@@ -4585,7 +4845,7 @@
             </tr>
             
             <tr>
-                <td>305</td>
+                <td>433</td>
                 <td>76</td>
                 <td>convention</td>
                 <td><code>trailing-whitespace</code></td>
@@ -4595,7 +4855,7 @@
             </tr>
             
             <tr>
-                <td>307</td>
+                <td>435</td>
                 <td>18</td>
                 <td>convention</td>
                 <td><code>trailing-whitespace</code></td>
@@ -4605,7 +4865,7 @@
             </tr>
             
             <tr>
-                <td>309</td>
+                <td>437</td>
                 <td>80</td>
                 <td>convention</td>
                 <td><code>trailing-whitespace</code></td>
@@ -4615,7 +4875,7 @@
             </tr>
             
             <tr>
-                <td>310</td>
+                <td>438</td>
                 <td>49</td>
                 <td>convention</td>
                 <td><code>trailing-whitespace</code></td>
@@ -4625,7 +4885,7 @@
             </tr>
             
             <tr>
-                <td>311</td>
+                <td>439</td>
                 <td>77</td>
                 <td>convention</td>
                 <td><code>trailing-whitespace</code></td>
@@ -4635,53 +4895,13 @@
             </tr>
             
             <tr>
-                <td>323</td>
-                <td>64</td>
+                <td>451</td>
+                <td>65</td>
                 <td>convention</td>
                 <td><code>trailing-whitespace</code></td>
                 <td>C0303</td>
                 <td></td>
                 <td><pre>Trailing whitespace</pre></td>
-            </tr>
-            
-            <tr>
-                <td>330</td>
-                <td>7</td>
-                <td>convention</td>
-                <td><code>singleton-comparison</code></td>
-                <td>C0121</td>
-                <td>get_population_data</td>
-                <td><pre>Comparison &#39;read_data == True&#39; should be &#39;read_data is True&#39; if checking for the singleton value True, or &#39;read_data&#39; if testing for truthiness</pre></td>
-            </tr>
-            
-            <tr>
-                <td>356</td>
-                <td>38</td>
-                <td>convention</td>
-                <td><code>singleton-comparison</code></td>
-                <td>C0121</td>
-                <td>get_population_data</td>
-                <td><pre>Comparison &#39;df_pop_raw[dd.EngEng[&#39;idCounty&#39;]].str.contains(&#39;__&#39;) == True&#39; should be &#39;df_pop_raw[dd.EngEng[&#39;idCounty&#39;]].str.contains(&#39;__&#39;) is True&#39; if checking for the singleton value True, or &#39;bool(df_pop_raw[dd.EngEng[&#39;idCounty&#39;]].str.contains(&#39;__&#39;))&#39; if testing for truthiness</pre></td>
-            </tr>
-            
-            <tr>
-                <td>359</td>
-                <td>4</td>
-                <td>convention</td>
-                <td><code>invalid-name</code></td>
-                <td>C0103</td>
-                <td>get_population_data</td>
-                <td><pre>Variable name &#34;idCounty_idx&#34; doesn&#39;t conform to snake_case naming style</pre></td>
-            </tr>
-            
-            <tr>
-                <td>368</td>
-                <td>4</td>
-                <td>convention</td>
-                <td><code>consider-using-enumerate</code></td>
-                <td>C0200</td>
-                <td>get_population_data</td>
-                <td><pre>Consider using enumerate instead of iterating with range and len</pre></td>
             </tr>
             
         </table>
@@ -5433,7 +5653,7 @@
                 <td><code>too-many-lines</code></td>
                 <td>C0302</td>
                 <td></td>
-                <td><pre>Too many lines in module (1079/1000)</pre></td>
+                <td><pre>Too many lines in module (1277/1000)</pre></td>
             </tr>
             
             <tr>
@@ -5459,6 +5679,26 @@
             <tr>
                 <td>24</td>
                 <td>0</td>
+                <td>warning</td>
+                <td><code>unused-import</code></td>
+                <td>W0611</td>
+                <td></td>
+                <td><pre>Unused Any imported from typing</pre></td>
+            </tr>
+            
+            <tr>
+                <td>24</td>
+                <td>0</td>
+                <td>warning</td>
+                <td><code>unused-import</code></td>
+                <td>W0611</td>
+                <td></td>
+                <td><pre>Unused List imported from typing</pre></td>
+            </tr>
+            
+            <tr>
+                <td>26</td>
+                <td>0</td>
                 <td>error</td>
                 <td><code>import-error</code></td>
                 <td>E0401</td>
@@ -5467,7 +5707,7 @@
             </tr>
             
             <tr>
-                <td>25</td>
+                <td>27</td>
                 <td>0</td>
                 <td>error</td>
                 <td><code>import-error</code></td>
@@ -5477,7 +5717,77 @@
             </tr>
             
             <tr>
-                <td>40</td>
+                <td>28</td>
+                <td>0</td>
+                <td>error</td>
+                <td><code>import-error</code></td>
+                <td>E0401</td>
+                <td></td>
+                <td><pre>Unable to import &#39;numpy&#39;</pre></td>
+            </tr>
+            
+            <tr>
+                <td>28</td>
+                <td>0</td>
+                <td>warning</td>
+                <td><code>unused-import</code></td>
+                <td>W0611</td>
+                <td></td>
+                <td><pre>Unused ndarray imported from numpy</pre></td>
+            </tr>
+            
+            <tr>
+                <td>28</td>
+                <td>0</td>
+                <td>warning</td>
+                <td><code>unused-import</code></td>
+                <td>W0611</td>
+                <td></td>
+                <td><pre>Unused dtype imported from numpy</pre></td>
+            </tr>
+            
+            <tr>
+                <td>29</td>
+                <td>0</td>
+                <td>error</td>
+                <td><code>import-error</code></td>
+                <td>E0401</td>
+                <td></td>
+                <td><pre>Unable to import &#39;pandas&#39;</pre></td>
+            </tr>
+            
+            <tr>
+                <td>29</td>
+                <td>0</td>
+                <td>warning</td>
+                <td><code>unused-import</code></td>
+                <td>W0611</td>
+                <td></td>
+                <td><pre>Unused DataFrame imported from pandas</pre></td>
+            </tr>
+            
+            <tr>
+                <td>29</td>
+                <td>0</td>
+                <td>warning</td>
+                <td><code>unused-import</code></td>
+                <td>W0611</td>
+                <td></td>
+                <td><pre>Unused Series imported from pandas</pre></td>
+            </tr>
+            
+            <tr>
+                <td>39</td>
+                <td>0</td>
+                <td>warning</td>
+                <td><code>unused-import</code></td>
+                <td>W0611</td>
+                <td></td>
+                <td><pre>Unused Conf imported from memilio.epidata.getDataIntoPandasDataFrame</pre></td>
+            </tr>
+            
+            <tr>
+                <td>45</td>
                 <td>0</td>
                 <td>convention</td>
                 <td><code>missing-function-docstring</code></td>
@@ -5487,7 +5797,7 @@
             </tr>
             
             <tr>
-                <td>42</td>
+                <td>46</td>
                 <td>0</td>
                 <td>convention</td>
                 <td><code>line-too-long</code></td>
@@ -5497,17 +5807,7 @@
             </tr>
             
             <tr>
-                <td>45</td>
-                <td>0</td>
-                <td>convention</td>
-                <td><code>line-too-long</code></td>
-                <td>C0301</td>
-                <td></td>
-                <td><pre>Line too long (127/120)</pre></td>
-            </tr>
-            
-            <tr>
-                <td>50</td>
+                <td>55</td>
                 <td>0</td>
                 <td>convention</td>
                 <td><code>missing-function-docstring</code></td>
@@ -5517,7 +5817,7 @@
             </tr>
             
             <tr>
-                <td>50</td>
+                <td>55</td>
                 <td>18</td>
                 <td>convention</td>
                 <td><code>invalid-name</code></td>
@@ -5527,7 +5827,7 @@
             </tr>
             
             <tr>
-                <td>66</td>
+                <td>71</td>
                 <td>0</td>
                 <td>convention</td>
                 <td><code>superfluous-parens</code></td>
@@ -5537,7 +5837,7 @@
             </tr>
             
             <tr>
-                <td>70</td>
+                <td>75</td>
                 <td>0</td>
                 <td>refactor</td>
                 <td><code>too-many-arguments</code></td>
@@ -5547,17 +5847,7 @@
             </tr>
             
             <tr>
-                <td>73</td>
-                <td>72</td>
-                <td>convention</td>
-                <td><code>trailing-whitespace</code></td>
-                <td>C0303</td>
-                <td></td>
-                <td><pre>Trailing whitespace</pre></td>
-            </tr>
-            
-            <tr>
-                <td>104</td>
+                <td>109</td>
                 <td>8</td>
                 <td>convention</td>
                 <td><code>invalid-name</code></td>
@@ -5567,17 +5857,7 @@
             </tr>
             
             <tr>
-                <td>105</td>
-                <td>81</td>
-                <td>convention</td>
-                <td><code>trailing-whitespace</code></td>
-                <td>C0303</td>
-                <td></td>
-                <td><pre>Trailing whitespace</pre></td>
-            </tr>
-            
-            <tr>
-                <td>155</td>
+                <td>160</td>
                 <td>0</td>
                 <td>refactor</td>
                 <td><code>too-many-locals</code></td>
@@ -5587,7 +5867,7 @@
             </tr>
             
             <tr>
-                <td>155</td>
+                <td>160</td>
                 <td>0</td>
                 <td>refactor</td>
                 <td><code>too-many-branches</code></td>
@@ -5597,7 +5877,7 @@
             </tr>
             
             <tr>
-                <td>155</td>
+                <td>160</td>
                 <td>0</td>
                 <td>refactor</td>
                 <td><code>too-many-statements</code></td>
@@ -5607,7 +5887,7 @@
             </tr>
             
             <tr>
-                <td>156</td>
+                <td>161</td>
                 <td>8</td>
                 <td>convention</td>
                 <td><code>invalid-name</code></td>
@@ -5617,7 +5897,7 @@
             </tr>
             
             <tr>
-                <td>158</td>
+                <td>163</td>
                 <td>0</td>
                 <td>convention</td>
                 <td><code>line-too-long</code></td>
@@ -5627,7 +5907,7 @@
             </tr>
             
             <tr>
-                <td>161</td>
+                <td>166</td>
                 <td>0</td>
                 <td>convention</td>
                 <td><code>line-too-long</code></td>
@@ -5637,7 +5917,7 @@
             </tr>
             
             <tr>
-                <td>162</td>
+                <td>167</td>
                 <td>0</td>
                 <td>convention</td>
                 <td><code>line-too-long</code></td>
@@ -5647,7 +5927,7 @@
             </tr>
             
             <tr>
-                <td>179</td>
+                <td>184</td>
                 <td>8</td>
                 <td>convention</td>
                 <td><code>invalid-name</code></td>
@@ -5657,7 +5937,7 @@
             </tr>
             
             <tr>
-                <td>201</td>
+                <td>206</td>
                 <td>4</td>
                 <td>convention</td>
                 <td><code>consider-using-dict-items</code></td>
@@ -5667,33 +5947,13 @@
             </tr>
             
             <tr>
-                <td>211</td>
+                <td>216</td>
                 <td>12</td>
                 <td>convention</td>
                 <td><code>invalid-name</code></td>
                 <td>C0103</td>
                 <td>sanitizing_extrapolation_mobility</td>
                 <td><pre>Variable name &#34;ii&#34; doesn&#39;t conform to snake_case naming style</pre></td>
-            </tr>
-            
-            <tr>
-                <td>220</td>
-                <td>0</td>
-                <td>convention</td>
-                <td><code>line-too-long</code></td>
-                <td>C0301</td>
-                <td></td>
-                <td><pre>Line too long (159/120)</pre></td>
-            </tr>
-            
-            <tr>
-                <td>224</td>
-                <td>0</td>
-                <td>convention</td>
-                <td><code>line-too-long</code></td>
-                <td>C0301</td>
-                <td></td>
-                <td><pre>Line too long (125/120)</pre></td>
             </tr>
             
             <tr>
@@ -5703,21 +5963,31 @@
                 <td><code>line-too-long</code></td>
                 <td>C0301</td>
                 <td></td>
-                <td><pre>Line too long (132/120)</pre></td>
+                <td><pre>Line too long (161/120)</pre></td>
             </tr>
             
             <tr>
-                <td>231</td>
+                <td>229</td>
                 <td>0</td>
                 <td>convention</td>
                 <td><code>line-too-long</code></td>
                 <td>C0301</td>
                 <td></td>
-                <td><pre>Line too long (125/120)</pre></td>
+                <td><pre>Line too long (127/120)</pre></td>
             </tr>
             
             <tr>
-                <td>232</td>
+                <td>237</td>
+                <td>0</td>
+                <td>convention</td>
+                <td><code>line-too-long</code></td>
+                <td>C0301</td>
+                <td></td>
+                <td><pre>Line too long (127/120)</pre></td>
+            </tr>
+            
+            <tr>
+                <td>238</td>
                 <td>0</td>
                 <td>convention</td>
                 <td><code>line-too-long</code></td>
@@ -5727,7 +5997,7 @@
             </tr>
             
             <tr>
-                <td>232</td>
+                <td>238</td>
                 <td>39</td>
                 <td>refactor</td>
                 <td><code>unnecessary-comprehension</code></td>
@@ -5737,7 +6007,7 @@
             </tr>
             
             <tr>
-                <td>241</td>
+                <td>247</td>
                 <td>8</td>
                 <td>convention</td>
                 <td><code>invalid-name</code></td>
@@ -5747,7 +6017,7 @@
             </tr>
             
             <tr>
-                <td>243</td>
+                <td>249</td>
                 <td>8</td>
                 <td>warning</td>
                 <td><code>redefined-builtin</code></td>
@@ -5757,7 +6027,7 @@
             </tr>
             
             <tr>
-                <td>243</td>
+                <td>249</td>
                 <td>8</td>
                 <td>convention</td>
                 <td><code>invalid-name</code></td>
@@ -5767,7 +6037,7 @@
             </tr>
             
             <tr>
-                <td>257</td>
+                <td>263</td>
                 <td>8</td>
                 <td>convention</td>
                 <td><code>consider-using-enumerate</code></td>
@@ -5777,17 +6047,7 @@
             </tr>
             
             <tr>
-                <td>267</td>
-                <td>0</td>
-                <td>convention</td>
-                <td><code>line-too-long</code></td>
-                <td>C0301</td>
-                <td></td>
-                <td><pre>Line too long (121/120)</pre></td>
-            </tr>
-            
-            <tr>
-                <td>282</td>
+                <td>340</td>
                 <td>0</td>
                 <td>convention</td>
                 <td><code>line-too-long</code></td>
@@ -5797,27 +6057,17 @@
             </tr>
             
             <tr>
-                <td>283</td>
+                <td>348</td>
                 <td>0</td>
                 <td>convention</td>
                 <td><code>line-too-long</code></td>
                 <td>C0301</td>
                 <td></td>
-                <td><pre>Line too long (205/120)</pre></td>
+                <td><pre>Line too long (126/120)</pre></td>
             </tr>
             
             <tr>
-                <td>318</td>
-                <td>0</td>
-                <td>convention</td>
-                <td><code>line-too-long</code></td>
-                <td>C0301</td>
-                <td></td>
-                <td><pre>Line too long (142/120)</pre></td>
-            </tr>
-            
-            <tr>
-                <td>344</td>
+                <td>353</td>
                 <td>25</td>
                 <td>convention</td>
                 <td><code>singleton-comparison</code></td>
@@ -5827,7 +6077,7 @@
             </tr>
             
             <tr>
-                <td>363</td>
+                <td>372</td>
                 <td>8</td>
                 <td>convention</td>
                 <td><code>invalid-name</code></td>
@@ -5837,7 +6087,7 @@
             </tr>
             
             <tr>
-                <td>365</td>
+                <td>374</td>
                 <td>12</td>
                 <td>convention</td>
                 <td><code>invalid-name</code></td>
@@ -5847,7 +6097,7 @@
             </tr>
             
             <tr>
-                <td>367</td>
+                <td>376</td>
                 <td>12</td>
                 <td>convention</td>
                 <td><code>invalid-name</code></td>
@@ -5857,7 +6107,7 @@
             </tr>
             
             <tr>
-                <td>377</td>
+                <td>386</td>
                 <td>0</td>
                 <td>refactor</td>
                 <td><code>too-many-arguments</code></td>
@@ -5867,7 +6117,7 @@
             </tr>
             
             <tr>
-                <td>377</td>
+                <td>386</td>
                 <td>0</td>
                 <td>refactor</td>
                 <td><code>too-many-locals</code></td>
@@ -5877,27 +6127,7 @@
             </tr>
             
             <tr>
-                <td>381</td>
-                <td>97</td>
-                <td>convention</td>
-                <td><code>trailing-whitespace</code></td>
-                <td>C0303</td>
-                <td></td>
-                <td><pre>Trailing whitespace</pre></td>
-            </tr>
-            
-            <tr>
-                <td>382</td>
-                <td>116</td>
-                <td>convention</td>
-                <td><code>trailing-whitespace</code></td>
-                <td>C0303</td>
-                <td></td>
-                <td><pre>Trailing whitespace</pre></td>
-            </tr>
-            
-            <tr>
-                <td>384</td>
+                <td>393</td>
                 <td>0</td>
                 <td>convention</td>
                 <td><code>line-too-long</code></td>
@@ -5907,7 +6137,7 @@
             </tr>
             
             <tr>
-                <td>400</td>
+                <td>410</td>
                 <td>4</td>
                 <td>convention</td>
                 <td><code>consider-using-enumerate</code></td>
@@ -5917,7 +6147,7 @@
             </tr>
             
             <tr>
-                <td>403</td>
+                <td>413</td>
                 <td>8</td>
                 <td>convention</td>
                 <td><code>invalid-name</code></td>
@@ -5927,7 +6157,7 @@
             </tr>
             
             <tr>
-                <td>412</td>
+                <td>422</td>
                 <td>8</td>
                 <td>convention</td>
                 <td><code>consider-using-enumerate</code></td>
@@ -5937,7 +6167,7 @@
             </tr>
             
             <tr>
-                <td>434</td>
+                <td>444</td>
                 <td>12</td>
                 <td>convention</td>
                 <td><code>consider-using-enumerate</code></td>
@@ -5947,7 +6177,7 @@
             </tr>
             
             <tr>
-                <td>452</td>
+                <td>462</td>
                 <td>0</td>
                 <td>convention</td>
                 <td><code>line-too-long</code></td>
@@ -5957,147 +6187,67 @@
             </tr>
             
             <tr>
-                <td>461</td>
+                <td>481</td>
                 <td>0</td>
                 <td>convention</td>
                 <td><code>line-too-long</code></td>
                 <td>C0301</td>
                 <td></td>
-                <td><pre>Line too long (124/120)</pre></td>
+                <td><pre>Line too long (121/120)</pre></td>
             </tr>
             
             <tr>
-                <td>465</td>
+                <td>506</td>
                 <td>0</td>
                 <td>refactor</td>
                 <td><code>too-many-arguments</code></td>
                 <td>R0913</td>
-                <td>get_vaccination_data</td>
-                <td><pre>Too many arguments (8/5)</pre></td>
+                <td>process_vaccination_data</td>
+                <td><pre>Too many arguments (7/5)</pre></td>
             </tr>
             
             <tr>
-                <td>465</td>
+                <td>506</td>
                 <td>0</td>
                 <td>refactor</td>
                 <td><code>too-many-locals</code></td>
                 <td>R0914</td>
-                <td>get_vaccination_data</td>
-                <td><pre>Too many local variables (66/15)</pre></td>
+                <td>process_vaccination_data</td>
+                <td><pre>Too many local variables (49/15)</pre></td>
             </tr>
             
             <tr>
-                <td>465</td>
+                <td>506</td>
                 <td>0</td>
                 <td>refactor</td>
                 <td><code>too-many-branches</code></td>
                 <td>R0912</td>
-                <td>get_vaccination_data</td>
-                <td><pre>Too many branches (49/12)</pre></td>
+                <td>process_vaccination_data</td>
+                <td><pre>Too many branches (41/12)</pre></td>
             </tr>
             
             <tr>
-                <td>465</td>
+                <td>506</td>
                 <td>0</td>
                 <td>refactor</td>
                 <td><code>too-many-statements</code></td>
                 <td>R0915</td>
-                <td>get_vaccination_data</td>
-                <td><pre>Too many statements (193/50)</pre></td>
+                <td>process_vaccination_data</td>
+                <td><pre>Too many statements (132/50)</pre></td>
             </tr>
             
             <tr>
-                <td>492</td>
-                <td>102</td>
-                <td>convention</td>
-                <td><code>trailing-whitespace</code></td>
-                <td>C0303</td>
-                <td></td>
-                <td><pre>Trailing whitespace</pre></td>
-            </tr>
-            
-            <tr>
-                <td>503</td>
-                <td>103</td>
-                <td>convention</td>
-                <td><code>trailing-whitespace</code></td>
-                <td>C0303</td>
-                <td></td>
-                <td><pre>Trailing whitespace</pre></td>
-            </tr>
-            
-            <tr>
-                <td>507</td>
-                <td>75</td>
-                <td>convention</td>
-                <td><code>trailing-whitespace</code></td>
-                <td>C0303</td>
-                <td></td>
-                <td><pre>Trailing whitespace</pre></td>
-            </tr>
-            
-            <tr>
-                <td>508</td>
-                <td>73</td>
-                <td>convention</td>
-                <td><code>trailing-whitespace</code></td>
-                <td>C0303</td>
-                <td></td>
-                <td><pre>Trailing whitespace</pre></td>
-            </tr>
-            
-            <tr>
-                <td>510</td>
-                <td>18</td>
-                <td>convention</td>
-                <td><code>trailing-whitespace</code></td>
-                <td>C0303</td>
-                <td></td>
-                <td><pre>Trailing whitespace</pre></td>
-            </tr>
-            
-            <tr>
-                <td>514</td>
-                <td>60</td>
-                <td>convention</td>
-                <td><code>trailing-whitespace</code></td>
-                <td>C0303</td>
-                <td></td>
-                <td><pre>Trailing whitespace</pre></td>
-            </tr>
-            
-            <tr>
-                <td>520</td>
-                <td>20</td>
-                <td>convention</td>
-                <td><code>trailing-whitespace</code></td>
-                <td>C0303</td>
-                <td></td>
-                <td><pre>Trailing whitespace</pre></td>
-            </tr>
-            
-            <tr>
-                <td>527</td>
-                <td>7</td>
-                <td>convention</td>
-                <td><code>singleton-comparison</code></td>
-                <td>C0121</td>
-                <td>get_vaccination_data</td>
-                <td><pre>Comparison &#39;impute_dates == False&#39; should be &#39;impute_dates is False&#39; if checking for the singleton value False, or &#39;not impute_dates&#39; if testing for falsiness</pre></td>
-            </tr>
-            
-            <tr>
-                <td>556</td>
+                <td>562</td>
                 <td>16</td>
                 <td>warning</td>
                 <td><code>raise-missing-from</code></td>
                 <td>W0707</td>
-                <td>get_vaccination_data</td>
+                <td>process_vaccination_data</td>
                 <td><pre>Consider explicitly re-raising using &#39;except Exception as exc&#39; and &#39;raise gd.DataError(&#34;Time data can&#39;t be transformed to intended format&#34;) from exc&#39;</pre></td>
             </tr>
             
             <tr>
-                <td>614</td>
+                <td>619</td>
                 <td>0</td>
                 <td>convention</td>
                 <td><code>line-too-long</code></td>
@@ -6107,7 +6257,7 @@
             </tr>
             
             <tr>
-                <td>617</td>
+                <td>622</td>
                 <td>0</td>
                 <td>convention</td>
                 <td><code>line-too-long</code></td>
@@ -6117,7 +6267,7 @@
             </tr>
             
             <tr>
-                <td>643</td>
+                <td>649</td>
                 <td>0</td>
                 <td>convention</td>
                 <td><code>line-too-long</code></td>
@@ -6127,133 +6277,263 @@
             </tr>
             
             <tr>
-                <td>675</td>
+                <td>681</td>
                 <td>12</td>
                 <td>convention</td>
                 <td><code>consider-using-enumerate</code></td>
                 <td>C0200</td>
-                <td>get_vaccination_data</td>
+                <td>process_vaccination_data</td>
                 <td><pre>Consider using enumerate instead of iterating with range and len</pre></td>
             </tr>
             
             <tr>
-                <td>686</td>
+                <td>692</td>
                 <td>12</td>
                 <td>convention</td>
                 <td><code>consider-using-enumerate</code></td>
                 <td>C0200</td>
-                <td>get_vaccination_data</td>
+                <td>process_vaccination_data</td>
                 <td><pre>Consider using enumerate instead of iterating with range and len</pre></td>
             </tr>
             
             <tr>
-                <td>699</td>
+                <td>705</td>
                 <td>8</td>
                 <td>convention</td>
                 <td><code>consider-using-enumerate</code></td>
                 <td>C0200</td>
-                <td>get_vaccination_data</td>
+                <td>process_vaccination_data</td>
                 <td><pre>Consider using enumerate instead of iterating with range and len</pre></td>
             </tr>
             
             <tr>
-                <td>723</td>
+                <td>729</td>
                 <td>8</td>
                 <td>convention</td>
                 <td><code>consider-using-enumerate</code></td>
                 <td>C0200</td>
-                <td>get_vaccination_data</td>
+                <td>process_vaccination_data</td>
                 <td><pre>Consider using enumerate instead of iterating with range and len</pre></td>
             </tr>
             
             <tr>
-                <td>736</td>
+                <td>742</td>
                 <td>8</td>
                 <td>convention</td>
                 <td><code>consider-using-enumerate</code></td>
                 <td>C0200</td>
-                <td>get_vaccination_data</td>
+                <td>process_vaccination_data</td>
                 <td><pre>Consider using enumerate instead of iterating with range and len</pre></td>
             </tr>
             
             <tr>
-                <td>820</td>
+                <td>826</td>
                 <td>11</td>
                 <td>refactor</td>
                 <td><code>consider-using-in</code></td>
                 <td>R1714</td>
-                <td>get_vaccination_data</td>
+                <td>process_vaccination_data</td>
                 <td><pre>Consider merging these comparisons with &#39;in&#39; by using &#39;sanitize_data in (1, 2)&#39;. Use a set instead if elements are hashable.</pre></td>
             </tr>
             
             <tr>
-                <td>868</td>
+                <td>882</td>
+                <td>0</td>
+                <td>refactor</td>
+                <td><code>too-many-arguments</code></td>
+                <td>R0913</td>
+                <td>write_vaccination_data</td>
+                <td><pre>Too many arguments (6/5)</pre></td>
+            </tr>
+            
+            <tr>
+                <td>882</td>
+                <td>0</td>
+                <td>refactor</td>
+                <td><code>too-many-locals</code></td>
+                <td>R0914</td>
+                <td>write_vaccination_data</td>
+                <td><pre>Too many local variables (36/15)</pre></td>
+            </tr>
+            
+            <tr>
+                <td>882</td>
+                <td>0</td>
+                <td>refactor</td>
+                <td><code>too-many-statements</code></td>
+                <td>R0915</td>
+                <td>write_vaccination_data</td>
+                <td><pre>Too many statements (74/50)</pre></td>
+            </tr>
+            
+            <tr>
+                <td>918</td>
+                <td>0</td>
+                <td>convention</td>
+                <td><code>line-too-long</code></td>
+                <td>C0301</td>
+                <td></td>
+                <td><pre>Line too long (142/120)</pre></td>
+            </tr>
+            
+            <tr>
+                <td>919</td>
+                <td>0</td>
+                <td>convention</td>
+                <td><code>line-too-long</code></td>
+                <td>C0301</td>
+                <td></td>
+                <td><pre>Line too long (190/120)</pre></td>
+            </tr>
+            
+            <tr>
+                <td>920</td>
+                <td>0</td>
+                <td>convention</td>
+                <td><code>line-too-long</code></td>
+                <td>C0301</td>
+                <td></td>
+                <td><pre>Line too long (139/120)</pre></td>
+            </tr>
+            
+            <tr>
+                <td>925</td>
+                <td>0</td>
+                <td>convention</td>
+                <td><code>line-too-long</code></td>
+                <td>C0301</td>
+                <td></td>
+                <td><pre>Line too long (122/120)</pre></td>
+            </tr>
+            
+            <tr>
+                <td>926</td>
+                <td>0</td>
+                <td>convention</td>
+                <td><code>line-too-long</code></td>
+                <td>C0301</td>
+                <td></td>
+                <td><pre>Line too long (143/120)</pre></td>
+            </tr>
+            
+            <tr>
+                <td>927</td>
+                <td>0</td>
+                <td>convention</td>
+                <td><code>line-too-long</code></td>
+                <td>C0301</td>
+                <td></td>
+                <td><pre>Line too long (144/120)</pre></td>
+            </tr>
+            
+            <tr>
+                <td>968</td>
                 <td>8</td>
                 <td>warning</td>
                 <td><code>unused-variable</code></td>
                 <td>W0612</td>
-                <td>get_vaccination_data</td>
+                <td>write_vaccination_data</td>
                 <td><pre>Unused variable &#39;df_fullsum&#39;</pre></td>
             </tr>
             
             <tr>
-                <td>908</td>
+                <td>996</td>
                 <td>30</td>
                 <td>refactor</td>
                 <td><code>unnecessary-comprehension</code></td>
                 <td>R1721</td>
-                <td>get_vaccination_data</td>
+                <td>write_vaccination_data</td>
                 <td><pre>Unnecessary use of a comprehension, use list(unique_age_groups_old) instead.</pre></td>
             </tr>
             
             <tr>
-                <td>921</td>
+                <td>1009</td>
                 <td>30</td>
                 <td>refactor</td>
                 <td><code>unnecessary-comprehension</code></td>
                 <td>R1721</td>
-                <td>get_vaccination_data</td>
+                <td>write_vaccination_data</td>
                 <td><pre>Unnecessary use of a comprehension, use list(unique_age_groups_old) instead.</pre></td>
             </tr>
             
             <tr>
-                <td>997</td>
+                <td>1062</td>
                 <td>8</td>
                 <td>warning</td>
                 <td><code>unused-variable</code></td>
                 <td>W0612</td>
-                <td>get_vaccination_data</td>
+                <td>write_vaccination_data</td>
                 <td><pre>Unused variable &#39;df_fullsum_county&#39;</pre></td>
             </tr>
             
             <tr>
-                <td>1025</td>
+                <td>1090</td>
                 <td>8</td>
                 <td>warning</td>
                 <td><code>unused-variable</code></td>
                 <td>W0612</td>
-                <td>get_vaccination_data</td>
+                <td>write_vaccination_data</td>
                 <td><pre>Unused variable &#39;df_fullsum_state&#39;</pre></td>
             </tr>
             
             <tr>
-                <td>1048</td>
+                <td>1113</td>
                 <td>30</td>
                 <td>refactor</td>
                 <td><code>unnecessary-comprehension</code></td>
                 <td>R1721</td>
-                <td>get_vaccination_data</td>
+                <td>write_vaccination_data</td>
                 <td><pre>Unnecessary use of a comprehension, use list(unique_age_groups_new) instead.</pre></td>
             </tr>
             
             <tr>
-                <td>1063</td>
+                <td>1128</td>
                 <td>30</td>
                 <td>refactor</td>
                 <td><code>unnecessary-comprehension</code></td>
                 <td>R1721</td>
-                <td>get_vaccination_data</td>
+                <td>write_vaccination_data</td>
                 <td><pre>Unnecessary use of a comprehension, use list(unique_age_groups_new) instead.</pre></td>
+            </tr>
+            
+            <tr>
+                <td>1134</td>
+                <td>4</td>
+                <td>refactor</td>
+                <td><code>no-else-return</code></td>
+                <td>R1705</td>
+                <td>write_vaccination_data</td>
+                <td><pre>Unnecessary &#34;else&#34; after &#34;return&#34;, remove the &#34;else&#34; and de-indent the code inside it</pre></td>
+            </tr>
+            
+            <tr>
+                <td>1182</td>
+                <td>0</td>
+                <td>refactor</td>
+                <td><code>too-many-arguments</code></td>
+                <td>R0913</td>
+                <td>get_vaccination_data</td>
+                <td><pre>Too many arguments (9/5)</pre></td>
+            </tr>
+            
+            <tr>
+                <td>1238</td>
+                <td>0</td>
+                <td>convention</td>
+                <td><code>line-too-long</code></td>
+                <td>C0301</td>
+                <td></td>
+                <td><pre>Line too long (140/120)</pre></td>
+            </tr>
+            
+            <tr>
+                <td>1260</td>
+                <td>4</td>
+                <td>warning</td>
+                <td><code>unused-variable</code></td>
+                <td>W0612</td>
+                <td>get_vaccination_data</td>
+                <td><pre>Unused variable &#39;silver_datasets&#39;</pre></td>
             </tr>
             
         </table>
@@ -10340,33 +10620,14 @@ from memilio.epidata import defaultDict as dd</pre></td>
                 <td>R0801</td>
                 <td></td>
                 <td><pre>Similar lines in 2 files
-==memilio.epidata.getCaseData:[243:249]
-==memilio.epidata.getDIVIData:[116:122]
-    try:
-        df[dd.EngEng[&#39;date&#39;]] = pd.to_datetime(
-            df[dd.EngEng[&#39;date&#39;]], format=&#34;ISO8601&#34;)
-    except ValueError:
+==memilio.epidata.getCaseData:[240:246]
+==memilio.epidata.getDIVIData:[138:144]
         try:
-            df[dd.EngEng[&#39;date&#39;]] = pd.to_datetime(</pre></td>
-            </tr>
-            
-            <tr>
-                <td>1</td>
-                <td>0</td>
-                <td>refactor</td>
-                <td><code>duplicate-code</code></td>
-                <td>R0801</td>
-                <td></td>
-                <td><pre>Similar lines in 2 files
-==memilio.epidata.getCaseData:[35:42]
-==memilio.epidata.transformWeatherData:[23:32]
-import numpy as np
-import pandas as pd
-
-from memilio.epidata import defaultDict as dd
-from memilio.epidata import geoModificationGermany as geoger
-from memilio.epidata import getDataIntoPandasDataFrame as gd
-from memilio.epidata import modifyDataframeSeries as mdfs</pre></td>
+            df[dd.EngEng[&#39;date&#39;]] = pd.to_datetime(
+                df[dd.EngEng[&#39;date&#39;]], format=&#34;ISO8601&#34;)
+        except ValueError:
+            try:
+                df[dd.EngEng[&#39;date&#39;]] = pd.to_datetime(</pre></td>
             </tr>
             
             <tr>
@@ -10380,15 +10641,12 @@ from memilio.epidata import modifyDataframeSeries as mdfs</pre></td>
 ==memilio.epidata.getCommuterMobility:[25:32]
 ==memilio.epidata.transformMobilityData:[19:29]
 import os
-
 import numpy as np
 import pandas as pd
 
 from memilio.epidata import defaultDict as dd
 from memilio.epidata import geoModificationGermany as geoger
-from memilio.epidata import getDataIntoPandasDataFrame as gd
-
-# activate CoW for more predictable behaviour of pandas DataFrames</pre></td>
+from memilio.epidata import getDataIntoPandasDataFrame as gd</pre></td>
             </tr>
             
             <tr>
@@ -10412,17 +10670,14 @@ from memilio.epidata import getDataIntoPandasDataFrame as gd
 pd.options.mode.copy_on_write = True
 
 
-def read_population_data(username, password):
-    &#39;&#39;&#39;! Reads Population data from regionalstatistik.de
+def getMobilityFromFile(directory, mobility_file):
+    &#34;&#34;&#34;! Gets a mobility matrix that is written in a plain txt file
+    under the given directory into a pandas data frame.
 
-    Username and Password are required to sign in on regionalstatistik.de.
-    A request is made to regionalstatistik.de and the StringIO is read in as a csv into the dataframe format.
-
-    @param username Username to sign in at regionalstatistik.de.
-    @param password Password to sign in at regionalstatistik.de.
-    @return DataFrame
-    &#39;&#39;&#39;
-</pre></td>
+    @param directory Path to folder where data is read.
+    @param mobility_file Mobility matrix file which has to be updated.
+    @return Mobility matrix data frame.
+    &#34;&#34;&#34;</pre></td>
             </tr>
             
             <tr>
@@ -10443,11 +10698,27 @@ def read_population_data(username, password):
     def setUp(self):
         self.setUpPyfakefs()
 
-    @patch(&#39;memilio.epidata.getVaccinationData.download_vaccination_data&#39;,
-           return_value=df_vacc_data_altern)
-    @patch(&#39;memilio.epidata.getPopulationData.get_population_data&#39;, return_value=df_pop)
-    @patch(&#39;memilio.epidata.getDataIntoPandasDataFrame.user_choice&#39;, return_value=True)
-    def test_get_vaccination_data_alternative_ages(self, mockin, mockp, mockv):</pre></td>
+    @patch(&#39;builtins.print&#39;)
+    def test_verify_sorted(self, mock_print):</pre></td>
+            </tr>
+            
+            <tr>
+                <td>1</td>
+                <td>0</td>
+                <td>refactor</td>
+                <td><code>duplicate-code</code></td>
+                <td>R0801</td>
+                <td></td>
+                <td><pre>Similar lines in 2 files
+==memilio.epidata.getDIVIData:[71:78]
+==memilio.epidata.getVaccinationData:[486:493]
+    conf = gd.Conf(out_folder, **kwargs)
+    out_folder = conf.path_to_use
+    no_raw = conf.no_raw
+
+    directory = os.path.join(out_folder, &#39;Germany/&#39;)
+    gd.check_dir(directory)
+</pre></td>
             </tr>
             
             <tr>
@@ -10467,37 +10738,73 @@ from memilio.epidata import modifyDataframeSeries as mdfs
 pd.options.mode.copy_on_write = True
 
 
-def get_jh_data(read_data=dd.defaultDict[&#39;read_data&#39;],
-                file_format=dd.defaultDict[&#39;file_format&#39;],
-                out_folder=dd.defaultDict[&#39;out_folder&#39;],
-                start_date=date(2020, 1, 22),
-                end_date=dd.defaultDict[&#39;end_date&#39;],
-                impute_dates=dd.defaultDict[&#39;impute_dates&#39;],
-                **kwargs):
-    &#34;&#34;&#34;! Download data from John Hopkins University
-
-   Data is either downloaded and afterwards stored or loaded from a stored filed.
-   The file is &#34;FullData_JohnHopkins.json&#34;
-
-   Working with the data includes
-   - rename columns such that &#34;/&#34; is deleted, e.g Country/Region becomes CountryRegion
-   - data of all countries together are written to a file
-   - download the data from following countries in a separate file
-   and are stored in the according folders with the country name
-       - Germany, SouthKorea, Spain, France, Italy, US, China
-   - furthermore, all countries, for which provinces are added, are written to a file
-
-    @param read_data True or False. Defines if data is read from file or downloaded. Default defined in defaultDict.
-    @param file_format File format which is used for writing the data. Default defined in defaultDict.
-    @param out_folder Folder where data is written to. Default defined in defaultDict.
-    @param start_date Date of first date in dataframe. Default defined in defaultDict.
-    @param end_date Date of last date in dataframe. Default defined in defaultDict.
-    @param impute_dates [Currently not used] True or False. Defines if values for dates without new information are imputed. Default defined in defaultDict.
-    @param moving_average [Currently not used] Integers &gt;=0. Applies an &#39;moving_average&#39;-days moving average on all time series
-        to smooth out effects of irregular reporting. Default defined in defaultDict.
-   &#34;&#34;&#34;
+def transformWeatherData(read_data=dd.defaultDict[&#39;read_data&#39;],
+                         file_format=dd.defaultDict[&#39;file_format&#39;],
+                         out_folder=dd.defaultDict[&#39;out_folder&#39;],
+                         start_date=dd.defaultDict[&#39;start_date&#39;],
+                         end_date=dd.defaultDict[&#39;end_date&#39;],
+                         moving_average=dd.defaultDict[&#39;moving_average&#39;],
+                         merge_berlin=True,
+                         merge_eisenach=False,
+                         **kwargs
+                         ):
+    &#34;&#34;&#34;! ...
+    @param file_format File format which is used for writing the data.
+        Default defined in defaultDict.
+    @param out_folder Path to folder where data is written in folder
+        out_folder/Germany.
+    @param start_date [Default = &#39;&#39;, taken from read data] Start date
+        of stored data frames.
+    @param end_date [Default = &#39;&#39;, taken from read data] End date of
+        stored data frames.
+    @param moving_average 0 [Default] or Number &gt; 0. Defines the number of
+        days for which a centered moving average is computed.
+    &#34;&#34;&#34;
     conf = gd.Conf(out_folder, **kwargs)
-    out_folder = conf.path_to_use</pre></td>
+    out_folder = conf.path_to_use
+</pre></td>
+            </tr>
+            
+            <tr>
+                <td>1</td>
+                <td>0</td>
+                <td>refactor</td>
+                <td><code>duplicate-code</code></td>
+                <td>R0801</td>
+                <td></td>
+                <td><pre>Similar lines in 2 files
+==memilio.epidata.getDIVIData:[41:71]
+==memilio.epidata.transformWeatherData:[24:32]
+import pandas as pd
+
+from memilio.epidata import defaultDict as dd
+from memilio.epidata import geoModificationGermany as geoger
+from memilio.epidata import getDataIntoPandasDataFrame as gd
+from memilio.epidata import modifyDataframeSeries as mdfs
+
+
+def fetch_divi_data(read_data: bool = dd.defaultDict[&#39;read_data&#39;],
+                    out_folder: str = dd.defaultDict[&#39;out_folder&#39;],
+                    file_format: str = dd.defaultDict[&#39;file_format&#39;],
+                    **kwargs
+                    ) -&gt; pd.DataFrame:
+    &#34;&#34;&#34;! Downloads or reads the DIVI ICU data and writes them in different files.
+
+    Available data starts from 2020-04-24.
+    If the given start_date is earlier, it is changed to this date and a warning is printed.
+    If it does not already exist, the folder Germany is generated in the given out_folder.
+    If read_data == True and the file &#34;FullData_DIVI.json&#34; exists, the data is read form this file
+    and stored in a pandas dataframe. If read_data = True and the file does not exist the program is stopped.
+    The downloaded dataframe is written to the file &#34;FullData_DIVI&#34;.
+
+    @param read_data bool. True or False. Defines if data is read from file or downloaded. Default defined in defaultDict.
+    @param file_format str. File format which is used for writing the data. Default defined in defaultDict.
+    @param out_folder str. Folder where data is written to. Default defined in defaultDict.
+    @param start_date date. The first date in dataframe. Default defined in defaultDict.
+    @param ***kwargs
+
+    @return Tuple[df_raw, start_date] Tuple. Contains the fetched data as well as the adjusted starting date
+    &#34;&#34;&#34;</pre></td>
             </tr>
             
             <tr>
@@ -10551,7 +10858,25 @@ def transformWeatherData(read_data=dd.defaultDict[&#39;read_data&#39;],
                 <td>R0801</td>
                 <td></td>
                 <td><pre>Similar lines in 2 files
+==memilio.epidata.getCommuterMobility:[26:32]
 ==memilio.epidata.getPopulationData:[32:40]
+import numpy as np
+import pandas as pd
+
+from memilio.epidata import defaultDict as dd
+from memilio.epidata import geoModificationGermany as geoger
+from memilio.epidata import getDataIntoPandasDataFrame as gd</pre></td>
+            </tr>
+            
+            <tr>
+                <td>1</td>
+                <td>0</td>
+                <td>refactor</td>
+                <td><code>duplicate-code</code></td>
+                <td>R0801</td>
+                <td></td>
+                <td><pre>Similar lines in 2 files
+==memilio.epidata.transformMobilityData:[21:29]
 ==memilio.epidata.transformWeatherData:[23:29]
 import numpy as np
 import pandas as pd
@@ -10561,42 +10886,6 @@ from memilio.epidata import geoModificationGermany as geoger
 from memilio.epidata import getDataIntoPandasDataFrame as gd
 
 # activate CoW for more predictable behaviour of pandas DataFrames</pre></td>
-            </tr>
-            
-            <tr>
-                <td>1</td>
-                <td>0</td>
-                <td>refactor</td>
-                <td><code>duplicate-code</code></td>
-                <td>R0801</td>
-                <td></td>
-                <td><pre>Similar lines in 2 files
-==memilio.epidata.getCaseData:[36:42]
-==memilio.epidata.getDIVIData:[40:82]
-import pandas as pd
-
-from memilio.epidata import defaultDict as dd
-from memilio.epidata import geoModificationGermany as geoger
-from memilio.epidata import getDataIntoPandasDataFrame as gd
-from memilio.epidata import modifyDataframeSeries as mdfs</pre></td>
-            </tr>
-            
-            <tr>
-                <td>1</td>
-                <td>0</td>
-                <td>refactor</td>
-                <td><code>duplicate-code</code></td>
-                <td>R0801</td>
-                <td></td>
-                <td><pre>Similar lines in 2 files
-==memilio.epidata.getCaseData:[35:41]
-==memilio.epidata.transformMobilityData:[21:29]
-import numpy as np
-import pandas as pd
-
-from memilio.epidata import defaultDict as dd
-from memilio.epidata import geoModificationGermany as geoger
-from memilio.epidata import getDataIntoPandasDataFrame as gd</pre></td>
             </tr>
             
             <tr>
@@ -10619,35 +10908,34 @@ from memilio.epidata import modifyDataframeSeries as mdfs
 pd.options.mode.copy_on_write = True
 
 
-def get_jh_data(read_data=dd.defaultDict[&#39;read_data&#39;],
-                file_format=dd.defaultDict[&#39;file_format&#39;],
-                out_folder=dd.defaultDict[&#39;out_folder&#39;],
-                start_date=date(2020, 1, 22),
-                end_date=dd.defaultDict[&#39;end_date&#39;],
-                impute_dates=dd.defaultDict[&#39;impute_dates&#39;],
-                **kwargs):
-    &#34;&#34;&#34;! Download data from John Hopkins University
+def hospit_sanity_checks(df):
+    &#34;&#34;&#34;! Checks the sanity of the hospitalization_data dataframe
 
-   Data is either downloaded and afterwards stored or loaded from a stored filed.
-   The file is &#34;FullData_JohnHopkins.json&#34;
+    Checks if type of the given data is a dataframe
+    Checks if the headers of the dataframe are those which are needed
 
-   Working with the data includes
-   - rename columns such that &#34;/&#34; is deleted, e.g Country/Region becomes CountryRegion
-   - data of all countries together are written to a file
-   - download the data from following countries in a separate file
-   and are stored in the according folders with the country name
-       - Germany, SouthKorea, Spain, France, Italy, US, China
-   - furthermore, all countries, for which provinces are added, are written to a file
+    @param df The dataframe which has to be checked
+    &#34;&#34;&#34;
+    # test if dataframe is empty</pre></td>
+            </tr>
+            
+            <tr>
+                <td>1</td>
+                <td>0</td>
+                <td>refactor</td>
+                <td><code>duplicate-code</code></td>
+                <td>R0801</td>
+                <td></td>
+                <td><pre>Similar lines in 2 files
+==memilio.epidata.getCaseData:[200:205]
+==memilio.epidata.getHospitalizationData:[170:177]
+    conf = gd.Conf(out_folder, **kwargs)
+    out_folder = conf.path_to_use
+    no_raw = conf.no_raw
+    directory = os.path.join(out_folder, &#39;Germany/&#39;)
+    gd.check_dir(directory)
 
-    @param read_data True or False. Defines if data is read from file or downloaded. Default defined in defaultDict.
-    @param file_format File format which is used for writing the data. Default defined in defaultDict.
-    @param out_folder Folder where data is written to. Default defined in defaultDict.
-    @param start_date Date of first date in dataframe. Default defined in defaultDict.
-    @param end_date Date of last date in dataframe. Default defined in defaultDict.
-    @param impute_dates [Currently not used] True or False. Defines if values for dates without new information are imputed. Default defined in defaultDict.
-    @param moving_average [Currently not used] Integers &gt;=0. Applies an &#39;moving_average&#39;-days moving average on all time series
-        to smooth out effects of irregular reporting. Default defined in defaultDict.
-   &#34;&#34;&#34;</pre></td>
+    # get raw dataframe</pre></td>
             </tr>
             
             <tr>
@@ -12383,22 +12671,22 @@ def get_jh_data(read_data=dd.defaultDict[&#39;read_data&#39;],
             
             <tr>
                 <td>refactor</td>
-                <td>253</td>
+                <td>260</td>
             </tr>
             
             <tr>
                 <td>warning</td>
-                <td>154</td>
+                <td>164</td>
             </tr>
             
             <tr>
                 <td>convention</td>
-                <td>678</td>
+                <td>688</td>
             </tr>
             
             <tr>
                 <td>error</td>
-                <td>73</td>
+                <td>75</td>
             </tr>
             
         </table>
@@ -12423,22 +12711,22 @@ def get_jh_data(read_data=dd.defaultDict[&#39;read_data&#39;],
             
             <tr>
                 <td>superfluous-parens</td>
-                <td>15</td>
+                <td>14</td>
             </tr>
             
             <tr>
                 <td>line-too-long</td>
-                <td>94</td>
+                <td>113</td>
             </tr>
             
             <tr>
                 <td>invalid-name</td>
-                <td>215</td>
+                <td>221</td>
             </tr>
             
             <tr>
                 <td>import-error</td>
-                <td>48</td>
+                <td>50</td>
             </tr>
             
             <tr>
@@ -12458,17 +12746,17 @@ def get_jh_data(read_data=dd.defaultDict[&#39;read_data&#39;],
             
             <tr>
                 <td>too-many-arguments</td>
-                <td>25</td>
+                <td>30</td>
             </tr>
             
             <tr>
                 <td>too-many-locals</td>
-                <td>40</td>
+                <td>39</td>
             </tr>
             
             <tr>
                 <td>singleton-comparison</td>
-                <td>28</td>
+                <td>24</td>
             </tr>
             
             <tr>
@@ -12483,12 +12771,37 @@ def get_jh_data(read_data=dd.defaultDict[&#39;read_data&#39;],
             
             <tr>
                 <td>no-else-return</td>
-                <td>10</td>
+                <td>11</td>
             </tr>
             
             <tr>
                 <td>unused-import</td>
-                <td>3</td>
+                <td>10</td>
+            </tr>
+            
+            <tr>
+                <td>broad-except</td>
+                <td>5</td>
+            </tr>
+            
+            <tr>
+                <td>logging-fstring-interpolation</td>
+                <td>1</td>
+            </tr>
+            
+            <tr>
+                <td>unnecessary-pass</td>
+                <td>2</td>
+            </tr>
+            
+            <tr>
+                <td>bare-except</td>
+                <td>8</td>
+            </tr>
+            
+            <tr>
+                <td>raise-missing-from</td>
+                <td>18</td>
             </tr>
             
             <tr>
@@ -12497,13 +12810,8 @@ def get_jh_data(read_data=dd.defaultDict[&#39;read_data&#39;],
             </tr>
             
             <tr>
-                <td>bare-except</td>
-                <td>9</td>
-            </tr>
-            
-            <tr>
-                <td>raise-missing-from</td>
-                <td>18</td>
+                <td>use-dict-literal</td>
+                <td>4</td>
             </tr>
             
             <tr>
@@ -12517,13 +12825,23 @@ def get_jh_data(read_data=dd.defaultDict[&#39;read_data&#39;],
             </tr>
             
             <tr>
-                <td>too-many-statements</td>
-                <td>18</td>
+                <td>inconsistent-return-statements</td>
+                <td>1</td>
+            </tr>
+            
+            <tr>
+                <td>unused-variable</td>
+                <td>10</td>
+            </tr>
+            
+            <tr>
+                <td>wrong-import-order</td>
+                <td>21</td>
             </tr>
             
             <tr>
                 <td>trailing-whitespace</td>
-                <td>56</td>
+                <td>45</td>
             </tr>
             
             <tr>
@@ -12533,22 +12851,12 @@ def get_jh_data(read_data=dd.defaultDict[&#39;read_data&#39;],
             
             <tr>
                 <td>redefined-builtin</td>
-                <td>18</td>
-            </tr>
-            
-            <tr>
-                <td>use-dict-literal</td>
-                <td>3</td>
+                <td>17</td>
             </tr>
             
             <tr>
                 <td>using-constant-test</td>
                 <td>1</td>
-            </tr>
-            
-            <tr>
-                <td>unused-variable</td>
-                <td>8</td>
             </tr>
             
             <tr>
@@ -12572,8 +12880,8 @@ def get_jh_data(read_data=dd.defaultDict[&#39;read_data&#39;],
             </tr>
             
             <tr>
-                <td>wrong-import-order</td>
-                <td>20</td>
+                <td>too-many-statements</td>
+                <td>17</td>
             </tr>
             
             <tr>
@@ -12637,11 +12945,6 @@ def get_jh_data(read_data=dd.defaultDict[&#39;read_data&#39;],
             </tr>
             
             <tr>
-                <td>broad-except</td>
-                <td>4</td>
-            </tr>
-            
-            <tr>
                 <td>missing-class-docstring</td>
                 <td>18</td>
             </tr>
@@ -12658,11 +12961,6 @@ def get_jh_data(read_data=dd.defaultDict[&#39;read_data&#39;],
             
             <tr>
                 <td>consider-merging-isinstance</td>
-                <td>1</td>
-            </tr>
-            
-            <tr>
-                <td>unnecessary-pass</td>
                 <td>1</td>
             </tr>
             
@@ -12703,7 +13001,7 @@ def get_jh_data(read_data=dd.defaultDict[&#39;read_data&#39;],
             
             <tr>
                 <td>duplicate-code</td>
-                <td>14</td>
+                <td>15</td>
             </tr>
             
         </table>
@@ -12733,7 +13031,7 @@ def get_jh_data(read_data=dd.defaultDict[&#39;read_data&#39;],
             
             <tr>
                 <td>memilio.epidata.getCaseData</td>
-                <td>39</td>
+                <td>61</td>
             </tr>
             
             <tr>
@@ -12748,7 +13046,7 @@ def get_jh_data(read_data=dd.defaultDict[&#39;read_data&#39;],
             
             <tr>
                 <td>memilio.epidata.getPopulationData</td>
-                <td>27</td>
+                <td>26</td>
             </tr>
             
             <tr>
@@ -12783,7 +13081,7 @@ def get_jh_data(read_data=dd.defaultDict[&#39;read_data&#39;],
             
             <tr>
                 <td>memilio.epidata.getDIVIData</td>
-                <td>16</td>
+                <td>17</td>
             </tr>
             
             <tr>
@@ -12798,7 +13096,7 @@ def get_jh_data(read_data=dd.defaultDict[&#39;read_data&#39;],
             
             <tr>
                 <td>memilio.epidata.getVaccinationData</td>
-                <td>83</td>
+                <td>89</td>
             </tr>
             
             <tr>
@@ -12898,7 +13196,7 @@ def get_jh_data(read_data=dd.defaultDict[&#39;read_data&#39;],
             
             <tr>
                 <td>memilio.epidata_test.test_epidata_get_divi_data</td>
-                <td>33</td>
+                <td>34</td>
             </tr>
             
         </table>
@@ -12928,7 +13226,7 @@ def get_jh_data(read_data=dd.defaultDict[&#39;read_data&#39;],
             
             <tr>
                 <td>memilio/epidata/getCaseData.py</td>
-                <td>39</td>
+                <td>61</td>
             </tr>
             
             <tr>
@@ -12943,7 +13241,7 @@ def get_jh_data(read_data=dd.defaultDict[&#39;read_data&#39;],
             
             <tr>
                 <td>memilio/epidata/getPopulationData.py</td>
-                <td>27</td>
+                <td>26</td>
             </tr>
             
             <tr>
@@ -12978,7 +13276,7 @@ def get_jh_data(read_data=dd.defaultDict[&#39;read_data&#39;],
             
             <tr>
                 <td>memilio/epidata/getDIVIData.py</td>
-                <td>16</td>
+                <td>17</td>
             </tr>
             
             <tr>
@@ -12993,7 +13291,7 @@ def get_jh_data(read_data=dd.defaultDict[&#39;read_data&#39;],
             
             <tr>
                 <td>memilio/epidata/getVaccinationData.py</td>
-                <td>83</td>
+                <td>89</td>
             </tr>
             
             <tr>
@@ -13093,7 +13391,7 @@ def get_jh_data(read_data=dd.defaultDict[&#39;read_data&#39;],
             
             <tr>
                 <td>memilio/epidata_test/test_epidata_get_divi_data.py</td>
-                <td>33</td>
+                <td>34</td>
             </tr>
             
         </table>
