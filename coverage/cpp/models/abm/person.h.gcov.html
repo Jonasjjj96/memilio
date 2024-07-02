@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2024-07-02 06:45:02</td>
+            <td class="headerValue">2024-07-02 11:15:11</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">20</td>
@@ -280,9 +280,9 @@
 <a name="218"><span class="lineNum">     218 </span>            :      * @brief Get the AgeGroup of this Person.</a>
 <a name="219"><span class="lineNum">     219 </span>            :      * @return AgeGroup of the Person.</a>
 <a name="220"><span class="lineNum">     220 </span>            :      */</a>
-<a name="221"><span class="lineNum">     221 </span><span class="lineCov">        634 :     AgeGroup get_age() const</span></a>
+<a name="221"><span class="lineNum">     221 </span><span class="lineCov">        637 :     AgeGroup get_age() const</span></a>
 <a name="222"><span class="lineNum">     222 </span>            :     {</a>
-<a name="223"><span class="lineNum">     223 </span><span class="lineCov">        634 :         return m_age;</span></a>
+<a name="223"><span class="lineNum">     223 </span><span class="lineCov">        637 :         return m_age;</span></a>
 <a name="224"><span class="lineNum">     224 </span>            :     }</a>
 <a name="225"><span class="lineNum">     225 </span>            : </a>
 <a name="226"><span class="lineNum">     226 </span>            :     /**</a>
@@ -297,9 +297,9 @@
 <a name="235"><span class="lineNum">     235 </span>            :      * @brief Get the time the Person has been at its current Location.</a>
 <a name="236"><span class="lineNum">     236 </span>            :      * @return TimeSpan the Person has been at the Location.</a>
 <a name="237"><span class="lineNum">     237 </span>            :      */</a>
-<a name="238"><span class="lineNum">     238 </span><span class="lineCov">          7 :     TimeSpan get_time_at_location() const</span></a>
+<a name="238"><span class="lineNum">     238 </span><span class="lineCov">          6 :     TimeSpan get_time_at_location() const</span></a>
 <a name="239"><span class="lineNum">     239 </span>            :     {</a>
-<a name="240"><span class="lineNum">     240 </span><span class="lineCov">          7 :         return m_time_at_location;</span></a>
+<a name="240"><span class="lineNum">     240 </span><span class="lineCov">          6 :         return m_time_at_location;</span></a>
 <a name="241"><span class="lineNum">     241 </span>            :     }</a>
 <a name="242"><span class="lineNum">     242 </span>            : </a>
 <a name="243"><span class="lineNum">     243 </span>            :     /**</a>
@@ -387,9 +387,9 @@
 <a name="325"><span class="lineNum">     325 </span>            :      * @param[in] params Parameter that includes the length of a quarantine.</a>
 <a name="326"><span class="lineNum">     326 </span>            :      * @return True if the Person is in quarantine.</a>
 <a name="327"><span class="lineNum">     327 </span>            :      */</a>
-<a name="328"><span class="lineNum">     328 </span><span class="lineCov">        157 :     bool is_in_quarantine(TimePoint t, const Parameters&amp; params) const</span></a>
+<a name="328"><span class="lineNum">     328 </span><span class="lineCov">        159 :     bool is_in_quarantine(TimePoint t, const Parameters&amp; params) const</span></a>
 <a name="329"><span class="lineNum">     329 </span>            :     {</a>
-<a name="330"><span class="lineNum">     330 </span><span class="lineCov">        157 :         return t &lt; m_quarantine_start + params.get&lt;mio::abm::QuarantineDuration&gt;();</span></a>
+<a name="330"><span class="lineNum">     330 </span><span class="lineCov">        159 :         return t &lt; m_quarantine_start + params.get&lt;mio::abm::QuarantineDuration&gt;();</span></a>
 <a name="331"><span class="lineNum">     331 </span>            :     }</a>
 <a name="332"><span class="lineNum">     332 </span>            :     </a>
 <a name="333"><span class="lineNum">     333 </span>            :     /**</a>
