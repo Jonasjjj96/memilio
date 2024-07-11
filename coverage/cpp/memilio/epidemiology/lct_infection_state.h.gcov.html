@@ -37,12 +37,12 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2024-07-05 08:23:42</td>
+            <td class="headerValue">2024-07-11 06:47:31</td>
             <td></td>
             <td class="headerItem">Functions:</td>
-            <td class="headerCovTableEntry">43</td>
-            <td class="headerCovTableEntry">49</td>
-            <td class="headerCovTableEntryMed">87.8 %</td>
+            <td class="headerCovTableEntry">53</td>
+            <td class="headerCovTableEntry">61</td>
+            <td class="headerCovTableEntryMed">86.9 %</td>
           </tr>
           <tr><td><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
         </table>
@@ -111,10 +111,10 @@
 <a name="49"><span class="lineNum">      49 </span>            :      * @return Number of subcompartments for State. Returned value is always at least one.</a>
 <a name="50"><span class="lineNum">      50 </span>            :      */</a>
 <a name="51"><span class="lineNum">      51 </span>            :     template &lt;InfectionState State&gt;</a>
-<a name="52"><span class="lineNum">      52 </span><span class="lineCov">       4839 :     static constexpr size_t get_num_subcompartments()</span></a>
+<a name="52"><span class="lineNum">      52 </span><span class="lineCov">       4960 :     static constexpr size_t get_num_subcompartments()</span></a>
 <a name="53"><span class="lineNum">      53 </span>            :     {</a>
 <a name="54"><span class="lineNum">      54 </span>            :         static_assert(State &lt; InfectionState::Count, &quot;State must be a a valid InfectionState.&quot;);</a>
-<a name="55"><span class="lineNum">      55 </span><span class="lineCov">       4839 :         return m_subcompartment_numbers[(size_t)State];</span></a>
+<a name="55"><span class="lineNum">      55 </span><span class="lineCov">       4960 :         return m_subcompartment_numbers[(size_t)State];</span></a>
 <a name="56"><span class="lineNum">      56 </span>            :     }</a>
 <a name="57"><span class="lineNum">      57 </span>            : </a>
 <a name="58"><span class="lineNum">      58 </span>            :     /**</a>
@@ -127,14 +127,14 @@
 <a name="65"><span class="lineNum">      65 </span>            :      *      Returned value is always non-negative.</a>
 <a name="66"><span class="lineNum">      66 </span>            :      */</a>
 <a name="67"><span class="lineNum">      67 </span>            :     template &lt;InfectionState State&gt;</a>
-<a name="68"><span class="lineNum">      68 </span><span class="lineCov">       9738 :     static constexpr size_t get_first_index()</span></a>
+<a name="68"><span class="lineNum">      68 </span><span class="lineCov">       9845 :     static constexpr size_t get_first_index()</span></a>
 <a name="69"><span class="lineNum">      69 </span>            :     {</a>
 <a name="70"><span class="lineNum">      70 </span>            :         static_assert(State &lt; InfectionState::Count, &quot;State must be a a valid InfectionState.&quot;);</a>
-<a name="71"><span class="lineNum">      71 </span><span class="lineCov">       9738 :         size_t index = 0;</span></a>
-<a name="72"><span class="lineNum">      72 </span><span class="lineCov">      51081 :         for (size_t i = 0; i &lt; (size_t)(State); i++) {</span></a>
-<a name="73"><span class="lineNum">      73 </span><span class="lineCov">      41343 :             index = index + m_subcompartment_numbers[i];</span></a>
+<a name="71"><span class="lineNum">      71 </span><span class="lineCov">       9845 :         size_t index = 0;</span></a>
+<a name="72"><span class="lineNum">      72 </span><span class="lineCov">      51489 :         for (size_t i = 0; i &lt; (size_t)(State); i++) {</span></a>
+<a name="73"><span class="lineNum">      73 </span><span class="lineCov">      41644 :             index = index + m_subcompartment_numbers[i];</span></a>
 <a name="74"><span class="lineNum">      74 </span>            :         }</a>
-<a name="75"><span class="lineNum">      75 </span><span class="lineCov">       9738 :         return index;</span></a>
+<a name="75"><span class="lineNum">      75 </span><span class="lineCov">       9845 :         return index;</span></a>
 <a name="76"><span class="lineNum">      76 </span>            :     }</a>
 <a name="77"><span class="lineNum">      77 </span>            : </a>
 <a name="78"><span class="lineNum">      78 </span>            :     static constexpr size_t Count{(... + Ns)};</a>

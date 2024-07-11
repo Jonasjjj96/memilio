@@ -86,6 +86,9 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmio_1_1lsecir_1_1DeathsPerCritical.html">DeathsPerCritical</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The percentage of dead patients per ICU patients in the SECIR model.  <a href="structmio_1_1lsecir_1_1DeathsPerCritical.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1lsecir_1_1Initializer.html">Initializer</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class that can be used to compute an initialization vector out of flows for a LCT <a class="el" href="classmio_1_1lsecir_1_1Model.html" title="Class that defines an LCT-SECIR model.">Model</a>.  <a href="classmio_1_1lsecir_1_1Initializer.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1lsecir_1_1Model.html">Model</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class that defines an LCT-SECIR model.  <a href="classmio_1_1lsecir_1_1Model.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -152,6 +155,24 @@ Enumerations</h2></td></tr>
  }</td></tr>
 <tr class="memdesc:a3aeb01ac3e9ac9c367ca6f0efaf7ba2b"><td class="mdescLeft">&#160;</td><td class="mdescRight">The InfectionState enum describes the basic categories for the infection state of persons.  <a href="namespacemio_1_1lsecir.html#a3aeb01ac3e9ac9c367ca6f0efaf7ba2b">More...</a><br /></td></tr>
 <tr class="separator:a3aeb01ac3e9ac9c367ca6f0efaf7ba2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace6ebab70fcac54c24785bad380e28d6"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemio_1_1lsecir.html#ace6ebab70fcac54c24785bad380e28d6">InfectionTransition</a> { <br />
+&#160;&#160;<a class="el" href="namespacemio_1_1lsecir.html#ace6ebab70fcac54c24785bad380e28d6ad223e739ddae9da49d87ec2efb8b24d1">SusceptibleToExposed</a> = 0
+, <a class="el" href="namespacemio_1_1lsecir.html#ace6ebab70fcac54c24785bad380e28d6af4a620103ad10d8ba92e1821ed7d9ae6">ExposedToInfectedNoSymptoms</a> = 1
+, <a class="el" href="namespacemio_1_1lsecir.html#ace6ebab70fcac54c24785bad380e28d6a6dbf4828958ffa97ea6581a4edb56b0f">InfectedNoSymptomsToInfectedSymptoms</a> = 2
+, <a class="el" href="namespacemio_1_1lsecir.html#ace6ebab70fcac54c24785bad380e28d6a4f14780a8c65d099644db2258a6b01ad">InfectedNoSymptomsToRecovered</a> = 3
+, <br />
+&#160;&#160;<a class="el" href="namespacemio_1_1lsecir.html#ace6ebab70fcac54c24785bad380e28d6a27947a571925e9e6ba2fd3b8540a0734">InfectedSymptomsToInfectedSevere</a> = 4
+, <a class="el" href="namespacemio_1_1lsecir.html#ace6ebab70fcac54c24785bad380e28d6aeb31ce0ece5464f33dc4a7f572b463e3">InfectedSymptomsToRecovered</a> = 5
+, <a class="el" href="namespacemio_1_1lsecir.html#ace6ebab70fcac54c24785bad380e28d6a04301a61e2338f340884a0ac0eb855d1">InfectedSevereToInfectedCritical</a> = 6
+, <a class="el" href="namespacemio_1_1lsecir.html#ace6ebab70fcac54c24785bad380e28d6ac5220be9dd2daeddc482536a285ee4a3">InfectedSevereToRecovered</a> = 7
+, <br />
+&#160;&#160;<a class="el" href="namespacemio_1_1lsecir.html#ace6ebab70fcac54c24785bad380e28d6ae83010ab1a9dfc257581f32b7e8e1819">InfectedCriticalToDead</a> = 8
+, <a class="el" href="namespacemio_1_1lsecir.html#ace6ebab70fcac54c24785bad380e28d6a0c3104e0fed343eb5f3af8f5a3a9cc11">InfectedCriticalToRecovered</a> = 9
+, <a class="el" href="namespacemio_1_1lsecir.html#ace6ebab70fcac54c24785bad380e28d6ae93f994f01c537c4e2f7d8528c3eb5e9">Count</a> = 10
+<br />
+ }</td></tr>
+<tr class="memdesc:ace6ebab70fcac54c24785bad380e28d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">The InfectionTransition enum describes the possible transitions of the infectious state of persons.  <a href="namespacemio_1_1lsecir.html#ace6ebab70fcac54c24785bad380e28d6">More...</a><br /></td></tr>
+<tr class="separator:ace6ebab70fcac54c24785bad380e28d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Typedef Documentation</h2>
 <a id="ae8fb1d532027380b056fa8b53abbd899"></a>
@@ -200,6 +221,43 @@ Enumerations</h2></td></tr>
 <tr><td class="fieldname"><a id="a3aeb01ac3e9ac9c367ca6f0efaf7ba2ba5c4c4cf7bbab0d76fe61420aee14a5ca"></a>Recovered&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a3aeb01ac3e9ac9c367ca6f0efaf7ba2ba183b62c7f067711f9c5a54913c054617"></a>Dead&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a3aeb01ac3e9ac9c367ca6f0efaf7ba2bae93f994f01c537c4e2f7d8528c3eb5e9"></a>Count&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
+<a id="ace6ebab70fcac54c24785bad380e28d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace6ebab70fcac54c24785bad380e28d6">&#9670;&nbsp;</a></span>InfectionTransition</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="namespacemio_1_1lsecir.html#ace6ebab70fcac54c24785bad380e28d6">mio::lsecir::InfectionTransition</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The InfectionTransition enum describes the possible transitions of the infectious state of persons. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ace6ebab70fcac54c24785bad380e28d6ad223e739ddae9da49d87ec2efb8b24d1"></a>SusceptibleToExposed&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ace6ebab70fcac54c24785bad380e28d6af4a620103ad10d8ba92e1821ed7d9ae6"></a>ExposedToInfectedNoSymptoms&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ace6ebab70fcac54c24785bad380e28d6a6dbf4828958ffa97ea6581a4edb56b0f"></a>InfectedNoSymptomsToInfectedSymptoms&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ace6ebab70fcac54c24785bad380e28d6a4f14780a8c65d099644db2258a6b01ad"></a>InfectedNoSymptomsToRecovered&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ace6ebab70fcac54c24785bad380e28d6a27947a571925e9e6ba2fd3b8540a0734"></a>InfectedSymptomsToInfectedSevere&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ace6ebab70fcac54c24785bad380e28d6aeb31ce0ece5464f33dc4a7f572b463e3"></a>InfectedSymptomsToRecovered&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ace6ebab70fcac54c24785bad380e28d6a04301a61e2338f340884a0ac0eb855d1"></a>InfectedSevereToInfectedCritical&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ace6ebab70fcac54c24785bad380e28d6ac5220be9dd2daeddc482536a285ee4a3"></a>InfectedSevereToRecovered&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ace6ebab70fcac54c24785bad380e28d6ae83010ab1a9dfc257581f32b7e8e1819"></a>InfectedCriticalToDead&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ace6ebab70fcac54c24785bad380e28d6a0c3104e0fed343eb5f3af8f5a3a9cc11"></a>InfectedCriticalToRecovered&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ace6ebab70fcac54c24785bad380e28d6ae93f994f01c537c4e2f7d8528c3eb5e9"></a>Count&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
 </div>
