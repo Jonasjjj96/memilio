@@ -26,6 +26,7 @@
 #include "abm/parameters.h"
 #include "abm/location.h"
 #include "abm/person.h"
+#include "abm/person_id.h"
 #include "abm/time.h"
 #include "abm/trip_list.h"
 #include "abm/random_events.h"
@@ -104,7 +105,7 @@ public:
     World& operator=(World&&)      = default;
 
     /**
-     * serialize this. 
+     * serialize this.
      * @see mio::serialize
      */
     template <class IOContext>
@@ -156,21 +157,21 @@ public:
             params, persons, locations, location_types, trip_list, use_migration_rules, cemetery_id, rng);
     }
 
-    /** 
+    /**
      * @brief Prepare the World for the next Simulation step.
      * @param[in] t Current time.
      * @param[in] dt Length of the time step.
      */
     void begin_step(TimePoint t, TimeSpan dt);
 
-    /** 
+    /**
      * @brief Evolve the world one time step.
      * @param[in] t Current time.
      * @param[in] dt Length of the time step.
      */
     void evolve(TimePoint t, TimeSpan dt);
 
-    /** 
+    /**
      * @brief Add a Location to the World.
      * @param[in] type Type of Location to add.
      * @param[in] num_cells [Default: 1] Number of Cell%s that the Location is divided into.
@@ -178,7 +179,7 @@ public:
      */
     LocationId add_location(LocationType type, uint32_t num_cells = 1);
 
-    /** 
+    /**
      * @brief Add a Person to the World.
      * @param[in] id Index and type of the initial Location of the Person.
      * @param[in] age AgeGroup of the person.
@@ -215,14 +216,19 @@ public:
      */
     LocationId find_location(LocationType type, const PersonId person) const;
 
-    /** 
+    void assign_location(PersonId assignee, LocationId location)
+    {
+        get_person(assignee).set_assigned_location(get_location(location).get_type(), location);
+    }
+
+    /**
      * @brief Get the number of Persons in one #InfectionState at all Location%s.
      * @param[in] t Specified #TimePoint.
      * @param[in] s Specified #InfectionState.
      */
     size_t get_subpopulation_combined(TimePoint t, InfectionState s) const;
 
-    /** 
+    /**
      * @brief Get the number of Persons in one #InfectionState at all Location%s of a type.
      * @param[in] t Specified #TimePoint.
      * @param[in] s Specified #InfectionState.
@@ -238,10 +244,10 @@ public:
 
     const TripList& get_trip_list() const;
 
-    /** 
+    /**
      * @brief Decide if migration rules (like go to school/work) are used or not;
      * The migration rules regarding hospitalization/ICU/quarantine are always used.
-     * @param[in] param If true uses the migration rules for migration to school/work etc., else only the rules 
+     * @param[in] param If true uses the migration rules for migration to school/work etc., else only the rules
      * regarding hospitalization/ICU/quarantine.
      */
     void use_migration_rules(bool param);
@@ -270,7 +276,7 @@ public:
         });
     }
 
-    /** 
+    /**
      * @brief Get the TestingStrategy.
      * @return Reference to the list of TestingScheme%s that are checked for testing.
      */
@@ -278,14 +284,14 @@ public:
 
     const TestingStrategy& get_testing_strategy() const;
 
-    /** 
+    /**
      * @brief The simulation parameters of the world.
      */
     Parameters parameters;
 
     /**
     * Get the RandomNumberGenerator used by this world for random events.
-    * Persons use their own generators with the same key as the global one. 
+    * Persons use their own generators with the same key as the global one.
     * @return The random number generator.
     */
     RandomNumberGenerator& get_rng()
@@ -294,7 +300,7 @@ public:
     }
 
     /**
-     * @brief Add a TestingScheme to the set of schemes that are checked for testing at all Locations that have 
+     * @brief Add a TestingScheme to the set of schemes that are checked for testing at all Locations that have
      * the LocationType.
      * @param[in] loc_type LocationId key for TestingScheme to be added.
      * @param[in] scheme TestingScheme to be added.
@@ -302,7 +308,7 @@ public:
     void add_testing_scheme(const LocationType& loc_type, const TestingScheme& scheme);
 
     /**
-     * @brief Remove a TestingScheme from the set of schemes that are checked for testing at all Locations that have 
+     * @brief Remove a TestingScheme from the set of schemes that are checked for testing at all Locations that have
      * the LocationType.
      * @param[in] loc_type LocationId key for TestingScheme to be added.
      * @param[in] scheme TestingScheme to be added.
@@ -317,13 +323,13 @@ public:
      */
     Person& get_person(PersonId id)
     {
-        assert(id.get() < m_persons.size());
+        assert(id.get() < m_persons.size() && "Given PersonId is not in this World.");
         return m_persons[id.get()];
     }
 
     const Person& get_person(PersonId id) const
     {
-        assert(id.get() < m_persons.size());
+        assert(id.get() < m_persons.size() && "Given PersonId is not in this World.");
         return m_persons[id.get()];
     }
     /** @} */
@@ -352,7 +358,7 @@ public:
         if (!m_is_local_population_cache_valid) {
             build_compute_local_population_cache();
         }
-        return m_local_population_cache[location.index];
+        return m_local_population_cache[location.get()];
     }
 
     // move a person to another location. this requires that location is part of this world.
@@ -372,8 +378,8 @@ public:
         if (has_moved) {
             m_are_exposure_caches_valid = false;
             if (m_is_local_population_cache_valid) {
-                --m_local_population_cache[origin.index];
-                ++m_local_population_cache[destination.index];
+                --m_local_population_cache[origin.get()];
+                ++m_local_population_cache[destination.get()];
             }
         }
     }
@@ -394,8 +400,8 @@ public:
         }
         auto personal_rng = PersonalRandomNumberGenerator(m_rng, get_person(person));
         mio::abm::interact(personal_rng, get_person(person), get_location(person),
-                           m_air_exposure_rates_cache[get_location(person).get_index()],
-                           m_contact_exposure_rates_cache[get_location(person).get_index()], t, dt, parameters);
+                           m_air_exposure_rates_cache[get_location(person).get_id().get()],
+                           m_contact_exposure_rates_cache[get_location(person).get_id().get()], t, dt, parameters);
     }
 
     /**
@@ -406,16 +412,16 @@ public:
      */
     const Location& get_location(LocationId id) const
     {
-        assert(id.index != INVALID_LOCATION_INDEX);
-        assert(id.index < m_locations.size());
-        return m_locations[id.index];
+        assert(id != LocationId::invalid_id() && "Given LocationId must be valid.");
+        assert(id < LocationId((uint32_t)m_locations.size()) && "Given LocationId is not in this World.");
+        return m_locations[id.get()];
     }
 
     Location& get_location(LocationId id)
     {
-        assert(id.index != INVALID_LOCATION_INDEX);
-        assert(id.index < m_locations.size());
-        return m_locations[id.index];
+        assert(id != LocationId::invalid_id() && "Given LocationId must be valid.");
+        assert(id < LocationId((uint32_t)m_locations.size()) && "Given LocationId is not in this World.");
+        return m_locations[id.get()];
     }
     /** @} */
 
@@ -456,7 +462,7 @@ private:
     /// @brief Shape the air and contact exposure cache according to the current Location%s.
     void build_exposure_caches();
 
-    /** 
+    /**
      * @brief Store all air/contact exposures for the current simulation step.
      * @param[in] t Current TimePoint of the simulation.
      * @param[in] dt The duration of the simulation step.

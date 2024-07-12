@@ -18,8 +18,8 @@
 * limitations under the License.
 */
 
-#ifndef MIO_ABM_PERSON_ID_H
-#define MIO_ABM_PERSON_ID_H
+#ifndef MIO_ABM_LOCATION_ID_H
+#define MIO_ABM_LOCATION_ID_H
 
 #include "memilio/utils/type_safe.h"
 #include <limits>
@@ -29,28 +29,29 @@ namespace mio
 namespace abm
 {
 
-/// Unique identifier for a Person within a World.
-struct MEMILIO_ENABLE_EBO PersonId : public mio::TypeSafe<uint32_t, PersonId>, public OperatorComparison<PersonId> {
+/// Unique identifier for a Location within a World.
+struct MEMILIO_ENABLE_EBO LocationId : public mio::TypeSafe<uint32_t, LocationId>,
+                                       public OperatorComparison<LocationId> {
     /// @brief Create an ID.
-    PersonId(uint32_t id)
-        : mio::TypeSafe<uint32_t, PersonId>(id)
+    LocationId(uint32_t id)
+        : mio::TypeSafe<uint32_t, LocationId>(id)
     {
     }
 
     /// @brief Create an invalid ID.
-    PersonId()
-        : mio::TypeSafe<uint32_t, PersonId>(std::numeric_limits<uint32_t>::max())
+    LocationId()
+        : mio::TypeSafe<uint32_t, LocationId>(std::numeric_limits<uint32_t>::max())
     {
     }
 
     /// @brief Value for invalid IDs.
-    const static PersonId invalid_id()
+    const static LocationId invalid_id()
     {
-        return PersonId();
+        return LocationId();
     }
 };
 
 } // namespace abm
 } // namespace mio
 
-#endif // MIO_ABM_PERSON_ID_H
+#endif // MIO_ABM_LOCATION_ID_H

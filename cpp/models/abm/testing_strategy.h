@@ -21,12 +21,15 @@
 #define MIO_ABM_TESTING_SCHEME_H
 
 #include "abm/config.h"
+#include "abm/location_id.h"
+#include "abm/location_type.h"
 #include "abm/parameters.h"
 #include "abm/person.h"
 #include "abm/location.h"
 #include "abm/time.h"
-#include "memilio/config.h"
+
 #include <bitset>
+#include <vector>
 
 namespace mio
 {
@@ -233,48 +236,59 @@ class TestingStrategy
 {
 public:
     /**
+     * @brief List of testing schemes for a given LocationType and LocationId.
+     * A LocalStrategy with id of value LocationId::invalid_id() is used for all Locations with LocationType type.
+     */
+    struct LocalStrategy {
+        LocationType type;
+        LocationId id;
+        std::vector<TestingScheme> schemes;
+    };
+
+    /**
      * @brief Create a TestingStrategy.
      * @param[in] testing_schemes Vector of TestingSchemes that are checked for testing.
      */
     TestingStrategy() = default;
-    explicit TestingStrategy(const std::unordered_map<LocationId, std::vector<TestingScheme>>& location_to_schemes_map);
+    explicit TestingStrategy(const std::vector<LocalStrategy>& location_to_schemes_map);
 
     /**
      * @brief Add a TestingScheme to the set of schemes that are checked for testing at a certain Location.
+     * A TestingScheme with loc_id of value LocationId::invalid_id() is used for all Locations of the given type.
+     * @param[in] loc_type LocationType key for TestingScheme to be remove.
      * @param[in] loc_id LocationId key for TestingScheme to be added.
      * @param[in] scheme TestingScheme to be added.
      */
-    void add_testing_scheme(const LocationId& loc_id, const TestingScheme& scheme);
+    void add_testing_scheme(const LocationType& loc_type, const LocationId& loc_id, const TestingScheme& scheme);
 
     /**
      * @brief Add a TestingScheme to the set of schemes that are checked for testing at a certain LocationType.
-     * A TestingScheme applies to all Location of the same type is store in 
-     * LocationId{INVALID_LOCATION_INDEX, location_type} of m_location_to_schemes_map.
+     * A TestingScheme with loc_id of value LocationId::invalid_id() is used for all Locations of the given type.
      * @param[in] loc_type LocationId key for TestingScheme to be added.
      * @param[in] scheme TestingScheme to be added.
      */
     void add_testing_scheme(const LocationType& loc_type, const TestingScheme& scheme)
     {
-        add_testing_scheme(LocationId{INVALID_LOCATION_INDEX, loc_type}, scheme);
+        add_testing_scheme(loc_type, LocationId::invalid_id(), scheme);
     }
 
     /**
      * @brief Remove a TestingScheme from the set of schemes that are checked for testing at a certain Location.
+     * @param[in] loc_type LocationType key for TestingScheme to be remove.
      * @param[in] loc_id LocationId key for TestingScheme to be remove.
      * @param[in] scheme TestingScheme to be removed.
      */
-    void remove_testing_scheme(const LocationId& loc_id, const TestingScheme& scheme);
+    void remove_testing_scheme(const LocationType& loc_type, const LocationId& loc_id, const TestingScheme& scheme);
 
     /**
      * @brief Remove a TestingScheme from the set of schemes that are checked for testing at a certain Location.
-     * A TestingScheme applies to all Location of the same type is store in 
-     * LocationId{INVALID_LOCATION_INDEX, location_type} of m_location_to_schemes_map.
+     * A TestingScheme with loc_id of value LocationId::invalid_id() is used for all Locations of the given type.
      * @param[in] loc_type LocationType key for TestingScheme to be remove.
      * @param[in] scheme TestingScheme to be removed.
      */
     void remove_testing_scheme(const LocationType& loc_type, const TestingScheme& scheme)
     {
-        remove_testing_scheme(LocationId{INVALID_LOCATION_INDEX, loc_type}, scheme);
+        remove_testing_scheme(loc_type, LocationId::invalid_id(), scheme);
     }
 
     /**
@@ -323,8 +337,7 @@ public:
     }
 
 private:
-    std::vector<std::pair<LocationId, std::vector<TestingScheme>>>
-        m_location_to_schemes_map; ///< Set of schemes that are checked for testing.
+    std::vector<LocalStrategy> m_location_to_schemes_map; ///< Set of schemes that are checked for testing.
 };
 
 } // namespace abm

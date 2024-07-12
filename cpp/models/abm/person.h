@@ -22,8 +22,9 @@
 
 #include "abm/infection.h"
 #include "abm/infection_state.h"
-#include "abm/location_type.h"
+#include "abm/location_id.h"
 #include "abm/location.h"
+#include "abm/location_type.h"
 #include "abm/parameters.h"
 #include "abm/person_id.h"
 #include "abm/personal_rng.h"
@@ -53,16 +54,10 @@ public:
      * @param[in] age The AgeGroup of the Person.
      * @param[in] person_id Index of the Person.
      */
-    explicit Person(mio::RandomNumberGenerator& rng, LocationId location, AgeGroup age,
+    explicit Person(mio::RandomNumberGenerator& rng, LocationType location_type, LocationId location_id, AgeGroup age,
                     PersonId person_id = PersonId::invalid_id());
 
     explicit Person(const Person& other, PersonId id);
-
-    /**
-     * @brief Create a copy of this #Person object with a new Location.
-     * @param[in, out] location The new #Location of the Person.
-     */
-    Person copy_person(LocationId location);
 
     /**
      * @brief Compare two Person%s.
@@ -79,7 +74,7 @@ public:
     Infection& get_infection();
     const Infection& get_infection() const;
 
-    /** 
+    /**
      * @brief Get all Vaccination%s of the Person.
      * @return A vector with all Vaccination%s.
      * @{
@@ -130,11 +125,16 @@ public:
      */
     LocationId get_location() const;
 
+    LocationType get_location_type() const
+    {
+        return m_location_type;
+    }
+
     /**
      * @brief Change the location of the person.
      * @param[in] id The new location.
      */
-    void set_location(LocationId id);
+    void set_location(LocationType type, LocationId id);
 
     /**
      * @brief Get the time the Person has been at its current Location.
@@ -164,12 +164,16 @@ public:
     }
 
     /**
-     * @brief Set an assigned Location of the Person. 
+     * @brief Set an assigned Location of the Person.
+     *
+     * Important: Setting incorrect values will cause issues during simulation. It is preferable to use
+     *            World::assign_location with a valid LocationId, obtained e.g. through World::add_location.
+     *
      * The assigned Location is saved by the index of its LocationId. Assume that a Person has at most one assigned
      * Location of a certain #LocationType.
      * @param[in] id The LocationId of the Location.
      */
-    void set_assigned_location(LocationId id);
+    void set_assigned_location(LocationType type, LocationId id);
 
     /**
      * @brief Returns the index of an assigned Location of the Person.
@@ -177,13 +181,13 @@ public:
      * @param[in] type #LocationType of the assigned Location.
      * @return The index in the LocationId of the assigned Location.
      */
-    uint32_t get_assigned_location_index(LocationType type) const;
+    LocationId get_assigned_location(LocationType type) const;
 
     /**
      * @brief Get the assigned Location%s of the Person.
      * @return A vector with the indices of the assigned Location%s of the Person.
      */
-    const std::vector<uint32_t>& get_assigned_locations() const
+    const std::vector<LocationId>& get_assigned_locations() const
     {
         return m_assigned_locations;
     }
@@ -258,7 +262,7 @@ public:
      * The PersonId should correspond to the index in m_persons in world.
      * @return The PersonId.
      */
-    PersonId get_person_id() const;
+    PersonId get_id() const;
 
     /**
      * @brief Get index of Cell%s of the Person.
@@ -349,7 +353,7 @@ public:
 
     /**
      * @brief Add a new #Vaccination
-     * @param[in] v ExposureType (i. e. vaccine) the person takes.  
+     * @param[in] v ExposureType (i. e. vaccine) the person takes.
      * @param[in] t TimePoint of the Vaccination.
      */
     void add_new_vaccination(ExposureType v, TimePoint t)
@@ -385,42 +389,9 @@ public:
     }
 
     /**
-     * @brief Get the latest #Infection or #Vaccination and its initial TimePoint of the Person. 
+     * @brief Get the latest #Infection or #Vaccination and its initial TimePoint of the Person.
      */
     std::pair<ExposureType, TimePoint> get_latest_protection() const;
-
-    // /**
-    //  * serialize this.
-    //  * @see mio::serialize
-    //  */
-    // template <class IOContext>
-    // void serialize(IOContext& io) const
-    // {
-    //     auto obj = io.create_object("Person");
-    //     obj.add_element("Location", m_location);
-    //     obj.add_element("age", m_age);
-    //     obj.add_element("id", m_person_id);
-    // }
-
-    // /**
-    //  * deserialize an object of this class.
-    //  * @see mio::deserialize
-    //  */
-    // template <class IOContext>
-    // static IOResult<Person> deserialize(IOContext& io)
-    // {
-    //     auto obj = io.expect_object("Person");
-    //     auto loc = obj.expect_element("Location", mio::Tag<LocationId>{});
-    //     auto age = obj.expect_element("age", Tag<uint32_t>{});
-    //     auto id  = obj.expect_element("id", Tag<PersonId>{});
-    //     return apply(
-    //         io,
-    //         [](auto&& loc_, auto&& age_, auto&& id_) {
-    //             mio::RandomNumberGenerator rng;
-    //             return Person{rng, loc_, AgeGroup(age_), id_};
-    //         },
-    //         loc, age, id);
-    // }
 
     auto auto_serialize()
     {
@@ -458,7 +429,8 @@ private:
     // }
 
     LocationId m_location; ///< Current Location of the Person.
-    std::vector<uint32_t> m_assigned_locations; /**! Vector with the indices of the assigned Locations so that the 
+    LocationType m_location_type; ///< Type of the current Location.
+    std::vector<LocationId> m_assigned_locations; /**! Vector with the indices of the assigned Locations so that the
     Person always visits the same Home or School etc. */
     std::vector<Vaccination> m_vaccinations; ///< Vector with all Vaccination%s the Person has received.
     std::vector<Infection> m_infections; ///< Vector with all Infection%s the Person had.
