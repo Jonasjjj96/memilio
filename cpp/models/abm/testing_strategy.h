@@ -27,6 +27,7 @@
 #include "abm/person.h"
 #include "abm/location.h"
 #include "abm/time.h"
+#include "memilio/io/auto_serialize.h"
 
 #include <bitset>
 #include <vector>
@@ -243,6 +244,11 @@ public:
         LocationType type;
         LocationId id;
         std::vector<TestingScheme> schemes;
+
+        auto auto_serialize()
+        {
+            return make_auto_serialization("LocalStrategy", NVP("type", type), NVP("id", id), NVP("schemes", schemes));
+        }
     };
 
     /**
@@ -334,6 +340,11 @@ public:
                 return TestingStrategy{schemes_};
             },
             schemes);
+    }
+
+    auto auto_serialize()
+    {
+        return make_auto_serialization("TestingStrategy", NVP("location_to_schemes_map", m_location_to_schemes_map));
     }
 
 private:

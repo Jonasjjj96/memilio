@@ -396,38 +396,32 @@ public:
     auto auto_serialize()
     {
         // clang-format off
-        return make_auto_serialization("Person",
-                                       NVP("location", m_location),
-                                       NVP("assigned_locations", m_assigned_locations),
-                                       NVP("vaccinations", m_vaccinations), 
-                                    //    NVP("infections", m_infections),
-                                       NVP("quarantine_start",m_quarantine_start),
-                                       NVP("age_group", m_age),
-                                       NVP("time_at_location", m_time_at_location),
-                                       NVP("rnd_workgroup", m_random_workgroup),
-                                       NVP("rnd_schoolgroup", m_random_schoolgroup),
-                                       NVP("rnd_go_to_work_hour", m_random_goto_work_hour),
-                                       NVP("rnd_go_to_school_hour", m_random_goto_school_hour),
-                                       NVP("time_of_last_test", m_time_of_last_test),
-                                       NVP("mask", m_mask),
-                                       NVP("wears_mask", m_wears_mask),
-                                       NVP("mask_compliance", m_mask_compliance),
-                                       NVP("id", m_person_id),
-                                       NVP("cells", m_cells),
-                                       NVP("last_transport_mode", m_last_transport_mode),
-                                       NVP("rng_counter", m_rng_counter)
-                                       );
+        return make_auto_serialization(
+            "Person",
+            NVP("location", m_location),
+            NVP("assigned_locations", m_assigned_locations),
+            NVP("vaccinations", m_vaccinations), 
+            NVP("infections", m_infections),
+            NVP("quarantine_start",m_quarantine_start),
+            NVP("age_group", m_age),
+            NVP("time_at_location", m_time_at_location),
+            NVP("rnd_workgroup", m_random_workgroup),
+            NVP("rnd_schoolgroup", m_random_schoolgroup),
+            NVP("rnd_go_to_work_hour", m_random_goto_work_hour),
+            NVP("rnd_go_to_school_hour", m_random_goto_school_hour),
+            NVP("time_of_last_test", m_time_of_last_test),
+            NVP("mask", m_mask),
+            NVP("wears_mask", m_wears_mask),
+            NVP("mask_compliance", m_mask_compliance),
+            NVP("id", m_person_id),
+            NVP("cells", m_cells),
+            NVP("last_transport_mode", m_last_transport_mode),
+            NVP("rng_counter", m_rng_counter)
+        );
         // clang-format on
     }
 
 private:
-    // friend AutoConstructor<Person>;
-    // Person()
-    //     : m_age(0)
-    //     , m_mask(MaskType::Count)
-    // {
-    // }
-
     LocationId m_location; ///< Current Location of the Person.
     LocationType m_location_type; ///< Type of the current Location.
     std::vector<LocationId> m_assigned_locations; /**! Vector with the indices of the assigned Locations so that the
@@ -455,7 +449,7 @@ private:
 template <>
 struct AutoConstructor<abm::Person> : abm::Person {
     AutoConstructor()
-        : Person(thread_local_rng(), abm::LocationId(), AgeGroup(0), abm::PersonId())
+        : Person(thread_local_rng(), abm::LocationType::Count, abm::LocationId(), AgeGroup(0), abm::PersonId())
     {
     }
 };
