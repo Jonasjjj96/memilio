@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2024-07-11 09:11:11</td>
+            <td class="headerValue">2024-07-19 11:34:27</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">0</td>
@@ -79,14 +79,14 @@
 <a name="17"><span class="lineNum">      17 </span>            : * See the License for the specific language governing permissions and</a>
 <a name="18"><span class="lineNum">      18 </span>            : * limitations under the License.</a>
 <a name="19"><span class="lineNum">      19 </span>            : */</a>
-<a name="20"><span class="lineNum">      20 </span>            : #ifndef EPI_ABM_INFECTION_H</a>
-<a name="21"><span class="lineNum">      21 </span>            : #define EPI_ABM_INFECTION_H</a>
+<a name="20"><span class="lineNum">      20 </span>            : #ifndef MIO_ABM_INFECTION_H</a>
+<a name="21"><span class="lineNum">      21 </span>            : #define MIO_ABM_INFECTION_H</a>
 <a name="22"><span class="lineNum">      22 </span>            : </a>
-<a name="23"><span class="lineNum">      23 </span>            : #include &quot;abm/time.h&quot;</a>
-<a name="24"><span class="lineNum">      24 </span>            : #include &quot;abm/infection_state.h&quot;</a>
-<a name="25"><span class="lineNum">      25 </span>            : #include &quot;abm/virus_variant.h&quot;</a>
-<a name="26"><span class="lineNum">      26 </span>            : #include &quot;abm/parameters.h&quot;</a>
-<a name="27"><span class="lineNum">      27 </span>            : #include &quot;abm/person.h&quot;</a>
+<a name="23"><span class="lineNum">      23 </span>            : #include &quot;abm/personal_rng.h&quot;</a>
+<a name="24"><span class="lineNum">      24 </span>            : #include &quot;abm/time.h&quot;</a>
+<a name="25"><span class="lineNum">      25 </span>            : #include &quot;abm/infection_state.h&quot;</a>
+<a name="26"><span class="lineNum">      26 </span>            : #include &quot;abm/virus_variant.h&quot;</a>
+<a name="27"><span class="lineNum">      27 </span>            : #include &quot;abm/parameters.h&quot;</a>
 <a name="28"><span class="lineNum">      28 </span>            : </a>
 <a name="29"><span class="lineNum">      29 </span>            : #include &lt;vector&gt;</a>
 <a name="30"><span class="lineNum">      30 </span>            : </a>
@@ -115,7 +115,7 @@
 <a name="53"><span class="lineNum">      53 </span>            :     /**</a>
 <a name="54"><span class="lineNum">      54 </span>            :      * @brief Create an Infection for a single Person.</a>
 <a name="55"><span class="lineNum">      55 </span>            :      * Draws a random infection course.</a>
-<a name="56"><span class="lineNum">      56 </span>            :      * @param[inout] rng Person::RandomNumberGenerator for the Person.</a>
+<a name="56"><span class="lineNum">      56 </span>            :      * @param[inout] rng PersonalRandomNumberGenerator of the Person.</a>
 <a name="57"><span class="lineNum">      57 </span>            :      * @param[in] virus Virus type of the Infection.</a>
 <a name="58"><span class="lineNum">      58 </span>            :      * @param[in] age AgeGroup to determine the ViralLoad course.</a>
 <a name="59"><span class="lineNum">      59 </span>            :      * @param[in] params Parameters of the Model.</a>
@@ -124,9 +124,9 @@
 <a name="62"><span class="lineNum">      62 </span>            :      * @param[in] latest_exposure [Default: {ExposureType::NoProtection, TimePoint(0)}] The pair value of last ExposureType (previous Infection/Vaccination) and TimePoint of that protection.</a>
 <a name="63"><span class="lineNum">      63 </span>            :      * @param[in] detected [Default: false] If the Infection is detected.     </a>
 <a name="64"><span class="lineNum">      64 </span>            :      */</a>
-<a name="65"><span class="lineNum">      65 </span>            :     Infection(Person::RandomNumberGenerator&amp; rng, VirusVariant virus, AgeGroup age, const Parameters&amp; params,</a>
+<a name="65"><span class="lineNum">      65 </span>            :     Infection(PersonalRandomNumberGenerator&amp; rng, VirusVariant virus, AgeGroup age, const Parameters&amp; params,</a>
 <a name="66"><span class="lineNum">      66 </span>            :               TimePoint start_date, InfectionState start_state = InfectionState::Exposed,</a>
-<a name="67"><span class="lineNum">      67 </span><span class="lineCov">         98 :               std::pair&lt;ExposureType, TimePoint&gt; latest_exposure = {ExposureType::NoProtection, TimePoint(0)},</span></a>
+<a name="67"><span class="lineNum">      67 </span><span class="lineCov">         84 :               std::pair&lt;ExposureType, TimePoint&gt; latest_exposure = {ExposureType::NoProtection, TimePoint(0)},</span></a>
 <a name="68"><span class="lineNum">      68 </span>            :               bool detected                                      = false);</a>
 <a name="69"><span class="lineNum">      69 </span>            : </a>
 <a name="70"><span class="lineNum">      70 </span>            :     /**</a>
@@ -181,39 +181,39 @@
 <a name="119"><span class="lineNum">     119 </span>            :      * @brief Determine ViralLoad course and Infection course based on init_state.</a>
 <a name="120"><span class="lineNum">     120 </span>            :      * Calls draw_infection_course_backward for all #InfectionState%s prior and draw_infection_course_forward for all</a>
 <a name="121"><span class="lineNum">     121 </span>            :      * subsequent #InfectionState%s.</a>
-<a name="122"><span class="lineNum">     122 </span>            :      * @param[inout] rng Person::RandomNumberGenerator of the Person.</a>
+<a name="122"><span class="lineNum">     122 </span>            :      * @param[inout] rng PersonalRandomNumberGenerator of the Person.</a>
 <a name="123"><span class="lineNum">     123 </span>            :      * @param[in] age AgeGroup of the Person.</a>
 <a name="124"><span class="lineNum">     124 </span>            :      * @param[in] params Parameters of the Model.</a>
 <a name="125"><span class="lineNum">     125 </span>            :      * @param[in] init_date Date of initializing the Infection.</a>
 <a name="126"><span class="lineNum">     126 </span>            :      * @param[in] init_state #InfectionState at time of initializing the Infection.</a>
 <a name="127"><span class="lineNum">     127 </span>            :      * @return The starting date of the Infection.</a>
 <a name="128"><span class="lineNum">     128 </span>            :      */</a>
-<a name="129"><span class="lineNum">     129 </span>            :     TimePoint draw_infection_course(Person::RandomNumberGenerator&amp; rng, AgeGroup age, const Parameters&amp; params,</a>
+<a name="129"><span class="lineNum">     129 </span>            :     TimePoint draw_infection_course(PersonalRandomNumberGenerator&amp; rng, AgeGroup age, const Parameters&amp; params,</a>
 <a name="130"><span class="lineNum">     130 </span>            :                                     TimePoint init_date, InfectionState start_state,</a>
 <a name="131"><span class="lineNum">     131 </span>            :                                     std::pair&lt;ExposureType, TimePoint&gt; latest_protection);</a>
 <a name="132"><span class="lineNum">     132 </span>            : </a>
 <a name="133"><span class="lineNum">     133 </span>            :     /**</a>
 <a name="134"><span class="lineNum">     134 </span>            :      * @brief Determine ViralLoad course and Infection course prior to the given start_state.</a>
-<a name="135"><span class="lineNum">     135 </span>            :      * @param[inout] rng Person::RandomNumberGenerator of the Person.</a>
+<a name="135"><span class="lineNum">     135 </span>            :      * @param[inout] rng PersonalRandomNumberGenerator of the Person.</a>
 <a name="136"><span class="lineNum">     136 </span>            :      * @param[in] age AgeGroup of the Person.</a>
 <a name="137"><span class="lineNum">     137 </span>            :      * @param[in] params Parameters of the Model.</a>
 <a name="138"><span class="lineNum">     138 </span>            :      * @param[in] init_date Date of initializing the Infection.</a>
 <a name="139"><span class="lineNum">     139 </span>            :      * @param[in] init_state #InfectionState at time of initializing the Infection.</a>
 <a name="140"><span class="lineNum">     140 </span>            :      */</a>
-<a name="141"><span class="lineNum">     141 </span>            :     void draw_infection_course_forward(Person::RandomNumberGenerator&amp; rng, AgeGroup age, const Parameters&amp; params,</a>
+<a name="141"><span class="lineNum">     141 </span>            :     void draw_infection_course_forward(PersonalRandomNumberGenerator&amp; rng, AgeGroup age, const Parameters&amp; params,</a>
 <a name="142"><span class="lineNum">     142 </span>            :                                        TimePoint init_date, InfectionState start_state,</a>
 <a name="143"><span class="lineNum">     143 </span>            :                                        std::pair&lt;ExposureType, TimePoint&gt; latest_protection);</a>
 <a name="144"><span class="lineNum">     144 </span>            : </a>
 <a name="145"><span class="lineNum">     145 </span>            :     /**</a>
 <a name="146"><span class="lineNum">     146 </span>            :      * @brief Determine ViralLoad course and Infection course subsequent to the given start_state.</a>
-<a name="147"><span class="lineNum">     147 </span>            :      * @param[inout] rng Person::RandomNumberGenerator of the Person.</a>
+<a name="147"><span class="lineNum">     147 </span>            :      * @param[inout] rng PersonalRandomNumberGenerator of the Person.</a>
 <a name="148"><span class="lineNum">     148 </span>            :      * @param[in] age AgeGroup of the person.</a>
 <a name="149"><span class="lineNum">     149 </span>            :      * @param[in] params Parameters of the Model.</a>
 <a name="150"><span class="lineNum">     150 </span>            :      * @param[in] init_date Date of initializing the Infection.</a>
 <a name="151"><span class="lineNum">     151 </span>            :      * @param[in] init_state InfectionState at time of initializing the Infection.</a>
 <a name="152"><span class="lineNum">     152 </span>            :      * @return The starting date of the Infection.</a>
 <a name="153"><span class="lineNum">     153 </span>            :      */</a>
-<a name="154"><span class="lineNum">     154 </span>            :     TimePoint draw_infection_course_backward(Person::RandomNumberGenerator&amp; rng, AgeGroup age, const Parameters&amp; params,</a>
+<a name="154"><span class="lineNum">     154 </span>            :     TimePoint draw_infection_course_backward(PersonalRandomNumberGenerator&amp; rng, AgeGroup age, const Parameters&amp; params,</a>
 <a name="155"><span class="lineNum">     155 </span>            :                                              TimePoint init_date, InfectionState init_state);</a>
 <a name="156"><span class="lineNum">     156 </span>            : </a>
 <a name="157"><span class="lineNum">     157 </span>            :     std::vector&lt;std::pair&lt;TimePoint, InfectionState&gt;&gt; m_infection_course; ///&lt; Start date of each #InfectionState.</a>

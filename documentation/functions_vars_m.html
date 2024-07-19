@@ -81,8 +81,14 @@ $(function() {
 <li>m_ages
 : <a class="el" href="classmio_1_1abm_1_1TestingCriteria.html#a383978a7ca853addc49fad1e7b5424b0">mio::abm::TestingCriteria</a>
 </li>
+<li>m_air_exposure_rates_cache
+: <a class="el" href="classmio_1_1abm_1_1World.html#a18461f747e1052f817ccbbb12d037ee8">mio::abm::World</a>
+</li>
+<li>m_are_exposure_caches_valid
+: <a class="el" href="classmio_1_1abm_1_1World.html#a59790b4f5b87c40d51c43fa5f919a897">mio::abm::World</a>
+</li>
 <li>m_assigned_locations
-: <a class="el" href="classmio_1_1abm_1_1Person.html#adaf3c79461093ebd722ca1ac47302359">mio::abm::Person</a>
+: <a class="el" href="classmio_1_1abm_1_1Person.html#a478882eb180fabea9b1819f08ec01903">mio::abm::Person</a>
 </li>
 <li>m_automatic_cache_update
 : <a class="el" href="classmio_1_1Dampings.html#ab1a81c189fbdd8fc8fa70a71be7581d6">mio::Dampings&lt; D &gt;</a>
@@ -96,17 +102,8 @@ $(function() {
 <li>m_buf
 : <a class="el" href="classmio_1_1ByteStream.html#a9d2fbb56f7f7f269d5faca1942cd4743">mio::ByteStream</a>
 </li>
-<li>m_cached_exposure_rate_air
-: <a class="el" href="structmio_1_1abm_1_1Cell.html#a08db49aef343dd71069bafd8eaf21e5d">mio::abm::Cell</a>
-</li>
-<li>m_cached_exposure_rate_contacts
-: <a class="el" href="structmio_1_1abm_1_1Cell.html#a47b25d3a0a3eb659c751b497e2376a55">mio::abm::Cell</a>
-</li>
 <li>m_capacity
 : <a class="el" href="structmio_1_1abm_1_1Cell.html#ac139206fbfa87f5eedf21384f07ef698">mio::abm::Cell</a>
-</li>
-<li>m_capacity_adapted_transmission_risk
-: <a class="el" href="classmio_1_1abm_1_1Location.html#a889399c1cae78db5277410933a966560">mio::abm::Location</a>
 </li>
 <li>m_cells
 : <a class="el" href="classmio_1_1abm_1_1Location.html#a635151804e7b40d8a61897901995ff93">mio::abm::Location</a>
@@ -134,11 +131,14 @@ $(function() {
 <li>m_cont_freq
 : <a class="el" href="classmio_1_1UncertainContactMatrix.html#a11513413214b20077d49c772175ca5c0">mio::UncertainContactMatrix&lt; FP &gt;</a>
 </li>
+<li>m_contact_exposure_rates_cache
+: <a class="el" href="classmio_1_1abm_1_1World.html#ac5cd5507d35d06716cbc83af6d374946">mio::abm::World</a>
+</li>
 <li>m_core
 : <a class="el" href="classmio_1_1OdeIntegrator.html#a6987f2818debd266b73bf47d02eff77d">mio::OdeIntegrator&lt; FP &gt;</a>
 </li>
 <li>m_counter
-: <a class="el" href="classmio_1_1abm_1_1Person_1_1RandomNumberGenerator.html#a06e586cfff2243b33e4b9a6a95f43bbe">mio::abm::Person::RandomNumberGenerator</a>
+: <a class="el" href="classmio_1_1abm_1_1PersonalRandomNumberGenerator.html#a7701e6c37ba49342c252fddb10c179e7">mio::abm::PersonalRandomNumberGenerator</a>
 </li>
 <li>m_current_index
 : <a class="el" href="classmio_1_1abm_1_1TripList.html#ad7a4d941c957d9569730293674248c58">mio::abm::TripList</a>
@@ -229,6 +229,9 @@ $(function() {
 <li>m_error_estimate
 : <a class="el" href="classmio_1_1RKIntegratorCore.html#aecddaa9f32812f15316c4374f7f2bf05">mio::RKIntegratorCore&lt; FP &gt;</a>
 </li>
+<li>m_exposure_caches_need_rebuild
+: <a class="el" href="classmio_1_1abm_1_1World.html#a41b9f699ad35f3769ccfb1d21dc410dd">mio::abm::World</a>
+</li>
 <li>m_flags
 : <a class="el" href="classmio_1_1SerializerBase.html#a72009e84dc15e048853ec6e997e34414">mio::SerializerBase</a>
 </li>
@@ -302,6 +305,9 @@ $(function() {
 <li>m_is_adaptive
 : <a class="el" href="classmio_1_1OdeIntegrator.html#a544fc29aa27691386371be5f62a6c8c5">mio::OdeIntegrator&lt; FP &gt;</a>
 </li>
+<li>m_is_local_population_cache_valid
+: <a class="el" href="classmio_1_1abm_1_1World.html#a3d028ff56a1211a3a30c1e27646c2c0d">mio::abm::World</a>
+</li>
 <li>m_iter_pair
 : <a class="el" href="classmio_1_1Range.html#a6aa7350554bc0c62be6129a4e55c066c">mio::Range&lt; IterPair &gt;</a>
 </li>
@@ -309,7 +315,7 @@ $(function() {
 : <a class="el" href="classmio_1_1iseir_1_1Model.html#ab2ca74f1dc76947883b98c2e52739e66">mio::iseir::Model&lt; FP &gt;</a>
 </li>
 <li>m_key
-: <a class="el" href="classmio_1_1abm_1_1Person_1_1RandomNumberGenerator.html#ab675f57af046538a7096589620fd530c">mio::abm::Person::RandomNumberGenerator</a>
+: <a class="el" href="classmio_1_1abm_1_1PersonalRandomNumberGenerator.html#a15ba57cc7377db4b3211f78ac62a5cd9">mio::abm::PersonalRandomNumberGenerator</a>
 </li>
 <li>m_kt_values
 : <a class="el" href="classmio_1_1RKIntegratorCore.html#a4601599650ded2be34a9211686f34ab9">mio::RKIntegratorCore&lt; FP &gt;</a>
@@ -326,15 +332,21 @@ $(function() {
 <li>m_level
 : <a class="el" href="classmio_1_1DampingSampling.html#a6a9ea905370be85850c8b7a1327b78e0">mio::DampingSampling&lt; FP &gt;</a>
 </li>
+<li>m_local_population_cache
+: <a class="el" href="classmio_1_1abm_1_1World.html#a5ec860e799a2465cee054b76a5c32e8a">mio::abm::World</a>
+</li>
 <li>m_location
-: <a class="el" href="classmio_1_1abm_1_1Person.html#a154a3dd98fe6ffb62345d093c14f2356">mio::abm::Person</a>
+: <a class="el" href="classmio_1_1abm_1_1Person.html#aeed290c489416bb8c59008efa8d1e1f3">mio::abm::Person</a>
 , <a class="el" href="structmio_1_1StateAgeFunction.html#a9e517fc83faafbe5f8858ef429834204">mio::StateAgeFunction</a>
 </li>
 <li>m_location_to_schemes_map
-: <a class="el" href="classmio_1_1abm_1_1TestingStrategy.html#a88fa438b436ed42cd8e483217733cc6d">mio::abm::TestingStrategy</a>
+: <a class="el" href="classmio_1_1abm_1_1TestingStrategy.html#a0fbf90ed408880738acd943233237c95">mio::abm::TestingStrategy</a>
+</li>
+<li>m_location_type
+: <a class="el" href="classmio_1_1abm_1_1Person.html#a1509b721f131d3245a0549e129c44c42">mio::abm::Person</a>
 </li>
 <li>m_locations
-: <a class="el" href="classmio_1_1abm_1_1World.html#a029567ee32015927d2e0d4902600468d">mio::abm::World</a>
+: <a class="el" href="classmio_1_1abm_1_1World.html#a1f05bd4c630d2fbdff78a3f03165f23f">mio::abm::World</a>
 </li>
 <li>m_log_norm_alpha
 : <a class="el" href="classmio_1_1abm_1_1Infection.html#af76464c3025d0fd9549d2177fc53f1a4">mio::abm::Infection</a>
@@ -378,7 +390,7 @@ $(function() {
 : <a class="el" href="classmio_1_1MigrationEdge.html#ad5f76c32b9744e46ed55bb690f817b98">mio::MigrationEdge&lt; FP &gt;</a>
 </li>
 <li>m_migration_rules
-: <a class="el" href="classmio_1_1abm_1_1World.html#abe73ed623b4c515270e2f20db4820532">mio::abm::World</a>
+: <a class="el" href="classmio_1_1abm_1_1World.html#a82f25f3c95194fc78295c31faedd799a">mio::abm::World</a>
 </li>
 <li>m_minimal_time_since_last_test
 : <a class="el" href="classmio_1_1abm_1_1TestingScheme.html#a92885feb6e6a0186ae12c9b757132785">mio::abm::TestingScheme</a>
@@ -393,9 +405,6 @@ $(function() {
 </li>
 <li>m_msg
 : <a class="el" href="classmio_1_1IOStatus.html#a7ad56602dbab764453bed7fa33e8f27b">mio::IOStatus</a>
-</li>
-<li>m_mut
-: <a class="el" href="classmio_1_1abm_1_1Location.html#a9136d5ff688d036dc16ff8c3458c6bd3">mio::abm::Location</a>
 </li>
 <li>m_N
 : <a class="el" href="classmio_1_1isecir_1_1Model.html#aa2153efbcfbed7df8ab91ca9ead82175">mio::isecir::Model</a>
@@ -438,13 +447,11 @@ $(function() {
 , <a class="el" href="classmio_1_1MigrationEdgeStochastic.html#a23ebffda5461caba007fa678aa47db64">mio::MigrationEdgeStochastic</a>
 </li>
 <li>m_person_id
-: <a class="el" href="classmio_1_1abm_1_1Person.html#a8413ac38aeefceb8fe8816605b1f930a">mio::abm::Person</a>
-, <a class="el" href="classmio_1_1abm_1_1Person_1_1RandomNumberGenerator.html#a06f4a2db8d3bf5924bbce4c8430a35f4">mio::abm::Person::RandomNumberGenerator</a>
+: <a class="el" href="classmio_1_1abm_1_1Person.html#a80667f0173626da6a902f0b262865988">mio::abm::Person</a>
+, <a class="el" href="classmio_1_1abm_1_1PersonalRandomNumberGenerator.html#a44d25163b502e8b31884cb363af711b8">mio::abm::PersonalRandomNumberGenerator</a>
 </li>
 <li>m_persons
-: <a class="el" href="structmio_1_1abm_1_1Cell.html#a97d985fd2aa4d46092c2bc90a40b9b55">mio::abm::Cell</a>
-, <a class="el" href="classmio_1_1abm_1_1Location.html#a06dab2f8ee3a99550ad07c8ed2b79598">mio::abm::Location</a>
-, <a class="el" href="classmio_1_1abm_1_1World.html#a50730201715b158f6c8618665d65599c">mio::abm::World</a>
+: <a class="el" href="classmio_1_1abm_1_1World.html#aafa8cb59738a582006e28e6037113a23">mio::abm::World</a>
 </li>
 <li>m_pop
 : <a class="el" href="classmio_1_1FlowSimulation.html#a16905587f9d743dec6596f4e911ff526">mio::FlowSimulation&lt; FP, M &gt;</a>
@@ -654,7 +661,8 @@ $(function() {
 : <a class="el" href="classmio_1_1ParameterSet.html#a708003bd5caa82ae03721c9d9a1d196a">mio::ParameterSet&lt; Tags &gt;</a>
 </li>
 <li>m_type
-: <a class="el" href="classmio_1_1abm_1_1Mask.html#a3d65b93e06ff200d929d0646a99841b0">mio::abm::Mask</a>
+: <a class="el" href="classmio_1_1abm_1_1Location.html#a2ca3248856a842d53de0e6ae265bfcb3">mio::abm::Location</a>
+, <a class="el" href="classmio_1_1abm_1_1Mask.html#a3d65b93e06ff200d929d0646a99841b0">mio::abm::Mask</a>
 , <a class="el" href="classmio_1_1DampingSampling.html#afd70f43667c85b4520bfb07f9135f19e">mio::DampingSampling&lt; FP &gt;</a>
 </li>
 <li>m_underlying_iter

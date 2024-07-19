@@ -31,18 +31,18 @@
             <td class="headerValue">coverage.info</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntry">50</td>
-            <td class="headerCovTableEntry">50</td>
-            <td class="headerCovTableEntryHi">100.0 %</td>
+            <td class="headerCovTableEntry">72</td>
+            <td class="headerCovTableEntry">92</td>
+            <td class="headerCovTableEntryMed">78.3 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2024-07-11 09:11:11</td>
+            <td class="headerValue">2024-07-19 11:34:27</td>
             <td></td>
             <td class="headerItem">Functions:</td>
-            <td class="headerCovTableEntry">8</td>
-            <td class="headerCovTableEntry">8</td>
-            <td class="headerCovTableEntryHi">100.0 %</td>
+            <td class="headerCovTableEntry">17</td>
+            <td class="headerCovTableEntry">18</td>
+            <td class="headerCovTableEntryHi">94.4 %</td>
           </tr>
           <tr><td><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
         </table>
@@ -60,36 +60,76 @@
       <td width="20%" class="tableHead">Hit count <span class="tableHeadSort"><a href="world.h.func-sort-c.html"><img src="../../updown.png" width=10 height=14 alt="Sort by hit count" title="Sort by hit count" border=0></a></span></td>
     </tr>
     <tr>
-              <td class="coverFn"><a href="world.h.gcov.html#283">mio::abm::World::get_rng()</a></td>
-              <td class="coverFnHi">120</td>
+              <td class="coverFn"><a href="world.h.gcov.html#327">mio::abm::World::get_person(mio::abm::PersonId)</a></td>
+              <td class="coverFnHi">2009</td>
             </tr>
     <tr>
-              <td class="coverFn"><a href="world.h.gcov.html#98">mio::abm::World::World(mio::abm::World&amp;&amp;)</a></td>
+              <td class="coverFn"><a href="world.h.gcov.html#423">mio::abm::World::get_location(mio::abm::LocationId)</a></td>
+              <td class="coverFnHi">2497</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="world.h.gcov.html#437">mio::abm::World::get_location(mio::abm::PersonId)</a></td>
+              <td class="coverFnHi">1227</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="world.h.gcov.html#222">mio::abm::World::assign_location(mio::abm::PersonId, mio::abm::LocationId)</a></td>
+              <td class="coverFnHi">122</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="world.h.gcov.html#300">mio::abm::World::get_rng()</a></td>
+              <td class="coverFnHi">104</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="world.h.gcov.html#375">mio::abm::World::migrate(mio::abm::PersonId, mio::abm::LocationId, mio::abm::TransportMode, std::vector&lt;unsigned int, std::allocator&lt;unsigned int&gt; &gt; const&amp;)</a></td>
+              <td class="coverFnHi">31</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="world.h.gcov.html#396">mio::abm::World::interact(mio::abm::PersonId, mio::abm::TimePoint, mio::abm::TimeSpan)</a></td>
+              <td class="coverFnHi">298</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="world.h.gcov.html#102">mio::abm::World::World(mio::abm::World&amp;&amp;)</a></td>
               <td class="coverFnHi">4</td>
             </tr>
     <tr>
-              <td class="coverFn"><a href="world.h.gcov.html#72">mio::abm::World::World(mio::abm::World const&amp;)</a></td>
+              <td class="coverFn"><a href="world.h.gcov.html#82">mio::abm::World::World(mio::abm::World const&amp;)</a></td>
+              <td class="coverFnHi">20</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="world.h.gcov.html#60">mio::abm::World::World(unsigned long)</a></td>
               <td class="coverFnHi">21</td>
             </tr>
     <tr>
-              <td class="coverFn"><a href="world.h.gcov.html#59">mio::abm::World::World(unsigned long)</a></td>
-              <td class="coverFnHi">24</td>
+              <td class="coverFn"><a href="world.h.gcov.html#333">mio::abm::World::get_person(mio::abm::PersonId) const</a></td>
+              <td class="coverFnHi">953</td>
             </tr>
     <tr>
-              <td class="coverFn"><a href="world.h.gcov.html#246">mio::abm::World::has_location(mio::abm::LocationType) const</a></td>
+              <td class="coverFn"><a href="world.h.gcov.html#263">mio::abm::World::has_location(mio::abm::LocationType) const</a></td>
               <td class="coverFnHi">3139</td>
             </tr>
     <tr>
-              <td class="coverFn"><a href="world.h.gcov.html#258">bool mio::abm::World::has_locations&lt;std::initializer_list&lt;mio::abm::LocationType&gt; &gt;(std::initializer_list&lt;mio::abm::LocationType&gt; const&amp;) const</a></td>
+              <td class="coverFn"><a href="world.h.gcov.html#275">bool mio::abm::World::has_locations&lt;std::initializer_list&lt;mio::abm::LocationType&gt; &gt;(std::initializer_list&lt;mio::abm::LocationType&gt; const&amp;) const</a></td>
               <td class="coverFnHi">2621</td>
             </tr>
     <tr>
-              <td class="coverFn"><a href="world.h.gcov.html#107">void mio::abm::World::serialize&lt;mio::JsonContext&gt;(mio::JsonContext&amp;) const</a></td>
-              <td class="coverFnHi">1</td>
+              <td class="coverFn"><a href="world.h.gcov.html#347">mio::abm::World::get_subpopulation(mio::abm::LocationId, mio::abm::TimePoint, mio::abm::InfectionState) const</a></td>
+              <td class="coverFnHi">3035</td>
             </tr>
     <tr>
-              <td class="coverFn"><a href="world.h.gcov.html#260">auto mio::abm::World::has_locations&lt;std::initializer_list&lt;mio::abm::LocationType&gt; &gt;(std::initializer_list&lt;mio::abm::LocationType&gt; const&amp;) const::{lambda(auto:1)#1}::operator()&lt;mio::abm::LocationType&gt;(mio::abm::LocationType) const</a></td>
+              <td class="coverFn"><a href="world.h.gcov.html#359">mio::abm::World::get_number_persons(mio::abm::LocationId) const</a></td>
+              <td class="coverFnHi">26</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="world.h.gcov.html#110">void mio::abm::World::serialize&lt;mio::JsonContext&gt;(mio::JsonContext&amp;) const</a></td>
+              <td class="coverFnLo">0</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="world.h.gcov.html#277">auto mio::abm::World::has_locations&lt;std::initializer_list&lt;mio::abm::LocationType&gt; &gt;(std::initializer_list&lt;mio::abm::LocationType&gt; const&amp;) const::{lambda(auto:1)#1}::operator()&lt;mio::abm::LocationType&gt;(mio::abm::LocationType) const</a></td>
               <td class="coverFnHi">3139</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="world.h.gcov.html#349">auto mio::abm::World::get_subpopulation(mio::abm::LocationId, mio::abm::TimePoint, mio::abm::InfectionState) const::{lambda(auto:1&amp;&amp;)#1}::operator()&lt;mio::abm::Person const&amp;&gt;(mio::abm::Person const&amp;) const</a></td>
+              <td class="coverFnHi">10362</td>
             </tr>
   </table>
   <br>

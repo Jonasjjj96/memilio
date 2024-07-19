@@ -68,25 +68,17 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
-<a href="#namespaces">Namespaces</a>  </div>
+<a href="#namespaces">Namespaces</a> &#124;
+<a href="#typedef-members">Typedefs</a>  </div>
   <div class="headertitle">
 <div class="title">location.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="person_8h_source.html">abm/person.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="location__id_8h_source.html">abm/location_id.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="mask__type_8h_source.html">abm/mask_type.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="abm_2parameters_8h_source.html">abm/parameters.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="location__type_8h_source.html">abm/location_type.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="abm_2infection__state_8h_source.html">abm/infection_state.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="vaccine_8h_source.html">abm/vaccine.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="age__group_8h_source.html">memilio/epidemiology/age_group.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="eigen_8h_source.html">memilio/math/eigen.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="custom__index__array_8h_source.html">memilio/utils/custom_index_array.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="time__series_8h_source.html">memilio/utils/time_series.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="memory_8h_source.html">memilio/utils/memory.h</a>&quot;</code><br />
-<code>#include &lt;array&gt;</code><br />
-<code>#include &lt;random&gt;</code><br />
-<code>#include &lt;mutex&gt;</code><br />
+<code>#include &quot;boost/atomic/atomic.hpp&quot;</code><br />
 </div>
 <p><a href="location_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -97,6 +89,10 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmio_1_1abm_1_1CellCapacity.html">mio::abm::CellCapacity</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structmio_1_1abm_1_1CellCapacity.html" title="CellCapacity describes the size of a Cell.">CellCapacity</a> describes the size of a <a class="el" href="structmio_1_1abm_1_1Cell.html" title="The Location can be split up into several Cells.">Cell</a>.  <a href="structmio_1_1abm_1_1CellCapacity.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmio_1_1abm_1_1CellIndex.html">mio::abm::CellIndex</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmio_1_1abm_1_1GeographicalLocation.html">mio::abm::GeographicalLocation</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1abm_1_1Location.html">mio::abm::Location</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">All <a class="el" href="classmio_1_1abm_1_1Location.html" title="All Locations in the simulated World where Persons gather.">Location</a>s in the simulated <a class="el" href="classmio_1_1abm_1_1World.html" title="The World of the Simulation.">World</a> where <a class="el" href="classmio_1_1abm_1_1Person.html" title="Agents in the simulated World that can carry and spread the Infection.">Person</a>s gather.  <a href="classmio_1_1abm_1_1Location.html#details">More...</a><br /></td></tr>
@@ -109,6 +105,13 @@ Namespaces</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:namespacemio_1_1abm"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemio_1_1abm.html">mio::abm</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:a53c19259993354db3d1f3835c37b971d"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemio_1_1abm.html#a53c19259993354db3d1f3835c37b971d">mio::abm::AirExposureRates</a> = CustomIndexArray&lt; boost::atomic&lt; <a class="el" href="memilio_2config_8h.html#acd4f1d492d83a74716a42615e127d641">ScalarType</a> &gt;, CellIndex, VirusVariant &gt;</td></tr>
+<tr class="separator:a53c19259993354db3d1f3835c37b971d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab8a73d1a29372787f277f5034c6bd6f1"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemio_1_1abm.html#ab8a73d1a29372787f277f5034c6bd6f1">mio::abm::ContactExposureRates</a> = CustomIndexArray&lt; boost::atomic&lt; <a class="el" href="memilio_2config_8h.html#acd4f1d492d83a74716a42615e127d641">ScalarType</a> &gt;, CellIndex, VirusVariant, AgeGroup &gt;</td></tr>
+<tr class="separator:ab8a73d1a29372787f277f5034c6bd6f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- start footer part -->

@@ -65,9 +65,6 @@ $(function() {
 <div class="textblock">Here is a list of all class members with links to the classes they belong to:</div>
 
 <h3><a id="index_c"></a>- c -</h3><ul>
-<li>cache_exposure_rates()
-: <a class="el" href="classmio_1_1abm_1_1Location.html#ae39c2ae947cfd9ef6a9c58eb174f4485">mio::abm::Location</a>
-</li>
 <li>calc_partial()
 : <a class="el" href="structad_1_1operations_1_1ad__acos.html#addd5a84122c6c07c6a4755660ca44a0f">ad::operations::ad_acos&lt; AD_TAPE_REAL &gt;</a>
 , <a class="el" href="structad_1_1operations_1_1ad__acosh.html#a4352399c260cb9066494b2e151aea09d">ad::operations::ad_acosh&lt; AD_TAPE_REAL &gt;</a>
@@ -147,11 +144,11 @@ $(function() {
 <li>cbegin()
 : <a class="el" href="classmio_1_1TimeSeries.html#a085941eea4858f29874dbc90ec203808">mio::TimeSeries&lt; FP &gt;</a>
 </li>
-<li>Cell()
-: <a class="el" href="structmio_1_1abm_1_1Cell.html#a569e5c92bf7d7edcda1e6dae422fd73b">mio::abm::Cell</a>
-</li>
 <li>CellCapacity()
 : <a class="el" href="structmio_1_1abm_1_1CellCapacity.html#a5b28292449e44037bcfebf3ef59f7fd2">mio::abm::CellCapacity</a>
+</li>
+<li>CellIndex()
+: <a class="el" href="structmio_1_1abm_1_1CellIndex.html#a78c5fc984ae8a2d79177c20a1b88f372">mio::abm::CellIndex</a>
 </li>
 <li>cells
 : <a class="el" href="structmio_1_1abm_1_1Trip.html#af2d5e2e46d3b35582b019353db6fd41a">mio::abm::Trip</a>
@@ -240,6 +237,9 @@ $(function() {
 <li>compute_compartment_from_flows()
 : <a class="el" href="classmio_1_1isecir_1_1Model.html#affa8f3510cb2af19a98ba7462a012cfc">mio::isecir::Model</a>
 </li>
+<li>compute_exposure_caches()
+: <a class="el" href="classmio_1_1abm_1_1World.html#a069655505c14ceb83e56636f5ba00242">mio::abm::World</a>
+</li>
 <li>compute_flow()
 : <a class="el" href="classmio_1_1isecir_1_1Model.html#a8305f12712589c2ac54315184634494f">mio::isecir::Model</a>
 </li>
@@ -253,7 +253,7 @@ $(function() {
 : <a class="el" href="classmio_1_1FlowSimulation.html#a663f28bec1f3f9c26fff46a1bb594e57">mio::FlowSimulation&lt; FP, M &gt;</a>
 </li>
 <li>compute_space_per_person_relative()
-: <a class="el" href="structmio_1_1abm_1_1Cell.html#a5b5c69a74930f0cd033e1f38a9766647">mio::abm::Cell</a>
+: <a class="el" href="structmio_1_1abm_1_1Cell.html#a9a3dae34a7fe05d5bc8c0da775c4ea65">mio::abm::Cell</a>
 </li>
 <li>compute_susceptibles()
 : <a class="el" href="classmio_1_1isecir_1_1Model.html#ac5c41f6043348cce0b18a97269653728">mio::isecir::Model</a>
@@ -284,19 +284,13 @@ $(function() {
 : <a class="el" href="structmio_1_1ConstantFunction.html#a0c675f7e61d59e4ccf153499454ff0ba">mio::ConstantFunction</a>
 </li>
 <li>ConstLocationIterator
-: <a class="el" href="classmio_1_1abm_1_1World.html#aeab471cadbd820400d3ac40187799a20">mio::abm::World</a>
+: <a class="el" href="classmio_1_1abm_1_1World.html#ad8353fa18d232f8d05506cc744da601f">mio::abm::World</a>
 </li>
 <li>ConstPersonIterator
-: <a class="el" href="classmio_1_1abm_1_1World.html#a5788f51792a6de8a78b368aad1c5e16e">mio::abm::World</a>
+: <a class="el" href="classmio_1_1abm_1_1World.html#a9de2c5a3ca7362f6e85a75288608e6f1">mio::abm::World</a>
 </li>
 <li>ControlledStepperWrapper()
 : <a class="el" href="classmio_1_1ControlledStepperWrapper.html#aa92e1a478b59d3499de656e0ecf7fde4">mio::ControlledStepperWrapper&lt; FP, ControlledStepper &gt;</a>
-</li>
-<li>copy_location_without_persons()
-: <a class="el" href="classmio_1_1abm_1_1Location.html#a2c7ad5c42c2d45b567d6862a8600fc5f">mio::abm::Location</a>
-</li>
-<li>copy_person()
-: <a class="el" href="classmio_1_1abm_1_1Person.html#ad5b7bd832aa89fe99fb7ddbf81656dab">mio::abm::Person</a>
 </li>
 <li>Count
 : <a class="el" href="classmio_1_1LctInfectionState.html#a9e35d576c299bd6691e20e6677740082">mio::LctInfectionState&lt; InfectionStates, Ns &gt;</a>
@@ -314,7 +308,7 @@ $(function() {
 , <a class="el" href="classad_1_1reference__constructor__wrapper_3_01void_01_5_01_4.html#a43dabeec5c817adc62869082223d0bf3">ad::reference_constructor_wrapper&lt; void * &gt;</a>
 </li>
 <li>create_callback_object()
-: <a class="el" href="structad_1_1internal_1_1blob__tape.html#a082ae681f371807ad04d203bd78560d9">ad::internal::blob_tape&lt; AD_TAPE_REAL, AD_ADJOINT_REAL &gt;</a>
+: <a class="el" href="structad_1_1internal_1_1blob__tape.html#af8f34e5e6f72526f47115915e169b581">ad::internal::blob_tape&lt; AD_TAPE_REAL, AD_ADJOINT_REAL &gt;</a>
 </li>
 <li>create_object()
 : <a class="el" href="classmio_1_1BinarySerializerContext.html#a3c00fcfebc6d99456598ba9aa043025f">mio::BinarySerializerContext</a>
@@ -332,7 +326,7 @@ $(function() {
 : <a class="el" href="classmemilio_1_1epidata_1_1getDataIntoPandasDataFrame_1_1VerbosityLevel.html#a18700611c1557faa150d61b790d47666">memilio.epidata.getDataIntoPandasDataFrame.VerbosityLevel</a>
 </li>
 <li>CustomIndexArray()
-: <a class="el" href="classmio_1_1CustomIndexArray.html#a50501eba9a61930b5c6f264a92521528">mio::CustomIndexArray&lt; Typ, Tags &gt;</a>
+: <a class="el" href="classmio_1_1CustomIndexArray.html#a6cb1e8eb0e1cc2e0b7279976942354f3">mio::CustomIndexArray&lt; Typ, Tags &gt;</a>
 </li>
 </ul>
 </div><!-- contents -->
