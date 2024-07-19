@@ -122,7 +122,7 @@ public:
 
     /**
      * @brief Construct a copy of a Location with a new ID.
-     * @param[in] other A Location.
+     * @param[in] other The Location to copy from.
      * @param[in] id The ID for the new Location.
      */
     explicit Location(const Location& other, LocationId id)
@@ -279,7 +279,7 @@ private:
     Location() = default;
 
     LocationType m_type; ///< Type of the Location.
-    LocationId m_id; ///< Id of the Location. Set by the World owning it.
+    LocationId m_id; ///< Unique identifier for the Location in the World owning it.
     LocalInfectionParameters m_parameters; ///< Infection parameters for the Location.
     std::vector<Cell> m_cells{}; ///< A vector of all Cell%s that the Location is divided in.
     MaskType m_required_mask; ///< Least secure type of Mask that is needed to enter the Location.

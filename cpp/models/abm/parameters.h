@@ -36,7 +36,6 @@
 #include "memilio/epidemiology/contact_matrix.h"
 #include <algorithm>
 #include <limits>
-#include <utility>
 
 namespace mio
 {

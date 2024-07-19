@@ -26,7 +26,6 @@
 #include "matchers.h"
 #include "memilio/io/json_serializer.h"
 #include "memilio/utils/random_number_generator.h"
-#include "json/config.h"
 
 TEST(TestLocation, initCell)
 {

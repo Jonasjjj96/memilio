@@ -314,37 +314,9 @@ public:
      */
     bool run_strategy(PersonalRandomNumberGenerator& rng, Person& person, const Location& location, TimePoint t);
 
-    /**
-     * serialize this. 
-     * @see mio::serialize
-     */
-    template <class IOContext>
-    void serialize(IOContext& io) const
-    {
-        auto obj = io.create_object("TestingStrategy");
-        obj.add_list("schemes", m_location_to_schemes_map.cbegin(), m_location_to_schemes_map.cend());
-    }
-
-    /**
-     * deserialize an object of this class.
-     * @see mio::deserialize
-     */
-    template <class IOContext>
-    static IOResult<TestingStrategy> deserialize(IOContext& io)
-    {
-        auto obj     = io.expect_object("TestingStrategy");
-        auto schemes = obj.expect_list("schemes", Tag<std::pair<LocationId, std::vector<TestingScheme>>>{});
-        return apply(
-            io,
-            [](auto&& schemes_) {
-                return TestingStrategy{schemes_};
-            },
-            schemes);
-    }
-
     auto auto_serialize()
     {
-        return make_auto_serialization("TestingStrategy", NVP("location_to_schemes_map", m_location_to_schemes_map));
+        return make_auto_serialization("TestingStrategy", NVP("schemes", m_location_to_schemes_map));
     }
 
 private:
