@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2024-07-19 11:34:27</td>
+            <td class="headerValue">2024-07-20 09:27:25</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">3</td>
@@ -174,11 +174,11 @@
 <a name="112"><span class="lineNum">     112 </span>            :      * performed after a Person's last test.</a>
 <a name="113"><span class="lineNum">     113 </span>            :      * @param start_date Starting date of the scheme.</a>
 <a name="114"><span class="lineNum">     114 </span>            :      * @param end_date Ending date of the scheme.</a>
-<a name="115"><span class="lineNum">     115 </span>            :      * @param test_type The type of test to be performed.</a>
+<a name="115"><span class="lineNum">     115 </span>            :      * @param test_parameters The parameters of test to be performed.</a>
 <a name="116"><span class="lineNum">     116 </span>            :      * @param probability Probability of the test to be performed if a testing rule applies.</a>
 <a name="117"><span class="lineNum">     117 </span>            :      */</a>
 <a name="118"><span class="lineNum">     118 </span>            :     TestingScheme(const TestingCriteria&amp; testing_criteria, TimeSpan minimal_time_since_last_test, TimePoint start_date,</a>
-<a name="119"><span class="lineNum">     119 </span>            :                   TimePoint end_date, const GenericTest&amp; test_type, ScalarType probability);</a>
+<a name="119"><span class="lineNum">     119 </span>            :                   TimePoint end_date, TestParameters test_parameters, ScalarType probability);</a>
 <a name="120"><span class="lineNum">     120 </span>            : </a>
 <a name="121"><span class="lineNum">     121 </span>            :     /**</a>
 <a name="122"><span class="lineNum">     122 </span>            :      * @brief Compares two TestingScheme%s for functional equality.</a>
@@ -211,7 +211,7 @@
 <a name="149"><span class="lineNum">     149 </span>            :     TimeSpan m_minimal_time_since_last_test; ///&lt; Shortest period of time between two tests.</a>
 <a name="150"><span class="lineNum">     150 </span>            :     TimePoint m_start_date; ///&lt; Starting date of the scheme.</a>
 <a name="151"><span class="lineNum">     151 </span>            :     TimePoint m_end_date; ///&lt; Ending date of the scheme.</a>
-<a name="152"><span class="lineNum">     152 </span>            :     GenericTest m_test_type; ///&lt; Type of the test.</a>
+<a name="152"><span class="lineNum">     152 </span>            :     TestParameters m_test_parameters; ///&lt; Parameters of the test.</a>
 <a name="153"><span class="lineNum">     153 </span>            :     ScalarType m_probability; ///&lt; Probability of performing the test.</a>
 <a name="154"><span class="lineNum">     154 </span>            :     bool m_is_active = false; ///&lt; Whether the scheme is currently active.</a>
 <a name="155"><span class="lineNum">     155 </span>            : };</a>

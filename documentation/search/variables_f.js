@@ -1,18 +1,18 @@
 var searchData=
 [
-  ['schemes_4099',['schemes',['../structmio_1_1abm_1_1TestingStrategy_1_1LocalStrategy.html#a0e0279acf4c3d39f06575e3e1aa546a5',1,'mio::abm::TestingStrategy::LocalStrategy']]],
-  ['sensitivity_4100',['sensitivity',['../structmio_1_1abm_1_1TestParameters.html#ad7e48b8f2883d0cdfee8b9e0c966f26f',1,'mio::abm::TestParameters']]],
-  ['seq_4101',['seq',['../classmio_1_1CustomIndexArray_1_1Slice_1_1Iterator.html#a0964422a221f7f1265960265eef09df6',1,'mio::CustomIndexArray::Slice::Iterator']]],
-  ['show_5fprogr_4102',['show_progr',['../classmemilio_1_1epidata_1_1getDataIntoPandasDataFrame_1_1Conf.html#a3cab0b71713dab3de8199657d81e080b',1,'memilio::epidata::getDataIntoPandasDataFrame::Conf']]],
-  ['size_4103',['size',['../classmio_1_1Index_3_01CategoryTag_01_4.html#ace2904f9d77e1ae0b0806ddf956462ca',1,'mio::Index&lt; CategoryTag &gt;::size()'],['../classmio_1_1Index.html#ace2904f9d77e1ae0b0806ddf956462ca',1,'mio::Index::size()']]],
-  ['source_4104',['source',['../structmio_1_1Flow.html#a46577d03278f33762b1afb9c474042b0',1,'mio::Flow']]],
-  ['specificity_4105',['specificity',['../structmio_1_1abm_1_1TestParameters.html#a8fc3dd8fa3256e496fb058f68059eeef',1,'mio::abm::TestParameters']]],
-  ['stackcounter_4106',['stackcounter',['../structad_1_1internal_1_1blob__tape_1_1position__t.html#aabf6e2bcb29d1bafdbcfc72dd0237036',1,'ad::internal::blob_tape::position_t']]],
-  ['start_4107',['start',['../structmio_1_1Seq.html#a29323e063eb8d9658b48b7280ac24a0a',1,'mio::Seq']]],
-  ['start_5fdate_4108',['start_date',['../structmio_1_1abm_1_1ViralLoad.html#a86c6af167e6eb6ada8d4024b0131b324',1,'mio::abm::ViralLoad']]],
-  ['start_5fnode_5fidx_4109',['start_node_idx',['../structmio_1_1OutEdgeBase.html#a3213274c80edf4444cbe5f19973a6d37',1,'mio::OutEdgeBase']]],
-  ['start_5ftime_4110',['start_time',['../structmio_1_1abm_1_1movement__data.html#aaff5c5318bb2dd603c26055ea011b9a5',1,'mio::abm::movement_data']]],
-  ['state_4111',['State',['../namespacememilio_1_1epidata_1_1defaultDict.html#a6f9d4f2a5f4b7e6e153dea07be7f3e22',1,'memilio::epidata::defaultDict']]],
-  ['step_5fsize_4112',['step_size',['../classmio_1_1ssir_1_1Model.html#a707c77720df1bbb7e1121241242868c5',1,'mio::ssir::Model::step_size()'],['../classmio_1_1ssirs_1_1Model.html#a0693ee8ab8a1dd64e9ecffeb945c141b',1,'mio::ssirs::Model::step_size()']]],
-  ['stride_4113',['stride',['../structmio_1_1Seq.html#ad381ff70960dad602924954fcf814462',1,'mio::Seq']]]
+  ['schemes_4100',['schemes',['../structmio_1_1abm_1_1TestingStrategy_1_1LocalStrategy.html#a0e0279acf4c3d39f06575e3e1aa546a5',1,'mio::abm::TestingStrategy::LocalStrategy']]],
+  ['sensitivity_4101',['sensitivity',['../structmio_1_1abm_1_1TestParameters.html#ad7e48b8f2883d0cdfee8b9e0c966f26f',1,'mio::abm::TestParameters']]],
+  ['seq_4102',['seq',['../classmio_1_1CustomIndexArray_1_1Slice_1_1Iterator.html#a0964422a221f7f1265960265eef09df6',1,'mio::CustomIndexArray::Slice::Iterator']]],
+  ['show_5fprogr_4103',['show_progr',['../classmemilio_1_1epidata_1_1getDataIntoPandasDataFrame_1_1Conf.html#a3cab0b71713dab3de8199657d81e080b',1,'memilio::epidata::getDataIntoPandasDataFrame::Conf']]],
+  ['size_4104',['size',['../classmio_1_1Index_3_01CategoryTag_01_4.html#ace2904f9d77e1ae0b0806ddf956462ca',1,'mio::Index&lt; CategoryTag &gt;::size()'],['../classmio_1_1Index.html#ace2904f9d77e1ae0b0806ddf956462ca',1,'mio::Index::size()']]],
+  ['source_4105',['source',['../structmio_1_1Flow.html#a46577d03278f33762b1afb9c474042b0',1,'mio::Flow']]],
+  ['specificity_4106',['specificity',['../structmio_1_1abm_1_1TestParameters.html#a8fc3dd8fa3256e496fb058f68059eeef',1,'mio::abm::TestParameters']]],
+  ['stackcounter_4107',['stackcounter',['../structad_1_1internal_1_1blob__tape_1_1position__t.html#aabf6e2bcb29d1bafdbcfc72dd0237036',1,'ad::internal::blob_tape::position_t']]],
+  ['start_4108',['start',['../structmio_1_1Seq.html#a29323e063eb8d9658b48b7280ac24a0a',1,'mio::Seq']]],
+  ['start_5fdate_4109',['start_date',['../structmio_1_1abm_1_1ViralLoad.html#a86c6af167e6eb6ada8d4024b0131b324',1,'mio::abm::ViralLoad']]],
+  ['start_5fnode_5fidx_4110',['start_node_idx',['../structmio_1_1OutEdgeBase.html#a3213274c80edf4444cbe5f19973a6d37',1,'mio::OutEdgeBase']]],
+  ['start_5ftime_4111',['start_time',['../structmio_1_1abm_1_1movement__data.html#aaff5c5318bb2dd603c26055ea011b9a5',1,'mio::abm::movement_data']]],
+  ['state_4112',['State',['../namespacememilio_1_1epidata_1_1defaultDict.html#a6f9d4f2a5f4b7e6e153dea07be7f3e22',1,'memilio::epidata::defaultDict']]],
+  ['step_5fsize_4113',['step_size',['../classmio_1_1ssir_1_1Model.html#a707c77720df1bbb7e1121241242868c5',1,'mio::ssir::Model::step_size()'],['../classmio_1_1ssirs_1_1Model.html#a0693ee8ab8a1dd64e9ecffeb945c141b',1,'mio::ssirs::Model::step_size()']]],
+  ['stride_4114',['stride',['../structmio_1_1Seq.html#ad381ff70960dad602924954fcf814462',1,'mio::Seq']]]
 ];

@@ -186,7 +186,7 @@ var searchData=
   ['m_5ft_5flast_5fnpi_5fcheck_1325',['m_t_last_npi_check',['../classmio_1_1osecir_1_1Simulation.html#a32c0a0d3b0d358f43b5dc322ac6c69dd',1,'mio::osecir::Simulation::m_t_last_npi_check()'],['../classmio_1_1osecirvvs_1_1Simulation.html#aeb45e34266e4790b3dc7358a2130ed93',1,'mio::osecirvvs::Simulation::m_t_last_npi_check()']]],
   ['m_5ftab_1326',['m_tab',['../classmio_1_1RKIntegratorCore.html#aed241aabb028dfc925759366529892d8',1,'mio::RKIntegratorCore']]],
   ['m_5ftab_5ffinal_1327',['m_tab_final',['../classmio_1_1RKIntegratorCore.html#a8bfb99019595c140367fccc15ea7a367',1,'mio::RKIntegratorCore']]],
-  ['m_5ftest_5ftype_1328',['m_test_type',['../classmio_1_1abm_1_1TestingScheme.html#ab680f463f4ed739e0ba1c6e171657992',1,'mio::abm::TestingScheme']]],
+  ['m_5ftest_5fparameters_1328',['m_test_parameters',['../classmio_1_1abm_1_1TestingScheme.html#a08e30c5d40fa5c288d0c500b927f5871',1,'mio::abm::TestingScheme']]],
   ['m_5ftesting_5fcriteria_1329',['m_testing_criteria',['../classmio_1_1abm_1_1TestingScheme.html#a41cef242f207c016d2e56e4313df020b',1,'mio::abm::TestingScheme']]],
   ['m_5ftesting_5fstrategy_1330',['m_testing_strategy',['../classmio_1_1abm_1_1World.html#a9ebb9d2b5992c566c56162ab30c214d7',1,'mio::abm::World']]],
   ['m_5fthresholds_1331',['m_thresholds',['../classmio_1_1DynamicNPIs.html#a7725b395f00e7f64cbf2e83ea8242aeb',1,'mio::DynamicNPIs']]],

@@ -1,9 +1,8 @@
 var searchData=
 [
-  ['ga1s_2311',['ga1s',['../classad_1_1ga1s.html',1,'ad']]],
-  ['ga1s_3c_20ad_5ftape_5freal_20_3e_2312',['ga1s&lt; AD_TAPE_REAL &gt;',['../classad_1_1ga1s.html',1,'ad']]],
-  ['gammasurvivalfunction_2313',['GammaSurvivalFunction',['../structmio_1_1GammaSurvivalFunction.html',1,'mio']]],
-  ['generictest_2314',['GenericTest',['../structmio_1_1abm_1_1GenericTest.html',1,'mio::abm']]],
+  ['ga1s_2312',['ga1s',['../classad_1_1ga1s.html',1,'ad']]],
+  ['ga1s_3c_20ad_5ftape_5freal_20_3e_2313',['ga1s&lt; AD_TAPE_REAL &gt;',['../classad_1_1ga1s.html',1,'ad']]],
+  ['gammasurvivalfunction_2314',['GammaSurvivalFunction',['../structmio_1_1GammaSurvivalFunction.html',1,'mio']]],
   ['geographicallocation_2315',['GeographicalLocation',['../structmio_1_1abm_1_1GeographicalLocation.html',1,'mio::abm']]],
   ['gotoschooltimemaximum_2316',['GotoSchoolTimeMaximum',['../structmio_1_1abm_1_1GotoSchoolTimeMaximum.html',1,'mio::abm']]],
   ['gotoschooltimeminimum_2317',['GotoSchoolTimeMinimum',['../structmio_1_1abm_1_1GotoSchoolTimeMinimum.html',1,'mio::abm']]],
