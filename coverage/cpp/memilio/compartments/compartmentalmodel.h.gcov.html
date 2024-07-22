@@ -31,13 +31,13 @@
             <td class="headerValue">coverage.info</td>
             <td></td>
             <td class="headerItem">Lines:</td>
+            <td class="headerCovTableEntry">18</td>
             <td class="headerCovTableEntry">21</td>
-            <td class="headerCovTableEntry">24</td>
-            <td class="headerCovTableEntryMed">87.5 %</td>
+            <td class="headerCovTableEntryMed">85.7 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2024-07-20 09:27:25</td>
+            <td class="headerValue">2024-07-22 11:59:05</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">74</td>
@@ -107,32 +107,32 @@
 <a name="45"><span class="lineNum">      45 </span>            : } //namespace details</a>
 <a name="46"><span class="lineNum">      46 </span>            : </a>
 <a name="47"><span class="lineNum">      47 </span>            : /**</a>
-<a name="48"><span class="lineNum">      48 </span>            :  * @brief check whether a check_constraints function exists</a>
-<a name="49"><span class="lineNum">      49 </span>            :  * @tparam The type to check for the existence of the member function</a>
+<a name="48"><span class="lineNum">      48 </span>            :  * @brief Check whether a check_constraints function exists.</a>
+<a name="49"><span class="lineNum">      49 </span>            :  * @tparam The type to check for the existence of the member function.</a>
 <a name="50"><span class="lineNum">      50 </span>            :  */</a>
 <a name="51"><span class="lineNum">      51 </span>            : template &lt;class T&gt;</a>
 <a name="52"><span class="lineNum">      52 </span>            : using has_check_constraints_member_function = is_expression_valid&lt;details::check_constraints_expr_t, T&gt;;</a>
 <a name="53"><span class="lineNum">      53 </span>            : </a>
 <a name="54"><span class="lineNum">      54 </span>            : /**</a>
-<a name="55"><span class="lineNum">      55 </span>            :  * @brief check whether a apply_constraints function exists</a>
-<a name="56"><span class="lineNum">      56 </span>            :  * @tparam The type to check for the existence of the member function</a>
+<a name="55"><span class="lineNum">      55 </span>            :  * @brief Check whether a apply_constraints function exists.</a>
+<a name="56"><span class="lineNum">      56 </span>            :  * @tparam The type to check for the existence of the member function.</a>
 <a name="57"><span class="lineNum">      57 </span>            :  */</a>
 <a name="58"><span class="lineNum">      58 </span>            : template &lt;class T&gt;</a>
 <a name="59"><span class="lineNum">      59 </span>            : using has_apply_constraints_member_function = is_expression_valid&lt;details::apply_constraints_expr_t, T&gt;;</a>
 <a name="60"><span class="lineNum">      60 </span>            : </a>
 <a name="61"><span class="lineNum">      61 </span>            : /**</a>
 <a name="62"><span class="lineNum">      62 </span>            :  * @brief CompartmentalModel is a template for a compartmental model for an</a>
-<a name="63"><span class="lineNum">      63 </span>            :  * array of initial populations and a parameter set</a>
-<a name="64"><span class="lineNum">      64 </span>            :  * @tparam FP floating point type, e.g., double</a>
+<a name="63"><span class="lineNum">      63 </span>            :  * array of initial populations and a parameter set.</a>
+<a name="64"><span class="lineNum">      64 </span>            :  * @tparam FP floating point type, e.g., double.</a>
 <a name="65"><span class="lineNum">      65 </span>            :  *</a>
 <a name="66"><span class="lineNum">      66 </span>            :  * The Populations must be a concrete class derived from the Populations template,</a>
 <a name="67"><span class="lineNum">      67 </span>            :  * i.e. a multi-dimensional array of compartment populations where each dimension</a>
-<a name="68"><span class="lineNum">      68 </span>            :  * corresponds to a category</a>
+<a name="68"><span class="lineNum">      68 </span>            :  * corresponds to a category.</a>
 <a name="69"><span class="lineNum">      69 </span>            :  *</a>
 <a name="70"><span class="lineNum">      70 </span>            :  * The ParameterSet must be a concrete class derived form the ParameterSet template,</a>
 <a name="71"><span class="lineNum">      71 </span>            :  * i.e. a compile-time map of parameters used by the model. These can be referenced</a>
 <a name="72"><span class="lineNum">      72 </span>            :  * when defining the flows between compartments and they can be used for parameter</a>
-<a name="73"><span class="lineNum">      73 </span>            :  * studies</a>
+<a name="73"><span class="lineNum">      73 </span>            :  * studies.</a>
 <a name="74"><span class="lineNum">      74 </span>            :  *</a>
 <a name="75"><span class="lineNum">      75 </span>            :  */</a>
 <a name="76"><span class="lineNum">      76 </span>            : template &lt;typename FP, class Comp, class Pop, class Params&gt;</a>
@@ -142,7 +142,7 @@
 <a name="80"><span class="lineNum">      80 </span>            :     using Populations  = Pop;</a>
 <a name="81"><span class="lineNum">      81 </span>            :     using ParameterSet = Params;</a>
 <a name="82"><span class="lineNum">      82 </span>            :     /**</a>
-<a name="83"><span class="lineNum">      83 </span>            :      * @brief CompartmentalModel default constructor</a>
+<a name="83"><span class="lineNum">      83 </span>            :      * @brief CompartmentalModel default constructor.</a>
 <a name="84"><span class="lineNum">      84 </span>            :      */</a>
 <a name="85"><span class="lineNum">      85 </span><span class="lineCov">        126 :     CompartmentalModel(Populations const&amp; po, ParameterSet const&amp; pa)</span></a>
 <a name="86"><span class="lineNum">      86 </span><span class="lineCov">        126 :         : populations{std::move(po)}</span></a>
@@ -156,108 +156,127 @@
 <a name="94"><span class="lineNum">      94 </span>            :     CompartmentalModel&amp; operator=(CompartmentalModel&amp;&amp;) = default;</a>
 <a name="95"><span class="lineNum">      95 </span><span class="lineCov">        492 :     virtual ~CompartmentalModel()                       = default;</span></a>
 <a name="96"><span class="lineNum">      96 </span>            : </a>
-<a name="97"><span class="lineNum">      97 </span>            :     //REMARK: Not pure virtual for easier java/python bindings</a>
+<a name="97"><span class="lineNum">      97 </span>            :     // REMARK: Not pure virtual for easier java/python bindings.</a>
 <a name="98"><span class="lineNum">      98 </span><span class="lineNoCov">          0 :     virtual void get_derivatives(Eigen::Ref&lt;const Vector&lt;FP&gt;&gt;, Eigen::Ref&lt;const Vector&lt;FP&gt;&gt; /*y*/, FP /*t*/,</span></a>
 <a name="99"><span class="lineNum">      99 </span><span class="lineNoCov">          0 :                                  Eigen::Ref&lt;Vector&lt;FP&gt;&gt; /*dydt*/) const {};</span></a>
 <a name="100"><span class="lineNum">     100 </span>            : </a>
 <a name="101"><span class="lineNum">     101 </span>            :     /**</a>
-<a name="102"><span class="lineNum">     102 </span>            :      * @brief eval_right_hand_side evaluates the right-hand-side f of the ODE dydt = f(y, t)</a>
+<a name="102"><span class="lineNum">     102 </span>            :      * @brief This function evaluates the right-hand-side f of the ODE dydt = f(y, t).</a>
 <a name="103"><span class="lineNum">     103 </span>            :      *</a>
 <a name="104"><span class="lineNum">     104 </span>            :      * The heart of the compartmental model is a first order ODE dydt = f(y,t), where y is a flat</a>
 <a name="105"><span class="lineNum">     105 </span>            :      * representation of all the compartmental populations at time t. This function evaluates the</a>
 <a name="106"><span class="lineNum">     106 </span>            :      * right-hand-side f of the ODE from the intercompartmental flows. It can be used in an ODE</a>
-<a name="107"><span class="lineNum">     107 </span>            :      * solver</a>
+<a name="107"><span class="lineNum">     107 </span>            :      * solver.</a>
 <a name="108"><span class="lineNum">     108 </span>            :      *</a>
 <a name="109"><span class="lineNum">     109 </span>            :      * The distinction between pop and y is only for the case of mobility.</a>
 <a name="110"><span class="lineNum">     110 </span>            :      * If we have mobility, we want to evaluate the evolution of infection states for a small group of travellers (y)</a>
 <a name="111"><span class="lineNum">     111 </span>            :      * while they are in any population (pop). It is important that pop &gt; y always applies.</a>
 <a name="112"><span class="lineNum">     112 </span>            :      *</a>
 <a name="113"><span class="lineNum">     113 </span>            :      * If we consider a simulation without mobility, the function is called with</a>
-<a name="114"><span class="lineNum">     114 </span>            :      * model.eval_right_hand_side(y, y, t, dydt)</a>
+<a name="114"><span class="lineNum">     114 </span>            :      * model.eval_right_hand_side(y, y, t, dydt).</a>
 <a name="115"><span class="lineNum">     115 </span>            :      *</a>
-<a name="116"><span class="lineNum">     116 </span>            :      * @param pop the current state of the population in the geographic unit we are considering</a>
-<a name="117"><span class="lineNum">     117 </span>            :      * @param y the current state of the model (or a subpopulation) as a flat array</a>
-<a name="118"><span class="lineNum">     118 </span>            :      * @param t the current time</a>
-<a name="119"><span class="lineNum">     119 </span>            :      * @param dydt a reference to the calculated output</a>
+<a name="116"><span class="lineNum">     116 </span>            :      * @param[in] pop The current state of the population in the geographic unit we are considering.</a>
+<a name="117"><span class="lineNum">     117 </span>            :      * @param[in] y The current state of the model (or a subpopulation) as a flat array.</a>
+<a name="118"><span class="lineNum">     118 </span>            :      * @param[in] t The current time.</a>
+<a name="119"><span class="lineNum">     119 </span>            :      * @param[out] dydt A reference to the calculated output.</a>
 <a name="120"><span class="lineNum">     120 </span>            :      */</a>
-<a name="121"><span class="lineNum">     121 </span><span class="lineCov">      63449 :     void eval_right_hand_side(Eigen::Ref&lt;const Vector&lt;FP&gt;&gt; pop, Eigen::Ref&lt;const Vector&lt;FP&gt;&gt; y, FP t,</span></a>
+<a name="121"><span class="lineNum">     121 </span><span class="lineCov">      61151 :     void eval_right_hand_side(Eigen::Ref&lt;const Vector&lt;FP&gt;&gt; pop, Eigen::Ref&lt;const Vector&lt;FP&gt;&gt; y, FP t,</span></a>
 <a name="122"><span class="lineNum">     122 </span>            :                               Eigen::Ref&lt;Vector&lt;FP&gt;&gt; dydt) const</a>
 <a name="123"><span class="lineNum">     123 </span>            :     {</a>
-<a name="124"><span class="lineNum">     124 </span><span class="lineCov">      63449 :         dydt.setZero();</span></a>
-<a name="125"><span class="lineNum">     125 </span><span class="lineCov">      63449 :         this-&gt;get_derivatives(pop, y, t, dydt);</span></a>
-<a name="126"><span class="lineNum">     126 </span><span class="lineCov">      63449 :     }</span></a>
+<a name="124"><span class="lineNum">     124 </span><span class="lineCov">      61151 :         dydt.setZero();</span></a>
+<a name="125"><span class="lineNum">     125 </span><span class="lineCov">      61151 :         this-&gt;get_derivatives(pop, y, t, dydt);</span></a>
+<a name="126"><span class="lineNum">     126 </span><span class="lineCov">      61151 :     }</span></a>
 <a name="127"><span class="lineNum">     127 </span>            : </a>
 <a name="128"><span class="lineNum">     128 </span>            :     /**</a>
-<a name="129"><span class="lineNum">     129 </span>            :      * @brief get_initial_values returns the initial values for the compartmental populations.</a>
-<a name="130"><span class="lineNum">     130 </span>            :      * This can be used as initial conditions in an ODE solver</a>
-<a name="131"><span class="lineNum">     131 </span>            :      * @return the initial populatoins</a>
+<a name="129"><span class="lineNum">     129 </span>            :      * @brief Get the initial conditions for the ODE dydt = f(y, t).</a>
+<a name="130"><span class="lineNum">     130 </span>            :      * See eval_right_hand_side for more detail.</a>
+<a name="131"><span class="lineNum">     131 </span>            :      * @return Current value of model populations as a flat vector.</a>
 <a name="132"><span class="lineNum">     132 </span>            :      */</a>
 <a name="133"><span class="lineNum">     133 </span><span class="lineCov">        142 :     Vector&lt;FP&gt; get_initial_values() const</span></a>
 <a name="134"><span class="lineNum">     134 </span>            :     {</a>
 <a name="135"><span class="lineNum">     135 </span><span class="lineCov">        142 :         return populations.get_compartments();</span></a>
 <a name="136"><span class="lineNum">     136 </span>            :     }</a>
 <a name="137"><span class="lineNum">     137 </span>            : </a>
-<a name="138"><span class="lineNum">     138 </span><span class="lineCov">         52 :     void apply_constraints()</span></a>
-<a name="139"><span class="lineNum">     139 </span>            :     {</a>
-<a name="140"><span class="lineNum">     140 </span><span class="lineCov">         52 :         populations.apply_constraints();</span></a>
-<a name="141"><span class="lineNum">     141 </span>            :         if constexpr (has_apply_constraints_member_function&lt;ParameterSet&gt;::value) {</a>
-<a name="142"><span class="lineNum">     142 </span><span class="lineCov">         51 :             parameters.apply_constraints();</span></a>
-<a name="143"><span class="lineNum">     143 </span>            :         }</a>
-<a name="144"><span class="lineNum">     144 </span><span class="lineCov">         52 :     }</span></a>
-<a name="145"><span class="lineNum">     145 </span>            : </a>
-<a name="146"><span class="lineNum">     146 </span><span class="lineCov">         57 :     void check_constraints() const</span></a>
-<a name="147"><span class="lineNum">     147 </span>            :     {</a>
-<a name="148"><span class="lineNum">     148 </span><span class="lineCov">         57 :         populations.check_constraints();</span></a>
-<a name="149"><span class="lineNum">     149 </span>            :         if constexpr (has_check_constraints_member_function&lt;ParameterSet&gt;::value) {</a>
-<a name="150"><span class="lineNum">     150 </span><span class="lineCov">         57 :             parameters.check_constraints();</span></a>
-<a name="151"><span class="lineNum">     151 </span>            :         }</a>
-<a name="152"><span class="lineNum">     152 </span><span class="lineCov">         57 :     }</span></a>
-<a name="153"><span class="lineNum">     153 </span>            : </a>
-<a name="154"><span class="lineNum">     154 </span>            :     Populations populations{};</a>
-<a name="155"><span class="lineNum">     155 </span>            :     ParameterSet parameters{};</a>
-<a name="156"><span class="lineNum">     156 </span>            : };</a>
-<a name="157"><span class="lineNum">     157 </span>            : </a>
-<a name="158"><span class="lineNum">     158 </span>            : /**</a>
-<a name="159"><span class="lineNum">     159 </span>            :  * detect the eval_right_hand_side member function of a compartment model.</a>
-<a name="160"><span class="lineNum">     160 </span>            :  * If the eval_right_hand_side member function exists in the type M, this template when instatiated</a>
-<a name="161"><span class="lineNum">     161 </span>            :  * will be equal to the return type of the function.</a>
-<a name="162"><span class="lineNum">     162 </span>            :  * Otherwise the template is invalid.</a>
-<a name="163"><span class="lineNum">     163 </span>            :  * @tparam FP, floating point type, e.g., double.</a>
-<a name="164"><span class="lineNum">     164 </span>            :  * @tparam M a type that has a eval_right_hand_side member function, e.g. a compartment model type.</a>
-<a name="165"><span class="lineNum">     165 </span>            :  */</a>
-<a name="166"><span class="lineNum">     166 </span>            : template &lt;typename FP, class M&gt;</a>
-<a name="167"><span class="lineNum">     167 </span>            : using eval_right_hand_side_expr_t =</a>
-<a name="168"><span class="lineNum">     168 </span>            :     decltype(std::declval&lt;const M&amp;&gt;().eval_right_hand_side(std::declval&lt;Eigen::Ref&lt;const Vector&lt;FP&gt;&gt;&gt;(),</a>
-<a name="169"><span class="lineNum">     169 </span>            :                                                            std::declval&lt;Eigen::Ref&lt;const Vector&lt;FP&gt;&gt;&gt;(),</a>
-<a name="170"><span class="lineNum">     170 </span>            :                                                            std::declval&lt;FP&gt;(), std::declval&lt;Eigen::Ref&lt;Vector&lt;FP&gt;&gt;&gt;()));</a>
-<a name="171"><span class="lineNum">     171 </span>            : </a>
-<a name="172"><span class="lineNum">     172 </span>            : /**</a>
-<a name="173"><span class="lineNum">     173 </span>            :  * detect the get_initial_values member function of a compartment model.</a>
-<a name="174"><span class="lineNum">     174 </span>            :  * If the detect_initial_values member function exists in the type M, this template when instatiated</a>
-<a name="175"><span class="lineNum">     175 </span>            :  * will be equal to the return type of the function.</a>
-<a name="176"><span class="lineNum">     176 </span>            :  * Otherwise the template is invalid.</a>
-<a name="177"><span class="lineNum">     177 </span>            :  * @tparam FP, floating point type, e.g., double.</a>
-<a name="178"><span class="lineNum">     178 </span>            :  * @tparam M a type that has a get_initial_values member function, e.g. a compartment model type.</a>
-<a name="179"><span class="lineNum">     179 </span>            :  */</a>
-<a name="180"><span class="lineNum">     180 </span>            : template &lt;typename FP, class M&gt;</a>
-<a name="181"><span class="lineNum">     181 </span>            : using get_initial_values_expr_t = decltype(std::declval&lt;Vector&lt;FP&gt;&amp;&gt;() = std::declval&lt;const M&amp;&gt;().get_initial_values());</a>
-<a name="182"><span class="lineNum">     182 </span>            : </a>
-<a name="183"><span class="lineNum">     183 </span>            : /**</a>
-<a name="184"><span class="lineNum">     184 </span>            :  * Template meta function to check if a type is a valid compartment model. </a>
-<a name="185"><span class="lineNum">     185 </span>            :  * Defines a static constant of name `value`. </a>
-<a name="186"><span class="lineNum">     186 </span>            :  * The constant `value` will be equal to true if M is a valid compartment model type.</a>
-<a name="187"><span class="lineNum">     187 </span>            :  * Otherwise, `value` will be equal to false.</a>
-<a name="188"><span class="lineNum">     188 </span>            :  * @tparam FP, floating point type, e.g., double.</a>
-<a name="189"><span class="lineNum">     189 </span>            :  * @tparam M a type that may or may not be a compartment model.</a>
-<a name="190"><span class="lineNum">     190 </span>            :  */</a>
-<a name="191"><span class="lineNum">     191 </span>            : template &lt;typename FP, class M&gt;</a>
-<a name="192"><span class="lineNum">     192 </span>            : using is_compartment_model =</a>
-<a name="193"><span class="lineNum">     193 </span>            :     std::integral_constant&lt;bool, (is_expression_valid&lt;eval_right_hand_side_expr_t, FP, M&gt;::value &amp;&amp;</a>
-<a name="194"><span class="lineNum">     194 </span>            :                                   is_expression_valid&lt;get_initial_values_expr_t, FP, M&gt;::value)&gt;;</a>
-<a name="195"><span class="lineNum">     195 </span>            : </a>
-<a name="196"><span class="lineNum">     196 </span>            : } // namespace mio</a>
-<a name="197"><span class="lineNum">     197 </span>            : </a>
-<a name="198"><span class="lineNum">     198 </span>            : #endif // MIO_COMPARTMENTALMODEL_H</a>
+<a name="138"><span class="lineNum">     138 </span>            :     /**</a>
+<a name="139"><span class="lineNum">     139 </span>            :      * @brief Checks whether the model satisfies all constraints. If not, it changes values to suffice their constraints.</a>
+<a name="140"><span class="lineNum">     140 </span>            :      *</a>
+<a name="141"><span class="lineNum">     141 </span>            :      * Attention: This function should be used with care. It can not and will not set model parameters and </a>
+<a name="142"><span class="lineNum">     142 </span>            :      *            compartments to meaningful values. In most cases it is preferable to use check_constraints,</a>
+<a name="143"><span class="lineNum">     143 </span>            :      *            and correct values manually before proceeding with the simulation.</a>
+<a name="144"><span class="lineNum">     144 </span>            :      *            The main usage for apply_constraints is in automated tests using random values for initialization.</a>
+<a name="145"><span class="lineNum">     145 </span>            :      *</a>
+<a name="146"><span class="lineNum">     146 </span>            :      * @return Returns true if one or more constraints were corrected, false otherwise. </a>
+<a name="147"><span class="lineNum">     147 </span>            :      */</a>
+<a name="148"><span class="lineNum">     148 </span><span class="lineCov">         52 :     bool apply_constraints()</span></a>
+<a name="149"><span class="lineNum">     149 </span>            :     {</a>
+<a name="150"><span class="lineNum">     150 </span>            :         if constexpr (has_apply_constraints_member_function&lt;ParameterSet&gt;::value) {</a>
+<a name="151"><span class="lineNum">     151 </span>            :             // use bitwise instead of logical or, so that both apply_constraint functions are called</a>
+<a name="152"><span class="lineNum">     152 </span><span class="lineCov">         51 :             return ((int)parameters.apply_constraints() | (int)populations.apply_constraints());</span></a>
+<a name="153"><span class="lineNum">     153 </span>            :         }</a>
+<a name="154"><span class="lineNum">     154 </span>            :         else {</a>
+<a name="155"><span class="lineNum">     155 </span><span class="lineCov">          1 :             return populations.check_constraints();</span></a>
+<a name="156"><span class="lineNum">     156 </span>            :         }</a>
+<a name="157"><span class="lineNum">     157 </span>            :     }</a>
+<a name="158"><span class="lineNum">     158 </span>            : </a>
+<a name="159"><span class="lineNum">     159 </span>            :     /**</a>
+<a name="160"><span class="lineNum">     160 </span>            :      * @brief Checks that the model satisfies all constraints (e.g. parameter or population constraints).</a>
+<a name="161"><span class="lineNum">     161 </span>            :      * @return Returns true if one or more constraints are not satisfied, false otherwise.</a>
+<a name="162"><span class="lineNum">     162 </span>            :      */</a>
+<a name="163"><span class="lineNum">     163 </span><span class="lineCov">         57 :     bool check_constraints() const</span></a>
+<a name="164"><span class="lineNum">     164 </span>            :     {</a>
+<a name="165"><span class="lineNum">     165 </span>            :         if constexpr (has_check_constraints_member_function&lt;ParameterSet&gt;::value) {</a>
+<a name="166"><span class="lineNum">     166 </span><span class="lineCov">         57 :             return (parameters.check_constraints() || populations.check_constraints());</span></a>
+<a name="167"><span class="lineNum">     167 </span>            :         }</a>
+<a name="168"><span class="lineNum">     168 </span>            :         else {</a>
+<a name="169"><span class="lineNum">     169 </span>            :             return populations.check_constraints();</a>
+<a name="170"><span class="lineNum">     170 </span>            :         }</a>
+<a name="171"><span class="lineNum">     171 </span>            :     }</a>
+<a name="172"><span class="lineNum">     172 </span>            : </a>
+<a name="173"><span class="lineNum">     173 </span>            :     Populations populations{};</a>
+<a name="174"><span class="lineNum">     174 </span>            :     ParameterSet parameters{};</a>
+<a name="175"><span class="lineNum">     175 </span>            : };</a>
+<a name="176"><span class="lineNum">     176 </span>            : </a>
+<a name="177"><span class="lineNum">     177 </span>            : /**</a>
+<a name="178"><span class="lineNum">     178 </span>            :  * Detect the eval_right_hand_side member function of a compartment model.</a>
+<a name="179"><span class="lineNum">     179 </span>            :  * If the eval_right_hand_side member function exists in the type M, this template when instatiated</a>
+<a name="180"><span class="lineNum">     180 </span>            :  * will be equal to the return type of the function.</a>
+<a name="181"><span class="lineNum">     181 </span>            :  * Otherwise the template is invalid.</a>
+<a name="182"><span class="lineNum">     182 </span>            :  * @tparam FP, floating point type, e.g., double.</a>
+<a name="183"><span class="lineNum">     183 </span>            :  * @tparam M a type that has a eval_right_hand_side member function, e.g. a compartment model type.</a>
+<a name="184"><span class="lineNum">     184 </span>            :  */</a>
+<a name="185"><span class="lineNum">     185 </span>            : template &lt;typename FP, class M&gt;</a>
+<a name="186"><span class="lineNum">     186 </span>            : using eval_right_hand_side_expr_t =</a>
+<a name="187"><span class="lineNum">     187 </span>            :     decltype(std::declval&lt;const M&amp;&gt;().eval_right_hand_side(std::declval&lt;Eigen::Ref&lt;const Vector&lt;FP&gt;&gt;&gt;(),</a>
+<a name="188"><span class="lineNum">     188 </span>            :                                                            std::declval&lt;Eigen::Ref&lt;const Vector&lt;FP&gt;&gt;&gt;(),</a>
+<a name="189"><span class="lineNum">     189 </span>            :                                                            std::declval&lt;FP&gt;(), std::declval&lt;Eigen::Ref&lt;Vector&lt;FP&gt;&gt;&gt;()));</a>
+<a name="190"><span class="lineNum">     190 </span>            : </a>
+<a name="191"><span class="lineNum">     191 </span>            : /**</a>
+<a name="192"><span class="lineNum">     192 </span>            :  * Detect the get_initial_values member function of a compartment model.</a>
+<a name="193"><span class="lineNum">     193 </span>            :  * If the detect_initial_values member function exists in the type M, this template when instatiated</a>
+<a name="194"><span class="lineNum">     194 </span>            :  * will be equal to the return type of the function.</a>
+<a name="195"><span class="lineNum">     195 </span>            :  * Otherwise the template is invalid.</a>
+<a name="196"><span class="lineNum">     196 </span>            :  * @tparam FP, floating point type, e.g., double.</a>
+<a name="197"><span class="lineNum">     197 </span>            :  * @tparam M a type that has a get_initial_values member function, e.g. a compartment model type.</a>
+<a name="198"><span class="lineNum">     198 </span>            :  */</a>
+<a name="199"><span class="lineNum">     199 </span>            : template &lt;typename FP, class M&gt;</a>
+<a name="200"><span class="lineNum">     200 </span>            : using get_initial_values_expr_t = decltype(std::declval&lt;Vector&lt;FP&gt;&amp;&gt;() = std::declval&lt;const M&amp;&gt;().get_initial_values());</a>
+<a name="201"><span class="lineNum">     201 </span>            : </a>
+<a name="202"><span class="lineNum">     202 </span>            : /**</a>
+<a name="203"><span class="lineNum">     203 </span>            :  * Template meta function to check if a type is a valid compartment model. </a>
+<a name="204"><span class="lineNum">     204 </span>            :  * Defines a static constant of name `value`. </a>
+<a name="205"><span class="lineNum">     205 </span>            :  * The constant `value` will be equal to true if M is a valid compartment model type.</a>
+<a name="206"><span class="lineNum">     206 </span>            :  * Otherwise, `value` will be equal to false.</a>
+<a name="207"><span class="lineNum">     207 </span>            :  * @tparam FP, floating point type, e.g., double.</a>
+<a name="208"><span class="lineNum">     208 </span>            :  * @tparam M a type that may or may not be a compartment model.</a>
+<a name="209"><span class="lineNum">     209 </span>            :  */</a>
+<a name="210"><span class="lineNum">     210 </span>            : template &lt;typename FP, class M&gt;</a>
+<a name="211"><span class="lineNum">     211 </span>            : using is_compartment_model =</a>
+<a name="212"><span class="lineNum">     212 </span>            :     std::integral_constant&lt;bool, (is_expression_valid&lt;eval_right_hand_side_expr_t, FP, M&gt;::value &amp;&amp;</a>
+<a name="213"><span class="lineNum">     213 </span>            :                                   is_expression_valid&lt;get_initial_values_expr_t, FP, M&gt;::value)&gt;;</a>
+<a name="214"><span class="lineNum">     214 </span>            : </a>
+<a name="215"><span class="lineNum">     215 </span>            : } // namespace mio</a>
+<a name="216"><span class="lineNum">     216 </span>            : </a>
+<a name="217"><span class="lineNum">     217 </span>            : #endif // MIO_COMPARTMENTALMODEL_H</a>
 </pre>
       </td>
     </tr>

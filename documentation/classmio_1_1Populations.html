@@ -114,12 +114,12 @@ Public Types</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a31cdeda7ea51f0b4115bb86baea199b7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1Populations.html#a31cdeda7ea51f0b4115bb86baea199b7">apply_constraints</a> ()</td></tr>
-<tr class="memdesc:a31cdeda7ea51f0b4115bb86baea199b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether all compartments have non-negative values.  <a href="classmio_1_1Populations.html#a31cdeda7ea51f0b4115bb86baea199b7">More...</a><br /></td></tr>
-<tr class="separator:a31cdeda7ea51f0b4115bb86baea199b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4c1cfa25ef738975b8bcdd599d69cad4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1Populations.html#a4c1cfa25ef738975b8bcdd599d69cad4">check_constraints</a> () const</td></tr>
-<tr class="memdesc:a4c1cfa25ef738975b8bcdd599d69cad4"><td class="mdescLeft">&#160;</td><td class="mdescRight">checks whether the population Parameters satisfy their corresponding constraints  <a href="classmio_1_1Populations.html#a4c1cfa25ef738975b8bcdd599d69cad4">More...</a><br /></td></tr>
-<tr class="separator:a4c1cfa25ef738975b8bcdd599d69cad4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2cac6c4a3b4701d07f904e2a636504b5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1Populations.html#a2cac6c4a3b4701d07f904e2a636504b5">apply_constraints</a> ()</td></tr>
+<tr class="memdesc:a2cac6c4a3b4701d07f904e2a636504b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether all compartments have non-negative values.  <a href="classmio_1_1Populations.html#a2cac6c4a3b4701d07f904e2a636504b5">More...</a><br /></td></tr>
+<tr class="separator:a2cac6c4a3b4701d07f904e2a636504b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a378a0eab85dd803f1d2b22e113294095"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1Populations.html#a378a0eab85dd803f1d2b22e113294095">check_constraints</a> () const</td></tr>
+<tr class="memdesc:a378a0eab85dd803f1d2b22e113294095"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether all compartments have non-negative values and logs an error if constraint is not satisfied.  <a href="classmio_1_1Populations.html#a378a0eab85dd803f1d2b22e113294095">More...</a><br /></td></tr>
+<tr class="separator:a378a0eab85dd803f1d2b22e113294095"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abb71c87802e5438d66e50f92427aad6c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacemio.html#a4980272f784bde5ee00a3385538950de">Vector</a>&lt; FP &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1Populations.html#abb71c87802e5438d66e50f92427aad6c">get_compartments</a> () const</td></tr>
 <tr class="memdesc:abb71c87802e5438d66e50f92427aad6c"><td class="mdescLeft">&#160;</td><td class="mdescRight">get_compartments returns an Eigen copy of the vector of populations.  <a href="classmio_1_1Populations.html#abb71c87802e5438d66e50f92427aad6c">More...</a><br /></td></tr>
 <tr class="separator:abb71c87802e5438d66e50f92427aad6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -335,8 +335,8 @@ template&lt;class... Ts, typename std::enable_if_t&lt; std::is_constructible&lt;
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a31cdeda7ea51f0b4115bb86baea199b7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a31cdeda7ea51f0b4115bb86baea199b7">&#9670;&nbsp;</a></span>apply_constraints()</h2>
+<a id="a2cac6c4a3b4701d07f904e2a636504b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2cac6c4a3b4701d07f904e2a636504b5">&#9670;&nbsp;</a></span>apply_constraints()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -344,7 +344,7 @@ template&lt;class... Ts, typename std::enable_if_t&lt; std::is_constructible&lt;
 template&lt;typename FP  = ScalarType, class... Categories&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classmio_1_1Populations.html">mio::Populations</a>&lt; FP, Categories &gt;::apply_constraints </td>
+          <td class="memname">bool <a class="el" href="classmio_1_1Populations.html">mio::Populations</a>&lt; FP, Categories &gt;::apply_constraints </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -354,14 +354,13 @@ template&lt;typename FP  = ScalarType, class... Categories&gt; </div>
 
 <p>Checks whether all compartments have non-negative values. </p>
 <p>This function can be used to prevent slighly negative function values in compartment sizes that came out due to roundoff errors if, e.g., population sizes were computed in a complex way.</p>
-<p>Attention: This function should be used with care. It is necessary for some test problems to run through quickly, but in a manual execution of an example, <a class="el" href="classmio_1_1Populations.html#a4c1cfa25ef738975b8bcdd599d69cad4" title="checks whether the population Parameters satisfy their corresponding constraints">check_constraints()</a> may be preferred. Note that the <a class="el" href="classmio_1_1Populations.html#a31cdeda7ea51f0b4115bb86baea199b7" title="Checks whether all compartments have non-negative values.">apply_constraints()</a> function can and will not set compartments to meaningful values in a sense of a particular scenario, it only sets negative values to zero.</p>
-<dl class="section return"><dt>Returns</dt><dd>Returns true if one ore more constraint were corrected, false otherwise. <br  />
- </dd></dl>
+<p>Attention: This function should be used with care. It can not and will not set model parameters and compartments to meaningful values. In most cases it is preferable to use check_constraints, and correct values manually before proceeding with the simulation. The main usage for apply_constraints is in automated tests using random values for initialization.</p>
+<dl class="section return"><dt>Returns</dt><dd>Returns true if one (or more) constraint(s) were corrected, otherwise false. </dd></dl>
 
 </div>
 </div>
-<a id="a4c1cfa25ef738975b8bcdd599d69cad4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4c1cfa25ef738975b8bcdd599d69cad4">&#9670;&nbsp;</a></span>check_constraints()</h2>
+<a id="a378a0eab85dd803f1d2b22e113294095"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a378a0eab85dd803f1d2b22e113294095">&#9670;&nbsp;</a></span>check_constraints()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -369,7 +368,7 @@ template&lt;typename FP  = ScalarType, class... Categories&gt; </div>
 template&lt;typename FP  = ScalarType, class... Categories&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classmio_1_1Populations.html">mio::Populations</a>&lt; FP, Categories &gt;::check_constraints </td>
+          <td class="memname">bool <a class="el" href="classmio_1_1Populations.html">mio::Populations</a>&lt; FP, Categories &gt;::check_constraints </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -377,7 +376,8 @@ template&lt;typename FP  = ScalarType, class... Categories&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>checks whether the population Parameters satisfy their corresponding constraints </p>
+<p>Checks whether all compartments have non-negative values and logs an error if constraint is not satisfied. </p>
+<dl class="section return"><dt>Returns</dt><dd>Returns true if one or more constraints are not satisfied, false otherwise. </dd></dl>
 
 </div>
 </div>

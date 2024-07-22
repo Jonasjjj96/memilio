@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2024-07-20 09:27:25</td>
+            <td class="headerValue">2024-07-22 11:59:05</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">15</td>
@@ -175,9 +175,9 @@
 <a name="113"><span class="lineNum">     113 </span>            :      * @brief Get the AgeGroup of this Person.</a>
 <a name="114"><span class="lineNum">     114 </span>            :      * @return AgeGroup of the Person.</a>
 <a name="115"><span class="lineNum">     115 </span>            :      */</a>
-<a name="116"><span class="lineNum">     116 </span><span class="lineCov">       1072 :     AgeGroup get_age() const</span></a>
+<a name="116"><span class="lineNum">     116 </span><span class="lineCov">       1075 :     AgeGroup get_age() const</span></a>
 <a name="117"><span class="lineNum">     117 </span>            :     {</a>
-<a name="118"><span class="lineNum">     118 </span><span class="lineCov">       1072 :         return m_age;</span></a>
+<a name="118"><span class="lineNum">     118 </span><span class="lineCov">       1075 :         return m_age;</span></a>
 <a name="119"><span class="lineNum">     119 </span>            :     }</a>
 <a name="120"><span class="lineNum">     120 </span>            : </a>
 <a name="121"><span class="lineNum">     121 </span>            :     /**</a>
@@ -186,9 +186,9 @@
 <a name="124"><span class="lineNum">     124 </span>            :      */</a>
 <a name="125"><span class="lineNum">     125 </span>            :     LocationId get_location() const;</a>
 <a name="126"><span class="lineNum">     126 </span>            : </a>
-<a name="127"><span class="lineNum">     127 </span><span class="lineCov">       1148 :     LocationType get_location_type() const</span></a>
+<a name="127"><span class="lineNum">     127 </span><span class="lineCov">       1152 :     LocationType get_location_type() const</span></a>
 <a name="128"><span class="lineNum">     128 </span>            :     {</a>
-<a name="129"><span class="lineNum">     129 </span><span class="lineCov">       1148 :         return m_location_type;</span></a>
+<a name="129"><span class="lineNum">     129 </span><span class="lineCov">       1152 :         return m_location_type;</span></a>
 <a name="130"><span class="lineNum">     130 </span>            :     }</a>
 <a name="131"><span class="lineNum">     131 </span>            : </a>
 <a name="132"><span class="lineNum">     132 </span>            :     /**</a>
@@ -201,9 +201,9 @@
 <a name="139"><span class="lineNum">     139 </span>            :      * @brief Get the time the Person has been at its current Location.</a>
 <a name="140"><span class="lineNum">     140 </span>            :      * @return TimeSpan the Person has been at the Location.</a>
 <a name="141"><span class="lineNum">     141 </span>            :      */</a>
-<a name="142"><span class="lineNum">     142 </span><span class="lineCov">         10 :     TimeSpan get_time_at_location() const</span></a>
+<a name="142"><span class="lineNum">     142 </span><span class="lineCov">          9 :     TimeSpan get_time_at_location() const</span></a>
 <a name="143"><span class="lineNum">     143 </span>            :     {</a>
-<a name="144"><span class="lineNum">     144 </span><span class="lineCov">         10 :         return m_time_at_location;</span></a>
+<a name="144"><span class="lineNum">     144 </span><span class="lineCov">          9 :         return m_time_at_location;</span></a>
 <a name="145"><span class="lineNum">     145 </span>            :     }</a>
 <a name="146"><span class="lineNum">     146 </span>            : </a>
 <a name="147"><span class="lineNum">     147 </span>            :     /**</a>
@@ -298,9 +298,9 @@
 <a name="236"><span class="lineNum">     236 </span>            :      * @param[in] params Parameter that includes the length of a quarantine.</a>
 <a name="237"><span class="lineNum">     237 </span>            :      * @return True if the Person is in quarantine.</a>
 <a name="238"><span class="lineNum">     238 </span>            :      */</a>
-<a name="239"><span class="lineNum">     239 </span><span class="lineCov">        159 :     bool is_in_quarantine(TimePoint t, const Parameters&amp; params) const</span></a>
+<a name="239"><span class="lineNum">     239 </span><span class="lineCov">        163 :     bool is_in_quarantine(TimePoint t, const Parameters&amp; params) const</span></a>
 <a name="240"><span class="lineNum">     240 </span>            :     {</a>
-<a name="241"><span class="lineNum">     241 </span><span class="lineCov">        159 :         return t &lt; m_quarantine_start + params.get&lt;mio::abm::QuarantineDuration&gt;();</span></a>
+<a name="241"><span class="lineNum">     241 </span><span class="lineCov">        163 :         return t &lt; m_quarantine_start + params.get&lt;mio::abm::QuarantineDuration&gt;();</span></a>
 <a name="242"><span class="lineNum">     242 </span>            :     }</a>
 <a name="243"><span class="lineNum">     243 </span>            : </a>
 <a name="244"><span class="lineNum">     244 </span>            :     /**</a>
@@ -373,9 +373,9 @@
 <a name="311"><span class="lineNum">     311 </span>            :      * @param[in] location The current Location of the Person.</a>
 <a name="312"><span class="lineNum">     312 </span>            :      * @return The probability that the Person does not comply to any Mask duty/wears a Mask even if it is not required.</a>
 <a name="313"><span class="lineNum">     313 </span>            :      */</a>
-<a name="314"><span class="lineNum">     314 </span><span class="lineCov">         36 :     ScalarType get_mask_compliance(LocationType location) const</span></a>
+<a name="314"><span class="lineNum">     314 </span><span class="lineCov">         34 :     ScalarType get_mask_compliance(LocationType location) const</span></a>
 <a name="315"><span class="lineNum">     315 </span>            :     {</a>
-<a name="316"><span class="lineNum">     316 </span><span class="lineCov">         36 :         return m_mask_compliance[static_cast&lt;int&gt;(location)];</span></a>
+<a name="316"><span class="lineNum">     316 </span><span class="lineCov">         34 :         return m_mask_compliance[static_cast&lt;int&gt;(location)];</span></a>
 <a name="317"><span class="lineNum">     317 </span>            :     }</a>
 <a name="318"><span class="lineNum">     318 </span>            : </a>
 <a name="319"><span class="lineNum">     319 </span>            :     /**</a>
@@ -436,10 +436,10 @@
 <a name="374"><span class="lineNum">     374 </span>            :      * @brief Set the transport mode the Person used to get to its current Location.</a>
 <a name="375"><span class="lineNum">     375 </span>            :      * @param[in] mode TransportMode the Person used to get to its current Location.</a>
 <a name="376"><span class="lineNum">     376 </span>            :      */</a>
-<a name="377"><span class="lineNum">     377 </span><span class="lineCov">         37 :     void set_last_transport_mode(const mio::abm::TransportMode mode)</span></a>
+<a name="377"><span class="lineNum">     377 </span><span class="lineCov">         35 :     void set_last_transport_mode(const mio::abm::TransportMode mode)</span></a>
 <a name="378"><span class="lineNum">     378 </span>            :     {</a>
-<a name="379"><span class="lineNum">     379 </span><span class="lineCov">         37 :         m_last_transport_mode = mode;</span></a>
-<a name="380"><span class="lineNum">     380 </span><span class="lineCov">         37 :     }</span></a>
+<a name="379"><span class="lineNum">     379 </span><span class="lineCov">         35 :         m_last_transport_mode = mode;</span></a>
+<a name="380"><span class="lineNum">     380 </span><span class="lineCov">         35 :     }</span></a>
 <a name="381"><span class="lineNum">     381 </span>            : </a>
 <a name="382"><span class="lineNum">     382 </span>            :     /**</a>
 <a name="383"><span class="lineNum">     383 </span>            :      * @brief Get this persons RandomNumberGenerator counter.</a>

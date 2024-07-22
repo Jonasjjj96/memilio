@@ -28,7 +28,7 @@
 
         
         <h2>Score</h2>
-        7.47 / 10
+        7.49 / 10
             
         
 
@@ -1514,7 +1514,7 @@ from memilio.epidata import defaultDict as dd</pre></td>
                 <td>R0801</td>
                 <td></td>
                 <td><pre>Similar lines in 2 files
-==memilio.epidata.getPopulationData:[32:54]
+==memilio.epidata.getPopulationData:[30:48]
 ==memilio.epidata.transformMobilityData:[21:40]
 import numpy as np
 import pandas as pd
@@ -1527,14 +1527,13 @@ from memilio.epidata import getDataIntoPandasDataFrame as gd
 pd.options.mode.copy_on_write = True
 
 
-def getMobilityFromFile(directory, mobility_file):
-    &#34;&#34;&#34;! Gets a mobility matrix that is written in a plain txt file
-    under the given directory into a pandas data frame.
+def read_population_data():
+    &#39;&#39;&#39;! Reads Population data from regionalstatistik.de
 
-    @param directory Path to folder where data is read.
-    @param mobility_file Mobility matrix file which has to be updated.
-    @return Mobility matrix data frame.
-    &#34;&#34;&#34;</pre></td>
+    A request is made to regionalstatistik.de and the StringIO is read in as a csv into the dataframe format.
+    @return DataFrame
+    &#39;&#39;&#39;
+</pre></td>
             </tr>
             
             <tr>
@@ -1548,15 +1547,12 @@ def getMobilityFromFile(directory, mobility_file):
 ==memilio.epidata.getCommuterMobility:[25:32]
 ==memilio.epidata.transformMobilityData:[19:29]
 import os
-
 import numpy as np
 import pandas as pd
 
 from memilio.epidata import defaultDict as dd
 from memilio.epidata import geoModificationGermany as geoger
-from memilio.epidata import getDataIntoPandasDataFrame as gd
-
-# activate CoW for more predictable behaviour of pandas DataFrames</pre></td>
+from memilio.epidata import getDataIntoPandasDataFrame as gd</pre></td>
             </tr>
             
             <tr>
@@ -1575,7 +1571,9 @@ import pandas as pd
 from memilio.epidata import defaultDict as dd
 from memilio.epidata import geoModificationGermany as geoger
 from memilio.epidata import getDataIntoPandasDataFrame as gd
-from memilio.epidata import modifyDataframeSeries as mdfs</pre></td>
+from memilio.epidata import modifyDataframeSeries as mdfs
+
+# activate CoW for more predictable behaviour of pandas DataFrames</pre></td>
             </tr>
             
             <tr>
@@ -1623,13 +1621,15 @@ from memilio.epidata import modifyDataframeSeries as mdfs</pre></td>
                 <td></td>
                 <td><pre>Similar lines in 2 files
 ==memilio.epidata.getCommuterMobility:[26:32]
-==memilio.epidata.getPopulationData:[32:40]
+==memilio.epidata.getPopulationData:[30:38]
 import numpy as np
 import pandas as pd
 
 from memilio.epidata import defaultDict as dd
 from memilio.epidata import geoModificationGermany as geoger
-from memilio.epidata import getDataIntoPandasDataFrame as gd</pre></td>
+from memilio.epidata import getDataIntoPandasDataFrame as gd
+
+# activate CoW for more predictable behaviour of pandas DataFrames</pre></td>
             </tr>
             
             <tr>
@@ -1701,28 +1701,16 @@ from memilio.epidata import modifyDataframeSeries as mdfs
 # activate CoW for more predictable behaviour of pandas DataFrames
 pd.options.mode.copy_on_write = True
 
+# Downloads testing data from RKI
 
-def transformWeatherData(read_data=dd.defaultDict[&#39;read_data&#39;],
-                         file_format=dd.defaultDict[&#39;file_format&#39;],
-                         out_folder=dd.defaultDict[&#39;out_folder&#39;],
-                         start_date=dd.defaultDict[&#39;start_date&#39;],
-                         end_date=dd.defaultDict[&#39;end_date&#39;],
-                         moving_average=dd.defaultDict[&#39;moving_average&#39;],
-                         merge_berlin=True,
-                         merge_eisenach=False,
-                         **kwargs
-                         ):
-    &#34;&#34;&#34;! ...
-    @param file_format File format which is used for writing the data.
-        Default defined in defaultDict.
-    @param out_folder Path to folder where data is written in folder
-        out_folder/Germany.
-    @param start_date [Default = &#39;&#39;, taken from read data] Start date
-        of stored data frames.
-    @param end_date [Default = &#39;&#39;, taken from read data] End date of
-        stored data frames.
-    @param moving_average 0 [Default] or Number &gt; 0. Defines the number of
-        days for which a centered moving average is computed.
+
+def download_testing_data():
+    &#34;&#34;&#34;! Downloads the Sars-CoV-2 test data sets from RKI on country
+    and federal state level. Information on federal state level do not sum
+    up to country-wide information since less laboratories are participating.
+
+    @return dataframe array with country level information first and
+        federal state level second
     &#34;&#34;&#34;</pre></td>
             </tr>
             
@@ -1793,41 +1781,7 @@ from memilio.epidata import geoModificationGermany as geoger
 from memilio.epidata import getDataIntoPandasDataFrame as gd
 from memilio.epidata import modifyDataframeSeries as mdfs
 
-
-def get_divi_data(read_data=dd.defaultDict[&#39;read_data&#39;],
-                  file_format=dd.defaultDict[&#39;file_format&#39;],
-                  out_folder=dd.defaultDict[&#39;out_folder&#39;],
-                  start_date=date(2020, 4, 24),
-                  end_date=dd.defaultDict[&#39;end_date&#39;],
-                  impute_dates=dd.defaultDict[&#39;impute_dates&#39;],
-                  moving_average=dd.defaultDict[&#39;moving_average&#39;],
-                  **kwargs
-                  ):
-    &#34;&#34;&#34;! Downloads or reads the DIVI ICU data and writes them in different files.
-
-    Available data starts from 2020-04-24.
-    If the given start_date is earlier, it is changed to this date and a warning is printed.
-    If it does not already exist, the folder Germany is generated in the given out_folder.
-    If read_data == True and the file &#34;FullData_DIVI.json&#34; exists, the data is read form this file
-    and stored in a pandas dataframe. If read_data = True and the file does not exist the program is stopped.
-
-    The downloaded dataframe is written to the file &#34;FullData_DIVI&#34;.
-    After that, the columns are renamed to English and the state and county names are added.
-    Afterwards, three kinds of structuring of the data are done.
-    We obtain the chronological sequence of ICU and ICU_ventilated
-    stored in the files &#34;county_divi&#34;.json&#34;, &#34;state_divi.json&#34; and &#34;germany_divi.json&#34;
-    for counties, states and whole Germany, respectively.
-
-    @param read_data True or False. Defines if data is read from file or downloaded. Default defined in defaultDict.
-    @param file_format File format which is used for writing the data. Default defined in defaultDict.
-    @param out_folder Folder where data is written to. Default defined in defaultDict.
-    @param start_date Date of first date in dataframe. Default defined in defaultDict.
-    @param end_date Date of last date in dataframe. Default defined in defaultDict.
-    @param impute_dates True or False. Defines if values for dates without new information are imputed. Default defined in defaultDict.
-    @param moving_average Integers &gt;=0. Applies an &#39;moving_average&#39;-days moving average on all time series
-        to smooth out effects of irregular reporting. Default defined in defaultDict.
-    &#34;&#34;&#34;
-</pre></td>
+# activate CoW for more predictable behaviour of pandas DataFrames</pre></td>
             </tr>
             
             <tr>
@@ -3384,21 +3338,11 @@ def get_divi_data(read_data=dd.defaultDict[&#39;read_data&#39;],
                 <td><code>too-many-branches</code></td>
                 <td>R0912</td>
                 <td>cli</td>
-                <td><pre>Too many branches (19/12)</pre></td>
+                <td><pre>Too many branches (18/12)</pre></td>
             </tr>
             
             <tr>
-                <td>325</td>
-                <td>0</td>
-                <td>refactor</td>
-                <td><code>too-many-statements</code></td>
-                <td>R0915</td>
-                <td>cli</td>
-                <td><pre>Too many statements (51/50)</pre></td>
-            </tr>
-            
-            <tr>
-                <td>368</td>
+                <td>366</td>
                 <td>0</td>
                 <td>convention</td>
                 <td><code>line-too-long</code></td>
@@ -3408,7 +3352,7 @@ def get_divi_data(read_data=dd.defaultDict[&#39;read_data&#39;],
             </tr>
             
             <tr>
-                <td>371</td>
+                <td>369</td>
                 <td>0</td>
                 <td>convention</td>
                 <td><code>line-too-long</code></td>
@@ -3418,7 +3362,7 @@ def get_divi_data(read_data=dd.defaultDict[&#39;read_data&#39;],
             </tr>
             
             <tr>
-                <td>373</td>
+                <td>371</td>
                 <td>0</td>
                 <td>convention</td>
                 <td><code>line-too-long</code></td>
@@ -3428,7 +3372,7 @@ def get_divi_data(read_data=dd.defaultDict[&#39;read_data&#39;],
             </tr>
             
             <tr>
-                <td>374</td>
+                <td>372</td>
                 <td>0</td>
                 <td>convention</td>
                 <td><code>line-too-long</code></td>
@@ -3438,7 +3382,7 @@ def get_divi_data(read_data=dd.defaultDict[&#39;read_data&#39;],
             </tr>
             
             <tr>
-                <td>375</td>
+                <td>373</td>
                 <td>0</td>
                 <td>convention</td>
                 <td><code>line-too-long</code></td>
@@ -3448,7 +3392,7 @@ def get_divi_data(read_data=dd.defaultDict[&#39;read_data&#39;],
             </tr>
             
             <tr>
-                <td>380</td>
+                <td>378</td>
                 <td>8</td>
                 <td>warning</td>
                 <td><code>raise-missing-from</code></td>
@@ -3458,7 +3402,7 @@ def get_divi_data(read_data=dd.defaultDict[&#39;read_data&#39;],
             </tr>
             
             <tr>
-                <td>432</td>
+                <td>430</td>
                 <td>0</td>
                 <td>convention</td>
                 <td><code>line-too-long</code></td>
@@ -3468,7 +3412,7 @@ def get_divi_data(read_data=dd.defaultDict[&#39;read_data&#39;],
             </tr>
             
             <tr>
-                <td>534</td>
+                <td>524</td>
                 <td>20</td>
                 <td>convention</td>
                 <td><code>invalid-name</code></td>
@@ -3478,7 +3422,7 @@ def get_divi_data(read_data=dd.defaultDict[&#39;read_data&#39;],
             </tr>
             
             <tr>
-                <td>534</td>
+                <td>524</td>
                 <td>0</td>
                 <td>warning</td>
                 <td><code>dangerous-default-value</code></td>
@@ -3488,7 +3432,7 @@ def get_divi_data(read_data=dd.defaultDict[&#39;read_data&#39;],
             </tr>
             
             <tr>
-                <td>557</td>
+                <td>547</td>
                 <td>4</td>
                 <td>convention</td>
                 <td><code>invalid-name</code></td>
@@ -3498,7 +3442,7 @@ def get_divi_data(read_data=dd.defaultDict[&#39;read_data&#39;],
             </tr>
             
             <tr>
-                <td>564</td>
+                <td>554</td>
                 <td>8</td>
                 <td>convention</td>
                 <td><code>invalid-name</code></td>
@@ -3508,7 +3452,7 @@ def get_divi_data(read_data=dd.defaultDict[&#39;read_data&#39;],
             </tr>
             
             <tr>
-                <td>565</td>
+                <td>555</td>
                 <td>8</td>
                 <td>convention</td>
                 <td><code>invalid-name</code></td>
@@ -3518,7 +3462,7 @@ def get_divi_data(read_data=dd.defaultDict[&#39;read_data&#39;],
             </tr>
             
             <tr>
-                <td>567</td>
+                <td>557</td>
                 <td>8</td>
                 <td>warning</td>
                 <td><code>raise-missing-from</code></td>
@@ -3528,7 +3472,7 @@ def get_divi_data(read_data=dd.defaultDict[&#39;read_data&#39;],
             </tr>
             
             <tr>
-                <td>592</td>
+                <td>582</td>
                 <td>4</td>
                 <td>warning</td>
                 <td><code>unnecessary-pass</code></td>
@@ -4814,7 +4758,7 @@ def get_divi_data(read_data=dd.defaultDict[&#39;read_data&#39;],
             </tr>
             
             <tr>
-                <td>30</td>
+                <td>28</td>
                 <td>0</td>
                 <td>convention</td>
                 <td><code>wrong-import-order</code></td>
@@ -4824,7 +4768,7 @@ def get_divi_data(read_data=dd.defaultDict[&#39;read_data&#39;],
             </tr>
             
             <tr>
-                <td>31</td>
+                <td>29</td>
                 <td>0</td>
                 <td>convention</td>
                 <td><code>wrong-import-order</code></td>
@@ -4834,7 +4778,7 @@ def get_divi_data(read_data=dd.defaultDict[&#39;read_data&#39;],
             </tr>
             
             <tr>
-                <td>33</td>
+                <td>31</td>
                 <td>0</td>
                 <td>error</td>
                 <td><code>import-error</code></td>
@@ -4844,7 +4788,7 @@ def get_divi_data(read_data=dd.defaultDict[&#39;read_data&#39;],
             </tr>
             
             <tr>
-                <td>34</td>
+                <td>32</td>
                 <td>0</td>
                 <td>error</td>
                 <td><code>import-error</code></td>
@@ -4855,16 +4799,6 @@ def get_divi_data(read_data=dd.defaultDict[&#39;read_data&#39;],
             
             <tr>
                 <td>50</td>
-                <td>64</td>
-                <td>convention</td>
-                <td><code>trailing-whitespace</code></td>
-                <td>C0303</td>
-                <td></td>
-                <td><pre>Trailing whitespace</pre></td>
-            </tr>
-            
-            <tr>
-                <td>56</td>
                 <td>10</td>
                 <td>warning</td>
                 <td><code>missing-timeout</code></td>
@@ -4874,27 +4808,7 @@ def get_divi_data(read_data=dd.defaultDict[&#39;read_data&#39;],
             </tr>
             
             <tr>
-                <td>81</td>
-                <td>69</td>
-                <td>convention</td>
-                <td><code>trailing-whitespace</code></td>
-                <td>C0303</td>
-                <td></td>
-                <td><pre>Trailing whitespace</pre></td>
-            </tr>
-            
-            <tr>
-                <td>105</td>
-                <td>21</td>
-                <td>warning</td>
-                <td><code>unspecified-encoding</code></td>
-                <td>W1514</td>
-                <td>manage_credentials</td>
-                <td><pre>Using open without explicitly specifying an encoding</pre></td>
-            </tr>
-            
-            <tr>
-                <td>196</td>
+                <td>131</td>
                 <td>59</td>
                 <td>convention</td>
                 <td><code>invalid-name</code></td>
@@ -4904,7 +4818,7 @@ def get_divi_data(read_data=dd.defaultDict[&#39;read_data&#39;],
             </tr>
             
             <tr>
-                <td>199</td>
+                <td>134</td>
                 <td>76</td>
                 <td>convention</td>
                 <td><code>trailing-whitespace</code></td>
@@ -4914,7 +4828,7 @@ def get_divi_data(read_data=dd.defaultDict[&#39;read_data&#39;],
             </tr>
             
             <tr>
-                <td>201</td>
+                <td>136</td>
                 <td>36</td>
                 <td>convention</td>
                 <td><code>trailing-whitespace</code></td>
@@ -4924,27 +4838,17 @@ def get_divi_data(read_data=dd.defaultDict[&#39;read_data&#39;],
             </tr>
             
             <tr>
-                <td>286</td>
-                <td>0</td>
-                <td>refactor</td>
-                <td><code>too-many-arguments</code></td>
-                <td>R0913</td>
-                <td>get_population_data</td>
-                <td><pre>Too many arguments (6/5)</pre></td>
-            </tr>
-            
-            <tr>
-                <td>286</td>
+                <td>221</td>
                 <td>0</td>
                 <td>refactor</td>
                 <td><code>too-many-locals</code></td>
                 <td>R0914</td>
                 <td>get_population_data</td>
-                <td><pre>Too many local variables (20/15)</pre></td>
+                <td><pre>Too many local variables (18/15)</pre></td>
             </tr>
             
             <tr>
-                <td>297</td>
+                <td>230</td>
                 <td>56</td>
                 <td>convention</td>
                 <td><code>trailing-whitespace</code></td>
@@ -4954,7 +4858,7 @@ def get_divi_data(read_data=dd.defaultDict[&#39;read_data&#39;],
             </tr>
             
             <tr>
-                <td>298</td>
+                <td>231</td>
                 <td>28</td>
                 <td>convention</td>
                 <td><code>trailing-whitespace</code></td>
@@ -4964,17 +4868,7 @@ def get_divi_data(read_data=dd.defaultDict[&#39;read_data&#39;],
             </tr>
             
             <tr>
-                <td>299</td>
-                <td>48</td>
-                <td>convention</td>
-                <td><code>trailing-whitespace</code></td>
-                <td>C0303</td>
-                <td></td>
-                <td><pre>Trailing whitespace</pre></td>
-            </tr>
-            
-            <tr>
-                <td>305</td>
+                <td>235</td>
                 <td>76</td>
                 <td>convention</td>
                 <td><code>trailing-whitespace</code></td>
@@ -4984,7 +4878,7 @@ def get_divi_data(read_data=dd.defaultDict[&#39;read_data&#39;],
             </tr>
             
             <tr>
-                <td>307</td>
+                <td>237</td>
                 <td>18</td>
                 <td>convention</td>
                 <td><code>trailing-whitespace</code></td>
@@ -4994,7 +4888,7 @@ def get_divi_data(read_data=dd.defaultDict[&#39;read_data&#39;],
             </tr>
             
             <tr>
-                <td>309</td>
+                <td>239</td>
                 <td>80</td>
                 <td>convention</td>
                 <td><code>trailing-whitespace</code></td>
@@ -5004,7 +4898,7 @@ def get_divi_data(read_data=dd.defaultDict[&#39;read_data&#39;],
             </tr>
             
             <tr>
-                <td>310</td>
+                <td>240</td>
                 <td>49</td>
                 <td>convention</td>
                 <td><code>trailing-whitespace</code></td>
@@ -5014,7 +4908,7 @@ def get_divi_data(read_data=dd.defaultDict[&#39;read_data&#39;],
             </tr>
             
             <tr>
-                <td>311</td>
+                <td>241</td>
                 <td>77</td>
                 <td>convention</td>
                 <td><code>trailing-whitespace</code></td>
@@ -5024,17 +4918,7 @@ def get_divi_data(read_data=dd.defaultDict[&#39;read_data&#39;],
             </tr>
             
             <tr>
-                <td>323</td>
-                <td>64</td>
-                <td>convention</td>
-                <td><code>trailing-whitespace</code></td>
-                <td>C0303</td>
-                <td></td>
-                <td><pre>Trailing whitespace</pre></td>
-            </tr>
-            
-            <tr>
-                <td>330</td>
+                <td>258</td>
                 <td>7</td>
                 <td>convention</td>
                 <td><code>singleton-comparison</code></td>
@@ -5044,7 +4928,7 @@ def get_divi_data(read_data=dd.defaultDict[&#39;read_data&#39;],
             </tr>
             
             <tr>
-                <td>356</td>
+                <td>280</td>
                 <td>38</td>
                 <td>convention</td>
                 <td><code>singleton-comparison</code></td>
@@ -5054,7 +4938,7 @@ def get_divi_data(read_data=dd.defaultDict[&#39;read_data&#39;],
             </tr>
             
             <tr>
-                <td>359</td>
+                <td>283</td>
                 <td>4</td>
                 <td>convention</td>
                 <td><code>invalid-name</code></td>
@@ -5064,7 +4948,7 @@ def get_divi_data(read_data=dd.defaultDict[&#39;read_data&#39;],
             </tr>
             
             <tr>
-                <td>368</td>
+                <td>292</td>
                 <td>4</td>
                 <td>convention</td>
                 <td><code>consider-using-enumerate</code></td>
@@ -11050,6 +10934,16 @@ def get_divi_data(read_data=dd.defaultDict[&#39;read_data&#39;],
             </tr>
             
             <tr>
+                <td>22</td>
+                <td>0</td>
+                <td>warning</td>
+                <td><code>unused-import</code></td>
+                <td>W0611</td>
+                <td></td>
+                <td><pre>Unused import configparser</pre></td>
+            </tr>
+            
+            <tr>
                 <td>24</td>
                 <td>0</td>
                 <td>error</td>
@@ -11090,7 +10984,7 @@ def get_divi_data(read_data=dd.defaultDict[&#39;read_data&#39;],
             </tr>
             
             <tr>
-                <td>43</td>
+                <td>39</td>
                 <td>9</td>
                 <td>warning</td>
                 <td><code>unspecified-encoding</code></td>
@@ -11100,7 +10994,7 @@ def get_divi_data(read_data=dd.defaultDict[&#39;read_data&#39;],
             </tr>
             
             <tr>
-                <td>48</td>
+                <td>44</td>
                 <td>9</td>
                 <td>warning</td>
                 <td><code>unspecified-encoding</code></td>
@@ -11110,7 +11004,7 @@ def get_divi_data(read_data=dd.defaultDict[&#39;read_data&#39;],
             </tr>
             
             <tr>
-                <td>54</td>
+                <td>50</td>
                 <td>4</td>
                 <td>convention</td>
                 <td><code>missing-function-docstring</code></td>
@@ -11120,7 +11014,7 @@ def get_divi_data(read_data=dd.defaultDict[&#39;read_data&#39;],
             </tr>
             
             <tr>
-                <td>66</td>
+                <td>62</td>
                 <td>0</td>
                 <td>convention</td>
                 <td><code>line-too-long</code></td>
@@ -11130,7 +11024,7 @@ def get_divi_data(read_data=dd.defaultDict[&#39;read_data&#39;],
             </tr>
             
             <tr>
-                <td>74</td>
+                <td>70</td>
                 <td>4</td>
                 <td>convention</td>
                 <td><code>missing-function-docstring</code></td>
@@ -11140,7 +11034,7 @@ def get_divi_data(read_data=dd.defaultDict[&#39;read_data&#39;],
             </tr>
             
             <tr>
-                <td>74</td>
+                <td>70</td>
                 <td>44</td>
                 <td>warning</td>
                 <td><code>unused-argument</code></td>
@@ -11150,163 +11044,23 @@ def get_divi_data(read_data=dd.defaultDict[&#39;read_data&#39;],
             </tr>
             
             <tr>
-                <td>74</td>
+                <td>70</td>
                 <td>55</td>
                 <td>warning</td>
                 <td><code>unused-argument</code></td>
                 <td>W0613</td>
                 <td>Test_getPopulationData.test_get_population_data_full</td>
-                <td><pre>Unused argument &#39;mock_export&#39;</pre></td>
+                <td><pre>Unused argument &#39;mock_assign&#39;</pre></td>
             </tr>
             
             <tr>
-                <td>74</td>
+                <td>70</td>
                 <td>68</td>
                 <td>warning</td>
                 <td><code>unused-argument</code></td>
                 <td>W0613</td>
                 <td>Test_getPopulationData.test_get_population_data_full</td>
                 <td><pre>Unused argument &#39;mock_download&#39;</pre></td>
-            </tr>
-            
-            <tr>
-                <td>85</td>
-                <td>4</td>
-                <td>convention</td>
-                <td><code>missing-function-docstring</code></td>
-                <td>C0116</td>
-                <td>Test_getPopulationData.test_config_write</td>
-                <td><pre>Missing function or method docstring</pre></td>
-            </tr>
-            
-            <tr>
-                <td>85</td>
-                <td>4</td>
-                <td>refactor</td>
-                <td><code>too-many-arguments</code></td>
-                <td>R0913</td>
-                <td>Test_getPopulationData.test_config_write</td>
-                <td><pre>Too many arguments (8/5)</pre></td>
-            </tr>
-            
-            <tr>
-                <td>85</td>
-                <td>32</td>
-                <td>warning</td>
-                <td><code>unused-argument</code></td>
-                <td>W0613</td>
-                <td>Test_getPopulationData.test_config_write</td>
-                <td><pre>Unused argument &#39;mock_test&#39;</pre></td>
-            </tr>
-            
-            <tr>
-                <td>85</td>
-                <td>43</td>
-                <td>warning</td>
-                <td><code>unused-argument</code></td>
-                <td>W0613</td>
-                <td>Test_getPopulationData.test_config_write</td>
-                <td><pre>Unused argument &#39;mock_export&#39;</pre></td>
-            </tr>
-            
-            <tr>
-                <td>85</td>
-                <td>56</td>
-                <td>warning</td>
-                <td><code>unused-argument</code></td>
-                <td>W0613</td>
-                <td>Test_getPopulationData.test_config_write</td>
-                <td><pre>Unused argument &#39;mock_raw&#39;</pre></td>
-            </tr>
-            
-            <tr>
-                <td>85</td>
-                <td>66</td>
-                <td>warning</td>
-                <td><code>unused-argument</code></td>
-                <td>W0613</td>
-                <td>Test_getPopulationData.test_config_write</td>
-                <td><pre>Unused argument &#39;mock_path&#39;</pre></td>
-            </tr>
-            
-            <tr>
-                <td>85</td>
-                <td>77</td>
-                <td>warning</td>
-                <td><code>unused-argument</code></td>
-                <td>W0613</td>
-                <td>Test_getPopulationData.test_config_write</td>
-                <td><pre>Unused argument &#39;mock_choice&#39;</pre></td>
-            </tr>
-            
-            <tr>
-                <td>85</td>
-                <td>90</td>
-                <td>warning</td>
-                <td><code>unused-argument</code></td>
-                <td>W0613</td>
-                <td>Test_getPopulationData.test_config_write</td>
-                <td><pre>Unused argument &#39;mock_pw&#39;</pre></td>
-            </tr>
-            
-            <tr>
-                <td>85</td>
-                <td>99</td>
-                <td>warning</td>
-                <td><code>unused-argument</code></td>
-                <td>W0613</td>
-                <td>Test_getPopulationData.test_config_write</td>
-                <td><pre>Unused argument &#39;mock_un&#39;</pre></td>
-            </tr>
-            
-            <tr>
-                <td>103</td>
-                <td>4</td>
-                <td>convention</td>
-                <td><code>missing-function-docstring</code></td>
-                <td>C0116</td>
-                <td>Test_getPopulationData.test_config_read</td>
-                <td><pre>Missing function or method docstring</pre></td>
-            </tr>
-            
-            <tr>
-                <td>103</td>
-                <td>31</td>
-                <td>warning</td>
-                <td><code>unused-argument</code></td>
-                <td>W0613</td>
-                <td>Test_getPopulationData.test_config_read</td>
-                <td><pre>Unused argument &#39;mock_test&#39;</pre></td>
-            </tr>
-            
-            <tr>
-                <td>103</td>
-                <td>42</td>
-                <td>warning</td>
-                <td><code>unused-argument</code></td>
-                <td>W0613</td>
-                <td>Test_getPopulationData.test_config_read</td>
-                <td><pre>Unused argument &#39;mock_export&#39;</pre></td>
-            </tr>
-            
-            <tr>
-                <td>103</td>
-                <td>66</td>
-                <td>warning</td>
-                <td><code>unused-argument</code></td>
-                <td>W0613</td>
-                <td>Test_getPopulationData.test_config_read</td>
-                <td><pre>Unused argument &#39;mock_path&#39;</pre></td>
-            </tr>
-            
-            <tr>
-                <td>110</td>
-                <td>13</td>
-                <td>warning</td>
-                <td><code>unspecified-encoding</code></td>
-                <td>W1514</td>
-                <td>Test_getPopulationData.test_config_read</td>
-                <td><pre>Using open without explicitly specifying an encoding</pre></td>
             </tr>
             
         </table>
@@ -12394,17 +12148,17 @@ def get_divi_data(read_data=dd.defaultDict[&#39;read_data&#39;],
             
             <tr>
                 <td>refactor</td>
-                <td>253</td>
+                <td>250</td>
             </tr>
             
             <tr>
                 <td>warning</td>
-                <td>154</td>
+                <td>143</td>
             </tr>
             
             <tr>
                 <td>convention</td>
-                <td>678</td>
+                <td>672</td>
             </tr>
             
             <tr>
@@ -12454,12 +12208,12 @@ def get_divi_data(read_data=dd.defaultDict[&#39;read_data&#39;],
             
             <tr>
                 <td>unspecified-encoding</td>
-                <td>29</td>
+                <td>27</td>
             </tr>
             
             <tr>
                 <td>missing-function-docstring</td>
-                <td>136</td>
+                <td>134</td>
             </tr>
             
             <tr>
@@ -12469,7 +12223,7 @@ def get_divi_data(read_data=dd.defaultDict[&#39;read_data&#39;],
             
             <tr>
                 <td>unused-argument</td>
-                <td>46</td>
+                <td>36</td>
             </tr>
             
             <tr>
@@ -12489,7 +12243,7 @@ def get_divi_data(read_data=dd.defaultDict[&#39;read_data&#39;],
             
             <tr>
                 <td>too-many-arguments</td>
-                <td>25</td>
+                <td>23</td>
             </tr>
             
             <tr>
@@ -12524,7 +12278,7 @@ def get_divi_data(read_data=dd.defaultDict[&#39;read_data&#39;],
             
             <tr>
                 <td>too-many-statements</td>
-                <td>18</td>
+                <td>17</td>
             </tr>
             
             <tr>
@@ -12535,6 +12289,11 @@ def get_divi_data(read_data=dd.defaultDict[&#39;read_data&#39;],
             <tr>
                 <td>consider-using-with</td>
                 <td>2</td>
+            </tr>
+            
+            <tr>
+                <td>unused-import</td>
+                <td>4</td>
             </tr>
             
             <tr>
@@ -12639,7 +12398,7 @@ def get_divi_data(read_data=dd.defaultDict[&#39;read_data&#39;],
             
             <tr>
                 <td>trailing-whitespace</td>
-                <td>56</td>
+                <td>52</td>
             </tr>
             
             <tr>
@@ -12670,11 +12429,6 @@ def get_divi_data(read_data=dd.defaultDict[&#39;read_data&#39;],
             <tr>
                 <td>consider-using-f-string</td>
                 <td>2</td>
-            </tr>
-            
-            <tr>
-                <td>unused-import</td>
-                <td>3</td>
             </tr>
             
             <tr>
@@ -12794,7 +12548,7 @@ def get_divi_data(read_data=dd.defaultDict[&#39;read_data&#39;],
             
             <tr>
                 <td>memilio.epidata_test.test_epidata_get_population_data</td>
-                <td>27</td>
+                <td>14</td>
             </tr>
             
             <tr>
@@ -12829,7 +12583,7 @@ def get_divi_data(read_data=dd.defaultDict[&#39;read_data&#39;],
             
             <tr>
                 <td>memilio.epidata.getDataIntoPandasDataFrame</td>
-                <td>66</td>
+                <td>65</td>
             </tr>
             
             <tr>
@@ -12899,7 +12653,7 @@ def get_divi_data(read_data=dd.defaultDict[&#39;read_data&#39;],
             
             <tr>
                 <td>memilio.epidata.getPopulationData</td>
-                <td>27</td>
+                <td>21</td>
             </tr>
             
             <tr>
@@ -12989,7 +12743,7 @@ def get_divi_data(read_data=dd.defaultDict[&#39;read_data&#39;],
             
             <tr>
                 <td>memilio/epidata_test/test_epidata_get_population_data.py</td>
-                <td>27</td>
+                <td>14</td>
             </tr>
             
             <tr>
@@ -13024,7 +12778,7 @@ def get_divi_data(read_data=dd.defaultDict[&#39;read_data&#39;],
             
             <tr>
                 <td>memilio/epidata/getDataIntoPandasDataFrame.py</td>
-                <td>66</td>
+                <td>65</td>
             </tr>
             
             <tr>
@@ -13094,7 +12848,7 @@ def get_divi_data(read_data=dd.defaultDict[&#39;read_data&#39;],
             
             <tr>
                 <td>memilio/epidata/getPopulationData.py</td>
-                <td>27</td>
+                <td>21</td>
             </tr>
             
             <tr>

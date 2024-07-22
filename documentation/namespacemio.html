@@ -465,7 +465,7 @@ Typedefs</h2></td></tr>
 <tr class="separator:a628e7270083870520c65318b8c5f2efd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a045ca6f4db7b107b26221502aa3bbb25"><td class="memTemplParams" colspan="2">template&lt;typename FP , class M &gt; </td></tr>
 <tr class="memitem:a045ca6f4db7b107b26221502aa3bbb25"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemio.html#a045ca6f4db7b107b26221502aa3bbb25">eval_right_hand_side_expr_t</a> = decltype(std::declval&lt; const M &amp; &gt;().eval_right_hand_side(std::declval&lt; Eigen::Ref&lt; const <a class="el" href="namespacemio.html#a4980272f784bde5ee00a3385538950de">Vector</a>&lt; FP &gt; &gt;&gt;(), std::declval&lt; Eigen::Ref&lt; const <a class="el" href="namespacemio.html#a4980272f784bde5ee00a3385538950de">Vector</a>&lt; FP &gt; &gt;&gt;(), std::declval&lt; FP &gt;(), std::declval&lt; Eigen::Ref&lt; <a class="el" href="namespacemio.html#a4980272f784bde5ee00a3385538950de">Vector</a>&lt; FP &gt; &gt;&gt;()))</td></tr>
-<tr class="memdesc:a045ca6f4db7b107b26221502aa3bbb25"><td class="mdescLeft">&#160;</td><td class="mdescRight">detect the eval_right_hand_side member function of a compartment model.  <a href="namespacemio.html#a045ca6f4db7b107b26221502aa3bbb25">More...</a><br /></td></tr>
+<tr class="memdesc:a045ca6f4db7b107b26221502aa3bbb25"><td class="mdescLeft">&#160;</td><td class="mdescRight">Detect the eval_right_hand_side member function of a compartment model.  <a href="namespacemio.html#a045ca6f4db7b107b26221502aa3bbb25">More...</a><br /></td></tr>
 <tr class="separator:a045ca6f4db7b107b26221502aa3bbb25"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a97757b3eaa1d1cd6fe1550f26c291bc5"><td class="memTemplParams" colspan="2">template&lt;class Sim &gt; </td></tr>
 <tr class="memitem:a97757b3eaa1d1cd6fe1550f26c291bc5"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemio.html#a97757b3eaa1d1cd6fe1550f26c291bc5">get_infections_relative_expr_t</a> = decltype(<a class="el" href="namespacemio.html#a85ab6b99636fa04a3d21cb8d08fc4c08">get_infections_relative</a>(std::declval&lt; const Sim &amp; &gt;(), std::declval&lt; double &gt;(), std::declval&lt; const Eigen::Ref&lt; const Eigen::VectorXd &gt; &amp; &gt;()))</td></tr>
@@ -473,7 +473,7 @@ Typedefs</h2></td></tr>
 <tr class="separator:a97757b3eaa1d1cd6fe1550f26c291bc5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1f36c00858aa9e417d85e64389a12a6d"><td class="memTemplParams" colspan="2">template&lt;typename FP , class M &gt; </td></tr>
 <tr class="memitem:a1f36c00858aa9e417d85e64389a12a6d"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemio.html#a1f36c00858aa9e417d85e64389a12a6d">get_initial_values_expr_t</a> = decltype(std::declval&lt; <a class="el" href="namespacemio.html#a4980272f784bde5ee00a3385538950de">Vector</a>&lt; FP &gt; &amp; &gt;()=std::declval&lt; const M &amp; &gt;().get_initial_values())</td></tr>
-<tr class="memdesc:a1f36c00858aa9e417d85e64389a12a6d"><td class="mdescLeft">&#160;</td><td class="mdescRight">detect the get_initial_values member function of a compartment model.  <a href="namespacemio.html#a1f36c00858aa9e417d85e64389a12a6d">More...</a><br /></td></tr>
+<tr class="memdesc:a1f36c00858aa9e417d85e64389a12a6d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Detect the get_initial_values member function of a compartment model.  <a href="namespacemio.html#a1f36c00858aa9e417d85e64389a12a6d">More...</a><br /></td></tr>
 <tr class="separator:a1f36c00858aa9e417d85e64389a12a6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a55bf290db560dfa35968e2b286ff078f"><td class="memTemplParams" colspan="2">template&lt;class Sim &gt; </td></tr>
 <tr class="memitem:a55bf290db560dfa35968e2b286ff078f"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemio.html#a55bf290db560dfa35968e2b286ff078f">get_migration_factors_expr_t</a> = decltype(<a class="el" href="namespacemio.html#ab74f1d86f5a3421e7a971c22b50fd89c">get_migration_factors</a>(std::declval&lt; const Sim &amp; &gt;(), std::declval&lt; double &gt;(), std::declval&lt; const Eigen::Ref&lt; const Eigen::VectorXd &gt; &amp; &gt;()))</td></tr>
@@ -481,11 +481,11 @@ Typedefs</h2></td></tr>
 <tr class="separator:a55bf290db560dfa35968e2b286ff078f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5f2af1294cf48bb782478c8d183031c0"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
 <tr class="memitem:a5f2af1294cf48bb782478c8d183031c0"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemio.html#a5f2af1294cf48bb782478c8d183031c0">has_apply_constraints_member_function</a> = <a class="el" href="structmio_1_1is__expression__valid.html">is_expression_valid</a>&lt; <a class="el" href="namespacemio_1_1details.html#a11800c3db22deebc6aa9f9d457c9add2">details::apply_constraints_expr_t</a>, T &gt;</td></tr>
-<tr class="memdesc:a5f2af1294cf48bb782478c8d183031c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">check whether a apply_constraints function exists  <a href="namespacemio.html#a5f2af1294cf48bb782478c8d183031c0">More...</a><br /></td></tr>
+<tr class="memdesc:a5f2af1294cf48bb782478c8d183031c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether a apply_constraints function exists.  <a href="namespacemio.html#a5f2af1294cf48bb782478c8d183031c0">More...</a><br /></td></tr>
 <tr class="separator:a5f2af1294cf48bb782478c8d183031c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a376021d0dfbbf5639180b1fa30a26f54"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
 <tr class="memitem:a376021d0dfbbf5639180b1fa30a26f54"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemio.html#a376021d0dfbbf5639180b1fa30a26f54">has_check_constraints_member_function</a> = <a class="el" href="structmio_1_1is__expression__valid.html">is_expression_valid</a>&lt; <a class="el" href="namespacemio_1_1details.html#a3718cd19964b2e578e34c903209a731f">details::check_constraints_expr_t</a>, T &gt;</td></tr>
-<tr class="memdesc:a376021d0dfbbf5639180b1fa30a26f54"><td class="mdescLeft">&#160;</td><td class="mdescRight">check whether a check_constraints function exists  <a href="namespacemio.html#a376021d0dfbbf5639180b1fa30a26f54">More...</a><br /></td></tr>
+<tr class="memdesc:a376021d0dfbbf5639180b1fa30a26f54"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether a check_constraints function exists.  <a href="namespacemio.html#a376021d0dfbbf5639180b1fa30a26f54">More...</a><br /></td></tr>
 <tr class="separator:a376021d0dfbbf5639180b1fa30a26f54"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a32e1937fb0741f02d404d42fd061e37c"><td class="memTemplParams" colspan="2">template&lt;class IOContext , class T &gt; </td></tr>
 <tr class="memitem:a32e1937fb0741f02d404d42fd061e37c"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemio.html#a32e1937fb0741f02d404d42fd061e37c">has_deserialize</a> = <a class="el" href="structmio_1_1is__expression__valid.html">is_expression_valid</a>&lt; <a class="el" href="namespacemio.html#a8bc3cbccffee821ee8b3d10fceb36d1e">deserialize_t</a>, IOContext, T &gt;</td></tr>
@@ -1331,7 +1331,7 @@ template&lt;typename FP , class M &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>detect the eval_right_hand_side member function of a compartment model. </p>
+<p>Detect the eval_right_hand_side member function of a compartment model. </p>
 <p>If the eval_right_hand_side member function exists in the type M, this template when instatiated will be equal to the return type of the function. Otherwise the template is invalid. </p><dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">FP,floating</td><td>point type, e.g., double. </td></tr>
@@ -1431,7 +1431,7 @@ template&lt;typename FP , class M &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>detect the get_initial_values member function of a compartment model. </p>
+<p>Detect the get_initial_values member function of a compartment model. </p>
 <p>If the detect_initial_values member function exists in the type M, this template when instatiated will be equal to the return type of the function. Otherwise the template is invalid. </p><dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">FP,floating</td><td>point type, e.g., double. </td></tr>
@@ -1474,10 +1474,10 @@ template&lt;class T &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>check whether a apply_constraints function exists </p>
+<p>Check whether a apply_constraints function exists. </p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">The</td><td>type to check for the existence of the member function </td></tr>
+    <tr><td class="paramname">The</td><td>type to check for the existence of the member function. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1498,10 +1498,10 @@ template&lt;class T &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>check whether a check_constraints function exists </p>
+<p>Check whether a check_constraints function exists. </p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">The</td><td>type to check for the existence of the member function </td></tr>
+    <tr><td class="paramname">The</td><td>type to check for the existence of the member function. </td></tr>
   </table>
   </dd>
 </dl>
