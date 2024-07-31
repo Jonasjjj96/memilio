@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2024-07-22 11:59:05</td>
+            <td class="headerValue">2024-07-31 09:55:57</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">27</td>
@@ -226,7 +226,7 @@
 <a name="164"><span class="lineNum">     164 </span><span class="lineCov">         12 :                     size_t event = mio::DiscreteDistribution&lt;size_t&gt;::get_instance()(m_rng, m_rates);</span></a>
 <a name="165"><span class="lineNum">     165 </span>            :                     //edge that performs transition event</a>
 <a name="166"><span class="lineNum">     166 </span><span class="lineCov">         12 :                     auto&amp; event_edge = Base::m_graph.edges()[event / parameters_per_edge];</span></a>
-<a name="167"><span class="lineNum">     167 </span>            :                     //index for compartment and age group migrating</a>
+<a name="167"><span class="lineNum">     167 </span>            :                     //index for compartment and age group moving</a>
 <a name="168"><span class="lineNum">     168 </span><span class="lineCov">         12 :                     auto flat_index = event % parameters_per_edge;</span></a>
 <a name="169"><span class="lineNum">     169 </span>            : </a>
 <a name="170"><span class="lineNum">     170 </span>            :                     //advance nodes until t + (waiting_time / cumulative_rate)</a>

@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2024-07-22 11:59:05</td>
+            <td class="headerValue">2024-07-31 09:55:57</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">5</td>
@@ -118,26 +118,26 @@
 <a name="56"><span class="lineNum">      56 </span><span class="lineCov">          2 :     m_number_of_households += number_of_households;</span></a>
 <a name="57"><span class="lineNum">      57 </span><span class="lineCov">          2 : }</span></a>
 <a name="58"><span class="lineNum">      58 </span>            : </a>
-<a name="59"><span class="lineNum">      59 </span><span class="lineCov">         16 : void add_household_to_world(World&amp; world, const Household&amp; household)</span></a>
+<a name="59"><span class="lineNum">      59 </span><span class="lineCov">         16 : void add_household_to_model(Model&amp; model, const Household&amp; household)</span></a>
 <a name="60"><span class="lineNum">      60 </span>            : {</a>
-<a name="61"><span class="lineNum">      61 </span><span class="lineCov">         16 :     auto home    = world.add_location(LocationType::Home);</span></a>
+<a name="61"><span class="lineNum">      61 </span><span class="lineCov">         16 :     auto home    = model.add_location(LocationType::Home);</span></a>
 <a name="62"><span class="lineNum">      62 </span><span class="lineCov">         16 :     auto members = household.get_members();</span></a>
-<a name="63"><span class="lineNum">      63 </span><span class="lineCov">         32 :     world.get_location(home).set_capacity(household.get_total_number_of_members(),</span></a>
+<a name="63"><span class="lineNum">      63 </span><span class="lineCov">         32 :     model.get_location(home).set_capacity(household.get_total_number_of_members(),</span></a>
 <a name="64"><span class="lineNum">      64 </span><span class="lineCov">         16 :                                           household.get_total_number_of_members() * household.get_space_per_member());</span></a>
 <a name="65"><span class="lineNum">      65 </span>            : </a>
 <a name="66"><span class="lineNum">      66 </span><span class="lineCov">         48 :     for (auto&amp; memberTouple : members) {</span></a>
 <a name="67"><span class="lineNum">      67 </span><span class="lineCov">         32 :         int count;</span></a>
-<a name="68"><span class="lineNum">      68 </span><span class="lineCov">         32 :         HouseholdMember member  = HouseholdMember(world.parameters.get_num_groups());</span></a>
+<a name="68"><span class="lineNum">      68 </span><span class="lineCov">         32 :         HouseholdMember member  = HouseholdMember(model.parameters.get_num_groups());</span></a>
 <a name="69"><span class="lineNum">      69 </span><span class="lineCov">         32 :         std::tie(member, count) = memberTouple;</span></a>
 <a name="70"><span class="lineNum">      70 </span><span class="lineCov">        136 :         for (int j = 0; j &lt; count; j++) {</span></a>
-<a name="71"><span class="lineNum">      71 </span><span class="lineCov">        104 :             auto age_group = pick_age_group_from_age_distribution(world.get_rng(), member.get_age_weights());</span></a>
-<a name="72"><span class="lineNum">      72 </span><span class="lineCov">        104 :             auto person    = world.add_person(home, age_group);</span></a>
-<a name="73"><span class="lineNum">      73 </span><span class="lineCov">        104 :             world.assign_location(person, home);</span></a>
+<a name="71"><span class="lineNum">      71 </span><span class="lineCov">        104 :             auto age_group = pick_age_group_from_age_distribution(model.get_rng(), member.get_age_weights());</span></a>
+<a name="72"><span class="lineNum">      72 </span><span class="lineCov">        104 :             auto person    = model.add_person(home, age_group);</span></a>
+<a name="73"><span class="lineNum">      73 </span><span class="lineCov">        104 :             model.assign_location(person, home);</span></a>
 <a name="74"><span class="lineNum">      74 </span>            :         }</a>
 <a name="75"><span class="lineNum">      75 </span><span class="lineCov">         32 :     }</span></a>
 <a name="76"><span class="lineNum">      76 </span><span class="lineCov">         32 : }</span></a>
 <a name="77"><span class="lineNum">      77 </span>            : </a>
-<a name="78"><span class="lineNum">      78 </span><span class="lineCov">          1 : void add_household_group_to_world(World&amp; world, const HouseholdGroup&amp; household_group)</span></a>
+<a name="78"><span class="lineNum">      78 </span><span class="lineCov">          1 : void add_household_group_to_model(Model&amp; model, const HouseholdGroup&amp; household_group)</span></a>
 <a name="79"><span class="lineNum">      79 </span>            : {</a>
 <a name="80"><span class="lineNum">      80 </span><span class="lineCov">          1 :     auto households = household_group.get_households();</span></a>
 <a name="81"><span class="lineNum">      81 </span>            : </a>
@@ -146,7 +146,7 @@
 <a name="84"><span class="lineNum">      84 </span><span class="lineCov">          2 :         Household household;</span></a>
 <a name="85"><span class="lineNum">      85 </span><span class="lineCov">          2 :         std::tie(household, count) = householdTuple;</span></a>
 <a name="86"><span class="lineNum">      86 </span><span class="lineCov">         17 :         for (int j = 0; j &lt; count; j++) {</span></a>
-<a name="87"><span class="lineNum">      87 </span><span class="lineCov">         15 :             add_household_to_world(world, household);</span></a>
+<a name="87"><span class="lineNum">      87 </span><span class="lineCov">         15 :             add_household_to_model(model, household);</span></a>
 <a name="88"><span class="lineNum">      88 </span>            :         }</a>
 <a name="89"><span class="lineNum">      89 </span><span class="lineCov">          2 :     }</span></a>
 <a name="90"><span class="lineNum">      90 </span><span class="lineCov">          2 : }</span></a>

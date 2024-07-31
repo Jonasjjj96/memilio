@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2024-07-22 11:59:05</td>
+            <td class="headerValue">2024-07-31 09:55:57</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">15</td>
@@ -866,17 +866,17 @@
 <a name="804"><span class="lineNum">     804 </span>            : }</a>
 <a name="805"><span class="lineNum">     805 </span>            : </a>
 <a name="806"><span class="lineNum">     806 </span>            : /**</a>
-<a name="807"><span class="lineNum">     807 </span>            :  * Get migration factors.</a>
-<a name="808"><span class="lineNum">     808 </span>            :  * Used by migration graph simulation.</a>
-<a name="809"><span class="lineNum">     809 </span>            :  * Like infection risk, migration of infected individuals is reduced if they are well isolated.</a>
+<a name="807"><span class="lineNum">     807 </span>            :  * Get mobility factors.</a>
+<a name="808"><span class="lineNum">     808 </span>            :  * Used by mobility graph simulation.</a>
+<a name="809"><span class="lineNum">     809 </span>            :  * Like infection risk, mobility of infected individuals is reduced if they are well isolated.</a>
 <a name="810"><span class="lineNum">     810 </span>            :  * @param model the compartment model with initial values.</a>
 <a name="811"><span class="lineNum">     811 </span>            :  * @param t current simulation time.</a>
 <a name="812"><span class="lineNum">     812 </span>            :  * @param y current value of compartments.</a>
-<a name="813"><span class="lineNum">     813 </span>            :  * @return vector expression, same size as y, with migration factors per compartment.</a>
+<a name="813"><span class="lineNum">     813 </span>            :  * @return vector expression, same size as y, with mobility factors per compartment.</a>
 <a name="814"><span class="lineNum">     814 </span>            :  * @tparam Base simulation type that uses a secir compartment model. see Simulation.</a>
 <a name="815"><span class="lineNum">     815 </span>            :  */</a>
 <a name="816"><span class="lineNum">     816 </span>            : template &lt;typename FP = double, class Base = mio::Simulation&lt;Model&lt;FP&gt;, FP&gt;&gt;</a>
-<a name="817"><span class="lineNum">     817 </span><span class="lineCov">          1 : auto get_migration_factors(const Simulation&lt;Base&gt;&amp; sim, FP /*t*/, const Eigen::Ref&lt;const Vector&lt;FP&gt;&gt;&amp; y)</span></a>
+<a name="817"><span class="lineNum">     817 </span><span class="lineCov">          1 : auto get_mobility_factors(const Simulation&lt;Base&gt;&amp; sim, FP /*t*/, const Eigen::Ref&lt;const Vector&lt;FP&gt;&gt;&amp; y)</span></a>
 <a name="818"><span class="lineNum">     818 </span>            : </a>
 <a name="819"><span class="lineNum">     819 </span>            : {</a>
 <a name="820"><span class="lineNum">     820 </span><span class="lineCov">          1 :     auto&amp; params = sim.get_model().parameters;</span></a>
@@ -918,7 +918,7 @@
 <a name="856"><span class="lineNum">     856 </span><span class="lineNoCov">          0 : }</span></a>
 <a name="857"><span class="lineNum">     857 </span>            : </a>
 <a name="858"><span class="lineNum">     858 </span>            : template &lt;typename FP = double, class Base = mio::Simulation&lt;Model&lt;FP&gt;, FP&gt;&gt;</a>
-<a name="859"><span class="lineNum">     859 </span><span class="lineCov">          1 : auto test_commuters(Simulation&lt;FP, Base&gt;&amp; sim, Eigen::Ref&lt;Vector&lt;FP&gt;&gt; migrated, FP time)</span></a>
+<a name="859"><span class="lineNum">     859 </span><span class="lineCov">          1 : auto test_commuters(Simulation&lt;FP, Base&gt;&amp; sim, Eigen::Ref&lt;Vector&lt;FP&gt;&gt; mobile_population, FP time)</span></a>
 <a name="860"><span class="lineNum">     860 </span>            : {</a>
 <a name="861"><span class="lineNum">     861 </span><span class="lineCov">          1 :     auto&amp; model       = sim.get_model();</span></a>
 <a name="862"><span class="lineNum">     862 </span><span class="lineCov">          1 :     auto nondetection = 1.0;</span></a>
@@ -945,30 +945,30 @@
 <a name="883"><span class="lineNum">     883 </span><span class="lineCov">          2 :             model.populations.get_flat_index({i, InfectionState::InfectedNoSymptomsImprovedImmunityConfirmed});</span></a>
 <a name="884"><span class="lineNum">     884 </span>            : </a>
 <a name="885"><span class="lineNum">     885 </span>            :         //put detected commuters in their own compartment so they don't contribute to infections in their home node</a>
-<a name="886"><span class="lineNum">     886 </span><span class="lineCov">          2 :         sim.get_result().get_last_value()[ISyNi] -= migrated[ISyNi] * (1 - nondetection);</span></a>
-<a name="887"><span class="lineNum">     887 </span><span class="lineCov">          2 :         sim.get_result().get_last_value()[ISyNCi] += migrated[ISyNi] * (1 - nondetection);</span></a>
-<a name="888"><span class="lineNum">     888 </span><span class="lineCov">          2 :         sim.get_result().get_last_value()[INSNi] -= migrated[INSNi] * (1 - nondetection);</span></a>
-<a name="889"><span class="lineNum">     889 </span><span class="lineCov">          2 :         sim.get_result().get_last_value()[INSNCi] += migrated[INSNi] * (1 - nondetection);</span></a>
+<a name="886"><span class="lineNum">     886 </span><span class="lineCov">          2 :         sim.get_result().get_last_value()[ISyNi] -= mobile_population[ISyNi] * (1 - nondetection);</span></a>
+<a name="887"><span class="lineNum">     887 </span><span class="lineCov">          2 :         sim.get_result().get_last_value()[ISyNCi] += mobile_population[ISyNi] * (1 - nondetection);</span></a>
+<a name="888"><span class="lineNum">     888 </span><span class="lineCov">          2 :         sim.get_result().get_last_value()[INSNi] -= mobile_population[INSNi] * (1 - nondetection);</span></a>
+<a name="889"><span class="lineNum">     889 </span><span class="lineCov">          2 :         sim.get_result().get_last_value()[INSNCi] += mobile_population[INSNi] * (1 - nondetection);</span></a>
 <a name="890"><span class="lineNum">     890 </span>            : </a>
-<a name="891"><span class="lineNum">     891 </span><span class="lineCov">          2 :         sim.get_result().get_last_value()[ISPIi] -= migrated[ISPIi] * (1 - nondetection);</span></a>
-<a name="892"><span class="lineNum">     892 </span><span class="lineCov">          2 :         sim.get_result().get_last_value()[ISPICi] += migrated[ISPIi] * (1 - nondetection);</span></a>
-<a name="893"><span class="lineNum">     893 </span><span class="lineCov">          2 :         sim.get_result().get_last_value()[INSPIi] -= migrated[INSPIi] * (1 - nondetection);</span></a>
-<a name="894"><span class="lineNum">     894 </span><span class="lineCov">          2 :         sim.get_result().get_last_value()[INSPICi] += migrated[INSPIi] * (1 - nondetection);</span></a>
+<a name="891"><span class="lineNum">     891 </span><span class="lineCov">          2 :         sim.get_result().get_last_value()[ISPIi] -= mobile_population[ISPIi] * (1 - nondetection);</span></a>
+<a name="892"><span class="lineNum">     892 </span><span class="lineCov">          2 :         sim.get_result().get_last_value()[ISPICi] += mobile_population[ISPIi] * (1 - nondetection);</span></a>
+<a name="893"><span class="lineNum">     893 </span><span class="lineCov">          2 :         sim.get_result().get_last_value()[INSPIi] -= mobile_population[INSPIi] * (1 - nondetection);</span></a>
+<a name="894"><span class="lineNum">     894 </span><span class="lineCov">          2 :         sim.get_result().get_last_value()[INSPICi] += mobile_population[INSPIi] * (1 - nondetection);</span></a>
 <a name="895"><span class="lineNum">     895 </span>            : </a>
-<a name="896"><span class="lineNum">     896 </span><span class="lineCov">          2 :         sim.get_result().get_last_value()[ISyIIi] -= migrated[ISyIIi] * (1 - nondetection);</span></a>
-<a name="897"><span class="lineNum">     897 </span><span class="lineCov">          2 :         sim.get_result().get_last_value()[ISyIICi] += migrated[ISyIIi] * (1 - nondetection);</span></a>
-<a name="898"><span class="lineNum">     898 </span><span class="lineCov">          2 :         sim.get_result().get_last_value()[INSIIi] -= migrated[INSIIi] * (1 - nondetection);</span></a>
-<a name="899"><span class="lineNum">     899 </span><span class="lineCov">          2 :         sim.get_result().get_last_value()[INSIICi] += migrated[INSIIi] * (1 - nondetection);</span></a>
+<a name="896"><span class="lineNum">     896 </span><span class="lineCov">          2 :         sim.get_result().get_last_value()[ISyIIi] -= mobile_population[ISyIIi] * (1 - nondetection);</span></a>
+<a name="897"><span class="lineNum">     897 </span><span class="lineCov">          2 :         sim.get_result().get_last_value()[ISyIICi] += mobile_population[ISyIIi] * (1 - nondetection);</span></a>
+<a name="898"><span class="lineNum">     898 </span><span class="lineCov">          2 :         sim.get_result().get_last_value()[INSIIi] -= mobile_population[INSIIi] * (1 - nondetection);</span></a>
+<a name="899"><span class="lineNum">     899 </span><span class="lineCov">          2 :         sim.get_result().get_last_value()[INSIICi] += mobile_population[INSIIi] * (1 - nondetection);</span></a>
 <a name="900"><span class="lineNum">     900 </span>            : </a>
 <a name="901"><span class="lineNum">     901 </span>            :         //reduce the number of commuters</a>
-<a name="902"><span class="lineNum">     902 </span><span class="lineCov">          2 :         migrated[ISyNi] *= nondetection;</span></a>
-<a name="903"><span class="lineNum">     903 </span><span class="lineCov">          2 :         migrated[INSNi] *= nondetection;</span></a>
+<a name="902"><span class="lineNum">     902 </span><span class="lineCov">          2 :         mobile_population[ISyNi] *= nondetection;</span></a>
+<a name="903"><span class="lineNum">     903 </span><span class="lineCov">          2 :         mobile_population[INSNi] *= nondetection;</span></a>
 <a name="904"><span class="lineNum">     904 </span>            : </a>
-<a name="905"><span class="lineNum">     905 </span><span class="lineCov">          2 :         migrated[ISPIi] *= nondetection;</span></a>
-<a name="906"><span class="lineNum">     906 </span><span class="lineCov">          2 :         migrated[INSPIi] *= nondetection;</span></a>
+<a name="905"><span class="lineNum">     905 </span><span class="lineCov">          2 :         mobile_population[ISPIi] *= nondetection;</span></a>
+<a name="906"><span class="lineNum">     906 </span><span class="lineCov">          2 :         mobile_population[INSPIi] *= nondetection;</span></a>
 <a name="907"><span class="lineNum">     907 </span>            : </a>
-<a name="908"><span class="lineNum">     908 </span><span class="lineCov">          2 :         migrated[ISyIIi] *= nondetection;</span></a>
-<a name="909"><span class="lineNum">     909 </span><span class="lineCov">          2 :         migrated[INSIIi] *= nondetection;</span></a>
+<a name="908"><span class="lineNum">     908 </span><span class="lineCov">          2 :         mobile_population[ISyIIi] *= nondetection;</span></a>
+<a name="909"><span class="lineNum">     909 </span><span class="lineCov">          2 :         mobile_population[INSIIi] *= nondetection;</span></a>
 <a name="910"><span class="lineNum">     910 </span>            :     }</a>
 <a name="911"><span class="lineNum">     911 </span><span class="lineCov">          1 : }</span></a>
 <a name="912"><span class="lineNum">     912 </span>            : </a>

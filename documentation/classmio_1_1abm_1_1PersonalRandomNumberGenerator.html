@@ -105,13 +105,13 @@ Public Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:a7701e6c37ba49342c252fddb10c179e7"><td class="memItemLeft" align="right" valign="top">mio::Counter&lt; uint32_t &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1abm_1_1PersonalRandomNumberGenerator.html#a7701e6c37ba49342c252fddb10c179e7">m_counter</a></td></tr>
-<tr class="memdesc:a7701e6c37ba49342c252fddb10c179e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reference to the <a class="el" href="classmio_1_1abm_1_1Person.html" title="Agents in the simulated World that can carry and spread the Infection.">Person</a>'s rng counter.  <a href="classmio_1_1abm_1_1PersonalRandomNumberGenerator.html#a7701e6c37ba49342c252fddb10c179e7">More...</a><br /></td></tr>
+<tr class="memdesc:a7701e6c37ba49342c252fddb10c179e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reference to the <a class="el" href="classmio_1_1abm_1_1Person.html" title="Agents in the simulated Model that can carry and spread the Infection.">Person</a>'s rng counter.  <a href="classmio_1_1abm_1_1PersonalRandomNumberGenerator.html#a7701e6c37ba49342c252fddb10c179e7">More...</a><br /></td></tr>
 <tr class="separator:a7701e6c37ba49342c252fddb10c179e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a15ba57cc7377db4b3211f78ac62a5cd9"><td class="memItemLeft" align="right" valign="top">mio::Key&lt; uint64_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1abm_1_1PersonalRandomNumberGenerator.html#a15ba57cc7377db4b3211f78ac62a5cd9">m_key</a></td></tr>
 <tr class="memdesc:a15ba57cc7377db4b3211f78ac62a5cd9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Global RNG Key.  <a href="classmio_1_1abm_1_1PersonalRandomNumberGenerator.html#a15ba57cc7377db4b3211f78ac62a5cd9">More...</a><br /></td></tr>
 <tr class="separator:a15ba57cc7377db4b3211f78ac62a5cd9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a44d25163b502e8b31884cb363af711b8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmio_1_1abm_1_1PersonId.html">PersonId</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1abm_1_1PersonalRandomNumberGenerator.html#a44d25163b502e8b31884cb363af711b8">m_person_id</a></td></tr>
-<tr class="memdesc:a44d25163b502e8b31884cb363af711b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Id of the <a class="el" href="classmio_1_1abm_1_1Person.html" title="Agents in the simulated World that can carry and spread the Infection.">Person</a>.  <a href="classmio_1_1abm_1_1PersonalRandomNumberGenerator.html#a44d25163b502e8b31884cb363af711b8">More...</a><br /></td></tr>
+<tr class="memdesc:a44d25163b502e8b31884cb363af711b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Id of the <a class="el" href="classmio_1_1abm_1_1Person.html" title="Agents in the simulated Model that can carry and spread the Infection.">Person</a>.  <a href="classmio_1_1abm_1_1PersonalRandomNumberGenerator.html#a44d25163b502e8b31884cb363af711b8">More...</a><br /></td></tr>
 <tr class="separator:a44d25163b502e8b31884cb363af711b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -154,8 +154,8 @@ Private Attributes</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">key</td><td>Key to be used by the generator. </td></tr>
-    <tr><td class="paramname">id</td><td>Id of the <a class="el" href="classmio_1_1abm_1_1Person.html" title="Agents in the simulated World that can carry and spread the Infection.">Person</a>. </td></tr>
-    <tr><td class="paramname">counter</td><td>Reference to the <a class="el" href="classmio_1_1abm_1_1Person.html" title="Agents in the simulated World that can carry and spread the Infection.">Person</a>'s RNG Counter. </td></tr>
+    <tr><td class="paramname">id</td><td>Id of the <a class="el" href="classmio_1_1abm_1_1Person.html" title="Agents in the simulated Model that can carry and spread the Infection.">Person</a>. </td></tr>
+    <tr><td class="paramname">counter</td><td>Reference to the <a class="el" href="classmio_1_1abm_1_1Person.html" title="Agents in the simulated Model that can carry and spread the Infection.">Person</a>'s RNG Counter. </td></tr>
   </table>
   </dd>
 </dl>
@@ -192,7 +192,7 @@ Private Attributes</h2></td></tr>
 <p>Uses the same key as another RandomNumberGenerator. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">rng</td><td>RandomNumberGenerator who's key will be used. </td></tr>
-    <tr><td class="paramname">person</td><td>Reference to the <a class="el" href="classmio_1_1abm_1_1Person.html" title="Agents in the simulated World that can carry and spread the Infection.">Person</a> who's counter will be used. </td></tr>
+    <tr><td class="paramname">person</td><td>Reference to the <a class="el" href="classmio_1_1abm_1_1Person.html" title="Agents in the simulated Model that can carry and spread the Infection.">Person</a> who's counter will be used. </td></tr>
   </table>
   </dd>
 </dl>
@@ -276,7 +276,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Reference to the <a class="el" href="classmio_1_1abm_1_1Person.html" title="Agents in the simulated World that can carry and spread the Infection.">Person</a>'s rng counter. </p>
+<p>Reference to the <a class="el" href="classmio_1_1abm_1_1Person.html" title="Agents in the simulated Model that can carry and spread the Infection.">Person</a>'s rng counter. </p>
 
 </div>
 </div>
@@ -324,7 +324,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Id of the <a class="el" href="classmio_1_1abm_1_1Person.html" title="Agents in the simulated World that can carry and spread the Infection.">Person</a>. </p>
+<p>Id of the <a class="el" href="classmio_1_1abm_1_1Person.html" title="Agents in the simulated Model that can carry and spread the Infection.">Person</a>. </p>
 
 </div>
 </div>

@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2024-07-22 11:59:05</td>
+            <td class="headerValue">2024-07-31 09:55:57</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">29</td>
@@ -351,15 +351,15 @@
 <a name="289"><span class="lineNum">     289 </span>            : }</a>
 <a name="290"><span class="lineNum">     290 </span>            : </a>
 <a name="291"><span class="lineNum">     291 </span>            : /**</a>
-<a name="292"><span class="lineNum">     292 </span>            :  * Make migration coefficient damping vector from dampings by group.</a>
-<a name="293"><span class="lineNum">     293 </span>            :  * Maps the vector of dampings by group onto a migration coefficient damping vector</a>
+<a name="292"><span class="lineNum">     292 </span>            :  * Make mobility coefficient damping vector from dampings by group.</a>
+<a name="293"><span class="lineNum">     293 </span>            :  * Maps the vector of dampings by group onto a mobility coefficient damping vector</a>
 <a name="294"><span class="lineNum">     294 </span>            :  * [g_0, g_0, ..., g_1, g_1, ..., g_2, ...].</a>
-<a name="295"><span class="lineNum">     295 </span>            :  * @param shape shape (i.e. size) of the migration coefficient vector.</a>
+<a name="295"><span class="lineNum">     295 </span>            :  * @param shape shape (i.e. size) of the mobility coefficient vector.</a>
 <a name="296"><span class="lineNum">     296 </span>            :  * @param groups damping value weighted by group.</a>
-<a name="297"><span class="lineNum">     297 </span>            :  * @return vector expression of migration coefficient damping.</a>
+<a name="297"><span class="lineNum">     297 </span>            :  * @return vector expression of mobility coefficient damping.</a>
 <a name="298"><span class="lineNum">     298 </span>            :  */</a>
 <a name="299"><span class="lineNum">     299 </span>            : template &lt;class V&gt;</a>
-<a name="300"><span class="lineNum">     300 </span><span class="lineCov">          9 : auto make_migration_damping_vector(ColumnVectorShape shape, V&amp;&amp; groups)</span></a>
+<a name="300"><span class="lineNum">     300 </span><span class="lineCov">          9 : auto make_mobility_damping_vector(ColumnVectorShape shape, V&amp;&amp; groups)</span></a>
 <a name="301"><span class="lineNum">     301 </span>            : {</a>
 <a name="302"><span class="lineNum">     302 </span><span class="lineCov">        208 :     return Eigen::VectorXd::NullaryExpr(shape.size(), [shape, groups = std::forward&lt;V&gt;(groups)](Eigen::Index i) {</span></a>
 <a name="303"><span class="lineNum">     303 </span><span class="lineCov">        213 :         auto num_groups       = groups.size();</span></a>

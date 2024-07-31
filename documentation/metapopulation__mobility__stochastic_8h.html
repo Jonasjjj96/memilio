@@ -87,11 +87,11 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1MigrationEdgeStochastic.html">mio::MigrationEdgeStochastic</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">represents the migration between two nodes.  <a href="classmio_1_1MigrationEdgeStochastic.html#details">More...</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1MobilityEdgeStochastic.html">mio::MobilityEdgeStochastic</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">represents the mobility between two nodes.  <a href="classmio_1_1MobilityEdgeStochastic.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1MigrationParametersStochastic.html">mio::MigrationParametersStochastic</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">parameters that influence migration.  <a href="classmio_1_1MigrationParametersStochastic.html#details">More...</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1MobilityParametersStochastic.html">mio::MobilityParametersStochastic</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">parameters that influence mobility.  <a href="classmio_1_1MobilityParametersStochastic.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
@@ -102,18 +102,18 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a456698e86179ed8ee48f44e3d9d8d85c"><td class="memTemplParams" colspan="2">template&lt;class Sim , class StochasticEdge &gt; </td></tr>
-<tr class="memitem:a456698e86179ed8ee48f44e3d9d8d85c"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemio.html#a456698e86179ed8ee48f44e3d9d8d85c">mio::apply_migration</a> (StochasticEdge &amp;migrationEdge, size_t event, SimulationNode&lt; Sim &gt; &amp;node_from, SimulationNode&lt; Sim &gt; &amp;node_to)</td></tr>
-<tr class="memdesc:a456698e86179ed8ee48f44e3d9d8d85c"><td class="mdescLeft">&#160;</td><td class="mdescRight">edge functor for migration simulation.  <a href="namespacemio.html#a456698e86179ed8ee48f44e3d9d8d85c">More...</a><br /></td></tr>
-<tr class="separator:a456698e86179ed8ee48f44e3d9d8d85c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a66f914e02a28f9b33c7acea466ecdf"><td class="memTemplParams" colspan="2">template&lt;class Sim , class StochasticEdge &gt; </td></tr>
+<tr class="memitem:a2a66f914e02a28f9b33c7acea466ecdf"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemio.html#a2a66f914e02a28f9b33c7acea466ecdf">mio::apply_mobility</a> (StochasticEdge &amp;mobilityEdge, size_t event, SimulationNode&lt; Sim &gt; &amp;node_from, SimulationNode&lt; Sim &gt; &amp;node_to)</td></tr>
+<tr class="memdesc:a2a66f914e02a28f9b33c7acea466ecdf"><td class="mdescLeft">&#160;</td><td class="mdescRight">edge functor for mobility-based simulation.  <a href="namespacemio.html#a2a66f914e02a28f9b33c7acea466ecdf">More...</a><br /></td></tr>
+<tr class="separator:a2a66f914e02a28f9b33c7acea466ecdf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader"></div></td></tr>
-<tr class="memitem:a718336dfc617e9dbb8b7e1d29050861b"><td class="memTemplParams" colspan="2">template&lt;class Sim &gt; </td></tr>
-<tr class="memitem:a718336dfc617e9dbb8b7e1d29050861b"><td class="memTemplItemLeft" align="right" valign="top">GraphSimulationStochastic&lt; Graph&lt; SimulationNode&lt; Sim &gt;, MigrationEdgeStochastic &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemio.html#a718336dfc617e9dbb8b7e1d29050861b">mio::make_migration_sim</a> (double t0, double dt, const Graph&lt; SimulationNode&lt; Sim &gt;, MigrationEdgeStochastic &gt; &amp;graph)</td></tr>
-<tr class="memdesc:a718336dfc617e9dbb8b7e1d29050861b"><td class="mdescLeft">&#160;</td><td class="mdescRight">create a migration simulation.  <a href="namespacemio.html#a718336dfc617e9dbb8b7e1d29050861b">More...</a><br /></td></tr>
-<tr class="separator:a718336dfc617e9dbb8b7e1d29050861b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a29ddabba17ee78ac0b4a3e380b9c4f39"><td class="memTemplParams" colspan="2">template&lt;class Sim &gt; </td></tr>
-<tr class="memitem:a29ddabba17ee78ac0b4a3e380b9c4f39"><td class="memTemplItemLeft" align="right" valign="top">GraphSimulationStochastic&lt; Graph&lt; SimulationNode&lt; Sim &gt;, MigrationEdgeStochastic &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemio.html#a29ddabba17ee78ac0b4a3e380b9c4f39">mio::make_migration_sim</a> (double t0, double dt, Graph&lt; SimulationNode&lt; Sim &gt;, MigrationEdgeStochastic &gt; &amp;&amp;graph)</td></tr>
-<tr class="separator:a29ddabba17ee78ac0b4a3e380b9c4f39"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a89528a592fbccb36b6a669d4dc15deec"><td class="memTemplParams" colspan="2">template&lt;class Sim &gt; </td></tr>
+<tr class="memitem:a89528a592fbccb36b6a669d4dc15deec"><td class="memTemplItemLeft" align="right" valign="top">GraphSimulationStochastic&lt; Graph&lt; SimulationNode&lt; Sim &gt;, MobilityEdgeStochastic &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemio.html#a89528a592fbccb36b6a669d4dc15deec">mio::make_mobility_sim</a> (double t0, double dt, const Graph&lt; SimulationNode&lt; Sim &gt;, MobilityEdgeStochastic &gt; &amp;graph)</td></tr>
+<tr class="memdesc:a89528a592fbccb36b6a669d4dc15deec"><td class="mdescLeft">&#160;</td><td class="mdescRight">create a mobility-based simulation.  <a href="namespacemio.html#a89528a592fbccb36b6a669d4dc15deec">More...</a><br /></td></tr>
+<tr class="separator:a89528a592fbccb36b6a669d4dc15deec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f0b1b27e9578188eff73c0f3715b0fb"><td class="memTemplParams" colspan="2">template&lt;class Sim &gt; </td></tr>
+<tr class="memitem:a3f0b1b27e9578188eff73c0f3715b0fb"><td class="memTemplItemLeft" align="right" valign="top">GraphSimulationStochastic&lt; Graph&lt; SimulationNode&lt; Sim &gt;, MobilityEdgeStochastic &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemio.html#a3f0b1b27e9578188eff73c0f3715b0fb">mio::make_mobility_sim</a> (double t0, double dt, Graph&lt; SimulationNode&lt; Sim &gt;, MobilityEdgeStochastic &gt; &amp;&amp;graph)</td></tr>
+<tr class="separator:a3f0b1b27e9578188eff73c0f3715b0fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- start footer part -->

@@ -82,7 +82,7 @@ Functions</h2></td></tr>
 <tr class="memitem:ace5558a5d455d1b6ba6d54a936eec4b7"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacememilio_1_1epidata_1_1getCommuterMobility.html#ace5558a5d455d1b6ba6d54a936eec4b7">commuter_sanity_checks</a> (df)</td></tr>
 <tr class="separator:ace5558a5d455d1b6ba6d54a936eec4b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a80c823e8e3e90d969ab359280bb0b472"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacememilio_1_1epidata_1_1getCommuterMobility.html#a80c823e8e3e90d969ab359280bb0b472">get_commuter_data</a> (read_data=dd.defaultDict['read_data'], file_format=dd.defaultDict['file_format'], out_folder=dd.defaultDict['out_folder'], setup_dict='', ref_year=2022, **kwargs)</td></tr>
-<tr class="memdesc:a80c823e8e3e90d969ab359280bb0b472"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes DataFrame of commuter migration patterns based on the Federal Agency of Work data.  <a href="namespacememilio_1_1epidata_1_1getCommuterMobility.html#a80c823e8e3e90d969ab359280bb0b472">More...</a><br /></td></tr>
+<tr class="memdesc:a80c823e8e3e90d969ab359280bb0b472"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes DataFrame of commuter mobility patterns based on the Federal Agency of Work data.  <a href="namespacememilio_1_1epidata_1_1getCommuterMobility.html#a80c823e8e3e90d969ab359280bb0b472">More...</a><br /></td></tr>
 <tr class="separator:a80c823e8e3e90d969ab359280bb0b472"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:add853d0061b670c870392e10d99a2dc4"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacememilio_1_1epidata_1_1getCommuterMobility.html#add853d0061b670c870392e10d99a2dc4">get_neighbors_mobility</a> (countyid, direction='both', abs_tol=0, rel_tol=0, tol_comb='or', out_folder=dd.defaultDict['out_folder'], ref_year=2022, **kwargs)</td></tr>
 <tr class="memdesc:add853d0061b670c870392e10d99a2dc4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the neighbors of a particular county ID depening on the commuter mobility and given absolute and relative thresholds on the number of commuters.  <a href="namespacememilio_1_1epidata_1_1getCommuterMobility.html#add853d0061b670c870392e10d99a2dc4">More...</a><br /></td></tr>
@@ -223,18 +223,18 @@ state_gov_table Table of governing region regional keys per federal state. </dd>
       </table>
 </div><div class="memdoc">
 
-<p>Computes DataFrame of commuter migration patterns based on the Federal Agency of Work data. </p>
+<p>Computes DataFrame of commuter mobility patterns based on the Federal Agency of Work data. </p>
 <p>Keyword arguments: </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">read_data</td><td>True or False. Defines if data is read from file or downloaded. Only for population data. Commuter data is always downloaded. Default defined in <a class="el" href="namespacememilio_1_1epidata_1_1defaultDict.html">defaultDict</a>. </td></tr>
     <tr><td class="paramname">file_format</td><td>File format which is used for writing the data. Default defined in <a class="el" href="namespacememilio_1_1epidata_1_1defaultDict.html">defaultDict</a>. </td></tr>
     <tr><td class="paramname">out_folder</td><td>Folder where data is written to. Default defined in <a class="el" href="namespacememilio_1_1epidata_1_1defaultDict.html">defaultDict</a>. </td></tr>
-    <tr><td class="paramname">setup_dict</td><td>dictionary with necessary values: 'path': String with datapath where migration files can be found 'abs_tol': tolerated undetected people 'rel_tol': relative Tolerance to undetected people </td></tr>
+    <tr><td class="paramname">setup_dict</td><td>dictionary with necessary values: 'path': String with datapath where mobility files can be found 'abs_tol': tolerated undetected people 'rel_tol': relative Tolerance to undetected people </td></tr>
     <tr><td class="paramname">ref_year</td><td>Year between 2013 and 2022 that specifies where the data should be taken from. Default value is 2022. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>df_commuter_migration DataFrame of commuter migration. df_commuter_migration[i][j]= number of commuters from county with county-id i to county with county-id j In commuter migration files is a cumulative value per county for number of commuters from whole Germany given. The printed errors are refering to the absolute and relative errors from included numbers per county in DataFrame and this cumulative values. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>df_commuter_mobility DataFrame of commuter mobility. df_commuter_mobility[i][j]= number of commuters from county with county-id i to county with county-id j In commuter mobility files is a cumulative value per county for number of commuters from whole Germany given. The printed errors are refering to the absolute and relative errors from included numbers per county in DataFrame and this cumulative values. </dd></dl>
 
 </div>
 </div>

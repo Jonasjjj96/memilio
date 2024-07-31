@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2024-07-22 11:59:05</td>
+            <td class="headerValue">2024-07-31 09:55:57</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">7</td>
@@ -254,9 +254,9 @@
 <a name="192"><span class="lineNum">     192 </span><span class="lineCov">         11 : }</span></a>
 <a name="193"><span class="lineNum">     193 </span>            : </a>
 <a name="194"><span class="lineNum">     194 </span>            : template &lt;typename FP = double&gt;</a>
-<a name="195"><span class="lineNum">     195 </span><span class="lineCov">          8 : Graph&lt;Model&lt;FP&gt;, MigrationParameters&lt;FP&gt;&gt; draw_sample(Graph&lt;Model&lt;FP&gt;, MigrationParameters&lt;FP&gt;&gt;&amp; graph)</span></a>
+<a name="195"><span class="lineNum">     195 </span><span class="lineCov">          8 : Graph&lt;Model&lt;FP&gt;, MobilityParameters&lt;FP&gt;&gt; draw_sample(Graph&lt;Model&lt;FP&gt;, MobilityParameters&lt;FP&gt;&gt;&amp; graph)</span></a>
 <a name="196"><span class="lineNum">     196 </span>            : {</a>
-<a name="197"><span class="lineNum">     197 </span><span class="lineCov">          8 :     Graph&lt;Model&lt;FP&gt;, MigrationParameters&lt;FP&gt;&gt; sampled_graph;</span></a>
+<a name="197"><span class="lineNum">     197 </span><span class="lineCov">          8 :     Graph&lt;Model&lt;FP&gt;, MobilityParameters&lt;FP&gt;&gt; sampled_graph;</span></a>
 <a name="198"><span class="lineNum">     198 </span>            : </a>
 <a name="199"><span class="lineNum">     199 </span>            :     //sample global parameters</a>
 <a name="200"><span class="lineNum">     200 </span><span class="lineCov">          8 :     auto&amp; shared_params_model = graph.nodes()[0].property;</span></a>
@@ -291,7 +291,7 @@
 <a name="229"><span class="lineNum">     229 </span><span class="lineCov">         22 :     for (auto&amp; edge : graph.edges()) {</span></a>
 <a name="230"><span class="lineNum">     230 </span><span class="lineCov">          7 :         auto edge_params = edge.property;</span></a>
 <a name="231"><span class="lineNum">     231 </span><span class="lineCov">         21 :         apply_dampings(edge_params.get_coefficients(), shared_contacts.get_dampings(), [&amp;edge_params](auto&amp; v) {</span></a>
-<a name="232"><span class="lineNum">     232 </span><span class="lineCov">         14 :             return make_migration_damping_vector(edge_params.get_coefficients().get_shape(), v);</span></a>
+<a name="232"><span class="lineNum">     232 </span><span class="lineCov">         14 :             return make_mobility_damping_vector(edge_params.get_coefficients().get_shape(), v);</span></a>
 <a name="233"><span class="lineNum">     233 </span>            :         });</a>
 <a name="234"><span class="lineNum">     234 </span><span class="lineCov">          7 :         edge_params.set_dynamic_npis_infected(shared_dynamic_npis);</span></a>
 <a name="235"><span class="lineNum">     235 </span><span class="lineCov">          7 :         sampled_graph.add_edge(edge.start_node_idx, edge.end_node_idx, edge_params);</span></a>

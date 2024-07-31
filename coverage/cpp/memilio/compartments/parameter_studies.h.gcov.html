@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2024-07-22 11:59:05</td>
+            <td class="headerValue">2024-07-31 09:55:57</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">13</td>
@@ -102,7 +102,7 @@
 <a name="40"><span class="lineNum">      40 </span>            : </a>
 <a name="41"><span class="lineNum">      41 </span>            : /**</a>
 <a name="42"><span class="lineNum">      42 </span>            :  * Class that performs multiple simulation runs with randomly sampled parameters.</a>
-<a name="43"><span class="lineNum">      43 </span>            :  * Can simulate migration graphs with one simulation in each node or single simulations.</a>
+<a name="43"><span class="lineNum">      43 </span>            :  * Can simulate mobility graphs with one simulation in each node or single simulations.</a>
 <a name="44"><span class="lineNum">      44 </span>            :  * @tparam S type of simulation that runs in one node of the graph.</a>
 <a name="45"><span class="lineNum">      45 </span>            :  */</a>
 <a name="46"><span class="lineNum">      46 </span>            : template &lt;class S&gt;</a>
@@ -117,12 +117,12 @@
 <a name="55"><span class="lineNum">      55 </span>            :     * The Graph type that stores the parametes of the simulation.</a>
 <a name="56"><span class="lineNum">      56 </span>            :     * This is the input of ParameterStudies.</a>
 <a name="57"><span class="lineNum">      57 </span>            :     */</a>
-<a name="58"><span class="lineNum">      58 </span>            :     using ParametersGraph = mio::Graph&lt;typename Simulation::Model, mio::MigrationParameters&lt;double&gt;&gt;;</a>
+<a name="58"><span class="lineNum">      58 </span>            :     using ParametersGraph = mio::Graph&lt;typename Simulation::Model, mio::MobilityParameters&lt;double&gt;&gt;;</a>
 <a name="59"><span class="lineNum">      59 </span>            :     /**</a>
 <a name="60"><span class="lineNum">      60 </span>            :     * The Graph type that stores simulations and their results of each run.</a>
 <a name="61"><span class="lineNum">      61 </span>            :     * This is the output of ParameterStudies for each run.</a>
 <a name="62"><span class="lineNum">      62 </span>            :     */</a>
-<a name="63"><span class="lineNum">      63 </span>            :     using SimulationGraph = mio::Graph&lt;mio::SimulationNode&lt;Simulation&gt;, mio::MigrationEdge&lt;double&gt;&gt;;</a>
+<a name="63"><span class="lineNum">      63 </span>            :     using SimulationGraph = mio::Graph&lt;mio::SimulationNode&lt;Simulation&gt;, mio::MobilityEdge&lt;double&gt;&gt;;</a>
 <a name="64"><span class="lineNum">      64 </span>            : </a>
 <a name="65"><span class="lineNum">      65 </span>            :     /**</a>
 <a name="66"><span class="lineNum">      66 </span>            :      * create study for graph of compartment models.</a>
@@ -412,7 +412,7 @@
 <a name="350"><span class="lineNum">     350 </span><span class="lineCov">          7 :             sim_graph.add_edge(edge.start_node_idx, edge.end_node_idx, edge.property);</span></a>
 <a name="351"><span class="lineNum">     351 </span>            :         }</a>
 <a name="352"><span class="lineNum">     352 </span>            : </a>
-<a name="353"><span class="lineNum">     353 </span><span class="lineCov">         16 :         return make_migration_sim(m_t0, m_dt_graph_sim, std::move(sim_graph));</span></a>
+<a name="353"><span class="lineNum">     353 </span><span class="lineCov">         16 :         return make_mobility_sim(m_t0, m_dt_graph_sim, std::move(sim_graph));</span></a>
 <a name="354"><span class="lineNum">     354 </span><span class="lineCov">          8 :     }</span></a>
 <a name="355"><span class="lineNum">     355 </span>            : </a>
 <a name="356"><span class="lineNum">     356 </span><span class="lineCov">          2 :     std::vector&lt;size_t&gt; distribute_runs(size_t num_runs, int num_procs)</span></a>

@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2024-07-22 11:59:05</td>
+            <td class="headerValue">2024-07-31 09:55:57</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">19</td>
@@ -152,7 +152,7 @@
 <a name="90"><span class="lineNum">      90 </span>            : }; // namespace mio</a>
 <a name="91"><span class="lineNum">      91 </span>            : </a>
 <a name="92"><span class="lineNum">      92 </span>            : /**</a>
-<a name="93"><span class="lineNum">      93 </span>            :  * @brief All Location%s in the simulated World where Person%s gather.</a>
+<a name="93"><span class="lineNum">      93 </span>            :  * @brief All Location%s in the simulated Model where Person%s gather.</a>
 <a name="94"><span class="lineNum">      94 </span>            :  */</a>
 <a name="95"><span class="lineNum">      95 </span>            : class Location</a>
 <a name="96"><span class="lineNum">      96 </span>            : {</a>
@@ -160,7 +160,7 @@
 <a name="98"><span class="lineNum">      98 </span>            :     /**</a>
 <a name="99"><span class="lineNum">      99 </span>            :      * @brief Construct a Location with provided parameters. </a>
 <a name="100"><span class="lineNum">     100 </span>            :      * @param[in] loc_type The #LocationType.</a>
-<a name="101"><span class="lineNum">     101 </span>            :      * @param[in] loc_id The index of the Location in the World.</a>
+<a name="101"><span class="lineNum">     101 </span>            :      * @param[in] loc_id The index of the Location in the Model.</a>
 <a name="102"><span class="lineNum">     102 </span>            :      * @param[in] num_agegroups [Default: 1] The number of age groups in the model.</a>
 <a name="103"><span class="lineNum">     103 </span>            :      * @param[in] num_cells [Default: 1] The number of Cell%s in which the Location is divided.</a>
 <a name="104"><span class="lineNum">     104 </span>            :      */</a>
@@ -200,7 +200,7 @@
 <a name="138"><span class="lineNum">     138 </span>            :     }</a>
 <a name="139"><span class="lineNum">     139 </span>            : </a>
 <a name="140"><span class="lineNum">     140 </span>            :     /**</a>
-<a name="141"><span class="lineNum">     141 </span>            :      * @brief Get the location's identifier in a World.</a>
+<a name="141"><span class="lineNum">     141 </span>            :      * @brief Get the location's identifier in a Model.</a>
 <a name="142"><span class="lineNum">     142 </span>            :      * @return The location's LocationId by value.</a>
 <a name="143"><span class="lineNum">     143 </span>            :      */</a>
 <a name="144"><span class="lineNum">     144 </span><span class="lineCov">       5680 :     LocationId get_id() const</span></a>
@@ -344,7 +344,7 @@
 <a name="282"><span class="lineNum">     282 </span>            : </a>
 <a name="283"><span class="lineNum">     283 </span>            : private:</a>
 <a name="284"><span class="lineNum">     284 </span>            :     LocationType m_type; ///&lt; Type of the Location.</a>
-<a name="285"><span class="lineNum">     285 </span>            :     LocationId m_id; ///&lt; Unique identifier for the Location in the World owning it.</a>
+<a name="285"><span class="lineNum">     285 </span>            :     LocationId m_id; ///&lt; Unique identifier for the Location in the Model owning it.</a>
 <a name="286"><span class="lineNum">     286 </span>            :     LocalInfectionParameters m_parameters; ///&lt; Infection parameters for the Location.</a>
 <a name="287"><span class="lineNum">     287 </span>            :     std::vector&lt;Cell&gt; m_cells{}; ///&lt; A vector of all Cell%s that the Location is divided in.</a>
 <a name="288"><span class="lineNum">     288 </span>            :     MaskType m_required_mask; ///&lt; Least secure type of Mask that is needed to enter the Location.</a>

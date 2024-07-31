@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2024-07-22 11:59:05</td>
+            <td class="headerValue">2024-07-31 09:55:57</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">2</td>
@@ -103,7 +103,7 @@
 <a name="41"><span class="lineNum">      41 </span>            : IOResult&lt;int&gt; count_lines(const std::string&amp; filename);</a>
 <a name="42"><span class="lineNum">      42 </span>            : </a>
 <a name="43"><span class="lineNum">      43 </span>            : /**</a>
-<a name="44"><span class="lineNum">      44 </span>            :  * @brief Reads formatted migration or contact data which is given in columns</a>
+<a name="44"><span class="lineNum">      44 </span>            :  * @brief Reads formatted mobility or contact data which is given in columns</a>
 <a name="45"><span class="lineNum">      45 </span>            :  *          from_str    to_str  from_rs     to_rs       count_abs</a>
 <a name="46"><span class="lineNum">      46 </span>            :  *        and separated by tabs. Writes it into a NxN Eigen Matrix, </a>
 <a name="47"><span class="lineNum">      47 </span>            :  *        where N is the number of regions</a>
@@ -112,7 +112,7 @@
 <a name="50"><span class="lineNum">      50 </span>            : IOResult&lt;Eigen::MatrixXd&gt; read_mobility_formatted(const std::string&amp; filename);</a>
 <a name="51"><span class="lineNum">      51 </span>            : </a>
 <a name="52"><span class="lineNum">      52 </span>            : /**</a>
-<a name="53"><span class="lineNum">      53 </span>            :  * @brief Reads txt migration data or contact which is given by values only</a>
+<a name="53"><span class="lineNum">      53 </span>            :  * @brief Reads txt mobility data or contact which is given by values only</a>
 <a name="54"><span class="lineNum">      54 </span>            :  *        and separated by spaces. Writes it into a NxN Eigen </a>
 <a name="55"><span class="lineNum">      55 </span>            :  *        Matrix, where N is the number of regions</a>
 <a name="56"><span class="lineNum">      56 </span>            :  * @param filename name of file to be read</a>
@@ -129,7 +129,7 @@
 <a name="67"><span class="lineNum">      67 </span>            :  * @param ioflags flags that set the behavior of serialization; see mio::IOFlags</a>
 <a name="68"><span class="lineNum">      68 </span>            :  */</a>
 <a name="69"><span class="lineNum">      69 </span>            : template &lt;typename FP, class Model&gt;</a>
-<a name="70"><span class="lineNum">      70 </span><span class="lineCov">         10 : IOResult&lt;void&gt; write_graph(const Graph&lt;Model, MigrationParameters&lt;FP&gt;&gt;&amp; graph, const std::string&amp; directory,</span></a>
+<a name="70"><span class="lineNum">      70 </span><span class="lineCov">         10 : IOResult&lt;void&gt; write_graph(const Graph&lt;Model, MobilityParameters&lt;FP&gt;&gt;&amp; graph, const std::string&amp; directory,</span></a>
 <a name="71"><span class="lineNum">      71 </span>            :                            int ioflags = IOF_None)</a>
 <a name="72"><span class="lineNum">      72 </span>            : {</a>
 <a name="73"><span class="lineNum">      73 </span><span class="lineCov">         10 :     assert(graph.nodes().size() &gt; 0 &amp;&amp; &quot;Graph Nodes are empty&quot;);</span></a>
@@ -189,8 +189,8 @@
 <a name="127"><span class="lineNum">     127 </span>            :  * @param read_edges boolean value that decides whether the edges of the graph should also be read in.</a>
 <a name="128"><span class="lineNum">     128 </span>            :  */</a>
 <a name="129"><span class="lineNum">     129 </span>            : template &lt;typename FP, class Model&gt;</a>
-<a name="130"><span class="lineNum">     130 </span><span class="lineCov">          3 : IOResult&lt;Graph&lt;Model, MigrationParameters&lt;FP&gt;&gt;&gt; read_graph(const std::string&amp; directory, int ioflags = IOF_None,</span></a>
-<a name="131"><span class="lineNum">     131 </span>            :                                                            bool read_edges = true)</a>
+<a name="130"><span class="lineNum">     130 </span><span class="lineCov">          3 : IOResult&lt;Graph&lt;Model, MobilityParameters&lt;FP&gt;&gt;&gt; read_graph(const std::string&amp; directory, int ioflags = IOF_None,</span></a>
+<a name="131"><span class="lineNum">     131 </span>            :                                                           bool read_edges = true)</a>
 <a name="132"><span class="lineNum">     132 </span>            : {</a>
 <a name="133"><span class="lineNum">     133 </span><span class="lineCov">          3 :     std::string abs_path;</span></a>
 <a name="134"><span class="lineNum">     134 </span><span class="lineCov">          3 :     if (!file_exists(directory, abs_path)) {</span></a>
@@ -198,7 +198,7 @@
 <a name="136"><span class="lineNum">     136 </span><span class="lineNoCov">          0 :         return failure(StatusCode::FileNotFound, directory);</span></a>
 <a name="137"><span class="lineNum">     137 </span>            :     }</a>
 <a name="138"><span class="lineNum">     138 </span>            : </a>
-<a name="139"><span class="lineNum">     139 </span><span class="lineCov">          3 :     auto graph = Graph&lt;Model, MigrationParameters&lt;FP&gt;&gt;{};</span></a>
+<a name="139"><span class="lineNum">     139 </span><span class="lineCov">          3 :     auto graph = Graph&lt;Model, MobilityParameters&lt;FP&gt;&gt;{};</span></a>
 <a name="140"><span class="lineNum">     140 </span>            : </a>
 <a name="141"><span class="lineNum">     141 </span>            :     //read nodes, as many as files are available</a>
 <a name="142"><span class="lineNum">     142 </span><span class="lineCov">         18 :     for (auto inode = 0;; ++inode) {</span></a>
@@ -237,7 +237,7 @@
 <a name="175"><span class="lineNum">     175 </span><span class="lineNoCov">          0 :                                    edge_filename + &quot;, EndNodeIndex not in range of number of graph nodes.&quot;);</span></a>
 <a name="176"><span class="lineNum">     176 </span>            :                 }</a>
 <a name="177"><span class="lineNum">     177 </span><span class="lineCov">          2 :                 BOOST_OUTCOME_TRY(auto&amp;&amp; parameters,</span></a>
-<a name="178"><span class="lineNum">     178 </span>            :                                   deserialize_json(e[&quot;Parameters&quot;], Tag&lt;MigrationParameters&lt;FP&gt;&gt;{}, ioflags));</a>
+<a name="178"><span class="lineNum">     178 </span>            :                                   deserialize_json(e[&quot;Parameters&quot;], Tag&lt;MobilityParameters&lt;FP&gt;&gt;{}, ioflags));</a>
 <a name="179"><span class="lineNum">     179 </span><span class="lineCov">          2 :                 graph.add_edge(start_node_idx, end_node_idx, parameters);</span></a>
 <a name="180"><span class="lineNum">     180 </span>            :             }</a>
 <a name="181"><span class="lineNum">     181 </span>            :         }</a>

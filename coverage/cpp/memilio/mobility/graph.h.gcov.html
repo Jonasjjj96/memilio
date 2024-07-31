@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2024-07-22 11:59:05</td>
+            <td class="headerValue">2024-07-31 09:55:57</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">89</td>
@@ -322,11 +322,11 @@
 <a name="260"><span class="lineNum">     260 </span>            :  * @param[in] export_time_series If true, reads data for each day of simulation and writes it in the same directory as the input files.</a>
 <a name="261"><span class="lineNum">     261 </span>            :  * @param[in] rki_age_groups Specifies whether rki-age_groups should be used.</a>
 <a name="262"><span class="lineNum">     262 </span>            :  */</a>
-<a name="263"><span class="lineNum">     263 </span>            : template &lt;class TestAndTrace, class ContactPattern, class Model, class MigrationParams, class Parameters,</a>
+<a name="263"><span class="lineNum">     263 </span>            : template &lt;class TestAndTrace, class ContactPattern, class Model, class MobilityParams, class Parameters,</a>
 <a name="264"><span class="lineNum">     264 </span>            :           class ReadFunction, class NodeIdFunction, typename FP = double&gt;</a>
 <a name="265"><span class="lineNum">     265 </span><span class="lineCov">          2 : IOResult&lt;void&gt; set_nodes(const Parameters&amp; params, Date start_date, Date end_date, const fs::path&amp; data_dir,</span></a>
 <a name="266"><span class="lineNum">     266 </span>            :                          const std::string&amp; population_data_path, bool is_node_for_county,</a>
-<a name="267"><span class="lineNum">     267 </span>            :                          Graph&lt;Model, MigrationParams&gt;&amp; params_graph, ReadFunction&amp;&amp; read_func,</a>
+<a name="267"><span class="lineNum">     267 </span>            :                          Graph&lt;Model, MobilityParams&gt;&amp; params_graph, ReadFunction&amp;&amp; read_func,</a>
 <a name="268"><span class="lineNum">     268 </span>            :                          NodeIdFunction&amp;&amp; node_func, const std::vector&lt;double&gt;&amp; scaling_factor_inf,</a>
 <a name="269"><span class="lineNum">     269 </span>            :                          double scaling_factor_icu, double tnt_capacity_factor, int num_days = 0,</a>
 <a name="270"><span class="lineNum">     270 </span>            :                          bool export_time_series = false, bool rki_age_groups = true)</a>
@@ -389,21 +389,21 @@
 <a name="327"><span class="lineNum">     327 </span>            :  * Reads the commuting matrices from txt files and sets the graph edges with that.</a>
 <a name="328"><span class="lineNum">     328 </span>            :  * @param[in] data_dir Directory that contains the data files.</a>
 <a name="329"><span class="lineNum">     329 </span>            :  * @param[in, out] params_graph Graph whose nodes are set by the function.</a>
-<a name="330"><span class="lineNum">     330 </span>            :  * @param[in] migrating_compartments Compartments that commute.</a>
+<a name="330"><span class="lineNum">     330 </span>            :  * @param[in] mobile_compartments Compartments that commute.</a>
 <a name="331"><span class="lineNum">     331 </span>            :  * @param[in] contact_locations_size Number of contact locations.</a>
 <a name="332"><span class="lineNum">     332 </span>            :  * @param[in] read_func Function that reads commuting matrices.</a>
 <a name="333"><span class="lineNum">     333 </span>            :  * @param[in] commuting_weights Vector with a commuting weight for every AgeGroup.</a>
 <a name="334"><span class="lineNum">     334 </span>            :  */</a>
-<a name="335"><span class="lineNum">     335 </span>            : template &lt;class ContactLocation, class Model, class MigrationParams, class MigrationCoefficientGroup,</a>
+<a name="335"><span class="lineNum">     335 </span>            : template &lt;class ContactLocation, class Model, class MobilityParams, class MobilityCoefficientGroup,</a>
 <a name="336"><span class="lineNum">     336 </span>            :           class InfectionState, class ReadFunction&gt;</a>
-<a name="337"><span class="lineNum">     337 </span><span class="lineCov">          1 : IOResult&lt;void&gt; set_edges(const fs::path&amp; data_dir, Graph&lt;Model, MigrationParams&gt;&amp; params_graph,</span></a>
-<a name="338"><span class="lineNum">     338 </span>            :                          std::initializer_list&lt;InfectionState&gt;&amp; migrating_compartments, size_t contact_locations_size,</a>
+<a name="337"><span class="lineNum">     337 </span><span class="lineCov">          1 : IOResult&lt;void&gt; set_edges(const fs::path&amp; data_dir, Graph&lt;Model, MobilityParams&gt;&amp; params_graph,</span></a>
+<a name="338"><span class="lineNum">     338 </span>            :                          std::initializer_list&lt;InfectionState&gt;&amp; mobile_compartments, size_t contact_locations_size,</a>
 <a name="339"><span class="lineNum">     339 </span>            :                          ReadFunction&amp;&amp; read_func,</a>
 <a name="340"><span class="lineNum">     340 </span>            :                          std::vector&lt;ScalarType&gt; commuting_weights = std::vector&lt;ScalarType&gt;{})</a>
 <a name="341"><span class="lineNum">     341 </span>            : {</a>
 <a name="342"><span class="lineNum">     342 </span>            :     // mobility between nodes</a>
 <a name="343"><span class="lineNum">     343 </span><span class="lineCov">          5 :     BOOST_OUTCOME_TRY(auto&amp;&amp; mobility_data_commuter,</span></a>
-<a name="344"><span class="lineNum">     344 </span>            :                       read_func((data_dir / &quot;mobility&quot; / &quot;commuter_migration_scaled.txt&quot;).string()));</a>
+<a name="344"><span class="lineNum">     344 </span>            :                       read_func((data_dir / &quot;mobility&quot; / &quot;commuter_mobility.txt&quot;).string()));</a>
 <a name="345"><span class="lineNum">     345 </span><span class="lineCov">          5 :     BOOST_OUTCOME_TRY(auto&amp;&amp; mobility_data_twitter,</span></a>
 <a name="346"><span class="lineNum">     346 </span>            :                       read_func((data_dir / &quot;mobility&quot; / &quot;twitter_scaled_1252.txt&quot;).string()));</a>
 <a name="347"><span class="lineNum">     347 </span><span class="lineCov">          2 :     if (mobility_data_commuter.rows() != Eigen::Index(params_graph.nodes().size()) ||</span></a>
@@ -420,7 +420,7 @@
 <a name="358"><span class="lineNum">     358 </span><span class="lineCov">          4 :             auto&amp; populations = params_graph.nodes()[county_idx_i].property.populations;</span></a>
 <a name="359"><span class="lineNum">     359 </span>            :             // mobility coefficients have the same number of components as the contact matrices.</a>
 <a name="360"><span class="lineNum">     360 </span>            :             // so that the same NPIs/dampings can be used for both (e.g. more home office =&gt; fewer commuters)</a>
-<a name="361"><span class="lineNum">     361 </span><span class="lineCov">          4 :             auto mobility_coeffs = MigrationCoefficientGroup(contact_locations_size, populations.numel());</span></a>
+<a name="361"><span class="lineNum">     361 </span><span class="lineCov">          4 :             auto mobility_coeffs = MobilityCoefficientGroup(contact_locations_size, populations.numel());</span></a>
 <a name="362"><span class="lineNum">     362 </span><span class="lineCov">          4 :             auto num_age_groups  = (size_t)params_graph.nodes()[county_idx_i].property.parameters.get_num_groups();</span></a>
 <a name="363"><span class="lineNum">     363 </span><span class="lineCov">          8 :             commuting_weights =</span></a>
 <a name="364"><span class="lineNum">     364 </span><span class="lineCov">          8 :                 (commuting_weights.size() == 0 ? std::vector&lt;ScalarType&gt;(num_age_groups, 1.0) : commuting_weights);</span></a>
@@ -432,7 +432,7 @@
 <a name="370"><span class="lineNum">     370 </span><span class="lineCov">          4 :             auto commuter_coeff_ij = mobility_data_commuter(county_idx_i, county_idx_j) /</span></a>
 <a name="371"><span class="lineNum">     371 </span><span class="lineCov">          4 :                                      working_population; //data is absolute numbers, we need relative</span></a>
 <a name="372"><span class="lineNum">     372 </span><span class="lineCov">         28 :             for (auto age = AgeGroup(0); age &lt; populations.template size&lt;mio::AgeGroup&gt;(); ++age) {</span></a>
-<a name="373"><span class="lineNum">     373 </span><span class="lineCov">        144 :                 for (auto compartment : migrating_compartments) {</span></a>
+<a name="373"><span class="lineNum">     373 </span><span class="lineCov">        144 :                 for (auto compartment : mobile_compartments) {</span></a>
 <a name="374"><span class="lineNum">     374 </span><span class="lineCov">        120 :                     auto coeff_index = populations.get_flat_index({age, compartment});</span></a>
 <a name="375"><span class="lineNum">     375 </span><span class="lineCov">        120 :                     mobility_coeffs[size_t(ContactLocation::Work)].get_baseline()[coeff_index] =</span></a>
 <a name="376"><span class="lineNum">     376 </span><span class="lineCov">        120 :                         commuter_coeff_ij * commuting_weights[size_t(age)];</span></a>
@@ -443,7 +443,7 @@
 <a name="381"><span class="lineNum">     381 </span><span class="lineCov">          4 :             auto twitter_coeff    = mobility_data_twitter(county_idx_i, county_idx_j) /</span></a>
 <a name="382"><span class="lineNum">     382 </span><span class="lineCov">          4 :                                  total_population; //data is absolute numbers, we need relative</span></a>
 <a name="383"><span class="lineNum">     383 </span><span class="lineCov">         28 :             for (auto age = AgeGroup(0); age &lt; populations.template size&lt;mio::AgeGroup&gt;(); ++age) {</span></a>
-<a name="384"><span class="lineNum">     384 </span><span class="lineCov">        144 :                 for (auto compartment : migrating_compartments) {</span></a>
+<a name="384"><span class="lineNum">     384 </span><span class="lineCov">        144 :                 for (auto compartment : mobile_compartments) {</span></a>
 <a name="385"><span class="lineNum">     385 </span><span class="lineCov">        120 :                     auto coeff_idx = populations.get_flat_index({age, compartment});</span></a>
 <a name="386"><span class="lineNum">     386 </span><span class="lineCov">        120 :                     mobility_coeffs[size_t(ContactLocation::Other)].get_baseline()[coeff_idx] = twitter_coeff;</span></a>
 <a name="387"><span class="lineNum">     387 </span>            :                 }</a>
