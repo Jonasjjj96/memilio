@@ -31,13 +31,13 @@
             <td class="headerValue">coverage.info</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntry">117</td>
+            <td class="headerCovTableEntry">118</td>
             <td class="headerCovTableEntry">128</td>
-            <td class="headerCovTableEntryHi">91.4 %</td>
+            <td class="headerCovTableEntryHi">92.2 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2024-07-31 09:55:57</td>
+            <td class="headerValue">2024-08-01 13:11:40</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">89</td>
@@ -362,7 +362,7 @@
 <a name="300"><span class="lineNum">     300 </span><span class="lineCov">          4 :         auto&amp; contacts       = nodes[node_idx].parameters.template get&lt;ContactPattern&gt;();</span></a>
 <a name="301"><span class="lineNum">     301 </span><span class="lineCov">          4 :         contacts.get_school_holidays() =</span></a>
 <a name="302"><span class="lineNum">     302 </span><span class="lineCov">          8 :             std::vector&lt;std::pair&lt;mio::SimulationTime, mio::SimulationTime&gt;&gt;(holiday_periods.size());</span></a>
-<a name="303"><span class="lineNum">     303 </span><span class="lineCov">          4 :         std::transform(</span></a>
+<a name="303"><span class="lineNum">     303 </span><span class="lineCov">          8 :         std::transform(</span></a>
 <a name="304"><span class="lineNum">     304 </span><span class="lineCov">          4 :             holiday_periods.begin(), holiday_periods.end(), contacts.get_school_holidays().begin(), [=](auto&amp; period) {</span></a>
 <a name="305"><span class="lineNum">     305 </span><span class="lineNoCov">          0 :                 return std::make_pair(mio::SimulationTime(mio::get_offset_in_days(period.first, start_date)),</span></a>
 <a name="306"><span class="lineNum">     306 </span><span class="lineNoCov">          0 :                                       mio::SimulationTime(mio::get_offset_in_days(period.second, start_date)));</span></a>
@@ -475,8 +475,8 @@
 <a name="413"><span class="lineNum">     413 </span><span class="lineCov">         30 :     for (auto i = size_t(0); i &lt; node_ids.size(); ++i) {</span></a>
 <a name="414"><span class="lineNum">     414 </span><span class="lineCov">         20 :         graph.add_node(node_ids[i], node_properties[i]);</span></a>
 <a name="415"><span class="lineNum">     415 </span>            :     }</a>
-<a name="416"><span class="lineNum">     416 </span><span class="lineCov">         10 :     return graph;</span></a>
-<a name="417"><span class="lineNum">     417 </span><span class="lineNoCov">          0 : }</span></a>
+<a name="416"><span class="lineNum">     416 </span><span class="lineCov">         20 :     return graph;</span></a>
+<a name="417"><span class="lineNum">     417 </span><span class="lineCov">         10 : }</span></a>
 <a name="418"><span class="lineNum">     418 </span>            : </a>
 <a name="419"><span class="lineNum">     419 </span>            : template &lt;class T&gt;</a>
 <a name="420"><span class="lineNum">     420 </span>            : std::enable_if_t&lt;!has_ostream_op&lt;T&gt;::value, void&gt; print_graph_object(std::ostream&amp; os, size_t idx, const T&amp;)</a>

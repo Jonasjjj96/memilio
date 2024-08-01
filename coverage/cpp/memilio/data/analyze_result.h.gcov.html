@@ -31,13 +31,13 @@
             <td class="headerValue">coverage.info</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntry">31</td>
             <td class="headerCovTableEntry">33</td>
-            <td class="headerCovTableEntryHi">93.9 %</td>
+            <td class="headerCovTableEntry">33</td>
+            <td class="headerCovTableEntryHi">100.0 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2024-07-31 09:55:57</td>
+            <td class="headerValue">2024-08-01 13:11:40</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">7</td>
@@ -134,8 +134,8 @@
 <a name="72"><span class="lineNum">      72 </span><span class="lineCov">          1 :     std::transform(ensemble_results.begin(), ensemble_results.end(), std::back_inserter(interpolated), [](auto&amp; run) {</span></a>
 <a name="73"><span class="lineNum">      73 </span><span class="lineCov">          2 :         return interpolate_simulation_result(run);</span></a>
 <a name="74"><span class="lineNum">      74 </span>            :     });</a>
-<a name="75"><span class="lineNum">      75 </span><span class="lineCov">          1 :     return interpolated;</span></a>
-<a name="76"><span class="lineNum">      76 </span><span class="lineNoCov">          0 : }</span></a>
+<a name="75"><span class="lineNum">      75 </span><span class="lineCov">          2 :     return interpolated;</span></a>
+<a name="76"><span class="lineNum">      76 </span><span class="lineCov">          1 : }</span></a>
 <a name="77"><span class="lineNum">      77 </span>            : </a>
 <a name="78"><span class="lineNum">      78 </span>            : std::vector&lt;std::vector&lt;TimeSeries&lt;double&gt;&gt;&gt;</a>
 <a name="79"><span class="lineNum">      79 </span>            : sum_nodes(const std::vector&lt;std::vector&lt;TimeSeries&lt;double&gt;&gt;&gt;&amp; ensemble_result);</a>
@@ -179,8 +179,8 @@
 <a name="117"><span class="lineNum">     117 </span><span class="lineCov">         14 :                    [](auto&amp; n) {</span></a>
 <a name="118"><span class="lineNum">     118 </span><span class="lineCov">         14 :                        return interpolate_simulation_result(n.property.get_result());</span></a>
 <a name="119"><span class="lineNum">     119 </span>            :                    });</a>
-<a name="120"><span class="lineNum">     120 </span><span class="lineCov">          7 :     return interpolated;</span></a>
-<a name="121"><span class="lineNum">     121 </span><span class="lineNoCov">          0 : }</span></a>
+<a name="120"><span class="lineNum">     120 </span><span class="lineCov">         14 :     return interpolated;</span></a>
+<a name="121"><span class="lineNum">     121 </span><span class="lineCov">          7 : }</span></a>
 <a name="122"><span class="lineNum">     122 </span>            : </a>
 <a name="123"><span class="lineNum">     123 </span>            : /**</a>
 <a name="124"><span class="lineNum">     124 </span>            :  * Compute the distance between two SECIR simulation results.</a>

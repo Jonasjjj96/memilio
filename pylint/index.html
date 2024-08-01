@@ -28,7 +28,7 @@
 
         
         <h2>Score</h2>
-        7.46 / 10
+        7.48 / 10
             
         
 
@@ -3245,21 +3245,11 @@
                 <td><code>too-many-branches</code></td>
                 <td>R0912</td>
                 <td>cli</td>
-                <td><pre>Too many branches (20/12)</pre></td>
+                <td><pre>Too many branches (19/12)</pre></td>
             </tr>
             
             <tr>
-                <td>337</td>
-                <td>0</td>
-                <td>refactor</td>
-                <td><code>too-many-statements</code></td>
-                <td>R0915</td>
-                <td>cli</td>
-                <td><pre>Too many statements (53/50)</pre></td>
-            </tr>
-            
-            <tr>
-                <td>381</td>
+                <td>379</td>
                 <td>0</td>
                 <td>convention</td>
                 <td><code>line-too-long</code></td>
@@ -3269,7 +3259,7 @@
             </tr>
             
             <tr>
-                <td>384</td>
+                <td>382</td>
                 <td>0</td>
                 <td>convention</td>
                 <td><code>line-too-long</code></td>
@@ -3279,7 +3269,7 @@
             </tr>
             
             <tr>
-                <td>386</td>
+                <td>384</td>
                 <td>0</td>
                 <td>convention</td>
                 <td><code>line-too-long</code></td>
@@ -3289,7 +3279,7 @@
             </tr>
             
             <tr>
-                <td>387</td>
+                <td>385</td>
                 <td>0</td>
                 <td>convention</td>
                 <td><code>line-too-long</code></td>
@@ -3299,7 +3289,7 @@
             </tr>
             
             <tr>
-                <td>388</td>
+                <td>386</td>
                 <td>0</td>
                 <td>convention</td>
                 <td><code>line-too-long</code></td>
@@ -3309,7 +3299,7 @@
             </tr>
             
             <tr>
-                <td>393</td>
+                <td>391</td>
                 <td>8</td>
                 <td>warning</td>
                 <td><code>raise-missing-from</code></td>
@@ -3319,7 +3309,7 @@
             </tr>
             
             <tr>
-                <td>445</td>
+                <td>443</td>
                 <td>0</td>
                 <td>convention</td>
                 <td><code>line-too-long</code></td>
@@ -3329,7 +3319,7 @@
             </tr>
             
             <tr>
-                <td>554</td>
+                <td>544</td>
                 <td>20</td>
                 <td>convention</td>
                 <td><code>invalid-name</code></td>
@@ -3339,7 +3329,7 @@
             </tr>
             
             <tr>
-                <td>554</td>
+                <td>544</td>
                 <td>0</td>
                 <td>warning</td>
                 <td><code>dangerous-default-value</code></td>
@@ -3349,7 +3339,7 @@
             </tr>
             
             <tr>
-                <td>577</td>
+                <td>567</td>
                 <td>4</td>
                 <td>convention</td>
                 <td><code>invalid-name</code></td>
@@ -3359,7 +3349,7 @@
             </tr>
             
             <tr>
-                <td>584</td>
+                <td>574</td>
                 <td>8</td>
                 <td>convention</td>
                 <td><code>invalid-name</code></td>
@@ -3369,7 +3359,7 @@
             </tr>
             
             <tr>
-                <td>585</td>
+                <td>575</td>
                 <td>8</td>
                 <td>convention</td>
                 <td><code>invalid-name</code></td>
@@ -3379,7 +3369,7 @@
             </tr>
             
             <tr>
-                <td>587</td>
+                <td>577</td>
                 <td>8</td>
                 <td>warning</td>
                 <td><code>raise-missing-from</code></td>
@@ -3389,7 +3379,7 @@
             </tr>
             
             <tr>
-                <td>612</td>
+                <td>602</td>
                 <td>4</td>
                 <td>warning</td>
                 <td><code>unnecessary-pass</code></td>
@@ -3604,6 +3594,350 @@
                 <td>C0103</td>
                 <td></td>
                 <td><pre>Module name &#34;getJHData&#34; doesn&#39;t conform to snake_case naming style</pre></td>
+            </tr>
+            
+            <tr>
+                <td>1</td>
+                <td>0</td>
+                <td>refactor</td>
+                <td><code>duplicate-code</code></td>
+                <td>R0801</td>
+                <td></td>
+                <td><pre>Similar lines in 2 files
+==memilio.epidata.getJHData:[97:106]
+==memilio.epidata_test.test_epidata_get_jh_data:[122:129]
+        directory_ger = os.path.join(out_folder, &#39;Germany/&#39;)
+        directory_es = os.path.join(out_folder, &#39;Spain/&#39;)
+        directory_fr = os.path.join(out_folder, &#39;France/&#39;)
+        directory_it = os.path.join(out_folder, &#39;Italy/&#39;)
+        directory_us = os.path.join(out_folder, &#39;US/&#39;)
+        directory_rok = os.path.join(out_folder, &#39;SouthKorea/&#39;)
+        directory_prc = os.path.join(out_folder, &#39;China/&#39;)</pre></td>
+            </tr>
+            
+            <tr>
+                <td>1</td>
+                <td>0</td>
+                <td>refactor</td>
+                <td><code>duplicate-code</code></td>
+                <td>R0801</td>
+                <td></td>
+                <td><pre>Similar lines in 2 files
+==memilio.epidata_test.test_epidata_getCaseData:[20:29]
+==memilio.epidata_test.test_epidata_get_jh_data:[19:28]
+import os
+import unittest
+from datetime import date, datetime
+from unittest.mock import patch
+
+import pandas as pd
+from pyfakefs import fake_filesystem_unittest
+
+from memilio.epidata import defaultDict as dd</pre></td>
+            </tr>
+            
+            <tr>
+                <td>1</td>
+                <td>0</td>
+                <td>refactor</td>
+                <td><code>duplicate-code</code></td>
+                <td>R0801</td>
+                <td></td>
+                <td><pre>Similar lines in 2 files
+==memilio.epidata.getCaseData:[36:43]
+==memilio.epidata.transformWeatherData:[23:32]
+import numpy as np
+import pandas as pd
+
+from memilio.epidata import defaultDict as dd
+from memilio.epidata import geoModificationGermany as geoger
+from memilio.epidata import getDataIntoPandasDataFrame as gd
+from memilio.epidata import modifyDataframeSeries as mdfs</pre></td>
+            </tr>
+            
+            <tr>
+                <td>1</td>
+                <td>0</td>
+                <td>refactor</td>
+                <td><code>duplicate-code</code></td>
+                <td>R0801</td>
+                <td></td>
+                <td><pre>Similar lines in 2 files
+==memilio.epidata.getCaseData:[238:244]
+==memilio.epidata.getDIVIData:[135:141]
+    try:
+        df[dd.EngEng[&#39;date&#39;]] = pd.to_datetime(
+            df[dd.EngEng[&#39;date&#39;]], format=&#34;ISO8601&#34;)
+    except ValueError:
+        try:
+            df[dd.EngEng[&#39;date&#39;]] = pd.to_datetime(</pre></td>
+            </tr>
+            
+            <tr>
+                <td>1</td>
+                <td>0</td>
+                <td>refactor</td>
+                <td><code>duplicate-code</code></td>
+                <td>R0801</td>
+                <td></td>
+                <td><pre>Similar lines in 2 files
+==memilio.epidata.getPopulationData:[30:48]
+==memilio.epidata.transformMobilityData:[21:40]
+import numpy as np
+import pandas as pd
+
+from memilio.epidata import defaultDict as dd
+from memilio.epidata import geoModificationGermany as geoger
+from memilio.epidata import getDataIntoPandasDataFrame as gd
+
+# activate CoW for more predictable behaviour of pandas DataFrames
+pd.options.mode.copy_on_write = True
+
+
+def read_population_data():
+    &#34;&#34;&#34;! Reads Population data from regionalstatistik.de
+
+    A request is made to regionalstatistik.de and the StringIO is read in as a csv into the dataframe format.
+    @return DataFrame
+    &#34;&#34;&#34;
+</pre></td>
+            </tr>
+            
+            <tr>
+                <td>1</td>
+                <td>0</td>
+                <td>refactor</td>
+                <td><code>duplicate-code</code></td>
+                <td>R0801</td>
+                <td></td>
+                <td><pre>Similar lines in 2 files
+==memilio.epidata.getCommuterMobility:[25:32]
+==memilio.epidata.transformMobilityData:[19:29]
+import os
+import numpy as np
+import pandas as pd
+
+from memilio.epidata import defaultDict as dd
+from memilio.epidata import geoModificationGermany as geoger
+from memilio.epidata import getDataIntoPandasDataFrame as gd</pre></td>
+            </tr>
+            
+            <tr>
+                <td>1</td>
+                <td>0</td>
+                <td>refactor</td>
+                <td><code>duplicate-code</code></td>
+                <td>R0801</td>
+                <td></td>
+                <td><pre>Similar lines in 2 files
+==memilio.epidata_test.test_epidata_getHospitalizationData:[103:109]
+==memilio.epidata_test.test_epidata_get_divi_data:[217:223]
+        df = pd.DataFrame(
+            {&#39;date_fake&#39;: [1, 2, 3],
+             &#39;6&#39;: [6, 7, 8],
+             &#39;7&#39;: [7, 8, 9],
+             &#39;8&#39;: [8, 9, 0],
+             &#39;bundesland&#39;: [2, 3, 4],</pre></td>
+            </tr>
+            
+            <tr>
+                <td>1</td>
+                <td>0</td>
+                <td>refactor</td>
+                <td><code>duplicate-code</code></td>
+                <td>R0801</td>
+                <td></td>
+                <td><pre>Similar lines in 2 files
+==memilio.epidata.getJHData:[31:69]
+==memilio.epidata.transformWeatherData:[28:60]
+from memilio.epidata import getDataIntoPandasDataFrame as gd
+from memilio.epidata import modifyDataframeSeries as mdfs
+
+# activate CoW for more predictable behaviour of pandas DataFrames
+pd.options.mode.copy_on_write = True
+
+
+def get_jh_data(read_data=dd.defaultDict[&#39;read_data&#39;],
+                file_format=dd.defaultDict[&#39;file_format&#39;],
+                out_folder=dd.defaultDict[&#39;out_folder&#39;],
+                start_date=date(2020, 1, 22),
+                end_date=dd.defaultDict[&#39;end_date&#39;],
+                impute_dates=dd.defaultDict[&#39;impute_dates&#39;],
+                **kwargs):
+    &#34;&#34;&#34;! Download data from John Hopkins University
+
+   Data is either downloaded and afterwards stored or loaded from a stored filed.
+   The file is &#34;FullData_JohnHopkins.json&#34;
+
+   Working with the data includes
+   - rename columns such that &#34;/&#34; is deleted, e.g Country/Region becomes CountryRegion
+   - data of all countries together are written to a file
+   - download the data from following countries in a separate file
+   and are stored in the according folders with the country name
+       - Germany, SouthKorea, Spain, France, Italy, US, China
+   - furthermore, all countries, for which provinces are added, are written to a file
+
+    @param read_data True or False. Defines if data is read from file or downloaded. Default defined in defaultDict.
+    @param file_format File format which is used for writing the data. Default defined in defaultDict.
+    @param out_folder Folder where data is written to. Default defined in defaultDict.
+    @param start_date Date of first date in dataframe. Default defined in defaultDict.
+    @param end_date Date of last date in dataframe. Default defined in defaultDict.
+    @param impute_dates [Currently not used] True or False. Defines if values for dates without new information are imputed. Default defined in defaultDict.
+    @param moving_average [Currently not used] Integers &gt;=0. Applies an &#39;moving_average&#39;-days moving average on all time series
+        to smooth out effects of irregular reporting. Default defined in defaultDict.
+   &#34;&#34;&#34;
+    conf = gd.Conf(out_folder, **kwargs)
+    out_folder = conf.path_to_use</pre></td>
+            </tr>
+            
+            <tr>
+                <td>1</td>
+                <td>0</td>
+                <td>refactor</td>
+                <td><code>duplicate-code</code></td>
+                <td>R0801</td>
+                <td></td>
+                <td><pre>Similar lines in 2 files
+==memilio.epidata.getCaseData:[36:42]
+==memilio.epidata.transformMobilityData:[21:29]
+import numpy as np
+import pandas as pd
+
+from memilio.epidata import defaultDict as dd
+from memilio.epidata import geoModificationGermany as geoger
+from memilio.epidata import getDataIntoPandasDataFrame as gd</pre></td>
+            </tr>
+            
+            <tr>
+                <td>1</td>
+                <td>0</td>
+                <td>refactor</td>
+                <td><code>duplicate-code</code></td>
+                <td>R0801</td>
+                <td></td>
+                <td><pre>Similar lines in 2 files
+==memilio.epidata.getCaseData:[37:43]
+==memilio.epidata.getDIVIData:[41:76]
+import pandas as pd
+
+from memilio.epidata import defaultDict as dd
+from memilio.epidata import geoModificationGermany as geoger
+from memilio.epidata import getDataIntoPandasDataFrame as gd
+from memilio.epidata import modifyDataframeSeries as mdfs</pre></td>
+            </tr>
+            
+            <tr>
+                <td>1</td>
+                <td>0</td>
+                <td>refactor</td>
+                <td><code>duplicate-code</code></td>
+                <td>R0801</td>
+                <td></td>
+                <td><pre>Similar lines in 2 files
+==memilio.epidata.getCommuterMobility:[26:32]
+==memilio.epidata.getPopulationData:[30:38]
+import numpy as np
+import pandas as pd
+
+from memilio.epidata import defaultDict as dd
+from memilio.epidata import geoModificationGermany as geoger
+from memilio.epidata import getDataIntoPandasDataFrame as gd</pre></td>
+            </tr>
+            
+            <tr>
+                <td>1</td>
+                <td>0</td>
+                <td>refactor</td>
+                <td><code>duplicate-code</code></td>
+                <td>R0801</td>
+                <td></td>
+                <td><pre>Similar lines in 2 files
+==memilio.epidata.getTestingData:[27:46]
+==memilio.epidata.transformWeatherData:[26:57]
+from memilio.epidata import defaultDict as dd
+from memilio.epidata import geoModificationGermany as geoger
+from memilio.epidata import getDataIntoPandasDataFrame as gd
+from memilio.epidata import modifyDataframeSeries as mdfs
+
+# activate CoW for more predictable behaviour of pandas DataFrames
+pd.options.mode.copy_on_write = True
+
+
+def transformWeatherData(read_data=dd.defaultDict[&#39;read_data&#39;],
+                         file_format=dd.defaultDict[&#39;file_format&#39;],
+                         out_folder=dd.defaultDict[&#39;out_folder&#39;],
+                         start_date=dd.defaultDict[&#39;start_date&#39;],
+                         end_date=dd.defaultDict[&#39;end_date&#39;],
+                         moving_average=dd.defaultDict[&#39;moving_average&#39;],
+                         merge_berlin=True,
+                         merge_eisenach=False,
+                         **kwargs
+                         ):
+    &#34;&#34;&#34;! ...
+    @param file_format File format which is used for writing the data.
+        Default defined in defaultDict.
+    @param out_folder Path to folder where data is written in folder
+        out_folder/Germany.
+    @param start_date [Default = &#39;&#39;, taken from read data] Start date
+        of stored data frames.
+    @param end_date [Default = &#39;&#39;, taken from read data] End date of
+        stored data frames.
+    @param moving_average 0 [Default] or Number &gt; 0. Defines the number of
+        days for which a centered moving average is computed.
+    &#34;&#34;&#34;</pre></td>
+            </tr>
+            
+            <tr>
+                <td>1</td>
+                <td>0</td>
+                <td>refactor</td>
+                <td><code>duplicate-code</code></td>
+                <td>R0801</td>
+                <td></td>
+                <td><pre>Similar lines in 2 files
+==memilio.epidata.getHospitalizationData:[32:51]
+==memilio.epidata.getJHData:[28:67]
+import pandas as pd
+
+from memilio.epidata import defaultDict as dd
+from memilio.epidata import getDataIntoPandasDataFrame as gd
+from memilio.epidata import modifyDataframeSeries as mdfs
+
+# activate CoW for more predictable behaviour of pandas DataFrames
+pd.options.mode.copy_on_write = True
+
+
+def hospit_sanity_checks(df):
+    &#34;&#34;&#34;! Checks the sanity of the hospitalization_data dataframe
+
+    Checks if type of the given data is a dataframe
+    Checks if the headers of the dataframe are those which are needed
+
+    @param df The dataframe which has to be checked
+    &#34;&#34;&#34;
+    # test if dataframe is empty</pre></td>
+            </tr>
+            
+            <tr>
+                <td>1</td>
+                <td>0</td>
+                <td>refactor</td>
+                <td><code>duplicate-code</code></td>
+                <td>R0801</td>
+                <td></td>
+                <td><pre>Similar lines in 2 files
+==memilio.epidata_test.test_epidata_getCommuterMobility:[65:75]
+==memilio.epidata_test.test_epidata_get_vaccination_data:[100:113]
+    filename = os.path.join(
+        here, &#39;test_data&#39;, &#39;TestSetPopulationFinal.json&#39;)
+    with open(filename) as file_object:
+        df_pop = pd.DataFrame(json.load(file_object))
+
+    def setUp(self):
+        self.setUpPyfakefs()
+
+    @patch(&#39;builtins.print&#39;)
+    def test_verify_sorted(self, mock_print):</pre></td>
             </tr>
             
             <tr>
@@ -4675,7 +5009,7 @@
             </tr>
             
             <tr>
-                <td>30</td>
+                <td>28</td>
                 <td>0</td>
                 <td>convention</td>
                 <td><code>wrong-import-order</code></td>
@@ -4685,7 +5019,7 @@
             </tr>
             
             <tr>
-                <td>31</td>
+                <td>29</td>
                 <td>0</td>
                 <td>convention</td>
                 <td><code>wrong-import-order</code></td>
@@ -4695,7 +5029,7 @@
             </tr>
             
             <tr>
-                <td>33</td>
+                <td>31</td>
                 <td>0</td>
                 <td>error</td>
                 <td><code>import-error</code></td>
@@ -4705,7 +5039,7 @@
             </tr>
             
             <tr>
-                <td>34</td>
+                <td>32</td>
                 <td>0</td>
                 <td>error</td>
                 <td><code>import-error</code></td>
@@ -4716,16 +5050,6 @@
             
             <tr>
                 <td>50</td>
-                <td>64</td>
-                <td>convention</td>
-                <td><code>trailing-whitespace</code></td>
-                <td>C0303</td>
-                <td></td>
-                <td><pre>Trailing whitespace</pre></td>
-            </tr>
-            
-            <tr>
-                <td>56</td>
                 <td>10</td>
                 <td>warning</td>
                 <td><code>missing-timeout</code></td>
@@ -4735,27 +5059,7 @@
             </tr>
             
             <tr>
-                <td>81</td>
-                <td>69</td>
-                <td>convention</td>
-                <td><code>trailing-whitespace</code></td>
-                <td>C0303</td>
-                <td></td>
-                <td><pre>Trailing whitespace</pre></td>
-            </tr>
-            
-            <tr>
-                <td>105</td>
-                <td>21</td>
-                <td>warning</td>
-                <td><code>unspecified-encoding</code></td>
-                <td>W1514</td>
-                <td>manage_credentials</td>
-                <td><pre>Using open without explicitly specifying an encoding</pre></td>
-            </tr>
-            
-            <tr>
-                <td>196</td>
+                <td>131</td>
                 <td>59</td>
                 <td>convention</td>
                 <td><code>invalid-name</code></td>
@@ -4765,7 +5069,7 @@
             </tr>
             
             <tr>
-                <td>199</td>
+                <td>134</td>
                 <td>76</td>
                 <td>convention</td>
                 <td><code>trailing-whitespace</code></td>
@@ -4775,7 +5079,7 @@
             </tr>
             
             <tr>
-                <td>201</td>
+                <td>136</td>
                 <td>36</td>
                 <td>convention</td>
                 <td><code>trailing-whitespace</code></td>
@@ -4785,7 +5089,7 @@
             </tr>
             
             <tr>
-                <td>310</td>
+                <td>240</td>
                 <td>7</td>
                 <td>convention</td>
                 <td><code>singleton-comparison</code></td>
@@ -4795,7 +5099,7 @@
             </tr>
             
             <tr>
-                <td>352</td>
+                <td>278</td>
                 <td>38</td>
                 <td>convention</td>
                 <td><code>singleton-comparison</code></td>
@@ -4805,7 +5109,7 @@
             </tr>
             
             <tr>
-                <td>355</td>
+                <td>281</td>
                 <td>4</td>
                 <td>convention</td>
                 <td><code>invalid-name</code></td>
@@ -4815,7 +5119,7 @@
             </tr>
             
             <tr>
-                <td>364</td>
+                <td>290</td>
                 <td>4</td>
                 <td>convention</td>
                 <td><code>consider-using-enumerate</code></td>
@@ -4825,17 +5129,7 @@
             </tr>
             
             <tr>
-                <td>410</td>
-                <td>0</td>
-                <td>refactor</td>
-                <td><code>too-many-arguments</code></td>
-                <td>R0913</td>
-                <td>get_population_data</td>
-                <td><pre>Too many arguments (6/5)</pre></td>
-            </tr>
-            
-            <tr>
-                <td>422</td>
+                <td>346</td>
                 <td>56</td>
                 <td>convention</td>
                 <td><code>trailing-whitespace</code></td>
@@ -4845,7 +5139,7 @@
             </tr>
             
             <tr>
-                <td>423</td>
+                <td>347</td>
                 <td>28</td>
                 <td>convention</td>
                 <td><code>trailing-whitespace</code></td>
@@ -4855,7 +5149,7 @@
             </tr>
             
             <tr>
-                <td>424</td>
+                <td>348</td>
                 <td>48</td>
                 <td>convention</td>
                 <td><code>trailing-whitespace</code></td>
@@ -4865,7 +5159,7 @@
             </tr>
             
             <tr>
-                <td>430</td>
+                <td>354</td>
                 <td>76</td>
                 <td>convention</td>
                 <td><code>trailing-whitespace</code></td>
@@ -4875,7 +5169,7 @@
             </tr>
             
             <tr>
-                <td>432</td>
+                <td>356</td>
                 <td>18</td>
                 <td>convention</td>
                 <td><code>trailing-whitespace</code></td>
@@ -4885,7 +5179,7 @@
             </tr>
             
             <tr>
-                <td>434</td>
+                <td>358</td>
                 <td>80</td>
                 <td>convention</td>
                 <td><code>trailing-whitespace</code></td>
@@ -4895,7 +5189,7 @@
             </tr>
             
             <tr>
-                <td>435</td>
+                <td>359</td>
                 <td>49</td>
                 <td>convention</td>
                 <td><code>trailing-whitespace</code></td>
@@ -4905,7 +5199,7 @@
             </tr>
             
             <tr>
-                <td>436</td>
+                <td>360</td>
                 <td>77</td>
                 <td>convention</td>
                 <td><code>trailing-whitespace</code></td>
@@ -7310,369 +7604,6 @@
                 <td>C0103</td>
                 <td>transformWeatherData</td>
                 <td><pre>Variable name &#34;countyID&#34; doesn&#39;t conform to snake_case naming style</pre></td>
-            </tr>
-            
-        </table>
-        
-        <h3>Module <code>memilio.epidata_test.__init__</code> (<code>memilio/epidata_test/__init__.py</code>)</h3>
-        <table>
-            <tr>
-                <th>Line</th>
-                <th>Col.</th>
-                <th>Type</th>
-                <th>Symbol</th>
-                <th>ID</th>
-                <th>Obj</th>
-                <th>Message</th>
-            </tr>
-            
-            <tr>
-                <td>1</td>
-                <td>0</td>
-                <td>refactor</td>
-                <td><code>duplicate-code</code></td>
-                <td>R0801</td>
-                <td></td>
-                <td><pre>Similar lines in 2 files
-==memilio.epidata_test.test_epidata_getCaseData:[20:29]
-==memilio.epidata_test.test_epidata_get_jh_data:[19:28]
-import os
-import unittest
-from datetime import date, datetime
-from unittest.mock import patch
-
-import pandas as pd
-from pyfakefs import fake_filesystem_unittest
-
-from memilio.epidata import defaultDict as dd</pre></td>
-            </tr>
-            
-            <tr>
-                <td>1</td>
-                <td>0</td>
-                <td>refactor</td>
-                <td><code>duplicate-code</code></td>
-                <td>R0801</td>
-                <td></td>
-                <td><pre>Similar lines in 2 files
-==memilio.epidata.getJHData:[97:106]
-==memilio.epidata_test.test_epidata_get_jh_data:[122:129]
-        directory_ger = os.path.join(out_folder, &#39;Germany/&#39;)
-        directory_es = os.path.join(out_folder, &#39;Spain/&#39;)
-        directory_fr = os.path.join(out_folder, &#39;France/&#39;)
-        directory_it = os.path.join(out_folder, &#39;Italy/&#39;)
-        directory_us = os.path.join(out_folder, &#39;US/&#39;)
-        directory_rok = os.path.join(out_folder, &#39;SouthKorea/&#39;)
-        directory_prc = os.path.join(out_folder, &#39;China/&#39;)</pre></td>
-            </tr>
-            
-            <tr>
-                <td>1</td>
-                <td>0</td>
-                <td>refactor</td>
-                <td><code>duplicate-code</code></td>
-                <td>R0801</td>
-                <td></td>
-                <td><pre>Similar lines in 2 files
-==memilio.epidata_test.test_epidata_getHospitalizationData:[103:109]
-==memilio.epidata_test.test_epidata_get_divi_data:[217:223]
-        df = pd.DataFrame(
-            {&#39;date_fake&#39;: [1, 2, 3],
-             &#39;6&#39;: [6, 7, 8],
-             &#39;7&#39;: [7, 8, 9],
-             &#39;8&#39;: [8, 9, 0],
-             &#39;bundesland&#39;: [2, 3, 4],</pre></td>
-            </tr>
-            
-            <tr>
-                <td>1</td>
-                <td>0</td>
-                <td>refactor</td>
-                <td><code>duplicate-code</code></td>
-                <td>R0801</td>
-                <td></td>
-                <td><pre>Similar lines in 2 files
-==memilio.epidata.getCaseData:[36:43]
-==memilio.epidata.transformWeatherData:[23:32]
-import numpy as np
-import pandas as pd
-
-from memilio.epidata import defaultDict as dd
-from memilio.epidata import geoModificationGermany as geoger
-from memilio.epidata import getDataIntoPandasDataFrame as gd
-from memilio.epidata import modifyDataframeSeries as mdfs</pre></td>
-            </tr>
-            
-            <tr>
-                <td>1</td>
-                <td>0</td>
-                <td>refactor</td>
-                <td><code>duplicate-code</code></td>
-                <td>R0801</td>
-                <td></td>
-                <td><pre>Similar lines in 2 files
-==memilio.epidata.getPopulationData:[32:54]
-==memilio.epidata.transformMobilityData:[21:40]
-import numpy as np
-import pandas as pd
-
-from memilio.epidata import defaultDict as dd
-from memilio.epidata import geoModificationGermany as geoger
-from memilio.epidata import getDataIntoPandasDataFrame as gd
-
-# activate CoW for more predictable behaviour of pandas DataFrames
-pd.options.mode.copy_on_write = True
-
-
-def getMobilityFromFile(directory, mobility_file):
-    &#34;&#34;&#34;! Gets a mobility matrix that is written in a plain txt file
-    under the given directory into a pandas data frame.
-
-    @param directory Path to folder where data is read.
-    @param mobility_file Mobility matrix file which has to be updated.
-    @return Mobility matrix data frame.
-    &#34;&#34;&#34;</pre></td>
-            </tr>
-            
-            <tr>
-                <td>1</td>
-                <td>0</td>
-                <td>refactor</td>
-                <td><code>duplicate-code</code></td>
-                <td>R0801</td>
-                <td></td>
-                <td><pre>Similar lines in 2 files
-==memilio.epidata.getCommuterMobility:[25:32]
-==memilio.epidata.transformMobilityData:[19:29]
-import os
-import numpy as np
-import pandas as pd
-
-from memilio.epidata import defaultDict as dd
-from memilio.epidata import geoModificationGermany as geoger
-from memilio.epidata import getDataIntoPandasDataFrame as gd</pre></td>
-            </tr>
-            
-            <tr>
-                <td>1</td>
-                <td>0</td>
-                <td>refactor</td>
-                <td><code>duplicate-code</code></td>
-                <td>R0801</td>
-                <td></td>
-                <td><pre>Similar lines in 2 files
-==memilio.epidata.getCaseData:[238:244]
-==memilio.epidata.getDIVIData:[135:141]
-        try:
-            df[dd.EngEng[&#39;date&#39;]] = pd.to_datetime(
-                df[dd.EngEng[&#39;date&#39;]], format=&#34;ISO8601&#34;)
-        except ValueError:
-            try:
-                df[dd.EngEng[&#39;date&#39;]] = pd.to_datetime(</pre></td>
-            </tr>
-            
-            <tr>
-                <td>1</td>
-                <td>0</td>
-                <td>refactor</td>
-                <td><code>duplicate-code</code></td>
-                <td>R0801</td>
-                <td></td>
-                <td><pre>Similar lines in 2 files
-==memilio.epidata_test.test_epidata_getCommuterMobility:[65:75]
-==memilio.epidata_test.test_epidata_get_vaccination_data:[100:113]
-    filename = os.path.join(
-        here, &#39;test_data&#39;, &#39;TestSetPopulationFinal.json&#39;)
-    with open(filename) as file_object:
-        df_pop = pd.DataFrame(json.load(file_object))
-
-    def setUp(self):
-        self.setUpPyfakefs()
-
-    @patch(&#39;builtins.print&#39;)
-    def test_verify_sorted(self, mock_print):</pre></td>
-            </tr>
-            
-            <tr>
-                <td>1</td>
-                <td>0</td>
-                <td>refactor</td>
-                <td><code>duplicate-code</code></td>
-                <td>R0801</td>
-                <td></td>
-                <td><pre>Similar lines in 2 files
-==memilio.epidata.getCaseData:[36:42]
-==memilio.epidata.getCommuterMobility:[26:32]
-import numpy as np
-import pandas as pd
-
-from memilio.epidata import defaultDict as dd
-from memilio.epidata import geoModificationGermany as geoger
-from memilio.epidata import getDataIntoPandasDataFrame as gd</pre></td>
-            </tr>
-            
-            <tr>
-                <td>1</td>
-                <td>0</td>
-                <td>refactor</td>
-                <td><code>duplicate-code</code></td>
-                <td>R0801</td>
-                <td></td>
-                <td><pre>Similar lines in 2 files
-==memilio.epidata.getTestingData:[27:46]
-==memilio.epidata.transformWeatherData:[26:57]
-from memilio.epidata import defaultDict as dd
-from memilio.epidata import geoModificationGermany as geoger
-from memilio.epidata import getDataIntoPandasDataFrame as gd
-from memilio.epidata import modifyDataframeSeries as mdfs
-
-# activate CoW for more predictable behaviour of pandas DataFrames
-pd.options.mode.copy_on_write = True
-
-
-def transformWeatherData(read_data=dd.defaultDict[&#39;read_data&#39;],
-                         file_format=dd.defaultDict[&#39;file_format&#39;],
-                         out_folder=dd.defaultDict[&#39;out_folder&#39;],
-                         start_date=dd.defaultDict[&#39;start_date&#39;],
-                         end_date=dd.defaultDict[&#39;end_date&#39;],
-                         moving_average=dd.defaultDict[&#39;moving_average&#39;],
-                         merge_berlin=True,
-                         merge_eisenach=False,
-                         **kwargs
-                         ):
-    &#34;&#34;&#34;! ...
-    @param file_format File format which is used for writing the data.
-        Default defined in defaultDict.
-    @param out_folder Path to folder where data is written in folder
-        out_folder/Germany.
-    @param start_date [Default = &#39;&#39;, taken from read data] Start date
-        of stored data frames.
-    @param end_date [Default = &#39;&#39;, taken from read data] End date of
-        stored data frames.
-    @param moving_average 0 [Default] or Number &gt; 0. Defines the number of
-        days for which a centered moving average is computed.
-    &#34;&#34;&#34;</pre></td>
-            </tr>
-            
-            <tr>
-                <td>1</td>
-                <td>0</td>
-                <td>refactor</td>
-                <td><code>duplicate-code</code></td>
-                <td>R0801</td>
-                <td></td>
-                <td><pre>Similar lines in 2 files
-==memilio.epidata.transformMobilityData:[21:29]
-==memilio.epidata.transformWeatherData:[23:29]
-import numpy as np
-import pandas as pd
-
-from memilio.epidata import defaultDict as dd
-from memilio.epidata import geoModificationGermany as geoger
-from memilio.epidata import getDataIntoPandasDataFrame as gd
-
-# activate CoW for more predictable behaviour of pandas DataFrames</pre></td>
-            </tr>
-            
-            <tr>
-                <td>1</td>
-                <td>0</td>
-                <td>refactor</td>
-                <td><code>duplicate-code</code></td>
-                <td>R0801</td>
-                <td></td>
-                <td><pre>Similar lines in 2 files
-==memilio.epidata.getJHData:[31:69]
-==memilio.epidata.transformWeatherData:[28:60]
-from memilio.epidata import getDataIntoPandasDataFrame as gd
-from memilio.epidata import modifyDataframeSeries as mdfs
-
-# activate CoW for more predictable behaviour of pandas DataFrames
-pd.options.mode.copy_on_write = True
-
-
-def get_jh_data(read_data=dd.defaultDict[&#39;read_data&#39;],
-                file_format=dd.defaultDict[&#39;file_format&#39;],
-                out_folder=dd.defaultDict[&#39;out_folder&#39;],
-                start_date=date(2020, 1, 22),
-                end_date=dd.defaultDict[&#39;end_date&#39;],
-                impute_dates=dd.defaultDict[&#39;impute_dates&#39;],
-                **kwargs):
-    &#34;&#34;&#34;! Download data from John Hopkins University
-
-   Data is either downloaded and afterwards stored or loaded from a stored filed.
-   The file is &#34;FullData_JohnHopkins.json&#34;
-
-   Working with the data includes
-   - rename columns such that &#34;/&#34; is deleted, e.g Country/Region becomes CountryRegion
-   - data of all countries together are written to a file
-   - download the data from following countries in a separate file
-   and are stored in the according folders with the country name
-       - Germany, SouthKorea, Spain, France, Italy, US, China
-   - furthermore, all countries, for which provinces are added, are written to a file
-
-    @param read_data True or False. Defines if data is read from file or downloaded. Default defined in defaultDict.
-    @param file_format File format which is used for writing the data. Default defined in defaultDict.
-    @param out_folder Folder where data is written to. Default defined in defaultDict.
-    @param start_date Date of first date in dataframe. Default defined in defaultDict.
-    @param end_date Date of last date in dataframe. Default defined in defaultDict.
-    @param impute_dates [Currently not used] True or False. Defines if values for dates without new information are imputed. Default defined in defaultDict.
-    @param moving_average [Currently not used] Integers &gt;=0. Applies an &#39;moving_average&#39;-days moving average on all time series
-        to smooth out effects of irregular reporting. Default defined in defaultDict.
-   &#34;&#34;&#34;
-    conf = gd.Conf(out_folder, **kwargs)
-    out_folder = conf.path_to_use</pre></td>
-            </tr>
-            
-            <tr>
-                <td>1</td>
-                <td>0</td>
-                <td>refactor</td>
-                <td><code>duplicate-code</code></td>
-                <td>R0801</td>
-                <td></td>
-                <td><pre>Similar lines in 2 files
-==memilio.epidata.getHospitalizationData:[32:51]
-==memilio.epidata.getJHData:[28:67]
-import pandas as pd
-
-from memilio.epidata import defaultDict as dd
-from memilio.epidata import getDataIntoPandasDataFrame as gd
-from memilio.epidata import modifyDataframeSeries as mdfs
-
-# activate CoW for more predictable behaviour of pandas DataFrames
-pd.options.mode.copy_on_write = True
-
-
-def hospit_sanity_checks(df):
-    &#34;&#34;&#34;! Checks the sanity of the hospitalization_data dataframe
-
-    Checks if type of the given data is a dataframe
-    Checks if the headers of the dataframe are those which are needed
-
-    @param df The dataframe which has to be checked
-    &#34;&#34;&#34;
-    # test if dataframe is empty</pre></td>
-            </tr>
-            
-            <tr>
-                <td>1</td>
-                <td>0</td>
-                <td>refactor</td>
-                <td><code>duplicate-code</code></td>
-                <td>R0801</td>
-                <td></td>
-                <td><pre>Similar lines in 2 files
-==memilio.epidata.getDIVIData:[41:76]
-==memilio.epidata.transformWeatherData:[24:32]
-import pandas as pd
-
-from memilio.epidata import defaultDict as dd
-from memilio.epidata import geoModificationGermany as geoger
-from memilio.epidata import getDataIntoPandasDataFrame as gd
-from memilio.epidata import modifyDataframeSeries as mdfs
-
-# activate CoW for more predictable behaviour of pandas DataFrames</pre></td>
             </tr>
             
         </table>
@@ -11234,6 +11165,16 @@ from memilio.epidata import modifyDataframeSeries as mdfs
             </tr>
             
             <tr>
+                <td>22</td>
+                <td>0</td>
+                <td>warning</td>
+                <td><code>unused-import</code></td>
+                <td>W0611</td>
+                <td></td>
+                <td><pre>Unused import configparser</pre></td>
+            </tr>
+            
+            <tr>
                 <td>24</td>
                 <td>0</td>
                 <td>error</td>
@@ -11274,7 +11215,7 @@ from memilio.epidata import modifyDataframeSeries as mdfs
             </tr>
             
             <tr>
-                <td>43</td>
+                <td>39</td>
                 <td>9</td>
                 <td>warning</td>
                 <td><code>unspecified-encoding</code></td>
@@ -11284,7 +11225,7 @@ from memilio.epidata import modifyDataframeSeries as mdfs
             </tr>
             
             <tr>
-                <td>48</td>
+                <td>44</td>
                 <td>9</td>
                 <td>warning</td>
                 <td><code>unspecified-encoding</code></td>
@@ -11294,7 +11235,7 @@ from memilio.epidata import modifyDataframeSeries as mdfs
             </tr>
             
             <tr>
-                <td>54</td>
+                <td>50</td>
                 <td>4</td>
                 <td>convention</td>
                 <td><code>missing-function-docstring</code></td>
@@ -11304,7 +11245,7 @@ from memilio.epidata import modifyDataframeSeries as mdfs
             </tr>
             
             <tr>
-                <td>66</td>
+                <td>62</td>
                 <td>0</td>
                 <td>convention</td>
                 <td><code>line-too-long</code></td>
@@ -11314,7 +11255,7 @@ from memilio.epidata import modifyDataframeSeries as mdfs
             </tr>
             
             <tr>
-                <td>74</td>
+                <td>70</td>
                 <td>4</td>
                 <td>convention</td>
                 <td><code>missing-function-docstring</code></td>
@@ -11324,7 +11265,7 @@ from memilio.epidata import modifyDataframeSeries as mdfs
             </tr>
             
             <tr>
-                <td>74</td>
+                <td>70</td>
                 <td>44</td>
                 <td>warning</td>
                 <td><code>unused-argument</code></td>
@@ -11334,163 +11275,23 @@ from memilio.epidata import modifyDataframeSeries as mdfs
             </tr>
             
             <tr>
-                <td>74</td>
+                <td>70</td>
                 <td>55</td>
                 <td>warning</td>
                 <td><code>unused-argument</code></td>
                 <td>W0613</td>
                 <td>Test_getPopulationData.test_get_population_data_full</td>
-                <td><pre>Unused argument &#39;mock_export&#39;</pre></td>
+                <td><pre>Unused argument &#39;mock_assign&#39;</pre></td>
             </tr>
             
             <tr>
-                <td>74</td>
+                <td>70</td>
                 <td>68</td>
                 <td>warning</td>
                 <td><code>unused-argument</code></td>
                 <td>W0613</td>
                 <td>Test_getPopulationData.test_get_population_data_full</td>
                 <td><pre>Unused argument &#39;mock_download&#39;</pre></td>
-            </tr>
-            
-            <tr>
-                <td>85</td>
-                <td>4</td>
-                <td>convention</td>
-                <td><code>missing-function-docstring</code></td>
-                <td>C0116</td>
-                <td>Test_getPopulationData.test_config_write</td>
-                <td><pre>Missing function or method docstring</pre></td>
-            </tr>
-            
-            <tr>
-                <td>85</td>
-                <td>4</td>
-                <td>refactor</td>
-                <td><code>too-many-arguments</code></td>
-                <td>R0913</td>
-                <td>Test_getPopulationData.test_config_write</td>
-                <td><pre>Too many arguments (8/5)</pre></td>
-            </tr>
-            
-            <tr>
-                <td>85</td>
-                <td>32</td>
-                <td>warning</td>
-                <td><code>unused-argument</code></td>
-                <td>W0613</td>
-                <td>Test_getPopulationData.test_config_write</td>
-                <td><pre>Unused argument &#39;mock_test&#39;</pre></td>
-            </tr>
-            
-            <tr>
-                <td>85</td>
-                <td>43</td>
-                <td>warning</td>
-                <td><code>unused-argument</code></td>
-                <td>W0613</td>
-                <td>Test_getPopulationData.test_config_write</td>
-                <td><pre>Unused argument &#39;mock_export&#39;</pre></td>
-            </tr>
-            
-            <tr>
-                <td>85</td>
-                <td>56</td>
-                <td>warning</td>
-                <td><code>unused-argument</code></td>
-                <td>W0613</td>
-                <td>Test_getPopulationData.test_config_write</td>
-                <td><pre>Unused argument &#39;mock_raw&#39;</pre></td>
-            </tr>
-            
-            <tr>
-                <td>85</td>
-                <td>66</td>
-                <td>warning</td>
-                <td><code>unused-argument</code></td>
-                <td>W0613</td>
-                <td>Test_getPopulationData.test_config_write</td>
-                <td><pre>Unused argument &#39;mock_path&#39;</pre></td>
-            </tr>
-            
-            <tr>
-                <td>85</td>
-                <td>77</td>
-                <td>warning</td>
-                <td><code>unused-argument</code></td>
-                <td>W0613</td>
-                <td>Test_getPopulationData.test_config_write</td>
-                <td><pre>Unused argument &#39;mock_choice&#39;</pre></td>
-            </tr>
-            
-            <tr>
-                <td>85</td>
-                <td>90</td>
-                <td>warning</td>
-                <td><code>unused-argument</code></td>
-                <td>W0613</td>
-                <td>Test_getPopulationData.test_config_write</td>
-                <td><pre>Unused argument &#39;mock_pw&#39;</pre></td>
-            </tr>
-            
-            <tr>
-                <td>85</td>
-                <td>99</td>
-                <td>warning</td>
-                <td><code>unused-argument</code></td>
-                <td>W0613</td>
-                <td>Test_getPopulationData.test_config_write</td>
-                <td><pre>Unused argument &#39;mock_un&#39;</pre></td>
-            </tr>
-            
-            <tr>
-                <td>103</td>
-                <td>4</td>
-                <td>convention</td>
-                <td><code>missing-function-docstring</code></td>
-                <td>C0116</td>
-                <td>Test_getPopulationData.test_config_read</td>
-                <td><pre>Missing function or method docstring</pre></td>
-            </tr>
-            
-            <tr>
-                <td>103</td>
-                <td>31</td>
-                <td>warning</td>
-                <td><code>unused-argument</code></td>
-                <td>W0613</td>
-                <td>Test_getPopulationData.test_config_read</td>
-                <td><pre>Unused argument &#39;mock_test&#39;</pre></td>
-            </tr>
-            
-            <tr>
-                <td>103</td>
-                <td>42</td>
-                <td>warning</td>
-                <td><code>unused-argument</code></td>
-                <td>W0613</td>
-                <td>Test_getPopulationData.test_config_read</td>
-                <td><pre>Unused argument &#39;mock_export&#39;</pre></td>
-            </tr>
-            
-            <tr>
-                <td>103</td>
-                <td>66</td>
-                <td>warning</td>
-                <td><code>unused-argument</code></td>
-                <td>W0613</td>
-                <td>Test_getPopulationData.test_config_read</td>
-                <td><pre>Unused argument &#39;mock_path&#39;</pre></td>
-            </tr>
-            
-            <tr>
-                <td>110</td>
-                <td>13</td>
-                <td>warning</td>
-                <td><code>unspecified-encoding</code></td>
-                <td>W1514</td>
-                <td>Test_getPopulationData.test_config_read</td>
-                <td><pre>Using open without explicitly specifying an encoding</pre></td>
             </tr>
             
         </table>
@@ -12578,17 +12379,17 @@ from memilio.epidata import modifyDataframeSeries as mdfs
             
             <tr>
                 <td>refactor</td>
-                <td>264</td>
+                <td>261</td>
             </tr>
             
             <tr>
                 <td>warning</td>
-                <td>155</td>
+                <td>144</td>
             </tr>
             
             <tr>
                 <td>convention</td>
-                <td>687</td>
+                <td>683</td>
             </tr>
             
             <tr>
@@ -12622,8 +12423,28 @@ from memilio.epidata import modifyDataframeSeries as mdfs
             </tr>
             
             <tr>
+                <td>missing-module-docstring</td>
+                <td>23</td>
+            </tr>
+            
+            <tr>
                 <td>invalid-name</td>
                 <td>220</td>
+            </tr>
+            
+            <tr>
+                <td>missing-class-docstring</td>
+                <td>18</td>
+            </tr>
+            
+            <tr>
+                <td>missing-function-docstring</td>
+                <td>134</td>
+            </tr>
+            
+            <tr>
+                <td>unnecessary-comprehension</td>
+                <td>16</td>
             </tr>
             
             <tr>
@@ -12632,18 +12453,8 @@ from memilio.epidata import modifyDataframeSeries as mdfs
             </tr>
             
             <tr>
-                <td>too-many-arguments</td>
-                <td>31</td>
-            </tr>
-            
-            <tr>
-                <td>raise-missing-from</td>
-                <td>18</td>
-            </tr>
-            
-            <tr>
-                <td>missing-function-docstring</td>
-                <td>136</td>
+                <td>unspecified-encoding</td>
+                <td>27</td>
             </tr>
             
             <tr>
@@ -12652,13 +12463,18 @@ from memilio.epidata import modifyDataframeSeries as mdfs
             </tr>
             
             <tr>
-                <td>broad-except</td>
-                <td>5</td>
+                <td>too-many-statements</td>
+                <td>16</td>
             </tr>
             
             <tr>
-                <td>trailing-whitespace</td>
-                <td>44</td>
+                <td>unused-argument</td>
+                <td>36</td>
+            </tr>
+            
+            <tr>
+                <td>singleton-comparison</td>
+                <td>24</td>
             </tr>
             
             <tr>
@@ -12667,8 +12483,73 @@ from memilio.epidata import modifyDataframeSeries as mdfs
             </tr>
             
             <tr>
-                <td>unused-import</td>
+                <td>too-many-lines</td>
                 <td>3</td>
+            </tr>
+            
+            <tr>
+                <td>consider-using-in</td>
+                <td>5</td>
+            </tr>
+            
+            <tr>
+                <td>redefined-builtin</td>
+                <td>17</td>
+            </tr>
+            
+            <tr>
+                <td>no-else-continue</td>
+                <td>3</td>
+            </tr>
+            
+            <tr>
+                <td>too-many-public-methods</td>
+                <td>2</td>
+            </tr>
+            
+            <tr>
+                <td>wrong-import-order</td>
+                <td>20</td>
+            </tr>
+            
+            <tr>
+                <td>unused-variable</td>
+                <td>9</td>
+            </tr>
+            
+            <tr>
+                <td>consider-using-with</td>
+                <td>2</td>
+            </tr>
+            
+            <tr>
+                <td>too-many-arguments</td>
+                <td>29</td>
+            </tr>
+            
+            <tr>
+                <td>superfluous-parens</td>
+                <td>14</td>
+            </tr>
+            
+            <tr>
+                <td>use-a-generator</td>
+                <td>9</td>
+            </tr>
+            
+            <tr>
+                <td>redundant-unittest-assert</td>
+                <td>1</td>
+            </tr>
+            
+            <tr>
+                <td>consider-iterating-dictionary</td>
+                <td>14</td>
+            </tr>
+            
+            <tr>
+                <td>unused-import</td>
+                <td>4</td>
             </tr>
             
             <tr>
@@ -12677,18 +12558,73 @@ from memilio.epidata import modifyDataframeSeries as mdfs
             </tr>
             
             <tr>
-                <td>unused-argument</td>
-                <td>46</td>
+                <td>protected-access</td>
+                <td>3</td>
             </tr>
             
             <tr>
-                <td>missing-module-docstring</td>
-                <td>23</td>
+                <td>bare-except</td>
+                <td>8</td>
+            </tr>
+            
+            <tr>
+                <td>too-many-instance-attributes</td>
+                <td>1</td>
+            </tr>
+            
+            <tr>
+                <td>import-outside-toplevel</td>
+                <td>1</td>
+            </tr>
+            
+            <tr>
+                <td>too-many-nested-blocks</td>
+                <td>13</td>
+            </tr>
+            
+            <tr>
+                <td>too-many-branches</td>
+                <td>14</td>
+            </tr>
+            
+            <tr>
+                <td>trailing-whitespace</td>
+                <td>42</td>
+            </tr>
+            
+            <tr>
+                <td>raise-missing-from</td>
+                <td>18</td>
             </tr>
             
             <tr>
                 <td>no-else-return</td>
                 <td>11</td>
+            </tr>
+            
+            <tr>
+                <td>inconsistent-return-statements</td>
+                <td>3</td>
+            </tr>
+            
+            <tr>
+                <td>redefined-argument-from-local</td>
+                <td>1</td>
+            </tr>
+            
+            <tr>
+                <td>unneeded-not</td>
+                <td>4</td>
+            </tr>
+            
+            <tr>
+                <td>use-dict-literal</td>
+                <td>4</td>
+            </tr>
+            
+            <tr>
+                <td>consider-using-f-string</td>
+                <td>2</td>
             </tr>
             
             <tr>
@@ -12707,78 +12643,8 @@ from memilio.epidata import modifyDataframeSeries as mdfs
             </tr>
             
             <tr>
-                <td>unnecessary-comprehension</td>
-                <td>16</td>
-            </tr>
-            
-            <tr>
-                <td>too-many-statements</td>
-                <td>17</td>
-            </tr>
-            
-            <tr>
-                <td>superfluous-parens</td>
-                <td>14</td>
-            </tr>
-            
-            <tr>
-                <td>redefined-builtin</td>
-                <td>17</td>
-            </tr>
-            
-            <tr>
-                <td>singleton-comparison</td>
-                <td>24</td>
-            </tr>
-            
-            <tr>
-                <td>use-dict-literal</td>
-                <td>4</td>
-            </tr>
-            
-            <tr>
-                <td>using-constant-test</td>
+                <td>too-many-boolean-expressions</td>
                 <td>1</td>
-            </tr>
-            
-            <tr>
-                <td>unused-variable</td>
-                <td>9</td>
-            </tr>
-            
-            <tr>
-                <td>dangerous-default-value</td>
-                <td>4</td>
-            </tr>
-            
-            <tr>
-                <td>unneeded-not</td>
-                <td>4</td>
-            </tr>
-            
-            <tr>
-                <td>duplicate-key</td>
-                <td>2</td>
-            </tr>
-            
-            <tr>
-                <td>too-many-instance-attributes</td>
-                <td>1</td>
-            </tr>
-            
-            <tr>
-                <td>import-outside-toplevel</td>
-                <td>1</td>
-            </tr>
-            
-            <tr>
-                <td>missing-class-docstring</td>
-                <td>18</td>
-            </tr>
-            
-            <tr>
-                <td>consider-iterating-dictionary</td>
-                <td>14</td>
             </tr>
             
             <tr>
@@ -12792,8 +12658,8 @@ from memilio.epidata import modifyDataframeSeries as mdfs
             </tr>
             
             <tr>
-                <td>bare-except</td>
-                <td>8</td>
+                <td>dangerous-default-value</td>
+                <td>4</td>
             </tr>
             
             <tr>
@@ -12802,27 +12668,27 @@ from memilio.epidata import modifyDataframeSeries as mdfs
             </tr>
             
             <tr>
-                <td>too-many-branches</td>
-                <td>14</td>
-            </tr>
-            
-            <tr>
                 <td>unnecessary-pass</td>
                 <td>2</td>
             </tr>
             
             <tr>
-                <td>wrong-import-order</td>
-                <td>20</td>
+                <td>broad-except</td>
+                <td>5</td>
             </tr>
             
             <tr>
-                <td>too-many-nested-blocks</td>
-                <td>13</td>
+                <td>duplicate-key</td>
+                <td>2</td>
             </tr>
             
             <tr>
-                <td>too-many-boolean-expressions</td>
+                <td>using-constant-test</td>
+                <td>1</td>
+            </tr>
+            
+            <tr>
+                <td>simplifiable-if-statement</td>
                 <td>1</td>
             </tr>
             
@@ -12833,71 +12699,6 @@ from memilio.epidata import modifyDataframeSeries as mdfs
             
             <tr>
                 <td>consider-using-max-builtin</td>
-                <td>1</td>
-            </tr>
-            
-            <tr>
-                <td>no-else-continue</td>
-                <td>3</td>
-            </tr>
-            
-            <tr>
-                <td>too-many-lines</td>
-                <td>3</td>
-            </tr>
-            
-            <tr>
-                <td>consider-using-in</td>
-                <td>5</td>
-            </tr>
-            
-            <tr>
-                <td>inconsistent-return-statements</td>
-                <td>3</td>
-            </tr>
-            
-            <tr>
-                <td>redefined-argument-from-local</td>
-                <td>1</td>
-            </tr>
-            
-            <tr>
-                <td>use-a-generator</td>
-                <td>9</td>
-            </tr>
-            
-            <tr>
-                <td>consider-using-f-string</td>
-                <td>2</td>
-            </tr>
-            
-            <tr>
-                <td>simplifiable-if-statement</td>
-                <td>1</td>
-            </tr>
-            
-            <tr>
-                <td>unspecified-encoding</td>
-                <td>29</td>
-            </tr>
-            
-            <tr>
-                <td>protected-access</td>
-                <td>3</td>
-            </tr>
-            
-            <tr>
-                <td>too-many-public-methods</td>
-                <td>2</td>
-            </tr>
-            
-            <tr>
-                <td>consider-using-with</td>
-                <td>2</td>
-            </tr>
-            
-            <tr>
-                <td>redundant-unittest-assert</td>
                 <td>1</td>
             </tr>
             
@@ -12922,123 +12723,8 @@ from memilio.epidata import modifyDataframeSeries as mdfs
             </tr>
             
             <tr>
-                <td>memilio.epidata.getDIVIData</td>
-                <td>17</td>
-            </tr>
-            
-            <tr>
-                <td>memilio.epidata.getSimulationData</td>
-                <td>12</td>
-            </tr>
-            
-            <tr>
-                <td>memilio.epidata.customPlot</td>
-                <td>13</td>
-            </tr>
-            
-            <tr>
-                <td>memilio.epidata.getJHData</td>
-                <td>13</td>
-            </tr>
-            
-            <tr>
-                <td>memilio.epidata.transformMobilityData</td>
-                <td>14</td>
-            </tr>
-            
-            <tr>
-                <td>memilio.epidata.getTestingData</td>
-                <td>58</td>
-            </tr>
-            
-            <tr>
-                <td>memilio.epidata.geoModificationGermany</td>
-                <td>30</td>
-            </tr>
-            
-            <tr>
-                <td>memilio.epidata.defaultDict</td>
-                <td>12</td>
-            </tr>
-            
-            <tr>
-                <td>memilio.epidata.progress_indicator</td>
-                <td>11</td>
-            </tr>
-            
-            <tr>
-                <td>memilio.epidata.getDataIntoPandasDataFrame</td>
-                <td>68</td>
-            </tr>
-            
-            <tr>
-                <td>memilio.epidata.getCommuterMobility</td>
-                <td>45</td>
-            </tr>
-            
-            <tr>
-                <td>memilio.epidata.getHospitalizationData</td>
-                <td>17</td>
-            </tr>
-            
-            <tr>
-                <td>memilio.epidata.transformWeatherData</td>
-                <td>16</td>
-            </tr>
-            
-            <tr>
-                <td>memilio.epidata.modifyDataframeSeries</td>
-                <td>38</td>
-            </tr>
-            
-            <tr>
-                <td>memilio.epidata.getVaccinationData</td>
-                <td>81</td>
-            </tr>
-            
-            <tr>
-                <td>memilio.epidata.cleanData</td>
-                <td>8</td>
-            </tr>
-            
-            <tr>
-                <td>memilio.epidata.getNPIData</td>
-                <td>91</td>
-            </tr>
-            
-            <tr>
-                <td>memilio.epidata.getCaseData</td>
-                <td>60</td>
-            </tr>
-            
-            <tr>
-                <td>memilio.epidata.getPopulationData</td>
-                <td>25</td>
-            </tr>
-            
-            <tr>
-                <td>memilio.epidata_test.test_epidata_get_population_data</td>
-                <td>27</td>
-            </tr>
-            
-            <tr>
-                <td>memilio.epidata_test.test_epidata_getCommuterMobility</td>
-                <td>18</td>
-            </tr>
-            
-            <tr>
-                <td>memilio.epidata_test.test_epidata_progress_indicator</td>
-                <td>20</td>
-            </tr>
-            
-            <tr>
-                <td>memilio.epidata_test.test_epidata_get_jh_data</td>
-                <td>17</td>
-            </tr>
-            
-            <tr>
-                <td>memilio.epidata_test.test_epidata_get_divi_data</td>
-                <td>19</td>
+                <td>memilio.epidata_test.test_epidata_customPlot</td>
+                <td>7</td>
             </tr>
             
             <tr>
@@ -13047,18 +12733,18 @@ from memilio.epidata import modifyDataframeSeries as mdfs
             </tr>
             
             <tr>
+                <td>memilio.epidata_test.test_epidata_transform_mobility_data</td>
+                <td>15</td>
+            </tr>
+            
+            <tr>
                 <td>memilio.epidata_test.test_epidata_get_vaccination_data</td>
                 <td>17</td>
             </tr>
             
             <tr>
-                <td>memilio.epidata_test.test_epidata_getNPIData</td>
-                <td>13</td>
-            </tr>
-            
-            <tr>
-                <td>memilio.epidata_test.test_epidata_get_simulation_data</td>
-                <td>6</td>
+                <td>memilio.epidata_test.test_epidata_get_jh_data</td>
+                <td>17</td>
             </tr>
             
             <tr>
@@ -13067,28 +12753,13 @@ from memilio.epidata import modifyDataframeSeries as mdfs
             </tr>
             
             <tr>
+                <td>memilio.epidata_test.test_epidata_getNPIData</td>
+                <td>13</td>
+            </tr>
+            
+            <tr>
                 <td>memilio.epidata_test.test_epidata_getDataIntoPandasDataFrame</td>
                 <td>56</td>
-            </tr>
-            
-            <tr>
-                <td>memilio.epidata_test.test_epidata_getHospitalizationData</td>
-                <td>16</td>
-            </tr>
-            
-            <tr>
-                <td>memilio.epidata_test.test_epidata_customPlot</td>
-                <td>7</td>
-            </tr>
-            
-            <tr>
-                <td>memilio.epidata_test.test_epidata_modifyDataframeSeries</td>
-                <td>42</td>
-            </tr>
-            
-            <tr>
-                <td>memilio.epidata_test.test_epidata_defaultDict</td>
-                <td>10</td>
             </tr>
             
             <tr>
@@ -13097,13 +12768,138 @@ from memilio.epidata import modifyDataframeSeries as mdfs
             </tr>
             
             <tr>
-                <td>memilio.epidata_test.test_epidata_transform_mobility_data</td>
-                <td>15</td>
+                <td>memilio.epidata_test.test_epidata_getCommuterMobility</td>
+                <td>18</td>
             </tr>
             
             <tr>
-                <td>memilio.epidata_test.__init__</td>
+                <td>memilio.epidata_test.test_epidata_modifyDataframeSeries</td>
+                <td>42</td>
+            </tr>
+            
+            <tr>
+                <td>memilio.epidata_test.test_epidata_get_population_data</td>
                 <td>14</td>
+            </tr>
+            
+            <tr>
+                <td>memilio.epidata_test.test_epidata_get_simulation_data</td>
+                <td>6</td>
+            </tr>
+            
+            <tr>
+                <td>memilio.epidata_test.test_epidata_defaultDict</td>
+                <td>10</td>
+            </tr>
+            
+            <tr>
+                <td>memilio.epidata_test.test_epidata_progress_indicator</td>
+                <td>20</td>
+            </tr>
+            
+            <tr>
+                <td>memilio.epidata_test.test_epidata_getHospitalizationData</td>
+                <td>16</td>
+            </tr>
+            
+            <tr>
+                <td>memilio.epidata_test.test_epidata_get_divi_data</td>
+                <td>19</td>
+            </tr>
+            
+            <tr>
+                <td>memilio.epidata.progress_indicator</td>
+                <td>11</td>
+            </tr>
+            
+            <tr>
+                <td>memilio.epidata.getHospitalizationData</td>
+                <td>17</td>
+            </tr>
+            
+            <tr>
+                <td>memilio.epidata.customPlot</td>
+                <td>13</td>
+            </tr>
+            
+            <tr>
+                <td>memilio.epidata.getVaccinationData</td>
+                <td>81</td>
+            </tr>
+            
+            <tr>
+                <td>memilio.epidata.getNPIData</td>
+                <td>91</td>
+            </tr>
+            
+            <tr>
+                <td>memilio.epidata.getTestingData</td>
+                <td>58</td>
+            </tr>
+            
+            <tr>
+                <td>memilio.epidata.getCommuterMobility</td>
+                <td>45</td>
+            </tr>
+            
+            <tr>
+                <td>memilio.epidata.getDataIntoPandasDataFrame</td>
+                <td>67</td>
+            </tr>
+            
+            <tr>
+                <td>memilio.epidata.getPopulationData</td>
+                <td>21</td>
+            </tr>
+            
+            <tr>
+                <td>memilio.epidata.getSimulationData</td>
+                <td>12</td>
+            </tr>
+            
+            <tr>
+                <td>memilio.epidata.defaultDict</td>
+                <td>12</td>
+            </tr>
+            
+            <tr>
+                <td>memilio.epidata.getDIVIData</td>
+                <td>17</td>
+            </tr>
+            
+            <tr>
+                <td>memilio.epidata.transformMobilityData</td>
+                <td>14</td>
+            </tr>
+            
+            <tr>
+                <td>memilio.epidata.geoModificationGermany</td>
+                <td>30</td>
+            </tr>
+            
+            <tr>
+                <td>memilio.epidata.cleanData</td>
+                <td>8</td>
+            </tr>
+            
+            <tr>
+                <td>memilio.epidata.getCaseData</td>
+                <td>60</td>
+            </tr>
+            
+            <tr>
+                <td>memilio.epidata.modifyDataframeSeries</td>
+                <td>38</td>
+            </tr>
+            
+            <tr>
+                <td>memilio.epidata.transformWeatherData</td>
+                <td>16</td>
+            </tr>
+            
+            <tr>
+                <td>memilio.epidata.getJHData</td>
+                <td>27</td>
             </tr>
             
         </table>
@@ -13122,123 +12918,8 @@ from memilio.epidata import modifyDataframeSeries as mdfs
             </tr>
             
             <tr>
-                <td>memilio/epidata/getDIVIData.py</td>
-                <td>17</td>
-            </tr>
-            
-            <tr>
-                <td>memilio/epidata/getSimulationData.py</td>
-                <td>12</td>
-            </tr>
-            
-            <tr>
-                <td>memilio/epidata/customPlot.py</td>
-                <td>13</td>
-            </tr>
-            
-            <tr>
-                <td>memilio/epidata/getJHData.py</td>
-                <td>13</td>
-            </tr>
-            
-            <tr>
-                <td>memilio/epidata/transformMobilityData.py</td>
-                <td>14</td>
-            </tr>
-            
-            <tr>
-                <td>memilio/epidata/getTestingData.py</td>
-                <td>58</td>
-            </tr>
-            
-            <tr>
-                <td>memilio/epidata/geoModificationGermany.py</td>
-                <td>30</td>
-            </tr>
-            
-            <tr>
-                <td>memilio/epidata/defaultDict.py</td>
-                <td>12</td>
-            </tr>
-            
-            <tr>
-                <td>memilio/epidata/progress_indicator.py</td>
-                <td>11</td>
-            </tr>
-            
-            <tr>
-                <td>memilio/epidata/getDataIntoPandasDataFrame.py</td>
-                <td>68</td>
-            </tr>
-            
-            <tr>
-                <td>memilio/epidata/getCommuterMobility.py</td>
-                <td>45</td>
-            </tr>
-            
-            <tr>
-                <td>memilio/epidata/getHospitalizationData.py</td>
-                <td>17</td>
-            </tr>
-            
-            <tr>
-                <td>memilio/epidata/transformWeatherData.py</td>
-                <td>16</td>
-            </tr>
-            
-            <tr>
-                <td>memilio/epidata/modifyDataframeSeries.py</td>
-                <td>38</td>
-            </tr>
-            
-            <tr>
-                <td>memilio/epidata/getVaccinationData.py</td>
-                <td>81</td>
-            </tr>
-            
-            <tr>
-                <td>memilio/epidata/cleanData.py</td>
-                <td>8</td>
-            </tr>
-            
-            <tr>
-                <td>memilio/epidata/getNPIData.py</td>
-                <td>91</td>
-            </tr>
-            
-            <tr>
-                <td>memilio/epidata/getCaseData.py</td>
-                <td>60</td>
-            </tr>
-            
-            <tr>
-                <td>memilio/epidata/getPopulationData.py</td>
-                <td>25</td>
-            </tr>
-            
-            <tr>
-                <td>memilio/epidata_test/test_epidata_get_population_data.py</td>
-                <td>27</td>
-            </tr>
-            
-            <tr>
-                <td>memilio/epidata_test/test_epidata_getCommuterMobility.py</td>
-                <td>18</td>
-            </tr>
-            
-            <tr>
-                <td>memilio/epidata_test/test_epidata_progress_indicator.py</td>
-                <td>20</td>
-            </tr>
-            
-            <tr>
-                <td>memilio/epidata_test/test_epidata_get_jh_data.py</td>
-                <td>17</td>
-            </tr>
-            
-            <tr>
-                <td>memilio/epidata_test/test_epidata_get_divi_data.py</td>
-                <td>19</td>
+                <td>memilio/epidata_test/test_epidata_customPlot.py</td>
+                <td>7</td>
             </tr>
             
             <tr>
@@ -13247,18 +12928,18 @@ from memilio.epidata import modifyDataframeSeries as mdfs
             </tr>
             
             <tr>
+                <td>memilio/epidata_test/test_epidata_transform_mobility_data.py</td>
+                <td>15</td>
+            </tr>
+            
+            <tr>
                 <td>memilio/epidata_test/test_epidata_get_vaccination_data.py</td>
                 <td>17</td>
             </tr>
             
             <tr>
-                <td>memilio/epidata_test/test_epidata_getNPIData.py</td>
-                <td>13</td>
-            </tr>
-            
-            <tr>
-                <td>memilio/epidata_test/test_epidata_get_simulation_data.py</td>
-                <td>6</td>
+                <td>memilio/epidata_test/test_epidata_get_jh_data.py</td>
+                <td>17</td>
             </tr>
             
             <tr>
@@ -13267,28 +12948,13 @@ from memilio.epidata import modifyDataframeSeries as mdfs
             </tr>
             
             <tr>
+                <td>memilio/epidata_test/test_epidata_getNPIData.py</td>
+                <td>13</td>
+            </tr>
+            
+            <tr>
                 <td>memilio/epidata_test/test_epidata_getDataIntoPandasDataFrame.py</td>
                 <td>56</td>
-            </tr>
-            
-            <tr>
-                <td>memilio/epidata_test/test_epidata_getHospitalizationData.py</td>
-                <td>16</td>
-            </tr>
-            
-            <tr>
-                <td>memilio/epidata_test/test_epidata_customPlot.py</td>
-                <td>7</td>
-            </tr>
-            
-            <tr>
-                <td>memilio/epidata_test/test_epidata_modifyDataframeSeries.py</td>
-                <td>42</td>
-            </tr>
-            
-            <tr>
-                <td>memilio/epidata_test/test_epidata_defaultDict.py</td>
-                <td>10</td>
             </tr>
             
             <tr>
@@ -13297,13 +12963,138 @@ from memilio.epidata import modifyDataframeSeries as mdfs
             </tr>
             
             <tr>
-                <td>memilio/epidata_test/test_epidata_transform_mobility_data.py</td>
-                <td>15</td>
+                <td>memilio/epidata_test/test_epidata_getCommuterMobility.py</td>
+                <td>18</td>
             </tr>
             
             <tr>
-                <td>memilio/epidata_test/__init__.py</td>
+                <td>memilio/epidata_test/test_epidata_modifyDataframeSeries.py</td>
+                <td>42</td>
+            </tr>
+            
+            <tr>
+                <td>memilio/epidata_test/test_epidata_get_population_data.py</td>
                 <td>14</td>
+            </tr>
+            
+            <tr>
+                <td>memilio/epidata_test/test_epidata_get_simulation_data.py</td>
+                <td>6</td>
+            </tr>
+            
+            <tr>
+                <td>memilio/epidata_test/test_epidata_defaultDict.py</td>
+                <td>10</td>
+            </tr>
+            
+            <tr>
+                <td>memilio/epidata_test/test_epidata_progress_indicator.py</td>
+                <td>20</td>
+            </tr>
+            
+            <tr>
+                <td>memilio/epidata_test/test_epidata_getHospitalizationData.py</td>
+                <td>16</td>
+            </tr>
+            
+            <tr>
+                <td>memilio/epidata_test/test_epidata_get_divi_data.py</td>
+                <td>19</td>
+            </tr>
+            
+            <tr>
+                <td>memilio/epidata/progress_indicator.py</td>
+                <td>11</td>
+            </tr>
+            
+            <tr>
+                <td>memilio/epidata/getHospitalizationData.py</td>
+                <td>17</td>
+            </tr>
+            
+            <tr>
+                <td>memilio/epidata/customPlot.py</td>
+                <td>13</td>
+            </tr>
+            
+            <tr>
+                <td>memilio/epidata/getVaccinationData.py</td>
+                <td>81</td>
+            </tr>
+            
+            <tr>
+                <td>memilio/epidata/getNPIData.py</td>
+                <td>91</td>
+            </tr>
+            
+            <tr>
+                <td>memilio/epidata/getTestingData.py</td>
+                <td>58</td>
+            </tr>
+            
+            <tr>
+                <td>memilio/epidata/getCommuterMobility.py</td>
+                <td>45</td>
+            </tr>
+            
+            <tr>
+                <td>memilio/epidata/getDataIntoPandasDataFrame.py</td>
+                <td>67</td>
+            </tr>
+            
+            <tr>
+                <td>memilio/epidata/getPopulationData.py</td>
+                <td>21</td>
+            </tr>
+            
+            <tr>
+                <td>memilio/epidata/getSimulationData.py</td>
+                <td>12</td>
+            </tr>
+            
+            <tr>
+                <td>memilio/epidata/defaultDict.py</td>
+                <td>12</td>
+            </tr>
+            
+            <tr>
+                <td>memilio/epidata/getDIVIData.py</td>
+                <td>17</td>
+            </tr>
+            
+            <tr>
+                <td>memilio/epidata/transformMobilityData.py</td>
+                <td>14</td>
+            </tr>
+            
+            <tr>
+                <td>memilio/epidata/geoModificationGermany.py</td>
+                <td>30</td>
+            </tr>
+            
+            <tr>
+                <td>memilio/epidata/cleanData.py</td>
+                <td>8</td>
+            </tr>
+            
+            <tr>
+                <td>memilio/epidata/getCaseData.py</td>
+                <td>60</td>
+            </tr>
+            
+            <tr>
+                <td>memilio/epidata/modifyDataframeSeries.py</td>
+                <td>38</td>
+            </tr>
+            
+            <tr>
+                <td>memilio/epidata/transformWeatherData.py</td>
+                <td>16</td>
+            </tr>
+            
+            <tr>
+                <td>memilio/epidata/getJHData.py</td>
+                <td>27</td>
             </tr>
             
         </table>

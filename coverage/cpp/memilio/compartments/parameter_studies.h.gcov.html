@@ -31,13 +31,13 @@
             <td class="headerValue">coverage.info</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntry">70</td>
             <td class="headerCovTableEntry">72</td>
-            <td class="headerCovTableEntryHi">97.2 %</td>
+            <td class="headerCovTableEntry">72</td>
+            <td class="headerCovTableEntryHi">100.0 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2024-07-31 09:55:57</td>
+            <td class="headerValue">2024-08-01 13:11:40</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">13</td>
@@ -311,8 +311,8 @@
 <a name="249"><span class="lineNum">     249 </span>            :         //Set the counter of our RNG so that future calls of run() produce different parameters.</a>
 <a name="250"><span class="lineNum">     250 </span><span class="lineCov">          2 :         m_rng.set_counter(m_rng.get_counter() + rng_totalsequence_counter&lt;uint64_t&gt;(m_num_runs, Counter&lt;uint32_t&gt;(0)));</span></a>
 <a name="251"><span class="lineNum">     251 </span>            : </a>
-<a name="252"><span class="lineNum">     252 </span><span class="lineCov">          2 :         return ensemble_result;</span></a>
-<a name="253"><span class="lineNum">     253 </span><span class="lineNoCov">          0 :     }</span></a>
+<a name="252"><span class="lineNum">     252 </span><span class="lineCov">          4 :         return ensemble_result;</span></a>
+<a name="253"><span class="lineNum">     253 </span><span class="lineCov">          2 :     }</span></a>
 <a name="254"><span class="lineNum">     254 </span>            : </a>
 <a name="255"><span class="lineNum">     255 </span>            :     /*</a>
 <a name="256"><span class="lineNum">     256 </span>            :      * @brief sets the number of Monte Carlo runs</a>
@@ -427,7 +427,7 @@
 <a name="365"><span class="lineNum">     365 </span><span class="lineCov">          2 :         std::fill(run_distribution.begin() + remainder, run_distribution.end(), num_runs_local);</span></a>
 <a name="366"><span class="lineNum">     366 </span>            : </a>
 <a name="367"><span class="lineNum">     367 </span><span class="lineCov">          4 :         return run_distribution;</span></a>
-<a name="368"><span class="lineNum">     368 </span><span class="lineNoCov">          0 :     }</span></a>
+<a name="368"><span class="lineNum">     368 </span><span class="lineCov">          2 :     }</span></a>
 <a name="369"><span class="lineNum">     369 </span>            : </a>
 <a name="370"><span class="lineNum">     370 </span>            : private:</a>
 <a name="371"><span class="lineNum">     371 </span>            :     // Stores Graph with the names and ranges of all parameters</a>

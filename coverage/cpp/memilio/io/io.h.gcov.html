@@ -31,13 +31,13 @@
             <td class="headerValue">coverage.info</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntry">114</td>
+            <td class="headerCovTableEntry">115</td>
             <td class="headerCovTableEntry">156</td>
-            <td class="headerCovTableEntryLo">73.1 %</td>
+            <td class="headerCovTableEntryLo">73.7 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2024-07-31 09:55:57</td>
+            <td class="headerValue">2024-08-01 13:11:40</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">765</td>
@@ -547,7 +547,7 @@
 <a name="485"><span class="lineNum">     485 </span>            :         });</a>
 <a name="486"><span class="lineNum">     486 </span>            : </a>
 <a name="487"><span class="lineNum">     487 </span>            :     //evaluate f if all succesful</a>
-<a name="488"><span class="lineNum">     488 </span><span class="lineCov">      32791 :     auto result =</span></a>
+<a name="488"><span class="lineNum">     488 </span><span class="lineCov">      65578 :     auto result =</span></a>
 <a name="489"><span class="lineNum">     489 </span><span class="lineCov">      32787 :         iter_err == std::end(status) ? details::eval(f, rs...) : details::ApplyResultT&lt;F, T...&gt;(failure(*iter_err));</span></a>
 <a name="490"><span class="lineNum">     490 </span>            : </a>
 <a name="491"><span class="lineNum">     491 </span><span class="lineCov">      32787 :     if (!result) {</span></a>
@@ -557,7 +557,7 @@
 <a name="495"><span class="lineNum">     495 </span><span class="lineCov">          7 :         io.set_error(result.error());</span></a>
 <a name="496"><span class="lineNum">     496 </span>            :     }</a>
 <a name="497"><span class="lineNum">     497 </span><span class="lineCov">      65574 :     return result;</span></a>
-<a name="498"><span class="lineNum">     498 </span><span class="lineCov">     165969 : }</span></a>
+<a name="498"><span class="lineNum">     498 </span><span class="lineCov">     198756 : }</span></a>
 <a name="499"><span class="lineNum">     499 </span>            : </a>
 <a name="500"><span class="lineNum">     500 </span>            : //utility for (de-)serializing tuple-like objects</a>
 <a name="501"><span class="lineNum">     501 </span>            : namespace details</a>
@@ -689,8 +689,8 @@
 <a name="627"><span class="lineNum">     627 </span><span class="lineCov">        810 :                     m(i, j) = v[i * c + j];</span></a>
 <a name="628"><span class="lineNum">     628 </span>            :                 }</a>
 <a name="629"><span class="lineNum">     629 </span>            :             }</a>
-<a name="630"><span class="lineNum">     630 </span><span class="lineCov">         46 :             return m;</span></a>
-<a name="631"><span class="lineNum">     631 </span><span class="lineNoCov">          0 :         },</span></a>
+<a name="630"><span class="lineNum">     630 </span><span class="lineCov">         92 :             return m;</span></a>
+<a name="631"><span class="lineNum">     631 </span><span class="lineCov">         46 :         },</span></a>
 <a name="632"><span class="lineNum">     632 </span><span class="lineCov">         92 :         rows, cols, elements);</span></a>
 <a name="633"><span class="lineNum">     633 </span><span class="lineCov">         46 : }</span></a>
 <a name="634"><span class="lineNum">     634 </span>            : </a>

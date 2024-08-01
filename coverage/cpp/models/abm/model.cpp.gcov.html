@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2024-07-31 09:55:57</td>
+            <td class="headerValue">2024-08-01 13:11:40</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">24</td>
@@ -107,7 +107,7 @@
 <a name="45"><span class="lineNum">      45 </span><span class="lineCov">         76 :     m_are_exposure_caches_valid       = false;</span></a>
 <a name="46"><span class="lineNum">      46 </span><span class="lineCov">         76 :     m_exposure_caches_need_rebuild    = true;</span></a>
 <a name="47"><span class="lineNum">      47 </span>            : </a>
-<a name="48"><span class="lineNum">      48 </span><span class="lineCov">         76 :     return id;</span></a>
+<a name="48"><span class="lineNum">      48 </span><span class="lineCov">        152 :     return id;</span></a>
 <a name="49"><span class="lineNum">      49 </span>            : }</a>
 <a name="50"><span class="lineNum">      50 </span>            : </a>
 <a name="51"><span class="lineNum">      51 </span><span class="lineCov">        110 : PersonId Model::add_person(const LocationId id, AgeGroup age)</span></a>
@@ -130,7 +130,7 @@
 <a name="68"><span class="lineNum">      68 </span><span class="lineCov">        135 :     if (m_is_local_population_cache_valid) {</span></a>
 <a name="69"><span class="lineNum">      69 </span><span class="lineNoCov">          0 :         ++m_local_population_cache[new_person.get_location().get()];</span></a>
 <a name="70"><span class="lineNum">      70 </span>            :     }</a>
-<a name="71"><span class="lineNum">      71 </span><span class="lineCov">        135 :     return new_id;</span></a>
+<a name="71"><span class="lineNum">      71 </span><span class="lineCov">        270 :     return new_id;</span></a>
 <a name="72"><span class="lineNum">      72 </span>            : }</a>
 <a name="73"><span class="lineNum">      73 </span>            : </a>
 <a name="74"><span class="lineNum">      74 </span><span class="lineCov">         82 : void Model::evolve(TimePoint t, TimeSpan dt)</span></a>
@@ -161,20 +161,20 @@
 <a name="99"><span class="lineNum">      99 </span>            : </a>
 <a name="100"><span class="lineNum">     100 </span><span class="lineCov">        298 :         auto try_mobility_rule = [&amp;](auto rule) -&gt; bool {</span></a>
 <a name="101"><span class="lineNum">     101 </span>            :             //run mobility rule and check if change of location can actually happen</a>
-<a name="102"><span class="lineNum">     102 </span><span class="lineCov">       7624 :             auto target_type                  = rule(personal_rng, person, t, dt, parameters);</span></a>
-<a name="103"><span class="lineNum">     103 </span><span class="lineCov">       2844 :             const Location&amp; target_location   = get_location(find_location(target_type, person_id));</span></a>
-<a name="104"><span class="lineNum">     104 </span><span class="lineCov">       2832 :             const LocationId current_location = person.get_location();</span></a>
-<a name="105"><span class="lineNum">     105 </span><span class="lineCov">       2832 :             if (m_testing_strategy.run_strategy(personal_rng, person, target_location, t)) {</span></a>
-<a name="106"><span class="lineNum">     106 </span><span class="lineCov">        956 :                 if (target_location.get_id() != current_location &amp;&amp;</span></a>
-<a name="107"><span class="lineNum">     107 </span><span class="lineCov">         24 :                     get_number_persons(target_location.get_id()) &lt; target_location.get_capacity().persons) {</span></a>
-<a name="108"><span class="lineNum">     108 </span><span class="lineCov">         24 :                     bool wears_mask = person.apply_mask_intervention(personal_rng, target_location);</span></a>
-<a name="109"><span class="lineNum">     109 </span><span class="lineCov">         12 :                     if (wears_mask) {</span></a>
-<a name="110"><span class="lineNum">     110 </span><span class="lineCov">         36 :                         change_location(person_id, target_location.get_id());</span></a>
+<a name="102"><span class="lineNum">     102 </span><span class="lineCov">       8496 :             auto target_type                  = rule(personal_rng, person, t, dt, parameters);</span></a>
+<a name="103"><span class="lineNum">     103 </span><span class="lineCov">       2814 :             const Location&amp; target_location   = get_location(find_location(target_type, person_id));</span></a>
+<a name="104"><span class="lineNum">     104 </span><span class="lineCov">       2796 :             const LocationId current_location = person.get_location();</span></a>
+<a name="105"><span class="lineNum">     105 </span><span class="lineCov">       3728 :             if (m_testing_strategy.run_strategy(personal_rng, person, target_location, t)) {</span></a>
+<a name="106"><span class="lineNum">     106 </span><span class="lineCov">        950 :                 if (target_location.get_id() != current_location &amp;&amp;</span></a>
+<a name="107"><span class="lineNum">     107 </span><span class="lineCov">         36 :                     get_number_persons(target_location.get_id()) &lt; target_location.get_capacity().persons) {</span></a>
+<a name="108"><span class="lineNum">     108 </span><span class="lineCov">         36 :                     bool wears_mask = person.apply_mask_intervention(personal_rng, target_location);</span></a>
+<a name="109"><span class="lineNum">     109 </span><span class="lineCov">         18 :                     if (wears_mask) {</span></a>
+<a name="110"><span class="lineNum">     110 </span><span class="lineCov">         54 :                         change_location(person_id, target_location.get_id());</span></a>
 <a name="111"><span class="lineNum">     111 </span>            :                     }</a>
-<a name="112"><span class="lineNum">     112 </span><span class="lineCov">         12 :                     return true;</span></a>
+<a name="112"><span class="lineNum">     112 </span><span class="lineCov">         18 :                     return true;</span></a>
 <a name="113"><span class="lineNum">     113 </span>            :                 }</a>
 <a name="114"><span class="lineNum">     114 </span>            :             }</a>
-<a name="115"><span class="lineNum">     115 </span><span class="lineCov">        932 :             return false;</span></a>
+<a name="115"><span class="lineNum">     115 </span><span class="lineCov">        914 :             return false;</span></a>
 <a name="116"><span class="lineNum">     116 </span><span class="lineCov">        298 :         };</span></a>
 <a name="117"><span class="lineNum">     117 </span>            : </a>
 <a name="118"><span class="lineNum">     118 </span>            :         //run mobility rules one after the other if the corresponding location type exists</a>
@@ -187,8 +187,8 @@
 <a name="125"><span class="lineNum">     125 </span><span class="lineCov">        590 :                 (has_locations({LocationType::School, LocationType::Home}) &amp;&amp; try_mobility_rule(&amp;go_to_school)) ||</span></a>
 <a name="126"><span class="lineNum">     126 </span><span class="lineCov">        588 :                 (has_locations({LocationType::Work, LocationType::Home}) &amp;&amp; try_mobility_rule(&amp;go_to_work)) ||</span></a>
 <a name="127"><span class="lineNum">     127 </span><span class="lineCov">        587 :                 (has_locations({LocationType::BasicsShop, LocationType::Home}) &amp;&amp; try_mobility_rule(&amp;go_to_shop)) ||</span></a>
-<a name="128"><span class="lineNum">     128 </span><span class="lineCov">       1478 :                 (has_locations({LocationType::SocialEvent, LocationType::Home}) &amp;&amp; try_mobility_rule(&amp;go_to_event)) ||</span></a>
-<a name="129"><span class="lineNum">     129 </span><span class="lineCov">        584 :                 (has_locations({LocationType::Home}) &amp;&amp; try_mobility_rule(&amp;go_to_quarantine));</span></a>
+<a name="128"><span class="lineNum">     128 </span><span class="lineCov">       1472 :                 (has_locations({LocationType::SocialEvent, LocationType::Home}) &amp;&amp; try_mobility_rule(&amp;go_to_event)) ||</span></a>
+<a name="129"><span class="lineNum">     129 </span><span class="lineCov">        578 :                 (has_locations({LocationType::Home}) &amp;&amp; try_mobility_rule(&amp;go_to_quarantine));</span></a>
 <a name="130"><span class="lineNum">     130 </span>            :         }</a>
 <a name="131"><span class="lineNum">     131 </span>            :         else {</a>
 <a name="132"><span class="lineNum">     132 </span>            :             //no daily routine mobility, just infection related</a>
@@ -294,7 +294,7 @@
 <a name="232"><span class="lineNum">     232 </span><span class="lineCov">        380 :         for (size_t i = 0; i &lt; num_persons; ++i) {</span></a>
 <a name="233"><span class="lineNum">     233 </span><span class="lineCov">        298 :             const Person&amp; person = m_persons[i];</span></a>
 <a name="234"><span class="lineNum">     234 </span><span class="lineCov">        298 :             const auto location  = person.get_location().get();</span></a>
-<a name="235"><span class="lineNum">     235 </span><span class="lineCov">        298 :             mio::abm::add_exposure_contribution(m_air_exposure_rates_cache[location],</span></a>
+<a name="235"><span class="lineNum">     235 </span><span class="lineCov">        596 :             mio::abm::add_exposure_contribution(m_air_exposure_rates_cache[location],</span></a>
 <a name="236"><span class="lineNum">     236 </span><span class="lineCov">        298 :                                                 m_contact_exposure_rates_cache[location], person,</span></a>
 <a name="237"><span class="lineNum">     237 </span><span class="lineCov">        298 :                                                 get_location(person.get_id()), t, dt);</span></a>
 <a name="238"><span class="lineNum">     238 </span>            :         } // implicit taskloop barrier</a>
@@ -332,11 +332,11 @@
 <a name="270"><span class="lineNum">     270 </span><span class="lineCov">          9 :     return std::make_pair(m_persons.begin(), m_persons.end());</span></a>
 <a name="271"><span class="lineNum">     271 </span>            : }</a>
 <a name="272"><span class="lineNum">     272 </span>            : </a>
-<a name="273"><span class="lineNum">     273 </span><span class="lineCov">        953 : LocationId Model::find_location(LocationType type, const PersonId person) const</span></a>
+<a name="273"><span class="lineNum">     273 </span><span class="lineCov">        941 : LocationId Model::find_location(LocationType type, const PersonId person) const</span></a>
 <a name="274"><span class="lineNum">     274 </span>            : {</a>
-<a name="275"><span class="lineNum">     275 </span><span class="lineCov">        953 :     auto location_id = get_person(person).get_assigned_location(type);</span></a>
-<a name="276"><span class="lineNum">     276 </span><span class="lineCov">        953 :     assert(location_id != LocationId::invalid_id() &amp;&amp; &quot;The person has no assigned location of that type.&quot;);</span></a>
-<a name="277"><span class="lineNum">     277 </span><span class="lineCov">        953 :     return location_id;</span></a>
+<a name="275"><span class="lineNum">     275 </span><span class="lineCov">        941 :     auto location_id = get_person(person).get_assigned_location(type);</span></a>
+<a name="276"><span class="lineNum">     276 </span><span class="lineCov">        941 :     assert(location_id != LocationId::invalid_id() &amp;&amp; &quot;The person has no assigned location of that type.&quot;);</span></a>
+<a name="277"><span class="lineNum">     277 </span><span class="lineCov">       1882 :     return location_id;</span></a>
 <a name="278"><span class="lineNum">     278 </span>            : }</a>
 <a name="279"><span class="lineNum">     279 </span>            : </a>
 <a name="280"><span class="lineNum">     280 </span><span class="lineCov">          1 : size_t Model::get_subpopulation_combined(TimePoint t, InfectionState s) const</span></a>
@@ -349,9 +349,9 @@
 <a name="287"><span class="lineNum">     287 </span>            : </a>
 <a name="288"><span class="lineNum">     288 </span><span class="lineCov">          2 : size_t Model::get_subpopulation_combined_per_location_type(TimePoint t, InfectionState s, LocationType type) const</span></a>
 <a name="289"><span class="lineNum">     289 </span>            : {</a>
-<a name="290"><span class="lineNum">     290 </span><span class="lineCov">          2 :     return std::accumulate(</span></a>
+<a name="290"><span class="lineNum">     290 </span><span class="lineCov">          4 :     return std::accumulate(</span></a>
 <a name="291"><span class="lineNum">     291 </span><span class="lineCov">         24 :         m_locations.begin(), m_locations.end(), (size_t)0, [t, s, type, this](size_t running_sum, const Location&amp; loc) {</span></a>
-<a name="292"><span class="lineNum">     292 </span><span class="lineCov">         32 :             return loc.get_type() == type ? running_sum + get_subpopulation(loc.get_id(), t, s) : running_sum;</span></a>
+<a name="292"><span class="lineNum">     292 </span><span class="lineCov">         42 :             return loc.get_type() == type ? running_sum + get_subpopulation(loc.get_id(), t, s) : running_sum;</span></a>
 <a name="293"><span class="lineNum">     293 </span><span class="lineCov">          2 :         });</span></a>
 <a name="294"><span class="lineNum">     294 </span>            : }</a>
 <a name="295"><span class="lineNum">     295 </span>            : </a>

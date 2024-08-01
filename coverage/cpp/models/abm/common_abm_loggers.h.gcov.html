@@ -31,13 +31,13 @@
             <td class="headerValue">coverage.info</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntry">68</td>
+            <td class="headerCovTableEntry">71</td>
             <td class="headerCovTableEntry">73</td>
-            <td class="headerCovTableEntryHi">93.2 %</td>
+            <td class="headerCovTableEntryHi">97.3 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2024-07-31 09:55:57</td>
+            <td class="headerValue">2024-08-01 13:11:40</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">7</td>
@@ -116,16 +116,16 @@
 <a name="54"><span class="lineNum">      54 </span><span class="lineCov">        150 : constexpr mio::abm::ActivityType guess_activity_type(mio::abm::LocationType current_location)</span></a>
 <a name="55"><span class="lineNum">      55 </span>            : {</a>
 <a name="56"><span class="lineNum">      56 </span><span class="lineCov">        150 :     switch (current_location) {</span></a>
-<a name="57"><span class="lineNum">      57 </span><span class="lineCov">         88 :     case mio::abm::LocationType::Home:</span></a>
-<a name="58"><span class="lineNum">      58 </span><span class="lineCov">         88 :         return mio::abm::ActivityType::Home;</span></a>
+<a name="57"><span class="lineNum">      57 </span><span class="lineCov">         82 :     case mio::abm::LocationType::Home:</span></a>
+<a name="58"><span class="lineNum">      58 </span><span class="lineCov">         82 :         return mio::abm::ActivityType::Home;</span></a>
 <a name="59"><span class="lineNum">      59 </span><span class="lineCov">          2 :     case mio::abm::LocationType::Work:</span></a>
 <a name="60"><span class="lineNum">      60 </span><span class="lineCov">          2 :         return mio::abm::ActivityType::Workplace;</span></a>
 <a name="61"><span class="lineNum">      61 </span><span class="lineNoCov">          0 :     case mio::abm::LocationType::School:</span></a>
 <a name="62"><span class="lineNum">      62 </span><span class="lineNoCov">          0 :         return mio::abm::ActivityType::Education;</span></a>
 <a name="63"><span class="lineNum">      63 </span><span class="lineCov">          2 :     case mio::abm::LocationType::SocialEvent:</span></a>
 <a name="64"><span class="lineNum">      64 </span><span class="lineCov">          2 :         return mio::abm::ActivityType::Leisure;</span></a>
-<a name="65"><span class="lineNum">      65 </span><span class="lineCov">          4 :     case mio::abm::LocationType::BasicsShop:</span></a>
-<a name="66"><span class="lineNum">      66 </span><span class="lineCov">          4 :         return mio::abm::ActivityType::Shopping;</span></a>
+<a name="65"><span class="lineNum">      65 </span><span class="lineCov">         10 :     case mio::abm::LocationType::BasicsShop:</span></a>
+<a name="66"><span class="lineNum">      66 </span><span class="lineCov">         10 :         return mio::abm::ActivityType::Shopping;</span></a>
 <a name="67"><span class="lineNum">      67 </span><span class="lineCov">          2 :     case mio::abm::LocationType::ICU:</span></a>
 <a name="68"><span class="lineNum">      68 </span><span class="lineCov">          2 :         return mio::abm::ActivityType::OtherActivity;</span></a>
 <a name="69"><span class="lineNum">      69 </span><span class="lineCov">          2 :     case mio::abm::LocationType::Hospital:</span></a>
@@ -165,8 +165,8 @@
 <a name="103"><span class="lineNum">     103 </span><span class="lineCov">         18 :             location_information.push_back(std::make_tuple(</span></a>
 <a name="104"><span class="lineNum">     104 </span><span class="lineCov">         18 :                 location.get_id(), location.get_type(), location.get_geographical_location(), n_cells, loc_capacity));</span></a>
 <a name="105"><span class="lineNum">     105 </span>            :         }</a>
-<a name="106"><span class="lineNum">     106 </span><span class="lineCov">          1 :         return location_information;</span></a>
-<a name="107"><span class="lineNum">     107 </span><span class="lineNoCov">          0 :     }</span></a>
+<a name="106"><span class="lineNum">     106 </span><span class="lineCov">          2 :         return location_information;</span></a>
+<a name="107"><span class="lineNum">     107 </span><span class="lineCov">          1 :     }</span></a>
 <a name="108"><span class="lineNum">     108 </span>            : };</a>
 <a name="109"><span class="lineNum">     109 </span>            : </a>
 <a name="110"><span class="lineNum">     110 </span>            : /**</a>
@@ -191,8 +191,8 @@
 <a name="129"><span class="lineNum">     129 </span><span class="lineCov">          6 :                 person.get_id(), sim.get_model().find_location(mio::abm::LocationType::Home, person.get_id()),</span></a>
 <a name="130"><span class="lineNum">     130 </span><span class="lineCov">          6 :                 person.get_age()));</span></a>
 <a name="131"><span class="lineNum">     131 </span>            :         }</a>
-<a name="132"><span class="lineNum">     132 </span><span class="lineCov">          1 :         return person_information;</span></a>
-<a name="133"><span class="lineNum">     133 </span><span class="lineNoCov">          0 :     }</span></a>
+<a name="132"><span class="lineNum">     132 </span><span class="lineCov">          2 :         return person_information;</span></a>
+<a name="133"><span class="lineNum">     133 </span><span class="lineCov">          1 :     }</span></a>
 <a name="134"><span class="lineNum">     134 </span>            : };</a>
 <a name="135"><span class="lineNum">     135 </span>            : </a>
 <a name="136"><span class="lineNum">     136 </span>            : /**</a>
@@ -220,8 +220,8 @@
 <a name="158"><span class="lineNum">     158 </span><span class="lineCov">        450 :                 std::make_tuple(p.get_id(), p.get_location(), sim.get_time(), p.get_last_transport_mode(),</span></a>
 <a name="159"><span class="lineNum">     159 </span><span class="lineCov">        300 :                                 guess_activity_type(p.get_location_type()), p.get_infection_state(sim.get_time())));</span></a>
 <a name="160"><span class="lineNum">     160 </span><span class="lineCov">        150 :         }</span></a>
-<a name="161"><span class="lineNum">     161 </span><span class="lineCov">         50 :         return mobility_data;</span></a>
-<a name="162"><span class="lineNum">     162 </span><span class="lineNoCov">          0 :     }</span></a>
+<a name="161"><span class="lineNum">     161 </span><span class="lineCov">        100 :         return mobility_data;</span></a>
+<a name="162"><span class="lineNum">     162 </span><span class="lineCov">         50 :     }</span></a>
 <a name="163"><span class="lineNum">     163 </span>            : };</a>
 <a name="164"><span class="lineNum">     164 </span>            : </a>
 <a name="165"><span class="lineNum">     165 </span>            : /**</a>
@@ -292,8 +292,8 @@
 <a name="230"><span class="lineNum">     230 </span><span class="lineCov">         24 :             auto&amp; current_state_vec = std::get&lt;index_of_type_v&lt;Logger, Loggers...&gt;&gt;(data).front();</span></a>
 <a name="231"><span class="lineNum">     231 </span><span class="lineCov">         96 :             for (auto i = 0; i &lt; (int)current_state_vec.size(); i++) {</span></a>
 <a name="232"><span class="lineNum">     232 </span><span class="lineCov">         72 :                 if (std::get&lt;1&gt;(t[i]) != std::get&lt;1&gt;(current_state_vec[i])) {</span></a>
-<a name="233"><span class="lineNum">     233 </span><span class="lineCov">         10 :                     std::get&lt;1&gt;(current_state_vec[i]) = std::get&lt;1&gt;(t[i]);</span></a>
-<a name="234"><span class="lineNum">     234 </span><span class="lineCov">         10 :                     diff_vector.push_back(t[i]);</span></a>
+<a name="233"><span class="lineNum">     233 </span><span class="lineCov">         16 :                     std::get&lt;1&gt;(current_state_vec[i]) = std::get&lt;1&gt;(t[i]);</span></a>
+<a name="234"><span class="lineNum">     234 </span><span class="lineCov">         16 :                     diff_vector.push_back(t[i]);</span></a>
 <a name="235"><span class="lineNum">     235 </span>            :                 }</a>
 <a name="236"><span class="lineNum">     236 </span>            :             }</a>
 <a name="237"><span class="lineNum">     237 </span><span class="lineCov">         24 :             std::get&lt;index_of_type_v&lt;Logger, Loggers...&gt;&gt;(data).push_back(diff_vector);</span></a>
