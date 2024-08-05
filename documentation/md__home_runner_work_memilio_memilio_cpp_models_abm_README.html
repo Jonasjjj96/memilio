@@ -141,8 +141,7 @@ Get Started</h1>
 <div class="ttc" id="aclassmio_1_1abm_1_1Household_html"><div class="ttname"><a href="classmio_1_1abm_1_1Household.html">mio::abm::Household</a></div><div class="ttdoc">A Household represented by a vector with HouseholdMembers.</div><div class="ttdef"><b>Definition:</b> household.h:92</div></div>
 <div class="ttc" id="anamespacemio_1_1abm_html_adf7c97b78134036336f14085c36a1b10"><div class="ttname"><a href="namespacemio_1_1abm.html#adf7c97b78134036336f14085c36a1b10">mio::abm::add_household_group_to_model</a></div><div class="ttdeci">void add_household_group_to_model(Model &amp;model, const HouseholdGroup &amp;household_group)</div><div class="ttdoc">Adds Households from a HouseholdGroup to the Model.</div><div class="ttdef"><b>Definition:</b> household.cpp:78</div></div>
 </div><!-- fragment --><p>During the simulation, people can get tested, and we have to specify the scheme for that:</p>
-<div class="fragment"><div class="line"><span class="keyword">auto</span> testing_min_time = <a class="code" href="namespacemio_1_1abm.html#ac50d53d4d672f332b55133479478fe6a">mio::abm::days</a>(1);</div>
-<div class="line"><span class="keyword">auto</span> probability      = 0.5;</div>
+<div class="fragment"><div class="line"><span class="keyword">auto</span> probability      = 0.5;</div>
 <div class="line"><span class="keyword">auto</span> start_date       = <a class="code" href="classmio_1_1abm_1_1TimePoint.html">mio::abm::TimePoint</a>(0);</div>
 <div class="line"><span class="keyword">auto</span> end_date         = <a class="code" href="classmio_1_1abm_1_1TimePoint.html">mio::abm::TimePoint</a>(0) + <a class="code" href="namespacemio_1_1abm.html#ac50d53d4d672f332b55133479478fe6a">mio::abm::days</a>(30);</div>
 <div class="line"><span class="keyword">auto</span> test_type        = mio::abm::AntigenTest();</div>
@@ -150,7 +149,7 @@ Get Started</h1>
 <div class="line"><span class="keyword">auto</span> testing_criteria_work =</div>
 <div class="line">    std::vector&lt;mio::abm::TestingCriteria&gt;{<a class="code" href="classmio_1_1abm_1_1TestingCriteria.html">mio::abm::TestingCriteria</a>({}, test_at_work, {})};</div>
 <div class="line"><span class="keyword">auto</span> testing_scheme_work =</div>
-<div class="line">    <a class="code" href="classmio_1_1abm_1_1TestingScheme.html">mio::abm::TestingScheme</a>(testing_criteria_work, testing_min_time, start_date, end_date, test_type, probability);</div>
+<div class="line">    <a class="code" href="classmio_1_1abm_1_1TestingScheme.html">mio::abm::TestingScheme</a>(testing_criteria_work, start_date, end_date, test_type, probability);</div>
 <div class="line">model.get_testing_strategy().add_testing_scheme(testing_scheme_work);</div>
 <div class="ttc" id="aclassmio_1_1abm_1_1TestingCriteria_html"><div class="ttname"><a href="classmio_1_1abm_1_1TestingCriteria.html">mio::abm::TestingCriteria</a></div><div class="ttdoc">TestingCriteria for TestingScheme.</div><div class="ttdef"><b>Definition:</b> testing_strategy.h:42</div></div>
 <div class="ttc" id="aclassmio_1_1abm_1_1TestingScheme_html"><div class="ttname"><a href="classmio_1_1abm_1_1TestingScheme.html">mio::abm::TestingScheme</a></div><div class="ttdoc">TestingScheme to regular test Persons.</div><div class="ttdef"><b>Definition:</b> testing_strategy.h:106</div></div>
