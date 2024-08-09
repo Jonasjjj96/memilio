@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2024-08-06 07:22:23</td>
+            <td class="headerValue">2024-08-09 12:18:00</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">12</td>
@@ -294,10 +294,10 @@
 <a name="232"><span class="lineNum">     232 </span><span class="lineCov">        206 :         m_populations[num_time_points - 2][Eigen::Index(InfectionState::Susceptible)] / (1 + dt * m_forceofinfection);</span></a>
 <a name="233"><span class="lineNum">     233 </span><span class="lineCov">        103 : }</span></a>
 <a name="234"><span class="lineNum">     234 </span>            : </a>
-<a name="235"><span class="lineNum">     235 </span><span class="lineCov">        974 : void Model::compute_flow(Eigen::Index idx_InfectionTransitions, Eigen::Index idx_IncomingFlow, ScalarType dt,</span></a>
+<a name="235"><span class="lineNum">     235 </span><span class="lineCov">       1021 : void Model::compute_flow(Eigen::Index idx_InfectionTransitions, Eigen::Index idx_IncomingFlow, ScalarType dt,</span></a>
 <a name="236"><span class="lineNum">     236 </span>            :                          Eigen::Index current_time_index)</a>
 <a name="237"><span class="lineNum">     237 </span>            : {</a>
-<a name="238"><span class="lineNum">     238 </span><span class="lineCov">        974 :     ScalarType sum = 0;</span></a>
+<a name="238"><span class="lineNum">     238 </span><span class="lineCov">       1021 :     ScalarType sum = 0;</span></a>
 <a name="239"><span class="lineNum">     239 </span>            :     /* In order to satisfy TransitionDistribution(dt*i) = 0 for all i &gt;= k, k is determined by the maximum support of the distribution.</a>
 <a name="240"><span class="lineNum">     240 </span>            :     Since we are using a backwards difference scheme to compute the derivative, we have that the</a>
 <a name="241"><span class="lineNum">     241 </span>            :     derivative of TransitionDistribution(dt*i) = 0 for all i &gt;= k+1.</a>
@@ -305,22 +305,22 @@
 <a name="243"><span class="lineNum">     243 </span>            :     Hence calc_time_index goes until std::ceil(support_max/dt) since for std::ceil(support_max/dt)+1 all terms are already zero. </a>
 <a name="244"><span class="lineNum">     244 </span>            :     This needs to be adjusted if we are changing the finite difference scheme */</a>
 <a name="245"><span class="lineNum">     245 </span>            : </a>
-<a name="246"><span class="lineNum">     246 </span><span class="lineCov">        974 :     Eigen::Index calc_time_index = (Eigen::Index)std::ceil(</span></a>
-<a name="247"><span class="lineNum">     247 </span><span class="lineCov">        974 :         parameters.get&lt;TransitionDistributions&gt;()[idx_InfectionTransitions].get_support_max(dt, m_tol) / dt);</span></a>
+<a name="246"><span class="lineNum">     246 </span><span class="lineCov">       1021 :     Eigen::Index calc_time_index = (Eigen::Index)std::ceil(</span></a>
+<a name="247"><span class="lineNum">     247 </span><span class="lineCov">       1021 :         parameters.get&lt;TransitionDistributions&gt;()[idx_InfectionTransitions].get_support_max(dt, m_tol) / dt);</span></a>
 <a name="248"><span class="lineNum">     248 </span>            : </a>
-<a name="249"><span class="lineNum">     249 </span><span class="lineCov">       4256 :     for (Eigen::Index i = current_time_index - calc_time_index; i &lt; current_time_index; i++) {</span></a>
+<a name="249"><span class="lineNum">     249 </span><span class="lineCov">       4491 :     for (Eigen::Index i = current_time_index - calc_time_index; i &lt; current_time_index; i++) {</span></a>
 <a name="250"><span class="lineNum">     250 </span>            :         // (current_time_index - i) * dt is the time the individuals have already spent in this state.</a>
-<a name="251"><span class="lineNum">     251 </span><span class="lineCov">       3282 :         ScalarType state_age = (current_time_index - i) * dt;</span></a>
+<a name="251"><span class="lineNum">     251 </span><span class="lineCov">       3470 :         ScalarType state_age = (current_time_index - i) * dt;</span></a>
 <a name="252"><span class="lineNum">     252 </span>            : </a>
 <a name="253"><span class="lineNum">     253 </span>            :         // Use backward difference scheme to approximate first derivative.</a>
-<a name="254"><span class="lineNum">     254 </span><span class="lineCov">       3282 :         sum += (parameters.get&lt;TransitionDistributions&gt;()[idx_InfectionTransitions].eval(state_age) -</span></a>
-<a name="255"><span class="lineNum">     255 </span><span class="lineCov">       3282 :                 parameters.get&lt;TransitionDistributions&gt;()[idx_InfectionTransitions].eval(state_age - dt)) /</span></a>
-<a name="256"><span class="lineNum">     256 </span><span class="lineCov">       3282 :                dt * m_transitions[i + 1][idx_IncomingFlow];</span></a>
+<a name="254"><span class="lineNum">     254 </span><span class="lineCov">       3470 :         sum += (parameters.get&lt;TransitionDistributions&gt;()[idx_InfectionTransitions].eval(state_age) -</span></a>
+<a name="255"><span class="lineNum">     255 </span><span class="lineCov">       3470 :                 parameters.get&lt;TransitionDistributions&gt;()[idx_InfectionTransitions].eval(state_age - dt)) /</span></a>
+<a name="256"><span class="lineNum">     256 </span><span class="lineCov">       3470 :                dt * m_transitions[i + 1][idx_IncomingFlow];</span></a>
 <a name="257"><span class="lineNum">     257 </span>            :     }</a>
 <a name="258"><span class="lineNum">     258 </span>            : </a>
-<a name="259"><span class="lineNum">     259 </span><span class="lineCov">        974 :     m_transitions.get_value(current_time_index)[Eigen::Index(idx_InfectionTransitions)] =</span></a>
-<a name="260"><span class="lineNum">     260 </span><span class="lineCov">        974 :         (-dt) * parameters.get&lt;TransitionProbabilities&gt;()[idx_InfectionTransitions] * sum;</span></a>
-<a name="261"><span class="lineNum">     261 </span><span class="lineCov">        974 : }</span></a>
+<a name="259"><span class="lineNum">     259 </span><span class="lineCov">       1021 :     m_transitions.get_value(current_time_index)[Eigen::Index(idx_InfectionTransitions)] =</span></a>
+<a name="260"><span class="lineNum">     260 </span><span class="lineCov">       1021 :         (-dt) * parameters.get&lt;TransitionProbabilities&gt;()[idx_InfectionTransitions] * sum;</span></a>
+<a name="261"><span class="lineNum">     261 </span><span class="lineCov">       1021 : }</span></a>
 <a name="262"><span class="lineNum">     262 </span>            : </a>
 <a name="263"><span class="lineNum">     263 </span><span class="lineCov">        927 : void Model::compute_flow(Eigen::Index idx_InfectionTransitions, Eigen::Index idx_IncomingFlow, ScalarType dt)</span></a>
 <a name="264"><span class="lineNum">     264 </span>            : {</a>
@@ -489,27 +489,27 @@
 <a name="427"><span class="lineNum">     427 </span><span class="lineCov">        128 :     m_forceofinfection = 1 / (m_N - deaths) * m_forceofinfection;</span></a>
 <a name="428"><span class="lineNum">     428 </span><span class="lineCov">        128 : }</span></a>
 <a name="429"><span class="lineNum">     429 </span>            : </a>
-<a name="430"><span class="lineNum">     430 </span><span class="lineCov">          9 : ScalarType Model::get_global_support_max(ScalarType dt) const</span></a>
+<a name="430"><span class="lineNum">     430 </span><span class="lineCov">         10 : ScalarType Model::get_global_support_max(ScalarType dt) const</span></a>
 <a name="431"><span class="lineNum">     431 </span>            : {</a>
-<a name="432"><span class="lineNum">     432 </span><span class="lineCov">         18 :     return std::max(</span></a>
-<a name="433"><span class="lineNum">     433 </span><span class="lineCov">          9 :         {parameters.get&lt;TransitionDistributions&gt;()[(int)InfectionTransition::ExposedToInfectedNoSymptoms]</span></a>
-<a name="434"><span class="lineNum">     434 </span><span class="lineCov">          9 :              .get_support_max(dt, m_tol),</span></a>
-<a name="435"><span class="lineNum">     435 </span><span class="lineCov">          9 :          parameters.get&lt;TransitionDistributions&gt;()[(int)InfectionTransition::InfectedNoSymptomsToInfectedSymptoms]</span></a>
-<a name="436"><span class="lineNum">     436 </span><span class="lineCov">          9 :              .get_support_max(dt, m_tol),</span></a>
-<a name="437"><span class="lineNum">     437 </span><span class="lineCov">          9 :          parameters.get&lt;TransitionDistributions&gt;()[(int)InfectionTransition::InfectedNoSymptomsToRecovered]</span></a>
-<a name="438"><span class="lineNum">     438 </span><span class="lineCov">          9 :              .get_support_max(dt, m_tol),</span></a>
-<a name="439"><span class="lineNum">     439 </span><span class="lineCov">          9 :          parameters.get&lt;TransitionDistributions&gt;()[(int)InfectionTransition::InfectedSymptomsToInfectedSevere]</span></a>
-<a name="440"><span class="lineNum">     440 </span><span class="lineCov">          9 :              .get_support_max(dt, m_tol),</span></a>
-<a name="441"><span class="lineNum">     441 </span><span class="lineCov">          9 :          parameters.get&lt;TransitionDistributions&gt;()[(int)InfectionTransition::InfectedSymptomsToRecovered]</span></a>
-<a name="442"><span class="lineNum">     442 </span><span class="lineCov">          9 :              .get_support_max(dt, m_tol),</span></a>
-<a name="443"><span class="lineNum">     443 </span><span class="lineCov">          9 :          parameters.get&lt;TransitionDistributions&gt;()[(int)InfectionTransition::InfectedSevereToInfectedCritical]</span></a>
-<a name="444"><span class="lineNum">     444 </span><span class="lineCov">          9 :              .get_support_max(dt, m_tol),</span></a>
-<a name="445"><span class="lineNum">     445 </span><span class="lineCov">          9 :          parameters.get&lt;TransitionDistributions&gt;()[(int)InfectionTransition::InfectedSevereToRecovered].get_support_max(</span></a>
-<a name="446"><span class="lineNum">     446 </span><span class="lineCov">          9 :              dt, m_tol),</span></a>
-<a name="447"><span class="lineNum">     447 </span><span class="lineCov">          9 :          parameters.get&lt;TransitionDistributions&gt;()[(int)InfectionTransition::InfectedCriticalToDead].get_support_max(</span></a>
-<a name="448"><span class="lineNum">     448 </span><span class="lineCov">          9 :              dt, m_tol),</span></a>
-<a name="449"><span class="lineNum">     449 </span><span class="lineCov">          9 :          parameters.get&lt;TransitionDistributions&gt;()[(int)InfectionTransition::InfectedCriticalToRecovered]</span></a>
-<a name="450"><span class="lineNum">     450 </span><span class="lineCov">         18 :              .get_support_max(dt, m_tol)});</span></a>
+<a name="432"><span class="lineNum">     432 </span><span class="lineCov">         20 :     return std::max(</span></a>
+<a name="433"><span class="lineNum">     433 </span><span class="lineCov">         10 :         {parameters.get&lt;TransitionDistributions&gt;()[(int)InfectionTransition::ExposedToInfectedNoSymptoms]</span></a>
+<a name="434"><span class="lineNum">     434 </span><span class="lineCov">         10 :              .get_support_max(dt, m_tol),</span></a>
+<a name="435"><span class="lineNum">     435 </span><span class="lineCov">         10 :          parameters.get&lt;TransitionDistributions&gt;()[(int)InfectionTransition::InfectedNoSymptomsToInfectedSymptoms]</span></a>
+<a name="436"><span class="lineNum">     436 </span><span class="lineCov">         10 :              .get_support_max(dt, m_tol),</span></a>
+<a name="437"><span class="lineNum">     437 </span><span class="lineCov">         10 :          parameters.get&lt;TransitionDistributions&gt;()[(int)InfectionTransition::InfectedNoSymptomsToRecovered]</span></a>
+<a name="438"><span class="lineNum">     438 </span><span class="lineCov">         10 :              .get_support_max(dt, m_tol),</span></a>
+<a name="439"><span class="lineNum">     439 </span><span class="lineCov">         10 :          parameters.get&lt;TransitionDistributions&gt;()[(int)InfectionTransition::InfectedSymptomsToInfectedSevere]</span></a>
+<a name="440"><span class="lineNum">     440 </span><span class="lineCov">         10 :              .get_support_max(dt, m_tol),</span></a>
+<a name="441"><span class="lineNum">     441 </span><span class="lineCov">         10 :          parameters.get&lt;TransitionDistributions&gt;()[(int)InfectionTransition::InfectedSymptomsToRecovered]</span></a>
+<a name="442"><span class="lineNum">     442 </span><span class="lineCov">         10 :              .get_support_max(dt, m_tol),</span></a>
+<a name="443"><span class="lineNum">     443 </span><span class="lineCov">         10 :          parameters.get&lt;TransitionDistributions&gt;()[(int)InfectionTransition::InfectedSevereToInfectedCritical]</span></a>
+<a name="444"><span class="lineNum">     444 </span><span class="lineCov">         10 :              .get_support_max(dt, m_tol),</span></a>
+<a name="445"><span class="lineNum">     445 </span><span class="lineCov">         10 :          parameters.get&lt;TransitionDistributions&gt;()[(int)InfectionTransition::InfectedSevereToRecovered].get_support_max(</span></a>
+<a name="446"><span class="lineNum">     446 </span><span class="lineCov">         10 :              dt, m_tol),</span></a>
+<a name="447"><span class="lineNum">     447 </span><span class="lineCov">         10 :          parameters.get&lt;TransitionDistributions&gt;()[(int)InfectionTransition::InfectedCriticalToDead].get_support_max(</span></a>
+<a name="448"><span class="lineNum">     448 </span><span class="lineCov">         10 :              dt, m_tol),</span></a>
+<a name="449"><span class="lineNum">     449 </span><span class="lineCov">         10 :          parameters.get&lt;TransitionDistributions&gt;()[(int)InfectionTransition::InfectedCriticalToRecovered]</span></a>
+<a name="450"><span class="lineNum">     450 </span><span class="lineCov">         20 :              .get_support_max(dt, m_tol)});</span></a>
 <a name="451"><span class="lineNum">     451 </span>            : }</a>
 <a name="452"><span class="lineNum">     452 </span>            : </a>
 <a name="453"><span class="lineNum">     453 </span>            : } // namespace isecir</a>
