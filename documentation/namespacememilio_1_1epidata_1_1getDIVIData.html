@@ -166,7 +166,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Downloads or reads the DIVI ICU data and writes them in different files. </p>
-<p>Available data starts from 2020-04-24. If the given start_date is earlier, it is changed to this date and a warning is printed. If it does not already exist, the folder Germany is generated in the given out_folder. If read_data == True and the file "FullData_DIVI.json" exists, the data is read form this file and stored in a pandas dataframe. If read_data = True and the file does not exist the program is stopped. The downloaded dataframe is written to the file "FullData_DIVI".</p>
+<p>If it does not already exist, the folder Germany is generated in the given out_folder. If read_data == True and the file "FullData_DIVI.json" exists, the data is read form this file and stored in a pandas dataframe. If read_data = True and the file does not exist the program is stopped. The downloaded dataframe is written to the file "FullData_DIVI".</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">directory</td><td>str Path to the output directory </td></tr>
@@ -244,7 +244,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Downloads or reads the DIVI ICU data and writes them in different files. </p>
-<p>Available data starts from 2020-04-24. If the given start_date is earlier, it is changed to this date and a warning is printed. If it does not already exist, the folder Germany is generated in the given out_folder. If read_data == True and the file "FullData_DIVI.json" exists, the data is read form this file and stored in a pandas dataframe. If read_data = True and the file does not exist the program is stopped.</p>
+<p>Available data starts from 2020-04-24. If the given start_date is earlier, it is changed to this date and a warning is printed. It has been announced that the dataset will no longer be updated from 2024-07-21 (CW29). If end_date is later, a warning is displayed. If it does not already exist, the folder Germany is generated in the given out_folder. If read_data == True and the file "FullData_DIVI.json" exists, the data is read form this file and stored in a pandas dataframe. If read_data = True and the file does not exist the program is stopped.</p>
 <p>The downloaded dataframe is written to the file "FullData_DIVI". After that, the columns are renamed to English and the state and county names are added. Afterwards, three kinds of structuring of the data are done. We obtain the chronological sequence of ICU and ICU_ventilated stored in the files "county_divi".json", "state_divi.json" and "germany_divi.json" for counties, states and whole Germany, respectively.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
