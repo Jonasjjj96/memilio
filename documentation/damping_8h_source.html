@@ -511,36 +511,34 @@ $(function() {
 <div class="line"><a name="l00609"></a><span class="lineno">  609</span>&#160;        });</div>
 <div class="line"><a name="l00610"></a><span class="lineno">  610</span>&#160;        <span class="comment">//remove active with the same type and level and add new one</span></div>
 <div class="line"><a name="l00611"></a><span class="lineno">  611</span>&#160;        get&lt;MatrixIdx&gt;(sum_same_level) += get&lt;MatrixIdx&gt;(damping) - get&lt;MatrixIdx&gt;(active_same_type).get();</div>
-<div class="line"><a name="l00612"></a><span class="lineno">  612</span>&#160;        <span class="comment">//avoid negative values due to rounding error if e.g. a previous damping is lifted</span></div>
-<div class="line"><a name="l00613"></a><span class="lineno">  613</span>&#160;        get&lt;MatrixIdx&gt;(sum_same_level)   = get&lt;MatrixIdx&gt;(sum_same_level).cwiseMax(0.);</div>
-<div class="line"><a name="l00614"></a><span class="lineno">  614</span>&#160;        get&lt;MatrixIdx&gt;(active_same_type) = get&lt;MatrixIdx&gt;(damping);</div>
-<div class="line"><a name="l00615"></a><span class="lineno">  615</span>&#160;    }</div>
-<div class="line"><a name="l00616"></a><span class="lineno">  616</span>&#160;    <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00617"></a><span class="lineno">  617</span>&#160;        <span class="comment">//add new type to active</span></div>
-<div class="line"><a name="l00618"></a><span class="lineno">  618</span>&#160;        active_by_type.emplace_back(get&lt;MatrixIdx&gt;(damping), get&lt;DampingLevel&gt;(damping), get&lt;DampingType&gt;(damping));</div>
-<div class="line"><a name="l00619"></a><span class="lineno">  619</span>&#160;        <span class="comment">//find damping with same level if existent</span></div>
-<div class="line"><a name="l00620"></a><span class="lineno">  620</span>&#160;        <span class="keyword">auto</span> iter_sum_same_level = std::find_if(sum_by_level.begin(), sum_by_level.end(), [&amp;damping](<span class="keyword">auto</span>&amp; sum) {</div>
-<div class="line"><a name="l00621"></a><span class="lineno">  621</span>&#160;            return get&lt;DampingLevel&gt;(sum) == get&lt;DampingLevel&gt;(damping);</div>
-<div class="line"><a name="l00622"></a><span class="lineno">  622</span>&#160;        });</div>
-<div class="line"><a name="l00623"></a><span class="lineno">  623</span>&#160;        <span class="keywordflow">if</span> (iter_sum_same_level != sum_by_level.end()) {</div>
-<div class="line"><a name="l00624"></a><span class="lineno">  624</span>&#160;            <span class="comment">//add to existing level</span></div>
-<div class="line"><a name="l00625"></a><span class="lineno">  625</span>&#160;            get&lt;MatrixIdx&gt;(*iter_sum_same_level) += get&lt;MatrixIdx&gt;(damping);</div>
-<div class="line"><a name="l00626"></a><span class="lineno">  626</span>&#160;        }</div>
-<div class="line"><a name="l00627"></a><span class="lineno">  627</span>&#160;        <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00628"></a><span class="lineno">  628</span>&#160;            <span class="comment">//add new level</span></div>
-<div class="line"><a name="l00629"></a><span class="lineno">  629</span>&#160;            sum_by_level.emplace_back(get&lt;MatrixIdx&gt;(damping), get&lt;DampingLevel&gt;(damping));</div>
-<div class="line"><a name="l00630"></a><span class="lineno">  630</span>&#160;        }</div>
-<div class="line"><a name="l00631"></a><span class="lineno">  631</span>&#160;    }</div>
-<div class="line"><a name="l00632"></a><span class="lineno">  632</span>&#160;}</div>
-<div class="line"><a name="l00633"></a><span class="lineno">  633</span>&#160; </div>
-<div class="line"><a name="l00637"></a><span class="lineno"><a class="line" href="namespacemio.html#a4a037bdec009fea22e8426a48c1341b8">  637</a></span>&#160;<span class="keyword">using</span> <a class="code" href="classmio_1_1Damping.html">SquareDamping</a>  = <a class="code" href="classmio_1_1Damping.html">Damping&lt;SquareMatrixShape&gt;</a>;</div>
-<div class="line"><a name="l00638"></a><span class="lineno"><a class="line" href="namespacemio.html#a56cceedcb6dc114cc6992f13e163d7bb">  638</a></span>&#160;<span class="keyword">using</span> <a class="code" href="classmio_1_1Dampings.html">SquareDampings</a> = <a class="code" href="classmio_1_1Dampings.html">Dampings&lt;SquareDamping&gt;</a>;</div>
-<div class="line"><a name="l00639"></a><span class="lineno"><a class="line" href="namespacemio.html#a852855378d297141c058aa4d561b90e9">  639</a></span>&#160;<span class="keyword">using</span> <a class="code" href="classmio_1_1Damping.html">VectorDamping</a>  = <a class="code" href="classmio_1_1Damping.html">Damping&lt;ColumnVectorShape&gt;</a>;</div>
-<div class="line"><a name="l00640"></a><span class="lineno"><a class="line" href="namespacemio.html#a70fa1b55f14e56241f910c68e9ff75bc">  640</a></span>&#160;<span class="keyword">using</span> <a class="code" href="classmio_1_1Dampings.html">VectorDampings</a> = <a class="code" href="classmio_1_1Dampings.html">Dampings&lt;VectorDamping&gt;</a>;</div>
+<div class="line"><a name="l00612"></a><span class="lineno">  612</span>&#160;        get&lt;MatrixIdx&gt;(active_same_type) = get&lt;MatrixIdx&gt;(damping);</div>
+<div class="line"><a name="l00613"></a><span class="lineno">  613</span>&#160;    }</div>
+<div class="line"><a name="l00614"></a><span class="lineno">  614</span>&#160;    <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00615"></a><span class="lineno">  615</span>&#160;        <span class="comment">//add new type to active</span></div>
+<div class="line"><a name="l00616"></a><span class="lineno">  616</span>&#160;        active_by_type.emplace_back(get&lt;MatrixIdx&gt;(damping), get&lt;DampingLevel&gt;(damping), get&lt;DampingType&gt;(damping));</div>
+<div class="line"><a name="l00617"></a><span class="lineno">  617</span>&#160;        <span class="comment">//find damping with same level if existent</span></div>
+<div class="line"><a name="l00618"></a><span class="lineno">  618</span>&#160;        <span class="keyword">auto</span> iter_sum_same_level = std::find_if(sum_by_level.begin(), sum_by_level.end(), [&amp;damping](<span class="keyword">auto</span>&amp; sum) {</div>
+<div class="line"><a name="l00619"></a><span class="lineno">  619</span>&#160;            return get&lt;DampingLevel&gt;(sum) == get&lt;DampingLevel&gt;(damping);</div>
+<div class="line"><a name="l00620"></a><span class="lineno">  620</span>&#160;        });</div>
+<div class="line"><a name="l00621"></a><span class="lineno">  621</span>&#160;        <span class="keywordflow">if</span> (iter_sum_same_level != sum_by_level.end()) {</div>
+<div class="line"><a name="l00622"></a><span class="lineno">  622</span>&#160;            <span class="comment">//add to existing level</span></div>
+<div class="line"><a name="l00623"></a><span class="lineno">  623</span>&#160;            get&lt;MatrixIdx&gt;(*iter_sum_same_level) += get&lt;MatrixIdx&gt;(damping);</div>
+<div class="line"><a name="l00624"></a><span class="lineno">  624</span>&#160;        }</div>
+<div class="line"><a name="l00625"></a><span class="lineno">  625</span>&#160;        <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00626"></a><span class="lineno">  626</span>&#160;            <span class="comment">//add new level</span></div>
+<div class="line"><a name="l00627"></a><span class="lineno">  627</span>&#160;            sum_by_level.emplace_back(get&lt;MatrixIdx&gt;(damping), get&lt;DampingLevel&gt;(damping));</div>
+<div class="line"><a name="l00628"></a><span class="lineno">  628</span>&#160;        }</div>
+<div class="line"><a name="l00629"></a><span class="lineno">  629</span>&#160;    }</div>
+<div class="line"><a name="l00630"></a><span class="lineno">  630</span>&#160;}</div>
+<div class="line"><a name="l00631"></a><span class="lineno">  631</span>&#160; </div>
+<div class="line"><a name="l00635"></a><span class="lineno"><a class="line" href="namespacemio.html#a4a037bdec009fea22e8426a48c1341b8">  635</a></span>&#160;<span class="keyword">using</span> <a class="code" href="classmio_1_1Damping.html">SquareDamping</a>  = <a class="code" href="classmio_1_1Damping.html">Damping&lt;SquareMatrixShape&gt;</a>;</div>
+<div class="line"><a name="l00636"></a><span class="lineno"><a class="line" href="namespacemio.html#a56cceedcb6dc114cc6992f13e163d7bb">  636</a></span>&#160;<span class="keyword">using</span> <a class="code" href="classmio_1_1Dampings.html">SquareDampings</a> = <a class="code" href="classmio_1_1Dampings.html">Dampings&lt;SquareDamping&gt;</a>;</div>
+<div class="line"><a name="l00637"></a><span class="lineno"><a class="line" href="namespacemio.html#a852855378d297141c058aa4d561b90e9">  637</a></span>&#160;<span class="keyword">using</span> <a class="code" href="classmio_1_1Damping.html">VectorDamping</a>  = <a class="code" href="classmio_1_1Damping.html">Damping&lt;ColumnVectorShape&gt;</a>;</div>
+<div class="line"><a name="l00638"></a><span class="lineno"><a class="line" href="namespacemio.html#a70fa1b55f14e56241f910c68e9ff75bc">  638</a></span>&#160;<span class="keyword">using</span> <a class="code" href="classmio_1_1Dampings.html">VectorDampings</a> = <a class="code" href="classmio_1_1Dampings.html">Dampings&lt;VectorDamping&gt;</a>;</div>
+<div class="line"><a name="l00639"></a><span class="lineno">  639</span>&#160; </div>
+<div class="line"><a name="l00640"></a><span class="lineno">  640</span>&#160;} <span class="comment">// namespace mio</span></div>
 <div class="line"><a name="l00641"></a><span class="lineno">  641</span>&#160; </div>
-<div class="line"><a name="l00642"></a><span class="lineno">  642</span>&#160;} <span class="comment">// namespace mio</span></div>
-<div class="line"><a name="l00643"></a><span class="lineno">  643</span>&#160; </div>
-<div class="line"><a name="l00644"></a><span class="lineno">  644</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// DAMPING_H</span></div>
+<div class="line"><a name="l00642"></a><span class="lineno">  642</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// DAMPING_H</span></div>
 <div class="ttc" id="aclassmio_1_1Damping_html"><div class="ttname"><a href="classmio_1_1Damping.html">mio::Damping</a></div><div class="ttdoc">represent interventions or effects that affect contact frequencies between multiple groups.</div><div class="ttdef"><b>Definition:</b> damping.h:69</div></div>
 <div class="ttc" id="aclassmio_1_1Damping_html_a160f2b8d9fc47fc6d3969f7368f3e3df"><div class="ttname"><a href="classmio_1_1Damping.html#a160f2b8d9fc47fc6d3969f7368f3e3df">mio::Damping::Shape</a></div><div class="ttdeci">S Shape</div><div class="ttdef"><b>Definition:</b> damping.h:71</div></div>
 <div class="ttc" id="aclassmio_1_1Damping_html_a20772173a501e25a0a5c69c020e6291d"><div class="ttname"><a href="classmio_1_1Damping.html#a20772173a501e25a0a5c69c020e6291d">mio::Damping::get_shape</a></div><div class="ttdeci">Shape get_shape() const</div><div class="ttdoc">shape of the damping matrix.</div><div class="ttdef"><b>Definition:</b> damping.h:192</div></div>

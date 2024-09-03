@@ -31,13 +31,13 @@
             <td class="headerValue">coverage.info</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntry">160</td>
-            <td class="headerCovTableEntry">165</td>
+            <td class="headerCovTableEntry">159</td>
+            <td class="headerCovTableEntry">164</td>
             <td class="headerCovTableEntryHi">97.0 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2024-08-22 14:04:17</td>
+            <td class="headerValue">2024-09-03 06:59:06</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">136</td>
@@ -411,19 +411,19 @@
 <a name="349"><span class="lineNum">     349 </span>            :      * @param t time in the simulation</a>
 <a name="350"><span class="lineNum">     350 </span>            :      * @return matrix expression </a>
 <a name="351"><span class="lineNum">     351 </span>            :      */</a>
-<a name="352"><span class="lineNum">     352 </span><span class="lineCov">     134651 :     auto get_matrix_at(SimulationTime t) const</span></a>
+<a name="352"><span class="lineNum">     352 </span><span class="lineCov">     131378 :     auto get_matrix_at(SimulationTime t) const</span></a>
 <a name="353"><span class="lineNum">     353 </span>            :     {</a>
-<a name="354"><span class="lineNum">     354 </span><span class="lineCov">     134651 :         assert(!m_accumulated_dampings_cached.empty() &amp;&amp;</span></a>
+<a name="354"><span class="lineNum">     354 </span><span class="lineCov">     131378 :         assert(!m_accumulated_dampings_cached.empty() &amp;&amp;</span></a>
 <a name="355"><span class="lineNum">     355 </span>            :                &quot;Cache is not current. Did you disable the automatic cache update?&quot;);</a>
-<a name="356"><span class="lineNum">     356 </span><span class="lineCov">     134651 :         auto ub =</span></a>
-<a name="357"><span class="lineNum">     357 </span><span class="lineCov">     134651 :             std::upper_bound(m_accumulated_dampings_cached.begin(), m_accumulated_dampings_cached.end(),</span></a>
-<a name="358"><span class="lineNum">     358 </span><span class="lineCov">     272673 :                              std::make_tuple(t), [](auto&amp;&amp; tup1, auto&amp;&amp; tup2) {</span></a>
-<a name="359"><span class="lineNum">     359 </span><span class="lineCov">     272673 :                                  return double(std::get&lt;SimulationTime&gt;(tup1)) &lt; double(std::get&lt;SimulationTime&gt;(tup2));</span></a>
+<a name="356"><span class="lineNum">     356 </span><span class="lineCov">     131378 :         auto ub =</span></a>
+<a name="357"><span class="lineNum">     357 </span><span class="lineCov">     131378 :             std::upper_bound(m_accumulated_dampings_cached.begin(), m_accumulated_dampings_cached.end(),</span></a>
+<a name="358"><span class="lineNum">     358 </span><span class="lineCov">     266127 :                              std::make_tuple(t), [](auto&amp;&amp; tup1, auto&amp;&amp; tup2) {</span></a>
+<a name="359"><span class="lineNum">     359 </span><span class="lineCov">     266127 :                                  return double(std::get&lt;SimulationTime&gt;(tup1)) &lt; double(std::get&lt;SimulationTime&gt;(tup2));</span></a>
 <a name="360"><span class="lineNum">     360 </span>            :                              });</a>
-<a name="361"><span class="lineNum">     361 </span><span class="lineCov">     134651 :         auto damping =</span></a>
-<a name="362"><span class="lineNum">     362 </span><span class="lineCov">     269302 :             smoother_cosine(double(t), double(std::get&lt;SimulationTime&gt;(*ub)) - 1, double(std::get&lt;SimulationTime&gt;(*ub)),</span></a>
-<a name="363"><span class="lineNum">     363 </span><span class="lineCov">     403953 :                             std::get&lt;Matrix&gt;(*(ub - 1)), std::get&lt;Matrix&gt;(*ub));</span></a>
-<a name="364"><span class="lineNum">     364 </span><span class="lineCov">     269302 :         return damping;</span></a>
+<a name="361"><span class="lineNum">     361 </span><span class="lineCov">     131378 :         auto damping =</span></a>
+<a name="362"><span class="lineNum">     362 </span><span class="lineCov">     262756 :             smoother_cosine(double(t), double(std::get&lt;SimulationTime&gt;(*ub)) - 1, double(std::get&lt;SimulationTime&gt;(*ub)),</span></a>
+<a name="363"><span class="lineNum">     363 </span><span class="lineCov">     394134 :                             std::get&lt;Matrix&gt;(*(ub - 1)), std::get&lt;Matrix&gt;(*ub));</span></a>
+<a name="364"><span class="lineNum">     364 </span><span class="lineCov">     262756 :         return damping;</span></a>
 <a name="365"><span class="lineNum">     365 </span>            :     }</a>
 <a name="366"><span class="lineNum">     366 </span><span class="lineCov">         34 :     auto get_matrix_at(double t) const</span></a>
 <a name="367"><span class="lineNum">     367 </span>            :     {</a>
@@ -671,39 +671,37 @@
 <a name="609"><span class="lineNum">     609 </span>            :         });</a>
 <a name="610"><span class="lineNum">     610 </span>            :         //remove active with the same type and level and add new one</a>
 <a name="611"><span class="lineNum">     611 </span><span class="lineCov">         80 :         get&lt;MatrixIdx&gt;(sum_same_level) += get&lt;MatrixIdx&gt;(damping) - get&lt;MatrixIdx&gt;(active_same_type).get();</span></a>
-<a name="612"><span class="lineNum">     612 </span>            :         //avoid negative values due to rounding error if e.g. a previous damping is lifted</a>
-<a name="613"><span class="lineNum">     613 </span><span class="lineCov">         80 :         get&lt;MatrixIdx&gt;(sum_same_level)   = get&lt;MatrixIdx&gt;(sum_same_level).cwiseMax(0.);</span></a>
-<a name="614"><span class="lineNum">     614 </span><span class="lineCov">         80 :         get&lt;MatrixIdx&gt;(active_same_type) = get&lt;MatrixIdx&gt;(damping);</span></a>
-<a name="615"><span class="lineNum">     615 </span>            :     }</a>
-<a name="616"><span class="lineNum">     616 </span>            :     else {</a>
-<a name="617"><span class="lineNum">     617 </span>            :         //add new type to active</a>
-<a name="618"><span class="lineNum">     618 </span><span class="lineCov">        201 :         active_by_type.emplace_back(get&lt;MatrixIdx&gt;(damping), get&lt;DampingLevel&gt;(damping), get&lt;DampingType&gt;(damping));</span></a>
-<a name="619"><span class="lineNum">     619 </span>            :         //find damping with same level if existent</a>
-<a name="620"><span class="lineNum">     620 </span><span class="lineCov">        287 :         auto iter_sum_same_level = std::find_if(sum_by_level.begin(), sum_by_level.end(), [&amp;damping](auto&amp; sum) {</span></a>
-<a name="621"><span class="lineNum">     621 </span><span class="lineCov">         86 :             return get&lt;DampingLevel&gt;(sum) == get&lt;DampingLevel&gt;(damping);</span></a>
-<a name="622"><span class="lineNum">     622 </span>            :         });</a>
-<a name="623"><span class="lineNum">     623 </span><span class="lineCov">        201 :         if (iter_sum_same_level != sum_by_level.end()) {</span></a>
-<a name="624"><span class="lineNum">     624 </span>            :             //add to existing level</a>
-<a name="625"><span class="lineNum">     625 </span><span class="lineCov">         20 :             get&lt;MatrixIdx&gt;(*iter_sum_same_level) += get&lt;MatrixIdx&gt;(damping);</span></a>
-<a name="626"><span class="lineNum">     626 </span>            :         }</a>
-<a name="627"><span class="lineNum">     627 </span>            :         else {</a>
-<a name="628"><span class="lineNum">     628 </span>            :             //add new level</a>
-<a name="629"><span class="lineNum">     629 </span><span class="lineCov">        181 :             sum_by_level.emplace_back(get&lt;MatrixIdx&gt;(damping), get&lt;DampingLevel&gt;(damping));</span></a>
-<a name="630"><span class="lineNum">     630 </span>            :         }</a>
-<a name="631"><span class="lineNum">     631 </span>            :     }</a>
-<a name="632"><span class="lineNum">     632 </span><span class="lineCov">        281 : }</span></a>
-<a name="633"><span class="lineNum">     633 </span>            : </a>
-<a name="634"><span class="lineNum">     634 </span>            : /**</a>
-<a name="635"><span class="lineNum">     635 </span>            :  * aliases for common damping specializations.</a>
-<a name="636"><span class="lineNum">     636 </span>            :  */</a>
-<a name="637"><span class="lineNum">     637 </span>            : using SquareDamping  = Damping&lt;SquareMatrixShape&gt;;</a>
-<a name="638"><span class="lineNum">     638 </span>            : using SquareDampings = Dampings&lt;SquareDamping&gt;;</a>
-<a name="639"><span class="lineNum">     639 </span>            : using VectorDamping  = Damping&lt;ColumnVectorShape&gt;;</a>
-<a name="640"><span class="lineNum">     640 </span>            : using VectorDampings = Dampings&lt;VectorDamping&gt;;</a>
+<a name="612"><span class="lineNum">     612 </span><span class="lineCov">         80 :         get&lt;MatrixIdx&gt;(active_same_type) = get&lt;MatrixIdx&gt;(damping);</span></a>
+<a name="613"><span class="lineNum">     613 </span>            :     }</a>
+<a name="614"><span class="lineNum">     614 </span>            :     else {</a>
+<a name="615"><span class="lineNum">     615 </span>            :         //add new type to active</a>
+<a name="616"><span class="lineNum">     616 </span><span class="lineCov">        201 :         active_by_type.emplace_back(get&lt;MatrixIdx&gt;(damping), get&lt;DampingLevel&gt;(damping), get&lt;DampingType&gt;(damping));</span></a>
+<a name="617"><span class="lineNum">     617 </span>            :         //find damping with same level if existent</a>
+<a name="618"><span class="lineNum">     618 </span><span class="lineCov">        287 :         auto iter_sum_same_level = std::find_if(sum_by_level.begin(), sum_by_level.end(), [&amp;damping](auto&amp; sum) {</span></a>
+<a name="619"><span class="lineNum">     619 </span><span class="lineCov">         86 :             return get&lt;DampingLevel&gt;(sum) == get&lt;DampingLevel&gt;(damping);</span></a>
+<a name="620"><span class="lineNum">     620 </span>            :         });</a>
+<a name="621"><span class="lineNum">     621 </span><span class="lineCov">        201 :         if (iter_sum_same_level != sum_by_level.end()) {</span></a>
+<a name="622"><span class="lineNum">     622 </span>            :             //add to existing level</a>
+<a name="623"><span class="lineNum">     623 </span><span class="lineCov">         20 :             get&lt;MatrixIdx&gt;(*iter_sum_same_level) += get&lt;MatrixIdx&gt;(damping);</span></a>
+<a name="624"><span class="lineNum">     624 </span>            :         }</a>
+<a name="625"><span class="lineNum">     625 </span>            :         else {</a>
+<a name="626"><span class="lineNum">     626 </span>            :             //add new level</a>
+<a name="627"><span class="lineNum">     627 </span><span class="lineCov">        181 :             sum_by_level.emplace_back(get&lt;MatrixIdx&gt;(damping), get&lt;DampingLevel&gt;(damping));</span></a>
+<a name="628"><span class="lineNum">     628 </span>            :         }</a>
+<a name="629"><span class="lineNum">     629 </span>            :     }</a>
+<a name="630"><span class="lineNum">     630 </span><span class="lineCov">        281 : }</span></a>
+<a name="631"><span class="lineNum">     631 </span>            : </a>
+<a name="632"><span class="lineNum">     632 </span>            : /**</a>
+<a name="633"><span class="lineNum">     633 </span>            :  * aliases for common damping specializations.</a>
+<a name="634"><span class="lineNum">     634 </span>            :  */</a>
+<a name="635"><span class="lineNum">     635 </span>            : using SquareDamping  = Damping&lt;SquareMatrixShape&gt;;</a>
+<a name="636"><span class="lineNum">     636 </span>            : using SquareDampings = Dampings&lt;SquareDamping&gt;;</a>
+<a name="637"><span class="lineNum">     637 </span>            : using VectorDamping  = Damping&lt;ColumnVectorShape&gt;;</a>
+<a name="638"><span class="lineNum">     638 </span>            : using VectorDampings = Dampings&lt;VectorDamping&gt;;</a>
+<a name="639"><span class="lineNum">     639 </span>            : </a>
+<a name="640"><span class="lineNum">     640 </span>            : } // namespace mio</a>
 <a name="641"><span class="lineNum">     641 </span>            : </a>
-<a name="642"><span class="lineNum">     642 </span>            : } // namespace mio</a>
-<a name="643"><span class="lineNum">     643 </span>            : </a>
-<a name="644"><span class="lineNum">     644 </span>            : #endif // DAMPING_H</a>
+<a name="642"><span class="lineNum">     642 </span>            : #endif // DAMPING_H</a>
 </pre>
       </td>
     </tr>
