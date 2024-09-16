@@ -37,12 +37,12 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2024-09-11 16:00:32</td>
+            <td class="headerValue">2024-09-16 08:07:28</td>
             <td></td>
             <td class="headerItem">Functions:</td>
-            <td class="headerCovTableEntry">38</td>
-            <td class="headerCovTableEntry">51</td>
-            <td class="headerCovTableEntryLo">74.5 %</td>
+            <td class="headerCovTableEntry">40</td>
+            <td class="headerCovTableEntry">53</td>
+            <td class="headerCovTableEntryMed">75.5 %</td>
           </tr>
           <tr><td><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
         </table>
@@ -73,7 +73,7 @@
             </tr>
     <tr>
               <td class="coverFn"><a href="dynamic_npis.h.gcov.html#94">mio::DynamicNPIs&lt;double&gt;::set_duration(mio::SimulationTime)</a></td>
-              <td class="coverFnHi">34</td>
+              <td class="coverFnHi">38</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="dynamic_npis.h.gcov.html#113">mio::DynamicNPIs&lt;double&gt;::set_interval(mio::SimulationTime)</a></td>
@@ -81,23 +81,23 @@
             </tr>
     <tr>
               <td class="coverFn"><a href="dynamic_npis.h.gcov.html#42">mio::DynamicNPIs&lt;double&gt;::set_threshold(double, std::vector&lt;mio::DampingSampling&lt;double&gt;, std::allocator&lt;mio::DampingSampling&lt;double&gt; &gt; &gt; const&amp;)</a></td>
-              <td class="coverFnHi">26</td>
+              <td class="coverFnHi">30</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="dynamic_npis.h.gcov.html#75">mio::DynamicNPIs&lt;double&gt;::get_thresholds()</a></td>
-              <td class="coverFnHi">12208</td>
+              <td class="coverFnHi">12317</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="dynamic_npis.h.gcov.html#135">mio::DynamicNPIs&lt;double&gt;::set_base_value(double)</a></td>
-              <td class="coverFnHi">34</td>
+              <td class="coverFnHi">38</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="dynamic_npis.h.gcov.html#55">mio::DynamicNPIs&lt;double&gt;::get_max_exceeded_threshold(double)</a></td>
-              <td class="coverFnHi">16</td>
+              <td class="coverFnHi">24</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="dynamic_npis.h.gcov.html#240">Eigen::Ref&lt;mio::ContactMatrix::Matrix const, 0, Eigen::internal::conditional&lt;mio::ContactMatrix::Matrix const::IsVectorAtCompileTime, Eigen::InnerStride&lt;1&gt;, Eigen::OuterStride&lt;-1&gt; &gt;::type&gt; mio::get_active_damping&lt;mio::ContactMatrix&gt;(mio::ContactMatrix const&amp;, mio::DampingLevel, mio::DampingType, mio::SimulationTime)</a></td>
-              <td class="coverFnHi">6</td>
+              <td class="coverFnHi">20</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="dynamic_npis.h.gcov.html#240">Eigen::Ref&lt;mio::DampingMatrixExpression&lt;mio::Dampings&lt;mio::Damping&lt;mio::RectMatrixShape&gt; &gt; &gt;::Matrix const, 0, Eigen::internal::conditional&lt;mio::DampingMatrixExpression&lt;mio::Dampings&lt;mio::Damping&lt;mio::RectMatrixShape&gt; &gt; &gt;::Matrix const::IsVectorAtCompileTime, Eigen::InnerStride&lt;1&gt;, Eigen::OuterStride&lt;-1&gt; &gt;::type&gt; mio::get_active_damping&lt;mio::DampingMatrixExpression&lt;mio::Dampings&lt;mio::Damping&lt;mio::RectMatrixShape&gt; &gt; &gt; &gt;(mio::DampingMatrixExpression&lt;mio::Dampings&lt;mio::Damping&lt;mio::RectMatrixShape&gt; &gt; &gt; const&amp;, mio::DampingLevel, mio::DampingType, mio::SimulationTime)</a></td>
@@ -109,7 +109,7 @@
             </tr>
     <tr>
               <td class="coverFn"><a href="dynamic_npis.h.gcov.html#214">std::vector&lt;unsigned long, std::allocator&lt;unsigned long&gt; &gt; mio::get_damping_indices&lt;mio::ContactMatrix&gt;(mio::ContactMatrix const&amp;, mio::DampingLevel, mio::DampingType, mio::SimulationTime, mio::SimulationTime)</a></td>
-              <td class="coverFnHi">3</td>
+              <td class="coverFnHi">10</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="dynamic_npis.h.gcov.html#214">std::vector&lt;unsigned long, std::allocator&lt;unsigned long&gt; &gt; mio::get_damping_indices&lt;mio::DampingMatrixExpression&lt;mio::Dampings&lt;mio::Damping&lt;mio::RectMatrixShape&gt; &gt; &gt; &gt;(mio::DampingMatrixExpression&lt;mio::Dampings&lt;mio::Damping&lt;mio::RectMatrixShape&gt; &gt; &gt; const&amp;, mio::DampingLevel, mio::DampingType, mio::SimulationTime, mio::SimulationTime)</a></td>
@@ -120,12 +120,16 @@
               <td class="coverFnHi">3</td>
             </tr>
     <tr>
-              <td class="coverFn"><a href="dynamic_npis.h.gcov.html#280">void mio::implement_dynamic_npis&lt;mio::ContactMatrixGroup, mio::osecir::Simulation&lt;double, mio_test::MockSimulation&gt;::advance(double)::{lambda(auto:1&amp;)#1}, double&gt;(mio::ContactMatrixGroup&amp;, std::vector&lt;mio::DampingSampling&lt;double&gt;, std::allocator&lt;mio::DampingSampling&lt;double&gt; &gt; &gt; const&amp;, mio::SimulationTime, mio::SimulationTime, mio::osecir::Simulation&lt;double, mio_test::MockSimulation&gt;::advance(double)::{lambda(auto:1&amp;)#1}&amp;&amp;)</a></td>
-              <td class="coverFnHi">1</td>
+              <td class="coverFn"><a href="dynamic_npis.h.gcov.html#280">void mio::implement_dynamic_npis&lt;mio::ContactMatrixGroup, mio::osecir::Simulation&lt;double, mio_test::MockSimulation&lt;mio::osecir::Model&gt; &gt;::advance(double)::{lambda(auto:1&amp;)#1}, double&gt;(mio::ContactMatrixGroup&amp;, std::vector&lt;mio::DampingSampling&lt;double&gt;, std::allocator&lt;mio::DampingSampling&lt;double&gt; &gt; &gt; const&amp;, mio::SimulationTime, mio::SimulationTime, mio::osecir::Simulation&lt;double, mio_test::MockSimulation&lt;mio::osecir::Model&gt; &gt;::advance(double)::{lambda(auto:1&amp;)#1}&amp;&amp;)</a></td>
+              <td class="coverFnHi">4</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="dynamic_npis.h.gcov.html#280">void mio::implement_dynamic_npis&lt;mio::ContactMatrixGroup, mio::osecir::Simulation&lt;double, mio::Simulation&lt;double, mio::osecir::Model&lt;double&gt; &gt; &gt;::advance(double)::{lambda(auto:1&amp;)#1}, double&gt;(mio::ContactMatrixGroup&amp;, std::vector&lt;mio::DampingSampling&lt;double&gt;, std::allocator&lt;mio::DampingSampling&lt;double&gt; &gt; &gt; const&amp;, mio::SimulationTime, mio::SimulationTime, mio::osecir::Simulation&lt;double, mio::Simulation&lt;double, mio::osecir::Model&lt;double&gt; &gt; &gt;::advance(double)::{lambda(auto:1&amp;)#1}&amp;&amp;)</a></td>
               <td class="coverFnLo">0</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="dynamic_npis.h.gcov.html#280">void mio::implement_dynamic_npis&lt;mio::ContactMatrixGroup, mio::osecirvvs::Simulation&lt;double, mio_test::MockSimulation&lt;mio::osecirvvs::Model&gt; &gt;::advance(double)::{lambda(auto:1&amp;)#1}, double&gt;(mio::ContactMatrixGroup&amp;, std::vector&lt;mio::DampingSampling&lt;double&gt;, std::allocator&lt;mio::DampingSampling&lt;double&gt; &gt; &gt; const&amp;, mio::SimulationTime, mio::SimulationTime, mio::osecirvvs::Simulation&lt;double, mio_test::MockSimulation&lt;mio::osecirvvs::Model&gt; &gt;::advance(double)::{lambda(auto:1&amp;)#1}&amp;&amp;)</a></td>
+              <td class="coverFnHi">4</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="dynamic_npis.h.gcov.html#280">void mio::implement_dynamic_npis&lt;mio::ContactMatrixGroup, mio::osecirvvs::Simulation&lt;double, mio::Simulation&lt;double, mio::osecirvvs::Model&lt;double&gt; &gt; &gt;::advance(double)::{lambda(auto:1&amp;)#1}, double&gt;(mio::ContactMatrixGroup&amp;, std::vector&lt;mio::DampingSampling&lt;double&gt;, std::allocator&lt;mio::DampingSampling&lt;double&gt; &gt; &gt; const&amp;, mio::SimulationTime, mio::SimulationTime, mio::osecirvvs::Simulation&lt;double, mio::Simulation&lt;double, mio::osecirvvs::Model&lt;double&gt; &gt; &gt;::advance(double)::{lambda(auto:1&amp;)#1}&amp;&amp;)</a></td>
@@ -165,15 +169,15 @@
             </tr>
     <tr>
               <td class="coverFn"><a href="dynamic_npis.h.gcov.html#85">mio::DynamicNPIs&lt;double&gt;::get_duration() const</a></td>
-              <td class="coverFnHi">30</td>
+              <td class="coverFnHi">37</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="dynamic_npis.h.gcov.html#106">mio::DynamicNPIs&lt;double&gt;::get_interval() const</a></td>
-              <td class="coverFnHi">35</td>
+              <td class="coverFnHi">42</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="dynamic_npis.h.gcov.html#128">mio::DynamicNPIs&lt;double&gt;::get_base_value() const</a></td>
-              <td class="coverFnHi">36</td>
+              <td class="coverFnHi">44</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="dynamic_npis.h.gcov.html#71">mio::DynamicNPIs&lt;double&gt;::get_thresholds() const</a></td>
@@ -205,7 +209,7 @@
             </tr>
     <tr>
               <td class="coverFn"><a href="dynamic_npis.h.gcov.html#59">auto mio::DynamicNPIs&lt;double&gt;::get_max_exceeded_threshold(double)::{lambda(auto:1&amp;, auto:2&amp;)#1}::operator()&lt;double const, std::pair&lt;double, std::vector&lt;mio::DampingSampling&lt;double&gt;, std::allocator&lt;mio::DampingSampling&lt;double&gt; &gt; &gt; &gt; &gt;(double const&amp;, std::pair&lt;double, std::vector&lt;mio::DampingSampling&lt;double&gt;, std::allocator&lt;mio::DampingSampling&lt;double&gt; &gt; &gt; &gt;&amp;) const</a></td>
-              <td class="coverFnHi">18</td>
+              <td class="coverFnHi">26</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="dynamic_npis.h.gcov.html#244">auto mio::get_active_damping&lt;mio::ContactMatrix&gt;(mio::ContactMatrix const&amp;, mio::DampingLevel, mio::DampingType, mio::SimulationTime)::{lambda(auto:1&amp;)#1}::operator()&lt;mio::Damping&lt;mio::SquareMatrixShape&gt; const&gt;(mio::Damping&lt;mio::SquareMatrixShape&gt; const&amp;) const</a></td>
@@ -220,12 +224,16 @@
               <td class="coverFnLo">0</td>
             </tr>
     <tr>
-              <td class="coverFn"><a href="dynamic_npis.h.gcov.html#326">auto mio::implement_dynamic_npis&lt;mio::ContactMatrixGroup, mio::osecir::Simulation&lt;double, mio_test::MockSimulation&gt;::advance(double)::{lambda(auto:1&amp;)#1}, double&gt;(mio::ContactMatrixGroup&amp;, std::vector&lt;mio::DampingSampling&lt;double&gt;, std::allocator&lt;mio::DampingSampling&lt;double&gt; &gt; &gt; const&amp;, mio::SimulationTime, mio::SimulationTime, mio::osecir::Simulation&lt;double, mio_test::MockSimulation&gt;::advance(double)::{lambda(auto:1&amp;)#1}&amp;&amp;)::{lambda(auto:1&amp;)#1}::operator()&lt;mio::Damping&lt;mio::SquareMatrixShape&gt; &gt;(mio::ContactMatrixGroup&amp;) const</a></td>
-              <td class="coverFnHi">1</td>
+              <td class="coverFn"><a href="dynamic_npis.h.gcov.html#326">auto mio::implement_dynamic_npis&lt;mio::ContactMatrixGroup, mio::osecir::Simulation&lt;double, mio_test::MockSimulation&lt;mio::osecir::Model&gt; &gt;::advance(double)::{lambda(auto:1&amp;)#1}, double&gt;(mio::ContactMatrixGroup&amp;, std::vector&lt;mio::DampingSampling&lt;double&gt;, std::allocator&lt;mio::DampingSampling&lt;double&gt; &gt; &gt; const&amp;, mio::SimulationTime, mio::SimulationTime, mio::osecir::Simulation&lt;double, mio_test::MockSimulation&lt;mio::osecir::Model&gt; &gt;::advance(double)::{lambda(auto:1&amp;)#1}&amp;&amp;)::{lambda(auto:1&amp;)#1}::operator()&lt;mio::Damping&lt;mio::SquareMatrixShape&gt; &gt;(mio::ContactMatrixGroup&amp;) const</a></td>
+              <td class="coverFnHi">4</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="dynamic_npis.h.gcov.html#326">auto mio::implement_dynamic_npis&lt;mio::ContactMatrixGroup, mio::osecir::Simulation&lt;double, mio::Simulation&lt;double, mio::osecir::Model&lt;double&gt; &gt; &gt;::advance(double)::{lambda(auto:1&amp;)#1}, double&gt;(mio::ContactMatrixGroup&amp;, std::vector&lt;mio::DampingSampling&lt;double&gt;, std::allocator&lt;mio::DampingSampling&lt;double&gt; &gt; &gt; const&amp;, mio::SimulationTime, mio::SimulationTime, mio::osecir::Simulation&lt;double, mio::Simulation&lt;double, mio::osecir::Model&lt;double&gt; &gt; &gt;::advance(double)::{lambda(auto:1&amp;)#1}&amp;&amp;)::{lambda(auto:1&amp;)#1}::operator()&lt;mio::Damping&lt;mio::SquareMatrixShape&gt; &gt;(mio::ContactMatrixGroup&amp;) const</a></td>
               <td class="coverFnLo">0</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="dynamic_npis.h.gcov.html#326">auto mio::implement_dynamic_npis&lt;mio::ContactMatrixGroup, mio::osecirvvs::Simulation&lt;double, mio_test::MockSimulation&lt;mio::osecirvvs::Model&gt; &gt;::advance(double)::{lambda(auto:1&amp;)#1}, double&gt;(mio::ContactMatrixGroup&amp;, std::vector&lt;mio::DampingSampling&lt;double&gt;, std::allocator&lt;mio::DampingSampling&lt;double&gt; &gt; &gt; const&amp;, mio::SimulationTime, mio::SimulationTime, mio::osecirvvs::Simulation&lt;double, mio_test::MockSimulation&lt;mio::osecirvvs::Model&gt; &gt;::advance(double)::{lambda(auto:1&amp;)#1}&amp;&amp;)::{lambda(auto:1&amp;)#1}::operator()&lt;mio::Damping&lt;mio::SquareMatrixShape&gt; &gt;(mio::ContactMatrixGroup&amp;) const</a></td>
+              <td class="coverFnHi">4</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="dynamic_npis.h.gcov.html#326">auto mio::implement_dynamic_npis&lt;mio::ContactMatrixGroup, mio::osecirvvs::Simulation&lt;double, mio::Simulation&lt;double, mio::osecirvvs::Model&lt;double&gt; &gt; &gt;::advance(double)::{lambda(auto:1&amp;)#1}, double&gt;(mio::ContactMatrixGroup&amp;, std::vector&lt;mio::DampingSampling&lt;double&gt;, std::allocator&lt;mio::DampingSampling&lt;double&gt; &gt; &gt; const&amp;, mio::SimulationTime, mio::SimulationTime, mio::osecirvvs::Simulation&lt;double, mio::Simulation&lt;double, mio::osecirvvs::Model&lt;double&gt; &gt; &gt;::advance(double)::{lambda(auto:1&amp;)#1}&amp;&amp;)::{lambda(auto:1&amp;)#1}::operator()&lt;mio::Damping&lt;mio::SquareMatrixShape&gt; &gt;(mio::ContactMatrixGroup&amp;) const</a></td>

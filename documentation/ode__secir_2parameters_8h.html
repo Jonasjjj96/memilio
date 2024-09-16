@@ -80,6 +80,7 @@ $(function() {
 <code>#include &quot;<a class="el" href="custom__index__array_8h_source.html">memilio/utils/custom_index_array.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="parameter__set_8h_source.html">memilio/utils/parameter_set.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="uncertain__value_8h_source.html">memilio/utils/uncertain_value.h</a>&quot;</code><br />
+<code>#include &lt;limits&gt;</code><br />
 </div>
 <p><a href="ode__secir_2parameters_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -94,8 +95,11 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmio_1_1osecir_1_1DeathsPerCritical.html">mio::osecir::DeathsPerCritical&lt; FP &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">the percentage of dead patients per ICU patients in the SECIR model  <a href="structmio_1_1osecir_1_1DeathsPerCritical.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmio_1_1osecir_1_1DynamicNPIsImplementationDelay.html">mio::osecir::DynamicNPIsImplementationDelay&lt; FP &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The delay with which <a class="el" href="classmio_1_1DynamicNPIs.html" title="represents non-pharmaceutical interventions (NPI) that are activated during the simulation if some va...">DynamicNPIs</a> are implemented and enforced after exceedance of threshold.  <a href="structmio_1_1osecir_1_1DynamicNPIsImplementationDelay.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmio_1_1osecir_1_1DynamicNPIsInfectedSymptoms.html">mio::osecir::DynamicNPIsInfectedSymptoms&lt; FP &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">the NPIs that are enacted if certain infection thresholds are exceeded.  <a href="structmio_1_1osecir_1_1DynamicNPIsInfectedSymptoms.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">the NPIs that are enforced if certain infection thresholds are exceeded.  <a href="structmio_1_1osecir_1_1DynamicNPIsInfectedSymptoms.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmio_1_1osecir_1_1ICUCapacity.html">mio::osecir::ICUCapacity&lt; FP &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">the icu capacity in the SECIR model  <a href="structmio_1_1osecir_1_1ICUCapacity.html#details">More...</a><br /></td></tr>
@@ -159,9 +163,9 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:aa92d62f50d61ba2eb849ab0b5c1d5c10"><td class="memTemplParams" colspan="2">template&lt;typename FP  = double&gt; </td></tr>
-<tr class="memitem:aa92d62f50d61ba2eb849ab0b5c1d5c10"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemio_1_1osecir.html#aa92d62f50d61ba2eb849ab0b5c1d5c10">mio::osecir::ParametersBase</a> = ParameterSet&lt; StartDay, Seasonality&lt; FP &gt;, ICUCapacity&lt; FP &gt;, TestAndTraceCapacity&lt; FP &gt;, TestAndTraceCapacityMaxRisk&lt; FP &gt;, ContactPatterns&lt; FP &gt;, DynamicNPIsInfectedSymptoms&lt; FP &gt;, TimeExposed&lt; FP &gt;, TimeInfectedNoSymptoms&lt; FP &gt;, TimeInfectedSymptoms&lt; FP &gt;, TimeInfectedSevere&lt; FP &gt;, TimeInfectedCritical&lt; FP &gt;, TransmissionProbabilityOnContact&lt; FP &gt;, RelativeTransmissionNoSymptoms&lt; FP &gt;, RecoveredPerInfectedNoSymptoms&lt; FP &gt;, RiskOfInfectionFromSymptomatic&lt; FP &gt;, MaxRiskOfInfectionFromSymptomatic&lt; FP &gt;, SeverePerInfectedSymptoms&lt; FP &gt;, CriticalPerSevere&lt; FP &gt;, DeathsPerCritical&lt; FP &gt; &gt;</td></tr>
-<tr class="separator:aa92d62f50d61ba2eb849ab0b5c1d5c10"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab17d763f388a4304459b54181dab1d59"><td class="memTemplParams" colspan="2">template&lt;typename FP  = double&gt; </td></tr>
+<tr class="memitem:ab17d763f388a4304459b54181dab1d59"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemio_1_1osecir.html#ab17d763f388a4304459b54181dab1d59">mio::osecir::ParametersBase</a> = ParameterSet&lt; StartDay, Seasonality&lt; FP &gt;, ICUCapacity&lt; FP &gt;, TestAndTraceCapacity&lt; FP &gt;, TestAndTraceCapacityMaxRisk&lt; FP &gt;, ContactPatterns&lt; FP &gt;, DynamicNPIsImplementationDelay&lt; FP &gt;, DynamicNPIsInfectedSymptoms&lt; FP &gt;, TimeExposed&lt; FP &gt;, TimeInfectedNoSymptoms&lt; FP &gt;, TimeInfectedSymptoms&lt; FP &gt;, TimeInfectedSevere&lt; FP &gt;, TimeInfectedCritical&lt; FP &gt;, TransmissionProbabilityOnContact&lt; FP &gt;, RelativeTransmissionNoSymptoms&lt; FP &gt;, RecoveredPerInfectedNoSymptoms&lt; FP &gt;, RiskOfInfectionFromSymptomatic&lt; FP &gt;, MaxRiskOfInfectionFromSymptomatic&lt; FP &gt;, SeverePerInfectedSymptoms&lt; FP &gt;, CriticalPerSevere&lt; FP &gt;, DeathsPerCritical&lt; FP &gt; &gt;</td></tr>
+<tr class="separator:ab17d763f388a4304459b54181dab1d59"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- start footer part -->
